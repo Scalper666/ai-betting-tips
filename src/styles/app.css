@@ -5,8 +5,8 @@
    Fonts: Space Grotesk (display) + Manrope (text)
    ============================================================ */
 :root{
-  --bg-0:#17212b; --bg-1:#151d26; --bg-2:#1a242f; --bg-3:#232e3c;
-  --surface:#1c2733; --surface-2:#232e3c; --surface-3:#2b3847;
+  --bg-0:#0f1720; --bg-1:#0c131b; --bg-2:#121b24; --bg-3:#1b2733;
+  --surface:#151f2a; --surface-2:#1b2733; --surface-3:#243342;
   --border:#101921; --border-2:#242f3d; --border-3:#33404f;
 
   --text:#ffffff; --text-dim:#8d9aa8; --text-mute:#5e6d7a;
@@ -21,6 +21,9 @@
 
   --grad-mint:linear-gradient(135deg,#40a7f0 0%,#2b7de0 100%);
   --grad-violet:linear-gradient(135deg,#2ea6ff 0%,#1c8adb 100%);
+  /* primary CTA buttons — green, independent of the blue accent (all skins) */
+  --btn-grad:linear-gradient(135deg,#34d17a 0%,#22b866 100%);
+  --btn-rgb:52,209,122; --btn-ink:#04240f;
   --grad-head:linear-gradient(180deg,var(--surface) 0%,var(--bg-1) 100%);
 
   --r-sm:8px; --r-md:13px; --r-lg:18px; --r-xl:24px; --r-pill:999px;
@@ -102,8 +105,8 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
   border:1px solid transparent;white-space:nowrap;font-family:'Space Grotesk',sans-serif}
 .btn:hover{transform:translateY(-2px)}
 .btn:active{transform:translateY(0)}
-.btn-mint{background:var(--grad-mint);color:var(--ink);box-shadow:0 8px 22px rgba(var(--accent-rgb),.28)}
-.btn-mint:hover{box-shadow:0 12px 30px rgba(var(--accent-rgb),.45)}
+.btn-mint{background:var(--btn-grad);color:var(--btn-ink);box-shadow:0 8px 22px rgba(var(--btn-rgb),.3)}
+.btn-mint:hover{box-shadow:0 12px 30px rgba(var(--btn-rgb),.5)}
 .btn-violet{background:var(--grad-violet);color:#fff;box-shadow:0 8px 22px rgba(14,203,129,.3)}
 .btn-violet:hover{box-shadow:0 12px 30px rgba(14,203,129,.46)}
 .btn-outline{background:transparent;border-color:var(--border-2);color:var(--text)}
