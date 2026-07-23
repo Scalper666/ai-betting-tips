@@ -7,6 +7,7 @@ const featured = rank === 1;
 ---
 <article class={`bk${featured ? ' featured' : ''}`}>
   {featured && <span class="bk-ribbon">Top pick</span>}
+  {bk.placeholder && <span class="demo-flag" title="Demo entry — replace with a real partner">demo</span>}
   <div class="bk-rank">{rank}</div>
 
   <div class="bk-brand">
@@ -18,9 +19,6 @@ const featured = rank === 1;
       <div class="bk-meta">
         <span class="rate">★ <b>{bk.rating}</b></span>
         <span class="tc">18+ · T&amp;C apply · <a href="https://www.gambleaware.org" rel="nofollow noopener" target="_blank" style="color:inherit;text-decoration:underline">GambleAware.org</a></span>
-        {bk.placeholder && (
-          <span class="tc" style="color:var(--danger)">demo entry — replace with a real partner</span>
-        )}
       </div>
     </div>
   </div>

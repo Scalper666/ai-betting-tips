@@ -22,6 +22,11 @@ const favicon = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'
   <meta property="og:url" content={canonical} />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href={favicon} />
+  <script is:inline>
+    // text-size preference: apply before paint (default "l" = slightly larger)
+    try { document.documentElement.setAttribute('data-fz', localStorage.getItem('abt-fz') || 'l'); }
+    catch (e) { document.documentElement.setAttribute('data-fz', 'l'); }
+  </script>
   {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
 </head>
 <body>

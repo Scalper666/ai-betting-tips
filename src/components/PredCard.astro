@@ -7,7 +7,7 @@ const conf = Number(rec.confidence ?? 60);
 const { label, cls } = confidenceLabel(conf);
 const href = `/predictions/${matchSlug(tip)}`;
 ---
-<article class="pred" data-cat={slugify(tip.league)}>
+<article class="pred" data-cat={slugify(tip.league)} data-kickoff={tip.kickoff ?? ''}>
   <div class="pred-top">
     <span class="pred-league"><span class="lg-logo">{tip.sport_icon ?? '🏆'}</span> {tip.league}</span>
     <span class="pred-when">🕒 {kickoffLabel(tip.kickoff)}</span>

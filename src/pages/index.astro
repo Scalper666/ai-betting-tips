@@ -8,6 +8,7 @@ import screener from '../data/screener.json';
 import stats from '../data/stats.json';
 import bookmakers from '../data/bookmakers.json';
 import historyData from '../data/history.json';
+import countriesData from '../data/countries.json';
 import { slugify, avgScore, kickoffLabel, matchSlug, AVATAR_STYLES, signed } from '../lib/utils.js';
 
 const tips = predictions.tips ?? [];
@@ -96,6 +97,24 @@ const resDate = (t) => {
   const d = new Date(t.kickoff ?? t.settled_at);
   return isNaN(d) ? '' : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
 };
+
+// geo block: country list for the client-side detector
+const geoCountries = (countriesData.countries ?? []).map((c) => ({ slug: c.slug, name: c.name, flag: c.flag }));
+
+// Acca of the day: the three most probable picks from different matches.
+// Confidence-first keeps the combined price in sane acca territory (~3–6x)
+// instead of multiplying longshot value picks into a 50x+ lottery ticket.
+const accaLegs = [];
+const accaSeen = new Set();
+for (const r of [...(screener.rows ?? [])].sort((a, b) => b.confidence - a.confidence)) {
+  const k = `${r.home}|${r.away}`;
+  if (accaSeen.has(k) || Number(r.odds) < 1.3) continue;
+  accaSeen.add(k);
+  accaLegs.push(r);
+  if (accaLegs.length === 3) break;
+}
+const accaOdds = accaLegs.reduce((p, r) => p * (Number(r.odds) || 1), 1);
+const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
 ---
 <Base
   title="AI Betting Tips — Expert Sports Betting Tips, Predictions & Bookmaker Reviews"
@@ -120,23 +139,68 @@ const resDate = (t) => {
     <div class="layout">
       <main class="content">
 
-        <!-- TOP BOOKMAKERS -->
-        <section>
+        <!-- TOP BOOKMAKERS (geo-aware: client script swaps country when detected) -->
+        <section id="geoBk" data-geo={JSON.stringify(geoCountries)} data-current="uk">
           <div class="sec-head">
-            <h2 class="sec-title">Top bookmakers in <b>🇬🇧 United Kingdom</b></h2>
-            <a href="/countries/uk" class="more-link">Change country →</a>
+            <h2 class="sec-title">Top bookmakers in <b data-geo-name>🇬🇧 United Kingdom</b></h2>
+            <a href="/countries/uk" class="more-link" data-geo-link>Change country →</a>
           </div>
-          <div class="geo-note"><span class="fl">🇬🇧</span> Ranked for players in <b>United Kingdom</b> — <a href="/countries/uk" style="color:var(--mint);font-weight:700">not your country?</a></div>
+          <div class="geo-note"><span class="fl">🇬🇧</span> Ranked for players in <b>United Kingdom</b> — <a href="/countries/uk" data-geo-link style="color:var(--mint);font-weight:700">not your country?</a></div>
           <div class="bk-list">
-            {bkList.map((bk, i) => <BookmakerRow bk={bk} rank={i + 1} />)}
+            {bkList.map((bk, i) => (
+              <div class="bk-geo" data-cn={(bk.countries ?? []).join(' ')}>
+                <BookmakerRow bk={bk} rank={i + 1} />
+              </div>
+            ))}
           </div>
         </section>
+        <script is:inline>
+          (function () {
+            var sec = document.getElementById('geoBk'); if (!sec) return;
+            var LIST = []; try { LIST = JSON.parse(sec.getAttribute('data-geo') || '[]'); } catch (e) {}
+            var ISO = { GB: 'uk', DE: 'de', IN: 'in', NG: 'ng' };
+            var TZ = { 'Europe/London': 'uk', 'Europe/Berlin': 'de', 'Europe/Busingen': 'de',
+                       'Asia/Kolkata': 'in', 'Asia/Calcutta': 'in', 'Africa/Lagos': 'ng' };
+            function apply(slug) {
+              if (!slug || slug === sec.getAttribute('data-current')) return;
+              var c = null;
+              for (var i = 0; i < LIST.length; i++) if (LIST[i].slug === slug) c = LIST[i];
+              if (!c) return;                       // no data for this country — keep default
+              var rows = [].slice.call(sec.querySelectorAll('[data-cn]'));
+              var match = rows.filter(function (r) { return (' ' + r.getAttribute('data-cn') + ' ').indexOf(' ' + slug + ' ') >= 0; });
+              if (!match.length) return;            // never leave the block empty
+              rows.forEach(function (r) { r.hidden = match.indexOf(r) < 0; });
+              match.forEach(function (r, i) { var rk = r.querySelector('.bk-rank'); if (rk) rk.textContent = i + 1; });
+              var name = sec.querySelector('[data-geo-name]'); if (name) name.textContent = c.flag + ' ' + c.name;
+              var note = sec.querySelector('.geo-note');
+              if (note) {
+                var fl = note.querySelector('.fl'); if (fl) fl.textContent = c.flag;
+                var b = note.querySelector('b'); if (b) b.textContent = c.name;
+              }
+              [].forEach.call(sec.querySelectorAll('[data-geo-link]'), function (a) { a.setAttribute('href', '/countries/' + slug); });
+              sec.setAttribute('data-current', slug);
+            }
+            // 1) instant offline guess from the browser timezone
+            try { var tz = Intl.DateTimeFormat().resolvedOptions().timeZone; if (TZ[tz]) apply(TZ[tz]); } catch (e) {}
+            // 2) refine via Cloudflare edge geo when the site is deployed behind it
+            try {
+              fetch('/cdn-cgi/trace').then(function (r) { return r.ok ? r.text() : ''; }).then(function (t) {
+                var m = /loc=([A-Z]{2})/.exec(t || ''); if (m && ISO[m[1]]) apply(ISO[m[1]]);
+              }).catch(function () {});
+            } catch (e) {}
+          })();
+        </script>
 
         <!-- FREE FOOTBALL PREDICTIONS -->
         <section data-filter-scope="preds">
           <div class="sec-head">
             <h2 class="sec-title">Free football <b>predictions</b></h2>
             <a href="/predictions" class="more-link">All predictions →</a>
+          </div>
+          <div class="chips day-tabs" data-day-tabs>
+            <span class="chip active" data-day="all">🗓 All days</span>
+            <span class="chip" data-day="today">Today <b class="n"></b></span>
+            <span class="chip" data-day="tomorrow">Tomorrow <b class="n"></b></span>
           </div>
           <div class="chips" data-chip-group="preds">
             <span class="chip active" data-filter="all"><span class="ic">⚡</span> All</span>
@@ -148,6 +212,63 @@ const resDate = (t) => {
             {featured.map((tip) => <PredCard tip={tip} />)}
           </div>
         </section>
+        <script is:inline>
+          (function () {
+            var tabs = document.querySelector('[data-day-tabs]'); if (!tabs) return;
+            var cards = [].slice.call(document.querySelectorAll('[data-filter-scope="preds"] [data-kickoff]'));
+            function key(d) { return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate(); }
+            var now = new Date(), today = key(now), tomorrow = key(new Date(now.getTime() + 864e5));
+            cards.forEach(function (c) {
+              var d = new Date(c.getAttribute('data-kickoff'));
+              var k = isNaN(d) ? '' : key(d);
+              c.setAttribute('data-day', k === today ? 'today' : k === tomorrow ? 'tomorrow' : 'later');
+            });
+            ['today', 'tomorrow'].forEach(function (v) {
+              var n = tabs.querySelector('[data-day="' + v + '"] .n');
+              if (n) n.textContent = cards.filter(function (c) { return c.getAttribute('data-day') === v; }).length;
+            });
+            tabs.addEventListener('click', function (e) {
+              var b = e.target.closest('[data-day]'); if (!b) return;
+              [].forEach.call(tabs.querySelectorAll('.chip'), function (c) { c.classList.remove('active'); });
+              b.classList.add('active');
+              var v = b.getAttribute('data-day');
+              cards.forEach(function (c) {
+                if (v === 'all' || c.getAttribute('data-day') === v) c.removeAttribute('data-day-off');
+                else c.setAttribute('data-day-off', '');
+              });
+            });
+          })();
+        </script>
+
+        <!-- ACCA OF THE DAY (auto-built from the top screener picks) -->
+        {accaLegs.length >= 2 && (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">Acca of the <b>day</b></h2>
+              <span class="acca-total">Combined odds <b>{accaOdds.toFixed(2)}</b></span>
+            </div>
+            <div class="acca">
+              {accaLegs.map((r) => (
+                <div class="acca-leg">
+                  <span class="acca-ic">{r.icon}</span>
+                  <div class="acca-m">
+                    <b>{r.home} — {r.away}</b>
+                    <span>{r.league} · {kickoffLabel(r.kickoff)}</span>
+                  </div>
+                  <span class="acca-pick">{r.market}</span>
+                  <span class="acca-odds">{Number(r.odds).toFixed(2)}</span>
+                </div>
+              ))}
+              <div class="acca-foot">
+                <span>{accaValue
+                  ? 'All legs carry a positive value edge from the AI screener.'
+                  : 'Built automatically from the highest-probability picks on today’s board.'}</span>
+                <a href="/screener" class="btn btn-mint btn-sm">Open screener · ×{accaOdds.toFixed(2)}</a>
+              </div>
+            </div>
+            <p class="res-note">18+ · Combined bets multiply the risk as well as the odds — stake responsibly.</p>
+          </section>
+        )}
 
         <!-- AI SCREENER PREVIEW -->
         <section>
@@ -239,7 +360,7 @@ const resDate = (t) => {
             <h2 class="sec-title">Best betting <b>bonuses</b></h2>
             <a href="/bonuses" class="more-link">All bonuses →</a>
           </div>
-          <div class="bonus-grid" style={`grid-template-columns:repeat(${Math.min(bkList.length, 4)},1fr)`}>
+          <div class="bonus-grid">
             {bkList.slice(0, 4).map((bk) => (
               <div class="bonus-card">
                 <div class="bonus-thumb" style={`background:linear-gradient(135deg,${bk.logo.bg},#06101f)`}>
@@ -395,6 +516,7 @@ const resDate = (t) => {
               matches.forEach(function (mm) { if (s && mm.sport !== s) return; (o[mm.d] = o[mm.d] || []).push(mm); });
               return o;
             }
+            var listExpanded = false;   // long days (20+ fixtures) start collapsed to 6 rows
             function renderList(day) {
               if (!day) { list.hidden = true; list.innerHTML = ''; return; }
               var arr = byDay()[day] || [];
@@ -402,15 +524,21 @@ const resDate = (t) => {
               var head = '<div class="cl-head"><span>' + DOW[(dt.getDay() + 6) % 7] + ' ' + dt.getDate() + ' ' + MON[dt.getMonth()].slice(0, 3) +
                 '</span><span class="cl-count">' + arr.length + (arr.length === 1 ? ' match' : ' matches') + '</span></div>';
               if (!arr.length) { list.hidden = false; list.innerHTML = head + '<div class="cl-empty">No matches scheduled on this day.</div>'; return; }
-              var rows = arr.map(function (mm) {
+              var show = listExpanded ? arr : arr.slice(0, 6);
+              var rows = show.map(function (mm) {
                 return '<a class="cl-row" href="' + esc(mm.href) + '">' +
                   '<span class="cl-t">' + esc(mm.t) + '</span>' +
                   '<span class="cl-m">' + esc(mm.home) + ' <i>v</i> ' + esc(mm.away) + '<span class="cl-lg">' + esc(mm.lg) + '</span></span>' +
                   '<span class="cl-go">→</span></a>';
               }).join('');
+              var more = (!listExpanded && arr.length > show.length)
+                ? '<button type="button" class="cl-more" data-cal-more>Show all ' + arr.length + ' matches ▾</button>' : '';
               list.hidden = false;
-              list.innerHTML = head + rows;
+              list.innerHTML = head + rows + more;
             }
+            list.addEventListener('click', function (e) {
+              if (e.target.closest('[data-cal-more]')) { listExpanded = true; renderList(sel); }
+            });
             function render() {
               label.textContent = MON[m] + ' ' + y;
               var days = byDay();
@@ -433,7 +561,7 @@ const resDate = (t) => {
               grid.innerHTML = html;
             }
             function selectDay(k) {
-              sel = k;
+              sel = k; listExpanded = false;
               var p = k.split('-'); y = +p[0]; m = +p[1] - 1;
               render(); renderList(k);
               if (list && list.scrollIntoView) list.scrollIntoView({ block: 'nearest', behavior: 'smooth' });

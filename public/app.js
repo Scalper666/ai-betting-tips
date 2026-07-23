@@ -132,3 +132,20 @@
     document.addEventListener('click', function () { sw.classList.remove('open'); });
   })();
 })();
+
+/* ---- Text-size control (A− / A+ in the header) ---- */
+(function () {
+  'use strict';
+  var LEVELS = ['s', 'm', 'l', 'xl'];   // zoom: .92 / 1 / 1.1 / 1.2 (css [data-fz])
+  function cur() {
+    var i = LEVELS.indexOf(document.documentElement.getAttribute('data-fz') || 'l');
+    return i < 0 ? 2 : i;
+  }
+  document.querySelectorAll('[data-fz-step]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var i = Math.min(LEVELS.length - 1, Math.max(0, cur() + parseInt(btn.getAttribute('data-fz-step'), 10)));
+      document.documentElement.setAttribute('data-fz', LEVELS[i]);
+      try { localStorage.setItem('abt-fz', LEVELS[i]); } catch (e) {}
+    });
+  });
+})();
