@@ -1,0 +1,40 @@
+---
+import { abbr, badgeColor, confidenceLabel, kickoffLabel, matchSlug, slugify } from '../lib/utils.js';
+
+const { tip } = Astro.props;
+const rec = tip.recommendation ?? {};
+const conf = Number(rec.confidence ?? 60);
+const { label, cls } = confidenceLabel(conf);
+const href = `/predictions/${matchSlug(tip)}`;
+---
+<article class="pred" data-cat={slugify(tip.league)}>
+  <div class="pred-top">
+    <span class="pred-league"><span class="lg-logo">{tip.sport_icon ?? '🏆'}</span> {tip.league}</span>
+    <span class="pred-when">🕒 {kickoffLabel(tip.kickoff)}</span>
+  </div>
+  <div class="pred-body">
+    <div class="match">
+      <div class="team">
+        <div class="badge" style={`background:${badgeColor(tip.home)}`}>{abbr(tip.home)}</div>
+        <div class="nm">{tip.home}</div>
+      </div>
+      <div class="vs">VS</div>
+      <div class="team">
+        <div class="badge" style={`background:${badgeColor(tip.away)}`}>{abbr(tip.away)}</div>
+        <div class="nm">{tip.away}</div>
+      </div>
+    </div>
+    <div class="pred-tip">
+      <div><div class="lbl">Our tip</div><div class="val">{rec.text}</div></div>
+      <div class="odd-box"><div class="ot">Odds</div><div class="ov">{Number(rec.price ?? 0).toFixed(2)}</div></div>
+    </div>
+    <div class="confidence">
+      <div class="cf-top"><span>Confidence</span><span class="pc">{label} · {conf}%</span></div>
+      <div class={`bar ${cls}`.trim()} data-val={conf}><i></i></div>
+    </div>
+  </div>
+  <div class="pred-foot">
+    <div class="by"><span class="ava">AI</span> AI Betting Tips model</div>
+    <a href={href} class="btn btn-ghost btn-sm">Analysis →</a>
+  </div>
+</article>

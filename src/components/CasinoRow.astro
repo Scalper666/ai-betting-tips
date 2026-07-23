@@ -1,0 +1,42 @@
+---
+import { avgScore } from '../lib/utils.js';
+
+const { casino: c, rank } = Astro.props;
+const avg = avgScore(c.scores);
+const featured = rank === 1;
+const bonusLabel = c.bonus.type === 'no-deposit' ? 'No-deposit offer' : 'Welcome package';
+---
+<article class={`bk${featured ? ' featured' : ''}`}>
+  {featured && <span class="bk-ribbon">Top pick</span>}
+  <div class="bk-rank">{rank}</div>
+
+  <div class="bk-brand">
+    <div class="bk-logo" style={`background:${c.logo.bg};color:${c.logo.fg}`}>
+      {c.logo.line1}<br />{c.logo.line2}
+    </div>
+    <div>
+      <h4>{c.name}</h4>
+      <div class="bk-meta">
+        <span class="rate">★ <b>{c.rating}</b></span>
+        <span class="tc">18+ · T&amp;C apply · <a href="https://www.gambleaware.org" rel="nofollow noopener" target="_blank" style="color:inherit;text-decoration:underline">GambleAware.org</a></span>
+        {c.placeholder && <span class="tc" style="color:var(--danger)">demo entry — replace with a real partner</span>}
+      </div>
+    </div>
+  </div>
+
+  <div class="bk-bonus">
+    <div class="blbl">{bonusLabel}</div>
+    <div class="amt">{c.bonus.headline}</div>
+    <div class="tc" style="margin-top:4px">{c.bonus.wagering} wagering{c.bonus.min_deposit ? ` · min dep €${c.bonus.min_deposit}` : ''}</div>
+  </div>
+
+  <div class="bk-score">
+    <div class="ring" data-val={Math.round(avg * 10)}><b>{avg}</b></div>
+    <div class="sl">Our score</div>
+  </div>
+
+  <div class="bk-actions">
+    <a href={c.affiliate_url} class="btn btn-mint btn-sm" rel="nofollow sponsored" target="_blank">Get bonus</a>
+    <a href={`/casinos/${c.slug}`} class="review">Read review</a>
+  </div>
+</article>

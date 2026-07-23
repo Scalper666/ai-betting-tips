@@ -1,0 +1,158 @@
+---
+import Base from '../../layouts/Base.astro';
+import predictions from '../../data/predictions.json';
+import { matchSlug, abbr, badgeColor, kickoffLabel, confidenceLabel, slugify } from '../../lib/utils.js';
+
+// ── This is programmatic SEO: one template → one page per match in the data.
+export function getStaticPaths() {
+  const tips = predictions.tips ?? [];
+  return tips.map((tip) => ({ params: { slug: matchSlug(tip) }, props: { tip } }));
+}
+
+const { tip } = Astro.props;
+const rec = tip.recommendation ?? {};
+const conf = Number(rec.confidence ?? 60);
+const { label, cls } = confidenceLabel(conf);
+const kickoff = kickoffLabel(tip.kickoff);
+
+const title = `${tip.home} vs ${tip.away} Prediction, Odds & Betting Tip`;
+const description = `${tip.home} vs ${tip.away} (${tip.league}) prediction: our tip is ${rec.text} at odds ${Number(rec.price ?? 0).toFixed(2)}. Best available odds compared across bookmakers.`;
+
+// Best odds across bookmakers — real value for the reader, straight from the pipeline
+const bestOdds = Object.entries(tip.best_h2h ?? {});
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SportsEvent',
+  name: `${tip.home} vs ${tip.away}`,
+  startDate: tip.kickoff,
+  sport: 'Football',
+  competitor: [
+    { '@type': 'SportsTeam', name: tip.home },
+    { '@type': 'SportsTeam', name: tip.away },
+  ],
+  superEvent: { '@type': 'SportsOrganization', name: tip.league },
+};
+---
+<Base title={title} description={description} schema={schema} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href="/">Home</a><span>/</span>
+        <a href="/predictions">Predictions</a><span>/</span>
+        <a href={`/league/${slugify(tip.league)}`}>{tip.league}</a><span>/</span>
+        {tip.home} vs {tip.away}
+      </div>
+      <h1>{tip.home} vs {tip.away} <em>prediction</em></h1>
+      <p class="lead">{tip.league} · {kickoff} — our model's pick, the best available price and how the market is priced.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+
+        <!-- Match + our tip -->
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Our <b>prediction</b></h2></div>
+          <article class="pred">
+            <div class="pred-top">
+              <span class="pred-league"><span class="lg-logo">{tip.sport_icon ?? '🏆'}</span> {tip.league}</span>
+              <span class="pred-when">🕒 {kickoff}</span>
+            </div>
+            <div class="pred-body">
+              <div class="match">
+                <div class="team">
+                  <div class="badge" style={`background:${badgeColor(tip.home)}`}>{abbr(tip.home)}</div>
+                  <div class="nm">{tip.home}</div>
+                </div>
+                <div class="vs">VS</div>
+                <div class="team">
+                  <div class="badge" style={`background:${badgeColor(tip.away)}`}>{abbr(tip.away)}</div>
+                  <div class="nm">{tip.away}</div>
+                </div>
+              </div>
+              <div class="pred-tip">
+                <div><div class="lbl">Our tip</div><div class="val">{rec.text}</div></div>
+                <div class="odd-box"><div class="ot">Odds</div><div class="ov">{Number(rec.price ?? 0).toFixed(2)}</div></div>
+              </div>
+              <div class="confidence">
+                <div class="cf-top"><span>Confidence</span><span class="pc">{label} · {conf}%</span></div>
+                <div class={`bar ${cls}`.trim()} data-val={conf}><i></i></div>
+              </div>
+            </div>
+            <div class="pred-foot">
+              <div class="by"><span class="ava">AI</span> Value edge {rec.edge_pct ?? 0}% · best price at {rec.bookmaker ?? '—'}</div>
+              <a href="#" class="btn btn-mint btn-sm">Bet at {rec.bookmaker ?? 'bookmaker'}</a>
+            </div>
+          </article>
+        </section>
+
+        <!-- Odds comparison: genuinely useful, and unique to us -->
+        {bestOdds.length > 0 && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">Best <b>odds</b> across bookmakers</h2></div>
+            <div class="odds-table"><div class="scr-scroll">
+              <table class="otbl">
+                <thead><tr><th style="text-align:left">Outcome</th><th>Best price</th><th>Bookmaker</th><th>Implied</th></tr></thead>
+                <tbody>
+                  {bestOdds.map(([name, info]) => (
+                    <tr>
+                      <td class="o-match" style="font-weight:700">{name}</td>
+                      <td class="o-cell hot"><b>{Number(info.price).toFixed(2)}</b></td>
+                      <td class="o-cell"><span>{info.bookmaker}</span></td>
+                      <td class="o-cell"><b>{(100 / Number(info.price)).toFixed(1)}%</b></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div></div>
+          </section>
+        )}
+
+        <!-- This is where the Claude API writes a unique preview per match -->
+        <section class="seo">
+          <h2>{tip.home} vs {tip.away}: match preview</h2>
+          <p>
+            Our model makes <b>{rec.text}</b> the value play in this {tip.league} fixture, priced at
+            <b> {Number(rec.price ?? 0).toFixed(2)}</b> with {rec.bookmaker ?? 'the market leader'} —
+            an edge of <b>{rec.edge_pct ?? 0}%</b> over the margin-free fair price, and a
+            confidence rating of <b>{conf}%</b>.
+          </p>
+          <p class="dim" style="font-size:13px">
+            ⓘ Placeholder for the AI-written preview (form, head-to-head, team news). The Claude API
+            fills this per match, so every one of these pages carries unique analysis rather than a template.
+          </p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Match <b>FAQ</b></h2></div>
+          <div class="faq">
+            <div class="faq-item open">
+              <div class="faq-q">What is the prediction for {tip.home} vs {tip.away}?<span class="pm">+</span></div>
+              <div class="faq-a"><p>Our tip is <b>{rec.text}</b> at odds of {Number(rec.price ?? 0).toFixed(2)}, with a {conf}% confidence rating.</p></div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">When does the match kick off?<span class="pm">+</span></div>
+              <div class="faq-a"><p>{tip.home} vs {tip.away} takes place {kickoff} in the {tip.league}.</p></div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>🎯 Best price</h4>
+          <p>{rec.text} @ {Number(rec.price ?? 0).toFixed(2)} at {rec.bookmaker ?? '—'}.</p>
+          <a href="#" class="btn btn-mint btn-block">Bet now</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">⚡</span> More {tip.league}</div>
+          <a class="tm" href={`/league/${slugify(tip.league)}`}><span class="dot"></span>All {tip.league} tips</a>
+          <a class="tm" href="/predictions"><span class="dot"></span>Today's predictions</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

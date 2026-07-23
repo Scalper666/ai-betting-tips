@@ -1,0 +1,73 @@
+{
+  "_readme": [
+    "One object per target market. Drives /countries/<slug>/ pages, which list the",
+    "bookmakers whose `countries` array contains this slug.",
+    "",
+    "IMPORTANT: gambling law changes often and varies by region. Verify every legal",
+    "line with a current source (and ideally a lawyer) before publishing — this is",
+    "YMYL content and Google holds it to a higher bar. `verify: true` marks entries",
+    "that have not been re-checked."
+  ],
+  "countries": [
+    {
+      "slug": "uk",
+      "name": "United Kingdom",
+      "flag": "🇬🇧",
+      "currency": "GBP (£)",
+      "regulator": "UK Gambling Commission (UKGC)",
+      "legal_summary": "Online sports betting is legal and tightly regulated. Operators serving UK players must hold a UKGC licence, which brings strict rules on advertising, affordability checks and player protection.",
+      "key_facts": [
+        "Credit cards cannot be used for gambling (banned since April 2020)",
+        "All licensed operators must participate in GAMSTOP self-exclusion",
+        "Winnings are not taxed for the player"
+      ],
+      "popular_payments": ["Debit card", "PayPal", "Apple Pay", "Bank transfer"],
+      "verify": true
+    },
+    {
+      "slug": "de",
+      "name": "Germany",
+      "flag": "🇩🇪",
+      "currency": "EUR (€)",
+      "regulator": "Gemeinsame Glücksspielbehörde der Länder (GGL)",
+      "legal_summary": "Regulated nationally under the 2021 State Treaty on Gambling. Licensed operators may offer sports betting, but the framework is noticeably stricter than in most of Europe.",
+      "key_facts": [
+        "Cross-operator monthly deposit limit applies by default",
+        "Live betting is restricted to a limited set of markets",
+        "A betting turnover tax applies and some operators pass it to the customer"
+      ],
+      "popular_payments": ["Sofort", "Giropay", "PayPal", "Visa", "Skrill"],
+      "verify": true
+    },
+    {
+      "slug": "in",
+      "name": "India",
+      "flag": "🇮🇳",
+      "currency": "INR (₹)",
+      "regulator": "Regulated at state level — no single national licence",
+      "legal_summary": "Rules differ by state: several states permit online betting while others prohibit it outright. Many international operators accept Indian players, so check the law where you live before signing up.",
+      "key_facts": [
+        "Rules vary significantly between states",
+        "UPI and local wallets are the most common deposit methods",
+        "Winnings are subject to tax deducted at source"
+      ],
+      "popular_payments": ["UPI", "Paytm", "Net banking", "Crypto"],
+      "verify": true
+    },
+    {
+      "slug": "ng",
+      "name": "Nigeria",
+      "flag": "🇳🇬",
+      "currency": "NGN (₦)",
+      "regulator": "National Lottery Regulatory Commission and state boards",
+      "legal_summary": "Sports betting is legal and popular, with both locally licensed operators and international sites serving the market. Football, and the Premier League in particular, dominates betting volume.",
+      "key_facts": [
+        "Mobile-first market — most bets are placed on phones",
+        "Bank transfer and mobile money are the leading payment methods",
+        "Data-light apps matter because of connection costs"
+      ],
+      "popular_payments": ["Bank transfer", "Paystack", "Flutterwave", "USSD"],
+      "verify": true
+    }
+  ]
+}

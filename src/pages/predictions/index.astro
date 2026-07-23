@@ -1,0 +1,38 @@
+---
+import Base from '../../layouts/Base.astro';
+import PredCard from '../../components/PredCard.astro';
+import predictions from '../../data/predictions.json';
+
+const tips = predictions.tips ?? [];
+---
+<Base
+  title="Football Predictions & Free Betting Tips — AI Betting Tips"
+  description="All of today's free predictions with our recommended tip, best available odds and a confidence rating."
+  active="predictions">
+
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span>Predictions</div>
+      <h1>Football <em>predictions</em> &amp; betting tips</h1>
+      <p class="lead">{tips.length} live picks generated from the odds pipeline — every one links to a full match page.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="pred-grid">
+            {tips.map((tip) => <PredCard tip={tip} />)}
+          </div>
+        </section>
+      </main>
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>🎯 How these are picked</h4>
+          <p>Fair odds with the bookmaker margin removed, then value = best price × fair probability.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

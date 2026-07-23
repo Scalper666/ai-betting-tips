@@ -1,0 +1,186 @@
+---
+import Base from '../../layouts/Base.astro';
+import data from '../../data/casinos.json';
+import countryData from '../../data/countries.json';
+import { avgScore, CASINO_SCORE_LABELS } from '../../lib/utils.js';
+
+export function getStaticPaths() {
+  return (data.casinos ?? []).map((c) => ({ params: { slug: c.slug }, props: { casino: c } }));
+}
+
+const { casino: c } = Astro.props;
+const avg = avgScore(c.scores);
+const markets = (countryData.countries ?? []).filter((x) => (c.countries ?? []).includes(x.slug));
+const others = (data.casinos ?? []).filter((x) => x.slug !== c.slug).slice(0, 4);
+const updated = new Date().toISOString().slice(0, 10);
+const year = new Date().getFullYear();
+
+const title = `${c.name} Casino Review ${year} — Bonus, Games & Payout Speed`;
+const description = `${c.name} review: rated ${avg}/10. ${c.bonus.headline} with ${c.bonus.wagering} wagering. Licences, providers, payout times and full pros & cons.`;
+
+const faq = [
+  { q: `Is ${c.name} safe to play at?`, a: `${c.name} holds ${c.licences.join(' and ')} licensing and uses audited random number generators. We check licence status, payout reliability and complaint history before recommending any casino.` },
+  { q: `What is the ${c.name} welcome offer?`, a: `${c.bonus.headline}. It carries ${c.bonus.wagering} wagering${c.bonus.min_deposit ? ` with a minimum deposit of €${c.bonus.min_deposit}` : ''}${c.bonus.code ? ` (code ${c.bonus.code})` : ''}.` },
+  { q: `How long do ${c.name} withdrawals take?`, a: `In our testing, withdrawals were processed in ${c.payout_time}.` },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Review',
+      name: title,
+      datePublished: updated,
+      itemReviewed: { '@type': 'Organization', name: c.name, foundingDate: String(c.founded) },
+      reviewRating: { '@type': 'Rating', ratingValue: avg, bestRating: 10, worstRating: 0 },
+      author: { '@type': 'Organization', name: 'AI Betting Tips' },
+      reviewBody: c.verdict,
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+    },
+  ],
+};
+---
+<Base title={title} description={description} schema={schema} active="casinos">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/casinos">Casinos</a><span>/</span>{c.name}</div>
+      <h1>{c.name} <em>casino review</em></h1>
+      <p class="lead">{description}</p>
+      <p class="tc" style="margin-top:6px">Last updated {updated} · Rated by the AI Betting Tips team</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+
+        {c.placeholder && (
+          <div class="box"><div class="box-pad" style="color:var(--danger);font-weight:700">
+            ⚠ Demo entry. Replace with a real partner and a real affiliate link before publishing.
+          </div></div>
+        )}
+
+        <section>
+          <div class="bk-list">
+            <article class="bk featured">
+              <div class="bk-rank">★</div>
+              <div class="bk-brand">
+                <div class="bk-logo" style={`background:${c.logo.bg};color:${c.logo.fg}`}>{c.logo.line1}<br />{c.logo.line2}</div>
+                <div>
+                  <h4>{c.name}</h4>
+                  <div class="bk-meta"><span class="rate">★ <b>{c.rating}</b></span><span class="tc">Founded {c.founded} · {c.licences.join(', ')}</span></div>
+                </div>
+              </div>
+              <div class="bk-bonus">
+                <div class="blbl">{c.bonus.type === 'no-deposit' ? 'No-deposit offer' : 'Welcome package'}</div>
+                <div class="amt">{c.bonus.headline}</div>
+                <div class="tc" style="margin-top:4px">{c.bonus.wagering} wagering{c.bonus.min_deposit ? ` · min dep €${c.bonus.min_deposit}` : ''}{c.bonus.code ? ` · code ${c.bonus.code}` : ''}</div>
+              </div>
+              <div class="bk-score">
+                <div class="ring" data-val={Math.round(avg * 10)}><b>{avg}</b></div>
+                <div class="sl">Our score</div>
+              </div>
+              <div class="bk-actions">
+                <a href={c.affiliate_url} class="btn btn-mint btn-sm" rel="nofollow sponsored" target="_blank">Get bonus</a>
+                <span class="review" style="text-decoration:none">18+ · T&amp;C apply · <a href="https://www.gambleaware.org" rel="nofollow noopener" target="_blank" style="color:inherit;text-decoration:underline">GambleAware.org</a></span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">How {c.name} <b>scores</b></h2></div>
+          <div class="box"><div class="box-pad">
+            <div class="rate-rows">
+              {Object.entries(c.scores).map(([k, v]) => (
+                <div class="rate-row">
+                  <span class="rl">{CASINO_SCORE_LABELS[k] ?? k}</span>
+                  <div class="bar" data-val={Math.round(v * 10)}><i></i></div>
+                  <span class="rv">{v}</span>
+                </div>
+              ))}
+            </div>
+          </div></div>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Pros &amp; <b>cons</b></h2></div>
+          <div class="feat-grid" style="grid-template-columns:1fr 1fr">
+            <div class="feat">
+              <div class="fi">✅</div><h4>What we liked</h4>
+              <ul style="margin:0;padding-left:18px;color:var(--text-dim);font-size:13.5px">
+                {c.pros.map((p) => <li style="margin-bottom:6px">{p}</li>)}
+              </ul>
+            </div>
+            <div class="feat v">
+              <div class="fi">⚠️</div><h4>What to watch</h4>
+              <ul style="margin:0;padding-left:18px;color:var(--text-dim);font-size:13.5px">
+                {c.cons.map((x) => <li style="margin-bottom:6px">{x}</li>)}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Key <b>facts</b></h2></div>
+          <div class="odds-table"><div class="scr-scroll">
+            <table class="otbl">
+              <tbody>
+                <tr><td class="o-match" style="font-weight:700">Licences</td><td class="o-cell"><b>{c.licences.join(', ')}</b></td></tr>
+                <tr><td class="o-match" style="font-weight:700">Payout speed</td><td class="o-cell hot"><b>{c.payout_time}</b></td></tr>
+                <tr><td class="o-match" style="font-weight:700">Payments</td><td class="o-cell"><b>{c.payments.join(', ')}</b></td></tr>
+                <tr><td class="o-match" style="font-weight:700">Game providers</td><td class="o-cell"><b>{c.providers.join(', ')}</b></td></tr>
+                <tr><td class="o-match" style="font-weight:700">Bonus wagering</td><td class="o-cell"><b>{c.bonus.wagering}{c.bonus.expires_days ? ` · expires in ${c.bonus.expires_days} days` : ''}</b></td></tr>
+              </tbody>
+            </table>
+          </div></div>
+        </section>
+
+        <section class="seo">
+          <h2>{c.name} verdict</h2>
+          <p>{c.verdict}</p>
+          <p class="dim" style="font-size:13px">ⓘ The AI layer expands this into a full 600–900 word review from the facts above.</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{c.name} <b>FAQ</b></h2></div>
+          <div class="faq">
+            {faq.map((f, i) => (
+              <div class={`faq-item${i === 0 ? ' open' : ''}`}>
+                <div class="faq-q">{f.q}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{f.a}</p></div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>🎰 {c.name}</h4>
+          <p>{c.bonus.headline}</p>
+          <a href={c.affiliate_url} class="btn btn-mint btn-block" rel="nofollow sponsored" target="_blank">Claim offer</a>
+        </div>
+        {markets.length > 0 && (
+          <div class="box">
+            <div class="box-h"><span class="hi">🌍</span> Available in</div>
+            {markets.map((x) => (
+              <a class="tm" href={`/countries/${x.slug}`}><span class="dot"></span>{x.flag} {x.name}</a>
+            ))}
+          </div>
+        )}
+        <div class="box">
+          <div class="box-h"><span class="hi">🎰</span> More casinos</div>
+          {others.map((x) => (
+            <a class="tm" href={`/casinos/${x.slug}`}><span class="dot"></span>{x.name} review</a>
+          ))}
+          <a class="tm" href="/casinos"><span class="dot"></span>All casinos</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

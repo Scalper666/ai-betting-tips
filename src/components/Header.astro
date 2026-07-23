@@ -1,0 +1,62 @@
+---
+const { active = '' } = Astro.props;
+const is = (k) => (active === k ? ' active' : '');
+---
+<header class="hdr">
+  <div class="container hdr-bar">
+    <a href="/" class="logo">
+      <span class="mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 6.5" stroke="#0b0e11" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="name">AI <em>Betting</em> Tips</span>
+    </a>
+    <nav class="nav">
+      <div class={`nav-item${is('predictions')}`}><button>Predictions <span class="caret">▼</span></button>
+        <div class="dropdown">
+          <a href="/screener"><span class="ic">🔍</span>AI Screener</a>
+          <a href="/predictions"><span class="ic">⚽</span>All Football Tips</a>
+          <a href="/league/champions-league"><span class="ic">🏆</span>Champions League</a>
+          <a href="/league/premier-league"><span class="ic">🦁</span>Premier League</a>
+          <a href="/league/serie-a"><span class="ic">🇮🇹</span>Serie A</a>
+          <a href="/tips/accumulator"><span class="ic">🎯</span>Accumulator Tips</a>
+          <a href="/tips/btts"><span class="ic">⚽</span>BTTS Tips</a>
+        </div>
+      </div>
+      <div class={`nav-item${is('bookmakers')}`}><button>Betting Sites <span class="caret">▼</span></button>
+        <div class="dropdown">
+          <a href="/bookmakers"><span class="ic">🏆</span>Top Rated Sites</a>
+          <a href="/betting-apps"><span class="ic">📱</span>Betting Apps</a>
+          <a href="/countries/uk"><span class="ic">🌍</span>By Country</a>
+        </div>
+      </div>
+      <div class={`nav-item${is('bonuses')}`}><button>Bonuses <span class="caret">▼</span></button>
+        <div class="dropdown">
+          <a href="/bonuses"><span class="ic">🎁</span>All Offers</a>
+          <a href="/bonuses"><span class="ic">💸</span>Free Bets</a>
+        </div>
+      </div>
+      <div class={`nav-item${is('casinos')}`}><button>Casinos <span class="caret">▼</span></button>
+        <div class="dropdown"><a href="/casinos"><span class="ic">🎰</span>Top Casinos</a><a href="/casinos"><span class="ic">🎥</span>Live Casino</a><a href="/casinos"><span class="ic">🆕</span>New Casinos</a></div>
+      </div>
+      <div class={`nav-item${is('tipsters')}`}><button>Tipsters <span class="caret">▼</span></button>
+        <div class="dropdown"><a href="/tipsters"><span class="ic">🥇</span>Leaderboard</a><a href="/tipsters"><span class="ic">✅</span>Verified Experts</a></div>
+      </div>
+      <div class={`nav-item${is('news')}`}><button>News <span class="caret">▼</span></button>
+        <div class="dropdown"><a href="/news"><span class="ic">📰</span>Latest News</a><a href="/news"><span class="ic">📊</span>Match Analysis</a></div>
+      </div>
+    </nav>
+    <div class="hdr-actions">
+      <a href="#" class="btn btn-outline btn-sm">Sign In</a>
+      <a href="#" class="btn btn-mint btn-sm">Join Free</a>
+      <div class="theme-switch">
+        <button class="theme-btn" aria-label="Colour scheme">🎨</button>
+        <div class="theme-menu">
+          <div class="tm-h">Colour scheme</div>
+          <button data-skin-set="amber"><span class="sw" style="background:linear-gradient(135deg,#fcd535,#f0b90b)"></span> Amber <span class="chk">✓</span></button>
+          <button data-skin-set="azure"><span class="sw" style="background:linear-gradient(135deg,#40a7f0,#2b7de0)"></span> Azure <span class="chk">✓</span></button>
+          <button data-skin-set="midnight"><span class="sw" style="background:linear-gradient(135deg,#5aa0e6,#4384c9)"></span> Midnight <span class="chk">✓</span></button>
+        </div>
+      </div>
+      <span class="country"><span class="fl">🇬🇧</span> <span class="cc">UK</span> ▾</span>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,96 @@
+---
+import Base from '../../layouts/Base.astro';
+import TipsterCards from '../../components/TipsterCards.astro';
+import Leaderboard from '../../components/Leaderboard.astro';
+import stats from '../../data/stats.json';
+import { AVATAR_STYLES, signed } from '../../lib/utils.js';
+
+const o = stats.overall ?? {};
+const inForm = [...(stats.tipsters ?? [])].sort((a, b) => (b.streak ?? 0) - (a.streak ?? 0)).slice(0, 3);
+---
+<Base
+  title="Expert Tipsters & Leaderboard — Verified Stats & ROI — AI Betting Tips"
+  description={`Verified tipster leaderboard: ${o.settled ?? 0} settled bets, ${o.win_rate ?? 0}% win rate, ${signed(o.roi ?? 0)}% ROI — every figure computed from graded results.`}
+  active="tipsters">
+
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span>Tipsters</div>
+      <h1>Expert <em>tipsters</em> &amp; leaderboard</h1>
+      <p class="lead">Every tip is archived when published and settled against the final score. The win rate, ROI and profit below are computed from {o.settled ?? 0} graded bets — no edited history, and a losing month shows as a losing month.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Featured <b>tipsters</b></h2></div>
+          <TipsterCards limit={6} />
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Monthly <b>leaderboard</b></h2></div>
+          <Leaderboard />
+        </section>
+
+        <section>
+          <div class="feature-article">
+            <div class="fa-img" style="background:linear-gradient(135deg,#0d3a2c,#072018)">📈</div>
+            <div class="fa-body">
+              <span class="tag">Join the team</span>
+              <h2>Think you've got what it takes? Become a AI Betting Tips tipster</h2>
+              <p>Build a verified, public track record. Every tip you post is archived and settled automatically — no way to fake results, no way to hide them.</p>
+              <div style="display:flex;gap:10px;flex-wrap:wrap"><a href="#" class="btn btn-mint">Apply now</a><a href="#" class="btn btn-outline">How it works</a></div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Tipster <b>FAQ</b></h2></div>
+          <div class="faq">
+            <div class="faq-item open">
+              <div class="faq-q">How are tipster stats verified?<span class="pm">+</span></div>
+              <div class="faq-a"><p>Tips are archived with their odds the moment they're published, then settled automatically against the final score. Win rate, ROI and profit are computed from those graded bets only.</p></div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">What does ROI mean?<span class="pm">+</span></div>
+              <div class="faq-a"><p>Return on investment at flat 1-unit staking: profit divided by units staked. +15% means every 100 units staked returned 115 on average. Voided bets are returned, not staked.</p></div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">Can a tipster be in the red?<span class="pm">+</span></div>
+              <div class="faq-a"><p>Yes — and when it happens the leaderboard shows it. Honest tracking is the whole point: a negative ROI is displayed exactly like a positive one.</p></div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>📈 Become a tipster</h4>
+          <p>Got a winning record? Build a verified profile and grow your following.</p>
+          <a href="#" class="btn btn-mint btn-block">Apply now</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🔥</span> In form</div>
+          {inForm.map((t, i) => (
+            <div class="mini-tip">
+              <div class="ava" style={AVATAR_STYLES[i % AVATAR_STYLES.length]}>{t.initials}</div>
+              <div><h5>{t.name}</h5><div class="mt-sp">{t.streak ? `${t.streak} wins in a row` : t.top_league}</div></div>
+              <div class="mt-roi"><b style={t.roi < 0 ? 'color:var(--lose)' : ''}>{signed(t.roi)}%</b><span>ROI</span></div>
+            </div>
+          ))}
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">📊</span> Overall record</div>
+          <a class="tm"><span class="dot"></span>Settled bets <span class="cnt">{o.settled ?? 0}</span></a>
+          <a class="tm"><span class="dot"></span>Win rate <span class="cnt">{o.win_rate ?? 0}%</span></a>
+          <a class="tm"><span class="dot"></span>ROI <span class="cnt">{signed(o.roi ?? 0)}%</span></a>
+          <a class="tm"><span class="dot"></span>Pending <span class="cnt">{o.pending ?? 0}</span></a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

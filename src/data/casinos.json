@@ -1,0 +1,177 @@
+{
+  "_readme": [
+    "ONE object per casino — same workflow as bookmakers.json:",
+    "  /casinos/            rating list",
+    "  /casinos/<slug>/     full review page (SEO, Schema.org Review + FAQPage)",
+    "  /countries/<slug>/   casinos block, filtered by the `countries` field",
+    "Join a casino affiliate programme -> real tracking link in `affiliate_url`,",
+    "fill the facts, set `placeholder` to false. While true, a visible 'demo entry'",
+    "badge is shown so nothing fake reads as a real recommendation."
+  ],
+  "casinos": [
+    {
+      "slug": "spingalaxy",
+      "name": "SpinGalaxy",
+      "placeholder": true,
+      "affiliate_url": "#",
+      "rating": 4.9,
+      "logo": { "line1": "SPIN", "line2": "GALAXY", "bg": "#1a0b2e", "fg": "#c9a2ff" },
+      "founded": 2019,
+      "licences": ["Malta Gaming Authority"],
+      "countries": ["uk", "de"],
+      "payments": ["Visa", "Mastercard", "Skrill", "Neteller", "Crypto"],
+      "scores": { "games": 9.8, "live": 9.6, "payout": 9.5, "bonus": 9.4, "app": 9.3, "safety": 9.9 },
+      "bonus": {
+        "headline": "100% up to €500 + 200 free spins",
+        "type": "welcome",
+        "wagering": "35x",
+        "min_deposit": 20,
+        "code": null,
+        "expires_days": 30
+      },
+      "payout_time": "2–24 hours",
+      "providers": ["NetEnt", "Pragmatic Play", "Evolution", "Play'n GO"],
+      "pros": [
+        "4,000+ slots plus a deep Evolution live-casino lobby",
+        "E-wallet withdrawals usually land the same day",
+        "MGA licence with audited RNG certificates published on-site"
+      ],
+      "cons": [
+        "35x wagering on the welcome package is average, not generous",
+        "No dedicated desktop app — browser and mobile only"
+      ],
+      "verdict": "The strongest all-round casino in our testing: a huge, well-organised game library, a genuinely fast cashier and top-tier licensing. The welcome package is large but carries standard 35x wagering — read the terms before opting in."
+    },
+    {
+      "slug": "royalreels",
+      "name": "RoyalReels",
+      "placeholder": true,
+      "affiliate_url": "#",
+      "rating": 4.7,
+      "logo": { "line1": "ROYAL", "line2": "REELS", "bg": "#0b1f3a", "fg": "#37c6ff" },
+      "founded": 2021,
+      "licences": ["Curaçao eGaming"],
+      "countries": ["in", "ng"],
+      "payments": ["Visa", "UPI", "Paytm", "Bank transfer", "Crypto"],
+      "scores": { "games": 9.1, "live": 9.4, "payout": 9.0, "bonus": 9.5, "app": 9.2, "safety": 8.6 },
+      "bonus": {
+        "headline": "200% up to €300",
+        "type": "welcome",
+        "wagering": "40x",
+        "min_deposit": 15,
+        "code": "ROYAL200",
+        "expires_days": 14
+      },
+      "payout_time": "12–48 hours",
+      "providers": ["Pragmatic Play", "Evolution", "Spribe", "JILI"],
+      "pros": [
+        "Local payment rails for India and Nigeria, including UPI",
+        "Big 200% headline match for small first deposits",
+        "Strong live game-show selection"
+      ],
+      "cons": [
+        "Curaçao licence offers weaker player protection than MGA",
+        "40x wagering plus a bonus code make the offer easy to misuse"
+      ],
+      "verdict": "A solid pick for the Indian and Nigerian markets thanks to local payments and a generous headline match — but treat the 40x wagering with respect and stick to the licensed alternatives if player protection is your priority."
+    },
+    {
+      "slug": "acevegas",
+      "name": "AceVegas",
+      "placeholder": true,
+      "affiliate_url": "#",
+      "rating": 4.6,
+      "logo": { "line1": "ACE", "line2": "VEGAS", "bg": "#2e1a0b", "fg": "#ffcf5c" },
+      "founded": 2017,
+      "licences": ["Malta Gaming Authority"],
+      "countries": ["uk", "de"],
+      "payments": ["Visa", "Mastercard", "PayPal", "Paysafecard"],
+      "scores": { "games": 9.0, "live": 8.8, "payout": 9.2, "bonus": 8.9, "app": 8.8, "safety": 9.4 },
+      "bonus": {
+        "headline": "100% up to €250 + 100 free spins",
+        "type": "welcome",
+        "wagering": "30x",
+        "min_deposit": 10,
+        "code": null,
+        "expires_days": 21
+      },
+      "payout_time": "6–24 hours",
+      "providers": ["NetEnt", "Microgaming", "Big Time Gaming"],
+      "pros": [
+        "Fair 30x wagering — below the market average",
+        "PayPal supported for both deposits and withdrawals",
+        "Clean table-games section with sensible stake ranges"
+      ],
+      "cons": [
+        "Slots library is smaller than the market leaders",
+        "Live chat closes overnight"
+      ],
+      "verdict": "A tidy, safety-first casino with the fairest welcome terms of the sites we rate. The library is smaller than SpinGalaxy's, but everything works, pays out quickly and the PayPal cashier is a real convenience."
+    },
+    {
+      "slug": "neonslots",
+      "name": "NeonSlots",
+      "placeholder": true,
+      "affiliate_url": "#",
+      "rating": 4.4,
+      "logo": { "line1": "NEON", "line2": "SLOTS", "bg": "#0b2e1a", "fg": "#4fe0a8" },
+      "founded": 2022,
+      "licences": ["Curaçao eGaming"],
+      "countries": ["ng"],
+      "payments": ["Bank transfer", "Paystack", "Crypto"],
+      "scores": { "games": 8.8, "live": 8.2, "payout": 8.9, "bonus": 9.0, "app": 8.9, "safety": 8.4 },
+      "bonus": {
+        "headline": "50 no-deposit free spins",
+        "type": "no-deposit",
+        "wagering": "45x",
+        "min_deposit": 0,
+        "code": "NEON50",
+        "expires_days": 7
+      },
+      "payout_time": "24–48 hours",
+      "providers": ["Pragmatic Play", "Hacksaw", "Nolimit City"],
+      "pros": [
+        "Genuine no-deposit spins — try the lobby without funding",
+        "Light, data-friendly mobile site",
+        "Crypto withdrawals within a day"
+      ],
+      "cons": [
+        "45x wagering on spin winnings is steep",
+        "Small live-casino section"
+      ],
+      "verdict": "Worth a look for the no-deposit spins alone, and the mobile-first build suits data-conscious players. Just be realistic about converting spin winnings through 45x wagering."
+    },
+    {
+      "slug": "goldrush",
+      "name": "GoldRush",
+      "placeholder": true,
+      "affiliate_url": "#",
+      "rating": 4.3,
+      "logo": { "line1": "GOLD", "line2": "RUSH", "bg": "#2e0b1a", "fg": "#ff8fb0" },
+      "founded": 2020,
+      "licences": ["Curaçao eGaming"],
+      "countries": ["in"],
+      "payments": ["UPI", "Net banking", "Crypto"],
+      "scores": { "games": 8.6, "live": 8.5, "payout": 8.3, "bonus": 8.8, "app": 8.4, "safety": 8.2 },
+      "bonus": {
+        "headline": "125% up to €400",
+        "type": "welcome",
+        "wagering": "40x",
+        "min_deposit": 15,
+        "code": null,
+        "expires_days": 14
+      },
+      "payout_time": "24–72 hours",
+      "providers": ["Pragmatic Play", "Evolution", "JILI"],
+      "pros": [
+        "Large match percentage on mid-size deposits",
+        "UPI deposits credit instantly"
+      ],
+      "cons": [
+        "Withdrawals can stretch to three days at weekends",
+        "Bonus excludes most table games"
+      ],
+      "verdict": "A reasonable India-focused option with a big headline match, held back by slower weekend withdrawals. Fine as a second account; not our first pick."
+    }
+  ]
+}

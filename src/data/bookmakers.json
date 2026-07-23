@@ -1,0 +1,119 @@
+{
+  "_readme": [
+    "ONE object per bookmaker. Everything else is generated from this file:",
+    "  /bookmakers/           rating list",
+    "  /bookmakers/<slug>/    full review page (SEO)",
+    "  /bonuses/              built from the `bonus` field",
+    "  /betting-apps/         built from the `app` field",
+    "  /countries/<slug>/     filtered by the `countries` field",
+    "",
+    "Workflow: join an affiliate programme -> put the real tracking link in",
+    "`affiliate_url`, fill the facts, set `placeholder` to false.",
+    "While `placeholder` is true the site shows a visible 'demo entry' badge so",
+    "nothing fake is ever presented to readers as a real recommendation."
+  ],
+  "bookmakers": [
+    {
+      "slug": "bethub",
+      "name": "BetHub",
+      "placeholder": true,
+      "affiliate_url": "#",
+      "rating": 4.9,
+      "logo": { "line1": "BET", "line2": "HUB", "bg": "#0b1f3a", "fg": "#3390ec" },
+      "founded": 2014,
+      "licences": ["Malta Gaming Authority", "UK Gambling Commission"],
+      "countries": ["uk", "de", "in"],
+      "payments": ["Visa", "Mastercard", "Skrill", "Neteller", "PayPal", "Crypto"],
+      "scores": { "odds": 9.7, "markets": 9.5, "payout": 9.9, "app": 9.6, "bonus": 9.4, "support": 9.8 },
+      "bonus": {
+        "headline": "100% up to €150 + 50 free bets",
+        "type": "welcome",
+        "wagering": "5x",
+        "min_odds": 1.5,
+        "min_deposit": 10,
+        "code": null,
+        "expires_days": 30
+      },
+      "app": { "android": true, "ios": true, "size_mb": 28, "rating": 4.6, "streaming": true },
+      "payout_time": "2–12 hours",
+      "pros": [
+        "Consistently sharp football prices — margins around 2.5% on top leagues",
+        "Withdrawals processed the same day on e-wallets",
+        "Live streaming included with a funded account"
+      ],
+      "cons": [
+        "Bonus is not available in every country",
+        "Live chat is slower at weekends"
+      ],
+      "verdict": "The strongest all-round option in our testing: pricing is competitive enough for regular bettors, payouts are fast, and the app is stable during big fixtures. The welcome offer carries fair 5x wagering, which is well below the market average."
+    },
+    {
+      "slug": "primebet",
+      "name": "PrimeBet",
+      "placeholder": true,
+      "affiliate_url": "#",
+      "rating": 4.7,
+      "logo": { "line1": "PRIME", "line2": "BET", "bg": "#1a4ea3", "fg": "#ffffff" },
+      "founded": 2011,
+      "licences": ["Curaçao eGaming"],
+      "countries": ["uk", "in", "ng"],
+      "payments": ["Visa", "Mastercard", "Skrill", "UPI", "Crypto"],
+      "scores": { "odds": 9.2, "markets": 9.6, "payout": 9.1, "app": 9.4, "bonus": 9.7, "support": 9.0 },
+      "bonus": {
+        "headline": "Bet €10 get €30 in free bets",
+        "type": "free-bet",
+        "wagering": "1x",
+        "min_odds": 1.5,
+        "min_deposit": 10,
+        "code": null,
+        "expires_days": 7
+      },
+      "app": { "android": true, "ios": true, "size_mb": 22, "rating": 4.5, "streaming": false },
+      "payout_time": "12–24 hours",
+      "pros": [
+        "Best welcome offer we tested — just 1x wagering on the free bets",
+        "Very deep market coverage, including lower divisions",
+        "Local payment methods in India and Nigeria"
+      ],
+      "cons": [
+        "Curaçao licence offers weaker player protection than MGA/UKGC",
+        "No live streaming"
+      ],
+      "verdict": "Worth an account purely for the free-bet offer, which is one of the few on the market with realistic terms. Market depth is excellent; the trade-off is a lighter regulatory framework than our top pick."
+    },
+    {
+      "slug": "oddsx",
+      "name": "OddsX",
+      "placeholder": true,
+      "affiliate_url": "#",
+      "rating": 4.6,
+      "logo": { "line1": "ODDS", "line2": "X", "bg": "#111111", "fg": "#fcd535" },
+      "founded": 2018,
+      "licences": ["Malta Gaming Authority"],
+      "countries": ["de", "ng"],
+      "payments": ["Visa", "Mastercard", "Skrill", "Paysafecard"],
+      "scores": { "odds": 9.4, "markets": 8.8, "payout": 9.0, "app": 8.7, "bonus": 9.1, "support": 9.2 },
+      "bonus": {
+        "headline": "150% up to €100",
+        "type": "welcome",
+        "wagering": "8x",
+        "min_odds": 1.8,
+        "min_deposit": 20,
+        "code": "SHARP150",
+        "expires_days": 14
+      },
+      "app": { "android": true, "ios": false, "size_mb": 19, "rating": 4.2, "streaming": false },
+      "payout_time": "24–48 hours",
+      "pros": [
+        "Largest headline bonus percentage of the sites we rate",
+        "Strong prices on accumulators and outrights"
+      ],
+      "cons": [
+        "8x wagering makes the bonus harder to clear than it looks",
+        "No iOS app — mobile web only for iPhone users",
+        "Withdrawals can take two working days"
+      ],
+      "verdict": "A good fit if you bet accumulators and want a large starting balance, provided you read the 8x wagering carefully. iPhone users should note there is no native app."
+    }
+  ]
+}

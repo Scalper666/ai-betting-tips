@@ -1,0 +1,77 @@
+---
+// Generated entirely from bookmakers.json — no separate bonus data to maintain.
+import Base from '../../layouts/Base.astro';
+import data from '../../data/bookmakers.json';
+
+const offers = (data.bookmakers ?? []).map((bk) => ({ bk, ...bk.bonus }));
+const year = new Date().getFullYear();
+---
+<Base
+  title={`Best Betting Bonuses & Free Bets ${year}`}
+  description="Welcome offers and free bets with the wagering requirements spelled out in plain English, so you can see which ones are actually worth claiming."
+  active="bonuses">
+
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span>Bonuses</div>
+      <h1>Betting <em>bonuses</em> &amp; free bets</h1>
+      <p class="lead">Every offer below shows its real terms — wagering, minimum odds and deposit — because a big headline number with 10x wagering is usually worth less than a small one with 1x.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Compare <b>offers</b></h2></div>
+          <div class="odds-table"><div class="scr-scroll">
+            <table class="otbl">
+              <thead><tr>
+                <th style="text-align:left">Bookmaker</th><th style="text-align:left">Offer</th>
+                <th>Wagering</th><th>Min odds</th><th>Min dep</th><th>Claim</th>
+              </tr></thead>
+              <tbody>
+                {offers.map(({ bk, headline, wagering, min_odds, min_deposit, code }) => (
+                  <tr>
+                    <td class="o-time"><a href={`/bookmakers/${bk.slug}`} style="color:inherit">{bk.name}</a></td>
+                    <td class="o-match" style="font-weight:700">
+                      {headline}
+                      {code && <span class="tc" style="display:block">code: {code}</span>}
+                    </td>
+                    <td class="o-cell hot"><b>{wagering}</b></td>
+                    <td class="o-cell"><b>{min_odds}</b></td>
+                    <td class="o-cell"><b>€{min_deposit}</b></td>
+                    <td><a href={bk.affiliate_url} class="btn btn-mint btn-sm" rel="nofollow sponsored" target="_blank">Claim</a></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div></div>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Bonus <b>FAQ</b></h2></div>
+          <div class="faq">
+            <div class="faq-item open">
+              <div class="faq-q">What does wagering mean?<span class="pm">+</span></div>
+              <div class="faq-a"><p>How many times you must bet the bonus before withdrawing. "5x" on a €20 bonus means €100 in qualifying bets. Lower is better — 1x on a free bet is close to cash.</p></div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">Is the biggest bonus the best one?<span class="pm">+</span></div>
+              <div class="faq-a"><p>Rarely. A 150% offer at 8x wagering is usually harder to convert than a smaller free bet at 1x. That's why the table above puts the terms next to the headline.</p></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">🎁</span> Offers</div>
+          {offers.map(({ bk, headline }) => (
+            <a class="tm" href={`/bookmakers/${bk.slug}`}><span class="dot"></span>{bk.name} — {headline}</a>
+          ))}
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

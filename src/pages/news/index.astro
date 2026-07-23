@@ -1,0 +1,64 @@
+---
+import Base from '../../layouts/Base.astro';
+import predictions from '../../data/predictions.json';
+import { matchSlug, kickoffLabel, slugify } from '../../lib/utils.js';
+
+// The news feed is generated from the pipeline: every fixture becomes a preview
+// article that links to its full match page. No hand-written posts to maintain.
+const tips = [...(predictions.tips ?? [])].sort(
+  (a, b) => (b.recommendation?.confidence ?? 0) - (a.recommendation?.confidence ?? 0));
+const featureTip = tips[0];
+const cards = tips.slice(1);
+const THUMBS = [
+  'linear-gradient(135deg,#1d2a4d,#0c1429)', 'linear-gradient(135deg,#2a4d1d,#14290c)',
+  'linear-gradient(135deg,#4d1d2a,#290c14)', 'linear-gradient(135deg,#3a2a1d,#22160c)',
+  'linear-gradient(135deg,#1d3a4d,#0c2029)', 'linear-gradient(135deg,#2d1d4d,#160c29)',
+];
+---
+<Base
+  title="Betting News, Match Previews & Analysis — AI Betting Tips"
+  description="Automated match previews for every fixture in our pipeline: prediction, best odds and confidence — updated with every data refresh."
+  active="news">
+
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span>News</div>
+      <h1>Betting <em>news</em> &amp; analysis</h1>
+      <p class="lead">Match previews generated from the live pipeline — every fixture gets a prediction, an odds comparison and a confidence rating. Refreshed with every data update.</p>
+    </div>
+  </div>
+
+  <div class="container" style="padding-bottom:60px">
+
+    {featureTip && (
+      <div class="feature-article" style="margin-bottom:18px">
+        <div class="fa-img" style="background:linear-gradient(135deg,#0b1f3a,#102a52)">🏆</div>
+        <div class="fa-body">
+          <span class="tag">{featureTip.league}</span>
+          <h2>{featureTip.home} vs {featureTip.away}: preview, prediction &amp; best bets</h2>
+          <p>Our model's strongest pick right now: {featureTip.recommendation?.text} at {Number(featureTip.recommendation?.price ?? 0).toFixed(2)}, confidence {featureTip.recommendation?.confidence}%.</p>
+          <div style="display:flex;align-items:center;gap:12px">
+            <a href={`/predictions/${matchSlug(featureTip)}`} class="btn btn-mint">Read preview</a>
+            <span class="dim" style="font-size:12.5px">AI Betting Tips model · {kickoffLabel(featureTip.kickoff)}</span>
+          </div>
+        </div>
+      </div>
+    )}
+
+    <div class="news-grid" style="grid-template-columns:repeat(4,1fr)">
+      {cards.map((t, i) => (
+        <div class="news-card">
+          <div class="news-thumb" style={`background:${THUMBS[i % THUMBS.length]}`}>
+            {t.sport_icon ?? '⚽'}
+            <span class="tag">{t.league}</span><span class="when">{kickoffLabel(t.kickoff)}</span>
+          </div>
+          <div class="news-body">
+            <h4><a href={`/predictions/${matchSlug(t)}`}>{t.home} vs {t.away}: prediction &amp; best odds</a></h4>
+            <div class="nf"><span>{t.recommendation?.text}</span><span class="read">Read →</span></div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</Base>

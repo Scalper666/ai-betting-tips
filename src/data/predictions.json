@@ -1,0 +1,639 @@
+{
+  "updated_at": "2026-07-21T21:17:50.610424+00:00",
+  "source": "mock-data",
+  "quota_remaining": null,
+  "stats": {
+    "total": 20,
+    "by_sport": {
+      "⚽": 10,
+      "🏀": 4,
+      "🎾": 3,
+      "🏒": 2,
+      "🥊": 1
+    },
+    "high_confidence": 6,
+    "avg_edge_pct": 6.62
+  },
+  "tips": [
+    {
+      "id": "mock_0",
+      "sport_key": "soccer_uefa_champs_league",
+      "sport_icon": "⚽",
+      "league": "Champions League",
+      "league_short": "UCL",
+      "kickoff": "2026-07-21T22:17:50.610424+00:00",
+      "home": "Real Madrid",
+      "away": "Manchester City",
+      "best_h2h": {
+        "Real Madrid": {
+          "price": 1.72,
+          "bookmaker": "bet365"
+        },
+        "Manchester City": {
+          "price": 2.05,
+          "bookmaker": "Fonbet"
+        },
+        "Draw": {
+          "price": 2.97,
+          "bookmaker": "1xBet"
+        }
+      },
+      "recommendation": {
+        "text": "Home total over 1.5",
+        "price": 2.3,
+        "bookmaker": "1xBet",
+        "confidence": 63,
+        "edge_pct": 2.9,
+        "type": "totals"
+      },
+      "value_picks": []
+    },
+    {
+      "id": "mock_1",
+      "sport_key": "soccer_uefa_champs_league",
+      "sport_icon": "⚽",
+      "league": "Champions League",
+      "league_short": "UCL",
+      "kickoff": "2026-07-22T05:17:50.610424+00:00",
+      "home": "Bayern Munich",
+      "away": "PSG",
+      "best_h2h": {
+        "Bayern Munich": {
+          "price": 2.51,
+          "bookmaker": "1xBet"
+        },
+        "PSG": {
+          "price": 2.62,
+          "bookmaker": "Stake"
+        },
+        "Draw": {
+          "price": 3.58,
+          "bookmaker": "1xBet"
+        }
+      },
+      "recommendation": {
+        "text": "Over 22.5 games",
+        "price": 2.56,
+        "bookmaker": "1xBet",
+        "confidence": 72,
+        "edge_pct": 6.9,
+        "type": "h2h"
+      },
+      "value_picks": []
+    },
+    {
+      "id": "mock_2",
+      "sport_key": "soccer_uefa_champs_league",
+      "sport_icon": "⚽",
+      "league": "Champions League",
+      "league_short": "UCL",
+      "kickoff": "2026-07-22T08:17:50.610424+00:00",
+      "home": "Arsenal",
+      "away": "Liverpool",
+      "best_h2h": {
+        "Arsenal": {
+          "price": 2.9,
+          "bookmaker": "Pinnacle"
+        },
+        "Liverpool": {
+          "price": 2.06,
+          "bookmaker": "Fonbet"
+        },
+        "Draw": {
+          "price": 3.95,
+          "bookmaker": "1xBet"
+        }
+      },
+      "recommendation": {
+        "text": "Over 22.5 games",
+        "price": 1.8,
+        "bookmaker": "bet365",
+        "confidence": 63,
+        "edge_pct": 5.0,
+        "type": "h2h"
+      },
+      "value_picks": []
+    },
+    {
+      "id": "mock_3",
+      "sport_key": "soccer_uefa_champs_league",
+      "sport_icon": "⚽",
+      "league": "Champions League",
+      "league_short": "UCL",
+      "kickoff": "2026-07-22T11:17:50.610424+00:00",
+      "home": "Barcelona",
+      "away": "Atletico Madrid",
+      "best_h2h": {
+        "Barcelona": {
+          "price": 1.59,
+          "bookmaker": "Pinnacle"
+        },
+        "Atletico Madrid": {
+          "price": 2.57,
+          "bookmaker": "Marathon"
+        },
+        "Draw": {
+          "price": 2.89,
+          "bookmaker": "1xBet"
+        }
+      },
+      "recommendation": {
+        "text": "Home total over 1.5",
+        "price": 1.95,
+        "bookmaker": "1xBet",
+        "confidence": 81,
+        "edge_pct": 4.6,
+        "type": "totals"
+      },
+      "value_picks": []
+    },
+    {
+      "id": "mock_4",
+      "sport_key": "soccer_epl",
+      "sport_icon": "⚽",
+      "league": "Premier League",
+      "league_short": "EPL",
+      "kickoff": "2026-07-22T19:17:50.610424+00:00",
+      "home": "Chelsea",
+      "away": "Tottenham",
+      "best_h2h": {
+        "Chelsea": {
+          "price": 3.05,
+          "bookmaker": "1xBet"
+        },
+        "Tottenham": {
+          "price": 3.21,
+          "bookmaker": "Fonbet"
+        },
+        "Draw": {
+          "price": 3.26,
+          "bookmaker": "1xBet"
+        }
+      },
+      "recommendation": {
+        "text": "Home -1.5",
+        "price": 2.22,
+        "bookmaker": "Pinnacle",
+        "confidence": 81,
+        "edge_pct": 6.1,
+        "type": "h2h"
+      },
+      "value_picks": []
+    },
+    {
+      "id": "mock_5",
+      "sport_key": "soccer_epl",
+      "sport_icon": "⚽",
+      "league": "Premier League",
+      "league_short": "EPL",
+      "kickoff": "2026-07-22T22:17:50.610424+00:00",
+      "home": "Man United",
+      "away": "Newcastle",
+      "best_h2h": {
+        "Man United": {
+          "price": 3.37,
+          "bookmaker": "bet365"
+        },
+        "Newcastle": {
+          "price": 1.64,
+          "bookmaker": "Stake"
+        },
+        "Draw": {
+          "price": 3.01,
+          "bookmaker": "1xBet"
+        }
+      },
+      "recommendation": {
+        "text": "Over 22.5 games",
+        "price": 2.24,
+        "bookmaker": "Pinnacle",
+        "confidence": 68,
+        "edge_pct": 8.6,
+        "type": "h2h"
+      },
+      "value_picks": []
+    },
+    {
+      "id": "mock_6",
+      "sport_key": "soccer_epl",
+      "sport_icon": "⚽",
+      "league": "Premier League",
+      "league_short": "EPL",
+      "kickoff": "2026-07-23T05:17:50.610424+00:00",
+      "home": "Aston Villa",
+      "away": "West Ham",
+      "best_h2h": {
+        "Aston Villa": {
+          "price": 3.04,
+          "bookmaker": "1xBet"
+        },
+        "West Ham": {
+          "price": 1.96,
+          "bookmaker": "Fonbet"
+        },
+        "Draw": {
+          "price": 3.77,
+          "bookmaker": "1xBet"
+        }
+      },
+      "recommendation": {
+        "text": "Home -1.5",
+        "price": 3.07,
+        "bookmaker": "bet365",
+        "confidence": 62,
+        "edge_pct": 5.6,
+        "type": "totals"
+      },
+      "value_picks": []
+    },
+    {
+      "id": "mock_7",
+      "sport_key": "soccer_italy_serie_a",
+      "sport_icon": "⚽",
+      "league": "Serie A",
+      "league_short": "SA",
+      "kickoff": "2026-07-23T13:17:50.610424+00:00",
+      "home": "Inter",
+      "away": "Juventus",
+      "best_h2h": {
+        "Inter": {
+          "price": 2.29,
+          "bookmaker": "bet365"
+        },
+        "Juventus": {
+          "price": 2.42,
+          "bookmaker": "Marathon"
+        },
+        "Draw": {
+          "price": 2.97,
+          "bookmaker": "1xBet"
+        }
+      },
+      "recommendation": {
+        "text": "Away win + Over 2.5",
+        "price": 2.56,
+        "bookmaker": "Fonbet",
+        "confidence": 74,
+        "edge_pct": 8.7,
+        "type": "h2h"
+      },
+      "value_picks": []
+    },
+    {
+      "id": "mock_8",
+      "sport_key": "soccer_italy_serie_a",
+      "sport_icon": "⚽",
+      "league": "Serie A",
+      "league_short": "SA",
+      "kickoff": "2026-07-23T18:17:50.610424+00:00",
+      "home": "Napoli",
+      "away": "Milan",
+      "best_h2h": {
+        "Napoli": {
+          "price": 2.52,
+          "bookmaker": "1xBet"
+        },
+        "Milan": {
+          "price": 3.01,
+          "bookmaker": "Fonbet"
+        },
+        "Draw": {
+          "price": 2.98,
+          "bookmaker": "1xBet"
+        }
+      },
+      "recommendation": {
+        "text": "Home total over 1.5",
+        "price": 1.75,
+        "bookmaker": "Fonbet",
+        "confidence": 85,
+        "edge_pct": 3.4,
+        "type": "h2h"
+      },
+      "value_picks": []
+    },
+    {
+      "id": "mock_9",
+      "sport_key": "soccer_italy_serie_a",
+      "sport_icon": "⚽",
+      "league": "Serie A",
+      "league_short": "SA",
+      "kickoff": "2026-07-23T21:17:50.610424+00:00",
+      "home": "Roma",
+      "away": "Lazio",
+      "best_h2h": {
+        "Roma": {
+          "price": 2.56,
+          "bookmaker": "bet365"
+        },
+        "Lazio": {
+          "price": 3.22,
+          "bookmaker": "Fonbet"
+        },
+        "Draw": {
+          "price": 3.62,
+          "bookmaker": "1xBet"
+        }
+      },
+      "recommendation": {
+        "text": "Away win + Over 2.5",
+        "price": 2.18,
+        "bookmaker": "bet365",
+        "confidence": 75,
+        "edge_pct": 3.0,
+        "type": "h2h"
+      },
+      "value_picks": []
+    },
+    {
+      "id": "mock_10",
+      "sport_key": "basketball_nba",
+      "sport_icon": "🏀",
+      "league": "NBA",
+      "league_short": "NBA",
+      "kickoff": "2026-07-24T02:17:50.610424+00:00",
+      "home": "LA Lakers",
+      "away": "Boston Celtics",
+      "best_h2h": {
+        "LA Lakers": {
+          "price": 1.51,
+          "bookmaker": "bet365"
+        },
+        "Boston Celtics": {
+          "price": 3.25,
+          "bookmaker": "Marathon"
+        }
+      },
+      "recommendation": {
+        "text": "Home total over 1.5",
+        "price": 3.06,
+        "bookmaker": "bet365",
+        "confidence": 69,
+        "edge_pct": 10.7,
+        "type": "h2h"
+      },
+      "value_picks": []
+    },
+    {
+      "id": "mock_11",
+      "sport_key": "basketball_nba",
+      "sport_icon": "🏀",
+      "league": "NBA",
+      "league_short": "NBA",
+      "kickoff": "2026-07-24T07:17:50.610424+00:00",
+      "home": "Denver",
+      "away": "Phoenix",
+      "best_h2h": {
+        "Denver": {
+          "price": 2.72,
+          "bookmaker": "1xBet"
+        },
+        "Phoenix": {
+          "price": 2.25,
+          "bookmaker": "Fonbet"
+        }
+      },
+      "recommendation": {
+        "text": "Home total over 1.5",
+        "price": 2.15,
+        "bookmaker": "1xBet",
+        "confidence": 58,
+        "edge_pct": 6.9,
+        "type": "totals"
+      },
+      "value_picks": []
+    },
+    {
+      "id": "mock_12",
+      "sport_key": "basketball_nba",
+      "sport_icon": "🏀",
+      "league": "NBA",
+      "league_short": "NBA",
+      "kickoff": "2026-07-24T13:17:50.610424+00:00",
+      "home": "Milwaukee",
+      "away": "Miami",
+      "best_h2h": {
+        "Milwaukee": {
+          "price": 3.26,
+          "bookmaker": "Pinnacle"
+        },
+        "Miami": {
+          "price": 1.98,
+          "bookmaker": "Fonbet"
+        }
+      },
+      "recommendation": {
+        "text": "Over 2.5 + BTTS",
+        "price": 2.78,
+        "bookmaker": "1xBet",
+        "confidence": 63,
+        "edge_pct": 9.9,
+        "type": "h2h"
+      },
+      "value_picks": []
+    },
+    {
+      "id": "mock_13",
+      "sport_key": "basketball_nba",
+      "sport_icon": "🏀",
+      "league": "NBA",
+      "league_short": "NBA",
+      "kickoff": "2026-07-24T17:17:50.610424+00:00",
+      "home": "Warriors",
+      "away": "Mavericks",
+      "best_h2h": {
+        "Warriors": {
+          "price": 3.03,
+          "bookmaker": "1xBet"
+        },
+        "Mavericks": {
+          "price": 2.82,
+          "bookmaker": "Stake"
+        }
+      },
+      "recommendation": {
+        "text": "Home -1.5",
+        "price": 3.09,
+        "bookmaker": "Pinnacle",
+        "confidence": 85,
+        "edge_pct": 3.5,
+        "type": "h2h"
+      },
+      "value_picks": []
+    },
+    {
+      "id": "mock_14",
+      "sport_key": "tennis_atp_french_open",
+      "sport_icon": "🎾",
+      "league": "Roland Garros (ATP)",
+      "league_short": "ATP",
+      "kickoff": "2026-07-24T23:17:50.610424+00:00",
+      "home": "C. Alcaraz",
+      "away": "J. Sinner",
+      "best_h2h": {
+        "C. Alcaraz": {
+          "price": 3.49,
+          "bookmaker": "bet365"
+        },
+        "J. Sinner": {
+          "price": 2.25,
+          "bookmaker": "Stake"
+        }
+      },
+      "recommendation": {
+        "text": "Home -1.5",
+        "price": 1.75,
+        "bookmaker": "1xBet",
+        "confidence": 73,
+        "edge_pct": 6.1,
+        "type": "h2h"
+      },
+      "value_picks": []
+    },
+    {
+      "id": "mock_15",
+      "sport_key": "tennis_atp_french_open",
+      "sport_icon": "🎾",
+      "league": "Roland Garros (ATP)",
+      "league_short": "ATP",
+      "kickoff": "2026-07-25T04:17:50.610424+00:00",
+      "home": "D. Medvedev",
+      "away": "A. Zverev",
+      "best_h2h": {
+        "D. Medvedev": {
+          "price": 2.68,
+          "bookmaker": "1xBet"
+        },
+        "A. Zverev": {
+          "price": 1.64,
+          "bookmaker": "Stake"
+        }
+      },
+      "recommendation": {
+        "text": "Over 2.5 + BTTS",
+        "price": 2.98,
+        "bookmaker": "1xBet",
+        "confidence": 62,
+        "edge_pct": 2.5,
+        "type": "h2h"
+      },
+      "value_picks": []
+    },
+    {
+      "id": "mock_16",
+      "sport_key": "tennis_atp_french_open",
+      "sport_icon": "🎾",
+      "league": "Roland Garros (ATP)",
+      "league_short": "ATP",
+      "kickoff": "2026-07-25T07:17:50.610424+00:00",
+      "home": "N. Djokovic",
+      "away": "H. Rune",
+      "best_h2h": {
+        "N. Djokovic": {
+          "price": 2.84,
+          "bookmaker": "1xBet"
+        },
+        "H. Rune": {
+          "price": 2.58,
+          "bookmaker": "Stake"
+        }
+      },
+      "recommendation": {
+        "text": "Home -1.5",
+        "price": 2.87,
+        "bookmaker": "Fonbet",
+        "confidence": 88,
+        "edge_pct": 10.4,
+        "type": "totals"
+      },
+      "value_picks": []
+    },
+    {
+      "id": "mock_17",
+      "sport_key": "icehockey_nhl",
+      "sport_icon": "🏒",
+      "league": "NHL",
+      "league_short": "NHL",
+      "kickoff": "2026-07-25T11:17:50.610424+00:00",
+      "home": "Edmonton",
+      "away": "Vegas",
+      "best_h2h": {
+        "Edmonton": {
+          "price": 2.82,
+          "bookmaker": "Pinnacle"
+        },
+        "Vegas": {
+          "price": 2.35,
+          "bookmaker": "Marathon"
+        }
+      },
+      "recommendation": {
+        "text": "Away win + Over 2.5",
+        "price": 2.66,
+        "bookmaker": "1xBet",
+        "confidence": 61,
+        "edge_pct": 9.8,
+        "type": "totals"
+      },
+      "value_picks": []
+    },
+    {
+      "id": "mock_18",
+      "sport_key": "icehockey_nhl",
+      "sport_icon": "🏒",
+      "league": "NHL",
+      "league_short": "NHL",
+      "kickoff": "2026-07-25T13:17:50.610424+00:00",
+      "home": "Boston",
+      "away": "NY Rangers",
+      "best_h2h": {
+        "Boston": {
+          "price": 2.18,
+          "bookmaker": "1xBet"
+        },
+        "NY Rangers": {
+          "price": 2.0,
+          "bookmaker": "Fonbet"
+        }
+      },
+      "recommendation": {
+        "text": "Over 22.5 games",
+        "price": 1.93,
+        "bookmaker": "Fonbet",
+        "confidence": 66,
+        "edge_pct": 6.8,
+        "type": "totals"
+      },
+      "value_picks": []
+    },
+    {
+      "id": "mock_19",
+      "sport_key": "mma_mixed_martial_arts",
+      "sport_icon": "🥊",
+      "league": "UFC / MMA",
+      "league_short": "UFC",
+      "kickoff": "2026-07-25T20:17:50.610424+00:00",
+      "home": "Adesanya",
+      "away": "Pereira",
+      "best_h2h": {
+        "Adesanya": {
+          "price": 2.39,
+          "bookmaker": "bet365"
+        },
+        "Pereira": {
+          "price": 1.7,
+          "bookmaker": "Stake"
+        }
+      },
+      "recommendation": {
+        "text": "Over 2.5 + BTTS",
+        "price": 3.09,
+        "bookmaker": "Pinnacle",
+        "confidence": 58,
+        "edge_pct": 11.0,
+        "type": "totals"
+      },
+      "value_picks": []
+    }
+  ]
+}

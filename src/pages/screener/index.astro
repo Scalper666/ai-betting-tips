@@ -1,0 +1,169 @@
+---
+import Base from '../../layouts/Base.astro';
+import screener from '../../data/screener.json';
+import { kickoffLabel } from '../../lib/utils.js';
+
+const rows = [...(screener.rows ?? [])].sort((a, b) => b.score - a.score);
+const sports = [...new Set(rows.map((r) => r.sport))].sort();
+const leagues = [...new Set(rows.map((r) => r.league))].sort();
+const scoreCls = (s) => (s >= 70 ? 's-hi' : s >= 50 ? 's-md' : 's-lo');
+const steamHtml = { up: ['scr-steam up', '↑ Steam'], down: ['scr-steam down', '↓ Drift'], flat: ['scr-steam flat', '— flat'] };
+---
+<Base
+  title="AI Predictions Screener — Value Bets Across All Sports — AI Betting Tips"
+  description="Live AI screener of value betting picks across football, basketball, tennis and more. Filter by sport, league, market and edge; sort by AI score."
+  active="predictions">
+
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/predictions">Predictions</a><span>/</span>AI Screener</div>
+      <h1>AI predictions <em>screener</em></h1>
+      <p class="lead">Every value pick across all sports and leagues, scored by our AI model and ranked. Filter by sport, league, market and edge — sort by any column.</p>
+    </div>
+  </div>
+
+  <div class="container" style="padding-bottom:60px">
+
+    <div class="scr-head">
+      <div class="scr-meta">
+        <span class="live"><span class="dot"></span>Live</span>
+        <span>Updated <b id="scrUpdated" data-updated={screener.updated_at}>—</b></span>
+        <span class="scr-count"><b id="scrCount">{rows.length}</b> value bets</span>
+      </div>
+      <a href="/predictions" class="more-link">Detailed previews →</a>
+    </div>
+
+    <div class="scr-filters" id="scrFilters">
+      <select id="fSport"><option value="">All sports</option>{sports.map((s) => <option>{s}</option>)}</select>
+      <select id="fLeague"><option value="">All leagues</option>{leagues.map((l) => <option>{l}</option>)}</select>
+      <select id="fType">
+        <option value="">All markets</option>
+        <option>Match result</option><option>Totals</option><option>BTTS</option><option>Handicap</option><option>Other</option>
+      </select>
+      <label class="scr-rng">Edge ≥ <input type="range" id="fEdge" min="0" max="12" step="0.5" value="0" /><output id="fEdgeV">0%</output></label>
+      <label class="scr-rng">Conf ≥ <input type="range" id="fConf" min="0" max="90" step="5" value="0" /><output id="fConfV">0%</output></label>
+      <input type="search" id="fSearch" placeholder="Search team / league…" />
+      <span class="scr-reset" id="fReset">↺ Reset</span>
+    </div>
+
+    <div class="scr-table-wrap">
+      <div class="scr-scroll">
+        <table class="scr-table">
+          <thead><tr>
+            <th class="num sort sorted" data-key="score">AI score <span class="ar">▾</span></th>
+            <th class="sort" data-key="match">Match <span class="ar">▾</span></th>
+            <th>Our tip</th>
+            <th class="num sort" data-key="odds">Odds <span class="ar">▾</span></th>
+            <th class="num sort" data-key="edge">Edge <span class="ar">▾</span></th>
+            <th class="num sort" data-key="conf">Conf <span class="ar">▾</span></th>
+            <th>Signal</th>
+            <th class="sort" data-key="kickoff">Kick-off <span class="ar">▾</span></th>
+            <th></th>
+          </tr></thead>
+          <tbody id="scrBody">
+            {rows.map((r) => (
+              <tr
+                data-sport={r.sport} data-league={r.league} data-type={r.type}
+                data-score={r.score} data-odds={r.odds} data-edge={r.edge} data-conf={r.confidence}
+                data-kickoff={r.kickoff ?? ''} data-search={`${r.home} ${r.away} ${r.league}`.toLowerCase()}>
+                <td class="num"><span class={`score-badge ${scoreCls(r.score)}`}>{r.score}</span></td>
+                <td><div class="scr-match"><span class="ic">{r.icon}</span><div class="mt"><b>{r.home} v {r.away}</b><span class="lg">{r.league}</span></div></div></td>
+                <td class="scr-tip">{r.market}</td>
+                <td class="num scr-odds">{Number(r.odds).toFixed(2)}</td>
+                <td class={`num edge ${r.edge > 0 ? 'pos' : 'neg'}`}>{r.edge > 0 ? '+' : ''}{r.edge}%</td>
+                <td class="num">{r.confidence}%</td>
+                <td><span class={(steamHtml[r.steam] ?? steamHtml.flat)[0]}>{(steamHtml[r.steam] ?? steamHtml.flat)[1]}</span></td>
+                <td class="scr-when">{kickoffLabel(r.kickoff)}</td>
+                <td><a href="#" class="btn btn-mint btn-sm">Bet</a></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="scr-empty" id="scrEmpty" style="display:none">No bets match your filters — loosen the edge/confidence sliders.</div>
+
+    <section class="seo" style="margin-top:34px">
+      <h2>How the AI screener works</h2>
+      <div class="clamp" id="seoClamp">
+        <p>The screener scans every fixture we have odds for and turns each into a scored betting signal — the fast way to see where the value is right now, without scrolling through match previews.</p>
+        <p>Each pick blends the market-implied probability of the outcome with the value edge — how much the best available price beats the fair price once the bookmaker margin is removed. The Signal column shows real line movement from our price snapshots. Signals are statistical opinions, not guarantees; you must be 18+.</p>
+      </div>
+      <span class="read-more" data-clamp-toggle="seoClamp">Read more ▾</span>
+    </section>
+
+  </div>
+
+  <script is:inline>
+    (function () {
+      'use strict';
+      var tbody = document.getElementById('scrBody');
+      if (!tbody) return;
+      var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr'));
+      var state = { sport: '', league: '', type: '', edge: 0, conf: 0, q: '', key: 'score', dir: -1 };
+
+      function apply() {
+        var visible = 0;
+        rows.forEach(function (tr) {
+          var d = tr.dataset, ok = true;
+          if (state.sport && d.sport !== state.sport) ok = false;
+          if (ok && state.league && d.league !== state.league) ok = false;
+          if (ok && state.type && d.type !== state.type) ok = false;
+          if (ok && +d.edge < state.edge) ok = false;
+          if (ok && +d.conf < state.conf) ok = false;
+          if (ok && state.q && d.search.indexOf(state.q.toLowerCase()) === -1) ok = false;
+          tr.style.display = ok ? '' : 'none';
+          if (ok) visible++;
+        });
+        var k = state.key, dir = state.dir;
+        rows.slice().sort(function (a, b) {
+          var va, vb;
+          if (k === 'match') { va = a.dataset.search; vb = b.dataset.search; }
+          else if (k === 'kickoff') { va = a.dataset.kickoff; vb = b.dataset.kickoff; }
+          else { va = +a.dataset[k]; vb = +b.dataset[k]; }
+          return va < vb ? -dir : va > vb ? dir : 0;
+        }).forEach(function (tr) { tbody.appendChild(tr); });
+        document.getElementById('scrCount').textContent = visible;
+        document.getElementById('scrEmpty').style.display = visible ? 'none' : '';
+      }
+
+      function markSort() {
+        document.querySelectorAll('.scr-table th.sort').forEach(function (th) {
+          var on = th.getAttribute('data-key') === state.key;
+          th.classList.toggle('sorted', on);
+          var ar = th.querySelector('.ar');
+          if (ar) ar.textContent = on ? (state.dir === 1 ? '▴' : '▾') : '▾';
+        });
+      }
+
+      document.getElementById('fSport').addEventListener('change', function (e) { state.sport = e.target.value; apply(); });
+      document.getElementById('fLeague').addEventListener('change', function (e) { state.league = e.target.value; apply(); });
+      document.getElementById('fType').addEventListener('change', function (e) { state.type = e.target.value; apply(); });
+      document.getElementById('fEdge').addEventListener('input', function (e) { state.edge = +e.target.value; document.getElementById('fEdgeV').textContent = e.target.value + '%'; apply(); });
+      document.getElementById('fConf').addEventListener('input', function (e) { state.conf = +e.target.value; document.getElementById('fConfV').textContent = e.target.value + '%'; apply(); });
+      document.getElementById('fSearch').addEventListener('input', function (e) { state.q = e.target.value; apply(); });
+      document.getElementById('fReset').addEventListener('click', function () {
+        state = { sport: '', league: '', type: '', edge: 0, conf: 0, q: '', key: 'score', dir: -1 };
+        document.querySelectorAll('#scrFilters select').forEach(function (s) { s.value = ''; });
+        document.getElementById('fEdge').value = 0; document.getElementById('fEdgeV').textContent = '0%';
+        document.getElementById('fConf').value = 0; document.getElementById('fConfV').textContent = '0%';
+        document.getElementById('fSearch').value = '';
+        markSort(); apply();
+      });
+      document.querySelectorAll('.scr-table th.sort').forEach(function (th) {
+        th.addEventListener('click', function () {
+          var k = th.getAttribute('data-key');
+          if (state.key === k) state.dir = -state.dir;
+          else { state.key = k; state.dir = (k === 'match' || k === 'kickoff') ? 1 : -1; }
+          markSort(); apply();
+        });
+      });
+
+      var upd = document.getElementById('scrUpdated');
+      if (upd && upd.dataset.updated) {
+        var mins = Math.max(0, Math.round((Date.now() - new Date(upd.dataset.updated).getTime()) / 60000));
+        upd.textContent = mins < 1 ? 'just now' : mins < 60 ? mins + 'm ago' : Math.round(mins / 60) + 'h ago';
+      }
+    })();
+  </script>
+</Base>
