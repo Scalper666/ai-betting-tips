@@ -6,7 +6,8 @@ import { kickoffLabel } from '../../lib/utils.js';
 const rows = [...(screener.rows ?? [])].sort((a, b) => b.score - a.score);
 const sports = [...new Set(rows.map((r) => r.sport))].sort();
 const leagues = [...new Set(rows.map((r) => r.league))].sort();
-const scoreCls = (s) => (s >= 70 ? 's-hi' : s >= 50 ? 's-md' : 's-lo');
+// score >= 45 means the pick has a positive edge (see pipeline ai_score) — green zone
+const scoreCls = (s) => (s >= 45 ? 's-hi' : s >= 30 ? 's-md' : 's-lo');
 const steamHtml = { up: ['scr-steam up', '↑ Steam'], down: ['scr-steam down', '↓ Drift'], flat: ['scr-steam flat', '— flat'] };
 ---
 <Base

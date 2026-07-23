@@ -7,6 +7,7 @@ import predictions from '../data/predictions.json';
 import screener from '../data/screener.json';
 import stats from '../data/stats.json';
 import bookmakers from '../data/bookmakers.json';
+import historyData from '../data/history.json';
 import { slugify, avgScore, kickoffLabel, matchSlug, AVATAR_STYLES, signed } from '../lib/utils.js';
 
 const tips = predictions.tips ?? [];
@@ -16,7 +17,8 @@ const chipLeagues = [...new Set(featured.map((t) => t.league))];
 
 // screener preview: top 6 by AI score
 const scrTop = [...(screener.rows ?? [])].sort((a, b) => b.score - a.score).slice(0, 6);
-const scoreCls = (s) => (s >= 70 ? 's-hi' : s >= 50 ? 's-md' : 's-lo');
+// score >= 45 means the pick has a positive edge (see pipeline ai_score) — green zone
+const scoreCls = (s) => (s >= 45 ? 's-hi' : s >= 30 ? 's-md' : 's-lo');
 
 // bookmakers ranked by computed score
 const bkList = [...(bookmakers.bookmakers ?? [])].sort((a, b) => avgScore(b.scores) - avgScore(a.scores));
@@ -74,6 +76,26 @@ const calSportOpts = calSports.map((label) => {
 });
 
 const miniTipsters = (stats.tipsters ?? []).slice(0, 3);
+
+// settlement transparency: latest graded bets from the pipeline archive.
+// Every published tip lands in history.json; results.py grades it once the
+// match finishes — this block simply surfaces that log, wins and losses alike.
+const settled = Object.values(historyData.tips ?? {})
+  .filter((t) => ['won', 'lost', 'void'].includes(t.status))
+  .sort((a, b) => String(b.settled_at ?? '').localeCompare(String(a.settled_at ?? '')));
+const resRows = settled.slice(0, 8);
+const resSum = {
+  won: settled.filter((t) => t.status === 'won').length,
+  lost: settled.filter((t) => t.status === 'lost').length,
+  voids: settled.filter((t) => t.status === 'void').length,
+  profit: Math.round(settled.reduce((s, t) => s + (t.profit ?? 0), 0) * 100) / 100,
+};
+// mock-phase settlements are labelled honestly until real ones replace them
+const resDemo = resRows.length > 0 && resRows.every((t) => t.score === 'simulated');
+const resDate = (t) => {
+  const d = new Date(t.kickoff ?? t.settled_at);
+  return isNaN(d) ? '' : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+};
 ---
 <Base
   title="AI Betting Tips — Expert Sports Betting Tips, Predictions & Bookmaker Reviews"
@@ -153,6 +175,38 @@ const miniTipsters = (stats.tipsters ?? []).slice(0, 3);
           </div>
           <a href="/screener" class="btn btn-outline btn-block" style="margin-top:12px">🔍 See all value bets in the AI screener →</a>
         </section>
+
+        <!-- RECENT RESULTS (settlement transparency from history.json) -->
+        {resRows.length > 0 && (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">Recent <b>results</b></h2>
+              <a href="/tipsters" class="more-link">Tipster stats →</a>
+            </div>
+            <div class="res-sum">
+              <div class="res-chip"><b>{settled.length}</b><span>Settled</span></div>
+              <div class="res-chip win"><b>{resSum.won}</b><span>Won</span></div>
+              <div class="res-chip lose"><b>{resSum.lost}</b><span>Lost</span></div>
+              <div class="res-chip"><b>{resSum.voids}</b><span>Void</span></div>
+              <div class={`res-chip ${resSum.profit >= 0 ? 'win' : 'lose'}`}><b>{signed(resSum.profit)}u</b><span>Profit</span></div>
+            </div>
+            <div class="res-list">
+              {resRows.map((t) => (
+                <div class="res-row">
+                  <span class={`res-mark ${t.status === 'won' ? 'w' : t.status === 'lost' ? 'l' : 'v'}`}>{t.status === 'won' ? 'W' : t.status === 'lost' ? 'L' : 'V'}</span>
+                  <span class="res-date">{resDate(t)}</span>
+                  <div class="res-match"><b>{t.home} v {t.away}</b><span>{t.market} · {t.league}</span></div>
+                  <span class="res-odds">{Number(t.odds ?? 0).toFixed(2)}</span>
+                  <span class={`res-profit ${(t.profit ?? 0) > 0 ? 'pos' : (t.profit ?? 0) < 0 ? 'neg' : 'zero'}`}>{signed(Math.round((t.profit ?? 0) * 100) / 100)}u</span>
+                </div>
+              ))}
+            </div>
+            <p class="res-note">
+              Every published tip is archived and graded against final scores — wins and losses alike, nothing is deleted.
+              {resDemo && <span class="res-demo"> These entries are simulated from a test run; real settlements replace them automatically.</span>}
+            </p>
+          </section>
+        )}
 
         <!-- BET TYPES -->
         <section>
