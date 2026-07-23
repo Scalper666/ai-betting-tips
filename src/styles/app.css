@@ -536,9 +536,9 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
 .cl-row{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:9px;background:var(--bg-3);border:1px solid var(--border-2)}
 .cl-row:hover{border-color:var(--mint);background:var(--surface-2)}
 .cl-t{font-size:11px;font-weight:800;color:var(--mint);font-variant-numeric:tabular-nums;min-width:34px}
-.cl-m{flex:1;display:flex;flex-direction:column;gap:1px;font-size:12px;font-weight:600;color:var(--text);line-height:1.3}
-.cl-m i{font-style:normal;color:var(--text-mute);font-size:10px}
-.cl-lg{font-size:10px;color:var(--text-mute);font-weight:600}
+.cl-m{flex:1;min-width:0;display:block;font-size:12px;font-weight:600;color:var(--text);line-height:1.35}
+.cl-m i{font-style:normal;color:var(--text-mute);font-size:10px;padding:0 2px}
+.cl-lg{display:block;font-size:10px;color:var(--text-mute);font-weight:600;margin-top:1px}
 .cl-go{color:var(--text-mute);font-weight:800}
 .cl-row:hover .cl-go{color:var(--mint)}
 
