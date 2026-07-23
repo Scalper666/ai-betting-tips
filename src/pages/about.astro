@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+
+const updated = 'July 2026';
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'AI Betting Tips',
+  url: 'https://ai-betting-tips.com',
+  description:
+    'Independent sports betting tips, data-driven predictions and honest bookmaker reviews.',
+};
+---
+<Base
+  title="About Us — AI Betting Tips"
+  description="Who we are, how our predictions are made, and how we stay independent while earning affiliate commissions."
+  active=""
+  schema={schema}>
+
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span>About</div>
+      <h1>About <em>AI Betting Tips</em></h1>
+      <p class="lead">We help sports bettors make more informed decisions with real odds data, an AI value screener and honest, clearly-labelled operator reviews.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="prose">
+      <h2>What we do</h2>
+      <p>AI Betting Tips is an independent information service for football and sports bettors. We publish free daily predictions, an AI-powered value screener, verified tipster statistics and reviews of licensed bookmakers and casinos. Everything is designed to help you understand the odds and the risks — not to promise winnings.</p>
+
+      <h2>How our predictions are made</h2>
+      <p>Our predictions start from live market odds collected from multiple licensed bookmakers. From those odds we derive the implied probability of each outcome and look for <strong>value</strong> — situations where a price looks generous relative to the wider market. The AI screener ranks these edges so you can compare them at a glance.</p>
+      <p>Two things we are always honest about:</p>
+      <ul>
+        <li><strong>No prediction is a guarantee.</strong> Sports are unpredictable by nature. Our tips are informed opinions, not certainties.</li>
+        <li><strong>Our published stats are settled results only.</strong> Win rate and ROI are calculated from bets that have actually finished and been graded against real scores — never cherry-picked.</li>
+      </ul>
+
+      <h2>How we stay independent</h2>
+      <p>We make money through affiliate commissions: when you sign up with an operator through a link on our site, we may earn a fee at no extra cost to you. This is standard for comparison sites, and we want to be transparent about it.</p>
+      <p>Crucially, commercial relationships <strong>do not</strong> buy a better rating. Our bookmaker and casino scores are calculated from fixed criteria (odds quality, payout speed, app, safety and more). A brand cannot pay to move up the list. Any brand shown with a “demo entry” label is a placeholder for layout purposes and is not a recommendation.</p>
+
+      <h2>Responsible gambling</h2>
+      <p>This site is strictly for adults aged 18 or over (or the legal age in your country). Betting should be entertainment you can afford, never a way to make money or recover losses. If gambling stops being fun, please read our <a href="/responsible-gambling">Responsible Gambling</a> guide for tools and free, confidential help.</p>
+
+      <h2>Contact</h2>
+      <p>Questions, corrections or partnership enquiries? Email <a href="mailto:contact@ai-betting-tips.com">contact@ai-betting-tips.com</a> or see our <a href="/contact">contact page</a>.</p>
+
+      <hr />
+      <p class="updated">Last updated: {updated}</p>
+    </div>
+  </div>
+</Base>
