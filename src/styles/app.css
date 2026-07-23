@@ -283,12 +283,12 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
 
 /* ===== Bookmaker rows ===== */
 .bk-list{display:flex;flex-direction:column;gap:13px}
-.bk{position:relative;display:grid;grid-template-columns:64px 1.4fr 1.5fr 150px 160px;
+.bk{position:relative;display:grid;grid-template-columns:34px 1.4fr 1.5fr 150px 160px;
   align-items:center;gap:18px;background:var(--surface);border:1px solid var(--border);
   border-radius:var(--r-lg);padding:18px 20px;transition:border-color .2s,box-shadow .2s,transform .2s;overflow:hidden}
 .bk:hover{border-color:var(--border-3);box-shadow:var(--shadow-sm)}
 .bk.featured{border-color:rgba(var(--accent-rgb),.45);box-shadow:var(--glow-mint)}
-.bk-rank{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:800;color:var(--text-mute);text-align:center}
+.bk-rank{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:800;color:var(--text-mute);text-align:center}
 .bk.featured .bk-rank{color:var(--mint)}
 .bk-ribbon{position:absolute;top:13px;right:-34px;transform:rotate(45deg);background:var(--grad-mint);
   color:var(--ink);font-size:10px;font-weight:800;letter-spacing:.05em;padding:4px 40px;text-transform:uppercase}
@@ -725,7 +725,7 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
   .burger{display:flex}
   .country-grid{grid-template-columns:repeat(2,1fr)}
   .pred-grid{grid-template-columns:1fr}
-  .bk{grid-template-columns:48px 1fr 1fr;gap:14px}
+  .bk{grid-template-columns:34px 1fr 1fr;gap:14px}
   .bk-bonus{border-left:0;border-top:1px solid var(--border);padding:12px 0 0;grid-column:1/-1;order:4}
   .bk-score{grid-column:2/3;order:3}
   .bk-actions{grid-column:1/-1;order:5;flex-direction:row}
@@ -827,7 +827,11 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
 .fz-ctl button:hover{color:var(--mint);border-color:var(--mint)}
 
 /* ---- day tabs (Today / Tomorrow) ---- */
-.day-tabs{margin-bottom:10px}
+.filter-bar{display:flex;flex-wrap:wrap;align-items:center;gap:9px 12px;margin-bottom:20px}
+.filter-bar .chips{margin-bottom:0}
+.chip-sep{width:1px;height:22px;background:var(--border-2)}
+@media (max-width:560px){.chip-sep{display:none}}
+.day-tabs{margin-bottom:0}
 .day-tabs .n{margin-left:5px;font-size:10px;background:var(--bg-3);border-radius:8px;padding:1px 6px;color:var(--text-dim)}
 .day-tabs .chip.active .n{background:rgba(0,0,0,.18);color:inherit}
 [data-day-off]{display:none!important}
@@ -853,9 +857,9 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
 }
 
 /* ---- demo placeholder corner flag (instead of inline red text) ---- */
-.demo-flag{position:absolute;top:10px;left:10px;z-index:2;background:var(--danger-soft);color:var(--danger);
-  border:1px solid rgba(229,72,77,.35);border-radius:6px;font-size:9px;font-weight:800;letter-spacing:.08em;
-  text-transform:uppercase;padding:3px 7px;cursor:help}
+.demo-flag{position:absolute;top:8px;left:8px;z-index:2;background:var(--danger-soft);color:var(--danger);
+  border:1px solid rgba(229,72,77,.35);border-radius:5px;font-size:8px;font-weight:800;letter-spacing:.06em;
+  text-transform:uppercase;padding:2px 5px;cursor:help}
 
 /* ---- calendar day-list expander ---- */
 .cl-more{width:100%;padding:8px;border-radius:9px;background:var(--bg-3);border:1px solid var(--border-2);

@@ -197,16 +197,19 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
             <h2 class="sec-title">Free football <b>predictions</b></h2>
             <a href="/predictions" class="more-link">All predictions →</a>
           </div>
-          <div class="chips day-tabs" data-day-tabs>
-            <span class="chip active" data-day="all">🗓 All days</span>
-            <span class="chip" data-day="today">Today <b class="n"></b></span>
-            <span class="chip" data-day="tomorrow">Tomorrow <b class="n"></b></span>
-          </div>
-          <div class="chips" data-chip-group="preds">
-            <span class="chip active" data-filter="all"><span class="ic">⚡</span> All</span>
-            {chipLeagues.map((lg) => (
-              <span class="chip" data-filter={slugify(lg)}><span class="ic">🏆</span> {lg}</span>
-            ))}
+          <div class="filter-bar">
+            <div class="chips day-tabs" data-day-tabs>
+              <span class="chip active" data-day="all">🗓 All days</span>
+              <span class="chip" data-day="today">Today <b class="n"></b></span>
+              <span class="chip" data-day="tomorrow">Tomorrow <b class="n"></b></span>
+            </div>
+            <span class="chip-sep" aria-hidden="true"></span>
+            <div class="chips" data-chip-group="preds">
+              <span class="chip active" data-filter="all"><span class="ic">⚡</span> All</span>
+              {chipLeagues.map((lg) => (
+                <span class="chip" data-filter={slugify(lg)}><span class="ic">🏆</span> {lg}</span>
+              ))}
+            </div>
           </div>
           <div class="pred-grid">
             {featured.map((tip) => <PredCard tip={tip} />)}
