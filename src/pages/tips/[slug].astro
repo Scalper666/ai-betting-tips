@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import PredCard from '../../components/PredCard.astro';
 import predictions from '../../data/predictions.json';
+import content from '../../data/content.json';
 import { slugify } from '../../lib/utils.js';
 
 // One SEO page per bet type — same pattern as leagues and matches.
@@ -12,6 +13,7 @@ export function getStaticPaths() {
 }
 
 const { type } = Astro.props;
+const ai = (content.entries ?? {})[`tips:${type.slug}`];
 const tips = (predictions.tips ?? []).filter((t) => String(t.sport_key ?? '').startsWith('soccer')).slice(0, 6);
 const leagues = [...new Set(tips.map((t) => t.league))];
 ---
@@ -62,8 +64,20 @@ const leagues = [...new Set(tips.map((t) => t.league))];
         <section class="seo">
           <h2>{type.name} explained</h2>
           <div class="clamp" id="seoClamp">
-            <p>Our {type.name.toLowerCase()} focus on {type.short} markets where we believe the odds offer genuine value, rather than simply backing the obvious favourite.</p>
-            <p>Every tip is archived and settled automatically for full transparency. Treat our tips as statistical opinions, stake sensibly and never chase losses. You must be 18+.</p>
+            {ai ? (
+              <>
+                <p>{ai.intro}</p>
+                <h3 style="margin:18px 0 8px">How it works</h3>
+                <p>{ai.how_it_works}</p>
+                <h3 style="margin:18px 0 8px">Strategy</h3>
+                <p>{ai.strategy}</p>
+              </>
+            ) : (
+              <>
+                <p>Our {type.name.toLowerCase()} focus on {type.short} markets where we believe the odds offer genuine value, rather than simply backing the obvious favourite.</p>
+                <p>Every tip is archived and settled automatically for full transparency. Treat our tips as statistical opinions, stake sensibly and never chase losses. You must be 18+.</p>
+              </>
+            )}
           </div>
           <span class="read-more" data-clamp-toggle="seoClamp">Read more ▾</span>
         </section>

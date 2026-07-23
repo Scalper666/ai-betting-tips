@@ -5,6 +5,7 @@ import CasinoRow from '../../components/CasinoRow.astro';
 import countryData from '../../data/countries.json';
 import bookmakerData from '../../data/bookmakers.json';
 import casinoData from '../../data/casinos.json';
+import content from '../../data/content.json';
 import { avgScore } from '../../lib/utils.js';
 
 export function getStaticPaths() {
@@ -12,6 +13,7 @@ export function getStaticPaths() {
 }
 
 const { country } = Astro.props;
+const ai = (content.entries ?? {})[`country:${country.slug}`];
 const list = (bookmakerData.bookmakers ?? [])
   .filter((bk) => (bk.countries ?? []).includes(country.slug))
   .sort((a, b) => avgScore(b.scores) - avgScore(a.scores));
@@ -37,6 +39,13 @@ const description = `Licensed bookmakers accepting players from ${country.name},
   <div class="container">
     <div class="layout">
       <main class="content">
+
+        {ai && (
+          <section class="seo" style="margin-top:22px">
+            <h2>Betting in {country.name}</h2>
+            <p>{ai.intro}</p>
+          </section>
+        )}
 
         <section>
           <div class="sec-head"><h2 class="sec-title">Top sites for <b>{country.name}</b></h2></div>

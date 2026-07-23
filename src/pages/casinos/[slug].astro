@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import data from '../../data/casinos.json';
+import content from '../../data/content.json';
 import countryData from '../../data/countries.json';
 import { avgScore, CASINO_SCORE_LABELS } from '../../lib/utils.js';
 
@@ -9,6 +10,7 @@ export function getStaticPaths() {
 }
 
 const { casino: c } = Astro.props;
+const ai = (content.entries ?? {})[`casino:${c.slug}`];
 const avg = avgScore(c.scores);
 const markets = (countryData.countries ?? []).filter((x) => (c.countries ?? []).includes(x.slug));
 const others = (data.casinos ?? []).filter((x) => x.slug !== c.slug).slice(0, 4);
@@ -123,6 +125,15 @@ const schema = {
             </div>
           </div>
         </section>
+
+        {ai && (
+          <section class="seo">
+            <h2>Our verdict on {c.name}</h2>
+            <p>{ai.verdict}</p>
+            <h3 style="margin:18px 0 8px">Who is {c.name} for?</h3>
+            <p>{ai.who_for}</p>
+          </section>
+        )}
 
         <section>
           <div class="sec-head"><h2 class="sec-title">Key <b>facts</b></h2></div>

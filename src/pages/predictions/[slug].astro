@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import predictions from '../../data/predictions.json';
+import content from '../../data/content.json';
 import { matchSlug, abbr, badgeColor, kickoffLabel, confidenceLabel, slugify } from '../../lib/utils.js';
 
 // ── This is programmatic SEO: one template → one page per match in the data.
@@ -10,6 +11,8 @@ export function getStaticPaths() {
 }
 
 const { tip } = Astro.props;
+// AI-written match preview (generate_content.py) — falls back to template copy
+const ai = (content.entries ?? {})[`match:${matchSlug(tip)}`];
 const rec = tip.recommendation ?? {};
 const conf = Number(rec.confidence ?? 60);
 const { label, cls } = confidenceLabel(conf);
@@ -110,19 +113,27 @@ const schema = {
           </section>
         )}
 
-        <!-- This is where the Claude API writes a unique preview per match -->
+        <!-- Unique AI-written preview per match (generate_content.py → content.json) -->
         <section class="seo">
           <h2>{tip.home} vs {tip.away}: match preview</h2>
-          <p>
-            Our model makes <b>{rec.text}</b> the value play in this {tip.league} fixture, priced at
-            <b> {Number(rec.price ?? 0).toFixed(2)}</b> with {rec.bookmaker ?? 'the market leader'} —
-            an edge of <b>{rec.edge_pct ?? 0}%</b> over the margin-free fair price, and a
-            confidence rating of <b>{conf}%</b>.
-          </p>
-          <p class="dim" style="font-size:13px">
-            ⓘ Placeholder for the AI-written preview (form, head-to-head, team news). The Claude API
-            fills this per match, so every one of these pages carries unique analysis rather than a template.
-          </p>
+          {ai ? (
+            <>
+              <p>{ai.intro}</p>
+              {ai.key_factors?.length > 0 && (
+                <ul class="ai-factors">
+                  {ai.key_factors.map((f) => <li>{f}</li>)}
+                </ul>
+              )}
+              <p><b>Verdict:</b> {ai.verdict}</p>
+            </>
+          ) : (
+            <p>
+              Our model makes <b>{rec.text}</b> the value play in this {tip.league} fixture, priced at
+              <b> {Number(rec.price ?? 0).toFixed(2)}</b> with {rec.bookmaker ?? 'the market leader'} —
+              an edge of <b>{rec.edge_pct ?? 0}%</b> over the margin-free fair price, and a
+              confidence rating of <b>{conf}%</b>.
+            </p>
+          )}
         </section>
 
         <section>
