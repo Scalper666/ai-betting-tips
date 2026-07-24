@@ -1,40 +1,97 @@
 ---
 import Base from '../../layouts/Base.astro';
 import predictions from '../../data/predictions.json';
+import historyData from '../../data/history.json';
 import content from '../../data/content.json';
 import { matchSlug, abbr, badgeColor, kickoffLabel, confidenceLabel, slugify } from '../../lib/utils.js';
 
-// ── This is programmatic SEO: one template → one page per match in the data.
+// ── Programmatic SEO, compounding edition:
+//    pages are built from the CURRENT feed ∪ the SETTLEMENT ARCHIVE, so a match
+//    page never dies — after full time it becomes a permanent result page
+//    ("our tip was X @ 5.2 — won, 2-1"), and the archive grows daily.
 export function getStaticPaths() {
   const tips = predictions.tips ?? [];
-  return tips.map((tip) => ({ params: { slug: matchSlug(tip) }, props: { tip } }));
+  const live = new Map(tips.map((t) => [matchSlug(t), t]));
+
+  // real (non-mock) archived tips, grouped by page slug
+  const bySlug = {};
+  for (const h of Object.values(historyData.tips ?? {})) {
+    if (h.score === 'simulated' || String(h.event_id ?? '').startsWith('mock')) continue;
+    if (!h.home || !h.away) continue;
+    const slug = slugify(`${h.home}-vs-${h.away}`);
+    (bySlug[slug] ??= []).push(h);
+  }
+
+  const slugs = new Set([...live.keys(), ...Object.keys(bySlug)]);
+  return [...slugs].map((slug) => ({
+    params: { slug },
+    props: {
+      tip: live.get(slug) ?? null,
+      archive: (bySlug[slug] ?? []).sort((a, b) => String(b.kickoff ?? '').localeCompare(String(a.kickoff ?? ''))),
+    },
+  }));
 }
 
-const { tip } = Astro.props;
-// AI-written match preview (generate_content.py) — falls back to template copy
-const ai = (content.entries ?? {})[`match:${matchSlug(tip)}`];
-const rec = tip.recommendation ?? {};
+const { tip, archive } = Astro.props;
+const isLive = !!tip;
+const latest = archive[0] ?? null;
+
+// unified view-model (live tip shape wins; archive entries carry our published bet)
+const home = tip?.home ?? latest?.home;
+const away = tip?.away ?? latest?.away;
+const league = tip?.league ?? latest?.league ?? 'Football';
+const kickoffIso = tip?.kickoff ?? latest?.kickoff;
+const rec = tip?.recommendation ?? {
+  text: latest?.market, price: latest?.odds, bookmaker: latest?.bookmaker,
+  confidence: latest?.confidence, edge_pct: latest?.edge_pct,
+};
 const conf = Number(rec.confidence ?? 60);
 const { label, cls } = confidenceLabel(conf);
-const kickoff = kickoffLabel(tip.kickoff);
+const kickoff = kickoffLabel(kickoffIso);
+const kickedDate = kickoffIso
+  ? new Date(kickoffIso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
+  : '';
 
-const title = `${tip.home} vs ${tip.away} Prediction, Odds & Betting Tip`;
-const description = `${tip.home} vs ${tip.away} (${tip.league}) prediction: our tip is ${rec.text} at odds ${Number(rec.price ?? 0).toFixed(2)}. Best available odds compared across bookmakers.`;
+// settlement state (archive mode)
+const settledStates = ['won', 'lost', 'void'];
+const settled = !isLive && latest && settledStates.includes(latest.status);
+// a fixture can leave the feed BEFORE it is played (league rotation) — don't say "kicked off"
+const played = kickoffIso ? new Date(kickoffIso).getTime() < Date.now() : true;
+const resultScore = settled && latest.score && latest.score !== 'simulated' ? latest.score : null;
+const resWord = { won: 'Won', lost: 'Lost', void: 'Void' }[latest?.status] ?? 'Pending';
+const resCls = { won: 'w', lost: 'l', void: 'v' }[latest?.status] ?? 'v';
+const profit = Number(latest?.profit ?? 0);
 
-// Best odds across bookmakers — real value for the reader, straight from the pipeline
-const bestOdds = Object.entries(tip.best_h2h ?? {});
+// our full settled record on this fixture (shown in both modes)
+const record = archive.filter((h) => settledStates.includes(h.status) && (isLive || h !== latest));
+
+// league pages exist only for leagues in the current feed — don't emit dead links
+const liveLeagues = new Set((predictions.tips ?? []).map((t) => slugify(t.league)));
+const leagueHref = liveLeagues.has(slugify(league)) ? `/league/${slugify(league)}` : '/predictions';
+
+const ai = (content.entries ?? {})[`match:${matchSlug({ home, away })}`];
+
+const title = isLive
+  ? `${home} vs ${away} Prediction, Odds & Betting Tip`
+  : `${home} vs ${away} Prediction & Result${resultScore ? ` (${resultScore})` : ''}`;
+const description = isLive
+  ? `${home} vs ${away} (${league}) prediction: our tip is ${rec.text} at odds ${Number(rec.price ?? 0).toFixed(2)}. Best available odds compared across bookmakers.`
+  : `${home} vs ${away} (${league}): our published tip was ${rec.text} at ${Number(rec.price ?? 0).toFixed(2)} — result: ${resWord.toLowerCase()}${resultScore ? `, final score ${resultScore}` : ''}. Every tip is archived and settled openly.`;
+
+const bestOdds = Object.entries(tip?.best_h2h ?? {});
 
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'SportsEvent',
-  name: `${tip.home} vs ${tip.away}`,
-  startDate: tip.kickoff,
+  name: `${home} vs ${away}`,
+  startDate: kickoffIso,
   sport: 'Football',
+  eventStatus: isLive ? 'https://schema.org/EventScheduled' : 'https://schema.org/EventCompleted',
   competitor: [
-    { '@type': 'SportsTeam', name: tip.home },
-    { '@type': 'SportsTeam', name: tip.away },
+    { '@type': 'SportsTeam', name: home },
+    { '@type': 'SportsTeam', name: away },
   ],
-  superEvent: { '@type': 'SportsOrganization', name: tip.league },
+  superEvent: { '@type': 'SportsOrganization', name: league },
 };
 ---
 <Base title={title} description={description} schema={schema} active="predictions">
@@ -43,11 +100,19 @@ const schema = {
       <div class="crumbs">
         <a href="/">Home</a><span>/</span>
         <a href="/predictions">Predictions</a><span>/</span>
-        <a href={`/league/${slugify(tip.league)}`}>{tip.league}</a><span>/</span>
-        {tip.home} vs {tip.away}
+        <a href={leagueHref}>{league}</a><span>/</span>
+        {home} vs {away}
       </div>
-      <h1>{tip.home} vs {tip.away} <em>prediction</em></h1>
-      <p class="lead">{tip.league} · {kickoff} — our model's pick, the best available price and how the market is priced.</p>
+      <h1>{home} vs {away} <em>{settled ? 'result' : 'prediction'}</em></h1>
+      <p class="lead">
+        {isLive
+          ? `${league} · ${kickoff} — our model's pick, the best available price and how the market is priced.`
+          : settled
+            ? `${league} · kicked off ${kickedDate} — the tip we published before the match and how it settled.`
+            : played
+              ? `${league} · kicked off ${kickedDate} — our published tip, awaiting settlement against the final score.`
+              : `${league} · kick-off ${kickedDate} — the tip we published ahead of this fixture.`}
+      </p>
     </div>
   </div>
 
@@ -57,41 +122,66 @@ const schema = {
 
         <!-- Match + our tip -->
         <section>
-          <div class="sec-head"><h2 class="sec-title">Our <b>prediction</b></h2></div>
+          <div class="sec-head"><h2 class="sec-title">Our <b>{isLive ? 'prediction' : 'published tip'}</b></h2></div>
           <article class="pred">
             <div class="pred-top">
-              <span class="pred-league"><span class="lg-logo">{tip.sport_icon ?? '🏆'}</span> {tip.league}</span>
-              <span class="pred-when">🕒 {kickoff}</span>
+              <span class="pred-league"><span class="lg-logo">{tip?.sport_icon ?? '⚽'}</span> {league}</span>
+              <span class="pred-when">🕒 {isLive ? kickoff : (played ? kickedDate : `kick-off ${kickedDate}`)}</span>
             </div>
             <div class="pred-body">
               <div class="match">
                 <div class="team">
-                  <div class="badge" style={`background:${badgeColor(tip.home)}`}>{abbr(tip.home)}</div>
-                  <div class="nm">{tip.home}</div>
+                  <div class="badge" style={`background:${badgeColor(home)}`}>{abbr(home)}</div>
+                  <div class="nm">{home}</div>
                 </div>
-                <div class="vs">VS</div>
+                <div class="vs">{resultScore ?? 'VS'}</div>
                 <div class="team">
-                  <div class="badge" style={`background:${badgeColor(tip.away)}`}>{abbr(tip.away)}</div>
-                  <div class="nm">{tip.away}</div>
+                  <div class="badge" style={`background:${badgeColor(away)}`}>{abbr(away)}</div>
+                  <div class="nm">{away}</div>
                 </div>
               </div>
               <div class="pred-tip">
                 <div><div class="lbl">Our tip</div><div class="val">{rec.text}</div></div>
                 <div class="odd-box"><div class="ot">Odds</div><div class="ov">{Number(rec.price ?? 0).toFixed(2)}</div></div>
               </div>
-              <div class="confidence">
-                <div class="cf-top"><span>Confidence</span><span class="pc">{label} · {conf}%</span></div>
-                <div class={`bar ${cls}`.trim()} data-val={conf}><i></i></div>
-              </div>
+              {isLive ? (
+                <div class="confidence">
+                  <div class="cf-top"><span>Confidence</span><span class="pc">{label} · {conf}%</span></div>
+                  <div class={`bar ${cls}`.trim()} data-val={conf}><i></i></div>
+                </div>
+              ) : (
+                <div class="res-sum" style="margin:14px 0 0">
+                  <div class={`res-chip ${latest?.status === 'won' ? 'win' : latest?.status === 'lost' ? 'lose' : ''}`}>
+                    <b>{resWord}</b><span>Result</span>
+                  </div>
+                  {resultScore && <div class="res-chip"><b>{resultScore}</b><span>Final score</span></div>}
+                  {settled && (
+                    <div class={`res-chip ${profit > 0 ? 'win' : profit < 0 ? 'lose' : ''}`}>
+                      <b>{profit > 0 ? '+' : ''}{profit.toFixed(2)}u</b><span>Profit</span>
+                    </div>
+                  )}
+                  <div class="res-chip"><b>{conf}%</b><span>Pre-match conf.</span></div>
+                </div>
+              )}
             </div>
             <div class="pred-foot">
-              <div class="by"><span class="ava">AI</span> Value edge {rec.edge_pct ?? 0}% · best price at {rec.bookmaker ?? '—'}</div>
-              <a href="#" class="btn btn-mint btn-sm">Bet at {rec.bookmaker ?? 'bookmaker'}</a>
+              <div class="by"><span class="ava">AI</span>
+                {isLive
+                  ? `Value edge ${rec.edge_pct ?? 0}% · best price at ${rec.bookmaker ?? '—'}`
+                  : settled
+                    ? `Settled against the final score — published pre-match at ${rec.bookmaker ?? '—'}`
+                    : played
+                      ? 'Awaiting settlement — graded automatically once the final score lands'
+                      : 'Published ahead of the fixture — graded automatically after full time'}
+              </div>
+              {isLive
+                ? <a href="#" class="btn btn-mint btn-sm">Bet at {rec.bookmaker ?? 'bookmaker'}</a>
+                : <a href="/predictions" class="btn btn-outline btn-sm">Today's predictions →</a>}
             </div>
           </article>
         </section>
 
-        <!-- Odds comparison: genuinely useful, and unique to us -->
+        <!-- Odds comparison (live fixtures only) -->
         {bestOdds.length > 0 && (
           <section>
             <div class="sec-head"><h2 class="sec-title">Best <b>odds</b> across bookmakers</h2></div>
@@ -113,9 +203,27 @@ const schema = {
           </section>
         )}
 
-        <!-- Unique AI-written preview per match (generate_content.py → content.json) -->
+        <!-- Our settled record on this fixture -->
+        {record.length > 0 && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">Our <b>record</b> on this fixture</h2></div>
+            <div class="res-list">
+              {record.map((h) => (
+                <div class="res-row">
+                  <span class={`res-mark ${h.status === 'won' ? 'w' : h.status === 'lost' ? 'l' : 'v'}`}>{h.status === 'won' ? 'W' : h.status === 'lost' ? 'L' : 'V'}</span>
+                  <span class="res-date">{h.kickoff ? new Date(h.kickoff).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: '2-digit' }) : ''}</span>
+                  <div class="res-match"><b>{h.market}</b><span>{h.score && h.score !== 'simulated' ? `final score ${h.score}` : h.league}</span></div>
+                  <span class="res-odds">{Number(h.odds ?? 0).toFixed(2)}</span>
+                  <span class={`res-profit ${(h.profit ?? 0) > 0 ? 'pos' : (h.profit ?? 0) < 0 ? 'neg' : 'zero'}`}>{(h.profit ?? 0) > 0 ? '+' : ''}{Number(h.profit ?? 0).toFixed(2)}u</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- Unique AI-written preview per match (written pre-match; kept in the archive) -->
         <section class="seo">
-          <h2>{tip.home} vs {tip.away}: match preview</h2>
+          <h2>{home} vs {away}: {isLive ? 'match preview' : 'pre-match preview'}</h2>
           {ai ? (
             <>
               <p>{ai.intro}</p>
@@ -128,11 +236,15 @@ const schema = {
             </>
           ) : (
             <p>
-              Our model makes <b>{rec.text}</b> the value play in this {tip.league} fixture, priced at
-              <b> {Number(rec.price ?? 0).toFixed(2)}</b> with {rec.bookmaker ?? 'the market leader'} —
-              an edge of <b>{rec.edge_pct ?? 0}%</b> over the margin-free fair price, and a
-              confidence rating of <b>{conf}%</b>.
+              Our model {isLive ? 'makes' : 'made'} <b>{rec.text}</b> the value play in this {league} fixture, priced at
+              <b> {Number(rec.price ?? 0).toFixed(2)}</b> with {rec.bookmaker ?? 'the market leader'}
+              {isLive ? ` — an edge of ${rec.edge_pct ?? 0}% over the margin-free fair price, and a confidence rating of ${conf}%.` : '.'}
             </p>
+          )}
+          {!isLive && settled && (
+            <p><b>How it settled:</b> the tip {latest.status === 'won' ? 'landed' : latest.status === 'lost' ? 'did not land' : 'was voided'}
+              {resultScore ? ` — the match finished ${resultScore}` : ''}, for a flat-stake return of {profit > 0 ? '+' : ''}{profit.toFixed(2)} units.
+              Every tip we publish is archived before kick-off and graded against the final score; nothing is edited or deleted afterwards.</p>
           )}
         </section>
 
@@ -140,27 +252,44 @@ const schema = {
           <div class="sec-head"><h2 class="sec-title">Match <b>FAQ</b></h2></div>
           <div class="faq">
             <div class="faq-item open">
-              <div class="faq-q">What is the prediction for {tip.home} vs {tip.away}?<span class="pm">+</span></div>
-              <div class="faq-a"><p>Our tip is <b>{rec.text}</b> at odds of {Number(rec.price ?? 0).toFixed(2)}, with a {conf}% confidence rating.</p></div>
+              <div class="faq-q">{isLive ? `What is the prediction for ${home} vs ${away}?` : `What was our prediction for ${home} vs ${away}?`}<span class="pm">+</span></div>
+              <div class="faq-a"><p>Our tip {isLive ? 'is' : 'was'} <b>{rec.text}</b> at odds of {Number(rec.price ?? 0).toFixed(2)}{isLive ? `, with a ${conf}% confidence rating.` : '.'}</p></div>
             </div>
-            <div class="faq-item">
-              <div class="faq-q">When does the match kick off?<span class="pm">+</span></div>
-              <div class="faq-a"><p>{tip.home} vs {tip.away} takes place {kickoff} in the {tip.league}.</p></div>
-            </div>
+            {isLive ? (
+              <div class="faq-item">
+                <div class="faq-q">When does the match kick off?<span class="pm">+</span></div>
+                <div class="faq-a"><p>{home} vs {away} takes place {kickoff} in the {league}.</p></div>
+              </div>
+            ) : (
+              <div class="faq-item">
+                <div class="faq-q">Did the tip win?<span class="pm">+</span></div>
+                <div class="faq-a"><p>{settled
+                  ? `The tip ${latest.status === 'won' ? 'won' : latest.status === 'lost' ? 'lost' : 'was voided'}${resultScore ? ` — final score ${resultScore}` : ''} (${profit > 0 ? '+' : ''}${profit.toFixed(2)}u at flat stakes).`
+                  : 'The match has not been settled yet — the result is graded automatically once the final score is available.'}</p></div>
+              </div>
+            )}
           </div>
         </section>
 
       </main>
 
       <aside class="sidebar">
-        <div class="promo">
-          <h4>🎯 Best price</h4>
-          <p>{rec.text} @ {Number(rec.price ?? 0).toFixed(2)} at {rec.bookmaker ?? '—'}.</p>
-          <a href="#" class="btn btn-mint btn-block">Bet now</a>
-        </div>
+        {isLive ? (
+          <div class="promo">
+            <h4>🎯 Best price</h4>
+            <p>{rec.text} @ {Number(rec.price ?? 0).toFixed(2)} at {rec.bookmaker ?? '—'}.</p>
+            <a href="#" class="btn btn-mint btn-block">Bet now</a>
+          </div>
+        ) : (
+          <div class="promo">
+            <h4>🔍 Live value picks</h4>
+            <p>This match is settled — see where our model finds value today.</p>
+            <a href="/screener" class="btn btn-mint btn-block">Open the AI screener</a>
+          </div>
+        )}
         <div class="box">
-          <div class="box-h"><span class="hi">⚡</span> More {tip.league}</div>
-          <a class="tm" href={`/league/${slugify(tip.league)}`}><span class="dot"></span>All {tip.league} tips</a>
+          <div class="box-h"><span class="hi">⚡</span> More {league}</div>
+          <a class="tm" href={leagueHref}><span class="dot"></span>All {league} tips</a>
           <a class="tm" href="/predictions"><span class="dot"></span>Today's predictions</a>
         </div>
       </aside>

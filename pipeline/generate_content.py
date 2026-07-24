@@ -329,9 +329,18 @@ def main() -> int:
     if args.only:
         work = [w for w in work if w["kind"] == args.only]
 
-    # prune match entries whose fixture left the feed (keeps the file bounded)
+    # Prune only match entries that exist NEITHER in the current feed NOR in the
+    # settlement archive. Archived matches keep their pages forever (SEO archive),
+    # so their previews must survive too. Mock-phase entries never get pages.
     live_keys = {w["key"] for w in build_worklist()}
-    stale = [k for k in entries if k.startswith("match:") and k not in live_keys]
+    hist = load_json(ROOT / "data" / "history.json").get("tips", {})
+    archived_keys = {
+        f"match:{slugify(str(v.get('home')) + '-vs-' + str(v.get('away')))}"
+        for v in (hist.values() if isinstance(hist, dict) else [])
+        if v.get("score") != "simulated" and not str(v.get("event_id", "")).startswith("mock")
+    }
+    keep = live_keys | archived_keys
+    stale = [k for k in entries if k.startswith("match:") and k not in keep]
     for k in stale:
         del entries[k]
 
