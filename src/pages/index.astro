@@ -8,7 +8,7 @@ import screener from '../data/screener.json';
 import bookmakers from '../data/bookmakers.json';
 import historyData from '../data/history.json';
 import countriesData from '../data/countries.json';
-import { slugify, avgScore, kickoffLabel, matchSlug, AVATAR_STYLES, signed } from '../lib/utils.js';
+import { slugify, avgScore, kickoffLabel, matchSlug, abbr, badgeColor, signed } from '../lib/utils.js';
 
 const tips = predictions.tips ?? [];
 const football = tips.filter((t) => String(t.sport_key ?? '').startsWith('soccer'));
@@ -404,6 +404,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
                   <div class="bonus-foot">
                     <a href={`/bookmakers/${bk.slug}`} class="btn btn-ghost btn-sm">Details</a>
                     <a href={bk.affiliate_url} class="btn btn-mint btn-sm" rel="nofollow sponsored" target="_blank">Claim</a>
+                  <span class="tc-line" style="flex-basis:100%">18+ · T&amp;C apply · <a href="https://www.gambleaware.org" rel="nofollow noopener" target="_blank">GambleAware.org</a></span>
                   </div>
                 </div>
               </div>
@@ -429,7 +430,13 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
               <a href="/news" class="more-link">All news →</a>
             </div>
             <div class="feature-article" style="margin-bottom:16px">
-              <div class="fa-img" style="background:linear-gradient(135deg,#0b1f3a,#102a52)">🏆</div>
+              <div class="fa-img" style="background:linear-gradient(135deg,#0b1f3a,#102a52)">
+                <div class="cover-vs">
+                  <span class="cvb" style={`background:${badgeColor(featureTip.home)}`}>{abbr(featureTip.home)}</span>
+                  <span class="cv-x">VS</span>
+                  <span class="cvb" style={`background:${badgeColor(featureTip.away)}`}>{abbr(featureTip.away)}</span>
+                </div>
+              </div>
               <div class="fa-body">
                 <span class="tag">{featureTip.league}</span>
                 <h2>{featureTip.home} vs {featureTip.away}: preview, prediction &amp; best bets</h2>
@@ -440,7 +447,14 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
             <div class="news-grid">
               {newsCards.map((t, i) => (
                 <div class="news-card">
-                  <div class="news-thumb" style={`background:${NEWS_THUMBS[i % NEWS_THUMBS.length]}`}>⚽<span class="tag">{t.league}</span><span class="when">{kickoffLabel(t.kickoff)}</span></div>
+                  <div class="news-thumb" style={`background:${NEWS_THUMBS[i % NEWS_THUMBS.length]}`}>
+                    <div class="cover-vs sm">
+                      <span class="cvb" style={`background:${badgeColor(t.home)}`}>{abbr(t.home)}</span>
+                      <span class="cv-x">v</span>
+                      <span class="cvb" style={`background:${badgeColor(t.away)}`}>{abbr(t.away)}</span>
+                    </div>
+                    <span class="tag">{t.league}</span><span class="when">{kickoffLabel(t.kickoff)}</span>
+                  </div>
                   <div class="news-body">
                     <h4><a href={`/predictions/${matchSlug(t)}`}>{t.home} vs {t.away}: prediction &amp; best odds</a></h4>
                     <div class="nf"><span>AI Betting Tips model</span><span class="read">Read →</span></div>
@@ -500,6 +514,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
             <h4>🎁 {topBk.bonus.headline.split(' + ')[0]}</h4>
             <p>Top-rated {topBk.name} gives new players {topBk.bonus.headline.toLowerCase()}.</p>
             <a href={`/bookmakers/${topBk.slug}`} class="btn btn-mint btn-block">Claim bonus</a>
+            <span class="tc-line">18+ · T&amp;C apply · <a href="https://www.gambleaware.org" rel="nofollow noopener" target="_blank">GambleAware.org</a></span>
           </div>
         )}
 

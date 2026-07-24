@@ -844,6 +844,21 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
   .res-date,.res-odds{display:none}
 }
 
+/* ---- badge-vs-badge covers for news/feature thumbs ---- */
+.cover-vs{display:flex;align-items:center;gap:14px}
+.cvb{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;color:#fff;
+  font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:15px;
+  border:2px solid rgba(255,255,255,.16);box-shadow:0 10px 26px rgba(0,0,0,.45)}
+.cv-x{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:13px;
+  color:rgba(255,255,255,.55);letter-spacing:.12em}
+.cover-vs.sm{gap:10px}
+.cover-vs.sm .cvb{width:42px;height:42px;border-radius:12px;font-size:11.5px}
+
+/* ---- generic compliance line under bonus CTAs ---- */
+.tc-line{display:block;font-size:10px;color:var(--text-dim);letter-spacing:.02em;margin-top:7px}
+.tc-line a{color:inherit;text-decoration:underline}
+.tc-line a:hover{color:var(--mint)}
+
 /* ---- glossary ---- */
 .gl-example{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--mint);
   border-radius:10px;padding:14px 16px;margin:6px 0 4px}
