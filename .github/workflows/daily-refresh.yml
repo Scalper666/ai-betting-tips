@@ -1,0 +1,93 @@
+# Daily site refresh — runs fully in the cloud, no PC needed.
+#   fetch odds -> settle finished matches -> real stats -> screener ->
+#   AI copy for new fixtures -> build -> deploy to Cloudflare Pages ->
+#   commit the data snapshot back to the repo (history must persist!)
+#
+# Secrets required (repo Settings -> Secrets and variables -> Actions):
+#   ODDS_API_KEY          the-odds-api.com key
+#   ANTHROPIC_API_KEY     Claude API key (AI page copy)
+#   CLOUDFLARE_API_TOKEN  token with Cloudflare Pages: Edit
+#   CLOUDFLARE_ACCOUNT_ID Cloudflare account id
+name: Daily refresh
+
+on:
+  schedule:
+    - cron: "30 5 * * *"   # 05:30 UTC = 08:30 MSK, after overnight matches finish
+  workflow_dispatch: {}     # manual "Run workflow" button / API trigger
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install pipeline deps
+        run: pip install -r pipeline/requirements.txt
+
+      - name: Fetch odds & archive tips
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          ODDS_API_REGION: eu
+          # 4 leagues x (2 odds + 2 scores) credits/day = ~480/month -> fits the free 500.
+          # Add leagues here after upgrading the Odds API plan.
+          ODDS_API_SPORTS: soccer_epl,soccer_spain_la_liga,soccer_usa_mls,soccer_brazil_campeonato
+        run: python pipeline/build.py
+
+      - name: Settle finished matches (real scores)
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          ODDS_API_REGION: eu
+        run: python pipeline/results.py
+
+      - name: Recompute honest tipster stats
+        run: python pipeline/stats.py
+
+      - name: Rebuild value screener
+        run: python pipeline/screener.py
+
+      - name: AI copy for new fixtures (cached; only new pages cost)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python pipeline/generate_content.py
+
+      - name: Sync data into the site
+        run: python pipeline/sync_astro.py
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Build site
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy to Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: npx wrangler pages deploy dist --project-name ai-betting-tips --commit-dirty=true
+
+      - name: Commit data snapshot (settled history must persist between runs)
+        run: |
+          git config user.name "abt-refresh-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data src/data
+          if git diff --cached --quiet; then
+            echo "no data changes"
+          else
+            git commit -m "data: scheduled refresh"
+            git push
+          fi
