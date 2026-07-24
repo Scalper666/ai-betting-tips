@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import glossary from '../../data/glossary.json';
+
+const terms = [...(glossary.terms ?? [])].sort((a, b) => a.term.localeCompare(b.term));
+const title = 'Betting Glossary — Every Term Explained with Examples';
+const description = `${terms.length} betting terms explained in plain English with worked examples: value, implied probability, handicaps, wagering requirements and more.`;
+---
+<Base title={title} description={description} active="">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span>Glossary</div>
+      <h1>Betting <em>glossary</em></h1>
+      <p class="lead">{terms.length} terms, written in plain English with a worked numeric example on every page — the vocabulary behind our predictions and screener.</p>
+    </div>
+  </div>
+
+  <div class="container" style="padding-bottom:60px">
+    <div class="team-grid" style="margin-top:8px">
+      {terms.map((t) => (
+        <a class="team-card" href={`/glossary/${t.slug}`}>
+          <span class="badge" style="background:linear-gradient(135deg,#2b3f57,#1d2b3c)">{t.term.slice(0, 1)}</span>
+          <span class="tc-name" title={t.short}>{t.term}</span>
+          <span class="tc-n">→</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>
