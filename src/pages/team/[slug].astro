@@ -1,0 +1,183 @@
+---
+import Base from '../../layouts/Base.astro';
+import predictions from '../../data/predictions.json';
+import historyData from '../../data/history.json';
+import content from '../../data/content.json';
+import AiFaq from '../../components/AiFaq.astro';
+import { matchSlug, abbr, badgeColor, kickoffLabel, slugify, faqSchema } from '../../lib/utils.js';
+
+// ── Team hub pages: one evergreen page per club we have ever tipped on.
+//    Built from the current feed ∪ the settlement archive — upcoming fixtures,
+//    our full settled record on the team, honest aggregate stats.
+export function getStaticPaths() {
+  const tips = predictions.tips ?? [];
+  const teams = new Map();   // name -> { name, entries: [], upcoming: [] }
+
+  const touch = (name) => {
+    if (!name) return null;
+    const slug = slugify(name);
+    if (!teams.has(slug)) teams.set(slug, { name, entries: [], upcoming: [] });
+    return teams.get(slug);
+  };
+
+  for (const h of Object.values(historyData.tips ?? {})) {
+    if (h.score === 'simulated' || String(h.event_id ?? '').startsWith('mock')) continue;
+    touch(h.home)?.entries.push(h);
+    touch(h.away)?.entries.push(h);
+  }
+  for (const t of tips) {
+    touch(t.home)?.upcoming.push(t);
+    touch(t.away)?.upcoming.push(t);
+  }
+
+  return [...teams.entries()].map(([slug, data]) => ({ params: { slug }, props: data }));
+}
+
+const { name, entries, upcoming } = Astro.props;
+const ai = (content.entries ?? {})[`team:${slugify(name)}`];
+
+const settledStates = ['won', 'lost', 'void'];
+const settledList = entries
+  .filter((h) => settledStates.includes(h.status))
+  .sort((a, b) => String(b.kickoff ?? '').localeCompare(String(a.kickoff ?? '')));
+const pendingPast = entries.filter((h) => !settledStates.includes(h.status));
+const leagues = [...new Set([...entries, ...upcoming].map((x) => x.league).filter(Boolean))];
+
+const stats = {
+  tips: entries.length + upcoming.length,
+  settled: settledList.length,
+  won: settledList.filter((h) => h.status === 'won').length,
+  lost: settledList.filter((h) => h.status === 'lost').length,
+  profit: Math.round(settledList.reduce((s, h) => s + (h.profit ?? 0), 0) * 100) / 100,
+};
+
+const upcomingSorted = [...upcoming].sort((a, b) => String(a.kickoff ?? '').localeCompare(String(b.kickoff ?? '')));
+
+const title = `${name} Betting Tips, Predictions & Our Record`;
+const description = `${name} betting tips with a fully transparent record: every prediction on ${name} fixtures is archived before kick-off and settled against the final score.`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'SportsTeam', name, sport: 'Football' },
+    ...(ai?.faq?.length ? [faqSchema(ai.faq)] : []),
+  ],
+};
+---
+<Base title={title} description={description} schema={schema} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href="/">Home</a><span>/</span>
+        <a href="/teams">Teams</a><span>/</span>
+        {name}
+      </div>
+      <h1><span class="badge" style={`display:inline-grid;place-items:center;width:44px;height:44px;border-radius:12px;vertical-align:middle;margin-right:10px;background:${badgeColor(name)}`}>{abbr(name)}</span> {name} <em>betting tips</em></h1>
+      <p class="lead">{leagues.join(' · ')} — every tip we publish on {name} fixtures, archived before kick-off and settled openly.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+
+        <!-- Honest aggregate record -->
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Our {name} <b>record</b></h2></div>
+          <div class="res-sum">
+            <div class="res-chip"><b>{stats.tips}</b><span>Tips</span></div>
+            <div class="res-chip"><b>{stats.settled}</b><span>Settled</span></div>
+            <div class="res-chip win"><b>{stats.won}</b><span>Won</span></div>
+            <div class="res-chip lose"><b>{stats.lost}</b><span>Lost</span></div>
+            <div class={`res-chip ${stats.profit > 0 ? 'win' : stats.profit < 0 ? 'lose' : ''}`}>
+              <b>{stats.profit > 0 ? '+' : ''}{stats.profit.toFixed(2)}u</b><span>Profit</span>
+            </div>
+          </div>
+          {stats.settled === 0 && (
+            <p class="res-note">No {name} tips have settled yet — results are graded automatically after full time and appear here.</p>
+          )}
+        </section>
+
+        <!-- Upcoming fixtures with our tips -->
+        {upcomingSorted.length > 0 && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">Upcoming {name} <b>fixtures</b></h2></div>
+            <div class="box">
+              {upcomingSorted.map((t) => (
+                <a class="mini-tip" href={`/predictions/${matchSlug(t)}`}>
+                  <div><h5>{t.home} v {t.away}</h5><div class="mt-sp">{t.league} · {kickoffLabel(t.kickoff)} · tip: {t.recommendation?.text}</div></div>
+                  <div class="mt-roi"><b>{Number(t.recommendation?.price ?? 0).toFixed(2)}</b><span>odds</span></div>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- Settled tips involving this team -->
+        {settledList.length > 0 && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">Settled <b>tips</b></h2></div>
+            <div class="res-list">
+              {settledList.map((h) => (
+                <a class="res-row" href={`/predictions/${slugify(`${h.home}-vs-${h.away}`)}`} style="text-decoration:none;color:inherit">
+                  <span class={`res-mark ${h.status === 'won' ? 'w' : h.status === 'lost' ? 'l' : 'v'}`}>{h.status === 'won' ? 'W' : h.status === 'lost' ? 'L' : 'V'}</span>
+                  <span class="res-date">{h.kickoff ? new Date(h.kickoff).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }) : ''}</span>
+                  <div class="res-match"><b>{h.home} v {h.away}</b><span>{h.market}{h.score && h.score !== 'simulated' ? ` · ${h.score}` : ''}</span></div>
+                  <span class="res-odds">{Number(h.odds ?? 0).toFixed(2)}</span>
+                  <span class={`res-profit ${(h.profit ?? 0) > 0 ? 'pos' : (h.profit ?? 0) < 0 ? 'neg' : 'zero'}`}>{(h.profit ?? 0) > 0 ? '+' : ''}{Number(h.profit ?? 0).toFixed(2)}u</span>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- Awaiting settlement -->
+        {pendingPast.length > 0 && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">Published, <b>awaiting result</b></h2></div>
+            <div class="res-list">
+              {pendingPast.map((h) => (
+                <a class="res-row" href={`/predictions/${slugify(`${h.home}-vs-${h.away}`)}`} style="text-decoration:none;color:inherit">
+                  <span class="res-mark v">•</span>
+                  <span class="res-date">{h.kickoff ? new Date(h.kickoff).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }) : ''}</span>
+                  <div class="res-match"><b>{h.home} v {h.away}</b><span>{h.market}</span></div>
+                  <span class="res-odds">{Number(h.odds ?? 0).toFixed(2)}</span>
+                  <span class="res-profit zero">—</span>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- AI-written team betting guide -->
+        {ai?.intro && (
+          <section class="seo">
+            <h2>Betting on {name}: how this page works</h2>
+            <p>{ai.intro}</p>
+          </section>
+        )}
+
+        <AiFaq faqs={ai?.faq ?? []} title={`${name} betting FAQ`} />
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>🔍 AI Screener</h4>
+          <p>Every value pick across all fixtures, ranked by AI score.</p>
+          <a href="/screener" class="btn btn-mint btn-block">Open screener</a>
+        </div>
+        {leagues.length > 0 && (
+          <div class="box">
+            <div class="box-h"><span class="hi">🏆</span> Competitions</div>
+            {leagues.map((lg) => (
+              <a class="tm" href={new Set((predictions.tips ?? []).map((t) => slugify(t.league))).has(slugify(lg)) ? `/league/${slugify(lg)}` : '/predictions'}>
+                <span class="dot"></span>{lg}
+              </a>
+            ))}
+            <a class="tm" href="/teams"><span class="dot"></span>All teams A–Z</a>
+          </div>
+        )}
+      </aside>
+    </div>
+  </div>
+</Base>

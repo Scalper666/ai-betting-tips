@@ -1,0 +1,62 @@
+---
+import Base from '../../layouts/Base.astro';
+import predictions from '../../data/predictions.json';
+import historyData from '../../data/history.json';
+import { abbr, badgeColor, slugify } from '../../lib/utils.js';
+
+// A–Z hub of every team we have ever tipped on — crawl path into the team pages.
+const teams = new Map();   // slug -> { name, leagues:Set, n }
+const touch = (name, league) => {
+  if (!name) return;
+  const slug = slugify(name);
+  if (!teams.has(slug)) teams.set(slug, { name, leagues: new Set(), n: 0 });
+  const t = teams.get(slug);
+  t.n += 1;
+  if (league) t.leagues.add(league);
+};
+for (const h of Object.values(historyData.tips ?? {})) {
+  if (h.score === 'simulated' || String(h.event_id ?? '').startsWith('mock')) continue;
+  touch(h.home, h.league); touch(h.away, h.league);
+}
+for (const t of predictions.tips ?? []) {
+  touch(t.home, t.league); touch(t.away, t.league);
+}
+
+// group by league for a scannable directory
+const byLeague = {};
+for (const [slug, t] of teams) {
+  const lg = [...t.leagues][0] ?? 'Other';
+  (byLeague[lg] ??= []).push({ slug, ...t });
+}
+for (const lg in byLeague) byLeague[lg].sort((a, b) => a.name.localeCompare(b.name));
+const leagueNames = Object.keys(byLeague).sort();
+
+const title = 'All Teams A–Z — Betting Tips & Records by Club';
+const description = `Betting tips and a fully settled record for every club we cover — ${teams.size} teams across ${leagueNames.length} competitions.`;
+---
+<Base title={title} description={description} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span>Teams</div>
+      <h1>Teams <em>A–Z</em></h1>
+      <p class="lead">{teams.size} clubs across {leagueNames.length} competitions — every team links to its tips page with our full, openly settled record.</p>
+    </div>
+  </div>
+
+  <div class="container" style="padding-bottom:60px">
+    {leagueNames.map((lg) => (
+      <section style="margin-top:26px">
+        <div class="sec-head"><h2 class="sec-title">{lg} <b>({byLeague[lg].length})</b></h2></div>
+        <div class="team-grid">
+          {byLeague[lg].map((t) => (
+            <a class="team-card" href={`/team/${t.slug}`}>
+              <span class="badge" style={`background:${badgeColor(t.name)}`}>{abbr(t.name)}</span>
+              <span class="tc-name">{t.name}</span>
+              <span class="tc-n">{t.n} tip{t.n === 1 ? '' : 's'}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</Base>

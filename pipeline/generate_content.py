@@ -115,6 +115,10 @@ SCHEMAS = {
         "intro": S_TEXT,
         "faq": S_FAQ,
     }, ["intro", "faq"]),
+    "team": _obj({                            # evergreen intro + FAQ for team hub pages
+        "intro": S_TEXT,
+        "faq": S_FAQ,
+    }, ["intro", "faq"]),
 }
 
 FAQ_RULES = """
@@ -254,6 +258,25 @@ Sections:
 {FAQ_RULES}"""
 
 
+TEAM_MIN_APPEARANCES = 3   # AI text once a team has this many archived/current fixtures
+
+def p_team(name: str, leagues: list[str], n_tips: int, settled: int, won: int, profit: float, markets: list[str]) -> str:
+    return f"""Write evergreen copy for our "{name} betting tips" team page.
+
+Data (our own archive only):
+- Team: {name}, seen in: {', '.join(leagues)}
+- Our archived record on {name} fixtures so far: {n_tips} tips published, {settled} settled ({won} won), cumulative profit {profit:+.2f} units at flat stakes
+- Markets we have tipped on their fixtures: {', '.join(markets) or 'match result, totals'}
+
+Sections:
+- intro: 100-140 words on following {name} through our value lens: how the page works (every {name}
+  fixture we cover gets a data-driven tip, archived before kick-off and settled against the final
+  score), and how to read our tips on their matches (implied probability, value edges). STRICTLY no
+  invented club facts: no history, players, managers, stadiums, form or fan culture — you only know
+  the betting data above. Do not cite the exact record numbers (they change daily).
+{FAQ_RULES}"""
+
+
 # ---------------------------------------------------------------- worklist
 def load_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
@@ -304,6 +327,42 @@ def build_worklist() -> list[dict]:
     for c in (load_json(ASTRO / "src" / "data" / "countries.json").get("countries") or []):
         work.append({"key": f"country:{c['slug']}", "kind": "country", "prompt": p_country(c),
                      "hash_src": json.dumps({k: c.get(k) for k in ("name", "regulator", "currency")}, sort_keys=True) + "|v2"})
+
+    # team hub pages — AI text once a team is seen often enough
+    hist = load_json(ROOT / "data" / "history.json").get("tips", {})
+    team_agg: dict[str, dict] = {}
+    def _feed(name, league, market, status, profit):
+        if not name:
+            return
+        a = team_agg.setdefault(name, {"n": 0, "settled": 0, "won": 0, "profit": 0.0,
+                                       "leagues": set(), "markets": set()})
+        a["n"] += 1
+        a["leagues"].add(league or "")
+        if market:
+            a["markets"].add("totals" if ("Over" in market or "Under" in market) else "match result")
+        if status in ("won", "lost", "void"):
+            a["settled"] += 1
+            a["profit"] += float(profit or 0)
+            if status == "won":
+                a["won"] += 1
+    for v in hist.values():
+        if v.get("score") == "simulated" or str(v.get("event_id", "")).startswith("mock"):
+            continue
+        for side in ("home", "away"):
+            _feed(v.get(side), v.get("league"), v.get("market"), v.get("status"), v.get("profit"))
+    for t in tips:
+        for side in ("home", "away"):
+            _feed(t.get(side), t.get("league"), (t.get("recommendation") or {}).get("text"), None, 0)
+    for name, a in team_agg.items():
+        if a["n"] < TEAM_MIN_APPEARANCES:
+            continue
+        work.append({
+            "key": f"team:{slugify(name)}",
+            "kind": "team",
+            "prompt": p_team(name, sorted(a["leagues"] - {""}), a["n"], a["settled"], a["won"],
+                             a["profit"], sorted(a["markets"])),
+            "hash_src": f"team|{name}|v1",   # written once; stats change daily but the copy is evergreen
+        })
 
     # thin index pages
     for key, what in PAGES:

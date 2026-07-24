@@ -133,15 +133,15 @@ const schema = {
             </div>
             <div class="pred-body">
               <div class="match">
-                <div class="team">
+                <a class="team" href={`/team/${slugify(home)}`}>
                   <div class="badge" style={`background:${badgeColor(home)}`}>{abbr(home)}</div>
                   <div class="nm">{home}</div>
-                </div>
+                </a>
                 <div class="vs">{resultScore ?? 'VS'}</div>
-                <div class="team">
+                <a class="team" href={`/team/${slugify(away)}`}>
                   <div class="badge" style={`background:${badgeColor(away)}`}>{abbr(away)}</div>
                   <div class="nm">{away}</div>
-                </div>
+                </a>
               </div>
               <div class="pred-tip">
                 <div><div class="lbl">Our tip</div><div class="val">{rec.text}</div></div>
