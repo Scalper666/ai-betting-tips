@@ -28,12 +28,6 @@ const topBk = bkList[0];
 const newsTips = [...football].sort((a, b) => (b.recommendation?.confidence ?? 0) - (a.recommendation?.confidence ?? 0));
 const featureTip = newsTips[0];
 const newsCards = newsTips.slice(1, 5);
-const NEWS_THUMBS = [
-  'linear-gradient(135deg,#1d2a4d,#0c1429)',
-  'linear-gradient(135deg,#2a4d1d,#14290c)',
-  'linear-gradient(135deg,#4d1d2a,#290c14)',
-  'linear-gradient(135deg,#3a2a1d,#22160c)',
-];
 
 // sidebar: league counts
 const leagueCounts = {};
@@ -430,7 +424,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
               <a href="/news" class="more-link">All news →</a>
             </div>
             <div class="feature-article" style="margin-bottom:16px">
-              <div class="fa-img" style="background:linear-gradient(135deg,#0b1f3a,#102a52)">
+              <div class="fa-img" style={`--ca:${badgeColor(featureTip.home)};--cb:${badgeColor(featureTip.away)}`}>
                 <div class="cover-vs">
                   <span class="cvb" style={`background:${badgeColor(featureTip.home)}`}>{abbr(featureTip.home)}</span>
                   <span class="cv-x">VS</span>
@@ -447,7 +441,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
             <div class="news-grid">
               {newsCards.map((t, i) => (
                 <div class="news-card">
-                  <div class="news-thumb" style={`background:${NEWS_THUMBS[i % NEWS_THUMBS.length]}`}>
+                  <div class="news-thumb" style={`--ca:${badgeColor(t.home)};--cb:${badgeColor(t.away)}`}>
                     <div class="cover-vs sm">
                       <span class="cvb" style={`background:${badgeColor(t.home)}`}>{abbr(t.home)}</span>
                       <span class="cv-x">v</span>
