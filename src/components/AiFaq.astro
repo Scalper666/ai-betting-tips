@@ -5,7 +5,7 @@ const { faqs = [], title = 'FAQ' } = Astro.props;
 ---
 {faqs.length > 0 && (
   <section>
-    <div class="sec-head"><h2 class="sec-title">{title.split(' ')[0]} <b>{title.split(' ').slice(1).join(' ') || 'FAQ'}</b></h2></div>
+    <div class="sec-head"><h2 class="sec-title">{title.split(' ')[0] + ' '}<b>{title.split(' ').slice(1).join(' ') || 'FAQ'}</b></h2></div>
     <div class="faq">
       {faqs.map((f, i) => (
         <div class={`faq-item${i === 0 ? ' open' : ''}`}>

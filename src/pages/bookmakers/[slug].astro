@@ -156,14 +156,14 @@ const schema = {
           <div class="odds-table"><div class="scr-scroll">
             <table class="otbl">
               <tbody>
-                <tr><td class="o-match" style="font-weight:700">Licences</td><td class="o-cell"><b>{bk.licences.join(', ')}</b></td></tr>
-                <tr><td class="o-match" style="font-weight:700">Payout speed</td><td class="o-cell hot"><b>{bk.payout_time}</b></td></tr>
-                <tr><td class="o-match" style="font-weight:700">Payments</td><td class="o-cell"><b>{bk.payments.join(', ')}</b></td></tr>
-                <tr><td class="o-match" style="font-weight:700">Mobile app</td><td class="o-cell"><b>
+                <tr><td class="o-match" style="font-weight:700">Licences</td><td class="o-cell"><span class="cb">{bk.licences.join(', ')}</span></td></tr>
+                <tr><td class="o-match" style="font-weight:700">Payout speed</td><td class="o-cell hot"><span class="cb">{bk.payout_time}</span></td></tr>
+                <tr><td class="o-match" style="font-weight:700">Payments</td><td class="o-cell"><span class="cb">{bk.payments.join(', ')}</span></td></tr>
+                <tr><td class="o-match" style="font-weight:700">Mobile app</td><td class="o-cell"><span class="cb">
                   {[bk.app.android && 'Android', bk.app.ios && 'iOS'].filter(Boolean).join(' · ') || 'Mobile web only'}
                   {bk.app.size_mb ? ` · ${bk.app.size_mb} MB` : ''}
-                </b></td></tr>
-                <tr><td class="o-match" style="font-weight:700">Live streaming</td><td class="o-cell"><b>{bk.app.streaming ? 'Yes' : 'No'}</b></td></tr>
+                </span></td></tr>
+                <tr><td class="o-match" style="font-weight:700">Live streaming</td><td class="o-cell"><span class="cb">{bk.app.streaming ? 'Yes' : 'No'}</span></td></tr>
               </tbody>
             </table>
           </div></div>
