@@ -1,16 +1,61 @@
 {
-  "updated_at": "2026-07-23T23:50:29.017587+00:00",
+  "updated_at": "2026-07-24T00:09:31.921695+00:00",
   "source": "the-odds-api.com",
-  "quota_remaining": "458",
+  "quota_remaining": "414",
   "stats": {
-    "total": 96,
+    "total": 60,
     "by_sport": {
-      "⚽": 96
+      "⚽": 60
     },
     "high_confidence": 0,
-    "avg_edge_pct": -2.01
+    "avg_edge_pct": -2.06
   },
   "tips": [
+    {
+      "id": "6df3308f8f7f763bfbf6954ec73b0e94",
+      "sport_key": "soccer_brazil_campeonato",
+      "sport_icon": "⚽",
+      "league": "Brasileirão",
+      "league_short": "BRA",
+      "kickoff": "2026-07-23T22:30:00Z",
+      "home": "Botafogo",
+      "away": "Vitoria",
+      "best_h2h": {
+        "Botafogo": {
+          "price": 3.2,
+          "bookmaker": "Matchbook"
+        },
+        "Vitoria": {
+          "price": 9.4,
+          "bookmaker": "Matchbook"
+        },
+        "Draw": {
+          "price": 1.93,
+          "bookmaker": "Pinnacle"
+        }
+      },
+      "recommendation": {
+        "text": "Draw (X)",
+        "price": 1.93,
+        "bookmaker": "Pinnacle",
+        "confidence": 57,
+        "edge_pct": 9.55,
+        "type": "h2h",
+        "outcome": "Draw"
+      },
+      "value_picks": [
+        {
+          "outcome": "Draw",
+          "best_price": 1.93,
+          "bookmaker": "Pinnacle",
+          "fair_prob": 0.5676,
+          "implied_prob": 0.5181,
+          "edge_pct": 9.55,
+          "kelly": 0.1027,
+          "confidence": 57
+        }
+      ]
+    },
     {
       "id": "3035a6e6fd13fdd62f5b8445e795b2bf",
       "sport_key": "soccer_brazil_campeonato",
@@ -30,54 +75,19 @@
           "bookmaker": "Betclic (FR)"
         },
         "Draw": {
-          "price": 45.0,
+          "price": 40.0,
           "bookmaker": "Betclic (FR)"
         }
       },
       "recommendation": {
-        "text": "Under 4.5 goals",
-        "price": 1.5,
-        "bookmaker": "Tipico",
-        "confidence": 65,
-        "edge_pct": -2.33,
+        "text": "Under 3.5 goals",
+        "price": 1.78,
+        "bookmaker": "Matchbook",
+        "confidence": 56,
+        "edge_pct": -0.43,
         "type": "totals",
         "side": "Under",
-        "point": 4.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "6df3308f8f7f763bfbf6954ec73b0e94",
-      "sport_key": "soccer_brazil_campeonato",
-      "sport_icon": "⚽",
-      "league": "Brasileirão",
-      "league_short": "BRA",
-      "kickoff": "2026-07-23T22:30:00Z",
-      "home": "Botafogo",
-      "away": "Vitoria",
-      "best_h2h": {
-        "Botafogo": {
-          "price": 2.2,
-          "bookmaker": "Coolbet"
-        },
-        "Vitoria": {
-          "price": 7.2,
-          "bookmaker": "Matchbook"
-        },
-        "Draw": {
-          "price": 2.54,
-          "bookmaker": "Betfair"
-        }
-      },
-      "recommendation": {
-        "text": "Over 1.0 goals",
-        "price": 1.71,
-        "bookmaker": "Coolbet",
-        "confidence": 55,
-        "edge_pct": -6.56,
-        "type": "totals",
-        "side": "Over",
-        "point": 1.0
+        "point": 3.5
       },
       "value_picks": []
     },
@@ -197,15 +207,15 @@
       "away": "FC Cincinnati",
       "best_h2h": {
         "Columbus Crew SC": {
-          "price": 1.79,
-          "bookmaker": "1xBet"
+          "price": 1.81,
+          "bookmaker": "Matchbook"
         },
         "FC Cincinnati": {
           "price": 4.21,
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 4.6,
+          "price": 4.5,
           "bookmaker": "Betfair"
         }
       },
@@ -222,34 +232,34 @@
       "value_picks": []
     },
     {
-      "id": "adcaf9aca5c21e35cc10e87edaa670c6",
+      "id": "b7738cc4de1ac068864d1c3091aac8a6",
       "sport_key": "soccer_usa_mls",
       "sport_icon": "⚽",
       "league": "MLS",
       "league_short": "MLS",
       "kickoff": "2026-07-25T23:30:00Z",
-      "home": "New York City FC",
-      "away": "Chicago Fire",
+      "home": "CF Montreal",
+      "away": "Inter Miami CF",
       "best_h2h": {
-        "Chicago Fire": {
-          "price": 2.92,
+        "CF Montreal": {
+          "price": 3.1,
+          "bookmaker": "LeoVegas (SE)"
+        },
+        "Inter Miami CF": {
+          "price": 2.22,
           "bookmaker": "Betfair"
         },
-        "New York City FC": {
-          "price": 2.41,
-          "bookmaker": "GTbets"
-        },
         "Draw": {
-          "price": 3.75,
-          "bookmaker": "Coolbet"
+          "price": 4.3,
+          "bookmaker": "Betfair"
         }
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.69,
-        "bookmaker": "1xBet",
-        "confidence": 57,
-        "edge_pct": -2.94,
+        "price": 1.41,
+        "bookmaker": "Betsson",
+        "confidence": 67,
+        "edge_pct": -5.34,
         "type": "totals",
         "side": "Over",
         "point": 2.5
@@ -275,16 +285,51 @@
           "bookmaker": "LeoVegas (SE)"
         },
         "Draw": {
-          "price": 3.85,
-          "bookmaker": "Betfair"
+          "price": 3.9,
+          "bookmaker": "Matchbook"
         }
       },
       "recommendation": {
         "text": "Over 2.5 goals",
         "price": 1.71,
         "bookmaker": "Unibet (NL)",
+        "confidence": 58,
+        "edge_pct": -1.56,
+        "type": "totals",
+        "side": "Over",
+        "point": 2.5
+      },
+      "value_picks": []
+    },
+    {
+      "id": "adcaf9aca5c21e35cc10e87edaa670c6",
+      "sport_key": "soccer_usa_mls",
+      "sport_icon": "⚽",
+      "league": "MLS",
+      "league_short": "MLS",
+      "kickoff": "2026-07-25T23:30:00Z",
+      "home": "New York City FC",
+      "away": "Chicago Fire",
+      "best_h2h": {
+        "Chicago Fire": {
+          "price": 2.92,
+          "bookmaker": "Betfair"
+        },
+        "New York City FC": {
+          "price": 2.41,
+          "bookmaker": "GTbets"
+        },
+        "Draw": {
+          "price": 3.8,
+          "bookmaker": "Matchbook"
+        }
+      },
+      "recommendation": {
+        "text": "Over 2.5 goals",
+        "price": 1.69,
+        "bookmaker": "1xBet",
         "confidence": 57,
-        "edge_pct": -1.92,
+        "edge_pct": -2.94,
         "type": "totals",
         "side": "Over",
         "point": 2.5
@@ -345,8 +390,8 @@
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 3.8,
-          "bookmaker": "LeoVegas (SE)"
+          "price": 3.85,
+          "bookmaker": "Matchbook"
         }
       },
       "recommendation": {
@@ -421,60 +466,15 @@
       },
       "recommendation": {
         "text": "Under 2.5 goals",
-        "price": 2.38,
-        "bookmaker": "1xBet",
+        "price": 2.4,
+        "bookmaker": "Matchbook",
         "confidence": 41,
-        "edge_pct": -2.91,
+        "edge_pct": -2.57,
         "type": "totals",
         "side": "Under",
         "point": 2.5
       },
       "value_picks": []
-    },
-    {
-      "id": "b7738cc4de1ac068864d1c3091aac8a6",
-      "sport_key": "soccer_usa_mls",
-      "sport_icon": "⚽",
-      "league": "MLS",
-      "league_short": "MLS",
-      "kickoff": "2026-07-25T23:30:00Z",
-      "home": "CF Montreal",
-      "away": "Inter Miami CF",
-      "best_h2h": {
-        "CF Montreal": {
-          "price": 3.1,
-          "bookmaker": "LeoVegas (SE)"
-        },
-        "Inter Miami CF": {
-          "price": 2.22,
-          "bookmaker": "Betfair"
-        },
-        "Draw": {
-          "price": 4.3,
-          "bookmaker": "Betfair"
-        }
-      },
-      "recommendation": {
-        "text": "Draw (X)",
-        "price": 4.3,
-        "bookmaker": "Betfair",
-        "confidence": 24,
-        "edge_pct": 3.08,
-        "type": "h2h",
-        "outcome": "Draw"
-      },
-      "value_picks": [
-        {
-          "outcome": "Draw",
-          "best_price": 4.3,
-          "bookmaker": "Betfair",
-          "fair_prob": 0.2397,
-          "implied_prob": 0.2326,
-          "edge_pct": 3.08,
-          "kelly": 0.0093,
-          "confidence": 24
-        }
-      ]
     },
     {
       "id": "5758151189675892207fb9eda1f5eea0",
@@ -741,7 +741,7 @@
         },
         "Draw": {
           "price": 3.8,
-          "bookmaker": "Pinnacle"
+          "bookmaker": "Betfair"
         }
       },
       "recommendation": {
@@ -806,8 +806,8 @@
           "bookmaker": "Nordic Bet"
         },
         "Sao Paulo": {
-          "price": 7.6,
-          "bookmaker": "Betfair"
+          "price": 8.0,
+          "bookmaker": "Matchbook"
         },
         "Draw": {
           "price": 4.4,
@@ -854,7 +854,7 @@
         "price": 3.5,
         "bookmaker": "Coolbet",
         "confidence": 30,
-        "edge_pct": 3.58,
+        "edge_pct": 3.57,
         "type": "h2h",
         "outcome": "Draw"
       },
@@ -865,7 +865,7 @@
           "bookmaker": "Coolbet",
           "fair_prob": 0.2959,
           "implied_prob": 0.2857,
-          "edge_pct": 3.58,
+          "edge_pct": 3.57,
           "kelly": 0.0143,
           "confidence": 30
         }
@@ -898,8 +898,8 @@
         "text": "Coritiba to win",
         "price": 5.75,
         "bookmaker": "Coolbet",
-        "confidence": 19,
-        "edge_pct": 12.0,
+        "confidence": 20,
+        "edge_pct": 12.45,
         "type": "h2h",
         "outcome": "Coritiba"
       },
@@ -908,11 +908,11 @@
           "outcome": "Coritiba",
           "best_price": 5.75,
           "bookmaker": "Coolbet",
-          "fair_prob": 0.1948,
+          "fair_prob": 0.1956,
           "implied_prob": 0.1739,
-          "edge_pct": 12.0,
-          "kelly": 0.0253,
-          "confidence": 19
+          "edge_pct": 12.45,
+          "kelly": 0.0262,
+          "confidence": 20
         }
       ]
     },
@@ -940,26 +940,16 @@
         }
       },
       "recommendation": {
-        "text": "Vitoria to win",
-        "price": 3.55,
-        "bookmaker": "Unibet (SE)",
-        "confidence": 29,
-        "edge_pct": 4.37,
-        "type": "h2h",
-        "outcome": "Vitoria"
+        "text": "Over 2.5 goals",
+        "price": 2.05,
+        "bookmaker": "GTbets",
+        "confidence": 47,
+        "edge_pct": -3.31,
+        "type": "totals",
+        "side": "Over",
+        "point": 2.5
       },
-      "value_picks": [
-        {
-          "outcome": "Vitoria",
-          "best_price": 3.55,
-          "bookmaker": "Unibet (SE)",
-          "fair_prob": 0.294,
-          "implied_prob": 0.2817,
-          "edge_pct": 4.37,
-          "kelly": 0.0171,
-          "confidence": 29
-        }
-      ]
+      "value_picks": []
     },
     {
       "id": "51474caaaca9d0664acc4c445caf0c64",
@@ -1717,51 +1707,6 @@
       ]
     },
     {
-      "id": "600aeb3560814afc9a02bec5126b249d",
-      "sport_key": "soccer_france_ligue_one",
-      "sport_icon": "⚽",
-      "league": "Ligue 1",
-      "league_short": "L1",
-      "kickoff": "2026-08-21T18:45:00Z",
-      "home": "Marseille",
-      "away": "Strasbourg",
-      "best_h2h": {
-        "Marseille": {
-          "price": 1.7,
-          "bookmaker": "1xBet"
-        },
-        "Strasbourg": {
-          "price": 5.0,
-          "bookmaker": "Coolbet"
-        },
-        "Draw": {
-          "price": 4.62,
-          "bookmaker": "1xBet"
-        }
-      },
-      "recommendation": {
-        "text": "Strasbourg to win",
-        "price": 5.0,
-        "bookmaker": "Coolbet",
-        "confidence": 21,
-        "edge_pct": 3.22,
-        "type": "h2h",
-        "outcome": "Strasbourg"
-      },
-      "value_picks": [
-        {
-          "outcome": "Strasbourg",
-          "best_price": 5.0,
-          "bookmaker": "Coolbet",
-          "fair_prob": 0.2064,
-          "implied_prob": 0.2,
-          "edge_pct": 3.22,
-          "kelly": 0.008,
-          "confidence": 21
-        }
-      ]
-    },
-    {
       "id": "eb2553d10d63dc912b99f8fd0d675721",
       "sport_key": "soccer_epl",
       "sport_icon": "⚽",
@@ -1828,216 +1773,6 @@
         "type": "totals",
         "side": "Over",
         "point": 2.75
-      },
-      "value_picks": []
-    },
-    {
-      "id": "4fe9bc44316cce0f1842180bd7fd42de",
-      "sport_key": "soccer_italy_serie_a",
-      "sport_icon": "⚽",
-      "league": "Serie A",
-      "league_short": "SA",
-      "kickoff": "2026-08-22T13:00:00Z",
-      "home": "Bologna",
-      "away": "Lazio",
-      "best_h2h": {
-        "Bologna": {
-          "price": 2.05,
-          "bookmaker": "LeoVegas (SE)"
-        },
-        "Lazio": {
-          "price": 3.6,
-          "bookmaker": "LeoVegas (SE)"
-        },
-        "Draw": {
-          "price": 3.25,
-          "bookmaker": "LeoVegas (SE)"
-        }
-      },
-      "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 1.66,
-        "bookmaker": "Unibet (SE)",
-        "confidence": 56,
-        "edge_pct": -7.29,
-        "type": "totals",
-        "side": "Under",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "d551f2c1f25f8717dc938e74bcbcb128",
-      "sport_key": "soccer_italy_serie_a",
-      "sport_icon": "⚽",
-      "league": "Serie A",
-      "league_short": "SA",
-      "kickoff": "2026-08-22T13:00:00Z",
-      "home": "Frosinone",
-      "away": "Juventus",
-      "best_h2h": {
-        "Frosinone": {
-          "price": 6.5,
-          "bookmaker": "LeoVegas (SE)"
-        },
-        "Juventus": {
-          "price": 1.45,
-          "bookmaker": "LeoVegas (SE)"
-        },
-        "Draw": {
-          "price": 4.33,
-          "bookmaker": "Everygame"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.78,
-        "bookmaker": "Unibet (SE)",
-        "confidence": 52,
-        "edge_pct": -7.17,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "e37906b7522f30dbf519e60e767de811",
-      "sport_key": "soccer_italy_serie_a",
-      "sport_icon": "⚽",
-      "league": "Serie A",
-      "league_short": "SA",
-      "kickoff": "2026-08-22T13:00:00Z",
-      "home": "Torino",
-      "away": "AC Milan",
-      "best_h2h": {
-        "AC Milan": {
-          "price": 1.76,
-          "bookmaker": "LeoVegas (SE)"
-        },
-        "Torino": {
-          "price": 4.3,
-          "bookmaker": "LeoVegas (SE)"
-        },
-        "Draw": {
-          "price": 3.65,
-          "bookmaker": "LeoVegas (SE)"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.85,
-        "bookmaker": "Unibet (SE)",
-        "confidence": 50,
-        "edge_pct": -7.5,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "e4e88aada4f206a2cc82334dc6ffaee4",
-      "sport_key": "soccer_italy_serie_a",
-      "sport_icon": "⚽",
-      "league": "Serie A",
-      "league_short": "SA",
-      "kickoff": "2026-08-22T13:00:00Z",
-      "home": "AS Roma",
-      "away": "Fiorentina",
-      "best_h2h": {
-        "AS Roma": {
-          "price": 1.49,
-          "bookmaker": "LeoVegas (SE)"
-        },
-        "Fiorentina": {
-          "price": 6.4,
-          "bookmaker": "LeoVegas (SE)"
-        },
-        "Draw": {
-          "price": 4.1,
-          "bookmaker": "LeoVegas (SE)"
-        }
-      },
-      "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 1.88,
-        "bookmaker": "Unibet (SE)",
-        "confidence": 49,
-        "edge_pct": -7.27,
-        "type": "totals",
-        "side": "Under",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "0a0f6982816e75d54caf976d288f6d15",
-      "sport_key": "soccer_italy_serie_a",
-      "sport_icon": "⚽",
-      "league": "Serie A",
-      "league_short": "SA",
-      "kickoff": "2026-08-22T13:00:00Z",
-      "home": "Atalanta BC",
-      "away": "Sassuolo",
-      "best_h2h": {
-        "Atalanta BC": {
-          "price": 1.51,
-          "bookmaker": "LeoVegas (SE)"
-        },
-        "Sassuolo": {
-          "price": 5.6,
-          "bookmaker": "LeoVegas (SE)"
-        },
-        "Draw": {
-          "price": 4.25,
-          "bookmaker": "LeoVegas (SE)"
-        }
-      },
-      "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 2.12,
-        "bookmaker": "Unibet (SE)",
-        "confidence": 44,
-        "edge_pct": -7.21,
-        "type": "totals",
-        "side": "Under",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "8e0fd55f15fc0f40767b91218afee9a7",
-      "sport_key": "soccer_italy_serie_a",
-      "sport_icon": "⚽",
-      "league": "Serie A",
-      "league_short": "SA",
-      "kickoff": "2026-08-22T13:00:00Z",
-      "home": "Venezia",
-      "away": "Lecce",
-      "best_h2h": {
-        "Lecce": {
-          "price": 3.15,
-          "bookmaker": "LeoVegas (SE)"
-        },
-        "Venezia": {
-          "price": 2.3,
-          "bookmaker": "LeoVegas (SE)"
-        },
-        "Draw": {
-          "price": 3.15,
-          "bookmaker": "LeoVegas (SE)"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 2.16,
-        "bookmaker": "Unibet (SE)",
-        "confidence": 43,
-        "edge_pct": -7.1,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5
       },
       "value_picks": []
     },
@@ -2122,11 +1857,11 @@
       "away": "Crystal Palace",
       "best_h2h": {
         "Crystal Palace": {
-          "price": 3.56,
+          "price": 3.54,
           "bookmaker": "1xBet"
         },
         "Everton": {
-          "price": 2.21,
+          "price": 2.23,
           "bookmaker": "1xBet"
         },
         "Draw": {
@@ -2142,41 +1877,6 @@
         "edge_pct": -0.27,
         "type": "totals",
         "side": "Under",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "1835d30f4ac2e1f3462f0654e0ea984a",
-      "sport_key": "soccer_france_ligue_one",
-      "sport_icon": "⚽",
-      "league": "Ligue 1",
-      "league_short": "L1",
-      "kickoff": "2026-08-22T15:15:00Z",
-      "home": "RC Lens",
-      "away": "Auxerre",
-      "best_h2h": {
-        "Auxerre": {
-          "price": 5.33,
-          "bookmaker": "1xBet"
-        },
-        "RC Lens": {
-          "price": 1.66,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 4.46,
-          "bookmaker": "1xBet"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.7,
-        "bookmaker": "1xBet",
-        "confidence": 58,
-        "edge_pct": -1.53,
-        "type": "totals",
-        "side": "Over",
         "point": 2.5
       },
       "value_picks": []
@@ -2215,296 +1915,6 @@
         "point": 3.0
       },
       "value_picks": []
-    },
-    {
-      "id": "ed57c6f67558fabe25c4634ca959ee01",
-      "sport_key": "soccer_italy_serie_a",
-      "sport_icon": "⚽",
-      "league": "Serie A",
-      "league_short": "SA",
-      "kickoff": "2026-08-22T16:30:00Z",
-      "home": "Udinese",
-      "away": "Como",
-      "best_h2h": {
-        "Como": {
-          "price": 1.89,
-          "bookmaker": "Betfair"
-        },
-        "Udinese": {
-          "price": 4.7,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 3.69,
-          "bookmaker": "1xBet"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 2.25,
-        "bookmaker": "1xBet",
-        "confidence": 44,
-        "edge_pct": -1.56,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "ef8a47c3c8c0f71a251e2efcbf84854a",
-      "sport_key": "soccer_italy_serie_a",
-      "sport_icon": "⚽",
-      "league": "Serie A",
-      "league_short": "SA",
-      "kickoff": "2026-08-22T16:30:00Z",
-      "home": "Inter Milan",
-      "away": "Monza",
-      "best_h2h": {
-        "Inter Milan": {
-          "price": 1.26,
-          "bookmaker": "1xBet"
-        },
-        "Monza": {
-          "price": 16.0,
-          "bookmaker": "Betfair"
-        },
-        "Draw": {
-          "price": 7.0,
-          "bookmaker": "Tipico"
-        }
-      },
-      "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 2.33,
-        "bookmaker": "1xBet",
-        "confidence": 42,
-        "edge_pct": -1.38,
-        "type": "totals",
-        "side": "Under",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "0fe221a0fc71ab3ecfbecf8f1a224b89",
-      "sport_key": "soccer_france_ligue_one",
-      "sport_icon": "⚽",
-      "league": "Ligue 1",
-      "league_short": "L1",
-      "kickoff": "2026-08-22T18:45:00Z",
-      "home": "Le Mans FC",
-      "away": "Brest",
-      "best_h2h": {
-        "Brest": {
-          "price": 2.81,
-          "bookmaker": "1xBet"
-        },
-        "Le Mans FC": {
-          "price": 2.55,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 3.75,
-          "bookmaker": "Coolbet"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.84,
-        "bookmaker": "1xBet",
-        "confidence": 54,
-        "edge_pct": -1.49,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "dd38b144d1f20e8eee148914f68f482c",
-      "sport_key": "soccer_france_ligue_one",
-      "sport_icon": "⚽",
-      "league": "Ligue 1",
-      "league_short": "L1",
-      "kickoff": "2026-08-22T18:45:00Z",
-      "home": "Nice",
-      "away": "Lorient",
-      "best_h2h": {
-        "Lorient": {
-          "price": 3.45,
-          "bookmaker": "Betfair"
-        },
-        "Nice": {
-          "price": 2.25,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 3.78,
-          "bookmaker": "1xBet"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.84,
-        "bookmaker": "1xBet",
-        "confidence": 54,
-        "edge_pct": -1.49,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "e2b33e2f28135088d12b464684414353",
-      "sport_key": "soccer_france_ligue_one",
-      "sport_icon": "⚽",
-      "league": "Ligue 1",
-      "league_short": "L1",
-      "kickoff": "2026-08-22T18:45:00Z",
-      "home": "Toulouse",
-      "away": "Lyon",
-      "best_h2h": {
-        "Lyon": {
-          "price": 2.09,
-          "bookmaker": "1xBet"
-        },
-        "Toulouse": {
-          "price": 3.58,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 3.88,
-          "bookmaker": "1xBet"
-        }
-      },
-      "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 2.19,
-        "bookmaker": "1xBet",
-        "confidence": 45,
-        "edge_pct": -1.51,
-        "type": "totals",
-        "side": "Under",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "c123d013c16bf22279a1fdf1248c4afb",
-      "sport_key": "soccer_italy_serie_a",
-      "sport_icon": "⚽",
-      "league": "Serie A",
-      "league_short": "SA",
-      "kickoff": "2026-08-22T18:45:00Z",
-      "home": "Genoa",
-      "away": "Napoli",
-      "best_h2h": {
-        "Genoa": {
-          "price": 5.2,
-          "bookmaker": "LeoVegas (SE)"
-        },
-        "Napoli": {
-          "price": 1.91,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 3.5,
-          "bookmaker": "LeoVegas (SE)"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 2.35,
-        "bookmaker": "1xBet",
-        "confidence": 42,
-        "edge_pct": -1.36,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "7d4101254957e46d6037bd1d8f268a0e",
-      "sport_key": "soccer_italy_serie_a",
-      "sport_icon": "⚽",
-      "league": "Serie A",
-      "league_short": "SA",
-      "kickoff": "2026-08-22T18:45:00Z",
-      "home": "Parma",
-      "away": "Cagliari",
-      "best_h2h": {
-        "Cagliari": {
-          "price": 2.98,
-          "bookmaker": "1xBet"
-        },
-        "Parma": {
-          "price": 2.73,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 3.25,
-          "bookmaker": "Betsson"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 2.43,
-        "bookmaker": "1xBet",
-        "confidence": 41,
-        "edge_pct": -1.37,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "78431f1842f3312e28537492ec14f081",
-      "sport_key": "soccer_france_ligue_one",
-      "sport_icon": "⚽",
-      "league": "Ligue 1",
-      "league_short": "L1",
-      "kickoff": "2026-08-22T18:45:00Z",
-      "home": "Troyes",
-      "away": "Paris FC",
-      "best_h2h": {
-        "Paris FC": {
-          "price": 2.55,
-          "bookmaker": "Codere (IT)"
-        },
-        "Troyes": {
-          "price": 2.8,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 3.78,
-          "bookmaker": "1xBet"
-        }
-      },
-      "recommendation": {
-        "text": "Draw (X)",
-        "price": 3.78,
-        "bookmaker": "1xBet",
-        "confidence": 27,
-        "edge_pct": 3.41,
-        "type": "h2h",
-        "outcome": "Draw"
-      },
-      "value_picks": [
-        {
-          "outcome": "Draw",
-          "best_price": 3.78,
-          "bookmaker": "1xBet",
-          "fair_prob": 0.2736,
-          "implied_prob": 0.2646,
-          "edge_pct": 3.41,
-          "kelly": 0.0123,
-          "confidence": 27
-        }
-      ]
     },
     {
       "id": "f5086c74d4a767e3ad7ea69bd4a66b76",
@@ -2587,96 +1997,6 @@
       ]
     },
     {
-      "id": "48df026b72fffa82898ff0cfcb02878d",
-      "sport_key": "soccer_france_ligue_one",
-      "sport_icon": "⚽",
-      "league": "Ligue 1",
-      "league_short": "L1",
-      "kickoff": "2026-08-23T13:00:00Z",
-      "home": "Angers",
-      "away": "Lille",
-      "best_h2h": {
-        "Angers": {
-          "price": 5.4,
-          "bookmaker": "Betfair"
-        },
-        "Lille": {
-          "price": 1.72,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 4.04,
-          "bookmaker": "1xBet"
-        }
-      },
-      "recommendation": {
-        "text": "Angers to win",
-        "price": 5.4,
-        "bookmaker": "Betfair",
-        "confidence": 19,
-        "edge_pct": 3.01,
-        "type": "h2h",
-        "outcome": "Angers"
-      },
-      "value_picks": [
-        {
-          "outcome": "Angers",
-          "best_price": 5.4,
-          "bookmaker": "Betfair",
-          "fair_prob": 0.1908,
-          "implied_prob": 0.1852,
-          "edge_pct": 3.01,
-          "kelly": 0.0068,
-          "confidence": 19
-        }
-      ]
-    },
-    {
-      "id": "38b23d1127eb086d775f97b935bbf992",
-      "sport_key": "soccer_france_ligue_one",
-      "sport_icon": "⚽",
-      "league": "Ligue 1",
-      "league_short": "L1",
-      "kickoff": "2026-08-23T15:15:00Z",
-      "home": "Le Havre",
-      "away": "AS Monaco",
-      "best_h2h": {
-        "AS Monaco": {
-          "price": 2.06,
-          "bookmaker": "Betfair"
-        },
-        "Le Havre": {
-          "price": 3.64,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 4.01,
-          "bookmaker": "1xBet"
-        }
-      },
-      "recommendation": {
-        "text": "Le Havre to win",
-        "price": 3.64,
-        "bookmaker": "1xBet",
-        "confidence": 30,
-        "edge_pct": 8.93,
-        "type": "h2h",
-        "outcome": "Le Havre"
-      },
-      "value_picks": [
-        {
-          "outcome": "Le Havre",
-          "best_price": 3.64,
-          "bookmaker": "1xBet",
-          "fair_prob": 0.2993,
-          "implied_prob": 0.2747,
-          "edge_pct": 8.93,
-          "kelly": 0.0338,
-          "confidence": 30
-        }
-      ]
-    },
-    {
       "id": "ea0bacc4c23f813c6af97ec9b306a850",
       "sport_key": "soccer_epl",
       "sport_icon": "⚽",
@@ -2708,261 +2028,6 @@
         "type": "totals",
         "side": "Over",
         "point": 3.25
-      },
-      "value_picks": []
-    },
-    {
-      "id": "be3b0694068c114eda8d252c66210b11",
-      "sport_key": "soccer_italy_serie_a",
-      "sport_icon": "⚽",
-      "league": "Serie A",
-      "league_short": "SA",
-      "kickoff": "2026-08-23T16:30:00Z",
-      "home": "Frosinone",
-      "away": "Juventus",
-      "best_h2h": {
-        "Frosinone": {
-          "price": 8.2,
-          "bookmaker": "Betfair"
-        },
-        "Juventus": {
-          "price": 1.52,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 4.55,
-          "bookmaker": "1xBet"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.89,
-        "bookmaker": "1xBet",
-        "confidence": 52,
-        "edge_pct": -1.43,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "120c61563f0b7119d87522da76fcaa33",
-      "sport_key": "soccer_italy_serie_a",
-      "sport_icon": "⚽",
-      "league": "Serie A",
-      "league_short": "SA",
-      "kickoff": "2026-08-23T16:30:00Z",
-      "home": "Venezia",
-      "away": "Lecce",
-      "best_h2h": {
-        "Lecce": {
-          "price": 3.31,
-          "bookmaker": "1xBet"
-        },
-        "Venezia": {
-          "price": 2.42,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 3.33,
-          "bookmaker": "1xBet"
-        }
-      },
-      "recommendation": {
-        "text": "Under 2.25 goals",
-        "price": 1.88,
-        "bookmaker": "Pinnacle",
-        "confidence": 51,
-        "edge_pct": -3.8,
-        "type": "totals",
-        "side": "Under",
-        "point": 2.25
-      },
-      "value_picks": []
-    },
-    {
-      "id": "d44b7b56dadba2e7606cdceec655e62f",
-      "sport_key": "soccer_italy_serie_a",
-      "sport_icon": "⚽",
-      "league": "Serie A",
-      "league_short": "SA",
-      "kickoff": "2026-08-23T18:45:00Z",
-      "home": "Atalanta BC",
-      "away": "Sassuolo",
-      "best_h2h": {
-        "Atalanta BC": {
-          "price": 1.59,
-          "bookmaker": "1xBet"
-        },
-        "Sassuolo": {
-          "price": 6.2,
-          "bookmaker": "Betfair"
-        },
-        "Draw": {
-          "price": 4.5,
-          "bookmaker": "Tipico"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.75 goals",
-        "price": 1.89,
-        "bookmaker": "BetOnline.ag",
-        "confidence": 51,
-        "edge_pct": -4.02,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.75
-      },
-      "value_picks": []
-    },
-    {
-      "id": "fbea45a1e53e07faac0027ac5d233587",
-      "sport_key": "soccer_italy_serie_a",
-      "sport_icon": "⚽",
-      "league": "Serie A",
-      "league_short": "SA",
-      "kickoff": "2026-08-23T18:45:00Z",
-      "home": "Torino",
-      "away": "AC Milan",
-      "best_h2h": {
-        "AC Milan": {
-          "price": 1.85,
-          "bookmaker": "1xBet"
-        },
-        "Torino": {
-          "price": 4.61,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 3.87,
-          "bookmaker": "1xBet"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.97,
-        "bookmaker": "1xBet",
-        "confidence": 50,
-        "edge_pct": -1.5,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "0a88bfab377a4bbddf8aec2983bf4c15",
-      "sport_key": "soccer_france_ligue_one",
-      "sport_icon": "⚽",
-      "league": "Ligue 1",
-      "league_short": "L1",
-      "kickoff": "2026-08-23T18:45:00Z",
-      "home": "Paris Saint Germain",
-      "away": "Rennes",
-      "best_h2h": {
-        "Paris Saint Germain": {
-          "price": 1.47,
-          "bookmaker": "1xBet"
-        },
-        "Rennes": {
-          "price": 7.0,
-          "bookmaker": "Coolbet"
-        },
-        "Draw": {
-          "price": 5.69,
-          "bookmaker": "1xBet"
-        }
-      },
-      "recommendation": {
-        "text": "Draw (X)",
-        "price": 5.69,
-        "bookmaker": "1xBet",
-        "confidence": 19,
-        "edge_pct": 5.86,
-        "type": "h2h",
-        "outcome": "Draw"
-      },
-      "value_picks": [
-        {
-          "outcome": "Draw",
-          "best_price": 5.69,
-          "bookmaker": "1xBet",
-          "fair_prob": 0.1861,
-          "implied_prob": 0.1757,
-          "edge_pct": 5.86,
-          "kelly": 0.0125,
-          "confidence": 19
-        }
-      ]
-    },
-    {
-      "id": "c23c70e25e6253ea30f33add6c73d299",
-      "sport_key": "soccer_italy_serie_a",
-      "sport_icon": "⚽",
-      "league": "Serie A",
-      "league_short": "SA",
-      "kickoff": "2026-08-24T16:30:00Z",
-      "home": "Bologna",
-      "away": "Lazio",
-      "best_h2h": {
-        "Bologna": {
-          "price": 2.21,
-          "bookmaker": "1xBet"
-        },
-        "Lazio": {
-          "price": 3.85,
-          "bookmaker": "Betfair"
-        },
-        "Draw": {
-          "price": 3.38,
-          "bookmaker": "1xBet"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.25 goals",
-        "price": 1.93,
-        "bookmaker": "BetOnline.ag",
-        "confidence": 50,
-        "edge_pct": -4.26,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.25
-      },
-      "value_picks": []
-    },
-    {
-      "id": "4164b325d120b7310921429a21496210",
-      "sport_key": "soccer_italy_serie_a",
-      "sport_icon": "⚽",
-      "league": "Serie A",
-      "league_short": "SA",
-      "kickoff": "2026-08-24T18:45:00Z",
-      "home": "AS Roma",
-      "away": "Fiorentina",
-      "best_h2h": {
-        "AS Roma": {
-          "price": 1.59,
-          "bookmaker": "1xBet"
-        },
-        "Fiorentina": {
-          "price": 6.44,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 4.4,
-          "bookmaker": "Tipico"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.95,
-        "bookmaker": "1xBet",
-        "confidence": 51,
-        "edge_pct": -1.27,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5
       },
       "value_picks": []
     },
@@ -3103,411 +2168,6 @@
         "type": "totals",
         "side": "Over",
         "point": 3.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "a8ca30a4492261eb5094ef63ba7e80d8",
-      "sport_key": "soccer_germany_bundesliga",
-      "sport_icon": "⚽",
-      "league": "Bundesliga",
-      "league_short": "BL",
-      "kickoff": "2026-08-28T18:30:00Z",
-      "home": "Bayern Munich",
-      "away": "VfB Stuttgart",
-      "best_h2h": {
-        "Bayern Munich": {
-          "price": 1.32,
-          "bookmaker": "1xBet"
-        },
-        "VfB Stuttgart": {
-          "price": 9.5,
-          "bookmaker": "Coolbet"
-        },
-        "Draw": {
-          "price": 7.0,
-          "bookmaker": "Tipico"
-        }
-      },
-      "recommendation": {
-        "text": "Over 3.5 goals",
-        "price": 1.7,
-        "bookmaker": "1xBet",
-        "confidence": 58,
-        "edge_pct": -1.71,
-        "type": "totals",
-        "side": "Over",
-        "point": 3.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "831beb2ef9729a813b44d2a50dd19970",
-      "sport_key": "soccer_germany_bundesliga",
-      "sport_icon": "⚽",
-      "league": "Bundesliga",
-      "league_short": "BL",
-      "kickoff": "2026-08-29T13:30:00Z",
-      "home": "RB Leipzig",
-      "away": "Borussia Monchengladbach",
-      "best_h2h": {
-        "Borussia Monchengladbach": {
-          "price": 5.75,
-          "bookmaker": "Coolbet"
-        },
-        "RB Leipzig": {
-          "price": 1.59,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 4.8,
-          "bookmaker": "Tipico"
-        }
-      },
-      "recommendation": {
-        "text": "Under 3.5 goals",
-        "price": 1.76,
-        "bookmaker": "1xBet",
-        "confidence": 56,
-        "edge_pct": -1.63,
-        "type": "totals",
-        "side": "Under",
-        "point": 3.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "fa5bd7399799a6c451cc4e6ca6145f11",
-      "sport_key": "soccer_germany_bundesliga",
-      "sport_icon": "⚽",
-      "league": "Bundesliga",
-      "league_short": "BL",
-      "kickoff": "2026-08-29T13:30:00Z",
-      "home": "FSV Mainz 05",
-      "away": "SC Paderborn",
-      "best_h2h": {
-        "FSV Mainz 05": {
-          "price": 1.74,
-          "bookmaker": "1xBet"
-        },
-        "SC Paderborn": {
-          "price": 4.93,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 4.21,
-          "bookmaker": "1xBet"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.75,
-        "bookmaker": "1xBet",
-        "confidence": 56,
-        "edge_pct": -1.56,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "57a8a5da3b5c298d388f4415c37cdf45",
-      "sport_key": "soccer_germany_bundesliga",
-      "sport_icon": "⚽",
-      "league": "Bundesliga",
-      "league_short": "BL",
-      "kickoff": "2026-08-29T13:30:00Z",
-      "home": "Union Berlin",
-      "away": "Eintracht Frankfurt",
-      "best_h2h": {
-        "Eintracht Frankfurt": {
-          "price": 2.97,
-          "bookmaker": "1xBet"
-        },
-        "Union Berlin": {
-          "price": 2.46,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 3.75,
-          "bookmaker": "Coolbet"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.78,
-        "bookmaker": "1xBet",
-        "confidence": 55,
-        "edge_pct": -1.41,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "66f7f9ce44fbbc1890035a3d68cfd3e5",
-      "sport_key": "soccer_germany_bundesliga",
-      "sport_icon": "⚽",
-      "league": "Bundesliga",
-      "league_short": "BL",
-      "kickoff": "2026-08-29T13:30:00Z",
-      "home": "SC Freiburg",
-      "away": "Werder Bremen",
-      "best_h2h": {
-        "SC Freiburg": {
-          "price": 2.08,
-          "bookmaker": "Marathon Bet"
-        },
-        "Werder Bremen": {
-          "price": 3.65,
-          "bookmaker": "LeoVegas (SE)"
-        },
-        "Draw": {
-          "price": 3.62,
-          "bookmaker": "Marathon Bet"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.68,
-        "bookmaker": "Unibet (SE)",
-        "confidence": 55,
-        "edge_pct": -7.06,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "c9bfe9c077e1bfb343a6e228b903c6d6",
-      "sport_key": "soccer_germany_bundesliga",
-      "sport_icon": "⚽",
-      "league": "Bundesliga",
-      "league_short": "BL",
-      "kickoff": "2026-08-29T13:30:00Z",
-      "home": "Augsburg",
-      "away": "FC Schalke 04",
-      "best_h2h": {
-        "Augsburg": {
-          "price": 2.13,
-          "bookmaker": "Marathon Bet"
-        },
-        "FC Schalke 04": {
-          "price": 3.32,
-          "bookmaker": "Marathon Bet"
-        },
-        "Draw": {
-          "price": 3.82,
-          "bookmaker": "Marathon Bet"
-        }
-      },
-      "recommendation": {
-        "text": "Over 3.5 goals",
-        "price": 2.35,
-        "bookmaker": "Unibet (SE)",
-        "confidence": 40,
-        "edge_pct": -6.97,
-        "type": "totals",
-        "side": "Over",
-        "point": 3.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "22ed1aaf03ab3966d098f7049715aada",
-      "sport_key": "soccer_germany_bundesliga",
-      "sport_icon": "⚽",
-      "league": "Bundesliga",
-      "league_short": "BL",
-      "kickoff": "2026-08-29T13:30:00Z",
-      "home": "1. FC Köln",
-      "away": "TSG Hoffenheim",
-      "best_h2h": {
-        "1. FC Köln": {
-          "price": 3.0,
-          "bookmaker": "LeoVegas (SE)"
-        },
-        "TSG Hoffenheim": {
-          "price": 2.45,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 4.0,
-          "bookmaker": "Coolbet"
-        }
-      },
-      "recommendation": {
-        "text": "Draw (X)",
-        "price": 4.0,
-        "bookmaker": "Coolbet",
-        "confidence": 26,
-        "edge_pct": 3.6,
-        "type": "h2h",
-        "outcome": "Draw"
-      },
-      "value_picks": [
-        {
-          "outcome": "Draw",
-          "best_price": 4.0,
-          "bookmaker": "Coolbet",
-          "fair_prob": 0.259,
-          "implied_prob": 0.25,
-          "edge_pct": 3.6,
-          "kelly": 0.012,
-          "confidence": 26
-        }
-      ]
-    },
-    {
-      "id": "bf5e00842d79a39d57b99fce07a1257e",
-      "sport_key": "soccer_germany_bundesliga",
-      "sport_icon": "⚽",
-      "league": "Bundesliga",
-      "league_short": "BL",
-      "kickoff": "2026-08-29T13:30:00Z",
-      "home": "Elversberg",
-      "away": "Bayer Leverkusen",
-      "best_h2h": {
-        "Bayer Leverkusen": {
-          "price": 1.6,
-          "bookmaker": "1xBet"
-        },
-        "Elversberg": {
-          "price": 5.75,
-          "bookmaker": "Coolbet"
-        },
-        "Draw": {
-          "price": 4.75,
-          "bookmaker": "Coolbet"
-        }
-      },
-      "recommendation": {
-        "text": "Elversberg to win",
-        "price": 5.75,
-        "bookmaker": "Coolbet",
-        "confidence": 19,
-        "edge_pct": 8.19,
-        "type": "h2h",
-        "outcome": "Elversberg"
-      },
-      "value_picks": [
-        {
-          "outcome": "Elversberg",
-          "best_price": 5.75,
-          "bookmaker": "Coolbet",
-          "fair_prob": 0.1882,
-          "implied_prob": 0.1739,
-          "edge_pct": 8.19,
-          "kelly": 0.0172,
-          "confidence": 19
-        }
-      ]
-    },
-    {
-      "id": "9d7f045126ec9185b73d9c67f881c6d2",
-      "sport_key": "soccer_germany_bundesliga",
-      "sport_icon": "⚽",
-      "league": "Bundesliga",
-      "league_short": "BL",
-      "kickoff": "2026-08-29T16:30:00Z",
-      "home": "Borussia Dortmund",
-      "away": "Hamburger SV",
-      "best_h2h": {
-        "Borussia Dortmund": {
-          "price": 1.38,
-          "bookmaker": "1xBet"
-        },
-        "Hamburger SV": {
-          "price": 9.5,
-          "bookmaker": "Coolbet"
-        },
-        "Draw": {
-          "price": 5.7,
-          "bookmaker": "Tipico"
-        }
-      },
-      "recommendation": {
-        "text": "Under 3.5 goals",
-        "price": 1.67,
-        "bookmaker": "1xBet",
-        "confidence": 59,
-        "edge_pct": -1.52,
-        "type": "totals",
-        "side": "Under",
-        "point": 3.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "5d3afd8c18aec6fac47b3c1244bd9002",
-      "sport_key": "soccer_germany_bundesliga",
-      "sport_icon": "⚽",
-      "league": "Bundesliga",
-      "league_short": "BL",
-      "kickoff": "2026-08-30T13:30:00Z",
-      "home": "SC Freiburg",
-      "away": "Werder Bremen",
-      "best_h2h": {
-        "SC Freiburg": {
-          "price": 2.11,
-          "bookmaker": "1xBet"
-        },
-        "Werder Bremen": {
-          "price": 3.7,
-          "bookmaker": "Tipico"
-        },
-        "Draw": {
-          "price": 3.85,
-          "bookmaker": "Coolbet"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.75 goals",
-        "price": 1.93,
-        "bookmaker": "Pinnacle",
-        "confidence": 49,
-        "edge_pct": -5.02,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.75
-      },
-      "value_picks": []
-    },
-    {
-      "id": "78ab183499784117d62a40821294d9fa",
-      "sport_key": "soccer_germany_bundesliga",
-      "sport_icon": "⚽",
-      "league": "Bundesliga",
-      "league_short": "BL",
-      "kickoff": "2026-08-30T15:30:00Z",
-      "home": "Augsburg",
-      "away": "FC Schalke 04",
-      "best_h2h": {
-        "Augsburg": {
-          "price": 2.17,
-          "bookmaker": "1xBet"
-        },
-        "FC Schalke 04": {
-          "price": 3.38,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 4.0,
-          "bookmaker": "Coolbet"
-        }
-      },
-      "recommendation": {
-        "text": "Over 3.0 goals",
-        "price": 1.94,
-        "bookmaker": "Coolbet",
-        "confidence": 49,
-        "edge_pct": -4.78,
-        "type": "totals",
-        "side": "Over",
-        "point": 3.0
       },
       "value_picks": []
     }
