@@ -8,3 +8,25 @@ export const BET_TYPES = [
   { slug: 'double-chance', name: 'Double Chance Tips', emoji: '🛡️', short: 'double chance', long: 'lower-risk double chance tips covering two of the three outcomes' },
   { slug: 'draw', name: 'Draw Tips', emoji: '🤝', short: 'draw', long: 'value draw predictions for tight, evenly-matched fixtures' },
 ];
+
+// pSEO matrix: data-backed bet-type x league combos (tips/[type]/[league]).
+// Lives here because Astro's getStaticPaths is isolated and only sees imports.
+export const MATRIX = [
+  { type: 'match-result', name: 'Match Result Tips', short: '1X2 winner picks' },
+  { type: 'over-under', name: 'Over/Under Goals Tips', short: 'totals picks' },
+  { type: 'draw', name: 'Draw Tips', short: 'value draw picks' },
+];
+
+export const matrixFilters = (kindKey) => ({
+  live: (t) => {
+    const rec = t.recommendation ?? {};
+    if (kindKey === 'over-under') return rec.type === 'totals';
+    if (kindKey === 'draw') return rec.outcome === 'Draw';
+    return rec.type === 'h2h' && rec.outcome !== 'Draw';
+  },
+  hist: (h) => {
+    if (kindKey === 'over-under') return h.type === 'totals';
+    if (kindKey === 'draw') return h.type === 'h2h' && h.outcome === 'Draw';
+    return h.type === 'h2h' && h.outcome !== 'Draw';
+  },
+});

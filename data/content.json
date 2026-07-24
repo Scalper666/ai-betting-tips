@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-07-24T11:57:46+00:00",
+ "updated_at": "2026-07-24T12:16:04+00:00",
  "entries": {
   "match:corinthians-vs-remo": {
    "intro": "Corinthians host Remo in this Brasileirao fixture as clear favourites according to the market. The home side is priced at 1.55 with Matchbook, which translates to an implied probability of roughly 65%. Remo, meanwhile, are the outsiders at 7.8 on Betfair, implying only about 13% chance of an away win, while the draw sits at 4.3, or around 23%. That is a substantial gap in the prices and reflects strong market confidence in Corinthians. Rather than backing the match result, our model leans toward the goals market, recommending Under 2.5 goals at 1.93 with Matchbook, carrying a market-implied confidence of about 52%. It is worth noting the value edge here is marginally negative at -0.36%, so this is a close call rather than a standout opportunity in the Corinthians versus Remo clash.",
@@ -3406,6 +3406,585 @@
    "_usage": {
     "in": 1100,
     "out": 1520
+   }
+  },
+  "combo:match-result:bundesliga": {
+   "intro": "The Bundesliga match result market, often labelled 1X2, is the classic three-way bet on whether the home side wins, the visitors win, or the game ends level after 90 minutes. Our approach treats it as a value exercise: we convert bookmaker odds into implied probabilities, compare those figures against our own model estimate for each outcome, and flag a selection only when the best available price looks generous relative to what we think the true chance is. There is no certainty in any single result, and a fair price still loses plenty of the time. Every tip on this page is published before kick-off and settled openly afterwards, win or lose, so you can judge the method on a transparent record rather than on marketing claims.",
+   "faq": [
+    {
+     "q": "What does the 1X2 bet mean in the Bundesliga?",
+     "a": "1X2 is the standard match result market covering three outcomes over 90 minutes: 1 for the home win, X for the draw, and 2 for the away win. It does not include extra time or penalties, and it settles purely on the score at full time of the scheduled match."
+    },
+    {
+     "q": "How do you decide which team to back for the win?",
+     "a": "We turn the odds into implied probabilities and compare them with our own model's assessment of each outcome. A pick is made only when the best price offers more value than the estimated chance suggests, rather than simply backing the shortest favourite."
+    },
+    {
+     "q": "Are draws worth backing in match result betting?",
+     "a": "The draw can hold value when the market appears to underprice a tight, evenly matched contest, and we will flag it when the numbers support it. That said, draws are inherently hard to predict, so they should be staked with the same caution as any other selection and within a sensible bankroll."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "ce10ba4285bbec65",
+   "_generated_at": "2026-07-24T12:14:57+00:00",
+   "_usage": {
+    "in": 1025,
+    "out": 542
+   }
+  },
+  "combo:match-result:brasileir-o": {
+   "intro": "The Match Result market, often written as 1X2, asks a single question about a Brasileirão fixture: will the home side win, will the away side win, or will the game end level? It is the most familiar bet in football, and that popularity is exactly why prices can drift from fair value. Our approach compares the implied probability behind each available price with our own model estimate, then flags a selection only when the best price on offer looks generous relative to that estimate. Every tip is published before kick-off and settled openly afterwards, win or lose, so the full record stays visible. No market is a formality here; odds reflect uncertainty, and staking discipline matters as much as selection.",
+   "faq": [
+    {
+     "q": "What does 1X2 mean in Brasileirao betting?",
+     "a": "1X2 is the Match Result market: 1 is a home win, X is a draw, and 2 is an away win. You are backing one of those three outcomes over the full regulation match, so the draw is always a live option rather than an afterthought."
+    },
+    {
+     "q": "How do you find value on match result tips?",
+     "a": "We convert the best available price into an implied probability and compare it with our model's own estimate for that outcome. A tip is only posted when the price looks generous versus our estimate, which is what we mean by value, and even then the result remains uncertain."
+    },
+    {
+     "q": "Do these tips guarantee a profit?",
+     "a": "No. Value betting aims to back prices we judge to be favourable over the long run, but any single 1X2 selection can lose and losing runs happen. Stake only what you can afford and treat the archive as a transparent record, not a promise."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "28be1acbba069232",
+   "_generated_at": "2026-07-24T12:14:57+00:00",
+   "_usage": {
+    "in": 1025,
+    "out": 507
+   }
+  },
+  "combo:match-result:la-liga": {
+   "intro": "La Liga match result tips focus on the classic 1X2 market, where you back one of three outcomes: the home win, the draw, or the away win. Our approach is built around value rather than picking favourites. For each fixture our model estimates the probability of each result and converts that into a fair price, then compares it against the best odds available from bookmakers. When a selection is priced more generously than our estimate suggests it should be, that gap signals potential value and becomes a candidate tip. Every pick is published before kick-off and settled openly in our archive, win or lose, so you can judge the process on transparent terms. Odds move constantly, so treat each tip as a snapshot and stake responsibly.",
+   "faq": [
+    {
+     "q": "What does 1X2 mean in La Liga betting?",
+     "a": "1X2 refers to the three possible full-time results of a match: 1 is a home win, X is a draw, and 2 is an away win. You are betting on the outcome of the 90 minutes plus stoppage time, not extra time or penalties. It is the most common football market and the basis for our match result tips."
+    },
+    {
+     "q": "How do you decide which La Liga match result to tip?",
+     "a": "We estimate a probability for each outcome and turn it into a fair price, then compare that with the best odds on offer. A tip is issued only when the available price implies a lower probability than our own estimate, meaning there is potential value. No outcome is ever certain, so selections are made on price against probability rather than confidence in a single result."
+    },
+    {
+     "q": "Is backing the favourite always the smart 1X2 bet?",
+     "a": "Not necessarily, because favourites are often priced with little margin and may offer poor value even when they are likely to win. Value depends on whether the odds are longer than the true chance of the outcome, which sometimes points to a draw or underdog. The aim is finding mispriced selections, not simply predicting the most probable winner."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "aefbc41f17937a5d",
+   "_generated_at": "2026-07-24T12:14:58+00:00",
+   "_usage": {
+    "in": 1021,
+    "out": 605
+   }
+  },
+  "combo:match-result:ligue-1": {
+   "intro": "The Match Result market, often written as 1X2, is the most familiar bet in Ligue 1: you back the home win, the draw, or the away win over the full 90 minutes plus stoppage time. Our approach treats each outcome as a probability question. We convert bookmaker odds into an implied percentage, compare that with our own model's estimate for the same result, and only flag a tip when the best available price looks generous relative to what we think the true chance is. That gap is what we mean by value, and it never removes the risk that a fair-priced selection still loses. Every Ligue 1 pick is published before kick-off and settled in the open afterwards, whether it wins or loses, so the record stays transparent over time.",
+   "faq": [
+    {
+     "q": "What does 1X2 mean in Ligue 1 betting?",
+     "a": "1X2 is a three-way market on the match result: 1 is the home win, X is the draw, and 2 is the away win. It settles on the score after 90 minutes plus stoppage time and does not usually include extra time or penalties."
+    },
+    {
+     "q": "How do you decide which Ligue 1 result to tip?",
+     "a": "We turn the available odds into an implied probability, then compare that with our model's own estimate for each outcome. A tip is only posted when the best price appears to offer value against our figure, though a value price is never a guarantee of a winning result."
+    },
+    {
+     "q": "Is backing the home team always the safest 1X2 pick?",
+     "a": "No. Home sides are sometimes favoured by the market, but the odds already reflect that, so a short home price is not automatically good value. We judge each match on the gap between the price and our estimated probability rather than defaulting to any single outcome."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "359c41e346accb41",
+   "_generated_at": "2026-07-24T12:15:02+00:00",
+   "_usage": {
+    "in": 1026,
+    "out": 539
+   }
+  },
+  "combo:match-result:mls": {
+   "intro": "The MLS Match Result market, often called 1X2, is a simple bet on the outcome of a single fixture: home win, draw, or away win. Our approach starts with the price. We convert bookmaker odds into implied probability, then compare that figure against our own model's estimate for each of the three outcomes. When our number suggests a selection is priced more generously than its true chance, we flag it as value and take the best available price. Every MLS pick is published before kick-off and archived transparently, then settled openly once the match finishes, win or lose. Football results carry real uncertainty, so we treat this as a long-run exercise in disciplined selection rather than a route to quick returns. Stake within limits that suit you.",
+   "faq": [
+    {
+     "q": "What does 1X2 mean in MLS betting?",
+     "a": "1X2 is the three-way match result market, where 1 is the home win, X is the draw, and 2 is the away win. You are backing a single one of those outcomes over 90 minutes plus stoppage time. It is the most common way to bet on an MLS fixture."
+    },
+    {
+     "q": "How do you decide which MLS match result tips have value?",
+     "a": "We turn the available odds into an implied probability for each outcome, then compare that with our model's own estimate of how likely each result is. A selection becomes a candidate only when our estimate points to a higher chance than the price implies, and we take the best price we can find. Value does not mean certainty; it means the odds look favourable relative to the risk."
+    },
+    {
+     "q": "Do draws matter more in MLS 1X2 betting?",
+     "a": "In any three-way market the draw is a live outcome and should never be ignored, since backing a home or away win means the draw is working against you. We assess all three results on their merits using the odds and our model rather than assuming any single outcome is more common. Each pick is judged on the value the price offers on the day."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "2ee907045b8af2e7",
+   "_generated_at": "2026-07-24T12:15:08+00:00",
+   "_usage": {
+    "in": 1019,
+    "out": 593
+   }
+  },
+  "combo:match-result:premier-league": {
+   "intro": "Premier League Match Result tips focus on the 1X2 market, where you back one of three outcomes: the home win, the draw or the away win. Our approach starts with the price. We convert the best available odds into an implied probability, then compare that figure against our own model's estimate for each result. A tip is only published when we believe the price offers value, meaning the market appears to underrate a particular outcome. Every selection is logged before kick-off, with the reasoning and odds we took, and settled openly once the match finishes, win or lose. This keeps the record transparent and lets you judge the process on its merits rather than on marketing. Odds move quickly, so stakes should always be managed sensibly.",
+   "faq": [
+    {
+     "q": "What does the 1X2 market mean in Premier League betting?",
+     "a": "1X2 is the full-time match result market with three options: 1 for the home team to win, X for the draw, and 2 for the away team to win. Your stake is settled on the outcome after 90 minutes plus stoppage time, not extra time. It is one of the most popular markets because it is simple and widely priced."
+    },
+    {
+     "q": "How do you decide which match result is a value bet?",
+     "a": "We turn the best available odds into an implied probability, then compare that with our model's own estimate for each result. When our estimate suggests an outcome is more likely than the price implies, we may flag it as value. Value is about the price being generous, not a prediction that the result is certain."
+    },
+    {
+     "q": "Can I expect to win every Premier League match result tip?",
+     "a": "No. Football results are uncertain and even strong selections lose regularly, so no tip can be guaranteed. The aim is to back prices we believe offer an edge over time, which is why we archive and settle every pick openly and encourage careful bankroll management."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "04a0ef710b0f7389",
+   "_generated_at": "2026-07-24T12:15:08+00:00",
+   "_usage": {
+    "in": 1021,
+    "out": 566
+   }
+  },
+  "combo:match-result:serie-a": {
+   "intro": "The Serie A match result market, often shown as 1X2, is the classic bet on which team wins or whether the game ends in a draw. Our approach treats each match through a value lens rather than simply backing favourites. We convert bookmaker odds into implied probabilities, compare that reading against the best available price, and flag a tip only when we believe the price offers an edge worth taking. No outcome is certain, and short-term variance is part of any betting market. Every selection we publish is archived before kick-off with the reasoning and odds we used, then settled openly once the match finishes. That record stays visible whether the calls land or miss, so you can judge the method honestly over time.",
+   "faq": [
+    {
+     "q": "What does 1X2 mean in Serie A betting?",
+     "a": "1X2 is the match result market, where 1 is the home win, X is the draw, and 2 is the away win. You are betting on a single outcome across the full ninety minutes plus stoppage time, not extra time. It is the most common way to bet on a Serie A fixture."
+    },
+    {
+     "q": "How do you decide which Serie A match result tips to post?",
+     "a": "We turn the available odds into implied probabilities and compare our own read of the fixture against the best price on offer. A tip is published only when we think the price undervalues an outcome, so we sometimes skip a match entirely rather than force a selection. Value is about the price, not certainty, and losing runs are always possible."
+    },
+    {
+     "q": "Are draws worth backing in Serie A?",
+     "a": "The draw can hold value in matches the market prices closely, since evenly rated sides raise the chance of a stalemate. We only suggest it when the odds look longer than the implied probability justifies. As with any pick, stake responsibly and treat it as one view rather than a lock."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "d261a362a9c7a283",
+   "_generated_at": "2026-07-24T12:15:10+00:00",
+   "_usage": {
+    "in": 1021,
+    "out": 566
+   }
+  },
+  "combo:over-under:brasileir-o": {
+   "intro": "Over/Under goals tips for the Brasileir\bgoal totals market involve betting on whether the combined goals in a match land above or below a line set by the bookmaker, most commonly 2.5. Our approach centres on value: we translate the offered odds into an implied probability, then compare that with our own model's estimate for how a game may play out. When we judge the best available price to be longer than the underlying chance warrants, we log a tip. Every selection is published pre-match and settled openly in our archive, wins and losses alike, so you can see how the market has treated us over time. Totals betting carries real risk and no edge is certain, so stake within a plan that suits your bankroll.",
+   "faq": [
+    {
+     "q": "What does Over/Under 2.5 goals mean in Brasileir\bgoal betting?",
+     "a": "It is a bet on the total number of goals scored by both teams combined in a single match. Over 2.5 wins if three or more goals are scored, while Under 2.5 wins if two or fewer are scored. The half-goal line removes the possibility of a push, so one side always settles as a winner."
+    },
+    {
+     "q": "How do you find value on goal totals?",
+     "a": "We convert the bookmaker's odds into an implied probability, then compare it with our model's own estimate for the match. A tip is only logged when the best available price looks longer than the true chance suggests, which is where potential value sits. Value does not mean a guaranteed result, only a price we consider favourable relative to the risk."
+    },
+    {
+     "q": "Is betting Over or Under the safer choice in this league?",
+     "a": "Neither side is inherently safer; the fair price depends on the specific fixture and the line on offer. We assess each match individually rather than defaulting to Over or Under as a habit. Sensible staking and treating each tip on its own merits matter more than any blanket rule."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "e6846153c3ec1afd",
+   "_generated_at": "2026-07-24T12:15:15+00:00",
+   "_usage": {
+    "in": 1025,
+    "out": 588
+   }
+  },
+  "combo:over-under:la-liga": {
+   "intro": "La Liga over/under goals betting is about the total number of goals scored in a match, not who wins. The most common line is 2.5, so you are backing whether the combined score finishes above or below that threshold, though bookmakers offer alternative lines such as 1.5 and 3.5. Our approach treats each total as a probability question: we convert a bookmaker's price into an implied percentage, compare it to our own model estimate, and flag a tip only when the best available price looks generous relative to that estimate. That gap is what we call value. Every selection is published before kick-off and settled openly in our archive, win or lose, so you can judge the method rather than take our word for it.",
+   "faq": [
+    {
+     "q": "What does over/under 2.5 goals mean in La Liga?",
+     "a": "It is a bet on the total goals scored by both teams combined in a single match. Over 2.5 wins if three or more goals are scored, while under 2.5 wins with two goals or fewer. The half-goal line removes the possibility of a push, so the bet always settles as a clear win or loss."
+    },
+    {
+     "q": "How do you decide between an over or under tip?",
+     "a": "We turn the bookmaker's odds into an implied probability, then compare that against our model's estimate for the same line. When our figure suggests a price is longer than the true chance warrants, that side becomes a candidate tip. There is no guaranteed outcome, so we only stake when the value edge is present."
+    },
+    {
+     "q": "Which goal line offers the best value in La Liga?",
+     "a": "There is no single best line; value shifts from match to match depending on how each bookmaker prices the total. Sometimes the edge sits on an alternative line like 1.5 or 3.5 rather than the standard 2.5. We assess each fixture on its own merits and stake responsibly rather than chasing one favoured market."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "ff6c9093548ca67b",
+   "_generated_at": "2026-07-24T12:15:20+00:00",
+   "_usage": {
+    "in": 1021,
+    "out": 585
+   }
+  },
+  "combo:over-under:bundesliga": {
+   "intro": "Over/Under goals betting in the Bundesliga asks a simple question: will the total number of goals in a match finish above or below a line set by the bookmaker, most commonly 2.5. Our approach treats every posted line as a probability. When a book prices Over 2.5 at a given number, that implies a percentage chance; our model builds its own estimate and flags a tip only when we believe the best available price offers value against that fair figure. We are not predicting how a game will unfold, only where the odds may be mispriced. Every tip on this market is published before kick-off and settled openly in our archive, win or lose, so you can judge the record for yourself rather than take a claim on trust. Bet within limits that suit you.",
+   "faq": [
+    {
+     "q": "What does Over/Under 2.5 goals mean in the Bundesliga?",
+     "a": "It is a bet on the combined goals scored by both teams in a single match. Over 2.5 wins if three or more goals are scored, while Under 2.5 wins if the match ends with two goals or fewer. The 2.5 line is the most common, but books also offer other lines such as 1.5 or 3.5."
+    },
+    {
+     "q": "How do you find value on Bundesliga totals?",
+     "a": "We convert the bookmaker's odds into an implied probability, then compare that to our own model estimate for the same outcome. A tip is only posted when the best price we can find suggests the market has undervalued a side of the line. Value does not mean a result is likely, only that the price looks favourable relative to the risk."
+    },
+    {
+     "q": "Are Over/Under goals bets a reliable way to make money?",
+     "a": "No betting market is reliable in that sense; totals outcomes are uncertain and losing runs happen even when prices are chosen carefully. The aim is to back positions where the odds appear generous over the long term, not to win any single bet. Stake only what you can comfortably afford and treat results as variable."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "02d18fbd8dbad1ca",
+   "_generated_at": "2026-07-24T12:15:22+00:00",
+   "_usage": {
+    "in": 1025,
+    "out": 613
+   }
+  },
+  "combo:over-under:ligue-1": {
+   "intro": "Over/Under goals betting in Ligue 1 asks a single question: will the combined goal tally in a match land above or below a set line, most commonly 2.5. Bookmakers post odds for each side, and those odds translate into an implied probability of that total being hit. Our approach compares that implied probability against our own model's estimate, then hunts for the best available price across markets. When the price offered is longer than our fair estimate suggests it should be, we flag it as value. Nothing here is a certainty, and totals can swing on a single late goal. Every tip we publish is archived before kick-off and settled in the open once the match ends, so the reasoning and the result stay on record.",
+   "faq": [
+    {
+     "q": "What does over/under 2.5 goals mean in Ligue 1 betting?",
+     "a": "It means you are wagering on whether the two teams will combine for three or more goals (over) or two or fewer goals (under) in a single match. The 2.5 line removes the possibility of a push, so one side always wins. Other lines such as 1.5 or 3.5 work the same way with a different threshold."
+    },
+    {
+     "q": "How do you decide which Ligue 1 totals are worth a bet?",
+     "a": "We estimate a fair probability for each total, then convert the bookmaker's odds into their implied probability and compare the two. A tip is only flagged when the available price is longer than our model considers fair, which points to potential value. This is a probability edge, not a prediction of a guaranteed outcome."
+    },
+    {
+     "q": "Are over or under bets better value in Ligue 1?",
+     "a": "Neither side is inherently better value; it depends entirely on where the line is set and the price on offer for a given match. Sometimes the market underprices the over, other times the under looks generous relative to our estimate. We assess each fixture on its own numbers and stake responsibly rather than favouring one direction by default."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "1fcd635f2be3ef96",
+   "_generated_at": "2026-07-24T12:15:22+00:00",
+   "_usage": {
+    "in": 1026,
+    "out": 598
+   }
+  },
+  "combo:over-under:mls": {
+   "intro": "Over/Under goals betting in Major League Soccer asks a simple question with plenty of nuance: will the combined goals in a match land above or below a line set by the bookmaker, most commonly 2.5. Our approach treats each posted total as a market price to be tested. We convert the odds on both sides into implied probabilities, then compare those figures against our model's estimate for the fixture. When the best available price offers more value than the implied probability suggests, we flag it as a tip. Every selection is published before kick-off and settled transparently in our archive, so you can follow the reasoning and the results without filtering. Totals outcomes are never certain, so treat each pick as one input and stake within your means.",
+   "faq": [
+    {
+     "q": "What does over/under 2.5 goals mean in MLS?",
+     "a": "It is a bet on the total number of goals scored by both teams combined in a single match. Over 2.5 wins if three or more goals are scored, while under 2.5 wins if two or fewer are scored. The 2.5 line is the most common, but bookmakers also offer other lines such as 1.5 and 3.5."
+    },
+    {
+     "q": "How do you find value on MLS goal totals?",
+     "a": "We turn the odds on each side of the total into an implied probability, then compare that with our own model's estimate for the match. A tip is only flagged when the best price we can find looks generous relative to that assessment. This is about pricing edges, not predicting exact scores, and no total is ever guaranteed to land."
+    },
+    {
+     "q": "Should I bet over or under in MLS matches?",
+     "a": "Neither side is inherently better; the right call depends on the line offered and the price attached to it. The aim is to back whichever side carries value against the implied probability, rather than assuming games are always high or low scoring. Compare prices across bookmakers and stake responsibly."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "188daecb579b123e",
+   "_generated_at": "2026-07-24T12:15:28+00:00",
+   "_usage": {
+    "in": 1019,
+    "out": 586
+   }
+  },
+  "combo:over-under:premier-league": {
+   "intro": "Premier League over/under goals betting is about the total number of goals scored in a match rather than which side wins. The most common line is 2.5, meaning you back either three or more goals (over) or two or fewer (under), though bookmakers offer alternative lines such as 1.5 and 3.5. Our approach centres on value: we estimate a fair probability for each total, convert it to a fair price, and compare that with the best odds available. When the market appears to be pricing an outcome shorter than we think it should, that gap is where potential value sits. Every tip is published before kick-off, then settled openly in our archive, win or lose, so the full record stays transparent and you can judge it for yourself.",
+   "faq": [
+    {
+     "q": "What does over 2.5 goals mean in the Premier League?",
+     "a": "Over 2.5 goals means you are betting that a match finishes with three or more goals in total, counting both teams combined. If the game ends with two goals or fewer, the bet loses. Under 2.5 is the opposite side, winning when the match produces zero, one or two goals."
+    },
+    {
+     "q": "How do you find value on Premier League totals?",
+     "a": "We estimate our own probability for a goals line, turn it into a fair price, and check it against the best odds on offer. A tip is only worth posting when the available price implies a lower chance than our estimate, suggesting the market may be underrating that outcome. Odds move and no result is certain, so we treat every selection as a calculated risk."
+    },
+    {
+     "q": "Is betting the over or under generally the safer option?",
+     "a": "Neither side is inherently safer; each total has its own fair price that reflects how likely the market thinks that outcome is. The sensible choice depends on whether the available odds offer value against your own estimate, not on a blanket preference. Stake within a budget you are comfortable with, since all totals bets can lose."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "b56db8294eeb0a3c",
+   "_generated_at": "2026-07-24T12:15:32+00:00",
+   "_usage": {
+    "in": 1021,
+    "out": 591
+   }
+  },
+  "combo:over-under:serie-a": {
+   "intro": "Serie A over/under goals betting is about a match's combined goal total rather than which side wins. The most common line is 2.5, so an over bet needs three or more goals while an under wins if the game finishes with two or fewer, and bookmakers also price alternative lines such as 1.5 and 3.5. Our model works by converting the available prices into implied probabilities, then comparing that figure against the best odds on offer across the market. When our estimate suggests a total is more likely than the price implies, we flag it as value and publish the tip. Every selection is archived pre-match and settled openly afterwards, so the reasoning and results stay transparent. Totals carry genuine risk, so stake within a plan that suits you.",
+   "faq": [
+    {
+     "q": "What does over 2.5 goals mean in Serie A?",
+     "a": "Over 2.5 goals means you are backing the two teams to combine for three or more goals in the match. If the game ends with two goals or fewer, the bet loses, and the result depends only on total goals rather than which team scores them."
+    },
+    {
+     "q": "How do you find value in over/under goals markets?",
+     "a": "We turn the bookmaker's odds into an implied probability and compare it with our own estimate for that total. When our figure indicates a total is more probable than the best available price suggests, we treat it as value. This is an edge over the market, not a prediction that any single bet will win."
+    },
+    {
+     "q": "Is under 2.5 goals safer than over 2.5?",
+     "a": "Neither side is inherently safer; each simply reflects a different view of how many goals a match will produce, and the odds move to balance that. The better choice is whichever one offers value against its implied probability. Any totals bet can lose, so manage your stakes carefully."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "11349893594ba792",
+   "_generated_at": "2026-07-24T12:15:33+00:00",
+   "_usage": {
+    "in": 1021,
+    "out": 553
+   }
+  },
+  "combo:draw:brasileir-o": {
+   "intro": "Draw betting in the Brasileirão focuses on a single outcome: matches that finish level after 90 minutes. The draw is often overlooked, which can leave prices slightly wider than an event's true likelihood warrants. Our approach is value-driven rather than result-chasing. We convert the best available draw price into an implied probability, compare it with our own model's estimate, and only flag a tip when the numbers suggest the market may be underrating the stalemate. There is no certainty here; even a well-priced draw can lose, and variance is part of the process. Every selection is published before kick-off and settled openly afterwards, win or lose, so you can see how the method holds up over time. Stake within your means and treat each pick as one input, not a promise.",
+   "faq": [
+    {
+     "q": "Is betting on the draw a good strategy in the Brasileirao?",
+     "a": "It can be, because draws are frequently underpriced when public attention focuses on a favourite winning. The key is selecting only matches where the available price implies a lower probability than you believe is fair, rather than backing the draw in every fixture. Even then, outcomes are uncertain and losing runs happen."
+    },
+    {
+     "q": "How do you find value in the draw market?",
+     "a": "We turn the best bookmaker price into an implied probability, then compare it against our model's own estimate for that game. When our estimate is meaningfully higher than what the odds suggest, that gap is what we call value. We only post a tip when that edge appears worthwhile."
+    },
+    {
+     "q": "What odds should I expect on a Brasileirao draw?",
+     "a": "Draw prices vary by matchup, typically sitting somewhere in the mid-range because a level result is one of three possible outcomes. Tighter, more evenly matched fixtures tend to carry shorter draw prices than lopsided ones. Always shop for the best available price, as a small difference affects long-term returns."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "bd54c1af405e8ea0",
+   "_generated_at": "2026-07-24T12:15:34+00:00",
+   "_usage": {
+    "in": 1021,
+    "out": 605
+   }
+  },
+  "combo:draw:la-liga": {
+   "intro": "La Liga draw tips focus on a single outcome market: matches priced to finish level. Draws are often underrated by casual bettors, which can leave gaps between the true likelihood of a stalemate and the best available price. Our model works by converting bookmaker odds into implied probability, then comparing that figure against our own estimate for the fixture. When our number suggests a draw is more likely than the price implies, we flag it as a value pick rather than a prediction of certainty. Every tip is published before kick-off and settled openly in our archive, win or lose, so you can judge the approach on its full record. Draws are inherently hard to call, so treat each selection as one input and stake responsibly.",
+   "faq": [
+    {
+     "q": "How do you find value in the La Liga draw market?",
+     "a": "We turn the best available draw odds into an implied probability and compare it with our own model estimate for that match. A tip is only issued when our figure indicates the draw is more likely than the market price suggests, which is what we mean by value rather than a guaranteed result."
+    },
+    {
+     "q": "Are draw bets in La Liga worth it?",
+     "a": "Draws can offer value because many bettors overlook them in favour of a home or away winner, which sometimes pushes the price higher than the true chance. That said, level results are genuinely difficult to predict, so no draw tip is ever a lock and results will vary over time."
+    },
+    {
+     "q": "Where can I see your La Liga draw tips results?",
+     "a": "Every selection is posted before the match and recorded in our public archive, then settled transparently as won or lost. This lets you review the complete history of picks and profit at flat stakes rather than relying on cherry-picked highlights."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "6f519992f93f036e",
+   "_generated_at": "2026-07-24T12:15:38+00:00",
+   "_usage": {
+    "in": 1017,
+    "out": 536
+   }
+  },
+  "team:orlando-city-sc": {
+   "intro": "This page tracks Orlando City SC through a value lens, focused on the numbers rather than noise. Every Orlando City SC fixture we cover gets a data-driven tip that is archived before kick-off and later settled against the final score, so the record stays honest and transparent. Our approach starts with the odds: we convert prices into implied probability, then look for spots where our read suggests the market may be mispricing an outcome. When our estimate points to a genuine edge, that becomes the basis for a tip. So far our published angles on Orlando City SC have centred on totals markets. Treat each write-up as a reasoned opinion, not a certainty, and stake within limits you are comfortable with, since results are never assured.",
+   "faq": [],
+   "_kind": "team",
+   "_model": "claude-opus-4-8",
+   "_hash": "bd20accf7342e1c8",
+   "_generated_at": "2026-07-24T12:15:40+00:00",
+   "_usage": {
+    "in": 1106,
+    "out": 240
+   }
+  },
+  "combo:draw:ligue-1": {
+   "intro": "Ligue 1 draw tips focus on a single outcome market: backing the match to end level after 90 minutes. Draws are notoriously hard to call, which is exactly why the price often drifts to levels the true chance may not justify. Our model estimates the probability of a stalemate for each fixture and converts it into a fair price, then compares that against the best odds available. When the market's implied probability sits below our own estimate, we flag potential value and publish a tip. Every selection is archived before kick-off and settled openly afterwards, win or lose, so the full picture stays visible. Draws carry real uncertainty, so stake sensibly and treat these as informed opinions rather than certainties.",
+   "faq": [
+    {
+     "q": "How do you find value in Ligue 1 draw betting?",
+     "a": "We estimate the likelihood of a match ending level and translate that into a fair price, then compare it with the best odds on offer. A tip is published only when the bookmaker's implied probability looks lower than our own estimate, suggesting the draw is priced generously. It is an edge based on pricing, not a prediction that any single game will finish level."
+    },
+    {
+     "q": "Are draws harder to predict than match winners?",
+     "a": "In many ways yes, because a draw depends on both teams cancelling each other out rather than one side prevailing. That difficulty is part of why draw prices can be attractive when a game looks tight. We treat each selection as a probability call, not a guarantee, so results will vary from match to match."
+    },
+    {
+     "q": "Can I make consistent profit backing draws in Ligue 1?",
+     "a": "No betting market offers assured profit, and draws are among the more volatile outcomes to target. The aim is to back situations where the odds appear longer than the real chance, accepting that returns come over a run of bets rather than any single one. Manage your bankroll carefully and only stake what you can afford to lose."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "b5145df0c8f3498c",
+   "_generated_at": "2026-07-24T12:15:44+00:00",
+   "_usage": {
+    "in": 1022,
+    "out": 602
+   }
+  },
+  "combo:draw:premier-league": {
+   "intro": "The Premier League draw market asks a single question: will the match end level after 90 minutes plus stoppage time? It is priced as its own outcome in the match result market, and draws are often overlooked by bettors focused on picking a winner. Our value approach starts with the best available price across bookmakers, converts it into an implied probability, and compares that with our model's own estimate for a level result. When our figure suggests the market has underpriced the stalemate, we flag the draw as a value pick. Every tip is archived before kick-off with the reasoning attached, then settled transparently once the final whistle confirms the result. No pick is edited after the fact, so the full record stays open to review.",
+   "faq": [
+    {
+     "q": "How do you find value on a draw?",
+     "a": "We take the best available draw price and turn it into an implied probability, then compare it with our model's own estimate for a level result. A pick is only flagged when our estimate suggests the market is offering more than the true chance warrants. Value means a favourable price relative to probability, never a promised outcome."
+    },
+    {
+     "q": "Are draw bets worth it in the Premier League?",
+     "a": "Draws can offer value because many bettors instinctively back a team to win, which can leave the level result slightly overpriced. That said, a draw is one of three possible outcomes and often the least likely, so it carries real risk. Treat it as one option among several and stake responsibly."
+    },
+    {
+     "q": "What does the draw bet cover exactly?",
+     "a": "A standard draw bet in the match result market pays if the score is level at the end of normal time, including stoppage time. Extra time and penalties in cup competitions do not count for this market. Always check the settlement rules at your bookmaker before placing a bet."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "9a0eb2f5b40c62eb",
+   "_generated_at": "2026-07-24T12:15:49+00:00",
+   "_usage": {
+    "in": 1017,
+    "out": 545
+   }
+  },
+  "team:nashville-sc": {
+   "intro": "This page tracks every Nashville SC fixture we cover through a value lens. The idea is simple: for each match we publish a data-driven tip before kick-off, archive it so it cannot be changed after the fact, then settle it honestly against the final score. Our work on Nashville SC has centred on totals markets, where we weigh the odds on offer against our own read of a fixture. To follow along, focus on implied probability: an over price of 2.00 reflects roughly a 50 percent chance, and we look for spots where we think the true likelihood is higher than the market suggests. That gap is the edge we chase. No tip is a certainty, so treat each as one input and stake within limits that suit you.",
+   "faq": [
+    {
+     "q": "What kind of Nashville SC bets do you tip?",
+     "a": "So far our Nashville SC coverage has focused on totals markets, such as over/under goals lines. We look at the price on offer and back a side only when we believe the market has mispriced the likely outcome."
+    },
+    {
+     "q": "How do you decide there's value in a Nashville SC match?",
+     "a": "We convert the available odds into implied probability, then compare that with our own estimate of the outcome. When our estimate points to a higher chance than the price implies, we consider it a value edge worth tipping. If the numbers do not line up, we pass rather than force a bet."
+    },
+    {
+     "q": "Do you settle and track your Nashville SC tips?",
+     "a": "Yes. Every tip is archived before kick-off and later settled against the final result, with running profit recorded at flat stakes. This keeps the record transparent, though past performance never guarantees future outcomes."
+    }
+   ],
+   "_kind": "team",
+   "_model": "claude-opus-4-8",
+   "_hash": "7681c2720d2f9157",
+   "_generated_at": "2026-07-24T12:15:52+00:00",
+   "_usage": {
+    "in": 1101,
+    "out": 522
+   }
+  },
+  "team:colorado-rapids": {
+   "intro": "This page tracks every Colorado Rapids fixture we cover in MLS through a value-focused lens. The idea is simple: for each match we analyze, we publish a data-driven tip, archive it before kick-off, and settle it honestly against the final score once the game ends. That record stays visible whether the calls land or not. When you read a Rapids tip here, start with the odds and their implied probability, which tells you the percentage chance the market is assigning to an outcome. We look for a value edge, meaning spots where our read suggests the true likelihood differs from what the price implies. So far our Rapids coverage has centered on totals markets. Treat every tip as one input, stake within your means, and remember that outcomes are never certain.",
+   "faq": [
+    {
+     "q": "What betting markets do you cover for Colorado Rapids?",
+     "a": "Our Colorado Rapids coverage has focused on totals markets, where we assess whether a match is likely to go over or under a given goal line. We add a tip whenever we find a fixture with a value angle worth publishing, so the markets we cover can broaden over time."
+    },
+    {
+     "q": "How do you decide on a Colorado Rapids betting tip?",
+     "a": "We convert the available odds into implied probability and compare that to our own read of the fixture, looking for spots where we think the market has mispriced an outcome. A tip is only published when we see a value edge, and each one is archived before kick-off so it can be settled transparently against the final result."
+    },
+    {
+     "q": "Are Colorado Rapids betting tips profitable?",
+     "a": "No betting tips can promise profit, since every match carries genuine uncertainty and results vary. We track our Rapids calls at flat stakes and settle them openly so you can judge the record for yourself, but you should always bet responsibly and only with money you can afford to lose."
+    }
+   ],
+   "_kind": "team",
+   "_model": "claude-opus-4-8",
+   "_hash": "b4ce520527cfe098",
+   "_generated_at": "2026-07-24T12:15:55+00:00",
+   "_usage": {
+    "in": 1111,
+    "out": 581
+   }
+  },
+  "team:st-louis-city-sc": {
+   "intro": "This page tracks every St. Louis City SC fixture we cover through a value-focused lens. The idea is straightforward: whenever a match lands on our radar, we publish a data-driven tip and archive it before kick-off, then settle it against the final score once the game ends. That process keeps a transparent record of what we called and how it played out. To read our tips, start with the odds and their implied probability, which is roughly the percentage chance the market assigns to an outcome. We look for spots where our own read differs enough from that price to suggest an edge, and we explain the reasoning rather than sell certainty. So far our published St. Louis City SC tips have concentrated on totals markets. Betting always carries risk, so stake within limits that suit you.",
+   "faq": [
+    {
+     "q": "What betting markets do you cover for St. Louis City SC?",
+     "a": "Our archived tips on St. Louis City SC fixtures have focused on totals markets, such as over/under goal lines. When a match offers a clear value angle, that is where we tend to publish, and each tip is logged before kick-off and settled against the final result."
+    }
+   ],
+   "_kind": "team",
+   "_model": "claude-opus-4-8",
+   "_hash": "2e5e4243e0452812",
+   "_generated_at": "2026-07-24T12:15:57+00:00",
+   "_usage": {
+    "in": 1111,
+    "out": 356
+   }
+  },
+  "team:san-diego-fc": {
+   "intro": "This page tracks San Diego FC through a value lens, focusing on the numbers rather than noise. For every San Diego FC fixture we cover, we publish a data-driven tip that is archived before kick-off and later settled against the final score, so the record stands on its own. We work in the MLS markets we have tipped so far, mainly match result and totals. To read our tips, start with the implied probability behind the odds: a price of 2.00 suggests roughly a 50 percent chance, and we look for spots where our read differs from that market number. A value edge is simply where we judge the true chance to be higher than the odds imply. Nothing here is certain, so stake within your means and treat each tip as one input.",
+   "faq": [
+    {
+     "q": "Do you post a tip for every San Diego FC match?",
+     "a": "We aim to cover the San Diego FC fixtures we can assess with useful data, and each one we cover gets a tip archived before kick-off. Some matches may be skipped when we do not see a clear angle, so coverage is selective rather than guaranteed for every game."
+    },
+    {
+     "q": "Which betting markets do you cover for San Diego FC?",
+     "a": "So far our San Diego FC tips have centred on match result and totals markets. These tend to offer the clearest way to compare our read against the odds, and we add other markets only when the data supports a genuine edge."
+    },
+    {
+     "q": "How should I read the odds in your San Diego FC tips?",
+     "a": "Convert the price into an implied probability first, since that tells you the chance the market assigns to an outcome. We flag a value edge when our estimate of the true probability is higher than that implied figure, but no edge removes risk, so bet responsibly."
+    }
+   ],
+   "_kind": "team",
+   "_model": "claude-opus-4-8",
+   "_hash": "a1b3f4d30c25398e",
+   "_generated_at": "2026-07-24T12:15:59+00:00",
+   "_usage": {
+    "in": 1104,
+    "out": 540
+   }
+  },
+  "team:fc-dallas": {
+   "intro": "This page tracks FC Dallas through a value-focused lens across their MLS fixtures. The approach is simple: every FC Dallas match we cover gets a data-driven tip, archived before kick-off and later settled against the final score, so there is a transparent record of how each call performed. We work primarily in match result and totals markets, translating bookmaker odds into implied probability and then looking for spots where our read differs enough to suggest an edge. When you read a tip here, focus on that gap between the price offered and the chance we estimate, rather than any single result. Odds move and outcomes are uncertain, so treat each suggestion as one input, stake within your means, and bet responsibly.",
+   "faq": [
+    {
+     "q": "How do you make FC Dallas betting tips?",
+     "a": "We start from the market odds on each FC Dallas fixture and convert them into implied probability, then compare that with our own model-based estimate. A tip is published when we think the price offers value on markets such as match result or totals. Every call is archived before kick-off and settled against the final score."
+    },
+    {
+     "q": "What betting markets do you cover for FC Dallas matches?",
+     "a": "Our archive on FC Dallas fixtures centres on match result and totals. These are widely available and liquid, which makes them well suited to comparing prices and spotting value. We only publish a tip when the odds appear to justify it."
+    },
+    {
+     "q": "Can I expect to win money following FC Dallas tips?",
+     "a": "No betting tip can promise profit, and outcomes are always uncertain. We aim to find value by identifying odds that look mispriced relative to implied probability, but individual results vary and losing runs happen. Stake only what you can afford and treat betting as entertainment, not income."
+    }
+   ],
+   "_kind": "team",
+   "_model": "claude-opus-4-8",
+   "_hash": "5006c5ac9a6444c0",
+   "_generated_at": "2026-07-24T12:16:04+00:00",
+   "_usage": {
+    "in": 1104,
+    "out": 553
    }
   }
  }

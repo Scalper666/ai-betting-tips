@@ -1,0 +1,48 @@
+---
+import Base from '../../../layouts/Base.astro';
+import historyData from '../../../data/history.json';
+
+// Archive hub: every day we have published tips for, newest first.
+const byDate = {};
+for (const h of Object.values(historyData.tips ?? {})) {
+  if (h.score === 'simulated' || String(h.event_id ?? '').startsWith('mock')) continue;
+  const d = String(h.kickoff ?? '').slice(0, 10);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) continue;
+  const day = (byDate[d] ??= { tips: 0, settled: 0, won: 0, profit: 0 });
+  day.tips += 1;
+  if (['won', 'lost', 'void'].includes(h.status)) {
+    day.settled += 1;
+    day.profit += h.profit ?? 0;
+    if (h.status === 'won') day.won += 1;
+  }
+}
+const dates = Object.keys(byDate).sort().reverse();
+const pretty = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' });
+
+const title = 'Predictions Archive by Date — Tips & Settled Results';
+const description = `Every day of published football tips with openly settled results — ${dates.length} days and counting. Nothing is edited or deleted after kick-off.`;
+---
+<Base title={title} description={description} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/predictions">Predictions</a><span>/</span>By date</div>
+      <h1>Predictions <em>by date</em></h1>
+      <p class="lead">{dates.length} day{dates.length === 1 ? '' : 's'} of archived tips — every day page lists what we published and how it settled.</p>
+    </div>
+  </div>
+
+  <div class="container" style="padding-bottom:60px">
+    <div class="res-list" style="max-width:760px">
+      {dates.map((d) => {
+        const s = byDate[d];
+        return (
+          <a class="res-row" href={`/predictions/daily/${d}`} style="text-decoration:none;color:inherit">
+            <span class={`res-mark ${s.profit > 0 ? 'w' : s.settled && s.profit < 0 ? 'l' : 'v'}`}>📅</span>
+            <div class="res-match"><b>{pretty(d)}</b><span>{s.tips} tips{s.settled ? ` · ${s.won}/${s.settled} won` : ' · awaiting results'}</span></div>
+            <span class={`res-profit ${s.profit > 0 ? 'pos' : s.profit < 0 ? 'neg' : 'zero'}`}>{s.settled ? `${s.profit > 0 ? '+' : ''}${s.profit.toFixed(2)}u` : '—'}</span>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</Base>

@@ -70,6 +70,11 @@ const description = `Free ${league} predictions with our recommended tip, best a
             </a>
           ))}
         </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🎯</span> {league} markets</div>
+          <a class="tm" href={`/tips/match-result/${slugify(league)}`}><span class="dot"></span>Match result tips</a>
+          <a class="tm" href={`/tips/over-under/${slugify(league)}`}><span class="dot"></span>Over/Under tips</a>
+        </div>
       </aside>
     </div>
   </div>

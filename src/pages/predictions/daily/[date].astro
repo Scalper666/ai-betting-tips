@@ -1,0 +1,131 @@
+---
+import Base from '../../../layouts/Base.astro';
+import historyData from '../../../data/history.json';
+import { slugify } from '../../../lib/utils.js';
+
+// ── One page per calendar day we published tips for: "Football predictions
+//    for 24 July 2026" with every tip and (once settled) its result.
+//    +1 page per day, forever — built purely from the settlement archive.
+export function getStaticPaths() {
+  const byDate = {};
+  for (const h of Object.values(historyData.tips ?? {})) {
+    if (h.score === 'simulated' || String(h.event_id ?? '').startsWith('mock')) continue;
+    const d = String(h.kickoff ?? '').slice(0, 10);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) continue;
+    (byDate[d] ??= []).push(h);
+  }
+  const dates = Object.keys(byDate).sort();
+  return dates.map((date, i) => ({
+    params: { date },
+    props: {
+      entries: byDate[date].sort((a, b) => String(a.kickoff).localeCompare(String(b.kickoff))),
+      prev: dates[i - 1] ?? null,
+      next: dates[i + 1] ?? null,
+    },
+  }));
+}
+
+const { date } = Astro.params;
+const { entries, prev, next } = Astro.props;
+
+const pretty = new Date(date + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+const prettyShort = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+
+const settledStates = ['won', 'lost', 'void'];
+const settled = entries.filter((h) => settledStates.includes(h.status));
+const stats = {
+  tips: entries.length,
+  settled: settled.length,
+  won: settled.filter((h) => h.status === 'won').length,
+  lost: settled.filter((h) => h.status === 'lost').length,
+  profit: Math.round(settled.reduce((s, h) => s + (h.profit ?? 0), 0) * 100) / 100,
+};
+const leagues = [...new Set(entries.map((h) => h.league).filter(Boolean))];
+const isPast = new Date(date + 'T23:59:59Z').getTime() < Date.now();
+
+const title = `Football Predictions ${pretty} — Tips${settled.length ? ' & Results' : ''}`;
+const description = settled.length
+  ? `All ${entries.length} football tips we published for ${pretty}, settled openly: ${stats.won} won, ${stats.lost} lost (${stats.profit > 0 ? '+' : ''}${stats.profit.toFixed(2)}u at flat stakes).`
+  : `${entries.length} football predictions for ${pretty} across ${leagues.join(', ')} — every tip archived before kick-off and settled against the final score.`;
+
+const timeOf = (iso) => (iso ? new Date(iso).toISOString().slice(11, 16) : '');
+---
+<Base title={title} description={description} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href="/">Home</a><span>/</span>
+        <a href="/predictions">Predictions</a><span>/</span>
+        <a href="/predictions/daily">By date</a><span>/</span>
+        {pretty}
+      </div>
+      <h1>Predictions for <em>{pretty}</em></h1>
+      <p class="lead">{entries.length} tip{entries.length === 1 ? '' : 's'} across {leagues.join(' · ')} — published before kick-off, settled against the final score, never edited.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+
+        {settled.length > 0 && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">Day <b>results</b></h2></div>
+            <div class="res-sum">
+              <div class="res-chip"><b>{stats.tips}</b><span>Tips</span></div>
+              <div class="res-chip"><b>{stats.settled}</b><span>Settled</span></div>
+              <div class="res-chip win"><b>{stats.won}</b><span>Won</span></div>
+              <div class="res-chip lose"><b>{stats.lost}</b><span>Lost</span></div>
+              <div class={`res-chip ${stats.profit > 0 ? 'win' : stats.profit < 0 ? 'lose' : ''}`}>
+                <b>{stats.profit > 0 ? '+' : ''}{stats.profit.toFixed(2)}u</b><span>Profit</span>
+              </div>
+            </div>
+          </section>
+        )}
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">All <b>tips</b> for {prettyShort(date)}</h2></div>
+          <div class="res-list">
+            {entries.map((h) => {
+              const st = settledStates.includes(h.status) ? h.status : 'pending';
+              return (
+                <a class="res-row" href={`/predictions/${slugify(`${h.home}-vs-${h.away}`)}`} style="text-decoration:none;color:inherit">
+                  <span class={`res-mark ${st === 'won' ? 'w' : st === 'lost' ? 'l' : 'v'}`}>{st === 'won' ? 'W' : st === 'lost' ? 'L' : st === 'void' ? 'V' : '•'}</span>
+                  <span class="res-date">{timeOf(h.kickoff)}</span>
+                  <div class="res-match"><b>{h.home} v {h.away}</b><span>{h.market}{h.score && h.score !== 'simulated' ? ` · final ${h.score}` : ` · ${h.league}`}</span></div>
+                  <span class="res-odds">{Number(h.odds ?? 0).toFixed(2)}</span>
+                  <span class={`res-profit ${st === 'won' ? 'pos' : st === 'lost' ? 'neg' : 'zero'}`}>{st === 'pending' ? '—' : `${(h.profit ?? 0) > 0 ? '+' : ''}${Number(h.profit ?? 0).toFixed(2)}u`}</span>
+                </a>
+              );
+            })}
+          </div>
+          {!isPast && (
+            <p class="res-note">Kick-offs are shown in UTC. Results are graded automatically after full time.</p>
+          )}
+        </section>
+
+        <!-- date chain: strong internal linking between day pages -->
+        <section>
+          <div class="res-sum">
+            {prev && <a class="res-chip" href={`/predictions/daily/${prev}`} style="text-decoration:none"><b>←</b><span>{prettyShort(prev)}</span></a>}
+            <a class="res-chip" href="/predictions" style="text-decoration:none"><b>Today</b><span>live tips</span></a>
+            {next && <a class="res-chip" href={`/predictions/daily/${next}`} style="text-decoration:none"><b>→</b><span>{prettyShort(next)}</span></a>}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>🔍 AI Screener</h4>
+          <p>Every current value pick, ranked by AI score.</p>
+          <a href="/screener" class="btn btn-mint btn-block">Open screener</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">📅</span> Archive</div>
+          <a class="tm" href="/predictions/daily"><span class="dot"></span>All days</a>
+          <a class="tm" href="/tipsters"><span class="dot"></span>Tipster stats</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

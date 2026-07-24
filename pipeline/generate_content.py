@@ -119,6 +119,10 @@ SCHEMAS = {
         "intro": S_TEXT,
         "faq": S_FAQ,
     }, ["intro", "faq"]),
+    "combo": _obj({                           # bet-type x league matrix pages
+        "intro": S_TEXT,
+        "faq": S_FAQ,
+    }, ["intro", "faq"]),
 }
 
 FAQ_RULES = """
@@ -277,6 +281,26 @@ Sections:
 {FAQ_RULES}"""
 
 
+MATRIX = [
+    ("match-result", "Match Result Tips", "1X2 winner picks"),
+    ("over-under", "Over/Under Goals Tips", "totals picks"),
+    ("draw", "Draw Tips", "value draw picks"),
+]
+COMBO_MIN_ITEMS = 2   # mirror of the Astro page threshold
+
+def p_combo(type_name: str, short: str, league: str, n: int, settled: int, won: int, profit: float) -> str:
+    return f"""Write evergreen copy for our "{league} {type_name}" page ({short} for the {league}).
+
+Data (our own archive only): {n} tips on this market in this league so far, {settled} settled ({won} won), cumulative profit {profit:+.2f} units at flat stakes.
+
+Sections:
+- intro: 100-140 words on this specific market in this specific league through our value lens: what the
+  market is, how our model finds value in it (implied probability vs best price), and that every tip is
+  archived pre-match and settled openly. STRICTLY no invented league statistics, trends or team facts.
+  Do not cite the exact record numbers (they change daily).
+{FAQ_RULES}"""
+
+
 # ---------------------------------------------------------------- worklist
 def load_json(path: Path):
     return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
@@ -327,6 +351,36 @@ def build_worklist() -> list[dict]:
     for c in (load_json(ASTRO / "src" / "data" / "countries.json").get("countries") or []):
         work.append({"key": f"country:{c['slug']}", "kind": "country", "prompt": p_country(c),
                      "hash_src": json.dumps({k: c.get(k) for k in ("name", "regulator", "currency")}, sort_keys=True) + "|v2"})
+
+    # bet-type x league matrix pages
+    hist_all = [v for v in load_json(ROOT / "data" / "history.json").get("tips", {}).values()
+                if v.get("score") != "simulated" and not str(v.get("event_id", "")).startswith("mock")]
+    def _combo_match(kind_key, rec_type, outcome):
+        if kind_key == "over-under":
+            return rec_type == "totals"
+        if kind_key == "draw":
+            return rec_type == "h2h" and outcome == "Draw"
+        return rec_type == "h2h" and outcome != "Draw"
+    combo_leagues = sorted({x.get("league") for x in hist_all if x.get("league")}
+                           | {t.get("league") for t in tips if t.get("league")})
+    for ckey, cname, cshort in MATRIX:
+        for lg in combo_leagues:
+            live_n = sum(1 for t in tips if t.get("league") == lg and
+                         _combo_match(ckey, (t.get("recommendation") or {}).get("type"),
+                                      (t.get("recommendation") or {}).get("outcome")))
+            past = [h for h in hist_all if h.get("league") == lg and
+                    _combo_match(ckey, h.get("type"), h.get("outcome"))]
+            if live_n + len(past) < COMBO_MIN_ITEMS:
+                continue
+            st = [h for h in past if h.get("status") in ("won", "lost", "void")]
+            work.append({
+                "key": f"combo:{ckey}:{slugify(lg)}",
+                "kind": "combo",
+                "prompt": p_combo(cname, cshort, lg, live_n + len(past), len(st),
+                                  sum(1 for h in st if h["status"] == "won"),
+                                  sum(float(h.get("profit") or 0) for h in st)),
+                "hash_src": f"combo|{ckey}|{lg}|v1",
+            })
 
     # team hub pages — AI text once a team is seen often enough
     hist = load_json(ROOT / "data" / "history.json").get("tips", {})
