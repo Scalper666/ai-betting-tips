@@ -1,14 +1,19 @@
 ---
 import Base from '../../layouts/Base.astro';
+import content from '../../data/content.json';
+import AiFaq from '../../components/AiFaq.astro';
 import TipsterCards from '../../components/TipsterCards.astro';
 import Leaderboard from '../../components/Leaderboard.astro';
 import stats from '../../data/stats.json';
-import { AVATAR_STYLES, signed } from '../../lib/utils.js';
+import { AVATAR_STYLES, signed, faqSchema } from '../../lib/utils.js';
 
 const o = stats.overall ?? {};
 const inForm = [...(stats.tipsters ?? [])].sort((a, b) => (b.streak ?? 0) - (a.streak ?? 0)).slice(0, 3);
+
+const aiPage = (content.entries ?? {})['page:tipsters'];
+const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(aiPage.faq) } : null;
 ---
-<Base
+<Base schema={pageSchema}
   title="Expert Tipsters & Leaderboard — Verified Stats & ROI — AI Betting Tips"
   description={`Verified tipster leaderboard: ${o.settled ?? 0} settled bets, ${o.win_rate ?? 0}% win rate, ${signed(o.roi ?? 0)}% ROI — every figure computed from graded results.`}
   active="tipsters">
@@ -65,6 +70,13 @@ const inForm = [...(stats.tipsters ?? [])].sort((a, b) => (b.streak ?? 0) - (a.s
           </div>
         </section>
 
+        {aiPage?.intro && (
+          <section class="seo">
+            <h2>About the leaderboard</h2>
+            <p>{aiPage.intro}</p>
+          </section>
+        )}
+        <AiFaq faqs={aiPage?.faq ?? []} title="Tipsters FAQ" />
       </main>
 
       <aside class="sidebar">

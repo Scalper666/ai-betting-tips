@@ -23,6 +23,7 @@ const faq = [
   { q: `What is the ${bk.name} welcome offer?`, a: `${bk.bonus.headline}. It carries ${bk.bonus.wagering} wagering at minimum odds of ${bk.bonus.min_odds}, with a minimum deposit of €${bk.bonus.min_deposit}.` },
   { q: `How long do ${bk.name} withdrawals take?`, a: `In our testing, withdrawals were processed in ${bk.payout_time}.` },
 ];
+if (ai?.faq?.length) faq.push(...ai.faq);
 
 const schema = {
   '@context': 'https://schema.org',

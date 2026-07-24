@@ -67,3 +67,13 @@ export function kickoffLabel(iso) {
   if (days === 1) return `Tomorrow · ${t}`;
   return `${d.toLocaleDateString('en-GB', { weekday: 'short' })} · ${t}`;
 }
+
+// FAQPage JSON-LD from [{q, a}] — merged into each page's schema graph
+export const faqSchema = (faqs) => ({
+  '@type': 'FAQPage',
+  mainEntity: (faqs ?? []).map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+});

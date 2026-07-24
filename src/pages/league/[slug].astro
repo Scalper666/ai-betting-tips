@@ -3,7 +3,8 @@ import Base from '../../layouts/Base.astro';
 import PredCard from '../../components/PredCard.astro';
 import predictions from '../../data/predictions.json';
 import content from '../../data/content.json';
-import { slugify } from '../../lib/utils.js';
+import { slugify, faqSchema } from '../../lib/utils.js';
+import AiFaq from '../../components/AiFaq.astro';
 
 // One SEO page per league, built from whatever leagues exist in the data.
 export function getStaticPaths() {
@@ -17,10 +18,11 @@ export function getStaticPaths() {
 
 const { league, tips } = Astro.props;
 const ai = (content.entries ?? {})[`league:${slugify(league)}`];
+const schema = ai?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(ai.faq) } : null;
 const title = `${league} Predictions, Tips & Odds — AI Betting Tips`;
 const description = `Free ${league} predictions with our recommended tip, best available odds and confidence rating for every fixture.`;
 ---
-<Base title={title} description={description} active="predictions">
+<Base title={title} description={description} schema={schema} active="predictions">
   <div class="container">
     <div class="page-head">
       <div class="crumbs">
@@ -56,6 +58,7 @@ const description = `Free ${league} predictions with our recommended tip, best a
             </p>
           )}
         </section>
+        <AiFaq faqs={ai?.faq ?? []} title={`${league} FAQ`} />
       </main>
 
       <aside class="sidebar">

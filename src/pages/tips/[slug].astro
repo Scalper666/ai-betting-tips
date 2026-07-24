@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 import PredCard from '../../components/PredCard.astro';
 import predictions from '../../data/predictions.json';
 import content from '../../data/content.json';
-import { slugify } from '../../lib/utils.js';
+import { slugify, faqSchema } from '../../lib/utils.js';
 
 // One SEO page per bet type — same pattern as leagues and matches.
 import { BET_TYPES } from '../../lib/betTypes.js';
@@ -14,12 +14,14 @@ export function getStaticPaths() {
 
 const { type } = Astro.props;
 const ai = (content.entries ?? {})[`tips:${type.slug}`];
+const schema = ai?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(ai.faq) } : null;
 const tips = (predictions.tips ?? []).filter((t) => String(t.sport_key ?? '').startsWith('soccer')).slice(0, 6);
 const leagues = [...new Set(tips.map((t) => t.league))];
 ---
 <Base
   title={`${type.name} — Free Football Betting Tips — AI Betting Tips`}
   description={`Free ${type.name.toLowerCase()} for football: expert ${type.short} predictions with odds, analysis and a confidence rating.`}
+  schema={schema}
   active="predictions">
 
   <div class="container">
@@ -58,6 +60,12 @@ const leagues = [...new Set(tips.map((t) => t.league))];
               <div class="faq-q">When are tips published?<span class="pm">+</span></div>
               <div class="faq-a"><p>Daily tips go live each morning and all selections are posted before kick-off.</p></div>
             </div>
+            {(ai?.faq ?? []).map((f) => (
+              <div class="faq-item">
+                <div class="faq-q">{f.q}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{f.a}</p></div>
+              </div>
+            ))}
           </div>
         </section>
 

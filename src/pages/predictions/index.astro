@@ -1,11 +1,17 @@
 ---
 import Base from '../../layouts/Base.astro';
+import content from '../../data/content.json';
+import AiFaq from '../../components/AiFaq.astro';
+import { faqSchema } from '../../lib/utils.js';
 import PredCard from '../../components/PredCard.astro';
 import predictions from '../../data/predictions.json';
 
 const tips = predictions.tips ?? [];
+
+const aiPage = (content.entries ?? {})['page:predictions'];
+const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(aiPage.faq) } : null;
 ---
-<Base
+<Base schema={pageSchema}
   title="Football Predictions & Free Betting Tips — AI Betting Tips"
   description="All of today's free predictions with our recommended tip, best available odds and a confidence rating."
   active="predictions">
@@ -26,6 +32,13 @@ const tips = predictions.tips ?? [];
             {tips.map((tip) => <PredCard tip={tip} />)}
           </div>
         </section>
+        {aiPage?.intro && (
+          <section class="seo">
+            <h2>About this page</h2>
+            <p>{aiPage.intro}</p>
+          </section>
+        )}
+        <AiFaq faqs={aiPage?.faq ?? []} title="Predictions FAQ" />
       </main>
       <aside class="sidebar">
         <div class="promo">

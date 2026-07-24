@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 import predictions from '../../data/predictions.json';
 import historyData from '../../data/history.json';
 import content from '../../data/content.json';
-import { matchSlug, abbr, badgeColor, kickoffLabel, confidenceLabel, slugify } from '../../lib/utils.js';
+import { matchSlug, abbr, badgeColor, kickoffLabel, confidenceLabel, slugify, faqSchema } from '../../lib/utils.js';
 
 // ── Programmatic SEO, compounding edition:
 //    pages are built from the CURRENT feed ∪ the SETTLEMENT ARCHIVE, so a match
@@ -80,8 +80,7 @@ const description = isLive
 
 const bestOdds = Object.entries(tip?.best_h2h ?? {});
 
-const schema = {
-  '@context': 'https://schema.org',
+const eventSchema = {
   '@type': 'SportsEvent',
   name: `${home} vs ${away}`,
   startDate: kickoffIso,
@@ -92,6 +91,10 @@ const schema = {
     { '@type': 'SportsTeam', name: away },
   ],
   superEvent: { '@type': 'SportsOrganization', name: league },
+};
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [eventSchema, ...(ai?.faq?.length ? [faqSchema(ai.faq)] : [])],
 };
 ---
 <Base title={title} description={description} schema={schema} active="predictions">
@@ -255,6 +258,12 @@ const schema = {
               <div class="faq-q">{isLive ? `What is the prediction for ${home} vs ${away}?` : `What was our prediction for ${home} vs ${away}?`}<span class="pm">+</span></div>
               <div class="faq-a"><p>Our tip {isLive ? 'is' : 'was'} <b>{rec.text}</b> at odds of {Number(rec.price ?? 0).toFixed(2)}{isLive ? `, with a ${conf}% confidence rating.` : '.'}</p></div>
             </div>
+            {(ai?.faq ?? []).map((f) => (
+              <div class="faq-item">
+                <div class="faq-q">{f.q}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{f.a}</p></div>
+              </div>
+            ))}
             {isLive ? (
               <div class="faq-item">
                 <div class="faq-q">When does the match kick off?<span class="pm">+</span></div>

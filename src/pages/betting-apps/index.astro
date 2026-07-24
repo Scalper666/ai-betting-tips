@@ -1,15 +1,20 @@
 ---
 // Also generated from bookmakers.json — the `app` field on each operator.
 import Base from '../../layouts/Base.astro';
+import content from '../../data/content.json';
+import AiFaq from '../../components/AiFaq.astro';
 import data from '../../data/bookmakers.json';
-import { avgScore } from '../../lib/utils.js';
+import { avgScore, faqSchema } from '../../lib/utils.js';
 
 const apps = (data.bookmakers ?? [])
   .filter((bk) => bk.app && (bk.app.android || bk.app.ios))
   .sort((a, b) => (b.app.rating ?? 0) - (a.app.rating ?? 0));
 const year = new Date().getFullYear();
+
+const aiPage = (content.entries ?? {})['page:betting-apps'];
+const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(aiPage.faq) } : null;
 ---
-<Base
+<Base schema={pageSchema}
   title={`Best Betting Apps ${year} — Android & iOS Compared`}
   description="Mobile betting apps compared on platforms, size, live streaming and in-app offers — pulled from our full bookmaker reviews."
   active="bookmakers">
@@ -55,6 +60,13 @@ const year = new Date().getFullYear();
           <h2>App vs mobile site</h2>
           <p>A native app is usually faster and adds push notifications and streaming; the mobile site needs no install and saves storage. Our reviews flag which operators genuinely have a better app and which are fine in the browser.</p>
         </section>
+        {aiPage?.intro && (
+          <section class="seo">
+            <h2>About betting apps</h2>
+            <p>{aiPage.intro}</p>
+          </section>
+        )}
+        <AiFaq faqs={aiPage?.faq ?? []} title="Betting apps FAQ" />
       </main>
 
       <aside class="sidebar">

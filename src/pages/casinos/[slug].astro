@@ -25,6 +25,7 @@ const faq = [
   { q: `What is the ${c.name} welcome offer?`, a: `${c.bonus.headline}. It carries ${c.bonus.wagering} wagering${c.bonus.min_deposit ? ` with a minimum deposit of €${c.bonus.min_deposit}` : ''}${c.bonus.code ? ` (code ${c.bonus.code})` : ''}.` },
   { q: `How long do ${c.name} withdrawals take?`, a: `In our testing, withdrawals were processed in ${c.payout_time}.` },
 ];
+if (ai?.faq?.length) faq.push(...ai.faq);
 
 const schema = {
   '@context': 'https://schema.org',

@@ -1,0 +1,18 @@
+---
+// Visible FAQ block for AI-generated Q&As (pair with faqSchema() in the page's
+// JSON-LD). Renders nothing when there are no items — safe to drop in anywhere.
+const { faqs = [], title = 'FAQ' } = Astro.props;
+---
+{faqs.length > 0 && (
+  <section>
+    <div class="sec-head"><h2 class="sec-title">{title.split(' ')[0]} <b>{title.split(' ').slice(1).join(' ') || 'FAQ'}</b></h2></div>
+    <div class="faq">
+      {faqs.map((f, i) => (
+        <div class={`faq-item${i === 0 ? ' open' : ''}`}>
+          <div class="faq-q">{f.q}<span class="pm">+</span></div>
+          <div class="faq-a"><p>{f.a}</p></div>
+        </div>
+      ))}
+    </div>
+  </section>
+)}

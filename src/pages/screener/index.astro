@@ -1,7 +1,9 @@
 ---
 import Base from '../../layouts/Base.astro';
+import content from '../../data/content.json';
+import AiFaq from '../../components/AiFaq.astro';
 import screener from '../../data/screener.json';
-import { kickoffLabel } from '../../lib/utils.js';
+import { kickoffLabel, faqSchema } from '../../lib/utils.js';
 
 const rows = [...(screener.rows ?? [])].sort((a, b) => b.score - a.score);
 const sports = [...new Set(rows.map((r) => r.sport))].sort();
@@ -9,8 +11,11 @@ const leagues = [...new Set(rows.map((r) => r.league))].sort();
 // score >= 45 means the pick has a positive edge (see pipeline ai_score) — green zone
 const scoreCls = (s) => (s >= 45 ? 's-hi' : s >= 30 ? 's-md' : 's-lo');
 const steamHtml = { up: ['scr-steam up', '↑ Steam'], down: ['scr-steam down', '↓ Drift'], flat: ['scr-steam flat', '— flat'] };
+
+const aiPage = (content.entries ?? {})['page:screener'];
+const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(aiPage.faq) } : null;
 ---
-<Base
+<Base schema={pageSchema}
   title="AI Predictions Screener — Value Bets Across All Sports — AI Betting Tips"
   description="Live AI screener of value betting picks across football, basketball, tennis and more. Filter by sport, league, market and edge; sort by AI score."
   active="predictions">
@@ -92,6 +97,7 @@ const steamHtml = { up: ['scr-steam up', '↑ Steam'], down: ['scr-steam down', 
       </div>
       <span class="read-more" data-clamp-toggle="seoClamp">Read more ▾</span>
     </section>
+    <AiFaq faqs={aiPage?.faq ?? []} title="Screener FAQ" />
 
   </div>
 

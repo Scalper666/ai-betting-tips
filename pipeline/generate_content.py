@@ -78,33 +78,58 @@ def _obj(props: dict, req: list[str]) -> dict:
 
 
 S_TEXT = {"type": "string"}
+S_FAQ = {"type": "array", "items": _obj({"q": S_TEXT, "a": S_TEXT}, ["q", "a"])}
 SCHEMAS = {
     "match": _obj({
         "intro": S_TEXT,                      # ~120-170 words market-based preview
         "key_factors": {"type": "array", "items": S_TEXT},   # 3-4 bullets
         "verdict": S_TEXT,                    # ~40-60 words wrap-up
-    }, ["intro", "key_factors", "verdict"]),
+        "faq": S_FAQ,                         # 3 search-style Q&As (FAQPage schema)
+    }, ["intro", "key_factors", "verdict", "faq"]),
     "league": _obj({
         "intro": S_TEXT,                      # what makes betting on this league distinct
         "betting_guide": S_TEXT,              # practical how-to paragraph
-    }, ["intro", "betting_guide"]),
+        "faq": S_FAQ,
+    }, ["intro", "betting_guide", "faq"]),
     "tips": _obj({
         "intro": S_TEXT,
         "how_it_works": S_TEXT,
         "strategy": S_TEXT,
-    }, ["intro", "how_it_works", "strategy"]),
+        "faq": S_FAQ,
+    }, ["intro", "how_it_works", "strategy", "faq"]),
     "bookmaker": _obj({
         "verdict": S_TEXT,                    # editorial verdict ~130-170 words
         "who_for": S_TEXT,                    # who this brand suits ~50-70 words
-    }, ["verdict", "who_for"]),
+        "faq": S_FAQ,
+    }, ["verdict", "who_for", "faq"]),
     "casino": _obj({
         "verdict": S_TEXT,
         "who_for": S_TEXT,
-    }, ["verdict", "who_for"]),
+        "faq": S_FAQ,
+    }, ["verdict", "who_for", "faq"]),
     "country": _obj({
         "intro": S_TEXT,                      # betting landscape ~110-150 words
-    }, ["intro"]),
+        "faq": S_FAQ,
+    }, ["intro", "faq"]),
+    "page": _obj({                            # evergreen intro + FAQ for thin index pages
+        "intro": S_TEXT,
+        "faq": S_FAQ,
+    }, ["intro", "faq"]),
 }
+
+FAQ_RULES = """
+- faq: exactly 3 concise Q&A pairs phrased the way real bettors search (natural questions).
+  Answers 2-3 sentences, honest, self-contained, no cross-references to "above". Evergreen wording:
+  never cite counts, dates or prices that change daily."""
+
+# Thin index pages that get an evergreen AI intro + FAQ (key -> what the page is)
+PAGES = [
+    ("predictions", "the football predictions hub listing every current tip with odds and confidence"),
+    ("screener", "the AI value screener — a sortable table of every bet scored by value edge and win probability"),
+    ("bonuses", "the betting bonuses comparison page listing welcome offers with their real wagering terms"),
+    ("betting-apps", "the betting apps roundup rating bookmakers' mobile apps"),
+    ("tipsters", "the tipster leaderboard with honest, settled win rates and ROI for every tipster"),
+]
 
 SYSTEM = """You are the senior editor of AI Betting Tips (ai-betting-tips.com), an English-language
 sports-betting information site. You write clear, useful, search-friendly copy.
@@ -148,7 +173,10 @@ Value picks vs market consensus:
 Sections:
 - intro: 120-170 words. Frame the fixture through the odds: who the market makes favourite and how strongly, what the prices imply in probability terms, and where our recommended bet fits. Mention both team names and the competition naturally (good for search).
 - key_factors: 3-4 short bullet sentences, each derived from the data above (price gaps, implied probabilities, value edges, draw pricing). No invented facts.
-- verdict: 40-60 words summarising the recommended bet and its risk level honestly."""
+- verdict: 40-60 words summarising the recommended bet and its risk level honestly.
+- faq: exactly 3 Q&As bettors would search about betting on this exact fixture (e.g. who is
+  favourite, what the draw is priced at, is there value) — answered ONLY from the data above.
+  Answers 1-3 sentences, honest. Never invent team news."""
 
 
 def p_league(name: str, short: str, teams: list[str], n: int) -> str:
@@ -158,7 +186,7 @@ Data: we currently list {n} upcoming {name} fixtures, featuring teams such as {'
 
 Sections:
 - intro: 120-160 words on betting on {name}: what kind of competition it is at a general level and what our predictions page offers (daily tips with odds comparison, value detection, honest settled results). Mention "{name} predictions" and "{name} betting tips" naturally once each.
-- betting_guide: 100-140 words of practical guidance for betting on this league responsibly: comparing odds across bookmakers, understanding implied probability, sticking to a bankroll plan. General best practice only — no invented league statistics."""
+- betting_guide: 100-140 words of practical guidance for betting on this league responsibly: comparing odds across bookmakers, understanding implied probability, sticking to a bankroll plan. General best practice only — no invented league statistics.{FAQ_RULES}"""
 
 
 def p_tips(slug: str, name: str) -> str:
@@ -167,7 +195,7 @@ def p_tips(slug: str, name: str) -> str:
 Sections:
 - intro: 90-130 words: what this bet type is and who it suits.
 - how_it_works: 110-150 words: mechanics of the bet with one simple worked example using odds (invent only the arithmetic example, clearly hypothetical, e.g. "say a team is priced at 2.00").
-- strategy: 110-150 words: sensible approach to this bet type — value thinking, common mistakes, bankroll discipline. No promises of profit."""
+- strategy: 110-150 words: sensible approach to this bet type — value thinking, common mistakes, bankroll discipline. No promises of profit.{FAQ_RULES}"""
 
 
 def p_bookmaker(bk: dict) -> str:
@@ -184,7 +212,7 @@ Data:
 
 Sections:
 - verdict: 130-170 words weighing the strong and weak category scores honestly (praise the high ones, note the lower ones), and put the welcome offer in context including its wagering terms.
-- who_for: 50-70 words on which kind of bettor this bookmaker suits best, based on the scores."""
+- who_for: 50-70 words on which kind of bettor this bookmaker suits best, based on the scores.{FAQ_RULES}"""
 
 
 def p_casino(c: dict) -> str:
@@ -201,7 +229,7 @@ Data:
 
 Sections:
 - verdict: 130-170 words, honest about strong and weak scores; explain the wagering requirement's practical meaning.
-- who_for: 50-70 words on which players this casino suits."""
+- who_for: 50-70 words on which players this casino suits.{FAQ_RULES}"""
 
 
 def p_country(c: dict) -> str:
@@ -214,7 +242,16 @@ Data:
 - Popular payment methods: {', '.join(c.get('popular_payments') or [])}
 
 Sections:
-- intro: 110-150 words about choosing a licensed bookmaker in {c.get('name')}: role of the regulator named above, why licensing matters, what our rankings weigh (odds, payout speed, app quality, safety). Do not make specific legal claims beyond "check local rules" — laws change."""
+- intro: 110-150 words about choosing a licensed bookmaker in {c.get('name')}: role of the regulator named above, why licensing matters, what our rankings weigh (odds, payout speed, app quality, safety). Do not make specific legal claims beyond "check local rules" — laws change.{FAQ_RULES}"""
+
+
+def p_page(key: str, what: str) -> str:
+    return f"""Write evergreen copy for {what} (site section /{key}/).
+
+Sections:
+- intro: 100-140 words explaining what this page offers a bettor and how to get the most out of it.
+  Mention that every published tip is archived and settled openly (our core trust promise) where natural.
+{FAQ_RULES}"""
 
 
 # ---------------------------------------------------------------- worklist
@@ -250,23 +287,27 @@ def build_worklist() -> list[dict]:
             "key": f"league:{slugify(name)}",
             "kind": "league",
             "prompt": p_league(name, ts[0].get("league_short", ""), teams, len(ts)),
-            "hash_src": name,   # evergreen — regenerate only if the league is new
+            "hash_src": name + "|v2",   # v2: faq added
         })
 
     # bet types (evergreen)
     for slug, name in BET_TYPES:
-        work.append({"key": f"tips:{slug}", "kind": "tips", "prompt": p_tips(slug, name), "hash_src": slug})
+        work.append({"key": f"tips:{slug}", "kind": "tips", "prompt": p_tips(slug, name), "hash_src": slug + "|v2"})
 
     # bookmakers / casinos / countries — read from the Astro data (hand-maintained)
     for bk in (load_json(ASTRO / "src" / "data" / "bookmakers.json").get("bookmakers") or []):
         work.append({"key": f"bookmaker:{bk['slug']}", "kind": "bookmaker", "prompt": p_bookmaker(bk),
-                     "hash_src": json.dumps(bk, sort_keys=True)})
+                     "hash_src": json.dumps(bk, sort_keys=True) + "|v2"})
     for c in (load_json(ASTRO / "src" / "data" / "casinos.json").get("casinos") or []):
         work.append({"key": f"casino:{c['slug']}", "kind": "casino", "prompt": p_casino(c),
-                     "hash_src": json.dumps(c, sort_keys=True)})
+                     "hash_src": json.dumps(c, sort_keys=True) + "|v2"})
     for c in (load_json(ASTRO / "src" / "data" / "countries.json").get("countries") or []):
         work.append({"key": f"country:{c['slug']}", "kind": "country", "prompt": p_country(c),
-                     "hash_src": json.dumps({k: c.get(k) for k in ("name", "regulator", "currency")}, sort_keys=True)})
+                     "hash_src": json.dumps({k: c.get(k) for k in ("name", "regulator", "currency")}, sort_keys=True) + "|v2"})
+
+    # thin index pages
+    for key, what in PAGES:
+        work.append({"key": f"page:{key}", "kind": "page", "prompt": p_page(key, what), "hash_src": key + "|v1"})
 
     # dedupe by key (e.g. rematch fixtures share a home-vs-away slug/page)
     seen: set[str] = set()

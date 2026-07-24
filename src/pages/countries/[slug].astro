@@ -6,7 +6,8 @@ import countryData from '../../data/countries.json';
 import bookmakerData from '../../data/bookmakers.json';
 import casinoData from '../../data/casinos.json';
 import content from '../../data/content.json';
-import { avgScore } from '../../lib/utils.js';
+import { avgScore, faqSchema } from '../../lib/utils.js';
+import AiFaq from '../../components/AiFaq.astro';
 
 export function getStaticPaths() {
   return (countryData.countries ?? []).map((c) => ({ params: { slug: c.slug }, props: { country: c } }));
@@ -14,6 +15,7 @@ export function getStaticPaths() {
 
 const { country } = Astro.props;
 const ai = (content.entries ?? {})[`country:${country.slug}`];
+const schema = ai?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(ai.faq) } : null;
 const list = (bookmakerData.bookmakers ?? [])
   .filter((bk) => (bk.countries ?? []).includes(country.slug))
   .sort((a, b) => avgScore(b.scores) - avgScore(a.scores));
@@ -25,7 +27,7 @@ const year = new Date().getFullYear();
 const title = `Best Betting Sites in ${country.name} ${year}`;
 const description = `Licensed bookmakers accepting players from ${country.name}, with local payment methods, bonus terms and how betting is regulated by ${country.regulator}.`;
 ---
-<Base title={title} description={description} active="bookmakers">
+<Base schema={schema} title={title} description={description} active="bookmakers">
   <div class="container">
     <div class="page-head">
       <div class="crumbs">
@@ -101,6 +103,7 @@ const description = `Licensed bookmakers accepting players from ${country.name},
           )}
         </section>
 
+        <AiFaq faqs={ai?.faq ?? []} title={`Betting in ${country.name} FAQ`} />
       </main>
 
       <aside class="sidebar">

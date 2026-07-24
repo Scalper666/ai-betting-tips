@@ -1,12 +1,18 @@
 ---
 // Generated entirely from bookmakers.json — no separate bonus data to maintain.
 import Base from '../../layouts/Base.astro';
+import content from '../../data/content.json';
+import AiFaq from '../../components/AiFaq.astro';
+import { faqSchema } from '../../lib/utils.js';
 import data from '../../data/bookmakers.json';
 
 const offers = (data.bookmakers ?? []).map((bk) => ({ bk, ...bk.bonus }));
 const year = new Date().getFullYear();
+
+const aiPage = (content.entries ?? {})['page:bonuses'];
+const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(aiPage.faq) } : null;
 ---
-<Base
+<Base schema={pageSchema}
   title={`Best Betting Bonuses & Free Bets ${year}`}
   description="Welcome offers and free bets with the wagering requirements spelled out in plain English, so you can see which ones are actually worth claiming."
   active="bonuses">
@@ -62,6 +68,13 @@ const year = new Date().getFullYear();
             </div>
           </div>
         </section>
+        {aiPage?.intro && (
+          <section class="seo">
+            <h2>About betting bonuses</h2>
+            <p>{aiPage.intro}</p>
+          </section>
+        )}
+        <AiFaq faqs={aiPage?.faq ?? []} title="Bonuses FAQ" />
       </main>
 
       <aside class="sidebar">
