@@ -78,6 +78,10 @@ const calSportOpts = calSports.map((label) => {
 
 const miniTipsters = (stats.tipsters ?? []).slice(0, 3);
 
+// Tipster cards are hidden until enough REAL settled history accumulates —
+// early numbers mixed mock-era settlements, which clashed with the honesty pitch.
+const SHOW_TIPSTERS = false;
+
 // settlement transparency: latest graded bets from the pipeline archive.
 // Every published tip lands in history.json; results.py grades it once the
 // match finishes — this block simply surfaces that log, wins and losses alike.
@@ -376,14 +380,17 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
           </div>
         </section>
 
-        <!-- TOP TIPSTERS (real stats) -->
-        <section>
-          <div class="sec-head">
-            <h2 class="sec-title">This month's top <b>tipsters</b></h2>
-            <a href="/tipsters" class="more-link">Full leaderboard →</a>
-          </div>
-          <TipsterCards limit={3} />
-        </section>
+        <!-- TOP TIPSTERS — hidden until enough real settled history accumulates
+             (early numbers mixed mock-era settlements; flip SHOW_TIPSTERS to bring back) -->
+        {SHOW_TIPSTERS && (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">This month's top <b>tipsters</b></h2>
+              <a href="/tipsters" class="more-link">Full leaderboard →</a>
+            </div>
+            <TipsterCards limit={3} />
+          </section>
+        )}
 
         <!-- BONUSES (from bookmakers.json) -->
         <section>
