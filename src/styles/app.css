@@ -77,6 +77,36 @@
   --halo:rgba(var(--accent-rgb),.07);
   --accent-rgb:90,160,230;
 }
+
+/* ===== Copper skin (data-skin="copper") — night stadium under sodium floodlights.
+   The one warm dark: every grey carries a brown undertone (no neutral slate),
+   ember-copper accent, teal as the counter-colour (orange/teal pairing).
+   Money-green CTAs stay global — on the warm field they read like a scoreboard. */
+:root[data-skin="copper"]{
+  --bg-0:#151110; --bg-1:#110e0c; --bg-2:#1a1512; --bg-3:#251d17;
+  --surface:#1b1614; --surface-2:#251d17; --surface-3:#322721;
+  --border:#362a20; --border-2:#443628; --border-3:#574435;
+  --text:#fbf6f1; --text-dim:#c7b8a9; --text-mute:#9a836e;
+  --mint:#ff9142; --mint-d:#ec7c28; --mint-soft:rgba(var(--accent-rgb),.14);
+  --violet:#4ec8b2; --violet-soft:rgba(78,200,178,.15);
+  --cyan:#6fd2c9;
+  --gold:#e8b25c;
+  --danger:#ef5d50; --danger-soft:rgba(239,93,80,.14);
+  --win:#58b368; --lose:#ef5d50; --push:#9a836e;
+  --grad-mint:linear-gradient(135deg,#ffa658 0%,#ec7c28 100%);
+  --grad-violet:linear-gradient(135deg,#4ec8b2 0%,#2fa08d 100%);
+  --glow-mint:0 0 0 1px rgba(var(--accent-rgb),.4),0 8px 30px rgba(var(--accent-rgb),.22);
+  --ink:#2b1503;               /* deep-brown text on copper fills */
+  --halo:rgba(var(--accent-rgb),.08);
+  --accent-rgb:255,145,66;
+}
+/* signature: two crossed floodlight beams from above + a faint pitch-teal wash below */
+:root[data-skin="copper"] body::before{
+  background:
+    radial-gradient(900px 430px at 28% -12%, rgba(255,145,66,.11), transparent 62%),
+    radial-gradient(880px 400px at 74% -16%, rgba(255,196,120,.07), transparent 60%),
+    radial-gradient(1200px 520px at 50% 116%, rgba(78,200,178,.05), transparent 65%);
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 html,body{margin:0;padding:0;overflow-x:clip}
