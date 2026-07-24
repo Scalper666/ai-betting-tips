@@ -4,7 +4,9 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 const { title, description = '', active = '', schema = null } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://ai-betting-tips.com').href;
+const site = Astro.site ?? 'https://ai-betting-tips.pages.dev';
+const canonical = new URL(Astro.url.pathname, site).href;
+const ogImage = new URL('/og.png', site).href;
 const favicon = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%233390ec'/><stop offset='1' stop-color='%232b7de0'/></linearGradient></defs><rect width='32' height='32' rx='9' fill='url(%23g)'/><path d='M9 17l4 4 10-11' stroke='%23fff' stroke-width='3.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>";
 ---
 <!doctype html>
@@ -20,7 +22,11 @@ const favicon = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content={ogImage} />
   <link rel="icon" href={favicon} />
   <script is:inline>
     // text-size preference: apply before paint (default "l" = slightly larger)

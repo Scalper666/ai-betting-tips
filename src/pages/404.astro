@@ -1,0 +1,40 @@
+---
+import Base from '../layouts/Base.astro';
+import predictions from '../data/predictions.json';
+import { matchSlug, kickoffLabel } from '../lib/utils.js';
+
+// A useful 404: surface today's live picks instead of a dead end.
+const tips = (predictions.tips ?? []).slice(0, 4);
+---
+<Base
+  title="Page not found — AI Betting Tips"
+  description="This page does not exist or has moved. Browse today's football predictions, the AI value screener and bookmaker reviews instead.">
+
+  <div class="container">
+    <div class="page-head" style="text-align:center;padding:64px 0 10px">
+      <h1 style="font-size:clamp(42px,7vw,72px)">4<em>0</em>4</h1>
+      <p class="lead" style="margin:0 auto">This page doesn't exist — maybe the match has been settled and archived,
+        or the address has a typo. Here's where to go instead:</p>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:26px 0 8px">
+        <a href="/" class="btn btn-mint">🏠 Home</a>
+        <a href="/predictions" class="btn btn-outline">⚽ Today's predictions</a>
+        <a href="/screener" class="btn btn-outline">🔍 AI screener</a>
+        <a href="/bookmakers" class="btn btn-outline">🏆 Bookmakers</a>
+      </div>
+    </div>
+
+    {tips.length > 0 && (
+      <div style="max-width:680px;margin:26px auto 70px">
+        <div class="box">
+          <div class="box-h"><span class="hi">⚡</span> Fresh picks right now</div>
+          {tips.map((t) => (
+            <a class="mini-tip" href={`/predictions/${matchSlug(t)}`}>
+              <div><h5>{t.home} v {t.away}</h5><div class="mt-sp">{t.league} · {kickoffLabel(t.kickoff)}</div></div>
+              <div class="mt-roi"><b>{Number(t.recommendation?.price ?? 0).toFixed(2)}</b><span>odds</span></div>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</Base>
