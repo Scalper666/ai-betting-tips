@@ -408,7 +408,9 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
 .bonus-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);
   overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,border-color .2s,box-shadow .2s}
 .bonus-card:hover{transform:translateY(-4px);border-color:var(--border-3);box-shadow:var(--shadow-sm)}
-.bonus-thumb{height:128px;position:relative;display:grid;place-items:center;font-size:46px;overflow:hidden}
+/* no overflow:hidden here — the logo chip hangs 20px below the thumb into the
+   body (bottom:-20px); the card's own overflow already clips the outer radius */
+.bonus-thumb{height:128px;position:relative;display:grid;place-items:center;font-size:46px}
 .bonus-thumb::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(7,10,17,.85))}
 .bonus-logo{position:absolute;bottom:-20px;left:18px;width:46px;height:46px;border-radius:13px;
   display:grid;place-items:center;font-weight:800;font-size:11px;border:3px solid var(--surface);z-index:2;
