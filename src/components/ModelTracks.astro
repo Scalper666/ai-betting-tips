@@ -1,0 +1,63 @@
+---
+// Honest replacement for fictional tipster personas: performance TRACKS of our
+// own model, computed straight from the settlement archive (REAL entries only —
+// mock-era settlements are excluded). Small samples are shown as small samples.
+import historyData from '../data/history.json';
+import { signed } from '../lib/utils.js';
+
+const { limit = 3 } = Astro.props;
+
+const TRACKS = [
+  { key: 'match-result', icon: '⚽', name: 'Match Result model', desc: '1X2 winner picks',
+    href: '/predictions', f: (h) => h.type === 'h2h' && h.outcome !== 'Draw' },
+  { key: 'totals', icon: '📊', name: 'Totals model', desc: 'Over/Under goals picks',
+    href: '/tips/over-under', f: (h) => h.type === 'totals' },
+  { key: 'draw', icon: '🤝', name: 'Draw value model', desc: 'Value on the draw (X)',
+    href: '/tips/draw', f: (h) => h.type === 'h2h' && h.outcome === 'Draw' },
+];
+
+const real = Object.values(historyData.tips ?? {}).filter(
+  (h) => h.score !== 'simulated' && !String(h.event_id ?? '').startsWith('mock')
+);
+const settledStates = ['won', 'lost', 'void'];
+
+const tracks = TRACKS.map((t) => {
+  const all = real.filter(t.f);
+  const settled = all.filter((h) => settledStates.includes(h.status));
+  const graded = settled.filter((h) => h.status !== 'void');
+  const won = graded.filter((h) => h.status === 'won').length;
+  const profit = Math.round(settled.reduce((s, h) => s + (h.profit ?? 0), 0) * 100) / 100;
+  return {
+    ...t,
+    published: all.length,
+    settled: settled.length,
+    winRate: graded.length ? Math.round((won / graded.length) * 1000) / 10 : null,
+    roi: graded.length ? Math.round((profit / graded.length) * 1000) / 10 : null,
+    profit,
+  };
+}).sort((a, b) => (b.roi ?? -999) - (a.roi ?? -999)).slice(0, limit);
+---
+<div class="tip-grid">
+  {tracks.map((t, i) => (
+    <article class={`tipster${i === 0 && t.roi != null && t.roi > 0 ? ' top' : ''}`}>
+      <span class="rank">{t.icon}</span>
+      <div class="ava" style="background:var(--surface-3);font-size:26px">{t.icon}</div>
+      <h4>{t.name}</h4>
+      <div class="role">{t.desc} · settled openly</div>
+      <div class="stats">
+        <div><div class="n win">{t.winRate != null ? `${t.winRate}%` : '—'}</div><div class="l">Win rate</div></div>
+        <div><div class={t.roi != null && t.roi >= 0 ? 'n roi' : 'n'} style={t.roi != null && t.roi < 0 ? 'color:var(--lose)' : ''}>{t.roi != null ? `${signed(t.roi)}%` : '—'}</div><div class="l">ROI</div></div>
+        <div><div class="n">{t.settled}</div><div class="l">Settled</div></div>
+      </div>
+      {t.settled < 20 && (
+        <div class="role" style="margin-top:6px;color:var(--gold)">⏳ early sample — {t.published} tips published so far</div>
+      )}
+      <a href={t.href} class={`btn ${i === 0 ? 'btn-mint' : 'btn-outline'} btn-sm btn-block`} style="margin-top:10px">See the picks →</a>
+    </article>
+  ))}
+</div>
+<p class="res-note" style="margin-top:12px">
+  These are performance tracks of one and the same model, split by market — not people.
+  Every number counts real settled tips only: archived before kick-off, graded against the final
+  score, never edited. Small samples are labelled as such.
+</p>

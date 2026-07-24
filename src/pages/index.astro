@@ -2,10 +2,9 @@
 import Base from '../layouts/Base.astro';
 import PredCard from '../components/PredCard.astro';
 import BookmakerRow from '../components/BookmakerRow.astro';
-import TipsterCards from '../components/TipsterCards.astro';
+import ModelTracks from '../components/ModelTracks.astro';
 import predictions from '../data/predictions.json';
 import screener from '../data/screener.json';
-import stats from '../data/stats.json';
 import bookmakers from '../data/bookmakers.json';
 import historyData from '../data/history.json';
 import countriesData from '../data/countries.json';
@@ -76,11 +75,7 @@ const calSportOpts = calSports.map((label) => {
   return { label, icon };
 });
 
-const miniTipsters = (stats.tipsters ?? []).slice(0, 3);
 
-// Tipster cards are hidden until enough REAL settled history accumulates —
-// early numbers mixed mock-era settlements, which clashed with the honesty pitch.
-const SHOW_TIPSTERS = false;
 
 // settlement transparency: latest graded bets from the pipeline archive.
 // Every published tip lands in history.json; results.py grades it once the
@@ -132,7 +127,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
           <h1>Win more with <span class="g">expert betting tips</span> you can actually trust</h1>
           <div class="hero-cta">
             <a href="/predictions" class="btn btn-mint">⚽ Today's Free Tips</a>
-            <a href="/tipsters" class="btn btn-outline">Meet our tipsters</a>
+            <a href="/tipsters" class="btn btn-outline">Model track record</a>
           </div>
         </div>
       </div>
@@ -380,17 +375,15 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
           </div>
         </section>
 
-        <!-- TOP TIPSTERS — hidden until enough real settled history accumulates
-             (early numbers mixed mock-era settlements; flip SHOW_TIPSTERS to bring back) -->
-        {SHOW_TIPSTERS && (
-          <section>
-            <div class="sec-head">
-              <h2 class="sec-title">This month's top <b>tipsters</b></h2>
-              <a href="/tipsters" class="more-link">Full leaderboard →</a>
-            </div>
-            <TipsterCards limit={3} />
-          </section>
-        )}
+        <!-- MODEL PERFORMANCE — honest tracks of our own model by market,
+             computed from REAL settled tips only (no fictional tipster personas) -->
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">Model <b>performance</b></h2>
+            <a href="/tipsters" class="more-link">Full track record →</a>
+          </div>
+          <ModelTracks limit={3} />
+        </section>
 
         <!-- BONUSES (from bookmakers.json) -->
         <section>

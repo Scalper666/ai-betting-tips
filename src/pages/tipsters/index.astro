@@ -1,28 +1,42 @@
 ---
 import Base from '../../layouts/Base.astro';
 import content from '../../data/content.json';
+import historyData from '../../data/history.json';
 import AiFaq from '../../components/AiFaq.astro';
-import TipsterCards from '../../components/TipsterCards.astro';
-import Leaderboard from '../../components/Leaderboard.astro';
-import stats from '../../data/stats.json';
-import { AVATAR_STYLES, signed, faqSchema } from '../../lib/utils.js';
+import ModelTracks from '../../components/ModelTracks.astro';
+import { slugify, faqSchema, signed } from '../../lib/utils.js';
 
-const o = stats.overall ?? {};
-const inForm = [...(stats.tipsters ?? [])].sort((a, b) => (b.streak ?? 0) - (a.streak ?? 0)).slice(0, 3);
+// ── Honest performance page: tracks of OUR OWN model by market, plus the full
+//    settled log. Real entries only — mock-era settlements are excluded, and
+//    there are no fictional tipster personas anymore.
+const settledStates = ['won', 'lost', 'void'];
+const real = Object.values(historyData.tips ?? {}).filter(
+  (h) => h.score !== 'simulated' && !String(h.event_id ?? '').startsWith('mock')
+);
+const settled = real
+  .filter((h) => settledStates.includes(h.status))
+  .sort((a, b) => String(b.settled_at ?? '').localeCompare(String(a.settled_at ?? '')));
+const graded = settled.filter((h) => h.status !== 'void');
+const won = graded.filter((h) => h.status === 'won').length;
+const profit = Math.round(settled.reduce((s, h) => s + (h.profit ?? 0), 0) * 100) / 100;
+const winRate = graded.length ? Math.round((won / graded.length) * 1000) / 10 : null;
+const roi = graded.length ? Math.round((profit / graded.length) * 1000) / 10 : null;
+const shown = settled.slice(0, 40);
 
 const aiPage = (content.entries ?? {})['page:tipsters'];
 const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(aiPage.faq) } : null;
 ---
 <Base schema={pageSchema}
-  title="Expert Tipsters & Leaderboard — Verified Stats & ROI — AI Betting Tips"
-  description={`Verified tipster leaderboard: ${o.settled ?? 0} settled bets, ${o.win_rate ?? 0}% win rate, ${signed(o.roi ?? 0)}% ROI — every figure computed from graded results.`}
+  title="Model Performance & Track Record — Every Tip Settled Openly"
+  description={`Our model's real track record: ${real.length} tips published, ${settled.length} settled${winRate != null ? `, ${winRate}% win rate, ${signed(roi)}% ROI` : ''} — archived before kick-off, graded on final scores, never edited.`}
   active="tipsters">
 
   <div class="container">
     <div class="page-head">
-      <div class="crumbs"><a href="/">Home</a><span>/</span>Tipsters</div>
-      <h1>Expert <em>tipsters</em> &amp; leaderboard</h1>
-      <p class="lead">Every tip is archived when published and settled against the final score. The win rate, ROI and profit below are computed from {o.settled ?? 0} graded bets — no edited history, and a losing month shows as a losing month.</p>
+      <div class="crumbs"><a href="/">Home</a><span>/</span>Performance</div>
+      <h1>Model <em>performance</em> &amp; track record</h1>
+      <p class="lead">No fictional experts here — one model, split into market tracks. {real.length} tips published so far,
+        {settled.length} settled against real final scores. Every number below is reproducible from the public archive.</p>
     </div>
   </div>
 
@@ -31,76 +45,92 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
       <main class="content">
 
         <section>
-          <div class="sec-head"><h2 class="sec-title">Featured <b>tipsters</b></h2></div>
-          <TipsterCards limit={6} />
-        </section>
-
-        <section>
-          <div class="sec-head"><h2 class="sec-title">Monthly <b>leaderboard</b></h2></div>
-          <Leaderboard />
-        </section>
-
-        <section>
-          <div class="feature-article">
-            <div class="fa-img" style="background:linear-gradient(135deg,#0d3a2c,#072018)">📈</div>
-            <div class="fa-body">
-              <span class="tag">Join the team</span>
-              <h2>Think you've got what it takes? Become a AI Betting Tips tipster</h2>
-              <p>Build a verified, public track record. Every tip you post is archived and settled automatically — no way to fake results, no way to hide them.</p>
-              <div style="display:flex;gap:10px;flex-wrap:wrap"><a href="#" class="btn btn-mint">Apply now</a><a href="#" class="btn btn-outline">How it works</a></div>
+          <div class="sec-head"><h2 class="sec-title">Overall <b>record</b></h2></div>
+          <div class="res-sum">
+            <div class="res-chip"><b>{real.length}</b><span>Published</span></div>
+            <div class="res-chip"><b>{settled.length}</b><span>Settled</span></div>
+            <div class="res-chip win"><b>{won}</b><span>Won</span></div>
+            <div class="res-chip"><b>{winRate != null ? `${winRate}%` : '—'}</b><span>Win rate</span></div>
+            <div class={`res-chip ${profit > 0 ? 'win' : profit < 0 ? 'lose' : ''}`}>
+              <b>{profit > 0 ? '+' : ''}{profit.toFixed(2)}u</b><span>Profit</span>
+            </div>
+            <div class={`res-chip ${roi != null && roi > 0 ? 'win' : roi != null && roi < 0 ? 'lose' : ''}`}>
+              <b>{roi != null ? `${signed(roi)}%` : '—'}</b><span>ROI</span>
             </div>
           </div>
+          {settled.length < 30 && (
+            <p class="res-note">⏳ Early days: the archive started recently, so samples are small. That is exactly why the
+              full log is public — judge the record as it grows, not from a screenshot.</p>
+          )}
         </section>
 
         <section>
-          <div class="sec-head"><h2 class="sec-title">Tipster <b>FAQ</b></h2></div>
+          <div class="sec-head"><h2 class="sec-title">Tracks by <b>market</b></h2></div>
+          <ModelTracks limit={3} />
+        </section>
+
+        {shown.length > 0 && (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">Settled <b>log</b></h2>
+              <a href="/predictions/daily" class="more-link">By date →</a>
+            </div>
+            <div class="res-list">
+              {shown.map((h) => (
+                <a class="res-row" href={`/predictions/${slugify(`${h.home}-vs-${h.away}`)}`} style="text-decoration:none;color:inherit">
+                  <span class={`res-mark ${h.status === 'won' ? 'w' : h.status === 'lost' ? 'l' : 'v'}`}>{h.status === 'won' ? 'W' : h.status === 'lost' ? 'L' : 'V'}</span>
+                  <span class="res-date">{h.kickoff ? new Date(h.kickoff).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }) : ''}</span>
+                  <div class="res-match"><b>{h.home} v {h.away}</b><span>{h.market}{h.score && h.score !== 'simulated' ? ` · ${h.score}` : ''}</span></div>
+                  <span class="res-odds">{Number(h.odds ?? 0).toFixed(2)}</span>
+                  <span class={`res-profit ${(h.profit ?? 0) > 0 ? 'pos' : (h.profit ?? 0) < 0 ? 'neg' : 'zero'}`}>{(h.profit ?? 0) > 0 ? '+' : ''}{Number(h.profit ?? 0).toFixed(2)}u</span>
+                </a>
+              ))}
+            </div>
+            {settled.length > shown.length && (
+              <p class="res-note">Showing the latest {shown.length} of {settled.length} settled tips — the rest live on the
+                <a href="/predictions/daily" style="color:var(--mint)"> daily archive pages</a>.</p>
+            )}
+          </section>
+        )}
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">How to <b>read this</b></h2></div>
           <div class="faq">
             <div class="faq-item open">
-              <div class="faq-q">How are tipster stats verified?<span class="pm">+</span></div>
-              <div class="faq-a"><p>Tips are archived with their odds the moment they're published, then settled automatically against the final score. Win rate, ROI and profit are computed from those graded bets only.</p></div>
+              <div class="faq-q">Where do these numbers come from?<span class="pm">+</span></div>
+              <div class="faq-a"><p>Every tip is archived with its odds the moment it is published, then settled automatically against the official final score. Win rate, ROI and profit are computed from those graded bets only — nothing is edited or deleted afterwards.</p></div>
             </div>
             <div class="faq-item">
-              <div class="faq-q">What does ROI mean?<span class="pm">+</span></div>
-              <div class="faq-a"><p>Return on investment at flat 1-unit staking: profit divided by units staked. +15% means every 100 units staked returned 115 on average. Voided bets are returned, not staked.</p></div>
+              <div class="faq-q">What is a "track"?<span class="pm">+</span></div>
+              <div class="faq-a"><p>A slice of the same model by market type: match-result picks, totals picks, draw value. Tracks are strategies, not people — we don't invent tipster personas.</p></div>
             </div>
             <div class="faq-item">
-              <div class="faq-q">Can a tipster be in the red?<span class="pm">+</span></div>
-              <div class="faq-a"><p>Yes — and when it happens the leaderboard shows it. Honest tracking is the whole point: a negative ROI is displayed exactly like a positive one.</p></div>
+              <div class="faq-q">Can the record be negative?<span class="pm">+</span></div>
+              <div class="faq-a"><p>Yes, and when it is, the page shows it. Betting outcomes swing hard on small samples — that's variance, and it's exactly why the full log stays public while the sample grows.</p></div>
             </div>
           </div>
         </section>
 
         {aiPage?.intro && (
           <section class="seo">
-            <h2>About the leaderboard</h2>
+            <h2>About this page</h2>
             <p>{aiPage.intro}</p>
           </section>
         )}
-        <AiFaq faqs={aiPage?.faq ?? []} title="Tipsters FAQ" />
+        <AiFaq faqs={aiPage?.faq ?? []} title="Performance FAQ" />
       </main>
 
       <aside class="sidebar">
         <div class="promo">
-          <h4>📈 Become a tipster</h4>
-          <p>Got a winning record? Build a verified profile and grow your following.</p>
-          <a href="#" class="btn btn-mint btn-block">Apply now</a>
+          <h4>🔍 Where the picks come from</h4>
+          <p>Every tip starts in the value screener — implied probability vs the best available price.</p>
+          <a href="/screener" class="btn btn-mint btn-block">Open the screener</a>
         </div>
         <div class="box">
-          <div class="box-h"><span class="hi">🔥</span> In form</div>
-          {inForm.map((t, i) => (
-            <div class="mini-tip">
-              <div class="ava" style={AVATAR_STYLES[i % AVATAR_STYLES.length]}>{t.initials}</div>
-              <div><h5>{t.name}</h5><div class="mt-sp">{t.streak ? `${t.streak} wins in a row` : t.top_league}</div></div>
-              <div class="mt-roi"><b style={t.roi < 0 ? 'color:var(--lose)' : ''}>{signed(t.roi)}%</b><span>ROI</span></div>
-            </div>
-          ))}
-        </div>
-        <div class="box">
-          <div class="box-h"><span class="hi">📊</span> Overall record</div>
-          <a class="tm"><span class="dot"></span>Settled bets <span class="cnt">{o.settled ?? 0}</span></a>
-          <a class="tm"><span class="dot"></span>Win rate <span class="cnt">{o.win_rate ?? 0}%</span></a>
-          <a class="tm"><span class="dot"></span>ROI <span class="cnt">{signed(o.roi ?? 0)}%</span></a>
-          <a class="tm"><span class="dot"></span>Pending <span class="cnt">{o.pending ?? 0}</span></a>
+          <div class="box-h"><span class="hi">📊</span> Explore</div>
+          <a class="tm" href="/predictions/daily"><span class="dot"></span>Results by date</a>
+          <a class="tm" href="/teams"><span class="dot"></span>Records by team</a>
+          <a class="tm" href="/glossary/roi-and-yield"><span class="dot"></span>What ROI means</a>
         </div>
       </aside>
     </div>

@@ -136,7 +136,7 @@ PAGES = [
     ("screener", "the AI value screener — a sortable table of every bet scored by value edge and win probability"),
     ("bonuses", "the betting bonuses comparison page listing welcome offers with their real wagering terms"),
     ("betting-apps", "the betting apps roundup rating bookmakers' mobile apps"),
-    ("tipsters", "the tipster leaderboard with honest, settled win rates and ROI for every tipster"),
+    ("tipsters", "the model performance page: honest by-market track records (match result, totals, draw value) of our own prediction model — no tipster personas — with a fully settled public log"),
 ]
 
 SYSTEM = """You are the senior editor of AI Betting Tips (ai-betting-tips.com), an English-language
@@ -420,7 +420,7 @@ def build_worklist() -> list[dict]:
 
     # thin index pages
     for key, what in PAGES:
-        work.append({"key": f"page:{key}", "kind": "page", "prompt": p_page(key, what), "hash_src": key + "|v1"})
+        work.append({"key": f"page:{key}", "kind": "page", "prompt": p_page(key, what), "hash_src": f"{key}|{what}|v2"})
 
     # dedupe by key (e.g. rematch fixtures share a home-vs-away slug/page)
     seen: set[str] = set()

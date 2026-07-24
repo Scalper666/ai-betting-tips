@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-07-24T12:16:04+00:00",
+ "updated_at": "2026-07-24T15:36:23+00:00",
  "entries": {
   "match:corinthians-vs-remo": {
    "intro": "Corinthians host Remo in this Brasileirao fixture as clear favourites according to the market. The home side is priced at 1.55 with Matchbook, which translates to an implied probability of roughly 65%. Remo, meanwhile, are the outsiders at 7.8 on Betfair, implying only about 13% chance of an away win, while the draw sits at 4.3, or around 23%. That is a substantial gap in the prices and reflects strong market confidence in Corinthians. Rather than backing the match result, our model leans toward the goals market, recommending Under 2.5 goals at 1.93 with Matchbook, carrying a market-implied confidence of about 52%. It is worth noting the value edge here is marginally negative at -0.36%, so this is a close call rather than a standout opportunity in the Corinthians versus Remo clash.",
@@ -2084,128 +2084,115 @@
    }
   },
   "page:screener": {
-   "intro": "The AI value screener brings every scored bet into one sortable table, ranked by value edge and estimated win probability. Instead of scanning fixtures one at a time, you can filter and order the whole board to find selections where our model sees a gap between its own probability and the price the market is offering. Sort by edge to surface the biggest perceived discrepancies, or by win probability if you prefer selections the model rates as more likely to land. Every tip published here is archived and settled openly, so you can trace how past picks performed rather than taking claims on trust. Use the screener as a starting point for your own research, compare it against current odds, and stake in line with a plan you are comfortable with.",
+   "intro": "The AI value screener pulls every bet we score into one sortable table, ranked by value edge and win probability so you can scan the whole board at a glance. Value edge is the gap between our model's estimated probability and the probability implied by the market price, while win probability shows how often the outcome is expected to land. Sort by edge to surface where the model disagrees most with the odds, or sort by win probability if you prefer higher-likelihood selections. Every published tip is archived and settled openly, so you can trace how past picks resolved rather than take our word for it. Use the screener as a shortlist, then apply your own judgement and sensible staking. Betting always carries risk, and no metric removes uncertainty.",
    "faq": [
     {
      "q": "What does value edge actually mean?",
-     "a": "Value edge is the difference between the model's estimated probability of an outcome and the probability implied by the bookmaker's odds. A positive edge means the model thinks the true chance is higher than the price suggests, which is where potential long-term value comes from. It is an estimate, not a certainty, and any single bet can still lose."
+     "a": "Value edge is the difference between our model's estimated probability for an outcome and the probability implied by the bookmaker's odds. A positive edge means the model rates the outcome more likely than the price suggests, which is where potential value can sit. It is an estimate, not a promise, and results still vary from bet to bet."
     },
     {
-     "q": "How do I sort bets to find the best opportunities?",
-     "a": "Click a column header to order the table by that metric, such as value edge or win probability. Sorting by edge highlights where the model most disagrees with the market, while sorting by win probability shows selections rated as more likely to win. Combining both views helps you balance potential value against your own comfort with risk."
+     "q": "Should I bet the highest edge or the highest win probability?",
+     "a": "That depends on your approach: high-edge picks target mispriced odds but often carry more variance, while high win-probability picks land more often at shorter prices. Many bettors filter for a balance of both and stake accordingly. Neither guarantees a return, so size your bets within a budget you can afford to lose."
     },
     {
-     "q": "Are past results on the screener verified?",
-     "a": "Yes, every published tip is archived and settled openly, so results stay visible whether they won or lost. This lets you review how selections have performed over time instead of relying on selective examples. Past performance does not predict future outcomes, so treat the record as context rather than a promise."
+     "q": "Can I check how the tips performed before?",
+     "a": "Yes. Every tip we publish is archived and settled openly, so you can review how selections resolved instead of relying on selective highlights. Reviewing that record helps you judge the screener's output realistically and set your own expectations."
     }
    ],
    "_kind": "page",
    "_model": "claude-opus-4-8",
-   "_hash": "8c5080109908850e",
-   "_generated_at": "2026-07-24T01:24:08+00:00",
+   "_hash": "102d8e11316f679b",
+   "_generated_at": "2026-07-24T15:36:13+00:00",
    "_usage": {
     "in": 921,
-    "out": 563
+    "out": 565
    }
   },
   "page:predictions": {
-   "intro": "This hub brings together our current football tips in one place, each shown with the latest odds and a clear confidence rating so you can compare selections at a glance. Rather than reading every write-up front to back, you can scan for the markets and matchups that fit your own approach, then dig into the reasoning behind any pick that interests you. Every tip is framed around market prices and implied probabilities, giving you a sense of how likely an outcome is rated rather than a promise of what will happen. Every published tip is archived and settled openly, win or lose, so you can review our track record before trusting a call. Treat the ratings as a guide, stake within your means, and make the final decision yourself.",
+   "intro": "This hub gathers our current football tips in one place, each shown with its odds and a confidence rating so you can quickly scan what the market is pricing and how strongly we lean. Use it as a starting point for your own research rather than a finished decision: check the odds against your bookmaker, weigh the confidence level, and only stake what fits your bankroll. Every tip we publish is archived and settled openly once results are known, so you can see the full picture over time rather than a cherry-picked highlight reel. Betting outcomes are always uncertain, and confidence reflects our read of the numbers, not a promise. Treat the page as a working tool, revisit it as selections update, and bet responsibly.",
    "faq": [
     {
-     "q": "How should I read the confidence rating on a tip?",
-     "a": "The confidence rating reflects how strongly a selection stands out against its odds, based on the market's implied probability rather than any inside information. A higher rating means we see clearer value, but no rating removes the underlying risk. Use it to prioritise which tips to research further, not as a guarantee of the result."
+     "q": "How do you decide the confidence rating on a tip?",
+     "a": "Confidence reflects how strongly the odds and implied probabilities support a selection relative to the price on offer. A higher rating means we see clearer value in the numbers, but it is never a guarantee, since any single match can go against the market."
     },
     {
-     "q": "Do you keep a record of tips that lost?",
-     "a": "Yes. Every tip we publish is archived and settled openly, whether it wins or loses, so nothing is quietly deleted. This lets you judge our approach honestly over time before deciding how much weight to give any selection."
+     "q": "Can I check whether your past predictions actually won?",
+     "a": "Yes. Every tip we publish is archived and settled openly once the result is known, whether it wins or loses. That transparent record lets you judge our approach over time instead of relying on selected examples."
     },
     {
-     "q": "Why do the odds on a tip sometimes differ from my bookmaker?",
-     "a": "Odds move constantly as bookmakers respond to betting activity, so the price we list can differ slightly from what you see at the moment you bet. Always check the current odds at your chosen bookmaker before placing a stake. If the price has shifted a lot, the value we identified may no longer be there."
+     "q": "What odds should I use when placing a bet from this page?",
+     "a": "We list the odds available at the time of publishing, but prices move, so always confirm the current number at your own bookmaker before staking. If the odds have shortened significantly, the value we saw may no longer be there."
     }
    ],
    "_kind": "page",
    "_model": "claude-opus-4-8",
-   "_hash": "60ca6de03cb43675",
-   "_generated_at": "2026-07-24T01:24:08+00:00",
+   "_hash": "538c7156ca903207",
+   "_generated_at": "2026-07-24T15:36:12+00:00",
    "_usage": {
     "in": 916,
-    "out": 557
+    "out": 502
    }
   },
   "page:bonuses": {
-   "intro": "This page brings together sportsbook welcome offers side by side, so you can compare what each one actually asks of you before you commit. Instead of focusing only on the headline figure, we list the real wagering terms: minimum odds, rollover requirements, qualifying deposits, expiry windows and any market restrictions that shape how a bonus behaves in practice. The aim is simple: help you read the fine print quickly and pick an offer that fits how you bet rather than one that just looks large. Take your time, check the terms against your own staking habits, and only wager what you can comfortably afford. And as always, every tip we publish is archived and settled openly, which is the trust promise that runs through everything on the site.",
+   "intro": "This page brings together sportsbook welcome offers alongside the wagering terms that actually decide their value. For each listing you can compare the headline promotion with the details that matter: rollover requirements, minimum qualifying odds, eligible markets, time limits and whether winnings are paid in cash or bonus funds. Reading the fine print before you claim helps you judge how realistic a bonus is to clear, rather than focusing on the size of the headline number alone. Use it as a starting point, then confirm the current terms on the operator's own site, since offers change. As always, our tips are archived and settled openly on the site, so you can review our track record before deciding where to place your trust. Bet within a budget you are comfortable with.",
    "faq": [
     {
-     "q": "What does wagering requirement actually mean?",
-     "a": "A wagering requirement is the number of times you must stake bonus funds before any winnings can be withdrawn. For example, a 5x requirement on a bonus means you need to place qualifying bets totalling five times that amount first. Always check the minimum odds that count toward it, since low-odds bets often don't qualify."
+     "q": "What does wagering requirement actually mean on a betting bonus?",
+     "a": "A wagering requirement is how many times you must stake the bonus, and sometimes the deposit, before the funds can be withdrawn. For example, a 5x requirement on a bonus means you need to place qualifying bets totalling five times its value. Lower multipliers and clear qualifying-odds rules generally make an offer easier to clear."
     },
     {
-     "q": "Are betting welcome bonuses actually worth it?",
-     "a": "A welcome offer can add value if the wagering terms are realistic for how you normally bet, but it is not free money and outcomes remain uncertain. The offers worth considering tend to have clear minimum odds, a reasonable rollover and a fair expiry window. Compare the terms rather than the headline amount before deciding."
+     "q": "Are betting welcome bonuses actually worth claiming?",
+     "a": "They can add value if the wagering terms are realistic and the qualifying markets suit how you normally bet. The risk is that high rollover, short time limits or steep minimum odds make an offer hard to complete. Always weigh the terms against your usual staking before deciding, and never bet more than you planned just to unlock a bonus."
     },
     {
-     "q": "Can I withdraw a bonus straight away?",
-     "a": "Usually not, because most bonus funds are locked until you meet the wagering requirement attached to them. Any winnings you generate are typically held alongside the bonus until those conditions are cleared. Read the specific terms of each offer, as expiry limits and eligible markets vary between sportsbooks."
+     "q": "Can I withdraw a bonus straight away after depositing?",
+     "a": "Usually no, because most welcome offers require you to meet the wagering conditions first, and some pay winnings as bonus funds rather than cash. Check whether the deposit itself is withdrawable and what the minimum qualifying odds are. Reading these rules before claiming avoids surprises when you try to cash out."
     }
    ],
    "_kind": "page",
    "_model": "claude-opus-4-8",
-   "_hash": "7d965487bd2dbc3b",
-   "_generated_at": "2026-07-24T01:24:16+00:00",
+   "_hash": "4edfdd20c2813c99",
+   "_generated_at": "2026-07-24T15:36:16+00:00",
    "_usage": {
     "in": 923,
-    "out": 601
+    "out": 635
    }
   },
   "page:betting-apps": {
-   "intro": "This page brings together our reviews of bookmakers' mobile apps so you can compare what matters before choosing where to bet. We look at everyday practicals: how quickly an app loads, how easy it is to place and check a bet, deposit and withdrawal options, live betting and streaming features, and how clearly bonus terms are set out. Ratings are meant as a starting point, not a verdict, so read the details that fit how you actually bet. To get the most value, shortlist two or three apps, test their navigation and odds display, and check any promotion's wagering conditions in full. Every tip we publish is archived and settled openly, so you can see our track record for yourself. Bet within a budget you are comfortable losing.",
-   "faq": [
-    {
-     "q": "What makes a good sports betting app?",
-     "a": "A good app is fast, stable and easy to navigate, letting you find markets, place bets and check your slip without friction. Practical extras like quick deposits and withdrawals, live betting, clear odds and transparent bonus terms also matter. The best choice depends on the sports and features you use most, so weigh the details against your own habits."
-    },
-    {
-     "q": "Are betting apps safe to use?",
-     "a": "Apps from licensed and regulated bookmakers generally use secure sign-in and payment handling, but safety also depends on your own habits. Download only from official stores or the operator's own site, use a strong password, and review deposit limits and responsible-gambling tools. Always read the terms before accepting any offer."
-    },
-    {
-     "q": "Do I get better odds on the app than the website?",
-     "a": "Odds are usually the same across a bookmaker's app and website, since both draw from the same pricing. Occasionally an operator runs app-only promotions or boosts, but these are marketing offers rather than a general pricing advantage. To find genuine value, compare the same market across several bookmakers rather than assuming one platform is cheaper."
-    }
-   ],
+   "intro": "This roundup compares bookmakers' mobile apps so you can pick the one that fits how you actually bet. We look at practical things like ease of navigation, speed of placing a bet, deposit and withdrawal options, live betting and in-play features, notification controls and the range of markets available on the go. Rather than chasing flashy promotions, focus on the features you will use most often and check the bonus terms before opting in. To help you judge our own reliability, every tip we publish is archived and settled openly, so you can see how our suggestions played out over time. Use the ratings as a starting point, try a couple of apps yourself, and set clear deposit limits so betting stays within a budget you are comfortable with.",
+   "faq": [],
    "_kind": "page",
    "_model": "claude-opus-4-8",
-   "_hash": "df57edd82af450da",
-   "_generated_at": "2026-07-24T01:24:16+00:00",
+   "_hash": "d7ffb38e984e7632",
+   "_generated_at": "2026-07-24T15:36:21+00:00",
    "_usage": {
     "in": 919,
-    "out": 608
+    "out": 427
    }
   },
   "page:tipsters": {
-   "intro": "This leaderboard ranks our tipsters by transparent, settled performance so you can judge each one on results rather than promises. For every profile you can see the long-term win rate and return on investment, calculated only from tips that have already been graded and closed. Every published tip is archived and settled openly, which is our core trust promise: nothing is quietly deleted or edited after the fact. To get the most from this page, look beyond a single headline number. Compare win rate alongside ROI, consider how long a tipster has been tracked, and check which sports or markets they specialise in. Past performance never dictates future outcomes, so treat these figures as one input and stake only what fits your bankroll.",
+   "intro": "This page shows the honest, by-market track record of our own prediction model, broken down so you can see how it performs across match result, totals, and draw value markets separately. There are no tipster personas here, just data from a single model and a fully settled public log you can browse in our tipsters section. Every tip we publish is archived and settled openly, win or lose, which is the core trust promise behind this site. To get the most from it, focus on the markets where the model has shown consistent value rather than treating all picks the same, and compare its reasoning against the current odds. Remember that past performance does not predict future results, so stake within a budget you are comfortable with.",
    "faq": [
     {
-     "q": "What does ROI mean for a tipster?",
-     "a": "ROI, or return on investment, shows the average profit or loss per unit staked across all settled tips, expressed as a percentage. A positive figure means the tipster's selections have returned more than they cost to stake over the tracked sample, while a negative figure means the opposite. It is a better long-term measure than win rate alone because it accounts for the odds taken."
+     "q": "How do you track your prediction model's results?",
+     "a": "Every tip the model publishes is logged and settled openly, whether it wins or loses, so nothing is quietly deleted. You can review the full history in our public log and see performance split by market, including match result, totals, and draw value."
     },
     {
-     "q": "Is a high win rate better than a high ROI?",
-     "a": "Not necessarily, because a tipster backing short-priced favourites can win often yet still lose money over time. ROI captures whether the prices taken actually delivered value, so it is usually the more meaningful gauge of profitability. Reading win rate and ROI together, alongside the size of the sample, gives the fullest picture."
+     "q": "Which betting market does your model do best in?",
+     "a": "Performance varies by market, which is exactly why we separate match result, totals, and draw value on this page rather than showing a single blended figure. Check the by-market breakdown to see where the model has been most consistent, and keep in mind that historical results are no guarantee of future outcomes."
     },
     {
-     "q": "How do I know these tipster stats are honest?",
-     "a": "Every tip is timestamped and archived when it is published, then graded once the event settles, so the record cannot be rewritten to look better. The win rates and ROI shown are built only from these closed, settled tips. You can review a tipster's history to see the wins and losses that produced their numbers."
+     "q": "Can I actually make money following an AI betting model?",
+     "a": "Betting always carries risk and no model can promise a profit, since results depend on uncertain outcomes. Our aim is to show transparent, settled records so you can judge value for yourself, then decide with a bankroll you can afford to lose."
     }
    ],
    "_kind": "page",
    "_model": "claude-opus-4-8",
-   "_hash": "9b246715d87c0d49",
-   "_generated_at": "2026-07-24T01:24:19+00:00",
+   "_hash": "80ad423ef1443935",
+   "_generated_at": "2026-07-24T15:36:23+00:00",
    "_usage": {
-    "in": 924,
-    "out": 599
+    "in": 944,
+    "out": 508
    }
   },
   "team:remo": {
