@@ -145,7 +145,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
             <h2 class="sec-title">Top bookmakers in <b data-geo-name>🇬🇧 United Kingdom</b></h2>
             <a href="/countries/uk" class="more-link" data-geo-link>Change country →</a>
           </div>
-          <div class="geo-note"><span class="fl">🇬🇧</span> Ranked for players in <b>United Kingdom</b> — <a href="/countries/uk" data-geo-link style="color:var(--mint);font-weight:700">not your country?</a></div>
+          <div class="geo-note"><span class="fl">🇬🇧</span> <span data-geo-lead>Ranked for players in</span> <b>United Kingdom</b><span data-geo-tail></span> · <a href="/countries/uk" data-geo-link style="color:var(--mint);font-weight:700">change country</a></div>
           <div class="bk-list">
             {bkList.map((bk, i) => (
               <div class="bk-geo" data-cn={(bk.countries ?? []).join(' ')}>
@@ -159,8 +159,36 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
             var sec = document.getElementById('geoBk'); if (!sec) return;
             var LIST = []; try { LIST = JSON.parse(sec.getAttribute('data-geo') || '[]'); } catch (e) {}
             var ISO = { GB: 'uk', DE: 'de', IN: 'in', NG: 'ng' };
-            var TZ = { 'Europe/London': 'uk', 'Europe/Berlin': 'de', 'Europe/Busingen': 'de',
-                       'Asia/Kolkata': 'in', 'Asia/Calcutta': 'in', 'Africa/Lagos': 'ng' };
+            // timezone -> ISO country (offline first guess; trace refines on the live site)
+            var TZ_CC = { 'Europe/London': 'GB', 'Europe/Berlin': 'DE', 'Europe/Busingen': 'DE',
+                          'Asia/Kolkata': 'IN', 'Asia/Calcutta': 'IN', 'Africa/Lagos': 'NG',
+                          'Europe/Moscow': 'RU', 'Europe/Kyiv': 'UA', 'Europe/Kiev': 'UA',
+                          'Europe/Minsk': 'BY', 'Asia/Almaty': 'KZ', 'Europe/Warsaw': 'PL',
+                          'Europe/Madrid': 'ES', 'Europe/Rome': 'IT', 'Europe/Paris': 'FR',
+                          'America/Sao_Paulo': 'BR', 'Asia/Dubai': 'AE', 'Europe/Istanbul': 'TR' };
+            // honest fallback when we detect a country we have no dedicated list for
+            function applyForeign(cc) {
+              if (!cc || cc === 'GB' || ISO[cc]) return;
+              var name = cc, flag = '🌍';
+              try { name = new Intl.DisplayNames(['en'], { type: 'region' }).of(cc) || cc; } catch (e) {}
+              try { flag = cc.replace(/./g, function (c) { return String.fromCodePoint(127397 + c.charCodeAt(0)); }); } catch (e) {}
+              var nameEl = sec.querySelector('[data-geo-name]');
+              if (nameEl) nameEl.textContent = '🌍 our international ranking';
+              var note = sec.querySelector('.geo-note');
+              if (note) {
+                var fl = note.querySelector('.fl'); if (fl) fl.textContent = flag;
+                var lead = note.querySelector('[data-geo-lead]'); if (lead) lead.textContent = 'Browsing from';
+                var b = note.querySelector('b'); if (b) b.textContent = name;
+                var tail = note.querySelector('[data-geo-tail]');
+                if (tail) tail.textContent = ' — no dedicated ' + name + ' edition yet, so this is our international list';
+              }
+              sec.setAttribute('data-current', 'intl:' + cc);
+            }
+            function route(cc) {
+              if (!cc) return;
+              if (ISO[cc]) apply(ISO[cc]);
+              else applyForeign(cc);
+            }
             function apply(slug) {
               if (!slug || slug === sec.getAttribute('data-current')) return;
               var c = null;
@@ -181,11 +209,11 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
               sec.setAttribute('data-current', slug);
             }
             // 1) instant offline guess from the browser timezone
-            try { var tz = Intl.DateTimeFormat().resolvedOptions().timeZone; if (TZ[tz]) apply(TZ[tz]); } catch (e) {}
-            // 2) refine via Cloudflare edge geo when the site is deployed behind it
+            try { var tz = Intl.DateTimeFormat().resolvedOptions().timeZone; route(TZ_CC[tz]); } catch (e) {}
+            // 2) refine via Cloudflare edge geo (authoritative on the live site)
             try {
               fetch('/cdn-cgi/trace').then(function (r) { return r.ok ? r.text() : ''; }).then(function (t) {
-                var m = /loc=([A-Z]{2})/.exec(t || ''); if (m && ISO[m[1]]) apply(ISO[m[1]]);
+                var m = /loc=([A-Z]{2})/.exec(t || ''); if (m) route(m[1]);
               }).catch(function () {});
             } catch (e) {}
           })();
