@@ -1,51 +1,16 @@
 {
-  "updated_at": "2026-07-24T07:54:24.362120+00:00",
+  "updated_at": "2026-07-25T07:32:52.519723+00:00",
   "source": "the-odds-api.com",
-  "quota_remaining": "392",
+  "quota_remaining": "370",
   "stats": {
     "total": 58,
     "by_sport": {
       "⚽": 58
     },
     "high_confidence": 0,
-    "avg_edge_pct": -2.39
+    "avg_edge_pct": -2.25
   },
   "tips": [
-    {
-      "id": "14d2db5f981081ec6d0541ee47bbbabb",
-      "sport_key": "soccer_brazil_campeonato",
-      "sport_icon": "⚽",
-      "league": "Brasileirão",
-      "league_short": "BRA",
-      "kickoff": "2026-07-25T21:30:00Z",
-      "home": "Santos",
-      "away": "Chapecoense",
-      "best_h2h": {
-        "Chapecoense": {
-          "price": 9.0,
-          "bookmaker": "Matchbook"
-        },
-        "Santos": {
-          "price": 1.45,
-          "bookmaker": "Matchbook"
-        },
-        "Draw": {
-          "price": 5.0,
-          "bookmaker": "Matchbook"
-        }
-      },
-      "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 2.22,
-        "bookmaker": "Matchbook",
-        "confidence": 44,
-        "edge_pct": -2.77,
-        "type": "totals",
-        "side": "Under",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
     {
       "id": "7cd00c0a66e3927513670c87e3389471",
       "sport_key": "soccer_brazil_campeonato",
@@ -57,39 +22,64 @@
       "away": "Internacional",
       "best_h2h": {
         "Atletico Paranaense": {
-          "price": 2.05,
-          "bookmaker": "Coolbet"
+          "price": 2.06,
+          "bookmaker": "Matchbook"
         },
         "Internacional": {
-          "price": 4.5,
+          "price": 4.3,
           "bookmaker": "Matchbook"
         },
         "Draw": {
           "price": 3.4,
+          "bookmaker": "Coolbet"
+        }
+      },
+      "recommendation": {
+        "text": "Under 2.5 goals",
+        "price": 1.69,
+        "bookmaker": "Matchbook",
+        "confidence": 59,
+        "edge_pct": -0.32,
+        "type": "totals",
+        "side": "Under",
+        "point": 2.5
+      },
+      "value_picks": []
+    },
+    {
+      "id": "14d2db5f981081ec6d0541ee47bbbabb",
+      "sport_key": "soccer_brazil_campeonato",
+      "sport_icon": "⚽",
+      "league": "Brasileirão",
+      "league_short": "BRA",
+      "kickoff": "2026-07-25T21:30:00Z",
+      "home": "Santos",
+      "away": "Chapecoense",
+      "best_h2h": {
+        "Chapecoense": {
+          "price": 9.4,
+          "bookmaker": "Matchbook"
+        },
+        "Santos": {
+          "price": 1.42,
+          "bookmaker": "Matchbook"
+        },
+        "Draw": {
+          "price": 5.1,
           "bookmaker": "Matchbook"
         }
       },
       "recommendation": {
-        "text": "Internacional to win",
-        "price": 4.5,
+        "text": "Over 2.5 goals",
+        "price": 1.75,
         "bookmaker": "Matchbook",
-        "confidence": 24,
-        "edge_pct": 7.24,
-        "type": "h2h",
-        "outcome": "Internacional"
+        "confidence": 57,
+        "edge_pct": -0.99,
+        "type": "totals",
+        "side": "Over",
+        "point": 2.5
       },
-      "value_picks": [
-        {
-          "outcome": "Internacional",
-          "best_price": 4.5,
-          "bookmaker": "Matchbook",
-          "fair_prob": 0.2383,
-          "implied_prob": 0.2222,
-          "edge_pct": 7.24,
-          "kelly": 0.0207,
-          "confidence": 24
-        }
-      ]
+      "value_picks": []
     },
     {
       "id": "58579f47c46b44d5baef9dd961b78d3f",
@@ -106,8 +96,8 @@
           "bookmaker": "Matchbook"
         },
         "New York Red Bulls": {
-          "price": 2.28,
-          "bookmaker": "Betfair"
+          "price": 2.35,
+          "bookmaker": "LeoVegas (SE)"
         },
         "Draw": {
           "price": 4.0,
@@ -116,10 +106,10 @@
       },
       "recommendation": {
         "text": "Over 3.0 goals",
-        "price": 1.83,
-        "bookmaker": "BetOnline.ag",
-        "confidence": 53,
-        "edge_pct": -3.76,
+        "price": 1.78,
+        "bookmaker": "Coolbet",
+        "confidence": 55,
+        "edge_pct": -2.83,
         "type": "totals",
         "side": "Over",
         "point": 3.0
@@ -137,24 +127,24 @@
       "away": "FC Cincinnati",
       "best_h2h": {
         "Columbus Crew SC": {
-          "price": 1.81,
-          "bookmaker": "Matchbook"
+          "price": 1.98,
+          "bookmaker": "Betfair"
         },
         "FC Cincinnati": {
-          "price": 4.3,
+          "price": 3.8,
           "bookmaker": "LeoVegas (SE)"
         },
         "Draw": {
-          "price": 4.6,
-          "bookmaker": "Matchbook"
+          "price": 4.3,
+          "bookmaker": "Betfair"
         }
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.37,
+        "price": 1.39,
         "bookmaker": "Betsson",
-        "confidence": 69,
-        "edge_pct": -5.46,
+        "confidence": 68,
+        "edge_pct": -5.52,
         "type": "totals",
         "side": "Over",
         "point": 2.5
@@ -172,12 +162,12 @@
       "away": "Inter Miami CF",
       "best_h2h": {
         "CF Montreal": {
-          "price": 3.1,
+          "price": 3.05,
           "bookmaker": "Betfair"
         },
         "Inter Miami CF": {
-          "price": 2.22,
-          "bookmaker": "Betfair"
+          "price": 2.25,
+          "bookmaker": "LeoVegas (SE)"
         },
         "Draw": {
           "price": 4.2,
@@ -186,80 +176,10 @@
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.41,
+        "price": 1.39,
         "bookmaker": "Betsson",
-        "confidence": 67,
-        "edge_pct": -5.34,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "30205c4070997541340bcb1cf407d90f",
-      "sport_key": "soccer_usa_mls",
-      "sport_icon": "⚽",
-      "league": "MLS",
-      "league_short": "MLS",
-      "kickoff": "2026-07-25T23:30:00Z",
-      "home": "Orlando City SC",
-      "away": "Nashville SC",
-      "best_h2h": {
-        "Nashville SC": {
-          "price": 2.24,
-          "bookmaker": "Matchbook"
-        },
-        "Orlando City SC": {
-          "price": 3.25,
-          "bookmaker": "LeoVegas (SE)"
-        },
-        "Draw": {
-          "price": 3.95,
-          "bookmaker": "Betfair"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.61,
-        "bookmaker": "Matchbook",
-        "confidence": 61,
-        "edge_pct": -2.38,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "adcaf9aca5c21e35cc10e87edaa670c6",
-      "sport_key": "soccer_usa_mls",
-      "sport_icon": "⚽",
-      "league": "MLS",
-      "league_short": "MLS",
-      "kickoff": "2026-07-25T23:30:00Z",
-      "home": "New York City FC",
-      "away": "Chicago Fire",
-      "best_h2h": {
-        "Chicago Fire": {
-          "price": 2.94,
-          "bookmaker": "Matchbook"
-        },
-        "New York City FC": {
-          "price": 2.41,
-          "bookmaker": "GTbets"
-        },
-        "Draw": {
-          "price": 3.85,
-          "bookmaker": "Matchbook"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.69,
-        "bookmaker": "1xBet",
-        "confidence": 58,
-        "edge_pct": -2.22,
+        "confidence": 68,
+        "edge_pct": -5.52,
         "type": "totals",
         "side": "Over",
         "point": 2.5
@@ -277,24 +197,24 @@
       "away": "Seattle Sounders FC",
       "best_h2h": {
         "Philadelphia Union": {
-          "price": 2.19,
-          "bookmaker": "1xBet"
+          "price": 2.06,
+          "bookmaker": "Betfair"
         },
         "Seattle Sounders FC": {
-          "price": 3.45,
-          "bookmaker": "LeoVegas (SE)"
+          "price": 3.7,
+          "bookmaker": "Matchbook"
         },
         "Draw": {
-          "price": 3.9,
+          "price": 3.95,
           "bookmaker": "Betfair"
         }
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.71,
-        "bookmaker": "Unibet (NL)",
-        "confidence": 58,
-        "edge_pct": -0.85,
+        "price": 1.67,
+        "bookmaker": "Matchbook",
+        "confidence": 59,
+        "edge_pct": -1.19,
         "type": "totals",
         "side": "Over",
         "point": 2.5
@@ -302,69 +222,34 @@
       "value_picks": []
     },
     {
-      "id": "804d263820352f697b38f35c8c9286d0",
-      "sport_key": "soccer_brazil_campeonato",
-      "sport_icon": "⚽",
-      "league": "Brasileirão",
-      "league_short": "BRA",
-      "kickoff": "2026-07-25T23:30:00Z",
-      "home": "Vasco da Gama",
-      "away": "Mirassol",
-      "best_h2h": {
-        "Mirassol": {
-          "price": 3.9,
-          "bookmaker": "Matchbook"
-        },
-        "Vasco da Gama": {
-          "price": 2.14,
-          "bookmaker": "Matchbook"
-        },
-        "Draw": {
-          "price": 3.55,
-          "bookmaker": "Matchbook"
-        }
-      },
-      "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 1.78,
-        "bookmaker": "1xBet",
-        "confidence": 54,
-        "edge_pct": -4.08,
-        "type": "totals",
-        "side": "Under",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "9ecd14ec9b83dfd4e0e6e2d18e88e1f8",
+      "id": "adcaf9aca5c21e35cc10e87edaa670c6",
       "sport_key": "soccer_usa_mls",
       "sport_icon": "⚽",
       "league": "MLS",
       "league_short": "MLS",
       "kickoff": "2026-07-25T23:30:00Z",
-      "home": "New England Revolution",
-      "away": "Atlanta United FC",
+      "home": "New York City FC",
+      "away": "Chicago Fire",
       "best_h2h": {
-        "Atlanta United FC": {
-          "price": 3.65,
-          "bookmaker": "LeoVegas (SE)"
+        "Chicago Fire": {
+          "price": 2.72,
+          "bookmaker": "Betfair"
         },
-        "New England Revolution": {
-          "price": 2.12,
+        "New York City FC": {
+          "price": 2.66,
           "bookmaker": "Betfair"
         },
         "Draw": {
-          "price": 3.85,
-          "bookmaker": "Matchbook"
+          "price": 3.8,
+          "bookmaker": "Betfair"
         }
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.81,
-        "bookmaker": "Unibet (NL)",
-        "confidence": 54,
-        "edge_pct": -2.57,
+        "price": 1.7,
+        "bookmaker": "Matchbook",
+        "confidence": 58,
+        "edge_pct": -0.83,
         "type": "totals",
         "side": "Over",
         "point": 2.5
@@ -382,11 +267,116 @@
       "away": "Toronto FC",
       "best_h2h": {
         "D.C. United": {
-          "price": 2.14,
-          "bookmaker": "Matchbook"
+          "price": 2.24,
+          "bookmaker": "Betfair"
         },
         "Toronto FC": {
-          "price": 3.68,
+          "price": 3.5,
+          "bookmaker": "LeoVegas (SE)"
+        },
+        "Draw": {
+          "price": 3.75,
+          "bookmaker": "Betfair"
+        }
+      },
+      "recommendation": {
+        "text": "Over 2.5 goals",
+        "price": 1.92,
+        "bookmaker": "Matchbook",
+        "confidence": 52,
+        "edge_pct": -0.62,
+        "type": "totals",
+        "side": "Over",
+        "point": 2.5
+      },
+      "value_picks": []
+    },
+    {
+      "id": "804d263820352f697b38f35c8c9286d0",
+      "sport_key": "soccer_brazil_campeonato",
+      "sport_icon": "⚽",
+      "league": "Brasileirão",
+      "league_short": "BRA",
+      "kickoff": "2026-07-25T23:30:00Z",
+      "home": "Vasco da Gama",
+      "away": "Mirassol",
+      "best_h2h": {
+        "Mirassol": {
+          "price": 3.95,
+          "bookmaker": "Matchbook"
+        },
+        "Vasco da Gama": {
+          "price": 2.12,
+          "bookmaker": "Matchbook"
+        },
+        "Draw": {
+          "price": 3.5,
+          "bookmaker": "Coolbet"
+        }
+      },
+      "recommendation": {
+        "text": "Over 2.5 goals",
+        "price": 2.14,
+        "bookmaker": "Matchbook",
+        "confidence": 46,
+        "edge_pct": -0.78,
+        "type": "totals",
+        "side": "Over",
+        "point": 2.5
+      },
+      "value_picks": []
+    },
+    {
+      "id": "30205c4070997541340bcb1cf407d90f",
+      "sport_key": "soccer_usa_mls",
+      "sport_icon": "⚽",
+      "league": "MLS",
+      "league_short": "MLS",
+      "kickoff": "2026-07-25T23:30:00Z",
+      "home": "Orlando City SC",
+      "away": "Nashville SC",
+      "best_h2h": {
+        "Nashville SC": {
+          "price": 2.32,
+          "bookmaker": "Matchbook"
+        },
+        "Orlando City SC": {
+          "price": 3.15,
+          "bookmaker": "LeoVegas (SE)"
+        },
+        "Draw": {
+          "price": 3.95,
+          "bookmaker": "Matchbook"
+        }
+      },
+      "recommendation": {
+        "text": "Under 2.5 goals",
+        "price": 2.38,
+        "bookmaker": "Betsson",
+        "confidence": 40,
+        "edge_pct": -4.32,
+        "type": "totals",
+        "side": "Under",
+        "point": 2.5
+      },
+      "value_picks": []
+    },
+    {
+      "id": "9ecd14ec9b83dfd4e0e6e2d18e88e1f8",
+      "sport_key": "soccer_usa_mls",
+      "sport_icon": "⚽",
+      "league": "MLS",
+      "league_short": "MLS",
+      "kickoff": "2026-07-25T23:30:00Z",
+      "home": "New England Revolution",
+      "away": "Atlanta United FC",
+      "best_h2h": {
+        "Atlanta United FC": {
+          "price": 3.85,
+          "bookmaker": "Matchbook"
+        },
+        "New England Revolution": {
+          "price": 2.1,
           "bookmaker": "GTbets"
         },
         "Draw": {
@@ -395,46 +385,56 @@
         }
       },
       "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.94,
-        "bookmaker": "1xBet",
-        "confidence": 51,
-        "edge_pct": -1.52,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5
+        "text": "Atlanta United FC to win",
+        "price": 3.85,
+        "bookmaker": "Matchbook",
+        "confidence": 27,
+        "edge_pct": 3.86,
+        "type": "h2h",
+        "outcome": "Atlanta United FC"
       },
-      "value_picks": []
+      "value_picks": [
+        {
+          "outcome": "Atlanta United FC",
+          "best_price": 3.85,
+          "bookmaker": "Matchbook",
+          "fair_prob": 0.2698,
+          "implied_prob": 0.2597,
+          "edge_pct": 3.86,
+          "kelly": 0.0135,
+          "confidence": 27
+        }
+      ]
     },
     {
-      "id": "e0e1e45371a0635e6da904554043eaed",
+      "id": "5758151189675892207fb9eda1f5eea0",
       "sport_key": "soccer_usa_mls",
       "sport_icon": "⚽",
       "league": "MLS",
       "league_short": "MLS",
       "kickoff": "2026-07-26T00:30:00Z",
-      "home": "Houston Dynamo",
-      "away": "Austin FC",
+      "home": "St. Louis City SC",
+      "away": "Colorado Rapids",
       "best_h2h": {
-        "Austin FC": {
-          "price": 4.8,
-          "bookmaker": "Betfair"
+        "Colorado Rapids": {
+          "price": 3.66,
+          "bookmaker": "1xBet"
         },
-        "Houston Dynamo": {
-          "price": 1.77,
-          "bookmaker": "Betfair"
+        "St. Louis City SC": {
+          "price": 2.1,
+          "bookmaker": "LeoVegas (SE)"
         },
         "Draw": {
           "price": 4.1,
-          "bookmaker": "GTbets"
+          "bookmaker": "Betfair"
         }
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.76,
+        "price": 1.64,
         "bookmaker": "1xBet",
-        "confidence": 56,
-        "edge_pct": -1.63,
+        "confidence": 60,
+        "edge_pct": -0.97,
         "type": "totals",
         "side": "Over",
         "point": 2.5
@@ -452,24 +452,24 @@
       "away": "Vancouver Whitecaps FC",
       "best_h2h": {
         "Minnesota United FC": {
-          "price": 3.85,
-          "bookmaker": "BetOnline.ag"
+          "price": 3.95,
+          "bookmaker": "Betfair"
         },
         "Vancouver Whitecaps FC": {
-          "price": 2.0,
-          "bookmaker": "Matchbook"
+          "price": 1.95,
+          "bookmaker": "Betfair"
         },
         "Draw": {
-          "price": 4.0,
-          "bookmaker": "Coolbet"
+          "price": 4.04,
+          "bookmaker": "Pinnacle"
         }
       },
       "recommendation": {
         "text": "Over 3.0 goals",
-        "price": 2.01,
-        "bookmaker": "Pinnacle",
-        "confidence": 48,
-        "edge_pct": -2.86,
+        "price": 1.99,
+        "bookmaker": "BetOnline.ag",
+        "confidence": 49,
+        "edge_pct": -2.54,
         "type": "totals",
         "side": "Over",
         "point": 3.0
@@ -477,39 +477,49 @@
       "value_picks": []
     },
     {
-      "id": "5758151189675892207fb9eda1f5eea0",
+      "id": "e0e1e45371a0635e6da904554043eaed",
       "sport_key": "soccer_usa_mls",
       "sport_icon": "⚽",
       "league": "MLS",
       "league_short": "MLS",
       "kickoff": "2026-07-26T00:30:00Z",
-      "home": "St. Louis City SC",
-      "away": "Colorado Rapids",
+      "home": "Houston Dynamo",
+      "away": "Austin FC",
       "best_h2h": {
-        "Colorado Rapids": {
-          "price": 3.54,
-          "bookmaker": "1xBet"
+        "Austin FC": {
+          "price": 5.1,
+          "bookmaker": "Betfair"
         },
-        "St. Louis City SC": {
-          "price": 2.1,
+        "Houston Dynamo": {
+          "price": 1.77,
           "bookmaker": "Betfair"
         },
         "Draw": {
-          "price": 4.0,
-          "bookmaker": "Coolbet"
+          "price": 4.1,
+          "bookmaker": "GTbets"
         }
       },
       "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 2.46,
-        "bookmaker": "Matchbook",
-        "confidence": 40,
-        "edge_pct": -2.69,
-        "type": "totals",
-        "side": "Under",
-        "point": 2.5
+        "text": "Austin FC to win",
+        "price": 5.1,
+        "bookmaker": "Betfair",
+        "confidence": 21,
+        "edge_pct": 5.23,
+        "type": "h2h",
+        "outcome": "Austin FC"
       },
-      "value_picks": []
+      "value_picks": [
+        {
+          "outcome": "Austin FC",
+          "best_price": 5.1,
+          "bookmaker": "Betfair",
+          "fair_prob": 0.2063,
+          "implied_prob": 0.1961,
+          "edge_pct": 5.23,
+          "kelly": 0.0128,
+          "confidence": 21
+        }
+      ]
     },
     {
       "id": "c2a65b891ad25522b6ddb9de1805f623",
@@ -522,39 +532,29 @@
       "away": "FC Dallas",
       "best_h2h": {
         "FC Dallas": {
-          "price": 3.4,
+          "price": 3.05,
           "bookmaker": "LeoVegas (SE)"
         },
         "San Diego FC": {
-          "price": 2.16,
-          "bookmaker": "Betfair"
+          "price": 2.36,
+          "bookmaker": "Matchbook"
         },
         "Draw": {
           "price": 4.1,
-          "bookmaker": "Betfair"
+          "bookmaker": "Matchbook"
         }
       },
       "recommendation": {
-        "text": "FC Dallas to win",
-        "price": 3.4,
-        "bookmaker": "LeoVegas (SE)",
-        "confidence": 31,
-        "edge_pct": 3.96,
-        "type": "h2h",
-        "outcome": "FC Dallas"
+        "text": "Under 3.5 goals",
+        "price": 1.82,
+        "bookmaker": "Matchbook",
+        "confidence": 54,
+        "edge_pct": -1.23,
+        "type": "totals",
+        "side": "Under",
+        "point": 3.5
       },
-      "value_picks": [
-        {
-          "outcome": "FC Dallas",
-          "best_price": 3.4,
-          "bookmaker": "LeoVegas (SE)",
-          "fair_prob": 0.3058,
-          "implied_prob": 0.2941,
-          "edge_pct": 3.96,
-          "kelly": 0.0165,
-          "confidence": 31
-        }
-      ]
+      "value_picks": []
     },
     {
       "id": "931f88cfa0011414d79e8b8650c5a6cd",
@@ -567,24 +567,24 @@
       "away": "LA Galaxy",
       "best_h2h": {
         "LA Galaxy": {
-          "price": 3.95,
-          "bookmaker": "GTbets"
+          "price": 3.89,
+          "bookmaker": "1xBet"
         },
         "San Jose Earthquakes": {
-          "price": 1.95,
-          "bookmaker": "Nordic Bet"
+          "price": 1.93,
+          "bookmaker": "Matchbook"
         },
         "Draw": {
-          "price": 4.32,
+          "price": 4.33,
           "bookmaker": "BetOnline.ag"
         }
       },
       "recommendation": {
         "text": "Under 3.5 goals",
-        "price": 1.79,
-        "bookmaker": "1xBet",
+        "price": 1.81,
+        "bookmaker": "Matchbook",
         "confidence": 55,
-        "edge_pct": -1.71,
+        "edge_pct": -1.11,
         "type": "totals",
         "side": "Under",
         "point": 3.5
@@ -602,26 +602,26 @@
       "away": "Sporting Kansas City",
       "best_h2h": {
         "Los Angeles FC": {
-          "price": 1.26,
+          "price": 1.28,
           "bookmaker": "Betfair"
         },
         "Sporting Kansas City": {
-          "price": 12.5,
-          "bookmaker": "Nordic Bet"
+          "price": 12.0,
+          "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 7.25,
+          "price": 7.36,
           "bookmaker": "1xBet"
         }
       },
       "recommendation": {
-        "text": "Under 3.5 goals",
-        "price": 2.06,
+        "text": "Over 3.5 goals",
+        "price": 1.93,
         "bookmaker": "Matchbook",
-        "confidence": 47,
-        "edge_pct": -2.26,
+        "confidence": 52,
+        "edge_pct": -0.36,
         "type": "totals",
-        "side": "Under",
+        "side": "Over",
         "point": 3.5
       },
       "value_picks": []
@@ -637,24 +637,24 @@
       "away": "Real Salt Lake",
       "best_h2h": {
         "Portland Timbers": {
-          "price": 2.5,
-          "bookmaker": "Matchbook"
+          "price": 2.52,
+          "bookmaker": "Betfair"
         },
         "Real Salt Lake": {
           "price": 2.75,
           "bookmaker": "LeoVegas (SE)"
         },
         "Draw": {
-          "price": 4.0,
-          "bookmaker": "Coolbet"
+          "price": 4.1,
+          "bookmaker": "Matchbook"
         }
       },
       "recommendation": {
         "text": "Over 3.5 goals",
-        "price": 2.18,
+        "price": 2.2,
         "bookmaker": "Matchbook",
         "confidence": 45,
-        "edge_pct": -2.93,
+        "edge_pct": -1.3,
         "type": "totals",
         "side": "Over",
         "point": 3.5
@@ -672,12 +672,12 @@
       "away": "Corinthians",
       "best_h2h": {
         "Bahia": {
-          "price": 2.21,
-          "bookmaker": "1xBet"
+          "price": 2.24,
+          "bookmaker": "Matchbook"
         },
         "Corinthians": {
-          "price": 3.55,
-          "bookmaker": "BetOnline.ag"
+          "price": 3.45,
+          "bookmaker": "GTbets"
         },
         "Draw": {
           "price": 3.5,
@@ -685,13 +685,13 @@
         }
       },
       "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 1.84,
-        "bookmaker": "1xBet",
-        "confidence": 53,
-        "edge_pct": -3.26,
+        "text": "Over 2.5 goals",
+        "price": 2.02,
+        "bookmaker": "Matchbook",
+        "confidence": 48,
+        "edge_pct": -3.44,
         "type": "totals",
-        "side": "Under",
+        "side": "Over",
         "point": 2.5
       },
       "value_picks": []
@@ -707,36 +707,36 @@
       "away": "Botafogo",
       "best_h2h": {
         "Botafogo": {
-          "price": 4.9,
-          "bookmaker": "Betfair"
+          "price": 5.0,
+          "bookmaker": "Matchbook"
         },
         "Cruzeiro": {
-          "price": 1.82,
-          "bookmaker": "BetOnline.ag"
+          "price": 1.81,
+          "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 3.77,
-          "bookmaker": "Pinnacle"
+          "price": 3.85,
+          "bookmaker": "Unibet (SE)"
         }
       },
       "recommendation": {
         "text": "Botafogo to win",
-        "price": 4.9,
-        "bookmaker": "Betfair",
+        "price": 5.0,
+        "bookmaker": "Matchbook",
         "confidence": 21,
-        "edge_pct": 3.58,
+        "edge_pct": 3.16,
         "type": "h2h",
         "outcome": "Botafogo"
       },
       "value_picks": [
         {
           "outcome": "Botafogo",
-          "best_price": 4.9,
-          "bookmaker": "Betfair",
-          "fair_prob": 0.2114,
-          "implied_prob": 0.2041,
-          "edge_pct": 3.58,
-          "kelly": 0.0092,
+          "best_price": 5.0,
+          "bookmaker": "Matchbook",
+          "fair_prob": 0.2063,
+          "implied_prob": 0.2,
+          "edge_pct": 3.16,
+          "kelly": 0.0079,
           "confidence": 21
         }
       ]
@@ -760,51 +760,16 @@
           "bookmaker": "Matchbook"
         },
         "Draw": {
-          "price": 3.95,
-          "bookmaker": "Betfair"
-        }
-      },
-      "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 1.89,
-        "bookmaker": "Matchbook",
-        "confidence": 51,
-        "edge_pct": -3.06,
-        "type": "totals",
-        "side": "Under",
-        "point": 2.5
-      },
-      "value_picks": []
-    },
-    {
-      "id": "b2ae0c5388431d8a811f3ead9312fed1",
-      "sport_key": "soccer_brazil_campeonato",
-      "sport_icon": "⚽",
-      "league": "Brasileirão",
-      "league_short": "BRA",
-      "kickoff": "2026-07-26T21:30:00Z",
-      "home": "Grêmio",
-      "away": "Fluminense",
-      "best_h2h": {
-        "Fluminense": {
-          "price": 2.72,
-          "bookmaker": "Betfair"
-        },
-        "Grêmio": {
-          "price": 2.7,
-          "bookmaker": "Matchbook"
-        },
-        "Draw": {
-          "price": 3.5,
+          "price": 4.0,
           "bookmaker": "Coolbet"
         }
       },
       "recommendation": {
         "text": "Under 2.5 goals",
-        "price": 1.93,
-        "bookmaker": "Matchbook",
+        "price": 1.89,
+        "bookmaker": "Unibet (SE)",
         "confidence": 51,
-        "edge_pct": -1.78,
+        "edge_pct": -2.83,
         "type": "totals",
         "side": "Under",
         "point": 2.5
@@ -826,20 +791,55 @@
           "bookmaker": "Coolbet"
         },
         "Sao Paulo": {
-          "price": 8.6,
+          "price": 8.4,
           "bookmaker": "Matchbook"
         },
         "Draw": {
-          "price": 4.4,
-          "bookmaker": "BetOnline.ag"
+          "price": 4.5,
+          "bookmaker": "Betfair"
         }
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.92,
-        "bookmaker": "1xBet",
+        "price": 1.93,
+        "bookmaker": "Matchbook",
         "confidence": 50,
-        "edge_pct": -3.5,
+        "edge_pct": -2.76,
+        "type": "totals",
+        "side": "Over",
+        "point": 2.5
+      },
+      "value_picks": []
+    },
+    {
+      "id": "b2ae0c5388431d8a811f3ead9312fed1",
+      "sport_key": "soccer_brazil_campeonato",
+      "sport_icon": "⚽",
+      "league": "Brasileirão",
+      "league_short": "BRA",
+      "kickoff": "2026-07-26T21:30:00Z",
+      "home": "Grêmio",
+      "away": "Fluminense",
+      "best_h2h": {
+        "Fluminense": {
+          "price": 2.72,
+          "bookmaker": "Matchbook"
+        },
+        "Grêmio": {
+          "price": 2.76,
+          "bookmaker": "Matchbook"
+        },
+        "Draw": {
+          "price": 3.55,
+          "bookmaker": "Matchbook"
+        }
+      },
+      "recommendation": {
+        "text": "Over 2.5 goals",
+        "price": 1.99,
+        "bookmaker": "Pinnacle",
+        "confidence": 49,
+        "edge_pct": -1.77,
         "type": "totals",
         "side": "Over",
         "point": 2.5
@@ -857,26 +857,26 @@
       "away": "Atletico Mineiro",
       "best_h2h": {
         "Atletico Mineiro": {
-          "price": 6.2,
-          "bookmaker": "Betfair"
+          "price": 6.4,
+          "bookmaker": "Matchbook"
         },
         "Palmeiras": {
-          "price": 1.7,
+          "price": 1.68,
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 3.85,
-          "bookmaker": "Coolbet"
+          "price": 3.9,
+          "bookmaker": "Matchbook"
         }
       },
       "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 1.85,
+        "text": "Over 2.5 goals",
+        "price": 2.06,
         "bookmaker": "Matchbook",
-        "confidence": 53,
-        "edge_pct": -1.21,
+        "confidence": 47,
+        "edge_pct": -3.09,
         "type": "totals",
-        "side": "Under",
+        "side": "Over",
         "point": 2.5
       },
       "value_picks": []
@@ -892,24 +892,24 @@
       "away": "Vitoria",
       "best_h2h": {
         "Remo": {
-          "price": 2.26,
-          "bookmaker": "1xBet"
+          "price": 2.28,
+          "bookmaker": "Matchbook"
         },
         "Vitoria": {
-          "price": 3.55,
-          "bookmaker": "Unibet (SE)"
+          "price": 3.45,
+          "bookmaker": "Matchbook"
         },
         "Draw": {
-          "price": 3.5,
-          "bookmaker": "Coolbet"
+          "price": 3.55,
+          "bookmaker": "Matchbook"
         }
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 2.06,
-        "bookmaker": "Matchbook",
+        "price": 2.07,
+        "bookmaker": "Unibet (SE)",
         "confidence": 47,
-        "edge_pct": -3.09,
+        "edge_pct": -3.15,
         "type": "totals",
         "side": "Over",
         "point": 2.5
@@ -931,8 +931,8 @@
           "bookmaker": "1xBet"
         },
         "Vasco da Gama": {
-          "price": 2.48,
-          "bookmaker": "Unibet (SE)"
+          "price": 2.43,
+          "bookmaker": "1xBet"
         },
         "Draw": {
           "price": 3.3,
@@ -962,7 +962,7 @@
       "away": "Grêmio",
       "best_h2h": {
         "Botafogo": {
-          "price": 1.74,
+          "price": 1.75,
           "bookmaker": "Unibet (NL)"
         },
         "Grêmio": {
@@ -970,21 +970,31 @@
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 3.8,
+          "price": 3.75,
           "bookmaker": "Unibet (NL)"
         }
       },
       "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 2.02,
+        "text": "Grêmio to win",
+        "price": 5.19,
         "bookmaker": "1xBet",
-        "confidence": 49,
-        "edge_pct": -0.27,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5
+        "confidence": 20,
+        "edge_pct": 4.32,
+        "type": "h2h",
+        "outcome": "Grêmio"
       },
-      "value_picks": []
+      "value_picks": [
+        {
+          "outcome": "Grêmio",
+          "best_price": 5.19,
+          "bookmaker": "1xBet",
+          "fair_prob": 0.201,
+          "implied_prob": 0.1927,
+          "edge_pct": 4.32,
+          "kelly": 0.0103,
+          "confidence": 20
+        }
+      ]
     },
     {
       "id": "b819c817f44cbe053c1de60d0a53ee3a",
@@ -1036,8 +1046,8 @@
           "bookmaker": "1xBet"
         },
         "Remo": {
-          "price": 5.0,
-          "bookmaker": "Coolbet"
+          "price": 5.4,
+          "bookmaker": "Unibet (NL)"
         },
         "Draw": {
           "price": 3.75,
@@ -1102,12 +1112,12 @@
       "away": "Palmeiras",
       "best_h2h": {
         "Palmeiras": {
-          "price": 2.07,
+          "price": 2.08,
           "bookmaker": "1xBet"
         },
         "Vitoria": {
-          "price": 3.75,
-          "bookmaker": "1xBet"
+          "price": 3.74,
+          "bookmaker": "GTbets"
         },
         "Draw": {
           "price": 3.5,
@@ -1141,11 +1151,11 @@
           "bookmaker": "1xBet"
         },
         "Corinthians": {
-          "price": 1.95,
-          "bookmaker": "Coolbet"
+          "price": 1.96,
+          "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 3.33,
+          "price": 3.31,
           "bookmaker": "1xBet"
         }
       },
@@ -1242,7 +1252,7 @@
       "away": "Rayo Vallecano",
       "best_h2h": {
         "Rayo Vallecano": {
-          "price": 3.6,
+          "price": 3.65,
           "bookmaker": "Betfair"
         },
         "Sevilla": {
@@ -1255,16 +1265,26 @@
         }
       },
       "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 2.36,
-        "bookmaker": "1xBet",
-        "confidence": 42,
-        "edge_pct": -1.52,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5
+        "text": "Rayo Vallecano to win",
+        "price": 3.65,
+        "bookmaker": "Betfair",
+        "confidence": 28,
+        "edge_pct": 3.9,
+        "type": "h2h",
+        "outcome": "Rayo Vallecano"
       },
-      "value_picks": []
+      "value_picks": [
+        {
+          "outcome": "Rayo Vallecano",
+          "best_price": 3.65,
+          "bookmaker": "Betfair",
+          "fair_prob": 0.2847,
+          "implied_prob": 0.274,
+          "edge_pct": 3.9,
+          "kelly": 0.0147,
+          "confidence": 28
+        }
+      ]
     },
     {
       "id": "f32c9c00fd77e4ec1abd5e34d67a6817",
@@ -1286,7 +1306,7 @@
         },
         "Draw": {
           "price": 3.7,
-          "bookmaker": "Pinnacle"
+          "bookmaker": "BetOnline.ag"
         }
       },
       "recommendation": {
@@ -1596,7 +1616,7 @@
           "bookmaker": "1xBet"
         },
         "Málaga": {
-          "price": 12.5,
+          "price": 12.0,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -1605,26 +1625,16 @@
         }
       },
       "recommendation": {
-        "text": "Draw (X)",
-        "price": 5.75,
-        "bookmaker": "BetOnline.ag",
-        "confidence": 18,
-        "edge_pct": 3.41,
-        "type": "h2h",
-        "outcome": "Draw"
+        "text": "Over 2.5 goals",
+        "price": 1.84,
+        "bookmaker": "1xBet",
+        "confidence": 54,
+        "edge_pct": -1.49,
+        "type": "totals",
+        "side": "Over",
+        "point": 2.5
       },
-      "value_picks": [
-        {
-          "outcome": "Draw",
-          "best_price": 5.75,
-          "bookmaker": "BetOnline.ag",
-          "fair_prob": 0.1798,
-          "implied_prob": 0.1739,
-          "edge_pct": 3.41,
-          "kelly": 0.0072,
-          "confidence": 18
-        }
-      ]
+      "value_picks": []
     },
     {
       "id": "eb2553d10d63dc912b99f8fd0d675721",
@@ -1641,8 +1651,8 @@
           "bookmaker": "Betfair"
         },
         "Coventry City": {
-          "price": 20.0,
-          "bookmaker": "Nordic Bet"
+          "price": 19.5,
+          "bookmaker": "1xBet"
         },
         "Draw": {
           "price": 8.5,
@@ -1672,7 +1682,7 @@
       "away": "Manchester United",
       "best_h2h": {
         "Hull City": {
-          "price": 8.0,
+          "price": 8.4,
           "bookmaker": "Betfair"
         },
         "Manchester United": {
@@ -1750,18 +1760,18 @@
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 3.44,
-          "bookmaker": "1xBet"
+          "price": 3.45,
+          "bookmaker": "Nordic Bet"
         }
       },
       "recommendation": {
-        "text": "Over 2.5 goals",
+        "text": "Under 2.5 goals",
         "price": 1.97,
         "bookmaker": "1xBet",
         "confidence": 50,
-        "edge_pct": -1.5,
+        "edge_pct": -1.0,
         "type": "totals",
-        "side": "Over",
+        "side": "Under",
         "point": 2.5
       },
       "value_picks": []
@@ -1890,31 +1900,21 @@
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 5.5,
-          "bookmaker": "BetOnline.ag"
+          "price": 5.28,
+          "bookmaker": "1xBet"
         }
       },
       "recommendation": {
-        "text": "Draw (X)",
-        "price": 5.5,
-        "bookmaker": "BetOnline.ag",
-        "confidence": 19,
-        "edge_pct": 3.33,
-        "type": "h2h",
-        "outcome": "Draw"
+        "text": "Under 3.25 goals",
+        "price": 1.97,
+        "bookmaker": "Pinnacle",
+        "confidence": 48,
+        "edge_pct": -5.13,
+        "type": "totals",
+        "side": "Under",
+        "point": 3.25
       },
-      "value_picks": [
-        {
-          "outcome": "Draw",
-          "best_price": 5.5,
-          "bookmaker": "BetOnline.ag",
-          "fair_prob": 0.1879,
-          "implied_prob": 0.1818,
-          "edge_pct": 3.33,
-          "kelly": 0.0074,
-          "confidence": 19
-        }
-      ]
+      "value_picks": []
     },
     {
       "id": "ea0bacc4c23f813c6af97ec9b306a850",
@@ -1935,8 +1935,8 @@
           "bookmaker": "Betfair"
         },
         "Draw": {
-          "price": 4.05,
-          "bookmaker": "Nordic Bet"
+          "price": 4.0,
+          "bookmaker": "Betfair"
         }
       },
       "recommendation": {
@@ -1962,7 +1962,7 @@
       "away": "Chelsea",
       "best_h2h": {
         "Chelsea": {
-          "price": 2.31,
+          "price": 2.26,
           "bookmaker": "1xBet"
         },
         "Fulham": {
@@ -1970,7 +1970,7 @@
           "bookmaker": "William Hill"
         },
         "Draw": {
-          "price": 3.78,
+          "price": 3.8,
           "bookmaker": "1xBet"
         }
       },
@@ -2046,10 +2046,10 @@
       },
       "recommendation": {
         "text": "Under 3.5 goals",
-        "price": 1.67,
+        "price": 1.66,
         "bookmaker": "1xBet",
         "confidence": 59,
-        "edge_pct": -1.36,
+        "edge_pct": -1.54,
         "type": "totals",
         "side": "Under",
         "point": 3.5
