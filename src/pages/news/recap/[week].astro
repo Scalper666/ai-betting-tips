@@ -1,0 +1,216 @@
+---
+import Base from '../../../layouts/Base.astro';
+import AiFaq from '../../../components/AiFaq.astro';
+import content from '../../../data/content.json';
+import { getRecapWeeks } from '../../../lib/recap.js';
+import { slugify, faqSchema } from '../../../lib/utils.js';
+
+// ── One page per ISO week of the model's real archive: "Week 30 results" with
+//    every tip, day-by-day profit and per-market breakdown. +1 page per week,
+//    forever — rebuilt daily by CI so the current week updates as bets settle.
+export function getStaticPaths() {
+  const weeks = getRecapWeeks();
+  return weeks.map((w, i) => ({
+    params: { week: w.slug },
+    props: {
+      w,
+      prev: weeks[i - 1] ? { slug: weeks[i - 1].slug, week: weeks[i - 1].week } : null,
+      next: weeks[i + 1] ? { slug: weeks[i + 1].slug, week: weeks[i + 1].week } : null,
+    },
+  }));
+}
+
+const { w, prev, next } = Astro.props;
+const s = w.stats;
+const ai = (content.entries ?? {})[`recap:${w.slug}`];
+
+const settledStates = ['won', 'lost', 'void'];
+const fmtU = (n) => `${n > 0 ? '+' : ''}${Number(n ?? 0).toFixed(2)}u`;
+const dayName = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { weekday: 'short', timeZone: 'UTC' });
+const dayNum = (d) => new Date(d + 'T12:00:00Z').getUTCDate();
+const prettyDay = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
+const timeOf = (iso) => (iso ? new Date(iso).toISOString().slice(11, 16) : '');
+const line = (g) => [
+  `${g.tips} tip${g.tips === 1 ? '' : 's'}`,
+  g.settled ? `${g.won}W–${g.lost}L${g.voided ? `–${g.voided}V` : ''}` : 'not settled yet',
+  g.settled ? `${fmtU(g.profit)}${g.roi != null ? ` (ROI ${g.roi > 0 ? '+' : ''}${g.roi}%)` : ''}` : null,
+].filter(Boolean).join(' · ');
+
+// tips grouped by day for the results list (skip empty days)
+const dayGroups = w.days
+  .map((d) => ({ ...d, list: w.entries.filter((h) => String(h.kickoff).slice(0, 10) === d.date) }))
+  .filter((d) => d.list.length);
+
+const title = s.settled
+  ? `Betting Model Results Week ${w.week} ${w.isoYear}: ${s.won}W–${s.lost}L, ${fmtU(s.profit)}`
+  : `Betting Model Tips Week ${w.week} ${w.isoYear} — ${s.tips} Picks Archived`;
+const description = s.settled
+  ? `Week ${w.week} (${w.label}) settled openly: ${s.won} won, ${s.lost} lost from ${s.settled} graded tips at flat stakes — ${fmtU(s.profit)}${s.roi != null ? `, ROI ${s.roi > 0 ? '+' : ''}${s.roi}%` : ''}. Full log with scores, odds and per-market breakdown.`
+  : `All ${s.tips} model tips published for ${w.label}, archived before kick-off. Results are graded automatically after each final whistle.`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      headline: title,
+      datePublished: w.monday,
+      dateModified: new Date().toISOString().slice(0, 10),
+      author: { '@type': 'Organization', name: 'AI Betting Tips' },
+      description,
+    },
+    ...(ai?.faq?.length ? [faqSchema(ai.faq)] : []),
+  ],
+};
+---
+<Base title={title} description={description} schema={schema} active="tipsters">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href="/">Home</a><span>/</span>
+        <a href="/news">News</a><span>/</span>
+        <a href="/news/recap">Weekly recaps</a><span>/</span>
+        Week {w.week}, {w.isoYear}
+      </div>
+      <h1>Week {w.week} <em>model results</em></h1>
+      <p class="lead">
+        {w.label} — {s.tips} tip{s.tips === 1 ? '' : 's'} published before kick-off and settled against the final score, never edited.
+        {w.inProgress && ' This week is still in progress: the page updates daily as fixtures settle.'}
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Week <b>results</b></h2></div>
+          <div class="res-sum">
+            <div class="res-chip"><b>{s.tips}</b><span>Tips</span></div>
+            <div class="res-chip"><b>{s.settled}</b><span>Settled</span></div>
+            <div class="res-chip win"><b>{s.won}</b><span>Won</span></div>
+            <div class="res-chip lose"><b>{s.lost}</b><span>Lost</span></div>
+            {s.winRate != null && <div class="res-chip"><b>{s.winRate}%</b><span>Strike rate</span></div>}
+            <div class={`res-chip ${s.profit > 0 ? 'win' : s.profit < 0 ? 'lose' : ''}`}>
+              <b>{fmtU(s.profit)}</b><span>Profit</span>
+            </div>
+            {s.roi != null && (
+              <div class={`res-chip ${s.roi > 0 ? 'win' : s.roi < 0 ? 'lose' : ''}`}>
+                <b>{s.roi > 0 ? '+' : ''}{s.roi}%</b><span>ROI</span>
+              </div>
+            )}
+          </div>
+
+          <div class="wk-strip">
+            {w.days.map((d) => (
+              <div class={`wk-day${d.tips === 0 ? ' empty' : ''}`}>
+                <div class="wd">{dayName(d.date)}</div>
+                <div class="dn">{dayNum(d.date)}</div>
+                {d.tips === 0 ? (
+                  <div class="wn">—</div>
+                ) : d.settled === 0 ? (
+                  <div class="wn">{d.tips} tip{d.tips === 1 ? '' : 's'}</div>
+                ) : (
+                  <div class={`wp ${d.profit > 0 ? 'pos' : d.profit < 0 ? 'neg' : 'zero'}`}>{fmtU(d.profit)}</div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {s.settled > 0 && s.settled < 20 && (
+            <p class="res-note">ⓘ Early sample — {s.settled} graded bet{s.settled === 1 ? '' : 's'} is too few to judge an edge. Numbers are shown for transparency, not as proof of profitability.</p>
+          )}
+        </section>
+
+        {ai?.intro && (
+          <section class="seo">
+            <h2>Week {w.week} in review</h2>
+            <p>{ai.intro}</p>
+          </section>
+        )}
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">By <b>market</b></h2></div>
+          <div class="odds-table"><div class="scr-scroll">
+            <table class="otbl">
+              <tbody>
+                {w.byType.map((g) => (
+                  <tr>
+                    <td class="o-match" style="font-weight:700">{g.label}</td>
+                    <td class="o-cell"><span class="cb">{line(g)}</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div></div>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">By <b>league</b></h2></div>
+          <div class="odds-table"><div class="scr-scroll">
+            <table class="otbl">
+              <tbody>
+                {w.byLeague.map((g) => (
+                  <tr>
+                    <td class="o-match" style="font-weight:700">{g.label}</td>
+                    <td class="o-cell"><span class="cb">{line(g)}</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div></div>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Full <b>log</b></h2></div>
+          <div class="res-list">
+            {dayGroups.map((d) => (
+              <>
+                <div class="res-daylbl">{prettyDay(d.date)}</div>
+                {d.list.map((h) => {
+                  const st = settledStates.includes(h.status) ? h.status : 'pending';
+                  return (
+                    <a class="res-row" href={`/predictions/${slugify(`${h.home}-vs-${h.away}`)}`} style="text-decoration:none;color:inherit">
+                      <span class={`res-mark ${st === 'won' ? 'w' : st === 'lost' ? 'l' : 'v'}`}>{st === 'won' ? 'W' : st === 'lost' ? 'L' : st === 'void' ? 'V' : '•'}</span>
+                      <span class="res-date">{timeOf(h.kickoff)}</span>
+                      <div class="res-match"><b>{h.home} v {h.away}</b><span>{h.market}{h.score && h.score !== 'simulated' ? ` · final ${h.score}` : ` · ${h.league}`}</span></div>
+                      <span class="res-odds">{Number(h.odds ?? 0).toFixed(2)}</span>
+                      <span class={`res-profit ${st === 'won' ? 'pos' : st === 'lost' ? 'neg' : 'zero'}`}>{st === 'pending' ? '—' : fmtU(h.profit ?? 0)}</span>
+                    </a>
+                  );
+                })}
+              </>
+            ))}
+          </div>
+          <p class="res-note">Stakes are flat 1u per tip. Kick-offs shown in UTC. Results are graded automatically after full time.</p>
+        </section>
+
+        <!-- week chain: strong internal linking between recap pages -->
+        <section>
+          <div class="res-sum">
+            {prev && <a class="res-chip" href={`/news/recap/${prev.slug}`} style="text-decoration:none"><b>←</b><span>Week {prev.week}</span></a>}
+            <a class="res-chip" href="/news/recap" style="text-decoration:none"><b>All</b><span>weeks</span></a>
+            {next && <a class="res-chip" href={`/news/recap/${next.slug}`} style="text-decoration:none"><b>→</b><span>Week {next.week}</span></a>}
+          </div>
+        </section>
+
+        <AiFaq faqs={ai?.faq ?? []} title={`Week ${w.week} results FAQ`} />
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>📈 Model performance</h4>
+          <p>Every track record, computed from openly settled bets only.</p>
+          <a href="/tipsters" class="btn btn-mint btn-block">See all tracks</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🗓</span> Archive</div>
+          <a class="tm" href="/news/recap"><span class="dot"></span>All weekly recaps</a>
+          <a class="tm" href="/predictions/daily"><span class="dot"></span>Results by date</a>
+          <a class="tm" href="/predictions"><span class="dot"></span>Current tips</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

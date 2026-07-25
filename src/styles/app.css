@@ -839,6 +839,19 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
 .res-profit.zero{color:var(--text-mute)}
 .res-note{margin:10px 2px 0;font-size:11.5px;color:var(--text-mute)}
 .res-note .res-demo{color:var(--danger)}
+
+/* weekly recap: Mon–Sun profit strip + day labels inside the log */
+.wk-strip{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin-top:14px}
+.wk-day{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center;min-width:0}
+.wk-day .wd{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-mute);font-weight:700}
+.wk-day .dn{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;margin:2px 0 1px;color:var(--text)}
+.wk-day .wn{font-size:11px;color:var(--text-dim);white-space:nowrap}
+.wk-day .wp{font-size:11.5px;font-weight:800;font-family:'Space Grotesk',sans-serif;white-space:nowrap}
+.wk-day .wp.pos{color:var(--win)}.wk-day .wp.neg{color:var(--lose)}.wk-day .wp.zero{color:var(--text-mute)}
+.wk-day.empty{opacity:.45}
+@media(max-width:640px){.wk-strip{gap:5px}.wk-day{padding:8px 3px;border-radius:8px}.wk-day .wn,.wk-day .wp{font-size:10px}}
+.res-daylbl{margin:16px 2px 8px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-mute);font-weight:700}
+.res-list .res-daylbl:first-child{margin-top:0}
 @media (max-width:560px){
   .res-row{grid-template-columns:28px 1fr 56px;gap:10px;padding:10px 13px}
   .res-date,.res-odds{display:none}

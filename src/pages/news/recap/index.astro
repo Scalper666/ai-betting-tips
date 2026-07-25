@@ -1,0 +1,72 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { getRecapWeeks } from '../../../lib/recap.js';
+
+const weeks = getRecapWeeks().slice().reverse(); // newest first
+const fmtU = (n) => `${n > 0 ? '+' : ''}${Number(n ?? 0).toFixed(2)}u`;
+
+const graded = weeks.reduce((s, w) => s + w.stats.settled - w.stats.voided, 0);
+const title = 'Weekly Betting Model Results — Full Archive';
+const description = `Week-by-week results of the AI Betting Tips model: every tip archived before kick-off, settled openly and never edited. ${weeks.length} week${weeks.length === 1 ? '' : 's'} on record.`;
+---
+<Base title={title} description={description} active="tipsters">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/news">News</a><span>/</span>Weekly recaps</div>
+      <h1>Weekly <em>model recaps</em></h1>
+      <p class="lead">One page per ISO week: the full tip log, day-by-day profit and per-market breakdown — settled openly at flat stakes, never edited after kick-off.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head"><h2 class="sec-title">All <b>weeks</b></h2></div>
+          <div class="res-list">
+            {weeks.map((w) => (
+              <a class="res-row" href={`/news/recap/${w.slug}`} style="text-decoration:none;color:inherit">
+                <span class={`res-mark ${w.stats.profit > 0 ? 'w' : w.stats.profit < 0 ? 'l' : 'v'}`}>W{w.week}</span>
+                <div class="res-match">
+                  <b>Week {w.week}, {w.isoYear}</b>
+                  <span>{w.label}{w.inProgress ? ' · in progress' : ''}</span>
+                </div>
+                <span class="res-odds">{w.stats.settled ? `${w.stats.won}W–${w.stats.lost}L` : `${w.stats.tips} tips`}</span>
+                <span class={`res-profit ${w.stats.profit > 0 ? 'pos' : w.stats.profit < 0 ? 'neg' : 'zero'}`}>
+                  {w.stats.settled ? fmtU(w.stats.profit) : '—'}
+                </span>
+              </a>
+            ))}
+          </div>
+          {graded > 0 && graded < 20 && (
+            <p class="res-note">ⓘ Early sample — {graded} graded bet{graded === 1 ? '' : 's'} across the archive is too few to judge an edge. Published for transparency, not as proof of profitability.</p>
+          )}
+        </section>
+
+        <section class="seo">
+          <h2>How these recaps work</h2>
+          <p>
+            Every tip the model publishes is archived before kick-off with its odds and confidence, then graded
+            automatically against the final score — wins, losses and voids alike. A new recap page is created for
+            each ISO week (Monday to Sunday), and the current week's page refreshes daily as fixtures settle.
+            Nothing is deleted or rewritten after the fact.
+          </p>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>📈 Model performance</h4>
+          <p>Track records by market, computed from settled bets only.</p>
+          <a href="/tipsters" class="btn btn-mint btn-block">See all tracks</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">📅</span> Also see</div>
+          <a class="tm" href="/predictions/daily"><span class="dot"></span>Results by date</a>
+          <a class="tm" href="/predictions"><span class="dot"></span>Current tips</a>
+          <a class="tm" href="/screener"><span class="dot"></span>AI Screener</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

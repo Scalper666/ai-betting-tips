@@ -123,6 +123,10 @@ SCHEMAS = {
         "intro": S_TEXT,
         "faq": S_FAQ,
     }, ["intro", "faq"]),
+    "recap": _obj({                           # weekly results recap pages
+        "intro": S_TEXT,
+        "faq": S_FAQ,
+    }, ["intro", "faq"]),
 }
 
 FAQ_RULES = """
@@ -287,6 +291,26 @@ MATRIX = [
     ("draw", "Draw Tips", "value draw picks"),
 ]
 COMBO_MIN_ITEMS = 2   # mirror of the Astro page threshold
+RECAP_MIN_SETTLED = 3   # AI review once a finished week has this many graded bets
+
+
+def p_recap(label: str, week: int, year: int, st: dict, markets: list[str], leagues: list[str],
+            best: str, worst: str) -> str:
+    return f"""Write copy for the weekly results recap page "Week {week}, {year}" ({label}) of our own
+prediction model. The week is finished and settled; these final figures are frozen, so unlike live
+pages you MAY cite them exactly.
+
+Final record: {st['tips']} tips published, {st['settled']} settled, {st['won']} won, {st['lost']} lost,
+{st['voided']} void. Profit at flat 1-unit stakes: {st['profit']:+.2f}u. ROI per graded bet: {st['roi']:+.1f}%.
+By market: {'; '.join(markets)}.
+By league: {'; '.join(leagues)}.
+Best result: {best}. Worst result: {worst}.
+
+Return JSON:
+- intro: 110-150 words reviewing the week from these figures only: overall record, which market or
+  league carried the week and which dragged it, and one honest observation. If the sample is small
+  (under 20 graded bets), say plainly that a week proves little either way — no trend claims.{FAQ_RULES}
+  Exception for this page: the frozen final figures above may be cited in answers."""
 
 def p_combo(type_name: str, short: str, league: str, n: int, settled: int, won: int, profit: float) -> str:
     return f"""Write evergreen copy for our "{league} {type_name}" page ({short} for the {league}).
@@ -381,6 +405,57 @@ def build_worklist() -> list[dict]:
                                   sum(float(h.get("profit") or 0) for h in st)),
                 "hash_src": f"combo|{ckey}|{lg}|v1",
             })
+
+    # weekly recap pages — AI review once a week is finished and settled enough.
+    # Hash on the final stats: late settlements retrigger a fresh (cheap) rewrite,
+    # then the copy freezes for good.
+    from datetime import date, timedelta
+    by_monday: dict[str, list[dict]] = {}
+    for h in hist_all:
+        d = str(h.get("kickoff") or "")[:10]
+        try:
+            dd = date.fromisoformat(d)
+        except ValueError:
+            continue
+        by_monday.setdefault((dd - timedelta(days=dd.isoweekday() - 1)).isoformat(), []).append(h)
+    today = datetime.now(timezone.utc).date()
+    for mon_s, ws in sorted(by_monday.items()):
+        monday = date.fromisoformat(mon_s)
+        if monday + timedelta(days=6) >= today:      # only finished weeks
+            continue
+        st_list = [h for h in ws if h.get("status") in ("won", "lost", "void")]
+        graded = [h for h in st_list if h.get("status") != "void"]
+        if len(st_list) < RECAP_MIN_SETTLED or not graded:
+            continue
+        iso_y, iso_w, _ = monday.isocalendar()
+        stats = {
+            "tips": len(ws), "settled": len(st_list),
+            "won": sum(1 for h in graded if h["status"] == "won"),
+            "lost": sum(1 for h in graded if h["status"] == "lost"),
+            "voided": len(st_list) - len(graded),
+            "profit": sum(float(h.get("profit") or 0) for h in st_list),
+        }
+        stats["roi"] = stats["profit"] / len(graded) * 100
+        def _grp(key):
+            g: dict[str, list[dict]] = {}
+            for h in st_list:
+                g.setdefault(str(h.get(key) or "—"), []).append(h)
+            names = {"h2h": "match result (1X2)", "totals": "over/under totals"}
+            return [f"{names.get(k, k)}: {sum(1 for x in v if x['status'] == 'won')}W-"
+                    f"{sum(1 for x in v if x['status'] == 'lost')}L, "
+                    f"{sum(float(x.get('profit') or 0) for x in v):+.2f}u"
+                    for k, v in sorted(g.items())]
+        def _pick(h):
+            return f"{h.get('home')} v {h.get('away')} ({h.get('market')}, odds {h.get('odds')}, final {h.get('score')})"
+        by_profit = sorted(graded, key=lambda h: float(h.get("profit") or 0))
+        label = f"{monday.strftime('%d %b')} – {(monday + timedelta(days=6)).strftime('%d %b %Y')}"
+        work.append({
+            "key": f"recap:{iso_y}-w{iso_w:02d}",
+            "kind": "recap",
+            "prompt": p_recap(label, iso_w, iso_y, stats, _grp("type"), _grp("league"),
+                              _pick(by_profit[-1]), _pick(by_profit[0])),
+            "hash_src": f"recap|{iso_y}-w{iso_w:02d}|{stats['settled']}|{stats['won']}|{stats['profit']:.2f}",
+        })
 
     # team hub pages — AI text once a team is seen often enough
     hist = load_json(ROOT / "data" / "history.json").get("tips", {})

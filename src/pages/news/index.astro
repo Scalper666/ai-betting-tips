@@ -2,6 +2,10 @@
 import Base from '../../layouts/Base.astro';
 import predictions from '../../data/predictions.json';
 import { matchSlug, kickoffLabel, slugify } from '../../lib/utils.js';
+import { getRecapWeeks } from '../../lib/recap.js';
+
+const recaps = getRecapWeeks().slice(-4).reverse(); // latest weeks first
+const fmtU = (n) => `${n > 0 ? '+' : ''}${Number(n ?? 0).toFixed(2)}u`;
 
 // The news feed is generated from the pipeline: every fixture becomes a preview
 // article that links to its full match page. No hand-written posts to maintain.
@@ -29,6 +33,23 @@ const THUMBS = [
   </div>
 
   <div class="container" style="padding-bottom:60px">
+
+    {recaps.length > 0 && (
+      <section style="margin-bottom:26px">
+        <div class="sec-head">
+          <h2 class="sec-title">Weekly <b>model recaps</b></h2>
+          <a href="/news/recap" class="more-link">All weeks →</a>
+        </div>
+        <div class="res-sum">
+          {recaps.map((w) => (
+            <a class="res-chip" href={`/news/recap/${w.slug}`} style="text-decoration:none">
+              <b>Week {w.week}</b>
+              <span>{w.stats.settled ? `${w.stats.won}W–${w.stats.lost}L · ${fmtU(w.stats.profit)}` : `${w.stats.tips} tips${w.inProgress ? ' · live' : ''}`}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
 
     {featureTip && (
       <div class="feature-article" style="margin-bottom:18px">
