@@ -216,8 +216,15 @@ def summarize_event(event: dict, meta: dict) -> dict | None:
     # Recommendation priority: (1) best value h2h by Kelly, (2) totals value,
     # (3) plain favourite — so every match still gets a sensible tip on the
     # most likely outcome rather than a longshot.
-    if value_picks:
-        top = value_picks[0]
+    # The MAIN tip is stricter than the screener list: it becomes a real
+    # archived bet, so no lottery tickets — moderate odds and a real chance
+    # of landing, or we fall through to totals / the favourite.
+    REC_MAX_ODDS = 4.0
+    REC_MIN_PROB = 0.35
+    rec_candidates = [p for p in value_picks
+                      if p["best_price"] <= REC_MAX_ODDS and p["fair_prob"] >= REC_MIN_PROB]
+    if rec_candidates:
+        top = rec_candidates[0]
         recommendation = {
             "text": _h2h_text(top["outcome"], home, away),
             "price": top["best_price"],

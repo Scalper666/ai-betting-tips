@@ -6,6 +6,7 @@
 # Secrets required (repo Settings -> Secrets and variables -> Actions):
 #   ODDS_API_KEY          the-odds-api.com key
 #   ANTHROPIC_API_KEY     Claude API key (AI page copy)
+#   FOOTBALL_DATA_TOKEN   football-data.org key (form / H2H / standings)
 #   CLOUDFLARE_API_TOKEN  token with Cloudflare Pages: Edit
 #   CLOUDFLARE_ACCOUNT_ID Cloudflare account id
 name: Daily refresh
@@ -49,6 +50,12 @@ jobs:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
           ODDS_API_REGION: eu
         run: python pipeline/results.py
+
+      - name: Fetch standings & season results (football-data.org)
+        env:
+          FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
+          ODDS_API_SPORTS: soccer_epl,soccer_spain_la_liga,soccer_usa_mls,soccer_brazil_campeonato
+        run: python pipeline/football_data.py
 
       - name: Recompute honest tipster stats
         run: python pipeline/stats.py

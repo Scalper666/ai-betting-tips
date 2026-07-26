@@ -5,6 +5,7 @@ import historyData from '../../data/history.json';
 import screener from '../../data/screener.json';
 import content from '../../data/content.json';
 import { matchSlug, abbr, badgeColor, kickoffLabel, confidenceLabel, slugify, faqSchema } from '../../lib/utils.js';
+import { teamForm, h2hBetween, leagueTable, resolveTeam } from '../../lib/form.js';
 
 // ── Programmatic SEO, compounding edition:
 //    pages are built from the CURRENT feed ∪ the SETTLEMENT ARCHIVE, so a match
@@ -86,6 +87,16 @@ const extraPicks = isLive
   ? (screener.rows ?? []).filter((r) => r.home === home && r.away === away && r.market !== rec.text)
       .sort((a, b) => (b.score ?? 0) - (a.score ?? 0))
   : [];
+
+// form / H2H / standings from football-data.org + our own results archive
+const sportKey = tip?.sport_key ?? latest?.sport_key ?? '';
+const formHome = teamForm(sportKey, home);
+const formAway = teamForm(sportKey, away);
+const h2h = h2hBetween(sportKey, home, away);
+const table = leagueTable(sportKey);
+const hlNames = new Set([resolveTeam(sportKey, home), resolveTeam(sportKey, away)].filter(Boolean));
+const shortDate = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: '2-digit', timeZone: 'UTC' });
+const resCls2 = { W: 'w', L: 'l', D: 'v' };
 
 // other fixtures from the live feed in the same league (mightytips-style widget)
 const upcoming = (predictions.tips ?? [])
@@ -235,6 +246,57 @@ const schema = {
           </section>
         )}
 
+        <!-- Team form: last 5 completed games per side -->
+        {(formHome.length > 0 || formAway.length > 0) && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">Team <b>form</b></h2></div>
+            <div class="form-grid">
+              {[{ name: home, list: formHome }, { name: away, list: formAway }].map((side) => (
+                <div class="box">
+                  <div class="box-h">
+                    <span class="hi" style={`background:${badgeColor(side.name)};color:#fff;font-size:10px;font-weight:800`}>{abbr(side.name)}</span>
+                    {side.name}
+                    <span class="fm-letters">
+                      {side.list.map((g) => <i class={`fm-l ${resCls2[g.res]}`}>{g.res}</i>)}
+                    </span>
+                  </div>
+                  {side.list.length ? side.list.map((g) => (
+                    <div class="fm-row">
+                      <span class="fm-d">{shortDate(g.d)}</span>
+                      <span class="fm-o">{g.ha === 'H' ? 'vs' : '@'} {g.opp}</span>
+                      <span class={`fm-s ${resCls2[g.res]}`}>{g.score}</span>
+                    </div>
+                  )) : (
+                    <div class="box-pad dim" style="font-size:12.5px">No completed games in our results dataset yet.</div>
+                  )}
+                </div>
+              ))}
+            </div>
+            {formHome.length + formAway.length > 0 && formHome.length < 5 && formAway.length < 5 && (
+              <p class="res-note">Form builds from completed fixtures in our dataset and fills out as the season progresses.</p>
+            )}
+          </section>
+        )}
+
+        <!-- Head-to-head from the results dataset -->
+        {h2h.length > 0 && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">Head-to-head: <b>{home} v {away}</b></h2></div>
+            <div class="res-list">
+              {h2h.map((g) => (
+                <div class="res-row">
+                  <span class={`res-mark ${resCls2[g.res]}`}>{g.res}</span>
+                  <span class="res-date">{shortDate(g.d)}</span>
+                  <div class="res-match"><b>{g.home} {g.score} {g.away}</b><span>{league}</span></div>
+                  <span class="res-odds" style="visibility:hidden"></span>
+                  <span class="res-profit zero"></span>
+                </div>
+              ))}
+            </div>
+            <p class="res-note">W/D/L shown from {home}'s perspective. Meetings from the seasons in our results dataset.</p>
+          </section>
+        )}
+
         <!-- Odds comparison (live fixtures only) -->
         {bestOdds.length > 0 && (
           <section>
@@ -321,6 +383,33 @@ const schema = {
               </table>
             </div></div>
             <p class="res-note">Best available 1X2 price per outcome across the bookmakers we track. Click a fixture for its full prediction.</p>
+          </section>
+        )}
+
+        <!-- League table (once the season has rounds played) -->
+        {table && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">{table.name} <b>standings</b></h2></div>
+            <div class="odds-table"><div class="scr-scroll">
+              <table class="otbl">
+                <thead><tr><th>#</th><th style="text-align:left">Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead>
+                <tbody>
+                  {table.rows.map((r) => (
+                    <tr class={hlNames.has(r.team) ? 'hl' : ''}>
+                      <td class="o-cell"><span>{r.pos}</span></td>
+                      <td class="o-match" style="font-weight:700">{r.team}</td>
+                      <td class="o-cell"><span>{r.p}</span></td>
+                      <td class="o-cell"><span>{r.w}</span></td>
+                      <td class="o-cell"><span>{r.d}</span></td>
+                      <td class="o-cell"><span>{r.l}</span></td>
+                      <td class="o-cell"><span>{r.gd > 0 ? `+${r.gd}` : r.gd}</span></td>
+                      <td class="o-cell hot"><span class="cb">{r.pts}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div></div>
+            <p class="res-note">Standings &amp; historical results via <a href="https://www.football-data.org" rel="nofollow noopener" target="_blank" style="color:inherit">football-data.org</a>, refreshed daily. Before a new season's opening round this shows the previous season's final table.</p>
           </section>
         )}
 

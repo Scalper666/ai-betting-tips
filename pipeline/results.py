@@ -105,7 +105,41 @@ def settle_real(h: dict, expire_days: int) -> tuple[int, int]:
             print(f"  ⚠ {sk}: {e}")
     print(f"  fetched {len(events)} finished/live event(s); quota left: {client.quota.get('remaining')}")
 
+    accumulate_results(events)
     return apply_grades(h, pend, events, expire_days)
+
+
+def accumulate_results(events: dict) -> None:
+    """Bank every completed score the /scores calls already returned (the whole
+    league round, not just our fixtures) into data/results-archive.json. Costs
+    zero extra credits and slowly builds our own form/H2H dataset — the only
+    free source that covers MLS."""
+    import json
+    path = history.ROOT / "data" / "results-archive.json"
+    try:
+        arch = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        arch = {}
+    games = arch.setdefault("games", {})
+    added = 0
+    for eid, ev in events.items():
+        if not eid or not ev.get("completed"):
+            continue
+        sm = scores_map(ev)
+        home, away = ev.get("home_team", ""), ev.get("away_team", "")
+        if not home or not away or home not in sm or away not in sm:
+            continue
+        if eid not in games:
+            added += 1
+        games[eid] = {
+            "sk": ev.get("sport_key", ""),
+            "d": str(ev.get("commence_time", ""))[:10],
+            "h": home, "a": away,
+            "hs": int(sm[home]), "as": int(sm[away]),
+        }
+    arch["updated_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    path.write_text(json.dumps(arch, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"  results archive: +{added} new, {len(games)} total")
 
 
 def apply_grades(h: dict, pend: list[dict], events: dict, expire_days: int) -> tuple[int, int]:

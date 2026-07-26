@@ -29,7 +29,8 @@ SRC = ROOT / "data"
 # Files the pipeline generates and the Astro site consumes.
 # history.json feeds the "Recent results" transparency block (settled bets).
 # content.json holds AI-written page copy (generate_content.py); optional.
-FILES = ["predictions.json", "screener.json", "stats.json", "history.json", "content.json"]
+FILES = ["predictions.json", "screener.json", "stats.json", "history.json", "content.json",
+         "football-data.json", "results-archive.json"]
 
 
 def astro_data_dir() -> Path | None:

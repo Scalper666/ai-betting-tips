@@ -853,6 +853,21 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
 .res-daylbl{margin:16px 2px 8px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-mute);font-weight:700}
 .res-list .res-daylbl:first-child{margin-top:0}
 
+/* match page: team form boxes + league-table highlight */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:760px){.form-grid{grid-template-columns:1fr}}
+.fm-letters{margin-left:auto;display:flex;gap:4px}
+.fm-l{width:20px;height:20px;border-radius:6px;display:grid;place-items:center;font-style:normal;
+  font-size:10.5px;font-weight:800;font-family:'Space Grotesk',sans-serif;color:#fff;background:var(--push)}
+.fm-l.w{background:var(--win)}.fm-l.l{background:var(--lose)}
+.fm-row{display:grid;grid-template-columns:64px 1fr auto;gap:10px;align-items:center;
+  padding:8px 16px;border-top:1px solid var(--border);font-size:12.5px}
+.fm-d{color:var(--text-mute);white-space:nowrap}
+.fm-o{color:var(--text-dim);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fm-s{font-family:'Space Grotesk',sans-serif;font-weight:800}
+.fm-s.w{color:var(--win)}.fm-s.l{color:var(--lose)}.fm-s.v{color:var(--text-mute)}
+.otbl tr.hl td{background:rgba(var(--accent-rgb),.10)}
+
 /* match page: numbered key-factor cards behind the tip */
 .rsn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .rsn{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:16px 15px}
@@ -864,40 +879,28 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
   .res-date,.res-odds{display:none}
 }
 
-/* ---- matchday covers: diagonal club-colour clash (broadcast-style) ----
-   Each cover is coloured by ITS two clubs (badgeColor vars --ca/--cb) with a
-   dark seam, a luminous split line and a faint pitch centre-circle. */
+/* ---- matchday covers: quiet straight club-colour split ----
+   Each cover is coloured by ITS two clubs (badgeColor vars --ca/--cb): two flat,
+   heavily dimmed colour fields with a clean vertical edge — no tilt, no decor. */
 .news-thumb, .feature-article .fa-img{
   background:
-    radial-gradient(130% 100% at 50% 40%, rgba(0,0,0,0) 35%, rgba(0,0,0,.42) 100%),
-    linear-gradient(105deg,
-      color-mix(in oklab, var(--ca, #1d2a4d), #0b0f16 42%) 0 46%,
-      #0b0f16 50%,
-      color-mix(in oklab, var(--cb, #4d1d2a), #0b0f16 42%) 54% 100%);
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.34) 100%),
+    linear-gradient(90deg,
+      color-mix(in oklab, var(--ca, #1d2a4d), #0e141d 62%) 0 50%,
+      color-mix(in oklab, var(--cb, #4d1d2a), #0e141d 62%) 50% 100%);
   overflow:hidden}
-.news-thumb::before, .feature-article .fa-img::before{
-  content:"";position:absolute;top:-25%;bottom:-25%;left:50%;width:1px;
-  background:linear-gradient(180deg, transparent, rgba(255,255,255,.38), transparent);
-  transform:rotate(15deg)}
-.news-thumb::after, .feature-article .fa-img::after{
-  content:"";position:absolute;left:50%;top:50%;width:200px;height:200px;margin:-100px 0 0 -100px;
-  border:1px solid rgba(255,255,255,.08);border-radius:50%;pointer-events:none}
-.feature-article .fa-img::after{width:300px;height:300px;margin:-150px 0 0 -150px}
 .news-thumb .tag, .news-thumb .when{z-index:3}
-.cover-vs{position:relative;z-index:2;display:flex;align-items:center;gap:18px}
-.cvb{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;color:#fff;
-  font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:16px;letter-spacing:.02em;
-  border:2px solid rgba(255,255,255,.18);
-  transform:rotate(-5deg);
-  box-shadow:0 16px 32px rgba(0,0,0,.5), 0 0 30px color-mix(in oklab, var(--ca, #1d2a4d), transparent 45%)}
-.cvb:last-child{transform:rotate(5deg);
-  box-shadow:0 16px 32px rgba(0,0,0,.5), 0 0 30px color-mix(in oklab, var(--cb, #4d1d2a), transparent 45%)}
-.cv-x{font-family:'Space Grotesk',sans-serif;font-weight:800;font-style:italic;font-size:14px;
-  color:rgba(255,255,255,.9);letter-spacing:.16em;text-shadow:0 0 16px rgba(255,255,255,.4)}
+.cover-vs{position:relative;z-index:2;display:flex;align-items:center;gap:16px}
+.cvb{width:60px;height:60px;border-radius:14px;display:grid;place-items:center;color:#fff;
+  font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:15px;letter-spacing:.02em;
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 8px 20px rgba(0,0,0,.35)}
+.cv-x{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:12.5px;
+  color:rgba(255,255,255,.65);letter-spacing:.14em}
 .cover-vs.sm{gap:12px}
-.cover-vs.sm .cvb{width:46px;height:46px;border-radius:13px;font-size:12px}
-.feature-article .fa-img .cvb{width:78px;height:78px;border-radius:22px;font-size:19px}
-.feature-article .fa-img .cv-x{font-size:17px}
+.cover-vs.sm .cvb{width:44px;height:44px;border-radius:11px;font-size:12px}
+.feature-article .fa-img .cvb{width:72px;height:72px;border-radius:17px;font-size:18px}
+.feature-article .fa-img .cv-x{font-size:14px}
 
 /* ---- generic compliance line under bonus CTAs ---- */
 .tc-line{display:block;font-size:10px;color:var(--text-dim);letter-spacing:.02em;margin-top:7px}
