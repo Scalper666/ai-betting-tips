@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import PredCard from '../components/PredCard.astro';
 import BookmakerRow from '../components/BookmakerRow.astro';
 import ModelTracks from '../components/ModelTracks.astro';
+import TeamMark from '../components/TeamMark.astro';
 import predictions from '../data/predictions.json';
 import screener from '../data/screener.json';
 import bookmakers from '../data/bookmakers.json';
@@ -426,9 +427,9 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
             <div class="feature-article" style="margin-bottom:16px">
               <div class="fa-img" style={`--ca:${badgeColor(featureTip.home)};--cb:${badgeColor(featureTip.away)}`}>
                 <div class="cover-vs">
-                  <span class="cvb" style={`background:${badgeColor(featureTip.home)}`}>{abbr(featureTip.home)}</span>
+                  <TeamMark team={featureTip.home} sportKey={featureTip.sport_key} />
                   <span class="cv-x">VS</span>
-                  <span class="cvb" style={`background:${badgeColor(featureTip.away)}`}>{abbr(featureTip.away)}</span>
+                  <TeamMark team={featureTip.away} sportKey={featureTip.sport_key} />
                 </div>
               </div>
               <div class="fa-body">
@@ -443,9 +444,9 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
                 <div class="news-card">
                   <div class="news-thumb" style={`--ca:${badgeColor(t.home)};--cb:${badgeColor(t.away)}`}>
                     <div class="cover-vs sm">
-                      <span class="cvb" style={`background:${badgeColor(t.home)}`}>{abbr(t.home)}</span>
+                      <TeamMark team={t.home} sportKey={t.sport_key} />
                       <span class="cv-x">v</span>
-                      <span class="cvb" style={`background:${badgeColor(t.away)}`}>{abbr(t.away)}</span>
+                      <TeamMark team={t.away} sportKey={t.sport_key} />
                     </div>
                     <span class="tag">{t.league}</span><span class="when">{kickoffLabel(t.kickoff)}</span>
                   </div>

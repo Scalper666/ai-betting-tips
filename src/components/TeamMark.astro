@@ -1,0 +1,13 @@
+---
+// Team badge: the real club crest (football-data.org CDN) when the team is
+// matched in our dataset, otherwise the lettered colour badge (e.g. MLS).
+import { teamCrest } from '../lib/form.js';
+import { abbr, badgeColor } from '../lib/utils.js';
+const { team, sportKey = '', cls = 'cvb' } = Astro.props;
+const crest = teamCrest(sportKey, team);
+---
+{crest ? (
+  <span class={`${cls} img`}><img src={crest} alt={`${team} logo`} loading="lazy" width="40" height="40" /></span>
+) : (
+  <span class={cls} style={`background:${badgeColor(team)}`}>{abbr(team)}</span>
+)}

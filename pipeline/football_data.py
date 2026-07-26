@@ -33,7 +33,15 @@ from odds_api import _build_session
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "football-data.json"
+CRESTS_DIR = ROOT / "public" / "crests"
 API = "https://api.football-data.org/v4"
+
+
+def _slug(s: str) -> str:
+    import re, unicodedata
+    s = unicodedata.normalize("NFD", s.lower())
+    s = "".join(c for c in s if not unicodedata.combining(c))
+    return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
 
 # The Odds API sport_key -> football-data.org competition code
 COMP = {
@@ -86,12 +94,31 @@ def main() -> int:
         try:
             st = get(f"/competitions/{code}/standings")
             table = next((s for s in st.get("standings", []) if s.get("type") == "TOTAL"), {})
-            rows = [{
-                "pos": r.get("position"),
-                "team": (r.get("team") or {}).get("shortName") or (r.get("team") or {}).get("name"),
-                "p": r.get("playedGames"), "w": r.get("won"), "d": r.get("draw"), "l": r.get("lost"),
-                "gd": r.get("goalDifference"), "pts": r.get("points"),
-            } for r in table.get("table", [])]
+            rows, crests = [], {}
+            for r in table.get("table", []):
+                team = r.get("team") or {}
+                name = team.get("shortName") or team.get("name")
+                rows.append({
+                    "pos": r.get("position"), "team": name,
+                    "p": r.get("playedGames"), "w": r.get("won"), "d": r.get("draw"), "l": r.get("lost"),
+                    "gd": r.get("goalDifference"), "pts": r.get("points"),
+                })
+                if name and team.get("crest"):
+                    # self-host the crest: adblockers / CSPs kill hotlinks to
+                    # crest CDNs, and our pages must not depend on a third
+                    # party at view time. Downloaded once, kept in the repo.
+                    url = team["crest"]
+                    ext = ".svg" if url.endswith(".svg") else ".png"
+                    local = CRESTS_DIR / f"{_slug(name)}{ext}"
+                    if not local.exists():
+                        try:
+                            CRESTS_DIR.mkdir(parents=True, exist_ok=True)
+                            local.write_bytes(ses.get(url, timeout=20).content)
+                            time.sleep(0.25)
+                        except Exception:
+                            local = None
+                    if local is not None:
+                        crests[name] = f"/crests/{local.name}"
 
             def matches_of(query: str) -> list[dict]:
                 out = []
@@ -121,6 +148,7 @@ def main() -> int:
                 "name": st.get("competition", {}).get("name", code),
                 "season": (st.get("season") or {}).get("startDate", "")[:4],
                 "standings": rows,
+                "crests": crests,
                 "results": results,
             }
             print(f"  ✓ {code}: {len(rows)} table rows, {len(results)} finished matches")

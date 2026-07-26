@@ -140,6 +140,15 @@ export function h2hBetween(sportKey, oddsHome, oddsAway, n = 10) {
     });
 }
 
+// real club crest URL (football-data.org CDN), or null → caller falls back to
+// the lettered colour badge (e.g. all of MLS)
+export function teamCrest(sportKey, oddsName) {
+  const lg = LEAGUES[sportKey];
+  if (!lg?.crests) return null;
+  const name = resolveTeam(sportKey, oddsName);
+  return (name && lg.crests[name]) || null;
+}
+
 // current league table, or null while the season hasn't started (all zeros)
 export function leagueTable(sportKey) {
   const lg = LEAGUES[sportKey];

@@ -6,6 +6,7 @@ import screener from '../../data/screener.json';
 import content from '../../data/content.json';
 import { matchSlug, abbr, badgeColor, kickoffLabel, confidenceLabel, slugify, faqSchema } from '../../lib/utils.js';
 import { teamForm, h2hBetween, leagueTable, resolveTeam } from '../../lib/form.js';
+import TeamMark from '../../components/TeamMark.astro';
 
 // ── Programmatic SEO, compounding edition:
 //    pages are built from the CURRENT feed ∪ the SETTLEMENT ARCHIVE, so a match
@@ -160,12 +161,12 @@ const schema = {
             <div class="pred-body">
               <div class="match">
                 <a class="team" href={`/team/${slugify(home)}`}>
-                  <div class="badge" style={`background:${badgeColor(home)}`}>{abbr(home)}</div>
+                  <TeamMark team={home} sportKey={sportKey} cls="badge" />
                   <div class="nm">{home}</div>
                 </a>
                 <div class="vs">{resultScore ?? 'VS'}</div>
                 <a class="team" href={`/team/${slugify(away)}`}>
-                  <div class="badge" style={`background:${badgeColor(away)}`}>{abbr(away)}</div>
+                  <TeamMark team={away} sportKey={sportKey} cls="badge" />
                   <div class="nm">{away}</div>
                 </a>
               </div>

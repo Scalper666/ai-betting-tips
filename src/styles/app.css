@@ -853,6 +853,11 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
 .res-daylbl{margin:16px 2px 8px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-mute);font-weight:700}
 .res-list .res-daylbl:first-child{margin-top:0}
 
+/* real club crests inside cover/hero badges (fallback = lettered badge) */
+.cvb.img,.badge.img{background:#fff;padding:7px}
+.cvb.img img,.badge.img img{width:100%;height:100%;object-fit:contain;display:block}
+.cover-vs.sm .cvb.img{padding:5px}
+
 /* match page: team form boxes + league-table highlight */
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:760px){.form-grid{grid-template-columns:1fr}}
