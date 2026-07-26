@@ -852,6 +852,13 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
 @media(max-width:640px){.wk-strip{gap:5px}.wk-day{padding:8px 3px;border-radius:8px}.wk-day .wn,.wk-day .wp{font-size:10px}}
 .res-daylbl{margin:16px 2px 8px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-mute);font-weight:700}
 .res-list .res-daylbl:first-child{margin-top:0}
+
+/* match page: numbered key-factor cards behind the tip */
+.rsn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.rsn{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);padding:16px 15px}
+.rsn .rn{font-family:'Space Grotesk',sans-serif;font-weight:800;font-size:12.5px;color:var(--mint);letter-spacing:.08em;margin-bottom:8px}
+.rsn p{margin:0;font-size:13.5px;color:var(--text-dim);line-height:1.55}
+@media(max-width:760px){.rsn-grid{grid-template-columns:1fr}.rsn{padding:13px 14px}}
 @media (max-width:560px){
   .res-row{grid-template-columns:28px 1fr 56px;gap:10px;padding:10px 13px}
   .res-date,.res-odds{display:none}
