@@ -23,6 +23,17 @@ const winRate = graded.length ? Math.round((won / graded.length) * 1000) / 10 : 
 const roi = graded.length ? Math.round((profit / graded.length) * 1000) / 10 : null;
 const shown = settled.slice(0, 40);
 
+// v2 era: selective official picks from the blended Poisson+market model.
+// Earlier (v1) bets stay in the all-time record — nothing is deleted — but the
+// current strategy is judged on its own slice.
+const v2 = real.filter((h) => h.model === 'v2');
+const v2Settled = v2.filter((h) => settledStates.includes(h.status));
+const v2Graded = v2Settled.filter((h) => h.status !== 'void');
+const v2Won = v2Graded.filter((h) => h.status === 'won').length;
+const v2Profit = Math.round(v2Settled.reduce((s, h) => s + (h.profit ?? 0), 0) * 100) / 100;
+const v2WinRate = v2Graded.length ? Math.round((v2Won / v2Graded.length) * 1000) / 10 : null;
+const v2Roi = v2Graded.length ? Math.round((v2Profit / v2Graded.length) * 1000) / 10 : null;
+
 const aiPage = (content.entries ?? {})['page:tipsters'];
 const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(aiPage.faq) } : null;
 ---
@@ -65,7 +76,33 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
         </section>
 
         <section>
-          <div class="sec-head"><h2 class="sec-title">Tracks by <b>market</b></h2></div>
+          <div class="sec-head"><h2 class="sec-title">Model <b>v2</b> — current strategy</h2></div>
+          <div class="res-sum">
+            <div class="res-chip"><b>{v2.length}</b><span>Published</span></div>
+            <div class="res-chip"><b>{v2Settled.length}</b><span>Settled</span></div>
+            <div class="res-chip"><b>{v2WinRate != null ? `${v2WinRate}%` : '—'}</b><span>Win rate</span></div>
+            <div class={`res-chip ${v2Profit > 0 ? 'win' : v2Profit < 0 ? 'lose' : ''}`}>
+              <b>{v2Profit > 0 ? '+' : ''}{v2Profit.toFixed(2)}u</b><span>Profit</span>
+            </div>
+            <div class={`res-chip ${v2Roi != null && v2Roi > 0 ? 'win' : v2Roi != null && v2Roi < 0 ? 'lose' : ''}`}>
+              <b>{v2Roi != null ? `${signed(v2Roi)}%` : '—'}</b><span>ROI</span>
+            </div>
+          </div>
+          <p class="res-note">
+            Since 29 Jul 2026 the model bets selectively: our own Poisson goal model (fitted on two seasons
+            of results) is blended with the market, and a pick is only published when it clears a value
+            threshold — roughly a quarter of fixtures instead of all of them. Earlier bets remain in the
+            all-time record below; nothing is deleted.
+          </p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">v2 tracks by <b>market</b></h2></div>
+          <ModelTracks limit={3} v2Only={true} />
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">All-time tracks <b>(incl. v1)</b></h2></div>
           <ModelTracks limit={3} />
         </section>
 

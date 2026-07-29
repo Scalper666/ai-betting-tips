@@ -57,7 +57,10 @@ def save(h: dict) -> None:
 
 
 def add_from_predictions(predictions: dict) -> tuple[int, int]:
-    """Archive any tip we haven't seen before. Returns (new, total)."""
+    """Archive any OFFICIAL tip we haven't seen before. Returns (new, total).
+
+    v2 selectivity: page "leans" are content, not bets — only picks that pass
+    the value gates in analyze._official_pick enter the graded record."""
     h = load()
     tips = h.setdefault("tips", {})
     now = datetime.now(timezone.utc).isoformat()
@@ -65,6 +68,8 @@ def add_from_predictions(predictions: dict) -> tuple[int, int]:
 
     for t in predictions.get("tips", []):
         rec = t.get("recommendation") or {}
+        if not rec.get("official"):
+            continue
         market = rec.get("text", "")
         eid = t.get("id") or f"{t.get('home','')}-{t.get('away','')}-{t.get('kickoff','')}"
         key = tip_key(eid, market)
@@ -87,6 +92,8 @@ def add_from_predictions(predictions: dict) -> tuple[int, int]:
             "confidence": rec.get("confidence"),
             "edge_pct": rec.get("edge_pct"),
             "bookmaker": rec.get("bookmaker"),
+            "basis": rec.get("basis"),
+            "model": "v2",               # selective era: official picks only
             "tipster": tipster_for(key),
             "published_at": now,
             "status": "pending",

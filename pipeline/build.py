@@ -48,13 +48,21 @@ def fetch_live(sport_filter: list[str] | None = None) -> dict:
     raw = client.fetch_many(keys, markets="h2h,totals")
     print(f"  quota: used={client.quota['used']} remaining={client.quota['remaining']}")
 
+    from model import GoalModel
+    gm = GoalModel()
+    print(f"  goal model: {len(gm.leagues)} league(s) fitted")
+
     tips = []
+    official_n = 0
     for sport_key, events in raw.items():
         meta = SPORT_KEYS[sport_key]
         for ev in events:
-            tip = summarize_event(ev, meta)
+            probs = gm.probs(sport_key, ev.get("home_team", ""), ev.get("away_team", ""))
+            tip = summarize_event(ev, meta, model_probs=probs)
             if tip:
                 tips.append(tip)
+                official_n += 1 if tip["recommendation"].get("official") else 0
+    print(f"  official picks: {official_n} of {len(tips)} fixtures (rest are page leans)")
 
     # Sort: live/closest first by confidence desc, then by kickoff
     tips.sort(key=lambda t: (

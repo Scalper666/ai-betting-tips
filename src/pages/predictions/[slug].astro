@@ -171,9 +171,14 @@ const schema = {
                 </a>
               </div>
               <div class="pred-tip">
-                <div><div class="lbl">Our tip</div><div class="val">{rec.text}</div></div>
+                <div><div class="lbl">{isLive && !rec.official ? 'Model lean' : 'Our tip'}</div><div class="val">{rec.text}</div></div>
                 <div class="odd-box"><div class="ot">Odds</div><div class="ov">{Number(rec.price ?? 0).toFixed(2)}</div></div>
               </div>
+              {isLive && (rec.official ? (
+                <div class="pk-flag ofc">★ Official pick — published to our graded record{rec.basis === 'model+market' ? ' · backed by our goal model' : ''}</div>
+              ) : (
+                <div class="pk-flag lean">ⓘ Model lean, not an official pick — this fixture didn't clear our value threshold, so it isn't counted in the record</div>
+              ))}
               {isLive ? (
                 <div class="confidence">
                   <div class="cf-top"><span>Confidence</span><span class="pc">{label} · {conf}%</span></div>

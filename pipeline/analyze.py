@@ -135,40 +135,44 @@ def find_value_picks(
     return picks
 
 
+def consensus_total(event: dict) -> dict | None:
+    """Best Over/Under prices at the most-quoted (consensus) line, with
+    margin-removed fair probabilities. Shared by the lean recommendation and
+    the official-pick evaluation."""
+    totals = best_totals(event)
+    if not totals:
+        return None
+    by_point: dict[float, dict] = {}
+    for k, info in totals.items():
+        by_point.setdefault(info["point"], {})[info["side"]] = info
+    if not by_point:
+        return None
+    target_point = sorted(by_point.keys(), key=lambda x: -len(by_point[x]))[0]
+    sides = by_point[target_point]
+    over, under = sides.get("Over"), sides.get("Under")
+    if not over or not under:
+        return None
+    oi, ui = implied_prob(over["price"]), implied_prob(under["price"])
+    tot = oi + ui
+    if tot <= 0:
+        return None
+    return {"point": target_point, "over": over, "under": under,
+            "fair_over": oi / tot, "fair_under": ui / tot}
+
+
 def pick_recommended_total(event: dict) -> dict | None:
     """
     From totals markets, pick the over/under line closest to the median line
     and recommend the side with better-than-fair odds.
     Simple heuristic for when h2h has no clear value pick.
     """
-    totals = best_totals(event)
-    if not totals:
+    ct = consensus_total(event)
+    if not ct:
         return None
+    target_point = ct["point"]
+    over, under = ct["over"], ct["under"]
 
-    # Group by point
-    by_point: dict[float, dict] = {}
-    for k, info in totals.items():
-        p = info["point"]
-        by_point.setdefault(p, {})[info["side"]] = info
-
-    # Pick the most quoted line (closest to bookies' consensus)
-    if not by_point:
-        return None
-    target_point = sorted(by_point.keys(), key=lambda x: -len(by_point[x]))[0]
-    sides = by_point[target_point]
-
-    # Compare implied probs: side with lower implied has better value at that line
-    over = sides.get("Over")
-    under = sides.get("Under")
-    if not over or not under:
-        return None
-
-    # Fair probability (assuming symmetric overround)
-    over_imp = implied_prob(over["price"])
-    under_imp = implied_prob(under["price"])
-    total = over_imp + under_imp
-    fair_over = over_imp / total if total > 0 else 0
-    fair_under = 1 - fair_over
+    fair_over, fair_under = ct["fair_over"], ct["fair_under"]
 
     # Recommend whichever side has lower margin (slightly mispriced)
     ev_over = over["price"] * fair_over - 1
@@ -192,7 +196,78 @@ def pick_recommended_total(event: dict) -> dict | None:
     }
 
 
-def summarize_event(event: dict, meta: dict) -> dict | None:
+# ---- official-pick thresholds (v2 selectivity) --------------------------
+# Every match page still shows a "model lean", but only picks passing these
+# gates are PUBLISHED to the graded record. Betting every fixture guarantees
+# market-average results (= minus the margin); official picks are selective.
+MODEL_W = 0.4            # blend weight of our Poisson model vs market fair prob
+OFFICIAL_MIN_EV = 0.03   # expected value per 1u at the best price
+OFFICIAL_MAX_ODDS = 4.0
+OFFICIAL_MIN_PROB = 0.35   # h2h blended probability floor
+OFFICIAL_TOTALS_MIN_PROB = 0.45
+OFFICIAL_TOTALS_MAX_ODDS = 2.6
+# leagues without a model (thin data): market-only official picks need a big
+# soft-price outlier to qualify
+MKT_MIN_EDGE_PCT = 4.0
+MKT_MAX_ODDS = 3.0
+MKT_MIN_CONF = 40
+
+
+def _official_pick(event, home, away, fair, best_h2h, value_picks, model_probs):
+    """Best candidate passing the official gates, or None. Ranked by Kelly."""
+    cands = []
+    if model_probs and fair:
+        from model import totals_probs
+        pm = {home: model_probs["p_home"], "Draw": model_probs["p_draw"], away: model_probs["p_away"]}
+        for name, info in (best_h2h or {}).items():
+            pf, p_mod = fair.get(name), pm.get(name)
+            price = float(info["price"])
+            if pf is None or p_mod is None or price <= 1.01:
+                continue
+            p = MODEL_W * p_mod + (1 - MODEL_W) * pf
+            ev = price * p - 1.0
+            if price <= OFFICIAL_MAX_ODDS and p >= OFFICIAL_MIN_PROB and ev >= OFFICIAL_MIN_EV:
+                cands.append({
+                    "text": _h2h_text(name, home, away), "price": round(price, 2),
+                    "bookmaker": info["bookmaker"], "confidence": min(98, int(round(p * 100))),
+                    "edge_pct": round(ev * 100, 2), "type": "h2h", "outcome": name,
+                    "kelly": ev / (price - 1.0),
+                })
+        ct = consensus_total(event)
+        if ct:
+            tp = totals_probs(model_probs["lambda_home"], model_probs["lambda_away"], ct["point"])
+            for side, key in (("Over", "over"), ("Under", "under")):
+                info = ct[key]
+                price = float(info["price"])
+                p = MODEL_W * tp[key] + (1 - MODEL_W) * ct[f"fair_{key}"]
+                ev = price * p + tp["push"] - 1.0   # a push returns the stake
+                if price <= OFFICIAL_TOTALS_MAX_ODDS and p >= OFFICIAL_TOTALS_MIN_PROB and ev >= OFFICIAL_MIN_EV:
+                    cands.append({
+                        "text": f"{side} {ct['point']} goals", "price": round(price, 2),
+                        "bookmaker": info["bookmaker"], "confidence": min(98, int(round(p * 100))),
+                        "edge_pct": round(ev * 100, 2), "type": "totals",
+                        "side": side, "point": ct["point"],
+                        "kelly": ev / (price - 1.0),
+                    })
+    else:
+        # no model: only a clear soft-price outlier on a likely outcome qualifies
+        for p in value_picks or []:
+            if (p["edge_pct"] >= MKT_MIN_EDGE_PCT and p["best_price"] <= MKT_MAX_ODDS
+                    and p["confidence"] >= MKT_MIN_CONF):
+                cands.append({
+                    "text": _h2h_text(p["outcome"], home, away), "price": p["best_price"],
+                    "bookmaker": p["bookmaker"], "confidence": p["confidence"],
+                    "edge_pct": p["edge_pct"], "type": "h2h", "outcome": p["outcome"],
+                    "kelly": p["kelly"],
+                })
+    if not cands:
+        return None
+    best = max(cands, key=lambda c: c["kelly"])
+    best.pop("kelly", None)
+    return best
+
+
+def summarize_event(event: dict, meta: dict, model_probs: dict | None = None) -> dict | None:
     """
     Convert a raw odds-event into a 'tip card' object for the website.
     Returns None when the event has insufficient odds data.
@@ -213,12 +288,17 @@ def summarize_event(event: dict, meta: dict) -> dict | None:
     value_picks = find_value_picks(event, fair=fair)
     totals_pick = pick_recommended_total(event)
 
-    # Recommendation priority: (1) best value h2h by Kelly, (2) totals value,
-    # (3) plain favourite — so every match still gets a sensible tip on the
-    # most likely outcome rather than a longshot.
-    # The MAIN tip is stricter than the screener list: it becomes a real
-    # archived bet, so no lottery tickets — moderate odds and a real chance
-    # of landing, or we fall through to totals / the favourite.
+    # Official pick first: passes the value gates -> gets published & graded.
+    official = _official_pick(event, home, away, fair, best_h2h, value_picks, model_probs)
+    if official:
+        recommendation = {**official, "official": True,
+                          "basis": "model+market" if model_probs else "market"}
+        return _tip_obj(event, meta, home, away, best_h2h, recommendation, value_picks, model_probs)
+
+    # Otherwise: a "model lean" for the page — same content, NOT archived.
+    # Priority: (1) best value h2h by Kelly, (2) totals value, (3) plain
+    # favourite — so every match still gets a sensible take on the most
+    # likely outcome rather than a longshot.
     REC_MAX_ODDS = 4.0
     REC_MIN_PROB = 0.35
     rec_candidates = [p for p in value_picks
@@ -266,6 +346,12 @@ def summarize_event(event: dict, meta: dict) -> dict | None:
     else:
         return None
 
+    recommendation = {**recommendation, "official": False,
+                      "basis": "model+market" if model_probs else "market"}
+    return _tip_obj(event, meta, home, away, best_h2h, recommendation, value_picks, model_probs)
+
+
+def _tip_obj(event, meta, home, away, best_h2h, recommendation, value_picks, model_probs):
     return {
         "id": event.get("id"),
         "sport_key": event.get("sport_key"),
@@ -280,6 +366,9 @@ def summarize_event(event: dict, meta: dict) -> dict | None:
             for name, info in best_h2h.items()
         },
         "recommendation": recommendation,
+        "model": ({"xg_home": model_probs["lambda_home"], "xg_away": model_probs["lambda_away"],
+                   "p_home": model_probs["p_home"], "p_draw": model_probs["p_draw"],
+                   "p_away": model_probs["p_away"]} if model_probs else None),
         "value_picks": value_picks[:3],  # top-3 value bets
     }
 

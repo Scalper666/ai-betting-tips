@@ -5,7 +5,9 @@
 import historyData from '../data/history.json';
 import { signed } from '../lib/utils.js';
 
-const { limit = 3 } = Astro.props;
+// v2Only: count only picks published under the selective v2 rules (own Poisson
+// model blended with the market, value gates) — the era marked h.model === 'v2'.
+const { limit = 3, v2Only = false } = Astro.props;
 
 const TRACKS = [
   { key: 'match-result', icon: '⚽', name: 'Match Result model', desc: '1X2 winner picks',
@@ -18,6 +20,7 @@ const TRACKS = [
 
 const real = Object.values(historyData.tips ?? {}).filter(
   (h) => h.score !== 'simulated' && !String(h.event_id ?? '').startsWith('mock')
+    && (!v2Only || h.model === 'v2')
 );
 const settledStates = ['won', 'lost', 'void'];
 
