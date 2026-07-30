@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-29T14:03:23.496796+00:00",
+  "updated_at": "2026-07-30T07:55:06.208117+00:00",
   "tips": {
     "mock_0|Home total over 1.5": {
       "key": "mock_0|Home total over 1.5",
@@ -1196,10 +1196,10 @@
       "bookmaker": "1xBet",
       "tipster": "Kate R.",
       "published_at": "2026-07-23T15:34:12.394592+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "won",
+      "profit": 0.88,
+      "settled_at": "2026-07-30T07:55:06.207726+00:00",
+      "score": "1-1"
     },
     "7f3c84d26ae6c82bb6c33c5f161185cb|Over 2.5 goals": {
       "key": "7f3c84d26ae6c82bb6c33c5f161185cb|Over 2.5 goals",
@@ -1220,10 +1220,10 @@
       "bookmaker": "1xBet",
       "tipster": "Kate R.",
       "published_at": "2026-07-23T15:34:12.394592+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "won",
+      "profit": 1.14,
+      "settled_at": "2026-07-30T07:55:06.207726+00:00",
+      "score": "2-1"
     },
     "ec1db1ae59afdc3fb045803d003445c5|Under 2.5 goals": {
       "key": "ec1db1ae59afdc3fb045803d003445c5|Under 2.5 goals",
@@ -1244,10 +1244,10 @@
       "bookmaker": "1xBet",
       "tipster": "Marco S.",
       "published_at": "2026-07-23T15:34:12.394592+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-07-30T07:55:06.207726+00:00",
+      "score": "0-4"
     },
     "0c616d7c1ac3c60aa0d87b53ecdb76eb|Over 2.5 goals": {
       "key": "0c616d7c1ac3c60aa0d87b53ecdb76eb|Over 2.5 goals",
@@ -1268,10 +1268,10 @@
       "bookmaker": "1xBet",
       "tipster": "Aleksandar K.",
       "published_at": "2026-07-23T15:34:12.394592+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-07-30T07:55:06.207726+00:00",
+      "score": "0-0"
     },
     "4f68110ae33722f386ddcd2aa17cc01c|Over 2.0 goals": {
       "key": "4f68110ae33722f386ddcd2aa17cc01c|Over 2.0 goals",
@@ -2900,10 +2900,10 @@
       "bookmaker": "1xBet",
       "tipster": "Aleksandar K.",
       "published_at": "2026-07-23T15:50:47.192818+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "won",
+      "profit": 1.09,
+      "settled_at": "2026-07-30T07:55:06.207726+00:00",
+      "score": "0-4"
     },
     "90a7c2b1668f47eaf38c10c7b49ac166|Over 2.5 goals": {
       "key": "90a7c2b1668f47eaf38c10c7b49ac166|Over 2.5 goals",
@@ -4580,10 +4580,10 @@
       "bookmaker": "Matchbook",
       "tipster": "Marco S.",
       "published_at": "2026-07-27T08:55:18.259196+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-07-30T07:55:06.207726+00:00",
+      "score": "1-1"
     },
     "778e839e022a74281964ba60cb664d06|Under 2.5 goals": {
       "key": "778e839e022a74281964ba60cb664d06|Under 2.5 goals",
@@ -5924,10 +5924,10 @@
       "bookmaker": "Matchbook",
       "tipster": "Marco S.",
       "published_at": "2026-07-29T08:05:46.878116+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "won",
+      "profit": 1.06,
+      "settled_at": "2026-07-30T07:55:06.207726+00:00",
+      "score": "0-0"
     },
     "4f68110ae33722f386ddcd2aa17cc01c|Under 2.0 goals": {
       "key": "4f68110ae33722f386ddcd2aa17cc01c|Under 2.0 goals",
@@ -6142,10 +6142,10 @@
       "model": "v2",
       "tipster": "Kate R.",
       "published_at": "2026-07-29T14:03:23.496685+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-07-30T07:55:06.207726+00:00",
+      "score": "1-1"
     },
     "aec4989a9fba43252f63741c86fa9165|Remo to win": {
       "key": "aec4989a9fba43252f63741c86fa9165|Remo to win",
@@ -6402,6 +6402,32 @@
       "model": "v2",
       "tipster": "Kate R.",
       "published_at": "2026-07-29T14:03:23.496685+00:00",
+      "status": "pending",
+      "profit": null,
+      "settled_at": null,
+      "score": null
+    },
+    "237fc150046e34b0affa008be3963438|Grêmio to win": {
+      "key": "237fc150046e34b0affa008be3963438|Grêmio to win",
+      "event_id": "237fc150046e34b0affa008be3963438",
+      "sport_key": "soccer_brazil_campeonato",
+      "league": "Brasileirão",
+      "home": "Grêmio",
+      "away": "Sao Paulo",
+      "kickoff": "2026-08-08T19:00:00Z",
+      "market": "Grêmio to win",
+      "type": "h2h",
+      "side": null,
+      "point": null,
+      "outcome": "Grêmio",
+      "odds": 2.5,
+      "confidence": 41,
+      "edge_pct": 3.46,
+      "bookmaker": "Unibet (SE)",
+      "basis": "model+market",
+      "model": "v2",
+      "tipster": "Kate R.",
+      "published_at": "2026-07-30T07:55:05.092640+00:00",
       "status": "pending",
       "profit": null,
       "settled_at": null,
