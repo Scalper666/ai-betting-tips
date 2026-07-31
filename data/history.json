@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-30T07:55:06.208117+00:00",
+  "updated_at": "2026-07-31T08:17:18.659116+00:00",
   "tips": {
     "mock_0|Home total over 1.5": {
       "key": "mock_0|Home total over 1.5",
@@ -1292,10 +1292,10 @@
       "bookmaker": "Coolbet",
       "tipster": "Kate R.",
       "published_at": "2026-07-23T15:34:12.394592+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-07-31T08:17:18.658753+00:00",
+      "score": "0-0"
     },
     "778e839e022a74281964ba60cb664d06|Over 2.5 goals": {
       "key": "778e839e022a74281964ba60cb664d06|Over 2.5 goals",
@@ -1316,10 +1316,10 @@
       "bookmaker": "1xBet",
       "tipster": "Marco S.",
       "published_at": "2026-07-23T15:34:12.394592+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-07-31T08:17:18.658753+00:00",
+      "score": "0-1"
     },
     "4b1211e0f448d01cf2b7fabd07aee49e|Under 2.5 goals": {
       "key": "4b1211e0f448d01cf2b7fabd07aee49e|Under 2.5 goals",
@@ -4604,10 +4604,10 @@
       "bookmaker": "BetOnline.ag",
       "tipster": "Kate R.",
       "published_at": "2026-07-27T08:55:18.259196+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "won",
+      "profit": 0.76,
+      "settled_at": "2026-07-31T08:17:18.658753+00:00",
+      "score": "0-1"
     },
     "52ee1a586957d4579ee0448ba6dab22f|Over 2.75 goals": {
       "key": "52ee1a586957d4579ee0448ba6dab22f|Over 2.75 goals",
@@ -5252,10 +5252,10 @@
       "bookmaker": "Matchbook",
       "tipster": "Aleksandar K.",
       "published_at": "2026-07-28T08:00:42.999618+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-07-31T08:17:18.658753+00:00",
+      "score": "0-0"
     },
     "93ddba19940f2ffe67b51881c567ab2c|Over 3.0 goals": {
       "key": "93ddba19940f2ffe67b51881c567ab2c|Over 3.0 goals",
@@ -5948,10 +5948,10 @@
       "bookmaker": "BetOnline.ag",
       "tipster": "Aleksandar K.",
       "published_at": "2026-07-29T08:05:46.878116+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "won",
+      "profit": 1.02,
+      "settled_at": "2026-07-31T08:17:18.658753+00:00",
+      "score": "0-0"
     },
     "93ddba19940f2ffe67b51881c567ab2c|Under 2.5 goals": {
       "key": "93ddba19940f2ffe67b51881c567ab2c|Under 2.5 goals",
@@ -6428,6 +6428,58 @@
       "model": "v2",
       "tipster": "Kate R.",
       "published_at": "2026-07-30T07:55:05.092640+00:00",
+      "status": "pending",
+      "profit": null,
+      "settled_at": null,
+      "score": null
+    },
+    "7a1f5faddca8a231804df243b8b7939e|Coritiba to win": {
+      "key": "7a1f5faddca8a231804df243b8b7939e|Coritiba to win",
+      "event_id": "7a1f5faddca8a231804df243b8b7939e",
+      "sport_key": "soccer_brazil_campeonato",
+      "league": "Brasileirão",
+      "home": "Coritiba",
+      "away": "Chapecoense",
+      "kickoff": "2026-08-08T23:30:00Z",
+      "market": "Coritiba to win",
+      "type": "h2h",
+      "side": null,
+      "point": null,
+      "outcome": "Coritiba",
+      "odds": 1.73,
+      "confidence": 62,
+      "edge_pct": 6.89,
+      "bookmaker": "1xBet",
+      "basis": "model+market",
+      "model": "v2",
+      "tipster": "Aleksandar K.",
+      "published_at": "2026-07-31T08:17:18.092335+00:00",
+      "status": "pending",
+      "profit": null,
+      "settled_at": null,
+      "score": null
+    },
+    "080179043efe768aaae54129824d42ac|Palmeiras to win": {
+      "key": "080179043efe768aaae54129824d42ac|Palmeiras to win",
+      "event_id": "080179043efe768aaae54129824d42ac",
+      "sport_key": "soccer_brazil_campeonato",
+      "league": "Brasileirão",
+      "home": "Palmeiras",
+      "away": "Internacional",
+      "kickoff": "2026-08-09T19:00:00Z",
+      "market": "Palmeiras to win",
+      "type": "h2h",
+      "side": null,
+      "point": null,
+      "outcome": "Palmeiras",
+      "odds": 1.64,
+      "confidence": 65,
+      "edge_pct": 6.19,
+      "bookmaker": "1xBet",
+      "basis": "model+market",
+      "model": "v2",
+      "tipster": "Kate R.",
+      "published_at": "2026-07-31T08:17:18.092335+00:00",
       "status": "pending",
       "profit": null,
       "settled_at": null,
