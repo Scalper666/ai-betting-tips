@@ -7,7 +7,9 @@ import { signed } from '../lib/utils.js';
 
 // v2Only: count only picks published under the selective v2 rules (own Poisson
 // model blended with the market, value gates) — the era marked h.model === 'v2'.
-const { limit = 3, v2Only = false } = Astro.props;
+const { limit = 3, v2Only = false, lang = 'en' } = Astro.props;
+import { t as _t } from '../i18n/index.js';
+const TT = (k) => _t(lang, k);
 
 const TRACKS = [
   { key: 'match-result', icon: '⚽', name: 'Match Result model', desc: '1X2 winner picks',
@@ -48,9 +50,9 @@ const tracks = TRACKS.map((t) => {
       <h4>{t.name}</h4>
       <div class="role">{t.desc} · settled openly</div>
       <div class="stats">
-        <div><div class="n win">{t.winRate != null ? `${t.winRate}%` : '—'}</div><div class="l">Win rate</div></div>
+        <div><div class="n win">{t.winRate != null ? `${t.winRate}%` : '—'}</div><div class="l">{lang === 'en' ? 'Win rate' : {es:'Acierto',pt:'Acerto',de:'Trefferquote'}[lang] ?? 'Win rate'}</div></div>
         <div><div class={t.roi != null && t.roi >= 0 ? 'n roi' : 'n'} style={t.roi != null && t.roi < 0 ? 'color:var(--lose)' : ''}>{t.roi != null ? `${signed(t.roi)}%` : '—'}</div><div class="l">ROI</div></div>
-        <div><div class="n">{t.settled}</div><div class="l">Settled</div></div>
+        <div><div class="n">{t.settled}</div><div class="l">{TT('home.res.settled')}</div></div>
       </div>
       {t.settled < 20 && (
         <div class="role" style="margin-top:6px;color:var(--gold)">⏳ early sample — {t.published} tips published so far</div>

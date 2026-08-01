@@ -1,0 +1,656 @@
+---
+import Base from '../layouts/Base.astro';
+import PredCard from '../components/PredCard.astro';
+import BookmakerRow from '../components/BookmakerRow.astro';
+import ModelTracks from '../components/ModelTracks.astro';
+import TeamMark from '../components/TeamMark.astro';
+import predictions from '../data/predictions.json';
+import screener from '../data/screener.json';
+import bookmakers from '../data/bookmakers.json';
+import historyData from '../data/history.json';
+import countriesData from '../data/countries.json';
+import { slugify, avgScore, kickoffLabel, matchSlug, abbr, badgeColor, signed } from '../lib/utils.js';
+import { t, localizeMarket } from '../i18n/index.js';
+
+const { lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+
+const tips = predictions.tips ?? [];
+const football = tips.filter((t) => String(t.sport_key ?? '').startsWith('soccer'));
+const featured = (football.length ? football : tips).slice(0, 6);
+const chipLeagues = [...new Set(featured.map((t) => t.league))];
+
+// screener preview: top 6 by AI score
+const scrTop = [...(screener.rows ?? [])].sort((a, b) => b.score - a.score).slice(0, 6);
+// score >= 45 means the pick has a positive edge (see pipeline ai_score) — green zone
+const scoreCls = (s) => (s >= 45 ? 's-hi' : s >= 30 ? 's-md' : 's-lo');
+
+// bookmakers ranked by computed score
+const bkList = [...(bookmakers.bookmakers ?? [])].sort((a, b) => avgScore(b.scores) - avgScore(a.scores));
+const topBk = bkList[0];
+
+// news feed: previews derived from the pipeline (top-confidence football first)
+const newsTips = [...football].sort((a, b) => (b.recommendation?.confidence ?? 0) - (a.recommendation?.confidence ?? 0));
+const featureTip = newsTips[0];
+const newsCards = newsTips.slice(1, 5);
+
+// sidebar: league counts
+const leagueCounts = {};
+for (const t of tips) leagueCounts[t.league] = (leagueCounts[t.league] ?? 0) + 1;
+const topLeagues = Object.entries(leagueCounts).sort((a, b) => b[1] - a[1]).slice(0, 5);
+
+// sidebar: interactive match calendar (client script below).
+// Each fixture carries date + kickoff time + teams + link so a day click lists its matches.
+const SPORT_META = {
+  soccer: { label: 'Football', icon: '⚽' },
+  basketball: { label: 'Basketball', icon: '🏀' },
+  americanfootball: { label: 'Am. Football', icon: '🏈' },
+  baseball: { label: 'Baseball', icon: '⚾' },
+  icehockey: { label: 'Ice Hockey', icon: '🏒' },
+  tennis: { label: 'Tennis', icon: '🎾' },
+};
+const sportMeta = (key) => {
+  const k = String(key ?? '');
+  for (const pre in SPORT_META) if (k.startsWith(pre)) return SPORT_META[pre];
+  return { label: 'Other', icon: '🎯' };
+};
+const calMatches = tips.map((t) => {
+  const d = new Date(t.kickoff);
+  if (isNaN(d)) return null;
+  const pad = (n) => String(n).padStart(2, '0');
+  return {
+    d: `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`,
+    t: `${pad(d.getHours())}:${pad(d.getMinutes())}`,
+    home: t.home,
+    away: t.away,
+    lg: t.league_short || t.league,
+    sport: sportMeta(t.sport_key).label,
+    href: `/predictions/${matchSlug(t)}`,
+  };
+}).filter(Boolean).sort((a, b) => a.d.localeCompare(b.d) || a.t.localeCompare(b.t));
+const calSports = [...new Set(calMatches.map((m) => m.sport))].sort();
+const calSportOpts = calSports.map((label) => {
+  const icon = Object.values(SPORT_META).find((s) => s.label === label)?.icon ?? '🎯';
+  return { label, icon };
+});
+
+
+
+// settlement transparency: latest graded bets from the pipeline archive.
+// Every published tip lands in history.json; results.py grades it once the
+// match finishes — this block simply surfaces that log, wins and losses alike.
+const settled = Object.values(historyData.tips ?? {})
+  .filter((t) => ['won', 'lost', 'void'].includes(t.status))
+  .sort((a, b) => String(b.settled_at ?? '').localeCompare(String(a.settled_at ?? '')));
+const resRows = settled.slice(0, 8);
+const resSum = {
+  won: settled.filter((t) => t.status === 'won').length,
+  lost: settled.filter((t) => t.status === 'lost').length,
+  voids: settled.filter((t) => t.status === 'void').length,
+  profit: Math.round(settled.reduce((s, t) => s + (t.profit ?? 0), 0) * 100) / 100,
+};
+// mock-phase settlements are labelled honestly until real ones replace them
+const resDemo = resRows.length > 0 && resRows.every((t) => t.score === 'simulated');
+const resDate = (t) => {
+  const d = new Date(t.kickoff ?? t.settled_at);
+  return isNaN(d) ? '' : d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+};
+
+// geo block: country list for the client-side detector
+const geoCountries = (countriesData.countries ?? []).map((c) => ({ slug: c.slug, name: c.name, flag: c.flag }));
+
+// Acca of the day: the three most probable picks from different matches.
+// Confidence-first keeps the combined price in sane acca territory (~3–6x)
+// instead of multiplying longshot value picks into a 50x+ lottery ticket.
+const accaLegs = [];
+const accaSeen = new Set();
+for (const r of [...(screener.rows ?? [])].sort((a, b) => b.confidence - a.confidence)) {
+  const k = `${r.home}|${r.away}`;
+  if (accaSeen.has(k) || Number(r.odds) < 1.3) continue;
+  accaSeen.add(k);
+  accaLegs.push(r);
+  if (accaLegs.length === 3) break;
+}
+const accaOdds = accaLegs.reduce((p, r) => p * (Number(r.odds) || 1), 1);
+const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
+---
+<Base lang={lang} i18nPath="/"
+  title={T('meta.home.title')}
+  description={T('meta.home.desc')}>
+
+  <!-- HERO (compact) -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1>{T('home.h1.pre')} <span class="g">{T('home.h1.g')}</span> {T('home.h1.post')}</h1>
+          <div class="hero-cta">
+            <a href="/predictions" class="btn btn-mint">{T('home.cta.tips')}</a>
+            <a href="/tipsters" class="btn btn-outline">{T('home.cta.track')}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+
+        <!-- TOP BOOKMAKERS (geo-aware: client script swaps country when detected) -->
+        <section id="geoBk" data-geo={JSON.stringify(geoCountries)} data-current="uk">
+          <div class="sec-head">
+            <h2 class="sec-title">{T('home.geo.pre')} <b data-geo-name>🇬🇧 United Kingdom</b></h2>
+            <a href="/countries/uk" class="more-link" data-geo-link>{T('home.geo.change')}</a>
+          </div>
+          <div class="geo-note"><span class="fl">🇬🇧</span> <span data-geo-lead>{T('home.geo.ranked')}</span> <b>United Kingdom</b><span data-geo-tail></span> · <a href="/countries/uk" data-geo-link style="color:var(--mint);font-weight:700">{T('home.geo.changeSm')}</a></div>
+          <div class="bk-list">
+            {bkList.map((bk, i) => (
+              <div class="bk-geo" data-cn={(bk.countries ?? []).join(' ')}>
+                <BookmakerRow bk={bk} rank={i + 1} lang={lang} />
+              </div>
+            ))}
+          </div>
+        </section>
+        <script is:inline define:vars={{ GEO_STR: { intl: T('home.geo.intl'), browsing: T('home.geo.browsing'), noEdition: T('home.geo.noEdition') }, PAGE_LANG: lang }}>
+          (function () {
+            var sec = document.getElementById('geoBk'); if (!sec) return;
+            var LIST = []; try { LIST = JSON.parse(sec.getAttribute('data-geo') || '[]'); } catch (e) {}
+            var ISO = { GB: 'uk', DE: 'de', IN: 'in', NG: 'ng' };
+            // timezone -> ISO country (offline first guess; trace refines on the live site)
+            var TZ_CC = { 'Europe/London': 'GB', 'Europe/Berlin': 'DE', 'Europe/Busingen': 'DE',
+                          'Asia/Kolkata': 'IN', 'Asia/Calcutta': 'IN', 'Africa/Lagos': 'NG',
+                          'Europe/Moscow': 'RU', 'Europe/Kyiv': 'UA', 'Europe/Kiev': 'UA',
+                          'Europe/Minsk': 'BY', 'Asia/Almaty': 'KZ', 'Europe/Warsaw': 'PL',
+                          'Europe/Madrid': 'ES', 'Europe/Rome': 'IT', 'Europe/Paris': 'FR',
+                          'America/Sao_Paulo': 'BR', 'Asia/Dubai': 'AE', 'Europe/Istanbul': 'TR' };
+            // honest fallback when we detect a country we have no dedicated list for
+            function applyForeign(cc) {
+              if (!cc || cc === 'GB' || ISO[cc]) return;
+              var name = cc, flag = '🌍';
+              try { name = new Intl.DisplayNames([PAGE_LANG], { type: 'region' }).of(cc) || cc; } catch (e) {}
+              try { flag = cc.replace(/./g, function (c) { return String.fromCodePoint(127397 + c.charCodeAt(0)); }); } catch (e) {}
+              var nameEl = sec.querySelector('[data-geo-name]');
+              if (nameEl) nameEl.textContent = GEO_STR.intl;
+              var note = sec.querySelector('.geo-note');
+              if (note) {
+                var fl = note.querySelector('.fl'); if (fl) fl.textContent = flag;
+                var lead = note.querySelector('[data-geo-lead]'); if (lead) lead.textContent = GEO_STR.browsing;
+                var b = note.querySelector('b'); if (b) b.textContent = name;
+                var tail = note.querySelector('[data-geo-tail]');
+                if (tail) tail.textContent = GEO_STR.noEdition.split('{name}').join(name);
+              }
+              sec.setAttribute('data-current', 'intl:' + cc);
+            }
+            function route(cc) {
+              if (!cc) return;
+              if (ISO[cc]) apply(ISO[cc]);
+              else applyForeign(cc);
+            }
+            function apply(slug) {
+              if (!slug || slug === sec.getAttribute('data-current')) return;
+              var c = null;
+              for (var i = 0; i < LIST.length; i++) if (LIST[i].slug === slug) c = LIST[i];
+              if (!c) return;                       // no data for this country — keep default
+              var rows = [].slice.call(sec.querySelectorAll('[data-cn]'));
+              var match = rows.filter(function (r) { return (' ' + r.getAttribute('data-cn') + ' ').indexOf(' ' + slug + ' ') >= 0; });
+              if (!match.length) return;            // never leave the block empty
+              rows.forEach(function (r) { r.hidden = match.indexOf(r) < 0; });
+              match.forEach(function (r, i) { var rk = r.querySelector('.bk-rank'); if (rk) rk.textContent = i + 1; });
+              var name = sec.querySelector('[data-geo-name]'); if (name) name.textContent = c.flag + ' ' + c.name;
+              var note = sec.querySelector('.geo-note');
+              if (note) {
+                var fl = note.querySelector('.fl'); if (fl) fl.textContent = c.flag;
+                var b = note.querySelector('b'); if (b) b.textContent = c.name;
+              }
+              [].forEach.call(sec.querySelectorAll('[data-geo-link]'), function (a) { a.setAttribute('href', '/countries/' + slug); });
+              sec.setAttribute('data-current', slug);
+            }
+            // 1) instant offline guess from the browser timezone
+            try { var tz = Intl.DateTimeFormat().resolvedOptions().timeZone; route(TZ_CC[tz]); } catch (e) {}
+            // 2) refine via Cloudflare edge geo (authoritative on the live site)
+            try {
+              fetch('/cdn-cgi/trace').then(function (r) { return r.ok ? r.text() : ''; }).then(function (t) {
+                var m = /loc=([A-Z]{2})/.exec(t || ''); if (m) route(m[1]);
+              }).catch(function () {});
+            } catch (e) {}
+          })();
+        </script>
+
+        <!-- FREE FOOTBALL PREDICTIONS -->
+        <section data-filter-scope="preds">
+          <div class="sec-head">
+            <h2 class="sec-title">{T('home.preds.pre')} <b>{T('home.preds.bold')}</b></h2>
+            <a href="/predictions" class="more-link">{T('home.preds.all')}</a>
+          </div>
+          <div class="filter-bar">
+            <div class="chips day-tabs" data-day-tabs>
+              <span class="chip active" data-day="all">{T('home.days.all')}</span>
+              <span class="chip" data-day="today">{T('home.days.today')} <b class="n"></b></span>
+              <span class="chip" data-day="tomorrow">{T('home.days.tomorrow')} <b class="n"></b></span>
+            </div>
+            <span class="chip-sep" aria-hidden="true"></span>
+            <div class="chips" data-chip-group="preds">
+              <span class="chip active" data-filter="all"><span class="ic">⚡</span> {T('home.chips.all')}</span>
+              {chipLeagues.map((lg) => (
+                <span class="chip" data-filter={slugify(lg)}><span class="ic">🏆</span> {lg}</span>
+              ))}
+            </div>
+          </div>
+          <div class="pred-grid">
+            {featured.map((tip) => <PredCard tip={tip} lang={lang} />)}
+          </div>
+        </section>
+        <script is:inline>
+          (function () {
+            var tabs = document.querySelector('[data-day-tabs]'); if (!tabs) return;
+            var cards = [].slice.call(document.querySelectorAll('[data-filter-scope="preds"] [data-kickoff]'));
+            function key(d) { return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate(); }
+            var now = new Date(), today = key(now), tomorrow = key(new Date(now.getTime() + 864e5));
+            cards.forEach(function (c) {
+              var d = new Date(c.getAttribute('data-kickoff'));
+              var k = isNaN(d) ? '' : key(d);
+              c.setAttribute('data-day', k === today ? 'today' : k === tomorrow ? 'tomorrow' : 'later');
+            });
+            ['today', 'tomorrow'].forEach(function (v) {
+              var n = tabs.querySelector('[data-day="' + v + '"] .n');
+              if (n) n.textContent = cards.filter(function (c) { return c.getAttribute('data-day') === v; }).length;
+            });
+            tabs.addEventListener('click', function (e) {
+              var b = e.target.closest('[data-day]'); if (!b) return;
+              [].forEach.call(tabs.querySelectorAll('.chip'), function (c) { c.classList.remove('active'); });
+              b.classList.add('active');
+              var v = b.getAttribute('data-day');
+              cards.forEach(function (c) {
+                if (v === 'all' || c.getAttribute('data-day') === v) c.removeAttribute('data-day-off');
+                else c.setAttribute('data-day-off', '');
+              });
+            });
+          })();
+        </script>
+
+        <!-- ACCA OF THE DAY (auto-built from the top screener picks) -->
+        {accaLegs.length >= 2 && (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">{T('home.acca.pre')} <b>{T('home.acca.bold')}</b></h2>
+              <span class="acca-total">{T('home.acca.combined')} <b>{accaOdds.toFixed(2)}</b></span>
+            </div>
+            <div class="acca">
+              {accaLegs.map((r) => (
+                <div class="acca-leg">
+                  <span class="acca-ic">{r.icon}</span>
+                  <div class="acca-m">
+                    <b>{r.home} — {r.away}</b>
+                    <span>{r.league} · {kickoffLabel(r.kickoff)}</span>
+                  </div>
+                  <span class="acca-pick">{localizeMarket(lang, r.market)}</span>
+                  <span class="acca-odds">{Number(r.odds).toFixed(2)}</span>
+                </div>
+              ))}
+              <div class="acca-foot">
+                <span>{accaValue ? T('home.acca.value') : T('home.acca.auto')}</span>
+                <a href="/screener" class="btn btn-mint btn-sm">{T('home.acca.open')} · ×{accaOdds.toFixed(2)}</a>
+              </div>
+            </div>
+            <p class="res-note">{T('home.acca.risk')}</p>
+          </section>
+        )}
+
+        <!-- AI SCREENER PREVIEW -->
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">{T('home.scr.pre')}<b>{T('home.scr.bold')}</b></h2>
+            <a href="/screener" class="more-link">{T('home.scr.open')}</a>
+          </div>
+          <div class="scr-table-wrap">
+            <div class="scr-scroll">
+              <table class="scr-table scr-mini">
+                <thead><tr><th class="num">{T('home.scr.score')}</th><th>{T('home.scr.match')}</th><th>{T('card.ourTip')}</th><th class="num">{T('card.odds')}</th><th class="num">{T('home.scr.edge')}</th></tr></thead>
+                <tbody>
+                  {scrTop.map((r) => (
+                    <tr>
+                      <td class="num"><span class={`score-badge ${scoreCls(r.score)}`}>{r.score}</span></td>
+                      <td><div class="scr-match"><span class="ic">{r.icon}</span><div class="mt"><b>{r.home} v {r.away}</b><span class="lg">{r.league}</span></div></div></td>
+                      <td class="scr-tip">{localizeMarket(lang, r.market)}</td>
+                      <td class="num scr-odds">{Number(r.odds).toFixed(2)}</td>
+                      <td class={`num edge ${r.edge > 0 ? 'pos' : 'neg'}`}>{r.edge > 0 ? '+' : ''}{r.edge}%</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <a href="/screener" class="btn btn-outline btn-block" style="margin-top:12px">{T('home.scr.seeAll')}</a>
+        </section>
+
+        <!-- RECENT RESULTS (settlement transparency from history.json) -->
+        {resRows.length > 0 && (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">{T('home.res.pre')} <b>{T('home.res.bold')}</b></h2>
+              <a href="/tipsters" class="more-link">{T('home.res.stats')}</a>
+            </div>
+            <div class="res-sum">
+              <div class="res-chip"><b>{settled.length}</b><span>{T('home.res.settled')}</span></div>
+              <div class="res-chip win"><b>{resSum.won}</b><span>{T('home.res.won')}</span></div>
+              <div class="res-chip lose"><b>{resSum.lost}</b><span>{T('home.res.lost')}</span></div>
+              <div class="res-chip"><b>{resSum.voids}</b><span>{T('home.res.void')}</span></div>
+              <div class={`res-chip ${resSum.profit >= 0 ? 'win' : 'lose'}`}><b>{signed(resSum.profit)}u</b><span>{T('home.res.profit')}</span></div>
+            </div>
+            <div class="res-list">
+              {resRows.map((t) => (
+                <div class="res-row">
+                  <span class={`res-mark ${t.status === 'won' ? 'w' : t.status === 'lost' ? 'l' : 'v'}`}>{t.status === 'won' ? 'W' : t.status === 'lost' ? 'L' : 'V'}</span>
+                  <span class="res-date">{resDate(t)}</span>
+                  <div class="res-match"><b>{t.home} v {t.away}</b><span>{localizeMarket(lang, t.market)} · {t.league}</span></div>
+                  <span class="res-odds">{Number(t.odds ?? 0).toFixed(2)}</span>
+                  <span class={`res-profit ${(t.profit ?? 0) > 0 ? 'pos' : (t.profit ?? 0) < 0 ? 'neg' : 'zero'}`}>{signed(Math.round((t.profit ?? 0) * 100) / 100)}u</span>
+                </div>
+              ))}
+            </div>
+            <p class="res-note">
+              {T('home.res.note')}
+              {resDemo && <span class="res-demo"> These entries are simulated from a test run; real settlements replace them automatically.</span>}
+            </p>
+          </section>
+        )}
+
+        <!-- BET TYPES -->
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">{T('home.bt.pre')} <b>{T('home.bt.bold')}</b></h2>
+            <a href="/predictions" class="more-link">{T('home.bt.explore')}</a>
+          </div>
+          <div class="bt-grid">
+            <a href="/tips/accumulator" class="bt-tile"><div class="ic">🎯</div><div><h4>{T('home.bt.acca')}</h4><p>{T('home.bt.accaP')}</p></div><span class="arr">→</span></a>
+            <a href="/tips/btts" class="bt-tile"><div class="ic">⚽</div><div><h4>{T('home.bt.btts')}</h4><p>{T('home.bt.bttsP')}</p></div><span class="arr">→</span></a>
+            <a href="/tips/over-under" class="bt-tile"><div class="ic">📊</div><div><h4>{T('home.bt.ou')}</h4><p>{T('home.bt.ouP')}</p></div><span class="arr">→</span></a>
+            <a href="/tips/correct-score" class="bt-tile"><div class="ic">🔢</div><div><h4>{T('home.bt.cs')}</h4><p>{T('home.bt.csP')}</p></div><span class="arr">→</span></a>
+            <a href="/tips/double-chance" class="bt-tile"><div class="ic">🛡️</div><div><h4>{T('home.bt.dc')}</h4><p>{T('home.bt.dcP')}</p></div><span class="arr">→</span></a>
+            <a href="/tips/draw" class="bt-tile"><div class="ic">🤝</div><div><h4>{T('home.bt.draw')}</h4><p>{T('home.bt.drawP')}</p></div><span class="arr">→</span></a>
+          </div>
+        </section>
+
+        <!-- MODEL PERFORMANCE — honest tracks of our own model by market,
+             computed from REAL settled tips only (no fictional tipster personas) -->
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">{T('home.perf.pre')}<b>{T('home.perf.bold')}</b></h2>
+            <a href="/tipsters" class="more-link">{T('home.perf.full')}</a>
+          </div>
+          <ModelTracks limit={3} lang={lang} />
+        </section>
+
+        <!-- BONUSES (from bookmakers.json) -->
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">{T('home.bon.pre')} <b>{T('home.bon.bold')}</b></h2>
+            <a href="/bonuses" class="more-link">{T('home.bon.all')}</a>
+          </div>
+          <div class="bonus-grid">
+            {bkList.slice(0, 4).map((bk) => (
+              <div class="bonus-card">
+                <div class="bonus-thumb" style={`background:linear-gradient(135deg,${bk.logo.bg},#06101f)`}>
+                  {bk.bonus.type === 'free-bet' ? '💸' : '🎁'}
+                  <div class="bonus-logo" style={`background:${bk.logo.bg};color:${bk.logo.fg}`}>{bk.logo.line1.slice(0, 2)}</div>
+                </div>
+                <div class="bonus-body">
+                  <div class="bt">{bk.name} · {bk.bonus.type === 'free-bet' ? T('home.bon.free') : T('home.bon.welcome')}</div>
+                  <div class="bn">{bk.bonus.headline}</div>
+                  <div class="bonus-foot">
+                    <a href={`/bookmakers/${bk.slug}`} class="btn btn-ghost btn-sm">{T('bk.details')}</a>
+                    <a href={bk.affiliate_url} class="btn btn-mint btn-sm" rel="nofollow sponsored" target="_blank">{T('bk.claim')}</a>
+                  <span class="tc-line" style="flex-basis:100%">{T('bk.tc')} <a href="https://www.gambleaware.org" rel="nofollow noopener" target="_blank">GambleAware.org</a></span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- WHY US -->
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{T('home.why.pre')} <b>AI Betting Tips</b></h2></div>
+          <div class="feat-grid">
+            <div class="feat"><div class="fi">✅</div><h4>{T('home.why.f1h')}</h4><p>{T('home.why.f1p')}</p></div>
+            <div class="feat v"><div class="fi">🔍</div><h4>{T('home.why.f2h')}</h4><p>{T('home.why.f2p')}</p></div>
+            <div class="feat"><div class="fi">🆓</div><h4>{T('home.why.f3h')}</h4><p>{T('home.why.f3p')}</p></div>
+          </div>
+        </section>
+
+        <!-- NEWS / MATCH PREVIEWS -->
+        {featureTip && (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">{T('home.news.pre')} <b>{T('home.news.bold')}</b></h2>
+              <a href="/news" class="more-link">{T('home.news.all')}</a>
+            </div>
+            <div class="feature-article" style="margin-bottom:16px">
+              <div class="fa-img" style={`--ca:${badgeColor(featureTip.home)};--cb:${badgeColor(featureTip.away)}`}>
+                <div class="cover-vs">
+                  <TeamMark team={featureTip.home} sportKey={featureTip.sport_key} />
+                  <span class="cv-x">VS</span>
+                  <TeamMark team={featureTip.away} sportKey={featureTip.sport_key} />
+                </div>
+              </div>
+              <div class="fa-body">
+                <span class="tag">{featureTip.league}</span>
+                <h2>{featureTip.home} vs {featureTip.away}: {T('home.news.preview')}</h2>
+                <p>{T('home.news.makes').split('{tip}').join(localizeMarket(lang, featureTip.recommendation?.text)).split('{price}').join(Number(featureTip.recommendation?.price ?? 0).toFixed(2))}</p>
+                <a href={`/predictions/${matchSlug(featureTip)}`} class="btn btn-mint">{T('home.news.read')}</a>
+              </div>
+            </div>
+            <div class="news-grid">
+              {newsCards.map((t, i) => (
+                <div class="news-card">
+                  <div class="news-thumb" style={`--ca:${badgeColor(t.home)};--cb:${badgeColor(t.away)}`}>
+                    <div class="cover-vs sm">
+                      <TeamMark team={t.home} sportKey={t.sport_key} />
+                      <span class="cv-x">v</span>
+                      <TeamMark team={t.away} sportKey={t.sport_key} />
+                    </div>
+                    <span class="tag">{t.league}</span><span class="when">{kickoffLabel(t.kickoff)}</span>
+                  </div>
+                  <div class="news-body">
+                    <h4><a href={`/predictions/${matchSlug(t)}`}>{t.home} vs {t.away}: {T('home.news.pred')}</a></h4>
+                    <div class="nf"><span>{T('card.model')}</span><span class="read">{T('home.news.readSm')}</span></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- SEO TEXT -->
+        <section class="seo">
+          <h2>{T('home.seo.h2')}</h2>
+          <div class="clamp" id="seoClamp">
+            <p>{T('home.seo.p1')}</p>
+            <h3>{T('home.seo.h3a')}</h3>
+            <p>{T('home.seo.p2')}</p>
+            <h3>{T('home.seo.h3b')}</h3>
+            <p>{T('home.seo.p3')}</p>
+            <h3>{T('home.seo.h3c')}</h3>
+            <p>{T('home.seo.p4')}</p>
+          </div>
+          <span class="read-more" data-clamp-toggle="seoClamp">{T('home.seo.more')}</span>
+        </section>
+
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+
+        <div class="box">
+          <div class="box-h"><span class="hi">⚡</span> {T('side.live')}</div>
+          {topLeagues.map(([lg, n]) => (
+            <a class="tm" href={`/league/${slugify(lg)}`}><span class="dot"></span>{lg} <span class="cnt">{n}</span></a>
+          ))}
+        </div>
+
+        <div class="box">
+          <div class="box-h"><span class="hi">🏆</span> {T('side.topBk')}</div>
+          {bkList.slice(0, 3).map((bk, i) => (
+            <div class={`bk-mini${i === 0 ? ' top' : ''}`}>
+              <a class="mini-tip" href={`/bookmakers/${bk.slug}`}>
+                <div class="ava" style={`background:${bk.logo.bg};color:${bk.logo.fg}`}>
+                  {bk.logo.line1.slice(0, 2)}
+                  {i === 0 && <span class="rank1">1</span>}
+                </div>
+                <div><h5>{bk.name}</h5><div class="mt-sp">★ {bk.rating}{i === 0 ? ` · ${T('bk.topPick')}` : ''}</div></div>
+                <div class="mt-roi"><b>{avgScore(bk.scores)}</b><span>Score</span></div>
+              </a>
+              <div class="mt-tc">{T('bk.tc')} <a href="https://www.gambleaware.org" rel="nofollow noopener" target="_blank">GambleAware.org</a></div>
+            </div>
+          ))}
+        </div>
+
+        {topBk && (
+          <div class="promo">
+            <h4>🎁 {topBk.bonus.headline.split(' + ')[0]}</h4>
+            <p>{T('side.givesNew').split('{name}').join(topBk.name).split('{bonus}').join(topBk.bonus.headline.toLowerCase())}</p>
+            <a href={`/bookmakers/${topBk.slug}`} class="btn btn-mint btn-block">{T('side.claim')}</a>
+            <span class="tc-line">{T('bk.tc')} <a href="https://www.gambleaware.org" rel="nofollow noopener" target="_blank">GambleAware.org</a></span>
+          </div>
+        )}
+
+        <div class="box" id="matchCal" data-matches={JSON.stringify(calMatches)}>
+          <div class="box-h"><span class="hi">📅</span> {T('side.cal')}</div>
+          <div class="cal-top">
+            {calSportOpts.length > 0 ? (
+              <select class="cal-sel" data-cal-sport aria-label="Filter calendar by sport">
+                {calSportOpts.length > 1 && <option value="">{T('side.allSports')}</option>}
+                {calSportOpts.map((s) => <option value={s.label}>{s.icon} {s.label}</option>)}
+              </select>
+            ) : (
+              <div class="cal-sel cal-sel-static">{T('side.allSports')}</div>
+            )}
+          </div>
+          <div class="cal-nav">
+            <button type="button" data-cal-prev aria-label="Previous month">‹</button>
+            <span data-cal-label>—</span>
+            <button type="button" data-cal-next aria-label="Next month">›</button>
+          </div>
+          <div class="cal-grid" data-cal-grid></div>
+          <div class="cal-list" data-cal-list hidden></div>
+        </div>
+        <script is:inline define:vars={{ CAL_STR: { match: T('cal.match'), matches: T('cal.matches'), none: T('cal.none'), showAll: T('cal.showAll') }, CAL_LANG: lang }}>
+          (function () {
+            var el = document.getElementById('matchCal');
+            if (!el) return;
+            var matches = [];
+            try { matches = JSON.parse(el.getAttribute('data-matches') || '[]'); } catch (e) {}
+            var grid = el.querySelector('[data-cal-grid]');
+            var label = el.querySelector('[data-cal-label]');
+            var list = el.querySelector('[data-cal-list]');
+            var sportSel = el.querySelector('[data-cal-sport]');
+            var now = new Date();
+            var y = now.getFullYear(), m = now.getMonth();
+            var sel = null;
+            var DOW = [], MON = [];
+            try {
+              var dowF = new Intl.DateTimeFormat(CAL_LANG, { weekday: 'short' });
+              for (var di = 0; di < 7; di++) DOW.push(dowF.format(new Date(Date.UTC(2024, 0, 1 + di))).slice(0, 2));
+              var monF = new Intl.DateTimeFormat(CAL_LANG, { month: 'long' });
+              for (var mi = 0; mi < 12; mi++) MON.push(monF.format(new Date(Date.UTC(2024, mi, 1))));
+            } catch (e) {
+              DOW = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su'];
+              MON = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            }
+            function pad(n) { return (n < 10 ? '0' : '') + n; }
+            function key(yy, mm, dd) { return yy + '-' + pad(mm + 1) + '-' + pad(dd); }
+            function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+            function activeSport() { return sportSel ? sportSel.value : ''; }
+            function byDay() {
+              var s = activeSport(), o = {};
+              matches.forEach(function (mm) { if (s && mm.sport !== s) return; (o[mm.d] = o[mm.d] || []).push(mm); });
+              return o;
+            }
+            var listExpanded = false;   // long days (20+ fixtures) start collapsed to 6 rows
+            function renderList(day) {
+              if (!day) { list.hidden = true; list.innerHTML = ''; return; }
+              var arr = byDay()[day] || [];
+              var dt = new Date(day + 'T00:00:00');
+              var head = '<div class="cl-head"><span>' + DOW[(dt.getDay() + 6) % 7] + ' ' + dt.getDate() + ' ' + MON[dt.getMonth()].slice(0, 3) +
+                '</span><span class="cl-count">' + arr.length + ' ' + (arr.length === 1 ? CAL_STR.match : CAL_STR.matches) + '</span></div>';
+              if (!arr.length) { list.hidden = false; list.innerHTML = head + '<div class="cl-empty">' + CAL_STR.none + '</div>'; return; }
+              var show = listExpanded ? arr : arr.slice(0, 6);
+              var rows = show.map(function (mm) {
+                return '<a class="cl-row" href="' + esc(mm.href) + '">' +
+                  '<span class="cl-t">' + esc(mm.t) + '</span>' +
+                  '<span class="cl-m">' + esc(mm.home) + ' <i>v</i> ' + esc(mm.away) + '<span class="cl-lg">' + esc(mm.lg) + '</span></span>' +
+                  '<span class="cl-go">→</span></a>';
+              }).join('');
+              var more = (!listExpanded && arr.length > show.length)
+                ? '<button type="button" class="cl-more" data-cal-more>' + CAL_STR.showAll.split('{n}').join(arr.length) + '</button>' : '';
+              list.hidden = false;
+              list.innerHTML = head + rows + more;
+            }
+            list.addEventListener('click', function (e) {
+              if (e.target.closest('[data-cal-more]')) { listExpanded = true; renderList(sel); }
+            });
+            function render() {
+              label.textContent = MON[m] + ' ' + y;
+              var days = byDay();
+              var startDow = (new Date(y, m, 1).getDay() + 6) % 7;
+              var daysIn = new Date(y, m + 1, 0).getDate();
+              var daysPrev = new Date(y, m, 0).getDate();
+              var tY = now.getFullYear(), tM = now.getMonth(), tD = now.getDate();
+              var html = '';
+              DOW.forEach(function (d) { html += '<div class="dow">' + d + '</div>'; });
+              for (var i = 0; i < 42; i++) {
+                var n = i - startDow + 1;
+                if (n < 1) { html += '<div class="day mute">' + (daysPrev + n) + '</div>'; continue; }
+                if (n > daysIn) { html += '<div class="day mute">' + (n - daysIn) + '</div>'; continue; }
+                var k = key(y, m, n), cls = 'day';
+                if (y === tY && m === tM && n === tD) cls += ' active';
+                if (days[k]) cls += ' has';
+                if (sel === k) cls += ' sel';
+                html += '<div class="' + cls + '" data-d="' + k + '" role="button" tabindex="0">' + n + '</div>';
+              }
+              grid.innerHTML = html;
+            }
+            function selectDay(k) {
+              sel = k; listExpanded = false;
+              var p = k.split('-'); y = +p[0]; m = +p[1] - 1;
+              render(); renderList(k);
+              if (list && list.scrollIntoView) list.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+            }
+            grid.addEventListener('click', function (e) {
+              var c = e.target.closest('[data-d]'); if (c) selectDay(c.getAttribute('data-d'));
+            });
+            grid.addEventListener('keydown', function (e) {
+              if (e.key !== 'Enter' && e.key !== ' ') return;
+              var c = e.target.closest('[data-d]'); if (c) { e.preventDefault(); selectDay(c.getAttribute('data-d')); }
+            });
+            el.querySelector('[data-cal-prev]').addEventListener('click', function () { if (--m < 0) { m = 11; y--; } render(); });
+            el.querySelector('[data-cal-next]').addEventListener('click', function () { if (++m > 11) { m = 0; y++; } render(); });
+            if (sportSel) sportSel.addEventListener('change', function () {
+              if (sel && !(byDay()[sel])) sel = null;
+              render(); renderList(sel);
+            });
+            (function init() {
+              var days = byDay();
+              var today = key(now.getFullYear(), now.getMonth(), now.getDate());
+              var keys = Object.keys(days).sort();
+              var pick = days[today] ? today : (keys.filter(function (k) { return k >= today; })[0] || keys[keys.length - 1] || null);
+              if (pick) { var p = pick.split('-'); y = +p[0]; m = +p[1] - 1; sel = pick; }
+              render(); renderList(sel);
+            })();
+          })();
+        </script>
+
+        <div class="box">
+          <div class="box-h"><span class="hi">📬</span> {T('side.newsletter')}</div>
+          <div class="box-pad newsletter">
+            <p class="dim" style="font-size:12.5px;margin:0 0 12px">{T('side.newsP')}</p>
+            <input type="email" placeholder="your@email.com" />
+            <button class="btn btn-mint btn-block">{T('side.subscribe')}</button>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </div>
+</Base>

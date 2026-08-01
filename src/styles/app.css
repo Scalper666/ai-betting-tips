@@ -853,6 +853,20 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
 .res-daylbl{margin:16px 2px 8px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-mute);font-weight:700}
 .res-list .res-daylbl:first-child{margin-top:0}
 
+/* language switcher (mirrors .theme-switch) */
+.lang-switch{position:relative}
+.lang-btn{display:flex;align-items:center;gap:5px;background:var(--surface-2);border:1px solid var(--border);
+  border-radius:9px;padding:7px 10px;font-size:11.5px;font-weight:700;color:var(--text-dim);cursor:pointer;font-family:inherit}
+.lang-btn:hover{color:var(--text);border-color:var(--border-2)}
+.lang-switch.open .theme-menu{opacity:1;visibility:visible;transform:translateY(0)}
+.lang-menu a{display:flex;align-items:center;gap:10px;width:100%;padding:9px 11px;border-radius:8px;
+  font-size:12.5px;font-weight:600;color:var(--text-dim);text-decoration:none}
+.lang-menu a:hover{background:var(--surface-3);color:var(--text)}
+.lang-menu a .chk{margin-left:auto;color:var(--mint);opacity:0;font-weight:800}
+.lang-menu a.active{color:var(--mint)}
+.lang-menu a.active .chk{opacity:1}
+@media(max-width:900px){.lang-btn .cc{display:none}}
+
 /* official pick vs model lean flag on the match hero */
 .pk-flag{margin-top:12px;padding:8px 12px;border-radius:9px;font-size:12px;font-weight:600;line-height:1.45}
 .pk-flag.ofc{background:rgba(var(--btn-rgb),.12);color:#7ee2a8;border:1px solid rgba(var(--btn-rgb),.35)}

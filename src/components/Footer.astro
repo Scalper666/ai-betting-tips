@@ -1,26 +1,29 @@
 ---
+import { homePath, t } from '../i18n/index.js';
+const { lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
 const year = new Date().getFullYear();
 ---
 <footer class="footer">
   <div class="container">
     <div class="footer-top">
       <div class="fcol fabout">
-        <a href="/" class="logo"><span class="mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" fill="#fff"/><path d="M12 8.1l3 2.2-1.15 3.5h-3.7L9 10.3z" fill="#0b0e11"/><g stroke="#0b0e11" stroke-width="1.5" stroke-linecap="round"><path d="M12 8.1V4.6M15 10.3l3.3-1.1M13.85 13.8l2.05 2.85M10.15 13.8L8.1 16.65M9 10.3L5.7 9.2"/></g><circle cx="12" cy="12" r="9.5" stroke="#0b0e11" stroke-width="1.6"/></svg></span><span class="name">AI <em>Betting</em> Tips</span></a>
-        <p>Independent sports betting tips, predictions and bookmaker reviews. We help you bet smarter with openly settled stats and honest analysis.</p>
-        <p>AI Betting Tips is an informational service. We may earn a commission from operators listed on this site.</p>
+        <a href={homePath(lang)} class="logo"><span class="mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" fill="#fff"/><path d="M12 8.1l3 2.2-1.15 3.5h-3.7L9 10.3z" fill="#0b0e11"/><g stroke="#0b0e11" stroke-width="1.5" stroke-linecap="round"><path d="M12 8.1V4.6M15 10.3l3.3-1.1M13.85 13.8l2.05 2.85M10.15 13.8L8.1 16.65M9 10.3L5.7 9.2"/></g><circle cx="12" cy="12" r="9.5" stroke="#0b0e11" stroke-width="1.6"/></svg></span><span class="name">AI <em>Betting</em> Tips</span></a>
+        <p>{T('ft.about1')}</p>
+        <p>{T('ft.about2')}</p>
       </div>
-      <div class="fcol"><h5>Predictions</h5><a href="/screener">AI Screener</a><a href="/predictions">All Football Tips</a><a href="/teams">Teams A–Z</a><a href="/glossary">Betting Glossary</a><a href="/tips/accumulator">Accumulators</a><a href="/tips/btts">BTTS Tips</a><a href="/tips/over-under">Over/Under</a></div>
-      <div class="fcol"><h5>Betting Sites</h5><a href="/bookmakers">Top Bookmakers</a><a href="/betting-apps">Betting Apps</a><a href="/casinos">Casinos</a><a href="/bonuses">Bonuses</a><a href="/countries/uk">By Country</a></div>
-      <div class="fcol"><h5>Results</h5><a href="/tipsters">Model Performance</a><a href="/news/recap">Weekly Recaps</a><a href="/predictions/daily">Results by Date</a><a href="/news">News</a></div>
-      <div class="fcol"><h5>Company</h5><a href="/about">About Us</a><a href="/contact">Contact</a><a href="/responsible-gambling">Responsible Gambling</a><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Use</a></div>
+      <div class="fcol"><h5>{T('nav.predictions')}</h5><a href="/screener">{T('nav.screener')}</a><a href="/predictions">{T('nav.allTips')}</a><a href="/teams">{T('ft.teamsAZ')}</a><a href="/glossary">{T('ft.glossary')}</a><a href="/tips/accumulator">{T('ft.accas')}</a><a href="/tips/btts">{T('nav.bttsTips')}</a><a href="/tips/over-under">{T('ft.overUnder')}</a></div>
+      <div class="fcol"><h5>{T('nav.sites')}</h5><a href="/bookmakers">{T('ft.topBk')}</a><a href="/betting-apps">{T('nav.apps')}</a><a href="/casinos">{T('nav.casinos')}</a><a href="/bonuses">{T('nav.bonuses')}</a><a href="/countries/uk">{T('nav.byCountry')}</a></div>
+      <div class="fcol"><h5>{T('nav.results')}</h5><a href="/tipsters">{T('nav.performance')}</a><a href="/news/recap">{T('nav.weeklyRecaps')}</a><a href="/predictions/daily">{T('nav.resultsByDate')}</a><a href="/news">{T('nav.news')}</a></div>
+      <div class="fcol"><h5>{T('ft.company')}</h5><a href="/about">{T('ft.aboutUs')}</a><a href="/contact">{T('ft.contact')}</a><a href="/responsible-gambling">{T('ft.rg')}</a><a href="/privacy">{T('ft.privacy')}</a><a href="/terms">{T('ft.terms')}</a></div>
     </div>
     <div class="disclaimer">
       <div class="age">18+</div>
-      <div>Our predictions are created by experts but do not guarantee winnings. Gambling involves risk — please bet responsibly and only wager what you can afford to lose. <a href="https://www.begambleaware.org" rel="nofollow noopener" target="_blank">BeGambleAware.org</a></div>
+      <div>{T('ft.disclaimer')} <a href="https://www.begambleaware.org" rel="nofollow noopener" target="_blank">BeGambleAware.org</a></div>
     </div>
     <div class="copybar">
-      <span>© {year} AI Betting Tips. All rights reserved.</span>
-      <span><a href="/terms">Terms</a> · <a href="/privacy">Privacy</a> · <a href="/responsible-gambling">Responsible Gambling</a></span>
+      <span>© {year} AI Betting Tips. {T('ft.rights')}</span>
+      <span><a href="/terms">{T('ft.termsShort')}</a> · <a href="/privacy">{T('ft.privacyShort')}</a> · <a href="/responsible-gambling">{T('ft.rg')}</a></span>
     </div>
   </div>
 </footer>

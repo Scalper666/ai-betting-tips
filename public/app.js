@@ -131,6 +131,15 @@
     });
     document.addEventListener('click', function () { sw.classList.remove('open'); });
   })();
+
+  /* language dropdown (same open/close pattern as the theme switch) */
+  (function () {
+    var ls = document.querySelector('.lang-switch');
+    if (!ls) return;
+    var btn = ls.querySelector('.lang-btn');
+    if (btn) btn.addEventListener('click', function (e) { e.stopPropagation(); ls.classList.toggle('open'); });
+    document.addEventListener('click', function () { ls.classList.remove('open'); });
+  })();
 })();
 
 /* ---- Text-size control (A− / A+ in the header) ---- */
