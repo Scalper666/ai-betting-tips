@@ -57,15 +57,23 @@ export const AVATAR_STYLES = [
 
 export const signed = (v) => `${v >= 0 ? '+' : ''}${v}`;
 
-export function kickoffLabel(iso) {
+const KICKOFF_WORDS = {
+  en: ['Today', 'Tomorrow', 'en-GB'],
+  es: ['Hoy', 'Mañana', 'es-ES'],
+  pt: ['Hoje', 'Amanhã', 'pt-BR'],
+  de: ['Heute', 'Morgen', 'de-DE'],
+};
+
+export function kickoffLabel(iso, lang = 'en') {
   if (!iso) return 'TBD';
   const d = new Date(iso);
   if (isNaN(d)) return 'TBD';
+  const [today, tomorrow, tag] = KICKOFF_WORDS[lang] ?? KICKOFF_WORDS.en;
   const t = d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
   const days = Math.round((new Date(d).setHours(0, 0, 0, 0) - new Date().setHours(0, 0, 0, 0)) / 86400000);
-  if (days <= 0) return `Today · ${t}`;
-  if (days === 1) return `Tomorrow · ${t}`;
-  return `${d.toLocaleDateString('en-GB', { weekday: 'short' })} · ${t}`;
+  if (days <= 0) return `${today} · ${t}`;
+  if (days === 1) return `${tomorrow} · ${t}`;
+  return `${d.toLocaleDateString(tag, { weekday: 'short' })} · ${t}`;
 }
 
 // FAQPage JSON-LD from [{q, a}] — merged into each page's schema graph

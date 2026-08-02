@@ -1,0 +1,12 @@
+---
+import TipsTypeView from '../../../views/TipsTypeView.astro';
+import { BET_TYPES } from '../../../lib/betTypes.js';
+import { ALT_LANGS } from '../../../i18n/index.js';
+
+export function getStaticPaths() {
+  return ALT_LANGS.flatMap((lang) =>
+    BET_TYPES.map((t) => ({ params: { lang, slug: t.slug }, props: { type: t } })));
+}
+const { type } = Astro.props;
+---
+<TipsTypeView lang={Astro.params.lang} type={type} />

@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-08-02T07:50:44+00:00",
+ "updated_at": "2026-08-02T10:13:47+00:00",
  "entries": {
   "match:corinthians-vs-remo": {
    "intro": "Corinthians host Remo in this Brasileirao fixture as clear favourites according to the market. The home side is priced at 1.55 with Matchbook, which translates to an implied probability of roughly 65%. Remo, meanwhile, are the outsiders at 7.8 on Betfair, implying only about 13% chance of an away win, while the draw sits at 4.3, or around 23%. That is a substantial gap in the prices and reflects strong market confidence in Corinthians. Rather than backing the match result, our model leans toward the goals market, recommending Under 2.5 goals at 1.93 with Matchbook, carrying a market-implied confidence of about 52%. It is worth noting the value edge here is marginally negative at -0.36%, so this is a close call rather than a standout opportunity in the Corinthians versus Remo clash.",
@@ -6442,6 +6442,466 @@
    "_usage": {
     "in": 1008,
     "out": 991
+   }
+  },
+  "es:tips:btts": {
+   "intro": "El mercado de Ambos Equipos Marcan, conocido como BTTS (Both Teams To Score), es una apuesta sencilla y muy popular en el fútbol. La premisa es directa: apuestas a si los dos equipos lograrán anotar al menos un gol durante el partido, con las opciones Sí o No. No importa el resultado final ni quién gana; solo si ambos ven puerta. Este tipo de apuesta suele atraer a quienes prefieren centrarse en la dinámica ofensiva y defensiva de un encuentro en lugar de acertar el marcador exacto o el ganador. Resulta útil para quienes buscan una alternativa al 1X2 tradicional y disfrutan analizando el potencial goleador de ambos conjuntos a lo largo de los noventa minutos.",
+   "how_it_works": "En BTTS eliges entre dos resultados. La opción Sí gana si cada equipo marca como mínimo un gol; la opción No gana si al menos uno de los dos se queda sin anotar, incluyendo el 0-0. Normalmente se computa sobre el tiempo reglamentario, sin contar prórroga ni penaltis, aunque conviene revisar las reglas de cada casa. Veamos un ejemplo hipotético con fines ilustrativos: imagina que el BTTS Sí se ofrece a una cuota de 1.80. La probabilidad implícita se calcula como 1 dividido entre la cuota, es decir, 1 / 1.80, lo que equivale a un 55,6% aproximadamente. Con una apuesta de 10 unidades a esa cuota, un acierto devolvería 18 unidades en total, de las cuales 8 serían beneficio neto. Si algún equipo no marca, pierdes la apuesta.",
+   "strategy": "Un enfoque razonable pasa por buscar valor, no solo resultados probables. Compara la probabilidad implícita de la cuota con tu propia estimación: si crees que la opción tiene más opciones de las que refleja el precio, puede existir valor; si no, quizá convenga descartar el partido. Un error habitual es fijarse únicamente en equipos con fama ofensiva sin considerar que las cuotas ya suelen incorporar esa reputación, dejando poco margen. Tampoco es aconsejable forzar una apuesta en cada encuentro; la selectividad ayuda. Compara cuotas entre operadores para obtener el mejor precio disponible. Y mantén disciplina con tu presupuesto: define un tamaño de apuesta coherente y evita perseguir pérdidas. Ninguna estrategia elimina el riesgo, así que apuesta solo lo que puedas permitirte perder y con moderación.",
+   "faq": [
+    {
+     "q": "¿Qué significa BTTS en las apuestas?",
+     "a": "BTTS son las siglas de Both Teams To Score, es decir, Ambos Equipos Marcan. Consiste en apostar a si los dos equipos anotarán al menos un gol en el partido, con las opciones Sí o No, sin que importe el resultado final ni el ganador."
+    },
+    {
+     "q": "¿El BTTS incluye la prórroga y los penaltis?",
+     "a": "Por lo general, el mercado BTTS se resuelve solo con los goles del tiempo reglamentario, sin contar prórroga ni tanda de penaltis. Aun así, las normas pueden variar entre casas de apuestas, por lo que conviene revisar los términos específicos del operador antes de apostar."
+    },
+    {
+     "q": "¿Es rentable apostar al BTTS?",
+     "a": "No existe garantía de rentabilidad en ningún mercado, incluido el BTTS. Los resultados son inciertos y las cuotas ya reflejan la valoración del mercado, así que la clave está en buscar valor de forma selectiva y gestionar el presupuesto con prudencia."
+    }
+   ],
+   "_kind": "tips",
+   "_model": "claude-opus-4-8",
+   "_hash": "68e17a878cb6c505",
+   "_generated_at": "2026-08-02T10:12:15+00:00",
+   "_usage": {
+    "in": 1140,
+    "out": 1317
+   }
+  },
+  "es:tips:accumulator": {
+   "intro": "Una apuesta combinada, conocida también como acumulador o combi, reúne varias selecciones en un mismo boleto. Para que la apuesta resulte ganadora, todas y cada una de las selecciones deben acertarse; si falla una sola, se pierde el conjunto. Su atractivo reside en que las cuotas de cada pronóstico se multiplican entre sí, lo que permite alcanzar cuotas totales elevadas con un desembolso reducido. Este tipo de apuesta suele encajar con quienes buscan multiplicar una cantidad pequeña y disfrutan siguiendo varios partidos a la vez. A cambio de ese potencial, la dificultad crece con cada selección añadida, por lo que conviene entenderla como una modalidad de mayor riesgo dentro de la oferta habitual de las casas.",
+   "how_it_works": "El mecanismo es sencillo: eliges dos o más selecciones y la casa multiplica sus cuotas para obtener la cuota combinada. El importe apostado se aplica una sola vez sobre esa cuota total. Supongamos, a modo de ejemplo hipotético, tres selecciones con cuotas de 2.00, 1.50 y 1.80. La cuota combinada sería 2.00 x 1.50 x 1.80 = 5.40. Con una apuesta de 10 unidades, el retorno potencial ascendería a 54 unidades (10 x 5.40), de las cuales 44 serían beneficio. El punto clave es que las tres selecciones deben acertarse; si una falla, el boleto completo se pierde. Cada selección adicional aumenta la cuota total, pero también reduce la probabilidad implícita de que todo el conjunto salga adelante, ya que se multiplican también los riesgos individuales.",
+   "strategy": "Un enfoque razonable pasa por buscar valor en cada selección por separado, es decir, casos en los que consideres que la cuota ofrecida es algo más alta de lo que sugeriría la probabilidad real, en lugar de encadenar pronósticos solo para inflar la cuota. Añadir muchas selecciones eleva la cuota final, pero también multiplica las probabilidades de fallar; mantener el boleto contenido suele ser más sostenible. Un error frecuente es incluir favoritos con cuotas muy bajas únicamente para rellenar, ya que aportan poco valor y sí riesgo. Gestiona el bankroll con disciplina, destinando a cada combinada una fracción pequeña del saldo y apostando con dinero que puedas permitirte perder. Ninguna estrategia garantiza beneficios: las combinadas son volátiles por naturaleza y conviene tratarlas como entretenimiento con riesgo asumido.",
+   "faq": [
+    {
+     "q": "¿Cuántas selecciones debo meter en una combinada?",
+     "a": "No existe un número ideal universal, ya que depende de tu tolerancia al riesgo. Cuantas más selecciones añadas, mayor será la cuota total, pero también menor la probabilidad de acertar todo el boleto. Muchos apostantes prefieren combinadas cortas para equilibrar potencial de retorno y probabilidad de éxito."
+    },
+    {
+     "q": "¿Qué pasa si uno de los partidos de mi combinada se aplaza?",
+     "a": "Las políticas varían según la casa de apuestas, así que conviene revisar sus términos concretos. Por lo general, la selección afectada suele anularse y tratarse con cuota de 1.00, de modo que la combinada se recalcula con las selecciones restantes. Consulta siempre las reglas específicas del operador antes de apostar."
+    },
+    {
+     "q": "¿Es mejor una apuesta combinada o varias apuestas simples?",
+     "a": "Cada opción tiene un perfil de riesgo distinto: la combinada ofrece cuotas más altas pero exige acertar todo, mientras que las simples reparten el riesgo y permiten ganar en unas aunque falles en otras. La elección depende de si priorizas mayor potencial de retorno o más margen ante fallos. Ninguna de las dos asegura beneficios."
+    }
+   ],
+   "_kind": "tips",
+   "_model": "claude-opus-4-8",
+   "_hash": "df4213e7aadf3462",
+   "_generated_at": "2026-08-02T10:12:15+00:00",
+   "_usage": {
+    "in": 1133,
+    "out": 1409
+   }
+  },
+  "pt:tips:accumulator": {
+   "intro": "Uma acumulada, também conhecida como aposta múltipla, combina duas ou mais seleções em um único bilhete. Para que a aposta seja vencedora, todas as seleções precisam acertar; se apenas uma falha, o bilhete inteiro é perdido. O grande atrativo está nas odds combinadas, já que os valores de cada perna se multiplicam entre si, gerando um retorno potencial bem maior do que apostas simples. Por outro lado, o risco cresce a cada seleção adicionada. Esse tipo de aposta costuma agradar quem busca retornos elevados com stakes menores e aceita uma probabilidade de acerto reduzida. É uma modalidade popular em finais de semana com muitos jogos, mas exige entendimento claro do equilíbrio entre risco e recompensa.",
+   "how_it_works": "O funcionamento é direto: você seleciona vários eventos e as odds de cada um são multiplicadas para formar a odd total da múltipla. Suponha, de forma puramente hipotética, três seleções cotadas a 2.00, 1.50 e 1.80. A odd combinada seria 2.00 x 1.50 x 1.80 = 5.40. Com um stake de 10 unidades, o retorno potencial seria 54 unidades (lucro de 44), mas somente se as três seleções acertarem. Caso qualquer uma falhe, todo o bilhete é perdido. É importante notar que a probabilidade implícita de cada perna também se multiplica: quanto mais seleções, menor a chance geral de o bilhete fechar. Por isso, o retorno maior vem acompanhado de um risco proporcionalmente mais alto a cada evento adicionado à múltipla.",
+   "strategy": "Uma abordagem sensata começa por pensar em valor, e não apenas em odds altas. Cada seleção deve, idealmente, oferecer um preço que você considere superior à probabilidade real do evento, com base nas cotações do mercado. Adicionar muitas pernas apenas para inflar o retorno é um erro comum, pois derruba drasticamente a chance de o bilhete fechar. Manter múltiplas mais enxutas costuma ser mais racional do que empilhar seleções aleatórias. Evite incluir favoritos com odds muito baixas só para completar o bilhete, já que eles pouco agregam ao retorno e ainda assim carregam risco. Defina um stake fixo e modesto dentro da sua banca, tratando a acumulada como aposta de maior variância. Disciplina de bankroll e expectativas realistas ajudam a manter o controle ao longo do tempo.",
+   "faq": [
+    {
+     "q": "Quantos jogos devo colocar em uma acumulada?",
+     "a": "Não existe número ideal universal, mas quanto mais seleções você adiciona, menor fica a probabilidade de o bilhete inteiro acertar. Muitos apostadores preferem múltiplas mais curtas para equilibrar o retorno com uma chance realista de fechar. A escolha depende do seu apetite ao risco e do valor que enxerga em cada seleção."
+    },
+    {
+     "q": "Qual a diferença entre aposta simples e acumulada?",
+     "a": "Na aposta simples você aposta em um único evento, e o resultado depende apenas dele. Na acumulada, várias seleções são combinadas em um só bilhete e todas precisam acertar para haver retorno. A múltipla oferece odds maiores, mas o risco também é bem mais elevado, já que uma única falha anula tudo."
+    },
+    {
+     "q": "Vale a pena apostar em acumuladas?",
+     "a": "Depende do seu perfil e objetivos. Acumuladas oferecem retorno potencial alto com stake baixo, mas têm probabilidade de acerto reduzida por exigirem que todas as seleções vençam. Podem fazer parte de uma estratégia se usadas com valor e disciplina de banca, sempre com a consciência de que nenhum resultado é garantido."
+    }
+   ],
+   "_kind": "tips",
+   "_model": "claude-opus-4-8",
+   "_hash": "7ad7fec891446f22",
+   "_generated_at": "2026-08-02T10:12:17+00:00",
+   "_usage": {
+    "in": 1126,
+    "out": 1354
+   }
+  },
+  "de:tips:accumulator": {
+   "intro": "Ein Accumulator, oft auch Kombiwette oder Combo genannt, bündelt mehrere Einzeltipps zu einer einzigen Wette. Damit die Kombination gewinnt, müssen alle ausgewählten Tipps richtig sein. Der Reiz liegt in den multiplizierten Quoten: Schon mit kleinem Einsatz lässt sich ein deutlich höherer potenzieller Gewinn erzielen als mit einzelnen Wetten. Gleichzeitig steigt mit jedem zusätzlichen Spiel das Risiko, denn ein einziger falscher Tipp lässt die gesamte Wette platzen. Dieser Wettyp eignet sich für Spielerinnen und Spieler, die bewusst höhere Auszahlungen anstreben und die geringere Trefferwahrscheinlichkeit akzeptieren. Wer lieber auf Konstanz setzt, ist mit Einzelwetten meist besser bedient. Ein Accumulator ist eher ein kalkuliertes Wagnis als ein Instrument für gleichmäßige Ergebnisse.",
+   "how_it_works": "Bei einem Accumulator werden die Quoten der einzelnen Auswahlen miteinander multipliziert. Die Gesamtquote bildet dann die Grundlage für die mögliche Auszahlung. Angenommen, du kombinierst drei Tipps mit den hypothetischen Quoten 2,00, 1,50 und 1,80. Die Gesamtquote ergibt sich aus 2,00 x 1,50 x 1,80 = 5,40. Setzt du in diesem Beispiel 10 Einheiten, beträgt die potenzielle Auszahlung 10 x 5,40 = 54 Einheiten, also 44 Einheiten Reingewinn. Der Haken: Alle drei Auswahlen müssen eintreffen. Liegt auch nur ein Tipp daneben, verfällt der komplette Einsatz. Jede zusätzliche Auswahl erhöht die Gesamtquote und damit die mögliche Auszahlung, senkt aber gleichzeitig die Wahrscheinlichkeit, dass die gesamte Kombination aufgeht. Genau in diesem Verhältnis liegt die Abwägung.",
+   "strategy": "Ein durchdachter Ansatz beginnt mit der Frage nach dem Value: Bietet eine Quote im Verhältnis zur eingeschätzten Wahrscheinlichkeit einen fairen oder überdurchschnittlichen Wert? Nur solche Auswahlen gehören in eine Kombination. Ein häufiger Fehler ist, immer mehr Spiele hinzuzufügen, um die Quote aufzublähen. Jede zusätzliche Auswahl multipliziert das Risiko, dass die gesamte Wette platzt. Oft sind kürzere Kombinationen mit wenigen, gut begründeten Tipps sinnvoller als lange Ketten aus Bauchentscheidungen. Wichtig ist zudem ein diszipliniertes Bankroll-Management: Setze nur einen kleinen, festen Anteil deines Budgets pro Wette und jage Verlusten nicht mit höheren Einsätzen hinterher. Behandle Quoten als Wahrscheinlichkeiten, nicht als Versprechen. Ein Accumulator kann attraktive Auszahlungen bieten, doch Gewinne sind nie sicher, und langfristige Ergebnisse hängen von konsequenter Auswahl und Geduld ab.",
+   "faq": [
+    {
+     "q": "Wie viele Spiele sollte ein Accumulator enthalten?",
+     "a": "Eine feste ideale Anzahl gibt es nicht, doch mit jedem zusätzlichen Spiel sinkt die Wahrscheinlichkeit, dass die gesamte Kombination aufgeht. Viele Bettor bevorzugen kürzere Kombinationen aus wenigen gut begründeten Auswahlen gegenüber langen Ketten. Entscheidend ist die Qualität jedes einzelnen Tipps, nicht die reine Menge."
+    },
+    {
+     "q": "Was passiert mit einer Kombiwette, wenn ein Spiel abgesagt wird?",
+     "a": "In der Regel wird die betroffene Auswahl mit einer Quote von 1,00 gewertet, sodass sie die Gesamtquote nicht beeinflusst. Die übrigen Auswahlen bleiben aktiv, und die Wette läuft mit angepasster Quote weiter. Die genaue Handhabung hängt vom jeweiligen Buchmacher und dessen Regelwerk ab."
+    },
+    {
+     "q": "Lohnt sich ein Accumulator mehr als Einzelwetten?",
+     "a": "Ein Accumulator bietet höhere potenzielle Auszahlungen bei kleinerem Einsatz, geht aber mit einer deutlich geringeren Trefferwahrscheinlichkeit einher. Einzelwetten liefern in der Regel konstantere Ergebnisse. Welche Variante besser passt, hängt von deiner Risikobereitschaft und deinen Zielen ab; einen garantierten Vorteil gibt es bei keiner der beiden."
+    }
+   ],
+   "_kind": "tips",
+   "_model": "claude-opus-4-8",
+   "_hash": "8c3aa560b3395eb6",
+   "_generated_at": "2026-08-02T10:12:20+00:00",
+   "_usage": {
+    "in": 1117,
+    "out": 1835
+   }
+  },
+  "es:tips:over-under": {
+   "intro": "Las apuestas de Más/Menos goles, conocidas como Over/Under, no dependen de qué equipo gana, sino del número total de goles que se marcan en el partido. La línea más habitual es 2,5 goles: apostar al Más (Over) implica que caerán tres o más tantos, mientras que el Menos (Under) gana si el encuentro termina con dos goles o menos. Es un mercado que suele atraer a quienes prefieren analizar el ritmo ofensivo y defensivo de un choque en lugar del resultado exacto. Resulta cómodo para apostantes que buscan una opción sencilla de entender, con líneas alternativas como 1,5, 3,5 o incluso mercados asiáticos que reparten el riesgo de otra manera.",
+   "how_it_works": "El funcionamiento es directo: el operador fija una línea de goles y tú eliges si el total superará o no ese número. Con la línea de 2,5, cualquier partido con tres o más goles hace ganar al Over, y dos o menos favorece al Under. Como no existe el medio gol, siempre hay un ganador claro y no hay empate en la apuesta. Imagina, de forma totalmente hipotética, que el Over 2,5 se paga a 2,00 y apuestas 10 unidades: si aciertas, recibirías 20 unidades en total, es decir, 10 de beneficio. Esa cuota de 2,00 refleja una probabilidad implícita cercana al 50 por ciento. Cuanto más baja sea la cuota, mayor probabilidad le asigna el mercado a ese desenlace, y viceversa.",
+   "strategy": "",
+   "faq": [],
+   "_kind": "tips",
+   "_model": "claude-opus-4-8",
+   "_hash": "15ddc61d29f95fa6",
+   "_generated_at": "2026-08-02T10:12:29+00:00",
+   "_usage": {
+    "in": 1135,
+    "out": 572
+   }
+  },
+  "de:tips:btts": {
+   "intro": "Both Teams To Score, kurz BTTS, ist eine der beliebtesten Wettarten im Fußball. Die Frage ist simpel: Treffen beide Mannschaften mindestens einmal im Verlauf des Spiels? Du tippst also entweder auf Ja (beide Teams erzielen ein Tor) oder auf Nein (mindestens eine Mannschaft bleibt torlos). Wer den Ausgang eines Spiels ohnehin nur schwer prognostizieren kann, findet in BTTS eine Alternative, die unabhängig vom Endergebnis funktioniert. Diese Wette eignet sich besonders für Fans offensiver Partien und für alle, die sich auf die Torgefahr statt auf den reinen Sieger konzentrieren möchten. Auch Einsteiger schätzen die klare Ja-oder-Nein-Struktur, die keine komplexen Handicaps oder Zusatzregeln erfordert.",
+   "how_it_works": "Bei BTTS gibt es nur zwei mögliche Ausgänge: Ja oder Nein. Tippst du auf Ja, gewinnt deine Wette, sobald beide Teams treffen, egal ob das Spiel 1:1, 3:2 oder 2:4 endet. Ein 1:0 oder 0:0 würde diesen Tipp verlieren lassen. Beim Tipp Nein ist es umgekehrt: Er gewinnt, wenn mindestens eine Mannschaft ohne Tor bleibt. Ein kurzes, rein hypothetisches Rechenbeispiel: Angenommen, BTTS Ja steht bei einer Quote von 1,80. Setzt du 10 Einheiten, ergibt sich bei Erfolg eine Auszahlung von 18 Einheiten (10 x 1,80), also 8 Einheiten Reingewinn. Die Quote spiegelt die vom Markt eingeschätzte Wahrscheinlichkeit wider: 1,80 entspricht rund 55,6 Prozent impliziter Wahrscheinlichkeit. Je niedriger die Quote, desto wahrscheinlicher hält der Markt das jeweilige Ereignis.",
+   "strategy": "Ein durchdachter Ansatz beginnt mit dem Vergleich von Quote und eigener Einschätzung. Rechne die Quote in eine implizite Wahrscheinlichkeit um und frage dich, ob du das Ereignis realistischer bewertest als der Markt. Nur wenn du einen Mehrwert vermutest, ist eine Wette überhaupt sinnvoll. Ein häufiger Fehler ist, jede offensiv wirkende Partie blind mit BTTS Ja zu spielen, ohne die Quote kritisch zu prüfen. Auch die Buchmachermarge solltest du im Blick behalten, da sie die Auszahlung schmälert. Setze feste Einheiten und riskiere pro Wette nur einen kleinen, gleichbleibenden Anteil deiner Bankroll, statt Verlusten hinterherzujagen. Kein Ansatz garantiert Gewinne, denn Fußball bleibt schwer vorhersehbar. Disziplin, Geduld und das konsequente Suchen nach Value sind langfristig wichtiger als einzelne Treffer. Wette stets in Maßen und mit Geld, dessen Verlust du verkraften kannst.",
+   "faq": [],
+   "_kind": "tips",
+   "_model": "claude-opus-4-8",
+   "_hash": "cf09a11b5139e8a9",
+   "_generated_at": "2026-08-02T10:12:35+00:00",
+   "_usage": {
+    "in": 1124,
+    "out": 1205
+   }
+  },
+  "pt:tips:btts": {
+   "intro": "Ambas as equipes marcam, conhecido pela sigla BTTS (Both Teams To Score), é um mercado em que você aposta se os dois times vão balançar as redes na mesma partida. As opções são simples: \"Sim\", quando ambos marcam pelo menos um gol, ou \"Não\", quando pelo menos um dos times não marca. Não importa o placar final nem quem vence — o foco está apenas nos gols de cada lado. Esse tipo de aposta costuma agradar quem prefere não depender do resultado exato do jogo e gosta de acompanhar confrontos com propostas ofensivas. Também é uma alternativa popular para quem quer diversificar além do tradicional 1X2, com uma lógica de acompanhamento bastante direta durante os 90 minutos.",
+   "how_it_works": "No BTTS você escolhe entre \"Sim\" e \"Não\", e a aposta é resolvida com base nos gols marcados dentro do tempo regulamentar. Se você aposta no \"Sim\", precisa que os dois times marquem; se aposta no \"Não\", basta que um deles fique sem marcar. Um empate em 0 a 0, por exemplo, sempre resolve o \"Não\" como vencedor. Veja um cálculo hipotético: imagine que o \"Sim\" esteja cotado a 1.80. Uma aposta de 50 unidades retornaria 90 no total (50 x 1.80), ou seja, um lucro de 40 unidades caso ambos marquem. Uma odd de 1.80 corresponde a uma probabilidade implícita de cerca de 56% (1 dividido por 1.80). Sempre compare essa porcentagem com a sua própria leitura do confronto antes de confirmar a entrada.",
+   "strategy": "A base de uma abordagem sensata é buscar valor: comparar a probabilidade implícita da odd com a sua estimativa própria para o jogo. Se você acredita que a chance real de ambos marcarem é maior do que a porcentagem embutida no preço, pode haver valor no \"Sim\"; o raciocínio inverso vale para o \"Não\". Um erro comum é apostar apenas em confrontos considerados \"ofensivos\" sem checar as cotações, pagando odds baixas demais. Outro descuido é ignorar o cenário do 0 a 0, que sempre favorece o \"Não\". Trate cada aposta de forma individual, evite perseguir perdas dobrando valores e defina um tamanho de stake compatível com sua banca. Registrar suas entradas ajuda a entender onde você acerta e onde erra. Nenhuma estratégia elimina o risco: resultados são incertos e variam a cada jogo.",
+   "faq": [
+    {
+     "q": "O que significa BTTS em apostas?",
+     "a": "BTTS é a sigla em inglês para Both Teams To Score, ou \"ambas as equipes marcam\". Você aposta se os dois times vão marcar pelo menos um gol na partida, escolhendo entre \"Sim\" e \"Não\". O vencedor e o placar exato não influenciam o resultado dessa aposta."
+    },
+    {
+     "q": "Os gols na prorrogação contam para o BTTS?",
+     "a": "Na maioria das casas, o mercado BTTS considera apenas os gols do tempo regulamentar, incluindo os acréscimos. Gols marcados na prorrogação ou nos pênaltis normalmente não contam. Como pode haver variações, vale sempre conferir as regras específicas da casa antes de apostar."
+    },
+    {
+     "q": "BTTS Sim ou Não: qual é a melhor opção?",
+     "a": "Não existe opção universalmente melhor; depende do confronto e, principalmente, da odd oferecida. A ideia é identificar em qual dos lados a probabilidade real parece maior do que a probabilidade implícita no preço. Avalie cada jogo individualmente em vez de seguir sempre a mesma escolha."
+    }
+   ],
+   "_kind": "tips",
+   "_model": "claude-opus-4-8",
+   "_hash": "524a947b0ae981f0",
+   "_generated_at": "2026-08-02T10:12:39+00:00",
+   "_usage": {
+    "in": 1133,
+    "out": 1352
+   }
+  },
+  "pt:tips:over-under": {
+   "intro": "A aposta de Over/Under gols, também chamada de mais/menos gols, é uma das modalidades mais populares e diretas do mercado esportivo. Em vez de tentar acertar quem vence a partida, você aposta na quantidade total de gols marcados por ambas as equipes juntas. O mercado mais comum é o Over/Under 2.5, mas existem várias linhas disponíveis, como 1.5, 3.5 e assim por diante. Essa aposta agrada quem prefere analisar o perfil ofensivo e defensivo dos times em vez de se prender ao resultado final. Também é uma boa porta de entrada para iniciantes, já que a lógica é simples de entender, e ao mesmo tempo oferece profundidade suficiente para apostadores mais experientes que gostam de trabalhar com estatísticas.",
+   "how_it_works": "O funcionamento é simples: a casa define uma linha de gols e você decide se o total da partida ficará acima (Over) ou abaixo (Under) desse número. Como as linhas usam o decimal .5, não existe empate no mercado. Numa linha de 2.5, por exemplo, o Over vence com 3 ou mais gols, e o Under vence com 0, 1 ou 2 gols. Suponha, de forma hipotética, que o Over 2.5 esteja cotado a 2.00. Nessa odd, o mercado precifica uma probabilidade implícita de cerca de 50% (o cálculo é 1 dividido por 2.00). Se você apostar 100 e o Over vencer, o retorno é de 200, sendo 100 de lucro. Se a partida terminar com dois gols ou menos, a aposta é perdida. Sempre confira qual linha está sendo oferecida antes de confirmar.",
+   "strategy": "Uma abordagem sensata começa por comparar sua própria expectativa de gols com a probabilidade implícita nas odds. Se o mercado precifica o Over 2.5 em torno de 55% e você acredita que a chance real é maior, pode haver valor; se for menor, talvez não valha a pena. Um erro comum é escolher sempre o Over apenas por parecer mais empolgante, ignorando confrontos com perfil defensivo. Outro deslize é misturar muitas linhas diferentes sem critério. Vale acompanhar a movimentação das odds e entender por que uma linha subiu ou caiu. Mantenha disciplina de banca: defina um valor por aposta e não persiga perdas aumentando stakes. Nenhuma estratégia elimina o risco, e resultados variam bastante no curto prazo, então trate cada entrada como parte de um plano de longo prazo.",
+   "faq": [
+    {
+     "q": "O que significa Over 2.5 gols?",
+     "a": "Significa que você está apostando em três ou mais gols na soma de ambas as equipes na partida. Se o jogo terminar com dois gols ou menos, a aposta é perdida. Como a linha usa .5, não há possibilidade de empate no mercado."
+    },
+    {
+     "q": "Gols na prorrogação contam no Over/Under?",
+     "a": "Na maioria das casas, o mercado padrão de Over/Under considera apenas o tempo regulamentar, incluindo os acréscimos, mas não a prorrogação ou os pênaltis. As regras podem variar entre operadores, então vale sempre conferir os termos específicos da casa antes de apostar."
+    },
+    {
+     "q": "É melhor apostar no Over ou no Under?",
+     "a": "Não existe opção universalmente melhor, pois depende do perfil das equipes e do valor oferecido pelas odds. A ideia é comparar a probabilidade implícita na cotação com sua própria avaliação da partida e apostar apenas quando enxergar valor. Ambas as opções envolvem risco e nenhuma garante retorno."
+    }
+   ],
+   "_kind": "tips",
+   "_model": "claude-opus-4-8",
+   "_hash": "4ea6e65b9165514a",
+   "_generated_at": "2026-08-02T10:12:42+00:00",
+   "_usage": {
+    "in": 1128,
+    "out": 1298
+   }
+  },
+  "de:tips:over-under": {
+   "intro": "Bei Über/Unter-Wetten auf Tore geht es nicht darum, welche Mannschaft gewinnt, sondern wie viele Treffer im Spiel insgesamt fallen. Der Buchmacher legt eine Linie fest, häufig 2,5 Tore, und du entscheidest, ob am Ende mehr (Über) oder weniger (Unter) Tore erzielt werden. Diese Wettart eignet sich besonders für Tipper, die ein Spiel nach seinem erwarteten Charakter einschätzen möchten, ohne sich auf einen Sieger festlegen zu müssen. Sie ist beliebt bei Fußball, funktioniert aber auch in anderen Sportarten. Wer offene, torreiche Partien anders bewertet als das reine Ergebnis, findet hier eine klare, leicht verständliche Alternative zur klassischen 1X2-Wette.",
+   "how_it_works": "Der Buchmacher gibt eine Torlinie vor, zum Beispiel 2,5. Tippst du auf Über 2,5, brauchst du mindestens drei Tore; bei Unter 2,5 gewinnst du bei zwei oder weniger Treffern. Da die Linie eine halbe Zahl enthält, gibt es keinen Rückzahlungsfall. Nehmen wir ein rein hypothetisches Beispiel: Über 2,5 wird mit einer Quote von 2,00 angeboten. Setzt du 10 Einheiten und fallen drei oder mehr Tore, erhältst du 20 Einheiten zurück, also 10 Einheiten Gewinn. Fallen nur zwei Tore, ist der Einsatz verloren. Die Quote von 2,00 entspricht einer eingepreisten Wahrscheinlichkeit von rund 50 Prozent. Es gibt auch ganze oder Viertellinien wie 2,0 oder 2,25, bei denen ein Teil des Einsatzes zurückerstattet werden kann.",
+   "strategy": "Sinnvoll ist es, die eigene Toreinschätzung mit der vom Markt eingepreisten Wahrscheinlichkeit abzugleichen. Eine Quote von 2,00 entspricht etwa 50 Prozent; hältst du das Ereignis für wahrscheinlicher, könnte Value vorliegen. Ein häufiger Fehler ist, nur auf Über zu setzen, weil Tore unterhaltsamer wirken, ohne die Linie zu hinterfragen. Vergleiche verschiedene Linien und Quoten, statt blind die erstbeste zu nehmen. Bedenke, dass Über/Unter stark von Spielstil und Spielverlauf abhängt und Einzelspiele große Schwankungen zeigen. Setze mit festen Einsätzen im Rahmen deiner Bankroll und vermeide es, Verluste durch höhere Einsätze aufholen zu wollen. Kein Ansatz garantiert Gewinne; Ziel ist eine disziplinierte, nachvollziehbare Entscheidung. Behandle Wetten als Freizeitausgabe und setze nur Beträge ein, deren Verlust du verkraften kannst.",
+   "faq": [
+    {
+     "q": "Was bedeutet Über 2,5 Tore genau?",
+     "a": "Über 2,5 Tore gewinnt, wenn im Spiel insgesamt drei oder mehr Treffer fallen, unabhängig davon, welche Mannschaft sie erzielt. Bei zwei oder weniger Toren ist die Wette verloren. Weil die Linie eine halbe Zahl ist, gibt es kein Unentschieden für die Wette selbst."
+    },
+    {
+     "q": "Zählen Tore in der Verlängerung bei Über/Unter mit?",
+     "a": "In der Regel gelten Über/Unter-Wetten nur für die reguläre Spielzeit inklusive Nachspielzeit, nicht für Verlängerung oder Elfmeterschießen. Prüfe jedoch immer die konkreten Regeln deines Buchmachers, da diese variieren können. Bei Unsicherheit hilft ein Blick in die Wettbestimmungen des Anbieters."
+    },
+    {
+     "q": "Ist Über oder Unter die bessere Wette?",
+     "a": "Keine der beiden Optionen ist grundsätzlich besser; entscheidend ist, ob die angebotene Quote die tatsächliche Torwahrscheinlichkeit fair oder zu deinen Gunsten abbildet. Vergleiche deine eigene Einschätzung mit der eingepreisten Wahrscheinlichkeit der Quote. Value entsteht dort, wo du den Ausgang für wahrscheinlicher hältst als der Markt."
+    }
+   ],
+   "_kind": "tips",
+   "_model": "claude-opus-4-8",
+   "_hash": "e8fc64ed1f17783a",
+   "_generated_at": "2026-08-02T10:12:53+00:00",
+   "_usage": {
+    "in": 1119,
+    "out": 1653
+   }
+  },
+  "es:tips:correct-score": {
+   "intro": "El resultado exacto es una apuesta en la que predices el marcador final concreto de un partido, por ejemplo 2-1 o 0-0. Es uno de los mercados con cuotas más altas precisamente porque acertar el número justo de goles de cada equipo resulta difícil. Suele atraer a apostantes que buscan pagos elevados con importes pequeños y que disfrutan analizando cómo puede desarrollarse un encuentro. No es el mercado más adecuado si prefieres una tasa de aciertos alta y regular, ya que la mayoría de las selecciones no entran. Conviene entenderlo como una apuesta de riesgo elevado y recompensa potencialmente grande, dentro de un plan de gasto controlado.",
+   "how_it_works": "Eliges un marcador exacto y tu apuesta gana solo si el partido termina justo con ese resultado. Cada marcador posible tiene su propia cuota, y los resultados que el mercado considera más probables, como un 1-0 o un 1-1, suelen pagar menos que marcadores abultados o poco frecuentes. Supongamos, a modo hipotético, que un 2-1 se ofrece a cuota 9.00. Si apuestas 5 unidades y el encuentro acaba exactamente 2-1, cobrarías 45 unidades (5 x 9.00), con 40 de beneficio. Si termina con cualquier otro marcador, incluido un 2-1 al contrario, la apuesta se pierde. La cuota implícita se calcula como 1 dividido entre la cuota; en el ejemplo, 1/9.00, en torno al 11% de probabilidad estimada por el mercado.",
+   "strategy": "La clave está en buscar valor: comparar tu propia estimación de cómo puede terminar el partido con la probabilidad implícita en la cuota. Si crees que un marcador es más probable de lo que sugiere su cuota, ahí puede haber interés; si no, es mejor pasar. Un error común es perseguir marcadores muy abultados solo por su cuota alta, cuando su probabilidad real es baja. Otro fallo habitual es cubrir demasiados resultados a la vez, lo que erosiona el valor y puede dejarte en pérdidas aunque aciertes. Mantén stakes pequeños y coherentes, ya que este mercado tiene una tasa de aciertos naturalmente baja. Define de antemano cuánto destinas a este tipo de apuestas y no lo amplíes para recuperar rachas negativas. Ninguna estrategia asegura beneficios.",
+   "faq": [
+    {
+     "q": "¿Es rentable apostar al resultado exacto?",
+     "a": "Puede ofrecer pagos elevados, pero también tiene una tasa de aciertos baja porque hay que clavar el marcador justo. Su rentabilidad depende de encontrar cuotas con valor respecto a tu estimación y de gestionar bien el importe. No existe ninguna garantía de beneficio en este ni en ningún mercado."
+    },
+    {
+     "q": "¿Qué pasa si el partido va a la prórroga?",
+     "a": "El mercado de resultado exacto suele liquidarse solo con el marcador de los 90 minutos, incluido el tiempo añadido, y no cuenta la prórroga ni los penaltis. Aun así, las reglas pueden variar entre casas, así que conviene revisar los términos del operador antes de apostar."
+    },
+    {
+     "q": "¿Cuáles son los marcadores exactos más habituales?",
+     "a": "El mercado tiende a asignar las cuotas más bajas a resultados ajustados como 1-0, 0-0, 1-1 o 2-1, por considerarlos más probables. Los marcadores con muchos goles pagan más porque son menos frecuentes. Esas cuotas reflejan la probabilidad estimada por el mercado, no una certeza."
+    }
+   ],
+   "_kind": "tips",
+   "_model": "claude-opus-4-8",
+   "_hash": "5f21f683ed862567",
+   "_generated_at": "2026-08-02T10:12:59+00:00",
+   "_usage": {
+    "in": 1133,
+    "out": 1312
+   }
+  },
+  "pt:tips:correct-score": {
+   "intro": "A aposta de placar exato, ou correct score, é uma das modalidades mais diretas e ao mesmo tempo mais desafiadoras do mercado esportivo. Você aposta no resultado final exato de uma partida, prevendo quantos gols cada equipe vai marcar, como 2 a 1, 1 a 0 ou 0 a 0. Por exigir uma previsão bem específica, costuma oferecer odds bem mais altas do que mercados simples como vencedor da partida. Esse tipo de aposta atrai quem gosta de análises detalhadas e aceita menor frequência de acerto em troca de retornos maiores por acerto. É indicada para apostadores que entendem que se trata de um mercado de baixa probabilidade e planejam seus valores com cuidado.",
+   "how_it_works": "No placar exato, você seleciona o resultado final preciso do jogo e só ganha se ele terminar exatamente naquele placar. Cada placar possível tem sua própria cotação, e quanto mais improvável o mercado considera aquele resultado, maior tende a ser a odd. Imagine, de forma puramente hipotética, que um placar de 2 a 1 esteja cotado a 9.00. Uma aposta de 10 unidades retornaria 90 unidades no total (lucro de 80) caso o jogo termine exatamente 2 a 1. Se acabar 2 a 0, 3 a 1 ou qualquer outro placar, a aposta é perdida. A probabilidade implícita de uma odd 9.00 é de cerca de 11%, o que reflete o quanto o mercado enxerga aquele resultado como pouco provável entre tantas combinações possíveis.",
+   "strategy": "A ideia central é buscar valor: comparar sua própria estimativa de probabilidade com a probabilidade implícita da odd e apostar apenas quando você acredita que o resultado é mais provável do que o preço sugere. Concentre-se em jogos com perfis de placar mais previsíveis, como partidas com tendência a poucos gols ou a favoritos claros, em vez de tentar adivinhar resultados exóticos por causa das odds altas. Um erro comum é apostar em muitos placares diferentes no mesmo jogo, o que corrói o retorno potencial. Como a taxa de acerto costuma ser baixa, use valores pequenos e consistentes por aposta e evite tentar recuperar perdas aumentando o stake. Nenhuma estratégia garante lucro; o objetivo é tomar decisões com disciplina e gestão de banca ao longo do tempo.",
+   "faq": [
+    {
+     "q": "O que significa apostar no placar exato?",
+     "a": "Significa prever o resultado final preciso da partida, indicando quantos gols cada equipe vai marcar, como 1 a 0 ou 2 a 2. Você só ganha se o jogo terminar exatamente naquele placar, o que torna esse mercado mais difícil, porém com odds normalmente mais altas."
+    },
+    {
+     "q": "Vale a pena apostar em placar exato?",
+     "a": "Pode valer para quem gosta de análises detalhadas e aceita uma frequência de acerto baixa em troca de retornos maiores por aposta. É importante encarar como um mercado de alta variância, apostar valores pequenos e nunca esperar ganhos constantes, já que os resultados são incertos."
+    },
+    {
+     "q": "Posso apostar em mais de um placar no mesmo jogo?",
+     "a": "Sim, muitas casas permitem cobrir vários placares na mesma partida. Porém, cada aposta adicional aumenta o custo total e reduz o lucro líquido caso um deles acerte, então é preciso equilibrar cobertura e retorno com cuidado."
+    }
+   ],
+   "_kind": "tips",
+   "_model": "claude-opus-4-8",
+   "_hash": "3d2e9d1b724dfd08",
+   "_generated_at": "2026-08-02T10:13:00+00:00",
+   "_usage": {
+    "in": 1126,
+    "out": 1264
+   }
+  },
+  "de:tips:correct-score": {
+   "intro": "Bei der Wette auf das korrekte Ergebnis (Correct Score) tippst du auf den exakten Endstand einer Partie, zum Beispiel 2:1 oder 0:0. Es ist eine der präzisesten Wettarten, weil du nicht nur den Sieger, sondern die genaue Toranzahl beider Mannschaften richtig vorhersagen musst. Genau deshalb sind die Quoten deutlich höher als bei einer einfachen Siegwette. Diese Wette eignet sich für Tipper, die gerne detailliert über Spielverläufe nachdenken und höhere Quoten bei entsprechend geringerer Trefferwahrscheinlichkeit in Kauf nehmen. Wer lieber sichere, häufige Treffer bevorzugt, ist mit klassischen Märkten oft besser bedient. Für alle, die den Reiz an knapp kalkulierten Ergebnissen suchen, bietet der Correct-Score-Markt reichlich Spielraum.",
+   "how_it_works": "Du wählst einen konkreten Endstand, und die Wette gewinnt nur, wenn genau dieses Ergebnis eintritt. Da es viele mögliche Endstände gibt, verteilt der Buchmacher die Wahrscheinlichkeit auf zahlreiche Optionen, was zu vergleichsweise hohen Quoten führt. Nehmen wir ein rein hypothetisches Beispiel: Ein Ergebnis von 2:1 wird mit einer Quote von 8.00 angeboten. Setzt du 10 Euro und die Partie endet tatsächlich 2:1, erhältst du 10 x 8.00 = 80 Euro ausbezahlt, also 70 Euro Gewinn. Endet das Spiel anders, etwa 1:1 oder 3:1, verlierst du den Einsatz. Aus der Quote lässt sich auch die implizite Wahrscheinlichkeit ableiten: 1 geteilt durch 8.00 ergibt 0,125, der Markt preist dieses Ergebnis also mit rund 12,5 Prozent ein.",
+   "strategy": "Sinnvoll ist es, den Correct-Score-Markt als Value-Suche zu verstehen: Vergleiche deine eigene Einschätzung eines plausiblen Endstands mit der impliziten Wahrscheinlichkeit aus der Quote. Liegt deine Erwartung höher als das, was der Buchmacher einpreist, kann ein Wert vorliegen. Ein häufiger Fehler ist es, nur auf spektakuläre Ergebnisse mit hohen Quoten zu setzen, obwohl niedrige Endstände statistisch oft wahrscheinlicher sind. Manche Tipper decken deshalb zwei oder drei naheliegende Ergebnisse ab, was die Trefferchance erhöht, aber auch den Gesamteinsatz und die nötige Gewinnquote steigert. Wichtig bleibt die Bankroll-Disziplin: Setze pro Wette nur einen kleinen, festen Anteil deines Budgets und jage keinen Verlusten hinterher. Da die Trefferquote bei dieser Wettart naturgemäß niedrig ist, solltest du längere Durststrecken einkalkulieren. Garantien auf Gewinne gibt es nicht.",
+   "faq": [
+    {
+     "q": "Was bedeutet eine Wette auf das korrekte Ergebnis?",
+     "a": "Du tippst auf den exakten Endstand eines Spiels, zum Beispiel 2:0 oder 1:1. Die Wette gewinnt nur, wenn genau dieses Ergebnis eintritt, weshalb die Quoten höher sind als bei einer normalen Siegwette."
+    },
+    {
+     "q": "Warum sind die Quoten beim Correct Score so hoch?",
+     "a": "Weil es sehr viele mögliche Endstände gibt und nur einer davon zutrifft. Die Wahrscheinlichkeit für ein einzelnes exaktes Ergebnis ist gering, und die höhere Quote spiegelt genau dieses erhöhte Risiko wider."
+    },
+    {
+     "q": "Kann man mehrere Ergebnisse gleichzeitig tippen?",
+     "a": "Ja, viele Tipper platzieren separate Wetten auf zwei oder drei plausible Endstände, um die Trefferchance zu erhöhen. Dadurch steigt allerdings der Gesamteinsatz, und der tatsächlich eintretende Endstand muss eine ausreichend hohe Quote haben, damit sich das rechnet."
+    }
+   ],
+   "_kind": "tips",
+   "_model": "claude-opus-4-8",
+   "_hash": "a6025f381805a89e",
+   "_generated_at": "2026-08-02T10:13:06+00:00",
+   "_usage": {
+    "in": 1117,
+    "out": 1603
+   }
+  },
+  "es:tips:double-chance": {
+   "intro": "La doble oportunidad es un mercado que permite cubrir dos de los tres resultados posibles de un partido con una sola apuesta. Puedes elegir entre local o empate (1X), visitante o empate (X2), o local o visitante (12), de modo que aciertas si se cumple cualquiera de las dos opciones seleccionadas. Al reducir el riesgo respecto al 1X2 tradicional, las cuotas también son más bajas, ya que estás abarcando un abanico más amplio de resultados. Suele encajar con quienes prefieren una mayor probabilidad de acierto a cambio de un rendimiento más contenido, y resulta útil en encuentros muy igualados o cuando quieres respaldar a un favorito sin depender de un marcador exacto.",
+   "how_it_works": "El funcionamiento es sencillo: en lugar de apostar por un único signo, tu selección cubre dos resultados. Con 1X ganas si el local vence o empata; con X2, si empata o gana el visitante; con 12, si cualquiera de los dos equipos gana y solo pierdes en caso de empate. Como abarcas más escenarios, la cuota es inferior a la del 1X2 simple. Veamos un ejemplo hipotético solo para ilustrar la aritmética: imagina que apuestas 10 unidades a una doble oportunidad 1X con cuota 1,40. Si el resultado entra dentro de tus opciones, el retorno sería 10 x 1,40 = 14 unidades, es decir, 4 de beneficio. Si sale el resultado no cubierto, pierdes la apuesta. Las cifras son inventadas y varían según cada mercado.",
+   "strategy": "El planteamiento razonable pasa por buscar valor y no simplemente la sensación de seguridad. Que un mercado tenga cuota baja no significa que sea buena apuesta: conviene comparar la probabilidad implícita de la cuota con tu propia estimación y actuar solo cuando creas que el precio ofrece margen. Un error frecuente es encadenar dobles oportunidades de cuota muy corta en combinadas, ya que el riesgo acumulado crece más de lo que aparenta. Otro fallo habitual es usar este mercado para forzar apuestas en partidos que en realidad no aportan valor. Gestiona tu banca con apuestas de tamaño consistente, evita perseguir pérdidas y establece límites que puedas mantener. Ningún mercado garantiza beneficios, así que trata la doble oportunidad como una herramienta más dentro de un enfoque disciplinado y a largo plazo.",
+   "faq": [
+    {
+     "q": "¿Qué significa doble oportunidad en las apuestas?",
+     "a": "Es un mercado en el que cubres dos de los tres resultados posibles de un partido con una sola apuesta. Puedes elegir 1X (local o empate), X2 (empate o visitante) o 12 (local o visitante), y ganas si se produce cualquiera de las dos opciones elegidas."
+    },
+    {
+     "q": "¿Por qué las cuotas de doble oportunidad son tan bajas?",
+     "a": "Porque estás cubriendo dos resultados en lugar de uno, así que la probabilidad de acierto es mayor y el precio se ajusta a la baja en consecuencia. A cambio de esa mayor probabilidad, el rendimiento potencial por unidad apostada es más reducido que en el 1X2 tradicional."
+    },
+    {
+     "q": "¿Es mejor la doble oportunidad que el 1X2?",
+     "a": "No hay una opción mejor de forma absoluta; depende de lo que busques y del valor que ofrezca la cuota. La doble oportunidad reduce el riesgo a costa de cuotas más bajas, mientras que el 1X2 paga más pero acierta con menos frecuencia. Lo importante es que el precio refleje una probabilidad que consideres favorable."
+    }
+   ],
+   "_kind": "tips",
+   "_model": "claude-opus-4-8",
+   "_hash": "58d076a6dc048bc2",
+   "_generated_at": "2026-08-02T10:13:15+00:00",
+   "_usage": {
+    "in": 1133,
+    "out": 1328
+   }
+  },
+  "pt:tips:double-chance": {
+   "intro": "A dupla chance é um mercado que permite cobrir dois dos três resultados possíveis de uma partida em uma única aposta. Você pode escolher entre casa ou empate, visitante ou empate, ou ainda casa ou visitante. Na prática, isso reduz o risco em comparação com o mercado de resultado final tradicional, já que apenas um dos três cenários faz o bilhete perder. Em troca dessa segurança maior, as odds costumam ser mais baixas. É um mercado que agrada quem prefere uma abordagem mais conservadora, quem aposta em jogos equilibrados ou quem quer respaldar um favorito sem ser surpreendido por um empate. Serve bem tanto para iniciantes quanto para quem busca montar entradas com menor variância.",
+   "how_it_works": "O funcionamento é simples: em vez de apostar em um único resultado, você combina dois deles. Como cobre mais cenários, a odd oferecida é menor do que a do mercado 1X2 correspondente. Veja um exemplo puramente hipotético para entender a lógica. Suponha que um time esteja cotado a 2.00 para vencer e o empate esteja a 3.20. A opção de dupla chance casa ou empate reuniria esses dois desfechos e, por isso, sairia por uma odd bem mais baixa, algo em torno de 1.20 a 1.30 dependendo das margens da casa. Se você apostar 100 a uma odd de 1.25, o retorno em caso de acerto seria de 125, ou seja, 25 de lucro. Basta que ocorra qualquer um dos dois resultados escolhidos para o bilhete ser pago.",
+   "strategy": "O ponto central é avaliar valor, e não apenas segurança. Como as odds são reduzidas, uma sequência de bilhetes verdes pode render pouco enquanto uma derrota isolada apaga vários acertos. Compare sempre a probabilidade implícita da dupla chance com a sua própria leitura do jogo antes de entrar. Um erro comum é usar esse mercado só por conforto psicológico, aceitando cotações muito baixas que oferecem retorno insuficiente para o risco assumido. Outro deslize é acumular várias seleções de dupla chance em múltiplas, o que pode inflar a odd total mas também multiplica as chances de falha. Prefira jogos que você entende, defina um valor de aposta compatível com sua banca e mantenha registros das suas entradas. A gestão de banca disciplinada é o que sustenta qualquer estratégia ao longo do tempo, sem promessas de lucro garantido.",
+   "faq": [
+    {
+     "q": "O que significa dupla chance nas apostas?",
+     "a": "É um mercado em que você cobre dois dos três resultados possíveis de um jogo em uma só aposta: casa ou empate, visitante ou empate, ou casa ou visitante. O bilhete é pago se qualquer um dos dois desfechos escolhidos acontecer. Em troca dessa segurança, as odds são mais baixas que as do mercado de resultado final tradicional."
+    },
+    {
+     "q": "Dupla chance vale a pena?",
+     "a": "Pode valer, dependendo do jogo e da odd oferecida. Ela reduz o risco por cobrir mais cenários, mas o retorno menor exige atenção ao valor da cotação. Faz mais sentido em partidas equilibradas ou quando você quer proteger uma entrada contra o empate, sempre avaliando se a odd compensa."
+    },
+    {
+     "q": "Qual a diferença entre dupla chance e handicap asiático?",
+     "a": "Na dupla chance você aposta em dois resultados diretos do 1X2, como casa ou empate. Já o handicap asiático aplica uma vantagem ou desvantagem em gols a um dos times, podendo até anular o empate ou devolver parte do valor. São mercados distintos, com dinâmicas de risco e retorno diferentes."
+    }
+   ],
+   "_kind": "tips",
+   "_model": "claude-opus-4-8",
+   "_hash": "0a4d466c6db5a9e2",
+   "_generated_at": "2026-08-02T10:13:22+00:00",
+   "_usage": {
+    "in": 1126,
+    "out": 1342
+   }
+  },
+  "de:tips:double-chance": {
+   "intro": "Die Doppelte Chance ist eine der zugänglichsten Wettarten im Fußball. Statt auf ein einziges Ergebnis zu setzen, deckst du mit einem Tipp zwei von drei möglichen Ausgängen ab: Heimsieg oder Unentschieden (1X), Auswärtssieg oder Unentschieden (X2) oder beide Mannschaften gewinnen (12). Dadurch steigt die Trefferwahrscheinlichkeit, während die Quoten entsprechend niedriger ausfallen. Diese Wette eignet sich für Einsteiger, die ein solides Gefühl für Wetten entwickeln möchten, sowie für vorsichtigere Tipper, die ihr Risiko begrenzen wollen. Auch bei Partien, in denen ein knapper Ausgang erwartet wird, kann die Doppelte Chance eine sinnvolle Absicherung sein. Wie bei jeder Wettart bleibt der Ausgang aber ungewiss, und niedrigere Quoten bedeuten nicht automatisch einen langfristigen Vorteil.",
+   "how_it_works": "Bei der Doppelten Chance kombinierst du zwei der drei Grundergebnisse in einem einzigen Tipp. Wählst du 1X, gewinnst du sowohl beim Heimsieg als auch beim Unentschieden; nur ein Auswärtssieg lässt die Wette verlieren. Analog decken X2 das Unentschieden plus den Auswärtssieg und 12 beide Siege ab. Weil du zwei Ausgänge abdeckst, liegen die Quoten deutlich unter denen einer klassischen Dreiweg-Wette. Ein rein hypothetisches Rechenbeispiel: Angenommen, eine 1X-Wette wird mit einer Quote von 1,30 angeboten. Bei einem Einsatz von 10 Einheiten ergibt sich eine Rückzahlung von 13 Einheiten, also ein Gewinn von 3 Einheiten, sofern das Heimteam gewinnt oder die Partie unentschieden endet. Endet sie mit einem Auswärtssieg, ist der Einsatz verloren. Die implizite Wahrscheinlichkeit bei 1,30 liegt bei rund 77 Prozent.",
+   "strategy": "Der Reiz der Doppelten Chance liegt in der höheren Trefferquote, doch niedrige Quoten verzeihen wenig. Entscheidend ist, ob die angebotene Quote im Verhältnis zur eingeschätzten Wahrscheinlichkeit einen Mehrwert bietet. Rechne die implizite Wahrscheinlichkeit aus (1 geteilt durch die Quote) und vergleiche sie mit deiner eigenen Einschätzung des Spiels. Ein häufiger Fehler ist es, diese Wette pauschal als sicher zu betrachten und deshalb hohe Einsätze zu platzieren; der Auswärtssieg oder ein unerwartetes Resultat kann jederzeit eintreten. Setze feste Einheiten pro Wette und passe die Höhe nicht impulsiv nach Verlusten an. Vermeide es außerdem, mehrere Doppelte Chancen unüberlegt zu einer Kombiwette zu bündeln, da sich das Risiko dadurch multipliziert. Diszipliniertes Bankroll-Management und realistische Erwartungen sind wichtiger als kurzfristige Ergebnisse.",
+   "faq": [
+    {
+     "q": "Was bedeutet Doppelte Chance beim Wetten?",
+     "a": "Die Doppelte Chance ist eine Wette, bei der du zwei von drei möglichen Spielausgängen in einem Tipp abdeckst, etwa Heimsieg oder Unentschieden. Dadurch steigt die Wahrscheinlichkeit eines Treffers, im Gegenzug fallen die Quoten niedriger aus als bei einer normalen Dreiweg-Wette."
+    },
+    {
+     "q": "Ist die Doppelte Chance besser als eine normale Siegwette?",
+     "a": "Besser oder schlechter hängt von der jeweiligen Quote und deiner Einschätzung ab. Die Doppelte Chance senkt das Risiko pro Wette, bietet aber geringere Erträge, während eine klassische Siegwette höhere Quoten bei höherem Risiko liefert. Entscheidend ist, ob die Quote einen fairen Gegenwert zur Wahrscheinlichkeit darstellt."
+    },
+    {
+     "q": "Kann man mit der Doppelten Chance sicher gewinnen?",
+     "a": "Nein, eine sichere Wette gibt es nicht. Auch die Doppelte Chance kann verloren gehen, etwa wenn der abgedeckte Ausgang nicht eintritt. Die niedrigeren Quoten spiegeln die höhere Trefferwahrscheinlichkeit wider, garantieren aber keinen langfristigen Gewinn."
+    }
+   ],
+   "_kind": "tips",
+   "_model": "claude-opus-4-8",
+   "_hash": "ca2976b0411f77d8",
+   "_generated_at": "2026-08-02T10:13:26+00:00",
+   "_usage": {
+    "in": 1117,
+    "out": 1754
+   }
+  },
+  "es:tips:draw": {
+   "intro": "La apuesta al empate consiste en pronosticar que un encuentro terminará con marcador igualado al final del tiempo reglamentario. Es una opción propia de mercados como el 1X2, donde eliges entre victoria local, empate o victoria visitante. Este tipo de apuesta suele encajar con quienes analizan enfrentamientos equilibrados, partidos entre rivales de nivel parecido o duelos con tendencia a pocos goles. También interesa a apostantes que buscan cuotas más altas que en las opciones de victoria, ya que el empate rara vez es el resultado favorito del mercado. Requiere paciencia y criterio, pues es un resultado menos frecuente que una victoria, pero puede ofrecer valor cuando la cuota refleja mal la igualdad real entre los dos equipos.",
+   "how_it_works": "Al apostar al empate seleccionas la opción X dentro del mercado 1X2. Ganas la apuesta solo si el partido finaliza en igualada tras el tiempo reglamentario; una victoria de cualquiera de los dos equipos hace perder el boleto. La prórroga o los penaltis no suelen contar en este mercado, salvo indicación expresa de la casa. Para calcular el retorno multiplicas tu importe por la cuota. Supongamos, de forma hipotética, que un empate se paga a cuota 3,40 y apuestas 10 unidades: tu retorno bruto sería 10 x 3,40 = 34 unidades, con una ganancia neta de 24. Esa cuota implica una probabilidad aproximada del 29% (1 dividido entre 3,40). Comparar esa probabilidad implícita con tu propia estimación de igualdad es la base para decidir si la apuesta tiene sentido.",
+   "strategy": "La clave está en buscar valor: apostar al empate solo cuando creas que la probabilidad real es mayor que la que sugiere la cuota. Fíjate en la probabilidad implícita (1 dividido entre la cuota) y compárala con tu análisis del equilibrio entre los equipos. Un error habitual es apostar al empate en muchos partidos por la cuota atractiva, sin filtrar los encuentros realmente ajustados; esto diluye el criterio y aumenta la varianza. Prioriza duelos entre rivales parejos y con tendencia a marcadores cortos, según lo que indiquen las cuotas del mercado. Gestiona el bankroll con apuestas de tamaño moderado y constante, evitando perseguir pérdidas. Recuerda que el empate es menos frecuente que una victoria, así que conviene esperar rachas negativas sin desviarte del plan. Ninguna estrategia elimina el riesgo ni garantiza beneficios.",
+   "faq": [
+    {
+     "q": "¿Qué pasa con mi apuesta al empate si hay prórroga o penaltis?",
+     "a": "En el mercado 1X2 estándar, el empate se resuelve con el marcador al final del tiempo reglamentario, incluido el descuento. La prórroga y la tanda de penaltis no cuentan, salvo que la casa especifique lo contrario. Revisa siempre las reglas del mercado antes de apostar."
+    },
+    {
+     "q": "¿Por qué el empate suele tener cuotas más altas?",
+     "a": "El empate rara vez es el resultado más probable según el mercado, por eso las casas le asignan cuotas superiores a la mayoría de las victorias. Una cuota más alta significa una probabilidad implícita más baja. Esto puede ofrecer valor en partidos muy igualados, pero también implica que aciertas con menos frecuencia."
+    },
+    {
+     "q": "¿Es rentable apostar siempre al empate?",
+     "a": "No existe una estrategia rentable garantizada; apostar al empate de forma indiscriminada suele generar mucha varianza y pérdidas a largo plazo. La opción con más sentido es seleccionar encuentros equilibrados donde creas que la cuota infravalora la igualdad. Aun así, el resultado sigue siendo incierto y el riesgo forma parte de cualquier apuesta."
+    }
+   ],
+   "_kind": "tips",
+   "_model": "claude-opus-4-8",
+   "_hash": "906bf239c216812a",
+   "_generated_at": "2026-08-02T10:13:28+00:00",
+   "_usage": {
+    "in": 1129,
+    "out": 1403
+   }
+  },
+  "pt:tips:draw": {
+   "intro": "A aposta no empate é uma das opções mais diretas do mercado 1X2: você aposta que a partida terminará com placar igualado no tempo regulamentar. É um mercado que costuma atrair odds mais altas do que apostar em um dos favoritos, justamente porque o empate raramente é o resultado mais provável na visão do mercado. Esse tipo de aposta tende a agradar quem gosta de analisar confrontos equilibrados, jogos entre times de força parecida ou partidas de baixa expectativa de gols. Também interessa a apostadores mais pacientes, dispostos a lidar com uma taxa de acerto naturalmente menor em troca de retornos individuais maiores quando o palpite se confirma.",
+   "how_it_works": "Ao apostar no empate, seu palpite só vence se o jogo terminar igual no tempo normal, salvo indicação diferente do mercado. Prorrogação e pênaltis costumam não contar para o resultado 1X2. As odds refletem a probabilidade implícita que o mercado atribui ao empate. Por exemplo, digamos, de forma puramente hipotética, que o empate esteja cotado a 3.20. A probabilidade implícita é 1 dividido por 3.20, ou seja, cerca de 31%. Se você apostar 10 unidades a 3.20 e acertar, o retorno bruto é 10 x 3.20 = 32 unidades, sendo 22 de lucro. Se o jogo tiver um vencedor, você perde o valor apostado. Sempre confira nas regras da casa como o mercado trata acréscimos e situações específicas antes de confirmar o bilhete.",
+   "strategy": "A base de uma abordagem sensata é buscar valor: comparar a probabilidade que você estima para o empate com a probabilidade implícita nas odds. Se você acredita que a chance real é maior do que a cotação sugere, pode haver valor; caso contrário, é melhor passar. Empates tendem a aparecer com mais frequência em confrontos equilibrados e em jogos com poucas oportunidades esperadas de gol, então analisar o contexto do duelo ajuda. Um erro comum é perseguir odds altas sem critério, apostando no empate só porque paga bem. Outro é dobrar apostas após perdas para recuperar prejuízo. Defina um valor fixo por entrada, mantenha registros e aposte apenas o que pode perder sem comprometer suas finanças. Nenhuma estratégia elimina o risco, e a variância faz parte deste mercado.",
+   "faq": [
+    {
+     "q": "Vale a pena apostar no empate?",
+     "a": "Pode valer quando você identifica valor, ou seja, quando sua estimativa para a chance de empate é maior do que a probabilidade implícita na odd. Como o empate costuma ter cotações mais altas, a taxa de acerto tende a ser menor, o que exige paciência. Não existe garantia de lucro em nenhum mercado."
+    },
+    {
+     "q": "O empate na prorrogação conta na aposta no empate?",
+     "a": "Na maioria das casas, o mercado 1X2 considera apenas o tempo regulamentar, incluindo acréscimos, mas não a prorrogação nem os pênaltis. Isso significa que um jogo empatado no tempo normal costuma validar a aposta mesmo que haja vencedor na prorrogação. Confira sempre as regras específicas da casa antes de apostar."
+    },
+    {
+     "q": "Como saber quando um jogo tem mais chance de empate?",
+     "a": "Confrontos entre times de força parecida e partidas com baixa expectativa de gols tendem a ter probabilidade de empate mais alta. Uma forma prática de avaliar é olhar a probabilidade implícita da odd de empate e comparar com sua própria análise do equilíbrio do jogo. Ainda assim, o resultado é sempre incerto."
+    }
+   ],
+   "_kind": "tips",
+   "_model": "claude-opus-4-8",
+   "_hash": "4a235d125f919605",
+   "_generated_at": "2026-08-02T10:13:40+00:00",
+   "_usage": {
+    "in": 1122,
+    "out": 1319
+   }
+  },
+  "de:tips:draw": {
+   "intro": "Eine Wette auf das Unentschieden bedeutet, dass du darauf tippst, dass eine Partie mit einem Remis endet – keine Mannschaft gewinnt in der regulären Spielzeit. Dieser Markt ist Teil der klassischen Dreiwegwette (1X2), bei der das X für das Remis steht. Draw-Wetten eignen sich für Tipper, die ausgeglichene Begegnungen einschätzen können und Wert darin sehen, gegen den Favoriten oder auf enge Duelle zu setzen. Weil das Unentschieden statistisch seltener eintritt als ein Sieg einer der beiden Seiten, sind die Quoten hier oft höher. Das macht den Markt für geduldige, selektive Spieler interessant, die nicht bei jedem Spiel mitwetten, sondern gezielt Situationen suchen, in denen ein Remis realistisch erscheint.",
+   "how_it_works": "Bei der Unentschieden-Wette gewinnt dein Tipp nur, wenn die Partie in der regulären Spielzeit mit demselben Torstand für beide Teams endet, etwa 0:0, 1:1 oder 2:2. Verlängerung und Elfmeterschießen zählen bei dieser Wette in der Regel nicht mit, sofern nicht ausdrücklich anders angegeben. Ein einfaches, rein hypothetisches Beispiel: Angenommen, das Remis wird mit einer Quote von 3.40 angeboten. Setzt du 10 Einheiten und die Partie endet tatsächlich unentschieden, erhältst du 34 Einheiten zurück (10 × 3.40), also 24 Einheiten Gewinn. Endet das Spiel mit einem Sieg einer Mannschaft, verfällt der Einsatz. Aus der Quote 3.40 lässt sich zudem eine implizite Wahrscheinlichkeit ableiten: 1 geteilt durch 3.40 ergibt rund 29 Prozent, die der Markt dem Remis zuschreibt.",
+   "strategy": "Sinnvoll ist es, das Unentschieden dort zu suchen, wo zwei ähnlich starke Teams aufeinandertreffen oder wo defensive Spielweisen ein enges Ergebnis begünstigen könnten. Vergleiche die angebotene Quote stets mit deiner eigenen Einschätzung der Wahrscheinlichkeit: Nur wenn du das Remis für wahrscheinlicher hältst, als es die implizite Quote nahelegt, liegt aus deiner Sicht ein Value vor. Ein häufiger Fehler ist es, das Unentschieden pauschal in vielen Spielen zu tippen, nur weil die Quoten höher sind – das führt oft zu langen Verlustserien. Setze lieber selektiv und mit konstanten, überschaubaren Einheiten statt mit wechselnden Beträgen. Kläre vorab die Regeln des Anbieters zu Verlängerung und Wertung. Und behalte dein Budget im Blick: Wette nur mit Geld, dessen Verlust du verkraften kannst. Gewinne sind nie garantiert.",
+   "faq": [
+    {
+     "q": "Was bedeutet das X bei einer 1X2-Wette?",
+     "a": "Das X steht für das Unentschieden. Bei der 1X2-Wette tippst du entweder auf den Heimsieg (1), das Remis (X) oder den Auswärtssieg (2). Dein Tipp auf X gewinnt nur, wenn die Partie in der regulären Spielzeit unentschieden endet."
+    },
+    {
+     "q": "Zählt die Unentschieden-Wette auch bei Verlängerung?",
+     "a": "In den meisten Fällen bezieht sich die Draw-Wette ausschließlich auf die reguläre Spielzeit inklusive Nachspielzeit. Tore in der Verlängerung oder ein Elfmeterschießen werden normalerweise nicht gewertet. Prüfe aber immer die konkreten Regeln deines Wettanbieters, da es Ausnahmen geben kann."
+    },
+    {
+     "q": "Warum sind die Quoten auf ein Unentschieden oft höher?",
+     "a": "Ein Remis tritt statistisch seltener ein als der Sieg einer der beiden Mannschaften, weshalb der Markt ihm eine geringere Wahrscheinlichkeit zuweist. Diese niedrigere implizite Wahrscheinlichkeit spiegelt sich in einer höheren Quote wider. Höhere Quoten bedeuten allerdings nicht automatisch mehr Wert, sondern nur ein selteneres Ereignis."
+    }
+   ],
+   "_kind": "tips",
+   "_model": "claude-opus-4-8",
+   "_hash": "26b12efc20f0ee39",
+   "_generated_at": "2026-08-02T10:13:47+00:00",
+   "_usage": {
+    "in": 1113,
+    "out": 1635
    }
   }
  }

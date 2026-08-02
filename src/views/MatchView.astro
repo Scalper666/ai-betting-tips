@@ -1,0 +1,465 @@
+---
+import Base from '../layouts/Base.astro';
+import predictions from '../data/predictions.json';
+import historyData from '../data/history.json';
+import screener from '../data/screener.json';
+import content from '../data/content.json';
+import { matchSlug, abbr, badgeColor, kickoffLabel, confidenceLabel, slugify, faqSchema } from '../lib/utils.js';
+import { teamForm, h2hBetween, leagueTable, resolveTeam } from '../lib/form.js';
+import { t, localizeMarket } from '../i18n/index.js';
+import TeamMark from '../components/TeamMark.astro';
+
+// ── Programmatic SEO view (paths come from lib/matchPages.js): live and
+//    archived fixtures share this template in every site language.
+const { tip, archive, lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
+const dloc = { en: 'en-GB', es: 'es-ES', pt: 'pt-BR', de: 'de-DE' }[lang] ?? 'en-GB';
+const isLive = !!tip;
+const latest = archive[0] ?? null;
+
+// unified view-model (live tip shape wins; archive entries carry our published bet)
+const home = tip?.home ?? latest?.home;
+const away = tip?.away ?? latest?.away;
+const league = tip?.league ?? latest?.league ?? 'Football';
+const kickoffIso = tip?.kickoff ?? latest?.kickoff;
+const rec = tip?.recommendation ?? {
+  text: latest?.market, price: latest?.odds, bookmaker: latest?.bookmaker,
+  confidence: latest?.confidence, edge_pct: latest?.edge_pct,
+};
+const recText = localizeMarket(lang, rec.text);
+const conf = Number(rec.confidence ?? 60);
+const { label, cls } = confidenceLabel(conf);
+const kickoff = kickoffLabel(kickoffIso, lang);
+const kickedDate = kickoffIso
+  ? new Date(kickoffIso).toLocaleDateString(dloc, { day: 'numeric', month: 'short', year: 'numeric' })
+  : '';
+
+// settlement state (archive mode)
+const settledStates = ['won', 'lost', 'void'];
+const settled = !isLive && latest && settledStates.includes(latest.status);
+// a fixture can leave the feed BEFORE it is played (league rotation) — don't say "kicked off"
+const played = kickoffIso ? new Date(kickoffIso).getTime() < Date.now() : true;
+const resultScore = settled && latest.score && latest.score !== 'simulated' ? latest.score : null;
+const resWord = { won: 'Won', lost: 'Lost', void: 'Void' }[latest?.status] ?? 'Pending';
+const resCls = { won: 'w', lost: 'l', void: 'v' }[latest?.status] ?? 'v';
+const profit = Number(latest?.profit ?? 0);
+
+// our full settled record on this fixture (shown in both modes)
+const record = archive.filter((h) => settledStates.includes(h.status) && (isLive || h !== latest));
+
+// league pages exist only for leagues in the current feed — don't emit dead links
+const liveLeagues = new Set((predictions.tips ?? []).map((t) => slugify(t.league)));
+const leagueHref = liveLeagues.has(slugify(league)) ? `/league/${slugify(league)}` : '/predictions';
+
+// match essays are EN-only (daily volume) — other languages get the
+// localized template copy instead
+const ai = lang === 'en' ? (content.entries ?? {})[`match:${matchSlug({ home, away })}`] : null;
+
+const title = isLive
+  ? F('mp.titleLive', { home, away })
+  : F('mp.titleRes', { home, away, score: resultScore ? ` (${resultScore})` : '' });
+const description = isLive
+  ? F('mp.descLive', { home, away, league, tip: recText, price: Number(rec.price ?? 0).toFixed(2) })
+  : F('mp.descRes', { home, away, league, tip: recText, price: Number(rec.price ?? 0).toFixed(2),
+      result: resWord.toLowerCase() + (resultScore ? ` ${resultScore}` : '') });
+
+const bestOdds = Object.entries(tip?.best_h2h ?? {});
+
+// additional model-scored markets for this fixture (from the screener feed)
+const extraPicks = isLive
+  ? (screener.rows ?? []).filter((r) => r.home === home && r.away === away && r.market !== rec.text)
+      .sort((a, b) => (b.score ?? 0) - (a.score ?? 0))
+  : [];
+
+// form / H2H / standings from football-data.org + our own results archive
+const sportKey = tip?.sport_key ?? latest?.sport_key ?? '';
+const formHome = teamForm(sportKey, home);
+const formAway = teamForm(sportKey, away);
+const h2h = h2hBetween(sportKey, home, away);
+const table = leagueTable(sportKey);
+const hlNames = new Set([resolveTeam(sportKey, home), resolveTeam(sportKey, away)].filter(Boolean));
+const shortDate = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString(dloc, { day: 'numeric', month: 'short', year: '2-digit', timeZone: 'UTC' });
+const resCls2 = { W: 'w', L: 'l', D: 'v' };
+
+// other fixtures from the live feed in the same league (mightytips-style widget)
+const upcoming = (predictions.tips ?? [])
+  .filter((t2) => t2.league === league && matchSlug(t2) !== slugify(`${home}-vs-${away}`))
+  .sort((a, b) => String(a.kickoff).localeCompare(String(b.kickoff)))
+  .slice(0, 8);
+const upLabel = (iso) => (iso ? new Date(iso).toLocaleDateString(dloc, { day: 'numeric', month: 'short', timeZone: 'UTC' }) + ' ' + new Date(iso).toISOString().slice(11, 16) : '');
+const px = (t2, k) => { const p = t2.best_h2h?.[k]?.price; return p ? Number(p).toFixed(2) : '—'; };
+
+const eventSchema = {
+  '@type': 'SportsEvent',
+  name: `${home} vs ${away}`,
+  startDate: kickoffIso,
+  sport: 'Football',
+  eventStatus: isLive ? 'https://schema.org/EventScheduled' : 'https://schema.org/EventCompleted',
+  competitor: [
+    { '@type': 'SportsTeam', name: home },
+    { '@type': 'SportsTeam', name: away },
+  ],
+  superEvent: { '@type': 'SportsOrganization', name: league },
+};
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [eventSchema, ...(ai?.faq?.length ? [faqSchema(ai.faq)] : [])],
+};
+---
+<Base lang={lang} i18nPath={`/predictions/${Astro.params.slug}`} title={title} description={description} schema={schema} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href="/">{T('crumb.home')}</a><span>/</span>
+        <a href="/predictions">{T('nav.predictions')}</a><span>/</span>
+        <a href={leagueHref}>{league}</a><span>/</span>
+        {home} vs {away}
+      </div>
+      <h1>{home} vs {away} <em>{settled ? T('mp.h1Res') : T('mp.h1Pred')}</em></h1>
+      <p class="lead">
+        {isLive
+          ? F('mp.leadLive', { league, kick: kickoff })
+          : settled
+            ? F('mp.leadSettled', { league, date: kickedDate })
+            : played
+              ? F('mp.leadAwait', { league, date: kickedDate })
+              : F('mp.leadUnplayed', { league, date: kickedDate })}
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+
+        <!-- Match + our tip -->
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{T('mp.secOur')} <b>{isLive ? T('mp.secOurPred') : T('mp.secOurTip')}</b></h2></div>
+          <article class="pred">
+            <div class="pred-top">
+              <span class="pred-league"><span class="lg-logo">{tip?.sport_icon ?? '⚽'}</span> {league}</span>
+              <span class="pred-when">🕒 {isLive ? kickoff : (played ? kickedDate : `${T('mp.kickPrefix')} ${kickedDate}`)}</span>
+            </div>
+            <div class="pred-body">
+              <div class="match">
+                <a class="team" href={`/team/${slugify(home)}`}>
+                  <TeamMark team={home} sportKey={sportKey} cls="badge" />
+                  <div class="nm">{home}</div>
+                </a>
+                <div class="vs">{resultScore ?? 'VS'}</div>
+                <a class="team" href={`/team/${slugify(away)}`}>
+                  <TeamMark team={away} sportKey={sportKey} cls="badge" />
+                  <div class="nm">{away}</div>
+                </a>
+              </div>
+              <div class="pred-tip">
+                <div><div class="lbl">{isLive && !rec.official ? T('mp.modelLean') : T('card.ourTip')}</div><div class="val">{recText}</div></div>
+                <div class="odd-box"><div class="ot">{T('card.odds')}</div><div class="ov">{Number(rec.price ?? 0).toFixed(2)}</div></div>
+              </div>
+              {isLive && (rec.official ? (
+                <div class="pk-flag ofc">{T('mp.flagOfficial')}{rec.basis === 'model+market' ? T('mp.flagModel') : ''}</div>
+              ) : (
+                <div class="pk-flag lean">{T('mp.flagLean')}</div>
+              ))}
+              {isLive ? (
+                <div class="confidence">
+                  <div class="cf-top"><span>{T('card.confidence')}</span><span class="pc">{T(`conf.${label}`)} · {conf}%</span></div>
+                  <div class={`bar ${cls}`.trim()} data-val={conf}><i></i></div>
+                </div>
+              ) : (
+                <div class="res-sum" style="margin:14px 0 0">
+                  <div class={`res-chip ${latest?.status === 'won' ? 'win' : latest?.status === 'lost' ? 'lose' : ''}`}>
+                    <b>{resWord}</b><span>{T('mp.result')}</span>
+                  </div>
+                  {resultScore && <div class="res-chip"><b>{resultScore}</b><span>{T('mp.finalScore')}</span></div>}
+                  {settled && (
+                    <div class={`res-chip ${profit > 0 ? 'win' : profit < 0 ? 'lose' : ''}`}>
+                      <b>{profit > 0 ? '+' : ''}{profit.toFixed(2)}u</b><span>{T('home.res.profit')}</span>
+                    </div>
+                  )}
+                  <div class="res-chip"><b>{conf}%</b><span>{T('mp.preConf')}</span></div>
+                </div>
+              )}
+            </div>
+            <div class="pred-foot">
+              <div class="by"><span class="ava">AI</span>
+                {isLive
+                  ? F('mp.footLive', { edge: rec.edge_pct ?? 0, bk: rec.bookmaker ?? '—' })
+                  : settled
+                    ? F('mp.footSettled', { bk: rec.bookmaker ?? '—' })
+                    : played
+                      ? T('mp.footAwait')
+                      : T('mp.footUnplayed')}
+              </div>
+              {isLive
+                ? <a href="#" class="btn btn-mint btn-sm">{F('mp.betAt', { bk: rec.bookmaker ?? '—' })}</a>
+                : <a href="/predictions" class="btn btn-outline btn-sm">{T('mp.todaysPreds')}</a>}
+            </div>
+          </article>
+        </section>
+
+        <!-- Key factors behind the tip (AI, market-grounded) -->
+        {ai?.key_factors?.length > 0 && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">{T('mp.kfPre')} <b>{T('mp.kfBold')}</b></h2></div>
+            <div class="rsn-grid">
+              {ai.key_factors.map((f, i) => (
+                <div class="rsn"><div class="rn">{String(i + 1).padStart(2, '0')}</div><p>{f}</p></div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- Additional model-scored markets for this fixture -->
+        {extraPicks.length > 0 && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">{T('mp.addPre')} <b>{T('mp.addBold')}</b></h2></div>
+            <div class="odds-table"><div class="scr-scroll">
+              <table class="otbl">
+                <thead><tr><th style="text-align:left">{T('mp.thMarket')}</th><th>{T('card.odds')}</th><th>{T('mp.thValueEdge')}</th><th>{T('card.confidence')}</th><th>{T('mp.thAiScore')}</th></tr></thead>
+                <tbody>
+                  {extraPicks.map((r) => (
+                    <tr>
+                      <td class="o-match" style="font-weight:700">{localizeMarket(lang, r.market)}</td>
+                      <td class="o-cell hot"><span class="cb">{Number(r.odds ?? 0).toFixed(2)}</span></td>
+                      <td class="o-cell"><span class="cb">{(r.edge ?? 0) > 0 ? '+' : ''}{Number(r.edge ?? 0).toFixed(1)}%</span></td>
+                      <td class="o-cell"><span class="cb">{r.confidence}%</span></td>
+                      <td class="o-cell"><span class="cb">{r.score}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div></div>
+            <p class="res-note">{T('mp.addNote')}</p>
+          </section>
+        )}
+
+        <!-- Team form: last 5 completed games per side -->
+        {(formHome.length > 0 || formAway.length > 0) && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">{T('mp.formPre')}<b>{T('mp.formBold')}</b></h2></div>
+            <div class="form-grid">
+              {[{ name: home, list: formHome }, { name: away, list: formAway }].map((side) => (
+                <div class="box">
+                  <div class="box-h">
+                    <span class="hi" style={`background:${badgeColor(side.name)};color:#fff;font-size:10px;font-weight:800`}>{abbr(side.name)}</span>
+                    {side.name}
+                    <span class="fm-letters">
+                      {side.list.map((g) => <i class={`fm-l ${resCls2[g.res]}`}>{g.res}</i>)}
+                    </span>
+                  </div>
+                  {side.list.length ? side.list.map((g) => (
+                    <div class="fm-row">
+                      <span class="fm-d">{shortDate(g.d)}</span>
+                      <span class="fm-o">{g.ha === 'H' ? 'vs' : '@'} {g.opp}</span>
+                      <span class={`fm-s ${resCls2[g.res]}`}>{g.score}</span>
+                    </div>
+                  )) : (
+                    <div class="box-pad dim" style="font-size:12.5px">{T('mp.noGames')}</div>
+                  )}
+                </div>
+              ))}
+            </div>
+            {formHome.length + formAway.length > 0 && formHome.length < 5 && formAway.length < 5 && (
+              <p class="res-note">{T('mp.formNote')}</p>
+            )}
+          </section>
+        )}
+
+        <!-- Head-to-head from the results dataset -->
+        {h2h.length > 0 && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">{T('mp.h2hPre')} <b>{home} v {away}</b></h2></div>
+            <div class="res-list">
+              {h2h.map((g) => (
+                <div class="res-row">
+                  <span class={`res-mark ${resCls2[g.res]}`}>{g.res}</span>
+                  <span class="res-date">{shortDate(g.d)}</span>
+                  <div class="res-match"><b>{g.home} {g.score} {g.away}</b><span>{league}</span></div>
+                  <span class="res-odds" style="visibility:hidden"></span>
+                  <span class="res-profit zero"></span>
+                </div>
+              ))}
+            </div>
+            <p class="res-note">{F('mp.h2hNote', { home })}</p>
+          </section>
+        )}
+
+        <!-- Odds comparison (live fixtures only) -->
+        {bestOdds.length > 0 && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">{T('mp.oddsPre')} <b>{T('mp.oddsBold')}</b> {T('mp.oddsPost')}</h2></div>
+            <div class="odds-table"><div class="scr-scroll">
+              <table class="otbl">
+                <thead><tr><th style="text-align:left">{T('mp.thOutcome')}</th><th>{T('mp.thBestPrice')}</th><th>{T('mp.thBookmaker')}</th><th>{T('mp.thImplied')}</th></tr></thead>
+                <tbody>
+                  {bestOdds.map(([name, info]) => (
+                    <tr>
+                      <td class="o-match" style="font-weight:700">{localizeMarket(lang, name === home || name === away ? name : name)}</td>
+                      <td class="o-cell hot"><span class="cb">{Number(info.price).toFixed(2)}</span></td>
+                      <td class="o-cell"><span>{info.bookmaker}</span></td>
+                      <td class="o-cell"><span class="cb">{(100 / Number(info.price)).toFixed(1)}%</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div></div>
+          </section>
+        )}
+
+        <!-- Unique AI-written preview per match (written pre-match; kept in the archive) -->
+        <section class="seo">
+          <h2>{home} vs {away}: {isLive ? T('mp.previewLive') : T('mp.previewRes')}</h2>
+          {ai ? (
+            <>
+              <p>{ai.intro}</p>
+              <p><b>Verdict:</b> {ai.verdict}</p>
+            </>
+          ) : (
+            <p>{F('mp.fallback', {
+              makes: isLive ? T('mp.makesLive') : T('mp.makesRes'),
+              tip: recText, league, price: Number(rec.price ?? 0).toFixed(2),
+              bk: rec.bookmaker ?? '—',
+              tail: isLive ? F('mp.fallbackTail', { edge: rec.edge_pct ?? 0, conf }) : '.',
+            })}</p>
+          )}
+          {!isLive && settled && (
+            <p>{F('mp.settledP', {
+              word: T(`mp.settledWord.${latest.status === 'won' ? 'won' : latest.status === 'lost' ? 'lost' : 'void'}`),
+              scorePart: resultScore ? F('mp.scorePart', { score: resultScore }) : '',
+              profit: (profit > 0 ? '+' : '') + profit.toFixed(2),
+            })}</p>
+          )}
+        </section>
+
+        <!-- Our settled record on this fixture -->
+        {record.length > 0 && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">{T('mp.recPre')} <b>{T('mp.recBold')}</b> {T('mp.recPost')}</h2></div>
+            <div class="res-list">
+              {record.map((h) => (
+                <div class="res-row">
+                  <span class={`res-mark ${h.status === 'won' ? 'w' : h.status === 'lost' ? 'l' : 'v'}`}>{h.status === 'won' ? 'W' : h.status === 'lost' ? 'L' : 'V'}</span>
+                  <span class="res-date">{h.kickoff ? new Date(h.kickoff).toLocaleDateString(dloc, { day: 'numeric', month: 'short', year: '2-digit' }) : ''}</span>
+                  <div class="res-match"><b>{localizeMarket(lang, h.market)}</b><span>{h.score && h.score !== 'simulated' ? F('mp.finalScoreLow', { score: h.score }) : h.league}</span></div>
+                  <span class="res-odds">{Number(h.odds ?? 0).toFixed(2)}</span>
+                  <span class={`res-profit ${(h.profit ?? 0) > 0 ? 'pos' : (h.profit ?? 0) < 0 ? 'neg' : 'zero'}`}>{(h.profit ?? 0) > 0 ? '+' : ''}{Number(h.profit ?? 0).toFixed(2)}u</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        <!-- Other fixtures in this league from the live feed -->
+        {upcoming.length > 0 && (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">{T('mp.upPre')} <b>{F('mp.upBold', { league })}</b></h2>
+              <a href={leagueHref} class="more-link">{F('mp.allLeagueTips', { league })}</a>
+            </div>
+            <div class="odds-table"><div class="scr-scroll">
+              <table class="otbl">
+                <thead><tr><th style="text-align:left">{T('mp.thKickUtc')}</th><th style="text-align:left">{T('home.scr.match')}</th><th>1</th><th>X</th><th>2</th></tr></thead>
+                <tbody>
+                  {upcoming.map((t2) => (
+                    <tr>
+                      <td class="o-cell" style="white-space:nowrap"><span>{upLabel(t2.kickoff)}</span></td>
+                      <td class="o-match" style="font-weight:700"><a href={`/predictions/${matchSlug(t2)}`} style="color:inherit;text-decoration:none">{t2.home} v {t2.away}</a></td>
+                      <td class="o-cell"><span class="cb">{px(t2, t2.home)}</span></td>
+                      <td class="o-cell"><span class="cb">{px(t2, 'Draw')}</span></td>
+                      <td class="o-cell"><span class="cb">{px(t2, t2.away)}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div></div>
+            <p class="res-note">{T('mp.upNote')}</p>
+          </section>
+        )}
+
+        <!-- League table (once the season has rounds played) -->
+        {table && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">{table.name} <b>{T('mp.standings')}</b></h2></div>
+            <div class="odds-table"><div class="scr-scroll">
+              <table class="otbl">
+                <thead><tr><th>#</th><th style="text-align:left">{T('mp.thTeam')}</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead>
+                <tbody>
+                  {table.rows.map((r) => (
+                    <tr class={hlNames.has(r.team) ? 'hl' : ''}>
+                      <td class="o-cell"><span>{r.pos}</span></td>
+                      <td class="o-match" style="font-weight:700">{r.team}</td>
+                      <td class="o-cell"><span>{r.p}</span></td>
+                      <td class="o-cell"><span>{r.w}</span></td>
+                      <td class="o-cell"><span>{r.d}</span></td>
+                      <td class="o-cell"><span>{r.l}</span></td>
+                      <td class="o-cell"><span>{r.gd > 0 ? `+${r.gd}` : r.gd}</span></td>
+                      <td class="o-cell hot"><span class="cb">{r.pts}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div></div>
+            <p class="res-note">{T('mp.stdNote')}</p>
+          </section>
+        )}
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{T('mp.faqPre')} <b>{T('mp.faqBold')}</b></h2></div>
+          <div class="faq">
+            <div class="faq-item open">
+              <div class="faq-q">{F(isLive ? 'mp.q1Live' : 'mp.q1Res', { home, away })}<span class="pm">+</span></div>
+              <div class="faq-a"><p>{F('mp.a1', { is: isLive ? T('mp.isLive') : T('mp.isRes'), tip: recText, price: Number(rec.price ?? 0).toFixed(2), confPart: isLive ? F('mp.confPart', { conf }) : '.' })}</p></div>
+            </div>
+            {(ai?.faq ?? []).map((f) => (
+              <div class="faq-item">
+                <div class="faq-q">{f.q}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{f.a}</p></div>
+              </div>
+            ))}
+            {isLive ? (
+              <div class="faq-item">
+                <div class="faq-q">{T('mp.q2')}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{F('mp.a2', { home, away, kick: kickoff, league })}</p></div>
+              </div>
+            ) : (
+              <div class="faq-item">
+                <div class="faq-q">{T('mp.q3')}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{settled
+                  ? F('mp.a3Settled', {
+                      word: T(`mp.faqWord.${latest.status === 'won' ? 'won' : latest.status === 'lost' ? 'lost' : 'void'}`),
+                      scorePart: resultScore ? ` — ${F('mp.finalScoreLow', { score: resultScore })}` : '',
+                      profit: (profit > 0 ? '+' : '') + profit.toFixed(2),
+                    })
+                  : T('mp.a3Pending')}</p></div>
+              </div>
+            )}
+          </div>
+        </section>
+
+      </main>
+
+      <aside class="sidebar">
+        {isLive ? (
+          <div class="promo">
+            <h4>{T('mp.promoBest')}</h4>
+            <p>{recText} @ {Number(rec.price ?? 0).toFixed(2)} · {rec.bookmaker ?? '—'}.</p>
+            <a href="#" class="btn btn-mint btn-block">{T('mp.betNow')}</a>
+          </div>
+        ) : (
+          <div class="promo">
+            <h4>{T('mp.promoSettledH')}</h4>
+            <p>{T('mp.promoSettledP')}</p>
+            <a href="/screener" class="btn btn-mint btn-block">{T('mp.openScr')}</a>
+          </div>
+        )}
+        <div class="box">
+          <div class="box-h"><span class="hi">⚡</span> {F('mp.moreLeague', { league })}</div>
+          <a class="tm" href={leagueHref}><span class="dot"></span>{F('mp.allTips2', { league })}</a>
+          <a class="tm" href="/predictions"><span class="dot"></span>{T('mp.todayTips')}</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

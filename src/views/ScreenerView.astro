@@ -83,7 +83,7 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
                 <td class={`num edge ${r.edge > 0 ? 'pos' : 'neg'}`}>{r.edge > 0 ? '+' : ''}{r.edge}%</td>
                 <td class="num">{r.confidence}%</td>
                 <td><span class={(steamHtml[r.steam] ?? steamHtml.flat)[0]}>{T((steamHtml[r.steam] ?? steamHtml.flat)[1])}</span></td>
-                <td class="scr-when">{kickoffLabel(r.kickoff)}</td>
+                <td class="scr-when">{kickoffLabel(r.kickoff, lang)}</td>
                 <td><a href="#" class="btn btn-mint btn-sm">{T('scr.bet')}</a></td>
               </tr>
             ))}

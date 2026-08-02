@@ -282,7 +282,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
                   <span class="acca-ic">{r.icon}</span>
                   <div class="acca-m">
                     <b>{r.home} — {r.away}</b>
-                    <span>{r.league} · {kickoffLabel(r.kickoff)}</span>
+                    <span>{r.league} · {kickoffLabel(r.kickoff, lang)}</span>
                   </div>
                   <span class="acca-pick">{localizeMarket(lang, r.market)}</span>
                   <span class="acca-odds">{Number(r.odds).toFixed(2)}</span>
@@ -450,7 +450,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
                       <span class="cv-x">v</span>
                       <TeamMark team={t.away} sportKey={t.sport_key} />
                     </div>
-                    <span class="tag">{t.league}</span><span class="when">{kickoffLabel(t.kickoff)}</span>
+                    <span class="tag">{t.league}</span><span class="when">{kickoffLabel(t.kickoff, lang)}</span>
                   </div>
                   <div class="news-body">
                     <h4><a href={`/predictions/${matchSlug(t)}`}>{t.home} vs {t.away}: {T('home.news.pred')}</a></h4>

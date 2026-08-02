@@ -1,0 +1,110 @@
+---
+import Base from '../layouts/Base.astro';
+import PredCard from '../components/PredCard.astro';
+import predictions from '../data/predictions.json';
+import content from '../data/content.json';
+import { slugify, faqSchema } from '../lib/utils.js';
+import { t } from '../i18n/index.js';
+
+// One SEO page per bet type — same pattern as leagues and matches.
+import { BET_TYPES } from '../lib/betTypes.js';
+
+const { type, lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
+const tname = T(`btype.${type.slug}.name`);
+const tlong = T(`btype.${type.slug}.long`);
+const ai = (content.entries ?? {})[lang === 'en' ? `tips:${type.slug}` : `${lang}:tips:${type.slug}`];
+const schema = ai?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(ai.faq) } : null;
+const tips = (predictions.tips ?? []).filter((t) => String(t.sport_key ?? '').startsWith('soccer')).slice(0, 6);
+const leagues = [...new Set(tips.map((t) => t.league))];
+---
+<Base lang={lang} i18nPath={`/tips/${type.slug}`}
+  title={F('tt.title', { name: tname })}
+  description={F('tt.desc', { name: tname.toLowerCase() })}
+  schema={schema}
+  active="predictions">
+
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">{T('crumb.home')}</a><span>/</span><a href="/predictions">{T('nav.predictions')}</a><span>/</span>{tname}</div>
+      <h1>{type.emoji} {tname}</h1>
+      <p class="lead">{F('tt.lead', { name: tname.toLowerCase(), long: tlong })}</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="chips">
+            <span class="chip active">{T('tt.allLeagues')}</span>
+            {leagues.map((lg) => <a class="chip" href={`/league/${slugify(lg)}`}>🏆 {lg}</a>)}
+          </div>
+          <div class="pred-grid">
+            {tips.map((tip) => <PredCard tip={tip} lang={lang} />)}
+          </div>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{tname} <b>FAQ</b></h2></div>
+          <div class="faq">
+            <div class="faq-item open">
+              <div class="faq-q">{F('tt.q1', { name: tname.toLowerCase() })}<span class="pm">+</span></div>
+              <div class="faq-a"><p>{F('tt.a1', { long: tlong })}</p></div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">{T('tt.q2')}<span class="pm">+</span></div>
+              <div class="faq-a"><p>{T('tt.a2')}</p></div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">{T('tt.q3')}<span class="pm">+</span></div>
+              <div class="faq-a"><p>{T('tt.a3')}</p></div>
+            </div>
+            {(ai?.faq ?? []).map((f) => (
+              <div class="faq-item">
+                <div class="faq-q">{f.q}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{f.a}</p></div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section class="seo">
+          <h2>{F('tt.explained', { name: tname })}</h2>
+          <div class="clamp" id="seoClamp">
+            {ai ? (
+              <>
+                <p>{ai.intro}</p>
+                <h3 style="margin:18px 0 8px">{T('tt.how')}</h3>
+                <p>{ai.how_it_works}</p>
+                <h3 style="margin:18px 0 8px">{T('tt.strategy')}</h3>
+                <p>{ai.strategy}</p>
+              </>
+            ) : (
+              <>
+                <p>{F('tt.fb1', { name: tname.toLowerCase() })}</p>
+                <p>{T('tt.fb2')}</p>
+              </>
+            )}
+          </div>
+          <span class="read-more" data-clamp-toggle="seoClamp">{T('home.seo.more')}</span>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>🔍 {T('nav.screener')}</h4>
+          <p>{T('tt.promoP')}</p>
+          <a href="/screener" class="btn btn-mint btn-block">{T('tt.openScr')}</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">⚡</span> {T('tt.moreTypes')}</div>
+          {BET_TYPES.filter((bt) => bt.slug !== type.slug).map((bt) => (
+            <a class="tm" href={`/tips/${bt.slug}`}><span class="dot"></span>{bt.emoji} {T(`btype.${bt.slug}.name`)}</a>
+          ))}
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>
