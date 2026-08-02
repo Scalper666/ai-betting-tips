@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { t, localizeMarket, trLabel } from '../i18n/index.js';
+import { t, localizeMarket, trLabel, lhref } from '../i18n/index.js';
 import content from '../data/content.json';
 import AiFaq from '../components/AiFaq.astro';
 import screener from '../data/screener.json';
@@ -8,6 +8,7 @@ import { kickoffLabel, faqSchema } from '../lib/utils.js';
 
 const { lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
 
 const rows = [...(screener.rows ?? [])].sort((a, b) => b.score - a.score);
 const sports = [...new Set(rows.map((r) => r.sport))].sort();
@@ -26,7 +27,7 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
 
   <div class="container">
     <div class="page-head">
-      <div class="crumbs"><a href="/">{T('crumb.home')}</a><span>/</span><a href="/predictions">{T('nav.predictions')}</a><span>/</span>{T('nav.screener')}</div>
+      <div class="crumbs"><a href={L('/')}>{T('crumb.home')}</a><span>/</span><a href={L('/predictions')}>{T('nav.predictions')}</a><span>/</span>{T('nav.screener')}</div>
       <h1>{T('scr.h1pre')} <em>{T('scr.h1em')}</em></h1>
       <p class="lead">{T('scr.lead')}</p>
     </div>
@@ -40,7 +41,7 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
         <span>{T('scr.updated')} <b id="scrUpdated" data-updated={screener.updated_at}>—</b></span>
         <span class="scr-count"><b id="scrCount">{rows.length}</b> {T('scr.valueBets')}</span>
       </div>
-      <a href="/predictions" class="more-link">{T('scr.detailed')}</a>
+      <a href={L('/predictions')} class="more-link">{T('scr.detailed')}</a>
     </div>
 
     <div class="scr-filters" id="scrFilters">

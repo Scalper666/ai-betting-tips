@@ -1,13 +1,14 @@
 ---
 import { abbr, badgeColor, confidenceLabel, kickoffLabel, matchSlug, slugify } from '../lib/utils.js';
-import { t, localizeMarket } from '../i18n/index.js';
+import { t, localizeMarket, lhref } from '../i18n/index.js';
 
 const { tip, lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
 const rec = tip.recommendation ?? {};
 const conf = Number(rec.confidence ?? 60);
 const { label, cls } = confidenceLabel(conf);
-const href = `/predictions/${matchSlug(tip)}`;
+const href = lhref(lang, `/predictions/${matchSlug(tip)}`);
 ---
 <article class="pred" data-cat={slugify(tip.league)} data-kickoff={tip.kickoff ?? ''}>
   <div class="pred-top">

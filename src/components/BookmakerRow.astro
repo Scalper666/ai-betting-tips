@@ -1,9 +1,10 @@
 ---
 import { avgScore } from '../lib/utils.js';
-import { t } from '../i18n/index.js';
+import { t, lhref } from '../i18n/index.js';
 
 const { bk, rank, lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
 const avg = avgScore(bk.scores);
 const featured = rank === 1;
 ---
@@ -38,6 +39,6 @@ const featured = rank === 1;
 
   <div class="bk-actions">
     <a href={bk.affiliate_url} class="btn btn-mint btn-sm" rel="nofollow sponsored" target="_blank">{T('bk.getBonus')}</a>
-    <a href={`/bookmakers/${bk.slug}`} class="review">{T('bk.readReview')}</a>
+    <a href={L(`/bookmakers/${bk.slug}`)} class="review">{T('bk.readReview')}</a>
   </div>
 </article>

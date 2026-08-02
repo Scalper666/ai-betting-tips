@@ -1,9 +1,10 @@
 ---
 import { avgScore } from '../lib/utils.js';
-import { t } from '../i18n/index.js';
+import { t, lhref } from '../i18n/index.js';
 
 const { casino: c, rank, lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
 const avg = avgScore(c.scores);
 const featured = rank === 1;
 const bonusLabel = c.bonus.type === 'no-deposit' ? T('row.noDeposit') : T('row.welcomePkg');
@@ -39,6 +40,6 @@ const bonusLabel = c.bonus.type === 'no-deposit' ? T('row.noDeposit') : T('row.w
 
   <div class="bk-actions">
     <a href={c.affiliate_url} class="btn btn-mint btn-sm" rel="nofollow sponsored" target="_blank">{T('bk.getBonus')}</a>
-    <a href={`/casinos/${c.slug}`} class="review">{T('bk.readReview')}</a>
+    <a href={L(`/casinos/${c.slug}`)} class="review">{T('bk.readReview')}</a>
   </div>
 </article>

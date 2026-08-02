@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { t, localizeMarket, trLabel } from '../i18n/index.js';
+import { t, localizeMarket, trLabel, lhref } from '../i18n/index.js';
 import content from '../data/content.json';
 import AiFaq from '../components/AiFaq.astro';
 import { faqSchema } from '../lib/utils.js';
@@ -9,6 +9,7 @@ import predictions from '../data/predictions.json';
 
 const { lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
 
 const tips = predictions.tips ?? [];
 
@@ -22,7 +23,7 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
 
   <div class="container">
     <div class="page-head">
-      <div class="crumbs"><a href="/">{T('crumb.home')}</a><span>/</span>{T('nav.predictions')}</div>
+      <div class="crumbs"><a href={L('/')}>{T('crumb.home')}</a><span>/</span>{T('nav.predictions')}</div>
       <h1>{T('pd.h1pre')} <em>{T('pd.h1em')}</em> {T('pd.h1post')}</h1>
       <p class="lead">{T('pd.lead').replace('{n}', String(tips.length))}</p>
     </div>
@@ -51,9 +52,9 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
         </div>
         <div class="box">
           <div class="box-h"><span class="hi">📅</span> {T('common.browse')}</div>
-          <a class="tm" href="/predictions/daily"><span class="dot"></span>{T('pd.archive')}</a>
-          <a class="tm" href="/teams"><span class="dot"></span>{T('ft.teamsAZ')}</a>
-          <a class="tm" href="/tipsters"><span class="dot"></span>{T('pd.records')}</a>
+          <a class="tm" href={L('/predictions/daily')}><span class="dot"></span>{T('pd.archive')}</a>
+          <a class="tm" href={L('/teams')}><span class="dot"></span>{T('ft.teamsAZ')}</a>
+          <a class="tm" href={L('/tipsters')}><span class="dot"></span>{T('pd.records')}</a>
         </div>
       </aside>
     </div>

@@ -7,8 +7,9 @@ import { signed } from '../lib/utils.js';
 
 // v2Only: count only picks published under the selective v2 rules (own Poisson
 // model blended with the market, value gates) — the era marked h.model === 'v2'.
+import { t as _t, lhref } from '../i18n/index.js';
 const { limit = 3, v2Only = false, lang = 'en' } = Astro.props;
-import { t as _t } from '../i18n/index.js';
+const L = (pth) => lhref(lang, pth);
 const TT = (k) => _t(lang, k);
 
 const TRACKS = [
@@ -57,7 +58,7 @@ const tracks = TRACKS.map((t) => {
       {t.settled < 20 && (
         <div class="role" style="margin-top:6px;color:var(--gold)">⏳ early sample — {t.published} tips published so far</div>
       )}
-      <a href={t.href} class={`btn ${i === 0 ? 'btn-mint' : 'btn-outline'} btn-sm btn-block`} style="margin-top:10px">See the picks →</a>
+      <a href={L(t.href)} class={`btn ${i === 0 ? 'btn-mint' : 'btn-outline'} btn-sm btn-block`} style="margin-top:10px">See the picks →</a>
     </article>
   ))}
 </div>

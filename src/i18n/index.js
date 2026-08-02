@@ -14,6 +14,29 @@ export const LOCALES = {
 export const ALT_LANGS = ['es', 'pt', 'de', 'fr'];
 export const homePath = (lang) => (lang === 'en' ? '/' : `/${lang}/`);
 
+// Internal links from localized pages: prefix with /{lang} when the target
+// page type has [lang] routes; anything untranslated links to the EN page
+// (never a 404). Keep this list in sync with src/pages/[lang]/.
+const I18N_PATHS = [
+  /^\/$/,
+  /^\/predictions$/,
+  /^\/predictions\/(?!daily(\/|$))[^/]+$/,
+  /^\/screener$/,
+  /^\/bookmakers(\/[^/]+)?$/,
+  /^\/bonuses$/,
+  /^\/casinos(\/[^/]+)?$/,
+  /^\/betting-apps$/,
+  /^\/countries\/[^/]+$/,
+  /^\/league\/[^/]+$/,
+  /^\/tips\/[^/]+$/,
+];
+export const lhref = (lang, path) => {
+  if (!path || lang === 'en' || !String(path).startsWith('/')) return path;
+  const clean = String(path).replace(/\/+$/, '') || '/';
+  if (!I18N_PATHS.some((re) => re.test(clean))) return path;
+  return clean === '/' ? `/${lang}/` : `/${lang}${clean}`;
+};
+
 // Odds-feed market strings arrive in English ("Over 2.5 goals", "X to win").
 export function localizeMarket(lang, text) {
   const s = String(text ?? '');

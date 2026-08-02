@@ -4,11 +4,12 @@ import PredCard from '../components/PredCard.astro';
 import predictions from '../data/predictions.json';
 import content from '../data/content.json';
 import { slugify, faqSchema } from '../lib/utils.js';
-import { t } from '../i18n/index.js';
+import { t, lhref } from '../i18n/index.js';
 import AiFaq from '../components/AiFaq.astro';
 
 const { league, tips, lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
 const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
 const trx = lang === 'en' ? null : ((content.entries ?? {})[`${lang}:league:${slugify(league)}`] ?? null);
 const ai = trx ?? (content.entries ?? {})[`league:${slugify(league)}`];
@@ -20,7 +21,7 @@ const description = F('lg.desc', { league });
   <div class="container">
     <div class="page-head">
       <div class="crumbs">
-        <a href="/">{T('crumb.home')}</a><span>/</span><a href="/predictions">{T('nav.predictions')}</a><span>/</span>{league}
+        <a href={L('/')}>{T('crumb.home')}</a><span>/</span><a href={L('/predictions')}>{T('nav.predictions')}</a><span>/</span>{league}
       </div>
       <h1>{league} <em>{T('lg.predEm')}</em></h1>
       <p class="lead">{F('lg.lead', { n: tips.length })}</p>
@@ -62,8 +63,8 @@ const description = F('lg.desc', { league });
         </div>
         <div class="box">
           <div class="box-h"><span class="hi">🎯</span> {F('lg.markets', { league })}</div>
-          <a class="tm" href={`/tips/match-result/${slugify(league)}`}><span class="dot"></span>{T('lg.mrTips')}</a>
-          <a class="tm" href={`/tips/over-under/${slugify(league)}`}><span class="dot"></span>{T('lg.ouTips')}</a>
+          <a class="tm" href={L(`/tips/match-result/${slugify(league)}`)}><span class="dot"></span>{T('lg.mrTips')}</a>
+          <a class="tm" href={L(`/tips/over-under/${slugify(league)}`)}><span class="dot"></span>{T('lg.ouTips')}</a>
         </div>
       </aside>
     </div>

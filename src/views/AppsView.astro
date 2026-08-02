@@ -1,7 +1,7 @@
 ---
 // Also generated from bookmakers.json — the `app` field on each operator.
 import Base from '../layouts/Base.astro';
-import { t, localizeMarket, trLabel } from '../i18n/index.js';
+import { t, localizeMarket, trLabel, lhref } from '../i18n/index.js';
 import content from '../data/content.json';
 import AiFaq from '../components/AiFaq.astro';
 import data from '../data/bookmakers.json';
@@ -9,6 +9,7 @@ import { avgScore, faqSchema } from '../lib/utils.js';
 
 const { lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
 
 const apps = (data.bookmakers ?? [])
   .filter((bk) => bk.app && (bk.app.android || bk.app.ios))
@@ -25,7 +26,7 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
 
   <div class="container">
     <div class="page-head">
-      <div class="crumbs"><a href="/">{T('crumb.home')}</a><span>/</span><a href="/bookmakers">{T('nav.sites')}</a><span>/</span>{T('app.crumb')}</div>
+      <div class="crumbs"><a href={L('/')}>{T('crumb.home')}</a><span>/</span><a href={L('/bookmakers')}>{T('nav.sites')}</a><span>/</span>{T('app.crumb')}</div>
       <h1>{T('app.h1pre')} <em>{T('app.h1em')}</em></h1>
       <p class="lead">{T('app.lead')}</p>
     </div>
@@ -45,7 +46,7 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
                 {apps.map((bk) => (
                   <tr>
                     <td class="o-match" style="font-weight:700">
-                      <a href={`/bookmakers/${bk.slug}`} style="color:inherit">{bk.name}</a>
+                      <a href={L(`/bookmakers/${bk.slug}`)} style="color:inherit">{bk.name}</a>
                       {bk.placeholder && <span class="tc" style="display:block;color:var(--danger)">{T('app.demoEntry')}</span>}
                     </td>
                     <td class="o-cell"><span class="cb">{[bk.app.android && '🤖 Android', bk.app.ios && '🍏 iOS'].filter(Boolean).join(' · ')}</span></td>
@@ -77,7 +78,7 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
         <div class="box">
           <div class="box-h"><span class="hi">📱</span> {T('app.reviews')}</div>
           {apps.map((bk) => (
-            <a class="tm" href={`/bookmakers/${bk.slug}`}><span class="dot"></span>{T('app.review').replace('{name}', bk.name)}</a>
+            <a class="tm" href={L(`/bookmakers/${bk.slug}`)}><span class="dot"></span>{T('app.review').replace('{name}', bk.name)}</a>
           ))}
         </div>
       </aside>

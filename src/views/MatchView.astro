@@ -6,13 +6,14 @@ import screener from '../data/screener.json';
 import content from '../data/content.json';
 import { matchSlug, abbr, badgeColor, kickoffLabel, confidenceLabel, slugify, faqSchema } from '../lib/utils.js';
 import { teamForm, h2hBetween, leagueTable, resolveTeam } from '../lib/form.js';
-import { t, localizeMarket } from '../i18n/index.js';
+import { t, localizeMarket, lhref } from '../i18n/index.js';
 import TeamMark from '../components/TeamMark.astro';
 
 // ── Programmatic SEO view (paths come from lib/matchPages.js): live and
 //    archived fixtures share this template in every site language.
 const { tip, archive, lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
 const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
 const dloc = { en: 'en-GB', es: 'es-ES', pt: 'pt-BR', de: 'de-DE', fr: 'fr-FR' }[lang] ?? 'en-GB';
 const isLive = !!tip;
@@ -111,9 +112,9 @@ const schema = {
   <div class="container">
     <div class="page-head">
       <div class="crumbs">
-        <a href="/">{T('crumb.home')}</a><span>/</span>
-        <a href="/predictions">{T('nav.predictions')}</a><span>/</span>
-        <a href={leagueHref}>{league}</a><span>/</span>
+        <a href={L('/')}>{T('crumb.home')}</a><span>/</span>
+        <a href={L('/predictions')}>{T('nav.predictions')}</a><span>/</span>
+        <a href={L(leagueHref)}>{league}</a><span>/</span>
         {home} vs {away}
       </div>
       <h1>{home} vs {away} <em>{settled ? T('mp.h1Res') : T('mp.h1Pred')}</em></h1>
@@ -143,12 +144,12 @@ const schema = {
             </div>
             <div class="pred-body">
               <div class="match">
-                <a class="team" href={`/team/${slugify(home)}`}>
+                <a class="team" href={L(`/team/${slugify(home)}`)}>
                   <TeamMark team={home} sportKey={sportKey} cls="badge" />
                   <div class="nm">{home}</div>
                 </a>
                 <div class="vs">{resultScore ?? 'VS'}</div>
-                <a class="team" href={`/team/${slugify(away)}`}>
+                <a class="team" href={L(`/team/${slugify(away)}`)}>
                   <TeamMark team={away} sportKey={sportKey} cls="badge" />
                   <div class="nm">{away}</div>
                 </a>
@@ -194,7 +195,7 @@ const schema = {
               </div>
               {isLive
                 ? <a href="#" class="btn btn-mint btn-sm">{F('mp.betAt', { bk: rec.bookmaker ?? '—' })}</a>
-                : <a href="/predictions" class="btn btn-outline btn-sm">{T('mp.todaysPreds')}</a>}
+                : <a href={L('/predictions')} class="btn btn-outline btn-sm">{T('mp.todaysPreds')}</a>}
             </div>
           </article>
         </section>
@@ -356,7 +357,7 @@ const schema = {
           <section>
             <div class="sec-head">
               <h2 class="sec-title">{T('mp.upPre')} <b>{F('mp.upBold', { league })}</b></h2>
-              <a href={leagueHref} class="more-link">{F('mp.allLeagueTips', { league })}</a>
+              <a href={L(leagueHref)} class="more-link">{F('mp.allLeagueTips', { league })}</a>
             </div>
             <div class="odds-table"><div class="scr-scroll">
               <table class="otbl">
@@ -365,7 +366,7 @@ const schema = {
                   {upcoming.map((t2) => (
                     <tr>
                       <td class="o-cell" style="white-space:nowrap"><span>{upLabel(t2.kickoff)}</span></td>
-                      <td class="o-match" style="font-weight:700"><a href={`/predictions/${matchSlug(t2)}`} style="color:inherit;text-decoration:none">{t2.home} v {t2.away}</a></td>
+                      <td class="o-match" style="font-weight:700"><a href={L(`/predictions/${matchSlug(t2)}`)} style="color:inherit;text-decoration:none">{t2.home} v {t2.away}</a></td>
                       <td class="o-cell"><span class="cb">{px(t2, t2.home)}</span></td>
                       <td class="o-cell"><span class="cb">{px(t2, 'Draw')}</span></td>
                       <td class="o-cell"><span class="cb">{px(t2, t2.away)}</span></td>
@@ -451,13 +452,13 @@ const schema = {
           <div class="promo">
             <h4>{T('mp.promoSettledH')}</h4>
             <p>{T('mp.promoSettledP')}</p>
-            <a href="/screener" class="btn btn-mint btn-block">{T('mp.openScr')}</a>
+            <a href={L('/screener')} class="btn btn-mint btn-block">{T('mp.openScr')}</a>
           </div>
         )}
         <div class="box">
           <div class="box-h"><span class="hi">⚡</span> {F('mp.moreLeague', { league })}</div>
-          <a class="tm" href={leagueHref}><span class="dot"></span>{F('mp.allTips2', { league })}</a>
-          <a class="tm" href="/predictions"><span class="dot"></span>{T('mp.todayTips')}</a>
+          <a class="tm" href={L(leagueHref)}><span class="dot"></span>{F('mp.allTips2', { league })}</a>
+          <a class="tm" href={L('/predictions')}><span class="dot"></span>{T('mp.todayTips')}</a>
         </div>
       </aside>
     </div>

@@ -1,8 +1,9 @@
 ---
-import { LOCALES, ALT_LANGS, homePath, t } from '../i18n/index.js';
+import { LOCALES, ALT_LANGS, homePath, t, lhref } from '../i18n/index.js';
 const { active = '', lang = 'en', i18nPath = null } = Astro.props;
 const is = (k) => (active === k ? ' active' : '');
 const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
 // picker target: same page in the other language when translated, else its home
 const langHref = (l) => (i18nPath ? (l === 'en' ? i18nPath : `/${l}${i18nPath}`) : homePath(l));
 const langs = ['en', ...ALT_LANGS];
@@ -16,36 +17,36 @@ const langs = ['en', ...ALT_LANGS];
     <nav class="nav">
       <div class={`nav-item${is('predictions')}`}><button>{T('nav.predictions')} <span class="caret">▼</span></button>
         <div class="dropdown">
-          <a href="/screener"><span class="ic">🔍</span>{T('nav.screener')}</a>
-          <a href="/predictions"><span class="ic">⚽</span>{T('nav.allTips')}</a>
-          <a href="/league/champions-league"><span class="ic">🏆</span>{T('nav.champions')}</a>
-          <a href="/league/premier-league"><span class="ic">🦁</span>{T('nav.premier')}</a>
-          <a href="/league/serie-a"><span class="ic">🇮🇹</span>{T('nav.serieA')}</a>
-          <a href="/tips/accumulator"><span class="ic">🎯</span>{T('nav.accaTips')}</a>
-          <a href="/tips/btts"><span class="ic">⚽</span>{T('nav.bttsTips')}</a>
+          <a href={L('/screener')}><span class="ic">🔍</span>{T('nav.screener')}</a>
+          <a href={L('/predictions')}><span class="ic">⚽</span>{T('nav.allTips')}</a>
+          <a href={L('/league/champions-league')}><span class="ic">🏆</span>{T('nav.champions')}</a>
+          <a href={L('/league/premier-league')}><span class="ic">🦁</span>{T('nav.premier')}</a>
+          <a href={L('/league/serie-a')}><span class="ic">🇮🇹</span>{T('nav.serieA')}</a>
+          <a href={L('/tips/accumulator')}><span class="ic">🎯</span>{T('nav.accaTips')}</a>
+          <a href={L('/tips/btts')}><span class="ic">⚽</span>{T('nav.bttsTips')}</a>
         </div>
       </div>
       <div class={`nav-item${is('bookmakers')}`}><button>{T('nav.sites')} <span class="caret">▼</span></button>
         <div class="dropdown">
-          <a href="/bookmakers"><span class="ic">🏆</span>{T('nav.topSites')}</a>
-          <a href="/betting-apps"><span class="ic">📱</span>{T('nav.apps')}</a>
-          <a href="/countries/uk"><span class="ic">🌍</span>{T('nav.byCountry')}</a>
+          <a href={L('/bookmakers')}><span class="ic">🏆</span>{T('nav.topSites')}</a>
+          <a href={L('/betting-apps')}><span class="ic">📱</span>{T('nav.apps')}</a>
+          <a href={L('/countries/uk')}><span class="ic">🌍</span>{T('nav.byCountry')}</a>
         </div>
       </div>
       <div class={`nav-item${is('bonuses')}`}><button>{T('nav.bonuses')} <span class="caret">▼</span></button>
         <div class="dropdown">
-          <a href="/bonuses"><span class="ic">🎁</span>{T('nav.allOffers')}</a>
-          <a href="/bonuses"><span class="ic">💸</span>{T('nav.freeBets')}</a>
+          <a href={L('/bonuses')}><span class="ic">🎁</span>{T('nav.allOffers')}</a>
+          <a href={L('/bonuses')}><span class="ic">💸</span>{T('nav.freeBets')}</a>
         </div>
       </div>
       <div class={`nav-item${is('casinos')}`}><button>{T('nav.casinos')} <span class="caret">▼</span></button>
-        <div class="dropdown"><a href="/casinos"><span class="ic">🎰</span>{T('nav.topCasinos')}</a><a href="/casinos"><span class="ic">🎥</span>{T('nav.liveCasino')}</a><a href="/casinos"><span class="ic">🆕</span>{T('nav.newCasinos')}</a></div>
+        <div class="dropdown"><a href={L('/casinos')}><span class="ic">🎰</span>{T('nav.topCasinos')}</a><a href={L('/casinos')}><span class="ic">🎥</span>{T('nav.liveCasino')}</a><a href={L('/casinos')}><span class="ic">🆕</span>{T('nav.newCasinos')}</a></div>
       </div>
       <div class={`nav-item${is('tipsters')}`}><button>{T('nav.results')} <span class="caret">▼</span></button>
-        <div class="dropdown"><a href="/tipsters"><span class="ic">📈</span>{T('nav.performance')}</a><a href="/news/recap"><span class="ic">🗓</span>{T('nav.weeklyRecaps')}</a><a href="/predictions/daily"><span class="ic">📅</span>{T('nav.resultsByDate')}</a></div>
+        <div class="dropdown"><a href={L('/tipsters')}><span class="ic">📈</span>{T('nav.performance')}</a><a href={L('/news/recap')}><span class="ic">🗓</span>{T('nav.weeklyRecaps')}</a><a href={L('/predictions/daily')}><span class="ic">📅</span>{T('nav.resultsByDate')}</a></div>
       </div>
       <div class={`nav-item${is('news')}`}><button>{T('nav.news')} <span class="caret">▼</span></button>
-        <div class="dropdown"><a href="/news"><span class="ic">📰</span>{T('nav.latestNews')}</a><a href="/news"><span class="ic">📊</span>{T('nav.matchAnalysis')}</a></div>
+        <div class="dropdown"><a href={L('/news')}><span class="ic">📰</span>{T('nav.latestNews')}</a><a href={L('/news')}><span class="ic">📊</span>{T('nav.matchAnalysis')}</a></div>
       </div>
     </nav>
     <div class="hdr-actions">

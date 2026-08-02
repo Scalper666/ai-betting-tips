@@ -1,7 +1,8 @@
 ---
-import { homePath, t } from '../i18n/index.js';
+import { homePath, t, lhref } from '../i18n/index.js';
 const { lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
 const year = new Date().getFullYear();
 ---
 <footer class="footer">
@@ -12,10 +13,10 @@ const year = new Date().getFullYear();
         <p>{T('ft.about1')}</p>
         <p>{T('ft.about2')}</p>
       </div>
-      <div class="fcol"><h5>{T('nav.predictions')}</h5><a href="/screener">{T('nav.screener')}</a><a href="/predictions">{T('nav.allTips')}</a><a href="/teams">{T('ft.teamsAZ')}</a><a href="/glossary">{T('ft.glossary')}</a><a href="/tips/accumulator">{T('ft.accas')}</a><a href="/tips/btts">{T('nav.bttsTips')}</a><a href="/tips/over-under">{T('ft.overUnder')}</a></div>
-      <div class="fcol"><h5>{T('nav.sites')}</h5><a href="/bookmakers">{T('ft.topBk')}</a><a href="/betting-apps">{T('nav.apps')}</a><a href="/casinos">{T('nav.casinos')}</a><a href="/bonuses">{T('nav.bonuses')}</a><a href="/countries/uk">{T('nav.byCountry')}</a></div>
-      <div class="fcol"><h5>{T('nav.results')}</h5><a href="/tipsters">{T('nav.performance')}</a><a href="/news/recap">{T('nav.weeklyRecaps')}</a><a href="/predictions/daily">{T('nav.resultsByDate')}</a><a href="/news">{T('nav.news')}</a></div>
-      <div class="fcol"><h5>{T('ft.company')}</h5><a href="/about">{T('ft.aboutUs')}</a><a href="/contact">{T('ft.contact')}</a><a href="/responsible-gambling">{T('ft.rg')}</a><a href="/privacy">{T('ft.privacy')}</a><a href="/terms">{T('ft.terms')}</a></div>
+      <div class="fcol"><h5>{T('nav.predictions')}</h5><a href={L('/screener')}>{T('nav.screener')}</a><a href={L('/predictions')}>{T('nav.allTips')}</a><a href={L('/teams')}>{T('ft.teamsAZ')}</a><a href={L('/glossary')}>{T('ft.glossary')}</a><a href={L('/tips/accumulator')}>{T('ft.accas')}</a><a href={L('/tips/btts')}>{T('nav.bttsTips')}</a><a href={L('/tips/over-under')}>{T('ft.overUnder')}</a></div>
+      <div class="fcol"><h5>{T('nav.sites')}</h5><a href={L('/bookmakers')}>{T('ft.topBk')}</a><a href={L('/betting-apps')}>{T('nav.apps')}</a><a href={L('/casinos')}>{T('nav.casinos')}</a><a href={L('/bonuses')}>{T('nav.bonuses')}</a><a href={L('/countries/uk')}>{T('nav.byCountry')}</a></div>
+      <div class="fcol"><h5>{T('nav.results')}</h5><a href={L('/tipsters')}>{T('nav.performance')}</a><a href={L('/news/recap')}>{T('nav.weeklyRecaps')}</a><a href={L('/predictions/daily')}>{T('nav.resultsByDate')}</a><a href={L('/news')}>{T('nav.news')}</a></div>
+      <div class="fcol"><h5>{T('ft.company')}</h5><a href={L('/about')}>{T('ft.aboutUs')}</a><a href={L('/contact')}>{T('ft.contact')}</a><a href={L('/responsible-gambling')}>{T('ft.rg')}</a><a href={L('/privacy')}>{T('ft.privacy')}</a><a href={L('/terms')}>{T('ft.terms')}</a></div>
     </div>
     <div class="disclaimer">
       <div class="age">18+</div>
@@ -23,7 +24,7 @@ const year = new Date().getFullYear();
     </div>
     <div class="copybar">
       <span>© {year} AI Betting Tips. {T('ft.rights')}</span>
-      <span><a href="/terms">{T('ft.termsShort')}</a> · <a href="/privacy">{T('ft.privacyShort')}</a> · <a href="/responsible-gambling">{T('ft.rg')}</a></span>
+      <span><a href={L('/terms')}>{T('ft.termsShort')}</a> · <a href={L('/privacy')}>{T('ft.privacyShort')}</a> · <a href={L('/responsible-gambling')}>{T('ft.rg')}</a></span>
     </div>
   </div>
 </footer>

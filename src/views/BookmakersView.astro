@@ -1,12 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
-import { t, localizeMarket, trLabel } from '../i18n/index.js';
+import { t, localizeMarket, trLabel, lhref } from '../i18n/index.js';
 import BookmakerRow from '../components/BookmakerRow.astro';
 import data from '../data/bookmakers.json';
 import { avgScore, SCORE_LABELS } from '../lib/utils.js';
 
 const { lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
 
 const list = [...(data.bookmakers ?? [])].sort((a, b) => avgScore(b.scores) - avgScore(a.scores));
 const year = new Date().getFullYear();
@@ -18,7 +19,7 @@ const year = new Date().getFullYear();
 
   <div class="container">
     <div class="page-head">
-      <div class="crumbs"><a href="/">{T('crumb.home')}</a><span>/</span>{T('nav.sites')}</div>
+      <div class="crumbs"><a href={L('/')}>{T('crumb.home')}</a><span>/</span>{T('nav.sites')}</div>
       <h1>{T('bkh.h1pre')} <em>{T('bkh.h1em')}</em> {year}</h1>
       <p class="lead">{T('bkh.lead')}</p>
     </div>
@@ -50,12 +51,12 @@ const year = new Date().getFullYear();
         <div class="promo">
           <h4>{T('bkh.top')}</h4>
           <p>{list[0]?.name} — {list[0]?.bonus.headline}</p>
-          <a href={`/bookmakers/${list[0]?.slug}`} class="btn btn-mint btn-block">{T('bk.readReview')}</a>
+          <a href={L(`/bookmakers/${list[0]?.slug}`)} class="btn btn-mint btn-block">{T('bk.readReview')}</a>
         </div>
         <div class="box">
           <div class="box-h"><span class="hi">🔗</span> {T('common.alsoSee')}</div>
-          <a class="tm" href="/bonuses"><span class="dot"></span>{T('nav.allOffers')}</a>
-          <a class="tm" href="/betting-apps"><span class="dot"></span>{T('nav.apps')}</a>
+          <a class="tm" href={L('/bonuses')}><span class="dot"></span>{T('nav.allOffers')}</a>
+          <a class="tm" href={L('/betting-apps')}><span class="dot"></span>{T('nav.apps')}</a>
         </div>
       </aside>
     </div>

@@ -1,12 +1,13 @@
 ---
 import Base from '../layouts/Base.astro';
-import { t, localizeMarket, trLabel } from '../i18n/index.js';
+import { t, localizeMarket, trLabel, lhref } from '../i18n/index.js';
 import CasinoRow from '../components/CasinoRow.astro';
 import data from '../data/casinos.json';
 import { avgScore, CASINO_SCORE_LABELS } from '../lib/utils.js';
 
 const { lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
 
 const list = [...(data.casinos ?? [])].sort((a, b) => avgScore(b.scores) - avgScore(a.scores));
 const top = list[0];
@@ -19,7 +20,7 @@ const year = new Date().getFullYear();
 
   <div class="container">
     <div class="page-head">
-      <div class="crumbs"><a href="/">{T('crumb.home')}</a><span>/</span>{T('nav.casinos')}</div>
+      <div class="crumbs"><a href={L('/')}>{T('crumb.home')}</a><span>/</span>{T('nav.casinos')}</div>
       <h1>{T('cas.h1pre')} <em>{T('cas.h1em')}</em> {T('cas.h1post')}</h1>
       <p class="lead">{T('cas.lead').replace('{year}', String(year))}</p>
     </div>
@@ -96,7 +97,7 @@ const year = new Date().getFullYear();
           <div class="promo">
             <h4>🎰 #1 {top.name}</h4>
             <p>{T('cas.topFor').replace('{year}', String(year)).replace('{bonus}', top.bonus.headline.toLowerCase())}</p>
-            <a href={`/casinos/${top.slug}`} class="btn btn-mint btn-block">{T('bk.readReview')}</a>
+            <a href={L(`/casinos/${top.slug}`)} class="btn btn-mint btn-block">{T('bk.readReview')}</a>
           </div>
         )}
         <div class="box">
@@ -111,8 +112,8 @@ const year = new Date().getFullYear();
         </div>
         <div class="box">
           <div class="box-h"><span class="hi">🔗</span> {T('common.alsoSee')}</div>
-          <a class="tm" href="/bookmakers"><span class="dot"></span>{T('nav.sites')}</a>
-          <a class="tm" href="/bonuses"><span class="dot"></span>{T('nav.bonuses')}</a>
+          <a class="tm" href={L('/bookmakers')}><span class="dot"></span>{T('nav.sites')}</a>
+          <a class="tm" href={L('/bonuses')}><span class="dot"></span>{T('nav.bonuses')}</a>
         </div>
       </aside>
     </div>

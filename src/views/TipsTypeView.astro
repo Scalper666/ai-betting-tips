@@ -4,13 +4,14 @@ import PredCard from '../components/PredCard.astro';
 import predictions from '../data/predictions.json';
 import content from '../data/content.json';
 import { slugify, faqSchema } from '../lib/utils.js';
-import { t } from '../i18n/index.js';
+import { t, lhref } from '../i18n/index.js';
 
 // One SEO page per bet type — same pattern as leagues and matches.
 import { BET_TYPES } from '../lib/betTypes.js';
 
 const { type, lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
 const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
 const tname = T(`btype.${type.slug}.name`);
 const tlong = T(`btype.${type.slug}.long`);
@@ -27,7 +28,7 @@ const leagues = [...new Set(tips.map((t) => t.league))];
 
   <div class="container">
     <div class="page-head">
-      <div class="crumbs"><a href="/">{T('crumb.home')}</a><span>/</span><a href="/predictions">{T('nav.predictions')}</a><span>/</span>{tname}</div>
+      <div class="crumbs"><a href={L('/')}>{T('crumb.home')}</a><span>/</span><a href={L('/predictions')}>{T('nav.predictions')}</a><span>/</span>{tname}</div>
       <h1>{type.emoji} {tname}</h1>
       <p class="lead">{F('tt.lead', { name: tname.toLowerCase(), long: tlong })}</p>
     </div>
@@ -39,7 +40,7 @@ const leagues = [...new Set(tips.map((t) => t.league))];
         <section>
           <div class="chips">
             <span class="chip active">{T('tt.allLeagues')}</span>
-            {leagues.map((lg) => <a class="chip" href={`/league/${slugify(lg)}`}>🏆 {lg}</a>)}
+            {leagues.map((lg) => <a class="chip" href={L(`/league/${slugify(lg)}`)}>🏆 {lg}</a>)}
           </div>
           <div class="pred-grid">
             {tips.map((tip) => <PredCard tip={tip} lang={lang} />)}
@@ -96,12 +97,12 @@ const leagues = [...new Set(tips.map((t) => t.league))];
         <div class="promo">
           <h4>🔍 {T('nav.screener')}</h4>
           <p>{T('tt.promoP')}</p>
-          <a href="/screener" class="btn btn-mint btn-block">{T('tt.openScr')}</a>
+          <a href={L('/screener')} class="btn btn-mint btn-block">{T('tt.openScr')}</a>
         </div>
         <div class="box">
           <div class="box-h"><span class="hi">⚡</span> {T('tt.moreTypes')}</div>
           {BET_TYPES.filter((bt) => bt.slug !== type.slug).map((bt) => (
-            <a class="tm" href={`/tips/${bt.slug}`}><span class="dot"></span>{bt.emoji} {T(`btype.${bt.slug}.name`)}</a>
+            <a class="tm" href={L(`/tips/${bt.slug}`)}><span class="dot"></span>{bt.emoji} {T(`btype.${bt.slug}.name`)}</a>
           ))}
         </div>
       </aside>

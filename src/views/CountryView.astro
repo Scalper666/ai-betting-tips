@@ -7,11 +7,12 @@ import bookmakerData from '../data/bookmakers.json';
 import casinoData from '../data/casinos.json';
 import content from '../data/content.json';
 import { avgScore, faqSchema } from '../lib/utils.js';
-import { t } from '../i18n/index.js';
+import { t, lhref } from '../i18n/index.js';
 import AiFaq from '../components/AiFaq.astro';
 
 const { country, lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
 const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
 const trx = lang === 'en' ? null : ((content.entries ?? {})[`${lang}:country:${country.slug}`] ?? null);
 const ai = trx ?? (content.entries ?? {})[`country:${country.slug}`];
@@ -33,7 +34,7 @@ const description = F('cn.desc', { name: country.name, reg: country.regulator })
   <div class="container">
     <div class="page-head">
       <div class="crumbs">
-        <a href="/">{T('crumb.home')}</a><span>/</span><a href="/bookmakers">{T('nav.sites')}</a><span>/</span>{country.name}
+        <a href={L('/')}>{T('crumb.home')}</a><span>/</span><a href={L('/bookmakers')}>{T('nav.sites')}</a><span>/</span>{country.name}
       </div>
       <h1>{country.flag} {T('cn.h1')} <em>{country.name}</em></h1>
       <p class="lead">{legalSummary}</p>
@@ -64,7 +65,7 @@ const description = F('cn.desc', { name: country.name, reg: country.regulator })
           <section>
             <div class="sec-head">
               <h2 class="sec-title">{T('cn.topCasinosPre')} <b>{country.name}</b></h2>
-              <a href="/casinos" class="more-link">{T('rv.allCasinos')} →</a>
+              <a href={L('/casinos')} class="more-link">{T('rv.allCasinos')} →</a>
             </div>
             <div class="bk-list">
               {casinoList.map((c, i) => <CasinoRow casino={c} rank={i + 1} lang={lang} />)}
@@ -109,13 +110,13 @@ const description = F('cn.desc', { name: country.name, reg: country.regulator })
         <div class="box">
           <div class="box-h"><span class="hi">🌍</span> {T('cn.otherMarkets')}</div>
           {(countryData.countries ?? []).filter((c) => c.slug !== country.slug).map((c) => (
-            <a class="tm" href={`/countries/${c.slug}`}><span class="dot"></span>{c.flag} {c.name}</a>
+            <a class="tm" href={L(`/countries/${c.slug}`)}><span class="dot"></span>{c.flag} {c.name}</a>
           ))}
         </div>
         <div class="box">
           <div class="box-h"><span class="hi">🔗</span> {T('common.alsoSee')}</div>
-          <a class="tm" href="/bookmakers"><span class="dot"></span>{T('rv.allBk')}</a>
-          <a class="tm" href="/bonuses"><span class="dot"></span>{T('nav.allOffers')}</a>
+          <a class="tm" href={L('/bookmakers')}><span class="dot"></span>{T('rv.allBk')}</a>
+          <a class="tm" href={L('/bonuses')}><span class="dot"></span>{T('nav.allOffers')}</a>
         </div>
       </aside>
     </div>

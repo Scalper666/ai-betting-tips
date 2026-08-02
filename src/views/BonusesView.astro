@@ -1,7 +1,7 @@
 ---
 // Generated entirely from bookmakers.json — no separate bonus data to maintain.
 import Base from '../layouts/Base.astro';
-import { t, localizeMarket, trLabel } from '../i18n/index.js';
+import { t, localizeMarket, trLabel, lhref } from '../i18n/index.js';
 import content from '../data/content.json';
 import AiFaq from '../components/AiFaq.astro';
 import { faqSchema } from '../lib/utils.js';
@@ -9,6 +9,7 @@ import data from '../data/bookmakers.json';
 
 const { lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
 
 const offers = (data.bookmakers ?? []).map((bk) => ({ bk, ...bk.bonus }));
 const year = new Date().getFullYear();
@@ -23,7 +24,7 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
 
   <div class="container">
     <div class="page-head">
-      <div class="crumbs"><a href="/">{T('crumb.home')}</a><span>/</span>{T('nav.bonuses')}</div>
+      <div class="crumbs"><a href={L('/')}>{T('crumb.home')}</a><span>/</span>{T('nav.bonuses')}</div>
       <h1>{T('bon.h1pre')} <em>{T('bon.h1em')}</em> {T('bon.h1post')}</h1>
       <p class="lead">{T('bon.lead')}</p>
     </div>
@@ -43,7 +44,7 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
               <tbody>
                 {offers.map(({ bk, headline, wagering, min_odds, min_deposit, code }) => (
                   <tr>
-                    <td class="o-time"><a href={`/bookmakers/${bk.slug}`} style="color:inherit">{bk.name}</a></td>
+                    <td class="o-time"><a href={L(`/bookmakers/${bk.slug}`)} style="color:inherit">{bk.name}</a></td>
                     <td class="o-match" style="font-weight:700">
                       {headline}
                       {code && <span class="tc" style="display:block">{T('bon.code')} {code}</span>}
@@ -85,7 +86,7 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
         <div class="box">
           <div class="box-h"><span class="hi">🎁</span> {T('bon.offers')}</div>
           {offers.map(({ bk, headline }) => (
-            <a class="tm" href={`/bookmakers/${bk.slug}`}><span class="dot"></span>{bk.name} — {headline}</a>
+            <a class="tm" href={L(`/bookmakers/${bk.slug}`)}><span class="dot"></span>{bk.name} — {headline}</a>
           ))}
         </div>
       </aside>

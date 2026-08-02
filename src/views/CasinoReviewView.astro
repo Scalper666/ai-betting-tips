@@ -4,10 +4,11 @@ import data from '../data/casinos.json';
 import content from '../data/content.json';
 import countryData from '../data/countries.json';
 import { avgScore, CASINO_SCORE_LABELS } from '../lib/utils.js';
-import { t, trLabel } from '../i18n/index.js';
+import { t, trLabel, lhref } from '../i18n/index.js';
 
 const { casino: c, lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
 const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
 const trx = lang === 'en' ? null : ((content.entries ?? {})[`${lang}:casino:${c.slug}`] ?? null);
 const ai = trx ?? (content.entries ?? {})[`casino:${c.slug}`];
@@ -54,7 +55,7 @@ const schema = {
 <Base lang={lang} i18nPath={`/casinos/${c.slug}`} title={title} description={description} schema={schema} active="casinos">
   <div class="container">
     <div class="page-head">
-      <div class="crumbs"><a href="/">{T('crumb.home')}</a><span>/</span><a href="/casinos">{T('nav.casinos')}</a><span>/</span>{c.name}</div>
+      <div class="crumbs"><a href={L('/')}>{T('crumb.home')}</a><span>/</span><a href={L('/casinos')}>{T('nav.casinos')}</a><span>/</span>{c.name}</div>
       <h1>{c.name} <em>{T('rv.casReviewEm')}</em></h1>
       <p class="lead">{description}</p>
       <p class="tc" style="margin-top:6px">{F('rv.lastUpdated', { date: updated })}</p>
@@ -187,16 +188,16 @@ const schema = {
           <div class="box">
             <div class="box-h"><span class="hi">🌍</span> {T('rv.availableIn')}</div>
             {markets.map((x) => (
-              <a class="tm" href={`/countries/${x.slug}`}><span class="dot"></span>{x.flag} {x.name}</a>
+              <a class="tm" href={L(`/countries/${x.slug}`)}><span class="dot"></span>{x.flag} {x.name}</a>
             ))}
           </div>
         )}
         <div class="box">
           <div class="box-h"><span class="hi">🎰</span> {T('rv.moreCasinos')}</div>
           {others.map((x) => (
-            <a class="tm" href={`/casinos/${x.slug}`}><span class="dot"></span>{F('rv.casReviewLink', { name: x.name })}</a>
+            <a class="tm" href={L(`/casinos/${x.slug}`)}><span class="dot"></span>{F('rv.casReviewLink', { name: x.name })}</a>
           ))}
-          <a class="tm" href="/casinos"><span class="dot"></span>{T('rv.allCasinos')}</a>
+          <a class="tm" href={L('/casinos')}><span class="dot"></span>{T('rv.allCasinos')}</a>
         </div>
       </aside>
     </div>

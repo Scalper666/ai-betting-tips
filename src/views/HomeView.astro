@@ -10,10 +10,11 @@ import bookmakers from '../data/bookmakers.json';
 import historyData from '../data/history.json';
 import countriesData from '../data/countries.json';
 import { slugify, avgScore, kickoffLabel, matchSlug, abbr, badgeColor, signed } from '../lib/utils.js';
-import { t, localizeMarket } from '../i18n/index.js';
+import { t, localizeMarket, lhref } from '../i18n/index.js';
 
 const { lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
 
 const tips = predictions.tips ?? [];
 const football = tips.filter((t) => String(t.sport_key ?? '').startsWith('soccer'));
@@ -65,7 +66,7 @@ const calMatches = tips.map((t) => {
     away: t.away,
     lg: t.league_short || t.league,
     sport: sportMeta(t.sport_key).label,
-    href: `/predictions/${matchSlug(t)}`,
+    href: lhref(lang, `/predictions/${matchSlug(t)}`),
   };
 }).filter(Boolean).sort((a, b) => a.d.localeCompare(b.d) || a.t.localeCompare(b.t));
 const calSports = [...new Set(calMatches.map((m) => m.sport))].sort();
@@ -125,8 +126,8 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
         <div class="hero-copy">
           <h1>{T('home.h1.pre')} <span class="g">{T('home.h1.g')}</span> {T('home.h1.post')}</h1>
           <div class="hero-cta">
-            <a href="/predictions" class="btn btn-mint">{T('home.cta.tips')}</a>
-            <a href="/tipsters" class="btn btn-outline">{T('home.cta.track')}</a>
+            <a href={L('/predictions')} class="btn btn-mint">{T('home.cta.tips')}</a>
+            <a href={L('/tipsters')} class="btn btn-outline">{T('home.cta.track')}</a>
           </div>
         </div>
       </div>
@@ -141,9 +142,9 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
         <section id="geoBk" data-geo={JSON.stringify(geoCountries)} data-current="uk">
           <div class="sec-head">
             <h2 class="sec-title">{T('home.geo.pre')} <b data-geo-name>🇬🇧 United Kingdom</b></h2>
-            <a href="/countries/uk" class="more-link" data-geo-link>{T('home.geo.change')}</a>
+            <a href={L('/countries/uk')} class="more-link" data-geo-link>{T('home.geo.change')}</a>
           </div>
-          <div class="geo-note"><span class="fl">🇬🇧</span> <span data-geo-lead>{T('home.geo.ranked')}</span> <b>United Kingdom</b><span data-geo-tail></span> · <a href="/countries/uk" data-geo-link style="color:var(--mint);font-weight:700">{T('home.geo.changeSm')}</a></div>
+          <div class="geo-note"><span class="fl">🇬🇧</span> <span data-geo-lead>{T('home.geo.ranked')}</span> <b>United Kingdom</b><span data-geo-tail></span> · <a href={L('/countries/uk')} data-geo-link style="color:var(--mint);font-weight:700">{T('home.geo.changeSm')}</a></div>
           <div class="bk-list">
             {bkList.map((bk, i) => (
               <div class="bk-geo" data-cn={(bk.countries ?? []).join(' ')}>
@@ -221,7 +222,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
         <section data-filter-scope="preds">
           <div class="sec-head">
             <h2 class="sec-title">{T('home.preds.pre')} <b>{T('home.preds.bold')}</b></h2>
-            <a href="/predictions" class="more-link">{T('home.preds.all')}</a>
+            <a href={L('/predictions')} class="more-link">{T('home.preds.all')}</a>
           </div>
           <div class="filter-bar">
             <div class="chips day-tabs" data-day-tabs>
@@ -290,7 +291,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
               ))}
               <div class="acca-foot">
                 <span>{accaValue ? T('home.acca.value') : T('home.acca.auto')}</span>
-                <a href="/screener" class="btn btn-mint btn-sm">{T('home.acca.open')} · ×{accaOdds.toFixed(2)}</a>
+                <a href={L('/screener')} class="btn btn-mint btn-sm">{T('home.acca.open')} · ×{accaOdds.toFixed(2)}</a>
               </div>
             </div>
             <p class="res-note">{T('home.acca.risk')}</p>
@@ -301,7 +302,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
         <section>
           <div class="sec-head">
             <h2 class="sec-title">{T('home.scr.pre')}<b>{T('home.scr.bold')}</b></h2>
-            <a href="/screener" class="more-link">{T('home.scr.open')}</a>
+            <a href={L('/screener')} class="more-link">{T('home.scr.open')}</a>
           </div>
           <div class="scr-table-wrap">
             <div class="scr-scroll">
@@ -321,7 +322,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
               </table>
             </div>
           </div>
-          <a href="/screener" class="btn btn-outline btn-block" style="margin-top:12px">{T('home.scr.seeAll')}</a>
+          <a href={L('/screener')} class="btn btn-outline btn-block" style="margin-top:12px">{T('home.scr.seeAll')}</a>
         </section>
 
         <!-- RECENT RESULTS (settlement transparency from history.json) -->
@@ -329,7 +330,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
           <section>
             <div class="sec-head">
               <h2 class="sec-title">{T('home.res.pre')} <b>{T('home.res.bold')}</b></h2>
-              <a href="/tipsters" class="more-link">{T('home.res.stats')}</a>
+              <a href={L('/tipsters')} class="more-link">{T('home.res.stats')}</a>
             </div>
             <div class="res-sum">
               <div class="res-chip"><b>{settled.length}</b><span>{T('home.res.settled')}</span></div>
@@ -360,15 +361,15 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
         <section>
           <div class="sec-head">
             <h2 class="sec-title">{T('home.bt.pre')} <b>{T('home.bt.bold')}</b></h2>
-            <a href="/predictions" class="more-link">{T('home.bt.explore')}</a>
+            <a href={L('/predictions')} class="more-link">{T('home.bt.explore')}</a>
           </div>
           <div class="bt-grid">
-            <a href="/tips/accumulator" class="bt-tile"><div class="ic">🎯</div><div><h4>{T('home.bt.acca')}</h4><p>{T('home.bt.accaP')}</p></div><span class="arr">→</span></a>
-            <a href="/tips/btts" class="bt-tile"><div class="ic">⚽</div><div><h4>{T('home.bt.btts')}</h4><p>{T('home.bt.bttsP')}</p></div><span class="arr">→</span></a>
-            <a href="/tips/over-under" class="bt-tile"><div class="ic">📊</div><div><h4>{T('home.bt.ou')}</h4><p>{T('home.bt.ouP')}</p></div><span class="arr">→</span></a>
-            <a href="/tips/correct-score" class="bt-tile"><div class="ic">🔢</div><div><h4>{T('home.bt.cs')}</h4><p>{T('home.bt.csP')}</p></div><span class="arr">→</span></a>
-            <a href="/tips/double-chance" class="bt-tile"><div class="ic">🛡️</div><div><h4>{T('home.bt.dc')}</h4><p>{T('home.bt.dcP')}</p></div><span class="arr">→</span></a>
-            <a href="/tips/draw" class="bt-tile"><div class="ic">🤝</div><div><h4>{T('home.bt.draw')}</h4><p>{T('home.bt.drawP')}</p></div><span class="arr">→</span></a>
+            <a href={L('/tips/accumulator')} class="bt-tile"><div class="ic">🎯</div><div><h4>{T('home.bt.acca')}</h4><p>{T('home.bt.accaP')}</p></div><span class="arr">→</span></a>
+            <a href={L('/tips/btts')} class="bt-tile"><div class="ic">⚽</div><div><h4>{T('home.bt.btts')}</h4><p>{T('home.bt.bttsP')}</p></div><span class="arr">→</span></a>
+            <a href={L('/tips/over-under')} class="bt-tile"><div class="ic">📊</div><div><h4>{T('home.bt.ou')}</h4><p>{T('home.bt.ouP')}</p></div><span class="arr">→</span></a>
+            <a href={L('/tips/correct-score')} class="bt-tile"><div class="ic">🔢</div><div><h4>{T('home.bt.cs')}</h4><p>{T('home.bt.csP')}</p></div><span class="arr">→</span></a>
+            <a href={L('/tips/double-chance')} class="bt-tile"><div class="ic">🛡️</div><div><h4>{T('home.bt.dc')}</h4><p>{T('home.bt.dcP')}</p></div><span class="arr">→</span></a>
+            <a href={L('/tips/draw')} class="bt-tile"><div class="ic">🤝</div><div><h4>{T('home.bt.draw')}</h4><p>{T('home.bt.drawP')}</p></div><span class="arr">→</span></a>
           </div>
         </section>
 
@@ -377,7 +378,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
         <section>
           <div class="sec-head">
             <h2 class="sec-title">{T('home.perf.pre')}<b>{T('home.perf.bold')}</b></h2>
-            <a href="/tipsters" class="more-link">{T('home.perf.full')}</a>
+            <a href={L('/tipsters')} class="more-link">{T('home.perf.full')}</a>
           </div>
           <ModelTracks limit={3} lang={lang} />
         </section>
@@ -386,7 +387,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
         <section>
           <div class="sec-head">
             <h2 class="sec-title">{T('home.bon.pre')} <b>{T('home.bon.bold')}</b></h2>
-            <a href="/bonuses" class="more-link">{T('home.bon.all')}</a>
+            <a href={L('/bonuses')} class="more-link">{T('home.bon.all')}</a>
           </div>
           <div class="bonus-grid">
             {bkList.slice(0, 4).map((bk) => (
@@ -399,7 +400,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
                   <div class="bt">{bk.name} · {bk.bonus.type === 'free-bet' ? T('home.bon.free') : T('home.bon.welcome')}</div>
                   <div class="bn">{bk.bonus.headline}</div>
                   <div class="bonus-foot">
-                    <a href={`/bookmakers/${bk.slug}`} class="btn btn-ghost btn-sm">{T('bk.details')}</a>
+                    <a href={L(`/bookmakers/${bk.slug}`)} class="btn btn-ghost btn-sm">{T('bk.details')}</a>
                     <a href={bk.affiliate_url} class="btn btn-mint btn-sm" rel="nofollow sponsored" target="_blank">{T('bk.claim')}</a>
                   <span class="tc-line" style="flex-basis:100%">{T('bk.tc')} <a href="https://www.gambleaware.org" rel="nofollow noopener" target="_blank">GambleAware.org</a></span>
                   </div>
@@ -424,7 +425,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
           <section>
             <div class="sec-head">
               <h2 class="sec-title">{T('home.news.pre')} <b>{T('home.news.bold')}</b></h2>
-              <a href="/news" class="more-link">{T('home.news.all')}</a>
+              <a href={L('/news')} class="more-link">{T('home.news.all')}</a>
             </div>
             <div class="feature-article" style="margin-bottom:16px">
               <div class="fa-img" style={`--ca:${badgeColor(featureTip.home)};--cb:${badgeColor(featureTip.away)}`}>
@@ -438,7 +439,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
                 <span class="tag">{featureTip.league}</span>
                 <h2>{featureTip.home} vs {featureTip.away}: {T('home.news.preview')}</h2>
                 <p>{T('home.news.makes').split('{tip}').join(localizeMarket(lang, featureTip.recommendation?.text)).split('{price}').join(Number(featureTip.recommendation?.price ?? 0).toFixed(2))}</p>
-                <a href={`/predictions/${matchSlug(featureTip)}`} class="btn btn-mint">{T('home.news.read')}</a>
+                <a href={L(`/predictions/${matchSlug(featureTip)}`)} class="btn btn-mint">{T('home.news.read')}</a>
               </div>
             </div>
             <div class="news-grid">
@@ -453,7 +454,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
                     <span class="tag">{t.league}</span><span class="when">{kickoffLabel(t.kickoff, lang)}</span>
                   </div>
                   <div class="news-body">
-                    <h4><a href={`/predictions/${matchSlug(t)}`}>{t.home} vs {t.away}: {T('home.news.pred')}</a></h4>
+                    <h4><a href={L(`/predictions/${matchSlug(t)}`)}>{t.home} vs {t.away}: {T('home.news.pred')}</a></h4>
                     <div class="nf"><span>{T('card.model')}</span><span class="read">{T('home.news.readSm')}</span></div>
                   </div>
                 </div>
@@ -485,7 +486,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
         <div class="box">
           <div class="box-h"><span class="hi">⚡</span> {T('side.live')}</div>
           {topLeagues.map(([lg, n]) => (
-            <a class="tm" href={`/league/${slugify(lg)}`}><span class="dot"></span>{lg} <span class="cnt">{n}</span></a>
+            <a class="tm" href={L(`/league/${slugify(lg)}`)}><span class="dot"></span>{lg} <span class="cnt">{n}</span></a>
           ))}
         </div>
 
@@ -493,7 +494,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
           <div class="box-h"><span class="hi">🏆</span> {T('side.topBk')}</div>
           {bkList.slice(0, 3).map((bk, i) => (
             <div class={`bk-mini${i === 0 ? ' top' : ''}`}>
-              <a class="mini-tip" href={`/bookmakers/${bk.slug}`}>
+              <a class="mini-tip" href={L(`/bookmakers/${bk.slug}`)}>
                 <div class="ava" style={`background:${bk.logo.bg};color:${bk.logo.fg}`}>
                   {bk.logo.line1.slice(0, 2)}
                   {i === 0 && <span class="rank1">1</span>}
@@ -510,7 +511,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
           <div class="promo">
             <h4>🎁 {topBk.bonus.headline.split(' + ')[0]}</h4>
             <p>{T('side.givesNew').split('{name}').join(topBk.name).split('{bonus}').join(topBk.bonus.headline.toLowerCase())}</p>
-            <a href={`/bookmakers/${topBk.slug}`} class="btn btn-mint btn-block">{T('side.claim')}</a>
+            <a href={L(`/bookmakers/${topBk.slug}`)} class="btn btn-mint btn-block">{T('side.claim')}</a>
             <span class="tc-line">{T('bk.tc')} <a href="https://www.gambleaware.org" rel="nofollow noopener" target="_blank">GambleAware.org</a></span>
           </div>
         )}
