@@ -15,7 +15,7 @@ const apps = (data.bookmakers ?? [])
   .sort((a, b) => (b.app.rating ?? 0) - (a.app.rating ?? 0));
 const year = new Date().getFullYear();
 
-const aiPage = (content.entries ?? {})['page:betting-apps'];
+const aiPage = (content.entries ?? {})[lang === 'en' ? 'page:betting-apps' : `${lang}:page:betting-apps`];
 const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(aiPage.faq) } : null;
 ---
 <Base schema={pageSchema} lang={lang} i18nPath="/betting-apps"
@@ -64,13 +64,13 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
           <h2>{T('app.vsH')}</h2>
           <p>{T('app.vsP')}</p>
         </section>
-        {lang === 'en' && aiPage?.intro && (
+        {aiPage?.intro && (
           <section class="seo">
-            <h2>About betting apps</h2>
+            <h2>{T('common.aboutPage')}</h2>
             <p>{aiPage.intro}</p>
           </section>
         )}
-        {lang === 'en' && <AiFaq faqs={aiPage?.faq ?? []} title="Betting apps FAQ" />}
+        <AiFaq faqs={aiPage?.faq ?? []} title={T('app.faqTitle')} />
       </main>
 
       <aside class="sidebar">

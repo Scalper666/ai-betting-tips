@@ -87,6 +87,9 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: npx wrangler pages deploy dist --project-name ai-betting-tips --commit-dirty=true
 
+      - name: Ping IndexNow (Bing/Yandex instant indexing)
+        run: python pipeline/indexnow.py
+
       - name: Commit data snapshot (settled history must persist between runs)
         run: |
           git config user.name "abt-refresh-bot"

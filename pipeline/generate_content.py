@@ -497,6 +497,26 @@ def build_worklist() -> list[dict]:
     for key, what in PAGES:
         work.append({"key": f"page:{key}", "kind": "page", "prompt": p_page(key, what), "hash_src": f"{key}|{what}|v2"})
 
+    # translated variants for kinds whose pages are localized (Astro reads
+    # `{lang}:{key}`). Whitelist grows as more page types get [lang] routes.
+    LANG_KINDS = {"page"}
+    LANG_NAMES = {"es": "Spanish (neutral, Spain-leaning)", "pt": "Brazilian Portuguese", "de": "German"}
+    langs = [l.strip() for l in os.getenv("CONTENT_LANGS", "es,pt,de").split(",") if l.strip() in LANG_NAMES]
+    lang_work = []
+    for w in work:
+        if w["kind"] not in LANG_KINDS:
+            continue
+        for lg in langs:
+            lang_work.append({
+                "key": f"{lg}:{w['key']}",
+                "kind": w["kind"],
+                "prompt": w["prompt"] + f"\n\nIMPORTANT: Write EVERY text field in {LANG_NAMES[lg]} — natural, "
+                          "native-quality prose using the betting terminology common in that market. "
+                          "Keep brand names and the site name (AI Betting Tips) in English.",
+                "hash_src": w["hash_src"] + "|" + lg,
+            })
+    work += lang_work
+
     # dedupe by key (e.g. rematch fixtures share a home-vs-away slug/page)
     seen: set[str] = set()
     work = [w for w in work if not (w["key"] in seen or seen.add(w["key"]))]

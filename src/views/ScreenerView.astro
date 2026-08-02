@@ -16,7 +16,7 @@ const leagues = [...new Set(rows.map((r) => r.league))].sort();
 const scoreCls = (s) => (s >= 45 ? 's-hi' : s >= 30 ? 's-md' : 's-lo');
 const steamHtml = { up: ['scr-steam up', 'scr.steamUp'], down: ['scr-steam down', 'scr.steamDown'], flat: ['scr-steam flat', 'scr.steamFlat'] };
 
-const aiPage = (content.entries ?? {})['page:screener'];
+const aiPage = (content.entries ?? {})[lang === 'en' ? 'page:screener' : `${lang}:page:screener`];
 const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(aiPage.faq) } : null;
 ---
 <Base schema={pageSchema} lang={lang} i18nPath="/screener"
@@ -101,7 +101,7 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
       </div>
       <span class="read-more" data-clamp-toggle="seoClamp">{T('home.seo.more')}</span>
     </section>
-    {lang === 'en' && <AiFaq faqs={aiPage?.faq ?? []} title="Screener FAQ" />}
+    <AiFaq faqs={aiPage?.faq ?? []} title={T('scr.faqTitle')} />
 
   </div>
 

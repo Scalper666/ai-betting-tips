@@ -361,6 +361,11 @@ const D = {
   'row.welcomePkg': { en: 'Welcome package', es: 'Paquete de bienvenida', pt: 'Pacote de boas-vindas', de: 'Willkommenspaket' },
   'row.wagering': { en: 'wagering', es: 'de rollover', pt: 'de rollover', de: 'Umsatz' },
   'row.minOdds': { en: 'min odds', es: 'cuota mín.', pt: 'odd mín.', de: 'Mindestquote' },
+  'common.aboutPage': { en: 'About this page', es: 'Sobre esta página', pt: 'Sobre esta página', de: 'Über diese Seite' },
+  'pd.faqTitle': { en: 'Predictions FAQ', es: 'Preguntas sobre pronósticos', pt: 'Perguntas sobre palpites', de: 'Prognosen FAQ' },
+  'scr.faqTitle': { en: 'Screener FAQ', es: 'Preguntas sobre el screener', pt: 'Perguntas sobre o screener', de: 'Screener FAQ' },
+  'bon.faqTitle': { en: 'Bonuses FAQ', es: 'Preguntas sobre bonos', pt: 'Perguntas sobre bônus', de: 'Bonus FAQ' },
+  'app.faqTitle': { en: 'Betting apps FAQ', es: 'Preguntas sobre apps', pt: 'Perguntas sobre apps', de: 'Wett-Apps FAQ' },
   'row.minDep': { en: 'min dep', es: 'dep. mín.', pt: 'dep. mín.', de: 'Mindesteinz.' },
 };
 
