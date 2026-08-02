@@ -41,8 +41,10 @@ def main() -> int:
     if sys.platform == "win32":
         ctx.load_default_certs(ssl.Purpose.SERVER_AUTH)
         ctx.verify_flags &= ~ssl.VERIFY_X509_STRICT
+    # bing.com/indexnow validates reliably and shares URLs with the whole
+    # IndexNow network; the api.indexnow.org aggregator 403s on fresh keys
     req = urllib.request.Request(
-        "https://api.indexnow.org/indexnow", data=body,
+        "https://www.bing.com/indexnow", data=body,
         headers={"Content-Type": "application/json; charset=utf-8"}, method="POST")
     try:
         with urllib.request.urlopen(req, context=ctx, timeout=30) as r:
