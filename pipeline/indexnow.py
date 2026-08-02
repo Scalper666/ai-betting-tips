@@ -30,27 +30,34 @@ def main() -> int:
         print("⚠ sitemap has no URLs — skipping")
         return 0
 
-    body = json.dumps({
-        "host": HOST,
-        "key": KEY,
-        "keyLocation": f"https://{HOST}/{KEY}.txt",
-        "urlList": urls[:10000],
-    }).encode()
-
     ctx = ssl.create_default_context()
     if sys.platform == "win32":
         ctx.load_default_certs(ssl.Purpose.SERVER_AUTH)
         ctx.verify_flags &= ~ssl.VERIFY_X509_STRICT
+
     # bing.com/indexnow validates reliably and shares URLs with the whole
-    # IndexNow network; the api.indexnow.org aggregator 403s on fresh keys
-    req = urllib.request.Request(
-        "https://www.bing.com/indexnow", data=body,
-        headers={"Content-Type": "application/json; charset=utf-8"}, method="POST")
-    try:
-        with urllib.request.urlopen(req, context=ctx, timeout=30) as r:
-            print(f"✓ IndexNow: {len(urls)} URLs submitted, HTTP {r.status}")
-    except Exception as e:
-        print(f"⚠ IndexNow ping failed (non-fatal): {e}")
+    # IndexNow network (api.indexnow.org 403s fresh keys). Large batches also
+    # 403 for new keys — chunk to 100 URLs per request.
+    import time
+    ok = fail = 0
+    for i in range(0, len(urls), 100):
+        body = json.dumps({
+            "host": HOST,
+            "key": KEY,
+            "keyLocation": f"https://{HOST}/{KEY}.txt",
+            "urlList": urls[i:i + 100],
+        }).encode()
+        req = urllib.request.Request(
+            "https://www.bing.com/indexnow", data=body,
+            headers={"Content-Type": "application/json; charset=utf-8"}, method="POST")
+        try:
+            with urllib.request.urlopen(req, context=ctx, timeout=30) as r:
+                ok += 1 if r.status in (200, 202) else 0
+        except Exception as e:
+            fail += 1
+            print(f"  ⚠ batch {i // 100 + 1}: {e}")
+        time.sleep(1)
+    print(f"✓ IndexNow: {len(urls)} URLs in {ok} batch(es) submitted" + (f", {fail} failed" if fail else ""))
     return 0
 
 
