@@ -1,0 +1,12 @@
+---
+import BookmakerReviewView from '../../../views/BookmakerReviewView.astro';
+import data from '../../../data/bookmakers.json';
+import { ALT_LANGS } from '../../../i18n/index.js';
+
+export function getStaticPaths() {
+  return ALT_LANGS.flatMap((lang) =>
+    (data.bookmakers ?? []).map((bk) => ({ params: { lang, slug: bk.slug }, props: { bk } })));
+}
+const { bk } = Astro.props;
+---
+<BookmakerReviewView lang={Astro.params.lang} bk={bk} />

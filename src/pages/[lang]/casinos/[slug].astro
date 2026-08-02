@@ -1,0 +1,12 @@
+---
+import CasinoReviewView from '../../../views/CasinoReviewView.astro';
+import data from '../../../data/casinos.json';
+import { ALT_LANGS } from '../../../i18n/index.js';
+
+export function getStaticPaths() {
+  return ALT_LANGS.flatMap((lang) =>
+    (data.casinos ?? []).map((c) => ({ params: { lang, slug: c.slug }, props: { casino: c } })));
+}
+const { casino } = Astro.props;
+---
+<CasinoReviewView lang={Astro.params.lang} casino={casino} />

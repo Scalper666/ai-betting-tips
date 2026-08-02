@@ -1,0 +1,123 @@
+---
+import Base from '../layouts/Base.astro';
+import BookmakerRow from '../components/BookmakerRow.astro';
+import CasinoRow from '../components/CasinoRow.astro';
+import countryData from '../data/countries.json';
+import bookmakerData from '../data/bookmakers.json';
+import casinoData from '../data/casinos.json';
+import content from '../data/content.json';
+import { avgScore, faqSchema } from '../lib/utils.js';
+import { t } from '../i18n/index.js';
+import AiFaq from '../components/AiFaq.astro';
+
+const { country, lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
+const trx = lang === 'en' ? null : ((content.entries ?? {})[`${lang}:country:${country.slug}`] ?? null);
+const ai = trx ?? (content.entries ?? {})[`country:${country.slug}`];
+const legalSummary = trx?.legal_summary ?? country.legal_summary;
+const keyFacts = trx?.key_facts ?? country.key_facts;
+const schema = ai?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(ai.faq) } : null;
+const list = (bookmakerData.bookmakers ?? [])
+  .filter((bk) => (bk.countries ?? []).includes(country.slug))
+  .sort((a, b) => avgScore(b.scores) - avgScore(a.scores));
+const casinoList = (casinoData.casinos ?? [])
+  .filter((c) => (c.countries ?? []).includes(country.slug))
+  .sort((a, b) => avgScore(b.scores) - avgScore(a.scores));
+
+const year = new Date().getFullYear();
+const title = F('cn.title', { name: country.name, year });
+const description = F('cn.desc', { name: country.name, reg: country.regulator });
+---
+<Base lang={lang} i18nPath={`/countries/${country.slug}`} schema={schema} title={title} description={description} active="bookmakers">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href="/">{T('crumb.home')}</a><span>/</span><a href="/bookmakers">{T('nav.sites')}</a><span>/</span>{country.name}
+      </div>
+      <h1>{country.flag} {T('cn.h1')} <em>{country.name}</em></h1>
+      <p class="lead">{legalSummary}</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+
+        {ai && (
+          <section class="seo" style="margin-top:22px">
+            <h2>{T('cn.bettingInPre')} {country.name}</h2>
+            <p>{ai.intro}</p>
+          </section>
+        )}
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{T('cn.topSitesPre')} <b>{country.name}</b></h2></div>
+          {list.length ? (
+            <div class="bk-list">{list.map((bk, i) => <BookmakerRow bk={bk} rank={i + 1} lang={lang} />)}</div>
+          ) : (
+            <div class="box"><div class="box-pad dim">{T('cn.noOperators')}</div></div>
+          )}
+        </section>
+
+        {casinoList.length > 0 && (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">{T('cn.topCasinosPre')} <b>{country.name}</b></h2>
+              <a href="/casinos" class="more-link">{T('rv.allCasinos')} →</a>
+            </div>
+            <div class="bk-list">
+              {casinoList.map((c, i) => <CasinoRow casino={c} rank={i + 1} lang={lang} />)}
+            </div>
+          </section>
+        )}
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{T('cn.bettingInPre')} <b>{country.name}</b></h2></div>
+          <div class="odds-table"><div class="scr-scroll">
+            <table class="otbl">
+              <tbody>
+                <tr><td class="o-match" style="font-weight:700">{T('cn.regulator')}</td><td class="o-cell"><span class="cb">{country.regulator}</span></td></tr>
+                <tr><td class="o-match" style="font-weight:700">{T('cn.currency')}</td><td class="o-cell"><span class="cb">{country.currency}</span></td></tr>
+                <tr><td class="o-match" style="font-weight:700">{T('cn.popularPayments')}</td><td class="o-cell"><span class="cb">{country.popular_payments.join(', ')}</span></td></tr>
+              </tbody>
+            </table>
+          </div></div>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{T('cn.knowPre')} <b>{T('cn.knowBold')}</b></h2></div>
+          <div class="feat-grid">
+            {keyFacts.map((f) => (
+              <div class="feat"><div class="fi">ℹ️</div><p>{f}</p></div>
+            ))}
+          </div>
+        </section>
+
+        <section class="seo">
+          <h2>{F('cn.legalH', { name: country.name })}</h2>
+          <p>{legalSummary}</p>
+          {country.verify && (
+            <p class="dim" style="font-size:13px">{T('cn.verifyNote')}</p>
+          )}
+        </section>
+
+        <AiFaq faqs={ai?.faq ?? []} title={F('cn.faqTitle', { name: country.name })} />
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">🌍</span> {T('cn.otherMarkets')}</div>
+          {(countryData.countries ?? []).filter((c) => c.slug !== country.slug).map((c) => (
+            <a class="tm" href={`/countries/${c.slug}`}><span class="dot"></span>{c.flag} {c.name}</a>
+          ))}
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🔗</span> {T('common.alsoSee')}</div>
+          <a class="tm" href="/bookmakers"><span class="dot"></span>{T('rv.allBk')}</a>
+          <a class="tm" href="/bonuses"><span class="dot"></span>{T('nav.allOffers')}</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

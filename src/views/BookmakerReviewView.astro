@@ -1,0 +1,221 @@
+---
+import Base from '../layouts/Base.astro';
+import data from '../data/bookmakers.json';
+import content from '../data/content.json';
+import countryData from '../data/countries.json';
+import { avgScore, SCORE_LABELS } from '../lib/utils.js';
+import { t, trLabel } from '../i18n/index.js';
+
+const { bk, lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
+const trx = lang === 'en' ? null : ((content.entries ?? {})[`${lang}:bookmaker:${bk.slug}`] ?? null);
+const ai = trx ?? (content.entries ?? {})[`bookmaker:${bk.slug}`];
+const pros = trx?.pros ?? bk.pros;
+const cons = trx?.cons ?? bk.cons;
+const shortVerdict = trx?.short_verdict ?? bk.verdict;
+const avg = avgScore(bk.scores);
+const markets = (countryData.countries ?? []).filter((c) => (bk.countries ?? []).includes(c.slug));
+const updated = new Date().toISOString().slice(0, 10);
+
+const title = F('rv.bkTitle', { name: bk.name, year: new Date().getFullYear() });
+const description = F('rv.bkDesc', { name: bk.name, avg, bonus: bk.bonus.headline, wag: bk.bonus.wagering });
+
+const faq = [
+  { q: F('rv.qSafeBk', { name: bk.name }), a: F('rv.aSafeBk', { name: bk.name, lic: bk.licences.join(' + ') }) },
+  { q: F('rv.qOffer', { name: bk.name }), a: F('rv.aOfferBk', { bonus: bk.bonus.headline, wag: bk.bonus.wagering, odds: bk.bonus.min_odds, dep: bk.bonus.min_deposit }) },
+  { q: F('rv.qWithdraw', { name: bk.name }), a: F('rv.aWithdraw', { time: bk.payout_time }) },
+];
+if (ai?.faq?.length) faq.push(...ai.faq);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Review',
+      name: title,
+      datePublished: updated,
+      itemReviewed: {
+        '@type': 'Organization',
+        name: bk.name,
+        foundingDate: String(bk.founded),
+      },
+      reviewRating: { '@type': 'Rating', ratingValue: avg, bestRating: 10, worstRating: 0 },
+      author: { '@type': 'Organization', name: 'AI Betting Tips' },
+      reviewBody: shortVerdict,
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    },
+  ],
+};
+---
+<Base lang={lang} i18nPath={`/bookmakers/${bk.slug}`} title={title} description={description} schema={schema} active="bookmakers">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href="/">{T('crumb.home')}</a><span>/</span><a href="/bookmakers">{T('nav.sites')}</a><span>/</span>{bk.name}
+      </div>
+      <h1>{bk.name} <em>{T('rv.reviewEm')}</em></h1>
+      <p class="lead">{description}</p>
+      <p class="tc" style="margin-top:6px">{F('rv.lastUpdated', { date: updated })} · <a href="#how-we-rate" style="color:var(--mint)">{T('rv.howWeRate')}</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+
+        {bk.placeholder && (
+          <div class="box"><div class="box-pad" style="color:var(--danger);font-weight:700">
+            {T('rv.demoWarn')}
+          </div></div>
+        )}
+
+        <!-- Snapshot -->
+        <section>
+          <div class="bk-list">
+            <article class="bk featured">
+              <div class="bk-rank">★</div>
+              <div class="bk-brand">
+                <div class="bk-logo" style={`background:${bk.logo.bg};color:${bk.logo.fg}`}>{bk.logo.line1}<br />{bk.logo.line2}</div>
+                <div>
+                  <h4>{bk.name}</h4>
+                  <div class="bk-meta">
+                    <span class="rate">★ <b>{bk.rating}</b></span>
+                    <span class="tc">{T('rv.founded')} {bk.founded} · {bk.licences.join(', ')}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="bk-bonus">
+                <div class="blbl">{T('rv.welcomeOffer')}</div>
+                <div class="amt">{bk.bonus.headline}</div>
+                <div class="tc" style="margin-top:4px">{F('rv.minOddsDep', { wag: bk.bonus.wagering, odds: bk.bonus.min_odds, dep: bk.bonus.min_deposit })}</div>
+              </div>
+              <div class="bk-score">
+                <div class="ring" data-val={Math.round(avg * 10)}><b>{avg}</b></div>
+                <div class="sl">{T('bk.ourScore')}</div>
+              </div>
+              <div class="bk-actions">
+                <a href={bk.affiliate_url} class="btn btn-mint btn-sm" rel="nofollow sponsored" target="_blank">{T('bk.getBonus')}</a>
+                <span class="review" style="text-decoration:none">{T('bk.tc')} <a href="https://www.gambleaware.org" rel="nofollow noopener" target="_blank" style="color:inherit;text-decoration:underline">GambleAware.org</a></span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Score breakdown -->
+        <section id="how-we-rate">
+          <div class="sec-head"><h2 class="sec-title">{F('rv.scoresPre', { name: bk.name })} <b>{F('rv.scoresBold', { name: bk.name })}</b></h2></div>
+          <div class="box"><div class="box-pad">
+            <div class="rate-rows">
+              {Object.entries(bk.scores).map(([k, v]) => (
+                <div class="rate-row">
+                  <span class="rl">{trLabel(lang, SCORE_LABELS[k] ?? k)}</span>
+                  <div class="bar" data-val={Math.round(v * 10)}><i></i></div>
+                  <span class="rv">{v}</span>
+                </div>
+              ))}
+            </div>
+          </div></div>
+        </section>
+
+        <!-- Pros / cons -->
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{T('rv.prosPre')} <b>{T('rv.prosBold')}</b></h2></div>
+          <div class="feat-grid" style="grid-template-columns:1fr 1fr">
+            <div class="feat">
+              <div class="fi">✅</div><h4>{T('rv.liked')}</h4>
+              <ul style="margin:0;padding-left:18px;color:var(--text-dim);font-size:13.5px">
+                {pros.map((p) => <li style="margin-bottom:6px">{p}</li>)}
+              </ul>
+            </div>
+            <div class="feat v">
+              <div class="fi">⚠️</div><h4>{T('rv.watch')}</h4>
+              <ul style="margin:0;padding-left:18px;color:var(--text-dim);font-size:13.5px">
+                {cons.map((c) => <li style="margin-bottom:6px">{c}</li>)}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {ai && (
+          <section class="seo">
+            <h2>{F('rv.verdictOn', { name: bk.name })}</h2>
+            <p>{ai.verdict}</p>
+            <h3 style="margin:18px 0 8px">{F('rv.whoFor', { name: bk.name })}</h3>
+            <p>{ai.who_for}</p>
+          </section>
+        )}
+
+        <!-- Facts table -->
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{T('rv.keyPre')} <b>{T('rv.keyBold')}</b></h2></div>
+          <div class="odds-table"><div class="scr-scroll">
+            <table class="otbl">
+              <tbody>
+                <tr><td class="o-match" style="font-weight:700">{T('rv.licences')}</td><td class="o-cell"><span class="cb">{bk.licences.join(', ')}</span></td></tr>
+                <tr><td class="o-match" style="font-weight:700">{T('rv.payoutSpeed')}</td><td class="o-cell hot"><span class="cb">{bk.payout_time}</span></td></tr>
+                <tr><td class="o-match" style="font-weight:700">{T('rv.payments')}</td><td class="o-cell"><span class="cb">{bk.payments.join(', ')}</span></td></tr>
+                <tr><td class="o-match" style="font-weight:700">{T('rv.mobileApp')}</td><td class="o-cell"><span class="cb">
+                  {[bk.app.android && 'Android', bk.app.ios && 'iOS'].filter(Boolean).join(' · ') || T('rv.mobileWebOnly')}
+                  {bk.app.size_mb ? ` · ${bk.app.size_mb} MB` : ''}
+                </span></td></tr>
+                <tr><td class="o-match" style="font-weight:700">{T('rv.liveStreaming')}</td><td class="o-cell"><span class="cb">{bk.app.streaming ? T('app.yes') : T('common.no')}</span></td></tr>
+              </tbody>
+            </table>
+          </div></div>
+        </section>
+
+        <!-- Verdict -->
+        <section class="seo">
+          <h2>{F('rv.verdictH', { name: bk.name })}</h2>
+          <p>{shortVerdict}</p>
+          <p class="dim" style="font-size:13px">{T('rv.aiNote')}</p>
+        </section>
+
+        <!-- FAQ -->
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{bk.name} <b>FAQ</b></h2></div>
+          <div class="faq">
+            {faq.map((f, i) => (
+              <div class={`faq-item${i === 0 ? ' open' : ''}`}>
+                <div class="faq-q">{f.q}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{f.a}</p></div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>🎁 {bk.name}</h4>
+          <p>{bk.bonus.headline}</p>
+          <a href={bk.affiliate_url} class="btn btn-mint btn-block" rel="nofollow sponsored" target="_blank">{T('rv.claimOffer')}</a>
+          <span class="tc-line">{T('bk.tc')} <a href="https://www.gambleaware.org" rel="nofollow noopener" target="_blank">GambleAware.org</a></span>
+        </div>
+        {markets.length > 0 && (
+          <div class="box">
+            <div class="box-h"><span class="hi">🌍</span> {T('rv.availableIn')}</div>
+            {markets.map((c) => (
+              <a class="tm" href={`/countries/${c.slug}`}><span class="dot"></span>{c.flag} {c.name}</a>
+            ))}
+          </div>
+        )}
+        <div class="box">
+          <div class="box-h"><span class="hi">🏆</span> {T('rv.compare')}</div>
+          <a class="tm" href="/bookmakers"><span class="dot"></span>{T('rv.allBk')}</a>
+          <a class="tm" href="/bonuses"><span class="dot"></span>{T('nav.allOffers')}</a>
+          <a class="tm" href="/betting-apps"><span class="dot"></span>{T('nav.apps')}</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

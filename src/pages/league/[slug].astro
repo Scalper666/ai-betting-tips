@@ -1,12 +1,8 @@
 ---
-import Base from '../../layouts/Base.astro';
-import PredCard from '../../components/PredCard.astro';
+import LeagueView from '../../views/LeagueView.astro';
 import predictions from '../../data/predictions.json';
-import content from '../../data/content.json';
-import { slugify, faqSchema } from '../../lib/utils.js';
-import AiFaq from '../../components/AiFaq.astro';
+import { slugify } from '../../lib/utils.js';
 
-// One SEO page per league, built from whatever leagues exist in the data.
 export function getStaticPaths() {
   const tips = predictions.tips ?? [];
   const leagues = [...new Set(tips.map((t) => t.league).filter(Boolean))];
@@ -15,67 +11,6 @@ export function getStaticPaths() {
     props: { league, tips: tips.filter((t) => t.league === league) },
   }));
 }
-
 const { league, tips } = Astro.props;
-const ai = (content.entries ?? {})[`league:${slugify(league)}`];
-const schema = ai?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(ai.faq) } : null;
-const title = `${league} Predictions, Tips & Odds — AI Betting Tips`;
-const description = `Free ${league} predictions with our recommended tip, best available odds and confidence rating for every fixture.`;
 ---
-<Base title={title} description={description} schema={schema} active="predictions">
-  <div class="container">
-    <div class="page-head">
-      <div class="crumbs">
-        <a href="/">Home</a><span>/</span><a href="/predictions">Predictions</a><span>/</span>{league}
-      </div>
-      <h1>{league} <em>predictions</em></h1>
-      <p class="lead">{tips.length} fixture{tips.length === 1 ? '' : 's'} with value picks, priced against the margin-free fair odds.</p>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="layout">
-      <main class="content">
-        <section>
-          <div class="pred-grid">
-            {tips.map((tip) => <PredCard tip={tip} />)}
-          </div>
-        </section>
-
-        <section class="seo">
-          <h2>{league} betting tips</h2>
-          {ai ? (
-            <>
-              <p>{ai.intro}</p>
-              <h3 style="margin:18px 0 8px">How to bet on the {league}</h3>
-              <p>{ai.betting_guide}</p>
-            </>
-          ) : (
-            <p>
-              Every {league} pick on this page comes from the same pipeline: we collect prices from all
-              available bookmakers, strip the margin to get a fair probability, then flag selections where
-              the best available price beats that fair line.
-            </p>
-          )}
-        </section>
-        <AiFaq faqs={ai?.faq ?? []} title={`${league} FAQ`} />
-      </main>
-
-      <aside class="sidebar">
-        <div class="box">
-          <div class="box-h"><span class="hi">⚡</span> All fixtures</div>
-          {tips.map((t) => (
-            <a class="tm" href={`/predictions/${slugify(`${t.home}-vs-${t.away}`)}`}>
-              <span class="dot"></span>{t.home} v {t.away}
-            </a>
-          ))}
-        </div>
-        <div class="box">
-          <div class="box-h"><span class="hi">🎯</span> {league} markets</div>
-          <a class="tm" href={`/tips/match-result/${slugify(league)}`}><span class="dot"></span>Match result tips</a>
-          <a class="tm" href={`/tips/over-under/${slugify(league)}`}><span class="dot"></span>Over/Under tips</a>
-        </div>
-      </aside>
-    </div>
-  </div>
-</Base>
+<LeagueView lang="en" league={league} tips={tips} />

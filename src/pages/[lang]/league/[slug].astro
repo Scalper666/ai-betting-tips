@@ -1,0 +1,18 @@
+---
+import LeagueView from '../../../views/LeagueView.astro';
+import predictions from '../../../data/predictions.json';
+import { slugify } from '../../../lib/utils.js';
+import { ALT_LANGS } from '../../../i18n/index.js';
+
+export function getStaticPaths() {
+  const tips = predictions.tips ?? [];
+  const leagues = [...new Set(tips.map((t) => t.league).filter(Boolean))];
+  return ALT_LANGS.flatMap((lang) =>
+    leagues.map((league) => ({
+      params: { lang, slug: slugify(league) },
+      props: { league, tips: tips.filter((t) => t.league === league) },
+    })));
+}
+const { league, tips } = Astro.props;
+---
+<LeagueView lang={Astro.params.lang} league={league} tips={tips} />

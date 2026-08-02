@@ -1,0 +1,12 @@
+---
+import CountryView from '../../../views/CountryView.astro';
+import countryData from '../../../data/countries.json';
+import { ALT_LANGS } from '../../../i18n/index.js';
+
+export function getStaticPaths() {
+  return ALT_LANGS.flatMap((lang) =>
+    (countryData.countries ?? []).map((c) => ({ params: { lang, slug: c.slug }, props: { country: c } })));
+}
+const { country } = Astro.props;
+---
+<CountryView lang={Astro.params.lang} country={country} />
