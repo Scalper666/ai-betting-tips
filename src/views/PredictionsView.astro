@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+import { t, localizeMarket, trLabel } from '../i18n/index.js';
+import content from '../data/content.json';
+import AiFaq from '../components/AiFaq.astro';
+import { faqSchema } from '../lib/utils.js';
+import PredCard from '../components/PredCard.astro';
+import predictions from '../data/predictions.json';
+
+const { lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+
+const tips = predictions.tips ?? [];
+
+const aiPage = (content.entries ?? {})['page:predictions'];
+const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(aiPage.faq) } : null;
+---
+<Base schema={pageSchema} lang={lang} i18nPath="/predictions"
+  title={T('pd.title')}
+  description={T('pd.desc')}
+  active="predictions">
+
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">{T('crumb.home')}</a><span>/</span>{T('nav.predictions')}</div>
+      <h1>{T('pd.h1pre')} <em>{T('pd.h1em')}</em> {T('pd.h1post')}</h1>
+      <p class="lead">{T('pd.lead').replace('{n}', String(tips.length))}</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="pred-grid">
+            {tips.map((tip) => <PredCard tip={tip} lang={lang} />)}
+          </div>
+        </section>
+        {lang === 'en' && aiPage?.intro && (
+          <section class="seo">
+            <h2>About this page</h2>
+            <p>{aiPage.intro}</p>
+          </section>
+        )}
+        {lang === 'en' && <AiFaq faqs={aiPage?.faq ?? []} title="Predictions FAQ" />}
+      </main>
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>{T('pd.promoH')}</h4>
+          <p>{T('pd.promoP')}</p>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">📅</span> {T('common.browse')}</div>
+          <a class="tm" href="/predictions/daily"><span class="dot"></span>{T('pd.archive')}</a>
+          <a class="tm" href="/teams"><span class="dot"></span>{T('ft.teamsAZ')}</a>
+          <a class="tm" href="/tipsters"><span class="dot"></span>{T('pd.records')}</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

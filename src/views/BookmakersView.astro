@@ -1,0 +1,63 @@
+---
+import Base from '../layouts/Base.astro';
+import { t, localizeMarket, trLabel } from '../i18n/index.js';
+import BookmakerRow from '../components/BookmakerRow.astro';
+import data from '../data/bookmakers.json';
+import { avgScore, SCORE_LABELS } from '../lib/utils.js';
+
+const { lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+
+const list = [...(data.bookmakers ?? [])].sort((a, b) => avgScore(b.scores) - avgScore(a.scores));
+const year = new Date().getFullYear();
+---
+<Base lang={lang} i18nPath="/bookmakers"
+  title={T('bkh.title').replace('{year}', String(year))}
+  description={T('bkh.desc').replace('{n}', String(list.length))}
+  active="bookmakers">
+
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">{T('crumb.home')}</a><span>/</span>{T('nav.sites')}</div>
+      <h1>{T('bkh.h1pre')} <em>{T('bkh.h1em')}</em> {year}</h1>
+      <p class="lead">{T('bkh.lead')}</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="bk-list">
+            {list.map((bk, i) => <BookmakerRow bk={bk} rank={i + 1} lang={lang} />)}
+          </div>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{T('bkh.howPre')} <b>{T('bkh.howBold')}</b></h2></div>
+          <div class="bt-grid">
+            {Object.entries(SCORE_LABELS).map(([k, label]) => (
+              <div class="bt-tile">
+                <div class="ic">📊</div>
+                <div><h4>{trLabel(lang, label)}</h4><p>{T('bkh.scored')}</p></div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>{T('bkh.top')}</h4>
+          <p>{list[0]?.name} — {list[0]?.bonus.headline}</p>
+          <a href={`/bookmakers/${list[0]?.slug}`} class="btn btn-mint btn-block">{T('bk.readReview')}</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🔗</span> {T('common.alsoSee')}</div>
+          <a class="tm" href="/bonuses"><span class="dot"></span>{T('nav.allOffers')}</a>
+          <a class="tm" href="/betting-apps"><span class="dot"></span>{T('nav.apps')}</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

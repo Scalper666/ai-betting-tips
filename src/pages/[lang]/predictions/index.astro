@@ -1,0 +1,10 @@
+---
+import PredictionsView from '../../../views/PredictionsView.astro';
+import { ALT_LANGS } from '../../../i18n/index.js';
+
+export function getStaticPaths() {
+  return ALT_LANGS.map((lang) => ({ params: { lang } }));
+}
+const { lang } = Astro.params;
+---
+<PredictionsView lang={lang} />

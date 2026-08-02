@@ -1,0 +1,120 @@
+---
+import Base from '../layouts/Base.astro';
+import { t, localizeMarket, trLabel } from '../i18n/index.js';
+import CasinoRow from '../components/CasinoRow.astro';
+import data from '../data/casinos.json';
+import { avgScore, CASINO_SCORE_LABELS } from '../lib/utils.js';
+
+const { lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+
+const list = [...(data.casinos ?? [])].sort((a, b) => avgScore(b.scores) - avgScore(a.scores));
+const top = list[0];
+const year = new Date().getFullYear();
+---
+<Base lang={lang} i18nPath="/casinos"
+  title={T('cas.title').replace('{year}', String(year))}
+  description={T('cas.desc').replace('{n}', String(list.length))}
+  active="casinos">
+
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">{T('crumb.home')}</a><span>/</span>{T('nav.casinos')}</div>
+      <h1>{T('cas.h1pre')} <em>{T('cas.h1em')}</em> {T('cas.h1post')}</h1>
+      <p class="lead">{T('cas.lead').replace('{year}', String(year))}</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+
+        <section>
+          <div class="bk-list">
+            {list.map((c, i) => <CasinoRow casino={c} rank={i + 1} lang={lang} />)}
+          </div>
+        </section>
+
+        {top && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">{T('cas.howPre')} <b>{T('cas.howBold')}</b></h2></div>
+            <div class="box"><div class="box-pad">
+              <p class="dim" style="margin:0 0 18px;font-size:13.5px">{T('cas.breakdown').replace('{name}', top.name)}</p>
+              <div class="rate-rows">
+                {Object.entries(top.scores).map(([k, v]) => (
+                  <div class="rate-row">
+                    <span class="rl">{trLabel(lang, CASINO_SCORE_LABELS[k] ?? k)}</span>
+                    <div class="bar" data-val={Math.round(v * 10)}><i></i></div>
+                    <span class="rv">{v}</span>
+                  </div>
+                ))}
+              </div>
+            </div></div>
+          </section>
+        )}
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{T('cas.checkPre')} <b>{T('cas.checkBold')}</b></h2></div>
+          <div class="feat-grid">
+            <div class="feat"><div class="fi">🎰</div><h4>{T('cas.f1h')}</h4><p>{T('cas.f1p')}</p></div>
+            <div class="feat v"><div class="fi">⚡</div><h4>{T('cas.f2h')}</h4><p>{T('cas.f2p')}</p></div>
+            <div class="feat"><div class="fi">🔒</div><h4>{T('cas.f3h')}</h4><p>{T('cas.f3p')}</p></div>
+          </div>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{T('cas.faqPre')} <b>{T('cas.faqBold')}</b></h2></div>
+          <div class="faq">
+            <div class="faq-item open">
+              <div class="faq-q">{T('cas.q1')}<span class="pm">+</span></div>
+              <div class="faq-a"><p>{T('cas.a1')}</p></div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">{T('cas.q2')}<span class="pm">+</span></div>
+              <div class="faq-a"><p>{T('cas.a2')}</p></div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">{T('cas.q3')}<span class="pm">+</span></div>
+              <div class="faq-a"><p>{T('cas.a3')}</p></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="seo">
+          <h2>{T('cas.seoH')}</h2>
+          <div class="clamp" id="seoClamp">
+            <p>{T('cas.seoP1')}</p>
+            <p>{T('cas.seoP2')}</p>
+          </div>
+          <span class="read-more" data-clamp-toggle="seoClamp">{T('home.seo.more')}</span>
+        </section>
+
+      </main>
+
+      <aside class="sidebar">
+        {top && (
+          <div class="promo">
+            <h4>🎰 #1 {top.name}</h4>
+            <p>{T('cas.topFor').replace('{year}', String(year)).replace('{bonus}', top.bonus.headline.toLowerCase())}</p>
+            <a href={`/casinos/${top.slug}`} class="btn btn-mint btn-block">{T('bk.readReview')}</a>
+          </div>
+        )}
+        <div class="box">
+          <div class="box-h"><span class="hi">🎁</span> {T('cas.topBonuses')}</div>
+          {list.slice(0, 3).map((c) => (
+            <div class="mini-tip">
+              <div class="ava" style={`background:${c.logo.bg};color:${c.logo.fg}`}>{c.logo.line1.slice(0, 2)}</div>
+              <div><h5>{c.name}</h5><div class="mt-sp">{c.bonus.headline}</div></div>
+              <div class="mt-roi"><b>{avgScore(c.scores)}</b><span>{T('common.score')}</span></div>
+            </div>
+          ))}
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🔗</span> {T('common.alsoSee')}</div>
+          <a class="tm" href="/bookmakers"><span class="dot"></span>{T('nav.sites')}</a>
+          <a class="tm" href="/bonuses"><span class="dot"></span>{T('nav.bonuses')}</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

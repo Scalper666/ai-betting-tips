@@ -1,0 +1,94 @@
+---
+// Generated entirely from bookmakers.json — no separate bonus data to maintain.
+import Base from '../layouts/Base.astro';
+import { t, localizeMarket, trLabel } from '../i18n/index.js';
+import content from '../data/content.json';
+import AiFaq from '../components/AiFaq.astro';
+import { faqSchema } from '../lib/utils.js';
+import data from '../data/bookmakers.json';
+
+const { lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+
+const offers = (data.bookmakers ?? []).map((bk) => ({ bk, ...bk.bonus }));
+const year = new Date().getFullYear();
+
+const aiPage = (content.entries ?? {})['page:bonuses'];
+const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(aiPage.faq) } : null;
+---
+<Base schema={pageSchema} lang={lang} i18nPath="/bonuses"
+  title={T('bon.title').replace('{year}', String(year))}
+  description={T('bon.desc')}
+  active="bonuses">
+
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">{T('crumb.home')}</a><span>/</span>{T('nav.bonuses')}</div>
+      <h1>{T('bon.h1pre')} <em>{T('bon.h1em')}</em> {T('bon.h1post')}</h1>
+      <p class="lead">{T('bon.lead')}</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{T('bon.comparePre')} <b>{T('bon.compareBold')}</b></h2></div>
+          <div class="odds-table"><div class="scr-scroll">
+            <table class="otbl">
+              <thead><tr>
+                <th style="text-align:left">{T('bon.thBookmaker')}</th><th style="text-align:left">{T('bon.thOffer')}</th>
+                <th>{T('bon.thWagering')}</th><th>{T('bon.thMinOdds')}</th><th>{T('bon.thMinDep')}</th><th>{T('bk.claim')}</th>
+              </tr></thead>
+              <tbody>
+                {offers.map(({ bk, headline, wagering, min_odds, min_deposit, code }) => (
+                  <tr>
+                    <td class="o-time"><a href={`/bookmakers/${bk.slug}`} style="color:inherit">{bk.name}</a></td>
+                    <td class="o-match" style="font-weight:700">
+                      {headline}
+                      {code && <span class="tc" style="display:block">{T('bon.code')} {code}</span>}
+                    </td>
+                    <td class="o-cell hot"><span class="cb">{wagering}</span></td>
+                    <td class="o-cell"><span class="cb">{min_odds}</span></td>
+                    <td class="o-cell"><span class="cb">€{min_deposit}</span></td>
+                    <td style="min-width:150px"><a href={bk.affiliate_url} class="btn btn-mint btn-sm" rel="nofollow sponsored" target="_blank">{T('bk.claim')}</a><span class="tc-line">{T('bk.tc')} <a href="https://www.gambleaware.org" rel="nofollow noopener" target="_blank">GambleAware.org</a></span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div></div>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{T('bon.faqPre')} <b>{T('bon.faqBold')}</b></h2></div>
+          <div class="faq">
+            <div class="faq-item open">
+              <div class="faq-q">{T('bon.q1')}<span class="pm">+</span></div>
+              <div class="faq-a"><p>{T('bon.a1')}</p></div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">{T('bon.q2')}<span class="pm">+</span></div>
+              <div class="faq-a"><p>{T('bon.a2')}</p></div>
+            </div>
+          </div>
+        </section>
+        {lang === 'en' && aiPage?.intro && (
+          <section class="seo">
+            <h2>About betting bonuses</h2>
+            <p>{aiPage.intro}</p>
+          </section>
+        )}
+        {lang === 'en' && <AiFaq faqs={aiPage?.faq ?? []} title="Bonuses FAQ" />}
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">🎁</span> {T('bon.offers')}</div>
+          {offers.map(({ bk, headline }) => (
+            <a class="tm" href={`/bookmakers/${bk.slug}`}><span class="dot"></span>{bk.name} — {headline}</a>
+          ))}
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>
