@@ -1,0 +1,158 @@
+---
+import Base from '../../layouts/Base.astro';
+import predictions from '../../data/predictions.json';
+import { buildH2hPairs, pairSlug } from '../../lib/h2h.js';
+import { resolveTeam } from '../../lib/form.js';
+import { matchSlug, slugify } from '../../lib/utils.js';
+
+// ── One page per pair of teams with ≥2 meetings in our results dataset:
+//    "Arsenal vs Chelsea head to head" queries. EN-only first wave.
+export function getStaticPaths() {
+  return buildH2hPairs().map((p) => ({ params: { pair: p.slug }, props: { p } }));
+}
+
+const { p } = Astro.props;
+const s = p.stats;
+const pct = (n) => Math.round((n / s.n) * 100);
+const shortDate = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+
+// is this pair in the current feed? (odds names resolved to dataset names)
+const upcoming = (predictions.tips ?? []).find((t) => {
+  const th = resolveTeam(t.sport_key, t.home) ?? t.home;
+  const ta = resolveTeam(t.sport_key, t.away) ?? t.away;
+  return pairSlug(th, ta) === p.slug;
+});
+
+const liveLeagues = new Set((predictions.tips ?? []).map((t) => slugify(t.league)));
+const leagueHref = liveLeagues.has(slugify(p.league)) ? `/league/${slugify(p.league)}` : '/predictions';
+
+const others = buildH2hPairs()
+  .filter((x) => x.league === p.league && x.slug !== p.slug)
+  .sort((a, b) => b.stats.n - a.stats.n)
+  .slice(0, 8);
+
+const title = `${p.teamA} vs ${p.teamB} — Head-to-Head Record & Past Results`;
+const description = `${p.teamA} vs ${p.teamB} head-to-head: ${s.n} meetings — ${s.aW} ${p.teamA} wins, ${s.draws} draws, ${s.bW} ${p.teamB} wins. ${s.avgGoals} goals per game on average, full match list inside.`;
+
+const faq = [
+  { q: `What is the head-to-head record between ${p.teamA} and ${p.teamB}?`,
+    a: `Across the ${s.n} meetings in our dataset, ${p.teamA} won ${s.aW}, ${p.teamB} won ${s.bW} and ${s.draws} ended in a draw.` },
+  { q: `How many goals do ${p.teamA} vs ${p.teamB} games produce?`,
+    a: `These meetings average ${s.avgGoals} goals per game; ${pct(s.over25)}% went over 2.5 goals and both teams scored in ${pct(s.btts)}%.` },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+<Base title={title} description={description} schema={schema} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href="/">Home</a><span>/</span>
+        <a href="/h2h">H2H</a><span>/</span>
+        {p.teamA} vs {p.teamB}
+      </div>
+      <h1>{p.teamA} vs {p.teamB} <em>head-to-head</em></h1>
+      <p class="lead">{s.n} meetings from the seasons in our results dataset ({p.league}) — full list, goals stats and, when a new fixture is scheduled, our prediction for it.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+
+        {upcoming && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">They meet <b>again soon</b></h2></div>
+            <div class="res-sum">
+              <a class="res-chip win" href={`/predictions/${matchSlug(upcoming)}`} style="text-decoration:none">
+                <b>{upcoming.home} v {upcoming.away}</b><span>Read our prediction →</span>
+              </a>
+            </div>
+          </section>
+        )}
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">All-time <b>record</b></h2></div>
+          <div class="res-sum">
+            <div class="res-chip"><b>{s.n}</b><span>Meetings</span></div>
+            <div class="res-chip win"><b>{s.aW}</b><span>{p.teamA} wins</span></div>
+            <div class="res-chip"><b>{s.draws}</b><span>Draws</span></div>
+            <div class="res-chip lose"><b>{s.bW}</b><span>{p.teamB} wins</span></div>
+            <div class="res-chip"><b>{s.aG}–{s.bG}</b><span>Goals</span></div>
+          </div>
+          <div class="res-sum" style="margin-top:10px">
+            <div class="res-chip"><b>{s.avgGoals}</b><span>Avg goals/game</span></div>
+            <div class="res-chip"><b>{pct(s.over25)}%</b><span>Over 2.5</span></div>
+            <div class="res-chip"><b>{pct(s.btts)}%</b><span>BTTS</span></div>
+          </div>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Past <b>meetings</b></h2></div>
+          <div class="res-list">
+            {p.meetings.map((m) => {
+              const aHome = m.home === p.teamA;
+              const ga = aHome ? m.hs : m.as, gb = aHome ? m.as : m.hs;
+              const res = ga > gb ? 'w' : gb > ga ? 'l' : 'v';
+              return (
+                <div class="res-row">
+                  <span class={`res-mark ${res}`}>{res === 'w' ? 'W' : res === 'l' ? 'L' : 'D'}</span>
+                  <span class="res-date">{shortDate(m.d)}</span>
+                  <div class="res-match"><b>{m.home} {m.hs}–{m.as} {m.away}</b><span>{p.league}</span></div>
+                  <span class="res-odds" style="visibility:hidden"></span>
+                  <span class="res-profit zero"></span>
+                </div>
+              );
+            })}
+          </div>
+          <p class="res-note">W/D/L shown from {p.teamA}'s perspective. Results from the seasons covered by our dataset — not the clubs' full historical archive.</p>
+        </section>
+
+        <section class="seo">
+          <h2>{p.teamA} vs {p.teamB}: what the numbers say</h2>
+          <p>
+            Across {s.n} meetings in our dataset, {s.aW > s.bW ? `${p.teamA} lead the series with ${s.aW} wins to ${s.bW}` : s.bW > s.aW ? `${p.teamB} lead the series with ${s.bW} wins to ${s.aW}` : `the series is level at ${s.aW} wins each`},
+            with {s.draws} draw{s.draws === 1 ? '' : 's'}. The fixture averages {s.avgGoals} goals per game — {pct(s.over25)}% of these
+            meetings cleared 2.5 goals and both teams scored in {pct(s.btts)}%. Past meetings never guarantee the next result,
+            but they are a useful baseline for judging the market's prices{upcoming ? ' — and this pair meet again soon, so check our prediction above' : ''}.
+          </p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">H2H <b>FAQ</b></h2></div>
+          <div class="faq">
+            {faq.map((f, i) => (
+              <div class={`faq-item${i === 0 ? ' open' : ''}`}>
+                <div class="faq-q">{f.q}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{f.a}</p></div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>🔍 AI Screener</h4>
+          <p>Every current value pick, ranked by AI score.</p>
+          <a href="/screener" class="btn btn-mint btn-block">Open screener</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">⚔️</span> More {p.league} H2H</div>
+          {others.map((x) => (
+            <a class="tm" href={`/h2h/${x.slug}`}><span class="dot"></span>{x.teamA} v {x.teamB}</a>
+          ))}
+          <a class="tm" href="/h2h"><span class="dot"></span>All head-to-heads</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🏆</span> {p.league}</div>
+          <a class="tm" href={leagueHref}><span class="dot"></span>{p.league} predictions</a>
+          <a class="tm" href="/predictions"><span class="dot"></span>Today's tips</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

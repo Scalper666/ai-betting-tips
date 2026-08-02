@@ -1,0 +1,96 @@
+---
+import Base from '../layouts/Base.astro';
+import PredCard from '../components/PredCard.astro';
+import predictions from '../data/predictions.json';
+import { slugify } from '../lib/utils.js';
+import { t, lhref } from '../i18n/index.js';
+
+// mode: 'today' | 'tomorrow' | 'weekend'. Static pages rebuilt by the daily
+// CI, so "today" is always the build date — exactly what the queries want.
+const { lang = 'en', mode = 'today' } = Astro.props;
+const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
+const dloc = { en: 'en-GB', es: 'es-ES', pt: 'pt-BR', de: 'de-DE', fr: 'fr-FR' }[lang] ?? 'en-GB';
+
+const dkey = (d) => d.toISOString().slice(0, 10);
+const now = new Date();
+const today = dkey(now);
+const tomorrow = dkey(new Date(now.getTime() + 864e5));
+// next Saturday+Sunday (a weekend in progress counts as this weekend)
+const dow = now.getUTCDay();
+const satOff = dow === 0 ? -1 : 6 - dow;
+const sat = dkey(new Date(now.getTime() + satOff * 864e5));
+const sun = dkey(new Date(now.getTime() + (satOff + 1) * 864e5));
+
+const inBucket = (iso) => {
+  const d = String(iso ?? '').slice(0, 10);
+  if (mode === 'today') return d === today;
+  if (mode === 'tomorrow') return d === tomorrow;
+  return d === sat || d === sun;
+};
+const tips = (predictions.tips ?? []).filter((x) => inBucket(x.kickoff));
+const leagues = [...new Set(tips.map((x) => x.league))];
+
+const prettyDate = mode === 'weekend'
+  ? `${new Date(sat + 'T12:00:00Z').toLocaleDateString(dloc, { day: 'numeric', month: 'long', timeZone: 'UTC' })} – ${new Date(sun + 'T12:00:00Z').toLocaleDateString(dloc, { day: 'numeric', month: 'long', timeZone: 'UTC' })}`
+  : new Date((mode === 'today' ? today : tomorrow) + 'T12:00:00Z').toLocaleDateString(dloc, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+
+const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
+const title = F(`day.${mode}.title`, { date: prettyDate });
+const description = F(`day.${mode}.desc`, { n: tips.length, date: prettyDate });
+---
+<Base lang={lang} i18nPath={`/predictions/${mode}`} title={title} description={description} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href="/">{T('crumb.home')}</a><span>/</span>
+        <a href={L('/predictions')}>{T('nav.predictions')}</a><span>/</span>
+        {T(`day.${mode}.crumb`)}
+      </div>
+      <h1>{T(`day.${mode}.h1pre`)} <em>{T(`day.${mode}.h1em`)}</em></h1>
+      <p class="lead">{F('day.lead', { n: tips.length, date: prettyDate })}</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="res-sum" style="margin-bottom:6px">
+            <a class={`res-chip ${mode === 'today' ? 'win' : ''}`} href={L('/predictions/today')} style="text-decoration:none"><b>{T('day.today.crumb')}</b><span>{T('day.tips')}</span></a>
+            <a class={`res-chip ${mode === 'tomorrow' ? 'win' : ''}`} href={L('/predictions/tomorrow')} style="text-decoration:none"><b>{T('day.tomorrow.crumb')}</b><span>{T('day.tips')}</span></a>
+            <a class={`res-chip ${mode === 'weekend' ? 'win' : ''}`} href={L('/predictions/weekend')} style="text-decoration:none"><b>{T('day.weekend.crumb')}</b><span>{T('day.tips')}</span></a>
+            <a class="res-chip" href={L('/predictions')} style="text-decoration:none"><b>{T('home.chips.all')}</b><span>{T('nav.predictions')}</span></a>
+          </div>
+          {tips.length > 0 ? (
+            <div class="pred-grid">
+              {tips.map((tip) => <PredCard tip={tip} lang={lang} />)}
+            </div>
+          ) : (
+            <div class="box"><div class="box-pad dim">{T('day.none')}</div></div>
+          )}
+        </section>
+
+        <section class="seo">
+          <h2>{F(`day.${mode}.seoH`, { date: prettyDate })}</h2>
+          <p>{T('day.seoP')}</p>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>🔍 {T('nav.screener')}</h4>
+          <p>{T('tt.promoP')}</p>
+          <a href={L('/screener')} class="btn btn-mint btn-block">{T('tt.openScr')}</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🏆</span> {T('side.live')}</div>
+          {leagues.map((lg) => (
+            <a class="tm" href={L(`/league/${slugify(lg)}`)}><span class="dot"></span>{lg}
+              <span class="cnt">{tips.filter((x) => x.league === lg).length}</span></a>
+          ))}
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

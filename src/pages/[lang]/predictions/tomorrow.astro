@@ -1,0 +1,9 @@
+---
+import DayView from '../../../views/DayView.astro';
+import { ALT_LANGS } from '../../../i18n/index.js';
+
+export function getStaticPaths() {
+  return ALT_LANGS.map((lang) => ({ params: { lang } }));
+}
+---
+<DayView lang={Astro.params.lang} mode="tomorrow" />

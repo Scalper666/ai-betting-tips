@@ -52,6 +52,9 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
         </div>
         <div class="box">
           <div class="box-h"><span class="hi">📅</span> {T('common.browse')}</div>
+          <a class="tm" href={L('/predictions/today')}><span class="dot"></span>{T('day.today.crumb')}</a>
+          <a class="tm" href={L('/predictions/tomorrow')}><span class="dot"></span>{T('day.tomorrow.crumb')}</a>
+          <a class="tm" href={L('/predictions/weekend')}><span class="dot"></span>{T('day.weekend.crumb')}</a>
           <a class="tm" href={L('/predictions/daily')}><span class="dot"></span>{T('pd.archive')}</a>
           <a class="tm" href={L('/teams')}><span class="dot"></span>{T('ft.teamsAZ')}</a>
           <a class="tm" href={L('/tipsters')}><span class="dot"></span>{T('pd.records')}</a>

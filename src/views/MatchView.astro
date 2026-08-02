@@ -6,6 +6,7 @@ import screener from '../data/screener.json';
 import content from '../data/content.json';
 import { matchSlug, abbr, badgeColor, kickoffLabel, confidenceLabel, slugify, faqSchema } from '../lib/utils.js';
 import { teamForm, h2hBetween, leagueTable, resolveTeam } from '../lib/form.js';
+import { pairSlug } from '../lib/h2h.js';
 import { t, localizeMarket, lhref } from '../i18n/index.js';
 import TeamMark from '../components/TeamMark.astro';
 
@@ -78,6 +79,7 @@ const sportKey = tip?.sport_key ?? latest?.sport_key ?? '';
 const formHome = teamForm(sportKey, home);
 const formAway = teamForm(sportKey, away);
 const h2h = h2hBetween(sportKey, home, away);
+const h2hHref = h2h.length >= 2 ? `/h2h/${pairSlug(resolveTeam(sportKey, home) ?? home, resolveTeam(sportKey, away) ?? away)}` : null;
 const table = leagueTable(sportKey);
 const hlNames = new Set([resolveTeam(sportKey, home), resolveTeam(sportKey, away)].filter(Boolean));
 const shortDate = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString(dloc, { day: 'numeric', month: 'short', year: '2-digit', timeZone: 'UTC' });
@@ -276,7 +278,10 @@ const schema = {
         <!-- Head-to-head from the results dataset -->
         {h2h.length > 0 && (
           <section>
-            <div class="sec-head"><h2 class="sec-title">{T('mp.h2hPre')} <b>{home} v {away}</b></h2></div>
+            <div class="sec-head">
+              <h2 class="sec-title">{T('mp.h2hPre')} <b>{home} v {away}</b></h2>
+              {h2hHref && lang === 'en' && <a href={h2hHref} class="more-link">Full H2H history →</a>}
+            </div>
             <div class="res-list">
               {h2h.map((g) => (
                 <div class="res-row">

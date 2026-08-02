@@ -40,9 +40,8 @@ jobs:
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
           ODDS_API_REGION: eu
-          # 4 leagues x (2 odds + 2 scores) credits/day = ~480/month -> fits the free 500.
-          # Add leagues here after upgrading the Odds API plan.
-          ODDS_API_SPORTS: soccer_epl,soccer_spain_la_liga,soccer_usa_mls,soccer_brazil_campeonato
+          # 18 leagues x ~4 credits/day ~= 2.2K/month of the 20K paid quota
+          ODDS_API_SPORTS: soccer_epl,soccer_efl_champ,soccer_spain_la_liga,soccer_italy_serie_a,soccer_germany_bundesliga,soccer_france_ligue_one,soccer_netherlands_eredivisie,soccer_portugal_primeira_liga,soccer_turkey_super_league,soccer_belgium_first_div,soccer_spl,soccer_usa_mls,soccer_brazil_campeonato,soccer_argentina_primera_division,soccer_mexico_ligamx,soccer_denmark_superliga,soccer_sweden_allsvenskan,soccer_uefa_champs_league_qualification
         run: python pipeline/build.py
 
       - name: Settle finished matches (real scores)
@@ -54,7 +53,7 @@ jobs:
       - name: Fetch standings & season results (football-data.org)
         env:
           FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
-          ODDS_API_SPORTS: soccer_epl,soccer_spain_la_liga,soccer_usa_mls,soccer_brazil_campeonato
+          ODDS_API_SPORTS: soccer_epl,soccer_efl_champ,soccer_spain_la_liga,soccer_italy_serie_a,soccer_germany_bundesliga,soccer_france_ligue_one,soccer_netherlands_eredivisie,soccer_portugal_primeira_liga,soccer_turkey_super_league,soccer_belgium_first_div,soccer_spl,soccer_usa_mls,soccer_brazil_campeonato,soccer_argentina_primera_division,soccer_mexico_ligamx,soccer_denmark_superliga,soccer_sweden_allsvenskan,soccer_uefa_champs_league_qualification
         run: python pipeline/football_data.py
 
       - name: Recompute honest tipster stats

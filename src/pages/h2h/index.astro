@@ -1,0 +1,40 @@
+---
+import Base from '../../layouts/Base.astro';
+import { buildH2hPairs } from '../../lib/h2h.js';
+
+// Directory of every head-to-head page, grouped by league.
+const pairs = buildH2hPairs();
+const byLeague = {};
+for (const p of pairs) (byLeague[p.league] ??= []).push(p);
+const leagues = Object.entries(byLeague)
+  .map(([name, list]) => [name, list.sort((a, b) => b.stats.n - a.stats.n)])
+  .sort((a, b) => b[1].length - a[1].length);
+
+const title = 'Football Head-to-Head Records (H2H) — Every Pair, Every Meeting';
+const description = `Head-to-head records for ${pairs.length} team pairings across ${leagues.length} leagues: wins, draws, goals and the full list of past meetings from our results dataset.`;
+---
+<Base title={title} description={description} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span>H2H</div>
+      <h1>Head-to-head <em>records</em></h1>
+      <p class="lead">{pairs.length} team pairings across {leagues.length} leagues — wins, draws, goal stats and every past meeting in our dataset, updated daily.</p>
+    </div>
+  </div>
+
+  <div class="container" style="padding-bottom:60px">
+    {leagues.map(([name, list]) => (
+      <section style="margin-top:30px">
+        <div class="sec-head"><h2 class="sec-title">{name} <b>({list.length})</b></h2></div>
+        <div class="team-grid">
+          {list.map((p) => (
+            <a class="tm" href={`/h2h/${p.slug}`}>
+              <span class="dot"></span>{p.teamA} v {p.teamB}
+              <span class="cnt">{p.stats.n}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+  </div>
+</Base>
