@@ -217,6 +217,11 @@ def main() -> None:
         except OddsAPIError as e:
             sys.exit(f"✗ {e}")
 
+    clv_n = history.apply_clv(h)
+    if clv_n:
+        history.save(h)
+        print(f"  CLV annotated on {clv_n} settled tip(s)")
+
     tips = list(h.get("tips", {}).values())
     counts = {}
     for t in tips:

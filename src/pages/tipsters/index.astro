@@ -34,6 +34,20 @@ const v2Profit = Math.round(v2Settled.reduce((s, h) => s + (h.profit ?? 0), 0) *
 const v2WinRate = v2Graded.length ? Math.round((v2Won / v2Graded.length) * 1000) / 10 : null;
 const v2Roi = v2Graded.length ? Math.round((v2Profit / v2Graded.length) * 1000) / 10 : null;
 
+// closing-line value: the standard early edge indicator. clv_pct compares the
+// price we took with the last price we tracked before kick-off.
+const clvOf = (list) => {
+  const w = list.filter((h) => h.clv_pct != null);
+  if (!w.length) return null;
+  return {
+    avg: Math.round((w.reduce((s, h) => s + h.clv_pct, 0) / w.length) * 100) / 100,
+    n: w.length,
+    beat: w.filter((h) => h.clv_pct > 0).length,
+  };
+};
+const clv = clvOf(settled);
+const v2Clv = clvOf(v2Settled);
+
 const aiPage = (content.entries ?? {})['page:tipsters'];
 const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(aiPage.faq) } : null;
 ---
@@ -68,6 +82,11 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
             <div class={`res-chip ${roi != null && roi > 0 ? 'win' : roi != null && roi < 0 ? 'lose' : ''}`}>
               <b>{roi != null ? `${signed(roi)}%` : '—'}</b><span>ROI</span>
             </div>
+            {clv && (
+              <div class={`res-chip ${clv.avg > 0 ? 'win' : clv.avg < 0 ? 'lose' : ''}`}>
+                <b>{signed(clv.avg)}%</b><span>Avg CLV</span>
+              </div>
+            )}
           </div>
           {settled.length < 30 && (
             <p class="res-note">⏳ Early days: the archive started recently, so samples are small. That is exactly why the
@@ -87,12 +106,18 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
             <div class={`res-chip ${v2Roi != null && v2Roi > 0 ? 'win' : v2Roi != null && v2Roi < 0 ? 'lose' : ''}`}>
               <b>{v2Roi != null ? `${signed(v2Roi)}%` : '—'}</b><span>ROI</span>
             </div>
+            {v2Clv && (
+              <div class={`res-chip ${v2Clv.avg > 0 ? 'win' : v2Clv.avg < 0 ? 'lose' : ''}`}>
+                <b>{signed(v2Clv.avg)}%</b><span>Avg CLV</span>
+              </div>
+            )}
           </div>
           <p class="res-note">
             Since 29 Jul 2026 the model bets selectively: our own Poisson goal model (fitted on two seasons
             of results) is blended with the market, and a pick is only published when it clears a value
             threshold — roughly a quarter of fixtures instead of all of them. Earlier bets remain in the
             all-time record below; nothing is deleted.
+            {v2Clv && ` CLV so far: ${signed(v2Clv.avg)}% average, beating the close on ${v2Clv.beat} of ${v2Clv.n} bets.`}
           </p>
         </section>
 
@@ -140,6 +165,13 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
             <div class="faq-item">
               <div class="faq-q">What is a "track"?<span class="pm">+</span></div>
               <div class="faq-a"><p>A slice of the same model by market type: match-result picks, totals picks, draw value. Tracks are strategies, not people — we don't invent tipster personas.</p></div>
+            </div>
+            <div class="faq-item">
+              <div class="faq-q">What is CLV and why show it?<span class="pm">+</span></div>
+              <div class="faq-a"><p>Closing-line value compares the price we took with the last price we tracked before
+                kick-off. Beating the close consistently is the standard early sign of a real edge — it converges much
+                faster than ROI. Our snapshots are taken at each daily refresh, so this is the last tracked price
+                rather than the true market close; we label it honestly.</p></div>
             </div>
             <div class="faq-item">
               <div class="faq-q">Can the record be negative?<span class="pm">+</span></div>

@@ -33,7 +33,12 @@ const tracks = TRACKS.map((t) => {
   const graded = settled.filter((h) => h.status !== 'void');
   const won = graded.filter((h) => h.status === 'won').length;
   const profit = Math.round(settled.reduce((s, h) => s + (h.profit ?? 0), 0) * 100) / 100;
+  const withClv = settled.filter((h) => h.clv_pct != null);
+  const clv = withClv.length
+    ? Math.round((withClv.reduce((s, h) => s + h.clv_pct, 0) / withClv.length) * 100) / 100
+    : null;
   return {
+    clv,
     ...t,
     published: all.length,
     settled: settled.length,
@@ -55,6 +60,9 @@ const tracks = TRACKS.map((t) => {
         <div><div class={t.roi != null && t.roi >= 0 ? 'n roi' : 'n'} style={t.roi != null && t.roi < 0 ? 'color:var(--lose)' : ''}>{t.roi != null ? `${signed(t.roi)}%` : '—'}</div><div class="l">ROI</div></div>
         <div><div class="n">{t.settled}</div><div class="l">{TT('home.res.settled')}</div></div>
       </div>
+      {t.clv != null && (
+        <div class="role" style="margin-top:6px">CLV {signed(t.clv)}% vs last tracked price</div>
+      )}
       {t.settled < 20 && (
         <div class="role" style="margin-top:6px;color:var(--gold)">⏳ early sample — {t.published} tips published so far</div>
       )}

@@ -180,6 +180,11 @@ const schema = {
                     </div>
                   )}
                   <div class="res-chip"><b>{conf}%</b><span>{T('mp.preConf')}</span></div>
+                  {latest?.clv_pct != null && (
+                    <div class={`res-chip ${latest.clv_pct > 0 ? 'win' : latest.clv_pct < 0 ? 'lose' : ''}`}>
+                      <b>{latest.clv_pct > 0 ? '+' : ''}{latest.clv_pct}%</b><span>CLV</span>
+                    </div>
+                  )}
                 </div>
               )}
             </div>

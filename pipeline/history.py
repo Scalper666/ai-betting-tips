@@ -144,6 +144,46 @@ def record_odds(predictions: dict) -> int:
     return len(data)
 
 
+def closing_price(key: str, kickoff, data: dict) -> float | None:
+    """Last tracked price at or before kick-off — our closing-line proxy.
+    Snapshots are daily, so this is 'the last price we saw', not the true
+    market close; the site labels it accordingly."""
+    series = data.get(key) or []
+    if not series or not kickoff:
+        return None
+    ko = str(kickoff)
+    best = None
+    for pt in series:
+        if str(pt.get("ts", "")) <= ko:
+            try:
+                best = float(pt.get("price"))
+            except (TypeError, ValueError):
+                continue
+    return best
+
+
+def apply_clv(h: dict) -> int:
+    """Closing-line value for settled real tips that don't have it yet:
+    clv_pct = (taken price / closing price - 1) * 100. Positive = we beat
+    the close — the standard early indicator of a real edge, long before
+    ROI converges. Idempotent; returns how many tips were annotated."""
+    data = load_odds()
+    done = 0
+    for tip in h.get("tips", {}).values():
+        if tip.get("clv_pct") is not None or tip.get("status") not in ("won", "lost", "void"):
+            continue
+        if tip.get("score") == "simulated" or str(tip.get("event_id", "")).startswith("mock"):
+            continue
+        close = closing_price(tip.get("key", ""), tip.get("kickoff"), data)
+        odds = tip.get("odds")
+        if not close or not odds:
+            continue
+        tip["close_odds"] = round(close, 2)
+        tip["clv_pct"] = round((float(odds) / close - 1) * 100, 2)
+        done += 1
+    return done
+
+
 def price_move(key: str, data: dict | None = None) -> str:
     """'up' = price shortened (money coming in), 'down' = drifted, 'flat' = no data/no change."""
     data = load_odds() if data is None else data
