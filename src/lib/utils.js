@@ -62,6 +62,7 @@ const KICKOFF_WORDS = {
   es: ['Hoy', 'Mañana', 'es-ES'],
   pt: ['Hoje', 'Amanhã', 'pt-BR'],
   de: ['Heute', 'Morgen', 'de-DE'],
+  fr: ["Aujourd'hui", 'Demain', 'fr-FR'],
 };
 
 export function kickoffLabel(iso, lang = 'en') {

@@ -865,6 +865,8 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
 .lang-menu a .chk{margin-left:auto;color:var(--mint);opacity:0;font-weight:800}
 .lang-menu a.active{color:var(--mint)}
 .lang-menu a.active .chk{opacity:1}
+.fl-ic{width:18px;height:13px;border-radius:2.5px;object-fit:cover;flex-shrink:0;
+  box-shadow:0 0 0 1px rgba(255,255,255,.14);display:inline-block;vertical-align:-1px}
 @media(max-width:900px){.lang-btn .cc{display:none}}
 
 /* official pick vs model lean flag on the match hero */

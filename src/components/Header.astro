@@ -49,8 +49,7 @@ const langs = ['en', ...ALT_LANGS];
       </div>
     </nav>
     <div class="hdr-actions">
-      <a href="#" class="btn btn-outline btn-sm">{T('nav.signIn')}</a>
-      <a href="#" class="btn btn-mint btn-sm">{T('nav.join')}</a>
+      <!-- Sign In / Join Free hidden until accounts exist (user request) -->
       <div class="fz-ctl" title="Text size">
         <button data-fz-step="-1" aria-label="Smaller text">A−</button>
         <button data-fz-step="1" aria-label="Larger text">A+</button>
@@ -66,12 +65,12 @@ const langs = ['en', ...ALT_LANGS];
         </div>
       </div>
       <div class="lang-switch">
-        <button class="lang-btn" aria-label={T('nav.language')}><span class="fl">{LOCALES[lang].flag}</span> <span class="cc">{lang.toUpperCase()}</span> ▾</button>
+        <button class="lang-btn" aria-label={T('nav.language')}><img class="fl-ic" src={`/flags/${LOCALES[lang].cc}.svg`} alt={LOCALES[lang].name} width="18" height="13" /> <span class="cc">{lang.toUpperCase()}</span> ▾</button>
         <div class="theme-menu lang-menu">
           <div class="tm-h">{T('nav.language')}</div>
           {langs.map((l) => (
             <a href={langHref(l)} class={l === lang ? 'active' : ''} rel="alternate" hreflang={l}>
-              <span class="fl">{LOCALES[l].flag}</span> {LOCALES[l].name} <span class="chk">✓</span>
+              <img class="fl-ic" src={`/flags/${LOCALES[l].cc}.svg`} alt="" width="18" height="13" /> {LOCALES[l].name} <span class="chk">✓</span>
             </a>
           ))}
         </div>

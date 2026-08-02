@@ -500,8 +500,8 @@ def build_worklist() -> list[dict]:
     # translated variants for kinds whose pages are localized (Astro reads
     # `{lang}:{key}`). Whitelist grows as more page types get [lang] routes.
     LANG_KINDS = {"page", "tips"}
-    LANG_NAMES = {"es": "Spanish (neutral, Spain-leaning)", "pt": "Brazilian Portuguese", "de": "German"}
-    langs = [l.strip() for l in os.getenv("CONTENT_LANGS", "es,pt,de").split(",") if l.strip() in LANG_NAMES]
+    LANG_NAMES = {"es": "Spanish (neutral, Spain-leaning)", "pt": "Brazilian Portuguese", "de": "German", "fr": "French (France)"}
+    langs = [l.strip() for l in os.getenv("CONTENT_LANGS", "es,pt,de,fr").split(",") if l.strip() in LANG_NAMES]
     lang_work = []
     for w in work:
         if w["kind"] not in LANG_KINDS:

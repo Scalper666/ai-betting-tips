@@ -2,13 +2,16 @@
 //    Adding a language = add it to LOCALES + ALT_LANGS and fill the dictionary
 //    column; routes under src/pages/[lang]/ pick it up automatically.
 
+import { FR } from './fr.js';
+
 export const LOCALES = {
-  en: { name: 'English', flag: '🇬🇧' },
-  es: { name: 'Español', flag: '🇪🇸' },
-  pt: { name: 'Português', flag: '🇧🇷' },
-  de: { name: 'Deutsch', flag: '🇩🇪' },
+  en: { name: 'English', flag: '🇬🇧', cc: 'gb' },
+  es: { name: 'Español', flag: '🇪🇸', cc: 'es' },
+  pt: { name: 'Português', flag: '🇧🇷', cc: 'br' },
+  de: { name: 'Deutsch', flag: '🇩🇪', cc: 'de' },
+  fr: { name: 'Français', flag: '🇫🇷', cc: 'fr' },
 };
-export const ALT_LANGS = ['es', 'pt', 'de'];
+export const ALT_LANGS = ['es', 'pt', 'de', 'fr'];
 export const homePath = (lang) => (lang === 'en' ? '/' : `/${lang}/`);
 
 // Odds-feed market strings arrive in English ("Over 2.5 goals", "X to win").
@@ -17,13 +20,13 @@ export function localizeMarket(lang, text) {
   if (lang === 'en' || !s) return s;
   let m;
   if ((m = s.match(/^Over ([\d.]+) goals$/)))
-    return { es: `Más de ${m[1]} goles`, pt: `Mais de ${m[1]} gols`, de: `Über ${m[1]} Tore` }[lang] ?? s;
+    return { es: `Más de ${m[1]} goles`, pt: `Mais de ${m[1]} gols`, de: `Über ${m[1]} Tore`, fr: `Plus de ${m[1]} buts` }[lang] ?? s;
   if ((m = s.match(/^Under ([\d.]+) goals$/)))
-    return { es: `Menos de ${m[1]} goles`, pt: `Menos de ${m[1]} gols`, de: `Unter ${m[1]} Tore` }[lang] ?? s;
+    return { es: `Menos de ${m[1]} goles`, pt: `Menos de ${m[1]} gols`, de: `Unter ${m[1]} Tore`, fr: `Moins de ${m[1]} buts` }[lang] ?? s;
   if ((m = s.match(/^(.+) to win$/)))
-    return { es: `Gana ${m[1]}`, pt: `${m[1]} vence`, de: `${m[1]} gewinnt` }[lang] ?? s;
+    return { es: `Gana ${m[1]}`, pt: `${m[1]} vence`, de: `${m[1]} gewinnt`, fr: `Victoire de ${m[1]}` }[lang] ?? s;
   if (s === 'Draw (X)' || s === 'Draw')
-    return { es: 'Empate (X)', pt: 'Empate (X)', de: 'Unentschieden (X)' }[lang] ?? s;
+    return { es: 'Empate (X)', pt: 'Empate (X)', de: 'Unentschieden (X)', fr: 'Match nul (X)' }[lang] ?? s;
   return s;
 }
 
@@ -580,17 +583,18 @@ const D = {
 
 // criterion labels arrive as English strings from utils.js maps
 const LBL = {
-  'Odds & margins': { es: 'Cuotas y márgenes', pt: 'Odds e margens', de: 'Quoten & Margen' },
-  'Market depth': { es: 'Variedad de mercados', pt: 'Variedade de mercados', de: 'Markttiefe' },
-  'Payout speed': { es: 'Velocidad de pago', pt: 'Velocidade de saque', de: 'Auszahlungstempo' },
-  'Mobile app': { es: 'App móvil', pt: 'App móvel', de: 'Mobile App' },
-  'Bonus value': { es: 'Valor del bono', pt: 'Valor do bônus', de: 'Bonuswert' },
-  'Support': { es: 'Soporte', pt: 'Suporte', de: 'Support' },
-  'Game selection': { es: 'Selección de juegos', pt: 'Seleção de jogos', de: 'Spielauswahl' },
-  'Live casino': { es: 'Casino en vivo', pt: 'Cassino ao vivo', de: 'Live-Casino' },
-  'Safety & licence': { es: 'Seguridad y licencia', pt: 'Segurança e licença', de: 'Sicherheit & Lizenz' },
-  'Safety': { es: 'Seguridad', pt: 'Segurança', de: 'Sicherheit' },
+  'Odds & margins': { es: 'Cuotas y márgenes', pt: 'Odds e margens', de: 'Quoten & Margen', fr: 'Cotes et marges' },
+  'Market depth': { es: 'Variedad de mercados', pt: 'Variedade de mercados', de: 'Markttiefe', fr: 'Profondeur des marchés' },
+  'Payout speed': { es: 'Velocidad de pago', pt: 'Velocidade de saque', de: 'Auszahlungstempo', fr: 'Rapidité des retraits' },
+  'Mobile app': { es: 'App móvil', pt: 'App móvel', de: 'Mobile App', fr: 'Appli mobile' },
+  'Bonus value': { es: 'Valor del bono', pt: 'Valor do bônus', de: 'Bonuswert', fr: 'Valeur du bonus' },
+  'Support': { es: 'Soporte', pt: 'Suporte', de: 'Support', fr: 'Support client' },
+  'Game selection': { es: 'Selección de juegos', pt: 'Seleção de jogos', de: 'Spielauswahl', fr: 'Choix de jeux' },
+  'Live casino': { es: 'Casino en vivo', pt: 'Cassino ao vivo', de: 'Live-Casino', fr: 'Casino en direct' },
+  'Safety & licence': { es: 'Seguridad y licencia', pt: 'Segurança e licença', de: 'Sicherheit & Lizenz', fr: 'Sécurité et licence' },
+  'Safety': { es: 'Seguridad', pt: 'Segurança', de: 'Sicherheit', fr: 'Sécurité' },
 };
 export const trLabel = (lang, label) => (lang === 'en' ? label : (LBL[label]?.[lang] ?? label));
 
-export const t = (lang, key) => D[key]?.[lang] ?? D[key]?.en ?? key;
+export const t = (lang, key) =>
+  (lang === 'fr' ? FR[key] : D[key]?.[lang]) ?? D[key]?.en ?? key;
