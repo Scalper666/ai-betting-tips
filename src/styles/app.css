@@ -714,9 +714,11 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
 .country .cc{color:var(--text)}
 
 /* geo strip — country quick-switch chips (reuses .chip look via .geo-chip) */
-.geo-note{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--text-mute);margin:-6px 0 16px}
+.geo-note{display:block;font-size:12.5px;line-height:1.55;color:var(--text-mute);margin:-6px 0 16px}
 .geo-note .fl{font-size:15px}
+.geo-note .fl-ic{vertical-align:-2px;margin-right:3px}
 .geo-note b{color:var(--text-dim)}
+.sec-title .fl-ic{vertical-align:-1.5px}
 
 .geo-hub{display:flex;flex-direction:column;gap:36px}
 .geo-cont .cont-h{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:16px}
@@ -772,12 +774,51 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
   .container{padding:0 16px}
   .tip-grid,.bt-grid,.bonus-grid,.news-grid,.footer-top,.country-grid{grid-template-columns:1fr}
   .sidebar{flex-direction:column}
-  .bk{grid-template-columns:1fr}
-  .bk-rank{display:none}
   .hero-stats{gap:18px}
   .lead-row{grid-template-columns:34px 1fr 86px;gap:10px;padding:13px}
   .lead-row .col-sm{display:none}
   .seo{padding:22px}
+
+  /* --- mobile density pass: ranking above the fold --- */
+  .hdr-bar{height:54px}
+  .hero{padding:7px 0 0}
+  .hero h1{font-size:16.5px;line-height:1.3;margin:0 0 8px}
+  .hero-cta{gap:8px;margin-bottom:0}
+  .hero-cta .btn{padding:7px 12px;font-size:12px;border-radius:9px}
+  .layout{padding:12px 0 48px;gap:22px}
+  .content{gap:30px}
+  .sec-head{margin-bottom:8px}
+  .sec-title{font-size:11px;letter-spacing:.06em;padding-left:13px}
+  .sec-title::before{width:5px;height:16px}
+  #geoBk .more-link{display:none}
+  .geo-note{font-size:11px;margin:-4px 0 10px}
+  .geo-note [data-geo-tail]{display:none}
+
+  /* dense bookmaker rows: 4-5 per phone screen */
+  .bk-list{gap:7px}
+  .bk{grid-template-columns:1fr auto;grid-template-areas:"brand score" "bonus bonus" "actions actions";
+    gap:5px 10px;padding:9px 11px;border-radius:12px}
+  .bk-rank{display:none}
+  .bk-ribbon{display:none}
+  .bk-brand{grid-area:brand;gap:9px}
+  .bk-logo{width:46px;height:34px;border-radius:8px;font-size:9px;padding:3px}
+  .bk-brand h4{font-size:13px;margin:0 0 1px}
+  .bk-brand>div{min-width:0}
+  .bk-meta{flex-wrap:nowrap;gap:6px;min-width:0}
+  .bk-meta .rate{font-size:11.5px;flex-shrink:0}
+  .bk-meta .tc{font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+  .bk-score{grid-area:score;align-self:center}
+  .bk-score .ring{width:38px;height:38px;margin:0}
+  .bk-score .ring::before{inset:3px}
+  .bk-score .ring b{font-size:12.5px}
+  .bk-score .sl{display:none}
+  .bk-bonus{grid-area:bonus;border-left:0;border-top:1px solid var(--border);padding:5px 0 0;min-width:0}
+  .bk-bonus .blbl{display:none}
+  .bk-bonus .amt{font-size:12px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bk-bonus .tc{font-size:9px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bk-actions{grid-area:actions;flex-direction:row;align-items:center;gap:8px}
+  .bk-actions .btn{flex:1;padding:7px 10px;font-size:11.5px}
+  .bk-actions .review{flex:0 0 auto;font-size:11px}
 }
 
 /* ---- long-form / legal pages ---- */

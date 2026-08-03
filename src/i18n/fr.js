@@ -77,6 +77,7 @@ export const FR = {
   'home.geo.changeSm': 'changer de pays',
   'home.geo.browsing': 'Vous naviguez depuis',
   'home.geo.intl': '🌍 notre classement international',
+  'home.geo.intlList': 'liste internationale',
   'home.geo.noEdition': ' — pas encore d’édition {name} dédiée, voici donc notre liste internationale',
   'home.preds.pre': 'Pronostics foot',
   'home.preds.bold': 'gratuits',

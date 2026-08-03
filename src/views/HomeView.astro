@@ -142,7 +142,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
         <!-- TOP BOOKMAKERS (geo-aware: client script swaps country when detected) -->
         <section id="geoBk" data-geo={JSON.stringify(geoCountries)} data-current="uk">
           <div class="sec-head">
-            <h2 class="sec-title">{T('home.geo.pre')} <b data-geo-name>🇬🇧 United Kingdom</b></h2>
+            <h2 class="sec-title">{T('home.geo.pre')} <b data-geo-name><img class="fl-ic" data-geo-name-flag src="/flags/gb.svg" alt="" width="18" height="13" /> <span data-geo-name-txt>United Kingdom</span></b></h2>
             <a href={L('/countries/uk')} class="more-link" data-geo-link>{T('home.geo.change')}</a>
           </div>
           <div class="geo-note"><img class="fl-ic" data-geo-flag src="/flags/gb.svg" alt="" width="18" height="13" /> <span data-geo-lead>{T('home.geo.ranked')}</span> <b>United Kingdom</b><span data-geo-tail></span> · <a href={L('/countries/uk')} data-geo-link style="color:var(--mint);font-weight:700">{T('home.geo.changeSm')}</a></div>
@@ -154,7 +154,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
             ))}
           </div>
         </section>
-        <script is:inline define:vars={{ GEO_STR: { intl: T('home.geo.intl'), browsing: T('home.geo.browsing'), noEdition: T('home.geo.noEdition') }, PAGE_LANG: lang }}>
+        <script is:inline define:vars={{ GEO_STR: { intl: T('home.geo.intl'), intlList: T('home.geo.intlList'), browsing: T('home.geo.browsing'), noEdition: T('home.geo.noEdition') }, PAGE_LANG: lang }}>
           (function () {
             var sec = document.getElementById('geoBk'); if (!sec) return;
             var LIST = []; try { LIST = JSON.parse(sec.getAttribute('data-geo') || '[]'); } catch (e) {}
@@ -172,14 +172,17 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
                           'Africa/Abidjan': 'CI', 'America/Mexico_City': 'MX', 'America/Argentina/Buenos_Aires': 'AR',
                           'America/Toronto': 'CA', 'America/Vancouver': 'CA', 'Europe/Dublin': 'IE',
                           'Africa/Douala': 'CM', 'America/Guayaquil': 'EC', 'Africa/Lusaka': 'ZM' };
+            // section title: SVG flag + text (emoji flags render as letter codes on Windows)
+            function setTitle(src, txt) {
+              var f = sec.querySelector('[data-geo-name-flag]'); if (f) f.src = src;
+              var t = sec.querySelector('[data-geo-name-txt]'); if (t) t.textContent = txt;
+            }
             // honest fallback when we detect a country we have no dedicated list for
             function applyForeign(cc) {
               if (!cc || cc === 'GB' || ISO[cc]) return;
-              var name = cc, flag = '🌍';
+              var name = cc;
               try { name = new Intl.DisplayNames([PAGE_LANG], { type: 'region' }).of(cc) || cc; } catch (e) {}
-              try { flag = cc.replace(/./g, function (c) { return String.fromCodePoint(127397 + c.charCodeAt(0)); }); } catch (e) {}
-              var nameEl = sec.querySelector('[data-geo-name]');
-              if (nameEl) nameEl.textContent = GEO_STR.intl;
+              setTitle('/flags/_int.svg', GEO_STR.intl.replace('🌍', '').trim());
               var note = sec.querySelector('.geo-note');
               if (note) {
                 var fl = note.querySelector('[data-geo-flag]'); if (fl) fl.src = '/flags/_int.svg';
@@ -203,8 +206,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
               var rows = [].slice.call(sec.querySelectorAll('[data-cn]'));
               var match = rows.filter(function (r) { return (' ' + r.getAttribute('data-cn') + ' ').indexOf(' ' + slug + ' ') >= 0; });
               if (!match.length) {                  // country page exists but no rated operators yet
-                var nameEl0 = sec.querySelector('[data-geo-name]');
-                if (nameEl0) nameEl0.textContent = c.flag + ' ' + c.name + ' — international list';
+                setTitle('/flags/' + (slug === 'uk' ? 'gb' : slug) + '.svg', c.name + ' — ' + GEO_STR.intlList);
                 var note0 = sec.querySelector('.geo-note');
                 if (note0) {
                   var fl0 = note0.querySelector('[data-geo-flag]'); if (fl0) fl0.src = '/flags/' + (slug === 'uk' ? 'gb' : slug) + '.svg';
@@ -216,7 +218,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
               }
               rows.forEach(function (r) { r.hidden = match.indexOf(r) < 0; });
               match.forEach(function (r, i) { var rk = r.querySelector('.bk-rank'); if (rk) rk.textContent = i + 1; });
-              var name = sec.querySelector('[data-geo-name]'); if (name) name.textContent = c.flag + ' ' + c.name;
+              setTitle('/flags/' + (slug === 'uk' ? 'gb' : slug) + '.svg', c.name);
               var note = sec.querySelector('.geo-note');
               if (note) {
                 var fl = note.querySelector('[data-geo-flag]'); if (fl) fl.src = '/flags/' + (slug === 'uk' ? 'gb' : slug) + '.svg';

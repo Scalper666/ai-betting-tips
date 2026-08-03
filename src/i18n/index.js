@@ -160,6 +160,7 @@ const D = {
   'home.geo.changeSm': { en: 'change country', es: 'cambiar país', pt: 'trocar país', de: 'Land wechseln' },
   'home.geo.browsing': { en: 'Browsing from', es: 'Navegando desde', pt: 'Navegando de', de: 'Du surfst aus' },
   'home.geo.intl': { en: '🌍 our international ranking', es: '🌍 nuestro ranking internacional', pt: '🌍 nosso ranking internacional', de: '🌍 unserem internationalen Ranking' },
+  'home.geo.intlList': { en: 'international list', es: 'lista internacional', pt: 'lista internacional', de: 'internationale Liste' },
   'home.geo.noEdition': { en: ' — no dedicated {name} edition yet, so this is our international list', es: ' — aún no hay edición para {name}; esta es nuestra lista internacional', pt: ' — ainda não há edição para {name}; esta é nossa lista internacional', de: ' — noch keine eigene {name}-Ausgabe, daher unsere internationale Liste' },
   'home.preds.pre': { en: 'Free football', es: 'Pronósticos de fútbol', pt: 'Palpites de futebol', de: 'Kostenlose Fußball-' },
   'home.preds.bold': { en: 'predictions', es: 'gratis', pt: 'grátis', de: 'Prognosen' },
