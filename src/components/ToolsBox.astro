@@ -1,15 +1,25 @@
 ---
-// Sidebar cross-link box for the calculators (tools are EN pages; labels are
-// localized, lhref keeps the links pointing at the EN routes).
+// Sidebar cross-link box for the calculators: compact 2×2 icon tiles.
+// Tools are EN pages; labels are localized, lhref keeps EN routes.
 import { t, lhref } from '../i18n/index.js';
 const { lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
 const L = (pth) => lhref(lang, pth);
+const TOOLS = [
+  { href: '/tools/odds-converter', icon: '🔁', key: 'ft.oddsConverter' },
+  { href: '/tools/accumulator-calculator', icon: '🎯', key: 'ft.accaCalc' },
+  { href: '/tools/margin-calculator', icon: '📊', key: 'ft.marginCalc' },
+  { href: '/dropping-odds', icon: '📉', key: 'ft.droppingOdds' },
+];
 ---
 <div class="box">
-  <div class="box-h"><span class="hi">🧮</span> {T('common.tools')}</div>
-  <a class="tm" href={L('/tools/odds-converter')}><span class="dot"></span>{T('ft.oddsConverter')}</a>
-  <a class="tm" href={L('/tools/accumulator-calculator')}><span class="dot"></span>{T('ft.accaCalc')}</a>
-  <a class="tm" href={L('/tools/margin-calculator')}><span class="dot"></span>{T('ft.marginCalc')}</a>
-  <a class="tm" href={L('/dropping-odds')}><span class="dot"></span>{T('ft.droppingOdds')}</a>
+  <div class="box-h"><span class="hi">🧮</span> {T('common.tools')}<a class="tools-all" href={L('/tools')}>→</a></div>
+  <div class="tools-mini">
+    {TOOLS.map((tl) => (
+      <a class="tool-t" href={L(tl.href)}>
+        <span class="ic">{tl.icon}</span>
+        <span class="lb">{T(tl.key)}</span>
+      </a>
+    ))}
+  </div>
 </div>

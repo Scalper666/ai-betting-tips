@@ -52,6 +52,14 @@ const langs = ['en', ...ALT_LANGS];
       <div class={`nav-item${is('tipsters')}`}><button>{T('nav.results')} <span class="caret">▼</span></button>
         <div class="dropdown"><a href={L('/tipsters')}><span class="ic">📈</span>{T('nav.performance')}</a><a href={L('/news/recap')}><span class="ic">🗓</span>{T('nav.weeklyRecaps')}</a><a href={L('/predictions/daily')}><span class="ic">📅</span>{T('nav.resultsByDate')}</a></div>
       </div>
+      <div class="nav-item"><button>{T('nav.tools')} <span class="caret">▼</span></button>
+        <div class="dropdown">
+          <a href={L('/tools/odds-converter')}><span class="ic">🔁</span>{T('ft.oddsConverter')}</a>
+          <a href={L('/tools/accumulator-calculator')}><span class="ic">🎯</span>{T('ft.accaCalc')}</a>
+          <a href={L('/tools/margin-calculator')}><span class="ic">📊</span>{T('ft.marginCalc')}</a>
+          <a href={L('/dropping-odds')}><span class="ic">📉</span>{T('ft.droppingOdds')}</a>
+        </div>
+      </div>
       <div class={`nav-item${is('news')}`}><button>{T('nav.news')} <span class="caret">▼</span></button>
         <div class="dropdown"><a href={L('/news')}><span class="ic">📰</span>{T('nav.latestNews')}</a><a href={L('/news')}><span class="ic">📊</span>{T('nav.matchAnalysis')}</a></div>
       </div>

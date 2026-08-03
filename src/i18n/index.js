@@ -602,6 +602,7 @@ const D = {
   'lg.markets': { en: '{league} markets', es: 'Mercados de {league}', pt: 'Mercados de {league}', de: '{league}-Märkte' },
   'lg.mrTips': { en: 'Match result tips', es: 'Pronósticos de resultado', pt: 'Palpites de resultado', de: 'Spielausgang-Tipps' },
   'lg.ouTips': { en: 'Over/Under tips', es: 'Pronósticos más/menos', pt: 'Palpites mais/menos', de: 'Über/Unter-Tipps' },
+  'nav.tools': { en: 'Tools', es: 'Herramientas', pt: 'Ferramentas', de: 'Rechner' },
   'common.tools': { en: 'Betting tools', es: 'Herramientas', pt: 'Ferramentas', de: 'Wett-Rechner' },
   'ft.marginCalc': { en: 'Margin & value calculator', es: 'Calculadora de margen y valor', pt: 'Calculadora de margem e valor', de: 'Margen- & Value-Rechner' },
   'ft.droppingOdds': { en: 'Dropping Odds', es: 'Cuotas en caída', pt: 'Odds em queda', de: 'Fallende Quoten' },
