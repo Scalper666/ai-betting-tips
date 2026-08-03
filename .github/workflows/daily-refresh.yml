@@ -41,8 +41,8 @@ jobs:
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
           ODDS_API_REGION: eu
-          # 18 leagues x ~4 credits/day ~= 2.2K/month of the 20K paid quota
-          ODDS_API_SPORTS: soccer_epl,soccer_efl_champ,soccer_spain_la_liga,soccer_italy_serie_a,soccer_germany_bundesliga,soccer_france_ligue_one,soccer_netherlands_eredivisie,soccer_portugal_primeira_liga,soccer_turkey_super_league,soccer_belgium_first_div,soccer_spl,soccer_usa_mls,soccer_brazil_campeonato,soccer_argentina_primera_division,soccer_mexico_ligamx,soccer_denmark_superliga,soccer_sweden_allsvenskan,soccer_uefa_champs_league_qualification
+          # 28 leagues x ~4 credits/day ~= 3.4K/month of the 20K paid quota
+          ODDS_API_SPORTS: soccer_epl,soccer_efl_champ,soccer_spain_la_liga,soccer_italy_serie_a,soccer_germany_bundesliga,soccer_france_ligue_one,soccer_netherlands_eredivisie,soccer_portugal_primeira_liga,soccer_turkey_super_league,soccer_belgium_first_div,soccer_spl,soccer_usa_mls,soccer_brazil_campeonato,soccer_argentina_primera_division,soccer_mexico_ligamx,soccer_denmark_superliga,soccer_sweden_allsvenskan,soccer_uefa_champs_league_qualification,soccer_austria_bundesliga,soccer_switzerland_superleague,soccer_greece_super_league,soccer_poland_ekstraklasa,soccer_norway_eliteserien,soccer_japan_j_league,soccer_korea_kleague1,soccer_germany_bundesliga2,soccer_spain_segunda_division,soccer_england_league1
         run: python pipeline/build.py
 
       - name: Settle finished matches (real scores)
@@ -54,7 +54,7 @@ jobs:
       - name: Fetch standings & season results (football-data.org)
         env:
           FOOTBALL_DATA_TOKEN: ${{ secrets.FOOTBALL_DATA_TOKEN }}
-          ODDS_API_SPORTS: soccer_epl,soccer_efl_champ,soccer_spain_la_liga,soccer_italy_serie_a,soccer_germany_bundesliga,soccer_france_ligue_one,soccer_netherlands_eredivisie,soccer_portugal_primeira_liga,soccer_turkey_super_league,soccer_belgium_first_div,soccer_spl,soccer_usa_mls,soccer_brazil_campeonato,soccer_argentina_primera_division,soccer_mexico_ligamx,soccer_denmark_superliga,soccer_sweden_allsvenskan,soccer_uefa_champs_league_qualification
+          ODDS_API_SPORTS: soccer_epl,soccer_efl_champ,soccer_spain_la_liga,soccer_italy_serie_a,soccer_germany_bundesliga,soccer_france_ligue_one,soccer_netherlands_eredivisie,soccer_portugal_primeira_liga,soccer_turkey_super_league,soccer_belgium_first_div,soccer_spl,soccer_usa_mls,soccer_brazil_campeonato,soccer_argentina_primera_division,soccer_mexico_ligamx,soccer_denmark_superliga,soccer_sweden_allsvenskan,soccer_uefa_champs_league_qualification,soccer_austria_bundesliga,soccer_switzerland_superleague,soccer_greece_super_league,soccer_poland_ekstraklasa,soccer_norway_eliteserien,soccer_japan_j_league,soccer_korea_kleague1,soccer_germany_bundesliga2,soccer_spain_segunda_division,soccer_england_league1
         run: python pipeline/football_data.py
 
       - name: Recompute honest tipster stats
@@ -85,7 +85,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        run: npx wrangler pages deploy dist --project-name ai-betting-tips --commit-dirty=true
+        run: npx wrangler pages deploy dist --project-name ai-betting-tips --branch main --commit-dirty=true
 
       - name: Ping IndexNow (Bing/Yandex instant indexing)
         run: python pipeline/indexnow.py
