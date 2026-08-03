@@ -602,6 +602,7 @@ const D = {
   'lg.markets': { en: '{league} markets', es: 'Mercados de {league}', pt: 'Mercados de {league}', de: '{league}-Märkte' },
   'lg.mrTips': { en: 'Match result tips', es: 'Pronósticos de resultado', pt: 'Palpites de resultado', de: 'Spielausgang-Tipps' },
   'lg.ouTips': { en: 'Over/Under tips', es: 'Pronósticos más/menos', pt: 'Palpites mais/menos', de: 'Über/Unter-Tipps' },
+  'lg.noLive': { en: 'No live fixtures from this league in the current feed — the page updates automatically when the next round is priced.', es: 'No hay partidos de esta liga en el feed actual; la página se actualiza sola cuando el mercado cotice la próxima jornada.', pt: 'Não há jogos desta liga no feed atual — a página se atualiza sozinha quando a próxima rodada for precificada.', de: 'Derzeit keine Spiele dieser Liga im Feed — die Seite aktualisiert sich automatisch, sobald die nächste Runde bepreist ist.' },
   // ---- day hubs (today / tomorrow / weekend) ----
   'day.tips': { en: 'tips', es: 'pronósticos', pt: 'palpites', de: 'Tipps' },
   'day.lead': { en: '{n} predictions for {date} — every one links to a full match page with odds, form and head-to-head.', es: '{n} pronósticos para {date}: cada uno enlaza a su página completa con cuotas, forma y cara a cara.', pt: '{n} palpites para {date} — cada um leva à página completa com odds, forma e confronto direto.', de: '{n} Prognosen für {date} — jede verlinkt auf die komplette Spielseite mit Quoten, Form und Direktvergleich.' },

@@ -1,6 +1,13 @@
 ---
 import { LOCALES, ALT_LANGS, homePath, t, lhref } from '../i18n/index.js';
+import predictions from '../data/predictions.json';
+import { slugify } from '../lib/utils.js';
+
 const { active = '', lang = 'en', i18nPath = null } = Astro.props;
+// top live leagues for the nav — hardcoded links 404 when a league leaves the feed
+const _counts = {};
+for (const tp of (predictions.tips ?? [])) _counts[tp.league] = (_counts[tp.league] ?? 0) + 1;
+const navLeagues = Object.entries(_counts).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([name]) => name);
 const is = (k) => (active === k ? ' active' : '');
 const T = (k) => t(lang, k);
 const L = (pth) => lhref(lang, pth);
@@ -19,9 +26,9 @@ const langs = ['en', ...ALT_LANGS];
         <div class="dropdown">
           <a href={L('/screener')}><span class="ic">🔍</span>{T('nav.screener')}</a>
           <a href={L('/predictions')}><span class="ic">⚽</span>{T('nav.allTips')}</a>
-          <a href={L('/league/champions-league')}><span class="ic">🏆</span>{T('nav.champions')}</a>
-          <a href={L('/league/premier-league')}><span class="ic">🦁</span>{T('nav.premier')}</a>
-          <a href={L('/league/serie-a')}><span class="ic">🇮🇹</span>{T('nav.serieA')}</a>
+          {navLeagues.map((lg) => (
+            <a href={L(`/league/${slugify(lg)}`)}><span class="ic">🏆</span>{lg}</a>
+          ))}
           <a href={L('/tips/accumulator')}><span class="ic">🎯</span>{T('nav.accaTips')}</a>
           <a href={L('/tips/btts')}><span class="ic">⚽</span>{T('nav.bttsTips')}</a>
         </div>

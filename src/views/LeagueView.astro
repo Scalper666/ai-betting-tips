@@ -5,12 +5,20 @@ import predictions from '../data/predictions.json';
 import content from '../data/content.json';
 import { slugify, faqSchema } from '../lib/utils.js';
 import { t, lhref } from '../i18n/index.js';
+import { leagueTable } from '../lib/form.js';
+import fdData from '../data/football-data.json';
 import AiFaq from '../components/AiFaq.astro';
 
 const { league, tips, lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
 const L = (pth) => lhref(lang, pth);
 const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
+// standings for leagues our football-data snapshot covers (name -> sport key)
+const skByName = {};
+for (const [sk, lg] of Object.entries(fdData.leagues ?? {})) skByName[lg.name] = sk;
+for (const tp of tips) skByName[tp.league] = tp.sport_key;
+const table = leagueTable(skByName[league]);
+
 const trx = lang === 'en' ? null : ((content.entries ?? {})[`${lang}:league:${slugify(league)}`] ?? null);
 const ai = trx ?? (content.entries ?? {})[`league:${slugify(league)}`];
 const schema = ai?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(ai.faq) } : null;
@@ -32,10 +40,40 @@ const description = F('lg.desc', { league });
     <div class="layout">
       <main class="content">
         <section>
-          <div class="pred-grid">
-            {tips.map((tip) => <PredCard tip={tip} lang={lang} />)}
-          </div>
+          {tips.length > 0 ? (
+            <div class="pred-grid">
+              {tips.map((tip) => <PredCard tip={tip} lang={lang} />)}
+            </div>
+          ) : (
+            <div class="box"><div class="box-pad dim">{T('lg.noLive')}</div></div>
+          )}
         </section>
+
+        {table && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">{league} <b>{T('mp.standings')}</b></h2></div>
+            <div class="odds-table"><div class="scr-scroll">
+              <table class="otbl">
+                <thead><tr><th>#</th><th style="text-align:left">{T('mp.thTeam')}</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead>
+                <tbody>
+                  {table.rows.map((r) => (
+                    <tr>
+                      <td class="o-cell"><span>{r.pos}</span></td>
+                      <td class="o-match" style="font-weight:700">{r.team}</td>
+                      <td class="o-cell"><span>{r.p}</span></td>
+                      <td class="o-cell"><span>{r.w}</span></td>
+                      <td class="o-cell"><span>{r.d}</span></td>
+                      <td class="o-cell"><span>{r.l}</span></td>
+                      <td class="o-cell"><span>{r.gd > 0 ? `+${r.gd}` : r.gd}</span></td>
+                      <td class="o-cell hot"><span class="cb">{r.pts}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div></div>
+            <p class="res-note">{T('mp.stdNote')}</p>
+          </section>
+        )}
 
         <section class="seo">
           <h2>{F('lg.tipsH', { league })}</h2>

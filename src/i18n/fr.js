@@ -510,6 +510,7 @@ export const FR = {
   'lg.markets': 'Marchés {league}',
   'lg.mrTips': 'Pronostics résultat du match',
   'lg.ouTips': 'Pronostics plus/moins',
+  'lg.noLive': 'Aucun match de cette ligue dans le flux actuel — la page se met à jour automatiquement dès que la prochaine journée est cotée.',
   'day.tips': 'pronostics',
   'day.lead': '{n} pronostics pour {date} — chacun renvoie vers une page de match complète avec cotes, forme et face-à-face.',
   'day.none': 'Pas encore de matchs sur ce créneau — revenez après la prochaine mise à jour.',
