@@ -150,6 +150,10 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
 .btn-lg{padding:14px 26px;font-size:15px;border-radius:12px}
 .btn-block{width:100%}
 
+/* ===== Top AI-model disclaimer strip (legal: informational only, no inducement) ===== */
+.ai-note{background:var(--bg-2);border-bottom:1px solid var(--border);color:var(--text-mute);
+  font-size:11px;line-height:1.5;text-align:center;padding:6px 18px}
+
 /* ===== Header ===== */
 .hdr{position:sticky;top:0;z-index:80;background:rgba(7,10,17,.82);
   backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
@@ -780,6 +784,7 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
   .seo{padding:22px}
 
   /* --- mobile density pass: ranking above the fold --- */
+  .ai-note{font-size:9.5px;line-height:1.45;padding:5px 12px}
   .hdr-bar{height:54px}
   .hero{padding:7px 0 0}
   .hero h1{font-size:16.5px;line-height:1.3;margin:0 0 8px}

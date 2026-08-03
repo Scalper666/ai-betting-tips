@@ -161,6 +161,12 @@ const D = {
   'home.geo.browsing': { en: 'Browsing from', es: 'Navegando desde', pt: 'Navegando de', de: 'Du surfst aus' },
   'home.geo.intl': { en: '🌍 our international ranking', es: '🌍 nuestro ranking internacional', pt: '🌍 nosso ranking internacional', de: '🌍 unserem internationalen Ranking' },
   'home.geo.intlList': { en: 'international list', es: 'lista internacional', pt: 'lista internacional', de: 'internationale Liste' },
+  'top.aiNote': {
+    en: '⚠️ Our AI model is still learning from match data. All predictions are experimental statistical estimates for information purposes only — not financial advice and not an invitation to bet. Outcomes are never guaranteed. 18+ · Gamble responsibly.',
+    es: '⚠️ Nuestro modelo de IA sigue aprendiendo de los datos de los partidos. Las predicciones son estimaciones estadísticas experimentales, solo informativas: no son asesoramiento financiero ni una incitación a apostar. Ningún resultado está garantizado. 18+ · Juega con responsabilidad.',
+    pt: '⚠️ Nosso modelo de IA ainda está aprendendo com os dados das partidas. As previsões são estimativas estatísticas experimentais, apenas informativas — não são aconselhamento financeiro nem um convite a apostar. Nenhum resultado é garantido. 18+ · Jogue com responsabilidade.',
+    de: '⚠️ Unser KI-Modell lernt noch aus Spieldaten. Alle Prognosen sind experimentelle statistische Schätzungen und dienen nur der Information — keine Finanzberatung und keine Aufforderung zum Wetten. Ergebnisse sind nie garantiert. 18+ · Bitte spiele verantwortungsvoll.',
+  },
   'home.geo.noEdition': { en: ' — no dedicated {name} edition yet, so this is our international list', es: ' — aún no hay edición para {name}; esta es nuestra lista internacional', pt: ' — ainda não há edição para {name}; esta é nossa lista internacional', de: ' — noch keine eigene {name}-Ausgabe, daher unsere internationale Liste' },
   'home.preds.pre': { en: 'Free football', es: 'Pronósticos de fútbol', pt: 'Palpites de futebol', de: 'Kostenlose Fußball-' },
   'home.preds.bold': { en: 'predictions', es: 'gratis', pt: 'grátis', de: 'Prognosen' },

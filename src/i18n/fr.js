@@ -78,6 +78,7 @@ export const FR = {
   'home.geo.browsing': 'Vous naviguez depuis',
   'home.geo.intl': '🌍 notre classement international',
   'home.geo.intlList': 'liste internationale',
+  'top.aiNote': '⚠️ Notre modèle d’IA apprend encore à partir des données des matchs. Les pronostics sont des estimations statistiques expérimentales, fournies à titre informatif uniquement — ni conseil financier, ni incitation à parier. Aucun résultat n’est garanti. 18+ · Jouez de manière responsable.',
   'home.geo.noEdition': ' — pas encore d’édition {name} dédiée, voici donc notre liste internationale',
   'home.preds.pre': 'Pronostics foot',
   'home.preds.bold': 'gratuits',
