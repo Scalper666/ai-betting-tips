@@ -1,0 +1,669 @@
+{
+  "set": "Betting Guides",
+  "guides": [
+    {
+      "slug": "how-to-read-betting-odds",
+      "title": "How to Read Betting Odds",
+      "nav": "Reading odds",
+      "desc": "Decimal, fractional and American odds explained with one running example — plus how to turn any price into the probability it implies.",
+      "cat": "Basics",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "Odds are prices, not predictions",
+          "ps": [
+            "A betting price does two jobs at once: it tells you how much a winning bet returns, and it hints at how likely the bookmaker thinks the outcome is. Neither job is a promise. Odds of 1.50 do not mean a team will win — they mean the bookmaker is charging you a price that corresponds to roughly a 67% chance, minus its own commission.",
+            "Once you see odds as prices in a marketplace, a lot of betting logic clicks into place. Prices vary between bookmakers, they move as money and news arrive, and — like any market — some prices are simply wrong. Finding those is the whole game for serious bettors."
+          ]
+        },
+        {
+          "h": "Decimal odds",
+          "ps": [
+            "Decimal odds are the default across Europe, Africa and most betting sites worldwide, and they are the easiest format to work with. The number is your total return per unit staked, stake included. Odds of 2.75 mean a winning €10 bet returns €27.50 — your €10 back plus €17.50 profit.",
+            "Two useful reflexes: anything below 2.00 is odds-on (the outcome is considered more likely than not), and the implied probability is simply 1 divided by the odds. 1 ÷ 2.75 ≈ 36.4%."
+          ]
+        },
+        {
+          "h": "Fractional odds",
+          "ps": [
+            "Fractional odds (5/2, 11/10, 4/6) are the traditional UK and Ireland format. The fraction is profit relative to stake: 5/2 means €5 profit for every €2 staked, so a €10 bet at 5/2 returns €35 in total (€25 profit plus your stake).",
+            "To convert to decimal, divide the fraction and add 1: 5/2 → 2.5 + 1 = 3.50. Fractions below 1 (like 4/6) are odds-on favourites."
+          ]
+        },
+        {
+          "h": "American odds",
+          "ps": [
+            "American odds come as positive or negative numbers anchored to a $100 stake. Negative (−150) shows how much you must stake to win $100: risk $150 to make $100 profit. Positive (+220) shows the profit on a $100 stake: risk $100 to make $220.",
+            "Conversion to decimal: for negative odds, 100 ÷ 150 + 1 = 1.67; for positive odds, 220 ÷ 100 + 1 = 3.20. If you mostly bet in decimal markets, converting American prices before comparing is worth the ten seconds it takes — our converter below does it instantly."
+          ]
+        },
+        {
+          "h": "From odds to implied probability",
+          "ps": [
+            "Implied probability is the chance at which a price would be perfectly fair. For decimal odds the formula is 1 ÷ odds × 100. Odds of 1.50 imply 66.7%, odds of 3.00 imply 33.3%, odds of 10.0 imply 10%.",
+            "Add up the implied probabilities of every outcome in a market and you will get more than 100% — typically 103–108% in football. That extra slice is the bookmaker's margin, and it is why comparing prices across bookmakers matters: the same goal, priced at 1.90 in one shop and 2.02 in another, is a different bet."
+          ]
+        }
+      ],
+      "example": "Manchester City are 1.44 to beat Fulham, the draw is 4.80, Fulham are 7.50. Implied probabilities: 69.4% + 20.8% + 13.3% = 103.5%. The 3.5 points above 100 are the margin. If your own estimate of City's chances is higher than 69.4%, the 1.44 might be value; if lower, the price is against you no matter how likely a City win feels.",
+      "takeaways": [
+        "Decimal odds = total return per unit staked; 1 ÷ odds = implied probability.",
+        "Fractional odds show profit relative to stake; American odds anchor to a $100 stake.",
+        "Every market's implied probabilities sum to more than 100% — the excess is the bookmaker's margin.",
+        "The same outcome at different prices is a different bet: compare before you place."
+      ],
+      "faq": [
+        { "q": "Which odds format should I use?", "a": "Whichever your market uses day to day — but learn to convert to decimal, because implied probability (1 ÷ odds) is easiest to compute there. Most sites let you switch formats in settings." },
+        { "q": "Do low odds mean a safe bet?", "a": "No. Odds of 1.20 imply about an 83% chance, which still loses roughly one time in six. Short-priced favourites lose often enough that no single bet is safe, and stacking them in accumulators compounds the risk." },
+        { "q": "Why do different bookmakers show different odds?", "a": "Each sets its own prices from its own model, liabilities and margin. Differences of 5–10% on the same outcome are common, which is why line shopping across several bookmakers is one of the few free improvements available to every bettor." }
+      ],
+      "related": ["value-betting-explained", "bookmaker-margin-explained", "how-ai-football-predictions-work"],
+      "glossary": ["odds-formats", "implied-probability", "fair-odds"],
+      "tools": [{ "href": "/tools/odds-converter", "label": "Convert any price between decimal, fractional and American — with implied probability" }]
+    },
+    {
+      "slug": "what-is-an-accumulator",
+      "title": "What Is an Accumulator Bet?",
+      "nav": "Accumulators",
+      "desc": "How accumulator odds multiply, what that does to your win chance, and the honest maths behind why accas pay big and lose often.",
+      "cat": "Markets",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "One bet, several legs",
+          "ps": [
+            "An accumulator (acca, parlay, combo) bundles several selections into a single bet. Every leg must win; one losing leg sinks the whole ticket. In exchange, the odds multiply rather than add, which is how a modest stake can return a large payout.",
+            "Three legs at 1.60, 1.75 and 1.90 combine to 1.60 × 1.75 × 1.90 = 5.32. A €10 acca returns €53.20 if all three land — far more than the €7.30 total profit the same €10 split across three singles would earn."
+          ]
+        },
+        {
+          "h": "What multiplication does to your chances",
+          "ps": [
+            "Odds multiply, but so do probabilities — downward. If each of those three legs has a 60% true chance, the acca wins 0.6 × 0.6 × 0.6 = 21.6% of the time. Five such legs: 7.8%. Eight legs: under 2%.",
+            "This is the trade every acca makes: bigger payouts, sharply lower hit rate. There is nothing wrong with that trade if you make it knowingly and stake accordingly — small stakes, money you can afford to lose entirely."
+          ]
+        },
+        {
+          "h": "The margin compounds too",
+          "ps": [
+            "Every leg carries the bookmaker's margin, and multiplying legs multiplies the margin as well. If the bookmaker keeps ~5% per leg, a treble bakes in roughly 14% of combined margin, and a six-fold over 25%. Long accas are structurally some of the most expensive bets on the menu.",
+            "Two practical consequences: keep accas short (2–4 legs), and price-shop each leg separately — a small price improvement per leg compounds in your favour exactly the way the margin compounds against you."
+          ]
+        },
+        {
+          "h": "How our site handles accas",
+          "ps": [
+            "Our daily accumulator combines the model's highest-confidence picks from different matches — confidence first, precisely to avoid multiplying longshots into a lottery ticket. The combined odds and each leg's price are shown openly, and the acca calculator below lets you rebuild or modify the ticket and see the maths before staking anything.",
+            "Treat any acca — ours included — as entertainment with a known cost, not an income plan. No model changes the arithmetic of multiplied probabilities."
+          ]
+        }
+      ],
+      "example": "Four legs at 1.50 each: combined odds 5.06. If each leg's true chance is the 66.7% the price implies, the acca lands 19.7% of the time — about one week in five. The €50.60 return on a €10 stake feels generous right up until you count the four losing weeks around it.",
+      "takeaways": [
+        "All legs must win; odds — and margins — multiply.",
+        "Win probability falls fast with each added leg: five 60% legs win under 8% of the time.",
+        "Short accas (2–4 legs) with shopped prices are the least expensive version of the format.",
+        "Stake small: the defining feature of accas is that most of them lose."
+      ],
+      "faq": [
+        { "q": "Is an accumulator better than singles?", "a": "Mathematically worse in expected value, because margins compound across legs. Singles preserve more of your edge if you have one; accas trade expected value for the chance of a large payout from a small stake." },
+        { "q": "What happens if a match in my acca is postponed?", "a": "Most bookmakers void that leg and recalculate the acca at the remaining legs' combined odds, so a four-fold becomes a treble. Check the individual bookmaker's rules — treatment of abandoned matches varies." },
+        { "q": "How many legs should an acca have?", "a": "If you must, 2–4. Beyond that the compounded margin and collapsing win probability make the ticket a lottery entry — fine as entertainment at pocket-change stakes, poor as a betting strategy." }
+      ],
+      "related": ["bankroll-management-guide", "common-betting-mistakes", "how-to-read-betting-odds"],
+      "glossary": ["accumulator", "void-bet", "variance"],
+      "tools": [{ "href": "/tools/accumulator-calculator", "label": "Build an acca and see combined odds, returns and implied probability" }]
+    },
+    {
+      "slug": "bankroll-management-guide",
+      "title": "Bankroll Management for Bettors",
+      "nav": "Bankroll management",
+      "desc": "Units, flat staking, percentage staking and stop rules — the boring system that decides whether variance ruins you or merely annoys you.",
+      "cat": "Strategy",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "Why staking matters more than picking",
+          "ps": [
+            "Two bettors can place the exact same bets and end the season in opposite worlds: one fine, one wiped out. The difference is staking. Betting outcomes arrive in streaks — losing runs of 8–10 bets are routine even for genuinely good bettors — and the size of your bets relative to your funds decides whether a normal streak is survivable.",
+            "A bankroll is money set aside for betting that you can afford to lose in full. Not rent, not savings targets — an entertainment budget with a hard edge. Everything below assumes that line has been drawn honestly."
+          ]
+        },
+        {
+          "h": "Units and flat staking",
+          "ps": [
+            "Divide your bankroll into units — 100 units is a sensible default, so a €500 bankroll makes each unit €5. Flat staking means betting the same 1 unit on every pick regardless of how confident you feel. It is the strategy we track our own model with, because it makes results honest: profit in units, not in stories.",
+            "Flat staking's virtue is that it neutralises the classic failure mode: betting big on 'sure things' (which lose at the worst times) and small on value (which is where long-term profit actually lives)."
+          ]
+        },
+        {
+          "h": "Percentage staking",
+          "ps": [
+            "Percentage staking bets a fixed share of your current bankroll — commonly 1–2% — so stakes shrink during losing runs and grow during winning ones. It is mathematically harder to bust, at the cost of slower recovery after a downswing since you are betting smaller exactly when you need to climb back.",
+            "A related idea, the Kelly criterion, sizes stakes from your estimated edge. Full Kelly is far too aggressive for real-world estimate errors; practitioners who use it at all use a quarter or less. For most bettors, flat or 1–2% percentage staking captures nearly all the benefit with none of the estimation burden."
+          ]
+        },
+        {
+          "h": "Rules that save bankrolls",
+          "ps": [
+            "Set a per-bet cap (1–2 units even when excited), a losing-day stop (walk away, the fixtures will be there tomorrow), and never chase — increasing stakes to recover losses is the single most reliable way to turn a bad week into a catastrophe.",
+            "Track every bet: date, market, odds, stake, result. A spreadsheet or our published settlement log format works. Bettors who keep records make better decisions for a simple reason — the numbers refuse to flatter memory.",
+            "If betting stops feeling like a budgeted hobby, use the deposit limits and self-exclusion tools every licensed bookmaker provides, and reach organisations like GambleAware. That is not fine print; it is part of the system."
+          ]
+        }
+      ],
+      "example": "Bankroll €500, flat 1-unit (€5) staking, average odds 2.00. A brutal 10-bet losing streak costs €50 — 10% of bankroll, annoying but survivable, and the strategy continues unchanged. The same streak staking €50 'to win it back faster' costs the entire bankroll. Identical picks, opposite outcomes.",
+      "takeaways": [
+        "Bankroll = money you can lose in full; divide it into 100 units.",
+        "Flat 1-unit staking is the honest default; 1–2% percentage staking is the durable alternative.",
+        "Cap single bets, stop on bad days, never chase losses.",
+        "Written records beat memory — profit is measured in units over hundreds of bets, not in highlights."
+      ],
+      "faq": [
+        { "q": "How big should my bankroll be?", "a": "Whatever you can genuinely afford to lose without consequence — for many people that is small, and that is fine. The system works identically at €100 or €10,000; what matters is the unit discipline, not the total." },
+        { "q": "Should I stake more on confident picks?", "a": "Confidence and value are not the same thing, and most bettors' confidence correlates poorly with results. If you vary stakes at all, keep the range tight (1–2 units) and driven by measured edge, not feeling." },
+        { "q": "When should I withdraw profits?", "a": "A common approach: set a milestone (say +50% on starting bankroll), withdraw the excess, and reset. Banking wins periodically keeps the bankroll a tool rather than a scoreboard." }
+      ],
+      "related": ["common-betting-mistakes", "value-betting-explained", "what-is-an-accumulator"],
+      "glossary": ["bankroll-management", "flat-staking", "kelly-criterion", "variance", "self-exclusion"],
+      "tools": [{ "href": "/tipsters", "label": "See our model's real settled record, tracked in flat 1-unit stakes" }]
+    },
+    {
+      "slug": "value-betting-explained",
+      "title": "Value Betting Explained",
+      "nav": "Value betting",
+      "desc": "What edge actually means, how expected value is calculated, and why winning bettors hunt mispriced odds instead of likely winners.",
+      "cat": "Strategy",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "The counterintuitive core",
+          "ps": [
+            "The most important idea in betting is that picking winners and making money are different skills. A bet on a 90% favourite at odds of 1.05 wins nine times out of ten and still loses money, because the price pays less than the risk deserves. A bet on a 30% underdog at 4.00 loses seven times out of ten and profits, because the price pays more.",
+            "Value is the gap between the odds on offer and the outcome's true probability. Betting is profitable exactly when you find prices that underestimate real chances — and only then. Everything else is entertainment with a fee."
+          ]
+        },
+        {
+          "h": "Expected value in one formula",
+          "ps": [
+            "Expected value (EV) per unit staked: (probability × odds) − 1. If you estimate a team's chance at 45% and the price is 2.40, EV = 0.45 × 2.40 − 1 = +0.08 — eight cents of long-run profit per euro staked. At 2.10 the same estimate gives −0.055: a losing bet regardless of how the match ends.",
+            "The formula is trivial; the probability estimate is everything. Your 45% has to be closer to the truth than the market's implied 41.7% (at 2.40, margin removed) for the edge to be real. That is a high bar against modern football markets."
+          ]
+        },
+        {
+          "h": "Where value hides",
+          "ps": [
+            "Big markets like Premier League match odds are efficient — thousands of sharp participants push prices close to true. Value hunters look where attention is thinner: smaller leagues, niche markets, early lines before the market settles, and price discrepancies between bookmakers.",
+            "Line shopping is the one source of value available to everyone with zero modelling: the best available price across bookmakers is routinely 3–8% better than the average price. Taking 2.02 instead of 1.90 on the same outcome needs no forecast at all, just an extra tab."
+          ]
+        },
+        {
+          "h": "How our screener applies this",
+          "ps": [
+            "Our model estimates probabilities from historical scoring rates (a Poisson framework blended with market prices), converts them to fair odds and compares against the best available price. When the price exceeds the model's fair odds by enough, the pick gets a positive edge score — that is the number in the Edge column of the screener.",
+            "The honest caveats: model probabilities are estimates with error bars, edges of a few percent are easily illusions, and even genuine edges lose often — value betting profits emerge over hundreds of bets, never within a weekend. Our published closing-line-value tracking exists precisely to test whether the model's edges are real."
+          ]
+        }
+      ],
+      "example": "You estimate a draw at 30% (fair odds 3.33). Bookmaker A prices it 3.10 — negative EV, pass. Bookmaker B prices it 3.60: EV = 0.30 × 3.60 − 1 = +0.08. Same match, same estimate, one bad bet and one good one. The market decided which — not the final score.",
+      "takeaways": [
+        "Value = price above true probability; EV = (prob × odds) − 1.",
+        "Likely winners at short prices can be terrible bets; unlikely winners at long prices can be great ones.",
+        "Line shopping across bookmakers is free value requiring no forecasting skill.",
+        "Real edges are small, noisy and only visible over hundreds of bets."
+      ],
+      "faq": [
+        { "q": "How do I know if my probability estimates are any good?", "a": "Track them against closing odds: if you consistently beat the closing line, your estimates carry information. That signal shows up within weeks, long before profit curves become meaningful." },
+        { "q": "Is value betting the same as arbitrage?", "a": "No. Arbitrage locks in a small guaranteed profit by covering all outcomes across bookmakers; value betting takes on variance, backing one outcome at a price it believes is wrong. Value betting can lose for months even when done well." },
+        { "q": "Can I value bet with a small bankroll?", "a": "The maths works at any size, but variance is brutal: even with a real 5% edge, hundred-bet losing stretches of the bankroll happen. Flat staking and a genuine entertainment budget are prerequisites, not options." }
+      ],
+      "related": ["how-to-read-betting-odds", "bookmaker-margin-explained", "bankroll-management-guide"],
+      "glossary": ["value-bet", "expected-value", "edge", "closing-line-value", "fair-odds"],
+      "tools": [{ "href": "/screener", "label": "The live value screener — model probabilities vs best available prices" }]
+    },
+    {
+      "slug": "bookmaker-margin-explained",
+      "title": "Bookmaker Margin Explained",
+      "nav": "Bookmaker margin",
+      "desc": "How the overround works, how to calculate it from any market in ten seconds, and how much of your money it quietly claims.",
+      "cat": "Basics",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "The house edge, in plain sight",
+          "ps": [
+            "Bookmakers do not profit by predicting matches better than you; they profit by selling every outcome slightly cheaper than its fair price. Add up the implied probabilities in any market and the total exceeds 100% — that excess is the margin, also called the overround or vig.",
+            "A market summing to 105% keeps roughly €5 of every €100 staked across it, regardless of the result. The margin is not hidden anywhere: it is right there in the prices, waiting to be computed."
+          ]
+        },
+        {
+          "h": "Calculating it yourself",
+          "ps": [
+            "For each outcome, take 1 ÷ decimal odds; sum the results; subtract 1. A match priced 2.10 / 3.40 / 3.60 gives 0.476 + 0.294 + 0.278 = 1.048 — a 4.8% margin.",
+            "Do this once per bookmaker you use and the differences become vivid. In our own research across the leagues we cover, typical best-price margins run around 3%, while single-bookmaker margins on the same fixtures are often 5–7%. Niche markets (correct score, scorers) can carry 10%+ margins — which is exactly why bookmakers advertise them hardest."
+          ]
+        },
+        {
+          "h": "What margin costs you over time",
+          "ps": [
+            "A 5% margin means an average bettor loses about €5 per €100 turned over — not per €100 deposited, per €100 staked. Bet €50 twice a week and the margin's expected cost is roughly €260 a year, before any skill or luck enters the picture.",
+            "Margin is also the bar your edge must clear: to profit at a 5%-margin bookmaker, your probability estimates must beat the market by more than 5%. Halving the margin you pay — by shopping prices — halves the skill required."
+          ]
+        },
+        {
+          "h": "Using margin to choose bookmakers",
+          "ps": [
+            "Margin is one of the fairest single numbers for comparing bookmakers, and one of the least advertised. A generous welcome bonus at a 7%-margin shop is usually worth less over a season than no bonus at a 4%-margin one — the bonus is paid once, the margin is charged on every bet forever.",
+            "Our bookmaker margins research page recomputes typical margins from live odds data on every site rebuild, and the calculator below extracts the margin from any market you paste in."
+          ]
+        }
+      ],
+      "example": "Odds 1.90 / 1.90 on an over-under line: 0.526 + 0.526 = 1.053, a 5.3% margin. The fair price for a genuine coin-flip would be 2.00 / 2.00. At 1.90 you must win 52.6% of such bets just to break even — the 2.6 points between 50% and 52.6% is what the margin charges you.",
+      "takeaways": [
+        "Margin = (sum of 1/odds across outcomes) − 1; it is the bookmaker's built-in fee.",
+        "Typical football match-odds margins: ~3% at best price across shops, 5–7% at a single bookmaker.",
+        "Margin scales with turnover — it is charged on every bet, not once.",
+        "Lower-margin bookmakers beat bigger bonuses over any serious time horizon."
+      ],
+      "faq": [
+        { "q": "Why do margins differ between markets?", "a": "Competition and liability. Match odds on big leagues are heavily shopped, so margins compress. Obscure props face no comparison pressure and carry double-digit margins comfortably." },
+        { "q": "Is a 0% margin possible?", "a": "Occasionally a bookmaker prices an outcome above fair as a promotion, and across different bookmakers the best prices on all outcomes sometimes sum below 100% — that is an arbitrage. Both are rare, small and short-lived." },
+        { "q": "Does margin mean I can't win?", "a": "It means the default trajectory is a slow loss at the margin's rate. Winning requires either luck (short term) or probability estimates that beat the market by more than the margin (long term) — a genuine but rare skill." }
+      ],
+      "related": ["how-to-read-betting-odds", "value-betting-explained", "how-to-choose-a-betting-site"],
+      "glossary": ["bookmaker-margin", "implied-probability", "odds-comparison", "sharp-and-soft-bookmakers"],
+      "tools": [{ "href": "/tools/margin-calculator", "label": "Paste any market's odds and see the exact margin" }]
+    },
+    {
+      "slug": "btts-explained",
+      "title": "Both Teams to Score (BTTS) Explained",
+      "nav": "BTTS",
+      "desc": "How the both-teams-to-score market settles, what actually drives BTTS probability, and the stats that matter more than recent goal feasts.",
+      "cat": "Markets",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "The simplest market in football",
+          "ps": [
+            "Both Teams to Score asks one question: will each side score at least once in regular time? A 1-1, 4-1 or 2-3 all settle Yes; a 0-0, 3-0 or 0-2 settle No. Own goals count for the team credited on the scoresheet; extra time does not count in standard markets.",
+            "Its appeal is psychological as much as mathematical: a BTTS Yes ticket stays alive deep into the match regardless of who is winning, which makes it one of football's most-watched markets."
+          ]
+        },
+        {
+          "h": "What actually drives BTTS probability",
+          "ps": [
+            "BTTS Yes needs both attacks to function and both defences to fail at least once. The statistical drivers are each team's scoring rate and concession rate — not the combined goal total. A 3-0-heavy team can be a poor BTTS pick despite big scorelines, because its defence keeps clean sheets.",
+            "In a Poisson framing (the model family our site uses), BTTS Yes probability is 1 − P(home blanks) − P(away blanks) + P(both blank). Typical top-league BTTS Yes rates sit near 50–53%, which is why prices usually hover between 1.80 and 2.00 on both sides."
+          ]
+        },
+        {
+          "h": "Reading the stats without fooling yourself",
+          "ps": [
+            "Useful signals: clean-sheet percentage on both sides, failed-to-score percentage, and underlying chance creation (xG for and against) rather than raw recent scorelines. Five straight BTTS Yes results in samples of five matches is noise — league-season base rates plus team defensive quality carry far more information.",
+            "Context shifts the number: missing first-choice centre-backs or keepers push toward Yes; a fixture where one side parks deep (big favourite away, relegation defence) pushes toward No. Derbies are popularly assumed BTTS-friendly; historically they are roughly base rate."
+          ]
+        },
+        {
+          "h": "How we price it",
+          "ps": [
+            "Our model estimates each team's scoring rates from weighted historical results, derives BTTS probabilities, and compares them against live prices — BTTS picks appear in the tips feed when the price exceeds the model's fair odds. As with every market: the edge estimate is statistical, individual matches are coin flips around it, and no BTTS streak means anything by itself."
+          ]
+        }
+      ],
+      "example": "Home side scores in 78% of home games and concedes in 55%; away side scores in 60% of away games and concedes in 70%. Independent-ish estimate: P(both score) ≈ 0.78 × 0.60 adjusted for defensive rates — the model lands at 56%. Fair odds ≈ 1.79, so a 1.95 price carries positive expected value; a 1.70 price does not, however open the match looks.",
+      "takeaways": [
+        "BTTS Yes = both sides score in 90 minutes plus stoppage; extra time excluded.",
+        "Drivers are per-team scoring and conceding rates, not combined goals.",
+        "Clean-sheet and failed-to-score percentages beat recent scorelines as signals.",
+        "Prices cluster near evens because league base rates sit close to 50%."
+      ],
+      "faq": [
+        { "q": "Does extra time count for BTTS?", "a": "Standard BTTS markets settle on 90 minutes plus stoppage time only. Cup-specific 'to qualify' or extra-time markets are separate products with their own rules — check the market name carefully." },
+        { "q": "Is BTTS better than over 2.5 goals?", "a": "They overlap but answer different questions: a 2-0 result wins overs and loses BTTS; a 1-1 wins BTTS and loses overs. Pick the market that matches your actual view — two functioning attacks (BTTS) versus general goal expectation (totals)." },
+        { "q": "What about BTTS in accumulators?", "a": "Popular because near-evens prices build big combined odds quickly — but five ~52% legs win under 4% of the time, and each leg carries margin. Treat BTTS accas as small-stake entertainment." }
+      ],
+      "related": ["over-under-goals-explained", "value-betting-explained", "what-is-an-accumulator"],
+      "glossary": ["btts", "xg", "implied-probability"],
+      "tools": [{ "href": "/tips/btts", "label": "Today's BTTS picks with model probabilities and best prices" }]
+    },
+    {
+      "slug": "over-under-goals-explained",
+      "title": "Over/Under Goals Betting Explained",
+      "nav": "Over/under goals",
+      "desc": "Total-goals lines from 0.5 to 4.5, why 2.5 rules football, and how quarter-lines split your stake — with the numbers that set the prices.",
+      "cat": "Markets",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Betting the match, not the winner",
+          "ps": [
+            "Over/under markets ignore who wins and count total goals by both teams. Over 2.5 wins on any result with three or more goals; Under 2.5 wins with two or fewer. The half-goal in the line makes a push impossible — one side always settles as a winner.",
+            "The 2.5 line dominates football because average top-league totals sit near 2.6–2.8 goals per match, putting both sides of the line close to a coin flip and prices close to evens."
+          ]
+        },
+        {
+          "h": "Whole lines and quarter lines",
+          "ps": [
+            "Whole-number lines (Over/Under 2.0, 3.0) can push: exactly three goals against a 3.0 line refunds the stake. Quarter lines (2.25, 2.75) split your stake across the adjacent half and whole line — Over 2.25 is half on Over 2.0, half on Over 2.5, so a two-goal match refunds half and loses half.",
+            "Quarter lines came from Asian handicap conventions and are worth understanding purely to avoid surprise settlements: a 'half win' on Over 2.75 after exactly three goals confuses more bettors than any other outcome in the totals family."
+          ]
+        },
+        {
+          "h": "What moves totals prices",
+          "ps": [
+            "Team scoring and conceding rates dominate, followed by pace and style (pressing teams create chaos, low-block teams suppress it), lineup news for key attackers, and — statistically underrated — referee and weather at the margins. League identity matters too: some leagues consistently run half a goal above or below others per match.",
+            "Recent 4-3 thrillers are the classic trap: totals regress hard to team-level rates. Our league predictability research quantifies how much league-to-league scoring differs from the global mean, recomputed on every rebuild."
+          ]
+        },
+        {
+          "h": "The model view",
+          "ps": [
+            "A Poisson model with each team's attack and defence rates produces a full scoreline distribution, from which P(0 goals), P(1), P(2)… follow directly; summing gives each line's fair price. Our over/under picks surface when live prices diverge from those fair odds by more than the noise floor.",
+            "Totals are among the most efficient football markets, so genuine edges are small and rare — expect our model to pass on most matches rather than force a pick."
+          ]
+        }
+      ],
+      "example": "Model expects 1.45 home goals and 1.10 away goals — a 2.55-goal match. The Poisson distribution puts Over 2.5 at 51%, fair odds 1.96. A bookmaker offering 2.06 has priced Under demand too heavily; the model flags Over. Final score 1-0 — the bet loses, and was still correct at kickoff. That distinction is the whole discipline.",
+      "takeaways": [
+        "Half-goal lines cannot push; whole lines can refund; quarter lines split the stake.",
+        "The 2.5 line rules football because real totals average ~2.6–2.8 goals.",
+        "Team scoring rates and league identity beat recent scorelines as predictors.",
+        "Totals markets are efficient: real edges are small, and passing is normal."
+      ],
+      "faq": [
+        { "q": "Do goals in extra time count?", "a": "Standard totals settle on 90 minutes plus stoppage. Markets covering extra time in cup ties are labelled separately — read the market name before assuming." },
+        { "q": "What does Over 2.25 pay if the match ends 2-1?", "a": "Full win: both halves of the stake (Over 2.0 and Over 2.5) win with three goals. At 2-0 the Over 2.0 half refunds and the Over 2.5 half loses — a half loss." },
+        { "q": "Why is Under often priced shorter than Over?", "a": "Recreational money prefers goals, so bookmakers can shade Over prices down and Under prices up. That systematic lean is exactly the kind of bias models look to exploit on the Under side." }
+      ],
+      "related": ["btts-explained", "asian-handicap-explained", "how-ai-football-predictions-work"],
+      "glossary": ["over-under", "settlement", "line-movement"],
+      "tools": [{ "href": "/tips/over-under", "label": "Today's totals picks with fair-odds comparison" }]
+    },
+    {
+      "slug": "asian-handicap-explained",
+      "title": "Asian Handicap: a Beginner's Guide",
+      "nav": "Asian handicap",
+      "desc": "How level, half, whole and quarter handicaps settle, why the draw disappears, and worked examples for every confusing case.",
+      "cat": "Markets",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "Two outcomes instead of three",
+          "ps": [
+            "Asian handicap gives one team a virtual head start, sized so the contest becomes roughly 50/50, and removes the draw as a bettable outcome — stakes are refunded or the handicap absorbs it. You are left with two prices near evens instead of three lopsided ones.",
+            "Removing the draw is the format's core appeal: you can back a strong favourite at a meaningful price (by laying goals) or take an underdog with insurance (by receiving them), without the draw sitting in ambush."
+          ]
+        },
+        {
+          "h": "Whole and half handicaps",
+          "ps": [
+            "Half handicaps (−0.5, −1.5) cannot push. Team A −0.5 is simply 'Team A wins'. Team A −1.5 needs a two-goal win; B +1.5 wins on a draw, a B win, or a one-goal loss.",
+            "Whole handicaps (0, −1, −2) can push: A −1 with a one-goal A win refunds every stake. The level (0) handicap — draw no bet — refunds on a draw and is the gentlest introduction to the format."
+          ]
+        },
+        {
+          "h": "Quarter handicaps",
+          "ps": [
+            "Quarter lines (−0.25, −0.75, +1.25…) split your stake across the two neighbouring lines. A −0.75 is half −0.5, half −1.0: if your team wins by exactly one, the −0.5 half wins and the −1.0 half refunds — a half win.",
+            "Every confusing Asian handicap settlement decomposes this way: split the stake in two, settle each half on its own line, add up. Ten seconds of arithmetic replaces memorising a table."
+          ]
+        },
+        {
+          "h": "Why serious bettors like it",
+          "ps": [
+            "Asian handicap and totals are where global liquidity concentrates, so margins are typically tighter than 1X2 — often 2–4% at sharp bookmakers versus 5%+ on match odds. Tighter margin means a lower bar for any edge you bring.",
+            "The format also maps cleanly onto model output: a scoreline distribution converts directly into cover probabilities for any line, making handicaps a natural habitat for statistical bettors. The trade-off is unfamiliarity — which this guide has now spent, at zero margin cost to you."
+          ]
+        }
+      ],
+      "example": "You back Arsenal −1.25 at 2.00 with €20: €10 on −1.0, €10 on −1.5. Arsenal win 2-1: the −1.0 half refunds €10, the −1.5 half loses — net −€10. Arsenal win 3-1: both halves win, net +€20. Arsenal draw 1-1: both halves lose, net −€20. One price, three genuinely different outcomes — always decompose before betting.",
+      "takeaways": [
+        "The handicap removes the draw: refunds (whole lines) or the line itself absorb it.",
+        "Half lines never push; whole lines can refund; quarter lines are two half-stakes.",
+        "Decompose any quarter line into its two neighbours to settle it instantly.",
+        "Margins on Asian lines are usually tighter than 1X2 — the cheapest football market to bet."
+      ],
+      "faq": [
+        { "q": "Is Asian handicap the same as European handicap?", "a": "No. European (3-way) handicap keeps the draw as a bettable outcome after applying whole-goal handicaps, so pushes become losses unless you backed the handicap draw. Asian handicap refunds instead. The names are confusingly similar; the settlement is not." },
+        { "q": "What is +0 (level ball) useful for?", "a": "It is draw-no-bet: back a team, get refunded on a draw. Ideal when you fancy an underdog to avoid defeat but do not trust them to win outright." },
+        { "q": "Why do Asian lines move more than 1X2?", "a": "They carry the sharpest global money, so new information (lineups, weather, big bets) hits them first. Watching Asian line movement is a common way to read where informed money leans." }
+      ],
+      "related": ["over-under-goals-explained", "how-to-read-betting-odds", "value-betting-explained"],
+      "glossary": ["asian-handicap", "draw-no-bet", "line-movement", "sharp-and-soft-bookmakers"],
+      "tools": [{ "href": "/dropping-odds", "label": "Watch where prices are moving across the markets we track" }]
+    },
+    {
+      "slug": "how-ai-football-predictions-work",
+      "title": "How AI Football Predictions Work",
+      "nav": "How AI predictions work",
+      "desc": "What is actually inside a football prediction model — ours included: Poisson rates, market blending, honest limits, and how to judge any tipster's claims.",
+      "cat": "Basics",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "No crystal ball, just counting",
+          "ps": [
+            "Strip the marketing from any football prediction model — ours included — and you find structured counting: how often teams score, how often they concede, weighted toward recent matches, adjusted for opposition and venue. From those rates, probability distributions over scorelines follow mathematically.",
+            "The word 'AI' adds no magic to this. A model's value lies in disciplined estimation and honest calibration, not in the label. Anyone claiming their algorithm 'knows' results is selling something."
+          ]
+        },
+        {
+          "h": "Inside our model, concretely",
+          "ps": [
+            "Our v2 model estimates each team's attack and defence strength with a time-decayed Poisson framework: recent matches weigh more (half-life around 240 days), small samples get shrunk toward league average to avoid overreacting, and teams need a minimum match count before we trust their rates at all.",
+            "Those rates produce a scoreline distribution per fixture, hence probabilities for every market we cover. We then blend model probabilities with market-implied ones (roughly 40/60) — an admission, built into the arithmetic, that the market knows things our data does not: injuries, motivation, weather, lineups.",
+            "A pick is only published as official when the blended probability clears the price by a meaningful margin with sane odds caps. Most matches produce no official pick; the full methodology, version history and known limitations live on our model page."
+          ]
+        },
+        {
+          "h": "What models cannot do",
+          "ps": [
+            "A model cannot know a manager rested his striker, a squad flew back from a cup tie at 4 a.m., or rain turned the pitch to soup. It compresses history into rates; anything outside history is invisible to it.",
+            "More fundamentally: even a perfect probability is not a prediction of one match. A 60% call loses four times in ten by construction. Models earn or lose their keep across hundreds of bets, in calibration — do 60% calls land about 60% of the time? — not in any highlight reel."
+          ]
+        },
+        {
+          "h": "How to judge anyone's predictions, including ours",
+          "ps": [
+            "Ask for the full settled record (every pick, not a curated month), results in flat-staked units, sample sizes in the hundreds, and — the sharpest test — closing line value: whether picks consistently beat the price the market closed at. CLV separates skill from luck far faster than profit curves do.",
+            "We publish all of the above, including losing runs, on our results pages — our early record includes an instructive stretch where longshot picks went 0-for-8 and forced a model revision. Any tipster showing only wins is showing you marketing."
+          ]
+        }
+      ],
+      "example": "The model rates a home side's attack at 1.6 expected goals against this defence, the away side at 0.9. The Poisson distribution gives home win 52%, draw 24%, away 24% — fair odds 1.92 / 4.17 / 4.17. The market prices the home team at 2.10, implying 47.6%. The blend lands at ~50%, still above the price's implication: positive edge, official pick. Sixty seconds later a leaked teamsheet could invalidate it — which is why edges are estimates, not facts.",
+      "takeaways": [
+        "Prediction models are weighted scoring rates → scoreline distributions → market probabilities.",
+        "Ours blends model with market (40/60) and publishes only clear-edge picks — passing on most matches.",
+        "Models are blind to news; probabilities are calibrated over hundreds of games, not single matches.",
+        "Judge any tipster on full flat-staked records and closing line value, never on highlight months."
+      ],
+      "faq": [
+        { "q": "What accuracy do football prediction models achieve?", "a": "On three-way match odds, top models land the correct outcome roughly 50–55% of the time — barely above always-backing-the-favourite. Accuracy is the wrong metric anyway; calibration and value against prices are what pay, which is why we report units and CLV instead." },
+        { "q": "Why does the model sometimes disagree with obvious form?", "a": "Because 'obvious form' is usually five matches of noise, and the model weighs two seasons of rates. When they clash, the longer sample is right more often — not always, just more often, which is all a model claims." },
+        { "q": "Do you use machine learning?", "a": "The core is classical statistics: time-decayed Poisson rates with shrinkage, blended with market prices. It is transparent, debuggable and published. Fancier architectures add opacity faster than they add football accuracy at our data scale." }
+      ],
+      "related": ["value-betting-explained", "how-to-read-betting-odds", "common-betting-mistakes"],
+      "glossary": ["xg", "closing-line-value", "fair-odds", "win-rate"],
+      "tools": [{ "href": "/model", "label": "Our full model methodology, version history and known limits" }]
+    },
+    {
+      "slug": "common-betting-mistakes",
+      "title": "7 Common Betting Mistakes (and Their Fixes)",
+      "nav": "Common mistakes",
+      "desc": "Chasing losses, longshot bias, bonus hunting without reading terms — the failure patterns that empty bankrolls, each with its practical fix.",
+      "cat": "Strategy",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "1. Chasing losses",
+          "ps": [
+            "The most destructive pattern in betting: raising stakes after losses to 'win it back'. Each escalation must overcome the same margins with more money at exactly the moment judgment is worst. Bad nights become busted bankrolls through chasing, almost never through the original bets.",
+            "Fix: a written losing-day stop rule, decided while calm. When it triggers, you are done — the fixtures return tomorrow."
+          ]
+        },
+        {
+          "h": "2. Longshot bias",
+          "ps": [
+            "Bettors systematically overpay for big odds — 8.00 shots priced as if they were 6.00 chances. Bookmakers know and shade accordingly, making high-odds markets some of the worst-value real estate in betting. Our own model's first version learned this expensively: an 0-for-8 run on double-digit-odds picks forced a rebuild with odds caps.",
+            "Fix: cap your betting range (we cap official picks at 4.0) and treat any price above it as entertainment, priced accordingly."
+          ]
+        },
+        {
+          "h": "3. Betting every match you watch",
+          "ps": [
+            "Interest is not edge. Betting whatever you happen to be watching multiplies turnover — and margin paid — across markets where you know nothing special. The margin arithmetic is merciless: double the volume at 5% margin, double the expected cost.",
+            "Fix: separate watching from betting. Fewer, deliberate bets in markets you actually track beat scattergun action every season."
+          ]
+        },
+        {
+          "h": "4. Ignoring the price",
+          "ps": [
+            "Deciding the outcome first and accepting whatever price your one bookmaker shows skips the entire half of betting where the profit lives. The same correct opinion is profitable at 2.10 and losing at 1.85.",
+            "Fix: line shopping. Two or three bookmaker accounts and ten extra seconds per bet recover 3–8% in price — the cheapest edge that exists."
+          ]
+        },
+        {
+          "h": "5. Misreading bonuses",
+          "ps": [
+            "A '100% up to €100' bonus with 8× wagering at minimum odds 1.8 requires €800 of qualifying turnover before withdrawal — at typical margins, an expected cost near the bonus itself. Bonuses are not free money; they are discounted turnover with conditions.",
+            "Fix: read wagering multiplier, minimum odds, market restrictions and expiry before depositing. Sometimes the bonus is genuinely good; the terms, not the headline, tell you."
+          ]
+        },
+        {
+          "h": "6. Results-based thinking",
+          "ps": [
+            "Judging a bet by whether it won is the subtlest leak. Good bets lose constantly; bad bets win often enough to teach terrible lessons. Streak-chasing, 'due' teams, and confidence built on five-match samples all grow from this root.",
+            "Fix: judge process — was the price better than the true chance? — and measure over hundreds of bets. A written record makes this automatic; memory makes it impossible."
+          ]
+        },
+        {
+          "h": "7. Betting without a budget",
+          "ps": [
+            "Every mistake above becomes dangerous when the money was never ring-fenced. Betting from the household account turns variance into genuine harm.",
+            "Fix: a fixed entertainment bankroll, deposit limits set in the account settings, and honesty about whether it is still fun. Licensed bookmakers provide limit and self-exclusion tools; GambleAware and equivalents exist precisely for when the answer stops being yes."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Never raise stakes to recover losses — write the stop rule down before you need it.",
+        "Avoid long odds by default; the market overprices dreams systematically.",
+        "Shop prices on every bet; judge bets by process, not results.",
+        "Read bonus wagering terms in full; bet only from a ring-fenced budget."
+      ],
+      "faq": [
+        { "q": "What is the single most damaging mistake?", "a": "Chasing losses. Every other error costs you at the margin's pace; chasing compresses a year of expected losses into one night. If you adopt only one rule, make it the losing-day stop." },
+        { "q": "How do I know if my betting is still recreational?", "a": "Honest tests: you bet only ring-fenced money, losses do not change your mood for long, you never hide the activity, and stopping for a week is easy. If any of those fail, use the limit tools and talk to GambleAware — early is the whole trick." },
+        { "q": "Are these mistakes really that common?", "a": "They are the norm, not the exception — bookmaker product design (bonuses, bet builders, high-odds promotions) actively encourages several of them. Assume the defaults are set against you and choose deliberately." }
+      ],
+      "related": ["bankroll-management-guide", "value-betting-explained", "what-is-an-accumulator"],
+      "glossary": ["bankroll-management", "wagering-requirements", "variance", "self-exclusion"],
+      "tools": [{ "href": "/tipsters", "label": "Our full settled record — losing runs included, flat-staked" }]
+    },
+    {
+      "slug": "how-to-choose-a-betting-site",
+      "title": "How to Choose a Betting Site",
+      "nav": "Choosing a betting site",
+      "desc": "A practical checklist — licence, margins, payout speed, limits and terms — for picking a bookmaker that fits your market, with the traps to skip.",
+      "cat": "Bookmakers",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "Licence first, everything else second",
+          "ps": [
+            "A licence from your market's regulator is the difference between a company with obligations — fund protection, dispute routes, responsible gambling tools — and a website with a logo. Regulated operators can be complained about, audited and fined; unregulated ones can simply stop paying.",
+            "Rules differ enormously by country (our country pages track who regulates each market we cover), and they change. Wherever you are: verify current local status before depositing, and treat a missing or vague licence as a full stop."
+          ]
+        },
+        {
+          "h": "The numbers that compound: margin and limits",
+          "ps": [
+            "Margin is the fee you pay on every bet — typical single-bookmaker match-odds margins run 5–7%, best-price shopping across several books gets near 3%. Over a season of regular betting the difference is real money; over years it dwarfs any welcome bonus.",
+            "Limits matter in the other direction: soft bookmakers restrict winning accounts quickly, sometimes to pocket-change stakes. If you intend to bet seriously, reputation for tolerating winners belongs on your checklist."
+          ]
+        },
+        {
+          "h": "Payments and payout speed",
+          "ps": [
+            "Deposits are instant everywhere; withdrawals are where bookmakers differ. Look for your local payment rails (bank transfer, cards, and in many of our markets mobile money like M-Pesa, MTN MoMo, PIX or UPI), stated withdrawal timelines, and — from user reports — whether those timelines hold.",
+            "One structural tip: complete identity verification (KYC) right after signup, before any withdrawal is pending. Most 'slow payout' complaints are actually verification queues hit at the worst moment."
+          ]
+        },
+        {
+          "h": "Terms, product and the honest trade-offs",
+          "ps": [
+            "Read four things in the terms: bonus wagering rules, maximum win caps, dormant account fees, and restricted markets. Max-win caps in particular surprise accumulator bettors at precisely the wrong time.",
+            "Product features — live streaming, cash-out, bet builders, app quality — are worth weighing only after licence, margin and payouts pass. They are the reasons marketing gives you; the other three are the reasons your money stays yours.",
+            "Our bookmaker reviews score operators across exactly these axes, per country, and we mark demo entries clearly until real partner data replaces them. Cross-check any review — ours included — against the operator's own published terms."
+          ]
+        }
+      ],
+      "takeaways": [
+        "No valid local licence — no deposit; everything else is secondary.",
+        "Margin is charged forever, bonuses once: prefer the lower-margin book.",
+        "Verify identity immediately after signup; check real payout-speed reports.",
+        "Read wagering terms, win caps and fee clauses before they read you."
+      ],
+      "faq": [
+        { "q": "Should I have accounts at several bookmakers?", "a": "Yes, two or three licensed ones. Line shopping alone justifies it, and it protects you if one restricts your account or delays a payout. Keep every account fully verified and within your one shared budget." },
+        { "q": "Are big-brand bookmakers always safer?", "a": "Brand size correlates with regulatory scrutiny, not generosity — big brands often carry higher margins and aggressive restriction policies. Safest is licensed-in-your-market plus a payout reputation you have checked, at any size." },
+        { "q": "What if a bookmaker refuses to pay out?", "a": "Licensed operator: complain formally in writing, then escalate to the regulator or the designated ADR body — these routes work and are the licence's whole point. Unlicensed operator: there is usually no route, which is the argument for the first section of this guide." }
+      ],
+      "related": ["bookmaker-margin-explained", "common-betting-mistakes", "how-to-read-betting-odds"],
+      "glossary": ["wagering-requirements", "sharp-and-soft-bookmakers", "cash-out", "free-bet"],
+      "tools": [{ "href": "/bookmakers", "label": "Our scored bookmaker comparison, by market" }]
+    },
+    {
+      "slug": "in-play-betting-guide",
+      "title": "In-Play Betting: How Live Markets Work",
+      "nav": "In-play betting",
+      "desc": "How live odds are made, why the margin quietly widens mid-match, the suspension mechanic, and the discipline live betting demands.",
+      "cat": "Markets",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "Markets that reprice every second",
+          "ps": [
+            "In-play betting keeps markets open while the match runs, repricing continuously from elapsed time, score, and live events. A 1.50 favourite conceding early can drift past 3.00 in seconds; every goal, red card and VAR review snaps prices to a new state.",
+            "The engine underneath is the same probability machinery as pre-match — expected goals remaining, score state, time decay — recalculated in real time, with an automated risk layer suspending markets when events outpace the pricing."
+          ]
+        },
+        {
+          "h": "What changes versus pre-match",
+          "ps": [
+            "Three structural differences. First, margin: live markets typically carry 1–3 points more than the same market pre-match — you pay extra for the running clock. Second, suspensions: markets lock during goals, penalties and reviews, precisely when you most want to act. Third, information latency: the feed you watch runs seconds behind the data feeds pricing the market, so 'reacting to what you just saw' usually means betting into a price that already knows.",
+            "Together these mean the casual live bettor faces worse prices, at worse moments, with worse information — a stacked deck worth understanding before playing."
+          ]
+        },
+        {
+          "h": "Where live betting is genuinely useful",
+          "ps": [
+            "Legitimate uses exist. Match-state reading — recognising that a 0-0 scoreline misrepresents a one-sided match — can beat a model that sees only the score. Planned entries (deciding pre-match you will back the favourite if they concede first, at a target price) turn live volatility into a tool rather than a trap.",
+            "Cash-out deserves its own honesty: it is a live-priced buyback with margin applied twice — convenient, occasionally rational for genuine risk management, and systematically unprofitable as a habit. Partial cash-out obeys the same arithmetic on a fraction of the stake."
+          ]
+        },
+        {
+          "h": "The discipline layer",
+          "ps": [
+            "Live betting compresses the entire emotional cycle of gambling into ninety minutes: losses arrive mid-adrenaline with instant rebet buttons attached. Every bankroll rule from our staking guide applies double, and pre-committed stakes — decided before kickoff, never during — are the single strongest protection.",
+            "Our model publishes pre-match picks only; we track live odds movement on the dropping-odds page but do not issue in-play tips. If you bet live, do it with planned entries, capped stakes, and the stop rules written down while your pulse was normal."
+          ]
+        }
+      ],
+      "example": "Pre-match: Over 2.5 at 1.90 (margin ~5%). Twenty scoreless minutes later the same Over 2.5 trades at 2.60 — but with live margin the fair price is nearer 2.75. You watched a dominant twenty minutes and want the Over; the market watched the same minutes through faster data and already moved. The question is never 'do I fancy goals now?' but 'is 2.60 better than the true remaining-goals probability?' — the same value test as ever, at a worse exchange rate.",
+      "takeaways": [
+        "Live prices are pre-match maths recalculated per second — with 1–3 points more margin.",
+        "Suspensions and feed delay mean you usually bet into a price that already knows.",
+        "Planned entries at target prices beat reactive betting; cash-out is margin paid twice.",
+        "Set stakes and stop rules before kickoff — live betting punishes improvisation."
+      ],
+      "faq": [
+        { "q": "Why did my live bet get rejected or delayed?", "a": "Bookmakers apply an acceptance delay (5–10 seconds) to live bets and void the attempt if the market moves or suspends within it. It is protection against bettors exploiting feed latency — annoying and universal." },
+        { "q": "Is cash-out ever the right move?", "a": "Occasionally — when your original reason for the bet has genuinely broken (key injury, red card against you) or the position is too large for comfort. As a routine habit it converts winning positions into margin donations." },
+        { "q": "Can I beat live markets by watching faster streams?", "a": "Courtside and low-latency data users do exist, and bookmaker delays exist because of them. For anyone on a normal broadcast, the latency war is lost before it starts — plan entries instead of racing the feed." }
+      ],
+      "related": ["value-betting-explained", "bankroll-management-guide", "over-under-goals-explained"],
+      "glossary": ["in-play-betting", "cash-out", "line-movement", "settlement"],
+      "tools": [{ "href": "/dropping-odds", "label": "Live odds movement across the markets we track" }]
+    }
+  ]
+}
