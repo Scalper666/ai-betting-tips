@@ -65,6 +65,24 @@ const favicon = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'
     try { document.documentElement.setAttribute('data-fz', localStorage.getItem('abt-fz') || 'l'); }
     catch (e) { document.documentElement.setAttribute('data-fz', 'l'); }
   </script>
+  <!-- Google Analytics 4 -->
+  <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-6BCWRLQQ2Y"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6BCWRLQQ2Y');
+    // affiliate outbound clicks (Get bonus / Claim): one delegated listener sitewide
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[rel~="sponsored"]');
+      if (!a || typeof gtag !== 'function') return;
+      gtag('event', 'affiliate_click', {
+        link_url: a.getAttribute('href') || '',
+        link_text: (a.textContent || '').trim().slice(0, 60),
+        page_path: location.pathname
+      });
+    });
+  </script>
   {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
   {crumbSchema && <script type="application/ld+json" set:html={JSON.stringify(crumbSchema)} />}
 </head>
