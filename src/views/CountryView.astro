@@ -36,7 +36,7 @@ const description = F('cn.desc', { name: country.name, reg: country.regulator })
       <div class="crumbs">
         <a href={L('/')}>{T('crumb.home')}</a><span>/</span><a href={L('/bookmakers')}>{T('nav.sites')}</a><span>/</span>{country.name}
       </div>
-      <h1>{country.flag} {T('cn.h1')} <em>{country.name}</em></h1>
+      <h1><img class="fl-ic" src={`/flags/${country.slug === 'uk' ? 'gb' : country.slug}.svg`} alt="" width="22" height="16" style="width:22px;height:16px" /> {T('cn.h1')} <em>{country.name}</em></h1>
       <p class="lead">{legalSummary}</p>
     </div>
   </div>
@@ -110,7 +110,7 @@ const description = F('cn.desc', { name: country.name, reg: country.regulator })
         <div class="box">
           <div class="box-h"><span class="hi">🌍</span> {T('cn.otherMarkets')}</div>
           {(countryData.countries ?? []).filter((c) => c.slug !== country.slug).map((c) => (
-            <a class="tm" href={L(`/countries/${c.slug}`)}><span class="dot"></span>{c.flag} {c.name}</a>
+            <a class="tm" href={L(`/countries/${c.slug}`)}><img class="fl-ic" src={`/flags/${c.slug === 'uk' ? 'gb' : c.slug}.svg`} alt="" width="18" height="13" /> {c.name}</a>
           ))}
         </div>
         <div class="box">

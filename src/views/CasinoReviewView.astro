@@ -188,7 +188,7 @@ const schema = {
           <div class="box">
             <div class="box-h"><span class="hi">🌍</span> {T('rv.availableIn')}</div>
             {markets.map((x) => (
-              <a class="tm" href={L(`/countries/${x.slug}`)}><span class="dot"></span>{x.flag} {x.name}</a>
+              <a class="tm" href={L(`/countries/${x.slug}`)}><img class="fl-ic" src={`/flags/${x.slug === 'uk' ? 'gb' : x.slug}.svg`} alt="" width="18" height="13" /> {x.name}</a>
             ))}
           </div>
         )}
