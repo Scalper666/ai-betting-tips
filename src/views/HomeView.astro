@@ -158,14 +158,18 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
           (function () {
             var sec = document.getElementById('geoBk'); if (!sec) return;
             var LIST = []; try { LIST = JSON.parse(sec.getAttribute('data-geo') || '[]'); } catch (e) {}
-            var ISO = { GB: 'uk', DE: 'de', IN: 'in', NG: 'ng' };
+            var ISO = { GB: 'uk', DE: 'de', IN: 'in', NG: 'ng', KE: 'ke', GH: 'gh', TZ: 'tz', UG: 'ug', ZA: 'za', PE: 'pe', CL: 'cl', CO: 'co', SN: 'sn', CI: 'ci' };
             // timezone -> ISO country (offline first guess; trace refines on the live site)
             var TZ_CC = { 'Europe/London': 'GB', 'Europe/Berlin': 'DE', 'Europe/Busingen': 'DE',
                           'Asia/Kolkata': 'IN', 'Asia/Calcutta': 'IN', 'Africa/Lagos': 'NG',
                           'Europe/Moscow': 'RU', 'Europe/Kyiv': 'UA', 'Europe/Kiev': 'UA',
                           'Europe/Minsk': 'BY', 'Asia/Almaty': 'KZ', 'Europe/Warsaw': 'PL',
                           'Europe/Madrid': 'ES', 'Europe/Rome': 'IT', 'Europe/Paris': 'FR',
-                          'America/Sao_Paulo': 'BR', 'Asia/Dubai': 'AE', 'Europe/Istanbul': 'TR' };
+                          'America/Sao_Paulo': 'BR', 'Asia/Dubai': 'AE', 'Europe/Istanbul': 'TR',
+                          'Africa/Nairobi': 'KE', 'Africa/Accra': 'GH', 'Africa/Dar_es_Salaam': 'TZ',
+                          'Africa/Kampala': 'UG', 'Africa/Johannesburg': 'ZA', 'America/Lima': 'PE',
+                          'America/Santiago': 'CL', 'America/Bogota': 'CO', 'Africa/Dakar': 'SN',
+                          'Africa/Abidjan': 'CI' };
             // honest fallback when we detect a country we have no dedicated list for
             function applyForeign(cc) {
               if (!cc || cc === 'GB' || ISO[cc]) return;
@@ -196,7 +200,18 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
               if (!c) return;                       // no data for this country — keep default
               var rows = [].slice.call(sec.querySelectorAll('[data-cn]'));
               var match = rows.filter(function (r) { return (' ' + r.getAttribute('data-cn') + ' ').indexOf(' ' + slug + ' ') >= 0; });
-              if (!match.length) return;            // never leave the block empty
+              if (!match.length) {                  // country page exists but no rated operators yet
+                var nameEl0 = sec.querySelector('[data-geo-name]');
+                if (nameEl0) nameEl0.textContent = c.flag + ' ' + c.name + ' — international list';
+                var note0 = sec.querySelector('.geo-note');
+                if (note0) {
+                  var fl0 = note0.querySelector('.fl'); if (fl0) fl0.textContent = c.flag;
+                  var b0 = note0.querySelector('b'); if (b0) b0.textContent = c.name;
+                }
+                [].forEach.call(sec.querySelectorAll('[data-geo-link]'), function (a) { a.setAttribute('href', '/countries/' + slug); });
+                sec.setAttribute('data-current', slug);
+                return;
+              }
               rows.forEach(function (r) { r.hidden = match.indexOf(r) < 0; });
               match.forEach(function (r, i) { var rk = r.querySelector('.bk-rank'); if (rk) rk.textContent = i + 1; });
               var name = sec.querySelector('[data-geo-name]'); if (name) name.textContent = c.flag + ' ' + c.name;
