@@ -1,0 +1,12 @@
+---
+import GlossaryTermView from '../../../views/GlossaryTermView.astro';
+import glossary from '../../../data/glossary.json';
+import { ALT_LANGS } from '../../../i18n/index.js';
+
+export function getStaticPaths() {
+  return ALT_LANGS.flatMap((lang) =>
+    (glossary.terms ?? []).map((x) => ({ params: { lang, slug: x.slug } })));
+}
+const { lang, slug } = Astro.params;
+---
+<GlossaryTermView slug={slug} lang={lang} />

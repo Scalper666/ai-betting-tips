@@ -1,0 +1,729 @@
+{
+  "lang": "es",
+  "terms": [
+    {
+      "slug": "value-bet",
+      "term": "Apuesta de Valor",
+      "short": "Una apuesta donde las cuotas ofrecidas son superiores a la probabilidad verdadera que justifican — el único tipo de apuesta que es rentable a largo plazo.",
+      "definition": [
+        "Una apuesta de valor existe cuando las cuotas de una casa de apuestas implican una probabilidad menor que la chance real del resultado. Si la probabilidad verdadera de que un equipo gane es 50% pero puedes apostar a cuotas de 2.20, el precio es 'incorrecto' a tu favor: en muchas repeticiones de esa situación ganarías más de lo que las cuotas asumen, por lo que la apuesta tiene valor esperado positivo.",
+        "El valor no tiene nada que ver con la probabilidad de que la apuesta gane. Apostar a un outsider a 5.00 puede ser una apuesta de valor mientras que apostar a un favorito a 1.20 puede ser un mal precio — lo que importa es la brecha entre precio y probabilidad, no la probabilidad en sí. Por eso los apostadores disciplinados buscan precios, no ganadores. Encontrar valor sistemáticamente requiere una estimación independiente de la probabilidad verdadera, que es exactamente lo que los modelos de cuotas y screeners intentan producir."
+      ],
+      "example": "Supongamos que la chance justa de una victoria local es 40% (cuotas justas 2.50), pero una casa ofrece 2.75. Valor esperado por 1€ apostado = (0.40 × 2.75) − 1 = +0.10, es decir, una ventaja del 10%. Individualmente la apuesta pierde el 60% de las veces — pero a escala, los precios como este son de donde proviene la ganancia.",
+      "related": [
+        "expected-value",
+        "implied-probability",
+        "edge",
+        "fair-odds"
+      ],
+      "see": [
+        {
+          "label": "Live value picks in the AI screener",
+          "href": "/screener"
+        }
+      ],
+      "_src_hash": "f37d30dbf5629570",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "implied-probability",
+      "term": "Probabilidad Implícita",
+      "short": "La chance de ganar que sugiere una cuota de apuestas: 1 dividido por las cuotas decimales.",
+      "definition": [
+        "Toda cuota de apuestas es en realidad una declaración de probabilidad disfrazada. Convertir cuotas decimales a probabilidad implícita es simple: divide 1 entre las cuotas. Cuotas de 2.00 implican 50%, cuotas de 4.00 implican 25%, cuotas de 1.25 implican 80%. Esta conversión es la base de toda decisión de apuestas seria, porque transforma la pregunta 'es esta cuota buena?' en la pregunta respondible 'es esta probabilidad demasiado baja?'.",
+        "Sumar las probabilidades implícitas de cada resultado en un mercado revela el margen de la casa de apuestas: el total siempre supera 100%, y el exceso es la ventaja incorporada del operador. Eliminar ese margen produce probabilidades justas —la visión de consenso real del mercado— contra las cuales se puede medir el valor."
+      ],
+      "example": "Un partido cotizado a 2.10 (local), 3.60 (empate), 3.40 (visitante) implica 47.6% + 27.8% + 29.4% = 104.8%. El exceso de 4.8% es el margen de la casa; la probabilidad local justa después de eliminarlo proporcionalmente es 47.6 / 104.8 ≈ 45.4%.",
+      "related": [
+        "bookmaker-margin",
+        "fair-odds",
+        "value-bet",
+        "odds-formats"
+      ],
+      "see": [],
+      "_src_hash": "f1a1df87792644ee",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "expected-value",
+      "term": "Valor Esperado (EV)",
+      "short": "La ganancia o pérdida promedio que produciría una apuesta si pudiera repetirse muchas veces al mismo precio.",
+      "definition": [
+        "El valor esperado responde una pregunta: si colocaras esta apuesta exacta mil veces, ¿terminarías ganando? Se calcula como (probabilidad de ganar × cuota decimal) − 1, expresado por unidad apostada. EV positivo (+EV) significa que la cuota supera la probabilidad real; EV negativo significa que el margen del operador o una valoración incorrecta trabaja en tu contra.",
+        "EV es un concepto de largo plazo. Una apuesta +EV puede perder muchas veces seguidas, y una apuesta −EV puede acertar — la varianza domina en muestras pequeñas. La disciplina de las apuestas rentables es rechazar juzgar decisiones por resultados individuales y juzgarlas por el precio que tomaste en su lugar. En cientos de apuestas, los resultados convergen hacia la expectativa."
+      ],
+      "example": "Estimas un empate con 30% de probabilidad y encuentras cuotas de 3.75. EV = (0.30 × 3.75) − 1 = +0.125 — una ganancia esperada de 12.5 céntimos por 1€ apostado. Si tu estimación de probabilidad es correcta, apostar este precio repetidamente es rentable aunque pierda el 70% de las veces.",
+      "related": [
+        "value-bet",
+        "edge",
+        "kelly-criterion",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "a2bb98856f4a259f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "edge",
+      "term": "Ventaja",
+      "short": "Tu ventaja sobre la cuota, usualmente expresada como valor esperado en porcentaje.",
+      "definition": [
+        "La ventaja es el tamaño de tu provecho en una apuesta: cuánto mejores son las cuotas que lo que la probabilidad real del evento justifica. Una ventaja del 5% significa que, por cada €100 apostado, esperas €5 de ganancia a largo plazo. Las ventajas en las apuestas deportivas son pequeñas — los profesionales se entusiasman con 2–5% — porque los mercados de apuestas son competitivos y mayormente eficientes.",
+        "Las ventajas reclamadas deben tratarse con escepticismo, incluyendo las nuestras. La prueba honesta de una ventaja es el resultado en una muestra amplia: si el registro calificado de un método en cientos de apuestas muestra retorno positivo, la ventaja es real; si no, fue solo ruido. Por eso archivamos cada pronóstico antes del inicio y publicamos los resultados liquidados, victorias y derrotas por igual."
+      ],
+      "example": "Mejor cuota disponible 2.30 contra una probabilidad justa del 46%: ventaja = (0.46 × 2.30) − 1 = +5.8%. Con apuestas planas de €10 durante 500 apuestas así, la ganancia esperada es aproximadamente €290 — con fluctuaciones sustanciales en el camino.",
+      "related": [
+        "value-bet",
+        "expected-value",
+        "closing-line-value",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [
+        {
+          "label": "How our settled record is computed",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "24d98b3b4c4c1dd4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-formats",
+      "term": "Formatos de Cuotas (Decimales, Fraccionarias, Estadounidenses)",
+      "short": "Tres formas de escribir el mismo precio: 2.50 = 6/4 = +150.",
+      "definition": [
+        "Las cuotas decimales muestran el retorno total por unidad apostada, incluyendo la apuesta: con 2.50, una apuesta de £10 devuelve £25 (£15 de ganancia más los £10 de apuesta). Son el estándar en Europa y el formato más fácil para cálculos, por lo que este sitio las utiliza en todas partes.",
+        "Las cuotas fraccionarias (6/4) muestran la ganancia relativa a la apuesta — gana £6 por cada £4 apostado — y siguen siendo tradicionales en Reino Unido. Las cuotas estadounidenses usan un signo más o menos: +150 significa que una apuesta de $100 gana $150; −200 significa que debes apostar $200 para ganar $100. Conversiones: decimal = fraccionaria + 1; estadounidense positiva = (cuota/100) + 1; estadounidense negativa = (100/|cuota|) + 1."
+      ],
+      "example": "Cuotas de 2.50, 6/4 y +150 son precios idénticos con una probabilidad implícita de 1 / 2.50 = 40%.",
+      "related": [
+        "implied-probability",
+        "odds-comparison"
+      ],
+      "see": [],
+      "_src_hash": "71f987ece97c137a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bookmaker-margin",
+      "term": "Margen de Casas de Apuestas (Overround / Vig)",
+      "short": "La ganancia que las casas de apuestas incluyen en sus cuotas — la razón por la que las probabilidades implícitas de todos los resultados suman más del 100%.",
+      "definition": [
+        "Las casas de apuestas no ofrecen cuotas justas. Cada precio está ligeramente por debajo de su valor justo para que, sea cual sea el resultado, la casa se quede con un porcentaje. Si sumas las probabilidades implícitas de todos los resultados y el exceso sobre el 100% es el margen — también llamado overround, juice o vig. Los márgenes típicos en mercados de resultados de fútbol van desde aproximadamente 2% en casas especializadas hasta 7% o más en casas recreativas.",
+        "El margen es el headwind por defecto que enfrenta cada apostante: apostando al azar, pierdes el margen con el tiempo. Esto tiene dos consecuencias prácticas. Primero, comparar cuotas entre casas de apuestas importa enormemente — la mejor cuota disponible a menudo elimina la mayor parte del margen. Segundo, ganar al mercado significa superar el margen y más, por lo que los edges genuinos a largo plazo son raros y pequeños."
+      ],
+      "example": "Mercado de dos resultados con cuotas 1.91 / 1.91: implica 52.4% + 52.4% = 104.8%, un margen de 4.8%. La cuota justa para un 50/50 genuino sería 2.00 / 2.00.",
+      "related": [
+        "implied-probability",
+        "fair-odds",
+        "odds-comparison",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "de2db94eb0eef4a6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fair-odds",
+      "term": "Cuotas Justas",
+      "short": "Lo que sería una cuota sin el margen de la casa — la estimación real de la probabilidad del mercado.",
+      "definition": [
+        "Las cuotas justas son la versión sin margen de un mercado: los precios que harían que la casa saliera sin ganancias ni pérdidas a largo plazo. La forma más simple de estimarlas es tomar la probabilidad implícita de cada resultado, sumarlas todas y escalar cada una proporcionalmente para que el total sea exactamente 100%. Las probabilidades reescaladas se convierten nuevamente en cuotas justas.",
+        "Las cuotas justas importan porque son el punto de referencia para encontrar valor. Una cuota solo representa valor si supera la cuota justa, no simplemente si 'se ve grande'. Promediar las probabilidades justas entre muchas casas produce un consenso robusto que es difícil de distorsionar por los ajustes de precios de un solo operador — esta comparación consenso versus mejor precio es exactamente cómo nuestro modelo identifica picks con valor."
+      ],
+      "example": "Probabilidades implícitas 47.6% / 27.8% / 29.4% (total 104.8%) se reescalan a 45.4% / 26.5% / 28.1%. Cuota justa local = 1 / 0.454 = 2.20. Cualquier casa que ofrezca más de 2.20 está pagando por encima de la estimación del propio mercado.",
+      "related": [
+        "bookmaker-margin",
+        "implied-probability",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "7ee23ed1ce1ec170",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "kelly-criterion",
+      "term": "Criterio de Kelly",
+      "short": "Una fórmula de gestión de banca que dimensiona las apuestas proporcionalmente a tu ventaja — y una forma útil de clasificar apuestas de valor.",
+      "definition": [
+        "El criterio de Kelly calcula la fracción de banca que maximiza el crecimiento a largo plazo cuando tienes ventaja: participación = ventaja ÷ (cuota decimal − 1). Ventajas mayores justifican apuestas más grandes; cuotas más altas justifican participaciones menores con la misma ventaja, porque la ganancia ocurre con menos frecuencia y la varianza es mayor. Kelly completo es agresivo — la mayoría de los profesionales usan Kelly a la mitad o a un cuarto para suavizar las oscilaciones.",
+        "Más allá de la gestión de participaciones, Kelly es una métrica de clasificación excelente. El porcentaje de ventaja bruta favorece a los outsiders: una 'ventaja' del 30% en un outsider de 21.00 suele ser un artefacto de precio, no una oportunidad. Dividir la ventaja entre (cuota − 1) pondera el valor según la frecuencia con que realmente se materializa, que es precisamente cómo nuestro filtro ordena sus selecciones — una ventaja modesta en un favorito de 1.80 puede superar una ventaja grande en una apuesta de 6.00."
+      ],
+      "example": "Ventaja del 8% a cuota 3.60: fracción Kelly = 0.08 / 2.60 ≈ 3.1% de banca. La misma ventaja del 8% a cuota 1.60 da 0.08 / 0.60 ≈ 13.3% — la cuota más baja justifica una participación mucho mayor.",
+      "related": [
+        "edge",
+        "bankroll-management",
+        "flat-staking",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Kelly-ranked picks in the screener",
+          "href": "/screener"
+        }
+      ],
+      "_src_hash": "8613ffe375f15d2e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bankroll-management",
+      "term": "Gestión de Banca",
+      "short": "Tratar tu dinero de apuestas como un fondo fijo con reglas de apuestas — la disciplina que evita que la varianza te arruine.",
+      "definition": [
+        "Una banca es dinero reservado exclusivamente para apostar — una cantidad cuya pérdida total podrías absorber sin daño. La gestión de banca es el conjunto de reglas que rigen cuánto de ella puede arriesgar cada apuesta individual. Enfoques comunes: apuesta plana (la misma unidad fija cada vez), apuesta porcentual (una parte fija de la banca actual), o apuesta basada en Kelly escalada según tu ventaja.",
+        "El propósito es la supervivencia a través de la varianza. Incluso una estrategia genuinamente rentable sufre rachas perdedoras de diez o más apuestas; apostar demasiado convierte una caída normal en ruina antes de que la ventaja pueda expresarse. La mayoría de apostadores disciplinados arriesgan 1–2% de la banca por apuesta. Igualmente importante: nunca inyectes dinero a la banca para recuperar pérdidas — ese es el modo de fallo que convierte las apuestas de entretenimiento en un problema."
+      ],
+      "example": "Con una banca de £500 y apuestas planas del 1.5% (£7.50 por apuesta), una racha brutal de 15 apuestas perdidas cuesta £112.50 — doloroso pero asumible, dejando el 77% del fondo intacto.",
+      "related": [
+        "flat-staking",
+        "kelly-criterion",
+        "variance",
+        "self-exclusion"
+      ],
+      "see": [
+        {
+          "label": "Responsible gambling tools & help",
+          "href": "/responsible-gambling"
+        }
+      ],
+      "_src_hash": "06fcd7d277eef549",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "flat-staking",
+      "term": "Apuesta Plana & Unidades",
+      "short": "Apostar el mismo monto fijo —una unidad— en cada selección, haciendo los resultados comparables y transparentes.",
+      "definition": [
+        "La apuesta plana arriesga una cantidad idéntica, llamada unidad, en cada apuesta sin importar el nivel de confianza. Una unidad suele ser el 1–2% del bankroll. Su gran virtud es la transparencia: la ganancia medida en unidades no puede ser maquillada mediante ponderación conveniente de apuestas después del hecho, por eso los pronosticadores transparentes publican resultados como '+8.40 unidades' en lugar de en moneda.",
+        "Todos los resultados en este sitio se liquidan con apuestas planas de una unidad: una apuesta ganadora a cuotas 2.50 registra +1.50 unidades, cualquier apuesta perdida registra −1.00, una anulada registra 0. Es la contabilidad más llana posible — sin 'multiplicadores de confianza' aplicados retroactivamente, sin forma de maquillaje de un mes perdedor."
+      ],
+      "example": "Diez apuestas planas: 4 ganan a cuotas promedio 2.40, 6 pierden. Ganancia = 4 × 1.40 − 6 × 1.00 = −0.40 unidades — una tasa de acierto del 40% no fue suficiente con esas cuotas. El mismo registro a cuotas promedio 2.80 hubiera registrado +1.20 unidades.",
+      "related": [
+        "bankroll-management",
+        "roi-and-yield",
+        "win-rate"
+      ],
+      "see": [
+        {
+          "label": "Our settled results, in units",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "a2154db69dabcdc1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "accumulator",
+      "term": "Acumulada (Acca / Parlay)",
+      "short": "Una apuesta que combina varias selecciones — todas deben ganar, las cuotas se multiplican, y también el margen del operador.",
+      "definition": [
+        "Una acumulada combina dos o más selecciones en una única apuesta cuyas cuotas son el producto de los precios individuales. Tres picks a 1.50 × 1.72 × 1.85 pagan 4.77 — atractivo, razón por la cual las acumuladas se promocionan agresivamente. La trampa: una rama perdedora hunde todo el boleto, y el margen del operador se compone con cada rama que agregues.",
+        "Si cada rama lleva un margen del 5%, una trixie genera aproximadamente una ventaja de la casa del 14% antes del inicio. Eso hace que las acumuladas largas tengan estructuralmente poco valor — entretenimiento primero, inversión nunca. Si combinas, mantén pocas ramas, busca el mejor precio en cada una individualmente, y apuesta pequeño: la expectativa correcta para una acumulada es una ganancia ocasional por diversión, nunca ganancias sostenidas."
+      ],
+      "example": "Tres ramas, cada una con probabilidad justa del 60%: probabilidad verdadera combinada = 0.6³ = 21.6% (cuotas justas 4.63). Ramas cotizadas a 1.58 cada una dan un pago de 3.94 — implicando 25.4% y entregando al operador un margen compuesto de ~18% en el boleto.",
+      "related": [
+        "bookmaker-margin",
+        "double-chance",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Accumulator tips",
+          "href": "/tips/accumulator"
+        }
+      ],
+      "_src_hash": "d6decdd7926e1ffb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "btts",
+      "term": "Ambos Equipos Anotan (BTTS)",
+      "short": "Mercado sobre si ambos lados anotan al menos una vez — el resultado final no importa.",
+      "definition": [
+        "BTTS (también 'goles a granel' o GG/NG) se resuelve Sí si cada equipo anota al menos un gol, No en caso contrario. Un 3–1 es Sí; un 2–0 es No. El resultado del partido es irrelevante, lo que hace que BTTS sea popular en encuentros entre equipos ofensivos con defensas débiles — puedes acertar sobre el carácter del partido mientras fallas en el ganador.",
+        "Cotizar BTTS correctamente significa estimar la probabilidad de anotación de cada equipo en lugar de cuál es mejor en general. Su primo cercano es el mercado de goles totales (over/under): BTTS-Sí se correlaciona fuertemente con Over 2.5, y comparar las dos cuotas ocasionalmente expone inconsistencias en cómo una casa ha modelado el mismo partido."
+      ],
+      "example": "Si el equipo local anota en el 75% de los partidos y el visitante en el 60% (aproximadamente independientes), BTTS-Sí ≈ 0.75 × 0.60 = 45% — cuota justa 2.22. Una cuota de 2.40 sería valor; 1.95 no lo sería.",
+      "related": [
+        "over-under",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "BTTS tips",
+          "href": "/tips/btts"
+        }
+      ],
+      "_src_hash": "05b46df492098048",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "over-under",
+      "term": "Over/Under (Totales)",
+      "short": "Apostar en el número combinado de goles en lugar del ganador, contra una línea como 2.5.",
+      "definition": [
+        "Una apuesta de totales ignora quién gana y solo pregunta cuántos goles produce el partido. La línea generalmente se establece en medio gol (2.5) para evitar empates: Over 2.5 necesita tres o más goles, Under 2.5 gana con dos o menos. Las líneas de números enteros (ej. exactamente 3.0) pueden 'empatarse' —caer exactamente en la línea— en cuyo caso las apuestas se devuelven como nulas.",
+        "Los totales suelen ser terreno más fértil para buscar valor que los resultados, porque el dinero casual se concentra en elegir ganadores, dejando los mercados de goles ligeramente menos eficientemente cotizados. También se adaptan bien a la modelización estadística: los goles siguen patrones razonablemente estables por equipo y liga, por eso una gran parte de las recomendaciones de nuestro modelo son totales."
+      ],
+      "example": "Over 2.5 a 1.93 implica 51.8%. Si tu modelo valora tres o más goles en 55%, EV = (0.55 × 1.93) − 1 = +6.2% — una apuesta de valor aunque sea casi un lanzamiento de moneda.",
+      "related": [
+        "btts",
+        "void-bet",
+        "asian-handicap"
+      ],
+      "see": [
+        {
+          "label": "Over/Under tips",
+          "href": "/tips/over-under"
+        }
+      ],
+      "_src_hash": "90644050aa93d2f1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "asian-handicap",
+      "term": "Handicap Asiático",
+      "short": "Un mercado de handicap que elimina el empate dando a un equipo una ventaja de goles, a menudo en incrementos de cuarto de gol.",
+      "definition": [
+        "Los handicaps asiáticos nivelan un desequilibrio sumando goles virtuales a un equipo antes del inicio. Apostar al favorito a −1.5 significa que debe ganar por dos goles de diferencia; apostar al outsider a +1.5 gana si evita perder por dos o más goles. Los handicaps de números enteros (−1.0) pueden resultar en devolución: si el favorito gana por exactamente un gol, las apuestas se devuelven.",
+        "Las líneas de cuarto (−0.75, +1.25) dividen tu stake entre las dos líneas adyacentes —mitad en −0.5 y mitad en −1.0, por ejemplo— por lo que los resultados pueden ser medio-ganancias y medio-pérdidas. Debido a que el empate se elimina, los mercados de handicap asiático tienen solo dos resultados, generalmente tienen márgenes más bajos que 1X2, y son donde el dinero más sofisticado en fútbol se negocia."
+      ],
+      "example": "£20 al favorito a −0.75 (cuota 1.95): una victoria por un gol paga la mitad de −0.5 en su totalidad y devuelve la mitad de −1.0 — retorno total £29.75, una 'medio-ganancia'. Una victoria por dos goles paga ambas mitades: £39.",
+      "related": [
+        "match-result",
+        "void-bet",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "711a58b58d3b87dd",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "double-chance",
+      "term": "Doble Oportunidad",
+      "short": "Cubrir dos de los tres resultados posibles en una apuesta — mucho más seguro, cuotas mucho más bajas.",
+      "definition": [
+        "Doble oportunidad combina dos resultados del mercado 1X2: local o empate (1X), visitante o empate (X2), o gana cualquier equipo (12). Solo uno de los tres resultados te derrota, así que la probabilidad de acierto es alta — y las cuotas correspondientemente bajas, frecuentemente por debajo de 1.50 cuando hay un favorito involucrado.",
+        "El mercado es funcionalmente similar a Draw No Bet y al handicap asiático +0.5; comparar los tres precios para la misma visión a veces revela cuál empaque ha cotizado una casa de apuestas más generosamente. La precaución estratégica: la seguridad no es valor. Un 1X a 1.25 con una probabilidad real del 78% es una apuesta perdedora disfrazada de seguridad — las cuotas bajas aún necesitan superar el precio justo."
+      ],
+      "example": "Local 45%, empate 28%: probabilidad justa 1X = 73% → cuotas justas 1.37. Una casa ofreciendo 1.44 está pagando valor en la opción 'segura'; una ofreciendo 1.28 no lo está.",
+      "related": [
+        "match-result",
+        "draw-no-bet",
+        "asian-handicap"
+      ],
+      "see": [
+        {
+          "label": "Double chance tips",
+          "href": "/tips/double-chance"
+        }
+      ],
+      "_src_hash": "dd5f4515ac8590f3",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "draw-no-bet",
+      "term": "Draw No Bet (DNB)",
+      "short": "Apuesta por un equipo; si el partido termina en empate, te devuelven la apuesta.",
+      "definition": [
+        "Draw No Bet elimina el empate de la ecuación: elige un bando, y un partido empatado devuelve tu apuesta como nula en lugar de pérdida. Es equivalente a la handicap asiática de 0.0 y se sitúa entre la cuota completa 1X2 (cuotas más altas, empate pierde) y doble oportunidad (cuotas más bajas, empate gana).",
+        "DNB es útil en situaciones donde te inclinas por un bando pero respetas un riesgo real de empate — derbis cerrados, favoritos visitantes cautelosos. También puedes construirlo manualmente dividiendo tu apuesta entre la victoria y el empate en la proporción correcta, lo que ocasionalmente supera la cuota DNB empaquetada. Como siempre, el empaquetado solo vale la pena cuando la probabilidad implícita está por debajo de tu estimación de la verdadera probabilidad."
+      ],
+      "example": "Equipo cotizado a 2.30 para ganar, 3.30 el empate. DNB ofrecido a 1.70: implícito 58.8% para un mercado donde la probabilidad de victoria (excluyendo empates) es 100 × 43.5/(43.5+26.3) ≈ 62% — un DNB justo sería ~1.61, así que 1.70 tiene valor.",
+      "related": [
+        "double-chance",
+        "asian-handicap",
+        "void-bet"
+      ],
+      "see": [],
+      "_src_hash": "554e9497dd446fe6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "match-result",
+      "term": "Resultado del Partido (1X2)",
+      "short": "El mercado clásico de tres opciones: victoria local (1), empate (X) o victoria visitante (2).",
+      "definition": [
+        "1X2 es el mercado principal del fútbol: apuesta por el equipo local, el empate o el equipo visitante durante 90 minutos más el tiempo de descuento (la prórroga y los penales no cuentan a menos que se especifique). Sus tres resultados lo diferencian estructuralmente de los mercados de dos opciones — las probabilidades se distribuyen entre tres, los empates ocurren mucho más frecuentemente de lo que los apostadores ocasionales esperan, y los márgenes suelen ser más altos que en las líneas de handicap asiático.",
+        "El empate merece respeto particular: el fútbol de primera división termina en empate aproximadamente una cuarta parte de las veces, sin embargo las cuotas de empate a menudo derivan generosas porque la mayoría del dinero recreativo busca un ganador. Este patrón de misvaloración es por qué los sistemas de valor periódicamente destacan los empates — no porque los empates sean predecibles, sino porque sistemáticamente están sub-apostados."
+      ],
+      "example": "Un mercado a 2.05 / 3.50 / 3.90 implica 48.8% / 28.6% / 25.6% (margen 3%). Si las probabilidades justas de consenso son 46% / 27% / 27%, el visitante a 3.90 (justo 3.70) es la esquina de valor del mercado.",
+      "related": [
+        "double-chance",
+        "draw-no-bet",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "bd857024ed451f0a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "correct-score",
+      "term": "Resultado Exacto",
+      "short": "Predecir el marcador final exacto — cuotas altas, varianza elevada, márgenes amplios.",
+      "definition": [
+        "El resultado exacto requiere el resultado preciso — 2–1, 0–0, 3–3 — donde cada marcador se cotiza individualmente, generalmente a cuotas altas. Dado que la probabilidad se distribuye entre más de veinte marcadores plausibles, incluso el resultado individual más probable (a menudo 1–1 o 1–0) rara vez supera el 12–13% de probabilidad.",
+        "Los márgenes del mercado están típicamente entre los más amplios que ofrece una casa de apuestas, y la varianza es extrema: los registros de resultado exacto fluctúan salvajemente en muestras pequeñas. Trátalo como un mercado divertido de pequeñas apuestas, no como una estrategia de valor. Si tienes una opinión fundamentada sobre el patrón de goles de un partido, los mercados de totales o BTTS (ambos equipos anotan) suelen expresar la misma opinión a precios más justos."
+      ],
+      "example": "Un 2–1 cotizado a 9.00 implica el 11,1%. Los modelos tipo Poisson con tasas de anotación realistas rara vez sitúan ningún marcador muy por encima del 13% — así que la cuota necesita estar por encima de 7.70 antes de que el valor sea siquiera concebible.",
+      "related": [
+        "over-under",
+        "btts",
+        "variance"
+      ],
+      "see": [
+        {
+          "label": "Correct score tips",
+          "href": "/tips/correct-score"
+        }
+      ],
+      "_src_hash": "b589a16b0efd68c4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "closing-line-value",
+      "term": "Closing Line Value (CLV)",
+      "short": "Superar el precio final previo al inicio — la evidencia estadística más sólida de que un apostador tiene ventaja real.",
+      "definition": [
+        "La cuota de cierre es el último precio disponible antes de que inicie un evento, después de que el mercado haya absorbido todas las noticias y movimientos de dinero. Es generalmente la estimación de probabilidad más precisa que existe. Closing line value significa haber tomado un precio mejor anteriormente: apostaste a 2.20 y cerró a 2.00. Si haces esto consistentemente, casi con certeza tienes una ventaja real, porque repetidamente estás prediciendo mejor que el veredicto final del mercado.",
+        "CLV importa porque separa habilidad de suerte mucho más rápido que las ganancias. Los resultados en algunas docenas de apuestas son ruido; batir consistentemente el cierre en la misma muestra es señal. También es por qué los precios se mueven en primer lugar — el valor temprano se apuesta hasta desaparecer — y por qué actuar rápidamente sobre valor detectado importa."
+      ],
+      "example": "Tomas 2.20; la línea cierra a 2.00. La probabilidad implícita pasó de 45.5% a 50%. Si el cierre es preciso, tu apuesta tenía EV = (0.50 × 2.20) − 1 = +10% — asegurado en el momento en que batiste el movimiento, sin importar el resultado.",
+      "related": [
+        "line-movement",
+        "edge",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "d542c47127cb6b0e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "line-movement",
+      "term": "Movimiento de Cuotas y Steam",
+      "short": "Cómo se ajustan las cuotas conforme llega dinero y noticias — y los picos de dinero inteligente conocidos como steam.",
+      "definition": [
+        "Las cuotas son precios vivos. Se abren desde el modelo de una casa de apuestas, luego se mueven conforme llegan apuestas, noticias de equipos y operadores profesionales se reposicionan. Una cuota que se acorta ('steaming in') señala dinero respaldando ese resultado; una cuota que se alarga señala lo opuesto. La mayoría del movimiento es rebalanceo rutinario, pero acortamientos rápidos y sincronizados en muchas casas — steam — frecuentemente marcan dinero respetado entrando al mercado.",
+        "El movimiento importa al apostador de value de dos formas. Tomada temprano, una cuota que luego hace steam normalmente significa que ganaste sobre la línea de cierre. Y una cuota que se alarga después de tu apuesta es una advertencia de que tu análisis difiere del dinero informado. Rastrear nuestra cuota publicada contra movimientos posteriores es uno de los controles de salud detrás de la columna de señales del screener."
+      ],
+      "example": "Un equipo abre a 2.10 y cotiza a 1.85 una hora antes del inicio en todo el mercado. La probabilidad implícita se movió 47.6% → 54.1%. Quien mantiene el ticket a 2.10 ahora posee una apuesta que el mercado mismo califica como +14% EV.",
+      "related": [
+        "closing-line-value",
+        "sharp-and-soft-bookmakers",
+        "value-bet"
+      ],
+      "see": [
+        {
+          "label": "Signal column in the screener",
+          "href": "/screener"
+        }
+      ],
+      "_src_hash": "8230946f4d53d082",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "sharp-and-soft-bookmakers",
+      "term": "Casas de apuestas sharps vs softs",
+      "short": "Las casas sharps aceptan ganadores y publican cuotas precisas con márgenes bajos; las softs buscan dinero casual y limitan ganadores rápidamente.",
+      "definition": [
+        "Las casas de apuestas sharps (y exchanges) operan con márgenes bajos, aceptan apuestas grandes, y moldean sus cuotas según el flujo de dinero profesional — sus líneas se consideran la verdad de referencia del mercado. Las casas softs se dirigen a clientes recreativos con bonos y promociones, operan con márgenes más altos, reaccionan más lentamente ante noticias, y restringen cuentas que ganan consistentemente.",
+        "El mapa de ventaja práctica sigue directamente: el valor se encuentra más frecuentemente en softs cuyas cuotas lentas o promocionales rezagan el consenso sharp. Comparar la cuota de una casa soft contra la línea justa sharp/consenso es precisamente el patrón que usa nuestra detección de valor. El trade-off a considerar: tomar consistentemente esas cuotas tiende a generar límites de apuesta en operadores softs — una insignia de honor, pero una restricción real."
+      ],
+      "example": "El consenso sharp precisa un lado en 1.95 (justa ~51%); una casa soft aún muestra 2.15 de ayer. Esa brecha del 10% es un spot de valor típico de casa soft — exactamente el tipo de discrepancia que se cierra dentro de horas.",
+      "related": [
+        "bookmaker-margin",
+        "closing-line-value",
+        "line-movement"
+      ],
+      "see": [
+        {
+          "label": "Bookmaker reviews",
+          "href": "/bookmakers"
+        }
+      ],
+      "_src_hash": "089eebf382cf0e6f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "arbitrage-betting",
+      "term": "Arbitrage Betting (Arbing)",
+      "short": "Cubrir todos los posibles resultados en diferentes casas de apuestas a cuotas que garantizan una pequeña ganancia.",
+      "definition": [
+        "Existe arbitraje cuando las discrepancias entre casas de apuestas permiten apostar a todos los desenlaces y asegurar ganancia sin importar el resultado — la probabilidad implícita combinada de las cuotas elegidas está por debajo del 100%. Los arbitrajes surgen cuando las casas no se ponen de acuerdo o rezagan en las noticias, y típicamente rinden entre 1–4% del total apostado.",
+        "Las complicaciones son prácticas. El arbitraje demanda alto volumen para retornos pequeños, cálculos de apuestas precisos y velocidad — las cuotas desaparecen en minutos. Las casas detectan rápidamente el patrón y responden con límites de apuesta o cierre de cuentas. Las apuestas anuladas en una casa pueden dejar el otro lado peligrosamente expuesto. Es un negocio real pero desgastante, más cercano a la logística que a las apuestas."
+      ],
+      "example": "Casa A: local 2.10 (47.6%). Casa B: visitante+empate (X2) 2.15 (46.5%). Total 94.1% < 100%. Apostando £51.20 y £48.80 respectivamente retorna ~£107.50 sin importar cómo termine el partido — aproximadamente +5.9% sobre £100 total.",
+      "related": [
+        "bookmaker-margin",
+        "value-bet",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "c70334cf2d0ed4e6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "cash-out",
+      "term": "Cash Out",
+      "short": "Liquidar una apuesta antes de que termine el evento a un precio ofrecido por la casa — conveniente, pero casi siempre por debajo del valor justo.",
+      "definition": [
+        "El cash out te permite cerrar una apuesta en vivo antes de que termine el evento: la casa ofrece un monto de recompra basado en la probabilidad actual de que tu apuesta gane. Las posiciones ganadoras pueden asegurarse temprano; las perdedoras, recuperarse parcialmente. Da sensación de control, que es precisamente por qué se comercializa tan agresivamente.",
+        "La mecánica es menos favorable: la cuota de cash out es el valor justo actual de tu boleto menos un nuevo margen — frecuentemente mayor que el margen de la apuesta original. Hacer cash out rutinariamente filtra EV dos veces. Si te encuentras queriendo tradear posiciones activamente, un exchange con cuotas back/lay transparentes hace el mismo trabajo a precios honestos; si sostienes apuestas de valor, la disciplina usualmente es dejarlas que se resuelvan."
+      ],
+      "example": "Tu £10 a 3.00 tiene 70% de probabilidad de ganar avanzado el evento. Valor justo del boleto = 0.70 × £30 = £21. Una cuota de cash out típica de £18.50 te cobra silenciosamente £2.50 — un descuento del 12% por el botón.",
+      "related": [
+        "expected-value",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "51e449202dcc787e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "free-bet",
+      "term": "Apuesta Gratis",
+      "short": "Un crédito promocional del operador — si ganas, te quedas con las ganancias, pero la apuesta no se devuelve.",
+      "definition": [
+        "Una apuesta gratis es crédito promocional: colócala, y si gana te quedas con las ganancias pero no con la apuesta misma ('apuesta no devuelta', AND). Una apuesta gratis de £10 a 4.00 te paga £30, no £40. Dado que la apuesta nunca es tuya, el valor real del crédito es aproximadamente su valor nominal por (1 − 1/cuota) — por eso las apuestas gratis extraen más valor en cuotas más altas.",
+        "Las apuestas gratis son la moneda de las ofertas de bienvenida y promociones. Usadas sin cuidado en favoritos cortos devuelven una fracción del valor nominal; usadas deliberadamente a cuotas de 3.00–5.00 se convierten en 65–80% del valor nominal en valor esperado. Siempre lee los términos asociados: ventanas de caducidad, cuotas mínimas y restricciones de mercados determinan cuál es el valor real del crédito."
+      ],
+      "example": "Apuesta gratis de £20 a cuota 5.00: gana £80 de ganancia el 20% de las veces → EV = £16, es decir 80% del valor nominal. El mismo crédito a 1.40 devuelve £8 × ... ≈ EV £5.70 — menos del 30% del valor nominal.",
+      "related": [
+        "wagering-requirements",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Current bonuses with real terms",
+          "href": "/bonuses"
+        }
+      ],
+      "_src_hash": "e8a48bb840d0fa67",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "wagering-requirements",
+      "term": "Requisitos de Apuesta (Rollover)",
+      "short": "Cuántas veces debe apostarse un bono antes de poder retirarlo — el número que determina si una oferta realmente vale la pena.",
+      "definition": [
+        "Un 'bono de £50, rollover 5x a cuotas mínimas 1.5' significa que debes realizar £250 en apuestas válidas antes de que el bono se convierta en dinero retirable. Cada apuesta obligatoria genera margen para la casa de apuestas, por lo que el costo real de cumplir el rollover es aproximadamente volumen × margen: la cifra anunciada se reduce con cada ciclo forzado a través de las cuotas.",
+        "El rollover es la línea más importante en los términos de cualquier bono — mucho más que el monto anunciado. Un bono pequeño con rollover 1x frecuentemente supera a uno grande con rollover 10x. Revisa también las cláusulas adicionales: cuotas mínimas (mínimos más altos obligan a apuestas más riesgosas), exclusión de mercados, apuesta máxima por evento, y fechas de vencimiento que anulan silenciosamente bonos inconclusos."
+      ],
+      "example": "Bono de £40, rollover 8x, margen promedio ~5%: costo esperado de cumplimiento ≈ £320 × 5% = £16. El valor realista del bono es cercano a £24 en lugar de £40 — y negativo si un vencimiento de 7 días obliga a apuestas apresuradas.",
+      "related": [
+        "free-bet",
+        "bookmaker-margin"
+      ],
+      "see": [
+        {
+          "label": "Offers compared with wagering shown",
+          "href": "/bonuses"
+        }
+      ],
+      "_src_hash": "9640d67e0723ae88",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "void-bet",
+      "term": "Apuesta Anulada (Push)",
+      "short": "Una apuesta cancelada: devolución de la apuesta, resuelta como ni ganada ni perdida.",
+      "definition": [
+        "Una apuesta se anula cuando no puede resolverse equitativamente: el partido se pospone o se abandona, un jugador designado no inicia, una línea de handicap o totales de número entero cae exactamente (un push), o la casa de apuestas cancela un error de cuota obvio (error palpable). Tu apuesta vuelve y la apuesta se registra como ni ganada ni perdida.",
+        "Los anulaciones importan para la honestidad en el registro. En nuestras estadísticas liquidadas una anulación contabiliza exactamente 0 unidades — se excluye de los cálculos de porcentaje de ganancia y las apuestas no se cuentan como volumen de negocio. En acumuladas, una rama anulada no hunde el boleto; la rama se elimina y las cuotas combinadas se recalculan sin ella."
+      ],
+      "example": "Handicap asiático −1.0 y el favorito gana 2–1: el margen de un gol cae exactamente en la línea, la apuesta hace push, y tu apuesta de £15 simplemente se devuelve.",
+      "related": [
+        "settlement",
+        "asian-handicap",
+        "over-under"
+      ],
+      "see": [],
+      "_src_hash": "bdffd6863e31d20a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "settlement",
+      "term": "Liquidación (Calificación)",
+      "short": "Marcar una apuesta como ganada, perdida o nula contra el resultado oficial — y la prueba de honestidad para cualquier pronosticador.",
+      "definition": [
+        "La liquidación es el acto de calificar una apuesta contra el resultado final: ganada, perdida o nula, con la ganancia calculada a partir de las cuotas realmente tomadas. Para un apostador individual es contabilidad; para cualquiera que publique pronósticos es la base completa de credibilidad. Un registro solo tiene sentido si cada pronóstico publicado es calificado — a la cuota publicada, contra el marcador oficial, con las pérdidas incluidas.",
+        "Las estafas clásicas de pronosticadores son estafas de liquidación: eliminar perdedores, calificar contra cuotas mejores que las disponibles, o reclasificar silenciosamente las pérdidas como 'nulas'. Nuestro sistema está construido específicamente contra esto: cada pronóstico se archiva antes del inicio con su cuota, los resultados se califican automáticamente a partir de los marcadores finales oficiales, y nada se edita después — las páginas de archivo permanecen, ganancias y pérdidas por igual."
+      ],
+      "example": "Pronóstico archivado a 2.30 previo al partido. Marcador final lo califica como ganador: +1.30 unidades a apuestas planas. Si hubiera perdido, la misma página mostraría permanentemente −1.00 — esa permanencia es el punto.",
+      "related": [
+        "void-bet",
+        "flat-staking",
+        "tipster"
+      ],
+      "see": [
+        {
+          "label": "Browse settled days",
+          "href": "/predictions/daily"
+        }
+      ],
+      "_src_hash": "7ac0c0dd355ffceb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "roi-and-yield",
+      "term": "ROI / Yield",
+      "short": "Ganancia como porcentaje de la inversión total — el número único más limpio para comparar registros de apuestas.",
+      "definition": [
+        "Yield (frecuentemente llamado ROI en apuestas) divide la ganancia neta entre la cantidad total apostada: 100 apuestas de 1 unidad que generan 6 unidades de ganancia representan un yield del 6%. Porque normaliza por volumen de negocio, el yield te permite comparar registros de diferentes tamaños y perfiles de cuotas de manera justa — a diferencia de la ganancia bruta, que solo premia apostar más.",
+        "Contexto de calibración: yields a largo plazo del 3–8% son territorio profesional fuerte; yields de dos dígitos en muestras grandes son raros y típicamente disminuyen conforme crece el tamaño de la muestra. Un yield espectacular en 30 apuestas es varianza, no habilidad — siempre lee el yield junto con el número de apuestas resueltas, y sé escéptico de cualquier registro que nunca muestre una racha perdedora."
+      ],
+      "example": "120 pronósticos resueltos con apuestas planas de 1 unidad, neto +7.9 unidades: yield = 7.9 / 120 = 6.6%. Las mismas +7.9 unidades en 400 apuestas sería un yield del 2.0% — un registro materialmente más débil (aunque aún positivo).",
+      "related": [
+        "win-rate",
+        "flat-staking",
+        "variance"
+      ],
+      "see": [
+        {
+          "label": "Tipster ROI on the leaderboard",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "5f6b7fb3c60444ed",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "win-rate",
+      "term": "Porcentaje de Aciertos (Tasa de Ganancia)",
+      "short": "El porcentaje de apuestas que ganan — carece de sentido aislado, es significativo junto al promedio de cuotas.",
+      "definition": [
+        "El porcentaje de aciertos es la proporción de apuestas liquidadas que ganaron. Aisladamente es el número más manipulado en marketing de apuestas: un 80% de aciertos suena espectacular y se logra trivialmente apostando a favoritos de 1.10 — mientras se pierde dinero. Inversamente, un 35% de aciertos es excelente si el promedio de cuotas utilizadas está por encima de 3.00.",
+        "El porcentaje de equilibrio para cualquier registro es 1 dividido entre el promedio de cuotas decimales: con cuotas promedio 2.50 necesitas 40% para no ganar ni perder. Todo por encima del equilibrio es ventaja; todo por debajo es pérdida disfrazada de porcentaje. Lee el porcentaje de aciertos, las cuotas promedio y el rendimiento conjuntamente, sobre un número específico de apuestas — cualquier registro que cite solo el porcentaje de aciertos está ocultando algo."
+      ],
+      "example": "Cuotas promedio 2.20 → equilibrio 45.5%. Un registro de 48% en esas cuotas rinde (0.48 × 2.20) − 1 = +5.6%. El mismo 48% con cuotas promedio 2.00 pierde 4% del volumen de apuestas.",
+      "related": [
+        "roi-and-yield",
+        "flat-staking",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "adaaf47d9aff3acd",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "variance",
+      "term": "Varianza",
+      "short": "Las fluctuaciones naturales entre resultados y expectativas — por qué las apuestas correctas pierden y los registros malos se ven bien, por un tiempo.",
+      "definition": [
+        "La varianza es el ruido estadístico entre lo que debería ocurrir en promedio y lo que realmente sucede en cualquier muestra finita. En apuestas es brutal e inevitable: una apuesta genuina con probabilidad 55% pierde casi la mitad de las veces; un portafolio con una ventaja real de +5% puede estar en pérdida después de doscientas apuestas; un pronosticador que tira monedas puede publicar un mes espectacular.",
+        "Respetar la varianza cambia el comportamiento. Determina el tamaño de las apuestas (ver gestión de bankroll), establece ventanas de evaluación (cientos de apuestas, no decenas), e inmuniza contra la desesperación y la euforia. También es por qué los registros completos y transparentes importan más que las rachas calientes — en una muestra suficientemente grande la varianza se disipa y solo queda la ventaja, positiva o negativa."
+      ],
+      "example": "500 apuestas independientes al 50% / cuota 2.10 (una ventaja real de +5%): aproximadamente uno de cada seis apostadores sigue en pérdida después de las 500 apuestas — pura varianza, ningún error cometido.",
+      "related": [
+        "expected-value",
+        "bankroll-management",
+        "win-rate"
+      ],
+      "see": [],
+      "_src_hash": "d5852e771c63e316",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "in-play-betting",
+      "term": "Apuestas En Vivo (Live Betting)",
+      "short": "Apuestas durante el desarrollo del evento, con cuotas que se actualizan con cada momento relevante.",
+      "definition": [
+        "Las apuestas en vivo mantienen los mercados abiertos durante el partido, repreciándose continuamente a medida que llegan goles, tarjetas y cambios de dinámica. Ofrece oportunidades analíticas reales —reaccionando al estado del juego más rápido o racionalmente que el algoritmo— pero el entorno está diseñado para impulsar decisiones: ventanas de suspensión cortas, cuotas parpadeantes y un retraso en la transmisión que significa que la casa generalmente sabe más de lo que tu stream muestra.",
+        "Dos advertencias estructurales. Los márgenes en vivo típicamente son más amplios que en pre-partido, por lo que la cuota promedio en vivo es peor. Y la frecuencia es enemiga de la disciplina: docenas de micro-decisiones por partido multiplican la exposición tanto al margen como a las decisiones emocionales. Si apuestas en vivo, predetermina puntos de entrada y apuestas antes del inicio, y trata de intentar recuperar una apuesta inicial perdida como la señal de alerta que es."
+      ],
+      "example": "Un favorito cotizado a 1.70 en pre-partido concede gol temprano: las cuotas en vivo suben a 2.90 (probabilidad implícita 34%). Si tu modelo pre-partido valoraba su escenario de remontada cercano al 42%, ese reprecio excesivo —no la emoción— es la única razón racional para apostar.",
+      "related": [
+        "cash-out",
+        "line-movement",
+        "bankroll-management"
+      ],
+      "see": [],
+      "_src_hash": "6048484c8edf3b0c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "xg",
+      "term": "Goles Esperados (xG)",
+      "short": "Métrica de calidad de remate que estima cuántos goles 'debería' haber anotado un equipo según sus ocasiones.",
+      "definition": [
+        "Los goles esperados asignan a cada remate una probabilidad de gol basada en resultados históricos de ocasiones similares — distancia, ángulo, parte del cuerpo, tipo de asistencia. Sumándolos se obtiene el xG de un equipo en un partido o temporada: una medida de calidad de ocasiones que elimina la varianza del acabado. Un equipo ganando 1–0 con 0,4 xG contra 2,3 se salvó gracias a su portero, sea lo que diga la clasificación.",
+        "Para apostadores, el xG es una señal de forma que se estabiliza más rápido que los resultados: los equipos muy por encima de su xG tienden a regresionarse, y el mercado a veces rezaga esa regresión. Sus limitaciones son igual de importantes — ignora el estado del partido y contexto más allá de su modelo, varía entre proveedores, y un partido de xG es casi tan variable como un partido de goles. Úsalo como un insumo, nunca como una sentencia."
+      ],
+      "example": "En los últimos seis partidos un equipo anotó 11 goles de 6,1 xG. Las cuotas de mercado que cotizan basándose en esos 11 goles pueden estar sobrevaloando una racha de acabado caliente que el xG dice está ~80% por encima de la tasa sostenible.",
+      "related": [
+        "variance",
+        "line-movement"
+      ],
+      "see": [],
+      "_src_hash": "be8ddc67f6613784",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "tipster",
+      "term": "Tipster",
+      "short": "Alguien que publica selecciones de apuestas — confía en el archivo, nunca en la captura de pantalla.",
+      "definition": [
+        "Un tipster publica apuestas recomendadas, gratuitas o de pago. La economía de la atención convierte el campo en un campo minado: los ganadores se promocionan ruidosamente, los récords perdedores se eliminan discretamente, y las capturas de pantalla no prueban nada. La única evidencia significativa es un registro completo, con marca de tiempo: cada tip archivado antes del evento, valorado a las cuotas citadas, con las pérdidas mostradas tan permanentemente como las ganancias.",
+        "Una lista de verificación válida para aplicar a cualquiera (incluyéndonos): ¿Es visible el historial completo, con rachas perdedoras intactas? ¿Las cuotas citadas están realmente disponibles en el momento de la publicación? ¿Se expresa la ganancia en unidades fijas durante un tamaño de muestra declarado? ¿El récord se mantiene a los precios de cierre? Cualquiera que rechace esas preguntas está vendiendo entretenimiento, no ventaja — paga por selecciones solo si el registro verificado te seguiría impresionando a la mitad de su rendimiento declarado."
+      ],
+      "example": "Dos afirmaciones: '¡gané 9 de mis últimos 10!' versus '412 tips liquidados, +4.8% de rendimiento, cuotas promedio 2.31, archivo completo'. La primera es una frase de marketing; la segunda es un registro — y el archivo es lo que la convierte en uno.",
+      "related": [
+        "settlement",
+        "roi-and-yield",
+        "win-rate"
+      ],
+      "see": [
+        {
+          "label": "Our leaderboard with settled records",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "4790ca1012523b3c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-comparison",
+      "term": "Comparación de Cuotas",
+      "short": "Revisar el precio de cada casa de apuestas antes de apostar — la ventaja más simple y confiable que existe.",
+      "definition": [
+        "Las diferentes casas de apuestas cotizan el mismo mercado de forma distinta, rutinariamente entre un 5–10%. Tomar 2.20 en lugar de 2.05 en el mismo resultado es una mejora del 7% en la rentabilidad sin riesgo adicional — acumulado en cada apuesta, el price shopping por sí solo frecuentemente separa un registro perdedor de uno en equilibrio, y uno en equilibrio de ganancias.",
+        "Este es el hábito profesional más fácil de copiar: mantener cuentas en varias casas de apuestas y siempre tomar el mejor precio disponible. Es también la base de la detección de valor — nuestro modelo compara la cuota de cada libro contra el consenso sin margen, y cada página de partido lista las mejores cuotas disponibles por resultado para que la comparación ya esté hecha."
+      ],
+      "example": "Tu apuesta promedio está en cuotas ~2.00 y apuestas 100 × £10 al mes. Tomar sistemáticamente precios 4% mejores vale aproximadamente £40 al mes — todo el margen devuelto, antes de cualquier habilidad predictiva.",
+      "related": [
+        "bookmaker-margin",
+        "fair-odds",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [
+        {
+          "label": "Best odds on every match page",
+          "href": "/predictions"
+        }
+      ],
+      "_src_hash": "558fd6fb31af123b",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "self-exclusion",
+      "term": "Autoexclusión y Límites de Apuestas",
+      "short": "Herramientas formales que te cierran el acceso al juego — límites de depósito, pausas temporales y esquemas de exclusión multi-operador.",
+      "definition": [
+        "Todo operador licenciado debe ofrecer herramientas de control: límites de depósito, pérdidas y apuestas; recordatorios de sesión; pausas cortas de 'tiempo fuera'; y autoexclusión completa que cierra la cuenta durante meses o años. Los esquemas nacionales extienden esto por todo el mercado de una vez — GAMSTOP en el Reino Unido te excluye de todos los operadores licenciados con un solo registro, y software de bloqueo como Gamban cubre sitios que los esquemas no alcanzan.",
+        "El enfoque honesto: estas no son herramientas solo para 'jugadores problemáticos'. Los límites de depósito fijados en un momento tranquilo son un seguro barato contra una noche de estrés; una pausa después de una mala racha es gestión de bankroll para la mente. Si las apuestas dejaron de sentirse como entretenimiento — perseguir pérdidas, ocultar apuestas, apostar dinero que tenía otro destino — las herramientas anteriores más líneas de ayuda gratuitas y confidenciales son la siguiente apuesta correcta."
+      ],
+      "example": "Establecer un límite de depósito mensual de £100 toma dos minutos en configuración de cuenta. No puede aumentarse en el calor del momento: los aumentos solo entran en vigor después de un período de enfriamiento — ese es el punto completo.",
+      "related": [
+        "bankroll-management"
+      ],
+      "see": [
+        {
+          "label": "Responsible gambling help & tools",
+          "href": "/responsible-gambling"
+        }
+      ],
+      "_src_hash": "c50087ed518f0a33",
+      "_model": "claude-haiku-4-5-20251001"
+    }
+  ]
+}

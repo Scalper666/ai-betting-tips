@@ -1,0 +1,12 @@
+---
+import GuideView from '../../../views/GuideView.astro';
+import guidesData from '../../../data/guides.json';
+import { ALT_LANGS } from '../../../i18n/index.js';
+
+export function getStaticPaths() {
+  return ALT_LANGS.flatMap((lang) =>
+    (guidesData.guides ?? []).map((g) => ({ params: { lang, slug: g.slug } })));
+}
+const { lang, slug } = Astro.params;
+---
+<GuideView slug={slug} lang={lang} />

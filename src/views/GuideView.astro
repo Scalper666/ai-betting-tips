@@ -1,0 +1,147 @@
+---
+import Base from '../layouts/Base.astro';
+import { guidesFor, glossaryFor } from '../lib/guides.js';
+import { faqSchema } from '../lib/utils.js';
+import { t, lhref } from '../i18n/index.js';
+
+// One guide article, localized. `slug` is language-independent; display fields
+// come from the per-language dataset produced by pipeline/translate_static.py.
+const { slug, lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
+
+const guides = guidesFor(lang);
+const i = guides.findIndex((x) => x.slug === slug);
+const g = guides[i];
+const prev = guides[i - 1] ?? null;
+const next = guides[i + 1] ?? null;
+
+const bySlug = Object.fromEntries(guides.map((x) => [x.slug, x]));
+const related = (g.related ?? []).map((s) => bySlug[s]).filter(Boolean);
+const glossaryBySlug = Object.fromEntries(glossaryFor(lang).map((x) => [x.slug, x]));
+const glossaryChips = (g.glossary ?? []).map((s) => glossaryBySlug[s]).filter(Boolean);
+
+const title = `${g.title} — ${T('gd.titleSuffix')}`;
+const description = g.desc;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Article',
+      headline: g.title,
+      description: g.desc,
+      articleSection: g.cat,
+      inLanguage: lang,
+      author: { '@type': 'Organization', name: 'AI Betting Tips', url: 'https://ai-betting-tips.com/about/' },
+      publisher: { '@type': 'Organization', name: 'AI Betting Tips' },
+      mainEntityOfPage: new URL(Astro.url.pathname, 'https://ai-betting-tips.com').href,
+    },
+    ...(g.faq?.length ? [faqSchema(g.faq)] : []),
+  ],
+};
+---
+<Base lang={lang} i18nPath={`/guides/${g.slug}`} title={title} description={description} schema={schema} active="">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href={L('/')}>{T('crumb.home')}</a><span>/</span>
+        <a href={L('/guides')}>{T('gd.crumb')}</a><span>/</span>
+        {g.nav}
+      </div>
+      <h1>{g.title}</h1>
+      <p class="lead">{g.desc}</p>
+      <div class="chips" style="margin:12px 0 0">
+        <span class="chip" style="cursor:default">📖 {T(`gd.cat${g.cat}`)}</span>
+        <span class="chip" style="cursor:default">⏱ {g.minutes} {T('gd.minRead')}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+
+        <section class="prose" style="padding:0;max-width:none">
+          {g.sections.map((s) => (
+            <>
+              <h2>{s.h}</h2>
+              {s.ps.map((p) => <p>{p}</p>)}
+            </>
+          ))}
+
+          {g.example && (
+            <div class="gl-example">
+              <div class="gl-ex-label">{T('gd.workedExample')}</div>
+              <p style="margin:0">{g.example}</p>
+            </div>
+          )}
+
+          {g.takeaways?.length > 0 && (
+            <div class="note">
+              <strong>{T('gd.takeaways')}</strong>
+              <ul style="margin:10px 0 0">
+                {g.takeaways.map((x) => <li>{x}</li>)}
+              </ul>
+            </div>
+          )}
+
+          {g.faq?.length > 0 && (
+            <>
+              <h2>{T('gd.faqTitle')}</h2>
+              {g.faq.map((f) => (
+                <>
+                  <h3>{f.q}</h3>
+                  <p>{f.a}</p>
+                </>
+              ))}
+            </>
+          )}
+        </section>
+
+        {(related.length > 0 || glossaryChips.length > 0) && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">{T('gd.keepPre')} <b>{T('gd.keepBold')}</b></h2></div>
+            <div class="chips" style="margin-bottom:0">
+              {related.map((r) => <a class="chip" href={L(`/guides/${r.slug}`)}>📗 {r.nav}</a>)}
+              {glossaryChips.map((x) => <a class="chip" href={L(`/glossary/${x.slug}`)}>📖 {x.term}</a>)}
+            </div>
+          </section>
+        )}
+
+        <section>
+          <div class="res-sum">
+            {prev && <a class="res-chip" href={L(`/guides/${prev.slug}`)} style="text-decoration:none"><b>←</b><span>{prev.nav}</span></a>}
+            <a class="res-chip" href={L('/guides')} style="text-decoration:none"><b>📚</b><span>{T('gd.allGuides')}</span></a>
+            {next && <a class="res-chip" href={L(`/guides/${next.slug}`)} style="text-decoration:none"><b>→</b><span>{next.nav}</span></a>}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        {(g.tools ?? []).length > 0 && (
+          <div class="promo">
+            <h4>🔗 {T('gd.seeAction')}</h4>
+            <p>{g.tools[0].label}</p>
+            <a href={g.tools[0].href} class="btn btn-mint btn-block">{T('gd.open')}</a>
+          </div>
+        )}
+        <div class="box">
+          <div class="box-h"><span class="hi">📚</span> {T('gd.boxAll')}</div>
+          {guides.map((x) => (
+            <a class="tm" href={L(`/guides/${x.slug}`)} aria-current={x.slug === g.slug ? 'page' : undefined}>
+              <span class="dot"></span>{x.nav}
+            </a>
+          ))}
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">⚡</span> {T('gd.putToWork')}</div>
+          <a class="tm" href={L('/predictions')}><span class="dot"></span>{T('gd.lnkPreds')}</a>
+          <a class="tm" href={L('/screener')}><span class="dot"></span>{T('gd.lnkScreener')}</a>
+          <a class="tm" href="/tools"><span class="dot"></span>{T('gd.lnkTools')}</a>
+          <a class="tm" href={L('/glossary')}><span class="dot"></span>{T('gd.lnkGlossary')}</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

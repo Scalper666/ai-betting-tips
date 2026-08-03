@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import { glossaryFor } from '../lib/guides.js';
+import { t, lhref } from '../i18n/index.js';
+
+const { lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
+
+const terms = [...glossaryFor(lang)].sort((a, b) => a.term.localeCompare(b.term, lang));
+const title = T('gl.hubTitle');
+const description = T('gl.hubDesc').split('{n}').join(String(terms.length));
+---
+<Base lang={lang} i18nPath="/glossary" title={title} description={description} active="">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href={L('/')}>{T('crumb.home')}</a><span>/</span>{T('gl.crumb')}</div>
+      <h1>{T('gl.hubH1pre')} <em>{T('gl.hubH1em')}</em></h1>
+      <p class="lead">{T('gl.hubLead').split('{n}').join(String(terms.length))}</p>
+    </div>
+  </div>
+
+  <div class="container" style="padding-bottom:60px">
+    <div class="team-grid" style="margin-top:8px">
+      {terms.map((x) => (
+        <a class="team-card" href={L(`/glossary/${x.slug}`)}>
+          <span class="badge" style="background:linear-gradient(135deg,#2b3f57,#1d2b3c)">{x.term.slice(0, 1)}</span>
+          <span class="tc-name" title={x.short}>{x.term}</span>
+          <span class="tc-n">→</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</Base>

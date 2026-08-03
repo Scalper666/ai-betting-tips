@@ -1,0 +1,736 @@
+{
+  "lang": "de",
+  "terms": [
+    {
+      "slug": "value-bet",
+      "term": "Value Bet",
+      "short": "Eine Wette, bei der die angebotenen Quoten höher sind als die echte Wahrscheinlichkeit rechtfertigt — die einzige Art von Wette, die langfristig profitabel ist.",
+      "definition": [
+        "Eine Value Bet existiert, wenn die Quoten eines Buchmachers eine niedrigere Wahrscheinlichkeit implizieren als die tatsächliche Chance eines Ereignisses. Wenn die echte Chance eines Teamgewinns bei 50% liegt, aber du die Wette bei 2,20 platzieren kannst, ist der Kurs \"falsch\" zu deinen Gunsten: Bei vielen Wiederholungen dieser Situation würdest du mehr gewinnen als die Quoten vermuten lassen, weshalb die Wette einen positiven Erwartungswert hat.",
+        "Value hat nichts damit zu tun, wie wahrscheinlich die Wette zu gewinnen ist. Eine 5,00er Quote auf einen Außenseiter zu spielen kann Value sein, während eine 1,20er Quote auf einen Favoriten schlechtes Value sein kann — es kommt auf die Spanne zwischen Kurs und Wahrscheinlichkeit an, nicht auf die Wahrscheinlichkeit selbst. Deshalb jagen disziplinierte Wetter Quoten, nicht Gewinner. Um Value systematisch zu finden, brauchst du eine unabhängige Schätzung der echten Wahrscheinlichkeit, genau das versuchen Odds-Modelle und Screener zu leisten."
+      ],
+      "example": "Angenommen, die faire Chance auf einen Heimsieg liegt bei 40% (faire Quote 2,50), aber ein Buchmacher bietet 2,75. Erwartungswert pro €1 Einsatz = (0,40 × 2,75) − 1 = +0,10, also ein 10%-Vorteil. Einzeln verliert die Wette 60% der Zeit — aber im großen Maßstab ist es genau diese Art von Quote, aus der Gewinne entstehen.",
+      "related": [
+        "expected-value",
+        "implied-probability",
+        "edge",
+        "fair-odds"
+      ],
+      "see": [
+        {
+          "label": "Live value picks in the AI screener",
+          "href": "/screener"
+        }
+      ],
+      "_src_hash": "f37d30dbf5629570",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "implied-probability",
+      "term": "Implizite Wahrscheinlichkeit",
+      "short": "Die Gewinnchance, die eine Wettquote suggeriert: 1 geteilt durch die Dezimalquote.",
+      "definition": [
+        "Jede Wettquote ist eine versteckte Wahrscheinlichkeitsaussage. Die Umrechnung von Dezimalquoten in implizite Wahrscheinlichkeit ist einfach: 1 durch die Quote dividieren. Quoten von 2.00 implizieren 50%, Quoten von 4.00 implizieren 25%, Quoten von 1.25 implizieren 80%. Diese Umrechnung ist die Grundlage jeder seriösen Wettentscheidung, denn sie verwandelt die Frage „ist dieser Kurs attraktiv?",
+        " in die beantwortbare Frage „ist diese Wahrscheinlichkeit zu niedrig?\"",
+        "Die Summe der impliziten Wahrscheinlichkeiten aller Ausgänge in einem Markt offenbart die Bookmaker-Marge: Die Gesamtsumme übersteigt immer 100%, und der Überschuss ist der eingebaute Vorteil des Anbieters. Durch Entfernung dieser Marge entstehen faire Wahrscheinlichkeiten — die tatsächliche Konsenssicht des Marktes — gegen die Value gemessen werden kann."
+      ],
+      "example": "Ein Match mit Quoten von 2.10 (Heimsieg), 3.60 (Unentschieden), 3.40 (Auswärtssieg) impliziert 47.6% + 27.8% + 29.4% = 104.8%. Der Überschuss von 4.8% ist die Bookmaker-Marge; die faire Heimwahrscheinlichkeit nach proportionaler Bereinigung beträgt 47.6 / 104.8 ≈ 45.4%.",
+      "related": [
+        "bookmaker-margin",
+        "fair-odds",
+        "value-bet",
+        "odds-formats"
+      ],
+      "see": [],
+      "_src_hash": "f1a1df87792644ee",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "expected-value",
+      "term": "Erwartungswert (EV)",
+      "short": "Der durchschnittliche Gewinn oder Verlust, den eine Wette erzeugen würde, wenn sie viele Male zum gleichen Quoten wiederholt werden könnte.",
+      "definition": [
+        "Der Erwartungswert beantwortet eine Frage: Wenn du diese exakte Wette tausendmal platzierst, endest du im Plus? Er wird berechnet als (Gewinnwahrscheinlichkeit × Dezimalquoten) − 1, ausgedrückt pro Einsatzeinheit. Positiver EV (+EV) bedeutet, dass die Quote die echte Wahrscheinlichkeit schlägt; negativer EV bedeutet, dass die Gewinnspanne des Buchmachers oder eine falsch bewertete Einschätzung gegen dich arbeitet.",
+        "EV ist ein Langzeit-Konzept. Eine +EV-Wette kann viele Male hintereinander verlieren, und eine −EV-Wette kann treffen — Varianz dominiert kleine Stichproben. Die Disziplin des profitablen Wettens besteht darin, Entscheidungen nicht an Einzelergebnissen zu messen, sondern an den Quoten, die du genommen hast. Über Hunderte von Wetten konvergieren die Ergebnisse gegen die Erwartung."
+      ],
+      "example": "Du schätzt ein Unentschieden auf 30% Wahrscheinlichkeit und findest Quoten von 3,75. EV = (0,30 × 3,75) − 1 = +0,125 — ein erwarteter Gewinn von 12,5 Cent pro 1 Euro Einsatz. Wenn deine Wahrscheinlichkeitsschätzung korrekt ist, ist das wiederholte Wetten zu diesem Kurs profitabel, auch wenn es 70% der Zeit verliert.",
+      "related": [
+        "value-bet",
+        "edge",
+        "kelly-criterion",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "a2bb98856f4a259f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "edge",
+      "term": "Edge",
+      "short": "Ihr Vorteil gegenüber der Quote, üblicherweise als Expected Value in Prozent ausgedrückt.",
+      "definition": [
+        "Edge ist die Größe Ihres Vorteils bei einer Wette: wie viel besser die Quoten sind als die wahre Wahrscheinlichkeit des Ergebnisses rechtfertigt. Ein Edge von 5% bedeutet, dass Sie pro £100 Einsatz langfristig mit £5 Gewinn rechnen können. Edges im Sportwetten sind klein — Profis freuen sich über 2–5% — weil Wettmärkte wettbewerbsintensiv und größtenteils effizient sind.",
+        "Behauptete Edges sollten skeptisch betrachtet werden, auch unsere. Der ehrliche Test eines Edges ist die Abrechnung über eine große Stichprobe: Wenn die Bilanz einer Methode über Hunderte von Wetten positiven Ertrag zeigt, ist der Edge real; wenn nicht, war es Rauschen. Deshalb archivieren wir jeden Tipp vor Spielbeginn und veröffentlichen die abgerechneten Ergebnisse, Gewinne und Verluste gleichermaßen."
+      ],
+      "example": "Beste verfügbare Quote 2,30 gegen eine faire Wahrscheinlichkeit von 46%: Edge = (0,46 × 2,30) − 1 = +5,8%. Bei flachen £10 Einsätzen über 500 solcher Wetten beträgt der erwartete Gewinn etwa £290 — mit erheblichen Schwankungen dazwischen.",
+      "related": [
+        "value-bet",
+        "expected-value",
+        "closing-line-value",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [
+        {
+          "label": "How our settled record is computed",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "24d98b3b4c4c1dd4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-formats",
+      "term": "Quoten-Formate (Dezimal, Bruch, Amerikanisch)",
+      "short": "Drei Schreibweisen für denselben Preis: 2,50 = 6/4 = +150.",
+      "definition": [
+        "Dezimalquoten zeigen die Gesamtauszahlung pro Einsatzeinheit an, inklusive Einsatz: Bei 2,50 bringt ein £10-Einsatz £25 zurück (£15 Gewinn plus £10 Einsatz). Sie sind der Standard in Europa und das einfachste Format für Berechnungen, weshalb diese Seite sie überall verwendet.",
+        "Bruchquoten (6/4) zeigen den Gewinn relativ zum Einsatz – gewinne £6 für jeden £4 gesetzten Einsatz – und sind im Vereinigten Königreich noch traditionell. Amerikanische Quoten verwenden ein Plus- oder Minuszeichen: +150 bedeutet, dass ein $100-Einsatz $150 gewinnt; −200 bedeutet, dass Sie $200 setzen müssen, um $100 zu gewinnen. Umrechnung: Dezimal = Bruch + 1; positiv Amerikanisch = (Quote/100) + 1; negativ Amerikanisch = (100/|Quote|) + 1."
+      ],
+      "example": "Quoten von 2,50, 6/4 und +150 sind identische Preise mit einer implizierten Wahrscheinlichkeit von 1 / 2,50 = 40%.",
+      "related": [
+        "implied-probability",
+        "odds-comparison"
+      ],
+      "see": [],
+      "_src_hash": "71f987ece97c137a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bookmaker-margin",
+      "term": "Bookmaker-Marge (Overround / Vig)",
+      "short": "Der Gewinn, den ein Wettanbieter in seine Quoten einbaut — der Grund, warum die Wahrscheinlichkeiten aller Ausgänge zusammen über 100% liegen.",
+      "definition": [
+        "Wettanbieter bieten keine fairen Quoten an. Jede Quote ist leicht unter ihrem fairen Wert angesetzt, damit der Anbieter unabhängig vom Ergebnis einen Prozentsatz behält. Addiert man die implizierten Wahrscheinlichkeiten aller Ausgänge und der Überschuss über 100% ist die Marge — auch Overround, Juice oder Vig genannt. Typische Fußball-Ergebniswetten-Margen liegen bei scharfsinnigen Wettanbietern bei etwa 2% und bei weniger professionellen Anbietern bei 7%+.",
+        "Die Marge ist der Standard-Gegenwind, dem sich jeder Wetter stellen muss: Bei zufälligen Wetten verlierst du die Marge im Laufe der Zeit. Das hat zwei praktische Konsequenzen. Erstens ist der Vergleich von Quoten über verschiedene Wettanbieter enorm wichtig — die beste verfügbare Quote beseitigt meist den Großteil der Marge. Zweitens bedeutet es, den Markt zu schlagen, die Marge zu überwinden und noch mehr, weshalb echte langfristige Vorteile selten und klein sind."
+      ],
+      "example": "Zweiweg-Markt mit Quote 1,91 / 1,91: impliziert 52,4% + 52,4% = 104,8%, eine Marge von 4,8%. Die faire Quote für eine echte 50/50 wäre 2,00 / 2,00.",
+      "related": [
+        "implied-probability",
+        "fair-odds",
+        "odds-comparison",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "de2db94eb0eef4a6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fair-odds",
+      "term": "Faire Quoten",
+      "short": "Der Preis ohne die Marge des Buchmachers — die echte Wahrscheinlichkeitsschätzung des Marktes.",
+      "definition": [
+        "Faire Quoten sind die margenfreie Version eines Marktes: die Preise, die das Buch langfristig zum Ausgleich bringen würden. Die einfachste Methode ist, die implizierte Wahrscheinlichkeit jedes Ausgangs zu nehmen, sie zu summieren und jede proportional so herabzuskalieren, dass die Summe exakt 100% ergibt. Die neu skalierten Wahrscheinlichkeiten werden dann in faire Quoten umgerechnet.",
+        "Faire Quoten sind wichtig, weil sie der Maßstab für Value sind. Ein Preis bietet nur Value, wenn er die faire Quote übersteigt, nicht nur weil er groß aussieht. Das Durchschnitts-Mittel fairer Wahrscheinlichkeiten über viele Buchmacher hinweg erzeugt einen robusten Konsens, den keine einzelne Preisabweichung eines Buchmachers verzerren kann — dieser Konsens-gegen-beste-Quote-Vergleich ist genau wie unser Modell Value-Picks identifiziert."
+      ],
+      "example": "Implizierte Wahrscheinlichkeiten 47,6% / 27,8% / 29,4% (Summe 104,8%) werden neu skaliert zu 45,4% / 26,5% / 28,1%. Faire Heimquoten = 1 / 0,454 = 2,20. Jeder Buchmacher, der mehr als 2,20 anbietet, zahlt über der eigenen Marktschätzung.",
+      "related": [
+        "bookmaker-margin",
+        "implied-probability",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "7ee23ed1ce1ec170",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "kelly-criterion",
+      "term": "Kelly Criterion",
+      "short": "Eine Einsatzformel, die Wetten proportional zu Ihrem Edge bemisst — und ein praktisches Hilfsmittel zum Bewerten von Value-Wetten.",
+      "definition": [
+        "Das Kelly-Kriterium berechnet den Bankroll-Anteil, der das langfristige Wachstum maximiert, wenn Sie einen Edge haben: Einsatz = Edge ÷ (Dezimalquote − 1). Größere Edges rechtfertigen höhere Einsätze; höhere Quoten rechtfertigen bei gleichem Edge kleinere Einsätze, da der Gewinn seltener eintritt und die Varianz höher ist. Volles Kelly ist aggressiv — die meisten Praktiker nutzen ein Half oder Quarter Kelly, um die Schwankungen zu dämpfen.",
+        "Über das Staking hinaus ist Kelly eine ausgezeichnete Rangierungsmetrik. Die reine Edge-Prozentsatz schmeichelt Außenseitern: ein 30%-‚Edge' bei einer 21.00 Quote ist meist ein Preisartefakt, keine echte Gelegenheit. Die Division des Edge durch (Quote − 1) gewichtet Value danach, wie oft sie tatsächlich eintritt — genau das ist der Grund, warum unser Screener seine Picks ordnet — ein bescheidener Edge bei einer 1.80 Favoritenquote kann einen großen Edge bei einem 6.00 Shot übertreffen."
+      ],
+      "example": "Edge 8% bei Quote 3.60: Kelly-Anteil = 0,08 / 2,60 ≈ 3,1% der Bankroll. Der gleiche 8%-Edge bei Quote 1.60 ergibt 0,08 / 0,60 ≈ 13,3% — die niedrigere Quote rechtfertigt einen deutlich höheren Einsatz.",
+      "related": [
+        "edge",
+        "bankroll-management",
+        "flat-staking",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Kelly-ranked picks in the screener",
+          "href": "/screener"
+        }
+      ],
+      "_src_hash": "8613ffe375f15d2e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bankroll-management",
+      "term": "Bankroll-Management",
+      "short": "Behandlung deines Wetteinsatzes als fester Fonds mit Einsatzregeln — die Disziplin, die dich vor Varianz bewahrt.",
+      "definition": [
+        "Ein Bankroll ist Geld, das ausschließlich zum Wetten reserviert ist — ein Betrag, dessen vollständiger Verlust dir keinen Schaden zufügen würde. Bankroll-Management sind die Regeln, die festlegen, wie viel davon ein einzelner Wett riskieren darf. Häufige Ansätze: Flat Staking (jedes Mal derselbe feste Betrag), Prozentsatz-Staking (ein fester Anteil des aktuellen Bankrolls) oder Kelly-basiertes Staking skaliert auf deinen Edge.",
+        "Der Zweck ist das Überleben durch Varianz. Selbst eine wirklich profitable Strategie erlebt Verlustserien von zehn oder mehr Wetten; ein zu großer Einsatz verwandelt einen normalen Durchhänger in den Ruin, bevor sich der Edge auswirken kann. Die meisten disziplinierten Wetter riskieren 1–2% des Bankrolls pro Wett. Ebenso wichtig: Stocke niemals einen Bankroll auf, um Verluste zu jagen — das ist der Fehlermodus, der Wetten vom Unterhaltungsmedium zum Problem macht."
+      ],
+      "example": "Mit einem £500 Bankroll und 1,5% Flat Stakes (£7,50 pro Wett) kostet eine brutale Serie von 15 verlorenen Wetten £112,50 — schmerzhaft, aber verkraftbar, es bleiben 77% des Fonds intact.",
+      "related": [
+        "flat-staking",
+        "kelly-criterion",
+        "variance",
+        "self-exclusion"
+      ],
+      "see": [
+        {
+          "label": "Responsible gambling tools & help",
+          "href": "/responsible-gambling"
+        }
+      ],
+      "_src_hash": "06fcd7d277eef549",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "flat-staking",
+      "term": "Flat Staking & Units",
+      "short": "Auf jeden Tipp denselben festen Betrag — eine Einheit — setzen, um Ergebnisse vergleichbar und ehrlich zu machen.",
+      "definition": [
+        "Flat Staking riskiert auf jeden Wetteinsatz einen identischen Betrag, genannt Einheit, unabhängig vom Vertrauen in die Quote. Eine Einheit beträgt normalerweise 1–2% der Bankroll. Ihr großer Vorteil ist Transparenz: Gewinne gemessen in Einheiten können nicht durch nachträgliche Einsatzgewichtung geschönt werden, weshalb seriöse Tipster Ergebnisse als „+8,40 Einheiten",
+        " veröffentlichen statt in Währung.",
+        "Alle Ergebnisse auf dieser Website werden mit flachen Einheiten-Einsätzen verrechnet: eine gewonnene Wette bei Quote 2,50 bringt +1,50 Einheiten, jede verlorene Wette kostet −1,00, eine Stornierung ist 0. Dies ist die einfachste mögliche Abrechnung — keine nachträglich angewendeten „Konfidenz-Multiplikatoren",
+        ",",
+        " keine Möglichkeit, einen verlierenden Monat zu beschönigen."
+      ],
+      "example": "Zehn flach gesetzte Wetten: 4 gewinnen bei Durchschnittsquote 2,40, 6 verlieren. Gewinn = 4 × 1,40 − 6 × 1,00 = −0,40 Einheiten — eine Quote-Quote von 40% reichte bei diesen Quoten nicht aus. Derselbe Rekord bei Durchschnittsquote 2,80 hätte +1,20 Einheiten gebracht.",
+      "related": [
+        "bankroll-management",
+        "roi-and-yield",
+        "win-rate"
+      ],
+      "see": [
+        {
+          "label": "Our settled results, in units",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "a2154db69dabcdc1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "accumulator",
+      "term": "Accumulator (Acca / Parlay)",
+      "short": "Eine Wette, die mehrere Tipps kombiniert — alle müssen gewinnen, Quoten multiplizieren sich, und die Buchmacher-Marge ebenso.",
+      "definition": [
+        "Ein Accumulator kombiniert zwei oder mehr Tipps zu einer einzelnen Wette, deren Quoten das Produkt der einzelnen Quoten sind. Drei Tipps zu 1,50 × 1,72 × 1,85 zahlen 4,77 — attraktiv, weshalb Accas intensiv vermarktet werden. Der Haken: ein verlorenes Bein lässt das ganze Ticket platzen, und die Buchmacher-Marge verstärkt sich mit jedem zusätzlichen Bein.",
+        "Trägt jedes Bein etwa 5% Marge, beinhaltet ein Dreier grob einen 14%-Hausvorteil vor Spielbeginn. Das macht lange Accumulatoren strukturell schlecht im Wert — Unterhaltung zuerst, Geldanlage niemals. Wenn Sie kombinieren, halten Sie die Anzahl der Tipps niedrig, suchen die beste Quote für jeden einzeln, und setzen Sie klein: Die korrekte Erwartung für einen Acca ist ein gelegentlicher Spaßgewinn, niemals konstanter Gewinn."
+      ],
+      "example": "Drei Tipps, jeder fair zu 60% wahrscheinlich: kombinierte echte Wahrscheinlichkeit = 0,6³ = 21,6% (faire Quote 4,63). Mit 1,58 pro Tipp kotierte Tipps geben eine Auszahlung von 3,94 — was 25,4% impliziert und dem Buch eine kombinierte ~18%-Marge auf das Ticket verschafft.",
+      "related": [
+        "bookmaker-margin",
+        "double-chance",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Accumulator tips",
+          "href": "/tips/accumulator"
+        }
+      ],
+      "_src_hash": "d6decdd7926e1ffb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "btts",
+      "term": "Beide Teams treffen (BTTS)",
+      "short": "Ein Markt, auf den man wetten kann, ob beide Mannschaften mindestens je ein Tor erzielen — das Endergebnis ist irrelevant.",
+      "definition": [
+        "BTTS (auch 'Tore galore' oder GG/NG genannt) wird mit Ja reguliert, wenn jede Mannschaft mindestens ein Tor erzielt, ansonsten mit Nein. Ein 3:1 ist Ja; ein 2:0 ist Nein. Das Endergebnis des Spiels ist unerheblich, weshalb BTTS bei Spielen zwischen offensivstarken Teams mit anfälligen Abwehren beliebt ist — du kannst über den Charakter des Spiels richtig liegen und trotzdem über den Gewinner falschliegen.",
+        "BTTS korrekt zu bewerten bedeutet, die Torquoten jeder Mannschaft separat zu schätzen, anstatt nur zu überlegen, wer besser ist. Der enge Verwandte ist der Marktzusammenhang Über/Unter Tore: BTTS-Ja korreliert stark mit Über 2,5, und wenn man die beiden Quoten vergleicht, werden manchmal Widersprüche in der Modellierung einer Partie durch ein Wettunternehmen sichtbar."
+      ],
+      "example": "Wenn die Heimmannschaft in 75% ihrer Spiele trifft und die Auswärtsmannschaft in 60% (grob unabhängig), dann BTTS-Ja ≈ 0,75 × 0,60 = 45% — faire Quote 2,22. Eine Quote von 2,40 wäre Value; 1,95 wäre es nicht.",
+      "related": [
+        "over-under",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "BTTS tips",
+          "href": "/tips/btts"
+        }
+      ],
+      "_src_hash": "05b46df492098048",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "over-under",
+      "term": "Over/Under (Totals)",
+      "short": "Wette auf die kombinierte Anzahl von Toren statt auf den Gewinner, gegen eine Quote wie 2,5.",
+      "definition": [
+        "Eine Totals-Wette ignoriert, wer gewinnt, und fragt nur, wie viele Tore das Match produziert. Die Quote wird normalerweise auf ein halbes Tor (2,5) gesetzt, damit es kein Unentschieden gibt: Over 2,5 benötigt drei oder mehr Tore, Under 2,5 gewinnt mit zwei oder weniger. Ganzzahlige Quoten (z. B. genau 3,0) können „pushen",
+        "— landen genau auf der Quote — wobei Einsätze als void zurückgegeben werden.",
+        "Totals sind oft bessere Jagdgründe für Value als Match Results, da Freizeitgeld sich auf die Auswahl von Gewinnern konzentriert, wodurch Torquoten-Märkte leicht weniger effizient bewertet werden. Sie eignen sich auch für statistische Modellierung: Tore folgen pro Team und Liga relativ stabilen Mustern, weshalb ein großer Teil unserer Modell-Empfehlungen Totals sind."
+      ],
+      "example": "Over 2,5 mit Quote 1,93 impliziert 51,8%. Wenn Ihr Modell Tore ab drei mit 55% bewertet, EV = (0,55 × 1,93) − 1 = +6,2% — eine Value-Wette, auch wenn sie fast ein Münzwurf ist.",
+      "related": [
+        "btts",
+        "void-bet",
+        "asian-handicap"
+      ],
+      "see": [
+        {
+          "label": "Over/Under tips",
+          "href": "/tips/over-under"
+        }
+      ],
+      "_src_hash": "90644050aa93d2f1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "asian-handicap",
+      "term": "Asian Handicap",
+      "short": "Ein Handicap-Markt, der das Unentschieden eliminiert, indem eine Mannschaft einen Tor-Vorsprung erhält, oft in Viertel-Tor-Schritten.",
+      "definition": [
+        "Asian Handicaps gleichen Unterschiede aus, indem sie vor Anpfiff virtuelle Tore zu einer Mannschaft addieren. Das Setzen auf den Favoriten bei −1,5 bedeutet, dass dieser mit zwei klaren Toren gewinnen muss; das Setzen auf den Außenseiter bei +1,5 gewinnt, wenn dieser nicht mit zwei oder mehr Toren verliert. Ganzzahlige Handicaps (−1,0) können pushen: Wenn der Favorit mit genau einem Tor gewinnt, werden die Einsätze zurückerstattet.",
+        "Quarter Lines (−0,75, +1,25) teilen deinen Einsatz auf die beiden benachbarten Linien auf – halb auf −0,5 und halb auf −1,0 – sodass Ergebnisse halb-Gewinne und halb-Verluste sein können. Da das Unentschieden konstruiert ist, haben Asian-Handicap-Märkte nur zwei Ausgänge, tragen typischerweise niedrigere Margen als 1X2 und sind dort, wo viel des schärfsten Fußballgelds gehandelt wird."
+      ],
+      "example": "£20 auf den Favoriten bei −0,75 (Quote 1,95): Ein Eins-Tor-Sieg zahlt die −0,5-Hälfte vollständig aus und erstattet die −1,0-Hälfte – Gesamtauszahlung £29,75, ein ‚Halb-Gewinn'. Ein Zwei-Tor-Sieg zahlt beide Hälften aus: £39.",
+      "related": [
+        "match-result",
+        "void-bet",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "711a58b58d3b87dd",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "double-chance",
+      "term": "Double Chance",
+      "short": "Zwei von drei Spielausgängen in einer Wette abdecken — wesentlich sicherer, deutlich niedrigere Quoten.",
+      "definition": [
+        "Double Chance kombiniert zwei Ausgänge des 1X2-Markts: Sieg oder Unentschieden daheim (1X), Auswärts oder Unentschieden (X2), oder Sieg eines beliebigen Teams (12). Nur eines der drei Ergebnisse besiegt Sie, daher ist die Gewinnwahrscheinlichkeit hoch — und die Quoten entsprechend niedrig, oft unter 1,50 bei Favoriten.",
+        "Der Markt funktioniert ähnlich wie Draw No Bet und das asiatische Handicap +0,5; das Vergleichen aller drei Quoten für die gleiche Ansicht zeigt manchmal, bei welcher Variante ein Buchmacher am großzügigsten kalkuliert hat. Die strategische Warnung: Sicherheit ist kein Value. Eine 1X Quote von 1,25 mit einer echten Gewinnchance von 78% ist eine verlorene Wette in sicherer Verpackung — niedrige Quoten müssen trotzdem die faire Quote schlagen."
+      ],
+      "example": "Sieg daheim 45%, Unentschieden 28%: faire 1X-Wahrscheinlichkeit = 73% → faire Quote 1,37. Ein Buchmacher mit 1,44 zahlt Value auf die ‚sichere' Option; einer mit 1,28 nicht.",
+      "related": [
+        "match-result",
+        "draw-no-bet",
+        "asian-handicap"
+      ],
+      "see": [
+        {
+          "label": "Double chance tips",
+          "href": "/tips/double-chance"
+        }
+      ],
+      "_src_hash": "dd5f4515ac8590f3",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "draw-no-bet",
+      "term": "Draw No Bet (DNB)",
+      "short": "Auf ein Team wetten; bei Unentschieden wird dein Einsatz zurückerstattet.",
+      "definition": [
+        "Draw No Bet eliminiert das Unentschieden aus der Rechnung: Wähle eine Seite, und ein Unentschieden ergibt eine Rückerstattung des Einsatzes statt eines Verlusts. Es entspricht dem 0.0 Asian Handicap und liegt zwischen den vollständigen 1X2-Quoten (höhere Quoten, Unentschieden verliert) und Double Chance (niedrigere Quoten, Unentschieden gewinnt).",
+        "DNB eignet sich für Situationen, in denen du ein Team bevorzugst, aber ein echtes Unentschieden-Risiko respektierst — enge Derbys, defensive Außenseiter-Favoriten. Du kannst es auch manuell konstruieren, indem du deinen Einsatz im richtigen Verhältnis zwischen Sieg und Unentschieden aufteilst, was manchmal die verpackte DNB-Quote schlägt. Wie immer lohnt sich die Verpackung nur, wenn die implizite Wahrscheinlichkeit unter deiner Einschätzung der echten Chance liegt."
+      ],
+      "example": "Team mit Quote 2.30 für Sieg, 3.30 für Unentschieden. DNB angeboten bei 1.70: impliziert 58.8% für einen Markt, bei dem die Gewinnchance (ohne Unentschieden) 100 × 43.5/(43.5+26.3) ≈ 62% beträgt — ein fairer DNB wäre ~1.61, also 1.70 hat Wert.",
+      "related": [
+        "double-chance",
+        "asian-handicap",
+        "void-bet"
+      ],
+      "see": [],
+      "_src_hash": "554e9497dd446fe6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "match-result",
+      "term": "Spielergebnis (1X2)",
+      "short": "Der klassische Dreiweg-Markt: Heimsieg (1), Unentschieden (X) oder Auswärtssieg (2).",
+      "definition": [
+        "1X2 ist Fußballs Hauptmarkt: Wetten Sie auf die Heimmannschaft, das Unentschieden oder die Auswärtsmannschaft über 90 Minuten plus Nachspielzeit (Verlängerung und Elfmeterschießen zählen nicht, wenn nicht anders angegeben). Seine drei Ausgänge unterscheiden sich strukturell von Zweiwege-Märkten — Wahrscheinlichkeiten verteilen sich auf drei Wege, Unentschieden treten deutlich häufiger auf als Gelegenheitswetter erwarten, und die Margen sind üblicherweise höher als bei Asian-Handicap-Linien.",
+        "Das Unentschieden verdient besonderen Respekt: Erstliga-Fußball endet etwa ein Viertel der Zeit unentschieden, doch Unentschieden-Quoten treiben oft großzügig davon ab, weil die meisten privaten Einsätze einen Sieger wollen. Dieses Mispricing-Muster ist der Grund, warum Value-Scanner regelmäßig Unentschieden markieren — nicht weil Unentschieden vorhersehbar sind, sondern weil sie systematisch untergewichtet werden."
+      ],
+      "example": "Ein Markt bei 2,05 / 3,50 / 3,90 impliziert 48,8% / 28,6% / 25,6% (Marge 3%). Wenn Consensus-Fair-Wahrscheinlichkeiten 46% / 27% / 27% sind, ist die Auswärtsseite bei 3,90 (Fair 3,70) die Value-Ecke des Marktes.",
+      "related": [
+        "double-chance",
+        "draw-no-bet",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "bd857024ed451f0a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "correct-score",
+      "term": "Correct Score",
+      "short": "Vorhersage des exakten Endergebnisses — hohe Quoten, hohe Varianz, breite Margen.",
+      "definition": [
+        "Correct Score verlangt das genaue Endergebnis — 2:1, 0:0, 3:3 — wobei jedes Ergebnis einzeln bewertet wird, zumeist mit hohen Quoten. Da die Wahrscheinlichkeit auf über zwanzig plausible Ergebnisse verteilt ist, überschreitet auch das wahrscheinlichste einzelne Ergebnis (oft 1:1 oder 1:0) selten 12–13%.",
+        "Die Margen in diesem Segment gehören typischerweise zu den breitesten eines Buchmachers, und die Varianz ist extrem: Correct-Score-Billanzen schwanken wild bei kleinen Stichproben. Betrachten Sie es als unterhaltsamen Markt für kleine Einsätze statt als Value-Strategie. Falls Sie eine echte Einschätzung zum Torverlauf eines Spiels haben, drücken Sie diese Meinung meist zu besseren Quoten über die Märkte Gesamttore oder BTTS aus."
+      ],
+      "example": "Eine 2:1 Quote von 9.00 impliziert 11,1%. Poisson-Modelle mit realistischen Torquoten bewerten normalerweise kein Ergebnis über 13% — die Quote muss also über 7.70 liegen, bevor Wert überhaupt denkbar ist.",
+      "related": [
+        "over-under",
+        "btts",
+        "variance"
+      ],
+      "see": [
+        {
+          "label": "Correct score tips",
+          "href": "/tips/correct-score"
+        }
+      ],
+      "_src_hash": "b589a16b0efd68c4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "closing-line-value",
+      "term": "Closing Line Value (CLV)",
+      "short": "Die finale Quote vor Spielbeginn schlagen — der stärkste statistische Beweis für einen echten Edge beim Wetter.",
+      "definition": [
+        "Die Closing Line ist die letzte verfügbare Quote vor Spielstart, nachdem der Markt alle Nachrichten und Einsätze verarbeitet hat. Sie stellt generell die schärfste Wahrscheinlichkeitsschätzung dar. Closing Line Value bedeutet, dass Sie zuvor eine bessere Quote genommen haben: Sie haben 2,20 gespielt und die Quote schloss bei 2,00. Wenn Sie das konsistent schaffen, verfügen Sie fast sicher über einen echten Edge, weil Sie wiederholt die endgültige Marktbewertung übertreffen.",
+        "CLV ist wichtig, weil es Geschick von Glück viel schneller trennt als Gewinne. Ergebnisse über einige Dutzend Wetten sind Rauschen; das Schließen konsistent zu schlagen ist ein Signal. Es ist auch der Grund, warum Quoten sich bewegen — early value wird weggespielt — und warum schnelles Handeln bei identifizierten Value-Gelegenheiten zählt."
+      ],
+      "example": "Sie nehmen 2,20; die Quote schließt bei 2,00. Die implizierte Wahrscheinlichkeit verschob sich von 45,5% auf 50%. Wenn der Closing-Wert korrekt ist, enthält Ihr Wett einen EV = (0,50 × 2,20) − 1 = +10% — realisiert in dem Moment, in dem Sie die Bewegung schlagen, unabhängig vom Ausgang.",
+      "related": [
+        "line-movement",
+        "edge",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "d542c47127cb6b0e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "line-movement",
+      "term": "Line Movement & Steam",
+      "short": "Wie sich Quoten verschieben, wenn Geld und Nachrichten eintreffen — und die scharfsinnigen Geldströme, bekannt als Steam.",
+      "definition": [
+        "Quoten sind lebende Preise. Sie öffnen nach dem Modell eines Buchmachers, bewegen sich dann, wenn Wetten eintreffen, Teamachrichten bekannt werden und schärfere Operatoren ihre Position anpassen. Ein sich verkürzender Preis ('Steam nach oben') signalisiert Geld, das dieses Ergebnis unterstützt; ein steigender Preis signalisiert das Gegenteil. Die meisten Bewegungen sind routinemäßiges Rebalancing, aber schnelle, synchronisierte Verkürzungen über viele Bücher hinweg — Steam — markieren oft respektiertes Geld, das den Markt betritt.",
+        "Die Bewegung ist für einen Value-Bettor auf zwei Arten wichtig. Frühzeitig genommen bedeutet ein Preis, der später steamt, normalerweise, dass du die Closing Line geschlagen hast. Und ein Preis, der sich nach deiner Wette verschlechtert, ist eine Warnung, dass deine Sicht mit informiertem Geld nicht übereinstimmt. Das Verfolgen unseres veröffentlichten Preises gegen spätere Bewegungen ist eine der Gesundheitsprüfungen hinter der Signalspalte des Screeners."
+      ],
+      "example": "Ein Team öffnet bei 2.10 und notiert eine Stunde vor Anpfiff bei 1.85 über den gesamten Markt. Die implizierte Wahrscheinlichkeit verschob sich von 47,6% → 54,1%. Jeder, der das 2.10-Ticket hält, besitzt jetzt eine Wette, die der Markt selbst mit +14% EV bewertet.",
+      "related": [
+        "closing-line-value",
+        "sharp-and-soft-bookmakers",
+        "value-bet"
+      ],
+      "see": [
+        {
+          "label": "Signal column in the screener",
+          "href": "/screener"
+        }
+      ],
+      "_src_hash": "8230946f4d53d082",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "sharp-and-soft-bookmakers",
+      "term": "Sharp vs Soft Bookmakers",
+      "short": "Sharps akzeptieren Gewinner und bieten genaue niedrig-marginale Quoten; Softs umwerben Gelegenheitsspieler und limitieren Gewinner schnell.",
+      "definition": [
+        "Sharp Bookmakers (und Wettbörsen) arbeiten mit niedrigen Margen, akzeptieren hohe Einsätze und bilden ihre Quoten anhand des Profi-Geldstroms – ihre Linien gelten als Marktwahrheit. Soft Bookmakers zielten auf Freizeitspieler mit Boni und Promotionen, arbeiten mit höheren Margen, reagieren langsamer auf Nachrichten und beschränken Konten von Dauergewinnern.",
+        "Die praktische Edge-Struktur folgt direkt daraus: Wert findet sich am häufigsten bei Softs, deren langsame oder promotionstechnisch geprägte Preisgestaltung hinter dem Sharp-Konsens zurückbleibt. Der Abgleich der Quote eines Soft-Books gegen die Sharp/Konsens-Referenzlinie ist genau das Muster, das unsere Value-Erkennung nutzt. Der Kompromiss, den man kennen sollte: konsistentes Annehmen dieser Quoten führt typischerweise zu Einsatzlimits bei Soft-Betreibern – ein Ehrenzeichen, aber eine echte Einschränkung."
+      ],
+      "example": "Sharp-Konsens bewertet eine Seite mit 1,95 (faire ~51%); ein Soft-Book zeigt immer noch 2,15 von gestern. Diese 10%-Lücke ist ein klassischer Soft-Book-Value-Spot – genau die Art von Diskrepanz, die innerhalb weniger Stunden verschwindet.",
+      "related": [
+        "bookmaker-margin",
+        "closing-line-value",
+        "line-movement"
+      ],
+      "see": [
+        {
+          "label": "Bookmaker reviews",
+          "href": "/bookmakers"
+        }
+      ],
+      "_src_hash": "089eebf382cf0e6f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "arbitrage-betting",
+      "term": "Arbitrage Betting (Arbing)",
+      "short": "Alle Ausgänge bei verschiedenen Wettanbietern zu Quoten absichern, die einen garantierten kleinen Gewinn ermöglichen.",
+      "definition": [
+        "Eine Arbitrage entsteht, wenn Unterschiede zwischen Wettanbietern es dir ermöglichen, jeden Ausgang abzudecken und unabhängig vom Ergebnis einen Gewinn zu sichern — die kombinierte implizite Wahrscheinlichkeit deiner gewählten Quoten fällt unter 100%. Arbitragen entstehen, wenn Buchmacher unterschiedliche Einschätzungen haben oder bei Nachrichten verzögert reagieren, und zahlen typischerweise 1–4% des Gesamteinsatzes.",
+        "Die Haken sind praktischer Natur. Arbitragen erfordern hohes Umsatzvolumen für kleine Renditen, präzise Einsatzberechnungen und Schnelligkeit — Quoten verschwinden in Minuten. Wettanbieter erkennen das Muster schnell und reagieren mit Einsatzlimits oder Kontosperrungen. Annullierte Wetten bei einem Anbieter können das andere Bein gefährlich exponieren. Es ist ein echtes, aber mühsames Geschäft — näher an Logistik als an Wetten."
+      ],
+      "example": "Anbieter A: Heimsieg 2,10 (47,6%). Anbieter B: Auswärts+Unentschieden (X2) 2,15 (46,5%). Zusammen 94,1% < 100%. Mit Einsätzen von £51,20 und £48,80 erhältst du ~£107,50 unabhängig vom Spielausgang — etwa +5,9% auf £100 Gesamteinsatz.",
+      "related": [
+        "bookmaker-margin",
+        "value-bet",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "c70334cf2d0ed4e6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "cash-out",
+      "term": "Cash Out",
+      "short": "Wette vorzeitig zu einem vom Buchmacher angebotenen Kurs abschließen — bequem, aber fast immer unter fairem Wert.",
+      "definition": [
+        "Cash Out ermöglicht es dir, eine Live-Wette vor Spielende zu schließen: der Buchmacher bietet einen Rückkaufbetrag basierend auf der aktuellen Gewinnwahrscheinlichkeit deiner Wette an. Gewinnpositionen können früh realisiert werden, Verlustpositionen teilweise gerettet. Es fühlt sich nach Kontrolle an, weshalb es intensiv vermarktet wird.",
+        "Die Mechanik ist weniger kundenfreundlich: die Cash-Out-Quote ist der faire aktuelle Wert deines Tickets minus eine neue Marge — oft größer als die Marge der ursprünglichen Wette. Regelmäßiges Cash Out kostet dich EV zweifach. Wenn du Positionen aktiv handeln möchtest, erfüllt eine Börse mit transparenten Back/Lay-Quoten dieselbe Funktion zu ehrlichen Preisen; hast du Value-Wetten, besteht die Disziplin normalerweise darin, sie bis zum Ende laufen zu lassen."
+      ],
+      "example": "Deine £10 zu 3.00 hat 70% Chancen zu gewinnen spät im Spiel. Fairer Ticketwert = 0,70 × £30 = £21. Ein typisches Cash-Out-Angebot von £18,50 kostet dich stillschweigend £2,50 — ein Abschlag von 12% für den Button.",
+      "related": [
+        "expected-value",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "51e449202dcc787e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "free-bet",
+      "term": "Free Bet",
+      "short": "Ein Bookmaker-Guthaben mit Kapital des Betreibers — Gewinne gehören dir, der Einsatz wird nicht zurückerstattet.",
+      "definition": [
+        "Eine Free Bet ist Promotionsguthaben: Platziere sie, und gewinnt sie, behältst du die Gewinne, aber nicht den Einsatz selbst ('Einsatz nicht zurückerstattet', ENR). Eine €10 Free Bet mit einer Quote von 4,00 zahlt €30, nicht €40. Da der Einsatz nie dir gehört, ist der echte Wert des Guthabens grob sein Nennwert mal (1 − 1/Quote) — deshalb extrahieren Free Bets auf höhere Quoten mehr Wert.",
+        "Free Bets sind die Währung von Willkommensboni und Promotionen. Verwendet man sie unüberlegt auf kurze Favoriten, liefert die Quote einen Bruchteil des Nennwerts; bewusst eingesetzt bei Quoten von 3,00–5,00 konvertieren sie zu 65–80% des Nennwerts im Erwartungswert. Lies immer die zugehörigen Bedingungen: Ablaufdaten, Mindestquoten und Marktbeschränkungen bestimmen den echten Wert des Guthabens."
+      ],
+      "example": "€20 Free Bet bei Quote 5,00: gewinnt 20% der Zeit €80 Gewinn → EW = €16, also 80% des Nennwerts. Dasselbe Guthaben bei 1,40 bringt €8 × ... ≈ EW €5,70 — unter 30% des Nennwerts.",
+      "related": [
+        "wagering-requirements",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Current bonuses with real terms",
+          "href": "/bonuses"
+        }
+      ],
+      "_src_hash": "e8a48bb840d0fa67",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "wagering-requirements",
+      "term": "Einsatzanforderungen (Rollover)",
+      "short": "Wie oft ein Bonus eingesetzt werden muss, bevor eine Auszahlung möglich ist — die Kennzahl, die entscheidend ist, ob ein Angebot etwas wert ist.",
+      "definition": [
+        "Ein „€50 Bonus, 5x Einsatz bei Min-Quoten 1,5",
+        ",",
+        " bedeutet, dass Sie €250 an qualifizierten Wetten platzieren müssen, bevor der Bonus in Guthaben umgewandelt wird, das Sie abheben können. Jeder erzwungene Einsatz bringt dem Anbieter seine Marge, also liegen die realen Kosten zum Erfüllen bei ungefähr Umsatz × Marge: die beworbene Summe schrumpft mit jedem erforderlichen Durchgang durch das Angebot.",
+        "Der Rollover ist die mit Abstand wichtigste Zeile in den Bonusbedingungen — deutlich wichtiger als der beworbene Betrag selbst. Ein kleiner Bonus mit 1x Umsatz schlägt routinemäßig einen großen mit 10x. Achten Sie auch auf die Nebenbedingungen: Mindestquoten (höhere Mindestwerte erzwingen riskantere Clearing-Wetten), Marktausschlüsse, maximale Einsätze pro Wette und Verfallsdaten, die unvollendete Boni stillschweigend ungültig machen."
+      ],
+      "example": "€40 Bonus, 8x Rollover, ~5% durchschnittliche Marge: zu erwartende Clearing-Kosten ≈ €320 × 5% = €16. Der realistische Wert des Bonus liegt eher bei €24 als €40 — und negativ, wenn eine 7-Tage-Frist Sie zu übereilten Wetten zwingt.",
+      "related": [
+        "free-bet",
+        "bookmaker-margin"
+      ],
+      "see": [
+        {
+          "label": "Offers compared with wagering shown",
+          "href": "/bonuses"
+        }
+      ],
+      "_src_hash": "9640d67e0723ae88",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "void-bet",
+      "term": "Void Bet (Push)",
+      "short": "Eine stornierte Wette: Einsatz zurückerstattet, abgewickelt als weder gewonnen noch verloren.",
+      "definition": [
+        "Eine Wette wird storniert, wenn sie nicht fair abgewickelt werden kann: Das Match wird verschoben oder abgebrochen, ein namentlich genannter Spieler spielt nicht, eine Ganzzahl-Handicap oder Totals-Linie landet exakt (ein Push), oder der Wettanbieter bricht eine offensichtliche Quotierungsfehlern auf (palpable error, 'palp'). Ihr Einsatz kommt zurück und die Wette wird als weder Gewinn noch Verlust verbucht.",
+        "Voids sind für die Ehrlichkeit der Aufzeichnungen wichtig. In unserer Statistik für abgewickelte Wetten verbucht ein Void exakt 0 Einheiten — es ist von der Gewinnquote ausgeschlossen und Einsätze werden nicht als Umsatz gezählt. Bei Kombiwetten senkt ein storniertes Bein das Ticket nicht; das Bein wird entfernt und die kombinierten Quoten werden ohne es neu berechnet."
+      ],
+      "example": "Asian Handicap −1.0 und der Favorit gewinnt 2–1: die Ein-Tor-Differenz landet exakt auf der Linie, die Wette pusht, und Ihr Einsatz von £15 wird einfach zurückerstattet.",
+      "related": [
+        "settlement",
+        "asian-handicap",
+        "over-under"
+      ],
+      "see": [],
+      "_src_hash": "bdffd6863e31d20a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "settlement",
+      "term": "Settlement (Grading)",
+      "short": "Eine Wette gegen das Endergebnis als gewonnen, verloren oder ungültig einstufen — und die Vertrauensprobe für jeden Tippgeber.",
+      "definition": [
+        "Settlement ist die Einstufung einer Wette gegen das Endergebnis: gewonnen, verloren oder ungültig, wobei der Gewinn aus den tatsächlich genommenen Quoten berechnet wird. Für einen einzelnen Wetter ist es Buchhaltung; für jeden, der Tips veröffentlicht, ist es die gesamte Grundlage der Glaubwürdigkeit. Eine Bilanz hat nur dann einen Wert, wenn jeder veröffentlichte Tip bewertet wird — zum veröffentlichten Kurs, gegen das offizielle Ergebnis, mit einbezogenen Verlusten.",
+        "Die klassischen Tippgeber-Betrügereien sind Settlement-Betrügereien: das Löschen von Verlierern, die Bewertung nach besseren Quoten als verfügbar waren, oder das stille Umklassifizieren von Verlusten als ‚Unentschieden'. Unsere Infrastruktur ist genau dagegen aufgebaut: Jeder Tip wird vor Spielbeginn mit seinem Kurs archiviert, Ergebnisse werden automatisch aus offiziellen Endergebnissen bewertet, und danach wird nichts mehr bearbeitet — die Archivseiten bleiben online, Gewinne und Verluste gleichermaßen."
+      ],
+      "example": "Tip archiviert bei 2.30 vor Spielbeginn. Endergebnis bewertet ihn als Gewinn: +1.30 Einheiten bei flachen Einsätzen. Hätte er verloren, würde dieselbe Seite permanent −1.00 anzeigen — diese Dauerhaftigkeit ist der Sinn.",
+      "related": [
+        "void-bet",
+        "flat-staking",
+        "tipster"
+      ],
+      "see": [
+        {
+          "label": "Browse settled days",
+          "href": "/predictions/daily"
+        }
+      ],
+      "_src_hash": "7ac0c0dd355ffceb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "roi-and-yield",
+      "term": "ROI / Yield",
+      "short": "Gewinn als Prozentsatz des Gesamteinsatzes — die sauberste einzelne Kennzahl zum Vergleich von Wettaufzeichnungen.",
+      "definition": [
+        "Yield (im Wettgeschäft oft ROI genannt) teilt den Nettogewinn durch den Gesamteinsatz: 100 Wetten à 1 Einheit mit einem Gewinn von 6 Einheiten ergeben eine Yield von 6%. Da die Yield durch den Umsatz normalisiert wird, können Sie Aufzeichnungen unterschiedlicher Größe und Quotenprofile fair vergleichen — anders als Rohgewinn, der einfach nur mehr Einsätze belohnt.",
+        "Kontextualisierung: langfristige Yields von 3–8% sind starkes professionelles Terrain; zweistellige Yields über große Stichproben sind selten und schrumpfen meist mit wachsendem Stichprobenumfang. Eine spektakuläre Yield über 30 Wetten ist Varianz, nicht Geschick — lesen Sie Yield immer zusammen mit der Anzahl der abgerechneten Wetten, und seien Sie misstrauisch bei jeder Aufzeichnung, die niemals eine Verlustphase zeigt."
+      ],
+      "example": "120 abgerechnete Tips bei pauschalen 1-Einheit-Einsätzen, netto +7,9 Einheiten: Yield = 7,9 / 120 = 6,6%. Dieselben +7,9 Einheiten über 400 Wetten würden eine Yield von 2,0% darstellen — eine materiell schwächere (aber immer noch positive) Aufzeichnung.",
+      "related": [
+        "win-rate",
+        "flat-staking",
+        "variance"
+      ],
+      "see": [
+        {
+          "label": "Tipster ROI on the leaderboard",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "5f6b7fb3c60444ed",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "win-rate",
+      "term": "Gewinnquote (Strike Rate)",
+      "short": "Der Prozentsatz der gewonnenen Wetten — isoliert bedeutungslos, zusammen mit durchschnittlichen Quoten aussagekräftig.",
+      "definition": [
+        "Die Gewinnquote ist der Anteil der abgerechnetenen Wetten, die gewonnen haben. Isoliert ist sie die am häufigsten manipulierte Kennzahl im Wettmarketing: Eine Gewinnquote von 80% klingt spektakulär und wird trivial erreicht, indem man 1,10-Favoriten spielt — während man Geld verliert. Umgekehrt ist eine Gewinnquote von 35% ausgezeichnet, wenn die durchschnittliche Quote über 3,00 liegt.",
+        "Die Break-Even-Gewinnquote für einen Rekord ist 1 geteilt durch die durchschnittlichen Dezimalquoten: Bei durchschnittlichen Quoten von 2,50 benötigen Sie 40% zum Ausgleich. Alles über Break-Even ist Vorteil; alles darunter ist Verlust in Prozentform verkleidet. Lesen Sie Gewinnquote, durchschnittliche Quote und Yield zusammen über eine angegebene Anzahl von Wetten — jeder Rekord, der nur die Gewinnquote angibt, versteckt etwas."
+      ],
+      "example": "Durchschnittliche Quote 2,20 → Break-Even 45,5%. Ein Rekord von 48% bei diesen Quoten ergibt (0,48 × 2,20) − 1 = +5,6%. Dieselbe 48% bei durchschnittlichen Quoten 2,00 verliert 4% des Umsatzes.",
+      "related": [
+        "roi-and-yield",
+        "flat-staking",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "adaaf47d9aff3acd",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "variance",
+      "term": "Varianz",
+      "short": "Die natürlichen Schwankungen zwischen Ergebnissen und Erwartung — warum gute Wetten verlieren und schlechte Bilanzserien vorübergehend gut aussehen.",
+      "definition": [
+        "Varianz ist das statistische Rauschen zwischen dem, was im Durchschnitt passieren sollte, und dem, was in einer endlichen Stichprobe tatsächlich passiert. Beim Wetten ist sie brutal und unvermeidbar: eine echte Wette mit 55%-Wahrscheinlichkeit verliert fast die Hälfte der Zeit; ein Portfolio mit echtem +5%-Edge kann nach zweihundert Wetten im Minus stehen; ein Münzwurf-Tipster kann einen glorreichen Monat zeigen.",
+        "Varianz ernst zu nehmen ändert das Verhalten. Sie bestimmt die Einsatzgröße (siehe Bankroll-Management), sie setzt Bewertungszeiträume (hunderte von Wetten, nicht dutzende), und sie schützt vor Verzweiflung ebenso wie vor Euphorie. Darum zählen vollständige transparente Statistiken mehr als Siegesserien — über eine lange genug Stichprobe hinweg wird Varianz ausgeglichen und nur der Edge, positiv oder negativ, bleibt übrig."
+      ],
+      "example": "500 unabhängige Wetten zu je 50% / Quote 2.10 (echter +5%-Edge): etwa einer von sechs Wettenden sitzt nach allen 500 Wetten immer noch im Minus — reine Varianz, kein Fehler gemacht.",
+      "related": [
+        "expected-value",
+        "bankroll-management",
+        "win-rate"
+      ],
+      "see": [],
+      "_src_hash": "d5852e771c63e316",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "in-play-betting",
+      "term": "In-Play (Live) Wetten",
+      "short": "Wetten während des laufenden Events zu Quoten, die sich mit jedem wichtigen Moment neu bewerten.",
+      "definition": [
+        "In-Play Wetten halten Märkte während des Spiels offen und bewerten Quoten kontinuierlich neu, wenn Tore, Verwarnungen und Momentum eintreten. Das bietet echte analytische Chancen — auf Spielsituationen schneller oder rationaler reagieren als der Algorithmus — aber die Umgebung ist auf Impulskäufe ausgerichtet: kurze Aussetzungszeiten, blinkende Quoten und eine Feed-Verzögerung, die bedeutet, dass das Buch meist mehr weiß als dein Stream zeigt.",
+        "Zwei strukturelle Warnungen. Live-Margen sind typischerweise breiter als vor Spielbeginn, sodass die durchschnittliche In-Play Quote ungünstiger ausfällt. Und Häufigkeit ist der Feind der Disziplin: Dutzende von Micro-Entscheidungen pro Spiel vervielfachen die Exposition gegenüber Marge und emotionalen Reaktionen. Wenn du Live wetten möchtest, lege Einstiegspunkte und Einsätze vor Anpfiff fest und behandle das Nachjagen eines frühen Verlusts als die rote Flagge, die es ist."
+      ],
+      "example": "Ein Favorit mit Quote 1.70 vor Spielbeginn kassiert früh ein Tor: Live-Quoten springen auf 2.90 (implizierte 34%). Wenn dein Pre-Match Modell das Comeback-Szenario näher bei 42% bewertet hat, ist diese Überreaktion der Quote — nicht die Aufregung — der einzige rationale Grund zu wetten.",
+      "related": [
+        "cash-out",
+        "line-movement",
+        "bankroll-management"
+      ],
+      "see": [],
+      "_src_hash": "6048484c8edf3b0c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "xg",
+      "term": "Expected Goals (xG)",
+      "short": "Eine Metrik zur Schussqualität, die schätzt, wie viele Tore ein Team aus seinen Chancen hätte erzielen „sollen.",
+      "definition": [
+        "Expected Goals ordnet jedem Schuss eine Wahrscheinlichkeit zu, basierend auf historischen Ergebnissen ähnlicher Chancen — Entfernung, Winkel, Körperteil, Assist-Art. Die Summe ergibt das xG eines Teams in einem Spiel oder einer Saison: ein Maß für die Chancenqualität, das Abschlussglück ausklammert. Ein Team, das 1:0 gewinnt mit 0,4 xG gegen 2,3, verdankt das seinem Torwart, egal was die Tabelle sagt.",
+        "Für Wettende ist xG ein Formsignal, das schneller stabil wird als Ergebnisse: Teams, die ihre xG massiv übererfüllen, tendieren zur Regression, und der Markt hinkt dieser Regression oft hinterher. Seine Grenzen sind ebenso wichtig — es ignoriert Spielsituation und Schuss-Kontext über sein Modell hinaus, unterscheidet sich zwischen Anbietern, und ein Spiel xG ist fast genauso rauschig wie ein Spiel Tore. Nutzen Sie es als Input, nie als Urteil."
+      ],
+      "example": "In den letzten sechs Spielen erzielte ein Team 11 Tore aus 6,1 xG. Wettmärkte, die nach diesen 11 Toren kalkulieren, könnten eine Abschlussglückssträhne übergewichten, die xG mit ~80% über nachhaltiger Rate laufen lässt.",
+      "related": [
+        "variance",
+        "line-movement"
+      ],
+      "see": [],
+      "_src_hash": "be8ddc67f6613784",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "tipster",
+      "term": "Tipster",
+      "short": "Jemand, der Wettempfehlungen veröffentlicht — verlassen Sie sich auf das Archiv, niemals auf Screenshots.",
+      "definition": [
+        "Ein Tipster veröffentlicht empfehlenswerte Wetten, kostenlos oder gegen Bezahlung. Die Aufmerksamkeitsökonomie macht das Feld zu einem Minenfeld: Gewinner werden laut gepriesen, Verlustrekorde werden stillschweigend gelöscht, und Screenshots beweisen nichts. Der einzige aussagekräftige Beleg ist ein vollständiges, zeitgestempeltes Archiv: jeder Tipp vor dem Event eingereicht, nach den notierten Quoten bewertet, mit Verlustläufen so dauerhaft dokumentiert wie Gewinne.",
+        "Eine Checkliste, die auf jeden anwendbar ist (auch auf uns): Ist die Vollhistorie sichtbar, mit intakten Verlustläufen? Sind die notierten Quoten tatsächlich zum Veröffentlichungszeitpunkt verfügbar? Ist der Gewinn in flachen Einheiten über eine definierte Stichprobe angegeben? Besteht das Rekord bei Schlusskursen? Wer diese Fragen verweigert, verkauft Unterhaltung, keine Edge — zahlen Sie für Tipps nur, wenn das verifizierte Archiv Sie selbst bei halber Quote noch beeindrucken würde."
+      ],
+      "example": "Zwei Aussagen: 'Gewonnen 9 von 10!' versus '412 abgerechnete Tipps, +4,8% Rendite, Durchschnittsquote 2,31, vollständiges Archiv'. Die erste ist ein Marketingsatz; die zweite ist ein Rekord — und das Archiv ist das, was ihn zu einem macht.",
+      "related": [
+        "settlement",
+        "roi-and-yield",
+        "win-rate"
+      ],
+      "see": [
+        {
+          "label": "Our leaderboard with settled records",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "4790ca1012523b3c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-comparison",
+      "term": "Quotenvergleich",
+      "short": "Die Quoten jedes Buchmachers vor dem Wetten checken — der einfachste und zuverlässigste Vorteil, den es gibt.",
+      "definition": [
+        "Verschiedene Buchmacher bewerten denselben Markt unterschiedlich, routinemäßig um 5–10%. 2,20 statt 2,05 auf das gleiche Ergebnis zu nehmen ist eine 7%-ige Verbesserung der Rendite ohne zusätzliches Risiko — über viele Wetten hinweg summiert sich ein Quotenvergleich häufig zwischen einer negativen Bilanz und Gewinnen auf.",
+        "Das ist die einfachste professionelle Gewohnheit zum Kopieren: Konten bei mehreren Buchmachern führen und immer die besten verfügbaren Quoten nehmen. Es ist auch das Fundament der Wertfeststellung — unser Modell vergleicht die Quote jedes Buchmachers mit dem margin-freien Konsens, und jede Match-Seite zeigt die besten verfügbaren Quoten pro Ergebnis, sodass der Vergleich bereits erledigt ist."
+      ],
+      "example": "Dein durchschnittlicher Einsatz liegt bei Quoten ~2,00 und du setzt 100 × £10 pro Monat. Systematisch 4% bessere Quoten zu nehmen bringt etwa £40 im Monat — die gesamte Marge zurückerstattet, ganz ohne Vorhersagekompetenz.",
+      "related": [
+        "bookmaker-margin",
+        "fair-odds",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [
+        {
+          "label": "Best odds on every match page",
+          "href": "/predictions"
+        }
+      ],
+      "_src_hash": "558fd6fb31af123b",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "self-exclusion",
+      "term": "Selbstausschluss und Einsatzlimits",
+      "short": "Formale Instrumente, die dich aus dem Glücksspiel sperren — Einzahlungsgrenzen, Auszeiten und operatorübergreifende Ausschlusssysteme.",
+      "definition": [
+        "Jeder lizenzierte Anbieter muss Kontrollinstrumente anbieten: Einzahlungs-, Verlust- und Einsatzlimits; Sitzungserinnerungen; kurze ‚Auszeit'-Pausen; und vollständiger Selbstausschluss, der das Konto für Monate oder Jahre sperrt. Nationale Systeme erweitern dies auf den gesamten Markt auf einmal — GAMSTOP im UK sperrt dich mit einer Registrierung von jedem lizenzierten Anbieter aus, und Blockierungssoftware wie Gamban erfasst Seiten, die die Systeme übersehen.",
+        "Die ehrliche Darstellung: Dies sind nicht nur Instrumente für ‚Problemspieler'. Einzahlungslimits, die an einem ruhigen Tag gesetzt werden, sind eine billige Versicherung gegen einen erhitzten Abend; eine Auszeit nach einer Pechsträhne ist Bankroll-Management für den Verstand. Wenn Wetten nicht mehr wie Unterhaltung wirken — Verluste nachjagen, Einsätze verheimlichen, Geld einsetzen, das eigentlich eine andere Bestimmung hatte — sind die oben genannten Instrumente plus kostenlose vertrauliche Hilfeleitungen der nächste richtige Zug."
+      ],
+      "example": "Ein monatliches Einzahlungslimit von 100 € in den Kontoeinstellungen dauert zwei Minuten. Es kann in der Hitze des Gefechts nicht erhöht werden: Erhöhungen werden erst nach einer Abkühlungsphase wirksam — genau das ist der Sinn.",
+      "related": [
+        "bankroll-management"
+      ],
+      "see": [
+        {
+          "label": "Responsible gambling help & tools",
+          "href": "/responsible-gambling"
+        }
+      ],
+      "_src_hash": "c50087ed518f0a33",
+      "_model": "claude-haiku-4-5-20251001"
+    }
+  ]
+}

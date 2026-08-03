@@ -1,0 +1,90 @@
+---
+import Base from '../layouts/Base.astro';
+import { guidesFor } from '../lib/guides.js';
+import { t, lhref } from '../i18n/index.js';
+
+const { lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
+
+const guides = guidesFor(lang);
+const CATS = [
+  { key: 'Basics', icon: '🎓' },
+  { key: 'Markets', icon: '📊' },
+  { key: 'Strategy', icon: '🧠' },
+  { key: 'Bookmakers', icon: '🏦' },
+  { key: 'Countries', icon: '🌍' },
+];
+const byCat = (k) => guides.filter((g) => g.cat === k);
+
+const title = T('gd.hubTitle');
+const description = T('gd.hubDesc');
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Betting Guides',
+  itemListElement: guides.map((g, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: g.title,
+    url: new URL(L(`/guides/${g.slug}`) + '/', 'https://ai-betting-tips.com').href,
+  })),
+};
+---
+<Base lang={lang} i18nPath="/guides" title={title} description={description} schema={schema} active="">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href={L('/')}>{T('crumb.home')}</a><span>/</span>{T('gd.crumb')}</div>
+      <h1>{T('gd.hubH1pre')} <em>{T('gd.hubH1em')}</em></h1>
+      <p class="lead">{T('gd.hubLead')}</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        {CATS.map((c) => byCat(c.key).length > 0 && (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">{c.icon} <b>{T(`gd.cat${c.key}`)}</b> — {T(`gd.blurb${c.key}`)}</h2>
+            </div>
+            <div class="bt-grid">
+              {byCat(c.key).map((g) => (
+                <a href={L(`/guides/${g.slug}`)} class="bt-tile">
+                  <div class="ic">📗</div>
+                  <div>
+                    <h4>{g.title}</h4>
+                    <p>{g.desc}</p>
+                  </div>
+                  <span class="arr">→</span>
+                </a>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        <section class="seo">
+          <h2>{T('gd.seoH2')}</h2>
+          <p>{T('gd.seoP')}</p>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">📚</span> {T('gd.boxAll')}</div>
+          {guides.map((g) => (
+            <a class="tm" href={L(`/guides/${g.slug}`)}><span class="dot"></span>{g.nav}</a>
+          ))}
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">⚡</span> {T('gd.putToWork')}</div>
+          <a class="tm" href={L('/glossary')}><span class="dot"></span>{T('gd.lnkGlossary')}</a>
+          <a class="tm" href="/tools"><span class="dot"></span>{T('gd.lnkTools')}</a>
+          <a class="tm" href="/model"><span class="dot"></span>{T('ft.ourModel')}</a>
+          <a class="tm" href="/research"><span class="dot"></span>{T('ft.research')}</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

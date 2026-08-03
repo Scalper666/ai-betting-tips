@@ -1,0 +1,1655 @@
+{
+  "lang": "fr",
+  "guides": [
+    {
+      "slug": "how-to-read-betting-odds",
+      "title": "Comment lire les cotes de paris",
+      "nav": "Lire les cotes",
+      "desc": "Cotes décimales, fractionnelles et américaines expliquées avec un exemple concret — plus comment convertir n'importe quelle cote en probabilité implicite.",
+      "cat": "Basics",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "Les cotes sont des prix, pas des prédictions",
+          "ps": [
+            "Une cote de paris remplit deux fonctions à la fois : elle indique combien rapporte un pari gagnant, et elle donne une indication sur la probabilité que le bookmaker attribue à l'issue. Aucune n'est une garantie. Des cotes de 1,50 ne signifient pas qu'une équipe gagnera — elles indiquent que le bookmaker pratique un prix correspondant à environ 67% de chances, moins sa propre commission.",
+            "Dès lors que vous voyez les cotes comme des prix sur un marché, beaucoup de logique de pari devient évidente. Les prix varient entre les bookmakers, ils se modifient au fil des paris et des informations, et — comme tout marché — certains prix sont tout simplement mal tarifiés. Les identifier est tout l'enjeu pour les parieurs sérieux."
+          ]
+        },
+        {
+          "h": "Cotes décimales",
+          "ps": [
+            "Les cotes décimales sont la norme en Europe, en Afrique et sur la plupart des sites de paris mondiaux, et c'est le format le plus facile à utiliser. Le nombre représente votre gain total par unité misée, mise incluse. Des cotes de 2,75 signifient qu'un pari gagnant de 10€ rapporte 27,50€ — vos 10€ plus un profit de 17,50€.",
+            "Deux réflexes utiles : tout ce qui est en dessous de 2,00 est favori (l'issue est considérée comme plus probable que non), et la probabilité implicite est simplement 1 divisé par les cotes. 1 ÷ 2,75 ≈ 36,4%."
+          ]
+        },
+        {
+          "h": "Cotes fractionnelles",
+          "ps": [
+            "Les cotes fractionnelles (5/2, 11/10, 4/6) sont le format traditionnel du Royaume-Uni et d'Irlande. La fraction représente le profit par rapport à la mise : 5/2 signifie 5€ de profit pour chaque 2€ misés, donc un pari de 10€ à 5/2 rapporte 35€ au total (25€ de profit plus votre mise).",
+            "Pour convertir en décimales, divisez la fraction et ajoutez 1 : 5/2 → 2,5 + 1 = 3,50. Les fractions inférieures à 1 (comme 4/6) sont des favoris."
+          ]
+        },
+        {
+          "h": "Cotes américaines",
+          "ps": [
+            "Les cotes américaines se présentent comme des nombres positifs ou négatifs ancrés sur une mise de 100$. Les négatifs (−150) indiquent combien vous devez miser pour gagner 100$ : risquer 150$ pour faire 100$ de profit. Les positifs (+220) indiquent le profit sur une mise de 100$ : risquer 100$ pour faire 220$ de profit.",
+            "Conversion en décimales : pour les cotes négatives, 100 ÷ 150 + 1 = 1,67 ; pour les cotes positives, 220 ÷ 100 + 1 = 3,20. Si vous pariez surtout sur des marchés décimaux, convertir les prix américains avant de comparer vaut le coup — notre convertisseur ci-dessous le fait instantanément."
+          ]
+        },
+        {
+          "h": "Des cotes à la probabilité implicite",
+          "ps": [
+            "La probabilité implicite est la chance à laquelle un prix serait parfaitement équitable. Pour les cotes décimales, la formule est 1 ÷ cotes × 100. Des cotes de 1,50 impliquent 66,7%, des cotes de 3,00 impliquent 33,3%, des cotes de 10,0 impliquent 10%.",
+            "Additionnez les probabilités implicites de chaque issue d'un marché et vous obtiendrez plus de 100% — généralement 103–108% au football. Cette portion supplémentaire est la marge du bookmaker, et c'est pourquoi comparer les prix entre bookmakers importe : le même événement, tarifé à 1,90 chez un bookmaker et 2,02 chez un autre, est un pari différent."
+          ]
+        }
+      ],
+      "example": "Manchester City sont à 1,44 pour battre Fulham, le match nul à 4,80, Fulham à 7,50. Probabilités implicites : 69,4% + 20,8% + 13,3% = 103,5%. Les 3,5 points au-dessus de 100 représentent la marge. Si votre propre estimation des chances de City est supérieure à 69,4%, les 1,44 peuvent offrir de la valeur ; si elle est inférieure, le prix joue contre vous peu importe la probabilité que vous accordez à une victoire de City.",
+      "takeaways": [
+        "Cotes décimales = gain total par unité misée ; 1 ÷ cotes = probabilité implicite.",
+        "Les cotes fractionnelles indiquent le profit par rapport à la mise ; les cotes américaines s'ancrent sur une mise de 100$.",
+        "Les probabilités implicites de chaque marché totalisent plus de 100% — l'excédent est la marge du bookmaker.",
+        "La même issue à des prix différents est un pari différent : comparez avant de miser."
+      ],
+      "faq": [
+        {
+          "q": "Quel format de cotes dois-je utiliser ?",
+          "a": "Celui que votre marché utilise au quotidien — mais apprenez à convertir en décimales, car la probabilité implicite (1 ÷ cotes) y est la plus facile à calculer. La plupart des sites vous permettent de changer de format dans les paramètres."
+        },
+        {
+          "q": "Les cotes basses signifient-elles un pari sûr ?",
+          "a": "Non. Des cotes de 1,20 impliquent environ 83% de chance, ce qui perd quand même environ une fois sur six. Les favoris aux cotes courtes perdent assez souvent pour qu'aucun pari individuel ne soit sûr, et les accumuler amplifie le risque."
+        },
+        {
+          "q": "Pourquoi les différents bookmakers affichent-ils des cotes différentes ?",
+          "a": "Chacun fixe ses propres prix à partir de son propre modèle, de ses risques et de sa marge. Les différences de 5–10% sur la même issue sont courantes, c'est pourquoi comparer les cotes entre plusieurs bookmakers est l'une des rares améliorations gratuites disponibles pour tous les parieurs."
+        }
+      ],
+      "related": [
+        "value-betting-explained",
+        "bookmaker-margin-explained",
+        "how-ai-football-predictions-work"
+      ],
+      "glossary": [
+        "odds-formats",
+        "implied-probability",
+        "fair-odds"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Convert any price between decimal, fractional and American — with implied probability"
+        }
+      ],
+      "_src_hash": "fddfa037b18c77ae",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "what-is-an-accumulator",
+      "title": "Qu'est-ce qu'un pari combiné ?",
+      "nav": "Paris combinés",
+      "desc": "Comment les cotes des paris combinés se multiplient, ce que cela fait à vos chances de gain, et les mathématiques honnêtes derrière pourquoi les combinés rapportent gros et perdent souvent.",
+      "cat": "Markets",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Un pari, plusieurs sélections",
+          "ps": [
+            "Un pari combiné (acca, parlay, combo) regroupe plusieurs sélections en un seul pari. Chaque sélection doit gagner ; une seule sélection perdante anéantit le ticket entier. En contrepartie, les cotes se multiplient plutôt que s'additionnent, ce qui permet à une mise modeste de générer un gros gain.",
+            "Trois sélections à 1.60, 1.75 et 1.90 se combinent pour 1.60 × 1.75 × 1.90 = 5.32. Un combiné de 10 € rapporte 53.20 € si les trois gagnent — bien plus que le gain total de 7.30 € que les mêmes 10 € répartis en trois paris simples généreraient."
+          ]
+        },
+        {
+          "h": "Ce que la multiplication fait à vos probabilités",
+          "ps": [
+            "Les cotes se multiplient, mais aussi les probabilités — à la baisse. Si chacune de ces trois sélections a une vraie chance de 60 %, le combiné gagne 0.6 × 0.6 × 0.6 = 21.6 % du temps. Cinq sélections de ce type : 7.8 %. Huit sélections : moins de 2 %.",
+            "C'est l'arbitrage que chaque combiné propose : des gains plus importants, un taux de réussite nettement plus faible. Il n'y a rien de mal à accepter cet arbitrage si vous le faites consciemment et en misant en conséquence — des mises petites, de l'argent que vous pouvez vous permettre de perdre entièrement."
+          ]
+        },
+        {
+          "h": "La marge se compose aussi",
+          "ps": [
+            "Chaque sélection porte la marge du bookmaker, et multiplier les sélections multiplie également la marge. Si le bookmaker conserve environ 5 % par sélection, un combiné triple incorpore à peu près 14 % de marge combinée, et un six-folds plus de 25 %. Les longs combinés sont structurellement parmi les paris les plus chers du menu.",
+            "Deux conséquences pratiques : gardez les combinés courts (2-4 sélections), et comparez les prix de chaque sélection séparément — une petite amélioration de prix par sélection se compose en votre faveur exactement comme la marge se compose contre vous."
+          ]
+        },
+        {
+          "h": "Comment notre site gère les combinés",
+          "ps": [
+            "Notre combiné quotidien regroupe les picks à la plus haute confiance de notre modèle provenant de différents matchs — confiance d'abord, précisément pour éviter de transformer les longshots en ticket loterie. Les cotes combinées et le prix de chaque sélection sont affichés ouvertement, et la calculatrice de combiné ci-dessous vous permet de reconstruire ou modifier le ticket et voir les mathématiques avant de miser.",
+            "Traitez tout combiné — le nôtre inclus — comme un divertissement avec un coût connu, pas comme un plan de revenus. Aucun modèle ne change l'arithmétique des probabilités multipliées."
+          ]
+        }
+      ],
+      "example": "Quatre sélections à 1.50 chacune : cotes combinées 5.06. Si la vraie chance de chaque sélection est les 66.7 % que le prix implique, le combiné gagne 19.7 % du temps — environ une semaine sur cinq. Le rendement de 50.60 € sur une mise de 10 € semble généreux jusqu'à ce que vous comptiez les quatre semaines perdantes autour.",
+      "takeaways": [
+        "Toutes les sélections doivent gagner ; les cotes — et marges — se multiplient.",
+        "La probabilité de gain chute rapidement avec chaque sélection ajoutée : cinq sélections à 60 % gagnent moins de 8 % du temps.",
+        "Les combinés courts (2-4 sélections) avec des prix comparés sont la version la moins chère du format.",
+        "Misez petit : la caractéristique déterminante des combinés est que la plupart d'entre eux perdent."
+      ],
+      "faq": [
+        {
+          "q": "Un pari combiné est-il meilleur que les paris simples ?",
+          "a": "Mathématiquement pire en valeur attendue, parce que les marges se composent à travers les sélections. Les paris simples préservent davantage votre avantage si vous en avez un ; les combinés échangent la valeur attendue pour la chance d'un gros gain d'une petite mise."
+        },
+        {
+          "q": "Que se passe-t-il si un match de mon combiné est reporté ?",
+          "a": "La plupart des bookmakers annulent cette sélection et recalculent le combiné aux cotes combinées des sélections restantes, donc un quatre-folds devient un trois-folds. Vérifiez les règles du bookmaker individuel — le traitement des matchs abandonnés varie."
+        },
+        {
+          "q": "Combien de sélections un combiné devrait-il avoir ?",
+          "a": "Si vous devez en avoir, 2-4. Au-delà, la marge composée et l'effondrement de la probabilité de gain transforment le ticket en entrée loterie — correct comme divertissement à mise modeste, mauvais comme stratégie de pari."
+        }
+      ],
+      "related": [
+        "bankroll-management-guide",
+        "common-betting-mistakes",
+        "how-to-read-betting-odds"
+      ],
+      "glossary": [
+        "accumulator",
+        "void-bet",
+        "variance"
+      ],
+      "tools": [
+        {
+          "href": "/tools/accumulator-calculator",
+          "label": "Build an acca and see combined odds, returns and implied probability"
+        }
+      ],
+      "_src_hash": "21bdb62c71e6f3dd",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bankroll-management-guide",
+      "title": "Gestion de bankroll pour parieurs",
+      "nav": "Gestion de bankroll",
+      "desc": "Unités, mise plate, mise en pourcentage et règles d'arrêt — le système ennuyeux qui détermine si la variance vous ruine ou vous ennuie simplement.",
+      "cat": "Strategy",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "Pourquoi la mise importe plus que la sélection",
+          "ps": [
+            "Deux parieurs peuvent placer les mêmes paris exactement et terminer la saison dans des mondes opposés : l'un va bien, l'autre est ruiné. La différence, c'est la mise. Les résultats de paris arrivent par séquences — les séries perdantes de 8–10 paris sont courantes même pour les parieurs vraiment bons — et la taille de vos mises par rapport à vos fonds détermine si une séquence normale est supportable.",
+            "Une bankroll est de l'argent mis de côté pour les paris que vous pouvez vous permettre de perdre entièrement. Pas le loyer, pas les objectifs d'épargne — un budget de divertissement avec une limite ferme. Tout ce qui suit suppose que cette ligne a été tracée honnêtement."
+          ]
+        },
+        {
+          "h": "Unités et mise plate",
+          "ps": [
+            "Divisez votre bankroll en unités — 100 unités est un défaut sensé, donc une bankroll de 500 € rend chaque unité à 5 €. La mise plate signifie parier le même 1 unité sur chaque sélection indépendamment de votre confiance. C'est la stratégie avec laquelle nous suivons notre propre modèle, car elle rend les résultats honnêtes : profit en unités, pas en histoires.",
+            "La vertu de la mise plate est qu'elle neutralise le mode d'échec classique : parier gros sur les 'coups sûrs' (qui perdent aux pires moments) et petit sur la valeur (c'est là que le profit à long terme réside réellement)."
+          ]
+        },
+        {
+          "h": "Mise en pourcentage",
+          "ps": [
+            "La mise en pourcentage parie une part fixe de votre bankroll actuelle — généralement 1–2% — donc les mises rétrécissent pendant les séries perdantes et croissent pendant les gagnantes. C'est mathématiquement plus difficile de faire faillite, au prix d'une récupération plus lente après une baisse puisque vous misez moins exactement quand vous avez besoin de remonter.",
+            "Une idée connexe, le critère de Kelly, dimensionne les mises à partir de votre avantage estimé. Le Kelly complet est beaucoup trop agressif pour les erreurs d'estimation réelles ; les praticiens qui l'utilisent du tout utilisent un quart ou moins. Pour la plupart des parieurs, la mise plate ou 1–2% en pourcentage capture presque tous les bénéfices sans aucun fardeau d'estimation."
+          ]
+        },
+        {
+          "h": "Règles qui sauvent les bankrolls",
+          "ps": [
+            "Fixez un plafond par pari (1–2 unités même quand enthousiaste), un arrêt en jour perdant (allez-vous, les rencontres seront là demain), et ne rattrapez jamais — augmenter les mises pour récupérer les pertes est le moyen le plus fiable de transformer une mauvaise semaine en catastrophe.",
+            "Suivez chaque pari : date, marché, cotes, mise, résultat. Un tableur ou notre format de journal de règlement publié fonctionne. Les parieurs qui tiennent des dossiers prennent de meilleures décisions pour une raison simple — les chiffres refusent de flatter la mémoire.",
+            "Si les paris cessent de ressembler à un passe-temps budgété, utilisez les limites de dépôt et les outils d'auto-exclusion que chaque bookmaker autorisé propose, et contactez des organisations comme GambleAware. Ce n'est pas une note de bas de page ; c'est une partie du système."
+          ]
+        },
+        {
+          "h": "",
+          "ps": []
+        }
+      ],
+      "example": "Bankroll de 500 €, mise plate de 1 unité (5 €), cotes moyennes de 2.00. Une série terrible de 10 paris perdus coûte 50 € — 10% de bankroll, ennuyeux mais supportable, et la stratégie continue sans changement. La même série en misant 50 € 'pour rattraper plus vite' coûte la bankroll entière. Sélections identiques, résultats opposés.",
+      "takeaways": [
+        "Bankroll = argent que vous pouvez perdre entièrement ; divisez-la en 100 unités.",
+        "La mise plate de 1 unité est le défaut honnête ; la mise en pourcentage de 1–2% est l'alternative durable.",
+        "Plafonnez les paris uniques, arrêtez les mauvais jours, ne rattrapez jamais les pertes.",
+        "Les dossiers écrits battent la mémoire — le profit se mesure en unités sur des centaines de paris, pas en moments forts."
+      ],
+      "faq": [
+        {
+          "q": "Quelle devrait être la taille de ma bankroll ?",
+          "a": "Tout ce que vous pouvez vraiment vous permettre de perdre sans conséquence — pour beaucoup de gens c'est petit, et c'est bien. Le système fonctionne identiquement à 100 € ou 10 000 € ; ce qui importe c'est la discipline unitaire, pas le total."
+        },
+        {
+          "q": "Devrais-je miser plus sur les sélections confiantes ?",
+          "a": "La confiance et la valeur ne sont pas la même chose, et la confiance de la plupart des parieurs corrèle mal avec les résultats. Si vous variez les mises du tout, gardez la plage serrée (1–2 unités) et basée sur l'avantage mesuré, pas sur le sentiment."
+        },
+        {
+          "q": "Quand devrais-je retirer les profits ?",
+          "a": "Une approche courante : fixez un jalon (disons +50% sur la bankroll de départ), retirez l'excédent et réinitialisez. Mettre en banque les gains périodiquement garde la bankroll un outil plutôt qu'un tableau de bord."
+        }
+      ],
+      "related": [
+        "common-betting-mistakes",
+        "value-betting-explained",
+        "what-is-an-accumulator"
+      ],
+      "glossary": [
+        "bankroll-management",
+        "flat-staking",
+        "kelly-criterion",
+        "variance",
+        "self-exclusion"
+      ],
+      "tools": [
+        {
+          "href": "/tipsters",
+          "label": "See our model's real settled record, tracked in flat 1-unit stakes"
+        }
+      ],
+      "_src_hash": "3ba97f5af83e8b4e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "value-betting-explained",
+      "title": "Value Betting Explained",
+      "nav": "Value betting",
+      "desc": "Ce que signifie réellement l'avantage, comment calculer l'espérance mathématique, et pourquoi les parieurs gagnants traquent les cotes mal évaluées plutôt que les favoris.",
+      "cat": "Strategy",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "Le cœur contre-intuitif",
+          "ps": [
+            "L'idée la plus importante en paris est que trouver les gagnants et faire de l'argent sont deux compétences différentes. Un pari sur un favori à 90% coté 1.05 gagne neuf fois sur dix et perd quand même de l'argent, car le prix paie moins que le risque ne le justifie. Un pari sur un outsider à 30% coté 4.00 perd sept fois sur dix et génère un profit, car le prix paie plus.",
+            "La value est l'écart entre les cotes proposées et la vraie probabilité du résultat. Les paris deviennent rentables uniquement quand vous trouvez des prix qui sous-estiment les chances réelles — et seulement dans ce cas. Tout le reste est du divertissement qui coûte cher."
+          ]
+        },
+        {
+          "h": "L'espérance mathématique en une formule",
+          "ps": [
+            "Espérance mathématique (EV) par unité misée : (probabilité × cotes) − 1. Si vous estimez les chances d'une équipe à 45% et le prix est 2.40, EV = 0.45 × 2.40 − 1 = +0.08 — huit centimes de profit à long terme par euro misé. À 2.10, la même estimation donne −0.055 : un pari perdant peu importe le résultat du match.",
+            "La formule est triviale ; l'estimation de probabilité est tout. Vos 45% doivent être plus proches de la vérité que les 41,7% implicites du marché (à 2.40, marge enlevée) pour que l'avantage soit réel. C'est un seuil très élevé sur les marchés modernes du football."
+          ]
+        },
+        {
+          "h": "Où se cache la value",
+          "ps": [
+            "Les grands marchés comme les cotes de match de Premier League sont efficients — des milliers de parieurs avisés poussent les prix proche de la vraie valeur. Les chasseurs de value cherchent là où l'attention est moindre : petits championnats, marchés de niche, cotes précoces avant la stabilisation du marché, et décalages de prix entre les bookmakers.",
+            "La comparaison de cotes est l'unique source de value accessible à tous sans aucun modèle : le meilleur prix disponible chez tous les bookmakers est régulièrement 3–8% mieux que le prix moyen. Prendre 2.02 au lieu de 1.90 sur le même résultat ne demande aucune prévision, juste un onglet supplémentaire."
+          ]
+        },
+        {
+          "h": "Comment notre screener applique cela",
+          "ps": [
+            "Notre modèle estime les probabilités à partir des taux de buts historiques (un cadre Poisson mélangé aux cotes du marché), les convertit en cotes équitables et les compare au meilleur prix disponible. Quand le prix dépasse les cotes équitables du modèle suffisamment, le pick obtient un score de value positif — c'est le chiffre dans la colonne Edge du screener.",
+            "Les vraies réserves : les probabilités du modèle sont des estimations avec des marges d'erreur, les avantages de quelques pourcents sont facilement des illusions, et même les véritables avantages perdent souvent — les profits en value betting émergent sur des centaines de paris, jamais en un weekend. Notre suivi publié de la closing line value existe précisément pour tester si les avantages du modèle sont réels."
+          ]
+        }
+      ],
+      "example": "Vous estimez un match nul à 30% (cotes équitables 3.33). Bookmaker A le cote 3.10 — EV négatif, passez. Bookmaker B le cote 3.60 : EV = 0.30 × 3.60 − 1 = +0.08. Même match, même estimation, un mauvais pari et un bon. Le marché a décidé — pas le résultat final.",
+      "takeaways": [
+        "Value = prix au-dessus de la probabilité réelle ; EV = (prob × cotes) − 1.",
+        "Les favoris probables à cotes basses peuvent être des paris horribles ; les outsiders improbables à cotes hautes peuvent être excellents.",
+        "Comparer les cotes entre bookmakers est une value gratuite qui ne demande aucune compétence de prévision.",
+        "Les véritables avantages sont petits, bruyants et ne deviennent visibles que sur des centaines de paris."
+      ],
+      "faq": [
+        {
+          "q": "Comment savoir si mes estimations de probabilité valent quelque chose ?",
+          "a": "Suivez-les contre les cotes de fermeture : si vous battez régulièrement la cote de clôture, vos estimations contiennent de l'information. Ce signal apparaît en quelques semaines, bien avant que les courbes de profit deviennent significatives."
+        },
+        {
+          "q": "La value betting est-elle la même chose que l'arbitrage ?",
+          "a": "Non. L'arbitrage verrouille un petit profit garanti en couvrant tous les résultats chez plusieurs bookmakers ; la value betting assume de la variance, soutenant un résultat à un prix que vous croyez mal évalué. La value betting peut perdre pendant des mois même si elle est bien faite."
+        },
+        {
+          "q": "Puis-je faire de la value betting avec une petite bankroll ?",
+          "a": "Les maths fonctionnent à n'importe quelle taille, mais la variance est brutale : même avec un véritable avantage de 5%, des séries perdantes de cent paris affectant la bankroll arrivent. Les mises plates et un vrai budget de divertissement sont des prérequis, pas des options."
+        }
+      ],
+      "related": [
+        "how-to-read-betting-odds",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "value-bet",
+        "expected-value",
+        "edge",
+        "closing-line-value",
+        "fair-odds"
+      ],
+      "tools": [
+        {
+          "href": "/screener",
+          "label": "The live value screener — model probabilities vs best available prices"
+        }
+      ],
+      "_src_hash": "36b3917c8edc9645",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bookmaker-margin-explained",
+      "title": "La marge des bookmakers expliquée",
+      "nav": "Marge des bookmakers",
+      "desc": "Comment fonctionne le surround, comment le calculer sur n'importe quel marché en dix secondes, et combien de votre argent il prélève discrètement.",
+      "cat": "Basics",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "L'avantage de la maison, bien visible",
+          "ps": [
+            "Les bookmakers ne gagnent pas en prédisant les matchs mieux que vous ; ils gagnent en vendant chaque résultat légèrement moins cher que son prix équitable. Additionnez les probabilités implicites sur n'importe quel marché et le total dépasse 100% — cet excédent est la marge, aussi appelée surround ou vig.",
+            "Un marché totalisant 105% retient environ €5 sur chaque €100 misé sur lui, quel que soit le résultat. La marge n'est cachée nulle part : elle est là dans les cotes, attendant d'être calculée."
+          ]
+        },
+        {
+          "h": "La calculer vous-même",
+          "ps": [
+            "Pour chaque résultat, prenez 1 ÷ cotes décimales ; additionnez les résultats ; soustrayez 1. Un match coté 2.10 / 3.40 / 3.60 donne 0.476 + 0.294 + 0.278 = 1.048 — une marge de 4.8%.",
+            "Faites-le une fois par bookmaker que vous utilisez et les différences deviennent évidentes. Dans nos propres recherches sur les ligues que nous couvrons, les marges typiques aux meilleures cotes tournent autour de 3%, tandis que les marges d'un seul bookmaker sur les mêmes matchs sont souvent de 5–7%. Les marchés de niche (score exact, buteurs) peuvent avoir des marges de 10%+ — c'est exactement pourquoi les bookmakers les publicisent le plus."
+          ]
+        },
+        {
+          "h": "Ce que la marge vous coûte au fil du temps",
+          "ps": [
+            "Une marge de 5% signifie qu'un parieur moyen perd environ €5 par €100 de chiffre d'affaires — pas par €100 déposé, par €100 misé. Misez €50 deux fois par semaine et le coût attendu de la marge est d'environ €260 par an, avant que n'interviennent compétence ou chance.",
+            "La marge est aussi le seuil que votre avantage doit dépasser : pour être rentable chez un bookmaker avec 5% de marge, vos estimations de probabilité doivent battre le marché de plus de 5%. Réduire de moitié la marge que vous payez — en comparant les cotes — réduit de moitié la compétence requise."
+          ]
+        },
+        {
+          "h": "Utiliser la marge pour choisir les bookmakers",
+          "ps": [
+            "La marge est l'un des nombres les plus justes pour comparer les bookmakers, et l'un des moins publicisés. Un bonus de bienvenue généreux chez un bookmaker à 7% de marge vaut généralement moins sur une saison qu'aucun bonus chez un bookmaker à 4% de marge — le bonus est payé une fois, la marge est prélevée sur chaque pari, à jamais.",
+            "Notre page de recherche sur les marges des bookmakers recalcule les marges typiques à partir de données de cotes en direct à chaque reconstruction du site, et la calculatrice ci-dessous extrait la marge de n'importe quel marché que vous collez."
+          ]
+        }
+      ],
+      "example": "Cotes 1.90 / 1.90 sur une ligne over-under : 0.526 + 0.526 = 1.053, une marge de 5.3%. Le prix équitable pour un véritable tirage à pile ou face serait 2.00 / 2.00. À 1.90, vous devez remporter 52.6% de tels paris simplement pour atteindre l'équilibre — les 2.6 points entre 50% et 52.6% sont ce que la marge vous facture.",
+      "takeaways": [
+        "Marge = (somme de 1/cotes sur tous les résultats) − 1 ; c'est le droit fixe intégré du bookmaker.",
+        "Marges typiques au football : ~3% aux meilleures cotes toutes boutiques, 5–7% chez un seul bookmaker.",
+        "La marge évolue avec le chiffre d'affaires — elle est prélevée sur chaque pari, pas une seule fois.",
+        "Les bookmakers à marge basse surpassent les meilleurs bonus sur tout horizon de temps sérieux."
+      ],
+      "faq": [
+        {
+          "q": "Pourquoi les marges diffèrent-elles selon les marchés ?",
+          "a": "Concurrence et exposition. Les cotes match sur les grands championnats sont fortement comparées, donc les marges se compriment. Les paris obscurs ne connaissent aucune pression comparative et supportent confortablement des marges à deux chiffres."
+        },
+        {
+          "q": "Une marge de 0% est-elle possible ?",
+          "a": "Occasionnellement un bookmaker cote un résultat au-dessus du prix équitable en promotion, et sur différents bookmakers les meilleures cotes sur tous les résultats font parfois moins de 100% — c'est un arbitrage. Les deux sont rares, petits et de courte durée."
+        },
+        {
+          "q": "La marge signifie-t-elle que je ne peux pas gagner ?",
+          "a": "Elle signifie que la trajectoire par défaut est une perte lente au taux de la marge. Gagner exige soit de la chance (court terme), soit des estimations de probabilité qui battent le marché de plus que la marge (long terme) — une compétence authentique mais rare."
+        }
+      ],
+      "related": [
+        "how-to-read-betting-odds",
+        "value-betting-explained",
+        "how-to-choose-a-betting-site"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "implied-probability",
+        "odds-comparison",
+        "sharp-and-soft-bookmakers"
+      ],
+      "tools": [
+        {
+          "href": "/tools/margin-calculator",
+          "label": "Paste any market's odds and see the exact margin"
+        }
+      ],
+      "_src_hash": "82d5113a6a774815",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "btts-explained",
+      "title": "Both Teams to Score (BTTS) Expliqué",
+      "nav": "BTTS",
+      "desc": "Comment le marché des deux équipes marquent se règle, ce qui détermine réellement la probabilité du BTTS, et les statistiques qui comptent plus que les fêtes de buts récentes.",
+      "cat": "Markets",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Le marché le plus simple du football",
+          "ps": [
+            "Le BTTS pose une seule question : chaque équipe marquera-t-elle au moins une fois en temps réglementaire ? Un 1-1, 4-1 ou 2-3 règlent Oui ; un 0-0, 3-0 ou 0-2 règlent Non. Les buts contre son propre camp comptent pour l'équipe au crédit de la feuille de match ; les prolongations ne comptent pas sur les marchés standards.",
+            "Son attrait est autant psychologique que mathématique : un ticket BTTS Oui reste vivant tard dans le match quel que soit celui qui gagne, ce qui en fait l'un des marchés les plus regardés du football."
+          ]
+        },
+        {
+          "h": "Ce qui détermine réellement la probabilité du BTTS",
+          "ps": [
+            "Le BTTS Oui a besoin que les deux attaques fonctionnent et que les deux défenses faillissent au moins une fois. Les déterminants statistiques sont le taux de buts de chaque équipe et son taux d'encaissement — pas le total combiné de buts. Une équipe lourde 3-0 peut être un mauvais choix BTTS malgré de gros scorelines, car sa défense garde des matchs nuls.",
+            "Dans un cadre de Poisson (la famille de modèles que notre site utilise), la probabilité BTTS Oui est 1 − P(blanchissage domicile) − P(blanchissage extérieur) + P(les deux blanchissages). Les taux BTTS Oui des ligues haut de gamme typiques avoisinent 50–53 %, c'est pourquoi les cotes oscille généralement entre 1,80 et 2,00 des deux côtés."
+          ]
+        },
+        {
+          "h": "Lire les statistiques sans vous tromper",
+          "ps": [
+            "Signaux utiles : pourcentage de matchs nuls des deux côtés, pourcentage sans marquer, et création de chances sous-jacente (xG pour et contre) plutôt que les scorelines bruts récents. Cinq résultats consécutifs BTTS Oui dans des échantillons de cinq matchs, c'est du bruit — les taux de base de la saison de ligue plus la qualité défensive de l'équipe portent bien plus d'informations.",
+            "Le contexte change le nombre : l'absence de défenseurs centraux ou de gardiens de premier choix pousse vers Oui ; un match où une équipe se verrouille profondément (grand favori à l'extérieur, défense de relégation) pousse vers Non. Les derbies sont populairement supposés favorables au BTTS ; historiquement, ils sont à peu près au taux de base."
+          ]
+        },
+        {
+          "h": "Comment nous le cotons",
+          "ps": [
+            "Notre modèle estime les taux de buts de chaque équipe à partir de résultats historiques pondérés, dérive les probabilités BTTS, et les compare aux cotes en direct — les picks BTTS apparaissent dans le flux de conseils quand la cote dépasse les cotes justes du modèle. Comme sur tout marché : l'estimation de l'avantage est statistique, les matchs individuels sont des pile ou face autour, et aucune série BTTS ne signifie rien par elle-même."
+          ]
+        },
+        {
+          "h": "Example",
+          "ps": [
+            "L'équipe à domicile marque dans 78 % des matchs à domicile et encaisse dans 55 % ; l'équipe à l'extérieur marque dans 60 % des matchs à l'extérieur et encaisse dans 70 %. Estimation indépendante-ish : P(les deux marquent) ≈ 0,78 × 0,60 ajustée pour les taux défensifs — le modèle arrive à 56 %. Cotes justes ≈ 1,79, donc une cote de 1,95 porte une valeur attendue positive ; une cote de 1,70 ne le fait pas, peu importe la clarté du match."
+          ]
+        }
+      ],
+      "example": "L'équipe à domicile marque dans 78 % des matchs à domicile et encaisse dans 55 % ; l'équipe à l'extérieur marque dans 60 % des matchs à l'extérieur et encaisse dans 70 %. Estimation indépendante-ish : P(les deux marquent) ≈ 0,78 × 0,60 ajustée pour les taux défensifs — le modèle arrive à 56 %. Cotes justes ≈ 1,79, donc une cote de 1,95 porte une valeur attendue positive ; une cote de 1,70 ne le fait pas, peu importe la clarté du match.",
+      "takeaways": [
+        "BTTS Oui = les deux équipes marquent en 90 minutes plus arrêts ; prolongations exclues.",
+        "Les déterminants sont les taux de buts et d'encaissement de chaque équipe, pas les buts combinés.",
+        "Les pourcentages de matchs nuls et sans but battent les scorelines récents comme signaux.",
+        "Les cotes se groupent près de l'égalité car les taux de base de la ligue sont proches de 50 %."
+      ],
+      "faq": [
+        {
+          "q": "Les prolongations comptent-elles pour le BTTS ?",
+          "a": "Les marchés BTTS standards se règlent uniquement en 90 minutes plus arrêts. Les marchés spécifiques aux coupes 'pour se qualifier' ou prolongations sont des produits séparés avec leurs propres règles — vérifiez le nom du marché avec attention."
+        },
+        {
+          "q": "Le BTTS est-il mieux que l'over 2.5 buts ?",
+          "a": "Ils se chevauchent mais répondent à des questions différentes : un résultat 2-0 gagne les overs et perd le BTTS ; un 1-1 gagne le BTTS et perd les overs. Choisissez le marché qui correspond à votre vision réelle — deux attaques fonctionnelles (BTTS) versus attente de buts général (totaux)."
+        },
+        {
+          "q": "Qu'en est-il du BTTS dans les accumulateurs ?",
+          "a": "Populaire car les cotes près de l'égalité construisent rapidement de gros cotes combinées — mais cinq jambes ~52 % gagnent moins de 4 % du temps, et chaque jambe porte la marge. Traitez les accas BTTS comme du divertissement à petits enjeux."
+        }
+      ],
+      "related": [
+        "over-under-goals-explained",
+        "value-betting-explained",
+        "what-is-an-accumulator"
+      ],
+      "glossary": [
+        "btts",
+        "xg",
+        "implied-probability"
+      ],
+      "tools": [
+        {
+          "href": "/tips/btts",
+          "label": "Today's BTTS picks with model probabilities and best prices"
+        }
+      ],
+      "_src_hash": "4ffa10344feddda5",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "over-under-goals-explained",
+      "title": "Parier sur le Total de Buts Expliqué",
+      "nav": "Total de buts",
+      "desc": "Lignes de total de 0,5 à 4,5 buts, pourquoi le 2,5 domine le football, et comment les lignes quarts divisent votre mise — avec les chiffres qui fixent les cotes.",
+      "cat": "Markets",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Parier sur le match, pas sur le vainqueur",
+          "ps": [
+            "Les marchés de total ignorent qui gagne et comptent les buts de chaque équipe. Over 2,5 gagne avec trois buts ou plus; Under 2,5 gagne avec deux buts ou moins. Le demi-but dans la ligne rend un nul impossible — un côté s'installe toujours en gagnant.",
+            "La ligne 2,5 domine le football car les totaux moyens des grands championnats se situent près de 2,6–2,8 buts par match, plaçant les deux côtés proche d'une chance égale et les cotes proches de l'équilibre."
+          ]
+        },
+        {
+          "h": "Lignes entières et lignes quarts",
+          "ps": [
+            "Les lignes en nombres entiers (Over/Under 2,0, 3,0) peuvent annuler: exactement trois buts contre une ligne 3,0 remboursent la mise. Les lignes quarts (2,25, 2,75) divisent votre mise entre la ligne demi-entière et entière adjacente — Over 2,25 est la moitié sur Over 2,0, moitié sur Over 2,5, donc un match à deux buts rembourse la moitié et perd la moitié.",
+            "Les lignes quarts viennent des conventions du handicap asiatique et valent la peine d'être comprises pour éviter les surprises de règlement: une 'demi-victoire' sur Over 2,75 après exactement trois buts confond plus de parieurs que tout autre résultat dans la famille des totaux."
+          ]
+        },
+        {
+          "h": "Ce qui fait bouger les cotes de total",
+          "ps": [
+            "Les taux de buts marqués et encaissés dominent, suivis par le rythme et le style (les équipes pressantes créent du chaos, les équipes basses le suppriment), les infos de composition pour les attaquants clés, et — statistiquement sous-évalué — l'arbitre et la météo en marge. L'identité de la ligue compte aussi: certains championnats affichent régulièrement un demi-but au-dessus ou en dessous des autres par match.",
+            "Les récents frissons 4-3 sont le piège classique: les totaux régressent beaucoup vers les taux au niveau des équipes. Notre recherche sur la prévisibilité de la ligue quantifie l'écart de buts entre les championnats et la moyenne mondiale, recalculée à chaque mise à jour."
+          ]
+        },
+        {
+          "h": "Vue du modèle",
+          "ps": [
+            "Un modèle Poisson avec les taux d'attaque et de défense de chaque équipe produit une distribution de score complète, d'où P(0 but), P(1), P(2)… suivent directement; en les additionnant on obtient la cote équitable de chaque ligne. Nos sélections over/under apparaissent quand les cotes en direct divergent de ces cotes équitables de plus que le bruit de fond.",
+            "Les totaux sont parmi les marchés de football les plus efficients, donc les vrais avantages sont petits et rares — attendez-vous à ce que notre modèle passe sur la plupart des matches plutôt que de forcer une sélection."
+          ]
+        }
+      ],
+      "example": "Le modèle s'attend à 1,45 but à domicile et 1,10 à l'extérieur — un match à 2,55 buts. La distribution Poisson met Over 2,5 à 51%, cotes équitables 1,96. Un bookmaker offrant 2,06 a trop pondéré la demande Under; le modèle signale Over. Score final 1-0 — le pari perd, et était quand même correct au coup d'envoi. Cette distinction est toute la discipline.",
+      "takeaways": [
+        "Les lignes demi-entières ne peuvent pas annuler; les lignes entières peuvent rembourser; les lignes quarts divisent la mise.",
+        "La ligne 2,5 règne sur le football car les vrais totaux affichent en moyenne ~2,6–2,8 buts.",
+        "Les taux de buts des équipes et l'identité de la ligue battent les récents scores comme prédicteurs.",
+        "Les marchés de totaux sont efficients: les vrais avantages sont petits, et passer est normal."
+      ],
+      "faq": [
+        {
+          "q": "Les buts en prolongation comptent-ils?",
+          "a": "Les totaux standards se règlent en 90 minutes plus l'arbitrage. Les marchés couvrant la prolongation dans les matchs de coupe sont étiquetés séparément — lisez le nom du marché avant de supposer."
+        },
+        {
+          "q": "Que paie Over 2,25 si le match se termine 2-1?",
+          "a": "Victoire complète: les deux moitiés de la mise (Over 2,0 et Over 2,5) gagnent avec trois buts. À 2-0 la moitié Over 2,0 rembourse et la moitié Over 2,5 perd — une demi-perte."
+        },
+        {
+          "q": "Pourquoi Under est-il souvent coté plus bas que Over?",
+          "a": "L'argent récréatif préfère les buts, donc les bookmakers peuvent réduire les cotes Over et augmenter les cotes Under. Cette inclinaison systématique est exactement le genre de biais que les modèles cherchent à exploiter du côté Under."
+        }
+      ],
+      "related": [
+        "btts-explained",
+        "asian-handicap-explained",
+        "how-ai-football-predictions-work"
+      ],
+      "glossary": [
+        "over-under",
+        "settlement",
+        "line-movement"
+      ],
+      "tools": [
+        {
+          "href": "/tips/over-under",
+          "label": "Today's totals picks with fair-odds comparison"
+        }
+      ],
+      "_src_hash": "0eb85c5471d43f11",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "asian-handicap-explained",
+      "title": "Handicap Asiatique : Guide du débutant",
+      "nav": "Handicap asiatique",
+      "desc": "Comment se règlent les handicaps nuls, demis, entiers et quarts, pourquoi le match nul disparaît, et exemples concrets pour chaque cas déroutant.",
+      "cat": "Markets",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "Deux résultats au lieu de trois",
+          "ps": [
+            "Le handicap asiatique donne à une équipe une avance virtuelle, dimensionnée pour que le match devienne à peu près 50/50, et élimine le match nul comme résultat jouable — les mises sont remboursées ou le handicap l'absorbe. Il vous reste deux cotes proches de 1.50 au lieu de trois déséquilibrées.",
+            "Éliminer le match nul est l'attrait central du format : vous pouvez couvrir un grand favori à une cote intéressante (en lui ôtant des buts) ou prendre un outsider avec une assurance (en lui en concédant), sans que le match nul vous guette."
+          ]
+        },
+        {
+          "h": "Handicaps entiers et demis",
+          "ps": [
+            "Les handicaps demis (−0.5, −1.5) ne peuvent pas se terminer par un push. Équipe A −0.5 signifie simplement « A gagne ». Équipe A −1.5 requiert une victoire d'au moins deux buts ; B +1.5 gagne sur un match nul, une victoire ou une défaite d'un seul but.",
+            "Les handicaps entiers (0, −1, −2) peuvent se terminer par un push : A −1 avec une victoire d'un but rembourse chaque mise. Le handicap nul (0) — match nul remboursé — se rembourse en cas de match nul et est la plus douce introduction au format."
+          ]
+        },
+        {
+          "h": "Handicaps à quarts",
+          "ps": [
+            "Les lignes à quarts (−0.25, −0.75, +1.25…) divisent votre mise entre les deux lignes adjacentes. Un −0.75 équivaut à la moitié sur −0.5, la moitié sur −1.0 : si votre équipe gagne d'exactement un but, la moitié −0.5 gagne et la moitié −1.0 se rembourse — une demi-victoire.",
+            "Chaque règlement déroutant se décompose ainsi : scindez la mise en deux, réglez chaque moitié sur sa propre ligne, additionnez. Dix secondes d'arithmétique remplacent l'apprentissage d'un tableau."
+          ]
+        },
+        {
+          "h": "Pourquoi les parieurs sérieux l'aiment",
+          "ps": [
+            "Le handicap asiatique et les totaux concentrent la plus grande liquidité mondiale, donc les marges sont généralement plus resserrées qu'en 1X2 — souvent 2–4 % chez les bookmakers pointus contre 5 %+ sur les cotes match. Une marge plus fine signifie une exigence moins élevée pour tout avantage que vous auriez.",
+            "Le format se traduit aussi directement en sortie de modèle : une distribution des scores se convertit directement en probabilités de couverture pour n'importe quelle ligne, rendant les handicaps un habitat naturel pour les parieurs statistiques. Le revers est l'inexpérience — que ce guide vient de dissiper, sans coût de marge pour vous."
+          ]
+        }
+      ],
+      "example": "Vous cravates Arsenal −1.25 à 2.00 avec €20 : €10 sur −1.0, €10 sur −1.5. Arsenal gagne 2-1 : la moitié −1.0 se rembourse €10, la moitié −1.5 perd — net −€10. Arsenal gagne 3-1 : les deux moitiés gagnent, net +€20. Arsenal fait 1-1 : les deux moitiés perdent, net −€20. Une seule cote, trois résultats réellement différents — décomposez toujours avant de parier.",
+      "takeaways": [
+        "Le handicap élimine le match nul : les remboursements (lignes entières) ou la ligne elle-même l'absorbent.",
+        "Les lignes demies ne peuvent jamais se terminer par un push ; les lignes entières peuvent se rembourser ; les lignes à quarts sont deux demi-mises.",
+        "Décomposez toute ligne à quarts en ses deux voisines pour la régler instantanément.",
+        "Les marges sur les lignes asiatiques sont généralement plus resserrées qu'en 1X2 — le marché du football le moins cher pour parier."
+      ],
+      "faq": [
+        {
+          "q": "Le handicap asiatique est-il identique au handicap européen ?",
+          "a": "Non. Le handicap européen (3 issues) conserve le match nul comme résultat jouable après application de handicaps à buts entiers, donc les pushes deviennent des pertes sauf si vous aviez parié sur le match nul handicapé. Le handicap asiatique se rembourse à la place. Les noms sont confusément similaires ; le règlement ne l'est pas."
+        },
+        {
+          "q": "À quoi sert le +0 (balle égale) ?",
+          "a": "C'est match nul remboursé : pariez sur une équipe, obtenez un remboursement en cas de match nul. Idéal quand vous aimez un outsider pour éviter la défaite mais ne lui faites pas confiance pour gagner net."
+        },
+        {
+          "q": "Pourquoi les lignes asiatiques bougent-elles plus que le 1X2 ?",
+          "a": "Elles concentrent l'argent informé le plus fin mondialement, donc les informations nouvelles (compositions, météo, gros paris) les frappent d'abord. Observer le mouvement des lignes asiatiques est un moyen courant de lire où penche l'argent informé."
+        },
+        {
+          "q": "Every confusing Asian handicap settlement decomposes this way: split the stake in two, settle each half on its own line, add up. Ten seconds of arithmetic replaces memorising a table.",
+          "a": ""
+        }
+      ],
+      "related": [
+        "over-under-goals-explained",
+        "how-to-read-betting-odds",
+        "value-betting-explained"
+      ],
+      "glossary": [
+        "asian-handicap",
+        "draw-no-bet",
+        "line-movement",
+        "sharp-and-soft-bookmakers"
+      ],
+      "tools": [
+        {
+          "href": "/dropping-odds",
+          "label": "Watch where prices are moving across the markets we track"
+        }
+      ],
+      "_src_hash": "e8622c2de6f78fa2",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "how-ai-football-predictions-work",
+      "title": "Comment fonctionnent les prédictions de football par IA",
+      "nav": "Comment fonctionnent les prédictions par IA",
+      "desc": "Ce qu'il y a réellement dans un modèle de prédiction de football — le nôtre y compris : taux de Poisson, fusion avec le marché, limites honnêtes, et comment juger les affirmations de n'importe quel pronostiqueur.",
+      "cat": "Basics",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "Pas de boule de cristal, juste du comptage",
+          "ps": [
+            "Dépouillé de son marketing, n'importe quel modèle de prédiction de football — le nôtre y compris — se résume à du comptage structuré : la fréquence des buts marqués, celle des buts encaissés, pondérés vers les matchs récents, ajustés selon l'opposition et le terrain. À partir de ces taux, les distributions de probabilité sur les résultats suivent mathématiquement.",
+            "Le mot « IA » n'ajoute aucune magie à cela. La valeur d'un modèle réside dans l'estimation disciplinée et l'étalonnage honnête, pas dans l'étiquette. Quiconque prétend que son algorithme « connaît » les résultats vend quelque chose."
+          ]
+        },
+        {
+          "h": "À l'intérieur de notre modèle, concrètement",
+          "ps": [
+            "Notre modèle v2 estime l'attaque et la défense de chaque équipe avec un cadre Poisson décroissant dans le temps : les matchs récents pèsent plus (demi-vie autour de 240 jours), les petits échantillons se réduisent vers la moyenne de la ligue pour éviter de surréagir, et les équipes ont besoin d'un nombre minimum de matchs avant que nous ayons confiance dans leurs taux.",
+            "Ces taux produisent une distribution de résultats par rencontre, d'où les probabilités pour tous les marchés que nous couvrons. Nous fusionnons ensuite les probabilités du modèle avec celles impliquées par le marché (environ 40/60) — un aveu, intégré dans les calculs, que le marché sait des choses que nos données ne savent pas : blessures, motivation, conditions météo, compositions.",
+            "Un pronostic n'est publié comme officiel que lorsque la probabilité fusionnée dépasse le prix d'une marge significative avec des cotes raisonnables. La plupart des matchs ne produisent aucun pronostic officiel ; la méthodologie complète, l'historique des versions et les limitations connues se trouvent sur notre page modèle."
+          ]
+        },
+        {
+          "h": "Ce que les modèles ne peuvent pas faire",
+          "ps": [
+            "Un modèle ne peut pas savoir qu'un entraîneur a ménagé son attaquant, qu'une équipe est revenue d'une finale de coupe à 4 heures du matin, ou que la pluie a transformé le terrain en boue. Il compresse l'historique en taux ; tout ce qui est en dehors de l'historique est invisible pour lui.",
+            "Plus fondamentalement : même une probabilité parfaite n'est pas une prédiction sur un seul match. Un pronostic à 60% perd quatre fois sur dix par construction. Les modèles gagnent ou perdent leur valeur sur des centaines de paris, par l'étalonnage — les pronostics à 60% réussissent-ils environ 60% du temps ? — pas sur n'importe quel bilan d'exception."
+          ]
+        },
+        {
+          "h": "Comment juger les prédictions de n'importe qui, y compris les nôtres",
+          "ps": [
+            "Demandez le bilan complet réglé (chaque pronostic, pas un mois curé), les résultats en unités mises à égalité, des tailles d'échantillon de plusieurs centaines, et — le test le plus pertinent — la valeur à la cote de clôture : si les pronostics battent constamment le prix auquel le marché a clôturé. La VCC sépare la compétence de la chance bien plus rapidement que les courbes de profit.",
+            "Nous publions tout cela, y compris les séries perdantes, sur nos pages de résultats — notre bilan initial comprend une période instructive où les pronostics underdog se sont avérés perdants 0 sur 8 et ont forcé une révision du modèle. Tout pronostiqueur qui montre seulement des victoires vous montre du marketing."
+          ]
+        },
+        {
+          "h": "",
+          "ps": []
+        }
+      ],
+      "example": "Le modèle évalue l'attaque du côté domicile à 1,6 buts attendus contre cette défense, le côté visiteur à 0,9. La distribution de Poisson donne victoire domicile 52%, match nul 24%, victoire visiteur 24% — cotes justes 1,92 / 4,17 / 4,17. Le marché cote l'équipe domicile à 2,10, impliquant 47,6%. La fusion arrive à environ 50%, toujours au-dessus de l'implication du prix : avantage positif, pronostic officiel. Soixante secondes plus tard une composition divulguée pourrait l'invalider — ce qui explique pourquoi les avantages sont des estimations, pas des certitudes.",
+      "takeaways": [
+        "Les modèles de prédiction sont des taux de buts pondérés → distributions de résultats → probabilités de marché.",
+        "Le nôtre fusionne le modèle avec le marché (40/60) et ne publie que les pronostics avec avantage clair — en passant la plupart des matchs.",
+        "Les modèles sont aveugles aux actualités ; les probabilités sont étalonnées sur des centaines de matchs, pas sur des rencontres isolées.",
+        "Jugez n'importe quel pronostiqueur sur son bilan complet en unités mises à égalité et sa valeur à la cote de clôture, jamais sur un mois exceptionnel."
+      ],
+      "faq": [
+        {
+          "q": "Quelle précision les modèles de prédiction de football atteignent-ils ?",
+          "a": "Sur les cotes match nul ou pas match nul, les meilleurs modèles trouvent le résultat correct environ 50–55% du temps — à peine au-dessus d'une stratégie toujours parier sur le favori. La précision est de toute façon la mauvaise métrique ; c'est l'étalonnage et la valeur face aux prix qui paient, ce qui explique pourquoi nous rapportons les unités et la VCC à la place."
+        },
+        {
+          "q": "Pourquoi le modèle est-il parfois en désaccord avec la forme évidente ?",
+          "a": "Parce que la « forme évidente » c'est généralement cinq matchs de bruit, et le modèle pèse deux années de taux. Quand ils s'opposent, l'échantillon plus long a raison plus souvent — pas toujours, juste plus souvent, ce qui est tout ce qu'un modèle prétend."
+        },
+        {
+          "q": "Utilisez-vous l'apprentissage automatique ?",
+          "a": "Le noyau est de la statistique classique : taux de Poisson décroissants dans le temps avec réduction, fusionnés avec les prix du marché. C'est transparent, déboguable et publié. Les architectures plus sophistiquées ajoutent de l'opacité plus vite qu'elles n'ajoutent de la précision football à notre échelle de données."
+        }
+      ],
+      "related": [
+        "value-betting-explained",
+        "how-to-read-betting-odds",
+        "common-betting-mistakes"
+      ],
+      "glossary": [
+        "xg",
+        "closing-line-value",
+        "fair-odds",
+        "win-rate"
+      ],
+      "tools": [
+        {
+          "href": "/model",
+          "label": "Our full model methodology, version history and known limits"
+        }
+      ],
+      "_src_hash": "b975728fd6bd973e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "common-betting-mistakes",
+      "title": "7 Erreurs de Pari Courantes (et Leurs Solutions)",
+      "nav": "Erreurs courantes",
+      "desc": "Rattraper les pertes, attirance pour les cotes élevées, chasse aux bonus sans lire les conditions — les schémas d'échec qui vident les bankrolls, chacun avec sa solution pratique.",
+      "cat": "Strategy",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "1. Rattraper les pertes",
+          "ps": [
+            "Le schéma le plus destructeur en pari : augmenter les enjeux après des pertes pour 'récupérer'. Chaque escalade doit surmonter les mêmes marges avec plus d'argent au moment précis où le jugement est le plus mauvais. Les mauvaises soirées deviennent des bankrolls explosés par la chasse aux pertes, pratiquement jamais par les paris initiaux.",
+            "Solution : une règle d'arrêt écrite pour les jours de perte, décidée au calme. Quand elle s'active, vous arrêtez — les matchs reviennent demain."
+          ]
+        },
+        {
+          "h": "2. Attirance pour les longues cotes",
+          "ps": [
+            "Les parieurs surpaient systématiquement les fortes cotes — des shots à 8.00 tarifés comme s'il s'agissait de chances à 6.00. Les bookmakers le savent et ajustent en conséquence, rendant les marchés hautes cotes parmi les plus mauvais terrains de valeur en pari. La première version de notre modèle l'a appris cher : une série 0-sur-8 sur les picks à cotes doubles chiffres a forcé une refonte avec des plafonds de cotes.",
+            "Solution : limiter votre gamme de cotes (nous plafonnons les picks officiels à 4.0) et traiter tout prix au-dessus comme du divertissement, tarifé en conséquence."
+          ]
+        },
+        {
+          "h": "3. Parier sur chaque match que vous regardez",
+          "ps": [
+            "L'intérêt n'est pas un avantage. Parier sur ce que vous regardez simplement multiplie le volume — et la marge versée — sur des marchés où vous ne savez rien de particulier. L'arithmétique de la marge est impitoyable : doubler le volume à 5% de marge, doubler le coût attendu.",
+            "Solution : séparer regarder de parier. Moins de paris, délibérés, sur des marchés que vous suivez réellement battent l'action en rafales chaque saison."
+          ]
+        },
+        {
+          "h": "4. Ignorer la cote",
+          "ps": [
+            "Décider du résultat d'abord et accepter la cote que votre seul bookmaker propose saute la moitié entière du pari où le profit se trouve. La même opinion correcte est rentable à 2.10 et perdante à 1.85.",
+            "Solution : le shopping de cotes. Deux ou trois comptes bookmakers et dix secondes supplémentaires par pari récupèrent 3–8% en cote — l'avantage le moins coûteux qui existe."
+          ]
+        },
+        {
+          "h": "5. Mal interpréter les bonus",
+          "ps": [
+            "Un bonus '100% jusqu'à 100€' avec 8× mise à cotes minimales 1.8 exige 800€ de volume de qualification avant retrait — à des marges typiques, un coût attendu près du bonus lui-même. Les bonus ne sont pas de l'argent gratuit ; c'est du volume de mise réduit avec conditions.",
+            "Solution : lire le multiplicateur de mise, les cotes minimales, les restrictions de marché et l'expiration avant de déposer. Parfois le bonus est vraiment bon ; les conditions, pas le titre, vous le disent."
+          ]
+        },
+        {
+          "h": "6. Pensée basée sur les résultats",
+          "ps": [
+            "Juger un pari selon qu'il a gagné est la fuite la plus subtile. Les bons paris perdent constamment ; les mauvais paris gagnent assez souvent pour enseigner des leçons terribles. La chasse aux séries, les équipes 'à qui le tour', et la confiance construite sur des échantillons de cinq matchs proviennent tous de cette racine.",
+            "Solution : juger le processus — la cote était-elle meilleure que la vraie chance ? — et mesurer sur des centaines de paris. Un registre écrit rend cela automatique ; la mémoire le rend impossible."
+          ]
+        },
+        {
+          "h": "7. Parier sans budget",
+          "ps": [
+            "Chaque erreur ci-dessus devient dangereuse quand l'argent n'a jamais été réservé. Parier sur le compte familial transforme la variance en vrai préjudice.",
+            "Solution : un bankroll de divertissement fixe, des limites de dépôt définies dans les paramètres du compte, et honnêteté sur le fait que c'est encore amusant. Les bookmakers autorisés fournissent des outils de limite et d'auto-exclusion ; GambleAware et équivalents existent précisément pour quand la réponse cesse d'être oui."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Ne relevez jamais les enjeux pour récupérer les pertes — écrivez la règle d'arrêt avant d'en avoir besoin.",
+        "Évitez les longues cotes par défaut ; le marché surpaye systématiquement les rêves.",
+        "Shoppez les cotes à chaque pari ; jugez les paris sur le processus, pas les résultats.",
+        "Lisez intégralement les conditions de mise des bonus ; ne pariez que depuis un bankroll réservé."
+      ],
+      "faq": [
+        {
+          "q": "Quelle est l'erreur la plus dommageable ?",
+          "a": "Rattraper les pertes. Chaque autre erreur vous coûte au rythme de la marge ; rattraper compresse une année de pertes attendues en une nuit. Si vous adoptez une seule règle, faites-en la règle d'arrêt des jours de perte."
+        },
+        {
+          "q": "Comment savoir si mon pari est encore récréatif ?",
+          "a": "Tests honnêtes : vous ne pariez que de l'argent réservé, les pertes ne changent pas votre humeur longtemps, vous ne cachez jamais l'activité, et arrêter une semaine est facile. Si l'un de ceux-ci échoue, utilisez les outils de limite et contactez GambleAware — tôt est la clé."
+        },
+        {
+          "q": "Ces erreurs sont-elles vraiment si courantes ?",
+          "a": "C'est la norme, pas l'exception — la conception des produits bookmakers (bonus, bet builders, promotions hautes cotes) encourage activement plusieurs d'entre elles. Supposez que les paramètres par défaut sont contre vous et choisissez délibérément."
+        }
+      ],
+      "related": [
+        "bankroll-management-guide",
+        "value-betting-explained",
+        "what-is-an-accumulator"
+      ],
+      "glossary": [
+        "bankroll-management",
+        "wagering-requirements",
+        "variance",
+        "self-exclusion"
+      ],
+      "tools": [
+        {
+          "href": "/tipsters",
+          "label": "Our full settled record — losing runs included, flat-staked"
+        }
+      ],
+      "_src_hash": "0581f9d544c5f853",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "how-to-choose-a-betting-site",
+      "title": "Comment choisir un site de paris",
+      "nav": "Choisir un site de paris",
+      "desc": "Un checklist pratique — agrément, marges, vitesse de paiement, limites et conditions — pour sélectionner un bookmaker adapté à votre marché, avec les pièges à éviter.",
+      "cat": "Bookmakers",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "L'agrément d'abord, tout le reste après",
+          "ps": [
+            "Un agrément délivré par le régulateur de votre marché fait la différence entre une entreprise soumise à des obligations — protection des fonds, recours en cas de litige, outils de jeu responsable — et un simple site avec un logo. Les opérateurs agréés peuvent être contestés, audités et sanctionnés ; les non-agréés peuvent simplement cesser de payer.",
+            "Les règles varient énormément selon les pays (nos pages par pays indiquent qui régule chaque marché que nous couvrons), et elles évoluent. Où que vous soyez : vérifiez le statut légal actuel avant de déposer des fonds, et considérez l'absence ou le flou sur l'agrément comme un obstacle absolu."
+          ]
+        },
+        {
+          "h": "Les chiffres qui s'accumulent : marges et limites",
+          "ps": [
+            "La marge est la commission que vous payez sur chaque pari — les marges typiques des cotes de match d'un seul bookmaker vont de 5 à 7%, et comparer les prix sur plusieurs sites vous rapproche de 3%. Sur une saison de paris réguliers, la différence représente de l'argent réel ; sur des années, elle éclipse n'importe quel bonus de bienvenue.",
+            "Les limites jouent dans l'autre direction : les bookmakers peu scrupuleux restreignent rapidement les comptes gagnants, parfois à des mises dérisoires. Si vous envisagez de parier sérieusement, la réputation en matière de tolérance envers les gagnants doit figurer sur votre checklist."
+          ]
+        },
+        {
+          "h": "Paiements et vitesse de retrait",
+          "ps": [
+            "Les dépôts sont instantanés partout ; les retraits sont là où les bookmakers diffèrent. Cherchez vos moyens de paiement locaux (virement bancaire, cartes, et dans de nombreux de nos marchés l'argent mobile comme M-Pesa, MTN MoMo, PIX ou UPI), les délais de retrait affichés, et — selon les retours d'utilisateurs — si ces délais sont respectés.",
+            "Un conseil structurel : complétez la vérification d'identité (KYC) immédiatement après l'inscription, avant tout retrait en attente. La plupart des plaintes sur les retraits lents sont en réalité des files d'attente de vérification qui vous rattrapent au mauvais moment."
+          ]
+        },
+        {
+          "h": "Conditions, offre et les vrais compromis",
+          "ps": [
+            "Lisez quatre choses dans les conditions : les règles de mise du bonus, les plafonds de gains maximums, les frais de compte inactif et les marchés restreints. Les plafonds de gains maximums surprennent en particulier les parieurs d'accumulations au pire moment.",
+            "Les fonctionnalités du produit — streaming en direct, cash-out, générateurs de paris, qualité de l'app — ne valent la peine d'être examinées que si l'agrément, la marge et les paiements passent le test. Ce sont les raisons que le marketing vous donne ; les trois autres sont les raisons pour lesquelles votre argent reste vôtre.",
+            "Nos critiques de bookmakers évaluent les opérateurs selon exactement ces critères, par pays, et nous marquons clairement les entrées de démonstration jusqu'à ce que des données de partenaire réel les remplacent. Vérifiez-croisez n'importe quelle critique — la nôtre incluse — contre les conditions publiées par l'opérateur lui-même."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Pas d'agrément local valide — pas de dépôt ; tout le reste est secondaire.",
+        "La marge se paye toujours, les bonus une fois : préférez le bookmaker à marge plus basse.",
+        "Vérifiez l'identité immédiatement après l'inscription ; consultez les vrais rapports sur la vitesse de retrait.",
+        "Lisez les conditions de mise, les plafonds de gains et les clauses de frais avant qu'ils ne vous les lisent."
+      ],
+      "faq": [
+        {
+          "q": "Dois-je avoir des comptes chez plusieurs bookmakers ?",
+          "a": "Oui, chez deux ou trois agréés. Le comparatif de cotes seul le justifie, et cela vous protège si l'un restreint votre compte ou retarde un paiement. Gardez chaque compte entièrement vérifié et dans votre budget partagé unique."
+        },
+        {
+          "q": "Les grands bookmakers sont-ils toujours plus sûrs ?",
+          "a": "La taille de la marque se corrèle avec le contrôle réglementaire, pas la générosité — les grandes marques affichent souvent des marges plus élevées et des politiques de restriction agressives. Le plus sûr c'est agréé dans votre marché plus une réputation de paiement que vous avez vérifiée, quelle que soit la taille."
+        },
+        {
+          "q": "Que faire si un bookmaker refuse de payer ?",
+          "a": "Opérateur agréé : formulez une réclamation formelle par écrit, puis saisissez le régulateur ou l'organe de traitement des litiges désigné — ces voies fonctionnent et constituent tout l'intérêt de l'agrément. Opérateur non-agréé : il n'y a généralement aucune voie, ce qui justifie la première section de ce guide."
+        }
+      ],
+      "related": [
+        "bookmaker-margin-explained",
+        "common-betting-mistakes",
+        "how-to-read-betting-odds"
+      ],
+      "glossary": [
+        "wagering-requirements",
+        "sharp-and-soft-bookmakers",
+        "cash-out",
+        "free-bet"
+      ],
+      "tools": [
+        {
+          "href": "/bookmakers",
+          "label": "Our scored bookmaker comparison, by market"
+        }
+      ],
+      "_src_hash": "2801fa5fb3a873f9",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "in-play-betting-guide",
+      "title": "Les paris en direct : comment fonctionnent les marchés live",
+      "nav": "Paris en direct",
+      "desc": "Comment les cotes live sont calculées, pourquoi la marge s'élargit discrètement en cours de match, le mécanisme de suspension, et la discipline que les paris en direct exigent.",
+      "cat": "Markets",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "Des marchés qui se réévaluent chaque seconde",
+          "ps": [
+            "Les paris en direct maintiennent les marchés ouverts pendant la rencontre, avec une réévaluation continue basée sur le temps écoulé, le score et les événements en direct. Un favori à 1.50 qui encaisse rapidement peut dépasser 3.00 en quelques secondes ; chaque but, expulsion et révision VAR ajuste les cotes à un nouvel état.",
+            "Le moteur sous-jacent est la même mécanique probabiliste qu'en avant-match — buts attendus restants, état du score, dépréciation temporelle — recalculée en temps réel, avec une couche de risque automatisée qui suspend les marchés quand les événements dépassent la tarification."
+          ]
+        },
+        {
+          "h": "Ce qui change par rapport à l'avant-match",
+          "ps": [
+            "Trois différences structurelles. Premièrement, la marge : les marchés live affichent généralement 1–3 points de plus que le même marché en avant-match — vous payez le chrono qui tourne. Deuxièmement, les suspensions : les marchés se figent lors des buts, penaltis et révisions, précisément quand vous voudriez agir. Troisièmement, la latence informationnelle : le flux que vous regardez a quelques secondes de retard sur les flux de données qui tariffent le marché, donc « réagir à ce que vous venez de voir » signifie généralement parier sur une cote qui le sait déjà.",
+            "Ensemble, cela signifie que le parieur live occasionnel fait face à de pires cotes, aux pires moments, avec de pires informations — un jeu truqué qu'il vaut la peine de comprendre avant de jouer."
+          ]
+        },
+        {
+          "h": "Où les paris en direct sont réellement utiles",
+          "ps": [
+            "Des usages légitimes existent. La lecture d'état de match — reconnaître qu'un score 0-0 ne représente mal une rencontre à sens unique — peut battre un modèle qui ne voit que le score. Les entrées planifiées (décider avant le coup d'envoi que vous soutiendrez le favori s'il encaisse d'abord, à un prix cible) transforment la volatilité live en outil plutôt qu'en piège.",
+            "Le retrait partiel mérite sa propre honnêteté : c'est un rachat à cote live avec marge appliquée deux fois — pratique, occasionnellement rationnel pour la gestion des risques réels, et systématiquement non rentable par habitude. Le retrait partiel obéit à la même arithmétique sur une fraction de la mise."
+          ]
+        },
+        {
+          "h": "La couche discipline",
+          "ps": [
+            "Les paris en direct compriment l'intégralité du cycle émotionnel du jeu en quatre-vingt-dix minutes : les pertes arrivent en pleine adrénaline avec des boutons de remise instantanée. Chaque règle de bankroll de notre guide de mise s'applique doublement, et les mises pré-engagées — décidées avant le coup d'envoi, jamais pendant — sont la seule protection la plus forte.",
+            "Notre modèle ne publie des picks qu'en avant-match ; nous suivons les mouvements de cotes live sur la page des cotes qui baissent mais n'émettons pas de conseils en direct. Si vous pariez en direct, faites-le avec des entrées planifiées, des mises plafonnées et les règles d'arrêt écrites tandis que votre pouls était normal."
+          ]
+        }
+      ],
+      "example": "Avant-match : Plus de 2,5 à 1.90 (marge ~5%). Vingt minutes sans score plus tard, le même Plus de 2,5 se négocie à 2.60 — mais avec la marge live, le prix équitable est proche de 2.75. Vous avez regardé vingt minutes dominantes et voulez le Plus ; le marché a regardé les mêmes minutes via des données plus rapides et s'est déjà déplacé. La question n'est jamais « est-ce que j'aime les buts maintenant ? » mais « 2.60 est-il meilleur que la probabilité réelle de buts restants ? » — le même test de valeur que toujours, à un taux de change pire.",
+      "takeaways": [
+        "Les cotes live sont les maths d'avant-match recalculées par seconde — avec 1–3 points de marge supplémentaire.",
+        "Les suspensions et la latence du flux signifient que vous pariez généralement sur une cote qui le sait déjà.",
+        "Les entrées planifiées à des prix cibles battent les paris réactifs ; le retrait partiel est une marge payée deux fois.",
+        "Fixez les mises et les règles d'arrêt avant le coup d'envoi — les paris en direct punissent l'improvisation."
+      ],
+      "faq": [
+        {
+          "q": "Pourquoi mon pari live a-t-il été rejeté ou retardé ?",
+          "a": "Les bookmakers appliquent un délai d'acceptation (5–10 secondes) aux paris live et annulent la tentative si le marché se déplace ou se suspend pendant celui-ci. C'est une protection contre les parieurs qui exploitent la latence du flux — ennuyeux et universel."
+        },
+        {
+          "q": "Le retrait partiel est-il jamais le bon choix ?",
+          "a": "Occasionnellement — quand votre raison initiale du pari s'est réellement rompue (blessure clé, expulsion contre vous) ou que la position est trop importante pour le confort. En tant qu'habitude régulière, il convertit les positions gagnantes en dons de marge."
+        },
+        {
+          "q": "Puis-je battre les marchés live en regardant des flux plus rapides ?",
+          "a": "Les utilisateurs de données en direct et à faible latence existent, et les délais des bookmakers existent à cause d'eux. Pour quiconque sur une diffusion normale, la course de latence est perdue avant de commencer — planifiez plutôt les entrées que de faire la course au flux."
+        }
+      ],
+      "related": [
+        "value-betting-explained",
+        "bankroll-management-guide",
+        "over-under-goals-explained"
+      ],
+      "glossary": [
+        "in-play-betting",
+        "cash-out",
+        "line-movement",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/dropping-odds",
+          "label": "Live odds movement across the markets we track"
+        }
+      ],
+      "_src_hash": "34ebf3f04a20a645",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-nigeria",
+      "title": "Les paris au Nigeria : fonctionnement",
+      "nav": "Les paris au Nigeria",
+      "desc": "Réglementation des paris au Nigeria, licence NLRC, virements bancaires et dépôts mobiles, et ce que représente un marché mobile peu gourmand en données pour le choix d'un site.",
+      "cat": "Countries",
+      "country": "ng",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Les paris sont-ils légaux au Nigeria ?",
+          "ps": [
+            "Oui. Les paris sportifs sont légaux et extrêmement populaires au Nigeria, régulés par la National Lottery Regulatory Commission et par des organes au niveau des États comme celui du Lagos. Les opérateurs agréés localement et les sites internationaux desservent le marché, et le football — la Premier League avant tout — domine le volume des paris.",
+            "Les responsabilités réglementaires entre les instances fédérales et étatiques ont fait l'objet de contestations judiciaires ces dernières années, donc le conseil pratique reste stable même si la structure évolue : privilégiez les opérateurs agréés pour le marché nigérian, et vérifiez le statut actuel avant de déposer."
+          ]
+        },
+        {
+          "h": "Démarrer : la checklist pratique",
+          "ps": [
+            "Inscrivez-vous auprès d'un opérateur qui dessert le Nigeria sous licence locale, vérifiez votre identité rapidement (les coordonnées bancaires liées au BVN accélèrent le processus), déposez en naira, et fixez une limite de dépôt avant votre premier pari — chaque opérateur sérieux en propose une.",
+            "Le Nigeria est un marché dominé par le mobile avec des coûts réels de données, donc le poids de l'appli compte : les meilleurs opérateurs proposent des applis légères et des paris par USSD ou SMS pour les connexions instables. Testez le processus de retrait avec une petite somme avant d'engager de l'argent sérieux — la fiabilité des gains varie plus que les cotes."
+          ]
+        },
+        {
+          "h": "Paiements : virements bancaires et portefeuilles mobiles",
+          "ps": [
+            "Les virements bancaires et paiements par carte dominent, avec des portefeuilles fintech (OPay, PalmPay, Moniepoint) de plus en plus soutenus pour les dépôts instantanés. Les retraits arrivent généralement par virement bancaire ; la rapidité varie de quelques minutes à deux jours selon l'opérateur.",
+            "Déposez en NGN et pariez en NGN — éviter la conversion de devises est un gain gratuit. Si un opérateur ne propose que des soldes en dollars aux joueurs nigérians, c'est un signe qu'il n'est pas vraiment conçu pour ce marché."
+          ]
+        },
+        {
+          "h": "Choisir un site pour le marché nigérian",
+          "ps": [
+            "Pesez le statut de licence, la vitesse des gains en naira, l'utilisation de données de l'appli, et la profondeur des marchés de la Premier League et de la Ligue des Champions — les ligues sur lesquelles les Nigérians parient réellement. Les marges de cotes diffèrent sensiblement entre opérateurs, donc comparez les prix sur le même match avant de vous fixer.",
+            "Notre page Nigeria classe les opérateurs exactement selon ces critères, et les guides sur les marges et la gestion de la bankroll s'appliquent partout — y compris ici. Ne pariez que ce que vous pouvez vous permettre de perdre ; 18+."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Les paris en ligne sont-ils imposés au Nigeria ?",
+          "a": "Les opérateurs paient des taxes de licence et de jeu ; les gains des parieurs n'ont généralement pas été imposés à la source, bien que des propositions refassent surface régulièrement. Les règles peuvent changer — vérifiez la position actuelle avant de supposer, notamment pour les gros gains."
+        },
+        {
+          "q": "Puis-je parier avec du crédit téléphonique ou par USSD ?",
+          "a": "Plusieurs opérateurs nigérians supportent les flux de paris USSD pour les téléphones basiques et les situations pauvres en données, bien que les dépôts passent généralement par les réseaux bancaires ou portefeuilles plutôt que par crédit téléphonique dans la plupart des cas. Consultez la page de paiement de chaque opérateur pour voir ce qu'il supporte réellement."
+        },
+        {
+          "q": "Comment savoir si un opérateur est agréé pour le Nigeria ?",
+          "a": "Les opérateurs agréés affichent les détails de la licence NLRC ou d'État au bas du site, et les régulateurs publient des listes d'opérateurs. Si les informations de licence sont manquantes ou vagues, traitez cela comme rédhibitoire — il y a assez d'options agréés pour ne jamais avoir besoin d'une licence non autorisée."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ng",
+          "label": "Ranked betting sites for Nigeria"
+        }
+      ],
+      "_src_hash": "585f6b2c0f197411",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-kenya",
+      "title": "Les paris au Kenya : comment ça marche",
+      "nav": "Les paris au Kenya",
+      "desc": "La licence BCLB au Kenya, les dépôts et retraits par M-Pesa, les règles fiscales qui vraiment s'appliquent, et comment choisir un site construit pour ce marché.",
+      "cat": "Countries",
+      "country": "ke",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Les paris sont-ils légaux au Kenya ?",
+          "ps": [
+            "Oui. Les paris sportifs sont légaux et régulés par le Betting Control and Licensing Board (BCLB), et le Kenya affiche l'un des taux de participation les plus élevés aux paris en Afrique — un marché quasi entièrement mobile.",
+            "Le point mouvant, c'est la fiscalité : la taxe d'accise sur les mises et la retenue à la source sur les gains ont toutes deux changé plusieurs fois et restent un sujet politique vivant. La couche de licence est stable ; la couche de coût ne l'est pas — vérifiez les taux actuels avant de calculer vos rendements."
+          ]
+        },
+        {
+          "h": "Débuter avec M-Pesa",
+          "ps": [
+            "L'inscription passe d'abord par le numéro de téléphone : la plupart des opérateurs vous vérifient par un numéro lié à M-Pesa, ce qui rend l'inscription rapide. Les dépôts via paybill M-Pesa sont pratiquement instantanés ; les retraits vers M-Pesa sont la caractéristique déterminante du marché — les meilleurs opérateurs versent en quelques minutes.",
+            "Comme tout transite par un seul canal, la vitesse de paiement est inhabituellement comparable entre opérateurs ici. Les retours d'utilisateurs sur les délais de retrait sont faciles à trouver et valent dix minutes de lecture avant de déposer où que ce soit."
+          ]
+        },
+        {
+          "h": "Les taxes : ce que les parieurs kényans ressentent vraiment",
+          "ps": [
+            "Le Kenya prélève des taxes sur les paris à plusieurs niveaux : une taxe d'accise est facturée sur les mises et une retenue à la source s'applique aux gains, avec des taux qui ont changé plusieurs fois dans les budgets récents. Cela signifie que le coût réel d'un pari est pire que les cotes seules ne le suggèrent — une cote de 1.90 avec accise sur la mise se comporte comme une cote inférieure.",
+            "Nous ne citons pas les taux exacts ici car ils changent réellement chaque année ; l'annexe actuelle de la KRA est la source de vérité. L'enseignement stratégique est stable : les taxes rendent la comparaison des marges encore plus importante au Kenya, pas moins."
+          ]
+        },
+        {
+          "h": "Choisir un site pour le marché kényan",
+          "ps": [
+            "Cherchez une licence BCLB actuelle, des retraits M-Pesa instantanés, des applications légères en données ou des flux USSD complets, et des cotes compétitives sur la Premier League anglaise — l'incontournable au Kenya. Les produits de jackpot locaux sont populaires mais offrent des cotes dignes des loteries ; considérez-les comme du divertissement, pas une stratégie.",
+            "Notre page Kenya classe les opérateurs selon ces critères. Les règles de bankroll de nos guides stratégiques s'appliquent avec une force accrue là où les mises supportent l'accise — des mises plus petites, moins nombreuses, mieux cotées. 18+, pariez responsablement."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Combien de taxes je paye sur mes gains au Kenya ?",
+          "a": "Une retenue à la source sur les gains s'applique et les opérateurs la déduisent automatiquement, mais le taux a changé plusieurs fois ces dernières années — consultez l'annexe actuelle de la KRA plutôt que de faire confiance à un chiffre statique, y compris ceux que vous liriez dans des guides."
+        },
+        {
+          "q": "Peux-je parier sans smartphone ?",
+          "a": "Oui — le marché du Kenya a grandi sur les paris par SMS et USSD, et plusieurs opérateurs agréés proposent toujours des menus USSD complets pour téléphones classiques. M-Pesa gère le côté financier de manière identique de toute façon."
+        },
+        {
+          "q": "Les sites de paris sans licence BCLB sont-ils sûrs ?",
+          "a": "Non. Les sites non régulés échappent au cadre de résolution des différends et de protection des fonds, et les autorités kényanes les bloquent périodiquement. Avec plusieurs options agréées et paiement instantané disponibles, il n'y a aucune raison d'accepter ce risque."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bankroll-management-guide",
+        "common-betting-mistakes"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ke",
+          "label": "Ranked betting sites for Kenya"
+        }
+      ],
+      "_src_hash": "8cb6c340ae83501a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-ghana",
+      "title": "Les paris au Ghana : comment ça marche",
+      "nav": "Les paris au Ghana",
+      "desc": "La licence de la Gaming Commission of Ghana, les paiements via MTN MoMo, la retenue fiscale sur les gains, et une checklist pratique pour bien choisir son site.",
+      "cat": "Countries",
+      "country": "gh",
+      "minutes": 4,
+      "sections": [
+        {
+          "h": "Les paris sont-ils légaux au Ghana ?",
+          "ps": [
+            "Oui. Les paris sportifs sont légaux et réglementés par la Gaming Commission of Ghana, qui délivre les licences et publie la liste approuvée — une ressource publique vraiment utile, puisqu'une simple recherche suffit pour vérifier le statut d'un site.",
+            "Depuis 2023, une retenue fiscale s'applique aux gains, prélevée par les opérateurs au moment du versement. Le taux a été ajusté depuis son introduction, vérifiez donc le chiffre actuel auprès de la GRA plutôt que de vous fier à un montant figé."
+          ]
+        },
+        {
+          "h": "Débuter : d'abord la monnaie mobile",
+          "ps": [
+            "La monnaie mobile est le canal par défaut — MTN MoMo avant tout, avec Vodafone Cash et AirtelTigo aussi acceptés chez la plupart des opérateurs agréés. Les dépôts sont instantanés ; les retraits vers MoMo varient de quelques minutes à un jour selon l'opérateur.",
+            "Inscrivez-vous avec votre numéro MoMo, complétez la vérification d'identité immédiatement, et testez un petit retrait avant d'augmenter vos enjeux. Parier en cedis du début à la fin vous évite les pertes de change."
+          ]
+        },
+        {
+          "h": "Choisir un site pour le marché ghanéen",
+          "ps": [
+            "Vérifiez trois points dans cet ordre : présence sur la liste des opérateurs agréés par la Gaming Commission, vitesse de retrait MoMo d'après les avis des utilisateurs, et qualité des cotes sur la Premier League et la Ghana Premier League. Les marges diffèrent assez entre opérateurs pour être pertinentes — notre guide des marges montre comment comparer en dix secondes.",
+            "Les bonus sont fortement commercialisés au Ghana ; lisez les conditions de mise avant de les valoriser au pied de la lettre. Notre page Ghana classe les opérateurs selon les critères ci-dessus. 18+, ne pariez que dans le cadre d'un budget que vous pouvez vous permettre de perdre."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Quel est le montant de la retenue fiscale sur les gains aux paris au Ghana ?",
+          "a": "Une retenue fiscale sur les gains bruts s'applique depuis 2023, prélevée automatiquement au versement. Le taux a été révisé depuis son lancement — consultez le barème actuel de la GRA pour connaître le chiffre qui s'applique aujourd'hui."
+        },
+        {
+          "q": "Quel mode de paiement est le meilleur pour parier au Ghana ?",
+          "a": "MTN MoMo est accepté partout et vous verse vos gains très vite chez les bons opérateurs. Les cartes fonctionnent pour les dépôts, mais les retraits passent presque toujours par la monnaie mobile — donc MoMo du début à la fin est la solution la plus simple."
+        },
+        {
+          "q": "Comment vérifier qu'un site de paris est agréé au Ghana ?",
+          "a": "La Gaming Commission of Ghana publie la liste des opérateurs autorisés. Si un site desservant le Ghana n'y figure pas, ou cache ses informations de licence, choisissez-en parmi les nombreux autres qui le sont."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "common-betting-mistakes"
+      ],
+      "glossary": [
+        "wagering-requirements",
+        "bookmaker-margin"
+      ],
+      "tools": [
+        {
+          "href": "/countries/gh",
+          "label": "Ranked betting sites for Ghana"
+        }
+      ],
+      "_src_hash": "41b9545fc5d9f1d2",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-south-africa",
+      "title": "Les paris en Afrique du Sud : comment ça marche",
+      "nav": "Les paris en Afrique du Sud",
+      "desc": "Pourquoi les paris sportifs sont légaux mais les casinos en ligne ne le sont pas, les licences provinciales, les virements et paiements par carte, et comment choisir un bookmaker agréé.",
+      "cat": "Countries",
+      "country": "za",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "La distinction sud-africaine : les paris oui, les casinos non",
+          "ps": [
+            "L'Afrique du Sud trace une ligne que la plupart des pays ne font pas : les paris sportifs en ligne sont entièrement légaux via des bookmakers titulaires de licences provinciales (le Cap-Occidental et le Mpumalanga délivrent la plupart des licences en ligne), tandis que les jeux de casino en ligne — machines à sous, roulette, croupiers en direct — restent interdits au niveau national.",
+            "Cela fait de l'onglet « casino » que certains sites affichent aux utilisateurs sud-africains un signal d'alerte légale, pas une fonctionnalité bonus. Un bookmaker local correctement agréé propose les paris sportifs, les courses hippiques et les jeux de numéros, et s'arrête là."
+          ]
+        },
+        {
+          "h": "Comment commencer",
+          "ps": [
+            "Inscrivez-vous auprès d'un bookmaker agréé au niveau provincial, complétez la vérification FICA (pièce d'identité et justificatif de domicile — obligatoire, donc faites-le dès le départ), et financez en rand par carte, virement instantané (écosystèmes Ozow, Zapper) ou bons d'achat en espèces.",
+            "Les gains de jeu récréatif ne sont généralement pas imposables pour le parieur — un avantage réel par rapport à plusieurs marchés comparables — bien que l'activité professionnelle peut attirer l'attention de l'AFRF. La vitesse de retrait varie de même-jour à plusieurs jours ; les avis des utilisateurs vous disent qui fait quoi."
+          ]
+        },
+        {
+          "h": "Choisir un site pour le marché sud-africain",
+          "ps": [
+            "Vérifiez le numéro de licence provinciale en bas de page, comparez les marges sur les matchs de Premier League et PSL, et vérifiez les délais de retrait par virement. La couverture locale compte : les meilleurs opérateurs côtent correctement la PSL, pas seulement le football européen.",
+            "Notre page Afrique du Sud classe les opérateurs selon ces critères. Les guides de stratégie — marge, bankroll, erreurs — s'appliquent sans changement. 18+, et le Programme national de jeu responsable (0800 006 008) est la ligne d'assistance locale."
+          ]
+        },
+        {
+          "h": "",
+          "ps": []
+        }
+      ],
+      "faq": [
+        {
+          "q": "Les casinos en ligne sont-ils vraiment illégaux en Afrique du Sud ?",
+          "a": "Oui — les jeux de casino en ligne sont interdits au niveau national, et des actions d'application contre les opérateurs de casinos offshore et même les gains ont eu lieu. Les paris sportifs en ligne via des bookmakers agréés au niveau provincial sont le canal légal."
+        },
+        {
+          "q": "Dois-je payer des impôts sur mes gains aux paris en Afrique du Sud ?",
+          "a": "Les gains de jeu récréatif ne sont généralement pas imposables. Les paris comme profession systématique peuvent être traités comme un revenu par l'AFRF — un seuil que la plupart des parieurs ne franchissent jamais, mais cela vaut la peine de savoir."
+        },
+        {
+          "q": "Qu'est-ce que la vérification FICA ?",
+          "a": "La vérification d'identité et d'adresse que les opérateurs agréés doivent effectuer selon la Loi sur le Centre de renseignements financiers. C'est obligatoire avant les retraits, donc soumettre les documents à l'inscription — pas au moment du paiement — est la démarche pratique."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/countries/za",
+          "label": "Ranked betting sites for South Africa"
+        }
+      ],
+      "_src_hash": "d0729858b2038930",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-india",
+      "title": "Les paris en Inde : comment ça marche",
+      "nav": "Les paris en Inde",
+      "desc": "Les règles État par État en Inde, les retenues fiscales qui s'appliquent réellement, les dépôts UPI, et comment penser honnêtement aux sites offshore.",
+      "cat": "Countries",
+      "country": "in",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Le cadre légal : une carte État par État",
+          "ps": [
+            "L'Inde n'a pas de licence nationale unique de paris. Le jeu est largement du ressort des États : quelques États gèrent des régimes licenciés pour certains produits, plusieurs interdisent les paris catégoriquement, et la plupart se situent entre les deux sous des lois rédigées bien avant internet. De nombreux opérateurs internationaux acceptent les joueurs indiens dans ce vide juridique.",
+            "Cela rend la seule première démarche honnête spécifique au lieu : vérifiez la loi de votre État avant de vous inscrire nulle part. Ce guide décrit le marché ; il ne peut pas vous autoriser à parier si votre État l'interdit."
+          ]
+        },
+        {
+          "h": "Les impôts : la partie certaine",
+          "ps": [
+            "Malgré l'ambiguïté du licenciement, la loi fiscale indienne est explicite sur les gains : une retenue à la source à taux fixe s'applique aux gains de jeu, et les changements récents de GST ont ajouté une taxe au dépôt pour les jeux d'argent en ligne. Ensemble, ils changent matériellement l'économie des paris depuis l'Inde.",
+            "Les taux et mécanismes ont changé à plusieurs reprises depuis 2023 — vérifiez le traitement TDS et GST actuel avant de supposer un quelconque chiffre. Le point structurel reste : les impôts ici sont réels, automatiques, et plus importants que la plupart des parieurs ne l'attendent."
+          ]
+        },
+        {
+          "h": "Paiements : UPI en tête",
+          "ps": [
+            "UPI domine les dépôts où c'est accepté, aux côtés des portefeuilles numériques (Paytm, PhonePe) et de la banque en ligne. Les canaux de paiement des opérateurs offshore vers l'Inde changent fréquemment à mesure que les processeurs tournent — les dépôts peu fiables sont l'agacement chronique du marché et un véritable critère de sélection.",
+            "La fiabilité des retraits compte encore plus : préférez les opérateurs ayant un long historique vérifiable de paiements aux utilisateurs indiens, et testez en petit avant de vous engager. Les soldes en roupies battent les soldes en dollars pour la seule raison du coût de conversion."
+          ]
+        },
+        {
+          "h": "Choisir honnêtement dans un marché gris",
+          "ps": [
+            "Où aucune licence locale n'existe, les substituts sont plus faibles mais pas sans valeur : une licence internationale établie, des années d'historique de paiements, un support réactif, et des conditions transparentes. La profondeur du marché du cricket est l'indicateur local — les opérateurs sérieux sur l'Inde évaluent l'IPL correctement.",
+            "Notre page Inde répertorie les opérateurs selon ces critères. Les paris sur marché gris concentrent tous les risques que ce site met en garde, donc les règles de bankroll s'appliquent deux fois : petits enjeux, argent séparé, et conscience complète de la loi de votre État. 18+."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Les paris en ligne sont-ils légaux en Inde ?",
+          "a": "Cela dépend de votre État. Quelques États licencient certains produits, certains interdisent complètement les paris, et la plupart ont des lois ambiguës d'avant internet. Il n'y a pas de licence nationale, vérifiez donc la position actuelle de votre État — c'est la seule réponse qui est vraie partout."
+        },
+        {
+          "q": "Comment les gains aux paris sont-ils imposés en Inde ?",
+          "a": "Une retenue à la source s'applique aux gains de jeu à taux fixe, et les changements de GST ont ajouté une taxe au dépôt pour les jeux d'argent en ligne. Les taux ont changé depuis 2023 — vérifiez les règles TDS et GST actuelles avant de parier plutôt que de vous fier à un quelconque chiffre statique."
+        },
+        {
+          "q": "Pourquoi les méthodes de dépôt changent-elles constamment sur les sites de paris en Inde ?",
+          "a": "Les opérateurs offshore acheminent les paiements par des processeurs qui tournent à mesure que les banques renforcent les règles, donc les identifiants UPI et les passerelles changent souvent. Les opérateurs disposant de canaux de paiement stables et de longue durée démontrent exactement la qualité opérationnelle que vous recherchez."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "common-betting-mistakes",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/countries/in",
+          "label": "Betting sites serving India"
+        }
+      ],
+      "_src_hash": "ede7d8338d0b5199",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-brazil",
+      "title": "Les paris au Brésil : comment ça marche",
+      "nav": "Les paris au Brésil",
+      "desc": "Le nouveau marché régulé du Brésil : licences SPA/MF, domaines .bet.br, paiements par PIX et ce qui a changé pour les parieurs en 2025.",
+      "cat": "Countries",
+      "country": "br",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Un marché qui vient de se légaliser",
+          "ps": [
+            "Le marché brésilien des paris à cotes fixes s'est ouvert en janvier 2025 sous la supervision du secrétariat aux paris du ministère des Finances (SPA/MF), convertissant l'un des plus grands marchés gris du monde en un marché sous licence presque du jour au lendemain.",
+            "Le marqueur visible : les opérateurs licenciés doivent utiliser des domaines .bet.br. Un site servant le Brésil à partir de tout autre domaine fonctionne en dehors du nouveau cadre — le contrôle de légalité le plus simple du monde des paris."
+          ]
+        },
+        {
+          "h": "Ce que la licence vous apporte",
+          "ps": [
+            "Les opérateurs licenciés doivent aux parieurs brésiliens la ségrégation des fonds, la vérification d'identité et d'âge, des outils de jeu responsable, des restrictions publicitaires et un processus de recours — des obligations que le marché offshore d'avant 2025 n'a jamais portées.",
+            "La transition signifie aussi une rotation : consolidation des marques, certains noms offshore qui sortent du marché, d'autres qui acquièrent des licences. Vérifier le statut SPA/MF actuel d'un site prend une minute et règle la question."
+          ]
+        },
+        {
+          "h": "Paiements : PIX domine le marché",
+          "ps": [
+            "PIX domine les dépôts et les retraits — instantanés, gratuits, 24h/24 — avec les cartes et le boleto comme options secondaires. Les opérateurs licenciés traitent les retraits PIX en quelques minutes ; tout ce qui est plus lent est un drapeau rouge sur ce marché en particulier, car la plateforme elle-même est instantanée.",
+            "Les gains au-delà du seuil d'exonération sont soumis à l'impôt sur le revenu selon le nouveau régime ; les seuils et les mécanismes sont nouveaux et en cours d'ajustement, vérifiez donc les directives actuelles de la Receita Federal pour les détails."
+          ]
+        },
+        {
+          "h": "Choisir un site pour le marché brésilien",
+          "ps": [
+            "Confirmez le domaine .bet.br et la licence SPA/MF, comparez les marges sur les matchs de Série A et de Champions League, et vérifiez la vitesse de retrait PIX dans les rapports d'utilisateurs. La qualité du support en langue portugaise distingue les opérateurs qui ont investi au Brésil de ceux qui ont traduit un modèle.",
+            "Notre page Brésil classe les opérateurs selon ces critères, en portugais quand c'est important. Aposte com responsabilidade — 18+."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Comment savoir si un site de paris est légal au Brésil ?",
+          "a": "Les opérateurs licenciés utilisent des domaines .bet.br sous autorisation SPA/MF — le domaine lui-même est le marqueur. Les sites servant le Brésil à partir d'autres domaines se situent en dehors du cadre réglementaire qui a pris effet en janvier 2025."
+        },
+        {
+          "q": "Les gains aux paris sont-ils imposés au Brésil ?",
+          "a": "Selon le nouveau régime, les gains nets au-delà d'un seuil d'exonération sont soumis à l'impôt sur le revenu. Les règles sont nouvelles et les détails ont été ajustés depuis le lancement — vérifiez les directives actuelles de la Receita Federal pour les seuils et les taux."
+        },
+        {
+          "q": "Puis-je toujours utiliser des sites offshore depuis le Brésil ?",
+          "a": "Le marché régulé est conçu pour orienter les joueurs vers les opérateurs licenciés .bet.br, avec un blocage des paiements et une répression contre les sites non agréés qui s'intensifient. Les opérateurs licenciés offrent désormais les mêmes produits avec de véritables protections des consommateurs — le compromis a disparu."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/countries/br",
+          "label": "Ranked betting sites for Brazil"
+        }
+      ],
+      "_src_hash": "6ec379e9d60ecc6a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-mexico",
+      "title": "Les paris au Mexique : comment ça marche",
+      "nav": "Les paris au Mexique",
+      "desc": "Le système de permis SEGOB au Mexique, les paiements SPEI et OXXO, et comment parier légalement pendant que la loi sur les jeux rénovée reste en attente.",
+      "cat": "Countries",
+      "country": "mx",
+      "minutes": 4,
+      "sections": [
+        {
+          "h": "Les paris sont-ils légaux au Mexique ?",
+          "ps": [
+            "Oui. Les paris fonctionnent légalement sous des permis de la SEGOB (via la Dirección General de Juegos y Sorteos) émis selon la Loi fédérale sur les jeux — un texte de 1947 adapté à l'ère d'internet. De nombreuses marques en ligne opèrent via des accords avec des titulaires de permis terrestres tandis qu'une loi rénovée est débattue depuis des années.",
+            "Pour les parieurs, le test pratique est la visibilité du permis : les opérateurs légitimes affichent les détails de leur permis SEGOB. Le cadre peut être ancien, mais la couche de permis est réelle et vérifiable."
+          ]
+        },
+        {
+          "h": "Paiements : SPEI, OXXO et cartes",
+          "ps": [
+            "Les virements SPEI traitent les dépôts instantanés et la plupart des retraits ; les bons OXXO restent un canal de dépôt apprécié pour l'économie en espèces — payez dans n'importe quel magasin de proximité, le solde apparaît en quelques minutes. Les cartes fonctionnent partout ; les retraits sont acheminés via SPEI.",
+            "Les soldes en pesos de bout en bout évitent les frais de conversion. La vitesse de retrait varie selon l'opérateur, de quelques heures à plusieurs jours — les retours d'utilisateurs sont la source honnête."
+          ]
+        },
+        {
+          "h": "Choisir un site pour le marché mexicain",
+          "ps": [
+            "Vérifiez le permis SEGOB, comparez les marges sur la Liga MX et le football européen, et vérifiez les délais de retrait SPEI. La profondeur de marché de la Liga MX est l'indicateur local — les opérateurs sérieux au Mexique la tarificent correctement, pas seulement la Premier League.",
+            "Notre page Mexique classe les opérateurs selon ces critères, en espagnol. Les règles peuvent changer quand la nouvelle loi sur les jeux longtemps débattue arrive enfin — vérifiez le statut actuel régulièrement. 18+, juega con responsabilidad."
+          ]
+        },
+        {
+          "h": "",
+          "ps": []
+        }
+      ],
+      "faq": [
+        {
+          "q": "Les gains aux paris sont-ils imposés au Mexique ?",
+          "a": "Une petite retenue fédérale s'applique aux prix de jeux dans certains cas, avec des variations au niveau des États. Les montants sont généralement modestes pour les parieurs typiques, mais consultez les règles SAT actuelles si vous gagnez gros — le traitement dépend du type et de la taille du prix."
+        },
+        {
+          "q": "Puis-je faire un dépôt en espèces au Mexique ?",
+          "a": "Oui — les bons OXXO vous permettent de déposer de l'argent liquide dans n'importe lequel des milliers de magasins de proximité, le solde étant crédité en quelques minutes. Cela reste l'un des canaux de dépôt les plus utilisés au Mexique aux côtés des virements SPEI."
+        },
+        {
+          "q": "Comment vérifier un permis SEGOB ?",
+          "a": "Les opérateurs agréés affichent leur numéro de permis (souvent en référence au titulaire du permis terrestre sous lequel ils opèrent) dans le pied de page du site. L'absence de toute référence de permis est le signal disqualifiant."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "common-betting-mistakes"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/countries/mx",
+          "label": "Ranked betting sites for Mexico"
+        }
+      ],
+      "_src_hash": "331f8f09e3aeee2c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-argentina",
+      "title": "Les paris en Argentine : comment ça marche",
+      "nav": "Les paris en Argentine",
+      "desc": "Régulation province par province en Argentine, paiements via Mercado Pago, et pourquoi la rapidité de retrait compte davantage ici que presque partout ailleurs.",
+      "cat": "Countries",
+      "country": "ar",
+      "minutes": 4,
+      "sections": [
+        {
+          "h": "Licences province par province",
+          "ps": [
+            "L'Argentine régule les paris en ligne au niveau provincial : Buenos Aires City (LOTBA) et Buenos Aires Province (IPLyC) gèrent des marchés en ligne licenciés, et d'autres provinces exploitent leurs propres régimes à différents stades. Il n'existe pas de licence nationale — votre province détermine vos options.",
+            "Les opérateurs licenciés font du géociblage par province, c'est pourquoi la disponibilité varie selon les régions. Consulter la liste des opérateurs de votre régulateur provincial est la démarche fiable."
+          ]
+        },
+        {
+          "h": "Paiements et le facteur peso",
+          "ps": [
+            "Mercado Pago est le canal par défaut, avec les virements bancaires et cartes en soutien. Les dépôts sont instantanés ; la rapidité de retrait est le point où les opérateurs se différencient — et en Argentine, cela compte bien plus que d'habitude, car la volatilité du peso signifie que l'argent en transit perd de la valeur.",
+            "Cela fait de la rapidité de retrait un critère de sélection de premier ordre ici, pas juste une commodité. Les retraits Mercado Pago le jour même sont le standard que les bons opérateurs respectent."
+          ]
+        },
+        {
+          "h": "Choisir un site pour le marché argentin",
+          "ps": [
+            "Confirmez la licence pour votre province, vérifiez la rapidité de retrait Mercado Pago à partir des rapports d'utilisateurs récents, et comparez les marges sur la Liga Profesional et le football européen. La profondeur de la ligue locale signale un investissement réel sur le marché.",
+            "Notre page Argentine classe les opérateurs selon ces critères, en espagnol. Les règles provinciales évoluent — vérifiez le statut actuel là où vous résidez. 18+, jugá con responsabilidad."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Les paris en ligne sont-ils légaux partout en Argentine ?",
+          "a": "Non — la régulation est provinciale. Buenos Aires City et Province licencient les opérateurs en ligne, plusieurs autres provinces ont leurs propres régimes, et certaines accusent du retard. Le régulateur de votre province détermine ce qui est licencié pour vous."
+        },
+        {
+          "q": "Pourquoi la rapidité de retrait compte-t-elle tant en Argentine ?",
+          "a": "Volatilité du peso : l'argent qui met des jours à arriver vaut mesurément moins que l'argent qui arrive en heures. Les opérateurs avec des retraits Mercado Pago le jour même vous protègent de la dévaluation en transit."
+        },
+        {
+          "q": "Les gains sont-ils imposés en Argentine ?",
+          "a": "Le traitement fiscal varie selon la province et le type de prix, et les règles nationales sur la fiscalité des jeux ont changé à plusieurs reprises. Pour des montants importants, consultez les directives actuelles de l'AFIP et provinciales plutôt que de supposer."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bankroll-management-guide",
+        "bookmaker-margin-explained"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ar",
+          "label": "Ranked betting sites for Argentina"
+        }
+      ],
+      "_src_hash": "b7d7156d6527e86f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-canada",
+      "title": "Les paris au Canada : comment ça marche",
+      "nav": "Les paris au Canada",
+      "desc": "Paris sur événements uniques depuis 2021, marché ouvert sous licence en Ontario versus plateformes provinciales, paiements Interac et gains non imposés.",
+      "cat": "Countries",
+      "country": "ca",
+      "minutes": 4,
+      "sections": [
+        {
+          "h": "Deux Canada : l'Ontario et le reste",
+          "ps": [
+            "Le Canada a légalisé les paris sportifs sur événements uniques au niveau national en 2021, mais le marché s'est scindé : l'Ontario exploite un marché ouvert sous licence où des dizaines d'opérateurs privés détiennent des licences AGCO/iGaming Ontario, tandis que les autres provinces canalisent les paris via leurs plateformes de sociétés de loterie (PROLINE+, Mise-o-jeu, PlayNow).",
+            "\nEn dehors de l'Ontario, les sites offshore occupent une zone grise — accessibles mais en dehors du cadre de protection des consommateurs. Les Ontariens n'ont pas ce compromis : le marché sous licence est profond et concurrentiel."
+          ]
+        },
+        {
+          "h": "Paiements et fiscalité",
+          "ps": [
+            "Interac est le rail universel — dépôts et retraits par Transfert Interac à peu près chez tous les opérateurs — aux côtés des cartes et de plus en plus d'options de banque instantanée. Les retraits chez les bons opérateurs sous licence arrivent dans les 24 à 48 heures.",
+            "Le véritable avantage canadien : les gains de paris récréatifs ne sont pas imposés. Seul le jeu d'argent professionnel exercé comme activité commerciale attire l'attention de l'ARC — un seuil que les parieurs récréatifs n'approchent pas."
+          ]
+        },
+        {
+          "h": "Choisir un site pour le marché canadien",
+          "ps": [
+            "En Ontario : vérifiez la licence iGaming Ontario, puis comparez les marges (les cotes NHL, NBA et Premier League varient sensiblement entre les sites) et la rapidité des retraits Interac. Ailleurs : la plateforme provinciale est l'option entièrement protégée ; si vous envisagez des sites offshore, appliquez la prudence de marché gris — licences établies, historiques de versements vérifiés, petits enjeux.",
+            "Notre page Canada classe les opérateurs selon ces critères. 18+/19+ selon la province ; ConnexOntario et les lignes d'aide provinciales offrent un soutien."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Les gains de paris sont-ils imposables au Canada ?",
+          "a": "Les gains récréatifs ne sont pas imposés. L'exception est le jeu d'argent exercé systématiquement comme activité commerciale — activité de niveau professionnel que l'ARC peut traiter comme revenu, ce que les parieurs récréatifs n'approchent pas."
+        },
+        {
+          "q": "Puis-je utiliser des sites de paris offshore en dehors de l'Ontario ?",
+          "a": "Ils sont accessibles et largement utilisés, mais se situent en dehors du cadre de licences et de règlement des litiges du Canada. Les plateformes provinciales offrent une protection complète ; les sites offshore exigent la prudence de marché gris — licences établies, historiques de versements vérifiés et petits enjeux."
+        },
+        {
+          "q": "Qu'est-ce qui est différent en Ontario ?",
+          "a": "L'Ontario a ouvert un marché entièrement sous licence en 2022 sous AGCO/iGaming Ontario, donc les opérateurs privés y détiennent des licences locales, des protections de financement et des voies de règlement — le cadre que les autres provinces acheminent plutôt par leurs plateformes de loterie."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "cash-out"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ca",
+          "label": "Ranked betting sites for Canada"
+        }
+      ],
+      "_src_hash": "ddb9e14ab1951141",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-ireland",
+      "title": "Les paris en Irlande : comment ça marche",
+      "nav": "Les paris en Irlande",
+      "desc": "Le nouvel régulateur irlandais GRAI, la Gambling Regulation Act 2024, les gains non imposés, et le choix d'un bookmaker dans un marché mature.",
+      "cat": "Countries",
+      "country": "ie",
+      "minutes": 4,
+      "sections": [
+        {
+          "h": "Un marché mature qui se dote d'un nouveau régulateur",
+          "ps": [
+            "Les paris sont totalement légaux en Irlande et culturellement ancrés — peu de marchés sont plus anciens. La structure est en transition : la Gambling Regulation Act 2024 a créé l'Autorité de Régulation du Jeu en Irlande (GRAI), reprenant l'agrément qui relevait historiquement des Revenue Commissioners.",
+            "Pour les parieurs, la transition change surtout la paperasse plutôt que la pratique : les opérateurs agréés restent agréés, et le nouveau régime ajoute des protections consommateurs — limites publicitaires, registre national d'autoexclusion — au fur et à mesure du déploiement."
+          ]
+        },
+        {
+          "h": "Paiements et fiscalité",
+          "ps": [
+            "Cartes, virements bancaires et PayPal couvrent le marché ; les retraits chez les bons opérateurs arrivent en un ou deux jours. L'avantage irlandais : les gains ne sont pas imposés au parieur — le droit de pari est prélevé sur les opérateurs.",
+            "Les critères de sélection pratiques sont universels : la marge, la vitesse de paiement et la politique de limites. Les opérateurs tournés vers l'Irlande rivalisent sur les produits courses et GAA aux côtés du football — la profondeur y marque les livres sérieux localement."
+          ]
+        },
+        {
+          "h": "Choisir un site pour le marché irlandais",
+          "ps": [
+            "Vérifiez l'agrément irlandais actuel, comparez les marges sur les marchés Premier League et courses, et consultez les avis sur la vitesse de paiement. Sur un marché aussi concurrentiel, il n'y a aucune raison d'accepter un book à forte marge — faire du line shopping entre deux ou trois opérateurs agréés est tout l'enjeu de l'optimisation.",
+            "Notre page Irlande classe les opérateurs selon ces critères. 18+ ; GambleAware et les outils du cadre GRAI constituent la couche de soutien."
+          ]
+        },
+        {
+          "h": "",
+          "ps": []
+        }
+      ],
+      "faq": [
+        {
+          "q": "Les gains aux paris sont-ils imposés en Irlande ?",
+          "a": "Non — les gains sont non imposés pour le parieur. Le droit de pari est prélevé sur les opérateurs sur le chiffre d'affaires, ce qui est intégré dans les cotes plutôt que déduit des versements."
+        },
+        {
+          "q": "Qu'est-ce qui change avec la Gambling Regulation Act 2024 ?",
+          "a": "Un régulateur dédié (GRAI) remplace le patchwork des anciennes routes d'agrément, en ajoutant des restrictions publicitaires, un registre national d'autoexclusion et des protections consommateurs plus fortes au fur et à mesure du déploiement. Les opérateurs agréés sont repris."
+        },
+        {
+          "q": "Les paris hippiques sont-ils différents légalement des paris sportifs ?",
+          "a": "Les deux sont totalement légaux ; les courses sont ancrées en profondeur dans le marché irlandais et l'agrément est identique. La différence pratique est la profondeur des produits — les books tournés vers l'Irlande rivalisent le plus sur les courses et le GAA aux côtés du football."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "value-betting-explained"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "self-exclusion"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ie",
+          "label": "Ranked betting sites for Ireland"
+        }
+      ],
+      "_src_hash": "d5b3b659707f7f54",
+      "_model": "claude-haiku-4-5-20251001"
+    }
+  ]
+}

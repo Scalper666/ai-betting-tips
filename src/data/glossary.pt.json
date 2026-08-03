@@ -1,0 +1,729 @@
+{
+  "lang": "pt",
+  "terms": [
+    {
+      "slug": "value-bet",
+      "term": "Value Bet",
+      "short": "Uma aposta em que as odds oferecidas são maiores do que a probabilidade real justifica — o único tipo de aposta que é lucrativa a longo prazo.",
+      "definition": [
+        "Uma value bet existe quando as odds de um bookmaker implicam uma probabilidade menor do que a chance real de um resultado acontecer. Se a chance real de um time vencer é 50% mas você consegue fazer a aposta em odds de 2.20, o preço está 'errado' a seu favor: em muitas repetições dessa situação você ganharia mais do que as odds assumem, então a aposta tem valor esperado positivo.",
+        "Value não tem nada a ver com o quão provável a aposta é de ganhar. Fazer backing em um underdog de 5.00 pode ser uma value bet enquanto fazer backing em um favorito de 1.20 pode ser péssima value — o que importa é a diferença entre preço e probabilidade, não a probabilidade em si. É por isso que apostadores disciplinados procuram por preços, não por vencedores. Encontrar value sistematicamente requer uma estimativa independente da probabilidade real, que é exatamente o que modelos de odds e screeners tentam produzir."
+      ],
+      "example": "Suponha que a chance justa de uma vitória em casa é 40% (odds justas 2.50), mas um bookmaker oferece 2.75. Valor esperado por £1 apostado = (0.40 × 2.75) − 1 = +0.10, ou seja, uma margem de 10%. Individualmente a aposta perde 60% das vezes — mas em escala, preços como este são de onde vem o lucro.",
+      "related": [
+        "expected-value",
+        "implied-probability",
+        "edge",
+        "fair-odds"
+      ],
+      "see": [
+        {
+          "label": "Live value picks in the AI screener",
+          "href": "/screener"
+        }
+      ],
+      "_src_hash": "f37d30dbf5629570",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "implied-probability",
+      "term": "Probabilidade Implícita",
+      "short": "A chance de vitória que um preço de aposta sugere: 1 dividido pelas odds decimais.",
+      "definition": [
+        "Todo preço de aposta é uma declaração de probabilidade disfarçada. Converter odds decimais em probabilidade implícita é simples: divida 1 pelas odds. Odds de 2.00 implicam 50%, odds de 4.00 implicam 25%, odds de 1.25 implicam 80%. Essa conversão é a base de toda decisão séria de apostas, porque transforma 'este preço é interessante?' na pergunta respondível 'essa probabilidade é muito baixa?'.",
+        "Somar as probabilidades implícitas de cada resultado em um mercado revela a margem da casa de apostas: o total sempre excede 100%, e o excesso é a vantagem incorporada do operador. Remover essa margem produz probabilidades justas — a visão de consenso real do mercado — contra as quais o valor pode ser medido."
+      ],
+      "example": "Uma partida precificada em 2.10 (casa), 3.60 (empate), 3.40 (fora) implica 47,6% + 27,8% + 29,4% = 104,8%. O excesso de 4,8% é a margem da casa de apostas; a probabilidade justa de vitória em casa após remover proporcionalmente é 47,6 / 104,8 ≈ 45,4%.",
+      "related": [
+        "bookmaker-margin",
+        "fair-odds",
+        "value-bet",
+        "odds-formats"
+      ],
+      "see": [],
+      "_src_hash": "f1a1df87792644ee",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "expected-value",
+      "term": "Valor Esperado (EV)",
+      "short": "O lucro ou prejuízo médio que uma aposta produziria se pudesse ser repetida muitas vezes pelo mesmo preço.",
+      "definition": [
+        "O valor esperado responde uma pergunta: se você colocasse essa aposta exata mil vezes, você terminaria em lucro? É calculado como (probabilidade de ganhar × odds decimais) − 1, expresso por unidade apostada. EV positivo (+EV) significa que o preço supera a probabilidade real; EV negativo significa que a margem da casa de apostas ou uma visão mal precificada está trabalhando contra você.",
+        "EV é um conceito de longo prazo. Uma aposta +EV pode perder muitas vezes seguidas, e uma aposta −EV pode vencer — a variância domina amostras pequenas. A disciplina das apostas lucrativas é recusar julgar decisões por resultados únicos e julgá-las pelo preço que você aceitou. Ao longo de centenas de apostas, os resultados convergem para a expectativa."
+      ],
+      "example": "Você estima um empate com 30% de probabilidade e encontra odds de 3.75. EV = (0.30 × 3.75) − 1 = +0.125 — um lucro esperado de 12.5p por £1 apostada. Se sua estimativa de probabilidade estiver correta, apostar nesse preço repetidamente é lucrativo mesmo que ele perca 70% das vezes.",
+      "related": [
+        "value-bet",
+        "edge",
+        "kelly-criterion",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "a2bb98856f4a259f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "edge",
+      "term": "Edge",
+      "short": "Sua vantagem sobre a cotação, geralmente expressa como valor esperado em percentual.",
+      "definition": [
+        "Edge é o tamanho da sua vantagem em uma aposta: quanto melhores as odds são em relação à verdadeira probabilidade do resultado. Um edge de 5% significa que, a cada £100 apostados, você espera £5 de lucro a longo prazo. Edges em apostas esportivas são pequenos — profissionais se animam com 2–5% — porque os mercados de apostas são competitivos e majoritariamente eficientes.",
+        "Edges alegados devem ser tratados com ceticismo, incluindo os nossos. O teste honesto de um edge é o histórico liquidado em grande volume: se o registro avaliado de um método ao longo de centenas de apostas mostra retorno positivo, o edge é real; se não, foi apenas ruído. Por isso arquivamos cada dica antes do início do jogo e publicamos os resultados liquidados, acertos e perdas."
+      ],
+      "example": "Melhor cotação disponível 2.30 contra uma probabilidade justa de 46%: edge = (0,46 × 2,30) − 1 = +5,8%. Em apostas fixas de £10 em 500 casos assim, o lucro esperado é cerca de £290 — com oscilações substanciais no caminho.",
+      "related": [
+        "value-bet",
+        "expected-value",
+        "closing-line-value",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [
+        {
+          "label": "How our settled record is computed",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "24d98b3b4c4c1dd4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-formats",
+      "term": "Formatos de Odds (Decimal, Fracional, Americana)",
+      "short": "Três formas de escrever o mesmo preço: 2.50 = 6/4 = +150.",
+      "definition": [
+        "Odds decimais mostram o retorno total por unidade apostada, incluindo a stake: em 2.50, uma aposta de £10 retorna £25 (£15 de lucro mais a stake de £10). É o formato padrão na Europa e o mais fácil para cálculos, razão pela qual este site usa em todos os lugares.",
+        "Odds fracionais (6/4) mostram o lucro relativo à stake — ganhe £6 para cada £4 apostado — e permanecem tradicionais no Reino Unido. Odds americanas usam um sinal de mais ou menos: +150 significa que uma stake de $100 ganha $150; −200 significa que você precisa apostar $200 para ganhar $100. Conversão: decimal = fracional + 1; americana positiva = (odds/100) + 1; americana negativa = (100/|odds|) + 1."
+      ],
+      "example": "Odds de 2.50, 6/4 e +150 são preços idênticos com uma probabilidade implícita de 1 / 2.50 = 40%.",
+      "related": [
+        "implied-probability",
+        "odds-comparison"
+      ],
+      "see": [],
+      "_src_hash": "71f987ece97c137a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bookmaker-margin",
+      "term": "Margem da Casa de Apostas (Overround / Vig)",
+      "short": "O lucro que a casa de apostas incorpora em seus preços — a razão pela qual as probabilidades implícitas de todos os resultados somam acima de 100%.",
+      "definition": [
+        "As casas de apostas não oferecem odds justas. Cada preço é ajustado ligeiramente abaixo de seu valor justo para que, independentemente do resultado, a casa mantenha uma porcentagem. Some as probabilidades implícitas de cada resultado e o excesso acima de 100% é a margem — também chamada de overround, juice ou vig. Margens típicas de resultado de jogos de futebol variam de cerca de 2% em casas de apostas profissionais a 7%+ em casas recreativas.",
+        "A margem é o obstáculo padrão que todo apostador enfrenta: apostando aleatoriamente, você perde a margem ao longo do tempo. Isso tem duas consequências práticas. Primeiro, comparar preços entre casas de apostas é extremamente importante — a melhor odd disponível frequentemente elimina a maior parte da margem. Segundo, vencer o mercado significa superar a margem e ainda obter lucro, é por isso que vantagens genuínas de longo prazo são raras e pequenas."
+      ],
+      "example": "Mercado com dois resultados cotado em 1.91 / 1.91: 52,4% + 52,4% = 104,8% implícito, uma margem de 4,8%. A odd justa para um genuíno 50/50 seria 2.00 / 2.00.",
+      "related": [
+        "implied-probability",
+        "fair-odds",
+        "odds-comparison",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "de2db94eb0eef4a6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fair-odds",
+      "term": "Odds Justas",
+      "short": "O que um preço seria com a margem da casa de apostas removida — a estimativa de probabilidade verdadeira do mercado.",
+      "definition": [
+        "Odds justas são a versão sem margem de um mercado: os preços que fariam a casa empatar no longo prazo. A forma mais simples de estimá-las é pegar a probabilidade implícita de cada resultado, somá-las e redimensionar cada uma proporcionalmente para que o total seja exatamente 100%. As probabilidades redimensionadas se convertem de volta em odds justas.",
+        "Odds justas importam porque são o parâmetro de value. Um preço só representa value se exceder o preço justo, não apenas se 'parecer grande'. A média das probabilidades justas entre várias casas de apostas produz um consenso robusto que é difícil de distorcer por qualquer particularidade de precificação de um operador isolado — essa comparação consenso-versus-melhor-preço é exatamente como nosso modelo identifica picks com value."
+      ],
+      "example": "Probabilidades implícitas 47,6% / 27,8% / 29,4% (total 104,8%) se redimensionam para 45,4% / 26,5% / 28,1%. Odds justas de casa = 1 / 0,454 = 2,20. Qualquer casa oferecendo mais de 2,20 está pagando acima da estimativa do próprio mercado.",
+      "related": [
+        "bookmaker-margin",
+        "implied-probability",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "7ee23ed1ce1ec170",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "kelly-criterion",
+      "term": "Critério de Kelly",
+      "short": "Uma fórmula de dimensionamento de apostas que aloca valores proporcionais à sua vantagem — e um método útil para classificar apostas com valor.",
+      "definition": [
+        "O critério de Kelly calcula a fração do bankroll que maximiza o crescimento a longo prazo quando você tem uma vantagem: aposta = vantagem ÷ (odds decimais − 1). Vantagens maiores justificam apostas maiores; odds maiores justificam apostas menores com a mesma vantagem, porque a vitória ocorre com menos frequência e a variância é mais alta. Kelly completo é agressivo — a maioria dos apostadores usa half Kelly ou quarter Kelly para suavizar as flutuações.",
+        "Além do dimensionamento, Kelly é uma excelente métrica de classificação. A porcentagem de vantagem bruta favorece outsiders: uma 'vantagem' de 30% em um outsider a 21.00 é geralmente um artefato de precificação, não uma oportunidade. Dividir a vantagem por (odds − 1) pondera o valor pela frequência com que realmente ocorre, que é precisamente como nosso screener ordena suas seleções — uma vantagem modesta em um favorito a 1.80 pode superar uma grande vantagem em um shot a 6.00."
+      ],
+      "example": "Vantagem de 8% com odds 3.60: fração de Kelly = 0,08 / 2,60 ≈ 3,1% do bankroll. A mesma vantagem de 8% com odds 1.60 resulta em 0,08 / 0,60 ≈ 13,3% — o preço menor justifica uma aposta muito maior.",
+      "related": [
+        "edge",
+        "bankroll-management",
+        "flat-staking",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Kelly-ranked picks in the screener",
+          "href": "/screener"
+        }
+      ],
+      "_src_hash": "8613ffe375f15d2e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bankroll-management",
+      "term": "Gestão de Banca",
+      "short": "Tratar seu dinheiro de apostas como um fundo fixo com regras de stake — a disciplina que impede a variância de arruiná-lo.",
+      "definition": [
+        "Uma banca é dinheiro reservado exclusivamente para apostas — um valor cuja perda total você poderia absorver sem prejudicial. Gestão de banca é o conjunto de regras que governa quanto dela qualquer aposta única pode arriscar. Abordagens comuns: stake fixo (a mesma unidade fixa toda vez), stake percentual (uma fração fixa da banca atual), ou stake baseado em Kelly dimensionado à margem.",
+        "O objetivo é sobreviver à variância. Até uma estratégia genuinamente lucrativa passa por sequências de perdas de dez ou mais apostas; fazer stake grande demais transforma um draw-down normal em ruína antes da margem poder se expressar. A maioria dos apostadores disciplinados arriscam 1–2% da banca por aposta. Igualmente importante: nunca recarregue a banca para perseguir perdas — esse é o modo de falha que transforma apostas de entretenimento em um problema."
+      ],
+      "example": "Com uma banca de £500 e stakes fixos de 1,5% (£7,50 por aposta), uma sequência brutal de 15 apostas perdidas custa £112,50 — doloroso mas suportável, deixando 77% do fundo intacto.",
+      "related": [
+        "flat-staking",
+        "kelly-criterion",
+        "variance",
+        "self-exclusion"
+      ],
+      "see": [
+        {
+          "label": "Responsible gambling tools & help",
+          "href": "/responsible-gambling"
+        }
+      ],
+      "_src_hash": "06fcd7d277eef549",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "flat-staking",
+      "term": "Apostas com Valor Fixo & Unidades",
+      "short": "Apostar o mesmo valor fixo — uma unidade — em toda seleção, tornando os resultados comparáveis e honestos.",
+      "definition": [
+        "Apostas com valor fixo arriscam uma quantia idêntica, chamada unidade, em toda aposta independentemente da confiança. Uma unidade é geralmente 1–2% do bankroll. Sua grande virtude é a honestidade: lucro medido em unidades não pode ser adulterado por ponderação de valor conveniente após o resultado, razão pela qual apostadores transparentes publicam resultados como '+8,40 unidades' em vez de em moeda.",
+        "Todos os resultados neste site são liquidados com apostas fixas de uma unidade: uma aposta vencedora com odds 2,50 registra +1,50 unidades, qualquer aposta perdida registra −1,00, uma nula registra 0. É a contabilidade mais simples possível — sem 'multiplicadores de confiança' aplicados posteriormente, nenhuma forma de disfarçar um mês perdedor."
+      ],
+      "example": "Dez apostas com valor fixo: 4 vencem com odds média 2,40, 6 perdem. Lucro = 4 × 1,40 − 6 × 1,00 = −0,40 unidades — uma taxa de acerto de 40% não foi suficiente com essas odds. O mesmo histórico com odds média 2,80 registraria +1,20 unidades.",
+      "related": [
+        "bankroll-management",
+        "roi-and-yield",
+        "win-rate"
+      ],
+      "see": [
+        {
+          "label": "Our settled results, in units",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "a2154db69dabcdc1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "accumulator",
+      "term": "Acumulada (Acca / Parlay)",
+      "short": "Uma aposta que combina várias seleções — todas precisam ganhar, as odds se multiplicam, e o ganho potencial também.",
+      "definition": [
+        "Uma acumulada combina duas ou mais seleções em uma única aposta cujas odds são o produto das cotações individuais. Três picks a 1.50 × 1.72 × 1.85 pagam 4.77 — atrativo, por isso as acumuladas são intensamente divulgadas. O problema: uma perna perdedora derruba o ticket inteiro, e a margem da casa de apostas se compõe com cada perna que você adiciona.",
+        "Se cada perna carrega uma margem de 5%, uma tríplice embutida embutida uma margem da casa de aproximadamente 14% antes do início. Isso torna as acumuladas longas estruturalmente de baixo valor — entretenimento em primeiro lugar, investimento nunca. Se você combinar, mantenha as pernas poucas, busque o melhor preço em cada uma individualmente, e aposte pequeno: a expectativa correta para uma acumulada é uma vitória divertida ocasional, nunca lucro constante."
+      ],
+      "example": "Três pernas, cada uma com 60% de probabilidade real: probabilidade combinada verdadeira = 0.6³ = 21.6% (odds justas 4.63). Pernas cotadas a 1.58 cada geram um pagamento de 3.94 — implicando 25.4% e entregando à casa uma margem composta de ~18% no ticket.",
+      "related": [
+        "bookmaker-margin",
+        "double-chance",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Accumulator tips",
+          "href": "/tips/accumulator"
+        }
+      ],
+      "_src_hash": "d6decdd7926e1ffb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "btts",
+      "term": "Ambos os Times Marcam (BTTS)",
+      "short": "Um mercado sobre se ambos os lados marcam pelo menos um gol — o resultado final não importa.",
+      "definition": [
+        "BTTS (também 'gols aos montes' ou GG/NG) liquida Sim se cada time marca pelo menos um gol, Não caso contrário. Um 3–1 é Sim; um 2–0 é Não. O resultado da partida é irrelevante, o que torna BTTS popular em jogos entre times ofensivos com defesas frágeis — você pode estar certo sobre o caráter do jogo enquanto erra sobre o vencedor.",
+        "Precificar BTTS bem significa estimar a probabilidade de cada time marcar em vez de determinar qual é melhor no geral. Seu primo próximo é o mercado de gols acima/abaixo: BTTS-Sim correlaciona fortemente com Over 2.5, e comparar os dois preços ocasionalmente expõe inconsistências em como uma casa de apostas modelou o mesmo confronto."
+      ],
+      "example": "Se o time da casa marca em 75% das partidas e o time visitante em 60% (aproximadamente independentes), BTTS-Sim ≈ 0.75 × 0.60 = 45% — odds justas 2.22. Um preço de 2.40 seria value; 1.95 não seria.",
+      "related": [
+        "over-under",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "BTTS tips",
+          "href": "/tips/btts"
+        }
+      ],
+      "_src_hash": "05b46df492098048",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "over-under",
+      "term": "Over/Under (Totais)",
+      "short": "Apostar no número combinado de gols em vez no vencedor, contra uma linha como 2.5.",
+      "definition": [
+        "Uma aposta de totais ignora quem vence e pergunta apenas quantos gols a partida produz. A linha é geralmente estabelecida em meio-gol (2.5) para não haver empate: Over 2.5 precisa de três ou mais gols, Under 2.5 vence com dois ou menos. Linhas inteiras (ex. exatamente 3.0) podem 'dar nulo' — cair exatamente na linha — caso em que as apostas são devolvidas como void.",
+        "Totais são frequentemente campos melhores para buscar value do que resultados de jogos, porque o dinheiro casual se concentra em escolher vencedores, deixando mercados de gols ligeiramente menos eficientemente precificados. Eles também se adequam à modelagem estatística: gols seguem padrões razoavelmente estáveis por time e liga, razão pela qual uma grande parcela das recomendações do nosso modelo são totais."
+      ],
+      "example": "Over 2.5 a 1.93 implica 51.8%. Se seu modelo avalia três ou mais gols em 55%, EV = (0.55 × 1.93) − 1 = +6.2% — uma aposta com value mesmo sendo praticamente uma moeda ao ar.",
+      "related": [
+        "btts",
+        "void-bet",
+        "asian-handicap"
+      ],
+      "see": [
+        {
+          "label": "Over/Under tips",
+          "href": "/tips/over-under"
+        }
+      ],
+      "_src_hash": "90644050aa93d2f1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "asian-handicap",
+      "term": "Asian Handicap",
+      "short": "Um mercado de handicap que elimina o empate atribuindo uma vantagem de gols para um dos times, frequentemente em incrementos de um quarto de gol.",
+      "definition": [
+        "Os handicaps asiáticos equilibram um confronto desigual adicionando gols virtuais a um time antes do apito inicial. Apostar no favorito em −1.5 significa que ele precisa vencer por dois gols de diferença; apostar no azarão em +1.5 vence se ele evitar perder por dois ou mais gols. Handicaps inteiros (−1.0) podem resultar em devolução: se o favorito vencer por exatamente um gol, as apostas são reembolsadas.",
+        "Linhas em quartos (−0.75, +1.25) dividem sua aposta entre as duas linhas adjacentes — metade em −0.5 e metade em −1.0, por exemplo — então os resultados podem ser meios ganhos e meio perdidos. Como o empate é eliminado por engenharia, os mercados de handicap asiático têm apenas dois resultados, normalmente apresentam margens mais baixas que 1X2, e é onde a maioria do dinheiro mais afiado do futebol é negociada."
+      ],
+      "example": "£20 no favorito em −0.75 (odds 1.95): uma vitória por um gol paga a metade −0.5 integralmente e devolve a metade −1.0 — retorno total £29.75, um 'meio ganho'. Uma vitória por dois gols paga ambas as metades: £39.",
+      "related": [
+        "match-result",
+        "void-bet",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "711a58b58d3b87dd",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "double-chance",
+      "term": "Double Chance",
+      "short": "Cobrir dois dos três resultados da partida em uma aposta — muito mais seguro, odds muito mais curtas.",
+      "definition": [
+        "Double chance combina dois resultados do mercado 1X2: casa-ou-empate (1X), visitante-ou-empate (X2), ou qualquer-time-vencer (12). Apenas um dos três resultados o derrota, então a probabilidade de ganho é alta — e as odds correspondentemente curtas, frequentemente abaixo de 1.50 quando um favorito está envolvido.",
+        "O mercado é funcionalmente similar ao Draw No Bet e ao Asian handicap +0.5; comparar os três preços para a mesma visão às vezes revela qual embalagem um operador precificou de forma mais generosa. A cautela estratégica: segurança não é value. Um 1X a 1.25 com chance real de 78% é uma aposta perdedora disfarçada de roupa segura — odds curtas ainda precisam superar o preço justo."
+      ],
+      "example": "Casa 45%, empate 28%: probabilidade 1X justa = 73% → odds justas 1.37. Uma casa oferecendo 1.44 está pagando value na opção 'segura'; uma oferecendo 1.28 não está.",
+      "related": [
+        "match-result",
+        "draw-no-bet",
+        "asian-handicap"
+      ],
+      "see": [
+        {
+          "label": "Double chance tips",
+          "href": "/tips/double-chance"
+        }
+      ],
+      "_src_hash": "dd5f4515ac8590f3",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "draw-no-bet",
+      "term": "Draw No Bet (DNB)",
+      "short": "Aposte em um time; se a partida terminar empatada, sua aposta é devolvida.",
+      "definition": [
+        "Draw No Bet remove o empate da equação: escolha um lado, e uma partida empatada devolve sua aposta como nula em vez de uma perda. É equivalente ao handicap asiático 0.0 e fica entre o preço 1X2 completo (odds maiores, empate perde) e double chance (odds menores, empate vence).",
+        "DNB é adequado em situações onde você confia em um lado mas respeita um risco real de empate — clássicos apertados, favoritos visitantes cautelosos. Você também pode construir manualmente dividindo sua aposta entre a vitória e o empate na proporção correta, o que ocasionalmente supera o preço DNB empacotado. Como sempre, o empacotamento só vale a pena quando a probabilidade implícita está abaixo de sua estimativa da chance verdadeira."
+      ],
+      "example": "Time cotado a 2.30 para vencer, 3.30 o empate. DNB oferecido a 1.70: implícita de 58,8% para um mercado onde a chance de vitória (excluindo empates) é 100 × 43,5/(43,5+26,3) ≈ 62% — um DNB justo seria ~1.61, então 1.70 traz valor.",
+      "related": [
+        "double-chance",
+        "asian-handicap",
+        "void-bet"
+      ],
+      "see": [],
+      "_src_hash": "554e9497dd446fe6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "match-result",
+      "term": "Resultado de Partida (1X2)",
+      "short": "O clássico mercado de três vias: vitória do mandante (1), empate (X) ou vitória do visitante (2).",
+      "definition": [
+        "1X2 é o principal mercado do futebol: aposte na equipe mandante, no empate ou na equipe visitante nos 90 minutos mais acréscimos (tempo extra e pênaltis não contam a menos que especificado). Seus três resultados o tornam estruturalmente diferente dos mercados de duas vias — as probabilidades se dividem em três, empates ocorrem muito mais frequentemente do que apostadores casuais esperam, e as margens costumam ser maiores do que nas linhas de handicap asiático.",
+        "O empate merece respeito particular: no futebol de primeira divisão, empates acontecem em aproximadamente um quarto das partidas, porém as odds de empate frequentemente ficam generosas porque a maioria do dinheiro recreativo quer um vencedor. Esse padrão de mispricing é por que as telas de value periodicamente destacam empates — não porque empates sejam previsíveis, mas porque são sistematicamente sub-apostados."
+      ],
+      "example": "Um mercado a 2.05 / 3.50 / 3.90 implica 48.8% / 28.6% / 25.6% (margem 3%). Se as probabilidades fair de consenso são 46% / 27% / 27%, o visitante a 3.90 (fair 3.70) é o canto de value do mercado.",
+      "related": [
+        "double-chance",
+        "draw-no-bet",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "bd857024ed451f0a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "correct-score",
+      "term": "Correct Score",
+      "short": "Prever o placar exato final — odds altas, alta variância, margens pesadas.",
+      "definition": [
+        "O mercado de correct score pede o resultado preciso — 2–1, 0–0, 3–3 — com cada placar precificado individualmente, geralmente com odds altas. Como a probabilidade se distribui entre mais de vinte placares plausíveis, até o resultado único mais provável (frequentemente 1–1 ou 1–0) raramente ultrapassa 11–13% de chance.",
+        "As margens do mercado estão tipicamente entre as mais amplas que uma casa oferece, e a variância é extrema: registros de correct score oscilam descontroladamente em amostras pequenas. Trate como um mercado divertido, de pequenas apostas, em vez de uma estratégia de value. Se você tem uma visão genuína sobre o padrão de gols de um jogo, os mercados de totais ou BTTS geralmente expressam a mesma opinião com preços mais justos."
+      ],
+      "example": "Um 2–1 precificado a 9.00 implica 11,1%. Modelos estilo Poisson com taxas de gols realistas raramente colocam qualquer placar muito acima de 13% — então o preço precisa estar acima de 7.70 antes de value ser sequer concebível.",
+      "related": [
+        "over-under",
+        "btts",
+        "variance"
+      ],
+      "see": [
+        {
+          "label": "Correct score tips",
+          "href": "/tips/correct-score"
+        }
+      ],
+      "_src_hash": "b589a16b0efd68c4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "closing-line-value",
+      "term": "Closing Line Value (CLV)",
+      "short": "Ganhar a cotação final pré-apito — a mais forte evidência estatística de que um apostador tem vantagem genuína.",
+      "definition": [
+        "A closing line é a última cotação disponível antes de um evento começar, depois que o mercado absorveu todas as notícias e apostas. Geralmente é a estimativa de probabilidade mais precisa que existe. Closing line value significa ter pegado uma cotação melhor antes: você apostou em 2.20 e fechou em 2.00. Fazer isso consistentemente e você quase certamente possui vantagem real, porque está repetidamente superando o veredito final do mercado.",
+        "CLV importa porque separa habilidade de sorte muito mais rápido do que lucro faz. Resultados em poucas dezenas de apostas são ruído; ganhar consistentemente o fechamento na mesma amostra é sinal. É também por isso que as cotações se movem — valor inicial é apostado — e por que agir rápido em valor identificado importa."
+      ],
+      "example": "Você pega 2.20; a linha fecha em 2.00. Probabilidade implícita se moveu de 45.5% para 50%. Se o fechamento é preciso, sua aposta carregava EV = (0.50 × 2.20) − 1 = +10% — realizado no momento que você ganhou o movimento, seja qual for o resultado.",
+      "related": [
+        "line-movement",
+        "edge",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "d542c47127cb6b0e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "line-movement",
+      "term": "Movimento de Odds & Steam",
+      "short": "Como as odds mudam conforme o dinheiro e notícias chegam — e os surtos de money sharp conhecidos como steam.",
+      "definition": [
+        "Odds são preços vivos. Abrem a partir do modelo da casa, depois se movem conforme as apostas chegam, notícias do time surgem e operadores mais experientes se reposicionam. Um preço encurtando ('steaming in') sinaliza dinheiro entrando naquele resultado; um preço estendendo sinaliza o oposto. A maioria do movimento é rebalanceamento rotineiro, mas encurtamentos rápidos e sincronizados em muitas casas — steam — frequentemente marcam money respeitado entrando no mercado.",
+        "O movimento importa para um apostador de valor de dois jeitos. Pegando cedo, um preço que depois faz steam geralmente significa que você bateu a linha de fechamento. E um preço que estende depois que você apostou é um aviso de que sua visão discorda do money informado. Rastrear nosso preço publicado contra movimentos posteriores é um dos health checks por trás da coluna de sinal do screener."
+      ],
+      "example": "Um time abre 2.10 e está 1.85 uma hora antes do kick-off no mercado. A probabilidade implícita se moveu 47.6% → 54.1%. Qualquer um segurando o ticket 2.10 agora possui uma aposta que o próprio mercado avalia como +14% EV.",
+      "related": [
+        "closing-line-value",
+        "sharp-and-soft-bookmakers",
+        "value-bet"
+      ],
+      "see": [
+        {
+          "label": "Signal column in the screener",
+          "href": "/screener"
+        }
+      ],
+      "_src_hash": "8230946f4d53d082",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "sharp-and-soft-bookmakers",
+      "term": "Casas de Apostas Sharps vs Softs",
+      "short": "Casas sharps aceitam ganhadores e oferecem odds com margens baixas; casas softs buscam apostadores casuais e limitam vencedores rapidamente.",
+      "definition": [
+        "Casas de apostas sharps (e exchanges) operam com margens baixas, aceitam grandes stakes e formam suas odds pelo fluxo de dinheiro profissional — suas linhas são tratadas como a verdade de mercado. Casas softs focam em clientes recreativos com bônus e promoções, operam com margens maiores, reagem mais lentamente a notícias e restringem contas de apostadores consistentes.",
+        "O mapa prático de vantagem segue diretamente disso: valor é encontrado mais frequentemente em casas softs cujas odds lentas ou promocionais ficam atrás do consenso sharp. Comparar a odd de uma casa soft contra a linha fair do consenso sharp é precisamente o padrão que nosso detector de valor usa. O trade-off importante: aproveitar consistentemente essas odds tende a gerar limitações de stake nas casas softs — é uma marca de honra, mas uma restrição real."
+      ],
+      "example": "Consenso sharp precifica um lado em 1.95 (fair ~51%); uma casa soft ainda mostra 2.15 de ontem. Esse gap de 10% é um spot clássico de valor em casa soft — e exatamente o tipo de discrepância que fecha dentro de horas.",
+      "related": [
+        "bookmaker-margin",
+        "closing-line-value",
+        "line-movement"
+      ],
+      "see": [
+        {
+          "label": "Bookmaker reviews",
+          "href": "/bookmakers"
+        }
+      ],
+      "_src_hash": "089eebf382cf0e6f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "arbitrage-betting",
+      "term": "Arbitragem em Apostas (Arbing)",
+      "short": "Cobrir todos os possíveis resultados em diferentes casas de apostas com odds que garantem um pequeno lucro.",
+      "definition": [
+        "Uma arbitragem existe quando discrepâncias entre casas de apostas permitem que você cubra todos os resultados e garanta lucro independentemente do resultado — a probabilidade implícita combinada dos seus odds escolhidos fica abaixo de 100%. Arbs surgem quando as casas discordam ou atrasam em relação às notícias, e normalmente pagam 1–4% da quantidade total apostada.",
+        "As pegadinhas são práticas. Arbs exigem grande volume de apostas para pequenos retornos, cálculos de stake precisos e velocidade — as odds desaparecem em minutos. As casas de apostas detectam o padrão rapidamente e respondem com limites de stake ou fechamento de contas. Apostas anuladas em uma casa podem deixar a outra perna perigosamente exposta. É um negócio real mas desgastante, mais próximo de logística do que de apostas."
+      ],
+      "example": "Casa A: vitória mandante 2.10 (47,6%). Casa B: vitória visitante+empate (X2) 2.15 (46,5%). Total 94,1% < 100%. Apostando £51.20 e £48.80 respectivamente retorna ~£107.50 independentemente do resultado da partida — aproximadamente +5,9% sobre £100 total.",
+      "related": [
+        "bookmaker-margin",
+        "value-bet",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "c70334cf2d0ed4e6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "cash-out",
+      "term": "Cash Out",
+      "short": "Encerrar uma aposta antes do final do evento por um valor que a casa oferece — conveniente, mas quase sempre abaixo do valor justo.",
+      "definition": [
+        "O cash out permite fechar uma aposta ao vivo antes do término do evento: a casa oferece um valor de recompra baseado na probabilidade atual de sua aposta ganhar. Posições vencedoras podem ser garantidas cedo; as perdedoras podem ser parcialmente resgatadas. Parece controle, o que é exatamente por que é tão divulgado.",
+        "A mecânica é menos favorável: a cotação de cash out é o valor justo atual de seu cupom menos uma margem nova — frequentemente maior que a margem da aposta original. Fazer cash out rotineiramente vaza EV duas vezes. Se você se vê querendo negociar posições ativamente, uma exchange com preços de back/lay transparentes faz o mesmo trabalho a preços honestos; se você mantém apostas com valor, a disciplina geralmente é deixá-las se liquidarem."
+      ],
+      "example": "Sua £10 a 3.00 tem 70% de chance de ganhar no final do jogo. Valor justo do cupom = 0,70 × £30 = £21. Uma cotação de cash out típica de £18.50 discretamente cobra £2.50 — um desconto de 12% pelo botão.",
+      "related": [
+        "expected-value",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "51e449202dcc787e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "free-bet",
+      "term": "Free Bet",
+      "short": "Um crédito promocional da casa — os ganhos são seus, a aposta inicial não é devolvida.",
+      "definition": [
+        "Uma free bet é crédito promocional: coloque-a, e se ganhar você fica com os lucros mas não recupera a aposta ('stake not returned', SNR). Uma free bet de £10 com odds 4.00 paga £30, não £40. Como a aposta nunca é sua, o valor real do crédito é aproximadamente seu valor nominal vezes (1 − 1/odds) — por isso free bets extraem mais valor em odds maiores.",
+        "Free bets são a moeda das promoções e bônus de boas-vindas. Usadas descuidadamente em favoritos curtos retornam uma fração do valor nominal; usadas deliberadamente em odds de 3.00–5.00 convertem para 65–80% do valor nominal em expectativa. Sempre leia os termos anexos: janelas de expiração, odds mínimas e restrições de mercado determinam qual é realmente o valor do crédito."
+      ],
+      "example": "Free bet de £20 com odds 5.00: ganha £80 de lucro 20% das vezes → EV = £16, ou 80% do valor nominal. O mesmo crédito com odds 1.40 retorna £8 × ... ≈ EV £5.70 — menos de 30% do valor nominal.",
+      "related": [
+        "wagering-requirements",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Current bonuses with real terms",
+          "href": "/bonuses"
+        }
+      ],
+      "_src_hash": "e8a48bb840d0fa67",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "wagering-requirements",
+      "term": "Exigências de Apostas (Rollover)",
+      "short": "Quantas vezes um bônus deve ser apostado antes da retirada — o número que determina se uma oferta vale algo.",
+      "definition": [
+        "Um 'bônus de £50, rollover 5x em odds mínimas 1.5' significa que você deve fazer £250 em apostas qualificantes antes do bônus se converter em saldo sacável. Toda aposta forçada gera margem para a casa, então o custo real de liberar o bônus é aproximadamente volume × margem: o valor anunciado diminui a cada passagem obrigatória pelos livros.",
+        "O rollover é a linha mais importante em qualquer termo de bônus — bem mais que o valor anunciado. Um bônus pequeno com rollover 1x frequentemente supera um grande com rollover 10x. Observe também as cláusulas de suporte: odds mínimas (mínimos mais altos forçam apostas mais arriscadas), exclusões de mercados, stake máximo por aposta e datas de expiração que silenciosamente anulam bônus inacabados."
+      ],
+      "example": "Bônus de £40, rollover 8x, ~5% de margem média: custo esperado de liberação ≈ £320 × 5% = £16. O valor realista do bônus é mais próximo de £24 do que £40 — e negativo se uma expiração de 7 dias força apostas precipitadas.",
+      "related": [
+        "free-bet",
+        "bookmaker-margin"
+      ],
+      "see": [
+        {
+          "label": "Offers compared with wagering shown",
+          "href": "/bonuses"
+        }
+      ],
+      "_src_hash": "9640d67e0723ae88",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "void-bet",
+      "term": "Aposta Anulada (Push)",
+      "short": "Uma aposta cancelada: a aposta é devolvida, liquidada como nem ganho nem perda.",
+      "definition": [
+        "Uma aposta é anulada quando não pode ser liquidada com justiça: o jogo é adiado ou abandonado, um jogador nomeado não inicia, uma linha de handicap ou totais de número inteiro cai exatamente (um push), ou a casa de apostas cancela um óbvio erro de precificação (erro palpável, 'palp'). Sua aposta é devolvida e a aposta é registrada como nem ganho nem perda.",
+        "Apostas anuladas importam para a honestidade do registro. Em nossas estatísticas liquidadas uma anulação registra exatamente 0 unidades — é excluída dos cálculos de taxa de ganho e as apostas não são contadas como volume. Em apostas combinadas, uma perna anulada não destrói o ticket; a perna é removida e as odds combinadas são recalculadas sem ela."
+      ],
+      "example": "Handicap asiático −1.0 e o favorito vence 2–1: a margem de um gol cai exatamente na linha, a aposta empatou, e sua aposta de £15 é simplesmente devolvida.",
+      "related": [
+        "settlement",
+        "asian-handicap",
+        "over-under"
+      ],
+      "see": [],
+      "_src_hash": "bdffd6863e31d20a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "settlement",
+      "term": "Liquidação (Classificação)",
+      "short": "Marcar uma aposta como ganha, perdida ou nula contra o resultado oficial — e o teste de honestidade para qualquer tipster.",
+      "definition": [
+        "Liquidação é o ato de classificar uma aposta contra o resultado final: ganha, perdida ou nula, com o lucro calculado a partir das odds efetivamente tomadas. Para um apostador individual é escrituração; para qualquer um publicando dicas é toda a base de credibilidade. Um registro só significa algo se cada dica publicada for classificada — ao preço publicado, contra o placar oficial, com perdas incluídas.",
+        "Os golpes clássicos de tipster são golpes de liquidação: deletar perdedores, classificar contra odds melhores do que estavam disponíveis, ou silenciosamente reclassificar perdas como 'nulas'. Nosso sistema é construído exatamente contra isso: cada dica é arquivada antes do início com seu preço, resultados são classificados automaticamente de placares finais oficiais, e nada é editado depois — as páginas de arquivo permanecem, ganhos e perdas igualmente."
+      ],
+      "example": "Dica arquivada a 2.30 pré-jogo. Placar final a classifica como vencedora: +1.30 unidades em stakes fixas. Se tivesse perdido, a mesma página mostraria permanentemente −1.00 — essa permanência é o ponto.",
+      "related": [
+        "void-bet",
+        "flat-staking",
+        "tipster"
+      ],
+      "see": [
+        {
+          "label": "Browse settled days",
+          "href": "/predictions/daily"
+        }
+      ],
+      "_src_hash": "7ac0c0dd355ffceb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "roi-and-yield",
+      "term": "ROI / Yield",
+      "short": "Lucro como percentual do total apostado — o número único mais limpo para comparar registros de apostas.",
+      "definition": [
+        "Yield (frequentemente chamado ROI nas apostas) divide o lucro líquido pelo montante total apostado: 100 apostas de 1 unidade retornando 6 unidades de lucro é um yield de 6%. Como normaliza pelo volume de giro, o yield permite comparar registros de tamanhos e perfis de odds diferentes de forma justa — diferentemente do lucro bruto, que recompensa simplesmente apostar mais.",
+        "Contexto para calibração: yields de longo prazo de 3–8% são território profissional forte; yields em dois dígitos em amostras grandes são raros e geralmente encolhem conforme o tamanho da amostra cresce. Um yield espetacular em 30 apostas é variância, não habilidade — sempre leia o yield junto com o número de apostas liquidadas, e desconfie de qualquer registro que nunca mostre um período de perdas."
+      ],
+      "example": "120 dicas liquidadas com stakes fixas de 1 unidade, saldo de +7,9 unidades: yield = 7,9 / 120 = 6,6%. Os mesmos +7,9 unidades em 400 apostas seriam um yield de 2,0% — um registro materialmente mais fraco (embora ainda positivo).",
+      "related": [
+        "win-rate",
+        "flat-staking",
+        "variance"
+      ],
+      "see": [
+        {
+          "label": "Tipster ROI on the leaderboard",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "5f6b7fb3c60444ed",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "win-rate",
+      "term": "Taxa de Acerto (Strike Rate)",
+      "short": "O percentual de apostas vencedoras — sem significado isolado, mas relevante quando acompanhado das odds médias.",
+      "definition": [
+        "A taxa de acerto é a proporção de apostas já resolvidas que venceram. Isoladamente, é o número mais abusado no marketing de apostas: uma taxa de 80% parece espetacular e é trivialmente alcançada ao cobrir favoritos em 1.10 — enquanto se perde dinheiro. Inversamente, uma taxa de 35% é excelente se o preço médio obtido for superior a 3.00.",
+        "A taxa de acerto de equilíbrio para qualquer histórico é 1 dividido pelas odds decimais médias: com odds médias de 2.50 você precisa de 40% para ficar no zero. Tudo acima do equilíbrio é vantagem; tudo abaixo é prejuízo disfarçado em percentual. Leia taxa de acerto, odds médias e ROI juntos, sobre um número declarado de apostas — qualquer histórico que cite apenas a taxa de acerto está escondendo algo."
+      ],
+      "example": "Odds médias 2.20 → equilíbrio 45,5%. Um histórico de 48% nessas odds gera (0.48 × 2.20) − 1 = +5.6%. Os mesmos 48% com odds médias 2.00 perdem 4% do volume de apostas.",
+      "related": [
+        "roi-and-yield",
+        "flat-staking",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "adaaf47d9aff3acd",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "variance",
+      "term": "Variância",
+      "short": "As flutuações naturais entre resultados e expectativa — por que apostas boas perdem e registros ruins parecem bons, por enquanto.",
+      "definition": [
+        "Variância é o ruído estatístico entre o que deveria acontecer na média e o que realmente acontece em qualquer amostra finita. Em apostas é brutal e inevitável: uma aposta genuína com probabilidade de 55% perde quase metade das vezes; uma carteira com uma vantagem real de +5% pode estar em prejuízo após duzentas apostas; um tipster jogando na sorte pode postar um mês glorioso.",
+        "Respeitar a variância muda o comportamento. Define o tamanho das apostas (veja gerenciamento de banca), estabelece janelas de avaliação (centenas de apostas, não dezenas) e inocula contra desespero e euforia. É também por isso que registros transparentes e completos importam mais do que sequências quentes — em uma amostra suficientemente longa a variância desaparece e apenas a vantagem, positiva ou negativa, permanece."
+      ],
+      "example": "500 apostas independentes com 50% / odds 2.10 (uma vantagem real de +5%): aproximadamente um entre seis apostadores ainda está no prejuízo após todas as 500 apostas — pura variância, nenhum erro cometido.",
+      "related": [
+        "expected-value",
+        "bankroll-management",
+        "win-rate"
+      ],
+      "see": [],
+      "_src_hash": "d5852e771c63e316",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "in-play-betting",
+      "term": "Apostas ao Vivo (In-Play)",
+      "short": "Apostar enquanto o evento está em andamento, com odds que se ajustam a cada lance significativo.",
+      "definition": [
+        "As apostas ao vivo mantêm os mercados abertos durante a partida, recalculando continuamente conforme gols, cartões e dinâmica surgem. Oferece oportunidades analíticas reais — reagir ao estado do jogo mais rápido ou racional que o algoritmo — mas o ambiente é engenheirado para impulso: janelas curtas de suspensão, preços piscantes e delay de transmissão que significa o apostador geralmente sabe mais que seu stream mostra.",
+        "Dois avisos estruturais. As margens ao vivo costumam ser maiores que pré-jogo, então a odd média em andamento é pior. E frequência é inimiga da disciplina: dezenas de micro-decisões por partida multiplicam exposição tanto à margem quanto à reação emocional. Se apostar ao vivo, pré-decida pontos de entrada e stakes antes do apito inicial, e trate tentar recuperar uma perda anterior como o sinal de alerta que realmente é."
+      ],
+      "example": "Um favorito cotado em 1.70 pré-jogo sofre gol cedo: odds ao vivo saltam para 2.90 (probabilidade implícita 34%). Se seu modelo pré-jogo avaliou o cenário de recuperação deles mais próximo de 42%, esse ajuste excessivo — não a emoção — é a única razão racional para apostar.",
+      "related": [
+        "cash-out",
+        "line-movement",
+        "bankroll-management"
+      ],
+      "see": [],
+      "_src_hash": "6048484c8edf3b0c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "xg",
+      "term": "Gols Esperados (xG)",
+      "short": "Métrica de qualidade de chute que estima quantos gols um time 'deveria' ter marcado pelas suas chances.",
+      "definition": [
+        "Gols esperados atribui a cada chute uma probabilidade de gol baseada em resultados históricos de chances similares — distância, ângulo, parte do corpo, tipo de assistência. Somando-os, obtém-se o xG de um time em uma partida ou temporada: uma medida de qualidade de chances que elimina a sorte do acabamento. Um time vencendo 1–0 com 0.4 xG contra 2.3 aproveitou seu goleiro, seja o que diga a tabela.",
+        "Para apostadores, xG é um sinal de forma que se estabiliza mais rápido que resultados: times massivamente acima de seu xG tendem a regredir, e o mercado às vezes fica para trás nessa regressão. Seus limites são igualmente importantes — ignora contexto de jogo e contexto de chute além de seu modelo, varia entre provedores, e um jogo de xG é quase tão volátil quanto um jogo de gols. Use-o como um input, nunca como um veredito."
+      ],
+      "example": "Nos últimos seis jogos um time marcou 11 gols de um xG de 6.1. Mercados de apostas precificando-os por esses 11 gols podem estar superavaliando um sequência quente de acabamento que o xG diz estar rodando ~80% acima da taxa sustentável.",
+      "related": [
+        "variance",
+        "line-movement"
+      ],
+      "see": [],
+      "_src_hash": "be8ddc67f6613784",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "tipster",
+      "term": "Tipster",
+      "short": "Alguém que publica seleções de apostas — confie no histórico, nunca na captura de tela.",
+      "definition": [
+        "Um tipster publica apostas recomendadas, gratuitas ou pagas. A economia da atenção torna o campo uma zona de risco: vencedores são promovidos com barulho, históricos perdedores são deletados silenciosamente, e capturas de tela não provam nada. A única evidência significativa é um registro completo e com data: cada tip arquivado antes do evento, avaliado nas odds cotadas, com perdas exibidas tão permanentemente quanto vitórias.",
+        "Uma checklist que vale a pena aplicar a qualquer um (incluindo a gente): O histórico completo está visível, com sequências perdedoras intactas? As odds cotadas estavam realmente disponíveis no momento da publicação? O lucro está indicado em unidades planas ao longo de uma amostra declarada? O histórico resiste às odds de fechamento? Qualquer um recusando essas questões está vendendo entretenimento, não vantagem — pague por picks apenas se o histórico verificado ainda impressionaria você na metade de seu rendimento declarado."
+      ],
+      "example": "Duas afirmações: 'ganhei 9 de meus últimos 10!' versus '412 tips liquidadas, +4,8% de yield, odds média 2.31, arquivo completo'. A primeira é uma frase de marketing; a segunda é um histórico — e o arquivo é o que a torna um.",
+      "related": [
+        "settlement",
+        "roi-and-yield",
+        "win-rate"
+      ],
+      "see": [
+        {
+          "label": "Our leaderboard with settled records",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "4790ca1012523b3c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-comparison",
+      "term": "Comparação de Odds",
+      "short": "Conferir o preço de cada casa de apostas antes de colocar a aposta — a vantagem mais simples e confiável que existe.",
+      "definition": [
+        "Diferentes casas de apostas precificam o mesmo mercado de formas distintas, rotineiramente com variações de 5–10%. Pegar 2.20 em vez de 2.05 no mesmo resultado é uma melhora de 7% no retorno sem risco adicional algum — acumulado em cada aposta, a busca por melhores preços separa sozinha um histórico de perdas de um ponto de equilíbrio, e um ponto de equilíbrio de lucro.",
+        "Este é o hábito profissional mais fácil de copiar: manter contas em várias casas de apostas e sempre pegar o melhor preço disponível. É também a base da detecção de valor — nosso modelo compara o preço de cada casa contra o consenso sem margem, e cada página de partida lista as melhores odds disponíveis por resultado, então a comparação já está pronta."
+      ],
+      "example": "Sua aposta média é em odds ~2.00 e você faz apostas de 100 × £10 por mês. Pegar sistematicamente preços 4% melhores vale cerca de £40 mensais — toda a margem devolvida, antes de qualquer habilidade preditiva.",
+      "related": [
+        "bookmaker-margin",
+        "fair-odds",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [
+        {
+          "label": "Best odds on every match page",
+          "href": "/predictions"
+        }
+      ],
+      "_src_hash": "558fd6fb31af123b",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "self-exclusion",
+      "term": "Autoexclusão & Limites de Apostas",
+      "short": "Ferramentas formais que bloqueiam seu acesso ao jogo — limites de depósito, pausas temporárias e esquemas de exclusão multi-operadora.",
+      "definition": [
+        "Todo operador licenciado deve oferecer ferramentas de controle: limites de depósito, perda e stake; lembretes de sessão; pausas curtas de 'intervalo'; e autoexclusão total que fecha a conta por meses ou anos. Esquemas nacionais estendem isso por todo o mercado de uma vez — GAMSTOP no Reino Unido exclui você de todo operador licenciado com um único registro, e softwares de bloqueio como Gamban cobrem sites que os esquemas deixam passar.",
+        "O enquadramento honesto: estas não são ferramentas apenas para 'apostadores problemáticos'. Limites de depósito definidos em um dia calmo são seguro barato contra uma noite de tilt; um intervalo após uma sequência ruim é gerenciamento de bankroll para a mente. Se as apostas pararam de ser diversão — perseguindo perdas, escondendo stakes, apostando dinheiro que tinha um destino — as ferramentas acima mais linhas de ajuda confidenciais e gratuitas são a próxima aposta correta."
+      ],
+      "example": "Definir um limite de depósito mensal de £100 leva dois minutos nas configurações da conta. Ele não pode ser aumentado no calor do momento: aumentos entram em vigor apenas após um período de reflexão — exatamente o ponto.",
+      "related": [
+        "bankroll-management"
+      ],
+      "see": [
+        {
+          "label": "Responsible gambling help & tools",
+          "href": "/responsible-gambling"
+        }
+      ],
+      "_src_hash": "c50087ed518f0a33",
+      "_model": "claude-haiku-4-5-20251001"
+    }
+  ]
+}

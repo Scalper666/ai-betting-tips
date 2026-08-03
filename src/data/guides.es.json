@@ -1,0 +1,1633 @@
+{
+  "lang": "es",
+  "guides": [
+    {
+      "slug": "how-to-read-betting-odds",
+      "title": "Cómo leer las cuotas de apuestas",
+      "nav": "Lectura de cuotas",
+      "desc": "Cuotas decimales, fraccionarias y estadounidenses explicadas con un ejemplo continuo — más cómo convertir cualquier precio a la probabilidad que implica.",
+      "cat": "Basics",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "Las cuotas son precios, no predicciones",
+          "ps": [
+            "Un precio de apuestas cumple dos funciones al mismo tiempo: te dice cuánto devuelve una apuesta ganadora y sugiere qué probabilidad cree que tiene el resultado la casa. Ninguna función es una promesa. Cuotas de 1.50 no significan que un equipo ganará — significan que la casa te cobra un precio que corresponde aproximadamente a un 66,7% de probabilidad, menos su propia comisión.",
+            "Una vez que ves las cuotas como precios en un mercado, mucha de la lógica de apuestas tiene sentido. Los precios varían entre casas, se mueven con el dinero y las noticias, y — como cualquier mercado — algunos precios son simplemente incorrectos. Encontrar esos es el juego completo para apostadores serios."
+          ]
+        },
+        {
+          "h": "Cuotas decimales",
+          "ps": [
+            "Las cuotas decimales son el estándar en Europa, África y la mayoría de casas de apuestas en el mundo, y son el formato más fácil de trabajar. El número es tu retorno total por unidad apostada, incluyendo lo que pusiste. Cuotas de 2.75 significan que una apuesta ganadora de €10 devuelve €27.50 — tus €10 de vuelta más €17.50 de ganancia.",
+            "Dos reflejos útiles: cualquier cosa por debajo de 2.00 son cuotas favoritas (el resultado se considera más probable que improbable), y la probabilidad implícita es simplemente 1 dividido por las cuotas. 1 ÷ 2.75 ≈ 36,4%."
+          ]
+        },
+        {
+          "h": "Cuotas fraccionarias",
+          "ps": [
+            "Las cuotas fraccionarias (5/2, 11/10, 4/6) son el formato tradicional del Reino Unido e Irlanda. La fracción es ganancia relativa a lo apostado: 5/2 significa €5 de ganancia por cada €2 apostados, así que una apuesta de €10 a 5/2 devuelve €35 en total (€25 de ganancia más tu apuesta).",
+            "Para convertir a decimales, divide la fracción y suma 1: 5/2 → 2.5 + 1 = 3.50. Las fracciones por debajo de 1 (como 4/6) son favoritas."
+          ]
+        },
+        {
+          "h": "Cuotas estadounidenses",
+          "ps": [
+            "Las cuotas estadounidenses vienen como números positivos o negativos anclados a una apuesta de $100. Las negativas (−150) muestran cuánto debes arriesgar para ganar $100: arriesgar $150 para ganar $100 de ganancia. Las positivas (+220) muestran la ganancia en una apuesta de $100: arriesgar $100 para ganar $220.",
+            "Conversión a decimales: para cuotas negativas, 100 ÷ 150 + 1 = 1.67; para cuotas positivas, 220 ÷ 100 + 1 = 3.20. Si principalmente apuestas en mercados decimales, convertir los precios estadounidenses antes de comparar vale la pena los diez segundos que toma — nuestro conversor de abajo lo hace instantáneamente."
+          ]
+        },
+        {
+          "h": "De las cuotas a la probabilidad implícita",
+          "ps": [
+            "La probabilidad implícita es la oportunidad a la cual un precio sería perfectamente justo. Para cuotas decimales la fórmula es 1 ÷ cuota × 100. Cuotas de 1.50 implican 66,7%, cuotas de 3.00 implican 33,3%, cuotas de 10.0 implican 10%.",
+            "Si sumas las probabilidades implícitas de cada resultado en un mercado obtendrás más del 100% — típicamente 103–108% en fútbol. Ese porcentaje extra es el margen de la casa, y es por qué comparar precios entre diferentes casas importa: el mismo resultado, con precio de 1.90 en una casa y 2.02 en otra, es una apuesta diferente."
+          ]
+        }
+      ],
+      "example": "Manchester City son 1.44 para vencer a Fulham, el empate es 4.80, Fulham son 7.50. Probabilidades implícitas: 69,4% + 20,8% + 13,3% = 103,5%. Los 3,5 puntos por encima de 100 son el margen. Si tu propia estimación de las oportunidades de City es mayor a 69,4%, las cuotas de 1.44 podrían tener valor; si es menor, el precio te va en contra sin importar cuán probable se sienta una victoria de City.",
+      "takeaways": [
+        "Cuotas decimales = retorno total por unidad apostada; 1 ÷ cuota = probabilidad implícita.",
+        "Las cuotas fraccionarias muestran ganancia relativa a lo apostado; las cuotas estadounidenses se anclan a una apuesta de $100.",
+        "Las probabilidades implícitas de cada mercado suman más del 100% — el exceso es el margen de la casa.",
+        "El mismo resultado a diferentes precios es una apuesta diferente: compara antes de apostar."
+      ],
+      "faq": [
+        {
+          "q": "¿Qué formato de cuotas debo usar?",
+          "a": "El que usa tu mercado día a día — pero aprende a convertir a decimales, porque la probabilidad implícita (1 ÷ cuota) es más fácil de calcular ahí. La mayoría de sitios te permiten cambiar formatos en configuración."
+        },
+        {
+          "q": "¿Cuotas bajas significan una apuesta segura?",
+          "a": "No. Cuotas de 1.20 implican aproximadamente un 83% de probabilidad, lo que aún pierde aproximadamente una de cada seis veces. Los favoritos con precio bajo pierden lo suficientemente seguido como para que ninguna apuesta única sea segura, y apilarlos en acumuladas aumenta el riesgo."
+        },
+        {
+          "q": "¿Por qué diferentes casas muestran cuotas diferentes?",
+          "a": "Cada una establece sus propios precios desde su propio modelo, responsabilidades y margen. Diferencias de 5–10% en el mismo resultado son comunes, razón por la cual hacer compras de línea entre varias casas es una de las pocas mejoras gratuitas disponibles para todos los apostadores."
+        }
+      ],
+      "related": [
+        "value-betting-explained",
+        "bookmaker-margin-explained",
+        "how-ai-football-predictions-work"
+      ],
+      "glossary": [
+        "odds-formats",
+        "implied-probability",
+        "fair-odds"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Convert any price between decimal, fractional and American — with implied probability"
+        }
+      ],
+      "_src_hash": "fddfa037b18c77ae",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "what-is-an-accumulator",
+      "title": "¿Qué es una apuesta acumulada?",
+      "nav": "Acumuladas",
+      "desc": "Cómo se multiplican las cuotas en las acumuladas, qué efecto tiene en tu probabilidad de ganar, y las matemáticas honestas detrás de por qué las acumuladas pagan mucho y pierden a menudo.",
+      "cat": "Markets",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Una apuesta, varios eventos",
+          "ps": [
+            "Una apuesta acumulada (acca, parlay, combo) agrupa varios pronósticos en una sola apuesta. Todos los eventos deben acertar; un evento fallido pierde el boleto completo. A cambio, las cuotas se multiplican en lugar de sumarse, lo que permite que una apuesta modesta genere un retorno grande.",
+            "Tres eventos a 1.60, 1.75 y 1.90 se combinan a 1.60 × 1.75 × 1.90 = 5.32. Una acumulada de €10 devuelve €53.20 si los tres aciertan — mucho más que los €7.30 de ganancia total que los mismos €10 repartidos entre tres apuestas individuales generarían."
+          ]
+        },
+        {
+          "h": "Qué hace la multiplicación con tus probabilidades",
+          "ps": [
+            "Las cuotas se multiplican, pero también lo hacen las probabilidades — hacia abajo. Si cada uno de esos tres eventos tiene una probabilidad verdadera del 60%, la acumulada gana 0.6 × 0.6 × 0.6 = 21.6% de las veces. Cinco eventos así: 7.8%. Ocho eventos: menos del 2%.",
+            "Este es el intercambio que hace toda acumulada: pagos más grandes, tasa de acierto claramente menor. No hay nada malo en ese intercambio si lo haces consciente y apuestas en consecuencia — apuestas pequeñas, dinero que puedas perder completamente."
+          ]
+        },
+        {
+          "h": "El margen también se multiplica",
+          "ps": [
+            "Cada evento lleva el margen de la casa de apuestas, y multiplicar eventos multiplica el margen también. Si la casa de apuestas retiene ~5% por evento, una triple bake aproximadamente el 14% de margen combinado, y una séxtuple más del 25%. Las acumuladas largas son estructuralmente algunas de las apuestas más costosas del menú.",
+            "Dos consecuencias prácticas: mantén las acumuladas cortas (2–4 eventos), y compara precios de cada evento por separado — una pequeña mejora de precio por evento se multiplica a tu favor exactamente de la misma manera que el margen se multiplica en tu contra."
+          ]
+        },
+        {
+          "h": "Cómo nuestro sitio maneja las acumuladas",
+          "ps": [
+            "Nuestra acumulada diaria combina los pronósticos de mayor confianza del modelo de diferentes partidos — confianza primero, precisamente para evitar multiplicar outsiders en un boleto de lotería. Las cuotas combinadas y el precio de cada evento se muestran abiertamente, y la calculadora de acumuladas de abajo te permite reconstruir o modificar el boleto y ver las matemáticas antes de apostar nada.",
+            "Trata cualquier acumulada — la nuestra incluida — como entretenimiento con un costo conocido, no como un plan de ingresos. Ningún modelo cambia la aritmética de las probabilidades multiplicadas."
+          ]
+        }
+      ],
+      "example": "Cuatro eventos a 1.50 cada uno: cuotas combinadas 5.06. Si la probabilidad verdadera de cada evento es el 66.7% que implica el precio, la acumulada se acierta el 19.7% de las veces — aproximadamente una semana de cada cinco. El retorno de €50.60 sobre una apuesta de €10 se ve generoso hasta que cuentas las cuatro semanas perdedoras a su alrededor.",
+      "takeaways": [
+        "Todos los eventos deben acertar; las cuotas — y los márgenes — se multiplican.",
+        "La probabilidad de ganar cae rápidamente con cada evento añadido: cinco eventos del 60% ganan menos del 8% de las veces.",
+        "Las acumuladas cortas (2–4 eventos) con precios comparados son la versión menos costosa del formato.",
+        "Apuesta poco: la característica definitoria de las acumuladas es que la mayoría pierden."
+      ],
+      "faq": [
+        {
+          "q": "¿Es una acumulada mejor que apuestas individuales?",
+          "a": "Matemáticamente peor en valor esperado, porque los márgenes se multiplican entre eventos. Las individuales preservan más de tu ventaja si tienes una; las acumuladas intercambian valor esperado por la oportunidad de un pago grande desde una apuesta pequeña."
+        },
+        {
+          "q": "¿Qué sucede si un partido en mi acumulada se pospone?",
+          "a": "La mayoría de las casas de apuestas anulan ese evento y recalculan la acumulada con las cuotas combinadas de los eventos restantes, así que una cuádruple se convierte en una triple. Verifica las reglas de cada casa de apuestas — el trato de partidos abandonados varía."
+        },
+        {
+          "q": "¿Cuántos eventos debería tener una acumulada?",
+          "a": "Si debe ser, 2–4. Más allá de eso el margen compuesto y la probabilidad de ganar colapsante hacen el boleto una entrada de lotería — está bien como entretenimiento con apuestas de cambio de bolsillo, pobre como estrategia de apuestas."
+        }
+      ],
+      "related": [
+        "bankroll-management-guide",
+        "common-betting-mistakes",
+        "how-to-read-betting-odds"
+      ],
+      "glossary": [
+        "accumulator",
+        "void-bet",
+        "variance"
+      ],
+      "tools": [
+        {
+          "href": "/tools/accumulator-calculator",
+          "label": "Build an acca and see combined odds, returns and implied probability"
+        }
+      ],
+      "_src_hash": "21bdb62c71e6f3dd",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bankroll-management-guide",
+      "title": "Gestión del bankroll para apostadores",
+      "nav": "Gestión del bankroll",
+      "desc": "Unidades, apuestas planas, apuestas porcentuales y reglas de parada — el sistema aburrido que decide si la varianza te arruina o simplemente te molesta.",
+      "cat": "Strategy",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "Por qué las apuestas importan más que la selección",
+          "ps": [
+            "Dos apostadores pueden hacer exactamente las mismas apuestas y terminar la temporada en mundos opuestos: uno bien, otro arruinado. La diferencia es el tamaño de la apuesta. Los resultados de las apuestas llegan en rachas — perder 8–10 apuestas seguidas es rutinario incluso para apostadores genuinamente buenos — y el tamaño de tus apuestas en relación con tus fondos decide si una racha normal es soportable.",
+            "Un bankroll es dinero reservado para apostar que puedas perder completamente. No el alquiler, no objetivos de ahorro — un presupuesto de entretenimiento con límite claro. Todo lo siguiente asume que esa línea se ha trazado honestamente."
+          ]
+        },
+        {
+          "h": "Unidades y apuestas planas",
+          "ps": [
+            "Divide tu bankroll en unidades — 100 unidades es un estándar sensato, así que un bankroll de €500 hace cada unidad €5. Apuestas planas significa apostar la misma 1 unidad en cada selección sin importar cuán confiado te sientas. Es la estrategia con la que rastreamos nuestro propio modelo, porque hace que los resultados sean honestos: ganancia en unidades, no en historias.",
+            "La virtud de las apuestas planas es que neutraliza el modo de fallo clásico: apostar grande en 'cosas seguras' (que pierden en los peores momentos) y pequeño en valor (que es donde realmente vive la ganancia a largo plazo)."
+          ]
+        },
+        {
+          "h": "Apuestas porcentuales",
+          "ps": [
+            "Las apuestas porcentuales apuestan una cuota fija de tu bankroll actual — comúnmente 1–2% — así que las apuestas se reducen durante rachas perdedoras y crecen durante rachas ganadoras. Es matemáticamente más difícil quebrar, al costo de una recuperación más lenta después de una caída ya que estás apostando menos justo cuando necesitas recuperarte.",
+            "Una idea relacionada, el criterio de Kelly, dimensiona apuestas desde tu ventaja estimada. Kelly completo es demasiado agresivo para errores de estimación del mundo real; los profesionales que lo usan en absoluto usan un cuarto o menos. Para la mayoría de apostadores, apuestas planas o porcentuales de 1–2% capturan casi todo el beneficio sin ninguna carga de estimación."
+          ]
+        },
+        {
+          "h": "Reglas que salvan bankrolls",
+          "ps": [
+            "Establece un límite por apuesta (1–2 unidades incluso cuando estés emocionado), una parada en días perdedores (retírate, los partidos estarán allí mañana), y nunca persigas — aumentar apuestas para recuperar pérdidas es la forma única más confiable de convertir una semana mala en una catástrofe.",
+            "Registra cada apuesta: fecha, mercado, cuota, apuesta, resultado. Una hoja de cálculo o nuestro formato de libro de cálculos publicado funciona. Los apostadores que llevan registros toman mejores decisiones por una razón simple — los números se niegan a adular la memoria.",
+            "Si apostar deja de sentirse como un hobby presupuestado, usa los límites de depósito y herramientas de autoexclusión que proporciona cada casa de apuestas licenciada, y contacta organizaciones como GambleAware. Eso no es letra pequeña; es parte del sistema."
+          ]
+        }
+      ],
+      "example": "Bankroll €500, apuestas planas de 1 unidad (€5), cuotas promedio 2.00. Una racha brutal de 10 apuestas perdidas cuesta €50 — 10% del bankroll, molesto pero soportable, y la estrategia continúa sin cambios. La misma racha apostando €50 'para recuperarlo más rápido' cuesta el bankroll completo. Selecciones idénticas, resultados opuestos.",
+      "takeaways": [
+        "Bankroll = dinero que puedas perder completamente; divídelo en 100 unidades.",
+        "Las apuestas planas de 1 unidad son el estándar honesto; las apuestas porcentuales de 1–2% son la alternativa duradera.",
+        "Limita apuestas simples, detente en días malos, nunca persigas pérdidas.",
+        "Los registros escritos superan a la memoria — la ganancia se mide en unidades durante cientos de apuestas, no en puntos destacados."
+      ],
+      "faq": [
+        {
+          "q": "¿Cuán grande debe ser mi bankroll?",
+          "a": "Lo que genuinamente puedas perder sin consecuencias — para muchas personas eso es pequeño, y está bien. El sistema funciona idénticamente con €100 o €10,000; lo que importa es la disciplina de unidades, no el total."
+        },
+        {
+          "q": "¿Debo apostar más en selecciones en las que tengo confianza?",
+          "a": "Confianza y valor no son lo mismo, y la confianza de la mayoría de apostadores se correlaciona pobremente con resultados. Si varías apuestas en absoluto, mantén el rango ajustado (1–2 unidades) e impulsado por ventaja medida, no por sensación."
+        },
+        {
+          "q": "¿Cuándo debo retirar ganancias?",
+          "a": "Un enfoque común: establece un hito (digamos +50% en bankroll inicial), retira el exceso, y reinicia. Asegurar ganancias periódicamente mantiene el bankroll como herramienta en lugar de marcador."
+        }
+      ],
+      "related": [
+        "common-betting-mistakes",
+        "value-betting-explained",
+        "what-is-an-accumulator"
+      ],
+      "glossary": [
+        "bankroll-management",
+        "flat-staking",
+        "kelly-criterion",
+        "variance",
+        "self-exclusion"
+      ],
+      "tools": [
+        {
+          "href": "/tipsters",
+          "label": "See our model's real settled record, tracked in flat 1-unit stakes"
+        }
+      ],
+      "_src_hash": "3ba97f5af83e8b4e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "value-betting-explained",
+      "title": "Apuestas de Valor Explicadas",
+      "nav": "Apuestas de valor",
+      "desc": "Qué significa realmente la ventaja, cómo se calcula el valor esperado, y por qué los apostadores ganadores buscan cuotas mal valoradas en lugar de ganadores probables.",
+      "cat": "Strategy",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "El núcleo contraintuitivo",
+          "ps": [
+            "La idea más importante en apuestas es que elegir ganadores y ganar dinero son habilidades distintas. Una apuesta en un favorito al 90% a cuota 1.05 gana nueve de cada diez veces y aun así pierde dinero, porque el precio paga menos de lo que el riesgo merece. Una apuesta en un perdedor al 30% a 4.00 pierde siete de cada diez veces y es rentable, porque el precio paga más.",
+            "El valor es la brecha entre las cuotas ofrecidas y la verdadera probabilidad del resultado. Las apuestas son rentables exactamente cuando encuentras precios que subestiman las probabilidades reales — y solo entonces. Todo lo demás es entretenimiento con comisión."
+          ]
+        },
+        {
+          "h": "Valor esperado en una fórmula",
+          "ps": [
+            "Valor esperado (EV) por unidad apostada: (probabilidad × cuota) − 1. Si estimas la probabilidad de un equipo en 45% y la cuota es 2.40, EV = 0.45 × 2.40 − 1 = +0.08 — ocho centavos de ganancia a largo plazo por euro apostado. A 2.10 la misma estimación da −0.055: una apuesta perdedora sin importar cómo termine el partido.",
+            "La fórmula es trivial; la estimación de probabilidad es todo. Tu 45% debe estar más cerca de la verdad que la probabilidad implícita del mercado de 41.7% (a 2.40, margen eliminado) para que la ventaja sea real. Esa es una barra alta frente a los mercados modernos de fútbol."
+          ]
+        },
+        {
+          "h": "Dónde se esconde el valor",
+          "ps": [
+            "Los mercados grandes como las cuotas de encuentro de la Premier League son eficientes — miles de participantes agudos empujan los precios cerca de la realidad. Los cazadores de valor miran donde la atención es menor: ligas menores, mercados de nicho, líneas tempranas antes de que el mercado se estabilice, y discrepancias de precios entre casas de apuestas.",
+            "El line shopping es la única fuente de valor disponible para todos sin necesidad de modelado: el mejor precio disponible entre casas de apuestas es rutinariamente 3–8% mejor que el precio promedio. Tomar 2.02 en lugar de 1.90 en el mismo resultado no requiere ni un pronóstico, solo una pestaña extra."
+          ]
+        },
+        {
+          "h": "Cómo aplicamos esto en nuestro screener",
+          "ps": [
+            "Nuestro modelo estima probabilidades a partir de tasas históricas de goles (un marco Poisson mezclado con precios de mercado), las convierte en cuotas justas y las compara con el mejor precio disponible. Cuando la cuota excede las cuotas justas del modelo lo suficiente, la selección obtiene una puntuación de ventaja positiva — ese es el número en la columna Edge del screener.",
+            "Las advertencias honestas: las probabilidades del modelo son estimaciones con márgenes de error, ventajas de unos pocos porcentajes son fácilmente ilusiones, e incluso las ventajas genuinas pierden frecuentemente — las ganancias de apuestas de valor emergen sobre cientos de apuestas, nunca dentro de un fin de semana. Nuestro seguimiento publicado de closing-line-value existe precisamente para probar si las ventajas del modelo son reales."
+          ]
+        }
+      ],
+      "example": "Estimas un empate en 30% (cuota justa 3.33). Casa de apuestas A lo valúa a 3.10 — EV negativo, pasar. Casa de apuestas B lo valúa a 3.60: EV = 0.30 × 3.60 − 1 = +0.08. Mismo partido, misma estimación, una apuesta mala y una buena. El mercado decidió cuál — no el resultado final.",
+      "takeaways": [
+        "Valor = precio por encima de la probabilidad verdadera; EV = (prob × cuota) − 1.",
+        "Los ganadores probables a cuotas cortas pueden ser apuestas terribles; los ganadores improbables a cuotas largas pueden ser excelentes.",
+        "El line shopping entre casas de apuestas es valor gratuito que no requiere habilidad de pronóstico.",
+        "Las ventajas reales son pequeñas, ruidosas y solo visibles sobre cientos de apuestas."
+      ],
+      "faq": [
+        {
+          "q": "¿Cómo sé si mis estimaciones de probabilidad son buenas?",
+          "a": "Compártalas contra las cuotas al cierre: si constantemente superas la línea de cierre, tus estimaciones contienen información. Esa señal se muestra dentro de semanas, mucho antes de que las curvas de ganancia se vuelvan significativas."
+        },
+        {
+          "q": "¿Las apuestas de valor son lo mismo que el arbitraje?",
+          "a": "No. El arbitraje asegura una ganancia pequeña garantizada cubriendo todos los resultados entre casas de apuestas; las apuestas de valor asumen varianza, respaldando un resultado en una cuota que crees es incorrecta. Las apuestas de valor pueden perder durante meses incluso si se hacen bien."
+        },
+        {
+          "q": "¿Puedo hacer apuestas de valor con un bankroll pequeño?",
+          "a": "Las matemáticas funcionan en cualquier tamaño, pero la varianza es brutal: incluso con una ventaja real del 5%, rachas perdedoras de cien apuestas del bankroll suceden. Las apuestas planas y un presupuesto de entretenimiento genuino son prerequisitos, no opcionales."
+        }
+      ],
+      "related": [
+        "how-to-read-betting-odds",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "value-bet",
+        "expected-value",
+        "edge",
+        "closing-line-value",
+        "fair-odds"
+      ],
+      "tools": [
+        {
+          "href": "/screener",
+          "label": "The live value screener — model probabilities vs best available prices"
+        }
+      ],
+      "_src_hash": "36b3917c8edc9645",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bookmaker-margin-explained",
+      "title": "El margen de la casa de apuestas explicado",
+      "nav": "Margen de la casa de apuestas",
+      "desc": "Cómo funciona el overround, cómo calcularlo de cualquier mercado en diez segundos, y cuánto dinero tuyo reclama en silencio.",
+      "cat": "Basics",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "La ventaja de la casa, a la vista",
+          "ps": [
+            "Las casas de apuestas no ganan prediciendo partidos mejor que tú; ganan vendiendo cada resultado ligeramente más barato que su precio justo. Si sumas las probabilidades implícitas en cualquier mercado, el total supera 100% —ese exceso es el margen, también llamado overround o vig.",
+            "Un mercado que suma 105% retiene aproximadamente €5 de cada €100 apostados en él, sin importar el resultado. El margen no está escondido en ningún lado: está ahí mismo en los precios, esperando a ser calculado."
+          ]
+        },
+        {
+          "h": "Calcularlo tú mismo",
+          "ps": [
+            "Para cada resultado, toma 1 ÷ cuota decimal; suma los resultados; resta 1. Un partido cotizado 2.10 / 3.40 / 3.60 da 0.476 + 0.294 + 0.278 = 1.048 —un margen del 4.8%.",
+            "Hazlo una vez por cada casa de apuestas que uses y las diferencias se hacen evidentes. En nuestra propia investigación en las ligas que cubrimos, los márgenes típicos de mejor precio rondan el 3%, mientras que los márgenes de una sola casa de apuestas en los mismos partidos frecuentemente están entre 5–7%. Los mercados nicho (resultado exacto, goleadores) pueden llevar márgenes de 10%+ —que es exactamente por qué las casas de apuestas los promocionan con más fuerza."
+          ]
+        },
+        {
+          "h": "Lo que el margen te cuesta con el tiempo",
+          "ps": [
+            "Un margen del 5% significa que un apostador promedio pierde aproximadamente €5 por cada €100 movidos —no por €100 depositados, por €100 apostados. Si apuestas €50 dos veces a la semana, el costo esperado del margen es aproximadamente €260 al año, antes de que entre en juego cualquier habilidad o suerte.",
+            "El margen es también la barrera que tu ventaja debe superar: para ganar en una casa de apuestas con margen del 5%, tus estimaciones de probabilidad deben vencer al mercado por más del 5%. Reducir a la mitad el margen que pagas —comparando precios— reduce a la mitad la habilidad requerida."
+          ]
+        },
+        {
+          "h": "Usar el margen para elegir casas de apuestas",
+          "ps": [
+            "El margen es uno de los números simples más justos para comparar casas de apuestas, y uno de los menos anunciados. Un bono de bienvenida generoso en una casa con margen del 7% normalmente vale menos en una temporada que ningún bono en una con margen del 4% —el bono se paga una sola vez, el margen se cobra en cada apuesta para siempre.",
+            "Nuestra página de investigación de márgenes de casas de apuestas recalcula los márgenes típicos desde datos de cuotas en vivo en cada actualización del sitio, y la calculadora abajo extrae el margen de cualquier mercado que pegues."
+          ]
+        }
+      ],
+      "example": "Cuotas 1.90 / 1.90 en una línea over-under: 0.526 + 0.526 = 1.053, un margen del 5.3%. El precio justo para un verdadero cara-o-cruz sería 2.00 / 2.00. A 1.90 debes ganar el 52.6% de tales apuestas solo para llegar a cero —los 2.6 puntos entre 50% y 52.6% es lo que el margen te cobra.",
+      "takeaways": [
+        "Margen = (suma de 1/cuota en todos los resultados) − 1; es la comisión integrada de la casa de apuestas.",
+        "Márgenes típicos en apuestas de partido: ~3% a mejor precio entre casas, 5–7% en una sola casa de apuestas.",
+        "El margen escala con el volumen —se cobra en cada apuesta, no una sola vez.",
+        "Las casas de apuestas con margen más bajo vencen bonificaciones más grandes en cualquier horizonte temporal serio."
+      ],
+      "faq": [
+        {
+          "q": "¿Por qué los márgenes difieren entre mercados?",
+          "a": "Competencia y responsabilidad. Las apuestas de partido en grandes ligas se comparan mucho, así que los márgenes se comprimen. Los props oscuros no enfrentan presión de comparación y llevan márgenes de dos dígitos cómodamente."
+        },
+        {
+          "q": "¿Es posible un margen del 0%?",
+          "a": "Ocasionalmente una casa de apuestas cotiza un resultado por encima del precio justo como promoción, y entre diferentes casas de apuestas los mejores precios en todos los resultados a veces suman menos del 100% —eso es un arbitraje. Ambos son raros, pequeños y de corta duración."
+        },
+        {
+          "q": "¿Significa el margen que no puedo ganar?",
+          "a": "Significa que la trayectoria por defecto es una pérdida lenta a la tasa del margen. Ganar requiere o bien suerte (corto plazo) o estimaciones de probabilidad que venza al mercado por más del margen (largo plazo) —una habilidad genuina pero rara."
+        }
+      ],
+      "related": [
+        "how-to-read-betting-odds",
+        "value-betting-explained",
+        "how-to-choose-a-betting-site"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "implied-probability",
+        "odds-comparison",
+        "sharp-and-soft-bookmakers"
+      ],
+      "tools": [
+        {
+          "href": "/tools/margin-calculator",
+          "label": "Paste any market's odds and see the exact margin"
+        }
+      ],
+      "_src_hash": "82d5113a6a774815",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "btts-explained",
+      "title": "Ambos Equipos Marcan (BTTS) Explicado",
+      "nav": "BTTS",
+      "desc": "Cómo se resuelve el mercado de ambos equipos marcando, qué factores impulsan realmente la probabilidad de BTTS, y las estadísticas que importan más que las rachas recientes de goles.",
+      "cat": "Markets",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "El mercado más simple del fútbol",
+          "ps": [
+            "Ambos Equipos Marcan plantea una sola pregunta: ¿marcará al menos una vez cada equipo en tiempo regular? Un 1-1, 4-1 o 2-3 se resuelve Sí; un 0-0, 3-0 o 0-2 se resuelve No. Los autogoles cuentan para el equipo acreditado en el acta; la prórroga no cuenta en los mercados estándar.",
+            "Su atractivo es tan psicológico como matemático: un boleto BTTS Sí se mantiene vivo hasta bien entrada la segunda mitad independientemente de quién gane, lo que lo convierte en uno de los mercados más seguidos del fútbol."
+          ]
+        },
+        {
+          "h": "Qué impulsa realmente la probabilidad de BTTS",
+          "ps": [
+            "BTTS Sí requiere que ambos ataques funcionen y ambas defensas fallen al menos una vez. Los factores estadísticos clave son la tasa de goles y la tasa de goles encajados de cada equipo — no el total de goles combinados. Un equipo con tendencia a 3-0 puede ser una mala opción de BTTS a pesar de los marcadores amplios, porque su defensa mantiene portería en cero.",
+            "En un marco Poisson (la familia de modelos que usa nuestro sitio), la probabilidad de BTTS Sí es 1 − P(local no marca) − P(visitante no marca) + P(ambos no marcan). Las tasas de BTTS Sí típicas en las grandes ligas se sitúan cerca del 50–53%, por lo que las cuotas suelen rondar 1.80 a 2.00 en ambos lados."
+          ]
+        },
+        {
+          "h": "Leer las estadísticas sin engañarse",
+          "ps": [
+            "Señales útiles: porcentaje de porterías en cero en ambos lados, porcentaje sin anotar, y creación de oportunidades subyacente (xG a favor y en contra) en lugar de marcadores recientes brutos. Cinco resultados BTTS Sí consecutivos en muestras de cinco partidos es ruido — las tasas base de la temporada de la liga más la calidad defensiva del equipo aportan mucha más información.",
+            "El contexto cambia el número: la ausencia de defensas centrales o porteros titulares empuja hacia Sí; un enfrentamiento donde un equipo se repliega profundamente (favorito grande fuera, defensa por el descenso) empuja hacia No. Los derbis se asumen popularmente amigos de BTTS; históricamente están aproximadamente en la tasa base."
+          ]
+        },
+        {
+          "h": "Cómo lo valoramos",
+          "ps": [
+            "Nuestro modelo estima las tasas de goles de cada equipo a partir de resultados históricos ponderados, deriva las probabilidades de BTTS, y las compara contra cuotas en vivo — los picks de BTTS aparecen en el feed de recomendaciones cuando la cuota supera las cuotas justas del modelo. Como en cada mercado: la estimación de ventaja es estadística, los partidos individuales son lanzamientos de moneda alrededor de ella, y ninguna racha de BTTS significa nada por sí sola."
+          ]
+        }
+      ],
+      "example": "El equipo local marca en el 78% de sus partidos en casa y encaja en el 55%; el equipo visitante marca en el 60% de sus partidos fuera y encaja en el 70%. Estimación aproximadamente independiente: P(ambos marcan) ≈ 0.78 × 0.60 ajustado por tasas defensivas — el modelo llega a 56%. Cuotas justas ≈ 1.79, por lo que una cuota de 1.95 tiene valor esperado positivo; una cuota de 1.70 no, sin embargo abierto se vea el partido.",
+      "takeaways": [
+        "BTTS Sí = ambos equipos marcan en 90 minutos más descuento; prórroga excluida.",
+        "Los factores impulsores son las tasas de goles y goles encajados por equipo, no los goles combinados.",
+        "Los porcentajes de porterías en cero y sin anotar superan los marcadores recientes como señales.",
+        "Las cuotas se agrupan cerca de la paridad porque las tasas base de la liga se sitúan cerca del 50%."
+      ],
+      "faq": [
+        {
+          "q": "¿Cuenta la prórroga para BTTS?",
+          "a": "Los mercados BTTS estándar se resuelven solo en 90 minutos más tiempo de descuento. Los mercados específicos de copas como 'para clasificarse' o prórroga son productos separados con reglas propias — verifica el nombre del mercado cuidadosamente."
+        },
+        {
+          "q": "¿Es BTTS mejor que más de 2.5 goles?",
+          "a": "Se superponen pero responden preguntas diferentes: un resultado 2-0 gana en goles totales y pierde en BTTS; un 1-1 gana en BTTS y pierde en goles totales. Elige el mercado que se ajuste a tu opinión real — dos ataques funcionando (BTTS) versus expectativa general de goles (totales)."
+        },
+        {
+          "q": "¿Qué hay de BTTS en acumuladas?",
+          "a": "Popular porque las cuotas cercanas a la paridad construyen rápidamente combinadas grandes — pero cinco tramos ~52% ganan menos del 4% de las veces, y cada tramo lleva margen. Trata las acumuladas de BTTS como entretenimiento de apuestas pequeñas."
+        }
+      ],
+      "related": [
+        "over-under-goals-explained",
+        "value-betting-explained",
+        "what-is-an-accumulator"
+      ],
+      "glossary": [
+        "btts",
+        "xg",
+        "implied-probability"
+      ],
+      "tools": [
+        {
+          "href": "/tips/btts",
+          "label": "Today's BTTS picks with model probabilities and best prices"
+        }
+      ],
+      "_src_hash": "4ffa10344feddda5",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "over-under-goals-explained",
+      "title": "Apuestas a Goles Totales Explicadas",
+      "nav": "Goles totales",
+      "desc": "Líneas de goles totales de 0.5 a 4.5, por qué 2.5 domina el fútbol, y cómo las líneas de cuarto dividen tu apuesta — con los números que fijan las cuotas.",
+      "cat": "Markets",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Apostar al partido, no al ganador",
+          "ps": [
+            "Los mercados de goles totales ignoran quién gana y cuentan los goles totales de ambos equipos. Over 2.5 gana con cualquier resultado de tres goles o más; Under 2.5 gana con dos o menos. El medio gol en la línea hace imposible el empate — uno de los lados siempre se resuelve como ganador.",
+            "La línea 2.5 domina el fútbol porque los totales promedio en las mejores ligas rondan 2.6–2.8 goles por partido, poniendo ambos lados de la línea cerca de moneda al aire y cuotas cercanas a paridad."
+          ]
+        },
+        {
+          "h": "Líneas completas y líneas de cuarto",
+          "ps": [
+            "Las líneas de números completos (Over/Under 2.0, 3.0) pueden devolver apuesta: exactamente tres goles contra una línea 3.0 devuelve la apuesta. Las líneas de cuarto (2.25, 2.75) dividen tu apuesta entre la línea media y completa adyacente — Over 2.25 es mitad en Over 2.0, mitad en Over 2.5, así que un partido de dos goles devuelve mitad y pierde mitad.",
+            "Las líneas de cuarto vinieron de convenciones de handicap asiático y vale la pena entenderlas solo para evitar sorpresas en la resolución: una 'media ganancia' en Over 2.75 después de exactamente tres goles confunde a más apostadores que cualquier otro resultado en la familia de totales."
+          ]
+        },
+        {
+          "h": "Qué mueve las cuotas de totales",
+          "ps": [
+            "Las tasas de anotación y defensa del equipo dominan, seguidas por ritmo y estilo (equipos que presionan crean caos, equipos de bloque bajo lo suprimen), noticias de alineación para delanteros clave, y — estadísticamente subestimado — árbitro y clima en los márgenes. La identidad de la liga también importa: algunas ligas consistentemente corren medio gol arriba o abajo de otras por partido.",
+            "Los emocionantes 4-3 recientes son la trampa clásica: los totales se revierten duramente a tasas a nivel de equipo. Nuestra investigación de predictibilidad de liga cuantifica cuánto difiere la anotación de liga a liga de la media global, recomputada en cada actualización."
+          ]
+        },
+        {
+          "h": "Vista del modelo",
+          "ps": [
+            "Un modelo Poisson con las tasas de ataque y defensa de cada equipo produce una distribución de marcadores completa, de la cual P(0 goles), P(1), P(2)… siguen directamente; sumar da la cuota justa de cada línea. Nuestras selecciones de over/under emergen cuando las cuotas en vivo divergen de esas probabilidades justas por más que el umbral de ruido.",
+            "Los totales están entre los mercados de fútbol más eficientes, así que las ventajas genuinas son pequeñas y raras — espera que nuestro modelo se abstenga de la mayoría de partidos en lugar de forzar una selección."
+          ]
+        }
+      ],
+      "example": "El modelo espera 1.45 goles en casa y 1.10 goles fuera — un partido de 2.55 goles. La distribución Poisson pone Over 2.5 en 51%, cuota justa 1.96. Una casa de apuestas ofreciendo 2.06 ha precificado muy pesada la demanda de Under; el modelo marca Over. Resultado final 1-0 — la apuesta pierde, y aún era correcta al inicio. Esa distinción es toda la disciplina.",
+      "takeaways": [
+        "Las líneas de medio gol no pueden devolver apuesta; las líneas completas sí; las líneas de cuarto dividen la apuesta.",
+        "La línea 2.5 domina el fútbol porque los totales reales promedian ~2.6–2.8 goles.",
+        "Las tasas de anotación de equipo e identidad de liga superan los marcadores recientes como predictores.",
+        "Los mercados de totales son eficientes: las ventajas reales son pequeñas, y abstenerse es normal."
+      ],
+      "faq": [
+        {
+          "q": "¿Cuentan los goles en tiempo extra?",
+          "a": "Los totales estándar se resuelven en 90 minutos más tiempo de descuento. Los mercados que cubren tiempo extra en copas están etiquetados por separado — lee el nombre del mercado antes de asumir."
+        },
+        {
+          "q": "¿Qué paga Over 2.25 si el partido termina 2-1?",
+          "a": "Ganancia completa: ambas mitades de la apuesta (Over 2.0 y Over 2.5) ganan con tres goles. En 2-0 la mitad Over 2.0 devuelve apuesta y la mitad Over 2.5 pierde — media pérdida."
+        },
+        {
+          "q": "¿Por qué Under frecuentemente tiene cuota más corta que Over?",
+          "a": "El dinero recreativo prefiere goles, así que las casas pueden reducir cuotas de Over y subir cuotas de Under. Ese sesgo sistemático es exactamente el tipo de distorsión que los modelos buscan explotar en el lado Under."
+        }
+      ],
+      "related": [
+        "btts-explained",
+        "asian-handicap-explained",
+        "how-ai-football-predictions-work"
+      ],
+      "glossary": [
+        "over-under",
+        "settlement",
+        "line-movement"
+      ],
+      "tools": [
+        {
+          "href": "/tips/over-under",
+          "label": "Today's totals picks with fair-odds comparison"
+        }
+      ],
+      "_src_hash": "0eb85c5471d43f11",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "asian-handicap-explained",
+      "title": "Asian Handicap: Guía para Principiantes",
+      "nav": "Asian handicap",
+      "desc": "Cómo se resuelven los handicaps nivel, medios, enteros y cuarto, por qué desaparece el empate, y ejemplos prácticos para cada caso confuso.",
+      "cat": "Markets",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "Dos resultados en lugar de tres",
+          "ps": [
+            "El Asian handicap le da a un equipo una ventaja virtual, dimensionada para que el encuentro sea aproximadamente 50/50, y elimina el empate como resultado apostable — las apuestas se devuelven o el handicap lo absorbe. Te quedan dos cuotas cercanas a pares en lugar de tres desproporcionadas.",
+            "Eliminar el empate es el atractivo principal del formato: puedes respaldar a un favorito fuerte a una cuota significativa (concediendo goles) o apostar por un perdedor con protección (recibiendo goles), sin que el empate acose en la sombra."
+          ]
+        },
+        {
+          "h": "Handicaps enteros y medios",
+          "ps": [
+            "Los handicaps medios (−0.5, −1.5) no pueden empujar. Equipo A −0.5 es simplemente 'Equipo A gana'. Equipo A −1.5 necesita una victoria por dos goles; B +1.5 gana con un empate, una victoria de B, o una derrota por un gol.",
+            "Los handicaps enteros (0, −1, −2) pueden empujar: A −1 con una victoria de A por un gol devuelve todas las apuestas. El handicap nivel (0) — empate sin apuesta — devuelve en caso de empate y es la introducción más suave al formato."
+          ]
+        },
+        {
+          "h": "Handicaps de cuarto",
+          "ps": [
+            "Las líneas de cuarto (−0.25, −0.75, +1.25…) dividen tu apuesta entre las dos líneas vecinas. Un −0.75 es mitad −0.5, mitad −1.0: si tu equipo gana por exactamente uno, la mitad −0.5 gana y la mitad −1.0 se devuelve — una victoria parcial.",
+            "Cada resolución confusa de Asian handicap se descompone así: divide la apuesta en dos, resuelve cada mitad en su propia línea, suma. Diez segundos de aritmética reemplazan memorizar una tabla."
+          ]
+        },
+        {
+          "h": "Por qué los apostadores serios lo prefieren",
+          "ps": [
+            "Asian handicap y totales son donde se concentra la liquidez global, así que los márgenes son típicamente más ajustados que en 1X2 — a menudo 2–4% en casas de apuestas profesionales versus 5%+ en apuestas de resultado. Margen más ajustado significa una barrera más baja para cualquier ventaja que aportes.",
+            "El formato también se mapea limpiamente al resultado del modelo: una distribución de marcadores se convierte directamente en probabilidades de cobertura para cualquier línea, haciendo que los handicaps sean un hábitat natural para apostadores estadísticos. La compensación es la falta de familiaridad — que esta guía ya ha cubierto, sin costo de margen para ti."
+          ]
+        }
+      ],
+      "example": "Apuestas Arsenal −1.25 a 2.00 con €20: €10 a −1.0, €10 a −1.5. Arsenal gana 2-1: la mitad −1.0 se devuelve €10, la mitad −1.5 pierde — neto −€10. Arsenal gana 3-1: ambas mitades ganan, neto +€20. Arsenal empata 1-1: ambas mitades pierden, neto −€20. Una cuota, tres resultados genuinamente diferentes — siempre descompón antes de apostar.",
+      "takeaways": [
+        "El handicap elimina el empate: devoluciones (líneas enteras) o la línea misma lo absorben.",
+        "Las líneas medias nunca empujan; las líneas enteras pueden devolver; las líneas de cuarto son dos mitades de apuestas.",
+        "Descompón cualquier línea de cuarto en sus dos vecinas para resolverla al instante.",
+        "Los márgenes en líneas asiáticas son generalmente más ajustados que en 1X2 — el mercado de fútbol más barato para apostar."
+      ],
+      "faq": [
+        {
+          "q": "¿Es el Asian handicap lo mismo que el handicap europeo?",
+          "a": "No. El handicap europeo (3 vías) mantiene el empate como resultado apostable después de aplicar handicaps de goles enteros, así que las devoluciones se convierten en pérdidas a menos que hayas apostado al empate con handicap. El Asian handicap devuelve en su lugar. Los nombres son confusamente similares; la resolución no."
+        },
+        {
+          "q": "¿Para qué es útil +0 (juego nivel)?",
+          "a": "Es empate sin apuesta: respalda un equipo, obtén devolución en caso de empate. Ideal cuando te gusta un perdedor para evitar la derrota pero no confías en que ganen directo."
+        },
+        {
+          "q": "¿Por qué se mueven más las líneas asiáticas que 1X2?",
+          "a": "Llevan el dinero global más afilado, así que la nueva información (alineaciones, clima, apuestas grandes) las golpea primero. Observar el movimiento de líneas asiáticas es una forma común de leer hacia dónde se inclina el dinero informado."
+        }
+      ],
+      "related": [
+        "over-under-goals-explained",
+        "how-to-read-betting-odds",
+        "value-betting-explained"
+      ],
+      "glossary": [
+        "asian-handicap",
+        "draw-no-bet",
+        "line-movement",
+        "sharp-and-soft-bookmakers"
+      ],
+      "tools": [
+        {
+          "href": "/dropping-odds",
+          "label": "Watch where prices are moving across the markets we track"
+        }
+      ],
+      "_src_hash": "e8622c2de6f78fa2",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "how-ai-football-predictions-work",
+      "title": "Cómo funcionan las predicciones de fútbol con IA",
+      "nav": "Cómo funcionan las predicciones",
+      "desc": "Qué hay realmente dentro de un modelo de predicción de fútbol — incluido el nuestro: tasas de Poisson, fusión de mercado, límites honestos y cómo evaluar las afirmaciones de cualquier pronosticador.",
+      "cat": "Basics",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "Sin bola de cristal, solo conteos",
+          "ps": [
+            "Despoja del marketing a cualquier modelo de predicción de fútbol — incluido el nuestro — y encontrarás conteos estructurados: con qué frecuencia marcan los equipos, con qué frecuencia encajan, ponderado hacia partidos recientes, ajustado por rival y localía. A partir de esas tasas, las distribuciones de probabilidad sobre marcadores siguen matemáticamente.",
+            "La palabra 'IA' no añade magia a esto. El valor de un modelo radica en la estimación disciplinada y la calibración honesta, no en la etiqueta. Cualquiera que afirme que su algoritmo 'conoce' los resultados está vendiendo algo."
+          ]
+        },
+        {
+          "h": "Dentro de nuestro modelo, en concreto",
+          "ps": [
+            "Nuestro modelo v2 estima la fortaleza de ataque y defensa de cada equipo con un marco Poisson con decaimiento temporal: los partidos recientes pesan más (vida media alrededor de 240 días), las muestras pequeñas se contraen hacia el promedio de la liga para evitar sobrerreaccionar, y los equipos necesitan un número mínimo de partidos antes de que confiemos en sus tasas en absoluto.",
+            "Esas tasas producen una distribución de marcadores por partido, de ahí las probabilidades para todos los mercados que cubrimos. Luego fusionamos probabilidades del modelo con las implícitas en el mercado (aproximadamente 40/60) — una admisión, integrada en la aritmética, de que el mercado sabe cosas que nuestros datos no: lesiones, motivación, condiciones climáticas, alineaciones.",
+            "Un pronóstico solo se publica como oficial cuando la probabilidad fusionada supera el precio por un margen significativo con límites de cuotas sensatos. La mayoría de los partidos no producen un pronóstico oficial; la metodología completa, historial de versiones y limitaciones conocidas residen en nuestra página del modelo."
+          ]
+        },
+        {
+          "h": "Lo que los modelos no pueden hacer",
+          "ps": [
+            "Un modelo no puede saber que un entrenador descansó a su delantero, que un equipo regresó de una copa a las 4 de la mañana, o que la lluvia convirtió el terreno en barro. Comprime la historia en tasas; todo lo que está fuera del historial es invisible para él.",
+            "Más fundamentalmente: incluso una probabilidad perfecta no es una predicción de un partido. Un pronóstico del 60% pierde cuatro de cada diez por construcción. Los modelos se ganan o pierden su valor a lo largo de cientos de apuestas, en calibración — ¿los pronósticos del 60% acierta alrededor del 60% de las veces? — no en ningún éxito espectacular."
+          ]
+        },
+        {
+          "h": "Cómo evaluar los pronósticos de cualquiera, incluidos los nuestros",
+          "ps": [
+            "Pide el registro completo liquidado (cada pronóstico, no un mes seleccionado), resultados en unidades con apuesta plana, tamaños de muestra en los cientos, y — la prueba más aguda — closing line value: si los pronósticos superan consistentemente el precio en el que cerró el mercado. CLV separa la habilidad de la suerte mucho más rápido que las curvas de ganancias.",
+            "Publicamos todo lo anterior, incluidas las rachas perdedoras, en nuestras páginas de resultados — nuestro registro inicial incluye un tramo instructivo donde los pronósticos de cuota alta fueron 0-8 y forzaron una revisión del modelo. Cualquier pronosticador que solo muestre victorias te está mostrando marketing."
+          ]
+        }
+      ],
+      "example": "El modelo valúa el ataque del equipo local en 1,6 goles esperados contra esta defensa, el equipo visitante en 0,9. La distribución de Poisson da victoria local 52%, empate 24%, visitante 24% — cuotas justas 1,92 / 4,17 / 4,17. El mercado valúa al equipo local en 2,10, implicando 47,6%. La fusión cae en ~50%, aún por encima de la implicación del precio: ventaja positiva, pronóstico oficial. Sesenta segundos después una alineación filtrada podría invalidarlo — por eso los márgenes son estimaciones, no hechos.",
+      "takeaways": [
+        "Los modelos de predicción son tasas de goles ponderadas → distribuciones de marcadores → probabilidades de mercado.",
+        "El nuestro fusiona modelo con mercado (40/60) y publica solo pronósticos con ventaja clara — rechazando la mayoría de partidos.",
+        "Los modelos son ciegos a noticias; las probabilidades se calibran durante cientos de partidos, no en partidas individuales.",
+        "Evalúa a cualquier pronosticador por registros completos con apuesta plana y closing line value, nunca por meses de éxito."
+      ],
+      "faq": [
+        {
+          "q": "¿Qué precisión alcanzan los modelos de predicción de fútbol?",
+          "a": "En cuotas de ganador/empate/perdedor, los mejores modelos aciertan el resultado correcto aproximadamente el 50–55% de las veces — apenas por encima de respaldar siempre al favorito. La precisión no es la métrica correcta de todas formas; la calibración y el valor contra los precios son lo que paga, por eso reportamos unidades y CLV en lugar de porcentajes."
+        },
+        {
+          "q": "¿Por qué el modelo a veces no está de acuerdo con la forma obvia?",
+          "a": "Porque 'forma obvia' es generalmente cinco partidos de ruido, y el modelo pondera dos temporadas de tasas. Cuando chocan, la muestra más larga tiene razón más a menudo — no siempre, solo más a menudo, que es todo lo que un modelo afirma."
+        },
+        {
+          "q": "¿Usan aprendizaje automático?",
+          "a": "El núcleo es estadística clásica: tasas de Poisson con decaimiento temporal y contracción, fusionadas con precios de mercado. Es transparente, depurable y publicado. Las arquitecturas más sofisticadas añaden opacidad más rápido de lo que añaden precisión en fútbol a nuestra escala de datos."
+        }
+      ],
+      "related": [
+        "value-betting-explained",
+        "how-to-read-betting-odds",
+        "common-betting-mistakes"
+      ],
+      "glossary": [
+        "xg",
+        "closing-line-value",
+        "fair-odds",
+        "win-rate"
+      ],
+      "tools": [
+        {
+          "href": "/model",
+          "label": "Our full model methodology, version history and known limits"
+        }
+      ],
+      "_src_hash": "b975728fd6bd973e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "common-betting-mistakes",
+      "title": "7 errores comunes en apuestas (y cómo corregirlos)",
+      "nav": "Errores comunes",
+      "desc": "Recuperar pérdidas, sesgo hacia cuotas altas, cazar bonos sin leer condiciones — los patrones de fracaso que vacían bankrolls, cada uno con su solución práctica.",
+      "cat": "Strategy",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "1. Recuperar pérdidas",
+          "ps": [
+            "El patrón más destructivo en apuestas: aumentar las cuotas después de perder para 'recuperarlo'. Cada escalada debe vencer los mismos márgenes con más dinero exactamente cuando el criterio es peor. Las noches malas se convierten en bankrolls destrozados a través de la recuperación, casi nunca por las apuestas originales.",
+            "Solución: una regla escrita de parada en días perdedores, decidida en calma. Cuando se activa, terminas — los partidos vuelven mañana."
+          ]
+        },
+        {
+          "h": "2. Sesgo hacia cuotas altas",
+          "ps": [
+            "Los apostadores sistemáticamente sobrepagan por cuotas grandes — disparos a 8.00 con precio como si fueran oportunidades a 6.00. Los bookmakers lo saben y ajustan en consecuencia, haciendo que los mercados de cuotas altas sean algunos de los peores en relación calidad-precio en apuestas. La primera versión de nuestro modelo aprendió esto caro: una racha de 0 de 8 en picks con cuotas de dos dígitos forzó una reconstrucción con límites de cuotas.",
+            "Solución: limita tu rango de apuestas (limitamos picks oficiales a 4.0) y trata cualquier cuota por encima como entretenimiento, con precio acordado."
+          ]
+        },
+        {
+          "h": "3. Apostar en cada partido que ves",
+          "ps": [
+            "El interés no es ventaja. Apostar en lo que sea que estés viendo multiplica el volumen — y el margen pagado — en mercados donde no sabes nada especial. La aritmética del margen es implacable: duplica el volumen al margen del 5%, duplicas el costo esperado.",
+            "Solución: separa ver de apostar. Menos apuestas deliberadas en mercados que realmente sigas vencen la acción dispersa cada temporada."
+          ]
+        },
+        {
+          "h": "4. Ignorar la cuota",
+          "ps": [
+            "Decidir primero el resultado y aceptar cualquier cuota que muestre tu único bookmaker omite la mitad entera de apuestas donde vive la ganancia. La misma opinión correcta es rentable a 2.10 y pierdes a 1.85.",
+            "Solución: comparar cuotas. Dos o tres cuentas de bookmakers y diez segundos extra por apuesta recuperan 3–8% en cuota — la ventaja más barata que existe."
+          ]
+        },
+        {
+          "h": "5. Malinterpretar bonos",
+          "ps": [
+            "Un bono '100% hasta €100' con 8× rollover a cuota mínima 1.8 requiere €800 en volumen de apuestas calificadas antes de retirar — con márgenes típicos, un costo esperado cercano al bono mismo. Los bonos no son dinero gratis; son volumen con descuento con condiciones.",
+            "Solución: lee multiplicador de rollover, cuota mínima, restricciones de mercados y vencimiento antes de depositar. A veces el bono es genuinamente bueno; los términos, no el titular, te lo dicen."
+          ]
+        },
+        {
+          "h": "6. Pensar basado en resultados",
+          "ps": [
+            "Juzgar una apuesta por si ganó es la fuga más sutil. Las buenas apuestas pierden constantemente; las malas ganan lo suficiente para enseñar lecciones terribles. Cazar rachas, equipos 'debidos' y confianza construida en muestras de cinco partidos todo crece de esta raíz.",
+            "Solución: juzga el proceso — ¿fue la cuota mejor que la probabilidad real? — y mide en cientos de apuestas. Un registro escrito lo hace automático; la memoria lo hace imposible."
+          ]
+        },
+        {
+          "h": "7. Apostar sin presupuesto",
+          "ps": [
+            "Cada error arriba se vuelve peligroso cuando el dinero nunca fue apartado. Apostar desde la cuenta del hogar convierte la varianza en daño genuino.",
+            "Solución: un bankroll de entretenimiento fijo, límites de depósito configurados en ajustes de cuenta, y honestidad sobre si sigue siendo divertido. Los bookmakers autorizados proporcionan herramientas de límite y auto-exclusión; GambleAware y equivalentes existen precisamente para cuando la respuesta deja de ser sí."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Nunca aumentes las cuotas para recuperar pérdidas — escribe la regla de parada antes de necesitarla.",
+        "Evita cuotas altas por defecto; el mercado sobreprecio los sueños sistemáticamente.",
+        "Compara cuotas en cada apuesta; juzga apuestas por proceso, no resultados.",
+        "Lee condiciones de rollover de bonos completamente; apuesta solo desde un presupuesto apartado."
+      ],
+      "faq": [
+        {
+          "q": "¿Cuál es el error más dañino?",
+          "a": "Recuperar pérdidas. Cada otro error te cuesta al ritmo del margen; recuperar comprime un año de pérdidas esperadas en una noche. Si adoptas solo una regla, que sea la parada en días perdedores."
+        },
+        {
+          "q": "¿Cómo sé si mis apuestas siguen siendo recreativas?",
+          "a": "Pruebas honestas: apuestas solo dinero apartado, las pérdidas no cambian tu ánimo por largo tiempo, nunca ocultas la actividad, y parar una semana es fácil. Si alguna falla, usa las herramientas de límite y habla con GambleAware — temprano es todo el truco."
+        },
+        {
+          "q": "¿Son estos errores realmente tan comunes?",
+          "a": "Son la norma, no la excepción — el diseño de productos de bookmakers (bonos, constructores de apuestas, promociones de cuotas altas) activamente alienta varios de ellos. Asume que los valores por defecto están contra ti y elige deliberadamente."
+        }
+      ],
+      "related": [
+        "bankroll-management-guide",
+        "value-betting-explained",
+        "what-is-an-accumulator"
+      ],
+      "glossary": [
+        "bankroll-management",
+        "wagering-requirements",
+        "variance",
+        "self-exclusion"
+      ],
+      "tools": [
+        {
+          "href": "/tipsters",
+          "label": "Our full settled record — losing runs included, flat-staked"
+        }
+      ],
+      "_src_hash": "0581f9d544c5f853",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "how-to-choose-a-betting-site",
+      "title": "Cómo elegir un sitio de apuestas",
+      "nav": "Elegir un sitio de apuestas",
+      "desc": "Un checklist práctico — licencia, márgenes, velocidad de pago, límites y términos — para elegir una casa de apuestas que se ajuste a tu mercado, y las trampas a evitar.",
+      "cat": "Bookmakers",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "Licencia primero, todo lo demás después",
+          "ps": [
+            "Una licencia del regulador de tu mercado es la diferencia entre una empresa con obligaciones — protección de fondos, vías de disputa, herramientas de juego responsable — y un sitio web con un logo. Los operadores regulados pueden ser reclamados, auditados y multados; los no regulados simplemente pueden dejar de pagar.",
+            "Las reglas varían enormemente según el país (nuestras páginas de país rastrean quién regula cada mercado que cubrimos), y cambian. Dondequiera que estés: verifica el estado local actual antes de depositar, y trata una licencia faltante o vaga como un punto de quiebre."
+          ]
+        },
+        {
+          "h": "Los números que se acumulan: margen y límites",
+          "ps": [
+            "El margen es la comisión que pagas en cada apuesta — los márgenes típicos de apuestas a ganador entre un operador oscilan entre 5–7%, y buscar el mejor precio entre varios libros se acerca al 3%. Durante una temporada de apuestas regulares la diferencia es dinero real; durante años supera cualquier bono de bienvenida.",
+            "Los límites importan en la otra dirección: las casas de apuestas blandas restringen cuentas ganadoras rápidamente, a veces a apuestas mínimas. Si pretendes apostar en serio, la reputación de tolerancia con ganadores debe estar en tu checklist."
+          ]
+        },
+        {
+          "h": "Pagos y velocidad de retiro",
+          "ps": [
+            "Los depósitos son instantáneos en todas partes; los retiros son donde las casas de apuestas se diferencian. Busca tus canales de pago locales (transferencia bancaria, tarjetas, y en muchos de nuestros mercados dinero móvil como M-Pesa, MTN MoMo, PIX o UPI), plazos de retiro declarados, y — según reportes de usuarios — si esos plazos se cumplen.",
+            "Un consejo estructural: completa la verificación de identidad (KYC) justo después del registro, antes de que haya algún retiro pendiente. La mayoría de quejas sobre 'retrasos en pagos' son en realidad colas de verificación golpeadas en el peor momento."
+          ]
+        },
+        {
+          "h": "Términos, producto y las compensaciones honestas",
+          "ps": [
+            "Lee cuatro cosas en los términos: reglas de apuesta de bonificación, límites máximos de ganancia, comisiones por cuenta inactiva, y mercados restringidos. Los límites máximos de ganancia en particular sorprenden a los apostadores de acumuladores exactamente en el peor momento.",
+            "Características del producto — transmisión en vivo, cash-out, constructores de apuestas, calidad de la aplicación — merece la pena sopesarlas solo después de que licencia, margen y pagos pasen. Son las razones que el marketing te da; las otras tres son las razones por las que tu dinero sigue siendo tuyo.",
+            "Nuestras reseñas de casas de apuestas califican a los operadores en exactamente estos ejes, por país, y marcamos entradas de demostración claramente hasta que datos de socios reales las reemplacen. Comprueba cualquier reseña — la nuestra incluida — contra los términos publicados del operador."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Sin licencia local válida — sin depósito; todo lo demás es secundario.",
+        "El margen se cobra siempre, los bonos una sola vez: prefiere la casa de menor margen.",
+        "Verifica identidad inmediatamente después del registro; comprueba reportes reales de velocidad de pago.",
+        "Lee los términos de apuesta, límites de ganancia y cláusulas de comisión antes de que te lean a ti."
+      ],
+      "faq": [
+        {
+          "q": "¿Debo tener cuentas en varias casas de apuestas?",
+          "a": "Sí, en dos o tres con licencia. La búsqueda de líneas por sí sola lo justifica, y te protege si una restringe tu cuenta o retrasa un pago. Mantén cada cuenta completamente verificada y dentro de tu presupuesto compartido."
+        },
+        {
+          "q": "¿Son las casas de apuestas de marca grande siempre más seguras?",
+          "a": "El tamaño de marca se correlaciona con el escrutinio regulatorio, no la generosidad — las marcas grandes a menudo conllevan márgenes más altos y políticas de restricción agresivas. Lo más seguro es licencia-en-tu-mercado más una reputación de pago que hayas verificado, en cualquier tamaño."
+        },
+        {
+          "q": "¿Qué pasa si una casa de apuestas se niega a pagar?",
+          "a": "Operador con licencia: reclama formalmente por escrito, luego escala al regulador o al organismo de ADR designado — estas vías funcionan y son el punto completo de la licencia. Operador sin licencia: generalmente no hay vía, que es el argumento de la primera sección de esta guía."
+        }
+      ],
+      "related": [
+        "bookmaker-margin-explained",
+        "common-betting-mistakes",
+        "how-to-read-betting-odds"
+      ],
+      "glossary": [
+        "wagering-requirements",
+        "sharp-and-soft-bookmakers",
+        "cash-out",
+        "free-bet"
+      ],
+      "tools": [
+        {
+          "href": "/bookmakers",
+          "label": "Our scored bookmaker comparison, by market"
+        }
+      ],
+      "_src_hash": "2801fa5fb3a873f9",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "in-play-betting-guide",
+      "title": "Apuestas en Directo: Cómo Funcionan los Mercados en Vivo",
+      "nav": "Apuestas en directo",
+      "desc": "Cómo se generan las cuotas en vivo, por qué el margen se amplía discretamente durante el partido, el mecanismo de suspensión y la disciplina que exige el betting en directo.",
+      "cat": "Markets",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "Mercados que recalculan cada segundo",
+          "ps": [
+            "Las apuestas en directo mantienen los mercados abiertos durante el partido, reajustando las cuotas continuamente según el tiempo transcurrido, el marcador y los eventos en vivo. Un favorito a 1.50 que encaja gol puede pasar a 3.00 en segundos; cada gol, tarjeta roja y revisión del VAR fija las precios en un nuevo estado.",
+            "El motor subyacente es el mismo aparato de probabilidades que en premercado — expected goals restantes, estado del marcador, decay temporal — recalculado en tiempo real, con una capa de riesgo automatizada que suspende mercados cuando los eventos superan el ritmo de fijación de precios."
+          ]
+        },
+        {
+          "h": "Qué cambia respecto al premercado",
+          "ps": [
+            "Tres diferencias estructurales. Primero, el margen: los mercados en directo típicamente cargan 1–3 puntos más que el mismo mercado en premercado — pagas extra por el reloj en movimiento. Segundo, suspensiones: los mercados se bloquean durante goles, penales y revisiones, precisamente cuando más quieres actuar. Tercero, latencia informativa: el feed que ves corre segundos por detrás de los datos que fijan los precios del mercado, así que 'reaccionar a lo que acabas de ver' generalmente significa apostar a una cuota que ya lo sabe.",
+            "En conjunto, esto significa que el apostador casual en directo enfrenta peores cuotas, en peores momentos, con peor información — un juego tramado que vale la pena entender antes de jugarlo."
+          ]
+        },
+        {
+          "h": "Dónde las apuestas en directo son genuinamente útiles",
+          "ps": [
+            "Existen usos legítimos. La lectura del estado del partido — reconocer que un marcador 0-0 no refleja un partido unilateral — puede ganar a un modelo que solo ve el marcador. Las entradas planeadas (decidir en premercado que respaldarás al favorito si encaja primero, a una cuota objetivo) convierten la volatilidad en vivo en una herramienta en lugar de una trampa.",
+            "El cash-out merece su propia honestidad: es una recompra con cuota en vivo y margen aplicado dos veces — conveniente, ocasionalmente racional para genuina gestión de riesgo, y sistemáticamente improductivo como hábito. El cash-out parcial obedece la misma aritmética en una fracción de la apuesta."
+          ]
+        },
+        {
+          "h": "La capa de disciplina",
+          "ps": [
+            "Las apuestas en directo comprimen todo el ciclo emocional del juego en noventa minutos: las pérdidas llegan en plena adrenalina con botones de reapuesta instantánea adjuntos. Cada regla de bankroll de nuestra guía de stakes se aplica al doble, y las apuestas precomprometidas — decididas antes del saque, nunca durante — son la única protección más fuerte.",
+            "Nuestro modelo publica solo picks en premercado; rastreamos el movimiento de cuotas en directo en la página de dropping-odds pero no emitimos tips en directo. Si apuestas en vivo, hazlo con entradas planeadas, stakes limitados y las reglas de stop escritas mientras tu pulso era normal."
+          ]
+        }
+      ],
+      "example": "Premercado: Over 2.5 a 1.90 (margen ~5%). Veinte minutos sin goles después, el mismo Over 2.5 se negocia a 2.60 — pero con margen en vivo el precio justo está más cerca de 2.75. Viste veinte minutos dominantes y quieres el Over; el mercado vio los mismos minutos a través de datos más rápidos y ya se movió. La pregunta nunca es '¿me apetecen goles ahora?' sino '¿es 2.60 mejor que la probabilidad real de goles restantes?' — la misma prueba de valor que siempre, a una tasa de cambio peor.",
+      "takeaways": [
+        "Las cuotas en vivo son matemáticas de premercado recalculadas por segundo — con 1–3 puntos más de margen.",
+        "Las suspensiones y el delay del feed significan que generalmente apuestas a una cuota que ya lo sabe.",
+        "Las entradas planeadas a cuotas objetivo ganan a las apuestas reactivas; el cash-out es margen pagado dos veces.",
+        "Establece stakes y reglas de stop antes del saque — el betting en directo castiga la improvisación."
+      ],
+      "faq": [
+        {
+          "q": "¿Por qué mi apuesta en directo fue rechazada o retrasada?",
+          "a": "Los operadores aplican un delay de aceptación (5–10 segundos) a las apuestas en vivo y anulan el intento si el mercado se mueve o se suspende dentro de él. Es protección contra apostadores que explotan la latencia del feed — molesto y universal."
+        },
+        {
+          "q": "¿Es el cash-out alguna vez la jugada correcta?",
+          "a": "Ocasionalmente — cuando tu razón original para la apuesta se ha roto genuinamente (lesión clave, tarjeta roja en tu contra) o la posición es demasiado grande para la comodidad. Como hábito rutinario convierte posiciones ganadoras en donaciones de margen."
+        },
+        {
+          "q": "¿Puedo ganar a mercados en vivo viendo streams más rápidos?",
+          "a": "Usuarios con datos de borde de cancha y baja latencia existen, y los delays de operadores existen por su culpa. Para cualquiera en una retransmisión normal, la guerra de latencia está perdida antes de empezar — planifica entradas en lugar de competir con el feed."
+        },
+        {
+          "q": "¿Cuánto margen extra cargan realmente los mercados en directo?",
+          "a": "Típicamente 1–3 puntos sobre la oferta en premercado, pero puede llegar a 4–5 en los primeros minutos o durante suspensiones cuando el riesgo es alto. Verifica el mismo mercado en premercado y en directo en un operador confiable para calibrar el coste."
+        },
+        {
+          "q": "¿Puedo usar apuestas en directo como cobertura para posiciones en premercado?",
+          "a": "Ocasionalmente tiene sentido matemático si obtienes el precio correcto — pero las comisiones dobles (margen en premercado + margen en directo) hacen que sea raramente rentable. Mejor diseñar stakes en premercado asumiendo la posibilidad de volatilidad."
+        }
+      ],
+      "related": [
+        "value-betting-explained",
+        "bankroll-management-guide",
+        "over-under-goals-explained"
+      ],
+      "glossary": [
+        "in-play-betting",
+        "cash-out",
+        "line-movement",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/dropping-odds",
+          "label": "Live odds movement across the markets we track"
+        }
+      ],
+      "_src_hash": "34ebf3f04a20a645",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-nigeria",
+      "title": "Apuestas en Nigeria: Cómo funcionan",
+      "nav": "Apuestas en Nigeria",
+      "desc": "Las normas de apuestas en Nigeria, la licencia NLRC, depósitos por transferencia bancaria y móvil, y qué significa un mercado móvil con datos limitados a la hora de elegir sitio.",
+      "cat": "Countries",
+      "country": "ng",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "¿Son legales las apuestas en Nigeria?",
+          "ps": [
+            "Sí. Las apuestas deportivas son legales y enormemente populares en Nigeria, supervisadas por la Comisión Nacional Reguladora de Loterías junto con organismos a nivel estatal como el de Lagos. Tanto operadores con licencia local como sitios internacionales atienden el mercado, y el fútbol —la Premier League sobre todo— domina el volumen de apuestas.",
+            "Las responsabilidades regulatorias entre organismos federales y estatales han sido controvertidas en tribunales en años recientes, así que el consejo práctico se mantiene estable aunque la estructura evolucione: prefiere operadores licenciados para el mercado nigeriano y comprueba el estado actual antes de depositar."
+          ]
+        },
+        {
+          "h": "Empezar: la lista de verificación práctica",
+          "ps": [
+            "Regístrate con un operador que sirva Nigeria bajo licencia local, verifica tu identidad pronto (los datos bancarios vinculados a BVN aceleran esto), deposita en naira y fija un límite de depósito antes de tu primera apuesta —todo operador serio ofrece uno.",
+            "Nigeria es un mercado móvil-primero con costos reales de datos, así que el peso de la app importa: los mejores operadores ofrecen apps ligeras en datos y apuestas por USSD o SMS para conexiones inestables. Prueba la ruta de retiro con una cantidad pequeña antes de comprometer dinero serio —la fiabilidad de pagos varía más que las cuotas."
+          ]
+        },
+        {
+          "h": "Pagos: transferencia bancaria y dinero móvil",
+          "ps": [
+            "Las transferencias bancarias y pagos con tarjeta lideran, con billeteras fintech (OPay, PalmPay, Moniepoint) cada vez más soportadas para depósitos instantáneos. Los retiros típicamente llegan por transferencia bancaria; la velocidad va desde minutos hasta un par de días según el operador.",
+            "Deposita en NGN y apuesta en NGN —evitar conversión de divisas es dinero gratis. Si un operador solo ofrece saldos en dólares a jugadores nigerianos, esa es señal de que no está realmente construido para el mercado."
+          ]
+        },
+        {
+          "h": "Elegir un sitio para el mercado nigeriano",
+          "ps": [
+            "Pondera el estado de licencia, velocidad de pago en naira, uso de datos de la app, y la profundidad de mercados de Premier League y Champions League —las ligas en que los nigerianos realmente apuestan. Los márgenes de cuotas difieren significativamente entre operadores, así que compara precios en el mismo partido antes de establecerte en uno.",
+            "Nuestra página de Nigeria clasifica operadores exactamente por estos criterios, y las guías sobre márgenes y gestión de banca aplican en todas partes —incluido aquí. Apuesta solo lo que puedas permitirte perder; 18+."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Se gravan las apuestas en línea en Nigeria?",
+          "a": "Los operadores pagan impuestos de licencia y juego; las ganancias de apostadores generalmente no se han gravado en origen, aunque propuestas surgen regularmente. Las normas pueden cambiar —comprueba la posición actual antes de asumir, especialmente para pagos grandes."
+        },
+        {
+          "q": "¿Puedo apostar con saldo o USSD?",
+          "a": "Varios operadores nigerianos soportan flujos de apuestas USSD para teléfonos básicos y situaciones de datos bajos, aunque los depósitos todavía se enrutan a través de banco o billetera en la mayoría de casos. Comprueba la página de pagos de cada operador para lo que realmente soporta."
+        },
+        {
+          "q": "¿Cómo sé que un operador tiene licencia para Nigeria?",
+          "a": "Los operadores licenciados muestran detalles de licencia NLRC o estatal en el pie de página del sitio, y los reguladores publican listas de operadores. Si la información de licencia falta o es vaga, trátala como descalificante —hay suficientes opciones licenciadas que nunca necesitas una sin licencia."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ng",
+          "label": "Ranked betting sites for Nigeria"
+        }
+      ],
+      "_src_hash": "585f6b2c0f197411",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-kenya",
+      "title": "Apuestas en Kenia: Cómo funciona",
+      "nav": "Apuestas en Kenia",
+      "desc": "Licencias de la BCLB en Kenia, depósitos y retiros por M-Pesa, las normas fiscales que realmente afectan, y cómo elegir un sitio diseñado para el mercado.",
+      "cat": "Countries",
+      "country": "ke",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "¿Son legales las apuestas en Kenia?",
+          "ps": [
+            "Sí. Las apuestas deportivas son legales y están reguladas por la Betting Control and Licensing Board (BCLB), y Kenia tiene una de las tasas de participación en apuestas más altas de África — un mercado casi enteramente móvil.",
+            "La parte variable es la política fiscal: el impuesto a las apuestas y la retención sobre ganancias han cambiado repetidamente y siguen siendo un tema político vigente. La capa de licencias es estable; la capa de costos no — verifica las tasas actuales antes de proyectar tus retornos."
+          ]
+        },
+        {
+          "h": "Primeros pasos con M-Pesa",
+          "ps": [
+            "El registro comienza con el número de teléfono: la mayoría de operadores te verifican mediante el número vinculado a M-Pesa, haciendo que el registro sea rápido. Los depósitos por paybill de M-Pesa son efectivamente instantáneos; los retiros de vuelta a M-Pesa son la característica distintiva del mercado — los mejores operadores pagan en minutos.",
+            "Porque todo se canaliza por una única vía, la velocidad de pago es inusualmente comparable entre operadores aquí. Los reportes de usuarios sobre tiempos de retiro son fáciles de encontrar y vale la pena dedicar diez minutos a leerlos antes de depositar en cualquier lugar."
+          ]
+        },
+        {
+          "h": "Impuestos: la parte que realmente sienten los apostadores kenianos",
+          "ps": [
+            "Kenia grava las apuestas en múltiples puntos: se aplica un impuesto especial sobre las apuestas y una retención fiscal sobre las ganancias, con tasas que han cambiado varias veces en presupuestos recientes. Eso significa que el costo efectivo de una apuesta es peor que lo que sugieren solo las cuotas — una cuota de 1.90 con impuesto sobre la apuesta se comporta como una cuota menor.",
+            "No citamos tasas exactas aquí porque genuinamente cambian año a año; el cronograma actual de la KRA es la fuente de verdad. El aprendizaje estratégico es estable: los impuestos hacen que buscar mejores cuotas importe más en Kenia, no menos."
+          ]
+        },
+        {
+          "h": "Elegir un sitio para el mercado keniano",
+          "ps": [
+            "Busca una licencia actual de la BCLB, retiros instantáneos por M-Pesa, apps ligeras en datos o flujos USSD completos, y cuotas competitivas en la Premier League inglesa — el mercado keniano por excelencia. Los productos de jackpot locales son populares pero ofrecen cuotas de lotería; trátalos como entretenimiento, no como estrategia.",
+            "Nuestra página de Kenia clasifica operadores según estos criterios. Las reglas de gestión de banca de nuestras guías de estrategia aplican con mayor fuerza donde las apuestas llevan impuesto especial — apuestas menores, menos frecuentes, mejor pagadas. 18+, apuesta responsablemente."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Cuánto impuesto pago sobre las ganancias en Kenia?",
+          "a": "Se aplica una retención fiscal sobre las ganancias que los operadores deducen automáticamente, pero la tasa ha cambiado varias veces en años recientes — consulta el cronograma actual de la KRA en lugar de confiar en ningún número estático, incluyendo los que leas en guías."
+        },
+        {
+          "q": "¿Puedo apostar sin un smartphone?",
+          "a": "Sí — el mercado de Kenia creció sobre apuestas por SMS y USSD, y varios operadores licenciados aún mantienen menús USSD completos para teléfonos básicos. M-Pesa maneja el lado del dinero de forma idéntica de cualquier manera."
+        },
+        {
+          "q": "¿Son seguros los sitios de apuestas sin licencia de la BCLB?",
+          "a": "No. Los sitios sin licencia quedan fuera del marco de disputas y protección de fondos, y las autoridades kenianas los bloquean periódicamente. Con múltiples opciones licenciadas e instantáneas disponibles, no hay razón para aceptar el riesgo."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bankroll-management-guide",
+        "common-betting-mistakes"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ke",
+          "label": "Ranked betting sites for Kenya"
+        }
+      ],
+      "_src_hash": "8cb6c340ae83501a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-ghana",
+      "title": "Apuestas en Ghana: Cómo funciona",
+      "nav": "Apuestas en Ghana",
+      "desc": "Licenciamiento de la Comisión de Juegos de Ghana, pagos por MTN MoMo, impuesto sobre ganancias, y una lista de verificación práctica para elegir sitio.",
+      "cat": "Countries",
+      "country": "gh",
+      "minutes": 4,
+      "sections": [
+        {
+          "h": "¿Son legales las apuestas en Ghana?",
+          "ps": [
+            "Sí. Las apuestas deportivas son legales y reguladas por la Comisión de Juegos de Ghana, que otorga licencias a los operadores y publica la lista aprobada — un recurso público genuinamente útil, ya que verificar el estado de un sitio requiere una sola búsqueda.",
+            "Desde 2023 se aplica un impuesto de retención sobre las ganancias, descontado por los operadores en el pago. La tasa se ha ajustado desde su introducción, así que verifica la cifra actual con la GRA en lugar de confiar en un número fijo."
+          ]
+        },
+        {
+          "h": "Primeros pasos: dinero móvil primero",
+          "ps": [
+            "El dinero móvil es el canal predeterminado — MTN MoMo por encima de todo, con Vodafone Cash y AirtelTigo también soportados en la mayoría de operadores licenciados. Los depósitos son instantáneos; los retiros a MoMo van desde minutos hasta un día dependiendo del operador.",
+            "Regístrate con tu número vinculado a MoMo, completa la verificación de identidad inmediatamente, y prueba un retiro pequeño antes de aumentar las apuestas. Apostar en cedis de inicio a fin evita pérdidas por conversión."
+          ]
+        },
+        {
+          "h": "Elegir un sitio para el mercado ghanés",
+          "ps": [
+            "Verifica tres cosas en orden: presencia en la lista de licenciados de la Comisión de Juegos, velocidad de retiro por MoMo según reportes de usuarios, y calidad de cuotas en la Premier League y Ghana Premier League. Los márgenes difieren entre operadores lo suficiente para importar — nuestra guía de márgenes muestra cómo comparar en diez segundos.",
+            "Los bonos se promocionan intensamente en Ghana; lee los términos de apuesta antes de valorarlos al pie de la letra. Nuestra página de Ghana clasifica operadores según los criterios anteriores. 18+, apuesta solo dentro de un presupuesto que puedas permitirte."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Cuál es el impuesto sobre ganancias de apuestas en Ghana?",
+          "a": "Un impuesto de retención sobre ganancias brutas se aplica desde 2023, descontado automáticamente en el pago. La tasa ha sido revisada desde su lanzamiento — consulta el calendario actual de la GRA para la cifra que aplica hoy."
+        },
+        {
+          "q": "¿Cuál es el mejor método de pago para apostar en Ghana?",
+          "a": "MTN MoMo está soportado en todas partes y paga más rápido en buenos operadores. Las tarjetas funcionan para depósitos pero los retiros casi siempre se canalizan nuevamente a través de dinero móvil — así que MoMo de inicio a fin es la configuración más sencilla."
+        },
+        {
+          "q": "¿Cómo verifico que un sitio de apuestas está licenciado en Ghana?",
+          "a": "La Comisión de Juegos de Ghana publica la lista de operadores licenciados. Si un sitio que opera en Ghana no está en ella, u oculta detalles de su licencia, elige uno de los muchos que sí están."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "common-betting-mistakes"
+      ],
+      "glossary": [
+        "wagering-requirements",
+        "bookmaker-margin"
+      ],
+      "tools": [
+        {
+          "href": "/countries/gh",
+          "label": "Ranked betting sites for Ghana"
+        }
+      ],
+      "_src_hash": "41b9545fc5d9f1d2",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-south-africa",
+      "title": "Apuestas en Sudáfrica: Cómo funcionan",
+      "nav": "Apuestas en Sudáfrica",
+      "desc": "Por qué las apuestas deportivas son legales pero los casinos en línea no, licencias provinciales, transferencias bancarias y pagos con tarjeta, y cómo elegir una casa de apuestas licenciada.",
+      "cat": "Countries",
+      "country": "za",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "La distinción sudafricana: apuestas sí, casino no",
+          "ps": [
+            "Las regulaciones de Sudáfrica trazan una línea que la mayoría de países no hacen: las apuestas deportivas en línea son completamente legales a través de casas de apuestas con licencias provinciales (Western Cape y Mpumalanga licencian la mayoría de operadores en línea), mientras que los juegos de casino en línea — máquinas tragaperras, ruleta, distribuidores en vivo — siguen prohibidos a nivel nacional.",
+            "Eso convierte la pestaña 'casino' que algunos sitios muestran a usuarios sudafricanos en una bandera legal roja, no en una característica de bonificación. Una casa de apuestas local debidamente licenciada ofrece deportes, carreras de caballos y productos de números de la suerte, y se detiene ahí."
+          ]
+        },
+        {
+          "h": "Primeros pasos",
+          "ps": [
+            "Regístrate en una casa de apuestas con licencia provincial, completa la verificación FICA (documento de identidad y comprobante de domicilio — obligatorio, así que hazlo desde el principio), y financia en rand mediante tarjeta, transferencia EFT instantánea (ecosistemas Ozow, Zapper) o vales de efectivo minoristas.",
+            "Las ganancias recreativas generalmente no están sujetas a impuestos para el apostador — una ventaja genuina sobre varios mercados similares — aunque la actividad a escala profesional puede atraer la atención de SARS. La velocidad de retiro varía de mismo día a varios días; los reportes de usuarios te dicen cuál es mejor."
+          ]
+        },
+        {
+          "h": "Elegir un sitio para el mercado sudafricano",
+          "ps": [
+            "Confirma el número de licencia provincial en el pie de página, compara márgenes en partidos de la Premier League y PSL, y verifica los plazos de retiro por EFT. La profundidad local importa: los mejores operadores cotizan la PSL correctamente, no solo el fútbol europeo.",
+            "Nuestra página de Sudáfrica clasifica operadores según estos criterios. Las guías de estrategia — margen, bankroll, errores — aplican sin cambios. 18+, y el Programa Nacional de Juego Responsable (0800 006 008) es la línea de apoyo local."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Los casinos en línea realmente son ilegales en Sudáfrica?",
+          "a": "Sí — los juegos de casino en línea están prohibidos a nivel nacional, y se han llevado acciones de cumplimiento contra operadores de casinos extraterritoriales e incluso ganancias. Las apuestas deportivas en línea a través de casas de apuestas licenciadas provincionalmente es el canal legal."
+        },
+        {
+          "q": "¿Pago impuestos sobre las ganancias de apuestas en Sudáfrica?",
+          "a": "Las ganancias recreativas generalmente no están sujetas a impuestos. Las apuestas como profesión sistemática pueden ser tratadas como ingreso por SARS — un límite que la mayoría de apostadores nunca alcanzan, pero vale la pena saberlo."
+        },
+        {
+          "q": "¿Qué es la verificación FICA?",
+          "a": "La verificación de identidad y domicilio que los operadores licenciados deben realizar bajo la Ley de Centro de Inteligencia Financiera. Es obligatoria antes de retiros, así que enviar documentos en el registro — no en el momento del pago — es el movimiento práctico."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/countries/za",
+          "label": "Ranked betting sites for South Africa"
+        }
+      ],
+      "_src_hash": "d0729858b2038930",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-india",
+      "title": "Apuestas en India: cómo funciona",
+      "nav": "Apuestas en India",
+      "desc": "Las reglas por estado, las deducciones fiscales que realmente aplican, depósitos por UPI, y cómo pensar honestamente sobre los sitios offshore.",
+      "cat": "Countries",
+      "country": "in",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "El panorama legal: mapa por estado",
+          "ps": [
+            "India no tiene una licencia de apuestas nacional única. El juego es en gran medida materia estatal: algunos estados operan regímenes licenciados para ciertos productos, varios prohíben las apuestas completamente, y la mayoría se sitúa en medio bajo leyes escritas mucho antes de internet. Muchos operadores internacionales aceptan jugadores indios en este vacío legal.",
+            "El primer paso honesto es específico por ubicación: verifica la ley de tu estado antes de registrarte en cualquier lugar. Esta guía describe el mercado; no puede autorizarte a apostar donde tu estado dice lo contrario."
+          ]
+        },
+        {
+          "h": "Impuestos: la parte segura",
+          "ps": [
+            "Sea cual sea la ambigüedad regulatoria, la ley fiscal india es explícita sobre las ganancias: se deduce impuesto en la fuente sobre ganancias de juego a una tasa fija, y los cambios recientes de GST añadieron impuesto en el lado del depósito para juegos de dinero en línea. En conjunto alteran materialmente la economía de las apuestas desde India.",
+            "Las tasas y mecánicas han cambiado repetidamente desde 2023 — verifica el tratamiento actual de TDS y GST antes de asumir ninguna cifra. El punto estructural permanece: los impuestos aquí son reales, automáticos, y más grandes de lo que la mayoría de apostadores esperan."
+          ]
+        },
+        {
+          "h": "Pagos: enfocados en UPI",
+          "ps": [
+            "UPI domina los depósitos donde se acepta, junto con billeteras (Paytm, PhonePe) y banca en línea. Los canales de pago de operadores offshore hacia India cambian frecuentemente conforme los procesadores rotan — los depósitos poco confiables son la molestia crónica del mercado y un criterio de selección genuino.",
+            "La confiabilidad de retiros importa aún más: prefiere operadores con historiales largos y verificables de pagos a usuarios indios, y prueba con montos pequeños antes de comprometerte. Los saldos en rupias superan los saldos en dólares simplemente por la razón del costo de conversión."
+          ]
+        },
+        {
+          "h": "Elegir honestamente en un mercado gris",
+          "ps": [
+            "Donde no existe licencia local, los sustitutos son más débiles pero no sin valor: una licencia internacional establecida, años de historial de pagos, soporte responsivo, y términos transparentes. La profundidad del mercado de críquet es la señal local — operadores serios sobre India cotizan el IPL correctamente.",
+            "Nuestra página India lista operadores en estos criterios. Las apuestas en mercado gris concentran cada riesgo del que este sitio advierte, así que las reglas de bankroll aplican doblemente: apuestas pequeñas, dinero separado, y plena conciencia de la ley de tu estado. 18+."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Son legales las apuestas en línea en India?",
+          "a": "Depende de tu estado. Algunos estados licencian ciertos productos, otros prohíben las apuestas completamente, y la mayoría tiene leyes pre-internet ambiguas. No hay licencia nacional, así que verifica la posición actual de tu estado — esa es la única respuesta que es cierta en todas partes."
+        },
+        {
+          "q": "¿Cómo se gravan las ganancias de apuestas en India?",
+          "a": "Se deduce impuesto en la fuente sobre ganancias de juego a una tasa fija, y los cambios de GST han añadido impuesto en el lado del depósito para juegos de dinero en línea. Las tasas han cambiado desde 2023 — verifica las reglas actuales de TDS y GST antes de apostar en lugar de confiar en ninguna cifra estática."
+        },
+        {
+          "q": "¿Por qué los métodos de depósito cambian constantemente en sitios de apuestas en India?",
+          "a": "Los operadores offshore enrutan pagos a través de procesadores que rotan conforme los bancos endurecen reglas, así que los identificadores de UPI y gateways cambian frecuentemente. Los operadores con canales de pago estables y antiguos están demostrando exactamente la calidad operativa que deseas."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "common-betting-mistakes",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/countries/in",
+          "label": "Betting sites serving India"
+        }
+      ],
+      "_src_hash": "ede7d8338d0b5199",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-brazil",
+      "title": "Apuestas en Brasil: Cómo funciona",
+      "nav": "Apuestas en Brasil",
+      "desc": "El nuevo mercado regulado de Brasil: licencias SPA/MF, dominios .bet.br, pagos por PIX y qué cambió para los apostadores en 2025.",
+      "cat": "Countries",
+      "country": "br",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Un mercado que acaba de legalizarse",
+          "ps": [
+            "El mercado regulado de apuestas de cuotas fijas de Brasil entró en vigor en enero de 2025 bajo la secretaría de apuestas del Ministerio de Hacienda (SPA/MF), convirtiendo uno de los mayores mercados grises del mundo en uno licenciado casi de la noche a la mañana.",
+            "El marcador visible: los operadores licenciados deben usar dominios .bet.br. Un sitio que atienda a Brasil desde cualquier otro dominio está operando fuera del nuevo marco regulatorio — el control de legalidad más sencillo del mundo en apuestas."
+          ]
+        },
+        {
+          "h": "Qué te da la licencia",
+          "ps": [
+            "Los operadores licenciados deben garantizar a los jugadores brasileños segregación de fondos, verificación de identidad y edad, herramientas de juego responsable, restricciones publicitarias y una vía de resolución de disputas — obligaciones que el mercado offshore pre-2025 nunca exigió.",
+            "La transición también significa cambios: consolidación de marcas, algunos nombres offshore saliendo del mercado, otros adquiriendo licencias. Verificar el estado actual de SPA/MF de un sitio toma un minuto y resuelve la cuestión."
+          ]
+        },
+        {
+          "h": "Pagos: PIX domina el mercado",
+          "ps": [
+            "PIX domina depósitos y retiros — instantáneo, gratuito, 24/7 — con tarjetas y boleto como opciones secundarias. Los operadores licenciados procesan retiros por PIX en minutos; algo más lento es una bandera roja en este mercado específicamente, porque el sistema en sí es instantáneo.",
+            "Las ganancias por encima del umbral de exención están sujetas al impuesto sobre la renta bajo el nuevo régimen; los umbrales y mecánicas son nuevos y están ajustándose, así que consulta la orientación actual de la Receita Federal para detalles específicos."
+          ]
+        },
+        {
+          "h": "Elegir un sitio para el mercado brasileño",
+          "ps": [
+            "Confirma el dominio .bet.br y la licencia SPA/MF, compara márgenes en partidos de Série A y Champions League, y revisa la velocidad de retiro por PIX en reportes de usuarios. La calidad del soporte en portugués diferencia a operadores que invirtieron en Brasil de aquellos que tradujeron una plantilla.",
+            "Nuestra página de Brasil clasifica operadores según estos criterios, en portugués donde importa. Aposte con responsabilidad — 18+."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Cómo sé si un sitio de apuestas es legal en Brasil?",
+          "a": "Los operadores licenciados usan dominios .bet.br bajo autorización SPA/MF — el dominio en sí es el marcador. Los sitios que atienden a Brasil desde otros dominios están fuera del marco regulado que entró en vigor en enero de 2025."
+        },
+        {
+          "q": "¿Se gravan las ganancias de apuestas en Brasil?",
+          "a": "Bajo el nuevo régimen, las ganancias netas por encima de un umbral de exención están sujetas al impuesto sobre la renta. Las reglas son nuevas y los detalles se han ajustado desde el lanzamiento — consulta la orientación actual de la Receita Federal para umbrales y tasas."
+        },
+        {
+          "q": "¿Puedo seguir usando sitios offshore desde Brasil?",
+          "a": "El mercado regulado está diseñado para canalizar jugadores hacia operadores licenciados .bet.br, con bloqueo de pagos y ejecución contra sitios no licenciados intensificándose. Los operadores licenciados ahora ofrecen los mismos productos con protecciones reales del consumidor — el equilibrio ha colapsado."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/countries/br",
+          "label": "Ranked betting sites for Brazil"
+        }
+      ],
+      "_src_hash": "6ec379e9d60ecc6a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-mexico",
+      "title": "Apuestas en México: Cómo funciona",
+      "nav": "Apuestas en México",
+      "desc": "El sistema de permisos de SEGOB en México, pagos por SPEI y OXXO, y cómo apostar legalmente mientras se espera la modernización de la ley de juegos.",
+      "cat": "Countries",
+      "country": "mx",
+      "minutes": 4,
+      "sections": [
+        {
+          "h": "¿Las apuestas son legales en México?",
+          "ps": [
+            "Sí. Las apuestas operan legalmente bajo permisos de SEGOB (vía la Dirección General de Juegos y Sorteos) emitidos conforme a la Ley Federal de Juegos de 1947, un marco legal adaptado a la era de internet. Muchas plataformas en línea operan mediante acuerdos con titulares de permisos terrestres mientras una ley modernizada se debate desde hace años.",
+            "Para los apostadores, la prueba práctica es la visibilidad del permiso: los operadores legítimos muestran sus detalles de permiso SEGOB. El marco puede estar anticuado, pero la capa de permisos es real y verificable."
+          ]
+        },
+        {
+          "h": "Pagos: SPEI, OXXO y tarjetas",
+          "ps": [
+            "Las transferencias SPEI manejan depósitos instantáneos y la mayoría de retiros; los vouchers OXXO siguen siendo una ruta de depósito muy utilizada para la economía de efectivo — paga en cualquier tienda de conveniencia, el saldo aparece en minutos. Las tarjetas funcionan en todas partes; los retiros se canalizan de vuelta por SPEI.",
+            "Los saldos en pesos de principio a fin evitan costos de conversión. La velocidad de retiro varía según el operador, desde horas hasta días — los reportes de usuarios son la fuente honesta."
+          ]
+        },
+        {
+          "h": "Elegir un sitio para el mercado mexicano",
+          "ps": [
+            "Verifica el permiso SEGOB, compara márgenes en Liga MX y fútbol europeo, y confirma los tiempos de retiro por SPEI. La profundidad de mercado en Liga MX es el indicador local — los operadores serios en México lo cotizan adecuadamente, no solo la Premier League.",
+            "Nuestra página de México clasifica operadores según estos criterios, en español. Las reglas pueden cambiar cuando la ley de juegos tan debatida finalmente se apruebe — revisa el estado actual periódicamente. 18+, juega con responsabilidad."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Se gravan las ganancias de apuestas en México?",
+          "a": "Se aplica una pequeña retención federal a los premios de juegos en ciertos casos, con variaciones a nivel estatal. Los montos generalmente son modestos para apostadores típicos, pero revisa las reglas actuales del SAT si ganas en grande — el tratamiento depende del tipo y monto del premio."
+        },
+        {
+          "q": "¿Puedo depositar en efectivo en México?",
+          "a": "Sí — los vouchers OXXO te permiten depositar efectivo en cualquiera de miles de tiendas de conveniencia, con el saldo acreditándose en minutos. Sigue siendo una de las rutas de depósito más utilizadas en México junto con transferencias SPEI."
+        },
+        {
+          "q": "¿Cómo verifico un permiso de SEGOB?",
+          "a": "Los operadores autorizados muestran su número de permiso (a menudo haciendo referencia al titular del permiso terrestre bajo el cual operan) en el pie de página del sitio. La ausencia de cualquier referencia de permiso es la señal de descalificación."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "common-betting-mistakes"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/countries/mx",
+          "label": "Ranked betting sites for Mexico"
+        }
+      ],
+      "_src_hash": "331f8f09e3aeee2c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-argentina",
+      "title": "Apuestas en Argentina: cómo funciona",
+      "nav": "Apuestas en Argentina",
+      "desc": "La licencia provincia por provincia en Argentina, pagos por Mercado Pago, y por qué la velocidad de retiro importa más aquí que en casi cualquier otro lugar.",
+      "cat": "Countries",
+      "country": "ar",
+      "minutes": 4,
+      "sections": [
+        {
+          "h": "Licencia provincia por provincia",
+          "ps": [
+            "Argentina regula las apuestas online a nivel provincial: la Ciudad de Buenos Aires (LOTBA) y la Provincia de Buenos Aires (IPLyC) operan mercados online licenciados, y otras provincias funcionan con regímenes propios en distintas etapas de desarrollo. No existe licencia nacional — tu provincia determina tus opciones.",
+            "Los operadores licenciados se geo-focalizan por provincia, por eso la disponibilidad varía según el país. Revisar la lista de operadores del regulador provincial es la mejor manera de confirmarlo."
+          ]
+        },
+        {
+          "h": "Pagos y el factor peso",
+          "ps": [
+            "Mercado Pago es el medio por defecto, con transferencia bancaria y tarjetas como alternativas. Los depósitos son instantáneos; la velocidad de retiro es donde los operadores se diferencian — y en Argentina importa más que lo usual, porque la volatilidad del peso hace que el dinero en tránsito pierda valor.",
+            "Eso convierte la velocidad de pago en un criterio de selección de primer orden aquí, no meramente una conveniencia. Los buenos operadores alcanzan retiros por Mercado Pago el mismo día."
+          ]
+        },
+        {
+          "h": "Elegir un sitio para el mercado argentino",
+          "ps": [
+            "Confirmá la licencia para tu provincia, verificá la velocidad de retiro por Mercado Pago según reportes recientes de usuarios, y comparás márgenes en Liga Profesional y fútbol europeo. La profundidad en ligas locales indica inversión real en el mercado.",
+            "Nuestra página de Argentina ranquea operadores por estos criterios, en español. Las normas provinciales evolucionan — verificá el estado actual donde vivís. 18+, jugá con responsabilidad."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Son las apuestas online legales en toda Argentina?",
+          "a": "No — la regulación es provincial. Buenos Aires Ciudad y Provincia licencian operadores online, varias otras provincias tienen sus propios regímenes, y algunas están rezagadas. El regulador de tu provincia determina qué está licenciado para vos."
+        },
+        {
+          "q": "¿Por qué la velocidad de retiro importa tanto en Argentina?",
+          "a": "Volatilidad del peso: dinero que tarda días en llegar vale notoriamente menos que dinero que llega en horas. Los operadores con retiros por Mercado Pago el mismo día te protegen de la devaluación en tránsito."
+        },
+        {
+          "q": "¿Se gravan las ganancias en Argentina?",
+          "a": "El tratamiento fiscal varía según la provincia y el tipo de premio, y las normas nacionales sobre tributación de juegos han cambiado repetidamente. Para montos significativos, consultá la guía actual de AFIP y provincial en lugar de asumir."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bankroll-management-guide",
+        "bookmaker-margin-explained"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ar",
+          "label": "Ranked betting sites for Argentina"
+        }
+      ],
+      "_src_hash": "b7d7156d6527e86f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-canada",
+      "title": "Apuestas en Canadá: cómo funcionan",
+      "nav": "Apuestas en Canadá",
+      "desc": "Apuestas de evento único desde 2021, mercado abierto regulado de Ontario versus plataformas provinciales, pagos por Interac y ganancias libres de impuestos.",
+      "cat": "Countries",
+      "country": "ca",
+      "minutes": 4,
+      "sections": [
+        {
+          "h": "Dos Canadás: Ontario y el resto",
+          "ps": [
+            "Canadá legalizó las apuestas deportivas de evento único a nivel nacional en 2021, pero el mercado se dividió: Ontario opera un mercado regulado abierto donde docenas de operadores privados cuentan con licencias de AGCO/iGaming Ontario, mientras que otras provincias canalizan las apuestas a través de plataformas de corporaciones de loterías (PROLINE+, Mise-o-jeu, PlayNow).",
+            "Fuera de Ontario, los sitios extraterritoriales ocupan una zona gris: accesibles pero fuera del marco de protección del consumidor. Los habitantes de Ontario no enfrentan este dilema: el mercado regulado es profundo y competitivo."
+          ]
+        },
+        {
+          "h": "Pagos e impuestos",
+          "ps": [
+            "Interac es la infraestructura universal: depósitos y retiros por Transferencia Electrónica en efectivamente todos los operadores, junto con tarjetas y opciones de banca instantánea cada vez más frecuentes. Los retiros en operadores regulados confiables llegan en menos de 24 horas a 48 horas.",
+            "La verdadera ventaja canadiense: las ganancias de apuestas recreativas no están sujetas a impuestos. Solo el juego profesional como negocio atrae la atención de la CRA; un umbral que los apostadores recreativos no alcanzan."
+          ]
+        },
+        {
+          "h": "Elegir un sitio para el mercado canadiense",
+          "ps": [
+            "En Ontario: confirma la licencia de iGaming Ontario, luego compara márgenes (los precios de NHL, NBA y Premier League varían significativamente entre operadores) y la velocidad de retiro por Interac. En otras provincias: la plataforma provincial es la opción completamente protegida; si consideras sitios extraterritoriales, aplica precaución de mercado gris (licencias establecidas, historiales de pago verificados, apuestas pequeñas).",
+            "Nuestra página de Canadá clasifica operadores según estos criterios. 18+/19+ por provincia; ConnexOntario y líneas provinciales de ayuda proporcionan apoyo."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Las ganancias de apuestas son gravables en Canadá?",
+          "a": "Las ganancias recreativas no están sujetas a impuestos. La excepción es el juego perseguido de forma sistemática como negocio, actividad de nivel profesional que la CRA puede tratar como ingreso, lo que no aplica a los apostadores recreativos."
+        },
+        {
+          "q": "¿Puedo usar sitios de apuestas extraterritoriales fuera de Ontario?",
+          "a": "Son accesibles y ampliamente utilizados, pero se encuentran fuera del marco de regulación y resolución de disputas de Canadá. Las plataformas provinciales ofrecen protección completa; los sitios extraterritoriales requieren precaución de mercado gris: licencias establecidas, historiales de pago verificados y apuestas pequeñas."
+        },
+        {
+          "q": "¿Qué diferencia tiene Ontario?",
+          "a": "Ontario abrió un mercado completamente regulado en 2022 bajo AGCO/iGaming Ontario, por lo que los operadores privados allí cuentan con licencias locales, fondos de protección y vías de resolución de disputas, el marco que otras provincias canalizan a través de sus plataformas de loterías en su lugar."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "cash-out"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ca",
+          "label": "Ranked betting sites for Canada"
+        }
+      ],
+      "_src_hash": "ddb9e14ab1951141",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-ireland",
+      "title": "Apuestas en Irlanda: Cómo funcionan",
+      "nav": "Apuestas en Irlanda",
+      "desc": "El nuevo regulador GRAI de Irlanda, la Gambling Regulation Act 2024, ganancias libres de impuestos y cómo elegir casa de apuestas en un mercado maduro.",
+      "cat": "Countries",
+      "country": "ie",
+      "minutes": 4,
+      "sections": [
+        {
+          "h": "Un mercado maduro con un nuevo regulador",
+          "ps": [
+            "Las apuestas son totalmente legales en Irlanda y están culturalmente arraigadas — pocos mercados son más antiguos. La estructura está en transición: la Gambling Regulation Act 2024 creó la Gambling Regulatory Authority of Ireland (GRAI), asumiendo las licencias que históricamente gestionaba la Revenue Commissioners.",
+            "Para los apostadores, la transición cambia la documentación más que la práctica: los operadores con licencia siguen siendo autorizados, y el nuevo marco añade protecciones al consumidor — límites publicitarios, registro nacional de autoexclusión — mientras se implementa progresivamente."
+          ]
+        },
+        {
+          "h": "Pagos e impuestos",
+          "ps": [
+            "Tarjeta, transferencia bancaria y PayPal cubren el mercado; los retiros en buenos operadores llegan en uno o dos días. La ventaja característica de Irlanda: las ganancias no están gravadas para el apostador — el impuesto de apuestas recae en los operadores.",
+            "Los criterios de selección práctica son los universales: margen, velocidad de pago y política de límites. Los operadores que atienden al mercado irlandés compiten intensamente en productos de carreras y GAA junto al fútbol — la profundidad en estos mercados marca las casas realmente competitivas localmente."
+          ]
+        },
+        {
+          "h": "Elegir un sitio para el mercado irlandés",
+          "ps": [
+            "Confirma que tenga licencia actual en Irlanda, compara márgenes en mercados de Premier League y carreras, y verifica los tiempos de pago. En un mercado tan competitivo, no hay razón para aceptar una casa con margen alto — comparar cuotas entre dos o tres operadores con licencia es la optimización completa.",
+            "Nuestra página de Irlanda clasifica operadores según estos criterios. 18+; GambleAware y las herramientas del nuevo marco GRAI son la capa de apoyo."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Se gravan las ganancias de apuestas en Irlanda?",
+          "a": "No — las ganancias están libres de impuestos para el apostador. El impuesto de apuestas se aplica a los operadores sobre la facturación, lo que se refleja en las cuotas en lugar de deducirse de los pagos."
+        },
+        {
+          "q": "¿Qué cambia con la Gambling Regulation Act 2024?",
+          "a": "Un regulador dedicado (GRAI) reemplaza el conjunto heterogéneo de rutas de licencia anteriores, añadiendo restricciones publicitarias, un registro nacional de autoexclusión y protecciones más sólidas del consumidor conforme se implementan las disposiciones. Los operadores con licencia se mantienen."
+        },
+        {
+          "q": "¿Las apuestas de carreras de caballos son legalmente diferentes de las apuestas deportivas?",
+          "a": "Ambas son totalmente legales; las carreras tienen raíces profundas en el mercado irlandés y la misma licencia las cubre. La diferencia práctica es la profundidad de producto — las casas que atienden el mercado irlandés compiten más intensamente en carreras y GAA junto al fútbol."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "value-betting-explained"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "self-exclusion"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ie",
+          "label": "Ranked betting sites for Ireland"
+        }
+      ],
+      "_src_hash": "d5b3b659707f7f54",
+      "_model": "claude-haiku-4-5-20251001"
+    }
+  ]
+}

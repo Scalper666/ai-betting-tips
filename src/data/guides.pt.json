@@ -1,0 +1,1629 @@
+{
+  "lang": "pt",
+  "guides": [
+    {
+      "slug": "how-to-read-betting-odds",
+      "title": "Como Ler as Odds",
+      "nav": "Lendo odds",
+      "desc": "Odds decimais, fracionárias e americanas explicadas com um exemplo prático — além de como converter qualquer preço na probabilidade implícita que representa.",
+      "cat": "Basics",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "Odds são preços, não previsões",
+          "ps": [
+            "Uma odd de apostas faz dois trabalhos ao mesmo tempo: diz quanto uma aposta vencedora retorna e sugere a probabilidade que a casa acredita para o resultado. Nenhum dos dois é uma promessa. Odds de 1.50 não significam que um time vai ganhar — significam que a casa está cobrando um preço correspondente a aproximadamente 67% de chance, menos sua própria margem.",
+            "Uma vez que você vê odds como preços em um mercado, muita lógica de apostas faz sentido. Os preços variam entre casas, se movem com dinheiro e notícias, e — como qualquer mercado — alguns preços são simplesmente errados. Encontrá-los é o jogo inteiro para apostadores sérios."
+          ]
+        },
+        {
+          "h": "Odds decimais",
+          "ps": [
+            "Odds decimais são o padrão na Europa, África e em praticamente todos os sites de apostas do mundo, e são o formato mais fácil de trabalhar. O número é seu retorno total por unidade apostada, incluindo a aposta. Odds de 2.75 significam que uma aposta vencedora de €10 retorna €27.50 — seus €10 de volta mais €17.50 de lucro.",
+            "Dois reflexos úteis: qualquer coisa abaixo de 2.00 é odds-on (o resultado é considerado mais provável que improvável), e a probabilidade implícita é simplesmente 1 dividido pelas odds. 1 ÷ 2.75 ≈ 36.4%."
+          ]
+        },
+        {
+          "h": "Odds fracionárias",
+          "ps": [
+            "Odds fracionárias (5/2, 11/10, 4/6) são o formato tradicional do Reino Unido e Irlanda. A fração é lucro relativo à aposta: 5/2 significa €5 de lucro para cada €2 apostados, então uma aposta de €10 em 5/2 retorna €35 no total (€25 de lucro mais sua aposta).",
+            "Para converter para decimais, divida a fração e adicione 1: 5/2 → 2.5 + 1 = 3.50. Frações abaixo de 1 (como 4/6) são favoritas em odds-on."
+          ]
+        },
+        {
+          "h": "Odds americanas",
+          "ps": [
+            "Odds americanas vêm como números positivos ou negativos ancorados a uma aposta de $100. Negativas (−150) mostram quanto você deve apostar para ganhar $100: arrisque $150 para lucrar $100. Positivas (+220) mostram o lucro em uma aposta de $100: arrisque $100 para lucrar $220.",
+            "Conversão para decimais: para odds negativas, 100 ÷ 150 + 1 = 1.67; para odds positivas, 220 ÷ 100 + 1 = 3.20. Se você aposta principalmente em mercados decimais, converter preços americanos antes de comparar vale os dez segundos que leva — nosso conversor abaixo faz isso instantaneamente."
+          ]
+        },
+        {
+          "h": "De odds para probabilidade implícita",
+          "ps": [
+            "Probabilidade implícita é a chance na qual um preço seria perfeitamente justo. Para odds decimais a fórmula é 1 ÷ odds × 100. Odds de 1.50 implicam 66.7%, odds de 3.00 implicam 33.3%, odds de 10.0 implicam 10%.",
+            "Some as probabilidades implícitas de todo resultado em um mercado e você terá mais de 100% — tipicamente 103–108% em futebol. Esse excesso é a margem da casa, e é por isso que comparar preços entre casas importa: o mesmo resultado, precificado em 1.90 em uma casa e 2.02 em outra, é uma aposta diferente."
+          ]
+        }
+      ],
+      "example": "Manchester City está em 1.44 para bater Fulham, o empate é 4.80, Fulham está em 7.50. Probabilidades implícitas: 69.4% + 20.8% + 13.3% = 103.5%. Os 3.5 pontos acima de 100 são a margem. Se sua própria estimativa das chances de City é maior que 69.4%, o 1.44 pode ter valor; se for menor, o preço está contra você não importa o quão provável uma vitória de City pareça.",
+      "takeaways": [
+        "Odds decimais = retorno total por unidade apostada; 1 ÷ odds = probabilidade implícita.",
+        "Odds fracionárias mostram lucro relativo à aposta; odds americanas ancoram a uma aposta de $100.",
+        "As probabilidades implícitas de todo mercado somam mais de 100% — o excesso é a margem da casa.",
+        "O mesmo resultado com preços diferentes é uma aposta diferente: compare antes de colocar."
+      ],
+      "faq": [
+        {
+          "q": "Qual formato de odds devo usar?",
+          "a": "Aquele que seu mercado usa diariamente — mas aprenda a converter para decimais, porque a probabilidade implícita (1 ÷ odds) é mais fácil de calcular aí. A maioria dos sites permite mudar formatos nas configurações."
+        },
+        {
+          "q": "Odds baixas significam uma aposta segura?",
+          "a": "Não. Odds de 1.20 implicam cerca de 83% de chance, o que ainda perde aproximadamente uma em cada seis vezes. Favoritas de preço curto perdem frequentemente o suficiente para que nenhuma aposta isolada seja segura, e combiná-las em múltiplas aumenta o risco."
+        },
+        {
+          "q": "Por que diferentes casas mostram odds diferentes?",
+          "a": "Cada uma define seus próprios preços a partir de seu próprio modelo, responsabilidades e margem. Diferenças de 5–10% no mesmo resultado são comuns, é por isso que comparar linhas entre várias casas é uma das poucas melhorias gratuitas disponíveis para todo apostador."
+        }
+      ],
+      "related": [
+        "value-betting-explained",
+        "bookmaker-margin-explained",
+        "how-ai-football-predictions-work"
+      ],
+      "glossary": [
+        "odds-formats",
+        "implied-probability",
+        "fair-odds"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Convert any price between decimal, fractional and American — with implied probability"
+        }
+      ],
+      "_src_hash": "fddfa037b18c77ae",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "what-is-an-accumulator",
+      "title": "O que é uma Aposta Acumulada?",
+      "nav": "Apostas Acumuladas",
+      "desc": "Como as odds de acumuladas se multiplicam, o que isso faz com sua chance de ganhar, e a matemática honesta por trás de por que as acumuladas pagam bem e perdem frequentemente.",
+      "cat": "Markets",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Uma aposta, vários palpites",
+          "ps": [
+            "Uma aposta acumulada (acca, parlay, combinada) agrupa várias seleções em uma única aposta. Todos os palpites devem vencer; um palpite perdedor derruba o bilhete inteiro. Em troca, as odds se multiplicam em vez de somar, o que permite que uma aposta modesta retorne um ganho grande.",
+            "Três palpites a 1.60, 1.75 e 1.90 se combinam em 1.60 × 1.75 × 1.90 = 5.32. Uma acumulada de €10 retorna €53.20 se todos os três acertarem — muito mais do que os €7.30 de lucro total que os mesmos €10 divididos em três apostas simples renderiam."
+          ]
+        },
+        {
+          "h": "O que a multiplicação faz com suas chances",
+          "ps": [
+            "As odds se multiplicam, mas as probabilidades também — para baixo. Se cada um desses três palpites tem uma chance real de 60%, a acumulada vence 0.6 × 0.6 × 0.6 = 21.6% das vezes. Cinco palpites assim: 7.8%. Oito palpites: menos de 2%.",
+            "Este é o trade que toda acumulada faz: ganhos maiores, taxa de acerto significativamente menor. Não há nada de errado com esse trade se você o fizer conscientemente e apostar de acordo — apostas pequenas, dinheiro que você pode perder inteiramente."
+          ]
+        },
+        {
+          "h": "A margem também se compõe",
+          "ps": [
+            "Cada palpite carrega a margem da casa de apostas, e multiplicar palpites multiplica a margem também. Se a casa mantém ~5% por palpite, uma tríplice embutida tem aproximadamente 14% de margem combinada, e uma sêxtupla mais de 25%. Acumuladas longas são estruturalmente algumas das apostas mais caras do cardápio.",
+            "Duas consequências práticas: mantenha as acumuladas curtas (2–4 palpites), e compare preços de cada palpite separadamente — uma pequena melhoria de preço por palpite se compõe a seu favor exatamente da maneira que a margem se compõe contra você."
+          ]
+        },
+        {
+          "h": "Como nosso site lida com acumuladas",
+          "ps": [
+            "Nossa acumulada diária combina os palpites de maior confiança do modelo de diferentes partidas — confiança em primeiro lugar, precisamente para evitar transformar longshots em um bilhete de loteria. As odds combinadas e o preço de cada palpite são mostrados abertamente, e a calculadora de acumuladas abaixo permite que você reconstrua ou modifique o bilhete e veja a matemática antes de apostar qualquer coisa.",
+            "Trate qualquer acumulada — inclusive a nossa — como entretenimento com um custo conhecido, não como um plano de renda. Nenhum modelo muda a aritmética das probabilidades multiplicadas."
+          ]
+        }
+      ],
+      "example": "Quatro palpites a 1.50 cada: odds combinadas 5.06. Se a chance real de cada palpite é os 66.7% que o preço implica, a acumulada acerta 19.7% das vezes — aproximadamente uma em cinco semanas. O retorno de €50.60 em uma aposta de €10 parece generoso até você contar as quatro semanas perdedoras ao redor disso.",
+      "takeaways": [
+        "Todos os palpites devem vencer; odds — e margens — se multiplicam.",
+        "A probabilidade de ganho cai rapidamente a cada palpite adicionado: cinco palpites com 60% de chance vencem menos de 8% das vezes.",
+        "Acumuladas curtas (2–4 palpites) com preços comparados são a versão menos cara do formato.",
+        "Aposte pequeno: a característica definidora das acumuladas é que a maioria delas perde."
+      ],
+      "faq": [
+        {
+          "q": "Uma aposta acumulada é melhor que apostas simples?",
+          "a": "Matematicamente pior em valor esperado, porque as margens se compõem entre palpites. Apostas simples preservam mais da sua vantagem se você tiver uma; acumuladas trocam valor esperado pela chance de um grande ganho a partir de uma aposta pequena."
+        },
+        {
+          "q": "O que acontece se uma partida em minha acumulada é adiada?",
+          "a": "A maioria das casas de apostas anula esse palpite e recalcula a acumulada com as odds combinadas dos palpites restantes, então uma quádrupla vira uma tríplice. Verifique as regras da casa de apostas específica — o tratamento de partidas abandonadas varia."
+        },
+        {
+          "q": "Quantos palpites uma acumulada deve ter?",
+          "a": "Se for necessário, 2–4. Além disso, a margem composta e a probabilidade de ganho desabando tornam o bilhete uma entrada de loteria — aceitável como entretenimento em apostas pequenas, inadequado como estratégia de apostas."
+        }
+      ],
+      "related": [
+        "bankroll-management-guide",
+        "common-betting-mistakes",
+        "how-to-read-betting-odds"
+      ],
+      "glossary": [
+        "accumulator",
+        "void-bet",
+        "variance"
+      ],
+      "tools": [
+        {
+          "href": "/tools/accumulator-calculator",
+          "label": "Build an acca and see combined odds, returns and implied probability"
+        }
+      ],
+      "_src_hash": "21bdb62c71e6f3dd",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bankroll-management-guide",
+      "title": "Gestão de Bankroll para Apostadores",
+      "nav": "Gestão de bankroll",
+      "desc": "Units, stake fixo, stake percentual e regras de parada — o sistema chato que decide se a variância te destrói ou apenas te incomoda.",
+      "cat": "Strategy",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "Por que o stake importa mais que a escolha",
+          "ps": [
+            "Dois apostadores podem fazer exatamente as mesmas apostas e terminar a temporada em mundos opostos: um bem, outro falido. A diferença é o stake. Resultados de apostas chegam em sequências — sequências de perda de 8–10 apostas são rotina mesmo para apostadores genuinamente bons — e o tamanho das suas apostas em relação aos seus fundos decide se uma sequência normal é sobrevivível.",
+            "Um bankroll é dinheiro separado para apostas que você pode perder na íntegra. Não aluguel, não metas de poupança — um orçamento de entretenimento com uma borda firme. Tudo abaixo assume que essa linha foi traçada honestamente."
+          ]
+        },
+        {
+          "h": "Units e stake fixo",
+          "ps": [
+            "Divida seu bankroll em units — 100 units é um padrão sensato, então um bankroll de €500 faz cada unit valer €5. Stake fixo significa apostar o mesmo 1 unit em cada escolha independente de quão confiante você se sente. É a estratégia que rastreamos nosso próprio modelo com, porque torna os resultados honestos: lucro em units, não em histórias.",
+            "A virtude do stake fixo é que neutraliza o modo clássico de falha: apostar grande em 'apostas certas' (que perdem nos piores momentos) e pequeno em value (que é onde o lucro de longo prazo realmente vive)."
+          ]
+        },
+        {
+          "h": "Stake percentual",
+          "ps": [
+            "Stake percentual aposta uma fração fixa do seu bankroll atual — comumente 1–2% — então os stakes encolhem durante sequências de perda e crescem durante sequências de vitória. É matematicamente mais difícil quebrar, ao custo de recuperação mais lenta após um downswing já que você está apostando menor exatamente quando precisa subir de volta.",
+            "Uma ideia relacionada, o critério de Kelly, dimensiona stakes a partir da sua vantagem estimada. Kelly completo é muito agressivo para erros de estimativa do mundo real; praticantes que usam isso de alguma forma usam um quarto ou menos. Para a maioria dos apostadores, stake fixo ou percentual de 1–2% captura quase todo o benefício sem nenhum ônus de estimação."
+          ]
+        },
+        {
+          "h": "Regras que salvam bankrolls",
+          "ps": [
+            "Estabeleça um limite por aposta (1–2 units mesmo quando animado), uma parada de dia com perda (saia, os jogos estarão lá amanhã), e nunca persiga — aumentar stakes para recuperar perdas é a forma única mais confiável de transformar uma semana ruim em catástrofe.",
+            "Rastreie cada aposta: data, mercado, odds, stake, resultado. Uma planilha ou nosso formato de settlement log publicado funciona. Apostadores que mantêm registros fazem melhores decisões por uma razão simples — os números se recusam a favorecer a memória.",
+            "Se apostar parar de parecer um hobby orçado, use os limites de depósito e ferramentas de auto-exclusão que toda casa de apostas licenciada fornece, e procure organizações como GambleAware. Isso não é letra miúda; é parte do sistema."
+          ]
+        }
+      ],
+      "example": "Bankroll €500, stake fixo de 1 unit (€5), odds médias de 2.00. Uma sequência brutal de 10 apostas perdidas custa €50 — 10% do bankroll, chato mas sobrevivível, e a estratégia continua inalterada. A mesma sequência apostando €50 'para ganhar de volta mais rápido' custa todo o bankroll. Escolhas idênticas, resultados opostos.",
+      "takeaways": [
+        "Bankroll = dinheiro que você pode perder na íntegra; divida em 100 units.",
+        "Stake fixo de 1 unit é o padrão honesto; stake percentual de 1–2% é a alternativa durável.",
+        "Limite apostas individuais, pare em dias ruins, nunca persiga perdas.",
+        "Registros escritos superam a memória — lucro é medido em units ao longo de centenas de apostas, não em destaques."
+      ],
+      "faq": [
+        {
+          "q": "Qual deve ser o tamanho do meu bankroll?",
+          "a": "Seja lá quanto você possa genuinamente perder sem consequências — para muitas pessoas isso é pouco, e tudo bem. O sistema funciona identicamente em €100 ou €10.000; o que importa é a disciplina de unit, não o total."
+        },
+        {
+          "q": "Devo apostar mais em escolhas confiantes?",
+          "a": "Confiança e value não são a mesma coisa, e a confiança da maioria dos apostadores se correlaciona pobremente com resultados. Se você variar stakes de alguma forma, mantenha o intervalo apertado (1–2 units) e impulsionado por vantagem medida, não por sensação."
+        },
+        {
+          "q": "Quando devo sacar lucros?",
+          "a": "Uma abordagem comum: defina um marco (digamos +50% no bankroll inicial), saque o excedente e reinicie. Bancar vitórias periodicamente mantém o bankroll uma ferramenta e não um placar."
+        }
+      ],
+      "related": [
+        "common-betting-mistakes",
+        "value-betting-explained",
+        "what-is-an-accumulator"
+      ],
+      "glossary": [
+        "bankroll-management",
+        "flat-staking",
+        "kelly-criterion",
+        "variance",
+        "self-exclusion"
+      ],
+      "tools": [
+        {
+          "href": "/tipsters",
+          "label": "See our model's real settled record, tracked in flat 1-unit stakes"
+        }
+      ],
+      "_src_hash": "3ba97f5af83e8b4e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "value-betting-explained",
+      "title": "Value Betting Explicado",
+      "nav": "Value betting",
+      "desc": "O que realmente significa ter edge, como se calcula o valor esperado, e por que apostadores vencedores caçam odds desvalorizadas em vez de apenas favoritos.",
+      "cat": "Strategy",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "O núcleo contraintuitivo",
+          "ps": [
+            "A ideia mais importante nas apostas é que acertar vencedores e ganhar dinheiro são habilidades diferentes. Uma aposta em um favorito de 90% com odds de 1.05 vence nove vezes em dez e ainda perde dinheiro, porque o preço paga menos do que o risco merece. Uma aposta em um underdog de 30% com 4.00 perde sete vezes em dez e lucra, porque o preço paga mais.",
+            "Value é a diferença entre as odds oferecidas e a verdadeira probabilidade do resultado. Apostar é lucrativo exatamente quando você encontra preços que subestimam as chances reais — e somente então. Tudo mais é entretenimento com taxa."
+          ]
+        },
+        {
+          "h": "Valor esperado em uma fórmula",
+          "ps": [
+            "Valor esperado (EV) por unidade apostada: (probabilidade × odds) − 1. Se você estima a chance de um time em 45% e o preço é 2.40, EV = 0.45 × 2.40 − 1 = +0.08 — oito centavos de lucro a longo prazo por euro apostado. Com 2.10, a mesma estimativa dá −0.055: uma aposta perdedora independente de como a partida termina.",
+            "A fórmula é trivial; a estimativa de probabilidade é tudo. Seu 45% precisa estar mais próximo da verdade do que o implícito do mercado 41.7% (com 2.40, margem removida) para o edge ser real. Esse é um patamar alto contra os mercados de futebol modernos."
+          ]
+        },
+        {
+          "h": "Onde o value se esconde",
+          "ps": [
+            "Grandes mercados como odds de match da Premier League são eficientes — milhares de participantes experientes empurram preços próximo ao real. Caçadores de value procuram onde a atenção é menor: ligas menores, mercados nicho, linhas abertas antes do mercado se estabilizar, e discrepâncias de preços entre casas de apostas.",
+            "Line shopping é a única fonte de value disponível para todos sem precisar de modelagem: o melhor preço disponível entre casas de apostas é rotineiramente 3–8% melhor do que o preço médio. Pegar 2.02 em vez de 1.90 no mesmo resultado não precisa de nenhuma previsão, apenas uma aba a mais."
+          ]
+        },
+        {
+          "h": "Como nosso screener aplica isso",
+          "ps": [
+            "Nosso modelo estima probabilidades a partir de taxas históricas de gols (framework Poisson mesclado com preços de mercado), converte em odds justas e compara com o melhor preço disponível. Quando o preço ultrapassa as odds justas do modelo o suficiente, o pick recebe um score de edge positivo — esse é o número na coluna Edge do screener.",
+            "As ressalvas honestas: probabilidades do modelo são estimativas com margens de erro, edges de poucos por cento são facilmente ilusões, e mesmo edges genuínos perdem frequentemente — lucros em value betting emergem em centenas de apostas, nunca dentro de um fim de semana. Nosso rastreamento publicado de closing-line-value existe precisamente para testar se os edges do modelo são reais."
+          ]
+        },
+        {
+          "h": "",
+          "ps": []
+        }
+      ],
+      "example": "Você estima um empate em 30% (odds justas 3.33). Casa A precifica em 3.10 — EV negativo, passa. Casa B precifica em 3.60: EV = 0.30 × 3.60 − 1 = +0.08. Mesma partida, mesma estimativa, uma aposta ruim e uma boa. O mercado decidiu qual — não o placar final.",
+      "takeaways": [
+        "Value = preço acima da probabilidade real; EV = (prob × odds) − 1.",
+        "Favoritos prováveis a preços baixos podem ser apostas terríveis; underdogs improváveis a preços altos podem ser ótimas.",
+        "Line shopping entre casas de apostas é value gratuito que não exige habilidade de previsão.",
+        "Edges reais são pequenos, ruidosos e só visíveis em centenas de apostas."
+      ],
+      "faq": [
+        {
+          "q": "Como sei se minhas estimativas de probabilidade têm alguma qualidade?",
+          "a": "Acompanhe-as contra as odds de fechamento: se você bater consistentemente a linha de encerramento, suas estimativas carregam informação. Esse sinal aparece em poucas semanas, muito antes de curvas de lucro se tornarem significativas."
+        },
+        {
+          "q": "Value betting é a mesma coisa que arbitragem?",
+          "a": "Não. Arbitragem bloqueia um pequeno lucro garantido cobrindo todos os resultados entre casas de apostas; value betting assume variância, apoiando um resultado que acredita estar errado. Value betting pode perder por meses mesmo sendo feito corretamente."
+        },
+        {
+          "q": "Posso fazer value betting com um bankroll pequeno?",
+          "a": "A matemática funciona em qualquer tamanho, mas a variância é brutal: mesmo com um edge real de 5%, sequências de cem apostas perdidas do bankroll acontecem. Staking flat e um orçamento genuinamente de entretenimento são pré-requisitos, não opções."
+        }
+      ],
+      "related": [
+        "how-to-read-betting-odds",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "value-bet",
+        "expected-value",
+        "edge",
+        "closing-line-value",
+        "fair-odds"
+      ],
+      "tools": [
+        {
+          "href": "/screener",
+          "label": "The live value screener — model probabilities vs best available prices"
+        }
+      ],
+      "_src_hash": "36b3917c8edc9645",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bookmaker-margin-explained",
+      "title": "Margem de Casa de Apostas Explicada",
+      "nav": "Margem de casa de apostas",
+      "desc": "Como funciona o overround, como calculá-lo em qualquer mercado em dez segundos, e quanto do seu dinheiro ele discretamente retira.",
+      "cat": "Basics",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "A vantagem da casa, à vista de todos",
+          "ps": [
+            "Casas de apostas não lucram prevendo jogos melhor que você; lucram vendendo cada resultado um pouco mais barato que seu preço justo. Somando as probabilidades implícitas em qualquer mercado, o total ultrapassa 100% — esse excesso é a margem, também chamada de overround ou vig.",
+            "Um mercado que soma 105% retém aproximadamente €5 de cada €100 apostados nele, independentemente do resultado. A margem não está escondida em lugar nenhum: está ali nos preços, esperando ser calculada."
+          ]
+        },
+        {
+          "h": "Calculando você mesmo",
+          "ps": [
+            "Para cada resultado, faça 1 ÷ odds decimais; some os resultados; subtraia 1. Uma partida precificada em 2.10 / 3.40 / 3.60 dá 0.476 + 0.294 + 0.278 = 1.048 — uma margem de 4.8%.",
+            "Faça isso uma vez por casa de apostas que você usa e as diferenças ficam claras. Em nossa própria pesquisa nos campeonatos que cobrimos, as margens típicas do melhor preço giram em torno de 3%, enquanto margens de uma única casa de apostas nos mesmos confrontos costumam ser 5–7%. Mercados de nicho (resultado correto, marcadores) podem ter margens acima de 10% — exatamente por isso casas de apostas as anunciam com mais força."
+          ]
+        },
+        {
+          "h": "O que a margem custa ao longo do tempo",
+          "ps": [
+            "Uma margem de 5% significa que um apostador médio perde cerca de €5 por €100 movimentados — não por €100 depositados, por €100 apostados. Apostar €50 duas vezes por semana e o custo esperado da margem é aproximadamente €260 por ano, antes que qualquer habilidade ou sorte entre em cena.",
+            "A margem também é a barreira que sua vantagem deve ultrapassar: para lucrar em uma casa de apostas com margem de 5%, suas estimativas de probabilidade devem bater o mercado por mais de 5%. Reduzir a margem que você paga — comparando preços — reduz pela metade a habilidade necessária."
+          ]
+        },
+        {
+          "h": "Usando margem para escolher casas de apostas",
+          "ps": [
+            "Margem é um dos números únicos mais justos para comparar casas de apostas, e um dos menos anunciados. Um bônus de boas-vindas generoso em uma loja com margem de 7% geralmente vale menos ao longo de uma temporada do que nenhum bônus em uma com margem de 4% — o bônus é pago uma vez, a margem é cobrada em toda aposta para sempre.",
+            "Nossa página de pesquisa de margens de casas de apostas recalcula margens típicas de dados de odds ao vivo em cada reconstrução de site, e a calculadora abaixo extrai a margem de qualquer mercado que você colar."
+          ]
+        }
+      ],
+      "example": "Odds 1.90 / 1.90 em uma linha over-under: 0.526 + 0.526 = 1.053, uma margem de 5.3%. O preço justo para um cara-ou-coroa genuíno seria 2.00 / 2.00. Em 1.90 você deve ganhar 52.6% dessas apostas apenas para empatar — os 2.6 pontos entre 50% e 52.6% é o que a margem cobra de você.",
+      "takeaways": [
+        "Margem = (soma de 1/odds entre resultados) − 1; é a taxa embutida da casa de apostas.",
+        "Margens típicas de odds de partida de futebol: ~3% no melhor preço entre casas, 5–7% em uma única casa de apostas.",
+        "Margem escala com o volume — é cobrada em toda aposta, não uma única vez.",
+        "Casas de apostas com margens mais baixas superam bônus maiores em qualquer horizonte de tempo sério."
+      ],
+      "faq": [
+        {
+          "q": "Por que as margens diferem entre mercados?",
+          "a": "Competição e exposição. Odds de partida em grandes campeonatos são muito comparadas, então as margens se comprimem. Props obscuros enfrentam nenhuma pressão de comparação e carregam margens de dois dígitos confortavelmente."
+        },
+        {
+          "q": "Uma margem de 0% é possível?",
+          "a": "Ocasionalmente uma casa de apostas precifica um resultado acima do justo como promoção, e entre diferentes casas de apostas os melhores preços em todos os resultados às vezes somam abaixo de 100% — isso é uma arbitragem. Ambos são raros, pequenos e de curta duração."
+        },
+        {
+          "q": "Margem significa que não posso ganhar?",
+          "a": "Significa que a trajetória padrão é uma perda lenta na taxa da margem. Ganhar requer ou sorte (curto prazo) ou estimativas de probabilidade que batem o mercado por mais que a margem (longo prazo) — uma habilidade genuína mas rara."
+        }
+      ],
+      "related": [
+        "how-to-read-betting-odds",
+        "value-betting-explained",
+        "how-to-choose-a-betting-site"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "implied-probability",
+        "odds-comparison",
+        "sharp-and-soft-bookmakers"
+      ],
+      "tools": [
+        {
+          "href": "/tools/margin-calculator",
+          "label": "Paste any market's odds and see the exact margin"
+        }
+      ],
+      "_src_hash": "82d5113a6a774815",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "btts-explained",
+      "title": "Ambos os Times Marcam (BTTS) Explicado",
+      "nav": "BTTS",
+      "desc": "Como o mercado ambos os times marcarem se resolve, o que realmente move a probabilidade de BTTS, e as estatísticas que importam mais do que recentes goleadas.",
+      "cat": "Markets",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "O mercado mais simples do futebol",
+          "ps": [
+            "Ambos os Times Marcam faz uma pergunta: cada lado vai marcar pelo menos uma vez no tempo regulamentário? Um 1-1, 4-1 ou 2-3 marcam Sim; um 0-0, 3-0 ou 0-2 marcam Não. Gols contra contam para o time creditado na súmula; prorrogação não conta em mercados padrão.",
+            "Seu apelo é tanto psicológico quanto matemático: um ticket BTTS Sim permanece vivo bem adentro da partida independentemente de quem está vencendo, o que o torna um dos mercados mais acompanhados do futebol."
+          ]
+        },
+        {
+          "h": "O que realmente move a probabilidade de BTTS",
+          "ps": [
+            "BTTS Sim precisa que ambos os ataques funcionem e ambas as defesas falhem pelo menos uma vez. Os direcionadores estatísticos são a taxa de gols de cada time e sua taxa de gols sofridos — não o total combinado de gols. Um time pesado em 3-0 pode ser uma péssima escolha de BTTS apesar dos placares altos, porque sua defesa mantém clean sheets.",
+            "Em um marco de Poisson (a família de modelo que nosso site usa), a probabilidade de BTTS Sim é 1 − P(mandante não marca) − P(visitante não marca) + P(ambos não marcam). As taxas típicas de BTTS Sim da liga principal ficam perto de 50–53%, é por isso que as odds geralmente flutuam entre 1.80 e 2.00 em ambos os lados."
+          ]
+        },
+        {
+          "h": "Lendo as estatísticas sem se enganar",
+          "ps": [
+            "Sinais úteis: percentual de clean sheets em ambos os lados, percentual de não-marcação, e criação de chances subjacente (xG pró e contra) em vez de placares brutos recentes. Cinco resultados BTTS Sim seguidos em amostras de cinco partidas é ruído — taxas base da temporada da liga mais qualidade defensiva do time carregam muito mais informação.",
+            "O contexto muda o número: ausência de zagueiros titulares ou goleiros empurram para Sim; um confronto onde um lado se fecha (grande favorito fora, defesa em luta contra rebaixamento) empurra para Não. Derbies são popularmente assumidos como BTTS-amigáveis; historicamente ficam perto da taxa base."
+          ]
+        },
+        {
+          "h": "Como precificamos",
+          "ps": [
+            "Nosso modelo estima as taxas de gols de cada time a partir de resultados históricos ponderados, derivam probabilidades de BTTS, e comparam contra odds ao vivo — dicas de BTTS aparecem no feed quando o preço excede as odds justas do modelo. Como em todo mercado: a estimativa de edge é estatística, partidas individuais são cara ou coroa ao redor dela, e nenhuma sequência de BTTS significa algo por si só."
+          ]
+        }
+      ],
+      "example": "O mandante marca em 78% dos jogos em casa e sofre em 55%; o visitante marca em 60% dos jogos fora e sofre em 70%. Estimativa independente-ish: P(ambos marcam) ≈ 0.78 × 0.60 ajustado para taxas defensivas — o modelo chega a 56%. Odds justas ≈ 1.79, então um preço de 1.95 carrega valor esperado positivo; um preço de 1.70 não, não importa como aberta a partida pareça.",
+      "takeaways": [
+        "BTTS Sim = ambos os times marcam em 90 minutos mais acréscimos; prorrogação excluída.",
+        "Direcionadores são taxas de gols e gols sofridos por time, não gols combinados.",
+        "Percentuais de clean sheets e não-marcação vencem placares recentes como sinais.",
+        "Odds se agrupam perto do par porque taxas base da liga ficam próximas a 50%."
+      ],
+      "faq": [
+        {
+          "q": "A prorrogação conta para BTTS?",
+          "a": "Mercados BTTS padrão se resolvem em 90 minutos mais acréscimos apenas. Mercados 'para se classificar' específicos de copa ou prorrogação são produtos separados com suas próprias regras — verifique o nome do mercado com cuidado."
+        },
+        {
+          "q": "BTTS é melhor que over 2.5 gols?",
+          "a": "Eles se sobrepõem mas respondem perguntas diferentes: um resultado 2-0 vence overs e perde BTTS; um 1-1 vence BTTS e perde overs. Escolha o mercado que combina com sua visão atual — dois ataques funcionando (BTTS) versus expectativa geral de gols (totais)."
+        },
+        {
+          "q": "E BTTS em acumuladas?",
+          "a": "Popular porque odds perto do par constroem rapidamente odds combinadas grandes — mas cinco pernas de ~52% ganham menos de 4% das vezes, e cada perna carrega margem. Trate acas BTTS como entretenimento de aposta pequena."
+        }
+      ],
+      "related": [
+        "over-under-goals-explained",
+        "value-betting-explained",
+        "what-is-an-accumulator"
+      ],
+      "glossary": [
+        "btts",
+        "xg",
+        "implied-probability"
+      ],
+      "tools": [
+        {
+          "href": "/tips/btts",
+          "label": "Today's BTTS picks with model probabilities and best prices"
+        }
+      ],
+      "_src_hash": "4ffa10344feddda5",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "over-under-goals-explained",
+      "title": "Apostas em Over/Under de Gols Explicadas",
+      "nav": "Over/under de gols",
+      "desc": "Linhas de gols totais de 0.5 a 4.5, por que 2.5 domina o futebol, e como as quarter-lines dividem sua aposta — com os números que definem as odds.",
+      "cat": "Markets",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Apostando na partida, não no vencedor",
+          "ps": [
+            "Mercados over/under ignoram quem vence e contam gols totais de ambos os times. Over 2.5 vence em qualquer resultado com três ou mais gols; Under 2.5 vence com dois ou menos. O meio-gol na linha torna um empate impossível — um lado sempre liquida como vencedor.",
+            "A linha 2.5 domina o futebol porque os totais médios das principais ligas ficam perto de 2.6–2.8 gols por partida, colocando ambos os lados da linha perto de um cara-ou-coroa e as odds próximas ao par."
+          ]
+        },
+        {
+          "h": "Linhas inteiras e quarter lines",
+          "ps": [
+            "Linhas de números inteiros (Over/Under 2.0, 3.0) podem dar empate: exatamente três gols contra uma linha 3.0 devolve a aposta. Quarter lines (2.25, 2.75) dividem sua aposta entre a linha adjacente inteira e meia — Over 2.25 é metade em Over 2.0, metade em Over 2.5, então uma partida com dois gols devolve metade e perde metade.",
+            "Quarter lines vieram das convenções de handicap asiático e valem a pena entender apenas para evitar liquidações surpreendentes: uma 'meia vitória' em Over 2.75 após exatamente três gols confunde mais apostadores do que qualquer outro resultado na família de totais."
+          ]
+        },
+        {
+          "h": "O que move as odds de totais",
+          "ps": [
+            "Taxas de gols marcados e sofridos pelos times dominam, seguidas por ritmo e estilo (times que pressionam criam caos, times defensivos suprimem), notícias de escalação de atacantes principais, e — estatisticamente subestimado — árbitro e clima nas margens. A identidade da liga também importa: algumas ligas consistentemente correm meio-gol acima ou abaixo de outras por partida.",
+            "Thrillers recentes de 4-3 são o clássico engano: totais regridem duramente para as taxas do nível dos times. Nossa pesquisa de previsibilidade de liga quantifica quanto a pontuação de liga para liga diferencia da média global, recompilada a cada atualização."
+          ]
+        },
+        {
+          "h": "A visão do modelo",
+          "ps": [
+            "Um modelo Poisson com as taxas de ataque e defesa de cada time produz uma distribuição de placares completa, da qual P(0 gols), P(1), P(2)… seguem diretamente; somando obtém-se a fair price de cada linha. Nossas sugestões over/under surgem quando as odds ao vivo divergem das odds justas por mais do que o piso de ruído.",
+            "Totais estão entre os mercados de futebol mais eficientes, então vantagens genuínas são pequenas e raras — espere nosso modelo desistir na maioria das partidas ao invés de forçar uma sugestão."
+          ]
+        }
+      ],
+      "example": "Modelo espera 1.45 gols da casa e 1.10 gols do visitante — uma partida de 2.55 gols. A distribuição Poisson coloca Over 2.5 em 51%, odds justas 1.96. Uma casa de apostas oferecendo 2.06 precificou a demanda por Under com peso demais; o modelo aponta Over. Resultado final 1-0 — a aposta perde, e mesmo assim estava correta no apito inicial. Essa distinção é toda a disciplina.",
+      "takeaways": [
+        "Linhas com meio-gol não podem dar empate; linhas inteiras podem devolver; quarter lines dividem a aposta.",
+        "A linha 2.5 domina o futebol porque os totais reais médios são ~2.6–2.8 gols.",
+        "Taxas de gols dos times e identidade da liga vencem placares recentes como preditores.",
+        "Mercados de totais são eficientes: vantagens reais são pequenas, e desistir é normal."
+      ],
+      "faq": [
+        {
+          "q": "Gols na prorrogação contam?",
+          "a": "Totais padrão liquidam em 90 minutos mais acréscimos. Mercados cobrindo prorrogação em copas são rotulados separadamente — leia o nome do mercado antes de assumir."
+        },
+        {
+          "q": "O que Over 2.25 paga se a partida termina 2-1?",
+          "a": "Vitória total: ambas as metades da aposta (Over 2.0 e Over 2.5) vencem com três gols. Em 2-0 a metade Over 2.0 devolve e a metade Over 2.5 perde — uma meia perda."
+        },
+        {
+          "q": "Por que Under frequentemente tem odds mais baixas que Over?",
+          "a": "Dinheiro recreativo prefere gols, então as casas podem reduzir as odds de Over e subir as de Under. Essa inclinação sistemática é exatamente o tipo de viés que modelos buscam explorar no lado Under."
+        }
+      ],
+      "related": [
+        "btts-explained",
+        "asian-handicap-explained",
+        "how-ai-football-predictions-work"
+      ],
+      "glossary": [
+        "over-under",
+        "settlement",
+        "line-movement"
+      ],
+      "tools": [
+        {
+          "href": "/tips/over-under",
+          "label": "Today's totals picks with fair-odds comparison"
+        }
+      ],
+      "_src_hash": "0eb85c5471d43f11",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "asian-handicap-explained",
+      "title": "Asian Handicap: Um Guia para Iniciantes",
+      "nav": "Asian handicap",
+      "desc": "Como os handicaps level, half, whole e quarter liquidam, por que o empate desaparece, e exemplos práticos para cada caso confuso.",
+      "cat": "Markets",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "Dois resultados em vez de três",
+          "ps": [
+            "O Asian handicap dá a um time uma vantagem virtual inicial, dimensionada para que o confronto fique aproximadamente 50/50, e remove o empate como resultado apostável — as apostas são devolvidas ou o handicap o absorve. Você fica com dois odds perto do par em vez de três desequilibrados.",
+            "Remover o empate é o apelo central do formato: você pode apoiar um favorito forte com um odd significativo (cedendo gols) ou pegar um underdog com proteção (recebendo gols), sem o empate à espreita."
+          ]
+        },
+        {
+          "h": "Handicaps whole e half",
+          "ps": [
+            "Half handicaps (−0.5, −1.5) não empurram. Time A −0.5 é simplesmente 'Time A vence'. Time A −1.5 precisa de uma vitória por dois gols; B +1.5 vence em empate, vitória de B, ou derrota por um gol.",
+            "Whole handicaps (0, −1, −2) podem empurrar: A −1 com vitória de A por um gol devolve toda aposta. O handicap level (0) — draw no bet — devolve em empate e é a introdução mais suave ao formato."
+          ]
+        },
+        {
+          "h": "Quarter handicaps",
+          "ps": [
+            "Quarter lines (−0.25, −0.75, +1.25…) dividem sua aposta entre as duas linhas vizinhas. Um −0.75 é metade −0.5, metade −1.0: se seu time vence por exatamente um, a metade −0.5 vence e a metade −1.0 devolve — uma meia vitória.",
+            "Toda liquidação confusa de Asian handicap se decompõe assim: divida a aposta em duas, liquide cada metade em sua própria linha, some. Dez segundos de aritmética substitui memorizar uma tabela."
+          ]
+        },
+        {
+          "h": "Por que apostadores sérios gostam",
+          "ps": [
+            "Asian handicap e totais são onde a liquidez global se concentra, então as margens são tipicamente menores que 1X2 — frequentemente 2–4% em casas de apostas sharp versus 5%+ em odds de confronto. Margem menor significa uma barreira mais baixa para qualquer vantagem que você traga.",
+            "O formato também mapeia limpo em output de modelo: uma distribuição de placar converte diretamente em probabilidades de cobertura para qualquer linha, tornando handicaps um habitat natural para apostadores estatísticos. O trade-off é falta de familiaridade — que este guia passou, sem custo de margem para você."
+          ]
+        }
+      ],
+      "example": "Você aposta Arsenal −1.25 a 2.00 com €20: €10 em −1.0, €10 em −1.5. Arsenal vence 2-1: a metade −1.0 devolve €10, a metade −1.5 perde — líquido −€10. Arsenal vence 3-1: ambas as metades vencem, líquido +€20. Arsenal empata 1-1: ambas as metades perdem, líquido −€20. Um odd, três resultados genuinamente diferentes — sempre decomponha antes de apostar.",
+      "takeaways": [
+        "O handicap remove o empate: devoluções (linhas whole) ou a linha em si o absorvem.",
+        "Half lines nunca empurram; whole lines podem devolver; quarter lines são duas meias-apostas.",
+        "Decomponha qualquer quarter line em seus dois vizinhos para liquidá-la instantaneamente.",
+        "Margens em linhas Asian são usualmente menores que 1X2 — o mercado de futebol mais barato para apostar."
+      ],
+      "faq": [
+        {
+          "q": "Asian handicap é o mesmo que European handicap?",
+          "a": "Não. European (3-way) handicap mantém o empate como resultado apostável após aplicar handicaps de gol inteiro, então devoluções se tornam perdas a menos que você tenha apostado no empate do handicap. Asian handicap devolve em vez disso. Os nomes são confusamente similares; a liquidação não é."
+        },
+        {
+          "q": "Para que +0 (level ball) é útil?",
+          "a": "É draw-no-bet: aposte em um time, receba devolução em empate. Ideal quando você gosta de um underdog para evitar derrota mas não confia neles para vencer na verdade."
+        },
+        {
+          "q": "Por que Asian lines se movem mais que 1X2?",
+          "a": "Elas carregam o dinheiro global mais sharp, então nova informação (escalações, clima, grandes apostas) as atinge primeiro. Observar movimento de linha Asian é uma forma comum de ler para onde o dinheiro informado se inclina."
+        }
+      ],
+      "related": [
+        "over-under-goals-explained",
+        "how-to-read-betting-odds",
+        "value-betting-explained"
+      ],
+      "glossary": [
+        "asian-handicap",
+        "draw-no-bet",
+        "line-movement",
+        "sharp-and-soft-bookmakers"
+      ],
+      "tools": [
+        {
+          "href": "/dropping-odds",
+          "label": "Watch where prices are moving across the markets we track"
+        }
+      ],
+      "_src_hash": "e8622c2de6f78fa2",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "how-ai-football-predictions-work",
+      "title": "Como Funcionam as Previsões de Futebol com IA",
+      "nav": "Como funcionam as previsões com IA",
+      "desc": "O que há dentro de um modelo de previsão de futebol — incluindo o nosso: taxas de Poisson, fusão de mercado, limites honestos e como avaliar qualquer promessa de um tipster.",
+      "cat": "Basics",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "Sem bola de cristal, só contagem",
+          "ps": [
+            "Retire o marketing de qualquer modelo de previsão de futebol — inclusive o nosso — e você encontra contagem estruturada: com que frequência times marcam, com que frequência sofrem gols, ponderado para partidas recentes, ajustado pela força do adversário e local. A partir dessas taxas, distribuições de probabilidade sobre placar seguem matematicamente.",
+            "A palavra 'IA' não adiciona magia a isso. O valor de um modelo está na estimação disciplinada e calibração honesta, não no rótulo. Qualquer um afirmando que seu algoritmo 'conhece' resultados está vendendo algo."
+          ]
+        },
+        {
+          "h": "Dentro do nosso modelo, concretamente",
+          "ps": [
+            "Nosso modelo v2 estima o poder de ataque e defesa de cada time com um framework Poisson com decaimento temporal: partidas recentes pesam mais (meia-vida em torno de 240 dias), amostras pequenas são contraídas para a média da liga para evitar superreação, e times precisam de um número mínimo de partidas antes confiamos em suas taxas.",
+            "Essas taxas produzem uma distribuição de placar por confronto, daí probabilidades para todos os mercados que cobrimos. Então fundimos probabilidades do modelo com as implícitas no mercado (aproximadamente 40/60) — uma admissão, integrada na aritmética, de que o mercado sabe coisas que nossos dados não sabem: lesões, motivação, clima, escalações.",
+            "Uma seleção é publicada como oficial apenas quando a probabilidade fundida supera o preço por uma margem significativa com odds sensatos. A maioria das partidas não produz seleção oficial; a metodologia completa, histórico de versões e limitações conhecidas vivem em nossa página de modelo."
+          ]
+        },
+        {
+          "h": "O que modelos não conseguem fazer",
+          "ps": [
+            "Um modelo não consegue saber se um técnico poupou seu atacante, um elenco voltou de uma partida de copa às 4 da manhã, ou chuva transformou o gramado em lama. Ele comprime o histórico em taxas; qualquer coisa fora do histórico é invisível para ele.",
+            "Mais fundamentalmente: nem uma probabilidade perfeita é uma previsão de uma única partida. Uma seleção de 60% perde quatro em dez por construção. Modelos ganham ou perdem seu valor em centenas de apostas, em calibração — seleções de 60% acertam cerca de 60% das vezes? — não em nenhum destaques."
+          ]
+        },
+        {
+          "h": "Como avaliar qualquer previsão, inclusive a nossa",
+          "ps": [
+            "Peça o histórico completo liquidado (cada seleção, não um mês escolhido), resultados em unidades com mesmo valor (flat-stake), amostras em centenas, e — o teste mais afiado — closing line value: se as seleções batem consistentemente o preço no qual o mercado fechou. CLV separa habilidade de sorte muito mais rápido que curvas de lucro.",
+            "Publicamos tudo isso, incluindo sequências perdedoras, em nossas páginas de resultados — nosso histórico inicial inclui um trecho instrutivo onde seleções de longa odd foram 0-8 e forçaram uma revisão de modelo. Qualquer tipster mostrando apenas vitórias está mostrando marketing."
+          ]
+        }
+      ],
+      "example": "O modelo classifica o ataque do time da casa em 1.6 gols esperados contra essa defesa, o visitante em 0.9. A distribuição Poisson dá vitória da casa 52%, empate 24%, visitante 24% — odds justas 1.92 / 4.17 / 4.17. O mercado precifica o time da casa em 2.10, implicando 47.6%. A fusão chega a ~50%, ainda acima da implicação do preço: edge positivo, seleção oficial. Sessenta segundos depois um escalação vazada poderia invalidá-la — razão pela qual edges são estimativas, não fatos.",
+      "takeaways": [
+        "Modelos de previsão são taxas de pontuação ponderadas → distribuições de placar → probabilidades de mercado.",
+        "O nosso funde modelo com mercado (40/60) e publica apenas seleções com edge claro — passando na maioria das partidas.",
+        "Modelos são cegos a notícias; probabilidades são calibradas em centenas de jogos, não em partidas isoladas.",
+        "Avalie qualquer tipster por históricos completos com flat-stake e closing line value, nunca em meses de destaques."
+      ],
+      "faq": [
+        {
+          "q": "Qual precisão modelos de previsão de futebol alcançam?",
+          "a": "Em odds de três resultados, modelos top acertam o resultado correto aproximadamente 50–55% das vezes — mal acima de sempre apostar no favorito. Precisão é a métrica errada mesmo; calibração e valor contra preços são o que pagam, razão pela qual reportamos unidades e CLV em vez disso."
+        },
+        {
+          "q": "Por que o modelo às vezes discorda da forma óbvia?",
+          "a": "Porque 'forma óbvia' geralmente é cinco partidas de ruído, e o modelo pondera duas temporadas de taxas. Quando colidem, a amostra maior está certa mais vezes — nem sempre, só mais vezes, o que é tudo que um modelo afirma."
+        },
+        {
+          "q": "Vocês usam machine learning?",
+          "a": "O núcleo é estatística clássica: taxas Poisson com decaimento temporal e shrinkage, fundidas com preços de mercado. É transparente, debugável e publicada. Arquiteturas mais sofisticadas adicionam opacidade mais rápido que adicionam precisão em futebol na nossa escala de dados."
+        }
+      ],
+      "related": [
+        "value-betting-explained",
+        "how-to-read-betting-odds",
+        "common-betting-mistakes"
+      ],
+      "glossary": [
+        "xg",
+        "closing-line-value",
+        "fair-odds",
+        "win-rate"
+      ],
+      "tools": [
+        {
+          "href": "/model",
+          "label": "Our full model methodology, version history and known limits"
+        }
+      ],
+      "_src_hash": "b975728fd6bd973e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "common-betting-mistakes",
+      "title": "7 Erros Comuns em Apostas (e Como Corrigi-los)",
+      "nav": "Erros comuns",
+      "desc": "Perseguir perdas, viés de longshots, caça de bônus sem ler os termos — os padrões de falha que esvaziam a banca, cada um com seu conserto prático.",
+      "cat": "Strategy",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "1. Perseguir perdas",
+          "ps": [
+            "O padrão mais destrutivo em apostas: aumentar as apostas após perdas para 'recuperar'. Cada escalada deve superar as mesmas margens com mais dinheiro exatamente quando o julgamento está pior. Noites ruins viram bancos quebrados por perseguição, quase nunca pelas apostas originais.",
+            "Conserto: uma regra escrita de parada em dias de perda, decidida em momentos de calma. Quando ela se ativa, você termina — os jogos voltam amanhã."
+          ]
+        },
+        {
+          "h": "2. Viés de longshots",
+          "ps": [
+            "Apostadores sistematicamente pagam demais por odds altas — shots de 8.00 precificadas como se fossem chances de 6.00. Bookmakers sabem e ajustam, tornando mercados de odds altas alguns dos piores territórios de valor em apostas. A primeira versão do nosso modelo aprendeu isso do jeito caro: uma sequência 0-8 em picks com odds de dois dígitos forçou uma reconstrução com caps de odds.",
+            "Conserto: limitar seu intervalo de apostas (cappamos picks oficiais em 4.0) e tratar qualquer preço acima disso como entretenimento, precificado correspondentemente."
+          ]
+        },
+        {
+          "h": "3. Apostar em cada jogo que você assiste",
+          "ps": [
+            "Interesse não é edge. Apostar qualquer coisa que você esteja assistindo multiplica o volume — e a margem paga — em mercados onde você não sabe nada especial. A aritmética da margem é implacável: dobrar o volume com 5% de margem, dobrar o custo esperado.",
+            "Conserto: separar assistir de apostar. Menos apostas, deliberadas, em mercados que você realmente acompanha batem a ação dispersa todas as temporadas."
+          ]
+        },
+        {
+          "h": "4. Ignorar o preço",
+          "ps": [
+            "Decidir o resultado primeiro e aceitar qualquer preço que sua única casa de apostas mostra pula a metade inteira de apostas onde o lucro vive. A mesma opinião correta é lucrativa em 2.10 e perdedora em 1.85.",
+            "Conserto: line shopping. Duas ou três contas de bookmakers e dez segundos extras por aposta recuperam 3–8% em preço — o edge mais barato que existe."
+          ]
+        },
+        {
+          "h": "5. Desentender bônus",
+          "ps": [
+            "Um bônus '100% até €100' com wagering 8× em odds mínimas de 1.8 requer €800 de turnover qualificado antes de saque — em margens típicas, um custo esperado próximo do próprio bônus. Bônus não são dinheiro grátis; são turnover com desconto e condições.",
+            "Conserto: ler multiplicador de wagering, odds mínimas, restrições de mercado e expiração antes de depositar. Às vezes o bônus é genuinamente bom; os termos, não o destaque, dizem a verdade."
+          ]
+        },
+        {
+          "h": "6. Raciocínio baseado em resultados",
+          "ps": [
+            "Julgar uma aposta se ela ganhou é o vazamento mais sutil. Boas apostas perdem constantemente; más apostas ganham o suficiente para ensinar lições terríveis. Perseguição de sequências, times 'devidos' e confiança construída em amostras de cinco jogos crescem dessa raiz.",
+            "Conserto: julgar o processo — o preço era melhor que a chance verdadeira? — e medir centenas de apostas. Um registro escrito torna isso automático; memória torna impossível."
+          ]
+        },
+        {
+          "h": "7. Apostar sem orçamento",
+          "ps": [
+            "Todo erro acima fica perigoso quando o dinheiro nunca foi separado. Apostar da conta doméstica transforma variância em dano real.",
+            "Conserto: uma banca de entretenimento fixa, limites de depósito definidos nas configurações da conta, e honestidade sobre se ainda é divertido. Bookmakers licenciados oferecem ferramentas de limite e autoexclusão; GambleAware e equivalentes existem precisamente para quando a resposta deixa de ser sim."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Nunca aumente apostas para recuperar perdas — escreva a regra de parada antes de precisar.",
+        "Evite odds altas por padrão; o mercado supervaloriza sonhos sistematicamente.",
+        "Faça line shopping em cada aposta; julgue apostas por processo, não resultados.",
+        "Leia os termos de wagering de bônus na íntegra; aposte apenas de uma banca separada."
+      ],
+      "faq": [
+        {
+          "q": "Qual é o erro mais prejudicial?",
+          "a": "Perseguir perdas. Todo outro erro custa no ritmo da margem; perseguir comprime um ano de perdas esperadas em uma noite. Se adotar apenas uma regra, que seja a parada em dia de perda."
+        },
+        {
+          "q": "Como sei se minhas apostas ainda são recreativas?",
+          "a": "Testes honestos: você aposta apenas dinheiro separado, perdas não mudam seu humor por muito tempo, você nunca esconde a atividade, e parar por uma semana é fácil. Se algum falhar, use as ferramentas de limite e fale com GambleAware — cedo é tudo."
+        },
+        {
+          "q": "Esses erros são mesmo tão comuns?",
+          "a": "São a norma, não a exceção — o design de produtos de bookmakers (bônus, bet builders, promoções de odds altas) ativamente encoraja vários deles. Assuma que os padrões estão contra você e escolha deliberadamente."
+        }
+      ],
+      "related": [
+        "bankroll-management-guide",
+        "value-betting-explained",
+        "what-is-an-accumulator"
+      ],
+      "glossary": [
+        "bankroll-management",
+        "wagering-requirements",
+        "variance",
+        "self-exclusion"
+      ],
+      "tools": [
+        {
+          "href": "/tipsters",
+          "label": "Our full settled record — losing runs included, flat-staked"
+        }
+      ],
+      "_src_hash": "0581f9d544c5f853",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "how-to-choose-a-betting-site",
+      "title": "Como Escolher um Site de Apostas",
+      "nav": "Escolhendo um site de apostas",
+      "desc": "Um checklist prático — licença, margem, velocidade de saque, limites e termos — para escolher uma casa de apostas adequada ao seu mercado, com as armadilhas a evitar.",
+      "cat": "Bookmakers",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "Licença em primeiro lugar, todo o resto em segundo",
+          "ps": [
+            "Uma licença do regulador do seu mercado é a diferença entre uma empresa com obrigações — proteção de fundos, canais de disputa, ferramentas de jogo responsável — e um site com um logo. Operadores regulados podem ser reclamados, auditados e multados; os não regulados podem simplesmente deixar de pagar.",
+            "As regras diferem enormemente entre países (nossas páginas por país rastreiam quem regula cada mercado que cobrimos), e mudam. Onde quer que você esteja: verifique o status local atual antes de depositar, e trate uma licença ausente ou vaga como um ponto de parada total."
+          ]
+        },
+        {
+          "h": "Os números que se acumulam: margem e limites",
+          "ps": [
+            "Margem é a taxa que você paga em cada aposta — margens típicas de odds de confronto em uma única casa correm entre 5–7%, comprando melhor preço em vários livros chega perto de 3%. Ao longo de uma temporada de apostas regulares a diferença é dinheiro real; ao longo dos anos supera qualquer bônus de boas-vindas.",
+            "Limites importam na outra direção: casas fracas restringem contas vencedoras rapidamente, às vezes para apostas minúsculas. Se você pretende apostar seriamente, reputação por tolerar vencedores deve estar em seu checklist."
+          ]
+        },
+        {
+          "h": "Pagamentos e velocidade de saque",
+          "ps": [
+            "Depósitos são instantâneos em toda parte; saques são onde as casas de apostas diferem. Procure seus meios de pagamento locais (transferência bancária, cartões, e em muitos dos nossos mercados dinheiro móvel como M-Pesa, MTN MoMo, PIX ou UPI), prazos de saque declarados, e — a partir de relatos de usuários — se esses prazos se mantêm.",
+            "Uma dica estrutural: conclua a verificação de identidade (KYC) logo após o cadastro, antes de qualquer saque estar pendente. A maioria das reclamações sobre 'saque lento' são na verdade filas de verificação atingidas no pior momento."
+          ]
+        },
+        {
+          "h": "Termos, produto e as compensações honestas",
+          "ps": [
+            "Leia quatro coisas nos termos: regras de aposta de bônus, limites de ganho máximo, taxas de conta inativa, e mercados restritos. Caps de ganho máximo em particular surpreendem apostadores de acumuladores no momento errado.",
+            "Recursos de produto — transmissão ao vivo, cash-out, construtores de apostas, qualidade do app — valem a pena avaliar apenas depois que licença, margem e saques passem. São as razões que o marketing lhe dá; os outros três são as razões pelas quais seu dinheiro permanece seu.",
+            "Nossas análises de casas de apostas classificam operadores exatamente nesses eixos, por país, e marcamos entradas de demonstração claramente até que dados reais do parceiro as substituam. Faça verificação cruzada de qualquer análise — incluindo a nossa — contra os termos publicados do operador."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Sem licença local válida — sem depósito; tudo mais é secundário.",
+        "Margem é cobrada para sempre, bônus uma vez: prefira a casa com margem menor.",
+        "Verifique identidade imediatamente após cadastro; verifique relatórios reais de velocidade de saque.",
+        "Leia termos de aposta, caps de ganho e cláusulas de taxa antes deles lerem você."
+      ],
+      "faq": [
+        {
+          "q": "Devo ter contas em várias casas de apostas?",
+          "a": "Sim, duas ou três licenciadas. O line shopping por si só justifica, e protege você se uma restringir sua conta ou atrasar um saque. Mantenha cada conta totalmente verificada e dentro de seu único orçamento compartilhado."
+        },
+        {
+          "q": "Casas de apostas de grandes marcas são sempre mais seguras?",
+          "a": "Tamanho de marca correlaciona com escrutínio regulatório, não generosidade — grandes marcas frequentemente carregam margens mais altas e políticas agressivas de restrição. O mais seguro é licenciado em seu mercado mais uma reputação de saque que você verificou, em qualquer tamanho."
+        },
+        {
+          "q": "E se uma casa de apostas se recusar a pagar?",
+          "a": "Operador licenciado: reclame formalmente por escrito, depois escale ao regulador ou ao órgão ADR designado — essas rotas funcionam e são o ponto inteiro da licença. Operador não licenciado: geralmente não há rota, que é o argumento para a primeira seção deste guia."
+        }
+      ],
+      "related": [
+        "bookmaker-margin-explained",
+        "common-betting-mistakes",
+        "how-to-read-betting-odds"
+      ],
+      "glossary": [
+        "wagering-requirements",
+        "sharp-and-soft-bookmakers",
+        "cash-out",
+        "free-bet"
+      ],
+      "tools": [
+        {
+          "href": "/bookmakers",
+          "label": "Our scored bookmaker comparison, by market"
+        }
+      ],
+      "_src_hash": "2801fa5fb3a873f9",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "in-play-betting-guide",
+      "title": "Apostas ao Vivo: Como Funcionam os Mercados em Tempo Real",
+      "nav": "Apostas ao vivo",
+      "desc": "Como as odds ao vivo são formadas, por que a margem se amplia discretamente durante a partida, o mecanismo de suspensão e a disciplina que as apostas ao vivo exigem.",
+      "cat": "Markets",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "Mercados que recalculam a cada segundo",
+          "ps": [
+            "As apostas ao vivo mantêm os mercados abertos durante a partida, recalculando continuamente conforme o tempo decorrido, o placar e eventos ao vivo. Um favorito a 1.50 que sofre um gol pode sair de 3.00 em segundos; cada gol, cartão vermelho e revisão de VAR ajusta os preços para um novo estado.",
+            "O motor por trás é a mesma maquinaria de probabilidade das apostas pré-jogo — expected goals restantes, estado do placar, decaimento do tempo — recalculado em tempo real, com uma camada de risco automatizada que suspende mercados quando eventos ultrapassam a precificação."
+          ]
+        },
+        {
+          "h": "O que muda em relação às apostas pré-jogo",
+          "ps": [
+            "Três diferenças estruturais. Primeira, margem: os mercados ao vivo costumam carregar 1–3 pontos a mais do que o mesmo mercado pré-jogo — você paga extra pelo tempo corrido. Segunda, suspensões: os mercados fecham durante gols, pênaltis e revisões, justamente quando você mais quer apostar. Terceira, latência da informação: o feed que você vê funciona segundos atrás dos feeds de dados que precificam o mercado, então 'reagir ao que acabou de ver' geralmente significa apostar em uma odd que já sabe.",
+            "Juntos, esses fatores significam que o apostador casual ao vivo enfrenta odds piores, em momentos piores, com informações piores — um jogo viciado que vale a pena entender antes de jogar."
+          ]
+        },
+        {
+          "h": "Onde as apostas ao vivo são genuinamente úteis",
+          "ps": [
+            "Usos legítimos existem. Leitura do estado da partida — reconhecer que um placar 0-0 não retrata uma partida unilateral — pode vencer um modelo que vê apenas o placar. Entradas planejadas (decidindo pré-jogo que você aposta no favorito se sofrer primeiro gol, em uma odd alvo) transformam a volatilidade ao vivo em ferramenta ao invés de armadilha.",
+            "O cash-out merece sua própria honestidade: é uma recompra precificada ao vivo com margem aplicada duas vezes — conveniente, ocasionalmente racional para gerenciamento genuíno de risco, e sistematicamente não rentável como hábito. Cash-out parcial obedece à mesma aritmética em uma fração da aposta."
+          ]
+        },
+        {
+          "h": "A camada de disciplina",
+          "ps": [
+            "As apostas ao vivo comprimem todo o ciclo emocional do jogo em noventa minutos: perdas chegam no meio da adrenalina com botões de reaposta instantânea anexados. Toda regra de bankroll do nosso guia de stakes se aplica em dobro, e stakes pré-comprometidas — decididas antes do apito, nunca durante — são a proteção mais forte.",
+            "Nosso modelo publica dicas pré-jogo apenas; rastreamos movimento de odds ao vivo na página de odds em queda mas não emitimos dicas ao vivo. Se apostar ao vivo, faça com entradas planejadas, stakes limitadas, e as regras de parada escritas enquanto seu pulso estava normal."
+          ]
+        }
+      ],
+      "example": "Pré-jogo: Over 2.5 a 1.90 (margem ~5%). Vinte minutos sem gols depois, o mesmo Over 2.5 é negociado a 2.60 — mas com a margem ao vivo a odd justa fica perto de 2.75. Você viu vinte minutos dominantes e quer o Over; o mercado viu os mesmos minutos através de dados mais rápidos e já se moveu. A questão nunca é 'gosto de gols agora?' mas '2.60 é melhor que a probabilidade de gols restantes verdadeira?' — o mesmo teste de valor de sempre, em uma taxa de câmbio pior.",
+      "takeaways": [
+        "Odds ao vivo são matemática pré-jogo recalculada por segundo — com 1–3 pontos a mais de margem.",
+        "Suspensões e latência do feed significam que você geralmente aposta em uma odd que já sabe.",
+        "Entradas planejadas em odds alvo vencem apostas reativas; cash-out é margem paga duas vezes.",
+        "Defina stakes e regras de parada antes do apito — apostas ao vivo punem improviso."
+      ],
+      "faq": [
+        {
+          "q": "Por que minha aposta ao vivo foi rejeitada ou atrasada?",
+          "a": "Casas de apostas aplicam um atraso de aceitação (5–10 segundos) em apostas ao vivo e anulam a tentativa se o mercado se move ou suspende dentro dele. É proteção contra apostadores explorando latência do feed — incômodo e universal."
+        },
+        {
+          "q": "O cash-out é alguma vez a jogada certa?",
+          "a": "Ocasionalmente — quando seu motivo original para a aposta genuinamente quebrou (lesão de chave, cartão vermelho contra você) ou a posição é grande demais para conforto. Como hábito rotineiro converte posições vencedoras em doações de margem."
+        },
+        {
+          "q": "Posso vencer mercados ao vivo assistindo em streams mais rápidos?",
+          "a": "Usuários de dados baixa-latência e ao lado do campo existem, e atrasos de casas de apostas existem por causa deles. Para qualquer um em um broadcast normal, a guerra de latência é perdida antes de começar — planeje entradas ao invés de correr contra o feed."
+        }
+      ],
+      "related": [
+        "value-betting-explained",
+        "bankroll-management-guide",
+        "over-under-goals-explained"
+      ],
+      "glossary": [
+        "in-play-betting",
+        "cash-out",
+        "line-movement",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/dropping-odds",
+          "label": "Live odds movement across the markets we track"
+        }
+      ],
+      "_src_hash": "34ebf3f04a20a645",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-nigeria",
+      "title": "Apostas na Nigéria: Como Funciona",
+      "nav": "Apostas na Nigéria",
+      "desc": "Regulamentação de apostas na Nigéria, licença da NLRC, depósitos por transferência bancária e celular, e o que um mercado móvel com custo de dados significa para escolher um site.",
+      "cat": "Countries",
+      "country": "ng",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Apostas são legais na Nigéria?",
+          "ps": [
+            "Sim. Apostas desportivas são legais e enormemente populares na Nigéria, supervisionadas pela National Lottery Regulatory Commission junto com conselhos estaduais como o de Lagos. Operadores licenciados localmente e sites internacionais servem o mercado, e o futebol — a Premier League acima de tudo — domina o volume de apostas.",
+            "As responsabilidades regulatórias entre órgãos federais e estaduais foram contestadas nos tribunais nos últimos anos, então o conselho prático é estável mesmo enquanto a estrutura evolui: prefira operadores licenciados para o mercado nigeriano e verifique o status atual antes de depositar."
+          ]
+        },
+        {
+          "h": "Começando: o checklist prático",
+          "ps": [
+            "Registre-se com um operador que serve a Nigéria sob licença local, verifique sua identidade no início (dados bancários vinculados a BVN aceleram isto), deposite em naira e defina um limite de depósito antes da sua primeira aposta — todo operador sério oferece um.",
+            "A Nigéria é um mercado mobile-first com custos de dados reais, então o peso do app importa: os melhores operadores oferecem apps leves e apostas por USSD ou SMS para conexões instáveis. Teste o caminho de saque com uma pequena quantia antes de comprometer dinheiro sério — a confiabilidade de pagamento varia mais que as odds."
+          ]
+        },
+        {
+          "h": "Pagamentos: transferência bancária e dinheiro móvel",
+          "ps": [
+            "Transferências bancárias e pagamentos com cartão lideram, com carteiras fintech (OPay, PalmPay, Moniepoint) cada vez mais suportadas para depósitos instantâneos. Saques normalmente chegam por transferência bancária; a velocidade varia de minutos a alguns dias dependendo do operador.",
+            "Deposite em NGN e aposte em NGN — evitar conversão de moeda é dinheiro de graça. Se um operador oferece apenas saldos em dólar para jogadores nigerianos, isso é sinal de que não é realmente construído para o mercado."
+          ]
+        },
+        {
+          "h": "Escolhendo um site para o mercado nigeriano",
+          "ps": [
+            "Pondere status de licença, velocidade de pagamento em naira, uso de dados do app e a profundidade dos mercados da Premier League e Champions League — as ligas em que nigerianos realmente apostam. As margens de odds diferem significativamente entre operadores, então compare preços na mesma partida antes de se fixar em um.",
+            "Nossa página Nigéria classifica operadores exatamente por estes critérios, e os guias sobre margens e gestão de banca se aplicam em todo lugar — incluindo aqui. Aposte apenas o que pode perder; 18+."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Apostas online são tributadas na Nigéria?",
+          "a": "Operadores pagam licenças e impostos de jogo; ganhos de apostadores geralmente não foram tributados na fonte, embora propostas surjam regularmente. Regras podem mudar — verifique a posição atual antes de assumir, especialmente para grandes pagamentos."
+        },
+        {
+          "q": "Posso apostar com tempo de ar ou USSD?",
+          "a": "Vários operadores nigerianos suportam fluxos de aposta USSD para telefones simples e situações de baixo consumo de dados, mas depósitos ainda são roteados através de linhas bancárias ou carteiras na maioria dos casos. Verifique a página de pagamentos de cada operador para o que realmente suporta."
+        },
+        {
+          "q": "Como sei se um operador é licenciado para a Nigéria?",
+          "a": "Operadores licenciados exibem detalhes de licença NLRC ou estadual no rodapé do site, e reguladores publicam listas de operadores. Se informações de licença estão ausentes ou vagas, trate como desqualificante — há operações licenciadas suficientes para que você nunca precise de uma sem licença."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ng",
+          "label": "Ranked betting sites for Nigeria"
+        }
+      ],
+      "_src_hash": "585f6b2c0f197411",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-kenya",
+      "title": "Apostas no Quênia: Como Funciona",
+      "nav": "Apostas no Quênia",
+      "desc": "Licenciamento BCLB no Quênia, depósitos e saques via M-Pesa, as regras de imposto que realmente pegam, e como escolher um site preparado para o mercado.",
+      "cat": "Countries",
+      "country": "ke",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Apostas são legais no Quênia?",
+          "ps": [
+            "Sim. Apostas esportivas são legais e licenciadas pela Betting Control and Licensing Board (BCLB), e o Quênia tem uma das taxas mais altas de participação em apostas da África — um mercado quase inteiramente móvel.",
+            "O ponto móvel é a política fiscal: impostos sobre stakes e retenção em ganhos mudaram repetidamente e continuam sendo um tema político em discussão. A camada de licença é estável; a camada de custo não — verifique as taxas atuais antes de modelar seus retornos."
+          ]
+        },
+        {
+          "h": "Começando com M-Pesa",
+          "ps": [
+            "O registro começa pelo número de telefone: a maioria dos operadores verifica você pelo número vinculado ao M-Pesa, tornando o cadastro rápido. Depósitos via paybill M-Pesa são efetivamente instantâneos; saques de volta para M-Pesa são a característica definidora do mercado — os melhores operadores pagam em minutos.",
+            "Como tudo passa por um único canal, a velocidade de pagamento é incomumente comparável entre operadores aqui. Relatos de usuários sobre tempos de saque são fáceis de encontrar e valem dez minutos de leitura antes de depositar em qualquer lugar."
+          ]
+        },
+        {
+          "h": "Impostos: a parte que apostadores quenianos realmente sentem",
+          "ps": [
+            "O Quênia tributa apostas em múltiplos pontos: um imposto especial é cobrado sobre stakes e um imposto retido na fonte se aplica a ganhos, com taxas que mudaram várias vezes nos orçamentos recentes. Isso significa que o preço efetivo de uma aposta é pior do que apenas as odds sugerem — uma odd de 1.90 com imposto sobre stake se comporta como uma odd mais baixa.",
+            "Não citamos taxas exatas aqui porque realmente mudam ano a ano; o cronograma atual da KRA é a fonte de verdade. O aprendizado estratégico é estável: impostos tornam a comparação de margens ainda mais importante no Quênia, não menos."
+          ]
+        },
+        {
+          "h": "Escolhendo um site para o mercado queniano",
+          "ps": [
+            "Procure por uma licença BCLB atual, saques instantâneos via M-Pesa, apps leves em dados ou fluxos USSD completos, e odds competitivas na Premier League Inglesa — o gramado do Quênia. Produtos de jackpot locais são populares mas carregam odds de nível loteria; trate-os como entretenimento, não estratégia.",
+            "Nossa página Quênia classifica operadores nestes critérios. As regras de bankroll em nossos guias de estratégia se aplicam com força extra quando stakes carregam impostos — apostas menores, menos frequentes, com melhor preço. 18+, aposte com responsabilidade."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Quanto imposto pago sobre ganhos no Quênia?",
+          "a": "Um imposto retido na fonte sobre ganhos se aplica e operadores descontam automaticamente, mas a taxa mudou várias vezes em anos recentes — verifique o cronograma atual da KRA em vez de confiar em qualquer número estático, incluindo os que você lê em guias."
+        },
+        {
+          "q": "Posso apostar sem um smartphone?",
+          "a": "Sim — o mercado do Quênia cresceu em apostas por SMS e USSD, e vários operadores licenciados ainda executam menus USSD completos para celulares básicos. M-Pesa funciona no lado do dinheiro de forma idêntica de qualquer jeito."
+        },
+        {
+          "q": "Sites de apostas sem licença BCLB são seguros?",
+          "a": "Não. Sites sem licença ficam fora do marco de proteção de fundos e disputas, e as autoridades quenianas periodicamente os bloqueiam. Com múltiplas opções licenciadas de pagamento instantâneo disponíveis, não há motivo para aceitar o risco."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bankroll-management-guide",
+        "common-betting-mistakes"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ke",
+          "label": "Ranked betting sites for Kenya"
+        }
+      ],
+      "_src_hash": "8cb6c340ae83501a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-ghana",
+      "title": "Apostas em Gana: Como Funciona",
+      "nav": "Apostas em Gana",
+      "desc": "Licenciamento da Gaming Commission de Gana, pagamentos via MTN MoMo, imposto de retenção sobre ganhos e um checklist prático para escolher o site certo.",
+      "cat": "Countries",
+      "country": "gh",
+      "minutes": 4,
+      "sections": [
+        {
+          "h": "Apostas são legais em Gana?",
+          "ps": [
+            "Sim. As apostas desportivas são legais e reguladas pela Gaming Commission of Ghana, que licencia operadores e publica a lista aprovada — um recurso público genuinamente útil, já que verificar o status de um site leva uma busca.",
+            "Desde 2023 incide um imposto de retenção sobre ganhos, descontado pelos operadores no momento do saque. A alíquota foi ajustada desde a introdução, portanto verifique o valor atual junto à GRA em vez de confiar em qualquer número fixo."
+          ]
+        },
+        {
+          "h": "Começando: mobile money em primeiro lugar",
+          "ps": [
+            "Mobile money é o meio padrão — MTN MoMo acima de tudo, com Vodafone Cash e AirtelTigo também suportados na maioria dos operadores licenciados. Depósitos são instantâneos; saques de volta para MoMo variam de minutos a um dia dependendo do operador.",
+            "Registre-se com seu número vinculado ao MoMo, complete a verificação de identidade imediatamente e teste um saque pequeno antes de aumentar as apostas. Apostar em cedis do início ao fim evita perdas com conversão."
+          ]
+        },
+        {
+          "h": "Escolhendo um site para o mercado ganês",
+          "ps": [
+            "Verifique três coisas nesta ordem: presença na lista de licenciados da Gaming Commission, velocidade de saque via MoMo conforme relatos de usuários e qualidade de odds na Premier League e Ghana Premier League. As margens diferem entre operadores o suficiente para importar — nosso guia de margens mostra como comparar em dez segundos.",
+            "Bônus são fortemente divulgados em Gana; leia os termos de aposta antes de avaliar seu valor. Nossa página sobre Gana classifica operadores conforme os critérios acima. 18+, aposte apenas dentro de um orçamento que possa arcar."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Qual é o imposto sobre ganhos de apostas em Gana?",
+          "a": "Um imposto de retenção sobre ganhos brutos se aplica desde 2023, descontado automaticamente no saque. A alíquota foi revista desde o lançamento — consulte a tabela atual da GRA para a alíquota vigente hoje."
+        },
+        {
+          "q": "Qual método de pagamento é melhor para apostas em Gana?",
+          "a": "MTN MoMo é suportado em todos os lugares e processa saques mais rápido em bons operadores. Cartões funcionam para depósitos, mas saques quase sempre retornam pelo mobile money — então MoMo do início ao fim é a configuração mais simples."
+        },
+        {
+          "q": "Como verifico se um site de apostas é licenciado em Gana?",
+          "a": "A Gaming Commission of Ghana publica a lista de operadores licenciados. Se um site que atua em Gana não está nela, ou esconde seus detalhes de licença, escolha um dos muitos que estão."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "common-betting-mistakes"
+      ],
+      "glossary": [
+        "wagering-requirements",
+        "bookmaker-margin"
+      ],
+      "tools": [
+        {
+          "href": "/countries/gh",
+          "label": "Ranked betting sites for Ghana"
+        }
+      ],
+      "_src_hash": "41b9545fc5d9f1d2",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-south-africa",
+      "title": "Apostas na África do Sul: Como Funciona",
+      "nav": "Apostas na África do Sul",
+      "desc": "Por que as apostas desportivas são legais mas os casinos online não, licenciamento provincial, transferências e pagamentos por cartão, e como escolher um bookmaker licenciado.",
+      "cat": "Countries",
+      "country": "za",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "A distinção sul-africana: apostas sim, casino não",
+          "ps": [
+            "A legislação sul-africana traça uma linha que a maioria dos países não faz: apostas desportivas online são totalmente legais através de bookmakers com licenças provinciais (Western Cape e Mpumalanga licenciam a maioria das marcas online), enquanto jogos de casino online — slots, roleta, dealers ao vivo — permanecem proibidos nacionalmente.",
+            "Isso torna a aba 'casino' que alguns sites mostram aos utilizadores sul-africanos uma bandeira vermelha legal, não uma funcionalidade bónus. Um bookmaker local adequadamente licenciado oferece desporto, corridas de cavalos e produtos de sorte, e para por aí."
+          ]
+        },
+        {
+          "h": "Começar",
+          "ps": [
+            "Registe-se num bookmaker com licença provincial, complete a verificação FICA (ID e comprovativo de morada — obrigatório, faça-o antecipadamente), e financie em rand através de cartão, transferência instantânea (ecossistemas Ozow, Zapper) ou vouchers de caixa retalho.",
+            "Os ganhos recreativos geralmente não são tributados para o apostador — uma vantagem genuína sobre vários mercados pares — embora atividade em escala profissional possa atrair atenção do SARS. A velocidade de levantamento varia de mesmo dia a vários dias; os relatos de utilizadores indicam-lhe qual é."
+          ]
+        },
+        {
+          "h": "Escolher um site para o mercado sul-africano",
+          "ps": [
+            "Confirme o número da licença provincial no rodapé, compare margens em jogos da Premier League e PSL, e verifique os prazos de levantamento por transferência. A profundidade local importa: os melhores operadores precificam a PSL corretamente, não apenas futebol europeu.",
+            "A nossa página da África do Sul classifica operadores nestes critérios. Os guias de estratégia — margem, banca, erros — aplicam-se sem alteração. 18+, e o National Responsible Gambling Programme (0800 006 008) é a linha de apoio local."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Os casinos online são realmente ilegais na África do Sul?",
+          "a": "Sim — jogos de casino online são proibidos nacionalmente, e ações de cumprimento contra operadores de casino offshore e até ganhos ocorreram. Apostas desportivas online através de bookmakers com licença provincial é o canal legal."
+        },
+        {
+          "q": "Pago impostos sobre ganhos de apostas na África do Sul?",
+          "a": "Ganhos recreativos geralmente não são tributados. Apostas como profissão sistemática podem ser tratadas como rendimento pelo SARS — um limiar que a maioria dos apostadores nunca atinge, mas vale a pena saber que existe."
+        },
+        {
+          "q": "O que é verificação FICA?",
+          "a": "A verificação de identidade e morada que operadores licenciados devem realizar sob a Lei do Centro de Inteligência Financeira. É obrigatória antes de levantamentos, pelo que submeter documentos no registo — não na altura do pagamento — é a abordagem prática."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/countries/za",
+          "label": "Ranked betting sites for South Africa"
+        }
+      ],
+      "_src_hash": "d0729858b2038930",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-india",
+      "title": "Apostas na Índia: Como Funciona",
+      "nav": "Apostas na Índia",
+      "desc": "Regras estado por estado na Índia, as deduções fiscais que realmente se aplicam, depósitos via UPI, e como pensar sobre sites offshore com honestidade.",
+      "cat": "Countries",
+      "country": "in",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "O cenário legal: um mapa estado por estado",
+          "ps": [
+            "A Índia não possui uma licença nacional única de apostas. O jogo é amplamente uma matéria estadual: alguns estados administram regimes licenciados para certos produtos, vários proíbem apostas completamente, e a maioria fica no meio-termo sob leis escritas muito antes da internet. Muitos operadores internacionais aceitam jogadores indianos nessa lacuna.",
+            "O único primeiro passo honesto é verificar a legislação do seu estado antes de se registrar em qualquer lugar. Este guia descreve o mercado; não pode autorizar você a apostar onde seu estado proíbe."
+          ]
+        },
+        {
+          "h": "Impostos: a parte certa",
+          "ps": [
+            "Independentemente da ambiguidade de licenciamento, a lei fiscal indiana é explícita sobre ganhos: imposto é deduzido na fonte sobre ganhos de jogos a uma alíquota fixa, e mudanças recentes no GST adicionaram imposto no lado do depósito para apostas online em dinheiro. Juntos, eles mudam materialmente a economia das apostas a partir da Índia.",
+            "Alíquotas e mecanismos mudaram repetidamente desde 2023 — verifique o tratamento atual de TDS e GST antes de assumir qualquer número. O ponto estrutural permanece: impostos aqui são reais, automáticos, e maiores do que a maioria dos apostadores espera."
+          ]
+        },
+        {
+          "h": "Pagamentos: UPI em primeiro lugar",
+          "ps": [
+            "UPI domina depósitos onde aceito, junto com carteiras (Paytm, PhonePe) e net banking. Os canais de pagamento dos operadores offshore para a Índia mudam frequentemente conforme processadores giram — depósitos não confiáveis são o incômodo crônico do mercado e um critério de seleção genuíno.",
+            "A confiabilidade de saque importa ainda mais: prefira operadores com histórico longo e verificável de pagamentos a usuários indianos, e teste valores pequenos antes de se comprometer. Saldos em Rúpia superam saldos em Dólar apenas pelo motivo do custo de conversão."
+          ]
+        },
+        {
+          "h": "Escolher com honestidade em um mercado cinzento",
+          "ps": [
+            "Onde nenhuma licença local existe, os substitutos são mais fracos mas não sem valor: uma licença internacional estabelecida, anos de histórico de pagamentos, suporte responsivo, e termos transparentes. A profundidade do mercado de Cricket é o indicador local — operadores sérios com a Índia precificam a IPL corretamente.",
+            "Nossa página Índia lista operadores nesses critérios. Apostas em mercado cinzento concentram todos os riscos que este site alerta, então as regras de bankroll se aplicam em dobro: apostas pequenas, dinheiro separado, e total conhecimento da lei do seu estado. 18+."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Apostas online são legais na Índia?",
+          "a": "Depende do seu estado. Alguns estados licenciam certos produtos, alguns proíbem apostas completamente, e a maioria tem leis ambíguas pré-internet. Não existe licença nacional, então verifique a posição atual do seu estado — essa é a única resposta verdadeira em toda a parte."
+        },
+        {
+          "q": "Como ganhos de apostas são tributados na Índia?",
+          "a": "Imposto é deduzido na fonte sobre ganhos de jogos a uma alíquota fixa, e mudanças no GST adicionaram imposto no lado do depósito para apostas online em dinheiro. Alíquotas mudaram desde 2023 — verifique as regras atuais de TDS e GST antes de apostar em vez de confiar em qualquer número estático."
+        },
+        {
+          "q": "Por que métodos de depósito continuam mudando em sites de apostas na Índia?",
+          "a": "Operadores offshore roteiam pagamentos através de processadores que giram conforme bancos apertam regras, então UPI handles e gateways mudam frequentemente. Operadores com canais de pagamento estáveis e de longa duração estão demonstrando exatamente a qualidade operacional que você deseja."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "common-betting-mistakes",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/countries/in",
+          "label": "Betting sites serving India"
+        }
+      ],
+      "_src_hash": "ede7d8338d0b5199",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-brazil",
+      "title": "Apostas no Brasil: Como Funciona",
+      "nav": "Apostas no Brasil",
+      "desc": "O novo mercado regulado do Brasil: licenças SPA/MF, domínios .bet.br, pagamentos via PIX e o que mudou para apostadores em 2025.",
+      "cat": "Countries",
+      "country": "br",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Um mercado que acabou de ficar legal",
+          "ps": [
+            "O mercado regulado de apostas de odds fixas do Brasil entrou em operação em janeiro de 2025 sob a secretaria de apostas do Ministério da Fazenda (SPA/MF), convertendo um dos maiores mercados cinzentos do mundo em um mercado licenciado quase da noite para o dia.",
+            "O marcador visível: operadoras licenciadas devem usar domínios .bet.br. Um site servindo o Brasil de qualquer outro domínio está operando fora do novo marco regulatório — a verificação de legalidade mais simples que existe no mundo das apostas."
+          ]
+        },
+        {
+          "h": "O que a licença oferece a você",
+          "ps": [
+            "Operadoras licenciadas devem oferecer aos jogadores brasileiros segregação de fundos, verificação de identidade e idade, ferramentas de jogo responsável, restrições de publicidade e um canal de resolução de disputas — obrigações que o mercado offshore pré-2025 nunca carregou.",
+            "A transição também significa reestruturação: marcas consolidando, alguns nomes offshore saindo, outros adquirindo licenças. Verificar o status atual SPA/MF de um site leva um minuto e resolve a questão."
+          ]
+        },
+        {
+          "h": "Pagamentos: PIX domina o mercado",
+          "ps": [
+            "PIX domina depósitos e saques — instantâneo, gratuito, 24/7 — com cartões e boleto como opções secundárias. Operadoras licenciadas liquidam saques via PIX em minutos; qualquer coisa mais lenta é uma bandeira vermelha neste mercado especificamente, porque o rail em si é instantâneo.",
+            "Ganhos acima do limite de isenção estão sujeitos a imposto de renda sob o novo regime; limites e mecânica são novos e estão se ajustando, então verifique a orientação atual da Receita Federal para detalhes específicos."
+          ]
+        },
+        {
+          "h": "Escolhendo um site para o mercado brasileiro",
+          "ps": [
+            "Confirme o domínio .bet.br e a licença SPA/MF, compare as odds em partidas da Série A e Champions League, e verifique a velocidade de saque via PIX em relatos de usuários. Qualidade de suporte em português diferencia operadoras que investiram no Brasil daquelas que apenas traduziram um template.",
+            "Nossa página Brasil classifica operadoras nesses critérios, em português onde importa. Aposte com responsabilidade — 18+."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Como sei se um site de apostas é legal no Brasil?",
+          "a": "Operadoras licenciadas usam domínios .bet.br sob autorização SPA/MF — o próprio domínio é o marcador. Sites servindo o Brasil de outros domínios ficam fora do marco regulatório que entrou em vigor em janeiro de 2025."
+        },
+        {
+          "q": "Os ganhos de apostas são tributados no Brasil?",
+          "a": "Sob o novo regime, ganhos líquidos acima de um limite de isenção estão sujeitos a imposto de renda. As regras são novas e detalhes foram ajustados desde o lançamento — verifique a orientação atual da Receita Federal para limites e alíquotas."
+        },
+        {
+          "q": "Ainda posso usar sites offshore do Brasil?",
+          "a": "O mercado regulado foi concebido para canalizar jogadores para operadoras licenciadas .bet.br, com bloqueio de pagamentos e aumento de fiscalização contra sites não licenciados. Operadoras licenciadas agora oferecem os mesmos produtos com proteções reais ao consumidor — o trade-off deixou de existir."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/countries/br",
+          "label": "Ranked betting sites for Brazil"
+        }
+      ],
+      "_src_hash": "6ec379e9d60ecc6a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-mexico",
+      "title": "Apostas no México: Como Funciona",
+      "nav": "Apostas no México",
+      "desc": "Sistema de licenças SEGOB do México, pagamentos via SPEI e OXXO, e como apostar legalmente enquanto uma lei de jogos modernizada continua pendente.",
+      "cat": "Countries",
+      "country": "mx",
+      "minutes": 4,
+      "sections": [
+        {
+          "h": "Apostar é legal no México?",
+          "ps": [
+            "Sim. As apostas operam legalmente sob licenças da SEGOB (via Dirección General de Juegos y Sorteos) emitidas conforme a Lei Federal de Jogos — um estatuto de 1947 adaptado à era da internet. Muitas operadoras online funcionam através de acordos com titulares de licenças presenciais enquanto uma lei modernizada é debatida há anos.",
+            "Para apostadores, o teste prático é a visibilidade da licença: operadoras legítimas exibem seus detalhes de licença SEGOB. O marco regulatório pode ser antigo, mas a camada de licenciamento é real e verificável."
+          ]
+        },
+        {
+          "h": "Pagamentos: SPEI, OXXO e cartões",
+          "ps": [
+            "Transferências SPEI bancárias processam depósitos instantâneos e a maioria dos saques; vouchers OXXO continuam sendo uma rota de depósito querida para a economia de dinheiro em espécie — pague em qualquer loja de conveniência, o saldo aparece em minutos. Cartões funcionam em toda parte; saques retornam via SPEI.",
+            "Saldos em Peso de ponta a ponta evitam custos de conversão. A velocidade de saque varia por operadora de horas a dias — relatos de usuários são a fonte honesta."
+          ]
+        },
+        {
+          "h": "Escolhendo um site para o mercado mexicano",
+          "ps": [
+            "Verifique a licença SEGOB, compare as margens em Liga MX e futebol europeu, e confirme os prazos de saque via SPEI. A profundidade de mercado em Liga MX é o indicador local — operadoras sérias sobre o México precificam adequadamente, não apenas a Premier League.",
+            "Nossa página México classifica operadoras nesses critérios, em espanhol. Regras podem mudar quando a nova lei de jogos tão debatida finalmente for sancionada — verifique o status periodicamente. 18+, juega con responsabilidad."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Os ganhos em apostas são tributados no México?",
+          "a": "Uma pequena retenção federal se aplica aos prêmios de jogos em certos casos, com variações no nível estadual. Os valores são geralmente modestos para apostadores típicos, mas consulte as regras atuais do SAT se ganhar alto — o tratamento depende do tipo e tamanho do prêmio."
+        },
+        {
+          "q": "Posso depositar com dinheiro em espécie no México?",
+          "a": "Sim — vouchers OXXO permitem depositar dinheiro em qualquer uma das milhares de lojas de conveniência, com o saldo creditado em minutos. Continua sendo uma das rotas de depósito mais utilizadas do México junto com transferências SPEI."
+        },
+        {
+          "q": "Como verifico uma licença SEGOB?",
+          "a": "Operadoras licenciadas exibem seu número de licença (frequentemente referenciando o titular da licença presencial sob o qual operam) no rodapé do site. A ausência de qualquer referência de licença é o sinal desqualificador."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "common-betting-mistakes"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/countries/mx",
+          "label": "Ranked betting sites for Mexico"
+        }
+      ],
+      "_src_hash": "331f8f09e3aeee2c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-argentina",
+      "title": "Apostas na Argentina: Como Funciona",
+      "nav": "Apostas na Argentina",
+      "desc": "Licenciamento provincial na Argentina, pagamentos via Mercado Pago, e por que velocidade de saque importa mais aqui do que em quase qualquer outro lugar.",
+      "cat": "Countries",
+      "country": "ar",
+      "minutes": 4,
+      "sections": [
+        {
+          "h": "Licenciamento por província",
+          "ps": [
+            "A Argentina regula apostas online em nível provincial: Buenos Aires City (LOTBA) e Buenos Aires Province (IPLyC) operam mercados online licenciados, e outras províncias têm seus próprios regimes em estágios variados. Não existe licença nacional — sua província determina suas opções.",
+            "Operadores licenciados fazem geo-targeting por província, é por isso que a disponibilidade varia pelo país. Conferir a lista de operadores do regulador da sua província é o jeito certo."
+          ]
+        },
+        {
+          "h": "Pagamentos e o fator peso",
+          "ps": [
+            "Mercado Pago é o canal padrão, com transferência bancária e cartões atrás dele. Depósitos são instantâneos; velocidade de saque é onde operadores se diferenciam — e na Argentina importa mais do que o normal, porque volatilidade do peso significa que dinheiro em trânsito perde valor.",
+            "Isso torna velocidade de saque um critério de primeira ordem de seleção aqui, não uma conveniência. Saques via Mercado Pago no mesmo dia é o padrão que os bons operadores atingem."
+          ]
+        },
+        {
+          "h": "Escolher um site para o mercado argentino",
+          "ps": [
+            "Confirme a licença para sua província, verifique velocidade de saque via Mercado Pago em relatos recentes de usuários, e compare margens na Liga Profesional e futebol europeu. Profundidade da liga local sinala investimento real no mercado.",
+            "Nossa página sobre Argentina classifica operadores por esses critérios, em espanhol. Regras provinciais evoluem — confira o status atual onde você mora. 18+, jugá con responsabilidad."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Apostas online são legais em todo lugar na Argentina?",
+          "a": "Não — a regulação é provincial. Buenos Aires City e Province licenciam operadores online, várias outras províncias têm seus próprios regimes, e algumas ficam para trás. O regulador da sua província determina o que é licenciado para você."
+        },
+        {
+          "q": "Por que velocidade de saque importa tanto na Argentina?",
+          "a": "Volatilidade do peso: dinheiro que demora dias para chegar vale consideravelmente menos do que dinheiro que chega em horas. Operadores com pagamentos via Mercado Pago no mesmo dia protegem você da desvalorização em trânsito."
+        },
+        {
+          "q": "Ganhos são tributados na Argentina?",
+          "a": "Tratamento tributário varia por província e tipo de prêmio, e regras nacionais sobre tributação de jogos mudaram repetidamente. Para montantes significativos, confira orientação atual da AFIP e provincial em vez de assumir."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bankroll-management-guide",
+        "bookmaker-margin-explained"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ar",
+          "label": "Ranked betting sites for Argentina"
+        }
+      ],
+      "_src_hash": "b7d7156d6527e86f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-canada",
+      "title": "Apostas no Canadá: Como Funciona",
+      "nav": "Apostas no Canadá",
+      "desc": "Apostas em eventos únicos desde 2021, mercado aberto licenciado de Ontário versus plataformas provinciais, pagamentos Interac e ganhos livres de impostos.",
+      "cat": "Countries",
+      "country": "ca",
+      "minutes": 4,
+      "sections": [
+        {
+          "h": "Dois Canadás: Ontário e o resto",
+          "ps": [
+            "O Canadá legalizou apostas em eventos únicos em nível nacional em 2021, mas o mercado se dividiu: Ontário opera um mercado aberto licenciado onde dezenas de operadores privados possuem licenças AGCO/iGaming Ontario, enquanto outras províncias canalizam as apostas através de plataformas de corporações de loteria (PROLINE+, Mise-o-jeu, PlayNow).",
+            "Fora de Ontário, sites offshore ocupam uma zona cinzenta — acessíveis mas fora do marco regulatório de proteção ao consumidor. Ontarianos não enfrentam essa troca: o mercado licenciado é profundo e competitivo."
+          ]
+        },
+        {
+          "h": "Pagamentos e impostos",
+          "ps": [
+            "Interac é o sistema universal — transferências e saques via Interac e-Transfer em praticamente todos os operadores — junto com cartões e opções bancárias instantâneas cada vez mais comuns. Saques em bons operadores licenciados chegam em 24 a 48 horas.",
+            "A vantagem genuína canadense: ganhos em apostas recreativas não são tributados. Apenas atividades de jogo profissional como negócio atraem atenção da CRA — um patamar que apostadores recreativos não atingem."
+          ]
+        },
+        {
+          "h": "Escolhendo um site para o mercado canadense",
+          "ps": [
+            "Em Ontário: confirme a licença iGaming Ontario, depois compare margens (preços de NHL, NBA e Premier League variam significativamente entre casas) e velocidade de saque via Interac. Em outras províncias: a plataforma provincial é a opção totalmente protegida; se considerar sites offshore, aplique cautela de mercado cinzento — licenças estabelecidas, históricos de pagamento verificados, apostas pequenas.",
+            "Nossa página Canada classifica operadores nesses critérios. 18+/19+ por província; ConnexOntario e linhas de ajuda provinciais fornecem suporte."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ganhos em apostas são tributáveis no Canadá?",
+          "a": "Ganhos recreativos não são tributados. A exceção é jogo praticado sistematicamente como negócio — atividade em nível profissional que a CRA pode tratar como renda, o que apostadores recreativos não atingem."
+        },
+        {
+          "q": "Posso usar sites de apostas offshore fora de Ontário?",
+          "a": "São acessíveis e amplamente utilizados, mas ficam fora do marco licenciamento e resolução de disputas do Canadá. Plataformas provinciais oferecem proteção total; sites offshore exigem cautela de mercado cinzento — licenças estabelecidas, históricos de pagamento verificados e apostas pequenas."
+        },
+        {
+          "q": "O que é diferente em Ontário?",
+          "a": "Ontário abriu um mercado totalmente licenciado em 2022 sob AGCO/iGaming Ontario, então operadores privados lá possuem licenças locais, proteções de fundos e rotas de resolução de disputas — o marco que outras províncias canalizam através de suas plataformas de loteria."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "cash-out"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ca",
+          "label": "Ranked betting sites for Canada"
+        }
+      ],
+      "_src_hash": "ddb9e14ab1951141",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-ireland",
+      "title": "Apostas na Irlanda: Como Funciona",
+      "nav": "Apostas na Irlanda",
+      "desc": "O novo regulador GRAI da Irlanda, a Lei de Regulação do Jogo 2024, ganhos isentos de impostos e a escolha de uma casa de apostas em um mercado maduro.",
+      "cat": "Countries",
+      "country": "ie",
+      "minutes": 4,
+      "sections": [
+        {
+          "h": "Um mercado maduro recebendo um novo regulador",
+          "ps": [
+            "As apostas são totalmente legais na Irlanda e culturalmente enraizadas — poucos mercados são mais antigos. A estrutura está em transição: a Lei de Regulação do Jogo 2024 criou a Gambling Regulatory Authority of Ireland (GRAI), assumindo o licenciamento que historicamente passava pelos Revenue Commissioners.",
+            "Para os apostadores, a transição muda mais a burocracia que a prática: operadores licenciados permanecem licenciados, e o novo regime adiciona proteções ao consumidor — limites de publicidade, registro nacional de autoexclusão — conforme as disposições são implementadas."
+          ]
+        },
+        {
+          "h": "Pagamentos e impostos",
+          "ps": [
+            "Cartões, transferência bancária e PayPal cobrem o mercado; saques em boas casas chegam em um ou dois dias úteis. A vantagem tipicamente irlandesa: ganhos não são tributados para o apostador — o imposto sobre apostas é cobrado dos operadores.",
+            "Os critérios práticos de seleção são os universais: margem, velocidade de pagamento e política de limites. Casas de apostas voltadas para o mercado irlandês competem bastante em produtos de corridas e GAA junto com futebol — profundidade ali marca os livros localmente sérios."
+          ]
+        },
+        {
+          "h": "Escolhendo um site para o mercado irlandês",
+          "ps": [
+            "Confirme o licenciamento atual na Irlanda, compare margens em mercados de Premier League e corridas, e verifique relatórios sobre velocidade de pagamento. Em um mercado tão competitivo, não há razão para aceitar uma casa com margem alta — comparar odds entre duas ou três operadores licenciados é toda a otimização.",
+            "Nossa página da Irlanda classifica operadores nesses critérios. 18+; GambleAware e as ferramentas do novo marco de trabalho GRAI são a camada de suporte."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ganhos com apostas são tributados na Irlanda?",
+          "a": "Não — ganhos são isentos de impostos para o apostador. O imposto sobre apostas é cobrado dos operadores no volume de negócios, o que é precificado nas odds em vez de deduzido dos pagamentos."
+        },
+        {
+          "q": "Quais são as mudanças sob a Lei de Regulação do Jogo 2024?",
+          "a": "Um regulador dedicado (GRAI) substitui a rede anterior de rotas de licenciamento, adicionando restrições de publicidade, registro nacional de autoexclusão e proteções mais fortes ao consumidor conforme as disposições são implementadas. Operadores licenciados fazem a transição."
+        },
+        {
+          "q": "As apostas em corridas de cavalos são legalmente diferentes das apostas em esportes?",
+          "a": "Ambas são totalmente legais; corridas têm raízes profundas no mercado irlandês e o mesmo licenciamento as abrange. A diferença prática é a profundidade de produtos — casas voltadas para o mercado irlandês competem mais duramente em corridas e GAA junto com futebol."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "value-betting-explained"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "self-exclusion"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ie",
+          "label": "Ranked betting sites for Ireland"
+        }
+      ],
+      "_src_hash": "d5b3b659707f7f54",
+      "_model": "claude-haiku-4-5-20251001"
+    }
+  ]
+}

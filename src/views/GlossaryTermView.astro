@@ -1,0 +1,96 @@
+---
+import Base from '../layouts/Base.astro';
+import { glossaryFor, glossarySetName } from '../lib/guides.js';
+import { t, lhref } from '../i18n/index.js';
+
+// One glossary term, localized. Sorting follows the localized term names so
+// prev/next A–Z chains stay alphabetical inside each language.
+const { slug, lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
+
+const terms = [...glossaryFor(lang)].sort((a, b) => a.term.localeCompare(b.term, lang));
+const i = terms.findIndex((x) => x.slug === slug);
+const term = terms[i];
+const prev = terms[i - 1] ?? null;
+const next = terms[i + 1] ?? null;
+
+const bySlug = Object.fromEntries(terms.map((x) => [x.slug, x]));
+const related = (term.related ?? []).map((s) => bySlug[s]).filter(Boolean);
+
+const title = T('gl.title').split('{term}').join(term.term);
+const description = term.short;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'DefinedTerm',
+  name: term.term,
+  description: term.short,
+  inLanguage: lang,
+  inDefinedTermSet: { '@type': 'DefinedTermSet', name: glossarySetName, url: 'https://ai-betting-tips.com/glossary/' },
+};
+---
+<Base lang={lang} i18nPath={`/glossary/${term.slug}`} title={title} description={description} schema={schema} active="">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href={L('/')}>{T('crumb.home')}</a><span>/</span>
+        <a href={L('/glossary')}>{T('gl.crumb')}</a><span>/</span>
+        {term.term}
+      </div>
+      <h1>{term.term}<em>{term.term.endsWith('?') ? '' : ` ${T('gl.explained')}`}</em></h1>
+      <p class="lead">{term.short}</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+
+        <section class="seo" style="margin-top:6px">
+          {term.definition.map((p) => <p>{p}</p>)}
+          {term.example && (
+            <div class="gl-example">
+              <div class="gl-ex-label">{T('gl.workedExample')}</div>
+              <p>{term.example}</p>
+            </div>
+          )}
+        </section>
+
+        {related.length > 0 && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">{T('gl.relPre')} <b>{T('gl.relBold')}</b></h2></div>
+            <div class="chips" style="margin-bottom:0">
+              {related.map((r) => <a class="chip" href={L(`/glossary/${r.slug}`)}>📖 {r.term}</a>)}
+            </div>
+          </section>
+        )}
+
+        <section>
+          <div class="res-sum">
+            {prev && <a class="res-chip" href={L(`/glossary/${prev.slug}`)} style="text-decoration:none"><b>←</b><span>{prev.term}</span></a>}
+            <a class="res-chip" href={L('/glossary')} style="text-decoration:none"><b>A–Z</b><span>{T('gl.allTerms')}</span></a>
+            {next && <a class="res-chip" href={L(`/glossary/${next.slug}`)} style="text-decoration:none"><b>→</b><span>{next.term}</span></a>}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        {(term.see ?? []).length > 0 && (
+          <div class="promo">
+            <h4>🔗 {T('gd.seeAction')}</h4>
+            <p>{term.see[0].label}</p>
+            <a href={term.see[0].href} class="btn btn-mint btn-block">{T('gd.open')}</a>
+          </div>
+        )}
+        <div class="box">
+          <div class="box-h"><span class="hi">📖</span> {T('gl.crumb')}</div>
+          <a class="tm" href={L('/glossary')}><span class="dot"></span>{T('gl.linkAll')}</a>
+          <a class="tm" href={L('/guides')}><span class="dot"></span>{T('ft.guides')}</a>
+          <a class="tm" href={L('/screener')}><span class="dot"></span>{T('gd.lnkScreener')}</a>
+          <a class="tm" href={L('/predictions')}><span class="dot"></span>{T('gd.lnkPreds')}</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>
