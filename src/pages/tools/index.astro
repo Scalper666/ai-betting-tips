@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Free Betting Tools — Calculators & Converters';
+const description = 'Free betting calculators: odds converter, accumulator calculator and bookmaker margin / value checker. No sign-up, instant results.';
+
+const TOOLS = [
+  { href: '/tools/odds-converter', icon: '🔁', name: 'Odds converter', p: 'Decimal ↔ fractional ↔ American ↔ implied probability.' },
+  { href: '/tools/accumulator-calculator', icon: '🎯', name: 'Accumulator calculator', p: 'Combined odds, returns and profit for any number of legs.' },
+  { href: '/tools/margin-calculator', icon: '📊', name: 'Margin & value calculator', p: "Expose the bookmaker's margin and test any price for value." },
+  { href: '/dropping-odds', icon: '📉', name: 'Dropping odds', p: 'The biggest line moves across the fixtures we track.' },
+];
+---
+<Base title={title} description={description} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span>Tools</div>
+      <h1>Betting <em>tools</em></h1>
+      <p class="lead">Free calculators used across our own pipeline — no sign-up, everything runs in your browser.</p>
+    </div>
+  </div>
+
+  <div class="container" style="padding-bottom:60px">
+    <div class="bt-grid" style="margin-top:26px">
+      {TOOLS.map((t) => (
+        <a href={t.href} class="bt-tile"><div class="ic">{t.icon}</div><div><h4>{t.name}</h4><p>{t.p}</p></div><span class="arr">→</span></a>
+      ))}
+    </div>
+  </div>
+</Base>

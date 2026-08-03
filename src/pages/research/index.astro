@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Betting Data Research — Live Studies From Our Pipeline';
+const description = 'Original data studies rebuilt daily from our own pipeline: bookmaker margins by league, league predictability across thousands of matches, and a public closing-line-value experiment.';
+
+const STUDIES = [
+  { href: '/research/bookmaker-margins', icon: '💸', name: 'What betting really costs', p: 'Best-price 1X2 margins by league, recomputed from every refresh.' },
+  { href: '/research/league-predictability', icon: '🎲', name: 'The most unpredictable leagues', p: 'Home advantage, draws and goals across thousands of matches.' },
+  { href: '/research/clv-experiment', icon: '🧪', name: 'The CLV experiment', p: 'Can a transparent model beat the closing line? A public, falsifiable test.' },
+];
+---
+<Base title={title} description={description} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span>Research</div>
+      <h1>Data <em>research</em></h1>
+      <p class="lead">Not opinion pieces: every study on this page is computed from our own pipeline data and rebuilds automatically every day. Cite them, link them, check them.</p>
+    </div>
+  </div>
+
+  <div class="container" style="padding-bottom:60px">
+    <div class="bt-grid" style="margin-top:26px">
+      {STUDIES.map((s) => (
+        <a href={s.href} class="bt-tile"><div class="ic">{s.icon}</div><div><h4>{s.name}</h4><p>{s.p}</p></div><span class="arr">→</span></a>
+      ))}
+    </div>
+  </div>
+</Base>

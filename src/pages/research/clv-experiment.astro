@@ -1,0 +1,89 @@
+---
+import Base from '../../layouts/Base.astro';
+import historyData from '../../data/history.json';
+
+// The public CLV experiment: can a transparent model beat the closing line?
+// All numbers live from the settlement archive.
+const settledStates = ['won', 'lost', 'void'];
+const real = Object.values(historyData.tips ?? {}).filter(
+  (h) => h.score !== 'simulated' && !String(h.event_id ?? '').startsWith('mock')
+);
+const settled = real.filter((h) => settledStates.includes(h.status));
+const clvOf = (list) => {
+  const w = list.filter((h) => h.clv_pct != null);
+  if (!w.length) return null;
+  return {
+    n: w.length,
+    avg: Math.round((w.reduce((s, h) => s + h.clv_pct, 0) / w.length) * 100) / 100,
+    beat: w.filter((h) => h.clv_pct > 0).length,
+  };
+};
+const all = clvOf(settled);
+const v1 = clvOf(settled.filter((h) => h.model !== 'v2'));
+const v2 = clvOf(settled.filter((h) => h.model === 'v2'));
+const updated = String(historyData.updated_at ?? '').slice(0, 10);
+
+const title = 'The CLV Experiment — Can a Transparent Model Beat the Closing Line?';
+const description = `A public, running experiment: every tip we publish is archived pre-match and measured against the last tracked price. ${all ? `${all.n} bets measured so far, average CLV ${all.avg > 0 ? '+' : ''}${all.avg}%.` : ''} Nothing deleted, everything reproducible.`;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  dateModified: updated,
+  author: { '@type': 'Organization', name: 'AI Betting Tips' },
+  description,
+};
+---
+<Base title={title} description={description} schema={schema} active="tipsters">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/research">Research</a><span>/</span>CLV experiment</div>
+      <h1>The <em>CLV experiment</em></h1>
+      <p class="lead">Closing-line value is the professional's early truth test: if you consistently beat the last price, you have an edge long before ROI can prove it. We measure ourselves in public. Updated {updated}.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Where the experiment <b>stands</b></h2></div>
+          {all ? (
+            <div class="res-sum">
+              <div class="res-chip"><b>{all.n}</b><span>Bets measured</span></div>
+              <div class={`res-chip ${all.avg > 0 ? 'win' : all.avg < 0 ? 'lose' : ''}`}><b>{all.avg > 0 ? '+' : ''}{all.avg}%</b><span>Avg CLV (all)</span></div>
+              {v1 && <div class={`res-chip ${v1.avg > 0 ? 'win' : 'lose'}`}><b>{v1.avg > 0 ? '+' : ''}{v1.avg}%</b><span>v1 era ({v1.n})</span></div>}
+              {v2 && <div class={`res-chip ${v2.avg > 0 ? 'win' : v2.avg < 0 ? 'lose' : ''}`}><b>{v2.avg > 0 ? '+' : ''}{v2.avg}%</b><span>v2 era ({v2.n})</span></div>}
+              <div class="res-chip"><b>{all.beat}/{all.n}</b><span>Beat the close</span></div>
+            </div>
+          ) : (
+            <div class="box"><div class="box-pad dim">First measurements land as soon as tracked bets settle.</div></div>
+          )}
+          <p class="res-note">CLV = (price we took ÷ last tracked price − 1). Our snapshots are taken at each refresh, so "close" means the last price we saw before kick-off, not the true market close — labelled honestly.</p>
+        </section>
+
+        <section class="seo">
+          <h2>Why CLV, not ROI</h2>
+          <p>Win-rate and ROI are what everyone quotes and what almost nobody should trust on small samples: a few hundred bets can sit 15% away from their true expectation by pure chance. Closing-line value converges far faster. The logic is simple — the closing price is the market's most informed estimate, sharpened by all the money that arrived before kick-off. If the price you took is consistently better than where the line closed, you were systematically ahead of the market's final opinion; profit follows over time. If you can't beat the close, no run of wins will save you.</p>
+          <h3>The experiment's rules</h3>
+          <p>Every official pick is archived at publication with its price and timestamp. Nothing is deleted or edited — losing runs stay on record next to winning ones. At settlement, each bet is annotated with the last price we tracked before kick-off and its CLV. The first era of our model (v1, a pure market-consensus approach) averaged negative CLV — exactly what theory predicts for a model with no information of its own, and we say so openly. The current model (v2) blends our own Poisson goal model with the market and bets selectively; its CLV track is accumulating now, in public, on this page and on the <a href="/tipsters" style="color:var(--mint)">performance page</a>.</p>
+          <h3>What would falsify us</h3>
+          <p>If v2's average CLV settles below zero over a few hundred measured bets, the model does not have an edge — and this page will show it. That's the point: a prediction site that can't lose an argument with its own data isn't making predictions, it's making content. Every number here is reproducible from the public settled log.</p>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>📈 The full record</h4>
+          <p>Every settled bet, every track, nothing curated.</p>
+          <a href="/tipsters" class="btn btn-mint btn-block">Model performance</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🔬</span> More research</div>
+          <a class="tm" href="/research/bookmaker-margins"><span class="dot"></span>Bookmaker margins</a>
+          <a class="tm" href="/research/league-predictability"><span class="dot"></span>League predictability</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

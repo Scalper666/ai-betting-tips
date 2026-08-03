@@ -602,6 +602,11 @@ const D = {
   'lg.markets': { en: '{league} markets', es: 'Mercados de {league}', pt: 'Mercados de {league}', de: '{league}-Märkte' },
   'lg.mrTips': { en: 'Match result tips', es: 'Pronósticos de resultado', pt: 'Palpites de resultado', de: 'Spielausgang-Tipps' },
   'lg.ouTips': { en: 'Over/Under tips', es: 'Pronósticos más/menos', pt: 'Palpites mais/menos', de: 'Über/Unter-Tipps' },
+  'ft.droppingOdds': { en: 'Dropping Odds', es: 'Cuotas en caída', pt: 'Odds em queda', de: 'Fallende Quoten' },
+  'ft.oddsConverter': { en: 'Odds Converter', es: 'Conversor de cuotas', pt: 'Conversor de odds', de: 'Quoten-Umrechner' },
+  'ft.accaCalc': { en: 'Acca Calculator', es: 'Calculadora de combinadas', pt: 'Calculadora de múltiplas', de: 'Kombi-Rechner' },
+  'ft.ourModel': { en: 'Our Model', es: 'Nuestro modelo', pt: 'Nosso modelo', de: 'Unser Modell' },
+  'ft.research': { en: 'Research', es: 'Estudios', pt: 'Estudos', de: 'Analysen' },
   'lg.noLive': { en: 'No live fixtures from this league in the current feed — the page updates automatically when the next round is priced.', es: 'No hay partidos de esta liga en el feed actual; la página se actualiza sola cuando el mercado cotice la próxima jornada.', pt: 'Não há jogos desta liga no feed atual — a página se atualiza sozinha quando a próxima rodada for precificada.', de: 'Derzeit keine Spiele dieser Liga im Feed — die Seite aktualisiert sich automatisch, sobald die nächste Runde bepreist ist.' },
   // ---- day hubs (today / tomorrow / weekend) ----
   'day.tips': { en: 'tips', es: 'pronósticos', pt: 'palpites', de: 'Tipps' },

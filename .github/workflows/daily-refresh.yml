@@ -13,7 +13,8 @@ name: Daily refresh
 
 on:
   schedule:
-    - cron: "30 5 * * *"   # 05:30 UTC = 08:30 MSK, after overnight matches finish
+    - cron: "30 5 * * *"   # 05:30 UTC — after overnight matches finish
+    - cron: "30 16 * * *"  # 16:30 UTC — fresh prices before the evening kick-offs
   workflow_dispatch: {}     # manual "Run workflow" button / API trigger
 
 permissions:

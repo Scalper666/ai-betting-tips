@@ -1,0 +1,125 @@
+---
+import Base from '../../layouts/Base.astro';
+
+// Evergreen utility page: converts between decimal / fractional / American
+// odds and implied probability. Pure client-side, no data needed.
+const title = 'Odds Converter — Decimal, Fractional, American & Implied Probability';
+const description = 'Free odds converter: turn decimal odds into fractional and American formats and see the implied probability — instantly, with the maths explained below.';
+
+const faq = [
+  { q: 'How do I convert decimal odds to implied probability?', a: 'Divide 1 by the decimal odds and multiply by 100. Odds of 2.50 imply 1 / 2.50 = 40%. Remember the bookmaker margin is baked in, so the true chance is usually a little lower than the implied figure.' },
+  { q: 'What is the difference between decimal and fractional odds?', a: 'Decimal odds show your total return per unit staked (2.50 returns 2.50 including the stake). Fractional odds show profit relative to stake (6/4 means 6 profit for every 4 staked). They express exactly the same price in different notation.' },
+  { q: 'How do American odds work?', a: 'Positive American odds (+150) show the profit on a 100 stake. Negative odds (−200) show how much you must stake to win 100. +150 equals decimal 2.50; −200 equals decimal 1.50.' },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+<Base title={title} description={description} schema={schema} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/tools">Tools</a><span>/</span>Odds converter</div>
+      <h1>Odds <em>converter</em></h1>
+      <p class="lead">Type a price in any format — decimal, fractional or American — and the other formats plus the implied probability update instantly.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="box"><div class="box-pad" id="oddsTool">
+            <div class="tool-row">
+              <div class="tool-f"><label>Decimal odds</label><input id="tDec" type="number" step="0.01" min="1.01" value="2.50" inputmode="decimal" /></div>
+              <div class="tool-f"><label>Fractional odds</label><input id="tFrac" type="text" value="6/4" /></div>
+            </div>
+            <div class="tool-row">
+              <div class="tool-f"><label>American odds</label><input id="tAm" type="number" step="1" value="150" inputmode="numeric" /></div>
+              <div class="tool-f"><label>Implied probability %</label><input id="tImp" type="number" step="0.1" min="0.1" max="99.9" value="40" inputmode="decimal" /></div>
+            </div>
+            <div class="tool-res">
+              <div class="tool-big"><b id="rRet">€25.00</b><span>Return on €10</span></div>
+              <div class="tool-big"><b id="rProf">€15.00</b><span>Profit on €10</span></div>
+            </div>
+          </div></div>
+        </section>
+
+        <section class="seo">
+          <h2>How odds formats relate</h2>
+          <p>All three formats describe the same thing — the price of an outcome. Decimal odds are the total return per unit staked, fractional odds are the profit relative to the stake, and American odds are quoted around a 100-unit stake. Implied probability is simply the inverse of the decimal price: it tells you what chance the market is charging you for. Because bookmakers build a margin into every price, the implied probabilities of all outcomes in a market add up to more than 100% — the excess is the bookmaker's edge. Comparing the implied probability with your own estimate of the true chance is the foundation of value betting: when your estimate is higher, the price may be worth taking.</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Converter <b>FAQ</b></h2></div>
+          <div class="faq">
+            {faq.map((f, i) => (
+              <div class={`faq-item${i === 0 ? ' open' : ''}`}>
+                <div class="faq-q">{f.q}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{f.a}</p></div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>🎯 Put it to work</h4>
+          <p>See where the best available price beats the fair line right now.</p>
+          <a href="/screener" class="btn btn-mint btn-block">Open the AI screener</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🧮</span> More tools</div>
+          <a class="tm" href="/tools/accumulator-calculator"><span class="dot"></span>Accumulator calculator</a>
+          <a class="tm" href="/tools/margin-calculator"><span class="dot"></span>Margin &amp; value calculator</a>
+          <a class="tm" href="/dropping-odds"><span class="dot"></span>Dropping odds</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var dec = document.getElementById('tDec'), frac = document.getElementById('tFrac'),
+          am = document.getElementById('tAm'), imp = document.getElementById('tImp'),
+          rRet = document.getElementById('rRet'), rProf = document.getElementById('rProf');
+      function gcd(a, b) { return b ? gcd(b, a % b) : a; }
+      function toFrac(d) {
+        var p = d - 1;
+        var best = '1/1', err = 1e9;
+        for (var den = 1; den <= 100; den++) {
+          var num = Math.round(p * den);
+          if (num < 1) continue;
+          var e = Math.abs(num / den - p);
+          if (e < err - 1e-9) { err = e; var g = gcd(num, den); best = (num / g) + '/' + (den / g); }
+        }
+        return best;
+      }
+      function fromFrac(s) {
+        var m = /^\s*(\d+)\s*\/\s*(\d+)\s*$/.exec(s || '');
+        if (!m) return null;
+        var num = +m[1], den = +m[2];
+        if (!den) return null;
+        return 1 + num / den;
+      }
+      function toAm(d) { return d >= 2 ? Math.round((d - 1) * 100) : -Math.round(100 / (d - 1)); }
+      function fromAm(a) { return a > 0 ? 1 + a / 100 : 1 + 100 / -a; }
+      function render(d, skip) {
+        if (!(d > 1.001)) return;
+        if (skip !== 'dec') dec.value = (Math.round(d * 100) / 100).toFixed(2);
+        if (skip !== 'frac') frac.value = toFrac(d);
+        if (skip !== 'am') am.value = toAm(d);
+        if (skip !== 'imp') imp.value = (Math.round(10000 / d) / 100).toFixed(1);
+        rRet.textContent = '€' + (10 * d).toFixed(2);
+        rProf.textContent = '€' + (10 * (d - 1)).toFixed(2);
+      }
+      dec.addEventListener('input', function () { render(parseFloat(dec.value), 'dec'); });
+      frac.addEventListener('input', function () { var d = fromFrac(frac.value); if (d) render(d, 'frac'); });
+      am.addEventListener('input', function () { var a = parseFloat(am.value); if (a >= 100 || a <= -101) render(fromAm(a), 'am'); });
+      imp.addEventListener('input', function () { var p = parseFloat(imp.value); if (p > 0 && p < 100) render(100 / p, 'imp'); });
+      render(2.5);
+    })();
+  </script>
+</Base>

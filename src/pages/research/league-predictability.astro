@@ -1,0 +1,122 @@
+---
+import Base from '../../layouts/Base.astro';
+import fd from '../../data/football-data.json';
+
+// Data study over the full results dataset: home advantage, draw rates and
+// goals per league. Rebuilt daily as new rounds land in the dataset.
+const rows = [];
+for (const lg of Object.values(fd.leagues ?? {})) {
+  const res = lg.results ?? [];
+  if (res.length < 100) continue;
+  let hw = 0, dr = 0, aw = 0, goals = 0, btts = 0, over25 = 0;
+  for (const r of res) {
+    goals += r.hs + r.as;
+    if (r.hs > r.as) hw++; else if (r.hs === r.as) dr++; else aw++;
+    if (r.hs > 0 && r.as > 0) btts++;
+    if (r.hs + r.as > 2.5) over25++;
+  }
+  const n = res.length;
+  rows.push({
+    league: lg.name, n,
+    hw: Math.round((hw / n) * 1000) / 10,
+    dr: Math.round((dr / n) * 1000) / 10,
+    aw: Math.round((aw / n) * 1000) / 10,
+    goals: Math.round((goals / n) * 100) / 100,
+    btts: Math.round((btts / n) * 1000) / 10,
+    over25: Math.round((over25 / n) * 1000) / 10,
+  });
+}
+// "unpredictability" = how flat the outcome distribution is (entropy-lite):
+// closer the three shares are to each other, harder the league is to call.
+for (const r of rows) {
+  const p = [r.hw, r.dr, r.aw].map((x) => x / 100);
+  r.spread = Math.round((Math.max(...p) - Math.min(...p)) * 1000) / 10;
+}
+rows.sort((a, b) => a.spread - b.spread);
+const total = rows.reduce((s, r) => s + r.n, 0);
+const updated = String(fd.updated_at ?? '').slice(0, 10);
+
+const title = `The Most Unpredictable Football Leagues — ${total} Matches Analysed`;
+const description = `Home advantage, draw rates and goals across ${rows.length} leagues and ${total} matches. Which league is hardest to call? A data study rebuilt daily from our results dataset.`;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  dateModified: updated,
+  author: { '@type': 'Organization', name: 'AI Betting Tips' },
+  description,
+};
+---
+<Base title={title} description={description} schema={schema} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/research">Research</a><span>/</span>League predictability</div>
+      <h1>The most <em>unpredictable</em> leagues</h1>
+      <p class="lead">{total} matches across {rows.length} leagues from our results dataset: who wins at home, who draws, and where outcomes are hardest to call. Updated {updated}.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Hardest to call <b>first</b></h2></div>
+          <div class="odds-table"><div class="scr-scroll">
+            <table class="otbl">
+              <thead><tr><th>#</th><th style="text-align:left">League</th><th>Matches</th><th>Home %</th><th>Draw %</th><th>Away %</th><th>Goals/game</th><th>BTTS %</th><th>Over 2.5 %</th></tr></thead>
+              <tbody>
+                {rows.map((r, i) => (
+                  <tr>
+                    <td class="o-cell"><span>{i + 1}</span></td>
+                    <td class="o-match" style="font-weight:700">{r.league}</td>
+                    <td class="o-cell"><span>{r.n}</span></td>
+                    <td class="o-cell"><span class="cb">{r.hw}%</span></td>
+                    <td class="o-cell"><span>{r.dr}%</span></td>
+                    <td class="o-cell"><span>{r.aw}%</span></td>
+                    <td class="o-cell"><span class="cb">{r.goals}</span></td>
+                    <td class="o-cell"><span>{r.btts}%</span></td>
+                    <td class="o-cell"><span>{r.over25}%</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div></div>
+          <p class="res-note">Ranked by how evenly outcomes are spread (the gap between the most and least common result) — a smaller gap means a league is harder to call from the table position alone.</p>
+        </section>
+
+        <section class="seo">
+          <h2>What the data says</h2>
+          <p>
+            Three patterns stand out. Home advantage is alive everywhere but far from uniform — the strongest home leagues
+            sit around {Math.max(...rows.map((r) => r.hw))}% home wins, while the flattest are near {Math.min(...rows.map((r) => r.hw))}%.
+            Draw rates cluster in the mid-twenties, which is exactly why bookmakers can price the draw generously and why our
+            model runs a dedicated draw-value track. And goals vary by almost a full goal per game between the highest and
+            lowest scoring competitions — the difference between an Over 2.5 league and an Under league is structural, not luck.
+          </p>
+          <p>
+            For bettors the lesson is to price the league, not just the teams: identical odds mean different things in a league
+            where 47% of games go to the home side versus one where 38% do. Our match pages surface this context automatically —
+            every fixture shows both teams' form, the head-to-head history and the league table next to the market prices.
+          </p>
+          <p>
+            Methodology: all completed fixtures in our football-data.org snapshot (current plus previous season per league).
+            Percentages are shares of played matches; the page recomputes on every daily refresh as new rounds finish.
+          </p>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>⚔️ Head-to-heads</h4>
+          <p>The same dataset, pair by pair — every meeting on record.</p>
+          <a href="/h2h" class="btn btn-mint btn-block">Browse H2H records</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🔬</span> More research</div>
+          <a class="tm" href="/research/bookmaker-margins"><span class="dot"></span>Bookmaker margins</a>
+          <a class="tm" href="/research/clv-experiment"><span class="dot"></span>The CLV experiment</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

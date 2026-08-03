@@ -1,0 +1,117 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Bookmaker Margin & Value Bet Calculator';
+const description = 'Enter 1X2 odds to see the bookmaker margin and fair odds, or check any single price against your own probability estimate to see if it is a value bet.';
+
+const faq = [
+  { q: 'What is the bookmaker margin?', a: 'The implied probabilities of all outcomes in a fair market add up to 100%. Bookmakers price them to add up to more — the excess is the margin, their built-in edge. A 1X2 market summing to 105% carries a 5% margin.' },
+  { q: 'What makes a bet a value bet?', a: 'A bet has value when your estimate of the true probability is higher than the probability implied by the price. Value does not guarantee a win — it means the price pays more than the risk warrants, which matters over many bets.' },
+  { q: 'How do I calculate fair odds?', a: 'Divide each implied probability by the market total to remove the margin, then invert. If a 1X2 market sums to 105%, an outcome priced at 2.00 (50%) has a fair probability of 47.6% and fair odds of 2.10.' },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+<Base title={title} description={description} schema={schema} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/tools">Tools</a><span>/</span>Margin &amp; value</div>
+      <h1>Margin &amp; value <em>calculator</em></h1>
+      <p class="lead">Two tools in one: paste a 1X2 market to expose the bookmaker's margin and fair odds, or test a single price against your own probability.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Market <b>margin</b></h2></div>
+          <div class="box"><div class="box-pad">
+            <div class="tool-row" style="grid-template-columns:1fr 1fr 1fr">
+              <div class="tool-f"><label>Home (1)</label><input id="m1" type="number" step="0.01" min="1.01" value="2.10" inputmode="decimal" /></div>
+              <div class="tool-f"><label>Draw (X)</label><input id="mX" type="number" step="0.01" min="1.01" value="3.40" inputmode="decimal" /></div>
+              <div class="tool-f"><label>Away (2)</label><input id="m2" type="number" step="0.01" min="1.01" value="3.60" inputmode="decimal" /></div>
+            </div>
+            <div class="tool-res">
+              <div class="tool-big warn"><b id="mMargin">—</b><span>Bookmaker margin</span></div>
+              <div class="tool-big"><b id="mFair">—</b><span>Fair odds (1 · X · 2)</span></div>
+            </div>
+          </div></div>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Value <b>check</b></h2></div>
+          <div class="box"><div class="box-pad">
+            <div class="tool-row">
+              <div class="tool-f"><label>Offered odds</label><input id="vOdds" type="number" step="0.01" min="1.01" value="2.20" inputmode="decimal" /></div>
+              <div class="tool-f"><label>Your probability %</label><input id="vProb" type="number" step="1" min="1" max="99" value="50" inputmode="numeric" /></div>
+            </div>
+            <div class="tool-res">
+              <div class="tool-big"><b id="vEv">—</b><span>Expected value</span></div>
+              <div class="tool-big"><b id="vVerdict">—</b><span>Verdict</span></div>
+            </div>
+          </div></div>
+          <p class="res-note">EV = odds × probability − 1. Positive EV means the price pays more than your estimated risk — if your estimate is right.</p>
+        </section>
+
+        <section class="seo">
+          <h2>Why the margin matters more than luck</h2>
+          <p>Every bet you place pays a hidden fee: the bookmaker's margin. On big-league 1X2 markets it typically runs 3–7% per bet, and it compounds fast across accumulators. Over hundreds of bets, a bettor picking at random doesn't break even — they lose the margin, mechanically. That's why comparing prices across bookmakers (which shrinks the effective margin) and insisting on positive expected value are the only durable habits in betting. Our <a href="/screener" style="color:var(--mint)">AI screener</a> automates both: it strips the margin to compute fair odds and flags the prices that still beat them.</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Margin <b>FAQ</b></h2></div>
+          <div class="faq">
+            {faq.map((f, i) => (
+              <div class={`faq-item${i === 0 ? ' open' : ''}`}>
+                <div class="faq-q">{f.q}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{f.a}</p></div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>📊 Live margins</h4>
+          <p>See today's best-price margins by league in our research section.</p>
+          <a href="/research/bookmaker-margins" class="btn btn-mint btn-block">Margin study</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🧮</span> More tools</div>
+          <a class="tm" href="/tools/odds-converter"><span class="dot"></span>Odds converter</a>
+          <a class="tm" href="/tools/accumulator-calculator"><span class="dot"></span>Acca calculator</a>
+          <a class="tm" href="/dropping-odds"><span class="dot"></span>Dropping odds</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var g = function (id) { return document.getElementById(id); };
+      function margin() {
+        var o = [parseFloat(g('m1').value), parseFloat(g('mX').value), parseFloat(g('m2').value)];
+        if (o.some(function (v) { return !(v > 1); })) return;
+        var sum = o.reduce(function (s, v) { return s + 1 / v; }, 0);
+        g('mMargin').textContent = ((sum - 1) * 100).toFixed(2) + '%';
+        g('mFair').textContent = o.map(function (v) { return (v * sum).toFixed(2); }).join(' · ');
+      }
+      function value() {
+        var odds = parseFloat(g('vOdds').value), p = parseFloat(g('vProb').value) / 100;
+        if (!(odds > 1) || !(p > 0 && p < 1)) return;
+        var ev = odds * p - 1;
+        g('vEv').textContent = (ev >= 0 ? '+' : '') + (ev * 100).toFixed(1) + '%';
+        g('vEv').parentElement.classList.toggle('warn', ev < 0);
+        g('vVerdict').textContent = ev > 0.02 ? 'Value ✓' : ev > -0.02 ? 'Borderline' : 'No value';
+      }
+      ['m1', 'mX', 'm2'].forEach(function (id) { g(id).addEventListener('input', margin); });
+      ['vOdds', 'vProb'].forEach(function (id) { g(id).addEventListener('input', value); });
+      margin(); value();
+    })();
+  </script>
+</Base>

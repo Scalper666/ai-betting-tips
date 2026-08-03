@@ -30,7 +30,7 @@ SRC = ROOT / "data"
 # history.json feeds the "Recent results" transparency block (settled bets).
 # content.json holds AI-written page copy (generate_content.py); optional.
 FILES = ["predictions.json", "screener.json", "stats.json", "history.json", "content.json",
-         "football-data.json", "results-archive.json"]
+         "football-data.json", "results-archive.json", "odds_history.json"]
 
 
 def astro_data_dir() -> Path | None:

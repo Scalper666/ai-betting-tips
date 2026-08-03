@@ -1,0 +1,100 @@
+---
+import Base from '../../layouts/Base.astro';
+import predictions from '../../data/predictions.json';
+import { slugify } from '../../lib/utils.js';
+
+// Live study: best-price 1X2 margin per league, recomputed on every build
+// from today's odds snapshot. Margin here = sum(1/best price) - 1, i.e. the
+// margin AFTER shopping for the best price across all tracked bookmakers —
+// single-bookmaker margins are higher.
+const byLeague = {};
+for (const t of (predictions.tips ?? [])) {
+  const prices = Object.values(t.best_h2h ?? {}).map((x) => Number(x.price)).filter((p) => p > 1);
+  if (prices.length < 3) continue;
+  const margin = prices.reduce((s, p) => s + 1 / p, 0) - 1;
+  (byLeague[t.league] ??= []).push(margin);
+}
+const rows = Object.entries(byLeague)
+  .map(([league, ms]) => ({
+    league,
+    n: ms.length,
+    avg: Math.round((ms.reduce((s, m) => s + m, 0) / ms.length) * 10000) / 100,
+  }))
+  .filter((r) => r.n >= 3)
+  .sort((a, b) => a.avg - b.avg);
+const overall = Math.round((rows.reduce((s, r) => s + r.avg * r.n, 0) / rows.reduce((s, r) => s + r.n, 0)) * 100) / 100;
+const updated = String(predictions.updated_at ?? '').slice(0, 10);
+
+const title = `Bookmaker Margins by League (${updated}) — Live Data Study`;
+const description = `Best-price 1X2 margins across ${rows.length} leagues from today's odds: ${overall}% on average after line shopping. Which leagues cost the most to bet on — recomputed daily.`;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  dateModified: updated,
+  author: { '@type': 'Organization', name: 'AI Betting Tips' },
+  description,
+};
+---
+<Base title={title} description={description} schema={schema} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/research">Research</a><span>/</span>Bookmaker margins</div>
+      <h1>What betting really costs: <em>margins by league</em></h1>
+      <p class="lead">A live study, recomputed with every data refresh: the 1X2 margin per league after taking the best available price across every bookmaker we track. Last update: {updated}.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="res-sum">
+            <div class="res-chip"><b>{rows.reduce((s, r) => s + r.n, 0)}</b><span>Fixtures sampled</span></div>
+            <div class="res-chip"><b>{rows.length}</b><span>Leagues</span></div>
+            <div class="res-chip win"><b>{overall}%</b><span>Avg best-price margin</span></div>
+          </div>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Cheapest to most <b>expensive</b></h2></div>
+          <div class="odds-table"><div class="scr-scroll">
+            <table class="otbl">
+              <thead><tr><th>#</th><th style="text-align:left">League</th><th>Fixtures</th><th>Avg margin</th></tr></thead>
+              <tbody>
+                {rows.map((r, i) => (
+                  <tr>
+                    <td class="o-cell"><span>{i + 1}</span></td>
+                    <td class="o-match" style="font-weight:700"><a href={`/league/${slugify(r.league)}`} style="color:inherit;text-decoration:none">{r.league}</a></td>
+                    <td class="o-cell"><span>{r.n}</span></td>
+                    <td class="o-cell hot"><span class="cb">{r.avg.toFixed(2)}%</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div></div>
+          <p class="res-note">Margin = Σ(1 / best price) − 1 across the three 1X2 outcomes, averaged over the league's current fixtures. Because we take the best price per outcome across all tracked bookmakers, these figures are LOWER than any single bookmaker's margin — this is the cost after line shopping.</p>
+        </section>
+
+        <section class="seo">
+          <h2>What this means for bettors</h2>
+          <p>The margin is the fee you pay for every bet, and it varies far more than most bettors realise. Top competitions attract sharp money and dense bookmaker coverage, which compresses margins; smaller leagues carry wider ones because operators price them with more caution and less competition. Two practical rules fall out of this data. First, line shopping is worth real money: taking the best price across bookmakers, as this table does, routinely cuts a single operator's margin in half. Second, the league you bet on is a cost decision — the same skill level loses more per bet in a high-margin league. Our <a href="/screener" style="color:var(--mint)">screener</a> bakes both rules in: it compares every tracked price and only flags selections that beat the margin-free fair line.</p>
+          <p>Methodology: for every fixture in today's feed we take the best available decimal price for each 1X2 outcome across all bookmakers we track, sum the implied probabilities and subtract 100%. The page rebuilds with every data refresh, so numbers always reflect the current board. Fixture counts vary with the calendar; leagues with fewer than three priced fixtures are excluded.</p>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>🧮 Check any market</h4>
+          <p>Paste 1X2 odds and see the margin and fair prices instantly.</p>
+          <a href="/tools/margin-calculator" class="btn btn-mint btn-block">Margin calculator</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🔬</span> More research</div>
+          <a class="tm" href="/research/league-predictability"><span class="dot"></span>League predictability</a>
+          <a class="tm" href="/research/clv-experiment"><span class="dot"></span>The CLV experiment</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

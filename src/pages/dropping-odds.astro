@@ -1,0 +1,94 @@
+---
+import Base from '../layouts/Base.astro';
+import predictions from '../data/predictions.json';
+import oddsHistory from '../data/odds_history.json';
+import { matchSlug, kickoffLabel } from '../lib/utils.js';
+
+// Biggest line moves across live fixtures, from our own price snapshots
+// (each refresh records the best price per tip when it changes).
+const rows = [];
+for (const t of (predictions.tips ?? [])) {
+  const rec = t.recommendation ?? {};
+  const key = `${t.id}|${rec.text ?? ''}`;
+  const series = oddsHistory[key] ?? [];
+  if (series.length < 2) continue;
+  const first = Number(series[0]?.price), last = Number(series[series.length - 1]?.price);
+  if (!(first > 1) || !(last > 1) || first === last) continue;
+  rows.push({
+    t, market: rec.text, first, last,
+    move: Math.round(((last - first) / first) * 1000) / 10,   // % change
+    points: series.length,
+  });
+}
+rows.sort((a, b) => Math.abs(b.move) - Math.abs(a.move));
+const shown = rows.slice(0, 40);
+const droppers = rows.filter((r) => r.move < 0).length;
+
+const title = 'Dropping Odds — Biggest Line Moves Today';
+const description = `Where the market is moving: ${rows.length} tracked prices have shifted since opening, ${droppers} of them shortening. Openings vs current best price, updated with every refresh.`;
+---
+<Base title={title} description={description} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span>Dropping odds</div>
+      <h1>Dropping <em>odds</em></h1>
+      <p class="lead">Prices that moved since we first tracked them — shortening odds usually mean money is arriving on that outcome. From our own snapshots, refreshed with every data update.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          {shown.length > 0 ? (
+            <div class="odds-table"><div class="scr-scroll">
+              <table class="otbl">
+                <thead><tr>
+                  <th style="text-align:left">Match</th><th style="text-align:left">Market</th>
+                  <th>Opened</th><th>Now</th><th>Move</th><th>Kick-off</th>
+                </tr></thead>
+                <tbody>
+                  {shown.map((r) => (
+                    <tr>
+                      <td class="o-match" style="font-weight:700">
+                        <a href={`/predictions/${matchSlug(r.t)}`} style="color:inherit;text-decoration:none">{r.t.home} v {r.t.away}</a>
+                        <span class="tc" style="display:block">{r.t.league}</span>
+                      </td>
+                      <td class="o-cell" style="text-align:left"><span>{r.market}</span></td>
+                      <td class="o-cell"><span class="cb">{r.first.toFixed(2)}</span></td>
+                      <td class="o-cell hot"><span class="cb">{r.last.toFixed(2)}</span></td>
+                      <td class="o-cell"><span class="cb" style={`color:${r.move < 0 ? 'var(--win)' : 'var(--lose)'}`}>{r.move > 0 ? '+' : ''}{r.move}%</span></td>
+                      <td class="o-cell" style="white-space:nowrap"><span>{kickoffLabel(r.t.kickoff)}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div></div>
+          ) : (
+            <div class="box"><div class="box-pad dim">Not enough price history yet — moves appear once a price changes between two refreshes.</div></div>
+          )}
+          <p class="res-note">"Opened" is the first price we tracked for our tip's market, not the bookmaker's true opening line. Green = odds shortening (backed), red = drifting.</p>
+        </section>
+
+        <section class="seo">
+          <h2>How to read dropping odds</h2>
+          <p>When a price shortens, bookmakers are reacting — usually to money, sometimes to news. A drop on its own is not a reason to bet: by the time a line has moved, much of the value has moved with it. The useful signal is disagreement: a price that drops at one bookmaker while lagging at another, or a move that contradicts our model's probability. That's why every fixture here links to its full match page, where you can compare the current best prices across books, our fair-odds estimate and the model's take before deciding anything. 18+, and treat all of it as information, not instruction.</p>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>🔍 AI Screener</h4>
+          <p>Same data, scored: every value pick ranked with a live steam signal.</p>
+          <a href="/screener" class="btn btn-mint btn-block">Open the screener</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🧮</span> Tools</div>
+          <a class="tm" href="/tools/odds-converter"><span class="dot"></span>Odds converter</a>
+          <a class="tm" href="/tools/accumulator-calculator"><span class="dot"></span>Acca calculator</a>
+          <a class="tm" href="/tools/margin-calculator"><span class="dot"></span>Margin &amp; value calculator</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

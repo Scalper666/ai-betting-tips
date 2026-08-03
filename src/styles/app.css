@@ -870,6 +870,21 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
   box-shadow:0 0 0 1px rgba(255,255,255,.14);display:inline-block;vertical-align:-1px}
 @media(max-width:900px){.lang-btn .cc{display:none}}
 
+/* calculators / tools */
+.tool-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+@media(max-width:640px){.tool-row{grid-template-columns:1fr}}
+.tool-f label{display:block;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--text-mute);margin-bottom:6px}
+.tool-f input,.tool-f select{width:100%;background:var(--bg-2);border:1px solid var(--border);border-radius:9px;
+  padding:11px 12px;color:var(--text);font-size:14.5px;font-family:'Space Grotesk',sans-serif;font-weight:700}
+.tool-f input:focus{outline:none;border-color:var(--mint)}
+.tool-res{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.tool-big{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 18px;min-width:130px}
+.tool-big b{display:block;font-family:'Space Grotesk',sans-serif;font-size:21px;font-weight:800;color:var(--mint)}
+.tool-big span{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-mute)}
+.tool-big.warn b{color:var(--lose)}
+.acca-legs .tool-row{grid-template-columns:1fr 110px 38px;align-items:end}
+.acca-add{margin-top:4px}
+
 /* official pick vs model lean flag on the match hero */
 .pk-flag{margin-top:12px;padding:8px 12px;border-radius:9px;font-size:12px;font-weight:600;line-height:1.45}
 .pk-flag.ofc{background:rgba(var(--btn-rgb),.12);color:#7ee2a8;border:1px solid rgba(var(--btn-rgb),.35)}

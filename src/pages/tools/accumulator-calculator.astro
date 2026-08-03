@@ -1,0 +1,119 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const title = 'Accumulator Calculator — Combined Odds, Returns & Profit';
+const description = 'Free acca calculator: add your legs, get the combined odds, total return and profit instantly — plus the honest maths on how multiples multiply risk.';
+
+const faq = [
+  { q: 'How are accumulator odds calculated?', a: 'Multiply the decimal odds of every leg together. Three legs at 1.50, 2.00 and 1.80 give 1.50 × 2.00 × 1.80 = 5.40 combined odds — a €10 stake returns €54.00 if every leg wins.' },
+  { q: 'Why do accumulators lose more often than singles?', a: 'Every leg must win. Three legs with a 60% chance each land only 0.6 × 0.6 × 0.6 = 21.6% of the time. The bookmaker margin also compounds across legs, which is why accas are priced so generously.' },
+  { q: 'What happens if one leg is a push or void?', a: 'Most bookmakers remove the void leg and recalculate the acca at the remaining combined odds, rather than settling the whole bet as lost. Check the operator’s rules — treatment can differ.' },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+<Base title={title} description={description} schema={schema} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/tools">Tools</a><span>/</span>Acca calculator</div>
+      <h1>Accumulator <em>calculator</em></h1>
+      <p class="lead">Add your legs and a stake — combined odds, total return and profit update as you type.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="box"><div class="box-pad" id="accaTool">
+            <div class="tool-row" style="grid-template-columns:1fr 1fr">
+              <div class="tool-f"><label>Stake (€)</label><input id="aStake" type="number" step="1" min="0" value="10" inputmode="decimal" /></div>
+              <div></div>
+            </div>
+            <div class="acca-legs" id="aLegs"></div>
+            <button type="button" class="btn btn-outline btn-sm acca-add" id="aAdd">+ Add leg</button>
+            <div class="tool-res">
+              <div class="tool-big"><b id="aOdds">—</b><span>Combined odds</span></div>
+              <div class="tool-big"><b id="aRet">—</b><span>Total return</span></div>
+              <div class="tool-big"><b id="aProf">—</b><span>Profit</span></div>
+              <div class="tool-big warn"><b id="aImp">—</b><span>Implied chance</span></div>
+            </div>
+          </div></div>
+          <p class="res-note">18+ · Combined bets multiply the risk as well as the odds — the implied chance above is what the market thinks of your acca. Stake responsibly.</p>
+        </section>
+
+        <section class="seo">
+          <h2>The honest maths of accumulators</h2>
+          <p>Accumulators are popular because small stakes can return big numbers, but the same multiplication that grows the odds also multiplies the bookmaker's margin and shrinks your chance of collecting. If each leg carries a typical 5% margin, a four-leg acca quietly charges you around 19% — far more than any single bet. That doesn't make accas a mistake; it makes leg selection matter more. Fewer, stronger legs at fair prices beat long lottery tickets over time. Our <a href="/tips/accumulator" style="color:var(--mint)">daily acca</a> is built confidence-first from the screener's most probable picks for exactly that reason.</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Acca <b>FAQ</b></h2></div>
+          <div class="faq">
+            {faq.map((f, i) => (
+              <div class={`faq-item${i === 0 ? ' open' : ''}`}>
+                <div class="faq-q">{f.q}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{f.a}</p></div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>🎯 Today's acca</h4>
+          <p>Confidence-first multiple built from the screener's top picks.</p>
+          <a href="/tips/accumulator" class="btn btn-mint btn-block">See the acca</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🧮</span> More tools</div>
+          <a class="tm" href="/tools/odds-converter"><span class="dot"></span>Odds converter</a>
+          <a class="tm" href="/tools/margin-calculator"><span class="dot"></span>Margin &amp; value calculator</a>
+          <a class="tm" href="/dropping-odds"><span class="dot"></span>Dropping odds</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var legsEl = document.getElementById('aLegs'), stake = document.getElementById('aStake');
+      var n = 0;
+      function addLeg(v) {
+        n++;
+        var row = document.createElement('div');
+        row.className = 'tool-row';
+        row.innerHTML = '<div class="tool-f"><label>Leg ' + n + '</label><input type="text" placeholder="e.g. Arsenal to win" /></div>' +
+          '<div class="tool-f"><label>Odds</label><input class="a-odds" type="number" step="0.01" min="1.01" value="' + (v || '') + '" inputmode="decimal" /></div>' +
+          '<button type="button" class="btn btn-ghost btn-sm a-del" title="Remove leg">✕</button>';
+        legsEl.appendChild(row);
+        row.querySelector('.a-del').addEventListener('click', function () { row.remove(); calc(); });
+        row.querySelector('.a-odds').addEventListener('input', calc);
+      }
+      function calc() {
+        var odds = [].slice.call(legsEl.querySelectorAll('.a-odds'))
+          .map(function (i) { return parseFloat(i.value); })
+          .filter(function (v) { return v > 1; });
+        var st = parseFloat(stake.value) || 0;
+        var big = function (id) { return document.getElementById(id); };
+        if (!odds.length) {
+          big('aOdds').textContent = big('aRet').textContent = big('aProf').textContent = big('aImp').textContent = '—';
+          return;
+        }
+        var combined = odds.reduce(function (p, v) { return p * v; }, 1);
+        big('aOdds').textContent = '×' + combined.toFixed(2);
+        big('aRet').textContent = '€' + (st * combined).toFixed(2);
+        big('aProf').textContent = '€' + (st * (combined - 1)).toFixed(2);
+        big('aImp').textContent = (100 / combined).toFixed(1) + '%';
+      }
+      document.getElementById('aAdd').addEventListener('click', function () { addLeg(''); calc(); });
+      stake.addEventListener('input', calc);
+      addLeg('1.50'); addLeg('2.00'); addLeg('1.80');
+      calc();
+    })();
+  </script>
+</Base>
