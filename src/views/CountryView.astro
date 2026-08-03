@@ -6,6 +6,7 @@ import countryData from '../data/countries.json';
 import bookmakerData from '../data/bookmakers.json';
 import casinoData from '../data/casinos.json';
 import content from '../data/content.json';
+import guidesData from '../data/guides.json';
 import { avgScore, faqSchema } from '../lib/utils.js';
 import { t, lhref } from '../i18n/index.js';
 import AiFaq from '../components/AiFaq.astro';
@@ -25,6 +26,8 @@ const list = (bookmakerData.bookmakers ?? [])
 const casinoList = (casinoData.casinos ?? [])
   .filter((c) => (c.countries ?? []).includes(country.slug))
   .sort((a, b) => avgScore(b.scores) - avgScore(a.scores));
+
+const countryGuide = (guidesData.guides ?? []).find((g) => g.country === country.slug) ?? null;
 
 const year = new Date().getFullYear();
 const title = F('cn.title', { name: country.name, year });
@@ -107,6 +110,13 @@ const description = F('cn.desc', { name: country.name, reg: country.regulator })
       </main>
 
       <aside class="sidebar">
+        {countryGuide && (
+          <div class="promo">
+            <h4>📗 {countryGuide.title}</h4>
+            <p>{countryGuide.desc}</p>
+            <a href={`/guides/${countryGuide.slug}`} class="btn btn-mint btn-block">{T('cn.readGuide')}</a>
+          </div>
+        )}
         <div class="box">
           <div class="box-h"><span class="hi">🌍</span> {T('cn.otherMarkets')}</div>
           {(countryData.countries ?? []).filter((c) => c.slug !== country.slug).map((c) => (

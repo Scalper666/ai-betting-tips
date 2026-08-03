@@ -76,12 +76,14 @@ const schema = {
             </div>
           )}
 
-          <div class="note">
-            <strong>Key takeaways</strong>
-            <ul style="margin:10px 0 0">
-              {g.takeaways.map((t) => <li>{t}</li>)}
-            </ul>
-          </div>
+          {g.takeaways?.length > 0 && (
+            <div class="note">
+              <strong>Key takeaways</strong>
+              <ul style="margin:10px 0 0">
+                {g.takeaways.map((t) => <li>{t}</li>)}
+              </ul>
+            </div>
+          )}
 
           {g.faq?.length > 0 && (
             <>

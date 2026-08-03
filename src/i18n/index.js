@@ -162,6 +162,7 @@ const D = {
   'home.geo.intl': { en: '🌍 our international ranking', es: '🌍 nuestro ranking internacional', pt: '🌍 nosso ranking internacional', de: '🌍 unserem internationalen Ranking' },
   'home.geo.intlList': { en: 'international list', es: 'lista internacional', pt: 'lista internacional', de: 'internationale Liste' },
   'ft.guides': { en: 'Betting Guides', es: 'Guías de apuestas', pt: 'Guias de apostas', de: 'Wett-Ratgeber' },
+  'cn.readGuide': { en: 'Read the full guide', es: 'Leer la guía completa (en inglés)', pt: 'Ler o guia completo (em inglês)', de: 'Kompletten Ratgeber lesen (Englisch)' },
   'top.aiNote': {
     en: '⚠️ Our AI model is still learning from match data. All predictions are experimental statistical estimates for information purposes only — not financial advice and not an invitation to bet. Outcomes are never guaranteed. 18+ · Gamble responsibly.',
     es: '⚠️ Nuestro modelo de IA sigue aprendiendo de los datos de los partidos. Las predicciones son estimaciones estadísticas experimentales, solo informativas: no son asesoramiento financiero ni una incitación a apostar. Ningún resultado está garantizado. 18+ · Juega con responsabilidad.',
