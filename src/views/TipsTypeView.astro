@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import ToolsBox from '../components/ToolsBox.astro';
 import PredCard from '../components/PredCard.astro';
 import predictions from '../data/predictions.json';
 import content from '../data/content.json';
@@ -105,6 +106,7 @@ const leagues = [...new Set(tips.map((t) => t.league))];
             <a class="tm" href={L(`/tips/${bt.slug}`)}><span class="dot"></span>{bt.emoji} {T(`btype.${bt.slug}.name`)}</a>
           ))}
         </div>
+        <ToolsBox lang={lang} />
       </aside>
     </div>
   </div>

@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import ToolsBox from '../components/ToolsBox.astro';
 import PredCard from '../components/PredCard.astro';
 import BookmakerRow from '../components/BookmakerRow.astro';
 import ModelTracks from '../components/ModelTracks.astro';
@@ -651,6 +652,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
           </div>
         </div>
 
+        <ToolsBox lang={lang} />
       </aside>
     </div>
   </div>

@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import ToolsBox from '../../components/ToolsBox.astro';
 import predictions from '../../data/predictions.json';
 import { buildH2hPairs, pairSlug } from '../../lib/h2h.js';
 import { resolveTeam } from '../../lib/form.js';
@@ -152,6 +153,7 @@ const schema = {
           <a class="tm" href={leagueHref}><span class="dot"></span>{p.league} predictions</a>
           <a class="tm" href="/predictions"><span class="dot"></span>Today's tips</a>
         </div>
+        <ToolsBox />
       </aside>
     </div>
   </div>

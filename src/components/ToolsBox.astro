@@ -1,0 +1,15 @@
+---
+// Sidebar cross-link box for the calculators (tools are EN pages; labels are
+// localized, lhref keeps the links pointing at the EN routes).
+import { t, lhref } from '../i18n/index.js';
+const { lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
+---
+<div class="box">
+  <div class="box-h"><span class="hi">🧮</span> {T('common.tools')}</div>
+  <a class="tm" href={L('/tools/odds-converter')}><span class="dot"></span>{T('ft.oddsConverter')}</a>
+  <a class="tm" href={L('/tools/accumulator-calculator')}><span class="dot"></span>{T('ft.accaCalc')}</a>
+  <a class="tm" href={L('/tools/margin-calculator')}><span class="dot"></span>{T('ft.marginCalc')}</a>
+  <a class="tm" href={L('/dropping-odds')}><span class="dot"></span>{T('ft.droppingOdds')}</a>
+</div>

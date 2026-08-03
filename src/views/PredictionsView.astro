@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import ToolsBox from '../components/ToolsBox.astro';
 import { t, localizeMarket, trLabel, lhref } from '../i18n/index.js';
 import content from '../data/content.json';
 import AiFaq from '../components/AiFaq.astro';
@@ -59,6 +60,7 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
           <a class="tm" href={L('/teams')}><span class="dot"></span>{T('ft.teamsAZ')}</a>
           <a class="tm" href={L('/tipsters')}><span class="dot"></span>{T('pd.records')}</a>
         </div>
+        <ToolsBox lang={lang} />
       </aside>
     </div>
   </div>

@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import ToolsBox from '../components/ToolsBox.astro';
 import PredCard from '../components/PredCard.astro';
 import predictions from '../data/predictions.json';
 import { slugify } from '../lib/utils.js';
@@ -90,6 +91,7 @@ const description = F(`day.${mode}.desc`, { n: tips.length, date: prettyDate });
               <span class="cnt">{tips.filter((x) => x.league === lg).length}</span></a>
           ))}
         </div>
+        <ToolsBox lang={lang} />
       </aside>
     </div>
   </div>

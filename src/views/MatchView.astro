@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import ToolsBox from '../components/ToolsBox.astro';
 import predictions from '../data/predictions.json';
 import historyData from '../data/history.json';
 import screener from '../data/screener.json';
@@ -470,6 +471,7 @@ const schema = {
           <a class="tm" href={L(leagueHref)}><span class="dot"></span>{F('mp.allTips2', { league })}</a>
           <a class="tm" href={L('/predictions')}><span class="dot"></span>{T('mp.todayTips')}</a>
         </div>
+        <ToolsBox lang={lang} />
       </aside>
     </div>
   </div>

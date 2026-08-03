@@ -510,6 +510,8 @@ export const FR = {
   'lg.markets': 'Marchés {league}',
   'lg.mrTips': 'Pronostics résultat du match',
   'lg.ouTips': 'Pronostics plus/moins',
+  'common.tools': 'Outils de paris',
+  'ft.marginCalc': 'Calculateur de marge et value',
   'ft.droppingOdds': 'Cotes en chute',
   'ft.oddsConverter': 'Convertisseur de cotes',
   'ft.accaCalc': 'Calculateur de combiné',
