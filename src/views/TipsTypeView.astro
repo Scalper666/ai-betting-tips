@@ -6,7 +6,7 @@ import content from '../data/content.json';
 import { slugify, faqSchema, signed, kickoffLabel, BUILD_ISO, fmtDate } from '../lib/utils.js';
 import { t, lhref, localizeMarket } from '../i18n/index.js';
 import { BET_TYPES } from '../lib/betTypes.js';
-import { picksForType, recordForType, bttsRates, commonScores, outcomeSplit, accaLegs } from '../lib/tipTypes.js';
+import { picksForType, recordForType, bttsRates, commonScores, outcomeSplit, accaLegs, bttsForecasts, scorelineForecasts } from '../lib/tipTypes.js';
 import { hasLeaguePage } from '../lib/links.js';
 
 // One page per bet type. Each shows what is genuinely true for its market: the
@@ -30,6 +30,9 @@ const accaOdds = legs.reduce((p, x) => p * (Number(x.recommendation?.price) || 1
 const btts = type.slug === 'btts' ? bttsRates() : [];
 const scores = type.slug === 'correct-score' ? commonScores() : null;
 const split = type.slug === 'double-chance' ? outcomeSplit() : null;
+// model estimates for markets we do not issue official picks in
+const bttsFx = type.slug === 'btts' ? bttsForecasts() : [];
+const scoreFx = type.slug === 'correct-score' ? scorelineForecasts() : [];
 
 // league chips: only leagues actually represented in what this page shows
 const shown = picks.length ? picks : legs;
@@ -93,6 +96,60 @@ const leagues = [...new Set(shown.map((x) => x.league))].filter((lg) => hasLeagu
               </div>
             </div>
             <p class="res-note">{T('tt.accaRisk')}</p>
+          </section>
+        )}
+
+
+        {bttsFx.length > 0 && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">{T('tt.bttsFxTitle')}</h2></div>
+            <div class="odds-table"><div class="scr-scroll">
+              <table class="otbl">
+                <thead><tr><th style="text-align:left">{T('mp.thMatch')}</th><th>xG</th><th>{T('tt.thBtts')}</th><th>{T('tt.thFair')}</th></tr></thead>
+                <tbody>
+                  {bttsFx.map((f) => (
+                    <tr>
+                      <td class="o-match" style="font-weight:700">
+                        <a href={L(`/predictions/${f.slug}`)} style="color:inherit">{f.home} v {f.away}</a>
+                        <span style="display:block;font-size:11px;color:var(--text-mute)">{f.league} · {kickoffLabel(f.kickoff, lang)}</span>
+                      </td>
+                      <td class="o-cell"><span>{f.xg}</span></td>
+                      <td class="o-cell hot"><span class="cb">{f.pct}%</span></td>
+                      <td class="o-cell"><span>{f.fair.toFixed(2)}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div></div>
+            <p class="res-note">{T('tt.bttsFxNote')}</p>
+          </section>
+        )}
+
+        {scoreFx.length > 0 && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">{T('tt.scoreFxTitle')}</h2></div>
+            <div class="odds-table"><div class="scr-scroll">
+              <table class="otbl">
+                <thead><tr><th style="text-align:left">{T('mp.thMatch')}</th><th>1</th><th>2</th><th>3</th></tr></thead>
+                <tbody>
+                  {scoreFx.map((f) => (
+                    <tr>
+                      <td class="o-match" style="font-weight:700">
+                        <a href={L(`/predictions/${f.slug}`)} style="color:inherit">{f.home} v {f.away}</a>
+                        <span style="display:block;font-size:11px;color:var(--text-mute)">{f.league} · {kickoffLabel(f.kickoff, lang)}</span>
+                      </td>
+                      {f.top.map((x, i) => (
+                        <td class={`o-cell${i === 0 ? ' hot' : ''}`}>
+                          <span class="cb">{x.score}</span>
+                          <span style="display:block;font-size:10.5px;color:var(--text-mute)">{x.pct}% · {x.fair.toFixed(1)}</span>
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div></div>
+            <p class="res-note">{T('tt.scoreFxNote')}</p>
           </section>
         )}
 

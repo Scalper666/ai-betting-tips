@@ -138,6 +138,28 @@ def outcome_probs(lh: float, la: float) -> dict:
     return {"home": home / tot, "draw": draw / tot, "away": away / tot}
 
 
+def scoreline_probs(lh: float, la: float, top: int = 6) -> list[dict]:
+    """Most likely exact scorelines. The Poisson grid is already computed for
+    1X2 and totals; exposing it costs nothing and answers the "correct score"
+    question directly instead of leaving it to guesswork."""
+    ph, pa = _pois_vec(lh), _pois_vec(la)
+    grid = []
+    tot = 0.0
+    for i in range(MAX_GOALS + 1):
+        for j in range(MAX_GOALS + 1):
+            pr = ph[i] * pa[j]
+            tot += pr
+            grid.append((i, j, pr))
+    grid.sort(key=lambda x: -x[2])
+    return [{"score": f"{i}-{j}", "p": round(pr / tot, 4)} for i, j, pr in grid[:top]]
+
+
+def btts_prob(lh: float, la: float) -> float:
+    """P(both teams score) = 1 - P(home blanks) - P(away blanks) + P(both blank)."""
+    ph, pa = _pois_vec(lh), _pois_vec(la)
+    return 1.0 - ph[0] - pa[0] + ph[0] * pa[0]
+
+
 def totals_probs(lh: float, la: float, point: float) -> dict:
     ph, pa = _pois_vec(lh), _pois_vec(la)
     over = push = under = 0.0
@@ -230,4 +252,6 @@ class GoalModel:
             "lambda_home": round(lh, 3),
             "lambda_away": round(la, 3),
             "games": min(lg.games[th], lg.games[ta]),
+            "scorelines": scoreline_probs(lh, la),
+            "p_btts": round(btts_prob(lh, la), 4),
         }

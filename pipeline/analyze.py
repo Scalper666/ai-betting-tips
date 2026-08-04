@@ -368,7 +368,9 @@ def _tip_obj(event, meta, home, away, best_h2h, recommendation, value_picks, mod
         "recommendation": recommendation,
         "model": ({"xg_home": model_probs["lambda_home"], "xg_away": model_probs["lambda_away"],
                    "p_home": model_probs["p_home"], "p_draw": model_probs["p_draw"],
-                   "p_away": model_probs["p_away"]} if model_probs else None),
+                   "p_away": model_probs["p_away"],
+                   "scorelines": model_probs.get("scorelines"),
+                   "p_btts": model_probs.get("p_btts")} if model_probs else None),
         "value_picks": value_picks[:3],  # top-3 value bets
     }
 

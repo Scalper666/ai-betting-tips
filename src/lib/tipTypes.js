@@ -9,6 +9,7 @@ import predictions from '../data/predictions.json';
 import historyData from '../data/history.json';
 import fdData from '../data/football-data.json';
 import { leagueName } from './leagues.js';
+import { matchSlug } from './utils.js';
 
 const realTip = (h) => h.score !== 'simulated' && !String(h.event_id ?? '').startsWith('mock');
 const soccer = (t) => String(t.sport_key ?? '').startsWith('soccer');
@@ -150,4 +151,44 @@ export function accaLegs(count = 3) {
     if (legs.length >= count) break;
   }
   return legs;
+}
+
+// Fixtures where the Poisson fit is trustworthy, ranked by the model's BTTS
+// probability. These are model estimates, NOT published picks — we issue those
+// only in markets where the edge is measured against a price.
+export function bttsForecasts(limit = 8) {
+  return (predictions.tips ?? [])
+    .filter((t) => soccer(t) && typeof t.model?.p_btts === 'number')
+    .sort((a, b) => b.model.p_btts - a.model.p_btts)
+    .slice(0, limit)
+    .map((t) => ({
+      home: t.home,
+      away: t.away,
+      league: t.league,
+      kickoff: t.kickoff,
+      slug: matchSlug(t),
+      pct: Math.round(t.model.p_btts * 1000) / 10,
+      fair: Math.round((1 / t.model.p_btts) * 100) / 100,
+      xg: `${t.model.xg_home} – ${t.model.xg_away}`,
+    }));
+}
+
+// Upcoming fixtures with their single most likely exact scoreline.
+export function scorelineForecasts(limit = 8) {
+  return (predictions.tips ?? [])
+    .filter((t) => soccer(t) && (t.model?.scorelines ?? []).length > 0)
+    .sort((a, b) => b.model.scorelines[0].p - a.model.scorelines[0].p)
+    .slice(0, limit)
+    .map((t) => ({
+      home: t.home,
+      away: t.away,
+      league: t.league,
+      kickoff: t.kickoff,
+      slug: matchSlug(t),
+      top: t.model.scorelines.slice(0, 3).map((x) => ({
+        score: x.score,
+        pct: Math.round(x.p * 1000) / 10,
+        fair: Math.round((1 / x.p) * 100) / 100,
+      })),
+    }));
 }

@@ -30,6 +30,12 @@ const rec = tip?.recommendation ?? {
   text: latest?.market, price: latest?.odds, bookmaker: latest?.bookmaker,
   confidence: latest?.confidence, edge_pct: latest?.edge_pct,
 };
+// Poisson scoreline distribution + BTTS probability, present only where the
+// model has a trustworthy fit for both sides (see pipeline/model.py MIN_GAMES).
+const mdl = tip?.model ?? null;
+const scorelines = mdl?.scorelines ?? [];
+const pBtts = typeof mdl?.p_btts === 'number' ? mdl.p_btts : null;
+
 const recText = localizeMarket(lang, rec.text);
 const conf = Number(rec.confidence ?? 60);
 const { label, cls } = confidenceLabel(conf);
@@ -218,6 +224,31 @@ const schema = {
                 <div class="rsn"><div class="rn">{String(i + 1).padStart(2, '0')}</div><p>{f}</p></div>
               ))}
             </div>
+          </section>
+        )}
+
+        <!-- Poisson scoreline distribution: answers "correct score" honestly -->
+        {scorelines.length > 0 && (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">{T('mp.slPre')} <b>{T('mp.slBold')}</b></h2>
+              {pBtts !== null && <span class="more-link" style="cursor:default">{T('mp.slBtts')} {Math.round(pBtts * 100)}%</span>}
+            </div>
+            <div class="odds-table"><div class="scr-scroll">
+              <table class="otbl">
+                <thead><tr><th>{T('tt.thScore')}</th><th>{T('mp.slChance')}</th><th>{T('tt.thFair')}</th></tr></thead>
+                <tbody>
+                  {scorelines.map((sc) => (
+                    <tr>
+                      <td class="o-cell" style="font-weight:700"><span>{sc.score}</span></td>
+                      <td class="o-cell"><span>{(sc.p * 100).toFixed(1)}%</span></td>
+                      <td class="o-cell hot"><span class="cb">{(1 / sc.p).toFixed(2)}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div></div>
+            <p class="res-note">{F('mp.slNote', { xgh: Number(mdl.xg_home).toFixed(2), xga: Number(mdl.xg_away).toFixed(2), cov: Math.round(scorelines.reduce((a, x) => a + x.p, 0) * 100) })}</p>
           </section>
         )}
 
