@@ -1,92 +1,16 @@
 {
-  "updated_at": "2026-08-03T22:36:16.395602+00:00",
+  "updated_at": "2026-08-04T01:13:32.697345+00:00",
   "source": "the-odds-api.com",
-  "quota_remaining": "19688",
+  "quota_remaining": "19614",
   "stats": {
-    "total": 312,
+    "total": 310,
     "by_sport": {
-      "⚽": 312
+      "⚽": 310
     },
     "high_confidence": 0,
-    "avg_edge_pct": -3.01
+    "avg_edge_pct": -3.03
   },
   "tips": [
-    {
-      "id": "3d9a2a8a3acc0e687e45dc523d3b3422",
-      "sport_key": "soccer_argentina_primera_division",
-      "sport_icon": "⚽",
-      "league": "Liga Profesional",
-      "league_short": "ARG",
-      "kickoff": "2026-08-03T22:00:00Z",
-      "home": "Velez Sarsfield BA",
-      "away": "Independiente",
-      "best_h2h": {
-        "Independiente": {
-          "price": 3.7,
-          "bookmaker": "Betfair"
-        },
-        "Velez Sarsfield BA": {
-          "price": 2.62,
-          "bookmaker": "Betfair"
-        },
-        "Draw": {
-          "price": 2.78,
-          "bookmaker": "Betfair"
-        }
-      },
-      "recommendation": {
-        "text": "Over 1.5 goals",
-        "price": 1.8,
-        "bookmaker": "Betsson",
-        "confidence": 52,
-        "edge_pct": -6.63,
-        "type": "totals",
-        "side": "Over",
-        "point": 1.5,
-        "official": false,
-        "basis": "market"
-      },
-      "model": null,
-      "value_picks": []
-    },
-    {
-      "id": "a5a3ffad41ec4a1e234e3057d44490e4",
-      "sport_key": "soccer_argentina_primera_division",
-      "sport_icon": "⚽",
-      "league": "Liga Profesional",
-      "league_short": "ARG",
-      "kickoff": "2026-08-03T22:00:00Z",
-      "home": "Platense",
-      "away": "Talleres",
-      "best_h2h": {
-        "Platense": {
-          "price": 3.25,
-          "bookmaker": "Betfair"
-        },
-        "Talleres": {
-          "price": 3.7,
-          "bookmaker": "Betfair"
-        },
-        "Draw": {
-          "price": 2.32,
-          "bookmaker": "Betfair"
-        }
-      },
-      "recommendation": {
-        "text": "Over 1.0 goals",
-        "price": 1.72,
-        "bookmaker": "Betsson",
-        "confidence": 52,
-        "edge_pct": -9.72,
-        "type": "totals",
-        "side": "Over",
-        "point": 1.0,
-        "official": false,
-        "basis": "market"
-      },
-      "model": null,
-      "value_picks": []
-    },
     {
       "id": "004b0d634351d34f62dc5ebb339f8f50",
       "sport_key": "soccer_argentina_primera_division",
@@ -98,27 +22,27 @@
       "away": "Atlético Tucuman",
       "best_h2h": {
         "Atlético Huracán": {
-          "price": 2.18,
+          "price": 2.76,
           "bookmaker": "Betfair"
         },
         "Atlético Tucuman": {
-          "price": 4.6,
+          "price": 5.1,
           "bookmaker": "Betfair"
         },
         "Draw": {
-          "price": 3.0,
-          "bookmaker": "Betfair"
+          "price": 2.25,
+          "bookmaker": "Unibet (SE)"
         }
       },
       "recommendation": {
-        "text": "Over 1.5 goals",
-        "price": 1.66,
-        "bookmaker": "1xBet",
-        "confidence": 59,
-        "edge_pct": -2.72,
+        "text": "Under 1.0 goals",
+        "price": 2.02,
+        "bookmaker": "Pinnacle",
+        "confidence": 48,
+        "edge_pct": -3.44,
         "type": "totals",
-        "side": "Over",
-        "point": 1.5,
+        "side": "Under",
+        "point": 1.0,
         "official": false,
         "basis": "market"
       },
@@ -136,32 +60,43 @@
       "away": "San Lorenzo",
       "best_h2h": {
         "Central Córdoba": {
-          "price": 3.35,
+          "price": 1.52,
           "bookmaker": "Betfair"
         },
         "San Lorenzo": {
-          "price": 2.74,
+          "price": 10.0,
           "bookmaker": "Betfair"
         },
         "Draw": {
-          "price": 3.0,
-          "bookmaker": "1xBet"
+          "price": 4.0,
+          "bookmaker": "Betfair"
         }
       },
       "recommendation": {
-        "text": "Over 1.5 goals",
-        "price": 1.61,
-        "bookmaker": "1xBet",
-        "confidence": 59,
-        "edge_pct": -4.46,
+        "text": "Over 2.5 goals",
+        "price": 2.63,
+        "bookmaker": "Unibet (SE)",
+        "confidence": 37,
+        "edge_pct": -3.67,
         "type": "totals",
         "side": "Over",
-        "point": 1.5,
+        "point": 2.5,
         "official": false,
         "basis": "market"
       },
       "model": null,
-      "value_picks": []
+      "value_picks": [
+        {
+          "outcome": "Draw",
+          "best_price": 4.0,
+          "bookmaker": "Betfair",
+          "fair_prob": 0.261,
+          "implied_prob": 0.25,
+          "edge_pct": 4.39,
+          "kelly": 0.0146,
+          "confidence": 26
+        }
+      ]
     },
     {
       "id": "0b1b3a69c0861f132f738877da640a79",
@@ -182,8 +117,8 @@
           "bookmaker": "Coolbet"
         },
         "Draw": {
-          "price": 3.73,
-          "bookmaker": "1xBet"
+          "price": 3.75,
+          "bookmaker": "Betfair"
         }
       },
       "recommendation": {
@@ -216,7 +151,7 @@
           "bookmaker": "LeoVegas (SE)"
         },
         "NK Celje": {
-          "price": 2.68,
+          "price": 2.7,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -327,6 +262,44 @@
       "value_picks": []
     },
     {
+      "id": "97117bc35c3bf9c416f7914a551e396c",
+      "sport_key": "soccer_uefa_champs_league_qualification",
+      "sport_icon": "⚽",
+      "league": "UCL Qualification",
+      "league_short": "UCLQ",
+      "kickoff": "2026-08-04T18:00:00Z",
+      "home": "Union Saint-Gilloise",
+      "away": "Bodø/Glimt",
+      "best_h2h": {
+        "Bodø/Glimt": {
+          "price": 3.3,
+          "bookmaker": "Betfair"
+        },
+        "Union Saint-Gilloise": {
+          "price": 2.22,
+          "bookmaker": "Betfair"
+        },
+        "Draw": {
+          "price": 3.84,
+          "bookmaker": "Marathon Bet"
+        }
+      },
+      "recommendation": {
+        "text": "Over 2.5 goals",
+        "price": 1.62,
+        "bookmaker": "1xBet",
+        "confidence": 59,
+        "edge_pct": -3.94,
+        "type": "totals",
+        "side": "Over",
+        "point": 2.5,
+        "official": false,
+        "basis": "market"
+      },
+      "model": null,
+      "value_picks": []
+    },
+    {
       "id": "a60dd7580eba6a18dc4695398227781d",
       "sport_key": "soccer_uefa_champs_league_qualification",
       "sport_icon": "⚽",
@@ -337,11 +310,11 @@
       "away": "NEC Nijmegen",
       "best_h2h": {
         "NEC Nijmegen": {
-          "price": 6.2,
-          "bookmaker": "Betfair"
+          "price": 6.0,
+          "bookmaker": "Unibet (NL)"
         },
         "Olympiakos Piraeus": {
-          "price": 1.6,
+          "price": 1.58,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -375,12 +348,12 @@
       "away": "Lyon",
       "best_h2h": {
         "Lyon": {
-          "price": 2.18,
+          "price": 2.22,
           "bookmaker": "Betfair"
         },
         "Sparta Prague": {
-          "price": 3.55,
-          "bookmaker": "LeoVegas (SE)"
+          "price": 3.4,
+          "bookmaker": "Unibet (SE)"
         },
         "Draw": {
           "price": 3.8,
@@ -403,44 +376,6 @@
       "value_picks": []
     },
     {
-      "id": "97117bc35c3bf9c416f7914a551e396c",
-      "sport_key": "soccer_uefa_champs_league_qualification",
-      "sport_icon": "⚽",
-      "league": "UCL Qualification",
-      "league_short": "UCLQ",
-      "kickoff": "2026-08-04T18:00:00Z",
-      "home": "Union Saint-Gilloise",
-      "away": "Bodø/Glimt",
-      "best_h2h": {
-        "Bodø/Glimt": {
-          "price": 3.15,
-          "bookmaker": "Unibet (SE)"
-        },
-        "Union Saint-Gilloise": {
-          "price": 2.28,
-          "bookmaker": "Betfair"
-        },
-        "Draw": {
-          "price": 3.8,
-          "bookmaker": "Marathon Bet"
-        }
-      },
-      "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 2.34,
-        "bookmaker": "1xBet",
-        "confidence": 41,
-        "edge_pct": -3.92,
-        "type": "totals",
-        "side": "Under",
-        "point": 2.5,
-        "official": false,
-        "basis": "market"
-      },
-      "model": null,
-      "value_picks": []
-    },
-    {
       "id": "99a8d4054357fa2be2603ac5cdf8f51a",
       "sport_key": "soccer_uefa_champs_league_qualification",
       "sport_icon": "⚽",
@@ -451,15 +386,15 @@
       "away": "FK Kauno Žalgiris",
       "best_h2h": {
         "Dinamo Zagreb": {
-          "price": 1.19,
+          "price": 1.17,
           "bookmaker": "Nordic Bet"
         },
         "FK Kauno Žalgiris": {
-          "price": 22.0,
+          "price": 25.0,
           "bookmaker": "Nordic Bet"
         },
         "Draw": {
-          "price": 9.2,
+          "price": 9.4,
           "bookmaker": "Betfair"
         }
       },
@@ -527,7 +462,7 @@
       "away": "SK Sturm Graz",
       "best_h2h": {
         "Fenerbahce": {
-          "price": 1.42,
+          "price": 1.43,
           "bookmaker": "Betfair"
         },
         "SK Sturm Graz": {
@@ -578,13 +513,13 @@
         }
       },
       "recommendation": {
-        "text": "Under 1.5 goals",
-        "price": 2.42,
+        "text": "Over 1.5 goals",
+        "price": 1.58,
         "bookmaker": "1xBet",
-        "confidence": 39,
-        "edge_pct": -5.15,
+        "confidence": 60,
+        "edge_pct": -5.2,
         "type": "totals",
-        "side": "Under",
+        "side": "Over",
         "point": 1.5,
         "official": false,
         "basis": "market"
@@ -603,16 +538,16 @@
       "away": "Belgrano de Cordoba",
       "best_h2h": {
         "Belgrano de Cordoba": {
-          "price": 3.3,
-          "bookmaker": "Betfair"
+          "price": 3.29,
+          "bookmaker": "BetOnline.ag"
         },
         "CA Tigre BA": {
           "price": 2.7,
           "bookmaker": "Unibet (SE)"
         },
         "Draw": {
-          "price": 2.94,
-          "bookmaker": "Betfair"
+          "price": 2.92,
+          "bookmaker": "Nordic Bet"
         }
       },
       "recommendation": {
@@ -641,11 +576,11 @@
       "away": "Lanus",
       "best_h2h": {
         "Lanus": {
-          "price": 3.55,
-          "bookmaker": "Unibet (SE)"
+          "price": 3.5,
+          "bookmaker": "Betfair"
         },
         "Union Santa Fe": {
-          "price": 2.4,
+          "price": 2.44,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -655,10 +590,10 @@
       },
       "recommendation": {
         "text": "Over 1.5 goals",
-        "price": 1.57,
+        "price": 1.53,
         "bookmaker": "Unibet (SE)",
-        "confidence": 61,
-        "edge_pct": -4.78,
+        "confidence": 62,
+        "edge_pct": -5.82,
         "type": "totals",
         "side": "Over",
         "point": 1.5,
@@ -759,7 +694,7 @@
           "bookmaker": "Coolbet"
         },
         "Pogoń Szczecin": {
-          "price": 2.05,
+          "price": 2.03,
           "bookmaker": "Coolbet"
         },
         "Draw": {
@@ -785,20 +720,20 @@
           "outcome": "Draw",
           "best_price": 3.75,
           "bookmaker": "Coolbet",
-          "fair_prob": 0.301,
+          "fair_prob": 0.3016,
           "implied_prob": 0.2667,
-          "edge_pct": 12.86,
-          "kelly": 0.0468,
+          "edge_pct": 13.1,
+          "kelly": 0.0476,
           "confidence": 30
         },
         {
           "outcome": "Motor Lublin",
           "best_price": 3.4,
           "bookmaker": "Coolbet",
-          "fair_prob": 0.3157,
+          "fair_prob": 0.3164,
           "implied_prob": 0.2941,
-          "edge_pct": 7.35,
-          "kelly": 0.0306,
+          "edge_pct": 7.58,
+          "kelly": 0.0316,
           "confidence": 32
         }
       ]
@@ -852,8 +787,8 @@
       "away": "Viborg FF",
       "best_h2h": {
         "SonderjyskE": {
-          "price": 3.07,
-          "bookmaker": "Pinnacle"
+          "price": 3.1,
+          "bookmaker": "Tipico"
         },
         "Viborg FF": {
           "price": 2.33,
@@ -890,8 +825,8 @@
       "away": "WSG Tirol",
       "best_h2h": {
         "Rheindorf Altach": {
-          "price": 2.18,
-          "bookmaker": "Betfair"
+          "price": 2.16,
+          "bookmaker": "Pinnacle"
         },
         "WSG Tirol": {
           "price": 3.62,
@@ -1004,7 +939,7 @@
       "away": "KV Kortrijk",
       "best_h2h": {
         "Club Brugge": {
-          "price": 1.27,
+          "price": 1.28,
           "bookmaker": "Betfair"
         },
         "KV Kortrijk": {
@@ -1012,18 +947,18 @@
           "bookmaker": "Nordic Bet"
         },
         "Draw": {
-          "price": 6.7,
-          "bookmaker": "Tipico"
+          "price": 6.66,
+          "bookmaker": "1xBet"
         }
       },
       "recommendation": {
-        "text": "Over 3.5 goals",
-        "price": 2.17,
-        "bookmaker": "BetOnline.ag",
-        "confidence": 45,
-        "edge_pct": -3.12,
+        "text": "Under 3.5 goals",
+        "price": 1.75,
+        "bookmaker": "1xBet",
+        "confidence": 55,
+        "edge_pct": -3.53,
         "type": "totals",
-        "side": "Over",
+        "side": "Under",
         "point": 3.5,
         "official": false,
         "basis": "market"
@@ -1069,9 +1004,9 @@
       "model": {
         "xg_home": 1.232,
         "xg_away": 1.313,
-        "p_home": 0.3473,
+        "p_home": 0.3474,
         "p_draw": 0.267,
-        "p_away": 0.3857
+        "p_away": 0.3856
       },
       "value_picks": []
     },
@@ -1090,7 +1025,7 @@
           "bookmaker": "Unibet (SE)"
         },
         "Rosario Central": {
-          "price": 1.58,
+          "price": 1.55,
           "bookmaker": "Betsson"
         },
         "Draw": {
@@ -1100,10 +1035,10 @@
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 2.48,
+        "price": 2.42,
         "bookmaker": "Betsson",
-        "confidence": 39,
-        "edge_pct": -3.49,
+        "confidence": 40,
+        "edge_pct": -4.41,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -1895,8 +1830,8 @@
       "away": "Aberdeen",
       "best_h2h": {
         "Aberdeen": {
-          "price": 2.65,
-          "bookmaker": "Pinnacle"
+          "price": 2.68,
+          "bookmaker": "Betsson"
         },
         "Dundee FC": {
           "price": 2.69,
@@ -2034,11 +1969,11 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 2.354,
+        "xg_home": 2.353,
         "xg_away": 1.281,
-        "p_home": 0.6129,
+        "p_home": 0.6128,
         "p_draw": 0.1903,
-        "p_away": 0.1968
+        "p_away": 0.1969
       },
       "value_picks": []
     },
@@ -2197,10 +2132,10 @@
           "outcome": "Motor Lublin",
           "best_price": 3.85,
           "bookmaker": "Pinnacle",
-          "fair_prob": 0.269,
+          "fair_prob": 0.2678,
           "implied_prob": 0.2597,
-          "edge_pct": 3.58,
-          "kelly": 0.0126,
+          "edge_pct": 3.09,
+          "kelly": 0.0108,
           "confidence": 27
         }
       ]
@@ -2398,10 +2333,10 @@
           "outcome": "Willem II",
           "best_price": 5.4,
           "bookmaker": "Unibet (NL)",
-          "fair_prob": 0.198,
+          "fair_prob": 0.1981,
           "implied_prob": 0.1852,
-          "edge_pct": 6.89,
-          "kelly": 0.0157,
+          "edge_pct": 6.95,
+          "kelly": 0.0158,
           "confidence": 20
         }
       ]
@@ -2500,14 +2435,14 @@
       "best_h2h": {
         "Atlético Tucuman": {
           "price": 1.82,
-          "bookmaker": "1xBet"
+          "bookmaker": "Unibet (SE)"
         },
         "Sarmiento de Junin": {
           "price": 5.2,
           "bookmaker": "Codere (IT)"
         },
         "Draw": {
-          "price": 3.25,
+          "price": 3.26,
           "bookmaker": "1xBet"
         }
       },
@@ -2529,10 +2464,10 @@
           "outcome": "Sarmiento de Junin",
           "best_price": 5.2,
           "bookmaker": "Codere (IT)",
-          "fair_prob": 0.2173,
+          "fair_prob": 0.2171,
           "implied_prob": 0.1923,
-          "edge_pct": 13.0,
-          "kelly": 0.031,
+          "edge_pct": 12.9,
+          "kelly": 0.0307,
           "confidence": 22
         }
       ]
@@ -2611,11 +2546,11 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 3.475,
+        "xg_home": 3.474,
         "xg_away": 1.138,
-        "p_home": 0.8073,
+        "p_home": 0.8071,
         "p_draw": 0.1101,
-        "p_away": 0.0826
+        "p_away": 0.0827
       },
       "value_picks": []
     },
@@ -2883,10 +2818,10 @@
       },
       "recommendation": {
         "text": "Under 2.5 goals",
-        "price": 1.79,
+        "price": 1.78,
         "bookmaker": "Unibet (SE)",
         "confidence": 54,
-        "edge_pct": -2.95,
+        "edge_pct": -3.24,
         "type": "totals",
         "side": "Under",
         "point": 2.5,
@@ -3019,10 +2954,10 @@
           "outcome": "Draw",
           "best_price": 3.86,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2713,
+          "fair_prob": 0.2715,
           "implied_prob": 0.2591,
-          "edge_pct": 4.73,
-          "kelly": 0.0165,
+          "edge_pct": 4.79,
+          "kelly": 0.0168,
           "confidence": 27
         }
       ]
@@ -3157,8 +3092,8 @@
       "model": {
         "xg_home": 2.175,
         "xg_away": 0.872,
-        "p_home": 0.6715,
-        "p_draw": 0.1904,
+        "p_home": 0.6714,
+        "p_draw": 0.1905,
         "p_away": 0.1381
       },
       "value_picks": []
@@ -3191,7 +3126,7 @@
         "price": 2.67,
         "bookmaker": "BetOnline.ag",
         "confidence": 41,
-        "edge_pct": 8.45,
+        "edge_pct": 8.46,
         "type": "h2h",
         "outcome": "Botafogo",
         "official": true,
@@ -3407,9 +3342,9 @@
       "model": {
         "xg_home": 1.269,
         "xg_away": 1.8,
-        "p_home": 0.2701,
+        "p_home": 0.2702,
         "p_draw": 0.231,
-        "p_away": 0.4989
+        "p_away": 0.4988
       },
       "value_picks": [
         {
@@ -3511,8 +3446,8 @@
       "away": "Dynamo Dresden",
       "best_h2h": {
         "1. FC Nürnberg": {
-          "price": 2.1,
-          "bookmaker": "Winamax (DE)"
+          "price": 2.12,
+          "bookmaker": "Betfair"
         },
         "Dynamo Dresden": {
           "price": 3.3,
@@ -3674,7 +3609,7 @@
       "away": "Degerfors IF",
       "best_h2h": {
         "Degerfors IF": {
-          "price": 8.0,
+          "price": 7.5,
           "bookmaker": "Unibet (SE)"
         },
         "Malmo FF": {
@@ -3682,16 +3617,16 @@
           "bookmaker": "GTbets"
         },
         "Draw": {
-          "price": 5.1,
+          "price": 4.8,
           "bookmaker": "Unibet (SE)"
         }
       },
       "recommendation": {
         "text": "Under 2.5 goals",
-        "price": 2.23,
-        "bookmaker": "Unibet (SE)",
-        "confidence": 43,
-        "edge_pct": -3.22,
+        "price": 2.2,
+        "bookmaker": "GTbets",
+        "confidence": 44,
+        "edge_pct": -3.79,
         "type": "totals",
         "side": "Under",
         "point": 2.5,
@@ -3702,12 +3637,12 @@
       "value_picks": [
         {
           "outcome": "Draw",
-          "best_price": 5.1,
+          "best_price": 4.8,
           "bookmaker": "Unibet (SE)",
-          "fair_prob": 0.2156,
-          "implied_prob": 0.1961,
-          "edge_pct": 9.95,
-          "kelly": 0.0243,
+          "fair_prob": 0.2162,
+          "implied_prob": 0.2083,
+          "edge_pct": 3.76,
+          "kelly": 0.0099,
           "confidence": 22
         }
       ]
@@ -3826,9 +3761,9 @@
       "model": {
         "xg_home": 1.371,
         "xg_away": 1.213,
-        "p_home": 0.4051,
+        "p_home": 0.4052,
         "p_draw": 0.2639,
-        "p_away": 0.331
+        "p_away": 0.3309
       },
       "value_picks": []
     },
@@ -3868,11 +3803,11 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 1.279,
-        "xg_away": 1.83,
-        "p_home": 0.2679,
+        "xg_home": 1.28,
+        "xg_away": 1.829,
+        "p_home": 0.268,
         "p_draw": 0.2288,
-        "p_away": 0.5033
+        "p_away": 0.5032
       },
       "value_picks": []
     },
@@ -3962,8 +3897,8 @@
       "away": "Genk",
       "best_h2h": {
         "Genk": {
-          "price": 2.22,
-          "bookmaker": "Betfair"
+          "price": 2.21,
+          "bookmaker": "Pinnacle"
         },
         "SV Zulte-Waregem": {
           "price": 3.2,
@@ -4048,7 +3983,7 @@
           "bookmaker": "Coolbet"
         },
         "Hearts": {
-          "price": 1.62,
+          "price": 1.64,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -4275,10 +4210,10 @@
           "outcome": "FC Luzern",
           "best_price": 3.51,
           "bookmaker": "Pinnacle",
-          "fair_prob": 0.2959,
+          "fair_prob": 0.2964,
           "implied_prob": 0.2849,
-          "edge_pct": 3.87,
-          "kelly": 0.0154,
+          "edge_pct": 4.02,
+          "kelly": 0.016,
           "confidence": 30
         }
       ]
@@ -4346,10 +4281,10 @@
       },
       "recommendation": {
         "text": "Under 2.5 goals",
-        "price": 2.45,
+        "price": 2.48,
         "bookmaker": "Nordic Bet",
         "confidence": 38,
-        "edge_pct": -6.96,
+        "edge_pct": -6.53,
         "type": "totals",
         "side": "Under",
         "point": 2.5,
@@ -4362,10 +4297,10 @@
           "outcome": "Draw",
           "best_price": 5.0,
           "bookmaker": "Coolbet",
-          "fair_prob": 0.2184,
+          "fair_prob": 0.2156,
           "implied_prob": 0.2,
-          "edge_pct": 9.19,
-          "kelly": 0.023,
+          "edge_pct": 7.79,
+          "kelly": 0.0195,
           "confidence": 22
         }
       ]
@@ -4408,8 +4343,8 @@
       "model": {
         "xg_home": 1.506,
         "xg_away": 1.468,
-        "p_home": 0.3863,
-        "p_draw": 0.2442,
+        "p_home": 0.3864,
+        "p_draw": 0.2441,
         "p_away": 0.3695
       },
       "value_picks": []
@@ -4689,7 +4624,7 @@
           "bookmaker": "Betsson"
         },
         "RAAL La Louvière": {
-          "price": 4.8,
+          "price": 4.9,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -4778,7 +4713,7 @@
         "price": 1.92,
         "bookmaker": "Pinnacle",
         "confidence": 49,
-        "edge_pct": 16.85,
+        "edge_pct": 16.86,
         "type": "totals",
         "side": "Under",
         "point": 3.0,
@@ -4786,11 +4721,11 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 2.176,
+        "xg_home": 2.175,
         "xg_away": 0.549,
-        "p_home": 0.75,
-        "p_draw": 0.1706,
-        "p_away": 0.0794
+        "p_home": 0.7499,
+        "p_draw": 0.1707,
+        "p_away": 0.0795
       },
       "value_picks": []
     },
@@ -4809,7 +4744,7 @@
           "bookmaker": "Nordic Bet"
         },
         "SK Beveren": {
-          "price": 5.7,
+          "price": 5.6,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -4833,12 +4768,12 @@
       "value_picks": [
         {
           "outcome": "SK Beveren",
-          "best_price": 5.7,
+          "best_price": 5.6,
           "bookmaker": "Betfair",
-          "fair_prob": 0.1863,
-          "implied_prob": 0.1754,
-          "edge_pct": 6.19,
-          "kelly": 0.0132,
+          "fair_prob": 0.1865,
+          "implied_prob": 0.1786,
+          "edge_pct": 4.41,
+          "kelly": 0.0096,
           "confidence": 19
         }
       ]
@@ -4996,7 +4931,7 @@
         "price": 1.64,
         "bookmaker": "1xBet",
         "confidence": 65,
-        "edge_pct": 5.92,
+        "edge_pct": 5.91,
         "type": "h2h",
         "outcome": "Palmeiras",
         "official": true,
@@ -5005,8 +4940,8 @@
       "model": {
         "xg_home": 2.255,
         "xg_away": 0.662,
-        "p_home": 0.7362,
-        "p_draw": 0.1704,
+        "p_home": 0.7361,
+        "p_draw": 0.1705,
         "p_away": 0.0934
       },
       "value_picks": []
@@ -5093,9 +5028,9 @@
       "model": {
         "xg_home": 1.084,
         "xg_away": 1.616,
-        "p_home": 0.2549,
+        "p_home": 0.255,
         "p_draw": 0.2477,
-        "p_away": 0.4974
+        "p_away": 0.4972
       },
       "value_picks": [
         {
@@ -5158,9 +5093,9 @@
       "model": {
         "xg_home": 1.818,
         "xg_away": 0.893,
-        "p_home": 0.5919,
+        "p_home": 0.5918,
         "p_draw": 0.2269,
-        "p_away": 0.1811
+        "p_away": 0.1812
       },
       "value_picks": [
         {
@@ -5186,7 +5121,7 @@
       "away": "Académico de Viseu",
       "best_h2h": {
         "Académico de Viseu": {
-          "price": 27.0,
+          "price": 25.0,
           "bookmaker": "Betfair"
         },
         "Benfica": {
@@ -5195,7 +5130,7 @@
         },
         "Draw": {
           "price": 10.0,
-          "bookmaker": "Tipico"
+          "bookmaker": "Betfair"
         }
       },
       "recommendation": {
@@ -5224,7 +5159,7 @@
       "away": "Barracas Central",
       "best_h2h": {
         "Barracas Central": {
-          "price": 5.65,
+          "price": 5.7,
           "bookmaker": "1xBet"
         },
         "Gimnasia La Plata": {
@@ -5262,7 +5197,7 @@
       "away": "Newells Old Boys",
       "best_h2h": {
         "Defensa y Justicia": {
-          "price": 2.48,
+          "price": 2.46,
           "bookmaker": "1xBet"
         },
         "Newells Old Boys": {
@@ -5304,8 +5239,8 @@
           "bookmaker": "Matchbook"
         },
         "Santos": {
-          "price": 2.25,
-          "bookmaker": "BetOnline.ag"
+          "price": 2.2,
+          "bookmaker": "Coolbet"
         },
         "Draw": {
           "price": 3.4,
@@ -5317,7 +5252,7 @@
         "price": 2.13,
         "bookmaker": "GTbets",
         "confidence": 45,
-        "edge_pct": -3.93,
+        "edge_pct": -3.63,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -5327,9 +5262,9 @@
       "model": {
         "xg_home": 1.183,
         "xg_away": 1.194,
-        "p_home": 0.3581,
+        "p_home": 0.3582,
         "p_draw": 0.2782,
-        "p_away": 0.3636
+        "p_away": 0.3635
       },
       "value_picks": []
     },
@@ -5369,7 +5304,7 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 1.255,
+        "xg_home": 1.256,
         "xg_away": 0.92,
         "p_home": 0.4404,
         "p_draw": 0.2878,
@@ -5414,9 +5349,9 @@
       },
       "model": {
         "xg_home": 2.297,
-        "xg_away": 0.589,
-        "p_home": 0.7603,
-        "p_draw": 0.161,
+        "xg_away": 0.59,
+        "p_home": 0.7602,
+        "p_draw": 0.1611,
         "p_away": 0.0787
       },
       "value_picks": []
@@ -5470,8 +5405,8 @@
       "away": "OB Odense BK",
       "best_h2h": {
         "OB Odense BK": {
-          "price": 2.62,
-          "bookmaker": "Nordic Bet"
+          "price": 2.67,
+          "bookmaker": "GTbets"
         },
         "Silkeborg IF": {
           "price": 2.54,
@@ -5546,8 +5481,8 @@
       "away": "Djurgardens IF",
       "best_h2h": {
         "Djurgardens IF": {
-          "price": 1.75,
-          "bookmaker": "Coolbet"
+          "price": 1.82,
+          "bookmaker": "GTbets"
         },
         "Västerås SK": {
           "price": 5.1,
@@ -5576,20 +5511,20 @@
           "outcome": "Västerås SK",
           "best_price": 5.1,
           "bookmaker": "Unibet (SE)",
-          "fair_prob": 0.2409,
+          "fair_prob": 0.2405,
           "implied_prob": 0.1961,
-          "edge_pct": 22.84,
-          "kelly": 0.0557,
+          "edge_pct": 22.64,
+          "kelly": 0.0552,
           "confidence": 24
         },
         {
           "outcome": "Draw",
           "best_price": 4.31,
           "bookmaker": "Pinnacle",
-          "fair_prob": 0.251,
+          "fair_prob": 0.2515,
           "implied_prob": 0.232,
-          "edge_pct": 8.2,
-          "kelly": 0.0248,
+          "edge_pct": 8.4,
+          "kelly": 0.0254,
           "confidence": 25
         }
       ]
@@ -5605,8 +5540,8 @@
       "away": "Nacional",
       "best_h2h": {
         "Nacional": {
-          "price": 4.08,
-          "bookmaker": "Pinnacle"
+          "price": 4.17,
+          "bookmaker": "GTbets"
         },
         "Santa Clara": {
           "price": 1.95,
@@ -5633,7 +5568,7 @@
         "xg_home": 1.181,
         "xg_away": 0.904,
         "p_home": 0.4227,
-        "p_draw": 0.297,
+        "p_draw": 0.2969,
         "p_away": 0.2804
       },
       "value_picks": []
@@ -5649,16 +5584,16 @@
       "away": "Belgrano de Cordoba",
       "best_h2h": {
         "Banfield": {
-          "price": 3.1,
-          "bookmaker": "1xBet"
+          "price": 3.15,
+          "bookmaker": "Betsson"
         },
         "Belgrano de Cordoba": {
           "price": 2.57,
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 2.93,
-          "bookmaker": "1xBet"
+          "price": 3.05,
+          "bookmaker": "Betsson"
         }
       },
       "recommendation": {
@@ -5733,8 +5668,8 @@
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 2.82,
-          "bookmaker": "1xBet"
+          "price": 2.98,
+          "bookmaker": "Nordic Bet"
         }
       },
       "recommendation": {
@@ -6117,7 +6052,7 @@
       "best_h2h": {
         "Plymouth Argyle": {
           "price": 2.29,
-          "bookmaker": "1xBet"
+          "bookmaker": "Pinnacle"
         },
         "Stockport County FC": {
           "price": 3.13,
@@ -6346,7 +6281,7 @@
         "xg_away": 0.925,
         "p_home": 0.492,
         "p_draw": 0.2668,
-        "p_away": 0.2411
+        "p_away": 0.2412
       },
       "value_picks": []
     },
@@ -6464,7 +6399,7 @@
       "model": {
         "xg_home": 1.176,
         "xg_away": 1.201,
-        "p_home": 0.3548,
+        "p_home": 0.3549,
         "p_draw": 0.2782,
         "p_away": 0.367
       },
@@ -6632,7 +6567,7 @@
       "model": {
         "xg_home": 1.078,
         "xg_away": 1.333,
-        "p_home": 0.3018,
+        "p_home": 0.3019,
         "p_draw": 0.2731,
         "p_away": 0.4251
       },
@@ -6673,7 +6608,7 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 1.118,
+        "xg_home": 1.119,
         "xg_away": 1.268,
         "p_home": 0.3255,
         "p_draw": 0.2766,
@@ -6983,10 +6918,10 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 1.152,
+        "xg_home": 1.153,
         "xg_away": 0.876,
-        "p_home": 0.4207,
-        "p_draw": 0.3019,
+        "p_home": 0.4208,
+        "p_draw": 0.3018,
         "p_away": 0.2774
       },
       "value_picks": []
@@ -7082,7 +7017,7 @@
           "bookmaker": "1xBet"
         },
         "Grêmio": {
-          "price": 4.79,
+          "price": 4.83,
           "bookmaker": "1xBet"
         },
         "Draw": {
@@ -7149,9 +7084,9 @@
       "model": {
         "xg_home": 1.085,
         "xg_away": 1.257,
-        "p_home": 0.3181,
+        "p_home": 0.3182,
         "p_draw": 0.2793,
-        "p_away": 0.4026
+        "p_away": 0.4025
       },
       "value_picks": []
     },
@@ -7229,9 +7164,9 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 1.239,
+        "xg_home": 1.24,
         "xg_away": 1.078,
-        "p_home": 0.399,
+        "p_home": 0.3991,
         "p_draw": 0.2812,
         "p_away": 0.3197
       },
@@ -7314,7 +7249,7 @@
         "price": 2.11,
         "bookmaker": "1xBet",
         "confidence": 49,
-        "edge_pct": 3.09,
+        "edge_pct": 3.08,
         "type": "h2h",
         "outcome": "Atletico Paranaense",
         "official": true,
@@ -7323,7 +7258,7 @@
       "model": {
         "xg_home": 1.481,
         "xg_away": 0.772,
-        "p_home": 0.5406,
+        "p_home": 0.5405,
         "p_draw": 0.2643,
         "p_away": 0.1952
       },
@@ -7839,7 +7774,7 @@
           "bookmaker": "Coolbet"
         },
         "Monterrey": {
-          "price": 1.56,
+          "price": 1.55,
           "bookmaker": "1xBet"
         },
         "Draw": {
@@ -7990,10 +7925,10 @@
           "outcome": "Draw",
           "best_price": 5.27,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2016,
+          "fair_prob": 0.2017,
           "implied_prob": 0.1898,
-          "edge_pct": 6.25,
-          "kelly": 0.0146,
+          "edge_pct": 6.27,
+          "kelly": 0.0147,
           "confidence": 20
         }
       ]
@@ -8113,7 +8048,7 @@
         "price": 2.15,
         "bookmaker": "Codere (IT)",
         "confidence": 49,
-        "edge_pct": 4.62,
+        "edge_pct": 4.61,
         "type": "h2h",
         "outcome": "Southampton",
         "official": true,
@@ -8122,9 +8057,9 @@
       "model": {
         "xg_home": 1.086,
         "xg_away": 1.786,
-        "p_home": 0.2298,
-        "p_draw": 0.2325,
-        "p_away": 0.5377
+        "p_home": 0.2299,
+        "p_draw": 0.2326,
+        "p_away": 0.5376
       },
       "value_picks": [
         {
@@ -8177,9 +8112,9 @@
       "model": {
         "xg_home": 1.102,
         "xg_away": 1.645,
-        "p_home": 0.2548,
+        "p_home": 0.2549,
         "p_draw": 0.2449,
-        "p_away": 0.5003
+        "p_away": 0.5001
       },
       "value_picks": []
     },
@@ -8397,13 +8332,13 @@
         }
       },
       "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 2.05,
-        "bookmaker": "William Hill",
-        "confidence": 47,
-        "edge_pct": -3.59,
+        "text": "Under 2.5 goals",
+        "price": 1.81,
+        "bookmaker": "1xBet",
+        "confidence": 53,
+        "edge_pct": -3.87,
         "type": "totals",
-        "side": "Over",
+        "side": "Under",
         "point": 2.5,
         "official": false,
         "basis": "market"
@@ -8633,8 +8568,8 @@
           "bookmaker": "Nordic Bet"
         },
         "Eyüpspor": {
-          "price": 9.6,
-          "bookmaker": "Codere (IT)"
+          "price": 9.5,
+          "bookmaker": "Coolbet"
         },
         "Draw": {
           "price": 5.7,
@@ -8659,10 +8594,10 @@
           "outcome": "Draw",
           "best_price": 5.7,
           "bookmaker": "Tipico",
-          "fair_prob": 0.1814,
+          "fair_prob": 0.182,
           "implied_prob": 0.1754,
-          "edge_pct": 3.42,
-          "kelly": 0.0073,
+          "edge_pct": 3.73,
+          "kelly": 0.0079,
           "confidence": 18
         }
       ]
@@ -8695,7 +8630,7 @@
         "price": 2.04,
         "bookmaker": "1xBet",
         "confidence": 52,
-        "edge_pct": 5.41,
+        "edge_pct": 5.39,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -8703,7 +8638,7 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 1.692,
+        "xg_home": 1.691,
         "xg_away": 1.352,
         "p_home": 0.4551,
         "p_draw": 0.2373,
@@ -8739,7 +8674,7 @@
         "price": 2.12,
         "bookmaker": "1xBet",
         "confidence": 50,
-        "edge_pct": 5.61,
+        "edge_pct": 5.58,
         "type": "h2h",
         "outcome": "Celta Vigo",
         "official": true,
@@ -8748,9 +8683,9 @@
       "model": {
         "xg_home": 1.713,
         "xg_away": 0.984,
-        "p_home": 0.5449,
+        "p_home": 0.5448,
         "p_draw": 0.2389,
-        "p_away": 0.2162
+        "p_away": 0.2163
       },
       "value_picks": []
     },
@@ -8867,10 +8802,10 @@
       },
       "model": {
         "xg_home": 1.111,
-        "xg_away": 1.472,
-        "p_home": 0.2858,
+        "xg_away": 1.471,
+        "p_home": 0.2859,
         "p_draw": 0.2598,
-        "p_away": 0.4543
+        "p_away": 0.4542
       },
       "value_picks": []
     },
@@ -8914,7 +8849,7 @@
         "xg_away": 1.347,
         "p_home": 0.3399,
         "p_draw": 0.2648,
-        "p_away": 0.3954
+        "p_away": 0.3953
       },
       "value_picks": []
     },
@@ -9646,7 +9581,7 @@
       "best_h2h": {
         "Internacional": {
           "price": 1.62,
-          "bookmaker": "1xBet"
+          "bookmaker": "Coolbet"
         },
         "Remo": {
           "price": 5.81,
@@ -9672,9 +9607,9 @@
       "model": {
         "xg_home": 1.541,
         "xg_away": 1.07,
-        "p_home": 0.4819,
+        "p_home": 0.4818,
         "p_draw": 0.2547,
-        "p_away": 0.2634
+        "p_away": 0.2635
       },
       "value_picks": []
     },
@@ -9730,22 +9665,22 @@
           "bookmaker": "Tipico"
         },
         "Necaxa": {
-          "price": 2.22,
-          "bookmaker": "Nordic Bet"
+          "price": 2.3,
+          "bookmaker": "Coolbet"
         },
         "Draw": {
-          "price": 3.55,
-          "bookmaker": "Nordic Bet"
+          "price": 3.6,
+          "bookmaker": "Coolbet"
         }
       },
       "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 2.04,
-        "bookmaker": "1xBet",
-        "confidence": 46,
-        "edge_pct": -5.8,
+        "text": "Over 2.5 goals",
+        "price": 1.76,
+        "bookmaker": "Coolbet",
+        "confidence": 54,
+        "edge_pct": -5.52,
         "type": "totals",
-        "side": "Under",
+        "side": "Over",
         "point": 2.5,
         "official": false,
         "basis": "market"
@@ -10001,8 +9936,8 @@
           "bookmaker": "Coolbet"
         },
         "Orlando City SC": {
-          "price": 3.24,
-          "bookmaker": "MyBookie.ag"
+          "price": 3.22,
+          "bookmaker": "Marathon Bet"
         },
         "Draw": {
           "price": 4.59,
@@ -10027,20 +9962,20 @@
           "outcome": "Draw",
           "best_price": 4.59,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2444,
+          "fair_prob": 0.2405,
           "implied_prob": 0.2179,
-          "edge_pct": 12.16,
-          "kelly": 0.0339,
+          "edge_pct": 10.37,
+          "kelly": 0.0289,
           "confidence": 24
         },
         {
           "outcome": "Orlando City SC",
-          "best_price": 3.24,
-          "bookmaker": "MyBookie.ag",
-          "fair_prob": 0.319,
-          "implied_prob": 0.3086,
-          "edge_pct": 3.36,
-          "kelly": 0.015,
+          "best_price": 3.22,
+          "bookmaker": "Marathon Bet",
+          "fair_prob": 0.3211,
+          "implied_prob": 0.3106,
+          "edge_pct": 3.4,
+          "kelly": 0.0153,
           "confidence": 32
         }
       ]
@@ -10271,10 +10206,10 @@
           "outcome": "Draw",
           "best_price": 4.37,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2606,
+          "fair_prob": 0.2604,
           "implied_prob": 0.2288,
-          "edge_pct": 13.87,
-          "kelly": 0.0412,
+          "edge_pct": 13.81,
+          "kelly": 0.041,
           "confidence": 26
         },
         {
@@ -10283,7 +10218,7 @@
           "bookmaker": "Marathon Bet",
           "fair_prob": 0.2407,
           "implied_prob": 0.2151,
-          "edge_pct": 11.94,
+          "edge_pct": 11.92,
           "kelly": 0.0327,
           "confidence": 24
         }
@@ -10643,7 +10578,7 @@
         "xg_away": 0.902,
         "p_home": 0.5216,
         "p_draw": 0.2572,
-        "p_away": 0.2212
+        "p_away": 0.2213
       },
       "value_picks": [
         {
@@ -10740,9 +10675,9 @@
       "model": {
         "xg_home": 2.136,
         "xg_away": 1.202,
-        "p_home": 0.5872,
+        "p_home": 0.5871,
         "p_draw": 0.2049,
-        "p_away": 0.2079
+        "p_away": 0.208
       },
       "value_picks": []
     },
@@ -10900,7 +10835,7 @@
         "xg_away": 1.041,
         "p_home": 0.4721,
         "p_draw": 0.2612,
-        "p_away": 0.2667
+        "p_away": 0.2668
       },
       "value_picks": []
     },
@@ -10932,7 +10867,7 @@
         "price": 2.32,
         "bookmaker": "1xBet",
         "confidence": 45,
-        "edge_pct": 3.9,
+        "edge_pct": 3.89,
         "type": "h2h",
         "outcome": "Nottingham Forest",
         "official": true,
@@ -11015,23 +10950,23 @@
         }
       },
       "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 2.34,
+        "text": "Over 2.5 goals",
+        "price": 1.7,
         "bookmaker": "1xBet",
-        "confidence": 45,
-        "edge_pct": 5.31,
+        "confidence": 58,
+        "edge_pct": -1.53,
         "type": "totals",
-        "side": "Under",
+        "side": "Over",
         "point": 2.5,
-        "official": true,
+        "official": false,
         "basis": "model+market"
       },
       "model": {
         "xg_home": 1.845,
-        "xg_away": 0.854,
-        "p_home": 0.6076,
+        "xg_away": 0.855,
+        "p_home": 0.6075,
         "p_draw": 0.2231,
-        "p_away": 0.1692
+        "p_away": 0.1693
       },
       "value_picks": []
     },
@@ -11070,11 +11005,11 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 1.73,
+        "xg_home": 1.729,
         "xg_away": 1.104,
         "p_home": 0.5202,
         "p_draw": 0.2375,
-        "p_away": 0.2422
+        "p_away": 0.2423
       },
       "value_picks": []
     },
@@ -11115,10 +11050,10 @@
       },
       "model": {
         "xg_home": 0.91,
-        "xg_away": 1.534,
-        "p_home": 0.2237,
+        "xg_away": 1.533,
+        "p_home": 0.2238,
         "p_draw": 0.2575,
-        "p_away": 0.5188
+        "p_away": 0.5187
       },
       "value_picks": []
     },
@@ -11133,7 +11068,7 @@
       "away": "Monza",
       "best_h2h": {
         "Inter Milan": {
-          "price": 1.26,
+          "price": 1.25,
           "bookmaker": "1xBet"
         },
         "Monza": {
@@ -11319,8 +11254,8 @@
         "xg_home": 0.993,
         "xg_away": 1.036,
         "p_home": 0.3361,
-        "p_draw": 0.3058,
-        "p_away": 0.3582
+        "p_draw": 0.3057,
+        "p_away": 0.3581
       },
       "value_picks": []
     },
@@ -11400,9 +11335,9 @@
       "model": {
         "xg_home": 1.275,
         "xg_away": 1.502,
-        "p_home": 0.3224,
+        "p_home": 0.3225,
         "p_draw": 0.2522,
-        "p_away": 0.4255
+        "p_away": 0.4254
       },
       "value_picks": []
     },
@@ -11484,7 +11419,7 @@
         "xg_away": 1.396,
         "p_home": 0.3841,
         "p_draw": 0.2509,
-        "p_away": 0.365
+        "p_away": 0.3649
       },
       "value_picks": [
         {
@@ -11537,9 +11472,9 @@
       "model": {
         "xg_home": 0.951,
         "xg_away": 1.471,
-        "p_home": 0.2441,
+        "p_home": 0.2442,
         "p_draw": 0.2637,
-        "p_away": 0.4922
+        "p_away": 0.4921
       },
       "value_picks": []
     },
@@ -11617,11 +11552,11 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 1.076,
-        "xg_away": 1.629,
-        "p_home": 0.2511,
+        "xg_home": 1.077,
+        "xg_away": 1.628,
+        "p_home": 0.2513,
         "p_draw": 0.2467,
-        "p_away": 0.5022
+        "p_away": 0.502
       },
       "value_picks": []
     },
@@ -11663,9 +11598,9 @@
       "model": {
         "xg_home": 0.847,
         "xg_away": 1.334,
-        "p_home": 0.2374,
+        "p_home": 0.2376,
         "p_draw": 0.2814,
-        "p_away": 0.4812
+        "p_away": 0.481
       },
       "value_picks": [
         {
@@ -11699,8 +11634,8 @@
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 5.25,
-          "bookmaker": "BetOnline.ag"
+          "price": 5.3,
+          "bookmaker": "Betfair"
         }
       },
       "recommendation": {
@@ -11708,7 +11643,7 @@
         "price": 1.98,
         "bookmaker": "Pinnacle",
         "confidence": 55,
-        "edge_pct": 8.73,
+        "edge_pct": 8.75,
         "type": "totals",
         "side": "Under",
         "point": 3.25,
@@ -11716,9 +11651,9 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 2.01,
+        "xg_home": 2.009,
         "xg_away": 0.985,
-        "p_home": 0.6113,
+        "p_home": 0.6112,
         "p_draw": 0.2104,
         "p_away": 0.1783
       },
@@ -11779,7 +11714,7 @@
       "away": "Villarreal",
       "best_h2h": {
         "Atlético Madrid": {
-          "price": 1.92,
+          "price": 1.94,
           "bookmaker": "Codere (IT)"
         },
         "Villarreal": {
@@ -11808,27 +11743,27 @@
         "xg_away": 1.319,
         "p_home": 0.4676,
         "p_draw": 0.2365,
-        "p_away": 0.2959
+        "p_away": 0.2958
       },
       "value_picks": [
         {
           "outcome": "Villarreal",
           "best_price": 4.75,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2295,
+          "fair_prob": 0.2303,
           "implied_prob": 0.2105,
-          "edge_pct": 9.0,
-          "kelly": 0.024,
+          "edge_pct": 9.4,
+          "kelly": 0.0251,
           "confidence": 23
         },
         {
           "outcome": "Draw",
           "best_price": 3.92,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2684,
+          "fair_prob": 0.2694,
           "implied_prob": 0.2551,
-          "edge_pct": 5.2,
-          "kelly": 0.0178,
+          "edge_pct": 5.61,
+          "kelly": 0.0192,
           "confidence": 27
         }
       ]
@@ -11871,9 +11806,9 @@
       "model": {
         "xg_home": 1.284,
         "xg_away": 1.405,
-        "p_home": 0.3429,
+        "p_home": 0.343,
         "p_draw": 0.2582,
-        "p_away": 0.3989
+        "p_away": 0.3988
       },
       "value_picks": [
         {
@@ -11916,7 +11851,7 @@
         "price": 1.84,
         "bookmaker": "Pinnacle",
         "confidence": 57,
-        "edge_pct": 4.02,
+        "edge_pct": 4.03,
         "type": "totals",
         "side": "Under",
         "point": 3.25,
@@ -11925,7 +11860,7 @@
       },
       "model": {
         "xg_home": 1.529,
-        "xg_away": 1.539,
+        "xg_away": 1.538,
         "p_home": 0.378,
         "p_draw": 0.2399,
         "p_away": 0.3821
@@ -11935,10 +11870,10 @@
           "outcome": "Newcastle United",
           "best_price": 3.5,
           "bookmaker": "Betfair",
-          "fair_prob": 0.2968,
+          "fair_prob": 0.2969,
           "implied_prob": 0.2857,
-          "edge_pct": 3.88,
-          "kelly": 0.0155,
+          "edge_pct": 3.91,
+          "kelly": 0.0157,
           "confidence": 30
         }
       ]
@@ -12280,9 +12215,9 @@
       "model": {
         "xg_home": 1.069,
         "xg_away": 1.591,
-        "p_home": 0.2553,
+        "p_home": 0.2554,
         "p_draw": 0.2502,
-        "p_away": 0.4945
+        "p_away": 0.4944
       },
       "value_picks": []
     },
@@ -12323,7 +12258,7 @@
       },
       "model": {
         "xg_home": 1.473,
-        "xg_away": 0.949,
+        "xg_away": 0.95,
         "p_home": 0.4932,
         "p_draw": 0.2635,
         "p_away": 0.2433
@@ -12396,7 +12331,7 @@
         "price": 1.75,
         "bookmaker": "1xBet",
         "confidence": 59,
-        "edge_pct": 3.88,
+        "edge_pct": 3.9,
         "type": "totals",
         "side": "Under",
         "point": 3.5,
@@ -12405,10 +12340,10 @@
       },
       "model": {
         "xg_home": 1.108,
-        "xg_away": 1.923,
-        "p_home": 0.2158,
+        "xg_away": 1.922,
+        "p_home": 0.216,
         "p_draw": 0.2208,
-        "p_away": 0.5634
+        "p_away": 0.5632
       },
       "value_picks": []
     },
@@ -12547,11 +12482,11 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 1.651,
-        "xg_away": 0.807,
-        "p_home": 0.5743,
-        "p_draw": 0.2438,
-        "p_away": 0.1819
+        "xg_home": 1.65,
+        "xg_away": 0.808,
+        "p_home": 0.5742,
+        "p_draw": 0.2439,
+        "p_away": 0.182
       },
       "value_picks": []
     },
@@ -12716,9 +12651,9 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 2.599,
+        "xg_home": 2.598,
         "xg_away": 0.977,
-        "p_home": 0.7216,
+        "p_home": 0.7214,
         "p_draw": 0.1592,
         "p_away": 0.1193
       },
@@ -12752,7 +12687,7 @@
         "price": 1.45,
         "bookmaker": "1xBet",
         "confidence": 73,
-        "edge_pct": 5.14,
+        "edge_pct": 5.13,
         "type": "h2h",
         "outcome": "Barcelona",
         "official": true,
@@ -12761,7 +12696,7 @@
       "model": {
         "xg_home": 2.821,
         "xg_away": 0.744,
-        "p_home": 0.8017,
+        "p_home": 0.8015,
         "p_draw": 0.1272,
         "p_away": 0.0712
       },
@@ -12795,7 +12730,7 @@
         "price": 1.69,
         "bookmaker": "1xBet",
         "confidence": 62,
-        "edge_pct": 4.09,
+        "edge_pct": 4.08,
         "type": "totals",
         "side": "Over",
         "point": 3.5,
@@ -12803,11 +12738,11 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 3.103,
+        "xg_home": 3.102,
         "xg_away": 1.446,
-        "p_home": 0.7047,
+        "p_home": 0.7046,
         "p_draw": 0.1469,
-        "p_away": 0.1484
+        "p_away": 0.1485
       },
       "value_picks": []
     },
@@ -12849,9 +12784,9 @@
       "model": {
         "xg_home": 1.553,
         "xg_away": 1.867,
-        "p_home": 0.3236,
+        "p_home": 0.3237,
         "p_draw": 0.223,
-        "p_away": 0.4534
+        "p_away": 0.4533
       },
       "value_picks": []
     },
@@ -12883,7 +12818,7 @@
         "price": 1.78,
         "bookmaker": "1xBet",
         "confidence": 59,
-        "edge_pct": 4.81,
+        "edge_pct": 4.79,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -12892,7 +12827,7 @@
       },
       "model": {
         "xg_home": 1.706,
-        "xg_away": 1.597,
+        "xg_away": 1.596,
         "p_home": 0.4082,
         "p_draw": 0.2298,
         "p_away": 0.362
@@ -13057,7 +12992,7 @@
       "away": "Hamburger SV",
       "best_h2h": {
         "Borussia Dortmund": {
-          "price": 1.35,
+          "price": 1.36,
           "bookmaker": "1xBet"
         },
         "Hamburger SV": {
@@ -13065,7 +13000,7 @@
           "bookmaker": "Unibet (SE)"
         },
         "Draw": {
-          "price": 5.79,
+          "price": 5.74,
           "bookmaker": "1xBet"
         }
       },
@@ -13095,11 +13030,11 @@
       "away": "Werder Bremen",
       "best_h2h": {
         "SC Freiburg": {
-          "price": 2.14,
+          "price": 2.09,
           "bookmaker": "1xBet"
         },
         "Werder Bremen": {
-          "price": 3.67,
+          "price": 3.74,
           "bookmaker": "1xBet"
         },
         "Draw": {
@@ -13108,22 +13043,23 @@
         }
       },
       "recommendation": {
-        "text": "SC Freiburg to win",
-        "price": 2.14,
-        "bookmaker": "1xBet",
+        "text": "Over 2.75 goals",
+        "price": 1.95,
+        "bookmaker": "Pinnacle",
         "confidence": 49,
-        "edge_pct": 5.07,
-        "type": "h2h",
-        "outcome": "SC Freiburg",
-        "official": true,
+        "edge_pct": -4.28,
+        "type": "totals",
+        "side": "Over",
+        "point": 2.75,
+        "official": false,
         "basis": "model+market"
       },
       "model": {
         "xg_home": 1.773,
         "xg_away": 1.09,
-        "p_home": 0.5337,
+        "p_home": 0.5336,
         "p_draw": 0.2337,
-        "p_away": 0.2326
+        "p_away": 0.2327
       },
       "value_picks": []
     },
@@ -13138,8 +13074,8 @@
       "away": "FC Schalke 04",
       "best_h2h": {
         "Augsburg": {
-          "price": 2.26,
-          "bookmaker": "1xBet"
+          "price": 2.18,
+          "bookmaker": "Codere (IT)"
         },
         "FC Schalke 04": {
           "price": 3.4,
