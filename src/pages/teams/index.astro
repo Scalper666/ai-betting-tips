@@ -1,62 +1,107 @@
 ---
 import Base from '../../layouts/Base.astro';
-import predictions from '../../data/predictions.json';
-import historyData from '../../data/history.json';
-import { abbr, badgeColor, slugify } from '../../lib/utils.js';
+import ToolsBox from '../../components/ToolsBox.astro';
+import { teamDirectory } from '../../lib/teams.js';
+import { abbr, badgeColor, slugify, BUILD_ISO, fmtDate } from '../../lib/utils.js';
 
-// A–Z hub of every team we have ever tipped on — crawl path into the team pages.
-const teams = new Map();   // slug -> { name, leagues:Set, n }
-const touch = (name, league) => {
-  if (!name) return;
-  const slug = slugify(name);
-  if (!teams.has(slug)) teams.set(slug, { name, leagues: new Set(), n: 0 });
-  const t = teams.get(slug);
-  t.n += 1;
-  if (league) t.leagues.add(league);
-};
-for (const h of Object.values(historyData.tips ?? {})) {
-  if (h.score === 'simulated' || String(h.event_id ?? '').startsWith('mock')) continue;
-  touch(h.home, h.league); touch(h.away, h.league);
-}
-for (const t of predictions.tips ?? []) {
-  touch(t.home, t.league); touch(t.away, t.league);
-}
+// ── Club directory. Lists competitions plus the most-tipped clubs in each,
+//    with the full lists on /teams/{league}: one flat page of ~270 clubs is
+//    past the point where crawlers follow every link.
+const { teams, byLeague, leagueNames } = teamDirectory();
 
-// group by league for a scannable directory
-const byLeague = {};
-for (const [slug, t] of teams) {
-  const lg = [...t.leagues][0] ?? 'Other';
-  (byLeague[lg] ??= []).push({ slug, ...t });
-}
-for (const lg in byLeague) byLeague[lg].sort((a, b) => a.name.localeCompare(b.name));
-const leagueNames = Object.keys(byLeague).sort();
+const leagues = leagueNames
+  .map((name) => ({
+    name,
+    n: byLeague[name].length,
+    top: [...byLeague[name]].sort((a, b) => b.n - a.n).slice(0, 6),
+  }))
+  .sort((a, b) => b.n - a.n);
 
 const title = 'All Teams A–Z — Betting Tips & Records by Club';
 const description = `Betting tips and a fully settled record for every club we cover — ${teams.size} teams across ${leagueNames.length} competitions.`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Clubs by competition',
+  numberOfItems: leagues.length,
+  itemListElement: leagues.map((l, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: `${l.name} clubs`,
+    url: `https://ai-betting-tips.com/teams/${slugify(l.name)}/`,
+  })),
+};
 ---
-<Base title={title} description={description} active="predictions">
+<Base title={title} description={description} schema={schema} updated={BUILD_ISO} active="predictions">
   <div class="container">
     <div class="page-head">
       <div class="crumbs"><a href="/">Home</a><span>/</span>Teams</div>
       <h1>Teams <em>A–Z</em></h1>
-      <p class="lead">{teams.size} clubs across {leagueNames.length} competitions — every team links to its tips page with our full, openly settled record.</p>
+      <p class="lead">{teams.size} clubs across {leagueNames.length} competitions — every team links to its tips page with our full, openly settled record. Choose a competition for the complete club list.</p>
+      <p class="upd-line">Updated {fmtDate(BUILD_ISO)} · <a href="/editorial-policy">how we work</a></p>
     </div>
   </div>
 
-  <div class="container" style="padding-bottom:60px">
-    {leagueNames.map((lg) => (
-      <section style="margin-top:26px">
-        <div class="sec-head"><h2 class="sec-title">{lg} <b>({byLeague[lg].length})</b></h2></div>
-        <div class="team-grid">
-          {byLeague[lg].map((t) => (
-            <a class="team-card" href={`/team/${t.slug}`}>
-              <span class="badge" style={`background:${badgeColor(t.name)}`}>{abbr(t.name)}</span>
-              <span class="tc-name">{t.name}</span>
-              <span class="tc-n">{t.n} tip{t.n === 1 ? '' : 's'}</span>
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">Browse <b>by competition</b></h2>
+            <a href="/predictions" class="more-link">Today's tips →</a>
+          </div>
+          <div class="bt-grid">
+            {leagues.map((l) => (
+              <a href={`/teams/${slugify(l.name)}`} class="bt-tile">
+                <div class="ic">👥</div>
+                <div>
+                  <h4>{l.name}</h4>
+                  <p>{l.n} club{l.n === 1 ? '' : 's'} covered</p>
+                </div>
+                <span class="arr">→</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        {leagues.slice(0, 6).map((l) => (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">{l.name} <b>most-tipped clubs</b></h2>
+              <a href={`/teams/${slugify(l.name)}`} class="more-link">All {l.n} →</a>
+            </div>
+            <div class="team-grid">
+              {l.top.map((t) => (
+                <a class="team-card" href={`/team/${t.slug}`}>
+                  <span class="badge" style={`background:${badgeColor(t.name)}`}>{abbr(t.name)}</span>
+                  <span class="tc-name">{t.name}</span>
+                  <span class="tc-n">{t.n} tip{t.n === 1 ? '' : 's'}</span>
+                </a>
+              ))}
+            </div>
+          </section>
+        ))}
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">👥</span> Clubs by competition</div>
+          {leagues.map((l) => (
+            <a class="tm" href={`/teams/${slugify(l.name)}`}>
+              <span class="dot"></span>{l.name}<span class="cnt">{l.n}</span>
             </a>
           ))}
         </div>
-      </section>
-    ))}
+        <div class="box">
+          <div class="box-h"><span class="hi">⚡</span> Live pages</div>
+          <a class="tm" href="/h2h"><span class="dot"></span>Head-to-head records</a>
+          <a class="tm" href="/table"><span class="dot"></span>League tables</a>
+          <a class="tm" href="/screener"><span class="dot"></span>AI value screener</a>
+          <a class="tm" href="/seasons"><span class="dot"></span>Season hubs</a>
+        </div>
+        <ToolsBox lang="en" />
+      </aside>
+    </div>
   </div>
 </Base>

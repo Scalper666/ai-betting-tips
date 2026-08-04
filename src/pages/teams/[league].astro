@@ -1,0 +1,101 @@
+---
+import Base from '../../layouts/Base.astro';
+import ToolsBox from '../../components/ToolsBox.astro';
+import { teamDirectory } from '../../lib/teams.js';
+import { hasLeaguePage, hasTablePage, hasH2hHub } from '../../lib/links.js';
+import { abbr, badgeColor, slugify, BUILD_ISO, fmtDate } from '../../lib/utils.js';
+
+// ── Per-competition club directory. /teams used to list all ~270 clubs on one
+//    page; splitting by league keeps each hub small enough that crawlers
+//    actually follow every club link.
+export function getStaticPaths() {
+  const { byLeague } = teamDirectory();
+  return Object.entries(byLeague).map(([league, list]) => ({
+    params: { league: slugify(league) },
+    props: { league, list },
+  }));
+}
+
+const { league, list } = Astro.props;
+const { byLeague } = teamDirectory();
+const others = Object.entries(byLeague)
+  .filter(([l]) => l !== league)
+  .map(([l, arr]) => ({ name: l, n: arr.length }))
+  .sort((a, b) => b.n - a.n);
+
+const totalTips = list.reduce((a, t) => a + t.n, 0);
+
+const title = `${league} Clubs — Betting Tips and Records by Team`;
+const description = `Every ${league} club we cover (${list.length} teams): each page carries our tips for that side and its fully settled record, wins and losses alike.`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `${league} clubs`,
+  numberOfItems: list.length,
+  itemListElement: list.slice(0, 30).map((t, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: t.name,
+    url: `https://ai-betting-tips.com/team/${t.slug}/`,
+  })),
+};
+---
+<Base title={title} description={description} schema={schema} updated={BUILD_ISO} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href="/">Home</a><span>/</span><a href="/teams">Teams</a><span>/</span>{league}
+      </div>
+      <h1>{league} <em>clubs</em></h1>
+      <p class="lead">{list.length} clubs, {totalTips} tips published across them. Each club page shows our upcoming picks for that side plus its complete settled record — nothing curated out.</p>
+      <p class="upd-line">Updated {fmtDate(BUILD_ISO)} · <a href="/editorial-policy">how we work</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">All <b>{league} clubs</b></h2>
+            {hasLeaguePage(league) && <a href={`/league/${slugify(league)}`} class="more-link">League tips →</a>}
+          </div>
+          <div class="team-grid">
+            {list.map((t) => (
+              <a class="team-card" href={`/team/${t.slug}`}>
+                <span class="badge" style={`background:${badgeColor(t.name)}`}>{abbr(t.name)}</span>
+                <span class="tc-name">{t.name}</span>
+                <span class="tc-n">{t.n} tip{t.n === 1 ? '' : 's'}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section class="seo">
+          <h2>What a club page gives you</h2>
+          <p>Each {league} club page pulls together the same three things: the fixtures our model has priced for that side, its record on our published picks — settled automatically against real scores — and the head-to-head history behind its upcoming games. The record includes losing runs, because a track record that only shows wins is marketing rather than evidence.</p>
+          <p>Club-level records are small samples by nature. A side we have tipped a dozen times can show a wild profit or loss on pure variance, which is why the honest way to read them is as a log of what we said and what happened, not as a forecast of the next bet.</p>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">🏆</span> {league}</div>
+          {hasLeaguePage(league) && <a class="tm" href={`/league/${slugify(league)}`}><span class="dot"></span>{league} predictions</a>}
+          {hasTablePage(league) && <a class="tm" href={`/table/${slugify(league)}`}><span class="dot"></span>{league} table</a>}
+          {hasH2hHub(league) && <a class="tm" href={`/h2h/league/${slugify(league)}`}><span class="dot"></span>{league} H2H records</a>}
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">👥</span> Clubs by competition</div>
+          {others.map((l) => (
+            <a class="tm" href={`/teams/${slugify(l.name)}`}>
+              <span class="dot"></span>{l.name}<span class="cnt">{l.n}</span>
+            </a>
+          ))}
+        </div>
+        <ToolsBox lang="en" />
+      </aside>
+    </div>
+  </div>
+</Base>

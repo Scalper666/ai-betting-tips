@@ -7,6 +7,7 @@ import predictions from '../../data/predictions.json';
 import historyData from '../../data/history.json';
 import { leagueTable } from '../../lib/form.js';
 import { slugify, faqSchema, signed, BUILD_ISO, fmtDate } from '../../lib/utils.js';
+import { hasLeaguePage, hasTablePage, hasH2hHub } from '../../lib/links.js';
 
 // ── Season hubs: one evergreen page per league season. Fixtures, standings and
 //    our settled record all come from the live pipeline, so the page stays
@@ -85,7 +86,7 @@ const schema = { '@context': 'https://schema.org', ...faqSchema(s.faq) };
         <section>
           <div class="sec-head">
             <h2 class="sec-title">Upcoming <b>{s.league} fixtures</b></h2>
-            <a href={`/league/${slugify(s.league)}`} class="more-link">League hub →</a>
+            {hasLeaguePage(s.league) && <a href={`/league/${slugify(s.league)}`} class="more-link">League hub →</a>}
           </div>
           {fixtures.length > 0 ? (
             <div class="pred-grid">
@@ -183,8 +184,9 @@ const schema = { '@context': 'https://schema.org', ...faqSchema(s.faq) };
       <aside class="sidebar">
         <div class="box">
           <div class="box-h"><span class="hi">⚽</span> {s.league} pages</div>
-          <a class="tm" href={`/league/${slugify(s.league)}`}><span class="dot"></span>League hub &amp; live tips</a>
-          {table && <a class="tm" href={`/table/${slugify(s.league)}`}><span class="dot"></span>{s.league} table</a>}
+          {hasLeaguePage(s.league) && <a class="tm" href={`/league/${slugify(s.league)}`}><span class="dot"></span>League hub &amp; live tips</a>}
+          {hasTablePage(s.league) && <a class="tm" href={`/table/${slugify(s.league)}`}><span class="dot"></span>{s.league} table</a>}
+          {hasH2hHub(s.league) && <a class="tm" href={`/h2h/league/${slugify(s.league)}`}><span class="dot"></span>{s.league} H2H records</a>}
           <a class="tm" href="/predictions/today"><span class="dot"></span>Today's predictions</a>
           <a class="tm" href="/screener"><span class="dot"></span>AI value screener</a>
           <a class="tm" href="/h2h"><span class="dot"></span>Head-to-head archive</a>

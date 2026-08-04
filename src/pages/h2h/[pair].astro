@@ -52,7 +52,7 @@ const schema = {
     <div class="page-head">
       <div class="crumbs">
         <a href="/">Home</a><span>/</span>
-        <a href="/h2h">H2H</a><span>/</span>
+        <a href="/h2h">H2H</a><span>/</span><a href={`/h2h/league/${slugify(p.league)}`}>{p.league}</a><span>/</span>
         {p.teamA} vs {p.teamB}
       </div>
       <h1>{p.teamA} vs {p.teamB} <em>head-to-head</em></h1>
@@ -146,7 +146,8 @@ const schema = {
           {others.map((x) => (
             <a class="tm" href={`/h2h/${x.slug}`}><span class="dot"></span>{x.teamA} v {x.teamB}</a>
           ))}
-          <a class="tm" href="/h2h"><span class="dot"></span>All head-to-heads</a>
+          <a class="tm" href={`/h2h/league/${slugify(p.league)}`}><span class="dot"></span>All {p.league} H2H</a>
+          <a class="tm" href="/h2h"><span class="dot"></span>Every competition</a>
         </div>
         <div class="box">
           <div class="box-h"><span class="hi">🏆</span> {p.league}</div>

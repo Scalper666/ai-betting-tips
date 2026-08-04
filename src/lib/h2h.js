@@ -1,5 +1,6 @@
 import fd from '../data/football-data.json';
 import archive from '../data/results-archive.json';
+import { leagueName } from './leagues.js';
 
 // ── Head-to-head page data: every pair of teams that met at least twice in
 //    our results dataset (football-data seasons + own archive). Slug is the
@@ -17,7 +18,7 @@ export const pairSlug = (a, b) => {
 function sources() {
   const out = [];
   for (const [sk, lg] of Object.entries(fd.leagues ?? {})) {
-    if ((lg.results ?? []).length) out.push({ sk, name: lg.name, results: lg.results });
+    if ((lg.results ?? []).length) out.push({ sk, name: leagueName(sk, lg.name), results: lg.results });
   }
   const bySk = {};
   for (const g of Object.values(archive.games ?? {})) {
@@ -25,7 +26,11 @@ function sources() {
     (bySk[g.sk] ??= []).push({ d: g.d, h: g.h, a: g.a, hs: g.hs, as: g.as });
   }
   for (const [sk, results] of Object.entries(bySk)) {
-    if (results.length >= 10) out.push({ sk, name: sk.replace('soccer_', '').replace(/_/g, ' '), results });
+    if (results.length >= 10) {
+      const fallback = sk.replace('soccer_', '').replace(/_/g, ' ')
+        .replace(/\b\w/g, (c) => c.toUpperCase());
+      out.push({ sk, name: leagueName(sk, fallback), results });
+    }
   }
   return out;
 }

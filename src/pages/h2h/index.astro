@@ -1,40 +1,118 @@
 ---
 import Base from '../../layouts/Base.astro';
+import ToolsBox from '../../components/ToolsBox.astro';
 import { buildH2hPairs } from '../../lib/h2h.js';
+import { slugify, BUILD_ISO, fmtDate } from '../../lib/utils.js';
 
-// Directory of every head-to-head page, grouped by league.
+// ── H2H directory. Deliberately does NOT list every pairing: with ~1700 pair
+//    pages, a flat index hides them all behind one over-linked page and search
+//    engines stop following. This lists competitions plus a few headline
+//    fixtures each; /h2h/league/{slug} carries the full lists.
 const pairs = buildH2hPairs();
 const byLeague = {};
 for (const p of pairs) (byLeague[p.league] ??= []).push(p);
+
 const leagues = Object.entries(byLeague)
-  .map(([name, list]) => [name, list.sort((a, b) => b.stats.n - a.stats.n)])
-  .sort((a, b) => b[1].length - a[1].length);
+  .map(([name, list]) => ({
+    name,
+    n: list.length,
+    meetings: list.reduce((a, p) => a + p.stats.n, 0),
+    top: [...list].sort((a, b) => b.stats.n - a.stats.n).slice(0, 5),
+  }))
+  .sort((a, b) => b.n - a.n);
+
+const totalMeetings = pairs.reduce((a, p) => a + p.stats.n, 0);
 
 const title = 'Football Head-to-Head Records (H2H) — Every Pair, Every Meeting';
 const description = `Head-to-head records for ${pairs.length} team pairings across ${leagues.length} leagues: wins, draws, goals and the full list of past meetings from our results dataset.`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Head-to-head records by league',
+  numberOfItems: leagues.length,
+  itemListElement: leagues.map((l, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: `${l.name} head-to-head records`,
+    url: `https://ai-betting-tips.com/h2h/league/${slugify(l.name)}/`,
+  })),
+};
 ---
-<Base title={title} description={description} active="predictions">
+<Base title={title} description={description} schema={schema} updated={BUILD_ISO} active="predictions">
   <div class="container">
     <div class="page-head">
       <div class="crumbs"><a href="/">Home</a><span>/</span>H2H</div>
       <h1>Head-to-head <em>records</em></h1>
-      <p class="lead">{pairs.length} team pairings across {leagues.length} leagues — wins, draws, goal stats and every past meeting in our dataset, updated daily.</p>
+      <p class="lead">{pairs.length} team pairings across {leagues.length} competitions, built from {totalMeetings} recorded meetings — wins, draws, goal averages and every past result. Pick a competition to see its full list.</p>
+      <p class="upd-line">Dataset refreshed {fmtDate(BUILD_ISO)} · <a href="/editorial-policy">how we work</a></p>
     </div>
   </div>
 
-  <div class="container" style="padding-bottom:60px">
-    {leagues.map(([name, list]) => (
-      <section style="margin-top:30px">
-        <div class="sec-head"><h2 class="sec-title">{name} <b>({list.length})</b></h2></div>
-        <div class="team-grid">
-          {list.map((p) => (
-            <a class="tm" href={`/h2h/${p.slug}`}>
-              <span class="dot"></span>{p.teamA} v {p.teamB}
-              <span class="cnt">{p.stats.n}</span>
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">Browse <b>by competition</b></h2>
+            <a href="/predictions" class="more-link">Today's tips →</a>
+          </div>
+          <div class="bt-grid">
+            {leagues.map((l) => (
+              <a href={`/h2h/league/${slugify(l.name)}`} class="bt-tile">
+                <div class="ic">⚔️</div>
+                <div>
+                  <h4>{l.name}</h4>
+                  <p>{l.n} pairings · {l.meetings} meetings on record</p>
+                </div>
+                <span class="arr">→</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        {leagues.slice(0, 6).map((l) => (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">{l.name} <b>most-played fixtures</b></h2>
+              <a href={`/h2h/league/${slugify(l.name)}`} class="more-link">All {l.n} →</a>
+            </div>
+            <div class="team-grid">
+              {l.top.map((p) => (
+                <a class="tm" href={`/h2h/${p.slug}`}>
+                  <span class="dot"></span>{p.teamA} v {p.teamB}
+                  <span class="cnt">{p.stats.n}</span>
+                </a>
+              ))}
+            </div>
+          </section>
+        ))}
+
+        <section class="seo">
+          <h2>What head-to-head data is actually good for</h2>
+          <p>Every betting site publishes H2H records, and most readers over-trust them. A meeting from four seasons ago involved different squads, different coaches and often a different division — it says almost nothing about the next ninety minutes. Our model ignores H2H history completely, working instead from each club's current scoring and conceding rates.</p>
+          <p>What survives scrutiny is the aggregate. Pairings that reliably produce goals — or reliably strangle each other — often reflect a structural tactical mismatch rather than coincidence, and that is worth checking against the current totals line. Read these pages for that, and for the history; take the probability from the price and the model.</p>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">⚔️</span> H2H by league</div>
+          {leagues.map((l) => (
+            <a class="tm" href={`/h2h/league/${slugify(l.name)}`}>
+              <span class="dot"></span>{l.name}<span class="cnt">{l.n}</span>
             </a>
           ))}
         </div>
-      </section>
-    ))}
+        <div class="box">
+          <div class="box-h"><span class="hi">⚡</span> Live pages</div>
+          <a class="tm" href="/screener"><span class="dot"></span>AI value screener</a>
+          <a class="tm" href="/table"><span class="dot"></span>League tables</a>
+          <a class="tm" href="/teams"><span class="dot"></span>Teams A–Z</a>
+          <a class="tm" href="/seasons"><span class="dot"></span>Season hubs</a>
+        </div>
+        <ToolsBox lang="en" />
+      </aside>
+    </div>
   </div>
 </Base>
