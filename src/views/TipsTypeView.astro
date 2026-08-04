@@ -2,14 +2,18 @@
 import Base from '../layouts/Base.astro';
 import ToolsBox from '../components/ToolsBox.astro';
 import PredCard from '../components/PredCard.astro';
-import predictions from '../data/predictions.json';
 import content from '../data/content.json';
-import { slugify, faqSchema } from '../lib/utils.js';
-import { t, lhref } from '../i18n/index.js';
-
-// One SEO page per bet type — same pattern as leagues and matches.
+import { slugify, faqSchema, signed, kickoffLabel, BUILD_ISO, fmtDate } from '../lib/utils.js';
+import { t, lhref, localizeMarket } from '../i18n/index.js';
 import { BET_TYPES } from '../lib/betTypes.js';
+import { picksForType, recordForType, bttsRates, commonScores, outcomeSplit, accaLegs } from '../lib/tipTypes.js';
+import { hasLeaguePage } from '../lib/links.js';
 
+// One page per bet type. Each shows what is genuinely true for its market: the
+// model's live picks where it makes them, our settled record in that market,
+// and base rates from the results dataset for markets we do NOT price (BTTS,
+// correct score, double chance). Previously every type rendered the same six
+// fixtures, which made these pages near-duplicates of each other.
 const { type, lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
 const L = (pth) => lhref(lang, pth);
@@ -18,13 +22,24 @@ const tname = T(`btype.${type.slug}.name`);
 const tlong = T(`btype.${type.slug}.long`);
 const ai = (content.entries ?? {})[lang === 'en' ? `tips:${type.slug}` : `${lang}:tips:${type.slug}`];
 const schema = ai?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(ai.faq) } : null;
-const tips = (predictions.tips ?? []).filter((t) => String(t.sport_key ?? '').startsWith('soccer')).slice(0, 6);
-const leagues = [...new Set(tips.map((t) => t.league))];
+
+const picks = picksForType(type.slug);
+const record = recordForType(type.slug);
+const legs = type.slug === 'accumulator' ? accaLegs(3) : [];
+const accaOdds = legs.reduce((p, x) => p * (Number(x.recommendation?.price) || 1), 1);
+const btts = type.slug === 'btts' ? bttsRates() : [];
+const scores = type.slug === 'correct-score' ? commonScores() : null;
+const split = type.slug === 'double-chance' ? outcomeSplit() : null;
+
+// league chips: only leagues actually represented in what this page shows
+const shown = picks.length ? picks : legs;
+const leagues = [...new Set(shown.map((x) => x.league))].filter((lg) => hasLeaguePage(lg));
 ---
 <Base lang={lang} i18nPath={`/tips/${type.slug}`}
   title={F('tt.title', { name: tname })}
   description={F('tt.desc', { name: tname.toLowerCase() })}
   schema={schema}
+  updated={BUILD_ISO}
   active="predictions">
 
   <div class="container">
@@ -32,21 +47,142 @@ const leagues = [...new Set(tips.map((t) => t.league))];
       <div class="crumbs"><a href={L('/')}>{T('crumb.home')}</a><span>/</span><a href={L('/predictions')}>{T('nav.predictions')}</a><span>/</span>{tname}</div>
       <h1>{type.emoji} {tname}</h1>
       <p class="lead">{F('tt.lead', { name: tname.toLowerCase(), long: tlong })}</p>
+      <p class="upd-line">{T('common.oddsUpdated')} {fmtDate(BUILD_ISO, lang)} · <a href="/editorial-policy">{T('common.howWeWrite')}</a></p>
     </div>
   </div>
 
   <div class="container">
     <div class="layout">
       <main class="content">
-        <section>
-          <div class="chips">
-            <span class="chip active">{T('tt.allLeagues')}</span>
-            {leagues.map((lg) => <a class="chip" href={L(`/league/${slugify(lg)}`)}>🏆 {lg}</a>)}
-          </div>
-          <div class="pred-grid">
-            {tips.map((tip) => <PredCard tip={tip} lang={lang} />)}
-          </div>
-        </section>
+
+        {picks.length > 0 && (
+          <section>
+            {leagues.length > 0 && (
+              <div class="chips">
+                <span class="chip active">{T('tt.allLeagues')}</span>
+                {leagues.map((lg) => <a class="chip" href={L(`/league/${slugify(lg)}`)}>🏆 {lg}</a>)}
+              </div>
+            )}
+            <div class="pred-grid">
+              {picks.map((tip) => <PredCard tip={tip} lang={lang} />)}
+            </div>
+          </section>
+        )}
+
+        {type.slug === 'accumulator' && legs.length >= 2 && (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">{T('tt.accaTitle')} <b>×{accaOdds.toFixed(2)}</b></h2>
+              <a href="/tools/acca-builder" class="more-link">{T('tt.accaCta')} →</a>
+            </div>
+            <div class="acca">
+              {legs.map((r) => (
+                <div class="acca-leg">
+                  <span class="acca-ic">{r.icon ?? '⚽'}</span>
+                  <div class="acca-m">
+                    <b>{r.home} — {r.away}</b>
+                    <span>{r.league} · {kickoffLabel(r.kickoff, lang)}</span>
+                  </div>
+                  <span class="acca-pick">{localizeMarket(lang, r.recommendation?.text)}</span>
+                  <span class="acca-odds">{Number(r.recommendation?.price ?? 0).toFixed(2)}</span>
+                </div>
+              ))}
+              <div class="acca-foot">
+                <span>{T('tt.accaNote')}</span>
+                <a href="/tools/acca-builder" class="btn btn-mint btn-sm">{T('tt.accaCta')}</a>
+              </div>
+            </div>
+            <p class="res-note">{T('tt.accaRisk')}</p>
+          </section>
+        )}
+
+        {btts.length > 0 && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">{T('tt.bttsTitle')}</h2></div>
+            <div class="odds-table"><div class="scr-scroll">
+              <table class="otbl">
+                <thead><tr><th style="text-align:left">{T('tt.thLeague')}</th><th>{T('tt.thGames')}</th><th>{T('tt.thBtts')}</th></tr></thead>
+                <tbody>
+                  {btts.map((b) => (
+                    <tr>
+                      <td class="o-match" style="font-weight:700">
+                        {hasLeaguePage(b.league)
+                          ? <a href={L(`/league/${slugify(b.league)}`)} style="color:inherit">{b.league}</a>
+                          : b.league}
+                      </td>
+                      <td class="o-cell"><span>{b.n}</span></td>
+                      <td class="o-cell hot"><span class="cb">{b.pct}%</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div></div>
+            <p class="res-note">{T('tt.bttsNote')}</p>
+          </section>
+        )}
+
+        {scores && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">{T('tt.scoresTitle')}</h2></div>
+            <div class="odds-table"><div class="scr-scroll">
+              <table class="otbl">
+                <thead><tr><th>{T('tt.thScore')}</th><th>{T('tt.thGames')}</th><th>{T('tt.thShare')}</th><th>{T('tt.thFair')}</th></tr></thead>
+                <tbody>
+                  {scores.rows.map((s) => (
+                    <tr>
+                      <td class="o-cell" style="font-weight:700"><span>{s.score}</span></td>
+                      <td class="o-cell"><span>{s.n}</span></td>
+                      <td class="o-cell"><span>{s.pct}%</span></td>
+                      <td class="o-cell hot"><span class="cb">{s.fair.toFixed(2)}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div></div>
+            <p class="res-note">{F('tt.scoresNote', { n: scores.total })}</p>
+          </section>
+        )}
+
+        {split && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">{T('tt.dcTitle')}</h2></div>
+            <div class="res-sum">
+              <div class="res-chip win"><b>{split.home}%</b><span>{T('tt.dcHome')}</span></div>
+              <div class="res-chip"><b>{split.draw}%</b><span>{T('tt.dcDraw')}</span></div>
+              <div class="res-chip lose"><b>{split.away}%</b><span>{T('tt.dcAway')}</span></div>
+            </div>
+            <div class="res-sum" style="margin-top:10px">
+              <div class="res-chip"><b>{split.homeOrDraw}%</b><span>1X</span></div>
+              <div class="res-chip"><b>{split.homeOrAway}%</b><span>12</span></div>
+              <div class="res-chip"><b>{split.awayOrDraw}%</b><span>X2</span></div>
+            </div>
+            <p class="res-note">{F('tt.dcNote', { n: split.n })}</p>
+          </section>
+        )}
+
+        {record && (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">{F('tt.recordTitle', { name: tname })}</h2>
+              <a href={L('/tipsters')} class="more-link">{T('home.res.stats')}</a>
+            </div>
+            <div class="res-sum">
+              <div class="res-chip"><b>{record.n}</b><span>{T('home.res.settled')}</span></div>
+              <div class="res-chip win"><b>{record.won}</b><span>{T('home.res.won')}</span></div>
+              <div class="res-chip lose"><b>{record.lost}</b><span>{T('home.res.lost')}</span></div>
+              {record.winRate !== null && <div class="res-chip"><b>{record.winRate}%</b><span>{T('tt.winRate')}</span></div>}
+              <div class={`res-chip ${record.profit >= 0 ? 'win' : 'lose'}`}><b>{signed(record.profit)}u</b><span>{T('home.res.profit')}</span></div>
+              {record.roi !== null && <div class={`res-chip ${record.roi >= 0 ? 'win' : 'lose'}`}><b>{signed(record.roi)}%</b><span>ROI</span></div>}
+            </div>
+            <p class="res-note">{T('tt.recordNote')}{record.early ? ` ${T('tt.earlySample')}` : ''}</p>
+          </section>
+        )}
+
+        {picks.length === 0 && legs.length === 0 && (
+          <section>
+            <div class="box"><div class="box-pad dim">{F('tt.noPicks', { name: tname.toLowerCase() })}</div></div>
+          </section>
+        )}
 
         <section>
           <div class="sec-head"><h2 class="sec-title">{tname} <b>FAQ</b></h2></div>
@@ -95,16 +231,31 @@ const leagues = [...new Set(tips.map((t) => t.league))];
       </main>
 
       <aside class="sidebar">
-        <div class="promo">
-          <h4>🔍 {T('nav.screener')}</h4>
-          <p>{T('tt.promoP')}</p>
-          <a href={L('/screener')} class="btn btn-mint btn-block">{T('tt.openScr')}</a>
-        </div>
+        {type.slug === 'accumulator' ? (
+          <div class="promo">
+            <h4>🤖 {T('tt.accaCta')}</h4>
+            <p>{T('tt.accaPromo')}</p>
+            <a href="/tools/acca-builder" class="btn btn-mint btn-block">{T('gd.open')}</a>
+          </div>
+        ) : (
+          <div class="promo">
+            <h4>🔍 {T('nav.screener')}</h4>
+            <p>{T('tt.promoP')}</p>
+            <a href={L('/screener')} class="btn btn-mint btn-block">{T('tt.openScr')}</a>
+          </div>
+        )}
         <div class="box">
           <div class="box-h"><span class="hi">⚡</span> {T('tt.moreTypes')}</div>
           {BET_TYPES.filter((bt) => bt.slug !== type.slug).map((bt) => (
             <a class="tm" href={L(`/tips/${bt.slug}`)}><span class="dot"></span>{bt.emoji} {T(`btype.${bt.slug}.name`)}</a>
           ))}
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">📗</span> {T('gd.putToWork')}</div>
+          <a class="tm" href={L('/guides')}><span class="dot"></span>{T('ft.guides')}</a>
+          <a class="tm" href={L('/glossary')}><span class="dot"></span>{T('gd.lnkGlossary')}</a>
+          <a class="tm" href="/model"><span class="dot"></span>{T('ft.ourModel')}</a>
+          <a class="tm" href={L('/tipsters')}><span class="dot"></span>{T('nav.performance')}</a>
         </div>
         <ToolsBox lang={lang} />
       </aside>
