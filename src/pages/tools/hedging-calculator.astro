@@ -1,0 +1,155 @@
+---
+import Base from '../../layouts/Base.astro';
+import { contentUpdated } from '../../lib/guides.js';
+
+const title = 'Hedging & Cash-Out Calculator — Lock In a Profit';
+const description = 'Work out the lay or opposite-side stake that locks in the same return whatever happens, and check whether a cash-out offer is worth taking or is quietly charging you twice.';
+
+const faq = [
+  { q: 'What does hedging a bet mean?', a: 'Backing the opposite outcome after your original bet, sized so both results pay the same. It converts an uncertain position into a fixed one — usually smaller than the original potential win, because you pay margin on both sides.' },
+  { q: 'Is taking a cash-out ever a good idea?', a: 'Occasionally — when the reason for your bet has genuinely broken (a red card against you, a key injury) or the position is larger than you are comfortable holding. As a habit it loses money: cash-out is priced with the bookmaker margin applied a second time, which this calculator shows you.' },
+  { q: 'How do I know if the cash-out offer is fair?', a: 'Compare it with what you could lock in by hedging at current market prices. Enter both above: if the hedge guarantees more than the cash-out button, the button is charging you for convenience.' },
+  { q: 'Do I need a betting exchange to hedge?', a: 'No. Backing the opposing outcome at any bookmaker works, though exchange lay bets are usually cleaner for single-outcome markets and carry lower effective margin. Either way, the arithmetic above is the same.' },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+<Base title={title} description={description} schema={schema} updated={`${contentUpdated}T00:00:00Z`} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/tools">Tools</a><span>/</span>Hedging &amp; cash-out</div>
+      <h1>Hedging &amp; cash-out <em>calculator</em></h1>
+      <p class="lead">Size the opposite-side bet that pays the same either way — and see whether the cash-out button is offering you a fair price or charging margin twice.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Hedge <b>the position</b></h2></div>
+          <div class="box"><div class="box-pad">
+            <div class="tool-row" style="grid-template-columns:1fr 1fr 1fr">
+              <div class="tool-f"><label>Original stake</label><input id="hStake" type="number" step="1" min="0.01" value="50" inputmode="decimal" /></div>
+              <div class="tool-f"><label>Original odds</label><input id="hOdds" type="number" step="0.01" min="1.01" value="4.00" inputmode="decimal" /></div>
+              <div class="tool-f"><label>Opposite side odds now</label><input id="hAgainst" type="number" step="0.01" min="1.01" value="1.45" inputmode="decimal" /></div>
+            </div>
+            <div class="tool-res">
+              <div class="tool-big"><b id="hHedge">—</b><span>Hedge stake</span></div>
+              <div class="tool-big"><b id="hLocked">—</b><span>Locked-in profit either way</span></div>
+            </div>
+            <div class="tool-res" style="margin-top:10px">
+              <div class="tool-big"><b id="hIfWin">—</b><span>Total return if original wins</span></div>
+              <div class="tool-big"><b id="hIfLose">—</b><span>Total return if it loses</span></div>
+            </div>
+            <p class="res-note" id="hNote" style="margin-top:12px">—</p>
+          </div></div>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Cash-out <b>check</b></h2></div>
+          <div class="box"><div class="box-pad">
+            <div class="tool-row">
+              <div class="tool-f"><label>Cash-out offered</label><input id="cOffer" type="number" step="0.01" min="0" value="120" inputmode="decimal" /></div>
+              <div class="tool-f"><label>Hedge guarantees (from above)</label><input id="cHedge" type="number" step="0.01" min="0" value="0" inputmode="decimal" readonly /></div>
+            </div>
+            <div class="tool-res">
+              <div class="tool-big"><b id="cVerdict">—</b><span>Verdict</span></div>
+              <div class="tool-big"><b id="cGap">—</b><span>Difference</span></div>
+            </div>
+            <p class="res-note">The hedge figure updates from the calculator above. Both numbers are total returns including your original stake, so they are directly comparable.</p>
+          </div></div>
+        </section>
+
+        <section class="seo">
+          <h2>What hedging actually costs</h2>
+          <p>Hedging feels like risk management and often is — but it is never free. You paid the bookmaker's margin on the original bet, and you pay it again on the opposite side, so the guaranteed amount is always less than the fair value of your position. That double charge is exactly what a cash-out button hides: it is an automated hedge with the spread widened in the operator's favour, which is why the comparison above so often favours doing it manually.</p>
+          <p>When hedging genuinely makes sense: the position has grown large relative to your bankroll, or new information has broken your original reasoning — a red card, a keeper injury, a lineup you did not expect. When it does not: as a reflex to protect every green position. Systematically converting good bets into small guaranteed profits gives away exactly the upside you were being paid for, and the margin on top.</p>
+          <p>The wider discipline lives in our <a href="/guides/bankroll-management-guide" style="color:var(--mint)">bankroll guide</a>, and the mechanics of live pricing — including why cash-out numbers move against you during a match — are in the <a href="/guides/in-play-betting-guide" style="color:var(--mint)">in-play guide</a>.</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Hedging <b>FAQ</b></h2></div>
+          <div class="faq">
+            {faq.map((f, i) => (
+              <div class={`faq-item${i === 0 ? ' open' : ''}`}>
+                <div class="faq-q">{f.q}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{f.a}</p></div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>📉 Live odds movement</h4>
+          <p>Watch where prices are drifting across the markets we track — the input every hedge decision needs.</p>
+          <a href="/dropping-odds" class="btn btn-mint btn-block">Dropping odds</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🧮</span> More tools</div>
+          <a class="tm" href="/tools/odds-converter"><span class="dot"></span>Odds converter</a>
+          <a class="tm" href="/tools/accumulator-calculator"><span class="dot"></span>Acca calculator</a>
+          <a class="tm" href="/tools/margin-calculator"><span class="dot"></span>Margin &amp; value</a>
+          <a class="tm" href="/tools/kelly-calculator"><span class="dot"></span>Kelly criterion</a>
+          <a class="tm" href="/tools/dutching-calculator"><span class="dot"></span>Dutching</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">📖</span> Related terms</div>
+          <a class="tm" href="/glossary/cash-out"><span class="dot"></span>Cash out</a>
+          <a class="tm" href="/glossary/arbitrage-betting"><span class="dot"></span>Arbitrage betting</a>
+          <a class="tm" href="/glossary/bookmaker-margin"><span class="dot"></span>Bookmaker margin</a>
+          <a class="tm" href="/glossary/in-play-betting"><span class="dot"></span>In-play betting</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var g = function (id) { return document.getElementById(id); };
+      var money = function (v) { return (Math.round(v * 100) / 100).toFixed(2); };
+      function hedge() {
+        var stake = parseFloat(g('hStake').value);
+        var odds = parseFloat(g('hOdds').value);
+        var against = parseFloat(g('hAgainst').value);
+        if (!(stake > 0) || !(odds > 1) || !(against > 1)) return;
+        var payout = stake * odds;                 // return if the original wins
+        var hedgeStake = payout / against;         // stake that matches it
+        var totalOut = stake + hedgeStake;
+        var locked = payout - totalOut;            // same whichever side lands
+        g('hHedge').textContent = money(hedgeStake);
+        g('hLocked').textContent = (locked >= 0 ? '+' : '') + money(locked);
+        g('hLocked').parentElement.classList.toggle('warn', locked < 0);
+        g('hIfWin').textContent = money(payout) + ' (staked ' + money(totalOut) + ')';
+        g('hIfLose').textContent = money(hedgeStake * against) + ' (staked ' + money(totalOut) + ')';
+        g('hNote').textContent = locked >= 0
+          ? 'Stake ' + money(hedgeStake) + ' on the opposite side and both outcomes return ' + money(payout) + ' — a guaranteed ' + money(locked) + ' profit on ' + money(totalOut) + ' total staked.'
+          : 'At these prices a hedge locks in a loss of ' + money(Math.abs(locked)) + ': the opposite side has moved too far. Holding the original bet keeps its upside intact.';
+        g('cHedge').value = money(payout);
+        cashout();
+      }
+      function cashout() {
+        var offer = parseFloat(g('cOffer').value);
+        var stake = parseFloat(g('hStake').value);
+        var hedgeReturn = parseFloat(g('cHedge').value);
+        var hedgeStake = hedgeReturn / parseFloat(g('hAgainst').value);
+        if (!(offer >= 0) || !(hedgeReturn > 0) || !(stake > 0)) return;
+        // compare like with like: net profit from cashing out vs from hedging
+        var cashProfit = offer - stake;
+        var hedgeProfit = hedgeReturn - (stake + hedgeStake);
+        var gap = cashProfit - hedgeProfit;
+        g('cGap').textContent = (gap >= 0 ? '+' : '') + money(gap);
+        g('cVerdict').textContent = gap > 0.5 ? 'Cash-out wins' : gap < -0.5 ? 'Hedge is better' : 'Roughly level';
+        g('cVerdict').parentElement.classList.toggle('warn', gap < -0.5);
+      }
+      ['hStake', 'hOdds', 'hAgainst'].forEach(function (id) { g(id).addEventListener('input', hedge); });
+      g('cOffer').addEventListener('input', cashout);
+      hedge();
+    })();
+  </script>
+</Base>

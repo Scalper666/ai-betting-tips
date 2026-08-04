@@ -1,0 +1,134 @@
+---
+import Base from '../../layouts/Base.astro';
+import { contentUpdated } from '../../lib/guides.js';
+
+const title = 'Dutching Calculator — Split a Stake Across Selections';
+const description = 'Split one total stake across two or three selections so every winner returns the same, and see the combined margin you are paying before you commit.';
+
+const faq = [
+  { q: 'What is dutching?', a: 'Backing several outcomes in the same event with stakes sized so any of them winning returns the same amount. It trades a smaller payout for a wider chance of collecting.' },
+  { q: 'Does dutching improve my expected value?', a: 'No. Covering more outcomes means paying the margin on more of the market, so expected value usually falls. What changes is variance: more frequent, smaller wins. It is a risk-shaping tool, not an edge.' },
+  { q: 'What does the market-covered percentage mean?', a: 'It is the sum of the implied probabilities of your selections. Above 100% you are covering the whole market and the excess is the bookmaker margin. Below 100% you have left outcomes unbacked — a draw, say — and if one of those lands you lose the full stake. Only prices that cover every outcome and still sum below 100% are arbitrage, which is rare, small and short-lived.' },
+  { q: 'Is dutching the same as an accumulator?', a: 'The opposite. An accumulator needs every leg to win and multiplies both odds and margin; dutching needs only one of several selections and splits a single stake across them.' },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+<Base title={title} description={description} schema={schema} updated={`${contentUpdated}T00:00:00Z`} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/tools">Tools</a><span>/</span>Dutching</div>
+      <h1>Dutching <em>calculator</em></h1>
+      <p class="lead">Enter a total stake and up to three prices to see how to split it for an equal return whichever selection wins — plus the combined margin that split is costing you.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Split <b>the stake</b></h2></div>
+          <div class="box"><div class="box-pad">
+            <div class="tool-row">
+              <div class="tool-f"><label>Total stake</label><input id="dTotal" type="number" step="1" min="0.01" value="100" inputmode="decimal" /></div>
+            </div>
+            <div class="tool-row" style="grid-template-columns:1fr 1fr 1fr;margin-top:10px">
+              <div class="tool-f"><label>Selection 1 odds</label><input id="d1" type="number" step="0.01" min="1.01" value="2.60" inputmode="decimal" /></div>
+              <div class="tool-f"><label>Selection 2 odds</label><input id="d2" type="number" step="0.01" min="1.01" value="3.40" inputmode="decimal" /></div>
+              <div class="tool-f"><label>Selection 3 odds (optional)</label><input id="d3" type="number" step="0.01" min="0" value="0" inputmode="decimal" /></div>
+            </div>
+            <div class="tool-res" style="margin-top:12px">
+              <div class="tool-big"><b id="dStakes">—</b><span>Stake split</span></div>
+              <div class="tool-big"><b id="dReturn">—</b><span>Return if any wins</span></div>
+            </div>
+            <div class="tool-res" style="margin-top:10px">
+              <div class="tool-big"><b id="dProfit">—</b><span>Profit if any wins</span></div>
+              <div class="tool-big"><b id="dMargin">—</b><span>Market covered</span></div>
+            </div>
+            <p class="res-note" id="dNote" style="margin-top:12px">—</p>
+          </div></div>
+        </section>
+
+        <section class="seo">
+          <h2>What dutching does and does not do</h2>
+          <p>Dutching reshapes risk. Instead of one selection at a big price, you hold several at a smaller equal return, collecting more often for less each time. That is a legitimate preference — but it is not an edge. Every extra selection you cover adds another slice of the bookmaker's overround to the bill, so the more of a market you buy, the more you pay for the privilege.</p>
+          <p>Read the coverage figure carefully. Above 100% means your selections span the whole market and the excess is margin. <strong>Below 100% is not a free bet</strong> — it means outcomes are left unbacked, and if one of those lands you lose the entire stake. Backing two of three football results is the classic case: it looks cheap precisely because the draw is not covered.</p>
+          <p>Where dutching earns its place: markets where you can confidently rule some outcomes out but not choose between the rest — fading a heavy favourite, or covering a plausible correct-score range. Where it does not: as a way to feel safer while quietly lowering expected value.</p>
+          <p>Compare with the opposite structure in our <a href="/guides/what-is-an-accumulator" style="color:var(--mint)">accumulator guide</a>, and read how margin compounds in the <a href="/guides/bookmaker-margin-explained" style="color:var(--mint)">margin guide</a>.</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Dutching <b>FAQ</b></h2></div>
+          <div class="faq">
+            {faq.map((f, i) => (
+              <div class={`faq-item${i === 0 ? ' open' : ''}`}>
+                <div class="faq-q">{f.q}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{f.a}</p></div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>🔍 Find the prices first</h4>
+          <p>Our screener compares model fair odds against the best available price on every fixture we track.</p>
+          <a href="/screener" class="btn btn-mint btn-block">Open screener</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🧮</span> More tools</div>
+          <a class="tm" href="/tools/odds-converter"><span class="dot"></span>Odds converter</a>
+          <a class="tm" href="/tools/accumulator-calculator"><span class="dot"></span>Acca calculator</a>
+          <a class="tm" href="/tools/margin-calculator"><span class="dot"></span>Margin &amp; value</a>
+          <a class="tm" href="/tools/kelly-calculator"><span class="dot"></span>Kelly criterion</a>
+          <a class="tm" href="/tools/hedging-calculator"><span class="dot"></span>Hedging &amp; cash-out</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">📖</span> Related terms</div>
+          <a class="tm" href="/glossary/bookmaker-margin"><span class="dot"></span>Bookmaker margin</a>
+          <a class="tm" href="/glossary/implied-probability"><span class="dot"></span>Implied probability</a>
+          <a class="tm" href="/glossary/arbitrage-betting"><span class="dot"></span>Arbitrage betting</a>
+          <a class="tm" href="/glossary/variance"><span class="dot"></span>Variance</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var g = function (id) { return document.getElementById(id); };
+      var money = function (v) { return (Math.round(v * 100) / 100).toFixed(2); };
+      function calc() {
+        var total = parseFloat(g('dTotal').value);
+        var odds = ['d1', 'd2', 'd3'].map(function (id) { return parseFloat(g(id).value); })
+          .filter(function (v) { return v > 1; });
+        if (!(total > 0) || odds.length < 2) {
+          g('dNote').textContent = 'Enter a total stake and at least two prices above 1.00.';
+          return;
+        }
+        var sum = odds.reduce(function (s, v) { return s + 1 / v; }, 0);
+        var ret = total / sum;                                  // equal return per winner
+        var stakes = odds.map(function (v) { return ret / v; });
+        g('dStakes').textContent = stakes.map(money).join(' · ');
+        g('dReturn').textContent = money(ret);
+        g('dProfit').textContent = (ret - total >= 0 ? '+' : '') + money(ret - total);
+        g('dProfit').parentElement.classList.toggle('warn', ret - total < 0);
+        // Sum of implied probabilities = how much of the market these prices
+        // cover. Over 100% means the selections overlap the whole market and
+        // the excess is margin. UNDER 100% does not mean arbitrage: it means
+        // outcomes are left uncovered, and any of them losing costs the lot.
+        g('dMargin').textContent = (sum * 100).toFixed(1) + '%';
+        g('dMargin').parentElement.classList.toggle('warn', sum >= 1);
+        g('dNote').textContent = sum >= 1
+          ? 'These ' + odds.length + ' selections imply ' + (sum * 100).toFixed(1) + '% combined probability. They cover the market with ' + ((sum - 1) * 100).toFixed(2) + '% to spare — that excess is the margin you pay for covering everything.'
+          : 'These ' + odds.length + ' selections cover ' + (sum * 100).toFixed(1) + '% of the market, so roughly ' + ((1 - sum) * 100).toFixed(1) + '% of it is left uncovered — a draw or any other unbacked outcome loses the whole ' + money(total) + '. That gap is your actual risk: this is dutching part of a market, not arbitrage.';
+      }
+      ['dTotal', 'd1', 'd2', 'd3'].forEach(function (id) { g(id).addEventListener('input', calc); });
+      calc();
+    })();
+  </script>
+</Base>

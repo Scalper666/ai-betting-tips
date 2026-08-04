@@ -1,0 +1,125 @@
+---
+import Base from '../../layouts/Base.astro';
+import { contentUpdated } from '../../lib/guides.js';
+
+const title = 'Kelly Criterion Calculator — Optimal Stake Size';
+const description = 'Work out the Kelly stake for any bet from your probability estimate and the price on offer, with fractional Kelly for the estimate error every real bettor has.';
+
+const faq = [
+  { q: 'What is the Kelly criterion?', a: 'A staking formula that maximises the long-run growth rate of a bankroll. For a simple bet it is (bp − q) ÷ b, where b is the decimal odds minus 1, p your estimated win probability and q is 1 − p. It only recommends a stake when your probability beats the price.' },
+  { q: 'Why use fractional Kelly instead of full Kelly?', a: 'Full Kelly assumes your probability is exactly right. It never is. Because Kelly is aggressive near the optimum, a modest overestimate of your edge produces heavy over-betting and brutal drawdowns, so experienced bettors use a quarter or half of the recommendation.' },
+  { q: 'What if Kelly tells me to bet zero?', a: 'It means the price does not beat your probability estimate — the bet has negative expected value and the correct stake is nothing. A staking formula cannot rescue a bad price.' },
+  { q: 'Is Kelly better than flat staking?', a: 'Mathematically it grows a bankroll faster when your probability estimates are well calibrated. Flat staking is more forgiving when they are not, which is why we track our own model in flat 1-unit stakes: it keeps the published record honest and comparable.' },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+<Base title={title} description={description} schema={schema} updated={`${contentUpdated}T00:00:00Z`} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/tools">Tools</a><span>/</span>Kelly criterion</div>
+      <h1>Kelly criterion <em>calculator</em></h1>
+      <p class="lead">Enter the price, your probability estimate and your bankroll to see the Kelly stake — plus the fractional versions that survive contact with real-world estimate error.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Stake <b>calculator</b></h2></div>
+          <div class="box"><div class="box-pad">
+            <div class="tool-row" style="grid-template-columns:1fr 1fr 1fr">
+              <div class="tool-f"><label>Decimal odds</label><input id="kOdds" type="number" step="0.01" min="1.01" value="2.50" inputmode="decimal" /></div>
+              <div class="tool-f"><label>Your probability %</label><input id="kProb" type="number" step="0.5" min="1" max="99" value="45" inputmode="decimal" /></div>
+              <div class="tool-f"><label>Bankroll</label><input id="kBank" type="number" step="10" min="1" value="1000" inputmode="decimal" /></div>
+            </div>
+            <div class="tool-res">
+              <div class="tool-big"><b id="kEdge">—</b><span>Edge (EV per unit)</span></div>
+              <div class="tool-big"><b id="kFull">—</b><span>Full Kelly stake</span></div>
+            </div>
+            <div class="tool-res" style="margin-top:10px">
+              <div class="tool-big"><b id="kHalf">—</b><span>Half Kelly</span></div>
+              <div class="tool-big"><b id="kQuarter">—</b><span>Quarter Kelly (recommended)</span></div>
+            </div>
+            <p class="res-note" id="kNote" style="margin-top:12px">—</p>
+          </div></div>
+        </section>
+
+        <section class="seo">
+          <h2>How to use this without blowing up</h2>
+          <p>Kelly answers a narrow question precisely: given a known edge, what stake maximises long-run growth? The catch is the word <em>known</em>. Your probability estimate carries error, and the formula is unforgiving about it — overstate a 5% edge by half and full Kelly has you betting roughly twice the optimal amount, which turns normal variance into ruinous drawdowns. That asymmetry is why the quarter-Kelly figure above is the one worth using.</p>
+          <p>Two sanity checks before you act on any number here. First, if the calculator returns zero, the bet is negative expected value at your own estimate — no stake sizing fixes that. Second, if it recommends a stake that makes you uncomfortable, your bankroll figure is probably not honest: a bankroll is money you can lose in full without consequence, not everything in the account.</p>
+          <p>We track our own model in flat 1-unit stakes rather than Kelly, deliberately. Flat staking makes a published record comparable and hard to flatter, and it does not silently amplify the model's own estimate errors. The staking guide goes deeper: <a href="/guides/bankroll-management-guide" style="color:var(--mint)">bankroll management</a>.</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Kelly <b>FAQ</b></h2></div>
+          <div class="faq">
+            {faq.map((f, i) => (
+              <div class={`faq-item${i === 0 ? ' open' : ''}`}>
+                <div class="faq-q">{f.q}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{f.a}</p></div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>📗 Staking, explained</h4>
+          <p>Units, flat staking, stop rules — the system that decides whether variance annoys you or ruins you.</p>
+          <a href="/guides/bankroll-management-guide" class="btn btn-mint btn-block">Read the guide</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🧮</span> More tools</div>
+          <a class="tm" href="/tools/odds-converter"><span class="dot"></span>Odds converter</a>
+          <a class="tm" href="/tools/accumulator-calculator"><span class="dot"></span>Acca calculator</a>
+          <a class="tm" href="/tools/margin-calculator"><span class="dot"></span>Margin &amp; value</a>
+          <a class="tm" href="/tools/hedging-calculator"><span class="dot"></span>Hedging &amp; cash-out</a>
+          <a class="tm" href="/tools/dutching-calculator"><span class="dot"></span>Dutching</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">📖</span> Related terms</div>
+          <a class="tm" href="/glossary/kelly-criterion"><span class="dot"></span>Kelly criterion</a>
+          <a class="tm" href="/glossary/expected-value"><span class="dot"></span>Expected value</a>
+          <a class="tm" href="/glossary/edge"><span class="dot"></span>Edge</a>
+          <a class="tm" href="/glossary/variance"><span class="dot"></span>Variance</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var g = function (id) { return document.getElementById(id); };
+      var money = function (v) { return (Math.round(v * 100) / 100).toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
+      function calc() {
+        var odds = parseFloat(g('kOdds').value);
+        var p = parseFloat(g('kProb').value) / 100;
+        var bank = parseFloat(g('kBank').value);
+        if (!(odds > 1) || !(p > 0 && p < 1) || !(bank > 0)) return;
+        var b = odds - 1;
+        var ev = odds * p - 1;                       // edge per unit staked
+        var f = (b * p - (1 - p)) / b;               // Kelly fraction
+        g('kEdge').textContent = (ev >= 0 ? '+' : '') + (ev * 100).toFixed(2) + '%';
+        g('kEdge').parentElement.classList.toggle('warn', ev < 0);
+        if (f <= 0) {
+          ['kFull', 'kHalf', 'kQuarter'].forEach(function (id) { g(id).textContent = '0.00'; });
+          g('kNote').textContent = 'No stake: at your probability the price is negative expected value. Kelly recommends betting nothing — the correct move is to pass, not to size down.';
+          return;
+        }
+        g('kFull').textContent = money(f * bank) + ' (' + (f * 100).toFixed(2) + '%)';
+        g('kHalf').textContent = money(f * bank / 2) + ' (' + (f * 50).toFixed(2) + '%)';
+        g('kQuarter').textContent = money(f * bank / 4) + ' (' + (f * 25).toFixed(2) + '%)';
+        g('kNote').textContent = 'Full Kelly assumes your ' + (p * 100).toFixed(1) + '% estimate is exact. It never is, and over-betting a mis-estimated edge is how bankrolls die — the quarter-Kelly figure is the practical one.';
+      }
+      ['kOdds', 'kProb', 'kBank'].forEach(function (id) { g(id).addEventListener('input', calc); });
+      calc();
+    })();
+  </script>
+</Base>

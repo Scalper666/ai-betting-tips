@@ -99,7 +99,20 @@ jobs:
           git add data src/data public/crests
           if git diff --cached --quiet; then
             echo "no data changes"
-          else
-            git commit -m "data: scheduled refresh"
-            git push
+            exit 0
           fi
+          git commit -m "data: scheduled refresh"
+          # A local push landing mid-run leaves our ref stale, and a lost push
+          # means lost settlements. Rebase onto origin and retry instead of
+          # failing the job; data snapshots always rebase cleanly because the
+          # bot is the only writer of these paths.
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "pushed on attempt $attempt"
+              exit 0
+            fi
+            echo "push rejected — rebasing onto origin/main (attempt $attempt)"
+            git pull --rebase --autostash origin main || exit 1
+          done
+          echo "could not push data snapshot after 3 attempts" >&2
+          exit 1
