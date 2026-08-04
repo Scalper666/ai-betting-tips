@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-08-04T16:36:42+00:00",
+ "updated_at": "2026-08-04T18:15:01+00:00",
  "entries": {
   "match:corinthians-vs-remo": {
    "intro": "Corinthians host Remo in this Brasileirao fixture as clear favourites according to the market. The home side is priced at 1.55 with Matchbook, which translates to an implied probability of roughly 65%. Remo, meanwhile, are the outsiders at 7.8 on Betfair, implying only about 13% chance of an away win, while the draw sits at 4.3, or around 23%. That is a substantial gap in the prices and reflects strong market confidence in Corinthians. Rather than backing the match result, our model leans toward the goals market, recommending Under 2.5 goals at 1.93 with Matchbook, carrying a market-implied confidence of about 52%. It is worth noting the value edge here is marginally negative at -0.36%, so this is a close call rather than a standout opportunity in the Corinthians versus Remo clash.",
@@ -8243,38 +8243,6 @@
    "_usage": {
     "in": 1284,
     "out": 811
-   }
-  },
-  "match:mj-llby-aif-vs-k-slovan-bratislava": {
-   "intro": "This UCL Qualification tie sees Mjällby AIF host ŠK Slovan Bratislava, and the market leans towards the home side. Mjällby are priced at 2.08, which translates to an implied probability of roughly 48%, marking them as modest favourites rather than a dominant one. Slovan Bratislava sit at 3.75, or about 27% in implied terms, while the draw shares that same 3.75 price and similar likelihood. That spread points to a game the market considers competitive, with Mjällby holding the edge but far from a formality. Our model steers away from the match result and instead looks at goals, recommending Over 2.5 goals at 1.88 with 1xBet, carrying a market-implied confidence of around 51%. It is worth noting the value edge on this pick is slightly negative at -3.8%, so it reflects the model's lean on game shape rather than a clear pricing advantage over the bookmaker.",
-   "key_factors": [
-    "Mjällby are favourites at 2.08 (about 48% implied), but the gap to Slovan at 3.75 (about 27%) is moderate rather than commanding.",
-    "The draw is priced identically to the away win at 3.75, suggesting the market sees a genuinely open contest.",
-    "The recommended Over 2.5 goals bet at 1.88 sits near an even split, with market-implied confidence around 51%.",
-    "No value picks cleared the threshold, and the recommended pick shows a negative edge of -3.8%, so it is a lean rather than a value play."
-   ],
-   "verdict": "The suggested play is Over 2.5 goals at 1.88, backed by roughly 51% implied confidence. Be aware the value edge is negative at -3.8%, meaning it offers no pricing advantage over the book. Treat it as a modest game-shape lean and stake responsibly.",
-   "faq": [
-    {
-     "q": "Who is the favourite for Mjällby AIF vs Slovan Bratislava?",
-     "a": "Mjällby AIF are the market favourites at 2.08, an implied probability of about 48%. Slovan Bratislava are priced at 3.75, roughly 27%."
-    },
-    {
-     "q": "What are the odds on the draw?",
-     "a": "The draw is priced at 3.75 with 1xBet, the same as the Slovan Bratislava away win, implying around a 27% chance."
-    },
-    {
-     "q": "Is there any value in this match?",
-     "a": "No selection cleared our value threshold. The recommended Over 2.5 goals pick at 1.88 actually shows a negative edge of -3.8%, so it is a lean on goals rather than a value bet."
-    }
-   ],
-   "_kind": "match",
-   "_model": "claude-opus-4-8",
-   "_hash": "7df28f3352d8ad3d",
-   "_generated_at": "2026-08-02T23:22:05+00:00",
-   "_usage": {
-    "in": 1298,
-    "out": 845
    }
   },
   "match:hapoel-be-er-sheva-vs-red-star-belgrade": {
@@ -18773,6 +18741,31 @@
    "_model": "session-translation",
    "_hash": "eae7d279735cf752",
    "_generated_at": "2026-08-04T16:22:17+00:00"
+  },
+  "combo:match-result:ucl-qualification": {
+   "intro": "UCL Qualification match result tips cover the classic 1X2 market, where you back the home win, the draw, or the away win across the qualifying rounds that decide who reaches the Champions League group stage. Our approach starts with the odds themselves: we convert each price into an implied probability, then compare that figure against our own model's estimate to see where the market may be underrating a selection. A tip is only published when we judge the best available price offers value against our projected chance, not simply because a side looks likely to win. Every pick is archived before kick-off with its stake and reasoning, then settled transparently once the match finishes. Betting always carries risk, so treat these tips as one input and stake within a level you are comfortable with.",
+   "faq": [
+    {
+     "q": "How do you pick the winner in UCL Qualification matches?",
+     "a": "We translate the bookmaker odds into an implied probability and weigh that against our model's own estimate for each outcome. When the best available price implies a lower chance than we project, we see potential value and may publish a home, draw, or away tip. No result is ever certain, so selections reflect perceived value rather than a prediction that cannot fail."
+    },
+    {
+     "q": "Is backing the draw worth it in qualification ties?",
+     "a": "The draw can hold value when the market prices it too cheaply relative to how evenly two sides appear matched in the odds. We only suggest it when the implied probability looks generous against our estimate. Because qualifying formats can influence how teams approach a game, we assess each match individually rather than applying a blanket rule."
+    },
+    {
+     "q": "Do you keep a record of your UCL Qualification tips?",
+     "a": "Yes. Each tip is logged before kick-off with the selection, the price, and the stake, then marked as won or lost after the match settles. This keeps the results open and lets you review how the picks have performed over time instead of relying on selective highlights."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "61806b52c215d2c5",
+   "_generated_at": "2026-08-04T18:15:01+00:00",
+   "_usage": {
+    "in": 1027,
+    "out": 597
+   }
   }
  }
 }
