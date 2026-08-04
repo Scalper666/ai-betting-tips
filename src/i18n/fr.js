@@ -81,6 +81,7 @@ export const FR = {
   'ft.guides': 'Guides de paris',
   'ft.seasons': 'Pronostics de saison',
   'ft.leagueResults': 'Résultats de football',
+  'ft.accaBuilder': 'Générateur de combinés IA',
   'ft.tables': 'Classements',
   'ft.editorial': 'Politique éditoriale',
   'common.updated': 'Mis à jour le',

@@ -7,6 +7,7 @@ const title = 'Free Betting Tools — Calculators & Converters';
 const description = 'Free betting calculators: odds converter, accumulator, bookmaker margin and value checker, Kelly stakes, hedging and cash-out, dutching. No sign-up, instant results.';
 
 const TOOLS = [
+  { href: '/tools/acca-builder', icon: '🤖', name: 'AI acca builder', p: "Build an accumulator from the model's own rated picks, with the hit rate and margin shown as you add legs." },
   { href: '/tools/odds-converter', icon: '🔁', name: 'Odds converter', p: 'Decimal ↔ fractional ↔ American ↔ implied probability.' },
   { href: '/tools/accumulator-calculator', icon: '🎯', name: 'Accumulator calculator', p: 'Combined odds, returns and profit for any number of legs.' },
   { href: '/tools/margin-calculator', icon: '📊', name: 'Margin & value calculator', p: "Expose the bookmaker's margin and test any price for value." },
@@ -51,8 +52,8 @@ const schema = {
         </section>
 
         <section class="seo">
-          <h2>Why these six, and not a hundred</h2>
-          <p>Each of these solves a problem that costs bettors real money when they guess instead of calculating. The converter and margin calculator expose what a price actually implies and what the bookmaker is charging for it. Kelly and the acca calculator size and structure a position. Hedging shows what a cash-out button is really offering, and dutching shows what covering extra outcomes costs in margin.</p>
+          <h2>Why these, and not a hundred</h2>
+          <p>The acca builder is the one that starts from our own data rather than yours: it pulls the model's rated selections and shows what combining them actually costs. The rest solve a problem that costs bettors real money when they guess instead of calculating. The converter and margin calculator expose what a price actually implies and what the bookmaker is charging for it. Kelly and the acca calculator size and structure a position. Hedging shows what a cash-out button is really offering, and dutching shows what covering extra outcomes costs in margin.</p>
           <p>None of them predict anything — that is the model's job, and its methodology and full settled record are published separately. Tools that promise to find winners belong to a different kind of website. If you want the reasoning behind each calculation, the <a href="/guides">guides</a> work through the same maths with examples, and the <a href="/glossary">glossary</a> defines every term used here.</p>
         </section>
       </main>

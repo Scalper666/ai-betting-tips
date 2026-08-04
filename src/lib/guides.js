@@ -13,8 +13,32 @@ import glPT from '../data/glossary.pt.json';
 import glDE from '../data/glossary.de.json';
 import glFR from '../data/glossary.fr.json';
 
-const G = { en: gEN.guides, es: gES.guides, pt: gPT.guides, de: gDE.guides, fr: gFR.guides };
-const GL = { en: glEN.terms, es: glES.terms, pt: glPT.terms, de: glDE.terms, fr: glFR.terms };
+// English is the source of truth for WHICH entries exist; a translation file
+// only supplies display text. Adding a guide and building before running the
+// translator used to crash the [lang] route (it builds every slug for every
+// language and found nothing to render), so entries missing from a translation
+// fall back to their English text instead. The page still ships, in English,
+// and picks up the translation on the next translator run.
+function merge(source, translated, key) {
+  if (!translated) return source;
+  const byKey = new Map(translated.map((x) => [x[key], x]));
+  return source.map((x) => byKey.get(x[key]) ?? x);
+}
+
+const G = {
+  en: gEN.guides,
+  es: merge(gEN.guides, gES.guides, 'slug'),
+  pt: merge(gEN.guides, gPT.guides, 'slug'),
+  de: merge(gEN.guides, gDE.guides, 'slug'),
+  fr: merge(gEN.guides, gFR.guides, 'slug'),
+};
+const GL = {
+  en: glEN.terms,
+  es: merge(glEN.terms, glES.terms, 'slug'),
+  pt: merge(glEN.terms, glPT.terms, 'slug'),
+  de: merge(glEN.terms, glDE.terms, 'slug'),
+  fr: merge(glEN.terms, glFR.terms, 'slug'),
+};
 
 // Date the editor-written source last changed (translations follow it).
 // Keep in sync with CONTENT_UPDATED in astro.config.mjs.

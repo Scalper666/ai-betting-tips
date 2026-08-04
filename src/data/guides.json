@@ -54,13 +54,35 @@
         "The same outcome at different prices is a different bet: compare before you place."
       ],
       "faq": [
-        { "q": "Which odds format should I use?", "a": "Whichever your market uses day to day — but learn to convert to decimal, because implied probability (1 ÷ odds) is easiest to compute there. Most sites let you switch formats in settings." },
-        { "q": "Do low odds mean a safe bet?", "a": "No. Odds of 1.20 imply about an 83% chance, which still loses roughly one time in six. Short-priced favourites lose often enough that no single bet is safe, and stacking them in accumulators compounds the risk." },
-        { "q": "Why do different bookmakers show different odds?", "a": "Each sets its own prices from its own model, liabilities and margin. Differences of 5–10% on the same outcome are common, which is why line shopping across several bookmakers is one of the few free improvements available to every bettor." }
+        {
+          "q": "Which odds format should I use?",
+          "a": "Whichever your market uses day to day — but learn to convert to decimal, because implied probability (1 ÷ odds) is easiest to compute there. Most sites let you switch formats in settings."
+        },
+        {
+          "q": "Do low odds mean a safe bet?",
+          "a": "No. Odds of 1.20 imply about an 83% chance, which still loses roughly one time in six. Short-priced favourites lose often enough that no single bet is safe, and stacking them in accumulators compounds the risk."
+        },
+        {
+          "q": "Why do different bookmakers show different odds?",
+          "a": "Each sets its own prices from its own model, liabilities and margin. Differences of 5–10% on the same outcome are common, which is why line shopping across several bookmakers is one of the few free improvements available to every bettor."
+        }
       ],
-      "related": ["value-betting-explained", "bookmaker-margin-explained", "how-ai-football-predictions-work"],
-      "glossary": ["odds-formats", "implied-probability", "fair-odds"],
-      "tools": [{ "href": "/tools/odds-converter", "label": "Convert any price between decimal, fractional and American — with implied probability" }]
+      "related": [
+        "value-betting-explained",
+        "bookmaker-margin-explained",
+        "how-ai-football-predictions-work"
+      ],
+      "glossary": [
+        "odds-formats",
+        "implied-probability",
+        "fair-odds"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Convert any price between decimal, fractional and American — with implied probability"
+        }
+      ]
     },
     {
       "slug": "what-is-an-accumulator",
@@ -107,13 +129,35 @@
         "Stake small: the defining feature of accas is that most of them lose."
       ],
       "faq": [
-        { "q": "Is an accumulator better than singles?", "a": "Mathematically worse in expected value, because margins compound across legs. Singles preserve more of your edge if you have one; accas trade expected value for the chance of a large payout from a small stake." },
-        { "q": "What happens if a match in my acca is postponed?", "a": "Most bookmakers void that leg and recalculate the acca at the remaining legs' combined odds, so a four-fold becomes a treble. Check the individual bookmaker's rules — treatment of abandoned matches varies." },
-        { "q": "How many legs should an acca have?", "a": "If you must, 2–4. Beyond that the compounded margin and collapsing win probability make the ticket a lottery entry — fine as entertainment at pocket-change stakes, poor as a betting strategy." }
+        {
+          "q": "Is an accumulator better than singles?",
+          "a": "Mathematically worse in expected value, because margins compound across legs. Singles preserve more of your edge if you have one; accas trade expected value for the chance of a large payout from a small stake."
+        },
+        {
+          "q": "What happens if a match in my acca is postponed?",
+          "a": "Most bookmakers void that leg and recalculate the acca at the remaining legs' combined odds, so a four-fold becomes a treble. Check the individual bookmaker's rules — treatment of abandoned matches varies."
+        },
+        {
+          "q": "How many legs should an acca have?",
+          "a": "If you must, 2–4. Beyond that the compounded margin and collapsing win probability make the ticket a lottery entry — fine as entertainment at pocket-change stakes, poor as a betting strategy."
+        }
       ],
-      "related": ["bankroll-management-guide", "common-betting-mistakes", "how-to-read-betting-odds"],
-      "glossary": ["accumulator", "void-bet", "variance"],
-      "tools": [{ "href": "/tools/accumulator-calculator", "label": "Build an acca and see combined odds, returns and implied probability" }]
+      "related": [
+        "bankroll-management-guide",
+        "common-betting-mistakes",
+        "how-to-read-betting-odds"
+      ],
+      "glossary": [
+        "accumulator",
+        "void-bet",
+        "variance"
+      ],
+      "tools": [
+        {
+          "href": "/tools/accumulator-calculator",
+          "label": "Build an acca and see combined odds, returns and implied probability"
+        }
+      ]
     },
     {
       "slug": "bankroll-management-guide",
@@ -161,13 +205,37 @@
         "Written records beat memory — profit is measured in units over hundreds of bets, not in highlights."
       ],
       "faq": [
-        { "q": "How big should my bankroll be?", "a": "Whatever you can genuinely afford to lose without consequence — for many people that is small, and that is fine. The system works identically at €100 or €10,000; what matters is the unit discipline, not the total." },
-        { "q": "Should I stake more on confident picks?", "a": "Confidence and value are not the same thing, and most bettors' confidence correlates poorly with results. If you vary stakes at all, keep the range tight (1–2 units) and driven by measured edge, not feeling." },
-        { "q": "When should I withdraw profits?", "a": "A common approach: set a milestone (say +50% on starting bankroll), withdraw the excess, and reset. Banking wins periodically keeps the bankroll a tool rather than a scoreboard." }
+        {
+          "q": "How big should my bankroll be?",
+          "a": "Whatever you can genuinely afford to lose without consequence — for many people that is small, and that is fine. The system works identically at €100 or €10,000; what matters is the unit discipline, not the total."
+        },
+        {
+          "q": "Should I stake more on confident picks?",
+          "a": "Confidence and value are not the same thing, and most bettors' confidence correlates poorly with results. If you vary stakes at all, keep the range tight (1–2 units) and driven by measured edge, not feeling."
+        },
+        {
+          "q": "When should I withdraw profits?",
+          "a": "A common approach: set a milestone (say +50% on starting bankroll), withdraw the excess, and reset. Banking wins periodically keeps the bankroll a tool rather than a scoreboard."
+        }
       ],
-      "related": ["common-betting-mistakes", "value-betting-explained", "what-is-an-accumulator"],
-      "glossary": ["bankroll-management", "flat-staking", "kelly-criterion", "variance", "self-exclusion"],
-      "tools": [{ "href": "/tipsters", "label": "See our model's real settled record, tracked in flat 1-unit stakes" }]
+      "related": [
+        "common-betting-mistakes",
+        "value-betting-explained",
+        "what-is-an-accumulator"
+      ],
+      "glossary": [
+        "bankroll-management",
+        "flat-staking",
+        "kelly-criterion",
+        "variance",
+        "self-exclusion"
+      ],
+      "tools": [
+        {
+          "href": "/tipsters",
+          "label": "See our model's real settled record, tracked in flat 1-unit stakes"
+        }
+      ]
     },
     {
       "slug": "value-betting-explained",
@@ -214,13 +282,37 @@
         "Real edges are small, noisy and only visible over hundreds of bets."
       ],
       "faq": [
-        { "q": "How do I know if my probability estimates are any good?", "a": "Track them against closing odds: if you consistently beat the closing line, your estimates carry information. That signal shows up within weeks, long before profit curves become meaningful." },
-        { "q": "Is value betting the same as arbitrage?", "a": "No. Arbitrage locks in a small guaranteed profit by covering all outcomes across bookmakers; value betting takes on variance, backing one outcome at a price it believes is wrong. Value betting can lose for months even when done well." },
-        { "q": "Can I value bet with a small bankroll?", "a": "The maths works at any size, but variance is brutal: even with a real 5% edge, hundred-bet losing stretches of the bankroll happen. Flat staking and a genuine entertainment budget are prerequisites, not options." }
+        {
+          "q": "How do I know if my probability estimates are any good?",
+          "a": "Track them against closing odds: if you consistently beat the closing line, your estimates carry information. That signal shows up within weeks, long before profit curves become meaningful."
+        },
+        {
+          "q": "Is value betting the same as arbitrage?",
+          "a": "No. Arbitrage locks in a small guaranteed profit by covering all outcomes across bookmakers; value betting takes on variance, backing one outcome at a price it believes is wrong. Value betting can lose for months even when done well."
+        },
+        {
+          "q": "Can I value bet with a small bankroll?",
+          "a": "The maths works at any size, but variance is brutal: even with a real 5% edge, hundred-bet losing stretches of the bankroll happen. Flat staking and a genuine entertainment budget are prerequisites, not options."
+        }
       ],
-      "related": ["how-to-read-betting-odds", "bookmaker-margin-explained", "bankroll-management-guide"],
-      "glossary": ["value-bet", "expected-value", "edge", "closing-line-value", "fair-odds"],
-      "tools": [{ "href": "/screener", "label": "The live value screener — model probabilities vs best available prices" }]
+      "related": [
+        "how-to-read-betting-odds",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "value-bet",
+        "expected-value",
+        "edge",
+        "closing-line-value",
+        "fair-odds"
+      ],
+      "tools": [
+        {
+          "href": "/screener",
+          "label": "The live value screener — model probabilities vs best available prices"
+        }
+      ]
     },
     {
       "slug": "bookmaker-margin-explained",
@@ -267,13 +359,36 @@
         "Lower-margin bookmakers beat bigger bonuses over any serious time horizon."
       ],
       "faq": [
-        { "q": "Why do margins differ between markets?", "a": "Competition and liability. Match odds on big leagues are heavily shopped, so margins compress. Obscure props face no comparison pressure and carry double-digit margins comfortably." },
-        { "q": "Is a 0% margin possible?", "a": "Occasionally a bookmaker prices an outcome above fair as a promotion, and across different bookmakers the best prices on all outcomes sometimes sum below 100% — that is an arbitrage. Both are rare, small and short-lived." },
-        { "q": "Does margin mean I can't win?", "a": "It means the default trajectory is a slow loss at the margin's rate. Winning requires either luck (short term) or probability estimates that beat the market by more than the margin (long term) — a genuine but rare skill." }
+        {
+          "q": "Why do margins differ between markets?",
+          "a": "Competition and liability. Match odds on big leagues are heavily shopped, so margins compress. Obscure props face no comparison pressure and carry double-digit margins comfortably."
+        },
+        {
+          "q": "Is a 0% margin possible?",
+          "a": "Occasionally a bookmaker prices an outcome above fair as a promotion, and across different bookmakers the best prices on all outcomes sometimes sum below 100% — that is an arbitrage. Both are rare, small and short-lived."
+        },
+        {
+          "q": "Does margin mean I can't win?",
+          "a": "It means the default trajectory is a slow loss at the margin's rate. Winning requires either luck (short term) or probability estimates that beat the market by more than the margin (long term) — a genuine but rare skill."
+        }
       ],
-      "related": ["how-to-read-betting-odds", "value-betting-explained", "how-to-choose-a-betting-site"],
-      "glossary": ["bookmaker-margin", "implied-probability", "odds-comparison", "sharp-and-soft-bookmakers"],
-      "tools": [{ "href": "/tools/margin-calculator", "label": "Paste any market's odds and see the exact margin" }]
+      "related": [
+        "how-to-read-betting-odds",
+        "value-betting-explained",
+        "how-to-choose-a-betting-site"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "implied-probability",
+        "odds-comparison",
+        "sharp-and-soft-bookmakers"
+      ],
+      "tools": [
+        {
+          "href": "/tools/margin-calculator",
+          "label": "Paste any market's odds and see the exact margin"
+        }
+      ]
     },
     {
       "slug": "btts-explained",
@@ -319,13 +434,35 @@
         "Prices cluster near evens because league base rates sit close to 50%."
       ],
       "faq": [
-        { "q": "Does extra time count for BTTS?", "a": "Standard BTTS markets settle on 90 minutes plus stoppage time only. Cup-specific 'to qualify' or extra-time markets are separate products with their own rules — check the market name carefully." },
-        { "q": "Is BTTS better than over 2.5 goals?", "a": "They overlap but answer different questions: a 2-0 result wins overs and loses BTTS; a 1-1 wins BTTS and loses overs. Pick the market that matches your actual view — two functioning attacks (BTTS) versus general goal expectation (totals)." },
-        { "q": "What about BTTS in accumulators?", "a": "Popular because near-evens prices build big combined odds quickly — but five ~52% legs win under 4% of the time, and each leg carries margin. Treat BTTS accas as small-stake entertainment." }
+        {
+          "q": "Does extra time count for BTTS?",
+          "a": "Standard BTTS markets settle on 90 minutes plus stoppage time only. Cup-specific 'to qualify' or extra-time markets are separate products with their own rules — check the market name carefully."
+        },
+        {
+          "q": "Is BTTS better than over 2.5 goals?",
+          "a": "They overlap but answer different questions: a 2-0 result wins overs and loses BTTS; a 1-1 wins BTTS and loses overs. Pick the market that matches your actual view — two functioning attacks (BTTS) versus general goal expectation (totals)."
+        },
+        {
+          "q": "What about BTTS in accumulators?",
+          "a": "Popular because near-evens prices build big combined odds quickly — but five ~52% legs win under 4% of the time, and each leg carries margin. Treat BTTS accas as small-stake entertainment."
+        }
       ],
-      "related": ["over-under-goals-explained", "value-betting-explained", "what-is-an-accumulator"],
-      "glossary": ["btts", "xg", "implied-probability"],
-      "tools": [{ "href": "/tips/btts", "label": "Today's BTTS picks with model probabilities and best prices" }]
+      "related": [
+        "over-under-goals-explained",
+        "value-betting-explained",
+        "what-is-an-accumulator"
+      ],
+      "glossary": [
+        "btts",
+        "xg",
+        "implied-probability"
+      ],
+      "tools": [
+        {
+          "href": "/tips/btts",
+          "label": "Today's BTTS picks with model probabilities and best prices"
+        }
+      ]
     },
     {
       "slug": "over-under-goals-explained",
@@ -372,13 +509,35 @@
         "Totals markets are efficient: real edges are small, and passing is normal."
       ],
       "faq": [
-        { "q": "Do goals in extra time count?", "a": "Standard totals settle on 90 minutes plus stoppage. Markets covering extra time in cup ties are labelled separately — read the market name before assuming." },
-        { "q": "What does Over 2.25 pay if the match ends 2-1?", "a": "Full win: both halves of the stake (Over 2.0 and Over 2.5) win with three goals. At 2-0 the Over 2.0 half refunds and the Over 2.5 half loses — a half loss." },
-        { "q": "Why is Under often priced shorter than Over?", "a": "Recreational money prefers goals, so bookmakers can shade Over prices down and Under prices up. That systematic lean is exactly the kind of bias models look to exploit on the Under side." }
+        {
+          "q": "Do goals in extra time count?",
+          "a": "Standard totals settle on 90 minutes plus stoppage. Markets covering extra time in cup ties are labelled separately — read the market name before assuming."
+        },
+        {
+          "q": "What does Over 2.25 pay if the match ends 2-1?",
+          "a": "Full win: both halves of the stake (Over 2.0 and Over 2.5) win with three goals. At 2-0 the Over 2.0 half refunds and the Over 2.5 half loses — a half loss."
+        },
+        {
+          "q": "Why is Under often priced shorter than Over?",
+          "a": "Recreational money prefers goals, so bookmakers can shade Over prices down and Under prices up. That systematic lean is exactly the kind of bias models look to exploit on the Under side."
+        }
       ],
-      "related": ["btts-explained", "asian-handicap-explained", "how-ai-football-predictions-work"],
-      "glossary": ["over-under", "settlement", "line-movement"],
-      "tools": [{ "href": "/tips/over-under", "label": "Today's totals picks with fair-odds comparison" }]
+      "related": [
+        "btts-explained",
+        "asian-handicap-explained",
+        "how-ai-football-predictions-work"
+      ],
+      "glossary": [
+        "over-under",
+        "settlement",
+        "line-movement"
+      ],
+      "tools": [
+        {
+          "href": "/tips/over-under",
+          "label": "Today's totals picks with fair-odds comparison"
+        }
+      ]
     },
     {
       "slug": "asian-handicap-explained",
@@ -425,13 +584,36 @@
         "Margins on Asian lines are usually tighter than 1X2 — the cheapest football market to bet."
       ],
       "faq": [
-        { "q": "Is Asian handicap the same as European handicap?", "a": "No. European (3-way) handicap keeps the draw as a bettable outcome after applying whole-goal handicaps, so pushes become losses unless you backed the handicap draw. Asian handicap refunds instead. The names are confusingly similar; the settlement is not." },
-        { "q": "What is +0 (level ball) useful for?", "a": "It is draw-no-bet: back a team, get refunded on a draw. Ideal when you fancy an underdog to avoid defeat but do not trust them to win outright." },
-        { "q": "Why do Asian lines move more than 1X2?", "a": "They carry the sharpest global money, so new information (lineups, weather, big bets) hits them first. Watching Asian line movement is a common way to read where informed money leans." }
+        {
+          "q": "Is Asian handicap the same as European handicap?",
+          "a": "No. European (3-way) handicap keeps the draw as a bettable outcome after applying whole-goal handicaps, so pushes become losses unless you backed the handicap draw. Asian handicap refunds instead. The names are confusingly similar; the settlement is not."
+        },
+        {
+          "q": "What is +0 (level ball) useful for?",
+          "a": "It is draw-no-bet: back a team, get refunded on a draw. Ideal when you fancy an underdog to avoid defeat but do not trust them to win outright."
+        },
+        {
+          "q": "Why do Asian lines move more than 1X2?",
+          "a": "They carry the sharpest global money, so new information (lineups, weather, big bets) hits them first. Watching Asian line movement is a common way to read where informed money leans."
+        }
       ],
-      "related": ["over-under-goals-explained", "how-to-read-betting-odds", "value-betting-explained"],
-      "glossary": ["asian-handicap", "draw-no-bet", "line-movement", "sharp-and-soft-bookmakers"],
-      "tools": [{ "href": "/dropping-odds", "label": "Watch where prices are moving across the markets we track" }]
+      "related": [
+        "over-under-goals-explained",
+        "how-to-read-betting-odds",
+        "value-betting-explained"
+      ],
+      "glossary": [
+        "asian-handicap",
+        "draw-no-bet",
+        "line-movement",
+        "sharp-and-soft-bookmakers"
+      ],
+      "tools": [
+        {
+          "href": "/dropping-odds",
+          "label": "Watch where prices are moving across the markets we track"
+        }
+      ]
     },
     {
       "slug": "how-ai-football-predictions-work",
@@ -479,13 +661,36 @@
         "Judge any tipster on full flat-staked records and closing line value, never on highlight months."
       ],
       "faq": [
-        { "q": "What accuracy do football prediction models achieve?", "a": "On three-way match odds, top models land the correct outcome roughly 50–55% of the time — barely above always-backing-the-favourite. Accuracy is the wrong metric anyway; calibration and value against prices are what pay, which is why we report units and CLV instead." },
-        { "q": "Why does the model sometimes disagree with obvious form?", "a": "Because 'obvious form' is usually five matches of noise, and the model weighs two seasons of rates. When they clash, the longer sample is right more often — not always, just more often, which is all a model claims." },
-        { "q": "Do you use machine learning?", "a": "The core is classical statistics: time-decayed Poisson rates with shrinkage, blended with market prices. It is transparent, debuggable and published. Fancier architectures add opacity faster than they add football accuracy at our data scale." }
+        {
+          "q": "What accuracy do football prediction models achieve?",
+          "a": "On three-way match odds, top models land the correct outcome roughly 50–55% of the time — barely above always-backing-the-favourite. Accuracy is the wrong metric anyway; calibration and value against prices are what pay, which is why we report units and CLV instead."
+        },
+        {
+          "q": "Why does the model sometimes disagree with obvious form?",
+          "a": "Because 'obvious form' is usually five matches of noise, and the model weighs two seasons of rates. When they clash, the longer sample is right more often — not always, just more often, which is all a model claims."
+        },
+        {
+          "q": "Do you use machine learning?",
+          "a": "The core is classical statistics: time-decayed Poisson rates with shrinkage, blended with market prices. It is transparent, debuggable and published. Fancier architectures add opacity faster than they add football accuracy at our data scale."
+        }
       ],
-      "related": ["value-betting-explained", "how-to-read-betting-odds", "common-betting-mistakes"],
-      "glossary": ["xg", "closing-line-value", "fair-odds", "win-rate"],
-      "tools": [{ "href": "/model", "label": "Our full model methodology, version history and known limits" }]
+      "related": [
+        "value-betting-explained",
+        "how-to-read-betting-odds",
+        "common-betting-mistakes"
+      ],
+      "glossary": [
+        "xg",
+        "closing-line-value",
+        "fair-odds",
+        "win-rate"
+      ],
+      "tools": [
+        {
+          "href": "/model",
+          "label": "Our full model methodology, version history and known limits"
+        }
+      ]
     },
     {
       "slug": "common-betting-mistakes",
@@ -552,13 +757,36 @@
         "Read bonus wagering terms in full; bet only from a ring-fenced budget."
       ],
       "faq": [
-        { "q": "What is the single most damaging mistake?", "a": "Chasing losses. Every other error costs you at the margin's pace; chasing compresses a year of expected losses into one night. If you adopt only one rule, make it the losing-day stop." },
-        { "q": "How do I know if my betting is still recreational?", "a": "Honest tests: you bet only ring-fenced money, losses do not change your mood for long, you never hide the activity, and stopping for a week is easy. If any of those fail, use the limit tools and talk to GambleAware — early is the whole trick." },
-        { "q": "Are these mistakes really that common?", "a": "They are the norm, not the exception — bookmaker product design (bonuses, bet builders, high-odds promotions) actively encourages several of them. Assume the defaults are set against you and choose deliberately." }
+        {
+          "q": "What is the single most damaging mistake?",
+          "a": "Chasing losses. Every other error costs you at the margin's pace; chasing compresses a year of expected losses into one night. If you adopt only one rule, make it the losing-day stop."
+        },
+        {
+          "q": "How do I know if my betting is still recreational?",
+          "a": "Honest tests: you bet only ring-fenced money, losses do not change your mood for long, you never hide the activity, and stopping for a week is easy. If any of those fail, use the limit tools and talk to GambleAware — early is the whole trick."
+        },
+        {
+          "q": "Are these mistakes really that common?",
+          "a": "They are the norm, not the exception — bookmaker product design (bonuses, bet builders, high-odds promotions) actively encourages several of them. Assume the defaults are set against you and choose deliberately."
+        }
       ],
-      "related": ["bankroll-management-guide", "value-betting-explained", "what-is-an-accumulator"],
-      "glossary": ["bankroll-management", "wagering-requirements", "variance", "self-exclusion"],
-      "tools": [{ "href": "/tipsters", "label": "Our full settled record — losing runs included, flat-staked" }]
+      "related": [
+        "bankroll-management-guide",
+        "value-betting-explained",
+        "what-is-an-accumulator"
+      ],
+      "glossary": [
+        "bankroll-management",
+        "wagering-requirements",
+        "variance",
+        "self-exclusion"
+      ],
+      "tools": [
+        {
+          "href": "/tipsters",
+          "label": "Our full settled record — losing runs included, flat-staked"
+        }
+      ]
     },
     {
       "slug": "how-to-choose-a-betting-site",
@@ -605,13 +833,36 @@
         "Read wagering terms, win caps and fee clauses before they read you."
       ],
       "faq": [
-        { "q": "Should I have accounts at several bookmakers?", "a": "Yes, two or three licensed ones. Line shopping alone justifies it, and it protects you if one restricts your account or delays a payout. Keep every account fully verified and within your one shared budget." },
-        { "q": "Are big-brand bookmakers always safer?", "a": "Brand size correlates with regulatory scrutiny, not generosity — big brands often carry higher margins and aggressive restriction policies. Safest is licensed-in-your-market plus a payout reputation you have checked, at any size." },
-        { "q": "What if a bookmaker refuses to pay out?", "a": "Licensed operator: complain formally in writing, then escalate to the regulator or the designated ADR body — these routes work and are the licence's whole point. Unlicensed operator: there is usually no route, which is the argument for the first section of this guide." }
+        {
+          "q": "Should I have accounts at several bookmakers?",
+          "a": "Yes, two or three licensed ones. Line shopping alone justifies it, and it protects you if one restricts your account or delays a payout. Keep every account fully verified and within your one shared budget."
+        },
+        {
+          "q": "Are big-brand bookmakers always safer?",
+          "a": "Brand size correlates with regulatory scrutiny, not generosity — big brands often carry higher margins and aggressive restriction policies. Safest is licensed-in-your-market plus a payout reputation you have checked, at any size."
+        },
+        {
+          "q": "What if a bookmaker refuses to pay out?",
+          "a": "Licensed operator: complain formally in writing, then escalate to the regulator or the designated ADR body — these routes work and are the licence's whole point. Unlicensed operator: there is usually no route, which is the argument for the first section of this guide."
+        }
       ],
-      "related": ["bookmaker-margin-explained", "common-betting-mistakes", "how-to-read-betting-odds"],
-      "glossary": ["wagering-requirements", "sharp-and-soft-bookmakers", "cash-out", "free-bet"],
-      "tools": [{ "href": "/bookmakers", "label": "Our scored bookmaker comparison, by market" }]
+      "related": [
+        "bookmaker-margin-explained",
+        "common-betting-mistakes",
+        "how-to-read-betting-odds"
+      ],
+      "glossary": [
+        "wagering-requirements",
+        "sharp-and-soft-bookmakers",
+        "cash-out",
+        "free-bet"
+      ],
+      "tools": [
+        {
+          "href": "/bookmakers",
+          "label": "Our scored bookmaker comparison, by market"
+        }
+      ]
     },
     {
       "slug": "in-play-betting-guide",
@@ -658,13 +909,36 @@
         "Set stakes and stop rules before kickoff — live betting punishes improvisation."
       ],
       "faq": [
-        { "q": "Why did my live bet get rejected or delayed?", "a": "Bookmakers apply an acceptance delay (5–10 seconds) to live bets and void the attempt if the market moves or suspends within it. It is protection against bettors exploiting feed latency — annoying and universal." },
-        { "q": "Is cash-out ever the right move?", "a": "Occasionally — when your original reason for the bet has genuinely broken (key injury, red card against you) or the position is too large for comfort. As a routine habit it converts winning positions into margin donations." },
-        { "q": "Can I beat live markets by watching faster streams?", "a": "Courtside and low-latency data users do exist, and bookmaker delays exist because of them. For anyone on a normal broadcast, the latency war is lost before it starts — plan entries instead of racing the feed." }
+        {
+          "q": "Why did my live bet get rejected or delayed?",
+          "a": "Bookmakers apply an acceptance delay (5–10 seconds) to live bets and void the attempt if the market moves or suspends within it. It is protection against bettors exploiting feed latency — annoying and universal."
+        },
+        {
+          "q": "Is cash-out ever the right move?",
+          "a": "Occasionally — when your original reason for the bet has genuinely broken (key injury, red card against you) or the position is too large for comfort. As a routine habit it converts winning positions into margin donations."
+        },
+        {
+          "q": "Can I beat live markets by watching faster streams?",
+          "a": "Courtside and low-latency data users do exist, and bookmaker delays exist because of them. For anyone on a normal broadcast, the latency war is lost before it starts — plan entries instead of racing the feed."
+        }
       ],
-      "related": ["value-betting-explained", "bankroll-management-guide", "over-under-goals-explained"],
-      "glossary": ["in-play-betting", "cash-out", "line-movement", "settlement"],
-      "tools": [{ "href": "/dropping-odds", "label": "Live odds movement across the markets we track" }]
+      "related": [
+        "value-betting-explained",
+        "bankroll-management-guide",
+        "over-under-goals-explained"
+      ],
+      "glossary": [
+        "in-play-betting",
+        "cash-out",
+        "line-movement",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/dropping-odds",
+          "label": "Live odds movement across the markets we track"
+        }
+      ]
     },
     {
       "slug": "betting-in-nigeria",
@@ -705,13 +979,34 @@
         }
       ],
       "faq": [
-        { "q": "Is online betting taxed in Nigeria?", "a": "Operators pay licensing and gaming taxes; bettors' winnings have generally not been taxed at source, though proposals surface regularly. Rules can change — check the current position before assuming, especially for large payouts." },
-        { "q": "Can I bet with airtime or USSD?", "a": "Several Nigerian operators support USSD betting flows for feature phones and low-data situations, though deposits still route through bank or wallet rails rather than airtime in most cases. Check each operator's payment page for what it actually supports." },
-        { "q": "How do I know an operator is licensed for Nigeria?", "a": "Licensed operators display NLRC or state licence details in the site footer, and regulators publish operator lists. If licence information is missing or vague, treat that as disqualifying — there are enough licensed options that you never need an unlicensed one." }
+        {
+          "q": "Is online betting taxed in Nigeria?",
+          "a": "Operators pay licensing and gaming taxes; bettors' winnings have generally not been taxed at source, though proposals surface regularly. Rules can change — check the current position before assuming, especially for large payouts."
+        },
+        {
+          "q": "Can I bet with airtime or USSD?",
+          "a": "Several Nigerian operators support USSD betting flows for feature phones and low-data situations, though deposits still route through bank or wallet rails rather than airtime in most cases. Check each operator's payment page for what it actually supports."
+        },
+        {
+          "q": "How do I know an operator is licensed for Nigeria?",
+          "a": "Licensed operators display NLRC or state licence details in the site footer, and regulators publish operator lists. If licence information is missing or vague, treat that as disqualifying — there are enough licensed options that you never need an unlicensed one."
+        }
       ],
-      "related": ["how-to-choose-a-betting-site", "bookmaker-margin-explained", "bankroll-management-guide"],
-      "glossary": ["bookmaker-margin", "wagering-requirements"],
-      "tools": [{ "href": "/countries/ng", "label": "Ranked betting sites for Nigeria" }]
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ng",
+          "label": "Ranked betting sites for Nigeria"
+        }
+      ]
     },
     {
       "slug": "betting-in-kenya",
@@ -752,13 +1047,34 @@
         }
       ],
       "faq": [
-        { "q": "How much tax do I pay on winnings in Kenya?", "a": "A withholding tax on winnings applies and operators deduct it automatically, but the rate has changed several times in recent years — check the KRA's current schedule rather than trusting any static number, including ones you read in guides." },
-        { "q": "Can I bet without a smartphone?", "a": "Yes — Kenya's market grew up on SMS and USSD betting, and several licensed operators still run full USSD menus for feature phones. M-Pesa handles the money side identically either way." },
-        { "q": "Are betting sites without BCLB licences safe?", "a": "No. Unlicensed sites sit outside the dispute and fund-protection framework, and Kenyan authorities periodically block them. With multiple licensed, instant-payout options available, there is no reason to accept the risk." }
+        {
+          "q": "How much tax do I pay on winnings in Kenya?",
+          "a": "A withholding tax on winnings applies and operators deduct it automatically, but the rate has changed several times in recent years — check the KRA's current schedule rather than trusting any static number, including ones you read in guides."
+        },
+        {
+          "q": "Can I bet without a smartphone?",
+          "a": "Yes — Kenya's market grew up on SMS and USSD betting, and several licensed operators still run full USSD menus for feature phones. M-Pesa handles the money side identically either way."
+        },
+        {
+          "q": "Are betting sites without BCLB licences safe?",
+          "a": "No. Unlicensed sites sit outside the dispute and fund-protection framework, and Kenyan authorities periodically block them. With multiple licensed, instant-payout options available, there is no reason to accept the risk."
+        }
       ],
-      "related": ["how-to-choose-a-betting-site", "bankroll-management-guide", "common-betting-mistakes"],
-      "glossary": ["bookmaker-margin", "settlement"],
-      "tools": [{ "href": "/countries/ke", "label": "Ranked betting sites for Kenya" }]
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bankroll-management-guide",
+        "common-betting-mistakes"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ke",
+          "label": "Ranked betting sites for Kenya"
+        }
+      ]
     },
     {
       "slug": "betting-in-ghana",
@@ -792,13 +1108,34 @@
         }
       ],
       "faq": [
-        { "q": "How much is the tax on betting winnings in Ghana?", "a": "A withholding tax on gross winnings has applied since 2023, deducted automatically at payout. The rate has been revised since launch — check the GRA's current schedule for the figure that applies today." },
-        { "q": "Which payment method is best for betting in Ghana?", "a": "MTN MoMo is supported everywhere and pays out fastest at good operators. Cards work for deposits but withdrawals almost always route back through mobile money — so MoMo end-to-end is the simplest setup." },
-        { "q": "How do I verify a betting site is licensed in Ghana?", "a": "The Gaming Commission of Ghana publishes the list of licensed operators. If a site serving Ghana is not on it, or hides its licence details, choose one of the many that are." }
+        {
+          "q": "How much is the tax on betting winnings in Ghana?",
+          "a": "A withholding tax on gross winnings has applied since 2023, deducted automatically at payout. The rate has been revised since launch — check the GRA's current schedule for the figure that applies today."
+        },
+        {
+          "q": "Which payment method is best for betting in Ghana?",
+          "a": "MTN MoMo is supported everywhere and pays out fastest at good operators. Cards work for deposits but withdrawals almost always route back through mobile money — so MoMo end-to-end is the simplest setup."
+        },
+        {
+          "q": "How do I verify a betting site is licensed in Ghana?",
+          "a": "The Gaming Commission of Ghana publishes the list of licensed operators. If a site serving Ghana is not on it, or hides its licence details, choose one of the many that are."
+        }
       ],
-      "related": ["how-to-choose-a-betting-site", "bookmaker-margin-explained", "common-betting-mistakes"],
-      "glossary": ["wagering-requirements", "bookmaker-margin"],
-      "tools": [{ "href": "/countries/gh", "label": "Ranked betting sites for Ghana" }]
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "common-betting-mistakes"
+      ],
+      "glossary": [
+        "wagering-requirements",
+        "bookmaker-margin"
+      ],
+      "tools": [
+        {
+          "href": "/countries/gh",
+          "label": "Ranked betting sites for Ghana"
+        }
+      ]
     },
     {
       "slug": "betting-in-south-africa",
@@ -832,13 +1169,34 @@
         }
       ],
       "faq": [
-        { "q": "Are online casinos really illegal in South Africa?", "a": "Yes — online casino gaming is prohibited nationally, and enforcement actions against offshore casino operators and even winnings have occurred. Online sports betting through provincially licensed bookmakers is the legal channel." },
-        { "q": "Do I pay tax on betting winnings in South Africa?", "a": "Recreational winnings are generally not taxed. Betting as a systematic profession can be treated as income by SARS — a bar most bettors never approach, but worth knowing exists." },
-        { "q": "What is FICA verification?", "a": "The identity and address verification licensed operators must perform under the Financial Intelligence Centre Act. It is mandatory before withdrawals, so submitting documents at signup — not at payout time — is the practical move." }
+        {
+          "q": "Are online casinos really illegal in South Africa?",
+          "a": "Yes — online casino gaming is prohibited nationally, and enforcement actions against offshore casino operators and even winnings have occurred. Online sports betting through provincially licensed bookmakers is the legal channel."
+        },
+        {
+          "q": "Do I pay tax on betting winnings in South Africa?",
+          "a": "Recreational winnings are generally not taxed. Betting as a systematic profession can be treated as income by SARS — a bar most bettors never approach, but worth knowing exists."
+        },
+        {
+          "q": "What is FICA verification?",
+          "a": "The identity and address verification licensed operators must perform under the Financial Intelligence Centre Act. It is mandatory before withdrawals, so submitting documents at signup — not at payout time — is the practical move."
+        }
       ],
-      "related": ["how-to-choose-a-betting-site", "bookmaker-margin-explained", "bankroll-management-guide"],
-      "glossary": ["bookmaker-margin", "settlement"],
-      "tools": [{ "href": "/countries/za", "label": "Ranked betting sites for South Africa" }]
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/countries/za",
+          "label": "Ranked betting sites for South Africa"
+        }
+      ]
     },
     {
       "slug": "betting-in-india",
@@ -879,13 +1237,34 @@
         }
       ],
       "faq": [
-        { "q": "Is online betting legal in India?", "a": "It depends on your state. A few states license some products, some prohibit betting entirely, and most have ambiguous pre-internet laws. There is no national licence, so check your state's current position — that is the only answer that is true everywhere." },
-        { "q": "How are betting winnings taxed in India?", "a": "Tax is deducted at source on gaming winnings at a flat rate, and GST changes have added deposit-side tax for online money gaming. Rates have shifted since 2023 — verify current TDS and GST rules before betting rather than relying on any static figure." },
-        { "q": "Why do deposit methods keep changing on betting sites in India?", "a": "Offshore operators route payments through processors that rotate as banks tighten rules, so UPI handles and gateways change often. Operators with stable, long-lived payment rails are demonstrating exactly the operational quality you want." }
+        {
+          "q": "Is online betting legal in India?",
+          "a": "It depends on your state. A few states license some products, some prohibit betting entirely, and most have ambiguous pre-internet laws. There is no national licence, so check your state's current position — that is the only answer that is true everywhere."
+        },
+        {
+          "q": "How are betting winnings taxed in India?",
+          "a": "Tax is deducted at source on gaming winnings at a flat rate, and GST changes have added deposit-side tax for online money gaming. Rates have shifted since 2023 — verify current TDS and GST rules before betting rather than relying on any static figure."
+        },
+        {
+          "q": "Why do deposit methods keep changing on betting sites in India?",
+          "a": "Offshore operators route payments through processors that rotate as banks tighten rules, so UPI handles and gateways change often. Operators with stable, long-lived payment rails are demonstrating exactly the operational quality you want."
+        }
       ],
-      "related": ["how-to-choose-a-betting-site", "common-betting-mistakes", "bankroll-management-guide"],
-      "glossary": ["bookmaker-margin", "wagering-requirements"],
-      "tools": [{ "href": "/countries/in", "label": "Betting sites serving India" }]
+      "related": [
+        "how-to-choose-a-betting-site",
+        "common-betting-mistakes",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/countries/in",
+          "label": "Betting sites serving India"
+        }
+      ]
     },
     {
       "slug": "betting-in-brazil",
@@ -926,13 +1305,34 @@
         }
       ],
       "faq": [
-        { "q": "How do I know a betting site is legal in Brazil?", "a": "Licensed operators use .bet.br domains under SPA/MF authorisation — the domain itself is the marker. Sites serving Brazil from other domains sit outside the regulated framework that took effect in January 2025." },
-        { "q": "Are betting winnings taxed in Brazil?", "a": "Under the new regime, net winnings above an exemption threshold are subject to income tax. The rules are new and details have been adjusted since launch — check current Receita Federal guidance for thresholds and rates." },
-        { "q": "Can I still use offshore sites from Brazil?", "a": "The regulated market is designed to channel players to licensed .bet.br operators, with payment blocking and enforcement against unlicensed sites ramping up. Licensed operators now offer the same products with actual consumer protections — the trade-off has collapsed." }
+        {
+          "q": "How do I know a betting site is legal in Brazil?",
+          "a": "Licensed operators use .bet.br domains under SPA/MF authorisation — the domain itself is the marker. Sites serving Brazil from other domains sit outside the regulated framework that took effect in January 2025."
+        },
+        {
+          "q": "Are betting winnings taxed in Brazil?",
+          "a": "Under the new regime, net winnings above an exemption threshold are subject to income tax. The rules are new and details have been adjusted since launch — check current Receita Federal guidance for thresholds and rates."
+        },
+        {
+          "q": "Can I still use offshore sites from Brazil?",
+          "a": "The regulated market is designed to channel players to licensed .bet.br operators, with payment blocking and enforcement against unlicensed sites ramping up. Licensed operators now offer the same products with actual consumer protections — the trade-off has collapsed."
+        }
       ],
-      "related": ["how-to-choose-a-betting-site", "bookmaker-margin-explained", "bankroll-management-guide"],
-      "glossary": ["bookmaker-margin", "settlement"],
-      "tools": [{ "href": "/countries/br", "label": "Ranked betting sites for Brazil" }]
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/countries/br",
+          "label": "Ranked betting sites for Brazil"
+        }
+      ]
     },
     {
       "slug": "betting-in-mexico",
@@ -966,13 +1366,34 @@
         }
       ],
       "faq": [
-        { "q": "Are betting winnings taxed in Mexico?", "a": "A small federal withholding applies to gaming prizes in certain cases, with state-level variations. Amounts are generally modest for typical bettors, but check current SAT rules if you win big — the treatment depends on prize type and size." },
-        { "q": "Can I deposit with cash in Mexico?", "a": "Yes — OXXO vouchers let you deposit cash at any of thousands of convenience stores, with the balance crediting in minutes. It remains one of Mexico's most-used deposit routes alongside SPEI transfers." },
-        { "q": "How do I verify a SEGOB permit?", "a": "Licensed operators display their permit number (often referencing the land-based permit holder they operate under) in the site footer. Absence of any permit reference is the disqualifying signal." }
+        {
+          "q": "Are betting winnings taxed in Mexico?",
+          "a": "A small federal withholding applies to gaming prizes in certain cases, with state-level variations. Amounts are generally modest for typical bettors, but check current SAT rules if you win big — the treatment depends on prize type and size."
+        },
+        {
+          "q": "Can I deposit with cash in Mexico?",
+          "a": "Yes — OXXO vouchers let you deposit cash at any of thousands of convenience stores, with the balance crediting in minutes. It remains one of Mexico's most-used deposit routes alongside SPEI transfers."
+        },
+        {
+          "q": "How do I verify a SEGOB permit?",
+          "a": "Licensed operators display their permit number (often referencing the land-based permit holder they operate under) in the site footer. Absence of any permit reference is the disqualifying signal."
+        }
       ],
-      "related": ["how-to-choose-a-betting-site", "bookmaker-margin-explained", "common-betting-mistakes"],
-      "glossary": ["bookmaker-margin", "wagering-requirements"],
-      "tools": [{ "href": "/countries/mx", "label": "Ranked betting sites for Mexico" }]
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "common-betting-mistakes"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/countries/mx",
+          "label": "Ranked betting sites for Mexico"
+        }
+      ]
     },
     {
       "slug": "betting-in-argentina",
@@ -1006,13 +1427,34 @@
         }
       ],
       "faq": [
-        { "q": "Is online betting legal everywhere in Argentina?", "a": "No — regulation is provincial. Buenos Aires City and Province license online operators, several other provinces have their own regimes, and some lag. Your province's regulator determines what is licensed for you." },
-        { "q": "Why does withdrawal speed matter so much in Argentina?", "a": "Peso volatility: money that takes days to arrive is worth measurably less than money that arrives in hours. Operators with same-day Mercado Pago payouts protect you from transit devaluation." },
-        { "q": "Are winnings taxed in Argentina?", "a": "Tax treatment varies by province and prize type, and national rules on gaming taxation have shifted repeatedly. For significant amounts, check current AFIP and provincial guidance rather than assuming." }
+        {
+          "q": "Is online betting legal everywhere in Argentina?",
+          "a": "No — regulation is provincial. Buenos Aires City and Province license online operators, several other provinces have their own regimes, and some lag. Your province's regulator determines what is licensed for you."
+        },
+        {
+          "q": "Why does withdrawal speed matter so much in Argentina?",
+          "a": "Peso volatility: money that takes days to arrive is worth measurably less than money that arrives in hours. Operators with same-day Mercado Pago payouts protect you from transit devaluation."
+        },
+        {
+          "q": "Are winnings taxed in Argentina?",
+          "a": "Tax treatment varies by province and prize type, and national rules on gaming taxation have shifted repeatedly. For significant amounts, check current AFIP and provincial guidance rather than assuming."
+        }
       ],
-      "related": ["how-to-choose-a-betting-site", "bankroll-management-guide", "bookmaker-margin-explained"],
-      "glossary": ["bookmaker-margin", "settlement"],
-      "tools": [{ "href": "/countries/ar", "label": "Ranked betting sites for Argentina" }]
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bankroll-management-guide",
+        "bookmaker-margin-explained"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ar",
+          "label": "Ranked betting sites for Argentina"
+        }
+      ]
     },
     {
       "slug": "betting-in-canada",
@@ -1046,13 +1488,34 @@
         }
       ],
       "faq": [
-        { "q": "Are betting winnings taxable in Canada?", "a": "Recreational winnings are not taxed. The exception is gambling pursued systematically as a business — professional-level activity the CRA can treat as income, which recreational bettors do not approach." },
-        { "q": "Can I use offshore betting sites outside Ontario?", "a": "They are accessible and widely used, but sit outside Canada's licensing and dispute framework. Provincial platforms offer full protection; offshore sites demand grey-market caution — established licences, verified payout histories and small stakes." },
-        { "q": "What is different about Ontario?", "a": "Ontario opened a fully licensed market in 2022 under AGCO/iGaming Ontario, so private operators there carry local licences, fund protections and dispute routes — the framework other provinces route through their lottery platforms instead." }
+        {
+          "q": "Are betting winnings taxable in Canada?",
+          "a": "Recreational winnings are not taxed. The exception is gambling pursued systematically as a business — professional-level activity the CRA can treat as income, which recreational bettors do not approach."
+        },
+        {
+          "q": "Can I use offshore betting sites outside Ontario?",
+          "a": "They are accessible and widely used, but sit outside Canada's licensing and dispute framework. Provincial platforms offer full protection; offshore sites demand grey-market caution — established licences, verified payout histories and small stakes."
+        },
+        {
+          "q": "What is different about Ontario?",
+          "a": "Ontario opened a fully licensed market in 2022 under AGCO/iGaming Ontario, so private operators there carry local licences, fund protections and dispute routes — the framework other provinces route through their lottery platforms instead."
+        }
       ],
-      "related": ["how-to-choose-a-betting-site", "bookmaker-margin-explained", "bankroll-management-guide"],
-      "glossary": ["bookmaker-margin", "cash-out"],
-      "tools": [{ "href": "/countries/ca", "label": "Ranked betting sites for Canada" }]
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "cash-out"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ca",
+          "label": "Ranked betting sites for Canada"
+        }
+      ]
     },
     {
       "slug": "betting-in-ireland",
@@ -1086,13 +1549,106 @@
         }
       ],
       "faq": [
-        { "q": "Are betting winnings taxed in Ireland?", "a": "No — winnings are tax-free for the punter. Betting duty is charged to operators on turnover, which is priced into odds rather than deducted from payouts." },
-        { "q": "What changes under the Gambling Regulation Act 2024?", "a": "A dedicated regulator (GRAI) replaces the patchwork of older licensing routes, adding advertising restrictions, a national self-exclusion register and stronger consumer protections as provisions phase in. Licensed operators carry across." },
-        { "q": "Is horse racing betting different from sports betting legally?", "a": "Both are fully legal; racing runs deep in the Irish market and the same licensing covers it. The practical difference is product depth — Irish-facing books compete hardest on racing and GAA alongside football." }
+        {
+          "q": "Are betting winnings taxed in Ireland?",
+          "a": "No — winnings are tax-free for the punter. Betting duty is charged to operators on turnover, which is priced into odds rather than deducted from payouts."
+        },
+        {
+          "q": "What changes under the Gambling Regulation Act 2024?",
+          "a": "A dedicated regulator (GRAI) replaces the patchwork of older licensing routes, adding advertising restrictions, a national self-exclusion register and stronger consumer protections as provisions phase in. Licensed operators carry across."
+        },
+        {
+          "q": "Is horse racing betting different from sports betting legally?",
+          "a": "Both are fully legal; racing runs deep in the Irish market and the same licensing covers it. The practical difference is product depth — Irish-facing books compete hardest on racing and GAA alongside football."
+        }
       ],
-      "related": ["how-to-choose-a-betting-site", "bookmaker-margin-explained", "value-betting-explained"],
-      "glossary": ["bookmaker-margin", "self-exclusion"],
-      "tools": [{ "href": "/countries/ie", "label": "Ranked betting sites for Ireland" }]
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "value-betting-explained"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "self-exclusion"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ie",
+          "label": "Ranked betting sites for Ireland"
+        }
+      ]
+    },
+    {
+      "slug": "betting-in-benin",
+      "title": "Betting in Benin: How It Works",
+      "nav": "Betting in Benin",
+      "desc": "Benin's betting rules, the national lottery framework, MTN MoMo and Moov Money deposits, and how to pick a site built for a mobile-first market.",
+      "cat": "Countries",
+      "country": "bj",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Is betting legal in Benin?",
+          "ps": [
+            "Betting in Benin operates under state oversight organised around the national lottery framework, so licensed activity does exist alongside international operators serving the market. What makes Benin different from its neighbours is how often the rules have been reorganised: the sector has been suspended, restructured and reopened more than once in recent years.",
+            "The practical consequence is that no guide — this one included — should be your final word on legality. Check the current position before you deposit, and prefer operators that state their licensing clearly rather than leaving you to guess."
+          ]
+        },
+        {
+          "h": "Mobile money runs the market",
+          "ps": [
+            "Betting in Benin is a phone activity end to end. MTN MoMo and Moov Money handle the bulk of deposits and withdrawals, with Celtiis Cash also supported at some operators, and balances held in XOF so you avoid conversion costs.",
+            "Because everything routes through the same few wallets, payout speed is unusually comparable between operators here — and worth checking before you commit. Test a small withdrawal early rather than discovering the delay when it matters."
+          ]
+        },
+        {
+          "h": "What actually matters when choosing a site",
+          "ps": [
+            "Four things, roughly in order: clearly stated licensing, mobile money withdrawal speed from real user reports, app weight, and odds quality on the leagues you actually bet. Data costs money in Benin, so a heavy app or a site that reloads constantly is a genuine expense, not just an annoyance — the best operators ship data-light apps and workable low-bandwidth sites.",
+            "On odds: margins differ enough between operators to matter more than any welcome bonus. Our margin guide shows how to compare two prices in ten seconds, and the difference compounds across every bet you place."
+          ]
+        },
+        {
+          "h": "Football, and mostly European football",
+          "ps": [
+            "Betting interest in Benin follows the European calendar — the Premier League, the Champions League and the big continental leagues dominate volume, the same pattern we see across francophone West Africa. That is convenient, because those are the most efficiently priced markets in the world: prices are honest, and line shopping across two operators is worth more than any tipping service.",
+            "Our model covers 30 competitions and publishes its full settled record, including losing runs. Treat every prediction — ours included — as a statistical estimate rather than a forecast, and stake accordingly. 18+, and bet only what you can afford to lose."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Are betting sites legal in Benin?",
+          "a": "Betting operates within a national lottery framework under state oversight, so licensed activity exists. The regime has been reorganised several times in recent years, so verify the current rules before signing up rather than relying on any static description."
+        },
+        {
+          "q": "Which payment methods work best for betting in Benin?",
+          "a": "MTN MoMo and Moov Money cover most of the market, with Celtiis Cash supported at some operators, all in XOF. Confirm on the operator's cashier page that your wallet works for withdrawals as well as deposits — the two are not always the same list."
+        },
+        {
+          "q": "Do I pay tax on betting winnings in Benin?",
+          "a": "Operators are taxed under the licensing framework; the treatment of individual winnings has changed alongside the sector's reorganisations, so check current guidance for significant amounts rather than assuming either way."
+        },
+        {
+          "q": "Why does app size matter so much here?",
+          "a": "Because mobile data is a real cost. A lightweight app or a site that works on a weak connection saves money on every session, which is why we score app quality and data behaviour alongside odds and payout speed."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/countries/bj",
+          "label": "Betting sites for Benin"
+        }
+      ]
     }
   ]
 }

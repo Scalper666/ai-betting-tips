@@ -166,6 +166,7 @@ const D = {
   'ft.guides': { en: 'Betting Guides', es: 'Guías de apuestas', pt: 'Guias de apostas', de: 'Wett-Ratgeber' },
   'ft.seasons': { en: 'Season predictions', es: 'Pronósticos de temporada', pt: 'Palpites da temporada', de: 'Saison-Prognosen' },
   'ft.leagueResults': { en: 'Football results', es: 'Resultados de fútbol', pt: 'Resultados de futebol', de: 'Fußball-Ergebnisse' },
+  'ft.accaBuilder': { en: 'AI acca builder', es: 'Constructor de combinadas IA', pt: 'Construtor de múltiplas IA', de: 'KI-Kombi-Builder' },
   'ft.tables': { en: 'League tables', es: 'Tablas de clasificación', pt: 'Tabelas de classificação', de: 'Tabellen' },
   'ft.editorial': { en: 'Editorial policy', es: 'Política editorial', pt: 'Política editorial', de: 'Redaktionsrichtlinien' },
   'common.updated': { en: 'Updated', es: 'Actualizado', pt: 'Atualizado', de: 'Aktualisiert' },
