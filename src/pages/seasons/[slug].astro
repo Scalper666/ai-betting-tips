@@ -8,6 +8,7 @@ import historyData from '../../data/history.json';
 import { leagueTable } from '../../lib/form.js';
 import { slugify, faqSchema, signed, BUILD_ISO, fmtDate } from '../../lib/utils.js';
 import { hasLeaguePage, hasTablePage, hasH2hHub } from '../../lib/links.js';
+import { hasResultsPage } from '../../lib/links.js';
 
 // ── Season hubs: one evergreen page per league season. Fixtures, standings and
 //    our settled record all come from the live pipeline, so the page stays
@@ -186,6 +187,7 @@ const schema = { '@context': 'https://schema.org', ...faqSchema(s.faq) };
           <div class="box-h"><span class="hi">⚽</span> {s.league} pages</div>
           {hasLeaguePage(s.league) && <a class="tm" href={`/league/${slugify(s.league)}`}><span class="dot"></span>League hub &amp; live tips</a>}
           {hasTablePage(s.league) && <a class="tm" href={`/table/${slugify(s.league)}`}><span class="dot"></span>{s.league} table</a>}
+          {hasResultsPage(s.league) && <a class="tm" href={`/results/${slugify(s.league)}`}><span class="dot"></span>{s.league} results</a>}
           {hasH2hHub(s.league) && <a class="tm" href={`/h2h/league/${slugify(s.league)}`}><span class="dot"></span>{s.league} H2H records</a>}
           <a class="tm" href="/predictions/today"><span class="dot"></span>Today's predictions</a>
           <a class="tm" href="/screener"><span class="dot"></span>AI value screener</a>

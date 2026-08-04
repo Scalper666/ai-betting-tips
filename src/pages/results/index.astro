@@ -1,0 +1,101 @@
+---
+import Base from '../../layouts/Base.astro';
+import ToolsBox from '../../components/ToolsBox.astro';
+import fdData from '../../data/football-data.json';
+import { slugify, BUILD_ISO, fmtDate } from '../../lib/utils.js';
+import { leagueName } from '../../lib/leagues.js';
+
+// ── Results directory: one entry per league whose finished matches we hold.
+const leagues = Object.entries(fdData.leagues ?? {})
+  .filter(([, lg]) => (lg.results ?? []).length > 0)
+  .map(([sk, lg]) => {
+    const results = lg.results ?? [];
+    const latest = results.reduce((a, r) => (r.d > a ? r.d : a), '');
+    const recent = [...results].sort((a, b) => String(b.d).localeCompare(String(a.d))).slice(0, 40);
+    const goals = recent.reduce((a, r) => a + (r.hs ?? 0) + (r.as ?? 0), 0);
+    return {
+      sk,
+      name: leagueName(sk, lg.name),
+      n: results.length,
+      latest,
+      avgGoals: recent.length ? Math.round((goals / recent.length) * 100) / 100 : 0,
+    };
+  })
+  .sort((a, b) => String(b.latest).localeCompare(String(a.latest)));
+
+const totalGames = leagues.reduce((a, l) => a + l.n, 0);
+
+const title = 'Football Results — Latest Scores by League';
+const description = `Latest results for every league we track: ${totalGames} finished matches with full scores, goal profiles and how our published picks settled.`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Football results by league',
+  numberOfItems: leagues.length,
+  itemListElement: leagues.map((l, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: `${l.name} results`,
+    url: `https://ai-betting-tips.com/results/${slugify(l.name)}/`,
+  })),
+};
+---
+<Base title={title} description={description} schema={schema} updated={BUILD_ISO} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span>Results</div>
+      <h1>Football <em>results</em></h1>
+      <p class="lead">{totalGames} finished matches across {leagues.length} competitions, from the same dataset that trains our model. Each league page carries the latest scores, that sample's goal and home-advantage profile, and how our own picks in the competition settled.</p>
+      <p class="upd-line">Snapshot taken {fmtDate(BUILD_ISO)} · <a href="/editorial-policy">how we work</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">Results <b>by competition</b></h2>
+            <a href="/predictions/daily" class="more-link">Our graded picks by date →</a>
+          </div>
+          <div class="bt-grid">
+            {leagues.map((l) => (
+              <a href={`/results/${slugify(l.name)}`} class="bt-tile">
+                <div class="ic">📋</div>
+                <div>
+                  <h4>{l.name} results</h4>
+                  <p>{l.n} matches on record · {l.avgGoals} goals/game recently</p>
+                </div>
+                <span class="arr">→</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section class="seo">
+          <h2>Two kinds of results, and why we separate them</h2>
+          <p>These pages hold <strong>match results</strong> — the scores themselves, straight from our data source. They are the raw material our model learns from, and the sanity check for any price you are offered: a competition whose goal rate has drifted well away from its historical norm is worth noticing before you back overs or unders.</p>
+          <p>Separately, <a href="/predictions/daily">our own results by date</a> and the <a href="/tipsters">track record</a> show what <em>we</em> said and how it settled, in flat units and with the losing runs intact. Keeping the two apart is deliberate: one is football's record, the other is ours being held to it.</p>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">📋</span> All results</div>
+          {leagues.map((l) => (
+            <a class="tm" href={`/results/${slugify(l.name)}`}><span class="dot"></span>{l.name}</a>
+          ))}
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">⚡</span> Live pages</div>
+          <a class="tm" href="/table"><span class="dot"></span>League tables</a>
+          <a class="tm" href="/h2h"><span class="dot"></span>Head-to-head records</a>
+          <a class="tm" href="/predictions/today"><span class="dot"></span>Today's predictions</a>
+          <a class="tm" href="/seasons"><span class="dot"></span>Season hubs</a>
+        </div>
+        <ToolsBox lang="en" />
+      </aside>
+    </div>
+  </div>
+</Base>

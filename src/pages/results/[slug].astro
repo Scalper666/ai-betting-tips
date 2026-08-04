@@ -1,0 +1,197 @@
+---
+import Base from '../../layouts/Base.astro';
+import ToolsBox from '../../components/ToolsBox.astro';
+import fdData from '../../data/football-data.json';
+import historyData from '../../data/history.json';
+import { slugify, faqSchema, signed, BUILD_ISO, fmtDate } from '../../lib/utils.js';
+import { leagueName } from '../../lib/leagues.js';
+import { hasLeaguePage, hasTablePage, hasH2hHub, hasTeamsHub, hasTeamPage } from '../../lib/links.js';
+
+// ── League results: recent finished matches from the football-data snapshot,
+//    grouped by date, plus how our own published picks fared in that league.
+//    Answers "{league} results" queries with data we already pay for.
+export function getStaticPaths() {
+  return Object.entries(fdData.leagues ?? {})
+    .filter(([, lg]) => (lg.results ?? []).length > 0)
+    .map(([sk, lg]) => {
+      const name = leagueName(sk, lg.name);
+      return { params: { slug: slugify(name) }, props: { sk, lg, name } };
+    });
+}
+
+const { sk, lg, name } = Astro.props;
+
+const all = [...(lg.results ?? [])].sort((a, b) => String(b.d).localeCompare(String(a.d)));
+const recent = all.slice(0, 60);
+
+// group by matchday date
+const byDate = [];
+for (const r of recent) {
+  const last = byDate[byDate.length - 1];
+  if (last && last.d === r.d) last.games.push(r);
+  else byDate.push({ d: r.d, games: [r] });
+}
+
+// aggregate goal profile of the shown sample — the betting-relevant read
+const shown = recent.length;
+const goals = recent.reduce((a, r) => a + (r.hs ?? 0) + (r.as ?? 0), 0);
+const avgGoals = shown ? Math.round((goals / shown) * 100) / 100 : 0;
+const homeWins = recent.filter((r) => r.hs > r.as).length;
+const draws = recent.filter((r) => r.hs === r.as).length;
+const awayWins = recent.filter((r) => r.hs < r.as).length;
+const over25 = recent.filter((r) => (r.hs ?? 0) + (r.as ?? 0) > 2.5).length;
+const bttsN = recent.filter((r) => r.hs > 0 && r.as > 0).length;
+const pct = (n) => (shown ? Math.round((n / shown) * 100) : 0);
+
+// our graded picks in this league (real ones only)
+const settled = Object.values(historyData.tips ?? {}).filter(
+  (t) => t.sport_key === sk && ['won', 'lost', 'void'].includes(t.status)
+    && t.score !== 'simulated' && !String(t.event_id ?? '').startsWith('mock')
+);
+const ourRec = {
+  n: settled.length,
+  won: settled.filter((t) => t.status === 'won').length,
+  lost: settled.filter((t) => t.status === 'lost').length,
+  profit: Math.round(settled.reduce((a, t) => a + (t.profit ?? 0), 0) * 100) / 100,
+};
+
+const others = Object.entries(fdData.leagues ?? {})
+  .filter(([k, l]) => k !== sk && (l.results ?? []).length > 0);
+
+const dateLabel = (d) => {
+  const dt = new Date(`${d}T12:00:00Z`);
+  return isNaN(dt) ? d : dt.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+};
+
+const title = `${name} Results — Latest Scores and What They Say About Prices`;
+const description = `Latest ${name} results with full scores, plus the goal and home-advantage profile of the last ${shown} matches and how our own published picks in the league settled.`;
+
+const faq = [
+  {
+    q: `Where do these ${name} results come from?`,
+    a: 'From the same football-data snapshot that feeds our model and league tables, refreshed twice a day. The timestamp at the top of the page shows when it was last pulled.',
+  },
+  {
+    q: 'How far back do the results go?',
+    a: `This page shows the most recent ${shown} matches; our dataset holds ${all.length} finished ${name} games in total, and the full history behind any specific pairing is on its head-to-head page.`,
+  },
+  {
+    q: 'Can I use recent results to predict the next round?',
+    a: 'Only carefully. Short runs of results are mostly noise, and the market has already priced in anything obvious. Aggregate profiles — goals per game, home-win rate over a large sample — carry more signal than any five-match streak, which is why our model weighs two seasons of rates rather than recent form.',
+  },
+];
+const schema = { '@context': 'https://schema.org', ...faqSchema(faq) };
+---
+<Base title={title} description={description} schema={schema} updated={BUILD_ISO} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href="/">Home</a><span>/</span><a href="/results">Results</a><span>/</span>{name}
+      </div>
+      <h1>{name} <em>results</em></h1>
+      <p class="lead">The latest {shown} finished {name} matches with full scores, from a dataset of {all.length} games. Below the scores: the goal and home-advantage profile of this sample, and how our own picks in the league actually settled.</p>
+      <p class="upd-line">Snapshot taken {fmtDate(BUILD_ISO)} · <a href="/editorial-policy">how we work</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">Sample <b>profile</b> ({shown} matches)</h2>
+            {hasTablePage(name) && <a href={`/table/${slugify(name)}`} class="more-link">League table →</a>}
+          </div>
+          <div class="res-sum">
+            <div class="res-chip"><b>{avgGoals}</b><span>goals/game</span></div>
+            <div class="res-chip win"><b>{pct(homeWins)}%</b><span>home wins</span></div>
+            <div class="res-chip"><b>{pct(draws)}%</b><span>draws</span></div>
+            <div class="res-chip lose"><b>{pct(awayWins)}%</b><span>away wins</span></div>
+            <div class="res-chip"><b>{pct(over25)}%</b><span>over 2.5</span></div>
+            <div class="res-chip"><b>{pct(bttsN)}%</b><span>BTTS</span></div>
+          </div>
+          <p class="res-note">These are raw rates for the sample shown, not predictions. They are useful as a sanity check against the totals and match-odds prices you are being offered — a league running well under its usual goal rate is worth noticing before backing overs.</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Latest <b>scores</b></h2></div>
+          {byDate.map((day) => (
+            <div style="margin-bottom:18px">
+              <div class="cl-head" style="margin-bottom:8px"><span>{dateLabel(day.d)}</span><span class="cl-count">{day.games.length} match{day.games.length === 1 ? '' : 'es'}</span></div>
+              <div class="res-list">
+                {day.games.map((r) => (
+                  <div class="res-row">
+                    <span class={`res-mark ${r.hs > r.as ? 'w' : r.hs < r.as ? 'l' : 'v'}`}>{r.hs > r.as ? 'H' : r.hs < r.as ? 'A' : 'D'}</span>
+                    <div class="res-match">
+                      <b>
+                        {hasTeamPage(r.h) ? <a href={`/team/${slugify(r.h)}`} style="color:inherit">{r.h}</a> : r.h}
+                        {' '}v{' '}
+                        {hasTeamPage(r.a) ? <a href={`/team/${slugify(r.a)}`} style="color:inherit">{r.a}</a> : r.a}
+                      </b>
+                      <span>{(r.hs ?? 0) + (r.as ?? 0)} goals{r.hs > 0 && r.as > 0 ? ' · BTTS' : ''}</span>
+                    </div>
+                    <span class="res-profit zero">{r.hs}–{r.as}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
+
+        {ourRec.n > 0 && (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">How our <b>{name} picks</b> settled</h2>
+              <a href="/tipsters" class="more-link">Full record →</a>
+            </div>
+            <div class="res-sum">
+              <div class="res-chip"><b>{ourRec.n}</b><span>settled</span></div>
+              <div class="res-chip win"><b>{ourRec.won}</b><span>won</span></div>
+              <div class="res-chip lose"><b>{ourRec.lost}</b><span>lost</span></div>
+              <div class={`res-chip ${ourRec.profit >= 0 ? 'win' : 'lose'}`}><b>{signed(ourRec.profit)}u</b><span>profit</span></div>
+            </div>
+            <p class="res-note">Graded automatically against these same scores, flat 1-unit stakes, losers included.</p>
+          </section>
+        )}
+
+        <section class="seo">
+          <h2>Reading {name} results without fooling yourself</h2>
+          <p>Results pages invite pattern-hunting, and most patterns found in twenty matches are noise. The reliable content here is the aggregate: this sample produced {avgGoals} goals per game with home sides winning {pct(homeWins)}% of the time. Compare those to the prices on offer for the next round — if a bookmaker's totals line implies a goal rate far from the competition's actual one, that gap is at least worth a second look.</p>
+          <p>What does not work is backing a team because it won its last three, or fading one because it lost them. Markets price recent results immediately and usually over-price them, which is why our model weighs two seasons of scoring rates with time decay instead of chasing streaks. Use these scores to check the market's assumptions, not to build a system from them.</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{name} results <b>FAQ</b></h2></div>
+          <div class="prose" style="padding:0;max-width:none">
+            {faq.map((f) => (<><h3>{f.q}</h3><p>{f.a}</p></>))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">⚽</span> {name} pages</div>
+          {hasLeaguePage(name) && <a class="tm" href={`/league/${slugify(name)}`}><span class="dot"></span>Predictions &amp; tips</a>}
+          {hasTablePage(name) && <a class="tm" href={`/table/${slugify(name)}`}><span class="dot"></span>{name} table</a>}
+          {hasH2hHub(name) && <a class="tm" href={`/h2h/league/${slugify(name)}`}><span class="dot"></span>H2H records</a>}
+          {hasTeamsHub(name) && <a class="tm" href={`/teams/${slugify(name)}`}><span class="dot"></span>{name} clubs</a>}
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">📋</span> Other results</div>
+          {others.map(([k, l]) => (
+            <a class="tm" href={`/results/${slugify(leagueName(k, l.name))}`}>
+              <span class="dot"></span>{leagueName(k, l.name)}
+            </a>
+          ))}
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">⚡</span> Live pages</div>
+          <a class="tm" href="/predictions/today"><span class="dot"></span>Today's predictions</a>
+          <a class="tm" href="/predictions/daily"><span class="dot"></span>Our results by date</a>
+          <a class="tm" href="/screener"><span class="dot"></span>AI value screener</a>
+        </div>
+        <ToolsBox lang="en" />
+      </aside>
+    </div>
+  </div>
+</Base>

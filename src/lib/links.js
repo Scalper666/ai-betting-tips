@@ -32,6 +32,12 @@ for (const [sk, lg] of Object.entries(fdData.leagues ?? {})) {
   if ((lg.scorers ?? []).length > 0) scorerSlugs.add(slug);
 }
 
+// /results/{slug}
+const resultsSlugs = new Set();
+for (const [sk, lg] of Object.entries(fdData.leagues ?? {})) {
+  if ((lg.results ?? []).length > 0) resultsSlugs.add(slugify(leagueName(sk, lg.name)));
+}
+
 // /h2h/league/{slug}
 const h2hSlugs = new Set(buildH2hPairs().map((p) => slugify(p.league)));
 
@@ -65,3 +71,4 @@ export const hasH2hHub = (league) => h2hSlugs.has(slugify(league));
 export const hasTeamsHub = (league) => teamsHubSlugs.has(slugify(league));
 export const hasTeamPage = (team) => teamSlugs.has(slugify(team));
 export const hasComboPage = (type, league) => comboSlugs.has(`${type}/${slugify(league)}`);
+export const hasResultsPage = (league) => resultsSlugs.has(slugify(league));

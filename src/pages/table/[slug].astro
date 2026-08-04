@@ -8,6 +8,7 @@ import seasonsData from '../../data/seasons.json';
 import { slugify, faqSchema, BUILD_ISO, fmtDate } from '../../lib/utils.js';
 import { leagueName } from '../../lib/leagues.js';
 import { hasTeamPage, hasH2hHub, hasTeamsHub, hasLeaguePage } from '../../lib/links.js';
+import { hasResultsPage } from '../../lib/links.js';
 
 // ── League tables: standings straight from the football-data snapshot the
 //    pipeline refreshes twice a day. One page per covered league, named with
@@ -182,6 +183,7 @@ const schema = { '@context': 'https://schema.org', ...faqSchema(faq) };
           {hasLeaguePage(name) && <a class="tm" href={`/league/${slugify(name)}`}><span class="dot"></span>Predictions &amp; tips</a>}
           <a class="tm" href="/predictions/today"><span class="dot"></span>Today's fixtures</a>
           <a class="tm" href="/screener"><span class="dot"></span>AI value screener</a>
+          {hasResultsPage(name) && <a class="tm" href={`/results/${slugify(name)}`}><span class="dot"></span>{name} results</a>}
           {hasH2hHub(name) && <a class="tm" href={`/h2h/league/${slugify(name)}`}><span class="dot"></span>{name} H2H records</a>}
           {hasTeamsHub(name) && <a class="tm" href={`/teams/${slugify(name)}`}><span class="dot"></span>{name} clubs</a>}
         </div>

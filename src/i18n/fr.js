@@ -80,6 +80,7 @@ export const FR = {
   'home.geo.intlList': 'liste internationale',
   'ft.guides': 'Guides de paris',
   'ft.seasons': 'Pronostics de saison',
+  'ft.leagueResults': 'Résultats de football',
   'ft.tables': 'Classements',
   'ft.editorial': 'Politique éditoriale',
   'common.updated': 'Mis à jour le',

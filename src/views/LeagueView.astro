@@ -11,6 +11,7 @@ import fdData from '../data/football-data.json';
 import seasonsData from '../data/seasons.json';
 import AiFaq from '../components/AiFaq.astro';
 import { hasComboPage, hasTablePage, hasH2hHub, hasTeamsHub } from '../lib/links.js';
+import { hasResultsPage } from '../lib/links.js';
 
 const { league, tips, lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
@@ -116,6 +117,7 @@ const description = F('lg.desc', { league });
           {hasComboPage('match-result', league) && <a class="tm" href={L(`/tips/match-result/${slugify(league)}`)}><span class="dot"></span>{T('lg.mrTips')}</a>}
           {hasComboPage('over-under', league) && <a class="tm" href={L(`/tips/over-under/${slugify(league)}`)}><span class="dot"></span>{T('lg.ouTips')}</a>}
           {hasTablePage(league) && <a class="tm" href={`/table/${slugify(league)}`}><span class="dot"></span>{league} table</a>}
+          {hasResultsPage(league) && <a class="tm" href={`/results/${slugify(league)}`}><span class="dot"></span>{league} results</a>}
           {hasH2hHub(league) && <a class="tm" href={`/h2h/league/${slugify(league)}`}><span class="dot"></span>{league} H2H records</a>}
           {hasTeamsHub(league) && <a class="tm" href={`/teams/${slugify(league)}`}><span class="dot"></span>{league} clubs</a>}
         </div>
