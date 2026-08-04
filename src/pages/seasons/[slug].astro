@@ -1,0 +1,208 @@
+---
+import Base from '../../layouts/Base.astro';
+import PredCard from '../../components/PredCard.astro';
+import ToolsBox from '../../components/ToolsBox.astro';
+import seasonsData from '../../data/seasons.json';
+import predictions from '../../data/predictions.json';
+import historyData from '../../data/history.json';
+import { leagueTable } from '../../lib/form.js';
+import { slugify, faqSchema, signed } from '../../lib/utils.js';
+
+// ── Season hubs: one evergreen page per league season. Fixtures, standings and
+//    our settled record all come from the live pipeline, so the page stays
+//    current every rebuild without anyone editing it.
+export function getStaticPaths() {
+  return (seasonsData.seasons ?? []).map((s) => ({ params: { slug: s.slug }, props: { s } }));
+}
+
+const { s } = Astro.props;
+
+// Season start: European seasons ("2026/27") open in July; calendar-year
+// seasons ("2026") in January. Used to scope our settled record to this season.
+const startYear = Number(String(s.season).slice(0, 4));
+const seasonStart = String(s.season).includes('/')
+  ? `${startYear}-07-01`
+  : `${startYear}-01-01`;
+
+const fixtures = (predictions.tips ?? [])
+  .filter((t) => t.sport_key === s.sport_key)
+  .sort((a, b) => String(a.kickoff).localeCompare(String(b.kickoff)));
+const officialCount = fixtures.filter((t) => t.recommendation?.official).length;
+
+const table = leagueTable(s.sport_key);
+
+// our real settled record in this league this season (never curated)
+const settled = Object.values(historyData.tips ?? {})
+  .filter((t) => t.sport_key === s.sport_key
+    && ['won', 'lost', 'void'].includes(t.status)
+    && String(t.kickoff ?? '') >= seasonStart);
+const rec = {
+  n: settled.length,
+  won: settled.filter((t) => t.status === 'won').length,
+  lost: settled.filter((t) => t.status === 'lost').length,
+  void: settled.filter((t) => t.status === 'void').length,
+  profit: Math.round(settled.reduce((a, t) => a + (t.profit ?? 0), 0) * 100) / 100,
+};
+const decided = rec.won + rec.lost;
+const roi = decided > 0 ? Math.round((rec.profit / decided) * 1000) / 10 : null;
+const recent = [...settled]
+  .sort((a, b) => String(b.settled_at ?? '').localeCompare(String(a.settled_at ?? '')))
+  .slice(0, 6);
+
+const otherSeasons = (seasonsData.seasons ?? []).filter((x) => x.slug !== s.slug);
+
+const title = `${s.league} ${s.season} Predictions & Betting Guide`;
+const description = `${s.league} ${s.season} predictions: model probabilities against best available odds for every fixture, live standings, and our full settled record — updated twice daily.`;
+const schema = { '@context': 'https://schema.org', ...faqSchema(s.faq) };
+---
+<Base title={title} description={description} schema={schema} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href="/">Home</a><span>/</span><a href="/seasons">Seasons</a><span>/</span>{s.league} {s.season}
+      </div>
+      <h1>{s.league} {s.season} <em>predictions</em></h1>
+      <p class="lead">{s.window} · model probabilities against best available prices for every priced fixture, refreshed twice a day.</p>
+      <div class="chips" style="margin:12px 0 0">
+        <span class="chip" style="cursor:default">📅 {s.window}</span>
+        <span class="chip" style="cursor:default">⚽ {fixtures.length} fixtures priced now</span>
+        {officialCount > 0 && <span class="chip" style="cursor:default">🎯 {officialCount} official picks live</span>}
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+
+        <section class="seo" style="margin-top:0">
+          {s.intro.map((p) => <p>{p}</p>)}
+        </section>
+
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">Upcoming <b>{s.league} fixtures</b></h2>
+            <a href={`/league/${slugify(s.league)}`} class="more-link">League hub →</a>
+          </div>
+          {fixtures.length > 0 ? (
+            <div class="pred-grid">
+              {fixtures.slice(0, 8).map((tip) => <PredCard tip={tip} lang="en" />)}
+            </div>
+          ) : (
+            <div class="box"><div class="box-pad dim">No {s.league} fixtures are priced right now — the feed refills as bookmakers open the next round.</div></div>
+          )}
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">What to expect this <b>season</b></h2></div>
+          <div class="rsn-grid">
+            {s.outlook.map((line) => (
+              <div class="rsn"><p style="margin:0">{line}</p></div>
+            ))}
+          </div>
+        </section>
+
+        {table && (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">{s.league} <b>{s.season} table</b></h2>
+              <span class="more-link" style="cursor:default">Live standings</span>
+            </div>
+            <div class="odds-table"><div class="scr-scroll">
+              <table class="otbl">
+                <thead><tr><th>#</th><th style="text-align:left">Team</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead>
+                <tbody>
+                  {table.rows.map((r) => (
+                    <tr>
+                      <td class="o-cell"><span>{r.pos}</span></td>
+                      <td class="o-match" style="font-weight:700">{r.team}</td>
+                      <td class="o-cell"><span>{r.p}</span></td>
+                      <td class="o-cell"><span>{r.w}</span></td>
+                      <td class="o-cell"><span>{r.d}</span></td>
+                      <td class="o-cell"><span>{r.l}</span></td>
+                      <td class="o-cell"><span>{r.gd > 0 ? `+${r.gd}` : r.gd}</span></td>
+                      <td class="o-cell hot"><span class="cb">{r.pts}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div></div>
+          </section>
+        )}
+
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">Our <b>{s.season} record</b> in this league</h2>
+            <a href="/tipsters" class="more-link">Full track record →</a>
+          </div>
+          {rec.n > 0 ? (
+            <>
+              <div class="res-sum">
+                <div class="res-chip"><b>{rec.n}</b><span>settled</span></div>
+                <div class="res-chip win"><b>{rec.won}</b><span>won</span></div>
+                <div class="res-chip lose"><b>{rec.lost}</b><span>lost</span></div>
+                <div class="res-chip"><b>{rec.void}</b><span>void</span></div>
+                <div class={`res-chip ${rec.profit >= 0 ? 'win' : 'lose'}`}><b>{signed(rec.profit)}u</b><span>profit</span></div>
+                {roi !== null && <div class={`res-chip ${roi >= 0 ? 'win' : 'lose'}`}><b>{signed(roi)}%</b><span>ROI</span></div>}
+              </div>
+              {recent.length > 0 && (
+                <div class="res-list">
+                  {recent.map((t) => (
+                    <div class="res-row">
+                      <span class={`res-mark ${t.status === 'won' ? 'w' : t.status === 'lost' ? 'l' : 'v'}`}>{t.status === 'won' ? 'W' : t.status === 'lost' ? 'L' : 'V'}</span>
+                      <div class="res-match"><b>{t.home} v {t.away}</b><span>{t.market}</span></div>
+                      <span class="res-odds">{Number(t.odds ?? 0).toFixed(2)}</span>
+                      <span class={`res-profit ${(t.profit ?? 0) > 0 ? 'pos' : (t.profit ?? 0) < 0 ? 'neg' : 'zero'}`}>{signed(Math.round((t.profit ?? 0) * 100) / 100)}u</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+              <p class="res-note">Every published pick in this league is archived and graded automatically — losers included. Flat 1-unit staking. {decided < 20 && 'This is an early sample: treat the ROI figure as noise until the count grows.'}</p>
+            </>
+          ) : (
+            <div class="box"><div class="box-pad dim">No settled picks in this league yet for {s.season}. Results appear here automatically as matches finish — nothing is curated or hidden.</div></div>
+          )}
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{s.league} {s.season} <b>FAQ</b></h2></div>
+          <div class="prose" style="padding:0;max-width:none">
+            {s.faq.map((f) => (
+              <>
+                <h3>{f.q}</h3>
+                <p>{f.a}</p>
+              </>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">⚽</span> {s.league} pages</div>
+          <a class="tm" href={`/league/${slugify(s.league)}`}><span class="dot"></span>League hub &amp; live tips</a>
+          <a class="tm" href="/predictions/today"><span class="dot"></span>Today's predictions</a>
+          <a class="tm" href="/screener"><span class="dot"></span>AI value screener</a>
+          <a class="tm" href="/h2h"><span class="dot"></span>Head-to-head archive</a>
+        </div>
+
+        <div class="box">
+          <div class="box-h"><span class="hi">📅</span> Other seasons</div>
+          {otherSeasons.map((x) => (
+            <a class="tm" href={`/seasons/${x.slug}`}><span class="dot"></span>{x.league} {x.season}</a>
+          ))}
+        </div>
+
+        <div class="box">
+          <div class="box-h"><span class="hi">📗</span> Learn the markets</div>
+          <a class="tm" href="/guides"><span class="dot"></span>Betting guides</a>
+          <a class="tm" href="/guides/how-ai-football-predictions-work"><span class="dot"></span>How our model works</a>
+          <a class="tm" href="/guides/value-betting-explained"><span class="dot"></span>Value betting explained</a>
+          <a class="tm" href="/glossary"><span class="dot"></span>Glossary A–Z</a>
+        </div>
+
+        <ToolsBox lang="en" />
+      </aside>
+    </div>
+  </div>
+</Base>

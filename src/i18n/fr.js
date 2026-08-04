@@ -79,6 +79,8 @@ export const FR = {
   'home.geo.intl': '🌍 notre classement international',
   'home.geo.intlList': 'liste internationale',
   'ft.guides': 'Guides de paris',
+  'ft.seasons': 'Pronostics de saison',
+  'lg.seasonHub': 'Espace saison',
   'cn.readGuide': 'Lire le guide complet',
   'gd.titleSuffix': 'Guide gratuit',
   'gd.crumb': 'Guides',

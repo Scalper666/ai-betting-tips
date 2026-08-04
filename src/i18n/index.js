@@ -164,6 +164,8 @@ const D = {
   'home.geo.intl': { en: '🌍 our international ranking', es: '🌍 nuestro ranking internacional', pt: '🌍 nosso ranking internacional', de: '🌍 unserem internationalen Ranking' },
   'home.geo.intlList': { en: 'international list', es: 'lista internacional', pt: 'lista internacional', de: 'internationale Liste' },
   'ft.guides': { en: 'Betting Guides', es: 'Guías de apuestas', pt: 'Guias de apostas', de: 'Wett-Ratgeber' },
+  'ft.seasons': { en: 'Season predictions', es: 'Pronósticos de temporada', pt: 'Palpites da temporada', de: 'Saison-Prognosen' },
+  'lg.seasonHub': { en: 'Season hub', es: 'Centro de temporada', pt: 'Central da temporada', de: 'Saison-Hub' },
   'cn.readGuide': { en: 'Read the full guide', es: 'Leer la guía completa', pt: 'Ler o guia completo', de: 'Kompletten Ratgeber lesen' },
   // guides section UI
   'gd.titleSuffix': { en: 'Free Guide', es: 'Guía gratuita', pt: 'Guia gratuito', de: 'Kostenloser Ratgeber' },

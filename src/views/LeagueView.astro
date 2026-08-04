@@ -8,6 +8,7 @@ import { slugify, faqSchema } from '../lib/utils.js';
 import { t, lhref } from '../i18n/index.js';
 import { leagueTable } from '../lib/form.js';
 import fdData from '../data/football-data.json';
+import seasonsData from '../data/seasons.json';
 import AiFaq from '../components/AiFaq.astro';
 
 const { league, tips, lang = 'en' } = Astro.props;
@@ -19,6 +20,8 @@ const skByName = {};
 for (const [sk, lg] of Object.entries(fdData.leagues ?? {})) skByName[lg.name] = sk;
 for (const tp of tips) skByName[tp.league] = tp.sport_key;
 const table = leagueTable(skByName[league]);
+// season hub for this league, when one exists (EN-only pages)
+const season = (seasonsData.seasons ?? []).find((s) => s.league === league) ?? null;
 
 const trx = lang === 'en' ? null : ((content.entries ?? {})[`${lang}:league:${slugify(league)}`] ?? null);
 const ai = trx ?? (content.entries ?? {})[`league:${slugify(league)}`];
@@ -92,6 +95,13 @@ const description = F('lg.desc', { league });
       </main>
 
       <aside class="sidebar">
+        {season && (
+          <div class="promo">
+            <h4>📅 {league} {season.season}</h4>
+            <p>{season.window}</p>
+            <a href={`/seasons/${season.slug}`} class="btn btn-mint btn-block">{T('lg.seasonHub')}</a>
+          </div>
+        )}
         <div class="box">
           <div class="box-h"><span class="hi">⚡</span> {T('lg.allFixtures')}</div>
           {tips.map((t) => (
