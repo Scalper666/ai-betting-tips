@@ -1,14 +1,14 @@
 {
-  "updated_at": "2026-08-04T08:01:46.502703+00:00",
+  "updated_at": "2026-08-04T15:28:18.124451+00:00",
   "source": "the-odds-api.com",
-  "quota_remaining": "19466",
+  "quota_remaining": "19318",
   "stats": {
     "total": 309,
     "by_sport": {
       "⚽": 309
     },
     "high_confidence": 0,
-    "avg_edge_pct": -3.06
+    "avg_edge_pct": -3.01
   },
   "tips": [
     {
@@ -22,26 +22,26 @@
       "away": "ŠK Slovan Bratislava",
       "best_h2h": {
         "Mjällby AIF": {
-          "price": 2.18,
+          "price": 2.28,
           "bookmaker": "Betfair"
         },
         "ŠK Slovan Bratislava": {
-          "price": 3.55,
-          "bookmaker": "Betsson"
+          "price": 3.65,
+          "bookmaker": "Coolbet"
         },
         "Draw": {
-          "price": 3.7,
-          "bookmaker": "Betfair"
+          "price": 3.45,
+          "bookmaker": "LeoVegas (SE)"
         }
       },
       "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.9,
-        "bookmaker": "1xBet",
-        "confidence": 51,
-        "edge_pct": -3.52,
+        "text": "Under 2.5 goals",
+        "price": 1.79,
+        "bookmaker": "LeoVegas (SE)",
+        "confidence": 54,
+        "edge_pct": -2.95,
         "type": "totals",
-        "side": "Over",
+        "side": "Under",
         "point": 2.5,
         "official": false,
         "basis": "market"
@@ -60,12 +60,12 @@
       "away": "NK Celje",
       "best_h2h": {
         "FC Ararat-Armenia": {
-          "price": 2.94,
+          "price": 3.2,
           "bookmaker": "Betfair"
         },
         "NK Celje": {
-          "price": 2.66,
-          "bookmaker": "Betfair"
+          "price": 2.48,
+          "bookmaker": "LeoVegas (SE)"
         },
         "Draw": {
           "price": 3.4,
@@ -74,50 +74,12 @@
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.95,
-        "bookmaker": "Betsson",
-        "confidence": 49,
-        "edge_pct": -3.51,
+        "price": 2.02,
+        "bookmaker": "1xBet",
+        "confidence": 48,
+        "edge_pct": -3.98,
         "type": "totals",
         "side": "Over",
-        "point": 2.5,
-        "official": false,
-        "basis": "market"
-      },
-      "model": null,
-      "value_picks": []
-    },
-    {
-      "id": "caa92af37544e12749703ff98426bc8c",
-      "sport_key": "soccer_uefa_champs_league_qualification",
-      "sport_icon": "⚽",
-      "league": "UCL Qualification",
-      "league_short": "UCLQ",
-      "kickoff": "2026-08-04T17:30:00Z",
-      "home": "PFC Levski Sofia",
-      "away": "FC Kairat",
-      "best_h2h": {
-        "FC Kairat": {
-          "price": 6.4,
-          "bookmaker": "Betfair"
-        },
-        "PFC Levski Sofia": {
-          "price": 1.67,
-          "bookmaker": "Betfair"
-        },
-        "Draw": {
-          "price": 3.95,
-          "bookmaker": "Betfair"
-        }
-      },
-      "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 1.72,
-        "bookmaker": "Unibet (SE)",
-        "confidence": 56,
-        "edge_pct": -2.9,
-        "type": "totals",
-        "side": "Under",
         "point": 2.5,
         "official": false,
         "basis": "market"
@@ -136,24 +98,24 @@
       "away": "Red Star Belgrade",
       "best_h2h": {
         "Hapoel Be'er Sheva": {
-          "price": 5.2,
+          "price": 5.6,
           "bookmaker": "Betfair"
         },
         "Red Star Belgrade": {
-          "price": 1.77,
-          "bookmaker": "Betfair"
+          "price": 1.68,
+          "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 4.0,
+          "price": 4.3,
           "bookmaker": "Betfair"
         }
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.74,
-        "bookmaker": "1xBet",
-        "confidence": 55,
-        "edge_pct": -3.83,
+        "price": 1.8,
+        "bookmaker": "BetOnline.ag",
+        "confidence": 54,
+        "edge_pct": -2.86,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -164,15 +126,53 @@
       "value_picks": [
         {
           "outcome": "Hapoel Be'er Sheva",
-          "best_price": 5.2,
+          "best_price": 5.6,
           "bookmaker": "Betfair",
-          "fair_prob": 0.2081,
-          "implied_prob": 0.1923,
-          "edge_pct": 8.2,
-          "kelly": 0.0195,
-          "confidence": 21
+          "fair_prob": 0.1927,
+          "implied_prob": 0.1786,
+          "edge_pct": 7.93,
+          "kelly": 0.0172,
+          "confidence": 19
         }
       ]
+    },
+    {
+      "id": "caa92af37544e12749703ff98426bc8c",
+      "sport_key": "soccer_uefa_champs_league_qualification",
+      "sport_icon": "⚽",
+      "league": "UCL Qualification",
+      "league_short": "UCLQ",
+      "kickoff": "2026-08-04T17:30:00Z",
+      "home": "PFC Levski Sofia",
+      "away": "FC Kairat",
+      "best_h2h": {
+        "FC Kairat": {
+          "price": 6.6,
+          "bookmaker": "Betfair"
+        },
+        "PFC Levski Sofia": {
+          "price": 1.68,
+          "bookmaker": "Betsson"
+        },
+        "Draw": {
+          "price": 3.85,
+          "bookmaker": "Betfair"
+        }
+      },
+      "recommendation": {
+        "text": "Over 2.5 goals",
+        "price": 2.31,
+        "bookmaker": "1xBet",
+        "confidence": 42,
+        "edge_pct": -4.09,
+        "type": "totals",
+        "side": "Over",
+        "point": 2.5,
+        "official": false,
+        "basis": "market"
+      },
+      "model": null,
+      "value_picks": []
     },
     {
       "id": "99a8d4054357fa2be2603ac5cdf8f51a",
@@ -185,100 +185,24 @@
       "away": "FK Kauno Žalgiris",
       "best_h2h": {
         "Dinamo Zagreb": {
-          "price": 1.16,
-          "bookmaker": "Nordic Bet"
+          "price": 1.18,
+          "bookmaker": "Betfair"
         },
         "FK Kauno Žalgiris": {
-          "price": 26.0,
-          "bookmaker": "Betfair"
+          "price": 22.0,
+          "bookmaker": "Nordic Bet"
         },
         "Draw": {
-          "price": 9.8,
+          "price": 9.0,
           "bookmaker": "Betfair"
         }
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.55,
+        "price": 1.52,
         "bookmaker": "Nordic Bet",
         "confidence": 61,
-        "edge_pct": -6.13,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5,
-        "official": false,
-        "basis": "market"
-      },
-      "model": null,
-      "value_picks": []
-    },
-    {
-      "id": "97117bc35c3bf9c416f7914a551e396c",
-      "sport_key": "soccer_uefa_champs_league_qualification",
-      "sport_icon": "⚽",
-      "league": "UCL Qualification",
-      "league_short": "UCLQ",
-      "kickoff": "2026-08-04T18:00:00Z",
-      "home": "Union Saint-Gilloise",
-      "away": "Bodø/Glimt",
-      "best_h2h": {
-        "Bodø/Glimt": {
-          "price": 3.02,
-          "bookmaker": "Coolbet"
-        },
-        "Union Saint-Gilloise": {
-          "price": 2.44,
-          "bookmaker": "Betfair"
-        },
-        "Draw": {
-          "price": 3.85,
-          "bookmaker": "Betfair"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.63,
-        "bookmaker": "1xBet",
-        "confidence": 59,
-        "edge_pct": -3.09,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5,
-        "official": false,
-        "basis": "market"
-      },
-      "model": null,
-      "value_picks": []
-    },
-    {
-      "id": "872c8ff973cd345f3b44480fb4a9ed2f",
-      "sport_key": "soccer_uefa_champs_league_qualification",
-      "sport_icon": "⚽",
-      "league": "UCL Qualification",
-      "league_short": "UCLQ",
-      "kickoff": "2026-08-04T18:00:00Z",
-      "home": "Sparta Prague",
-      "away": "Lyon",
-      "best_h2h": {
-        "Lyon": {
-          "price": 2.1,
-          "bookmaker": "Betfair"
-        },
-        "Sparta Prague": {
-          "price": 3.7,
-          "bookmaker": "Betsson"
-        },
-        "Draw": {
-          "price": 3.85,
-          "bookmaker": "Betfair"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.77,
-        "bookmaker": "BetOnline.ag",
-        "confidence": 55,
-        "edge_pct": -2.92,
+        "edge_pct": -6.64,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -299,26 +223,113 @@
       "away": "NEC Nijmegen",
       "best_h2h": {
         "NEC Nijmegen": {
-          "price": 6.4,
+          "price": 6.8,
           "bookmaker": "Betfair"
         },
         "Olympiakos Piraeus": {
-          "price": 1.6,
+          "price": 1.54,
           "bookmaker": "Betfair"
         },
         "Draw": {
-          "price": 4.5,
+          "price": 4.8,
           "bookmaker": "Betfair"
         }
       },
       "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 2.14,
+        "text": "Over 2.5 goals",
+        "price": 1.61,
         "bookmaker": "LeoVegas (SE)",
-        "confidence": 44,
-        "edge_pct": -6.83,
+        "confidence": 58,
+        "edge_pct": -7.03,
         "type": "totals",
-        "side": "Under",
+        "side": "Over",
+        "point": 2.5,
+        "official": false,
+        "basis": "market"
+      },
+      "model": null,
+      "value_picks": [
+        {
+          "outcome": "Draw",
+          "best_price": 4.8,
+          "bookmaker": "Betfair",
+          "fair_prob": 0.215,
+          "implied_prob": 0.2083,
+          "edge_pct": 3.18,
+          "kelly": 0.0084,
+          "confidence": 21
+        }
+      ]
+    },
+    {
+      "id": "97117bc35c3bf9c416f7914a551e396c",
+      "sport_key": "soccer_uefa_champs_league_qualification",
+      "sport_icon": "⚽",
+      "league": "UCL Qualification",
+      "league_short": "UCLQ",
+      "kickoff": "2026-08-04T18:00:00Z",
+      "home": "Union Saint-Gilloise",
+      "away": "Bodø/Glimt",
+      "best_h2h": {
+        "Bodø/Glimt": {
+          "price": 3.3,
+          "bookmaker": "Betfair"
+        },
+        "Union Saint-Gilloise": {
+          "price": 2.3,
+          "bookmaker": "Betfair"
+        },
+        "Draw": {
+          "price": 3.75,
+          "bookmaker": "Betfair"
+        }
+      },
+      "recommendation": {
+        "text": "Over 2.5 goals",
+        "price": 1.77,
+        "bookmaker": "1xBet",
+        "confidence": 55,
+        "edge_pct": -2.31,
+        "type": "totals",
+        "side": "Over",
+        "point": 2.5,
+        "official": false,
+        "basis": "market"
+      },
+      "model": null,
+      "value_picks": []
+    },
+    {
+      "id": "872c8ff973cd345f3b44480fb4a9ed2f",
+      "sport_key": "soccer_uefa_champs_league_qualification",
+      "sport_icon": "⚽",
+      "league": "UCL Qualification",
+      "league_short": "UCLQ",
+      "kickoff": "2026-08-04T18:00:00Z",
+      "home": "Sparta Prague",
+      "away": "Lyon",
+      "best_h2h": {
+        "Lyon": {
+          "price": 2.06,
+          "bookmaker": "Betfair"
+        },
+        "Sparta Prague": {
+          "price": 3.75,
+          "bookmaker": "Betfair"
+        },
+        "Draw": {
+          "price": 3.85,
+          "bookmaker": "Betfair"
+        }
+      },
+      "recommendation": {
+        "text": "Over 2.5 goals",
+        "price": 1.77,
+        "bookmaker": "BetOnline.ag",
+        "confidence": 55,
+        "edge_pct": -2.52,
+        "type": "totals",
+        "side": "Over",
         "point": 2.5,
         "official": false,
         "basis": "market"
@@ -341,12 +352,12 @@
           "bookmaker": "Betfair"
         },
         "Sabah FK": {
-          "price": 5.75,
-          "bookmaker": "Marathon Bet"
+          "price": 5.8,
+          "bookmaker": "LeoVegas (SE)"
         },
         "Draw": {
-          "price": 4.1,
-          "bookmaker": "Marathon Bet"
+          "price": 4.2,
+          "bookmaker": "LeoVegas (SE)"
         }
       },
       "recommendation": {
@@ -362,18 +373,7 @@
         "basis": "market"
       },
       "model": null,
-      "value_picks": [
-        {
-          "outcome": "Sabah FK",
-          "best_price": 5.75,
-          "bookmaker": "Marathon Bet",
-          "fair_prob": 0.1807,
-          "implied_prob": 0.1739,
-          "edge_pct": 3.89,
-          "kelly": 0.0082,
-          "confidence": 18
-        }
-      ]
+      "value_picks": []
     },
     {
       "id": "713ff08f1bd3e066b0f281e2788c3554",
@@ -390,20 +390,20 @@
           "bookmaker": "Nordic Bet"
         },
         "SK Sturm Graz": {
-          "price": 9.1,
-          "bookmaker": "Marathon Bet"
+          "price": 9.8,
+          "bookmaker": "Betfair"
         },
         "Draw": {
-          "price": 5.2,
+          "price": 5.3,
           "bookmaker": "Betfair"
         }
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.69,
+        "price": 1.67,
         "bookmaker": "1xBet",
-        "confidence": 57,
-        "edge_pct": -4.05,
+        "confidence": 58,
+        "edge_pct": -3.96,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -424,12 +424,12 @@
       "away": "Estudiantes",
       "best_h2h": {
         "Boca Juniors": {
-          "price": 2.23,
-          "bookmaker": "Unibet (SE)"
+          "price": 2.16,
+          "bookmaker": "Betfair"
         },
         "Estudiantes": {
-          "price": 4.21,
-          "bookmaker": "BetOnline.ag"
+          "price": 4.33,
+          "bookmaker": "Pinnacle"
         },
         "Draw": {
           "price": 3.05,
@@ -438,10 +438,10 @@
       },
       "recommendation": {
         "text": "Over 1.5 goals",
-        "price": 1.61,
+        "price": 1.6,
         "bookmaker": "Unibet (SE)",
         "confidence": 60,
-        "edge_pct": -4.13,
+        "edge_pct": -4.0,
         "type": "totals",
         "side": "Over",
         "point": 1.5,
@@ -508,16 +508,16 @@
           "bookmaker": "BetOnline.ag"
         },
         "Draw": {
-          "price": 3.15,
-          "bookmaker": "Betsson"
+          "price": 3.09,
+          "bookmaker": "Pinnacle"
         }
       },
       "recommendation": {
         "text": "Under 2.5 goals",
-        "price": 1.54,
+        "price": 1.53,
         "bookmaker": "1xBet",
         "confidence": 62,
-        "edge_pct": -5.0,
+        "edge_pct": -4.8,
         "type": "totals",
         "side": "Under",
         "point": 2.5,
@@ -539,14 +539,14 @@
       "best_h2h": {
         "Kashima Antlers": {
           "price": 2.0,
-          "bookmaker": "Coolbet"
+          "bookmaker": "1xBet"
         },
         "Yokohama F Marinos": {
           "price": 4.0,
           "bookmaker": "Tipico"
         },
         "Draw": {
-          "price": 3.54,
+          "price": 3.52,
           "bookmaker": "1xBet"
         }
       },
@@ -555,7 +555,7 @@
         "price": 2.1,
         "bookmaker": "Coolbet",
         "confidence": 46,
-        "edge_pct": -3.66,
+        "edge_pct": -3.95,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -576,11 +576,11 @@
       "away": "Urawa Red Diamonds",
       "best_h2h": {
         "Gamba Osaka": {
-          "price": 2.38,
-          "bookmaker": "BetOnline.ag"
+          "price": 2.44,
+          "bookmaker": "Betfair"
         },
         "Urawa Red Diamonds": {
-          "price": 3.04,
+          "price": 3.0,
           "bookmaker": "1xBet"
         },
         "Draw": {
@@ -590,10 +590,10 @@
       },
       "recommendation": {
         "text": "Under 2.5 goals",
-        "price": 1.81,
+        "price": 1.8,
         "bookmaker": "1xBet",
         "confidence": 53,
-        "edge_pct": -4.32,
+        "edge_pct": -4.6,
         "type": "totals",
         "side": "Under",
         "point": 2.5,
@@ -644,20 +644,20 @@
           "outcome": "Motor Lublin",
           "best_price": 3.5,
           "bookmaker": "Coolbet",
-          "fair_prob": 0.319,
+          "fair_prob": 0.3214,
           "implied_prob": 0.2857,
-          "edge_pct": 11.66,
-          "kelly": 0.0466,
+          "edge_pct": 12.5,
+          "kelly": 0.05,
           "confidence": 32
         },
         {
           "outcome": "Draw",
           "best_price": 3.6,
           "bookmaker": "Coolbet",
-          "fair_prob": 0.3098,
+          "fair_prob": 0.3121,
           "implied_prob": 0.2778,
-          "edge_pct": 11.52,
-          "kelly": 0.0443,
+          "edge_pct": 12.35,
+          "kelly": 0.0475,
           "confidence": 31
         }
       ]
@@ -681,8 +681,8 @@
           "bookmaker": "GTbets"
         },
         "Draw": {
-          "price": 3.7,
-          "bookmaker": "Nordic Bet"
+          "price": 3.75,
+          "bookmaker": "Betfair"
         }
       },
       "recommendation": {
@@ -715,8 +715,8 @@
           "bookmaker": "Betfair"
         },
         "Viborg FF": {
-          "price": 2.33,
-          "bookmaker": "GTbets"
+          "price": 2.28,
+          "bookmaker": "Betfair"
         },
         "Draw": {
           "price": 3.8,
@@ -753,8 +753,8 @@
           "bookmaker": "Pinnacle"
         },
         "WSG Tirol": {
-          "price": 3.62,
-          "bookmaker": "Pinnacle"
+          "price": 3.65,
+          "bookmaker": "Betfair"
         },
         "Draw": {
           "price": 3.3,
@@ -800,13 +800,13 @@
         }
       },
       "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.65,
+        "text": "Under 2.5 goals",
+        "price": 2.31,
         "bookmaker": "1xBet",
-        "confidence": 58,
-        "edge_pct": -3.92,
+        "confidence": 42,
+        "edge_pct": -4.09,
         "type": "totals",
-        "side": "Over",
+        "side": "Under",
         "point": 2.5,
         "official": false,
         "basis": "market"
@@ -825,8 +825,8 @@
       "away": "Hertha Berlin",
       "best_h2h": {
         "Hertha Berlin": {
-          "price": 2.9,
-          "bookmaker": "Tipico"
+          "price": 2.99,
+          "bookmaker": "Pinnacle"
         },
         "VfL Bochum": {
           "price": 2.48,
@@ -839,10 +839,48 @@
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.65,
+        "price": 1.62,
         "bookmaker": "Tipico",
-        "confidence": 57,
-        "edge_pct": -5.71,
+        "confidence": 58,
+        "edge_pct": -5.81,
+        "type": "totals",
+        "side": "Over",
+        "point": 2.5,
+        "official": false,
+        "basis": "market"
+      },
+      "model": null,
+      "value_picks": []
+    },
+    {
+      "id": "e0192834b7c5b07ce05534832e7992aa",
+      "sport_key": "soccer_poland_ekstraklasa",
+      "sport_icon": "⚽",
+      "league": "Ekstraklasa",
+      "league_short": "POL",
+      "kickoff": "2026-08-07T18:30:00Z",
+      "home": "Wisła Kraków",
+      "away": "Wisła Płock",
+      "best_h2h": {
+        "Wisła Kraków": {
+          "price": 1.95,
+          "bookmaker": "Coolbet"
+        },
+        "Wisła Płock": {
+          "price": 3.85,
+          "bookmaker": "Unibet (SE)"
+        },
+        "Draw": {
+          "price": 3.6,
+          "bookmaker": "Coolbet"
+        }
+      },
+      "recommendation": {
+        "text": "Over 2.5 goals",
+        "price": 1.89,
+        "bookmaker": "Coolbet",
+        "confidence": 50,
+        "edge_pct": -5.5,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -867,7 +905,7 @@
           "bookmaker": "Betfair"
         },
         "KV Kortrijk": {
-          "price": 12.0,
+          "price": 12.5,
           "bookmaker": "Nordic Bet"
         },
         "Draw": {
@@ -945,8 +983,8 @@
       "away": "Aldosivi Mar del Plata",
       "best_h2h": {
         "Aldosivi Mar del Plata": {
-          "price": 7.9,
-          "bookmaker": "Betsson"
+          "price": 8.6,
+          "bookmaker": "Betfair"
         },
         "Rosario Central": {
           "price": 1.55,
@@ -958,13 +996,13 @@
         }
       },
       "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 2.48,
-        "bookmaker": "Betsson",
-        "confidence": 39,
-        "edge_pct": -4.24,
+        "text": "Under 2.5 goals",
+        "price": 1.54,
+        "bookmaker": "1xBet",
+        "confidence": 62,
+        "edge_pct": -5.0,
         "type": "totals",
-        "side": "Over",
+        "side": "Under",
         "point": 2.5,
         "official": false,
         "basis": "market"
@@ -987,8 +1025,8 @@
           "bookmaker": "BetOnline.ag"
         },
         "Independiente Rivadavia": {
-          "price": 1.61,
-          "bookmaker": "Unibet (SE)"
+          "price": 1.56,
+          "bookmaker": "1xBet"
         },
         "Draw": {
           "price": 4.02,
@@ -997,10 +1035,10 @@
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 2.45,
+        "price": 2.38,
         "bookmaker": "Unibet (SE)",
         "confidence": 40,
-        "edge_pct": -2.48,
+        "edge_pct": -3.61,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -1239,44 +1277,6 @@
       "value_picks": []
     },
     {
-      "id": "782a529d8ca743b9ffa1f19117a19f2b",
-      "sport_key": "soccer_korea_kleague1",
-      "sport_icon": "⚽",
-      "league": "K League 1",
-      "league_short": "KOR",
-      "kickoff": "2026-08-08T10:30:00Z",
-      "home": "Bucheon FC 1995",
-      "away": "Gwangju FC",
-      "best_h2h": {
-        "Bucheon FC 1995": {
-          "price": 1.97,
-          "bookmaker": "BetOnline.ag"
-        },
-        "Gwangju FC": {
-          "price": 4.4,
-          "bookmaker": "LeoVegas (SE)"
-        },
-        "Draw": {
-          "price": 3.4,
-          "bookmaker": "Coolbet"
-        }
-      },
-      "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 1.6,
-        "bookmaker": "1xBet",
-        "confidence": 59,
-        "edge_pct": -5.31,
-        "type": "totals",
-        "side": "Under",
-        "point": 2.5,
-        "official": false,
-        "basis": "market"
-      },
-      "model": null,
-      "value_picks": []
-    },
-    {
       "id": "aa6f2c2a9a1b8b05f7564104675e3884",
       "sport_key": "soccer_korea_kleague1",
       "sport_icon": "⚽",
@@ -1405,12 +1405,12 @@
           "bookmaker": "LeoVegas (SE)"
         },
         "Jeonbuk Hyundai Motors": {
-          "price": 1.79,
+          "price": 1.78,
           "bookmaker": "Pinnacle"
         },
         "Draw": {
-          "price": 3.75,
-          "bookmaker": "Coolbet"
+          "price": 3.65,
+          "bookmaker": "LeoVegas (SE)"
         }
       },
       "recommendation": {
@@ -1419,6 +1419,44 @@
         "bookmaker": "BetOnline.ag",
         "confidence": 46,
         "edge_pct": -3.58,
+        "type": "totals",
+        "side": "Over",
+        "point": 2.5,
+        "official": false,
+        "basis": "market"
+      },
+      "model": null,
+      "value_picks": []
+    },
+    {
+      "id": "782a529d8ca743b9ffa1f19117a19f2b",
+      "sport_key": "soccer_korea_kleague1",
+      "sport_icon": "⚽",
+      "league": "K League 1",
+      "league_short": "KOR",
+      "kickoff": "2026-08-08T10:30:00Z",
+      "home": "Bucheon FC 1995",
+      "away": "Gwangju FC",
+      "best_h2h": {
+        "Bucheon FC 1995": {
+          "price": 1.97,
+          "bookmaker": "BetOnline.ag"
+        },
+        "Gwangju FC": {
+          "price": 4.4,
+          "bookmaker": "LeoVegas (SE)"
+        },
+        "Draw": {
+          "price": 3.4,
+          "bookmaker": "Coolbet"
+        }
+      },
+      "recommendation": {
+        "text": "Over 2.5 goals",
+        "price": 2.3,
+        "bookmaker": "LeoVegas (SE)",
+        "confidence": 41,
+        "edge_pct": -5.64,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -1439,16 +1477,16 @@
       "away": "Incheon United",
       "best_h2h": {
         "Gangwon FC": {
-          "price": 2.35,
-          "bookmaker": "Coolbet"
+          "price": 2.25,
+          "bookmaker": "William Hill"
         },
         "Incheon United": {
           "price": 3.5,
           "bookmaker": "William Hill"
         },
         "Draw": {
-          "price": 3.1,
-          "bookmaker": "Coolbet"
+          "price": 2.8,
+          "bookmaker": "William Hill"
         }
       },
       "recommendation": {
@@ -1520,7 +1558,7 @@
         },
         "VfL Osnabrück": {
           "price": 5.6,
-          "bookmaker": "Tipico"
+          "bookmaker": "Unibet (NL)"
         },
         "Draw": {
           "price": 4.3,
@@ -1595,7 +1633,7 @@
           "bookmaker": "Tipico"
         },
         "SV Darmstadt 98": {
-          "price": 2.2,
+          "price": 2.18,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -1629,8 +1667,8 @@
       "away": "Bodø/Glimt",
       "best_h2h": {
         "Bodø/Glimt": {
-          "price": 1.46,
-          "bookmaker": "Nordic Bet"
+          "price": 1.47,
+          "bookmaker": "Betfair"
         },
         "Vålerenga": {
           "price": 6.6,
@@ -1667,24 +1705,24 @@
       "away": "Górnik Zabrze",
       "best_h2h": {
         "Górnik Zabrze": {
-          "price": 2.41,
-          "bookmaker": "Pinnacle"
+          "price": 2.38,
+          "bookmaker": "Betfair"
         },
         "Radomiak Radom": {
-          "price": 2.95,
-          "bookmaker": "Coolbet"
+          "price": 2.98,
+          "bookmaker": "Betfair"
         },
         "Draw": {
-          "price": 3.5,
-          "bookmaker": "Coolbet"
+          "price": 3.55,
+          "bookmaker": "Pinnacle"
         }
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.93,
-        "bookmaker": "Pinnacle",
-        "confidence": 49,
-        "edge_pct": -4.51,
+        "price": 1.89,
+        "bookmaker": "Coolbet",
+        "confidence": 51,
+        "edge_pct": -3.78,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -1705,26 +1743,26 @@
       "away": "AIK",
       "best_h2h": {
         "AIK": {
-          "price": 2.28,
-          "bookmaker": "Unibet (SE)"
+          "price": 2.24,
+          "bookmaker": "Coolbet"
         },
         "Örgryte IS": {
           "price": 3.34,
           "bookmaker": "GTbets"
         },
         "Draw": {
-          "price": 3.77,
-          "bookmaker": "GTbets"
+          "price": 3.8,
+          "bookmaker": "Unibet (SE)"
         }
       },
       "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 2.35,
+        "text": "Over 2.5 goals",
+        "price": 1.61,
         "bookmaker": "GTbets",
-        "confidence": 41,
-        "edge_pct": -3.41,
+        "confidence": 59,
+        "edge_pct": -4.46,
         "type": "totals",
-        "side": "Under",
+        "side": "Over",
         "point": 2.5,
         "official": false,
         "basis": "market"
@@ -1747,7 +1785,7 @@
           "bookmaker": "Pinnacle"
         },
         "Dundee FC": {
-          "price": 2.7,
+          "price": 2.78,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -1806,7 +1844,18 @@
         "basis": "market"
       },
       "model": null,
-      "value_picks": []
+      "value_picks": [
+        {
+          "outcome": "Draw",
+          "best_price": 5.63,
+          "bookmaker": "Pinnacle",
+          "fair_prob": 0.1954,
+          "implied_prob": 0.1776,
+          "edge_pct": 10.01,
+          "kelly": 0.0216,
+          "confidence": 20
+        }
+      ]
     },
     {
       "id": "0385d6e349a2a311cc5843975015873b",
@@ -1819,12 +1868,12 @@
       "away": "St Johnstone",
       "best_h2h": {
         "St Johnstone": {
-          "price": 3.1,
+          "price": 3.05,
           "bookmaker": "Betfair"
         },
         "St Mirren": {
-          "price": 2.42,
-          "bookmaker": "Betsson"
+          "price": 2.38,
+          "bookmaker": "Pinnacle"
         },
         "Draw": {
           "price": 3.5,
@@ -1844,50 +1893,6 @@
         "basis": "market"
       },
       "model": null,
-      "value_picks": []
-    },
-    {
-      "id": "5d48e61f140b4e0ad043d9c69c1db4bc",
-      "sport_key": "soccer_netherlands_eredivisie",
-      "sport_icon": "⚽",
-      "league": "Eredivisie",
-      "league_short": "ERE",
-      "kickoff": "2026-08-08T14:30:00Z",
-      "home": "NEC Nijmegen",
-      "away": "SC Telstar",
-      "best_h2h": {
-        "NEC Nijmegen": {
-          "price": 1.44,
-          "bookmaker": "Betfair"
-        },
-        "SC Telstar": {
-          "price": 7.5,
-          "bookmaker": "Unibet (NL)"
-        },
-        "Draw": {
-          "price": 5.4,
-          "bookmaker": "Unibet (NL)"
-        }
-      },
-      "recommendation": {
-        "text": "Under 3.5 goals",
-        "price": 1.8,
-        "bookmaker": "1xBet",
-        "confidence": 53,
-        "edge_pct": -3.72,
-        "type": "totals",
-        "side": "Under",
-        "point": 3.5,
-        "official": false,
-        "basis": "model+market"
-      },
-      "model": {
-        "xg_home": 2.353,
-        "xg_away": 1.281,
-        "p_home": 0.6128,
-        "p_draw": 0.1903,
-        "p_away": 0.1969
-      },
       "value_picks": []
     },
     {
@@ -1927,6 +1932,61 @@
       },
       "model": null,
       "value_picks": []
+    },
+    {
+      "id": "5d48e61f140b4e0ad043d9c69c1db4bc",
+      "sport_key": "soccer_netherlands_eredivisie",
+      "sport_icon": "⚽",
+      "league": "Eredivisie",
+      "league_short": "ERE",
+      "kickoff": "2026-08-08T14:30:00Z",
+      "home": "NEC Nijmegen",
+      "away": "SC Telstar",
+      "best_h2h": {
+        "NEC Nijmegen": {
+          "price": 1.49,
+          "bookmaker": "Betfair"
+        },
+        "SC Telstar": {
+          "price": 7.5,
+          "bookmaker": "Unibet (NL)"
+        },
+        "Draw": {
+          "price": 5.25,
+          "bookmaker": "Coolbet"
+        }
+      },
+      "recommendation": {
+        "text": "Over 3.5 goals",
+        "price": 2.09,
+        "bookmaker": "1xBet",
+        "confidence": 46,
+        "edge_pct": -4.16,
+        "type": "totals",
+        "side": "Over",
+        "point": 3.5,
+        "official": false,
+        "basis": "model+market"
+      },
+      "model": {
+        "xg_home": 2.353,
+        "xg_away": 1.281,
+        "p_home": 0.6128,
+        "p_draw": 0.1903,
+        "p_away": 0.1969
+      },
+      "value_picks": [
+        {
+          "outcome": "Draw",
+          "best_price": 5.25,
+          "bookmaker": "Coolbet",
+          "fair_prob": 0.1973,
+          "implied_prob": 0.1905,
+          "edge_pct": 3.59,
+          "kelly": 0.0085,
+          "confidence": 20
+        }
+      ]
     },
     {
       "id": "96eeececd0e89110835293c17ca72948",
@@ -1986,7 +2046,7 @@
         },
         "Draw": {
           "price": 3.45,
-          "bookmaker": "Coolbet"
+          "bookmaker": "Betfair"
         }
       },
       "recommendation": {
@@ -2045,51 +2105,13 @@
           "outcome": "Motor Lublin",
           "best_price": 3.85,
           "bookmaker": "Pinnacle",
-          "fair_prob": 0.2695,
+          "fair_prob": 0.27,
           "implied_prob": 0.2597,
-          "edge_pct": 3.77,
-          "kelly": 0.0132,
+          "edge_pct": 3.95,
+          "kelly": 0.0139,
           "confidence": 27
         }
       ]
-    },
-    {
-      "id": "0d5d112aa8db5051389932467629678a",
-      "sport_key": "soccer_poland_ekstraklasa",
-      "sport_icon": "⚽",
-      "league": "Ekstraklasa",
-      "league_short": "POL",
-      "kickoff": "2026-08-08T15:30:00Z",
-      "home": "Lech Poznań",
-      "away": "Piast Gliwice",
-      "best_h2h": {
-        "Lech Poznań": {
-          "price": 1.61,
-          "bookmaker": "888sport"
-        },
-        "Piast Gliwice": {
-          "price": 5.25,
-          "bookmaker": "Coolbet"
-        },
-        "Draw": {
-          "price": 4.2,
-          "bookmaker": "Coolbet"
-        }
-      },
-      "recommendation": {
-        "text": "Over 3.0 goals",
-        "price": 2.15,
-        "bookmaker": "Coolbet",
-        "confidence": 44,
-        "edge_pct": -5.69,
-        "type": "totals",
-        "side": "Over",
-        "point": 3.0,
-        "official": false,
-        "basis": "market"
-      },
-      "model": null,
-      "value_picks": []
     },
     {
       "id": "c77211f322b9972c2bd43bbc8b5b13be",
@@ -2106,22 +2128,22 @@
           "bookmaker": "Coolbet"
         },
         "FC Lausanne-Sport": {
-          "price": 2.95,
+          "price": 3.0,
           "bookmaker": "Tipico"
         },
         "Draw": {
-          "price": 4.16,
+          "price": 4.23,
           "bookmaker": "Pinnacle"
         }
       },
       "recommendation": {
-        "text": "Over 3.25 goals",
-        "price": 1.83,
+        "text": "Under 3.25 goals",
+        "price": 2.02,
         "bookmaker": "Pinnacle",
-        "confidence": 52,
-        "edge_pct": -4.21,
+        "confidence": 48,
+        "edge_pct": -3.98,
         "type": "totals",
-        "side": "Over",
+        "side": "Under",
         "point": 3.25,
         "official": false,
         "basis": "market"
@@ -2182,7 +2204,7 @@
           "bookmaker": "Tipico"
         },
         "Standard Liege": {
-          "price": 2.42,
+          "price": 2.44,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -2220,20 +2242,20 @@
           "bookmaker": "Betsson"
         },
         "Willem II": {
-          "price": 5.4,
+          "price": 5.25,
           "bookmaker": "Unibet (NL)"
         },
         "Draw": {
           "price": 4.3,
-          "bookmaker": "Betfair"
+          "bookmaker": "Unibet (NL)"
         }
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.61,
-        "bookmaker": "Unibet (SE)",
+        "price": 1.6,
+        "bookmaker": "1xBet",
         "confidence": 60,
-        "edge_pct": -3.64,
+        "edge_pct": -4.0,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -2244,12 +2266,12 @@
       "value_picks": [
         {
           "outcome": "Willem II",
-          "best_price": 5.4,
+          "best_price": 5.25,
           "bookmaker": "Unibet (NL)",
-          "fair_prob": 0.198,
-          "implied_prob": 0.1852,
-          "edge_pct": 6.93,
-          "kelly": 0.0158,
+          "fair_prob": 0.1987,
+          "implied_prob": 0.1905,
+          "edge_pct": 4.31,
+          "kelly": 0.0101,
           "confidence": 20
         }
       ]
@@ -2301,9 +2323,9 @@
           "outcome": "Draw",
           "best_price": 3.95,
           "bookmaker": "Betfair",
-          "fair_prob": 0.2627,
+          "fair_prob": 0.2628,
           "implied_prob": 0.2532,
-          "edge_pct": 3.78,
+          "edge_pct": 3.79,
           "kelly": 0.0128,
           "confidence": 26
         }
@@ -2333,13 +2355,13 @@
         }
       },
       "recommendation": {
-        "text": "Over 2.75 goals",
-        "price": 2.0,
-        "bookmaker": "BetOnline.ag",
-        "confidence": 48,
-        "edge_pct": -3.9,
+        "text": "Under 2.75 goals",
+        "price": 1.84,
+        "bookmaker": "Pinnacle",
+        "confidence": 52,
+        "edge_pct": -4.17,
         "type": "totals",
-        "side": "Over",
+        "side": "Under",
         "point": 2.75,
         "official": false,
         "basis": "market"
@@ -2358,7 +2380,7 @@
       "away": "Sarmiento de Junin",
       "best_h2h": {
         "Atlético Tucuman": {
-          "price": 1.82,
+          "price": 1.83,
           "bookmaker": "1xBet"
         },
         "Sarmiento de Junin": {
@@ -2366,8 +2388,8 @@
           "bookmaker": "Codere (IT)"
         },
         "Draw": {
-          "price": 3.21,
-          "bookmaker": "1xBet"
+          "price": 3.2,
+          "bookmaker": "Codere (IT)"
         }
       },
       "recommendation": {
@@ -2388,11 +2410,11 @@
           "outcome": "Sarmiento de Junin",
           "best_price": 5.2,
           "bookmaker": "Codere (IT)",
-          "fair_prob": 0.217,
+          "fair_prob": 0.2144,
           "implied_prob": 0.1923,
-          "edge_pct": 12.83,
-          "kelly": 0.0305,
-          "confidence": 22
+          "edge_pct": 11.49,
+          "kelly": 0.0274,
+          "confidence": 21
         }
       ]
     },
@@ -2411,7 +2433,7 @@
           "bookmaker": "Unibet (SE)"
         },
         "Estudiantes": {
-          "price": 2.6,
+          "price": 2.62,
           "bookmaker": "1xBet"
         },
         "Draw": {
@@ -2421,10 +2443,10 @@
       },
       "recommendation": {
         "text": "Over 1.5 goals",
-        "price": 1.94,
+        "price": 1.96,
         "bookmaker": "1xBet",
-        "confidence": 50,
-        "edge_pct": -3.76,
+        "confidence": 49,
+        "edge_pct": -3.27,
         "type": "totals",
         "side": "Over",
         "point": 1.5,
@@ -2489,11 +2511,11 @@
       "away": "Legia Warszawa",
       "best_h2h": {
         "Korona Kielce": {
-          "price": 2.85,
+          "price": 2.81,
           "bookmaker": "Pinnacle"
         },
         "Legia Warszawa": {
-          "price": 2.56,
+          "price": 2.59,
           "bookmaker": "Pinnacle"
         },
         "Draw": {
@@ -2527,8 +2549,8 @@
       "away": "Grasshopper Zürich",
       "best_h2h": {
         "Grasshopper Zürich": {
-          "price": 5.6,
-          "bookmaker": "Betfair"
+          "price": 5.5,
+          "bookmaker": "Coolbet"
         },
         "Servette": {
           "price": 1.6,
@@ -2603,12 +2625,12 @@
       "away": "Lommel SK",
       "best_h2h": {
         "Lommel SK": {
-          "price": 5.6,
+          "price": 5.5,
           "bookmaker": "Betfair"
         },
         "Sint Truiden": {
           "price": 1.62,
-          "bookmaker": "1xBet"
+          "bookmaker": "Nordic Bet"
         },
         "Draw": {
           "price": 4.14,
@@ -2616,13 +2638,13 @@
         }
       },
       "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 2.0,
+        "text": "Over 2.5 goals",
+        "price": 1.81,
         "bookmaker": "1xBet",
-        "confidence": 48,
-        "edge_pct": -4.71,
+        "confidence": 53,
+        "edge_pct": -4.54,
         "type": "totals",
-        "side": "Under",
+        "side": "Over",
         "point": 2.5,
         "official": false,
         "basis": "market"
@@ -2641,12 +2663,12 @@
       "away": "Union Saint-Gilloise",
       "best_h2h": {
         "Union Saint-Gilloise": {
-          "price": 1.78,
-          "bookmaker": "Unibet (SE)"
+          "price": 1.76,
+          "bookmaker": "1xBet"
         },
         "Westerlo": {
-          "price": 4.6,
-          "bookmaker": "Nordic Bet"
+          "price": 4.9,
+          "bookmaker": "Unibet (SE)"
         },
         "Draw": {
           "price": 3.9,
@@ -2655,10 +2677,10 @@
       },
       "recommendation": {
         "text": "Under 2.5 goals",
-        "price": 2.02,
+        "price": 2.03,
         "bookmaker": "1xBet",
-        "confidence": 48,
-        "edge_pct": -3.98,
+        "confidence": 47,
+        "edge_pct": -3.76,
         "type": "totals",
         "side": "Under",
         "point": 2.5,
@@ -2687,7 +2709,7 @@
           "bookmaker": "Betfair"
         },
         "Draw": {
-          "price": 5.1,
+          "price": 5.0,
           "bookmaker": "Unibet (NL)"
         }
       },
@@ -2761,24 +2783,24 @@
       "away": "Sporting Lisbon",
       "best_h2h": {
         "CF Estrela": {
-          "price": 14.0,
-          "bookmaker": "Coolbet"
+          "price": 14.5,
+          "bookmaker": "Betfair"
         },
         "Sporting Lisbon": {
           "price": 1.24,
           "bookmaker": "Betsson"
         },
         "Draw": {
-          "price": 6.9,
-          "bookmaker": "Pinnacle"
+          "price": 6.6,
+          "bookmaker": "Betfair"
         }
       },
       "recommendation": {
         "text": "Under 3.0 goals",
-        "price": 2.01,
-        "bookmaker": "Pinnacle",
-        "confidence": 48,
-        "edge_pct": -3.67,
+        "price": 1.93,
+        "bookmaker": "Coolbet",
+        "confidence": 49,
+        "edge_pct": -5.02,
         "type": "totals",
         "side": "Under",
         "point": 3.0,
@@ -2799,11 +2821,11 @@
       "away": "River Plate",
       "best_h2h": {
         "CA Tigre BA": {
-          "price": 3.4,
+          "price": 3.44,
           "bookmaker": "1xBet"
         },
         "River Plate": {
-          "price": 2.4,
+          "price": 2.38,
           "bookmaker": "1xBet"
         },
         "Draw": {
@@ -2815,8 +2837,8 @@
         "text": "Under 1.5 goals",
         "price": 2.5,
         "bookmaker": "Unibet (SE)",
-        "confidence": 38,
-        "edge_pct": -3.94,
+        "confidence": 39,
+        "edge_pct": -3.56,
         "type": "totals",
         "side": "Under",
         "point": 1.5,
@@ -2867,10 +2889,10 @@
           "outcome": "Draw",
           "best_price": 3.85,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2715,
+          "fair_prob": 0.272,
           "implied_prob": 0.2597,
-          "edge_pct": 4.53,
-          "kelly": 0.0159,
+          "edge_pct": 4.74,
+          "kelly": 0.0166,
           "confidence": 27
         }
       ]
@@ -2929,12 +2951,12 @@
       "away": "Velez Sarsfield BA",
       "best_h2h": {
         "Boca Juniors": {
-          "price": 1.85,
+          "price": 1.82,
           "bookmaker": "Nordic Bet"
         },
         "Velez Sarsfield BA": {
-          "price": 5.2,
-          "bookmaker": "Codere (IT)"
+          "price": 5.24,
+          "bookmaker": "1xBet"
         },
         "Draw": {
           "price": 3.25,
@@ -2957,12 +2979,12 @@
       "value_picks": [
         {
           "outcome": "Velez Sarsfield BA",
-          "best_price": 5.2,
-          "bookmaker": "Codere (IT)",
-          "fair_prob": 0.2243,
-          "implied_prob": 0.1923,
-          "edge_pct": 16.62,
-          "kelly": 0.0396,
+          "best_price": 5.24,
+          "bookmaker": "1xBet",
+          "fair_prob": 0.2199,
+          "implied_prob": 0.1908,
+          "edge_pct": 15.24,
+          "kelly": 0.036,
           "confidence": 22
         }
       ]
@@ -2978,7 +3000,7 @@
       "away": "Chapecoense",
       "best_h2h": {
         "Chapecoense": {
-          "price": 5.7,
+          "price": 5.6,
           "bookmaker": "Matchbook"
         },
         "Coritiba": {
@@ -2995,7 +3017,7 @@
         "price": 1.99,
         "bookmaker": "Pinnacle",
         "confidence": 53,
-        "edge_pct": 6.14,
+        "edge_pct": 4.59,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -3039,7 +3061,7 @@
         "price": 2.67,
         "bookmaker": "BetOnline.ag",
         "confidence": 41,
-        "edge_pct": 8.44,
+        "edge_pct": 8.41,
         "type": "h2h",
         "outcome": "Botafogo",
         "official": true,
@@ -3079,10 +3101,10 @@
       },
       "recommendation": {
         "text": "Under 2.5 goals",
-        "price": 1.53,
+        "price": 1.52,
         "bookmaker": "1xBet",
         "confidence": 63,
-        "edge_pct": -3.68,
+        "edge_pct": -4.08,
         "type": "totals",
         "side": "Under",
         "point": 2.5,
@@ -3217,8 +3239,8 @@
       "away": "Feyenoord",
       "best_h2h": {
         "Feyenoord": {
-          "price": 1.71,
-          "bookmaker": "1xBet"
+          "price": 1.72,
+          "bookmaker": "Unibet (NL)"
         },
         "Sparta Rotterdam": {
           "price": 5.1,
@@ -3231,10 +3253,10 @@
       },
       "recommendation": {
         "text": "Over 3.5 goals",
-        "price": 2.33,
+        "price": 2.35,
         "bookmaker": "1xBet",
         "confidence": 41,
-        "edge_pct": -4.09,
+        "edge_pct": -4.11,
         "type": "totals",
         "side": "Over",
         "point": 3.5,
@@ -3253,13 +3275,51 @@
           "outcome": "Sparta Rotterdam",
           "best_price": 5.1,
           "bookmaker": "Unibet (NL)",
-          "fair_prob": 0.2106,
+          "fair_prob": 0.2102,
           "implied_prob": 0.1961,
-          "edge_pct": 7.42,
-          "kelly": 0.0181,
+          "edge_pct": 7.22,
+          "kelly": 0.0176,
           "confidence": 21
         }
       ]
+    },
+    {
+      "id": "387f00871fa093d20a7983af9b5d0408",
+      "sport_key": "soccer_germany_bundesliga2",
+      "sport_icon": "⚽",
+      "league": "2. Bundesliga",
+      "league_short": "BL2",
+      "kickoff": "2026-08-09T11:30:00Z",
+      "home": "FC Energie Cottbus",
+      "away": "Hannover 96",
+      "best_h2h": {
+        "FC Energie Cottbus": {
+          "price": 3.2,
+          "bookmaker": "Tipico"
+        },
+        "Hannover 96": {
+          "price": 2.16,
+          "bookmaker": "Betfair"
+        },
+        "Draw": {
+          "price": 3.85,
+          "bookmaker": "Betfair"
+        }
+      },
+      "recommendation": {
+        "text": "Over 2.5 goals",
+        "price": 1.57,
+        "bookmaker": "William Hill",
+        "confidence": 60,
+        "edge_pct": -5.09,
+        "type": "totals",
+        "side": "Over",
+        "point": 2.5,
+        "official": false,
+        "basis": "market"
+      },
+      "model": null,
+      "value_picks": []
     },
     {
       "id": "06b55211376bb30fced8f186900f531f",
@@ -3276,12 +3336,12 @@
           "bookmaker": "Coolbet"
         },
         "Greuther Fürth": {
-          "price": 4.2,
+          "price": 4.0,
           "bookmaker": "Tipico"
         },
         "Draw": {
-          "price": 4.0,
-          "bookmaker": "Tipico"
+          "price": 3.95,
+          "bookmaker": "Winamax (DE)"
         }
       },
       "recommendation": {
@@ -3323,13 +3383,13 @@
         }
       },
       "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 1.98,
-        "bookmaker": "Pinnacle",
-        "confidence": 48,
-        "edge_pct": -4.09,
+        "text": "Over 2.5 goals",
+        "price": 1.86,
+        "bookmaker": "1xBet",
+        "confidence": 52,
+        "edge_pct": -3.63,
         "type": "totals",
-        "side": "Under",
+        "side": "Over",
         "point": 2.5,
         "official": false,
         "basis": "market"
@@ -3348,8 +3408,8 @@
       "away": "Dynamo Dresden",
       "best_h2h": {
         "1. FC Nürnberg": {
-          "price": 2.1,
-          "bookmaker": "Winamax (DE)"
+          "price": 2.11,
+          "bookmaker": "Codere (IT)"
         },
         "Dynamo Dresden": {
           "price": 3.3,
@@ -3376,42 +3436,53 @@
       "value_picks": []
     },
     {
-      "id": "387f00871fa093d20a7983af9b5d0408",
-      "sport_key": "soccer_germany_bundesliga2",
+      "id": "b35dfbc867b7f75783a0542e8d502e9b",
+      "sport_key": "soccer_sweden_allsvenskan",
       "sport_icon": "⚽",
-      "league": "2. Bundesliga",
-      "league_short": "BL2",
-      "kickoff": "2026-08-09T11:30:00Z",
-      "home": "FC Energie Cottbus",
-      "away": "Hannover 96",
+      "league": "Allsvenskan",
+      "league_short": "SWE",
+      "kickoff": "2026-08-09T12:00:00Z",
+      "home": "Malmo FF",
+      "away": "Degerfors IF",
       "best_h2h": {
-        "FC Energie Cottbus": {
-          "price": 3.2,
-          "bookmaker": "Tipico"
+        "Degerfors IF": {
+          "price": 7.5,
+          "bookmaker": "Unibet (SE)"
         },
-        "Hannover 96": {
-          "price": 2.2,
-          "bookmaker": "Betfair"
+        "Malmo FF": {
+          "price": 1.55,
+          "bookmaker": "GTbets"
         },
         "Draw": {
-          "price": 3.9,
-          "bookmaker": "Betfair"
+          "price": 4.8,
+          "bookmaker": "Unibet (SE)"
         }
       },
       "recommendation": {
-        "text": "Over 3.5 goals",
-        "price": 2.35,
-        "bookmaker": "1xBet",
-        "confidence": 40,
-        "edge_pct": -5.88,
+        "text": "Over 2.5 goals",
+        "price": 1.72,
+        "bookmaker": "Coolbet",
+        "confidence": 56,
+        "edge_pct": -3.47,
         "type": "totals",
         "side": "Over",
-        "point": 3.5,
+        "point": 2.5,
         "official": false,
         "basis": "market"
       },
       "model": null,
-      "value_picks": []
+      "value_picks": [
+        {
+          "outcome": "Draw",
+          "best_price": 4.8,
+          "bookmaker": "Unibet (SE)",
+          "fair_prob": 0.2167,
+          "implied_prob": 0.2083,
+          "edge_pct": 4.03,
+          "kelly": 0.0106,
+          "confidence": 22
+        }
+      ]
     },
     {
       "id": "112461d55bc7e1207c0be9c1899d759f",
@@ -3441,7 +3512,7 @@
         "price": 1.88,
         "bookmaker": "Pinnacle",
         "confidence": 51,
-        "edge_pct": -4.04,
+        "edge_pct": -3.8,
         "type": "totals",
         "side": "Under",
         "point": 3.5,
@@ -3454,10 +3525,10 @@
           "outcome": "BK Hacken",
           "best_price": 6.0,
           "bookmaker": "Unibet (SE)",
-          "fair_prob": 0.1776,
+          "fair_prob": 0.1774,
           "implied_prob": 0.1667,
-          "edge_pct": 6.53,
-          "kelly": 0.0131,
+          "edge_pct": 6.44,
+          "kelly": 0.0129,
           "confidence": 18
         }
       ]
@@ -3473,16 +3544,16 @@
       "away": "FC Zurich",
       "best_h2h": {
         "FC Lugano": {
-          "price": 1.54,
+          "price": 1.53,
           "bookmaker": "Pinnacle"
         },
         "FC Zurich": {
-          "price": 6.02,
-          "bookmaker": "Pinnacle"
+          "price": 6.0,
+          "bookmaker": "Coolbet"
         },
         "Draw": {
-          "price": 4.5,
-          "bookmaker": "Coolbet"
+          "price": 4.7,
+          "bookmaker": "Tipico"
         }
       },
       "recommendation": {
@@ -3501,93 +3572,6 @@
       "value_picks": []
     },
     {
-      "id": "b35dfbc867b7f75783a0542e8d502e9b",
-      "sport_key": "soccer_sweden_allsvenskan",
-      "sport_icon": "⚽",
-      "league": "Allsvenskan",
-      "league_short": "SWE",
-      "kickoff": "2026-08-09T12:00:00Z",
-      "home": "Malmo FF",
-      "away": "Degerfors IF",
-      "best_h2h": {
-        "Degerfors IF": {
-          "price": 8.0,
-          "bookmaker": "Unibet (SE)"
-        },
-        "Malmo FF": {
-          "price": 1.55,
-          "bookmaker": "GTbets"
-        },
-        "Draw": {
-          "price": 5.1,
-          "bookmaker": "Unibet (SE)"
-        }
-      },
-      "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 2.23,
-        "bookmaker": "Unibet (SE)",
-        "confidence": 43,
-        "edge_pct": -3.22,
-        "type": "totals",
-        "side": "Under",
-        "point": 2.5,
-        "official": false,
-        "basis": "market"
-      },
-      "model": null,
-      "value_picks": [
-        {
-          "outcome": "Draw",
-          "best_price": 5.1,
-          "bookmaker": "Unibet (SE)",
-          "fair_prob": 0.2135,
-          "implied_prob": 0.1961,
-          "edge_pct": 8.9,
-          "kelly": 0.0217,
-          "confidence": 21
-        }
-      ]
-    },
-    {
-      "id": "361a9d2af09a24104eba70ee260791a2",
-      "sport_key": "soccer_norway_eliteserien",
-      "sport_icon": "⚽",
-      "league": "Eliteserien",
-      "league_short": "NOR",
-      "kickoff": "2026-08-09T12:30:00Z",
-      "home": "Lillestrom",
-      "away": "Rosenborg",
-      "best_h2h": {
-        "Lillestrom": {
-          "price": 2.45,
-          "bookmaker": "Coolbet"
-        },
-        "Rosenborg": {
-          "price": 2.89,
-          "bookmaker": "GTbets"
-        },
-        "Draw": {
-          "price": 3.64,
-          "bookmaker": "Pinnacle"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.66,
-        "bookmaker": "LeoVegas (SE)",
-        "confidence": 58,
-        "edge_pct": -3.24,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5,
-        "official": false,
-        "basis": "market"
-      },
-      "model": null,
-      "value_picks": []
-    },
-    {
       "id": "58b382fa954e85ab500c472ac73c7e8d",
       "sport_key": "soccer_spl",
       "sport_icon": "⚽",
@@ -3598,12 +3582,12 @@
       "away": "Celtic",
       "best_h2h": {
         "Celtic": {
-          "price": 1.43,
+          "price": 1.44,
           "bookmaker": "Betsson"
         },
         "Kilmarnock": {
-          "price": 7.4,
-          "bookmaker": "Betsson"
+          "price": 7.25,
+          "bookmaker": "Coolbet"
         },
         "Draw": {
           "price": 5.0,
@@ -3636,16 +3620,16 @@
       "away": "FC Utrecht",
       "best_h2h": {
         "FC Utrecht": {
-          "price": 3.05,
-          "bookmaker": "Unibet (NL)"
+          "price": 3.0,
+          "bookmaker": "Tipico"
         },
         "Groningen": {
-          "price": 2.4,
-          "bookmaker": "1xBet"
+          "price": 2.43,
+          "bookmaker": "Unibet (NL)"
         },
         "Draw": {
           "price": 3.6,
-          "bookmaker": "Coolbet"
+          "bookmaker": "Unibet (NL)"
         }
       },
       "recommendation": {
@@ -3688,16 +3672,16 @@
           "bookmaker": "Unibet (NL)"
         },
         "Draw": {
-          "price": 4.75,
-          "bookmaker": "Coolbet"
+          "price": 4.8,
+          "bookmaker": "Unibet (NL)"
         }
       },
       "recommendation": {
         "text": "Over 3.5 goals",
-        "price": 2.23,
+        "price": 2.2,
         "bookmaker": "Unibet (SE)",
-        "confidence": 43,
-        "edge_pct": -3.22,
+        "confidence": 44,
+        "edge_pct": -3.79,
         "type": "totals",
         "side": "Over",
         "point": 3.5,
@@ -3711,6 +3695,44 @@
         "p_draw": 0.2288,
         "p_away": 0.5032
       },
+      "value_picks": []
+    },
+    {
+      "id": "361a9d2af09a24104eba70ee260791a2",
+      "sport_key": "soccer_norway_eliteserien",
+      "sport_icon": "⚽",
+      "league": "Eliteserien",
+      "league_short": "NOR",
+      "kickoff": "2026-08-09T12:30:00Z",
+      "home": "Lillestrom",
+      "away": "Rosenborg",
+      "best_h2h": {
+        "Lillestrom": {
+          "price": 2.48,
+          "bookmaker": "LeoVegas (SE)"
+        },
+        "Rosenborg": {
+          "price": 2.89,
+          "bookmaker": "GTbets"
+        },
+        "Draw": {
+          "price": 3.64,
+          "bookmaker": "Pinnacle"
+        }
+      },
+      "recommendation": {
+        "text": "Under 2.5 goals",
+        "price": 2.32,
+        "bookmaker": "1xBet",
+        "confidence": 41,
+        "edge_pct": -3.92,
+        "type": "totals",
+        "side": "Under",
+        "point": 2.5,
+        "official": false,
+        "basis": "market"
+      },
+      "model": null,
       "value_picks": []
     },
     {
@@ -3761,16 +3783,16 @@
       "away": "Lyngby",
       "best_h2h": {
         "Lyngby": {
-          "price": 3.9,
-          "bookmaker": "Unibet (NL)"
+          "price": 3.66,
+          "bookmaker": "GTbets"
         },
         "Randers FC": {
           "price": 2.14,
           "bookmaker": "Betfair"
         },
         "Draw": {
-          "price": 3.75,
-          "bookmaker": "Unibet (NL)"
+          "price": 3.72,
+          "bookmaker": "Pinnacle"
         }
       },
       "recommendation": {
@@ -3786,18 +3808,45 @@
         "basis": "market"
       },
       "model": null,
-      "value_picks": [
-        {
-          "outcome": "Lyngby",
-          "best_price": 3.9,
-          "bookmaker": "Unibet (NL)",
-          "fair_prob": 0.268,
-          "implied_prob": 0.2564,
-          "edge_pct": 4.51,
-          "kelly": 0.0155,
-          "confidence": 27
+      "value_picks": []
+    },
+    {
+      "id": "9fb5371c4008ee7d2ba49336196853ee",
+      "sport_key": "soccer_belgium_first_div",
+      "sport_icon": "⚽",
+      "league": "Belgian Pro League",
+      "league_short": "BEL",
+      "kickoff": "2026-08-09T14:00:00Z",
+      "home": "SV Zulte-Waregem",
+      "away": "Genk",
+      "best_h2h": {
+        "Genk": {
+          "price": 2.21,
+          "bookmaker": "Pinnacle"
+        },
+        "SV Zulte-Waregem": {
+          "price": 3.2,
+          "bookmaker": "Tipico"
+        },
+        "Draw": {
+          "price": 3.69,
+          "bookmaker": "1xBet"
         }
-      ]
+      },
+      "recommendation": {
+        "text": "Over 2.5 goals",
+        "price": 1.75,
+        "bookmaker": "1xBet",
+        "confidence": 55,
+        "edge_pct": -4.13,
+        "type": "totals",
+        "side": "Over",
+        "point": 2.5,
+        "official": false,
+        "basis": "market"
+      },
+      "model": null,
+      "value_picks": []
     },
     {
       "id": "71d869f64273f53c8190088817aab46a",
@@ -3810,12 +3859,12 @@
       "away": "Leuven",
       "best_h2h": {
         "Charleroi": {
-          "price": 1.82,
-          "bookmaker": "Nordic Bet"
+          "price": 1.8,
+          "bookmaker": "1xBet"
         },
         "Leuven": {
-          "price": 4.8,
-          "bookmaker": "Betfair"
+          "price": 4.6,
+          "bookmaker": "Nordic Bet"
         },
         "Draw": {
           "price": 3.7,
@@ -3896,7 +3945,7 @@
           "bookmaker": "Coolbet"
         },
         "Hearts": {
-          "price": 1.64,
+          "price": 1.6,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -3934,12 +3983,12 @@
           "bookmaker": "Betfair"
         },
         "Motherwell": {
-          "price": 1.81,
-          "bookmaker": "Pinnacle"
+          "price": 1.82,
+          "bookmaker": "Betsson"
         },
         "Draw": {
-          "price": 3.85,
-          "bookmaker": "Coolbet"
+          "price": 3.95,
+          "bookmaker": "Betfair"
         }
       },
       "recommendation": {
@@ -3951,44 +4000,6 @@
         "type": "totals",
         "side": "Over",
         "point": 2.75,
-        "official": false,
-        "basis": "market"
-      },
-      "model": null,
-      "value_picks": []
-    },
-    {
-      "id": "9fb5371c4008ee7d2ba49336196853ee",
-      "sport_key": "soccer_belgium_first_div",
-      "sport_icon": "⚽",
-      "league": "Belgian Pro League",
-      "league_short": "BEL",
-      "kickoff": "2026-08-09T14:00:00Z",
-      "home": "SV Zulte-Waregem",
-      "away": "Genk",
-      "best_h2h": {
-        "Genk": {
-          "price": 2.21,
-          "bookmaker": "Pinnacle"
-        },
-        "SV Zulte-Waregem": {
-          "price": 3.2,
-          "bookmaker": "Tipico"
-        },
-        "Draw": {
-          "price": 3.69,
-          "bookmaker": "1xBet"
-        }
-      },
-      "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 2.11,
-        "bookmaker": "1xBet",
-        "confidence": 45,
-        "edge_pct": -4.34,
-        "type": "totals",
-        "side": "Under",
-        "point": 2.5,
         "official": false,
         "basis": "market"
       },
@@ -4022,8 +4033,8 @@
         "text": "Over 2.5 goals",
         "price": 1.73,
         "bookmaker": "GTbets",
-        "confidence": 56,
-        "edge_pct": -3.54,
+        "confidence": 55,
+        "edge_pct": -4.54,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -4045,7 +4056,7 @@
       "best_h2h": {
         "IFK Goteborg": {
           "price": 2.32,
-          "bookmaker": "Pinnacle"
+          "bookmaker": "Betfair"
         },
         "Kalmar FF": {
           "price": 3.2,
@@ -4082,26 +4093,26 @@
       "away": "FC Luzern",
       "best_h2h": {
         "FC Luzern": {
-          "price": 3.51,
+          "price": 3.55,
           "bookmaker": "Pinnacle"
         },
         "FC St Gallen": {
-          "price": 2.05,
+          "price": 2.08,
           "bookmaker": "Coolbet"
         },
         "Draw": {
-          "price": 4.0,
-          "bookmaker": "Coolbet"
+          "price": 3.97,
+          "bookmaker": "GTbets"
         }
       },
       "recommendation": {
-        "text": "Under 3.25 goals",
-        "price": 1.97,
+        "text": "Over 3.25 goals",
+        "price": 1.86,
         "bookmaker": "Pinnacle",
-        "confidence": 49,
-        "edge_pct": -4.07,
+        "confidence": 51,
+        "edge_pct": -4.33,
         "type": "totals",
-        "side": "Under",
+        "side": "Over",
         "point": 3.25,
         "official": false,
         "basis": "market"
@@ -4109,24 +4120,24 @@
       "model": null,
       "value_picks": [
         {
-          "outcome": "FC Luzern",
-          "best_price": 3.51,
-          "bookmaker": "Pinnacle",
-          "fair_prob": 0.2988,
-          "implied_prob": 0.2849,
-          "edge_pct": 4.87,
-          "kelly": 0.0194,
-          "confidence": 30
+          "outcome": "Draw",
+          "best_price": 3.97,
+          "bookmaker": "GTbets",
+          "fair_prob": 0.2632,
+          "implied_prob": 0.2519,
+          "edge_pct": 4.5,
+          "kelly": 0.0152,
+          "confidence": 26
         },
         {
-          "outcome": "Draw",
-          "best_price": 4.0,
-          "bookmaker": "Coolbet",
-          "fair_prob": 0.2589,
-          "implied_prob": 0.25,
-          "edge_pct": 3.54,
-          "kelly": 0.0118,
-          "confidence": 26
+          "outcome": "FC Luzern",
+          "best_price": 3.55,
+          "bookmaker": "Pinnacle",
+          "fair_prob": 0.291,
+          "implied_prob": 0.2817,
+          "edge_pct": 3.3,
+          "kelly": 0.013,
+          "confidence": 29
         }
       ]
     },
@@ -4226,7 +4237,7 @@
         },
         "Draw": {
           "price": 4.0,
-          "bookmaker": "Unibet (NL)"
+          "bookmaker": "Coolbet"
         }
       },
       "recommendation": {
@@ -4261,8 +4272,8 @@
       "away": "RB Salzburg",
       "best_h2h": {
         "RB Salzburg": {
-          "price": 1.92,
-          "bookmaker": "Nordic Bet"
+          "price": 1.91,
+          "bookmaker": "888sport"
         },
         "Wolfsberger AC": {
           "price": 3.8,
@@ -4350,13 +4361,13 @@
         }
       },
       "recommendation": {
-        "text": "Over 3.0 goals",
-        "price": 1.89,
+        "text": "Under 3.0 goals",
+        "price": 1.93,
         "bookmaker": "Pinnacle",
-        "confidence": 51,
-        "edge_pct": -4.27,
+        "confidence": 50,
+        "edge_pct": -4.26,
         "type": "totals",
-        "side": "Over",
+        "side": "Under",
         "point": 3.0,
         "official": false,
         "basis": "market"
@@ -4417,12 +4428,12 @@
           "bookmaker": "Nordic Bet"
         },
         "Piast Gliwice": {
-          "price": 5.15,
-          "bookmaker": "Marathon Bet"
+          "price": 5.25,
+          "bookmaker": "Coolbet"
         },
         "Draw": {
-          "price": 4.13,
-          "bookmaker": "Pinnacle"
+          "price": 4.2,
+          "bookmaker": "Coolbet"
         }
       },
       "recommendation": {
@@ -4455,8 +4466,8 @@
           "bookmaker": "Unibet (SE)"
         },
         "Brondby IF": {
-          "price": 1.75,
-          "bookmaker": "888sport"
+          "price": 1.78,
+          "bookmaker": "Betsson"
         },
         "Draw": {
           "price": 4.0,
@@ -4481,10 +4492,10 @@
           "outcome": "AC Horsens",
           "best_price": 5.2,
           "bookmaker": "Unibet (SE)",
-          "fair_prob": 0.2029,
+          "fair_prob": 0.2037,
           "implied_prob": 0.1923,
-          "edge_pct": 5.51,
-          "kelly": 0.0131,
+          "edge_pct": 5.93,
+          "kelly": 0.0141,
           "confidence": 20
         }
       ]
@@ -4538,24 +4549,24 @@
       "away": "LASK",
       "best_h2h": {
         "Austria Wien": {
-          "price": 3.65,
+          "price": 3.7,
           "bookmaker": "Betfair"
         },
         "LASK": {
-          "price": 2.11,
-          "bookmaker": "Pinnacle"
+          "price": 2.05,
+          "bookmaker": "Coolbet"
         },
         "Draw": {
-          "price": 3.64,
+          "price": 3.67,
           "bookmaker": "Pinnacle"
         }
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.93,
+        "price": 1.92,
         "bookmaker": "Pinnacle",
         "confidence": 50,
-        "edge_pct": -3.75,
+        "edge_pct": -4.0,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -4580,8 +4591,8 @@
           "bookmaker": "Betsson"
         },
         "FC Porto": {
-          "price": 1.2,
-          "bookmaker": "Coolbet"
+          "price": 1.21,
+          "bookmaker": "Betsson"
         },
         "Draw": {
           "price": 7.8,
@@ -4620,43 +4631,32 @@
       "away": "SK Beveren",
       "best_h2h": {
         "Royal Antwerp": {
-          "price": 1.72,
-          "bookmaker": "Nordic Bet"
+          "price": 1.76,
+          "bookmaker": "Betfair"
         },
         "SK Beveren": {
-          "price": 5.5,
+          "price": 5.2,
           "bookmaker": "Betfair"
         },
         "Draw": {
-          "price": 3.82,
-          "bookmaker": "Pinnacle"
+          "price": 3.75,
+          "bookmaker": "Unibet (NL)"
         }
       },
       "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 1.76,
-        "bookmaker": "Coolbet",
-        "confidence": 54,
-        "edge_pct": -4.25,
+        "text": "Over 2.5 goals",
+        "price": 2.11,
+        "bookmaker": "1xBet",
+        "confidence": 45,
+        "edge_pct": -4.34,
         "type": "totals",
-        "side": "Under",
+        "side": "Over",
         "point": 2.5,
         "official": false,
         "basis": "market"
       },
       "model": null,
-      "value_picks": [
-        {
-          "outcome": "SK Beveren",
-          "best_price": 5.5,
-          "bookmaker": "Betfair",
-          "fair_prob": 0.191,
-          "implied_prob": 0.1818,
-          "edge_pct": 5.05,
-          "kelly": 0.0112,
-          "confidence": 19
-        }
-      ]
+      "value_picks": []
     },
     {
       "id": "584a9940c0c25ef3841b212d9923a4d9",
@@ -4699,10 +4699,10 @@
           "outcome": "Kristiansund BK",
           "best_price": 4.9,
           "bookmaker": "Coolbet",
-          "fair_prob": 0.2148,
+          "fair_prob": 0.2149,
           "implied_prob": 0.2041,
-          "edge_pct": 5.23,
-          "kelly": 0.0134,
+          "edge_pct": 5.3,
+          "kelly": 0.0136,
           "confidence": 21
         }
       ]
@@ -4718,7 +4718,7 @@
       "away": "Atlético Huracán",
       "best_h2h": {
         "Atlético Huracán": {
-          "price": 2.92,
+          "price": 2.98,
           "bookmaker": "Nordic Bet"
         },
         "San Lorenzo": {
@@ -4727,15 +4727,15 @@
         },
         "Draw": {
           "price": 2.72,
-          "bookmaker": "1xBet"
+          "bookmaker": "Nordic Bet"
         }
       },
       "recommendation": {
         "text": "Over 1.5 goals",
-        "price": 1.9,
-        "bookmaker": "1xBet",
+        "price": 1.91,
+        "bookmaker": "BetOnline.ag",
         "confidence": 50,
-        "edge_pct": -4.75,
+        "edge_pct": -4.5,
         "type": "totals",
         "side": "Over",
         "point": 1.5,
@@ -4756,12 +4756,12 @@
       "away": "Widzew Łódź",
       "best_h2h": {
         "Jagiellonia Białystok": {
-          "price": 2.37,
+          "price": 2.38,
           "bookmaker": "Pinnacle"
         },
         "Widzew Łódź": {
-          "price": 3.12,
-          "bookmaker": "Pinnacle"
+          "price": 3.1,
+          "bookmaker": "Tipico"
         },
         "Draw": {
           "price": 3.4,
@@ -4769,13 +4769,13 @@
         }
       },
       "recommendation": {
-        "text": "Over 2.25 goals",
-        "price": 1.83,
+        "text": "Under 2.25 goals",
+        "price": 2.0,
         "bookmaker": "Pinnacle",
-        "confidence": 52,
-        "edge_pct": -4.67,
+        "confidence": 48,
+        "edge_pct": -4.44,
         "type": "totals",
-        "side": "Over",
+        "side": "Under",
         "point": 2.25,
         "official": false,
         "basis": "market"
@@ -4811,7 +4811,7 @@
         "price": 1.64,
         "bookmaker": "1xBet",
         "confidence": 65,
-        "edge_pct": 5.91,
+        "edge_pct": 5.9,
         "type": "h2h",
         "outcome": "Palmeiras",
         "official": true,
@@ -4841,7 +4841,7 @@
           "bookmaker": "Betfair"
         },
         "Vasco da Gama": {
-          "price": 4.2,
+          "price": 4.1,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -4871,126 +4871,6 @@
       "value_picks": []
     },
     {
-      "id": "7bfe542ebd029ecc7c4a0ffc7a6fb292",
-      "sport_key": "soccer_portugal_primeira_liga",
-      "sport_icon": "⚽",
-      "league": "Primeira Liga",
-      "league_short": "PPL",
-      "kickoff": "2026-08-09T19:30:00Z",
-      "home": "Moreirense FC",
-      "away": "Braga",
-      "best_h2h": {
-        "Braga": {
-          "price": 1.74,
-          "bookmaker": "Pinnacle"
-        },
-        "Moreirense FC": {
-          "price": 5.25,
-          "bookmaker": "Coolbet"
-        },
-        "Draw": {
-          "price": 3.85,
-          "bookmaker": "Coolbet"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.96,
-        "bookmaker": "Coolbet",
-        "confidence": 49,
-        "edge_pct": -4.83,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5,
-        "official": false,
-        "basis": "model+market"
-      },
-      "model": {
-        "xg_home": 1.084,
-        "xg_away": 1.616,
-        "p_home": 0.255,
-        "p_draw": 0.2477,
-        "p_away": 0.4972
-      },
-      "value_picks": [
-        {
-          "outcome": "Moreirense FC",
-          "best_price": 5.25,
-          "bookmaker": "Coolbet",
-          "fair_prob": 0.2236,
-          "implied_prob": 0.1905,
-          "edge_pct": 17.41,
-          "kelly": 0.041,
-          "confidence": 22
-        },
-        {
-          "outcome": "Draw",
-          "best_price": 3.85,
-          "bookmaker": "Coolbet",
-          "fair_prob": 0.2716,
-          "implied_prob": 0.2597,
-          "edge_pct": 4.55,
-          "kelly": 0.016,
-          "confidence": 27
-        }
-      ]
-    },
-    {
-      "id": "9e4982aee8921f2f7854b2fa9f69ac2a",
-      "sport_key": "soccer_portugal_primeira_liga",
-      "sport_icon": "⚽",
-      "league": "Primeira Liga",
-      "league_short": "PPL",
-      "kickoff": "2026-08-09T19:30:00Z",
-      "home": "Gil Vicente",
-      "away": "Rio Ave FC",
-      "best_h2h": {
-        "Gil Vicente": {
-          "price": 1.87,
-          "bookmaker": "Betfair"
-        },
-        "Rio Ave FC": {
-          "price": 4.2,
-          "bookmaker": "Coolbet"
-        },
-        "Draw": {
-          "price": 3.75,
-          "bookmaker": "Coolbet"
-        }
-      },
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.95,
-        "bookmaker": "Pinnacle",
-        "confidence": 49,
-        "edge_pct": -4.02,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5,
-        "official": false,
-        "basis": "model+market"
-      },
-      "model": {
-        "xg_home": 1.818,
-        "xg_away": 0.893,
-        "p_home": 0.5918,
-        "p_draw": 0.2269,
-        "p_away": 0.1812
-      },
-      "value_picks": [
-        {
-          "outcome": "Draw",
-          "best_price": 3.75,
-          "bookmaker": "Coolbet",
-          "fair_prob": 0.2753,
-          "implied_prob": 0.2667,
-          "edge_pct": 3.24,
-          "kelly": 0.0118,
-          "confidence": 28
-        }
-      ]
-    },
-    {
       "id": "c0489e522f3d367b4f085ef1e1daaed9",
       "sport_key": "soccer_portugal_primeira_liga",
       "sport_icon": "⚽",
@@ -5009,19 +4889,155 @@
           "bookmaker": "Betfair"
         },
         "Draw": {
-          "price": 10.5,
+          "price": 10.0,
           "bookmaker": "Tipico"
         }
       },
       "recommendation": {
-        "text": "Over 3.5 goals",
-        "price": 2.12,
-        "bookmaker": "GTbets",
-        "confidence": 45,
-        "edge_pct": -4.13,
+        "text": "Under 3.5 goals",
+        "price": 1.77,
+        "bookmaker": "Tipico",
+        "confidence": 54,
+        "edge_pct": -3.54,
+        "type": "totals",
+        "side": "Under",
+        "point": 3.5,
+        "official": false,
+        "basis": "market"
+      },
+      "model": null,
+      "value_picks": []
+    },
+    {
+      "id": "9e4982aee8921f2f7854b2fa9f69ac2a",
+      "sport_key": "soccer_portugal_primeira_liga",
+      "sport_icon": "⚽",
+      "league": "Primeira Liga",
+      "league_short": "PPL",
+      "kickoff": "2026-08-09T19:30:00Z",
+      "home": "Gil Vicente",
+      "away": "Rio Ave FC",
+      "best_h2h": {
+        "Gil Vicente": {
+          "price": 2.04,
+          "bookmaker": "Betfair"
+        },
+        "Rio Ave FC": {
+          "price": 4.2,
+          "bookmaker": "LeoVegas (SE)"
+        },
+        "Draw": {
+          "price": 3.57,
+          "bookmaker": "GTbets"
+        }
+      },
+      "recommendation": {
+        "text": "Gil Vicente to win",
+        "price": 2.04,
+        "bookmaker": "Betfair",
+        "confidence": 53,
+        "edge_pct": 7.71,
+        "type": "h2h",
+        "outcome": "Gil Vicente",
+        "official": true,
+        "basis": "model+market"
+      },
+      "model": {
+        "xg_home": 1.818,
+        "xg_away": 0.893,
+        "p_home": 0.5918,
+        "p_draw": 0.2269,
+        "p_away": 0.1812
+      },
+      "value_picks": []
+    },
+    {
+      "id": "7bfe542ebd029ecc7c4a0ffc7a6fb292",
+      "sport_key": "soccer_portugal_primeira_liga",
+      "sport_icon": "⚽",
+      "league": "Primeira Liga",
+      "league_short": "PPL",
+      "kickoff": "2026-08-09T19:30:00Z",
+      "home": "Moreirense FC",
+      "away": "Braga",
+      "best_h2h": {
+        "Braga": {
+          "price": 1.73,
+          "bookmaker": "888sport"
+        },
+        "Moreirense FC": {
+          "price": 5.2,
+          "bookmaker": "Tipico"
+        },
+        "Draw": {
+          "price": 3.75,
+          "bookmaker": "Coolbet"
+        }
+      },
+      "recommendation": {
+        "text": "Over 2.5 goals",
+        "price": 1.96,
+        "bookmaker": "Coolbet",
+        "confidence": 49,
+        "edge_pct": -4.57,
         "type": "totals",
         "side": "Over",
-        "point": 3.5,
+        "point": 2.5,
+        "official": false,
+        "basis": "model+market"
+      },
+      "model": {
+        "xg_home": 1.084,
+        "xg_away": 1.616,
+        "p_home": 0.255,
+        "p_draw": 0.2477,
+        "p_away": 0.4972
+      },
+      "value_picks": [
+        {
+          "outcome": "Moreirense FC",
+          "best_price": 5.2,
+          "bookmaker": "Tipico",
+          "fair_prob": 0.1992,
+          "implied_prob": 0.1923,
+          "edge_pct": 3.56,
+          "kelly": 0.0085,
+          "confidence": 20
+        }
+      ]
+    },
+    {
+      "id": "1c2dfe24b07cddd45f9dccb6478ff65f",
+      "sport_key": "soccer_argentina_primera_division",
+      "sport_icon": "⚽",
+      "league": "Liga Profesional",
+      "league_short": "ARG",
+      "kickoff": "2026-08-09T20:45:00Z",
+      "home": "Gimnasia La Plata",
+      "away": "Barracas Central",
+      "best_h2h": {
+        "Barracas Central": {
+          "price": 5.6,
+          "bookmaker": "1xBet"
+        },
+        "Gimnasia La Plata": {
+          "price": 1.78,
+          "bookmaker": "Betsson"
+        },
+        "Draw": {
+          "price": 3.35,
+          "bookmaker": "Betsson"
+        }
+      },
+      "recommendation": {
+        "text": "Over 1.5 goals",
+        "price": 1.54,
+        "bookmaker": "1xBet",
+        "confidence": 62,
+        "edge_pct": -5.0,
+        "type": "totals",
+        "side": "Over",
+        "point": 1.5,
         "official": false,
         "basis": "market"
       },
@@ -5047,7 +5063,7 @@
           "bookmaker": "Codere (IT)"
         },
         "Draw": {
-          "price": 3.05,
+          "price": 3.2,
           "bookmaker": "Betsson"
         }
       },
@@ -5067,44 +5083,6 @@
       "value_picks": []
     },
     {
-      "id": "1c2dfe24b07cddd45f9dccb6478ff65f",
-      "sport_key": "soccer_argentina_primera_division",
-      "sport_icon": "⚽",
-      "league": "Liga Profesional",
-      "league_short": "ARG",
-      "kickoff": "2026-08-09T20:45:00Z",
-      "home": "Gimnasia La Plata",
-      "away": "Barracas Central",
-      "best_h2h": {
-        "Barracas Central": {
-          "price": 5.59,
-          "bookmaker": "1xBet"
-        },
-        "Gimnasia La Plata": {
-          "price": 1.78,
-          "bookmaker": "Betsson"
-        },
-        "Draw": {
-          "price": 3.27,
-          "bookmaker": "1xBet"
-        }
-      },
-      "recommendation": {
-        "text": "Under 1.5 goals",
-        "price": 2.5,
-        "bookmaker": "1xBet",
-        "confidence": 38,
-        "edge_pct": -5.09,
-        "type": "totals",
-        "side": "Under",
-        "point": 1.5,
-        "official": false,
-        "basis": "market"
-      },
-      "model": null,
-      "value_picks": []
-    },
-    {
       "id": "d098481aaf9324107f137d32b6e1176e",
       "sport_key": "soccer_brazil_campeonato",
       "sport_icon": "⚽",
@@ -5115,7 +5093,7 @@
       "away": "Atletico Paranaense",
       "best_h2h": {
         "Atletico Paranaense": {
-          "price": 3.65,
+          "price": 3.7,
           "bookmaker": "Betfair"
         },
         "Santos": {
@@ -5132,7 +5110,7 @@
         "price": 2.13,
         "bookmaker": "GTbets",
         "confidence": 45,
-        "edge_pct": -3.63,
+        "edge_pct": -3.93,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -5203,11 +5181,11 @@
       "away": "Vitoria",
       "best_h2h": {
         "Flamengo": {
-          "price": 1.24,
-          "bookmaker": "1xBet"
+          "price": 1.25,
+          "bookmaker": "Unibet (NL)"
         },
         "Vitoria": {
-          "price": 14.0,
+          "price": 14.5,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -5293,7 +5271,7 @@
           "bookmaker": "Pinnacle"
         },
         "Draw": {
-          "price": 3.8,
+          "price": 3.85,
           "bookmaker": "Betfair"
         }
       },
@@ -5361,8 +5339,8 @@
       "away": "Djurgardens IF",
       "best_h2h": {
         "Djurgardens IF": {
-          "price": 1.78,
-          "bookmaker": "Unibet (SE)"
+          "price": 1.8,
+          "bookmaker": "Betfair"
         },
         "Västerås SK": {
           "price": 4.9,
@@ -5370,7 +5348,7 @@
         },
         "Draw": {
           "price": 4.15,
-          "bookmaker": "Pinnacle"
+          "bookmaker": "Coolbet"
         }
       },
       "recommendation": {
@@ -5391,10 +5369,10 @@
           "outcome": "Västerås SK",
           "best_price": 4.9,
           "bookmaker": "Unibet (SE)",
-          "fair_prob": 0.2253,
+          "fair_prob": 0.2327,
           "implied_prob": 0.2041,
-          "edge_pct": 10.38,
-          "kelly": 0.0266,
+          "edge_pct": 14.04,
+          "kelly": 0.036,
           "confidence": 23
         }
       ]
@@ -5410,8 +5388,8 @@
       "away": "Nacional",
       "best_h2h": {
         "Nacional": {
-          "price": 4.17,
-          "bookmaker": "GTbets"
+          "price": 4.2,
+          "bookmaker": "Tipico"
         },
         "Santa Clara": {
           "price": 1.95,
@@ -5454,26 +5432,26 @@
       "away": "Belgrano de Cordoba",
       "best_h2h": {
         "Banfield": {
-          "price": 3.1,
-          "bookmaker": "1xBet"
+          "price": 3.05,
+          "bookmaker": "Codere (IT)"
         },
         "Belgrano de Cordoba": {
-          "price": 2.57,
+          "price": 2.63,
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 3.05,
+          "price": 2.98,
           "bookmaker": "Betsson"
         }
       },
       "recommendation": {
-        "text": "Under 1.5 goals",
-        "price": 2.33,
+        "text": "Over 1.5 goals",
+        "price": 1.61,
         "bookmaker": "1xBet",
-        "confidence": 41,
-        "edge_pct": -5.14,
+        "confidence": 59,
+        "edge_pct": -5.12,
         "type": "totals",
-        "side": "Under",
+        "side": "Over",
         "point": 1.5,
         "official": false,
         "basis": "market"
@@ -5534,7 +5512,7 @@
           "bookmaker": "1xBet"
         },
         "Talleres": {
-          "price": 2.44,
+          "price": 2.45,
           "bookmaker": "1xBet"
         },
         "Draw": {
@@ -5568,7 +5546,7 @@
       "away": "Akhisar Belediyespor",
       "best_h2h": {
         "Akhisar Belediyespor": {
-          "price": 12.25,
+          "price": 12.0,
           "bookmaker": "Betclic (FR)"
         },
         "Galatasaray": {
@@ -5610,7 +5588,7 @@
           "bookmaker": "Pinnacle"
         },
         "Real Sociedad B": {
-          "price": 4.22,
+          "price": 4.17,
           "bookmaker": "1xBet"
         },
         "Draw": {
@@ -5721,44 +5699,6 @@
       ]
     },
     {
-      "id": "808d86dfd7646411d52eaa0308c0d693",
-      "sport_key": "soccer_england_league1",
-      "sport_icon": "⚽",
-      "league": "League One",
-      "league_short": "EL1",
-      "kickoff": "2026-08-15T11:30:00Z",
-      "home": "Oxford United",
-      "away": "Milton Keynes Dons",
-      "best_h2h": {
-        "Milton Keynes Dons": {
-          "price": 3.46,
-          "bookmaker": "Pinnacle"
-        },
-        "Oxford United": {
-          "price": 2.15,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 3.37,
-          "bookmaker": "Pinnacle"
-        }
-      },
-      "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 1.72,
-        "bookmaker": "1xBet",
-        "confidence": 55,
-        "edge_pct": -5.45,
-        "type": "totals",
-        "side": "Under",
-        "point": 2.5,
-        "official": false,
-        "basis": "market"
-      },
-      "model": null,
-      "value_picks": []
-    },
-    {
       "id": "8fa8141096288144c6b6181d1fb5ffa2",
       "sport_key": "soccer_england_league1",
       "sport_icon": "⚽",
@@ -5786,7 +5726,7 @@
         "price": 1.81,
         "bookmaker": "LeoVegas (SE)",
         "confidence": 53,
-        "edge_pct": -4.32,
+        "edge_pct": -4.09,
         "type": "totals",
         "side": "Under",
         "point": 2.5,
@@ -5811,20 +5751,20 @@
           "bookmaker": "LeoVegas (SE)"
         },
         "Reading": {
-          "price": 3.27,
+          "price": 3.32,
           "bookmaker": "Pinnacle"
         },
         "Draw": {
-          "price": 3.49,
-          "bookmaker": "Pinnacle"
+          "price": 3.45,
+          "bookmaker": "Betsson"
         }
       },
       "recommendation": {
         "text": "Under 2.5 goals",
-        "price": 1.94,
+        "price": 1.93,
         "bookmaker": "Pinnacle",
         "confidence": 49,
-        "edge_pct": -4.52,
+        "edge_pct": -4.77,
         "type": "totals",
         "side": "Under",
         "point": 2.5,
@@ -5873,6 +5813,44 @@
       "value_picks": []
     },
     {
+      "id": "808d86dfd7646411d52eaa0308c0d693",
+      "sport_key": "soccer_england_league1",
+      "sport_icon": "⚽",
+      "league": "League One",
+      "league_short": "EL1",
+      "kickoff": "2026-08-15T11:30:00Z",
+      "home": "Oxford United",
+      "away": "Milton Keynes Dons",
+      "best_h2h": {
+        "Milton Keynes Dons": {
+          "price": 3.51,
+          "bookmaker": "Pinnacle"
+        },
+        "Oxford United": {
+          "price": 2.15,
+          "bookmaker": "1xBet"
+        },
+        "Draw": {
+          "price": 3.35,
+          "bookmaker": "Betsson"
+        }
+      },
+      "recommendation": {
+        "text": "Over 2.5 goals",
+        "price": 2.1,
+        "bookmaker": "1xBet",
+        "confidence": 45,
+        "edge_pct": -5.75,
+        "type": "totals",
+        "side": "Over",
+        "point": 2.5,
+        "official": false,
+        "basis": "market"
+      },
+      "model": null,
+      "value_picks": []
+    },
+    {
       "id": "686c758175d584228d6a8cc8ed939a3b",
       "sport_key": "soccer_england_league1",
       "sport_icon": "⚽",
@@ -5883,12 +5861,12 @@
       "away": "Wimbledon",
       "best_h2h": {
         "Huddersfield Town": {
-          "price": 1.65,
-          "bookmaker": "Betsson"
+          "price": 1.63,
+          "bookmaker": "1xBet"
         },
         "Wimbledon": {
-          "price": 5.05,
-          "bookmaker": "Marathon Bet"
+          "price": 5.06,
+          "bookmaker": "Pinnacle"
         },
         "Draw": {
           "price": 4.09,
@@ -5925,7 +5903,7 @@
           "bookmaker": "1xBet"
         },
         "Stockport County FC": {
-          "price": 3.13,
+          "price": 3.09,
           "bookmaker": "Pinnacle"
         },
         "Draw": {
@@ -5959,7 +5937,7 @@
       "away": "Wycombe Wanderers",
       "best_h2h": {
         "Blackpool": {
-          "price": 2.63,
+          "price": 2.65,
           "bookmaker": "Pinnacle"
         },
         "Wycombe Wanderers": {
@@ -6001,11 +5979,11 @@
           "bookmaker": "LeoVegas (SE)"
         },
         "Peterborough United": {
-          "price": 5.2,
+          "price": 5.1,
           "bookmaker": "Marathon Bet"
         },
         "Draw": {
-          "price": 3.94,
+          "price": 3.95,
           "bookmaker": "Pinnacle"
         }
       },
@@ -6022,18 +6000,7 @@
         "basis": "market"
       },
       "model": null,
-      "value_picks": [
-        {
-          "outcome": "Peterborough United",
-          "best_price": 5.2,
-          "bookmaker": "Marathon Bet",
-          "fair_prob": 0.201,
-          "implied_prob": 0.1923,
-          "edge_pct": 4.5,
-          "kelly": 0.0107,
-          "confidence": 20
-        }
-      ]
+      "value_picks": []
     },
     {
       "id": "79f656b6298e5f6003ab9a8bc6c28428",
@@ -6060,10 +6027,10 @@
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.91,
+        "price": 1.92,
         "bookmaker": "Pinnacle",
         "confidence": 50,
-        "edge_pct": -4.5,
+        "edge_pct": -4.25,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -6088,12 +6055,12 @@
           "bookmaker": "LeoVegas (SE)"
         },
         "Sheffield Wednesday": {
-          "price": 2.48,
-          "bookmaker": "Betfair"
+          "price": 2.53,
+          "bookmaker": "Pinnacle"
         },
         "Draw": {
-          "price": 3.54,
-          "bookmaker": "Pinnacle"
+          "price": 3.45,
+          "bookmaker": "LeoVegas (SE)"
         }
       },
       "recommendation": {
@@ -6122,8 +6089,8 @@
       "away": "West Bromwich Albion",
       "best_h2h": {
         "Norwich City": {
-          "price": 2.1,
-          "bookmaker": "Betfair"
+          "price": 2.08,
+          "bookmaker": "LeoVegas (SE)"
         },
         "West Bromwich Albion": {
           "price": 3.63,
@@ -6218,10 +6185,10 @@
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.96,
+        "price": 1.97,
         "bookmaker": "Pinnacle",
-        "confidence": 49,
-        "edge_pct": -4.57,
+        "confidence": 48,
+        "edge_pct": -4.59,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -6339,20 +6306,20 @@
           "bookmaker": "LeoVegas (SE)"
         },
         "Wigan Athletic": {
-          "price": 3.16,
-          "bookmaker": "1xBet"
+          "price": 3.22,
+          "bookmaker": "Pinnacle"
         },
         "Draw": {
-          "price": 3.23,
-          "bookmaker": "Pinnacle"
+          "price": 3.15,
+          "bookmaker": "Betsson"
         }
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 2.21,
-        "bookmaker": "1xBet",
+        "price": 2.22,
+        "bookmaker": "Betsson",
         "confidence": 43,
-        "edge_pct": -5.53,
+        "edge_pct": -5.35,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -6377,7 +6344,7 @@
           "bookmaker": "Betsson"
         },
         "Stevenage": {
-          "price": 3.3,
+          "price": 3.29,
           "bookmaker": "Pinnacle"
         },
         "Draw": {
@@ -6428,7 +6395,7 @@
         "price": 2.75,
         "bookmaker": "Coolbet",
         "confidence": 38,
-        "edge_pct": 5.04,
+        "edge_pct": 5.15,
         "type": "h2h",
         "outcome": "Derby County",
         "official": true,
@@ -6454,7 +6421,7 @@
       "away": "Millwall",
       "best_h2h": {
         "Bristol City": {
-          "price": 2.6,
+          "price": 2.64,
           "bookmaker": "Betfair"
         },
         "Millwall": {
@@ -6471,7 +6438,7 @@
         "price": 3.0,
         "bookmaker": "LeoVegas (SE)",
         "confidence": 36,
-        "edge_pct": 8.49,
+        "edge_pct": 8.6,
         "type": "h2h",
         "outcome": "Millwall",
         "official": true,
@@ -6539,11 +6506,11 @@
           "bookmaker": "Tipico"
         },
         "Trabzonspor": {
-          "price": 1.92,
+          "price": 1.9,
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 3.79,
+          "price": 3.83,
           "bookmaker": "1xBet"
         }
       },
@@ -6581,8 +6548,8 @@
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 3.4,
-          "bookmaker": "Coolbet"
+          "price": 3.3,
+          "bookmaker": "Codere (IT)"
         }
       },
       "recommendation": {
@@ -6612,7 +6579,7 @@
       "best_h2h": {
         "Birmingham City": {
           "price": 2.9,
-          "bookmaker": "LeoVegas (SE)"
+          "bookmaker": "Betfair"
         },
         "Sheffield United": {
           "price": 2.58,
@@ -6649,15 +6616,15 @@
       "away": "Granada CF",
       "best_h2h": {
         "Granada CF": {
-          "price": 4.73,
+          "price": 4.78,
           "bookmaker": "1xBet"
         },
         "Oviedo": {
           "price": 1.76,
-          "bookmaker": "1xBet"
+          "bookmaker": "Pinnacle"
         },
         "Draw": {
-          "price": 3.83,
+          "price": 3.84,
           "bookmaker": "1xBet"
         }
       },
@@ -6801,7 +6768,7 @@
       "away": "Getafe",
       "best_h2h": {
         "Alavés": {
-          "price": 2.5,
+          "price": 2.55,
           "bookmaker": "Unibet (NL)"
         },
         "Getafe": {
@@ -6814,15 +6781,14 @@
         }
       },
       "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 3.05,
-        "bookmaker": "Nordic Bet",
-        "confidence": 31,
-        "edge_pct": -5.46,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5,
-        "official": false,
+        "text": "Alavés to win",
+        "price": 2.55,
+        "bookmaker": "Unibet (NL)",
+        "confidence": 41,
+        "edge_pct": 3.62,
+        "type": "h2h",
+        "outcome": "Alavés",
+        "official": true,
         "basis": "model+market"
       },
       "model": {
@@ -6883,15 +6849,15 @@
       "away": "Alanyaspor",
       "best_h2h": {
         "Alanyaspor": {
-          "price": 2.73,
+          "price": 2.71,
           "bookmaker": "1xBet"
         },
         "Gazişehir Gaziantep": {
-          "price": 2.63,
+          "price": 2.66,
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 3.52,
+          "price": 3.5,
           "bookmaker": "1xBet"
         }
       },
@@ -6908,50 +6874,6 @@
         "basis": "market"
       },
       "model": null,
-      "value_picks": []
-    },
-    {
-      "id": "eda193f19bde1b5e6bca79107fdfcc4f",
-      "sport_key": "soccer_brazil_campeonato",
-      "sport_icon": "⚽",
-      "league": "Brasileirão",
-      "league_short": "BRA",
-      "kickoff": "2026-08-15T19:30:00Z",
-      "home": "Atletico Mineiro",
-      "away": "Grêmio",
-      "best_h2h": {
-        "Atletico Mineiro": {
-          "price": 1.81,
-          "bookmaker": "1xBet"
-        },
-        "Grêmio": {
-          "price": 4.79,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 3.75,
-          "bookmaker": "Coolbet"
-        }
-      },
-      "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 1.81,
-        "bookmaker": "1xBet",
-        "confidence": 53,
-        "edge_pct": -4.09,
-        "type": "totals",
-        "side": "Under",
-        "point": 2.5,
-        "official": false,
-        "basis": "model+market"
-      },
-      "model": {
-        "xg_home": 1.439,
-        "xg_away": 0.954,
-        "p_home": 0.4832,
-        "p_draw": 0.2669,
-        "p_away": 0.2499
-      },
       "value_picks": []
     },
     {
@@ -7037,6 +6959,50 @@
       "value_picks": []
     },
     {
+      "id": "eda193f19bde1b5e6bca79107fdfcc4f",
+      "sport_key": "soccer_brazil_campeonato",
+      "sport_icon": "⚽",
+      "league": "Brasileirão",
+      "league_short": "BRA",
+      "kickoff": "2026-08-15T19:30:00Z",
+      "home": "Atletico Mineiro",
+      "away": "Grêmio",
+      "best_h2h": {
+        "Atletico Mineiro": {
+          "price": 1.81,
+          "bookmaker": "1xBet"
+        },
+        "Grêmio": {
+          "price": 4.83,
+          "bookmaker": "1xBet"
+        },
+        "Draw": {
+          "price": 3.75,
+          "bookmaker": "Coolbet"
+        }
+      },
+      "recommendation": {
+        "text": "Over 2.5 goals",
+        "price": 2.03,
+        "bookmaker": "1xBet",
+        "confidence": 47,
+        "edge_pct": -4.04,
+        "type": "totals",
+        "side": "Over",
+        "point": 2.5,
+        "official": false,
+        "basis": "model+market"
+      },
+      "model": {
+        "xg_home": 1.439,
+        "xg_away": 0.954,
+        "p_home": 0.4832,
+        "p_draw": 0.2669,
+        "p_away": 0.2499
+      },
+      "value_picks": []
+    },
+    {
       "id": "90a7c2b1668f47eaf38c10c7b49ac166",
       "sport_key": "soccer_spain_la_liga",
       "sport_icon": "⚽",
@@ -7091,11 +7057,11 @@
       "away": "Gimnasia La Plata",
       "best_h2h": {
         "Estudiantes": {
-          "price": 2.11,
+          "price": 2.1,
           "bookmaker": "1xBet"
         },
         "Gimnasia La Plata": {
-          "price": 4.0,
+          "price": 4.03,
           "bookmaker": "1xBet"
         },
         "Draw": {
@@ -7119,13 +7085,13 @@
       "value_picks": [
         {
           "outcome": "Gimnasia La Plata",
-          "best_price": 4.0,
+          "best_price": 4.03,
           "bookmaker": "1xBet",
-          "fair_prob": 0.3055,
-          "implied_prob": 0.25,
-          "edge_pct": 22.19,
-          "kelly": 0.074,
-          "confidence": 31
+          "fair_prob": 0.305,
+          "implied_prob": 0.2481,
+          "edge_pct": 22.91,
+          "kelly": 0.0756,
+          "confidence": 30
         }
       ]
     },
@@ -7283,13 +7249,13 @@
         }
       },
       "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 1.96,
-        "bookmaker": "Coolbet",
-        "confidence": 49,
-        "edge_pct": -4.83,
+        "text": "Over 2.5 goals",
+        "price": 1.85,
+        "bookmaker": "Nordic Bet",
+        "confidence": 52,
+        "edge_pct": -4.59,
         "type": "totals",
-        "side": "Under",
+        "side": "Over",
         "point": 2.5,
         "official": false,
         "basis": "market"
@@ -7388,20 +7354,20 @@
           "bookmaker": "LeoVegas (SE)"
         },
         "Toronto FC": {
-          "price": 2.35,
+          "price": 2.38,
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 3.96,
+          "price": 3.94,
           "bookmaker": "1xBet"
         }
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.75,
+        "price": 1.76,
         "bookmaker": "1xBet",
         "confidence": 55,
-        "edge_pct": -2.93,
+        "edge_pct": -3.02,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -7474,10 +7440,10 @@
       },
       "recommendation": {
         "text": "Over 3.5 goals",
-        "price": 2.14,
+        "price": 2.13,
         "bookmaker": "1xBet",
-        "confidence": 45,
-        "edge_pct": -3.13,
+        "confidence": 46,
+        "edge_pct": -3.03,
         "type": "totals",
         "side": "Over",
         "point": 3.5,
@@ -7493,7 +7459,7 @@
           "fair_prob": 0.2331,
           "implied_prob": 0.2198,
           "edge_pct": 6.05,
-          "kelly": 0.0171,
+          "kelly": 0.017,
           "confidence": 23
         }
       ]
@@ -7522,13 +7488,13 @@
         }
       },
       "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 1.81,
-        "bookmaker": "1xBet",
-        "confidence": 53,
-        "edge_pct": -4.09,
+        "text": "Over 2.5 goals",
+        "price": 2.03,
+        "bookmaker": "Coolbet",
+        "confidence": 47,
+        "edge_pct": -4.04,
         "type": "totals",
-        "side": "Under",
+        "side": "Over",
         "point": 2.5,
         "official": false,
         "basis": "model+market"
@@ -7605,9 +7571,9 @@
       },
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.46,
-        "bookmaker": "Nordic Bet",
-        "confidence": 65,
+        "price": 1.44,
+        "bookmaker": "William Hill",
+        "confidence": 66,
         "edge_pct": -5.49,
         "type": "totals",
         "side": "Over",
@@ -7724,16 +7690,16 @@
           "bookmaker": "Coolbet"
         },
         "Draw": {
-          "price": 5.71,
+          "price": 5.68,
           "bookmaker": "1xBet"
         }
       },
       "recommendation": {
         "text": "Under 3.5 goals",
-        "price": 1.81,
+        "price": 1.8,
         "bookmaker": "1xBet",
         "confidence": 54,
-        "edge_pct": -3.0,
+        "edge_pct": -3.08,
         "type": "totals",
         "side": "Under",
         "point": 3.5,
@@ -7744,12 +7710,12 @@
       "value_picks": [
         {
           "outcome": "Draw",
-          "best_price": 5.71,
+          "best_price": 5.68,
           "bookmaker": "1xBet",
-          "fair_prob": 0.1848,
-          "implied_prob": 0.1751,
-          "edge_pct": 5.51,
-          "kelly": 0.0117,
+          "fair_prob": 0.1849,
+          "implied_prob": 0.1761,
+          "edge_pct": 5.05,
+          "kelly": 0.0108,
           "confidence": 18
         }
       ]
@@ -7867,22 +7833,22 @@
           "bookmaker": "LeoVegas (SE)"
         },
         "St. Louis City SC": {
-          "price": 4.3,
-          "bookmaker": "Coolbet"
+          "price": 4.15,
+          "bookmaker": "Nordic Bet"
         },
         "Draw": {
-          "price": 4.5,
+          "price": 4.53,
           "bookmaker": "1xBet"
         }
       },
       "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 2.52,
+        "text": "Over 2.5 goals",
+        "price": 1.49,
         "bookmaker": "Nordic Bet",
-        "confidence": 37,
-        "edge_pct": -5.97,
+        "confidence": 63,
+        "edge_pct": -5.55,
         "type": "totals",
-        "side": "Under",
+        "side": "Over",
         "point": 2.5,
         "official": false,
         "basis": "market"
@@ -7891,12 +7857,12 @@
       "value_picks": [
         {
           "outcome": "Draw",
-          "best_price": 4.5,
+          "best_price": 4.53,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2378,
-          "implied_prob": 0.2222,
-          "edge_pct": 7.02,
-          "kelly": 0.0201,
+          "fair_prob": 0.2377,
+          "implied_prob": 0.2208,
+          "edge_pct": 7.67,
+          "kelly": 0.0217,
           "confidence": 24
         }
       ]
@@ -7967,7 +7933,7 @@
         "price": 2.15,
         "bookmaker": "Codere (IT)",
         "confidence": 49,
-        "edge_pct": 4.6,
+        "edge_pct": 4.59,
         "type": "h2h",
         "outcome": "Southampton",
         "official": true,
@@ -7985,10 +7951,10 @@
           "outcome": "Watford",
           "best_price": 3.7,
           "bookmaker": "LeoVegas (SE)",
-          "fair_prob": 0.2795,
+          "fair_prob": 0.2796,
           "implied_prob": 0.2703,
-          "edge_pct": 3.41,
-          "kelly": 0.0126,
+          "edge_pct": 3.46,
+          "kelly": 0.0128,
           "confidence": 28
         }
       ]
@@ -8086,11 +8052,11 @@
       "away": "Villarreal",
       "best_h2h": {
         "Real Racing Club de Santander": {
-          "price": 3.55,
+          "price": 3.5,
           "bookmaker": "Unibet (SE)"
         },
         "Villarreal": {
-          "price": 2.16,
+          "price": 2.17,
           "bookmaker": "Unibet (SE)"
         },
         "Draw": {
@@ -8162,11 +8128,11 @@
       "away": "Kocaelispor",
       "best_h2h": {
         "Basaksehir": {
-          "price": 1.54,
-          "bookmaker": "Codere (IT)"
+          "price": 1.55,
+          "bookmaker": "1xBet"
         },
         "Kocaelispor": {
-          "price": 6.81,
+          "price": 6.75,
           "bookmaker": "1xBet"
         },
         "Draw": {
@@ -8320,21 +8286,21 @@
       "away": "Instituto de Córdoba",
       "best_h2h": {
         "Central Córdoba": {
-          "price": 3.4,
-          "bookmaker": "Codere (IT)"
+          "price": 3.41,
+          "bookmaker": "1xBet"
         },
         "Instituto de Córdoba": {
-          "price": 2.37,
+          "price": 2.35,
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 2.98,
+          "price": 2.99,
           "bookmaker": "1xBet"
         }
       },
       "recommendation": {
         "text": "Over 1.5 goals",
-        "price": 1.62,
+        "price": 1.61,
         "bookmaker": "1xBet",
         "confidence": 59,
         "edge_pct": -5.12,
@@ -8358,24 +8324,24 @@
       "away": "Atlético Huracán",
       "best_h2h": {
         "Atlético Huracán": {
-          "price": 2.63,
+          "price": 2.62,
           "bookmaker": "1xBet"
         },
         "Sarmiento de Junin": {
-          "price": 3.13,
+          "price": 3.15,
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 2.83,
+          "price": 2.82,
           "bookmaker": "1xBet"
         }
       },
       "recommendation": {
         "text": "Over 1.5 goals",
-        "price": 1.76,
+        "price": 1.79,
         "bookmaker": "1xBet",
-        "confidence": 54,
-        "edge_pct": -5.09,
+        "confidence": 53,
+        "edge_pct": -4.88,
         "type": "totals",
         "side": "Over",
         "point": 1.5,
@@ -8487,8 +8453,8 @@
           "bookmaker": "Nordic Bet"
         },
         "Eyüpspor": {
-          "price": 9.6,
-          "bookmaker": "Codere (IT)"
+          "price": 9.3,
+          "bookmaker": "1xBet"
         },
         "Draw": {
           "price": 5.7,
@@ -8513,10 +8479,10 @@
           "outcome": "Draw",
           "best_price": 5.7,
           "bookmaker": "Tipico",
-          "fair_prob": 0.1814,
+          "fair_prob": 0.1847,
           "implied_prob": 0.1754,
-          "edge_pct": 3.42,
-          "kelly": 0.0073,
+          "edge_pct": 5.3,
+          "kelly": 0.0113,
           "confidence": 18
         }
       ]
@@ -8577,7 +8543,7 @@
       "best_h2h": {
         "CA Osasuna": {
           "price": 3.9,
-          "bookmaker": "Unibet (SE)"
+          "bookmaker": "Betfair"
         },
         "Celta Vigo": {
           "price": 2.12,
@@ -8593,7 +8559,7 @@
         "price": 2.12,
         "bookmaker": "1xBet",
         "confidence": 50,
-        "edge_pct": 5.59,
+        "edge_pct": 5.61,
         "type": "h2h",
         "outcome": "Celta Vigo",
         "official": true,
@@ -8813,10 +8779,10 @@
           "outcome": "Draw",
           "best_price": 5.0,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2098,
+          "fair_prob": 0.2099,
           "implied_prob": 0.2,
-          "edge_pct": 4.88,
-          "kelly": 0.0122,
+          "edge_pct": 4.94,
+          "kelly": 0.0124,
           "confidence": 21
         },
         {
@@ -8825,7 +8791,7 @@
           "bookmaker": "LeoVegas (SE)",
           "fair_prob": 0.2106,
           "implied_prob": 0.2041,
-          "edge_pct": 3.21,
+          "edge_pct": 3.2,
           "kelly": 0.0082,
           "confidence": 21
         }
@@ -8966,22 +8932,22 @@
           "bookmaker": "Codere (IT)"
         },
         "Rosario Central": {
-          "price": 2.33,
+          "price": 2.3,
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 2.98,
+          "price": 2.99,
           "bookmaker": "1xBet"
         }
       },
       "recommendation": {
-        "text": "Over 1.5 goals",
-        "price": 1.52,
+        "text": "Under 1.5 goals",
+        "price": 2.5,
         "bookmaker": "1xBet",
-        "confidence": 62,
-        "edge_pct": -5.19,
+        "confidence": 38,
+        "edge_pct": -5.09,
         "type": "totals",
-        "side": "Over",
+        "side": "Under",
         "point": 1.5,
         "official": false,
         "basis": "market"
@@ -9201,11 +9167,11 @@
       "away": "Atlético Tucuman",
       "best_h2h": {
         "Atlético Tucuman": {
-          "price": 3.22,
+          "price": 3.23,
           "bookmaker": "1xBet"
         },
         "Estudiantes de Río Cuarto": {
-          "price": 2.54,
+          "price": 2.53,
           "bookmaker": "1xBet"
         },
         "Draw": {
@@ -9218,7 +9184,7 @@
         "price": 1.7,
         "bookmaker": "1xBet",
         "confidence": 56,
-        "edge_pct": -5.06,
+        "edge_pct": -4.87,
         "type": "totals",
         "side": "Over",
         "point": 1.5,
@@ -9501,13 +9467,13 @@
         }
       },
       "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.98,
+        "text": "Under 2.5 goals",
+        "price": 1.88,
         "bookmaker": "1xBet",
-        "confidence": 49,
-        "edge_pct": -3.83,
+        "confidence": 51,
+        "edge_pct": -3.8,
         "type": "totals",
-        "side": "Over",
+        "side": "Under",
         "point": 2.5,
         "official": false,
         "basis": "model+market"
@@ -9649,7 +9615,7 @@
           "bookmaker": "1xBet"
         },
         "Málaga": {
-          "price": 12.0,
+          "price": 12.5,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -9840,15 +9806,15 @@
       "away": "Chicago Fire",
       "best_h2h": {
         "Chicago Fire": {
-          "price": 2.02,
-          "bookmaker": "Coolbet"
+          "price": 2.03,
+          "bookmaker": "1xBet"
         },
         "Orlando City SC": {
           "price": 3.2,
           "bookmaker": "Coolbet"
         },
         "Draw": {
-          "price": 4.58,
+          "price": 4.57,
           "bookmaker": "1xBet"
         }
       },
@@ -9868,12 +9834,12 @@
       "value_picks": [
         {
           "outcome": "Draw",
-          "best_price": 4.58,
+          "best_price": 4.57,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2521,
-          "implied_prob": 0.2183,
-          "edge_pct": 15.48,
-          "kelly": 0.0432,
+          "fair_prob": 0.2548,
+          "implied_prob": 0.2188,
+          "edge_pct": 16.44,
+          "kelly": 0.046,
           "confidence": 25
         }
       ]
@@ -9942,11 +9908,11 @@
           "bookmaker": "Betsson"
         },
         "New York Red Bulls": {
-          "price": 2.85,
-          "bookmaker": "1xBet"
+          "price": 2.82,
+          "bookmaker": "Betsson"
         },
         "Draw": {
-          "price": 4.21,
+          "price": 4.23,
           "bookmaker": "1xBet"
         }
       },
@@ -9966,12 +9932,12 @@
       "value_picks": [
         {
           "outcome": "Draw",
-          "best_price": 4.21,
+          "best_price": 4.23,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2512,
-          "implied_prob": 0.2375,
-          "edge_pct": 5.78,
-          "kelly": 0.018,
+          "fair_prob": 0.2507,
+          "implied_prob": 0.2364,
+          "edge_pct": 6.07,
+          "kelly": 0.0188,
           "confidence": 25
         }
       ]
@@ -10085,7 +10051,7 @@
       "away": "Atlanta United FC",
       "best_h2h": {
         "Atlanta United FC": {
-          "price": 4.7,
+          "price": 4.65,
           "bookmaker": "Marathon Bet"
         },
         "Minnesota United FC": {
@@ -10115,20 +10081,20 @@
           "outcome": "Draw",
           "best_price": 4.37,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2605,
+          "fair_prob": 0.2603,
           "implied_prob": 0.2288,
-          "edge_pct": 13.84,
-          "kelly": 0.0411,
+          "edge_pct": 13.74,
+          "kelly": 0.0408,
           "confidence": 26
         },
         {
           "outcome": "Atlanta United FC",
-          "best_price": 4.7,
+          "best_price": 4.65,
           "bookmaker": "Marathon Bet",
-          "fair_prob": 0.2404,
-          "implied_prob": 0.2128,
-          "edge_pct": 12.99,
-          "kelly": 0.0351,
+          "fair_prob": 0.2407,
+          "implied_prob": 0.2151,
+          "edge_pct": 11.94,
+          "kelly": 0.0327,
           "confidence": 24
         }
       ]
@@ -10350,55 +10316,6 @@
       ]
     },
     {
-      "id": "e2a48a3415f53affd071b29ab64023f8",
-      "sport_key": "soccer_usa_mls",
-      "sport_icon": "⚽",
-      "league": "MLS",
-      "league_short": "MLS",
-      "kickoff": "2026-08-20T02:30:00Z",
-      "home": "LA Galaxy",
-      "away": "San Jose Earthquakes",
-      "best_h2h": {
-        "LA Galaxy": {
-          "price": 2.5,
-          "bookmaker": "Coolbet"
-        },
-        "San Jose Earthquakes": {
-          "price": 2.56,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 4.28,
-          "bookmaker": "1xBet"
-        }
-      },
-      "recommendation": {
-        "text": "Under 3.5 goals",
-        "price": 1.76,
-        "bookmaker": "1xBet",
-        "confidence": 55,
-        "edge_pct": -3.02,
-        "type": "totals",
-        "side": "Under",
-        "point": 3.5,
-        "official": false,
-        "basis": "market"
-      },
-      "model": null,
-      "value_picks": [
-        {
-          "outcome": "Draw",
-          "best_price": 4.28,
-          "bookmaker": "1xBet",
-          "fair_prob": 0.2625,
-          "implied_prob": 0.2336,
-          "edge_pct": 12.34,
-          "kelly": 0.0376,
-          "confidence": 26
-        }
-      ]
-    },
-    {
       "id": "b0a96001cc3056e18abd450a83d0a575",
       "sport_key": "soccer_usa_mls",
       "sport_icon": "⚽",
@@ -10444,6 +10361,55 @@
           "edge_pct": 16.62,
           "kelly": 0.0463,
           "confidence": 25
+        }
+      ]
+    },
+    {
+      "id": "e2a48a3415f53affd071b29ab64023f8",
+      "sport_key": "soccer_usa_mls",
+      "sport_icon": "⚽",
+      "league": "MLS",
+      "league_short": "MLS",
+      "kickoff": "2026-08-20T02:30:00Z",
+      "home": "LA Galaxy",
+      "away": "San Jose Earthquakes",
+      "best_h2h": {
+        "LA Galaxy": {
+          "price": 2.5,
+          "bookmaker": "Coolbet"
+        },
+        "San Jose Earthquakes": {
+          "price": 2.57,
+          "bookmaker": "1xBet"
+        },
+        "Draw": {
+          "price": 4.26,
+          "bookmaker": "1xBet"
+        }
+      },
+      "recommendation": {
+        "text": "Over 3.5 goals",
+        "price": 2.18,
+        "bookmaker": "1xBet",
+        "confidence": 45,
+        "edge_pct": -2.93,
+        "type": "totals",
+        "side": "Over",
+        "point": 3.5,
+        "official": false,
+        "basis": "market"
+      },
+      "model": null,
+      "value_picks": [
+        {
+          "outcome": "Draw",
+          "best_price": 4.26,
+          "bookmaker": "1xBet",
+          "fair_prob": 0.2626,
+          "implied_prob": 0.2347,
+          "edge_pct": 11.89,
+          "kelly": 0.0365,
+          "confidence": 26
         }
       ]
     },
@@ -10494,11 +10460,11 @@
           "outcome": "Alavés",
           "best_price": 4.42,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2451,
+          "fair_prob": 0.2432,
           "implied_prob": 0.2262,
-          "edge_pct": 8.33,
-          "kelly": 0.0244,
-          "confidence": 25
+          "edge_pct": 7.49,
+          "kelly": 0.0219,
+          "confidence": 24
         }
       ]
     },
@@ -10513,11 +10479,11 @@
       "away": "Strasbourg",
       "best_h2h": {
         "Marseille": {
-          "price": 1.7,
+          "price": 1.69,
           "bookmaker": "1xBet"
         },
         "Strasbourg": {
-          "price": 5.4,
+          "price": 5.3,
           "bookmaker": "LeoVegas (SE)"
         },
         "Draw": {
@@ -10547,12 +10513,12 @@
       "value_picks": [
         {
           "outcome": "Strasbourg",
-          "best_price": 5.4,
+          "best_price": 5.3,
           "bookmaker": "LeoVegas (SE)",
-          "fair_prob": 0.202,
-          "implied_prob": 0.1852,
-          "edge_pct": 9.06,
-          "kelly": 0.0206,
+          "fair_prob": 0.2029,
+          "implied_prob": 0.1887,
+          "edge_pct": 7.54,
+          "kelly": 0.0175,
           "confidence": 20
         }
       ]
@@ -10599,18 +10565,7 @@
         "p_draw": 0.2049,
         "p_away": 0.208
       },
-      "value_picks": [
-        {
-          "outcome": "Real Sociedad",
-          "best_price": 3.71,
-          "bookmaker": "1xBet",
-          "fair_prob": 0.2802,
-          "implied_prob": 0.2695,
-          "edge_pct": 3.97,
-          "kelly": 0.0147,
-          "confidence": 28
-        }
-      ]
+      "value_picks": []
     },
     {
       "id": "eb2553d10d63dc912b99f8fd0d675721",
@@ -10627,8 +10582,8 @@
           "bookmaker": "1xBet"
         },
         "Coventry City": {
-          "price": 21.0,
-          "bookmaker": "Nordic Bet"
+          "price": 20.0,
+          "bookmaker": "Unibet (SE)"
         },
         "Draw": {
           "price": 8.6,
@@ -10699,11 +10654,11 @@
       "away": "Crystal Palace",
       "best_h2h": {
         "Crystal Palace": {
-          "price": 3.54,
-          "bookmaker": "1xBet"
+          "price": 3.55,
+          "bookmaker": "Unibet (SE)"
         },
         "Everton": {
-          "price": 2.24,
+          "price": 2.26,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -10743,7 +10698,7 @@
       "away": "Sunderland",
       "best_h2h": {
         "Ipswich Town": {
-          "price": 2.98,
+          "price": 2.88,
           "bookmaker": "Betfair"
         },
         "Sunderland": {
@@ -10798,7 +10753,7 @@
         "price": 2.32,
         "bookmaker": "1xBet",
         "confidence": 45,
-        "edge_pct": 3.95,
+        "edge_pct": 3.78,
         "type": "h2h",
         "outcome": "Nottingham Forest",
         "official": true,
@@ -10912,12 +10867,12 @@
       "away": "Tottenham Hotspur",
       "best_h2h": {
         "Brentford": {
-          "price": 2.58,
-          "bookmaker": "Betfair"
+          "price": 2.6,
+          "bookmaker": "Unibet (SE)"
         },
         "Tottenham Hotspur": {
-          "price": 2.95,
-          "bookmaker": "Unibet (SE)"
+          "price": 2.88,
+          "bookmaker": "1xBet"
         },
         "Draw": {
           "price": 3.78,
@@ -10926,10 +10881,10 @@
       },
       "recommendation": {
         "text": "Brentford to win",
-        "price": 2.58,
-        "bookmaker": "Betfair",
-        "confidence": 45,
-        "edge_pct": 15.28,
+        "price": 2.6,
+        "bookmaker": "Unibet (SE)",
+        "confidence": 44,
+        "edge_pct": 15.42,
         "type": "h2h",
         "outcome": "Brentford",
         "official": true,
@@ -10959,8 +10914,8 @@
           "bookmaker": "1xBet"
         },
         "Udinese": {
-          "price": 4.8,
-          "bookmaker": "Unibet (SE)"
+          "price": 4.9,
+          "bookmaker": "Betfair"
         },
         "Draw": {
           "price": 3.71,
@@ -10986,7 +10941,18 @@
         "p_draw": 0.2575,
         "p_away": 0.5187
       },
-      "value_picks": []
+      "value_picks": [
+        {
+          "outcome": "Udinese",
+          "best_price": 4.9,
+          "bookmaker": "Betfair",
+          "fair_prob": 0.2115,
+          "implied_prob": 0.2041,
+          "edge_pct": 3.64,
+          "kelly": 0.0093,
+          "confidence": 21
+        }
+      ]
     },
     {
       "id": "ef8a47c3c8c0f71a251e2efcbf84854a",
@@ -11003,7 +10969,7 @@
           "bookmaker": "1xBet"
         },
         "Monza": {
-          "price": 17.0,
+          "price": 17.5,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -11165,16 +11131,16 @@
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 3.2,
-          "bookmaker": "Unibet (SE)"
+          "price": 3.15,
+          "bookmaker": "1xBet"
         }
       },
       "recommendation": {
         "text": "Under 2.5 goals",
         "price": 1.66,
         "bookmaker": "1xBet",
-        "confidence": 62,
-        "edge_pct": 3.59,
+        "confidence": 63,
+        "edge_pct": 3.78,
         "type": "totals",
         "side": "Under",
         "point": 2.5,
@@ -11201,7 +11167,7 @@
       "away": "Paris FC",
       "best_h2h": {
         "Paris FC": {
-          "price": 2.63,
+          "price": 2.55,
           "bookmaker": "LeoVegas (SE)"
         },
         "Troyes": {
@@ -11357,11 +11323,11 @@
           "outcome": "Toulouse",
           "best_price": 3.75,
           "bookmaker": "LeoVegas (SE)",
-          "fair_prob": 0.2759,
+          "fair_prob": 0.2749,
           "implied_prob": 0.2667,
-          "edge_pct": 3.45,
-          "kelly": 0.0125,
-          "confidence": 28
+          "edge_pct": 3.07,
+          "kelly": 0.0112,
+          "confidence": 27
         }
       ]
     },
@@ -11433,13 +11399,13 @@
         }
       },
       "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 2.21,
-        "bookmaker": "1xBet",
-        "confidence": 43,
-        "edge_pct": -5.53,
+        "text": "Over 2.5 goals",
+        "price": 1.65,
+        "bookmaker": "Betsson",
+        "confidence": 57,
+        "edge_pct": -5.71,
         "type": "totals",
-        "side": "Under",
+        "side": "Over",
         "point": 2.5,
         "official": false,
         "basis": "market"
@@ -11458,7 +11424,7 @@
       "away": "Real Madrid",
       "best_h2h": {
         "Espanyol": {
-          "price": 5.2,
+          "price": 5.8,
           "bookmaker": "Tipico"
         },
         "Real Madrid": {
@@ -11492,23 +11458,13 @@
       "value_picks": [
         {
           "outcome": "Espanyol",
-          "best_price": 5.2,
+          "best_price": 5.8,
           "bookmaker": "Tipico",
-          "fair_prob": 0.2283,
-          "implied_prob": 0.1923,
-          "edge_pct": 18.73,
-          "kelly": 0.0446,
-          "confidence": 23
-        },
-        {
-          "outcome": "Draw",
-          "best_price": 4.22,
-          "bookmaker": "1xBet",
-          "fair_prob": 0.2619,
-          "implied_prob": 0.237,
-          "edge_pct": 10.53,
-          "kelly": 0.0327,
-          "confidence": 26
+          "fair_prob": 0.1961,
+          "implied_prob": 0.1724,
+          "edge_pct": 13.74,
+          "kelly": 0.0286,
+          "confidence": 20
         }
       ]
     },
@@ -11523,8 +11479,8 @@
       "away": "Lille",
       "best_h2h": {
         "Angers": {
-          "price": 5.4,
-          "bookmaker": "Unibet (SE)"
+          "price": 5.6,
+          "bookmaker": "Betfair"
         },
         "Lille": {
           "price": 1.75,
@@ -11537,10 +11493,10 @@
       },
       "recommendation": {
         "text": "Under 2.5 goals",
-        "price": 1.91,
+        "price": 1.9,
         "bookmaker": "1xBet",
         "confidence": 56,
-        "edge_pct": 7.01,
+        "edge_pct": 6.88,
         "type": "totals",
         "side": "Under",
         "point": 2.5,
@@ -11554,7 +11510,18 @@
         "p_draw": 0.2814,
         "p_away": 0.481
       },
-      "value_picks": []
+      "value_picks": [
+        {
+          "outcome": "Angers",
+          "best_price": 5.6,
+          "bookmaker": "Betfair",
+          "fair_prob": 0.1878,
+          "implied_prob": 0.1786,
+          "edge_pct": 5.18,
+          "kelly": 0.0113,
+          "confidence": 19
+        }
+      ]
     },
     {
       "id": "87c7c9bfd5e3072bded20c702f553c63",
@@ -11575,8 +11542,8 @@
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 5.25,
-          "bookmaker": "BetOnline.ag"
+          "price": 5.3,
+          "bookmaker": "Betfair"
         }
       },
       "recommendation": {
@@ -11619,8 +11586,8 @@
           "bookmaker": "Betfair"
         },
         "Draw": {
-          "price": 3.8,
-          "bookmaker": "Unibet (SE)"
+          "price": 3.75,
+          "bookmaker": "Betfair"
         }
       },
       "recommendation": {
@@ -11691,20 +11658,20 @@
           "outcome": "Villarreal",
           "best_price": 4.75,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2302,
+          "fair_prob": 0.2313,
           "implied_prob": 0.2105,
-          "edge_pct": 9.33,
-          "kelly": 0.0249,
+          "edge_pct": 9.89,
+          "kelly": 0.0264,
           "confidence": 23
         },
         {
           "outcome": "Draw",
           "best_price": 3.92,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2672,
+          "fair_prob": 0.2668,
           "implied_prob": 0.2551,
-          "edge_pct": 4.74,
-          "kelly": 0.0162,
+          "edge_pct": 4.58,
+          "kelly": 0.0157,
           "confidence": 27
         }
       ]
@@ -11779,12 +11746,12 @@
           "bookmaker": "Coolbet"
         },
         "Newcastle United": {
-          "price": 3.55,
+          "price": 3.6,
           "bookmaker": "Betfair"
         },
         "Draw": {
-          "price": 4.1,
-          "bookmaker": "Unibet (SE)"
+          "price": 4.01,
+          "bookmaker": "1xBet"
         }
       },
       "recommendation": {
@@ -11809,13 +11776,13 @@
       "value_picks": [
         {
           "outcome": "Newcastle United",
-          "best_price": 3.55,
+          "best_price": 3.6,
           "bookmaker": "Betfair",
-          "fair_prob": 0.296,
-          "implied_prob": 0.2817,
-          "edge_pct": 5.08,
-          "kelly": 0.0199,
-          "confidence": 30
+          "fair_prob": 0.2946,
+          "implied_prob": 0.2778,
+          "edge_pct": 6.04,
+          "kelly": 0.0232,
+          "confidence": 29
         }
       ]
     },
@@ -11881,13 +11848,13 @@
         }
       },
       "recommendation": {
-        "text": "Over 2.25 goals",
-        "price": 1.93,
+        "text": "Under 2.25 goals",
+        "price": 1.88,
         "bookmaker": "Pinnacle",
-        "confidence": 50,
-        "edge_pct": -4.26,
+        "confidence": 51,
+        "edge_pct": -4.04,
         "type": "totals",
-        "side": "Over",
+        "side": "Under",
         "point": 2.25,
         "official": false,
         "basis": "market"
@@ -11944,7 +11911,7 @@
       "away": "Real Racing Club de Santander",
       "best_h2h": {
         "Getafe": {
-          "price": 1.97,
+          "price": 1.95,
           "bookmaker": "Codere (IT)"
         },
         "Real Racing Club de Santander": {
@@ -11974,10 +11941,10 @@
           "outcome": "Real Racing Club de Santander",
           "best_price": 5.0,
           "bookmaker": "William Hill",
-          "fair_prob": 0.213,
+          "fair_prob": 0.21,
           "implied_prob": 0.2,
-          "edge_pct": 6.51,
-          "kelly": 0.0163,
+          "edge_pct": 5.01,
+          "kelly": 0.0125,
           "confidence": 21
         }
       ]
@@ -12221,8 +12188,8 @@
           "bookmaker": "1xBet"
         },
         "Rennes": {
-          "price": 7.5,
-          "bookmaker": "Coolbet"
+          "price": 7.6,
+          "bookmaker": "Betfair"
         },
         "Draw": {
           "price": 5.69,
@@ -12263,7 +12230,7 @@
           "bookmaker": "Tipico"
         },
         "Draw": {
-          "price": 5.8,
+          "price": 5.6,
           "bookmaker": "Codere (IT)"
         }
       },
@@ -12379,10 +12346,10 @@
           "outcome": "Levante",
           "best_price": 5.06,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2113,
+          "fair_prob": 0.2102,
           "implied_prob": 0.1976,
-          "edge_pct": 6.94,
-          "kelly": 0.0171,
+          "edge_pct": 6.37,
+          "kelly": 0.0157,
           "confidence": 21
         }
       ]
@@ -12398,8 +12365,8 @@
       "away": "Fiorentina",
       "best_h2h": {
         "AS Roma": {
-          "price": 1.62,
-          "bookmaker": "Unibet (SE)"
+          "price": 1.6,
+          "bookmaker": "1xBet"
         },
         "Fiorentina": {
           "price": 6.6,
@@ -12446,7 +12413,7 @@
           "bookmaker": "1xBet"
         },
         "Fulham": {
-          "price": 3.4,
+          "price": 3.45,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -12476,12 +12443,12 @@
       "value_picks": [
         {
           "outcome": "Fulham",
-          "best_price": 3.4,
+          "best_price": 3.45,
           "bookmaker": "Betfair",
-          "fair_prob": 0.3033,
-          "implied_prob": 0.2941,
-          "edge_pct": 3.11,
-          "kelly": 0.013,
+          "fair_prob": 0.3027,
+          "implied_prob": 0.2899,
+          "edge_pct": 4.43,
+          "kelly": 0.0181,
           "confidence": 30
         }
       ]
@@ -12587,7 +12554,7 @@
         },
         "Draw": {
           "price": 5.2,
-          "bookmaker": "Tipico"
+          "bookmaker": "Betfair"
         }
       },
       "recommendation": {
@@ -12638,8 +12605,8 @@
         "text": "Barcelona to win",
         "price": 1.45,
         "bookmaker": "1xBet",
-        "confidence": 73,
-        "edge_pct": 5.13,
+        "confidence": 72,
+        "edge_pct": 5.03,
         "type": "h2h",
         "outcome": "Barcelona",
         "official": true,
@@ -12805,8 +12772,8 @@
           "bookmaker": "Unibet (SE)"
         },
         "Draw": {
-          "price": 4.8,
-          "bookmaker": "Betfair"
+          "price": 4.75,
+          "bookmaker": "Coolbet"
         }
       },
       "recommendation": {
@@ -12827,10 +12794,10 @@
           "outcome": "Elversberg",
           "best_price": 5.8,
           "bookmaker": "Unibet (SE)",
-          "fair_prob": 0.1805,
+          "fair_prob": 0.1808,
           "implied_prob": 0.1724,
-          "edge_pct": 4.69,
-          "kelly": 0.0098,
+          "edge_pct": 4.86,
+          "kelly": 0.0101,
           "confidence": 18
         }
       ]
@@ -12876,10 +12843,10 @@
           "outcome": "Borussia Monchengladbach",
           "best_price": 5.75,
           "bookmaker": "Coolbet",
-          "fair_prob": 0.1794,
+          "fair_prob": 0.1797,
           "implied_prob": 0.1739,
-          "edge_pct": 3.17,
-          "kelly": 0.0067,
+          "edge_pct": 3.34,
+          "kelly": 0.007,
           "confidence": 18
         }
       ]
@@ -12900,7 +12867,7 @@
         },
         "SC Paderborn": {
           "price": 5.0,
-          "bookmaker": "Betfair"
+          "bookmaker": "Unibet (SE)"
         },
         "Draw": {
           "price": 4.21,
@@ -12975,7 +12942,7 @@
           "bookmaker": "1xBet"
         },
         "Werder Bremen": {
-          "price": 3.74,
+          "price": 3.76,
           "bookmaker": "1xBet"
         },
         "Draw": {
