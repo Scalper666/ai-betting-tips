@@ -1,0 +1,90 @@
+---
+import Base from '../layouts/Base.astro';
+import { BUILD_ISO, fmtDate } from '../lib/utils.js';
+import { contentUpdated } from '../lib/guides.js';
+
+// ── Editorial policy: how content is produced, reviewed and corrected.
+//    Written to be checkable — every claim here maps to something a reader can
+//    verify on the site (settlement log, model page, research pages).
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'Editorial policy',
+  url: 'https://ai-betting-tips.com/editorial-policy/',
+  publisher: { '@type': 'Organization', name: 'AI Betting Tips', url: 'https://ai-betting-tips.com/' },
+};
+---
+<Base
+  title="Editorial Policy — How We Write, Review and Correct"
+  description="How AI Betting Tips produces content: who writes it, what the model does and doesn't do, how legal and payment facts are checked, how we handle affiliate money, and how to report an error."
+  schema={schema}
+  updated={`${contentUpdated}T00:00:00Z`}
+  active="">
+
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span>Editorial policy</div>
+      <h1>Editorial <em>policy</em></h1>
+      <p class="lead">How this site's content is produced, checked and corrected — written so you can verify the claims rather than trust them.</p>
+      <p class="upd-line">Updated {fmtDate(contentUpdated)} · data pages rebuilt {fmtDate(BUILD_ISO)}</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="prose">
+      <div class="note">
+        Short version: a small editorial team writes the explanatory content; a published statistical model produces the predictions; every pick is archived and graded automatically, including the losing ones; affiliate links never influence a rating. Nothing here is financial advice.
+      </div>
+
+      <h2>Who writes what</h2>
+      <p>Two distinct sources produce everything on this site, and we label which is which rather than blurring them into an anonymous "expert" voice:</p>
+      <ul>
+        <li><strong>The editorial team</strong> writes the guides, the glossary, the country pages and the methodology write-ups. These are human-written and human-reviewed. We do not invent named tipster personas, and we do not attribute articles to people who do not exist — a common practice in this industry that we deliberately avoid.</li>
+        <li><strong>The model</strong> produces every prediction, probability and edge figure. It is a statistical system, described in full on <a href="/model">our model page</a>, not an opinion. Match previews are generated from the model's own output and market prices; they never assert facts about injuries, team news or motivation, because the model has no access to those.</li>
+      </ul>
+      <p>Where AI assists editorial content — for example translating guides into Spanish, Portuguese, German and French — the source text is human-written first and the translation preserves every risk warning. Translated pages carry the same claims as the English original, not softened marketing versions.</p>
+
+      <h2>How predictions are produced and judged</h2>
+      <p>The model estimates team scoring rates from historical results with time decay and shrinkage, converts them into probabilities for each market, and blends them with market-implied probabilities. A pick is only published as official when the blend clears the best available price by a defined margin, within odds caps. Most fixtures produce no official pick.</p>
+      <p>Three commitments make this checkable:</p>
+      <ul>
+        <li><strong>Every published pick is archived before the match starts</strong> and graded automatically against the real score. The site cannot quietly delete a loser, because the results pages are generated from that same archive.</li>
+        <li><strong>Results are shown in flat 1-unit stakes</strong>, with wins, losses and voids together. Our <a href="/tipsters">track record page</a> currently shows a negative return over its early sample, and we publish it as-is.</li>
+        <li><strong>We track closing line value</strong> — whether our picks beat the price the market closed at. It is the fastest honest test of whether a model has an edge, and it can embarrass us faster than profit curves can. See the <a href="/research/clv-experiment">CLV experiment</a>.</li>
+      </ul>
+      <p>We do not publish accuracy claims we cannot back with the settlement log, and we do not describe any bet as safe, guaranteed or "sure".</p>
+
+      <h2>How we check legal, tax and payment facts</h2>
+      <p>Country pages and country guides describe regulators, licensing status and payment methods for each market. These change often — tax rates in particular — so our approach is:</p>
+      <ul>
+        <li>We name the regulator and the licensing framework rather than paraphrasing vaguely.</li>
+        <li>Where a rate or threshold changes frequently, we say so and point you to the tax authority instead of printing a number that will silently go stale.</li>
+        <li>Country content is flagged internally for re-verification, and pages carry the date of their last update.</li>
+      </ul>
+      <p>This is general information, not legal advice. Gambling law depends on where you live, and it is your responsibility to check the current rules in your jurisdiction before betting.</p>
+
+      <h2>How bookmakers are rated — and how we make money</h2>
+      <p>The site earns commission when a reader signs up with an operator through our links. Those links are marked <code>sponsored</code> and disclosed on every page that carries them. Two rules keep the money separate from the ratings:</p>
+      <ul>
+        <li><strong>Commission never changes a score.</strong> Ratings are computed from fixed criteria — odds quality and margin, payout speed, app stability, account security, market availability — with the same formula for every operator.</li>
+        <li><strong>We publish inconvenient facts.</strong> Margin comparisons, restriction policies and licensing gaps go in the review whether or not the operator is a partner. Our <a href="/research/bookmaker-margins">margin research</a> exists precisely to make the most commercially awkward number public.</li>
+      </ul>
+      <p>Operators shown with a <strong>demo</strong> label are placeholder entries used while the site is being built. They are clearly marked as such and are not recommendations.</p>
+
+      <h2>Freshness and corrections</h2>
+      <p>Data-driven pages — predictions, odds, tables, results — are rebuilt automatically twice a day, and each one states when it was last refreshed. Editor-written pages carry their own update date, which changes only when the content actually changes; we do not restamp untouched pages to look fresh.</p>
+      <p>If you find an error — a wrong regulator, a stale tax rule, a mis-settled bet, a broken calculation — tell us via the <a href="/contact">contact page</a>. Factual corrections are made promptly, and material ones are noted on the page. Corrections to settled results are made by fixing the pipeline that grades them, so the fix applies to every affected page at once rather than to the one someone complained about.</p>
+
+      <h2>What we will not do</h2>
+      <ul>
+        <li>Promise profits, guarantee outcomes, or sell "fixed" or insider information.</li>
+        <li>Publish fabricated tipster identities, fake verified-profit screenshots, or reviews written by the operator being reviewed.</li>
+        <li>Hide losing runs, quietly delete failed predictions, or reset the record when it looks bad.</li>
+        <li>Target anyone under 18, or present betting as a way to make a living or solve money problems.</li>
+      </ul>
+
+      <h2>Responsible gambling</h2>
+      <p>Betting carries real financial risk and can become harmful. Every page on this site carries an 18+ notice, and our <a href="/responsible-gambling">responsible gambling page</a> lists support organisations and the deposit-limit and self-exclusion tools licensed operators must provide. If betting has stopped being entertainment, those tools exist for exactly that moment — using them early is the whole point.</p>
+    </div>
+  </div>
+</Base>

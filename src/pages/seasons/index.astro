@@ -52,7 +52,9 @@ const schema = {
                 <div class="ic">📅</div>
                 <div>
                   <h4>{s.league} {s.season}</h4>
-                  <p>{s.window} · {counts[s.sport_key] ?? 0} fixtures priced now</p>
+                  <p>{s.window} · {(counts[s.sport_key] ?? 0) > 0
+                    ? `${counts[s.sport_key]} fixtures priced now`
+                    : 'markets open closer to kickoff'}</p>
                 </div>
                 <span class="arr">→</span>
               </a>

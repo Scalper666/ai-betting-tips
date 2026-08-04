@@ -1,0 +1,130 @@
+---
+import Base from '../../layouts/Base.astro';
+import ToolsBox from '../../components/ToolsBox.astro';
+import fdData from '../../data/football-data.json';
+import { slugify, faqSchema, BUILD_ISO, fmtDate } from '../../lib/utils.js';
+import { leagueName } from '../../lib/leagues.js';
+
+// ── Top scorers: the football-data scorer list per league, refreshed with the
+//    rest of the snapshot. Pages only exist for leagues that actually have
+//    scorer data — an empty leaderboard is not a page worth having.
+export function getStaticPaths() {
+  return Object.entries(fdData.leagues ?? {})
+    .filter(([, lg]) => (lg.scorers ?? []).length > 0)
+    .map(([sk, lg]) => {
+      const name = leagueName(sk, lg.name);
+      return { params: { slug: slugify(name) }, props: { sk, lg, name } };
+    });
+}
+
+const { sk, lg, name } = Astro.props;
+const scorers = lg.scorers ?? [];
+const top = scorers[0];
+const hasTable = (lg.standings ?? []).some((r) => (r.p ?? 0) > 0);
+const others = Object.entries(fdData.leagues ?? {}).filter(([k, l]) => k !== sk && (l.scorers ?? []).length > 0);
+
+const title = `${name} Top Scorers — Goals, Assists and Appearances`;
+const description = `${name} top scorer standings: goals, assists, penalties and appearances for the leading ${scorers.length} players, refreshed twice daily alongside our odds data.`;
+
+const faq = [
+  {
+    q: `Who is the ${name} top scorer right now?`,
+    a: top
+      ? `${top.name} of ${top.team} leads with ${top.goals} goals${top.played ? ` in ${top.played} appearances` : ''}. The list refreshes twice a day with the rest of our data snapshot.`
+      : 'The leaderboard fills as the season progresses.',
+  },
+  {
+    q: 'Do penalties count towards these totals?',
+    a: 'Yes — the goals column is total goals, with penalties shown separately where the data source provides them. A striker with a high penalty share is a different betting proposition from one scoring the same total from open play.',
+  },
+  {
+    q: 'Can I bet on the top scorer market here?',
+    a: 'We do not price outright top-scorer markets: they run for months, carry heavy margins and are among the least efficient bets on the board for the customer. This page is context for match betting, not a tip.',
+  },
+];
+const schema = { '@context': 'https://schema.org', ...faqSchema(faq) };
+---
+<Base title={title} description={description} schema={schema} updated={BUILD_ISO} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href="/">Home</a><span>/</span><a href="/predictions">Predictions</a><span>/</span>{name} top scorers
+      </div>
+      <h1>{name} <em>top scorers</em></h1>
+      <p class="lead">
+        {top
+          ? `${top.name} leads the ${name} scoring charts with ${top.goals} goals. Full leaderboard below with assists and appearances, refreshed twice a day.`
+          : `${name} scoring leaderboard, refreshed twice a day.`}
+      </p>
+      <p class="upd-line">Snapshot taken {fmtDate(BUILD_ISO)} · <a href="/editorial-policy">how we work</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">{name} <b>scoring charts</b></h2>
+            {hasTable && <a href={`/table/${slugify(name)}`} class="more-link">League table →</a>}
+          </div>
+          <div class="odds-table"><div class="scr-scroll">
+            <table class="otbl">
+              <thead><tr><th>#</th><th style="text-align:left">Player</th><th style="text-align:left">Club</th><th>Apps</th><th>Goals</th><th>Assists</th><th>Pens</th></tr></thead>
+              <tbody>
+                {scorers.map((p, i) => (
+                  <tr>
+                    <td class="o-cell"><span>{i + 1}</span></td>
+                    <td class="o-match" style="font-weight:700">{p.name}</td>
+                    <td class="o-match">
+                      <a href={`/team/${slugify(p.team ?? '')}`} style="color:inherit">{p.team}</a>
+                    </td>
+                    <td class="o-cell"><span>{p.played ?? '—'}</span></td>
+                    <td class="o-cell hot"><span class="cb">{p.goals}</span></td>
+                    <td class="o-cell"><span>{p.assists ?? '—'}</span></td>
+                    <td class="o-cell"><span>{p.pens ?? '—'}</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div></div>
+        </section>
+
+        <section class="seo">
+          <h2>What scoring charts tell a bettor (and what they don't)</h2>
+          <p>Goal tallies are a record of finishing plus opportunity, and the two separate badly. A forward on twelve goals from a side creating chances all season is a different player from one on twelve at a team that barely attacks — and the second is usually finishing above their sustainable rate. Over a long enough run, conversion drifts back toward the underlying chance quality, which is why our model works from team scoring rates rather than individual hot streaks.</p>
+          <p>The penalty column matters more than most tables admit. A striker whose total leans on spot kicks depends on their team winning penalties and on keeping the duty — both of which can vanish overnight. Strip penalties out before comparing two players' open-play threat.</p>
+          <p>Where this page genuinely helps match betting is context for goal markets: whether a team's scoring is concentrated in one player, and what happens to a totals line when that player is missing. That link is real, but it is a nudge rather than an edge — the market prices absences quickly.</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{name} scorers <b>FAQ</b></h2></div>
+          <div class="prose" style="padding:0;max-width:none">
+            {faq.map((f) => (<><h3>{f.q}</h3><p>{f.a}</p></>))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">⚽</span> {name} pages</div>
+          {hasTable && <a class="tm" href={`/table/${slugify(name)}`}><span class="dot"></span>{name} table</a>}
+          <a class="tm" href={`/league/${slugify(name)}`}><span class="dot"></span>Predictions &amp; tips</a>
+          <a class="tm" href="/screener"><span class="dot"></span>AI value screener</a>
+          <a class="tm" href="/teams"><span class="dot"></span>Team pages A–Z</a>
+        </div>
+        {others.length > 0 && (
+          <div class="box">
+            <div class="box-h"><span class="hi">🥅</span> Other leagues</div>
+            {others.map(([k, l]) => (
+              <a class="tm" href={`/top-scorers/${slugify(leagueName(k, l.name))}`}>
+                <span class="dot"></span>{leagueName(k, l.name)}
+              </a>
+            ))}
+          </div>
+        )}
+        <ToolsBox lang="en" />
+      </aside>
+    </div>
+  </div>
+</Base>

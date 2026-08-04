@@ -143,6 +143,24 @@ def main() -> int:
                     results = matches_of(f"status=FINISHED&season={int(season) - 1}") + results
                 except Exception as e:
                     print(f"  ⚠ {code} season {int(season) - 1}: {str(e)[:60]}")
+            # top scorers: one extra call per league, keeps the previous list
+            # if the endpoint is unavailable for this competition/plan
+            scorers = (leagues.get(sk) or {}).get("scorers", [])
+            try:
+                sc = get(f"/competitions/{code}/scorers?limit=15")
+                fetched = [{
+                    "name": (s.get("player") or {}).get("name"),
+                    "team": (s.get("team") or {}).get("shortName") or (s.get("team") or {}).get("name"),
+                    "goals": s.get("goals") or 0,
+                    "assists": s.get("assists"),
+                    "pens": s.get("penalties"),
+                    "played": s.get("playedMatches"),
+                } for s in sc.get("scorers", []) if (s.get("player") or {}).get("name")]
+                if fetched:
+                    scorers = fetched
+            except Exception as e:
+                print(f"  ⚠ {code} scorers: {str(e)[:60]} — keeping previous")
+
             leagues[sk] = {
                 "code": code,
                 "name": st.get("competition", {}).get("name", code),
@@ -150,8 +168,9 @@ def main() -> int:
                 "standings": rows,
                 "crests": crests,
                 "results": results,
+                "scorers": scorers,
             }
-            print(f"  ✓ {code}: {len(rows)} table rows, {len(results)} finished matches")
+            print(f"  ✓ {code}: {len(rows)} table rows, {len(results)} finished matches, {len(scorers)} scorers")
         except Exception as e:
             print(f"  ⚠ {code}: {type(e).__name__} {str(e)[:90]} — keeping previous data")
 

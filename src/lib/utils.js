@@ -1,3 +1,14 @@
+// Build timestamp — evaluated once per build, so data-driven pages can state
+// (and mark up) when their odds/standings/results were last refreshed. CI
+// rebuilds twice a day, so this is a truthful "last updated" for those pages.
+export const BUILD_ISO = new Date().toISOString();
+
+// Short human date for "updated" lines. Locale-aware, day-month-year order.
+export const fmtDate = (iso, lang = 'en') => {
+  const d = new Date(iso);
+  return isNaN(d) ? '' : d.toLocaleDateString(lang, { day: 'numeric', month: 'short', year: 'numeric' });
+};
+
 export function slugify(s) {
   return String(s ?? '')
     .toLowerCase()

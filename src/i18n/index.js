@@ -165,6 +165,12 @@ const D = {
   'home.geo.intlList': { en: 'international list', es: 'lista internacional', pt: 'lista internacional', de: 'internationale Liste' },
   'ft.guides': { en: 'Betting Guides', es: 'Guías de apuestas', pt: 'Guias de apostas', de: 'Wett-Ratgeber' },
   'ft.seasons': { en: 'Season predictions', es: 'Pronósticos de temporada', pt: 'Palpites da temporada', de: 'Saison-Prognosen' },
+  'ft.tables': { en: 'League tables', es: 'Tablas de clasificación', pt: 'Tabelas de classificação', de: 'Tabellen' },
+  'ft.editorial': { en: 'Editorial policy', es: 'Política editorial', pt: 'Política editorial', de: 'Redaktionsrichtlinien' },
+  'common.updated': { en: 'Updated', es: 'Actualizado', pt: 'Atualizado', de: 'Aktualisiert' },
+  'common.oddsUpdated': { en: 'Odds and data refreshed', es: 'Cuotas y datos actualizados', pt: 'Odds e dados atualizados', de: 'Quoten und Daten aktualisiert' },
+  'common.byEditors': { en: 'Written by the AI Betting Tips editorial team', es: 'Escrito por el equipo editorial de AI Betting Tips', pt: 'Escrito pela equipe editorial da AI Betting Tips', de: 'Verfasst vom Redaktionsteam von AI Betting Tips' },
+  'common.howWeWrite': { en: 'how we work', es: 'cómo trabajamos', pt: 'como trabalhamos', de: 'wie wir arbeiten' },
   'lg.seasonHub': { en: 'Season hub', es: 'Centro de temporada', pt: 'Central da temporada', de: 'Saison-Hub' },
   'cn.readGuide': { en: 'Read the full guide', es: 'Leer la guía completa', pt: 'Ler o guia completo', de: 'Kompletten Ratgeber lesen' },
   // guides section UI

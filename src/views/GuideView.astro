@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
-import { guidesFor, glossaryFor } from '../lib/guides.js';
-import { faqSchema } from '../lib/utils.js';
+import { guidesFor, glossaryFor, contentUpdated } from '../lib/guides.js';
+import { faqSchema, fmtDate } from '../lib/utils.js';
 import { t, lhref } from '../i18n/index.js';
 
 // One guide article, localized. `slug` is language-independent; display fields
@@ -41,7 +41,7 @@ const schema = {
   ],
 };
 ---
-<Base lang={lang} i18nPath={`/guides/${g.slug}`} title={title} description={description} schema={schema} active="">
+<Base lang={lang} i18nPath={`/guides/${g.slug}`} title={title} description={description} schema={schema} updated={`${contentUpdated}T00:00:00Z`} active="">
   <div class="container">
     <div class="page-head">
       <div class="crumbs">
@@ -55,6 +55,7 @@ const schema = {
         <span class="chip" style="cursor:default">📖 {T(`gd.cat${g.cat}`)}</span>
         <span class="chip" style="cursor:default">⏱ {g.minutes} {T('gd.minRead')}</span>
       </div>
+      <p class="upd-line">{T('common.updated')} {fmtDate(contentUpdated, lang)} · {T('common.byEditors')} · <a href="/editorial-policy">{T('common.howWeWrite')}</a></p>
     </div>
   </div>
 

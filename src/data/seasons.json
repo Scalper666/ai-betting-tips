@@ -1,6 +1,50 @@
 {
   "seasons": [
     {
+      "slug": "champions-league-2026-27",
+      "sport_key": "soccer_uefa_champs_league",
+      "league": "Champions League",
+      "season": "2026/27",
+      "window": "September 2026 – Spring 2027",
+      "pre_season_note": "Champions League fixtures are not priced yet — bookmakers open these markets shortly before the league phase begins in September. Qualifying-round ties are already live in our feed, and this page fills automatically the moment the main draw is priced.",
+      "intro": [
+        "The Champions League 2026/27 runs on the expanded format: 36 clubs in a single league phase, eight matches each against eight different opponents, one combined table. The top eight go straight to the last 16; teams finishing ninth to twenty-fourth meet in a knockout playoff round; everyone below is out with no parachute into the Europa League.",
+        "For bettors that format changed the maths. Group-stage dead rubbers largely disappeared — a club in fourteenth place is still fighting for a top-eight seed in January — so motivation stays live deeper into the phase than the old four-team groups ever allowed. Our model treats each fixture on club scoring rates rather than continental reputation, which matters most in the mismatched pairings the swiss-model draw produces."
+      ],
+      "outlook": [
+        "36-club league phase: eight fixtures per team, one table, top eight seeded straight into the last 16",
+        "Cross-league fixtures mean our per-club rates carry more weight than domestic-form narratives",
+        "Elite European matches are the sharpest-priced markets in football — expect few official picks and small edges"
+      ],
+      "faq": [
+        { "q": "When does the Champions League 2026/27 start?", "a": "The league phase begins in September 2026 and runs into January 2027, followed by the knockout playoff round, the last 16 and the final in spring 2027. Fixtures appear on this page as soon as bookmakers price them." },
+        { "q": "How does the 36-team Champions League format work?", "a": "All 36 clubs sit in a single table and play eight matches against eight different opponents. The top eight advance directly to the last 16, ninth to twenty-fourth contest a two-legged knockout playoff, and the rest are eliminated." },
+        { "q": "Is there value betting on Champions League matches?", "a": "Rarely on the headline 1X2 — these are the most heavily traded football markets in the world and prices are efficient. Our model finds disagreements more often on totals and in fixtures pairing clubs from leagues that rarely meet, where the market has less shared history to price from." }
+      ]
+    },
+    {
+      "slug": "europa-league-2026-27",
+      "sport_key": "soccer_uefa_europa_league",
+      "league": "Europa League",
+      "season": "2026/27",
+      "window": "September 2026 – Spring 2027",
+      "pre_season_note": "Europa League markets open shortly before the league phase begins in September. This page fills automatically with priced fixtures and model probabilities as soon as they do.",
+      "intro": [
+        "The Europa League 2026/27 mirrors the Champions League structure: 36 clubs, a single league phase of eight matches each, top eight into the last 16 and ninth-to-twenty-fourth into a knockout playoff. The prize at the end is a Champions League place, which keeps motivation unusually honest for a secondary competition.",
+        "It is also, from a pricing perspective, more interesting than its senior competition. Squad rotation is heavier, travel is longer, and the quality spread between entrants is wider — three things that produce genuine uncertainty and, with it, prices that disagree with the underlying rates more often than in the Champions League."
+      ],
+      "outlook": [
+        "Same 36-club league phase format as the Champions League, with a Champions League place for the winner",
+        "Heavy rotation and long away trips make lineup uncertainty a bigger factor than in domestic leagues",
+        "Wider quality spread and lighter market attention than the Champions League — historically more model-market disagreement"
+      ],
+      "faq": [
+        { "q": "When does the Europa League 2026/27 season start?", "a": "The league phase starts in September 2026 and runs into January 2027, with the knockout rounds following and the final in spring 2027. Priced fixtures appear in the feed on this page once bookmakers open the markets." },
+        { "q": "Why is the Europa League harder to price than the Champions League?", "a": "Clubs rotate squads around domestic priorities, travel distances are longer, and the gap between the strongest and weakest entrants is wider. Lineup uncertainty is the model's blind spot, so we treat Thursday-night edges with extra caution." },
+        { "q": "Does the Europa League winner qualify for the Champions League?", "a": "Yes — the title carries a Champions League place for the following season, which is why late-stage motivation in this competition is genuine rather than token." }
+      ]
+    },
+    {
       "slug": "premier-league-2026-27",
       "sport_key": "soccer_epl",
       "league": "Premier League",

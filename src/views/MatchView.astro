@@ -5,7 +5,7 @@ import predictions from '../data/predictions.json';
 import historyData from '../data/history.json';
 import screener from '../data/screener.json';
 import content from '../data/content.json';
-import { matchSlug, abbr, badgeColor, kickoffLabel, confidenceLabel, slugify, faqSchema } from '../lib/utils.js';
+import { matchSlug, abbr, badgeColor, kickoffLabel, confidenceLabel, slugify, faqSchema, BUILD_ISO, fmtDate } from '../lib/utils.js';
 import { teamForm, h2hBetween, leagueTable, resolveTeam } from '../lib/form.js';
 import { pairSlug } from '../lib/h2h.js';
 import { t, localizeMarket, lhref } from '../i18n/index.js';
@@ -130,6 +130,7 @@ const schema = {
               ? F('mp.leadAwait', { league, date: kickedDate })
               : F('mp.leadUnplayed', { league, date: kickedDate })}
       </p>
+      <p class="upd-line">{T('common.oddsUpdated')} {fmtDate(BUILD_ISO, lang)} · <a href="/editorial-policy">{T('common.howWeWrite')}</a></p>
     </div>
   </div>
 

@@ -114,6 +114,7 @@ const description = F('lg.desc', { league });
           <div class="box-h"><span class="hi">🎯</span> {F('lg.markets', { league })}</div>
           <a class="tm" href={L(`/tips/match-result/${slugify(league)}`)}><span class="dot"></span>{T('lg.mrTips')}</a>
           <a class="tm" href={L(`/tips/over-under/${slugify(league)}`)}><span class="dot"></span>{T('lg.ouTips')}</a>
+          {table && <a class="tm" href={`/table/${slugify(league)}`}><span class="dot"></span>{league} table</a>}
         </div>
         <ToolsBox lang={lang} />
       </aside>

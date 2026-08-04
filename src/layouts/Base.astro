@@ -8,7 +8,10 @@ import { ALT_LANGS, homePath, t } from '../i18n/index.js';
 // under (e.g. '/'), which switches on hreflang alternates + localized picker
 // targets. Pages without i18nPath are EN-only — the picker then offers the
 // localized home pages.
-const { title, description = '', active = '', schema = null, lang = 'en', i18nPath = null } = Astro.props;
+// `updated`: ISO date this page's content last changed. Data-driven pages pass
+// the build time (odds refresh twice daily); editor-written pages pass the date
+// their source file changed. It feeds dateModified in Article-type schema.
+const { title, description = '', active = '', schema = null, lang = 'en', i18nPath = null, updated = null } = Astro.props;
 const site = Astro.site ?? 'https://ai-betting-tips.com';
 const canonical = new URL(Astro.url.pathname, site).href;
 const ogImage = new URL('/og.png', site).href;
@@ -32,6 +35,51 @@ const crumbSchema = segs.length
           name: prettySeg(s),
           item: new URL('/' + segs.slice(0, i + 1).join('/') + '/', site).href,
         })),
+      ],
+    }
+  : null;
+// Stamp dateModified onto Article-family nodes that didn't set one themselves.
+// Search engines surface these dates, and our data pages genuinely do change.
+function withDates(node) {
+  if (!node || typeof node !== 'object' || !updated) return node;
+  if (Array.isArray(node)) return node.map(withDates);
+  const ARTICLE = ['Article', 'NewsArticle', 'BlogPosting', 'TechArticle'];
+  const out = { ...node };
+  if (Array.isArray(out['@graph'])) out['@graph'] = out['@graph'].map(withDates);
+  if (ARTICLE.includes(out['@type'])) {
+    out.dateModified = out.dateModified ?? updated;
+    out.datePublished = out.datePublished ?? updated;
+  }
+  return out;
+}
+const pageSchema = schema ? withDates(schema) : null;
+
+// Publisher identity — emitted on home pages only, where brand queries land.
+// No sameAs (we run no social profiles yet) and no SearchAction (no site
+// search): claiming either would be a false signal.
+const isHome = Astro.url.pathname.replace(/\/+$/, '') === '' ||
+  ALT_LANGS.some((l) => Astro.url.pathname.replace(/\/+$/, '') === `/${l}`);
+const orgSchema = isHome
+  ? {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Organization',
+          '@id': `${site}#organization`,
+          name: 'AI Betting Tips',
+          url: String(site),
+          logo: { '@type': 'ImageObject', url: new URL('/og.png', site).href, width: 1200, height: 630 },
+          description: 'Football predictions from a published statistical model, with every settled pick and its closing line value on record.',
+          knowsAbout: ['Football betting', 'Sports prediction models', 'Betting odds comparison'],
+        },
+        {
+          '@type': 'WebSite',
+          '@id': `${site}#website`,
+          url: String(site),
+          name: 'AI Betting Tips',
+          inLanguage: lang,
+          publisher: { '@id': `${site}#organization` },
+        },
       ],
     }
   : null;
@@ -83,8 +131,9 @@ const favicon = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'
       });
     });
   </script>
-  {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+  {pageSchema && <script type="application/ld+json" set:html={JSON.stringify(pageSchema)} />}
   {crumbSchema && <script type="application/ld+json" set:html={JSON.stringify(crumbSchema)} />}
+  {orgSchema && <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />}
 </head>
 <body>
   <div class="ai-note" role="note">{t(lang, 'top.aiNote')}</div>

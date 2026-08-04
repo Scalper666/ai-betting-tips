@@ -16,6 +16,9 @@ import glFR from '../data/glossary.fr.json';
 const G = { en: gEN.guides, es: gES.guides, pt: gPT.guides, de: gDE.guides, fr: gFR.guides };
 const GL = { en: glEN.terms, es: glES.terms, pt: glPT.terms, de: glDE.terms, fr: glFR.terms };
 
+// Date the editor-written source last changed (translations follow it).
+// Keep in sync with CONTENT_UPDATED in astro.config.mjs.
+export const contentUpdated = gEN.updated;
 export const guidesFor = (lang) => G[lang] ?? G.en;
 export const glossaryFor = (lang) => GL[lang] ?? GL.en;
 export const glossarySetName = glEN.set;
