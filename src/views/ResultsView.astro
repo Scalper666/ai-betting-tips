@@ -1,0 +1,186 @@
+---
+import Base from '../layouts/Base.astro';
+import ToolsBox from '../components/ToolsBox.astro';
+import fdData from '../data/football-data.json';
+import historyData from '../data/history.json';
+import { slugify, faqSchema, signed, BUILD_ISO, fmtDate } from '../lib/utils.js';
+import { leagueName } from '../lib/leagues.js';
+import { hasLeaguePage, hasTablePage, hasH2hHub, hasTeamsHub, hasTeamPage } from '../lib/links.js';
+import { t, lhref } from '../i18n/index.js';
+
+// Recent finished matches per league, grouped by matchday, plus the sample's
+// goal profile and how our own published picks in that league settled.
+const { sk, lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
+const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
+const dloc = { en: 'en-GB', es: 'es-ES', pt: 'pt-BR', de: 'de-DE', fr: 'fr-FR' }[lang] ?? 'en-GB';
+
+const lg = (fdData.leagues ?? {})[sk];
+const name = leagueName(sk, lg?.name ?? '');
+const all = [...(lg?.results ?? [])].sort((a, b) => String(b.d).localeCompare(String(a.d)));
+const recent = all.slice(0, 60);
+
+const byDate = [];
+for (const r of recent) {
+  const last = byDate[byDate.length - 1];
+  if (last && last.d === r.d) last.games.push(r);
+  else byDate.push({ d: r.d, games: [r] });
+}
+
+const shown = recent.length;
+const goals = recent.reduce((a, r) => a + (r.hs ?? 0) + (r.as ?? 0), 0);
+const avgGoals = shown ? Math.round((goals / shown) * 100) / 100 : 0;
+const pct = (n) => (shown ? Math.round((n / shown) * 100) : 0);
+const homeWins = pct(recent.filter((r) => r.hs > r.as).length);
+const draws = pct(recent.filter((r) => r.hs === r.as).length);
+const awayWins = pct(recent.filter((r) => r.hs < r.as).length);
+const over25 = pct(recent.filter((r) => (r.hs ?? 0) + (r.as ?? 0) > 2.5).length);
+const bttsPct = pct(recent.filter((r) => r.hs > 0 && r.as > 0).length);
+
+const settled = Object.values(historyData.tips ?? {}).filter(
+  (x) => x.sport_key === sk && ['won', 'lost', 'void'].includes(x.status)
+    && x.score !== 'simulated' && !String(x.event_id ?? '').startsWith('mock')
+);
+const ourRec = settled.length ? {
+  n: settled.length,
+  won: settled.filter((x) => x.status === 'won').length,
+  lost: settled.filter((x) => x.status === 'lost').length,
+  profit: Math.round(settled.reduce((a, x) => a + (x.profit ?? 0), 0) * 100) / 100,
+} : null;
+
+const others = Object.entries(fdData.leagues ?? {})
+  .filter(([k, l]) => k !== sk && (l.results ?? []).length > 0);
+
+const dateLabel = (d) => {
+  const dt = new Date(`${d}T12:00:00Z`);
+  return isNaN(dt) ? d : dt.toLocaleDateString(dloc, { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+};
+
+const title = F('rs.title', { name });
+const description = F('rs.desc', { name, n: shown });
+const faq = [
+  { q: F('rs.faqQ1', { name }), a: T('rs.faqA1') },
+  { q: T('rs.faqQ2'), a: F('rs.faqA2', { n: shown, total: all.length, name }) },
+  { q: T('rs.faqQ3'), a: T('rs.faqA3') },
+];
+const schema = { '@context': 'https://schema.org', ...faqSchema(faq) };
+---
+<Base lang={lang} i18nPath={`/results/${slugify(name)}`} title={title} description={description}
+      schema={schema} updated={BUILD_ISO} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href={L('/')}>{T('crumb.home')}</a><span>/</span>
+        <a href={L('/results')}>{T('rs.crumb')}</a><span>/</span>{name}
+      </div>
+      <h1>{name} <em>{T('rs.crumb').toLowerCase()}</em></h1>
+      <p class="lead">{F('rs.lead', { n: shown, name, total: all.length })}</p>
+      <p class="upd-line">{T('tb.snapshot')} {fmtDate(BUILD_ISO, lang)} · <a href="/editorial-policy">{T('common.howWeWrite')}</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">{F('rs.profile', { n: shown })}</h2>
+            {hasTablePage(name) && <a href={L(`/table/${slugify(name)}`)} class="more-link">{T('tb.crumb')} →</a>}
+          </div>
+          <div class="res-sum">
+            <div class="res-chip"><b>{avgGoals}</b><span>{T('rs.goalsPer')}</span></div>
+            <div class="res-chip win"><b>{homeWins}%</b><span>{T('rs.homeWins')}</span></div>
+            <div class="res-chip"><b>{draws}%</b><span>{T('rs.draws')}</span></div>
+            <div class="res-chip lose"><b>{awayWins}%</b><span>{T('rs.awayWins')}</span></div>
+            <div class="res-chip"><b>{over25}%</b><span>{T('rs.over25')}</span></div>
+            <div class="res-chip"><b>{bttsPct}%</b><span>BTTS</span></div>
+          </div>
+          <p class="res-note">{T('rs.profileNote')}</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{T('rs.latestScores')}</h2></div>
+          {byDate.map((day) => (
+            <div style="margin-bottom:18px">
+              <div class="cl-head" style="margin-bottom:8px">
+                <span>{dateLabel(day.d)}</span>
+                <span class="cl-count">{day.games.length} {day.games.length === 1 ? T('rs.match') : T('rs.matches')}</span>
+              </div>
+              <div class="res-list">
+                {day.games.map((r) => (
+                  <div class="res-row">
+                    <span class={`res-mark ${r.hs > r.as ? 'w' : r.hs < r.as ? 'l' : 'v'}`}>{r.hs > r.as ? 'H' : r.hs < r.as ? 'A' : 'D'}</span>
+                    <div class="res-match">
+                      <b>
+                        {hasTeamPage(r.h) ? <a href={`/team/${slugify(r.h)}`} style="color:inherit">{r.h}</a> : r.h}
+                        {' '}v{' '}
+                        {hasTeamPage(r.a) ? <a href={`/team/${slugify(r.a)}`} style="color:inherit">{r.a}</a> : r.a}
+                      </b>
+                      <span>{(r.hs ?? 0) + (r.as ?? 0)} {T('rs.goalsWord')}{r.hs > 0 && r.as > 0 ? ' · BTTS' : ''}</span>
+                    </div>
+                    <span class="res-profit zero">{r.hs}–{r.as}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </section>
+
+        {ourRec && (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">{F('rs.ourPicks', { name })}</h2>
+              <a href={L('/tipsters')} class="more-link">{T('rs.fullRecord')} →</a>
+            </div>
+            <div class="res-sum">
+              <div class="res-chip"><b>{ourRec.n}</b><span>{T('home.res.settled')}</span></div>
+              <div class="res-chip win"><b>{ourRec.won}</b><span>{T('home.res.won')}</span></div>
+              <div class="res-chip lose"><b>{ourRec.lost}</b><span>{T('home.res.lost')}</span></div>
+              <div class={`res-chip ${ourRec.profit >= 0 ? 'win' : 'lose'}`}><b>{signed(ourRec.profit)}u</b><span>{T('home.res.profit')}</span></div>
+            </div>
+            <p class="res-note">{T('rs.picksNote')}</p>
+          </section>
+        )}
+
+        <section class="seo">
+          <h2>{F('rs.seoH', { name })}</h2>
+          <p>{F('rs.seoP1', { avg: avgGoals, home: homeWins })}</p>
+          <p>{T('rs.seoP2')}</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{name} <b>FAQ</b></h2></div>
+          <div class="prose" style="padding:0;max-width:none">
+            {faq.map((f) => (<><h3>{f.q}</h3><p>{f.a}</p></>))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">⚽</span> {name}</div>
+          {hasLeaguePage(name) && <a class="tm" href={L(`/league/${slugify(name)}`)}><span class="dot"></span>{T('tb.leagueTips')}</a>}
+          {hasTablePage(name) && <a class="tm" href={L(`/table/${slugify(name)}`)}><span class="dot"></span>{T('tb.crumb')}</a>}
+          {hasH2hHub(name) && <a class="tm" href={`/h2h/league/${slugify(name)}`}><span class="dot"></span>H2H</a>}
+          {hasTeamsHub(name) && <a class="tm" href={`/teams/${slugify(name)}`}><span class="dot"></span>{T('ft.teamsAZ')}</a>}
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">📋</span> {T('rs.otherResults')}</div>
+          {others.map(([k, l]) => (
+            <a class="tm" href={L(`/results/${slugify(leagueName(k, l.name))}`)}>
+              <span class="dot"></span>{leagueName(k, l.name)}
+            </a>
+          ))}
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">⚡</span> {T('tb.livePages')}</div>
+          <a class="tm" href={L('/predictions/today')}><span class="dot"></span>{T('gd.lnkPreds')}</a>
+          <a class="tm" href={L('/predictions/daily')}><span class="dot"></span>{T('rs.gradedByDate')}</a>
+          <a class="tm" href={L('/screener')}><span class="dot"></span>{T('gd.lnkScreener')}</a>
+        </div>
+        <ToolsBox lang={lang} />
+      </aside>
+    </div>
+  </div>
+</Base>

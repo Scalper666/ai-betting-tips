@@ -1,0 +1,13 @@
+---
+import ResultsView from '../../../views/ResultsView.astro';
+import { resultsPaths } from '../../../lib/dataPages.js';
+import { ALT_LANGS } from '../../../i18n/index.js';
+
+export function getStaticPaths() {
+  return ALT_LANGS.flatMap((lang) =>
+    resultsPaths().map(({ slug, sk }) => ({ params: { lang, slug }, props: { sk } })));
+}
+const { lang } = Astro.params;
+const { sk } = Astro.props;
+---
+<ResultsView sk={sk} lang={lang} />

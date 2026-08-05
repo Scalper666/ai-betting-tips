@@ -1,0 +1,102 @@
+---
+import Base from '../layouts/Base.astro';
+import ToolsBox from '../components/ToolsBox.astro';
+import fdData from '../data/football-data.json';
+import { slugify, BUILD_ISO, fmtDate } from '../lib/utils.js';
+import { leagueName } from '../lib/leagues.js';
+import { t, lhref } from '../i18n/index.js';
+
+const { lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
+const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
+
+const leagues = Object.entries(fdData.leagues ?? {})
+  .filter(([, lg]) => (lg.results ?? []).length > 0)
+  .map(([sk, lg]) => {
+    const results = lg.results ?? [];
+    const latest = results.reduce((a, r) => (r.d > a ? r.d : a), '');
+    const recent = [...results].sort((a, b) => String(b.d).localeCompare(String(a.d))).slice(0, 40);
+    const goals = recent.reduce((a, r) => a + (r.hs ?? 0) + (r.as ?? 0), 0);
+    return {
+      sk,
+      name: leagueName(sk, lg.name),
+      n: results.length,
+      latest,
+      avgGoals: recent.length ? Math.round((goals / recent.length) * 100) / 100 : 0,
+    };
+  })
+  .sort((a, b) => String(b.latest).localeCompare(String(a.latest)));
+
+const totalGames = leagues.reduce((a, l) => a + l.n, 0);
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Football results by league',
+  itemListElement: leagues.map((l, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: `${l.name} results`,
+    url: `https://ai-betting-tips.com${L(`/results/${slugify(l.name)}`)}/`,
+  })),
+};
+---
+<Base lang={lang} i18nPath="/results" title={T('rs.hubTitle')} description={F('rs.hubDesc', { n: totalGames })}
+      schema={schema} updated={BUILD_ISO} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href={L('/')}>{T('crumb.home')}</a><span>/</span>{T('rs.crumb')}</div>
+      <h1>{T('rs.hubH1a')} <em>{T('rs.hubH1b')}</em></h1>
+      <p class="lead">{F('rs.hubLead', { n: totalGames, leagues: leagues.length })}</p>
+      <p class="upd-line">{T('tb.snapshot')} {fmtDate(BUILD_ISO, lang)} · <a href="/editorial-policy">{T('common.howWeWrite')}</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">{T('rs.hubSec')}</h2>
+            <a href={L('/predictions/daily')} class="more-link">{T('rs.gradedByDate')} →</a>
+          </div>
+          <div class="bt-grid">
+            {leagues.map((l) => (
+              <a href={L(`/results/${slugify(l.name)}`)} class="bt-tile">
+                <div class="ic">📋</div>
+                <div>
+                  <h4>{l.name}</h4>
+                  <p>{F('rs.hubCard', { n: l.n, avg: l.avgGoals })}</p>
+                </div>
+                <span class="arr">→</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section class="seo">
+          <h2>{T('rs.hubSeoH')}</h2>
+          <p>{T('rs.hubSeoP')}</p>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">📋</span> {T('rs.allResults')}</div>
+          {leagues.map((l) => (
+            <a class="tm" href={L(`/results/${slugify(l.name)}`)}><span class="dot"></span>{l.name}</a>
+          ))}
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">⚡</span> {T('tb.livePages')}</div>
+          <a class="tm" href={L('/table')}><span class="dot"></span>{T('ft.tables')}</a>
+          <a class="tm" href={L('/h2h')}><span class="dot"></span>H2H</a>
+          <a class="tm" href={L('/predictions/today')}><span class="dot"></span>{T('gd.lnkPreds')}</a>
+          <a class="tm" href={L('/guides')}><span class="dot"></span>{T('ft.guides')}</a>
+        </div>
+        <ToolsBox lang={lang} />
+      </aside>
+    </div>
+  </div>
+</Base>
