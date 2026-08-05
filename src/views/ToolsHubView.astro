@@ -1,0 +1,92 @@
+---
+import Base from '../layouts/Base.astro';
+import { contentUpdated, guidesFor } from '../lib/guides.js';
+import { fmtDate } from '../lib/utils.js';
+import { t, lhref } from '../i18n/index.js';
+
+// Tools hub, localized. The calculators themselves stay in English for now —
+// their copy is long and the maths is language-independent — but the hub is
+// what carries the search demand and the internal links, so it travels.
+const { lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
+
+// guide names come from the translated dataset rather than new i18n keys
+const guideNav = (slug) => guidesFor(lang).find((g) => g.slug === slug)?.nav ?? slug;
+const LEARN = ['how-to-read-betting-odds', 'bookmaker-margin-explained', 'value-betting-explained', 'bankroll-management-guide'];
+
+const TOOLS = [
+  { href: '/tools/acca-builder', icon: '🤖', name: 'tl.nmAcca', p: 'tl.dsAcca' },
+  { href: '/tools/odds-converter', icon: '🔁', name: 'tl.nmConv', p: 'tl.dsConv' },
+  { href: '/tools/accumulator-calculator', icon: '🎯', name: 'tl.nmAccaCalc', p: 'tl.dsAccaCalc' },
+  { href: '/tools/margin-calculator', icon: '📊', name: 'tl.nmMargin', p: 'tl.dsMargin' },
+  { href: '/tools/kelly-calculator', icon: '📐', name: 'tl.nmKelly', p: 'tl.dsKelly' },
+  { href: '/tools/hedging-calculator', icon: '🛡️', name: 'tl.nmHedge', p: 'tl.dsHedge' },
+  { href: '/tools/dutching-calculator', icon: '🪢', name: 'tl.nmDutch', p: 'tl.dsDutch' },
+  { href: '/dropping-odds', icon: '📉', name: 'tl.nmDrop', p: 'tl.dsDrop' },
+];
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Free betting calculators',
+  itemListElement: TOOLS.map((x, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: T(x.name),
+    url: `https://ai-betting-tips.com${x.href}/`,
+  })),
+};
+---
+<Base lang={lang} i18nPath="/tools" title={T('tl.title')} description={T('tl.desc')}
+      schema={schema} updated={`${contentUpdated}T00:00:00Z`} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href={L('/')}>{T('crumb.home')}</a><span>/</span>{T('common.tools')}</div>
+      <h1>{T('tl.h1a')} <em>{T('tl.h1b')}</em></h1>
+      <p class="lead">{T('tl.lead')}</p>
+      <p class="upd-line">{T('common.updated')} {fmtDate(contentUpdated, lang)} · <a href="/editorial-policy">{T('common.howWeWrite')}</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{T('tl.allCalcs')}</h2></div>
+          <div class="bt-grid">
+            {TOOLS.map((x) => (
+              <a href={x.href} class="bt-tile">
+                <div class="ic">{x.icon}</div>
+                <div><h4>{T(x.name)}</h4><p>{T(x.p)}</p></div>
+                <span class="arr">→</span>
+              </a>
+            ))}
+          </div>
+          {lang !== 'en' && <p class="res-note">{T('tl.enNote')}</p>}
+        </section>
+
+        <section class="seo">
+          <h2>{T('tl.seoH')}</h2>
+          <p>{T('tl.seoP1')}</p>
+          <p>{T('tl.seoP2')}</p>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>🔍 {T('tl.pricesWorth')}</h4>
+          <p>{T('tl.pricesP')}</p>
+          <a href={L('/screener')} class="btn btn-mint btn-block">{T('tt.openScr')}</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">📗</span> {T('tl.learnMaths')}</div>
+          {LEARN.map((slug) => (
+            <a class="tm" href={L(`/guides/${slug}`)}><span class="dot"></span>{guideNav(slug)}</a>
+          ))}
+          <a class="tm" href={L('/glossary')}><span class="dot"></span>{T('gd.lnkGlossary')}</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>
