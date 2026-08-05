@@ -82,6 +82,9 @@ jobs:
         run: |
           npm ci
           npm run build
+          # themed sitemaps: Search Console reports coverage per submitted
+          # sitemap, so splitting by page type shows WHICH sections stall
+          python pipeline/split_sitemap.py
 
       - name: Deploy to Cloudflare Pages
         env:
