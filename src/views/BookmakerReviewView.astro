@@ -129,7 +129,7 @@ const schema = {
         <!-- Pros / cons -->
         <section>
           <div class="sec-head"><h2 class="sec-title">{T('rv.prosPre')} <b>{T('rv.prosBold')}</b></h2></div>
-          <div class="feat-grid" style="grid-template-columns:1fr 1fr">
+          <div class="feat-grid two">
             <div class="feat">
               <div class="fi">✅</div><h4>{T('rv.liked')}</h4>
               <ul style="margin:0;padding-left:18px;color:var(--text-dim);font-size:13.5px">
@@ -158,7 +158,7 @@ const schema = {
         <section>
           <div class="sec-head"><h2 class="sec-title">{T('rv.keyPre')} <b>{T('rv.keyBold')}</b></h2></div>
           <div class="odds-table"><div class="scr-scroll">
-            <table class="otbl">
+            <table class="otbl kv">
               <tbody>
                 <tr><td class="o-match" style="font-weight:700">{T('rv.licences')}</td><td class="o-cell"><span class="cb">{bk.licences.join(', ')}</span></td></tr>
                 <tr><td class="o-match" style="font-weight:700">{T('rv.payoutSpeed')}</td><td class="o-cell hot"><span class="cb">{bk.payout_time}</span></td></tr>

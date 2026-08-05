@@ -1113,3 +1113,45 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
   .scr-table td:nth-child(5){grid-column:3;grid-row:2;justify-self:end}
   .scr-table td:nth-child(n+6){display:none}
 }
+
+/* ---- mobile layout fixes (from real device screenshots) ---- */
+/* two-column feature grids (pros/cons) must collapse like every other grid;
+   they used to carry an inline grid-template-columns that beat the media query */
+.feat-grid.two{grid-template-columns:1fr 1fr}
+
+/* label/value tables (key facts) stack on phones. As a scrolling table the
+   values sat off-screen to the right and simply looked missing. */
+@media (max-width:560px){
+  .feat-grid.two{grid-template-columns:1fr}
+  /* the 820px rule gives .otbl a 680px min-width for horizontal scrolling;
+     a stacked label/value list must opt out or it stays off-screen */
+  .otbl.kv{min-width:0}
+  .otbl.kv,.otbl.kv tbody,.otbl.kv tr,.otbl.kv td{display:block;width:100%}
+  .otbl.kv tr{padding:11px 13px;border-bottom:1px solid var(--border)}
+  .otbl.kv tr:last-child{border-bottom:0}
+  .otbl.kv tbody td{padding:0;border:0;text-align:left}
+  .otbl.kv td.o-match{font-size:11px;text-transform:uppercase;letter-spacing:.05em;
+    color:var(--text-mute);font-weight:700!important;margin-bottom:3px}
+  .otbl.kv td.o-cell{text-align:left}
+  .otbl.kv .cb{white-space:normal;line-height:1.45}
+
+  /* acca legs: pick and price share a row with the match instead of stacking
+     into a four-line block per leg */
+  .acca-leg{grid-template-columns:1fr auto;gap:4px 10px;padding:10px 13px}
+  .acca-m b{white-space:normal;font-size:13px;line-height:1.3}
+  .acca-m span{font-size:10.5px}
+  .acca-pick{grid-column:1;justify-self:start;font-size:10.5px;padding:3px 8px}
+  .acca-odds{grid-row:2;align-self:center}
+
+  /* screener rows: let long fixture names use a second line rather than
+     truncating "FC Porto v Alverca" to "FC Porto v Al..." */
+  .scr-table td:nth-child(2) .scr-match b{white-space:normal;overflow:visible;
+    text-overflow:clip;line-height:1.25;font-size:12.5px}
+  .scr-table tr{padding:8px 11px;gap:1px 9px}
+  .scr-table .scr-match{gap:7px}
+  .scr-table .scr-match .ic{font-size:13px}
+  .scr-table .scr-match .lg{font-size:10.5px;line-height:1.2}
+  .scr-table .score-badge{min-width:34px;padding:4px 6px;font-size:12.5px}
+  .scr-table td:nth-child(3){font-size:11.5px;line-height:1.25}
+  .scr-table td:nth-child(4),.scr-table td:nth-child(5){font-size:12.5px}
+}
