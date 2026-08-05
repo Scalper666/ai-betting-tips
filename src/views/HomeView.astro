@@ -380,6 +380,22 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
           </section>
         )}
 
+        <!-- DATA SECTIONS: strong homepage links into the hubs that
+             previously existed only in the footer -->
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">{T('home.hubs.pre')} <b>{T('home.hubs.bold')}</b></h2>
+          </div>
+          <div class="bt-grid">
+            <a href="/table" class="bt-tile"><div class="ic">📊</div><div><h4>{T('ft.tables')}</h4><p>{T('home.hubs.tables')}</p></div><span class="arr">→</span></a>
+            <a href="/results" class="bt-tile"><div class="ic">📋</div><div><h4>{T('ft.leagueResults')}</h4><p>{T('home.hubs.results')}</p></div><span class="arr">→</span></a>
+            <a href={L('/h2h')} class="bt-tile"><div class="ic">⚔️</div><div><h4>{T('home.hubs.h2hName')}</h4><p>{T('home.hubs.h2h')}</p></div><span class="arr">→</span></a>
+            <a href={L('/teams')} class="bt-tile"><div class="ic">👥</div><div><h4>{T('ft.teamsAZ')}</h4><p>{T('home.hubs.teams')}</p></div><span class="arr">→</span></a>
+            <a href="/seasons" class="bt-tile"><div class="ic">📅</div><div><h4>{T('ft.seasons')}</h4><p>{T('home.hubs.seasons')}</p></div><span class="arr">→</span></a>
+            <a href="/tools/acca-builder" class="bt-tile"><div class="ic">🤖</div><div><h4>{T('ft.accaBuilder')}</h4><p>{T('home.hubs.acca')}</p></div><span class="arr">→</span></a>
+          </div>
+        </section>
+
         <!-- BET TYPES -->
         <section>
           <div class="sec-head">
