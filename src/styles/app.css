@@ -184,7 +184,10 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
   font-size:13px;color:var(--text-dim);font-weight:600}
 .dropdown a:hover{background:var(--surface-3);color:var(--text)}
 .dropdown a .ic{width:22px;text-align:center}
-.hdr-actions{display:flex;align-items:center;gap:9px}
+/* Pushed right on its own: .nav carries flex:1 on desktop, but it is hidden
+   below 1024px, so without this the controls and burger bunch up against the
+   logo and leave the right side of the bar empty. */
+.hdr-actions{display:flex;align-items:center;gap:9px;margin-left:auto}
 .icon-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--border);
   background:var(--surface);display:grid;place-items:center;color:var(--text-dim);transition:.18s}
 .icon-btn:hover{color:var(--mint);border-color:var(--mint)}
