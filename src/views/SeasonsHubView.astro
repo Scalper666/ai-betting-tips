@@ -1,0 +1,92 @@
+---
+import Base from '../layouts/Base.astro';
+import ToolsBox from '../components/ToolsBox.astro';
+import predictions from '../data/predictions.json';
+import historyData from '../data/history.json';
+import { seasonsFor } from '../lib/seasons.js';
+import { BUILD_ISO, fmtDate } from '../lib/utils.js';
+import { t, lhref } from '../i18n/index.js';
+
+const { lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
+const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
+
+const seasons = seasonsFor(lang);
+const counts = {};
+for (const x of predictions.tips ?? []) counts[x.sport_key] = (counts[x.sport_key] ?? 0) + 1;
+const settledAll = Object.values(historyData.tips ?? {}).filter((x) => ['won', 'lost'].includes(x.status)).length;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Football season predictions',
+  itemListElement: seasons.map((s, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: `${s.league} ${s.season}`,
+    url: `https://ai-betting-tips.com${L(`/seasons/${s.slug}`)}/`,
+  })),
+};
+---
+<Base lang={lang} i18nPath="/seasons" title={T('sn.hubTitle')} description={T('sn.hubDesc')}
+      schema={schema} updated={BUILD_ISO} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href={L('/')}>{T('crumb.home')}</a><span>/</span>{T('sn.crumb')}</div>
+      <h1>{T('sn.hubH1a')} <em>{T('sn.hubH1b')}</em></h1>
+      <p class="lead">{T('sn.hubLead')}</p>
+      <p class="upd-line">{T('sn.refreshed')} {fmtDate(BUILD_ISO, lang)} · <a href="/editorial-policy">{T('common.howWeWrite')}</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">{T('sn.hubSec')}</h2>
+            <a href={L('/predictions')} class="more-link">{T('nav.allTips')} →</a>
+          </div>
+          <div class="bt-grid">
+            {seasons.map((s) => (
+              <a href={L(`/seasons/${s.slug}`)} class="bt-tile">
+                <div class="ic">📅</div>
+                <div>
+                  <h4>{s.league} {s.season}</h4>
+                  <p>{s.window} · {(counts[s.sport_key] ?? 0) > 0
+                    ? F('sn.pricedNow', { n: counts[s.sport_key] })
+                    : T('sn.hubCardOpen')}</p>
+                </div>
+                <span class="arr">→</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section class="seo">
+          <h2>{T('sn.hubSeoH')}</h2>
+          <p>{T('sn.hubSeoP1')}</p>
+          <p>{F('sn.hubSeoP2', { n: settledAll })}</p>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">📅</span> {T('sn.allSeasons')}</div>
+          {seasons.map((s) => (
+            <a class="tm" href={L(`/seasons/${s.slug}`)}><span class="dot"></span>{s.league} {s.season}</a>
+          ))}
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">⚡</span> {T('tb.livePages')}</div>
+          <a class="tm" href={L('/table')}><span class="dot"></span>{T('ft.tables')}</a>
+          <a class="tm" href={L('/results')}><span class="dot"></span>{T('ft.leagueResults')}</a>
+          <a class="tm" href={L('/predictions/today')}><span class="dot"></span>{T('gd.lnkPreds')}</a>
+          <a class="tm" href={L('/tipsters')}><span class="dot"></span>{T('nav.performance')}</a>
+        </div>
+        <ToolsBox lang={lang} />
+      </aside>
+    </div>
+  </div>
+</Base>

@@ -75,6 +75,9 @@ S_SECTIONS = {"type": "array", "items": _obj({"h": S, "ps": S_ARR}, ["h", "ps"])
 GUIDE_FIELDS = {"title": S, "nav": S, "desc": S, "sections": S_SECTIONS,
                 "example": S, "takeaways": S_ARR, "faq": S_FAQ}
 TERM_FIELDS = {"term": S, "short": S, "definition": S_ARR, "example": S}
+# season hubs: window is a date range shown as-is, slug/sport_key are keys
+SEASON_FIELDS = {"window": S, "intro": S_ARR, "outlook": S_ARR, "faq": S_FAQ,
+                 "pre_season_note": S}
 
 
 def src_hash(entry: dict, fields: dict) -> str:
@@ -174,7 +177,7 @@ def run_collection(client, name: str, entries: list[dict], fields: dict,
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--only", choices=["guides", "glossary"], default=None)
+    ap.add_argument("--only", choices=["guides", "glossary", "seasons"], default=None)
     ap.add_argument("--langs", default="es,pt,de,fr")
     args = ap.parse_args()
     langs = [l.strip() for l in args.langs.split(",") if l.strip() in LANGS]
@@ -198,6 +201,11 @@ def main() -> None:
         # translate the four core fields and copy `see` as-is (label stays EN — the
         # linked tool pages are EN anyway).
         u = run_collection(client, "glossary", gl["terms"], TERM_FIELDS, "slug", langs, None)
+        for k in usage: usage[k] += u[k]
+
+    if args.only in (None, "seasons"):
+        seasons = json.loads((SRC / "seasons.json").read_text(encoding="utf-8"))["seasons"]
+        u = run_collection(client, "seasons", seasons, SEASON_FIELDS, "slug", langs, None)
         for k in usage: usage[k] += u[k]
 
     cost = usage["in"] / 1e6 * 1.0 + usage["out"] / 1e6 * 5.0

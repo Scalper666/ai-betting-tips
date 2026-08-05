@@ -1,0 +1,208 @@
+---
+import Base from '../layouts/Base.astro';
+import PredCard from '../components/PredCard.astro';
+import ToolsBox from '../components/ToolsBox.astro';
+import predictions from '../data/predictions.json';
+import historyData from '../data/history.json';
+import { leagueTable } from '../lib/form.js';
+import { seasonsFor, seasonBySlug } from '../lib/seasons.js';
+import { slugify, faqSchema, signed, BUILD_ISO, fmtDate } from '../lib/utils.js';
+import { hasLeaguePage, hasTablePage, hasH2hHub, hasResultsPage } from '../lib/links.js';
+import { t, lhref } from '../i18n/index.js';
+
+// One evergreen page per league season. Fixtures, standings and our settled
+// record all come from the live pipeline, so the page stays current every
+// rebuild without anyone editing it.
+const { slug, lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
+const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
+
+const s = seasonBySlug(lang, slug);
+
+// Season start: European seasons ("2026/27") open in July; calendar-year
+// seasons ("2026") in January. Scopes our settled record to this season.
+const startYear = Number(String(s.season).slice(0, 4));
+const seasonStart = String(s.season).includes('/') ? `${startYear}-07-01` : `${startYear}-01-01`;
+
+const fixtures = (predictions.tips ?? [])
+  .filter((t2) => t2.sport_key === s.sport_key)
+  .sort((a, b) => String(a.kickoff).localeCompare(String(b.kickoff)));
+const officialCount = fixtures.filter((t2) => t2.recommendation?.official).length;
+
+const table = leagueTable(s.sport_key);
+
+const settled = Object.values(historyData.tips ?? {})
+  .filter((t2) => t2.sport_key === s.sport_key
+    && ['won', 'lost', 'void'].includes(t2.status)
+    && String(t2.kickoff ?? '') >= seasonStart);
+const rec = {
+  n: settled.length,
+  won: settled.filter((t2) => t2.status === 'won').length,
+  lost: settled.filter((t2) => t2.status === 'lost').length,
+  void: settled.filter((t2) => t2.status === 'void').length,
+  profit: Math.round(settled.reduce((a, t2) => a + (t2.profit ?? 0), 0) * 100) / 100,
+};
+const decided = rec.won + rec.lost;
+const roi = decided > 0 ? Math.round((rec.profit / decided) * 1000) / 10 : null;
+const recent = [...settled]
+  .sort((a, b) => String(b.settled_at ?? '').localeCompare(String(a.settled_at ?? '')))
+  .slice(0, 6);
+
+const otherSeasons = seasonsFor(lang).filter((x) => x.slug !== s.slug);
+
+const title = F('sn.title', { league: s.league, season: s.season });
+const description = F('sn.desc', { league: s.league, season: s.season });
+const schema = { '@context': 'https://schema.org', ...faqSchema(s.faq) };
+---
+<Base lang={lang} i18nPath={`/seasons/${s.slug}`} title={title} description={description}
+      schema={schema} updated={BUILD_ISO} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href={L('/')}>{T('crumb.home')}</a><span>/</span>
+        <a href={L('/seasons')}>{T('sn.crumb')}</a><span>/</span>{s.league} {s.season}
+      </div>
+      <h1>{s.league} {s.season} <em>{T('nav.predictions').toLowerCase()}</em></h1>
+      <p class="lead">{F('sn.lead', { window: s.window })}</p>
+      <div class="chips" style="margin:12px 0 0">
+        <span class="chip" style="cursor:default">📅 {s.window}</span>
+        {fixtures.length > 0
+          ? <span class="chip" style="cursor:default">⚽ {F('sn.pricedNow', { n: fixtures.length })}</span>
+          : <span class="chip" style="cursor:default">⏳ {T('sn.notOpen')}</span>}
+        {officialCount > 0 && <span class="chip" style="cursor:default">🎯 {F('sn.officialLive', { n: officialCount })}</span>}
+      </div>
+      <p class="upd-line">{T('sn.refreshed')} {fmtDate(BUILD_ISO, lang)} · {T('sn.rebuilt')} · <a href="/editorial-policy">{T('common.howWeWrite')}</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+
+        <section class="seo" style="margin-top:0">
+          {s.intro.map((p) => <p>{p}</p>)}
+        </section>
+
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">{F('sn.upcoming', { league: s.league })}</h2>
+            {hasLeaguePage(s.league) && <a href={L(`/league/${slugify(s.league)}`)} class="more-link">{T('sn.leagueHub')} →</a>}
+          </div>
+          {fixtures.length > 0 ? (
+            <div class="pred-grid">
+              {fixtures.slice(0, 8).map((tip) => <PredCard tip={tip} lang={lang} />)}
+            </div>
+          ) : (
+            <div class="box"><div class="box-pad dim">{s.pre_season_note ?? F('sn.noFixtures', { league: s.league })}</div></div>
+          )}
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{T('sn.expect')}</h2></div>
+          <div class="rsn-grid">
+            {s.outlook.map((line) => (
+              <div class="rsn"><p style="margin:0">{line}</p></div>
+            ))}
+          </div>
+        </section>
+
+        {table && (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">{F('sn.tableH', { league: s.league, season: s.season })}</h2>
+              <span class="more-link" style="cursor:default">{T('sn.liveStandings')}</span>
+            </div>
+            <div class="odds-table"><div class="scr-scroll">
+              <table class="otbl">
+                <thead><tr><th>#</th><th style="text-align:left">{T('tb.thTeam')}</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead>
+                <tbody>
+                  {table.rows.map((r) => (
+                    <tr>
+                      <td class="o-cell"><span>{r.pos}</span></td>
+                      <td class="o-match" style="font-weight:700">{r.team}</td>
+                      <td class="o-cell"><span>{r.p}</span></td>
+                      <td class="o-cell"><span>{r.w}</span></td>
+                      <td class="o-cell"><span>{r.d}</span></td>
+                      <td class="o-cell"><span>{r.l}</span></td>
+                      <td class="o-cell"><span>{r.gd > 0 ? `+${r.gd}` : r.gd}</span></td>
+                      <td class="o-cell hot"><span class="cb">{r.pts}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div></div>
+          </section>
+        )}
+
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">{F('sn.recordH', { season: s.season })}</h2>
+            <a href={L('/tipsters')} class="more-link">{T('sn.fullTrack')} →</a>
+          </div>
+          {rec.n > 0 ? (
+            <>
+              <div class="res-sum">
+                <div class="res-chip"><b>{rec.n}</b><span>{T('home.res.settled')}</span></div>
+                <div class="res-chip win"><b>{rec.won}</b><span>{T('home.res.won')}</span></div>
+                <div class="res-chip lose"><b>{rec.lost}</b><span>{T('home.res.lost')}</span></div>
+                <div class="res-chip"><b>{rec.void}</b><span>{T('home.res.void')}</span></div>
+                <div class={`res-chip ${rec.profit >= 0 ? 'win' : 'lose'}`}><b>{signed(rec.profit)}u</b><span>{T('home.res.profit')}</span></div>
+                {roi !== null && <div class={`res-chip ${roi >= 0 ? 'win' : 'lose'}`}><b>{signed(roi)}%</b><span>ROI</span></div>}
+              </div>
+              {recent.length > 0 && (
+                <div class="res-list">
+                  {recent.map((t2) => (
+                    <div class="res-row">
+                      <span class={`res-mark ${t2.status === 'won' ? 'w' : t2.status === 'lost' ? 'l' : 'v'}`}>{t2.status === 'won' ? 'W' : t2.status === 'lost' ? 'L' : 'V'}</span>
+                      <div class="res-match"><b>{t2.home} v {t2.away}</b><span>{t2.market}</span></div>
+                      <span class="res-odds">{Number(t2.odds ?? 0).toFixed(2)}</span>
+                      <span class={`res-profit ${(t2.profit ?? 0) > 0 ? 'pos' : (t2.profit ?? 0) < 0 ? 'neg' : 'zero'}`}>{signed(Math.round((t2.profit ?? 0) * 100) / 100)}u</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+              <p class="res-note">{T('sn.recordNote')}{decided < 20 ? ` ${T('sn.earlyNote')}` : ''}</p>
+            </>
+          ) : (
+            <div class="box"><div class="box-pad dim">{F('sn.noRecord', { season: s.season })}</div></div>
+          )}
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{s.league} {s.season} <b>FAQ</b></h2></div>
+          <div class="prose" style="padding:0;max-width:none">
+            {s.faq.map((f) => (<><h3>{f.q}</h3><p>{f.a}</p></>))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">⚽</span> {F('sn.leaguePages', { league: s.league })}</div>
+          {hasLeaguePage(s.league) && <a class="tm" href={L(`/league/${slugify(s.league)}`)}><span class="dot"></span>{T('sn.leagueHub')}</a>}
+          {hasTablePage(s.league) && <a class="tm" href={L(`/table/${slugify(s.league)}`)}><span class="dot"></span>{T('tb.crumb')}</a>}
+          {hasResultsPage(s.league) && <a class="tm" href={L(`/results/${slugify(s.league)}`)}><span class="dot"></span>{T('rs.crumb')}</a>}
+          {hasH2hHub(s.league) && <a class="tm" href={`/h2h/league/${slugify(s.league)}`}><span class="dot"></span>H2H</a>}
+          <a class="tm" href={L('/predictions/today')}><span class="dot"></span>{T('gd.lnkPreds')}</a>
+        </div>
+
+        <div class="box">
+          <div class="box-h"><span class="hi">📅</span> {T('sn.otherSeasons')}</div>
+          {otherSeasons.map((x) => (
+            <a class="tm" href={L(`/seasons/${x.slug}`)}><span class="dot"></span>{x.league} {x.season}</a>
+          ))}
+        </div>
+
+        <div class="box">
+          <div class="box-h"><span class="hi">📗</span> {T('sn.learnMarkets')}</div>
+          <a class="tm" href={L('/guides')}><span class="dot"></span>{T('ft.guides')}</a>
+          <a class="tm" href={L('/guides/how-ai-football-predictions-work')}><span class="dot"></span>{T('ft.ourModel')}</a>
+          <a class="tm" href={L('/glossary')}><span class="dot"></span>{T('gd.lnkGlossary')}</a>
+        </div>
+
+        <ToolsBox lang={lang} />
+      </aside>
+    </div>
+  </div>
+</Base>

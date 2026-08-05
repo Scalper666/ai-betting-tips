@@ -1,0 +1,12 @@
+---
+import SeasonView from '../../../views/SeasonView.astro';
+import { seasonPaths } from '../../../lib/dataPages.js';
+import { ALT_LANGS } from '../../../i18n/index.js';
+
+export function getStaticPaths() {
+  return ALT_LANGS.flatMap((lang) =>
+    seasonPaths().map(({ slug }) => ({ params: { lang, slug } })));
+}
+const { lang, slug } = Astro.params;
+---
+<SeasonView slug={slug} lang={lang} />
