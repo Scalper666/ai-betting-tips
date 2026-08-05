@@ -1,0 +1,13 @@
+---
+import TableView from '../../../views/TableView.astro';
+import { tablePaths } from '../../../lib/dataPages.js';
+import { ALT_LANGS } from '../../../i18n/index.js';
+
+export function getStaticPaths() {
+  return ALT_LANGS.flatMap((lang) =>
+    tablePaths().map(({ slug, sk }) => ({ params: { lang, slug }, props: { sk } })));
+}
+const { lang } = Astro.params;
+const { sk } = Astro.props;
+---
+<TableView sk={sk} lang={lang} />

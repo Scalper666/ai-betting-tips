@@ -87,6 +87,9 @@ def main() -> int:
     m = re.search(r"<lastmod>([^<]+)</lastmod>", (DIST / "sitemap-index.xml").read_text(encoding="utf-8"))
     if m:
         lastmod = f"<lastmod>{m.group(1)}</lastmod>"
+    # The index lists ONLY the themed files. sitemap-0.xml stays on disk so the
+    # originally submitted URL keeps resolving, but listing it here too would
+    # double-count every URL in Search Console (5,220 reported for 4,830 pages).
     parts = "".join(
         f"<sitemap><loc>{SITE}/sitemap-{name}.xml</loc>{lastmod}</sitemap>" for name, _ in written
     )
@@ -94,7 +97,6 @@ def main() -> int:
         '<?xml version="1.0" encoding="UTF-8"?>'
         '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
         + parts +
-        f"<sitemap><loc>{SITE}/sitemap-0.xml</loc>{lastmod}</sitemap>"
         "</sitemapindex>",
         encoding="utf-8",
     )

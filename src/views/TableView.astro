@@ -1,0 +1,183 @@
+---
+import Base from '../layouts/Base.astro';
+import PredCard from '../components/PredCard.astro';
+import ToolsBox from '../components/ToolsBox.astro';
+import fdData from '../data/football-data.json';
+import predictions from '../data/predictions.json';
+import seasonsData from '../data/seasons.json';
+import { slugify, faqSchema, BUILD_ISO, fmtDate } from '../lib/utils.js';
+import { leagueName } from '../lib/leagues.js';
+import { hasTeamPage, hasH2hHub, hasTeamsHub, hasLeaguePage, hasResultsPage, hasScorersPage } from '../lib/links.js';
+import { t, lhref } from '../i18n/index.js';
+
+// League standings, localized. Data comes from the football-data snapshot the
+// pipeline refreshes twice a day; between seasons it holds the completed
+// season's final table, and the page says so rather than passing it off live.
+const { sk, lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
+const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
+
+const lg = (fdData.leagues ?? {})[sk];
+const name = leagueName(sk, lg?.name ?? '');
+const rows = lg?.standings ?? [];
+
+// Live table or last season's final one? Two signals, because the round-robin
+// test alone misreads formats like the 36-club UEFA league phase.
+const maxPlayed = (rows.length - 1) * 2;
+const lastResult = (lg?.results ?? []).reduce((a, r) => (r.d > a ? r.d : a), '');
+const daysSince = lastResult
+  ? Math.floor((Date.now() - new Date(`${lastResult}T00:00:00Z`).getTime()) / 864e5)
+  : 999;
+const completed = rows.length > 0 && (rows.every((r) => (r.p ?? 0) >= maxPlayed) || daysSince > 21);
+const played = rows.reduce((a, r) => a + (r.p ?? 0), 0);
+const scorers = lg?.scorers ?? [];
+
+const upcoming = (predictions.tips ?? [])
+  .filter((x) => x.sport_key === sk)
+  .sort((a, b) => String(a.kickoff).localeCompare(String(b.kickoff)))
+  .slice(0, 4);
+
+const season = (seasonsData.seasons ?? []).find((s) => s.sport_key === sk) ?? null;
+const others = Object.entries(fdData.leagues ?? {})
+  .filter(([k, l]) => k !== sk && (l.standings ?? []).some((r) => (r.p ?? 0) > 0));
+
+const title = completed ? F('tb.titleFinal', { name }) : F('tb.titleLive', { name });
+const description = completed
+  ? F('tb.descFinal', { name, n: rows.length })
+  : F('tb.descLive', { name, n: rows.length });
+
+const faq = [
+  { q: F('tb.faqQ1', { name }), a: T('tb.faqA1') },
+  { q: T('tb.faqQ2'), a: T('tb.faqA2') },
+  { q: T('tb.faqQ3'), a: T('tb.faqA3') },
+];
+const schema = { '@context': 'https://schema.org', ...faqSchema(faq) };
+---
+<Base lang={lang} i18nPath={`/table/${slugify(name)}`} title={title} description={description}
+      schema={schema} updated={BUILD_ISO} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href={L('/')}>{T('crumb.home')}</a><span>/</span>
+        <a href={L('/table')}>{T('tb.crumb')}</a><span>/</span>{name}
+      </div>
+      <h1>{name} <em>{T('tb.crumb').toLowerCase()}</em></h1>
+      <p class="lead">
+        {completed
+          ? F('tb.leadFinal', { name, n: rows.length, p: played })
+          : F('tb.leadLive', { name, n: rows.length })}
+      </p>
+      <p class="upd-line">{T('tb.snapshot')} {fmtDate(BUILD_ISO, lang)} · <a href="/editorial-policy">{T('common.howWeWrite')}</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">{completed ? T('tb.secFinal') : T('tb.secLive')} <b>{F('tb.standings', { name })}</b></h2>
+            {hasLeaguePage(name) && <a href={L(`/league/${slugify(name)}`)} class="more-link">{T('tb.leagueTips')} →</a>}
+          </div>
+          <div class="odds-table"><div class="scr-scroll">
+            <table class="otbl">
+              <thead><tr><th>#</th><th style="text-align:left">{T('tb.thTeam')}</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead>
+              <tbody>
+                {rows.map((r) => (
+                  <tr>
+                    <td class="o-cell"><span>{r.pos}</span></td>
+                    <td class="o-match" style="font-weight:700">
+                      {hasTeamPage(r.team)
+                        ? <a href={`/team/${slugify(r.team)}`} style="color:inherit">{r.team}</a>
+                        : r.team}
+                    </td>
+                    <td class="o-cell"><span>{r.p}</span></td>
+                    <td class="o-cell"><span>{r.w}</span></td>
+                    <td class="o-cell"><span>{r.d}</span></td>
+                    <td class="o-cell"><span>{r.l}</span></td>
+                    <td class="o-cell"><span>{r.gd > 0 ? `+${r.gd}` : r.gd}</span></td>
+                    <td class="o-cell hot"><span class="cb">{r.pts}</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div></div>
+        </section>
+
+        {scorers.length > 0 && (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">{F('tb.topScorers', { name })}</h2>
+              {hasScorersPage(name) && <a href={`/top-scorers/${slugify(name)}`} class="more-link">{T('tb.fullList')} →</a>}
+            </div>
+            <div class="res-list">
+              {scorers.slice(0, 5).map((p, i) => (
+                <div class="res-row">
+                  <span class="res-mark v">{i + 1}</span>
+                  <div class="res-match"><b>{p.name}</b><span>{p.team}</span></div>
+                  <span class="res-odds">{p.played ?? '—'} {T('tb.apps')}</span>
+                  <span class="res-profit pos">{p.goals} {T('tb.goals')}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {upcoming.length > 0 && (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">{F('tb.nextFixtures', { name })}</h2>
+              {hasLeaguePage(name) && <a href={L(`/league/${slugify(name)}`)} class="more-link">{T('tb.allFixtures')} →</a>}
+            </div>
+            <div class="pred-grid">
+              {upcoming.map((tip) => <PredCard tip={tip} lang={lang} />)}
+            </div>
+          </section>
+        )}
+
+        <section class="seo">
+          <h2>{F('tb.seoH', { name })}</h2>
+          <p>{T('tb.seoP1')}</p>
+          <p>{T('tb.seoP2')}</p>
+          <p>{T('tb.seoP3')}</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{name} <b>FAQ</b></h2></div>
+          <div class="prose" style="padding:0;max-width:none">
+            {faq.map((f) => (<><h3>{f.q}</h3><p>{f.a}</p></>))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        {season && (
+          <div class="promo">
+            <h4>📅 {name} {season.season}</h4>
+            <p>{season.window}</p>
+            <a href={L(`/seasons/${season.slug}`)} class="btn btn-mint btn-block">{T('lg.seasonHub')}</a>
+          </div>
+        )}
+        <div class="box">
+          <div class="box-h"><span class="hi">⚽</span> {name}</div>
+          {hasLeaguePage(name) && <a class="tm" href={L(`/league/${slugify(name)}`)}><span class="dot"></span>{T('tb.leagueTips')}</a>}
+          <a class="tm" href={L('/predictions/today')}><span class="dot"></span>{T('gd.lnkPreds')}</a>
+          <a class="tm" href={L('/screener')}><span class="dot"></span>{T('gd.lnkScreener')}</a>
+          {hasResultsPage(name) && <a class="tm" href={L(`/results/${slugify(name)}`)}><span class="dot"></span>{T('ft.leagueResults')}</a>}
+          {hasH2hHub(name) && <a class="tm" href={`/h2h/league/${slugify(name)}`}><span class="dot"></span>H2H</a>}
+          {hasTeamsHub(name) && <a class="tm" href={`/teams/${slugify(name)}`}><span class="dot"></span>{T('ft.teamsAZ')}</a>}
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">📊</span> {T('tb.otherTables')}</div>
+          {others.map(([k, l]) => (
+            <a class="tm" href={L(`/table/${slugify(leagueName(k, l.name))}`)}>
+              <span class="dot"></span>{leagueName(k, l.name)}
+            </a>
+          ))}
+        </div>
+        <ToolsBox lang={lang} />
+      </aside>
+    </div>
+  </div>
+</Base>
