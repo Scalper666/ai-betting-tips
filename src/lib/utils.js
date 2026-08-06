@@ -9,9 +9,22 @@ export const fmtDate = (iso, lang = 'en') => {
   return isNaN(d) ? '' : d.toLocaleDateString(lang, { day: 'numeric', month: 'short', year: 'numeric' });
 };
 
+// Letters NFD cannot decompose: their accent is baked into the codepoint
+// rather than carried as a combining mark, so they need spelling out.
+const LIGATURES = { ß: 'ss', ø: 'o', ł: 'l', đ: 'd', þ: 'th', æ: 'ae', œ: 'oe', ð: 'd', ı: 'i' };
+
+// Accents are transliterated, not dropped. Stripping them turned "Atlético"
+// into "atl-tico" — a URL missing the very word people search for. NFD splits
+// é into e + a combining mark, which the mark filter then removes, leaving "e".
+// h2h.js and form.js already normalize this way; this keeps slugs consistent
+// with them, and any change here must be mirrored in
+// pipeline/generate_content.py, which keys generated copy by the same slug.
 export function slugify(s) {
   return String(s ?? '')
     .toLowerCase()
+    .replace(/[ßøłđþæœðı]/g, (c) => LIGATURES[c])
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
 }

@@ -30,6 +30,7 @@ import os
 import re
 import ssl
 import sys
+import unicodedata
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
@@ -67,9 +68,20 @@ BET_TYPES = [
 ]
 
 
+_LIGATURES = {"ß": "ss", "ø": "o", "ł": "l", "đ": "d", "þ": "th",
+              "æ": "ae", "œ": "oe", "ð": "d", "ı": "i"}
+
+
 def slugify(s: str) -> str:
-    """Mirror of src/lib/utils.js slugify — keys must match Astro page slugs."""
-    return re.sub(r"^-+|-+$", "", re.sub(r"[^a-z0-9]+", "-", str(s or "").lower()))
+    """Mirror of src/lib/utils.js slugify — keys must match Astro page slugs.
+
+    Accents are transliterated rather than dropped, so "Atlético" keys as
+    atletico and not atl-tico. Change both copies together or generated copy
+    stops matching its page.
+    """
+    s = "".join(_LIGATURES.get(c, c) for c in str(s or "").lower())
+    s = "".join(c for c in unicodedata.normalize("NFD", s) if not unicodedata.combining(c))
+    return re.sub(r"^-+|-+$", "", re.sub(r"[^a-z0-9]+", "-", s))
 
 
 # ---------------------------------------------------------------- schemas
