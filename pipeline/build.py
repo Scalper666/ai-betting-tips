@@ -185,8 +185,12 @@ def main():
     # and snapshot prices so the screener can show real line movement.
     try:
         new, total = history.add_from_predictions(result)
+        # after archiving, drop bets the feed stranded by re-listing a fixture
+        # under a new id — they can never settle and would pad the record
+        retired = history.retire_superseded(result)
         series = history.record_odds(result)
-        print(f"  Archived: {new} new, {total} total in history.json · {series} odds series")
+        print(f"  Archived: {new} new, {total} total in history.json · {series} odds series"
+              + (f" · {retired} superseded voided" if retired else ""))
     except Exception as e:  # never let archiving break the build
         print(f"  ⚠ history archive failed: {e}", file=sys.stderr)
 

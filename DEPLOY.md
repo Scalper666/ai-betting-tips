@@ -3,6 +3,15 @@
 From working prototype to a live, auto-updating site. Steps marked 🧑 need you
 (accounts / keys); everything else is already wired in the code.
 
+> **Editing data by hand?** The pipeline writes `data/*.json`; the site reads
+> `src/data/*.json`. They are two files, bridged by `python pipeline/sync_astro.py`.
+> Edit the first without running the sync and the build silently uses stale data —
+> it will not error, pages just quietly lose their generated copy. Always:
+>
+> ```
+> python pipeline/sync_astro.py && npx astro build
+> ```
+
 ## 1. Real odds data 🧑 ~5 min
 
 1. Sign up at <https://the-odds-api.com> (free tier = 500 requests/month).

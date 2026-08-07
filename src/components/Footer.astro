@@ -1,4 +1,5 @@
 ---
+import Subscribe from './Subscribe.astro';
 import { homePath, t, lhref } from '../i18n/index.js';
 const { lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
@@ -12,6 +13,7 @@ const year = new Date().getFullYear();
         <a href={homePath(lang)} class="logo"><span class="mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" fill="#fff"/><path d="M12 8.1l3 2.2-1.15 3.5h-3.7L9 10.3z" fill="#0b0e11"/><g stroke="#0b0e11" stroke-width="1.5" stroke-linecap="round"><path d="M12 8.1V4.6M15 10.3l3.3-1.1M13.85 13.8l2.05 2.85M10.15 13.8L8.1 16.65M9 10.3L5.7 9.2"/></g><circle cx="12" cy="12" r="9.5" stroke="#0b0e11" stroke-width="1.6"/></svg></span><span class="name">AI <em>Betting</em> Tips</span></a>
         <p>{T('ft.about1')}</p>
         <p>{T('ft.about2')}</p>
+        <Subscribe lang={lang} source="footer" />
       </div>
       <div class="fcol"><h5>{T('nav.predictions')}</h5><a href={L('/screener')}>{T('nav.screener')}</a><a href={L('/predictions')}>{T('nav.allTips')}</a><a href={L('/predictions/today')}>{T('day.today.crumb')}</a><a href={L('/predictions/weekend')}>{T('day.weekend.crumb')}</a><a href="/seasons">{T('ft.seasons')}</a><a href="/table">{T('ft.tables')}</a><a href="/results">{T('ft.leagueResults')}</a><a href={L('/h2h')}>H2H</a><a href={L('/teams')}>{T('ft.teamsAZ')}</a><a href={L('/glossary')}>{T('ft.glossary')}</a><a href={L('/tips/accumulator')}>{T('ft.accas')}</a><a href={L('/tips/btts')}>{T('nav.bttsTips')}</a><a href={L('/tips/over-under')}>{T('ft.overUnder')}</a><a href={L('/tools')}>{T('common.tools')}</a><a href={L('/tools/odds-converter')}>{T('ft.oddsConverter')}</a><a href={L('/tools/accumulator-calculator')}>{T('ft.accaCalc')}</a><a href="/tools/acca-builder">{T('ft.accaBuilder')}</a><a href={L('/tools/margin-calculator')}>{T('ft.marginCalc')}</a><a href={L('/dropping-odds')}>{T('ft.droppingOdds')}</a></div>
       <div class="fcol"><h5>{T('nav.sites')}</h5><a href={L('/bookmakers')}>{T('ft.topBk')}</a><a href={L('/betting-apps')}>{T('nav.apps')}</a><a href={L('/casinos')}>{T('nav.casinos')}</a><a href={L('/bonuses')}>{T('nav.bonuses')}</a><a href={L('/countries/uk')}>{T('nav.byCountry')}</a></div>

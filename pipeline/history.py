@@ -107,6 +107,66 @@ def add_from_predictions(predictions: dict) -> tuple[int, int]:
     return new, len(tips)
 
 
+def retire_superseded(predictions: dict) -> int:
+    """Void bets left stranded when a fixture is re-listed under a new id.
+
+    Before a league confirms its calendar the odds feed emits provisional
+    kickoffs — whole rounds parked on one placeholder slot. We archive an
+    official pick against that listing; the league then confirms the real date,
+    the feed issues a NEW event_id, and add_from_predictions archives a second
+    bet on the same match. The first can never settle, because the id it points
+    at no longer exists in any feed, so it would sit pending forever and inflate
+    the published-tips count with a bet that was never resolvable.
+
+    Voiding is the honest state for it — the fixture we priced did not take
+    place as listed — and it keeps the row auditable instead of deleting it.
+
+    Deliberately narrow, so a genuine repeat fixture or a slow settlement is
+    never touched. All four must hold:
+      · the row is still pending
+      · its kickoff is in the future (a played match is settlement's problem)
+      · its event_id is absent from the current feed
+      · the same fixture IS in the feed under a different id
+
+    Matching is on the fixture, not the market: a re-listed match strands its
+    bet whichever market we picked, and the new listing often prices a
+    different one. The pair is ordered (home, away), so a return leg — same
+    clubs, venue swapped — never matches. Two meetings with the same home side
+    both unplayed inside the feed horizon would, but that is a cup replay
+    against a league game, and such a bet could not settle under its dead id
+    anyway.
+    """
+    h = load()
+    tips = h.setdefault("tips", {})
+    now = datetime.now(timezone.utc)
+
+    live_ids, live_fixtures = set(), set()
+    for t in predictions.get("tips", []):
+        live_ids.add(t.get("id"))
+        live_fixtures.add((t.get("home", ""), t.get("away", "")))
+
+    retired = 0
+    for row in tips.values():
+        if row.get("status") != "pending" or row.get("event_id") in live_ids:
+            continue
+        if (row.get("home", ""), row.get("away", "")) not in live_fixtures:
+            continue
+        try:
+            if datetime.fromisoformat(str(row.get("kickoff"))) <= now:
+                continue
+        except (TypeError, ValueError):
+            continue
+        row["status"] = "void"
+        row["profit"] = 0.0
+        row["settled_at"] = now.isoformat()
+        row["void_reason"] = "fixture re-listed by the feed under a new id"
+        retired += 1
+
+    if retired:
+        save(h)
+    return retired
+
+
 # ---------------------------------------------------------------- odds history
 # Snapshots of the price we quoted for each tip, so the screener can show a real
 # line-movement ("steam") signal instead of guessing from the edge.

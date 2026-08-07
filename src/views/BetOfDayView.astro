@@ -1,0 +1,157 @@
+---
+import Base from '../layouts/Base.astro';
+import ToolsBox from '../components/ToolsBox.astro';
+import { betOfTheDay, fairOdds } from '../lib/betOfDay.js';
+import { abbr, badgeColor, matchSlug, kickoffLabel, fmtDate, topScoreline, BUILD_ISO } from '../lib/utils.js';
+import { t, lhref, localizeMarket } from '../i18n/index.js';
+
+// One pick, argued in two numbers: what the model makes the outcome worth
+// against what a book will pay for it. Everything else on this page supports
+// that comparison or qualifies it.
+const { lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
+
+const sel = betOfTheDay();
+const tip = sel?.tip;
+const rec = tip?.recommendation ?? {};
+const model = tip?.model ?? {};
+
+const offered = Number(rec.price ?? 0);
+const fair = tip ? fairOdds(offered, rec.edge_pct ?? 0) : 0;
+// confidence is the blended model probability for this outcome, rounded — the
+// same number the edge is derived from, so the two never disagree on the page
+const modelPct = Number(rec.confidence ?? 0);
+const impliedPct = offered ? Math.round((100 / offered) * 10) / 10 : 0;
+const score = tip ? topScoreline(tip) : null;
+
+const title = tip
+  ? `Bet of the Day — ${tip.home} vs ${tip.away}, ${localizeMarket('en', rec.text)}`
+  : 'Bet of the Day — Our Highest-Rated Pick';
+const description = tip
+  ? `Today's highest-rated official pick: ${localizeMarket('en', rec.text)} in ${tip.home} vs ${tip.away} at ${offered.toFixed(2)}. Our model prices it at ${fair.toFixed(2)} — the reasoning, the numbers and the limits are all on the page.`
+  : 'Our single highest-rated pick of the day, with the price it was taken at and the model reasoning behind it. Empty on days when nothing clears our value threshold.';
+
+const schema = tip
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: title,
+      description,
+      datePublished: BUILD_ISO,
+      dateModified: BUILD_ISO,
+      author: { '@type': 'Organization', name: 'AI Betting Tips' },
+    }
+  : undefined;
+---
+<Base title={title} description={description} schema={schema} updated={BUILD_ISO} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href={L('/')}>Home</a><span>/</span>{T('botd.eyebrow')}
+      </div>
+      <h1>{T('botd.eyebrow')}</h1>
+      <p class="lead">{T('botd.lead')}</p>
+      <p class="upd-line">{fmtDate(BUILD_ISO, lang)} · <a href={L('/editorial-policy')}>how we work</a> · <a href={L('/model')}>the model</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        {tip ? (
+          <>
+            <section class="botd">
+              <div class="botd-top">
+                <span class="botd-lg">{tip.sport_icon ?? '🏆'} {tip.league}</span>
+                <span class="botd-ko">🕒 {kickoffLabel(tip.kickoff, lang)}</span>
+              </div>
+
+              <h2 class="botd-pick">{localizeMarket(lang, rec.text)}</h2>
+
+              <div class="botd-fx">
+                <span class="badge" style={`background:${badgeColor(tip.home)}`}>{abbr(tip.home)}</span>
+                <span class="botd-nm">{tip.home}</span>
+                <span class="botd-v">v</span>
+                <span class="botd-nm">{tip.away}</span>
+                <span class="badge" style={`background:${badgeColor(tip.away)}`}>{abbr(tip.away)}</span>
+              </div>
+
+              <div class="botd-prices">
+                <div class="pr">
+                  <span class="pr-lbl">{T('botd.fair')}</span>
+                  <span class="pr-v">{fair.toFixed(2)}</span>
+                </div>
+                <div class="pr-gap" aria-hidden="true"><b>+{Number(rec.edge_pct ?? 0).toFixed(1)}%</b></div>
+                <div class="pr pr-best">
+                  <span class="pr-lbl">{T('botd.offered')}</span>
+                  <span class="pr-v">{offered.toFixed(2)}</span>
+                  {rec.bookmaker && <span class="pr-bk">{rec.bookmaker}</span>}
+                </div>
+              </div>
+
+              <p class="botd-gapnote">
+                <b>{T('botd.gapLbl')}.</b>{' '}
+                {T('botd.gapNote').replace('{fair}', fair.toFixed(2)).replace('{offered}', offered.toFixed(2))}
+              </p>
+
+              <p class="botd-stamp">
+                {T('botd.stamp')}: {offered.toFixed(2)} · {fmtDate(BUILD_ISO, lang)}. {T('botd.moves')}
+              </p>
+            </section>
+
+            <section>
+              <div class="sec-head"><h2 class="sec-title">{T('botd.saw')}</h2></div>
+              <div class="botd-nums">
+                <div class="bn"><span class="bn-l">{T('botd.pModel')}</span><span class="bn-v">{modelPct}%</span></div>
+                <div class="bn"><span class="bn-l">{T('botd.pMarket')}</span><span class="bn-v">{impliedPct}%</span></div>
+                {model.xg_home != null && (
+                  <div class="bn"><span class="bn-l">xG</span><span class="bn-v">{Number(model.xg_home).toFixed(2)} – {Number(model.xg_away).toFixed(2)}</span></div>
+                )}
+                {score && (
+                  <div class="bn"><span class="bn-l">{T('botd.likely')}</span><span class="bn-v">{score}</span></div>
+                )}
+              </div>
+              <a href={L(`/predictions/${matchSlug(tip)}`)} class="btn btn-mint">{T('botd.full')} →</a>
+            </section>
+
+            <section class="seo">
+              <h2>{T('botd.limits')}</h2>
+              <p>{T('botd.limitsBody')}</p>
+            </section>
+
+            {sel.others.length > 0 && (
+              <section>
+                <div class="sec-head"><h2 class="sec-title">{T('botd.others')}</h2></div>
+                <div class="box">
+                  {sel.others.map((o) => (
+                    <a class="tm" href={L(`/predictions/${matchSlug(o)}`)}>
+                      <span class="dot"></span>{o.home} v {o.away} — {localizeMarket(lang, o.recommendation.text)}
+                      <span class="cnt">{Number(o.recommendation.price).toFixed(2)}</span>
+                    </a>
+                  ))}
+                </div>
+              </section>
+            )}
+          </>
+        ) : (
+          <section class="botd botd-empty">
+            <h2 class="botd-pick">{T('botd.noneH')}</h2>
+            <p class="botd-gapnote">{T('botd.noneP')}</p>
+            <a href={L('/predictions')} class="btn btn-mint">{t(lang, 'nav.predictions')} →</a>
+          </section>
+        )}
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">📌</span> {T('botd.eyebrow')}</div>
+          <a class="tm" href={L('/predictions')}><span class="dot"></span>{t(lang, 'nav.predictions')}</a>
+          <a class="tm" href={L('/screener')}><span class="dot"></span>{t(lang, 'nav.screener')}</a>
+          <a class="tm" href={L('/model')}><span class="dot"></span>{t(lang, 'nav.model')}</a>
+        </div>
+        <ToolsBox lang={lang} />
+      </aside>
+    </div>
+  </div>
+</Base>

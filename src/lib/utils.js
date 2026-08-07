@@ -31,6 +31,15 @@ export function slugify(s) {
 
 export const matchSlug = (tip) => slugify(`${tip.home}-vs-${tip.away}`);
 
+// The model's single most likely scoreline, en-dashed for display. Null when
+// the Poisson fit had too little league history to trust — roughly three
+// quarters of the feed, since we only hold results for ten competitions.
+// Callers must handle null rather than printing a placeholder score.
+export const topScoreline = (tip) => {
+  const s = tip?.model?.scorelines?.[0]?.score;
+  return s ? String(s).replace('-', '–') : null;
+};
+
 export function abbr(name) {
   const w = String(name ?? '').split(/[\s.]+/).filter(Boolean);
   if (w.length >= 2) return (w[0][0] + w[1][0] + (w[2] ? w[2][0] : '')).toUpperCase().slice(0, 3);

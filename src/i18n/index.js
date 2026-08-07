@@ -20,6 +20,7 @@ export const homePath = (lang) => (lang === 'en' ? '/' : `/${lang}/`);
 const I18N_PATHS = [
   /^\/$/,
   /^\/predictions$/,
+  /^\/bet-of-the-day$/,
   /^\/predictions\/(?!daily(\/|$))[^/]+$/,
   /^\/screener$/,
   /^\/bookmakers(\/[^/]+)?$/,
@@ -81,6 +82,7 @@ const D = {
   'nav.results': { en: 'Results', es: 'Resultados', pt: 'Resultados', de: 'Ergebnisse' },
   'nav.news': { en: 'News', es: 'Noticias', pt: 'Notícias', de: 'News' },
   'nav.screener': { en: 'AI Screener', es: 'Screener IA', pt: 'Screener IA', de: 'KI-Screener' },
+  'nav.model': { en: 'Our Model', es: 'Nuestro modelo', pt: 'Nosso modelo', de: 'Unser Modell' },
   'nav.allTips': { en: 'All Football Tips', es: 'Todos los pronósticos', pt: 'Todos os palpites', de: 'Alle Fußball-Tipps' },
   'nav.accaTips': { en: 'Accumulator Tips', es: 'Combinadas', pt: 'Múltiplas', de: 'Kombiwetten' },
   'nav.bttsTips': { en: 'BTTS Tips', es: 'Ambos marcan', pt: 'Ambas marcam', de: 'Beide treffen' },
@@ -142,7 +144,94 @@ const D = {
   'card.odds': { en: 'Odds', es: 'Cuota', pt: 'Odd', de: 'Quote' },
   'card.confidence': { en: 'Confidence', es: 'Confianza', pt: 'Confiança', de: 'Vertrauen' },
   'card.model': { en: 'AI Betting Tips model', es: 'Modelo de AI Betting Tips', pt: 'Modelo do AI Betting Tips', de: 'AI-Betting-Tips-Modell' },
+  // Eyebrow over the predicted scoreline on a card. Has to be short enough to
+  // sit between two club badges, and has to make clear the number is a
+  // forecast rather than a live score.
+  'card.modelScore': { en: 'Model', es: 'Modelo', pt: 'Modelo', de: 'Modell' },
   'card.analysis': { en: 'Analysis →', es: 'Análisis →', pt: 'Análise →', de: 'Analyse →' },
+
+  // ── Bet of the day. The page argues its case with two prices side by side —
+  // what the model makes the outcome worth against what a book will pay — so
+  // the labels have to keep those two straight without a legend.
+  // shown in place of the final score on a bet voided because the feed
+  // re-listed the fixture — a bare "V" with no reason reads as a hidden loss
+  'mp.voidRelisted': {
+    en: 'Void — fixture rescheduled and re-listed',
+    es: 'Anulada — partido reprogramado y vuelto a listar',
+    pt: 'Anulada — partida remarcada e relistada',
+    de: 'Annulliert — Spiel verlegt und neu angesetzt',
+  },
+
+  // ── Newsletter. The pitch is the honest one: most days the model publishes
+  // nothing, so promising "daily tips" would be a promise we break by design.
+  'sub.h': { en: 'The pick, by email', es: 'El pronóstico, por email', pt: 'O palpite, por email', de: 'Der Tipp, per E-Mail' },
+  'sub.p': {
+    en: 'One message when the model publishes an official pick — the bet, the price and the reasoning. No message on the days it publishes nothing, which is most of them.',
+    es: 'Un mensaje cuando el modelo publica un pronóstico oficial: la apuesta, la cuota y el razonamiento. Ningún mensaje los días que no publica nada, que son la mayoría.',
+    pt: 'Uma mensagem quando o modelo publica um palpite oficial: a aposta, a odd e o raciocínio. Nenhuma mensagem nos dias em que não publica nada, que são a maioria.',
+    de: 'Eine Nachricht, wenn das Modell einen offiziellen Tipp veröffentlicht — die Wette, die Quote und die Begründung. Keine Nachricht an den Tagen ohne Tipp, und das sind die meisten.',
+  },
+  'sub.label': { en: 'Email address', es: 'Correo electrónico', pt: 'Endereço de email', de: 'E-Mail-Adresse' },
+  'sub.ph': { en: 'you@example.com', es: 'tu@ejemplo.com', pt: 'voce@exemplo.com', de: 'du@beispiel.de' },
+  'sub.cta': { en: 'Subscribe', es: 'Suscribirse', pt: 'Inscrever-se', de: 'Abonnieren' },
+  'sub.consent': {
+    en: 'Send me the picks. I am 18 or over and have read the',
+    es: 'Envíenme los pronósticos. Tengo 18 años o más y he leído la',
+    pt: 'Envie-me os palpites. Tenho 18 anos ou mais e li a',
+    de: 'Schickt mir die Tipps. Ich bin 18 oder älter und habe die',
+  },
+  'sub.privacy': { en: 'privacy policy', es: 'política de privacidad', pt: 'política de privacidade', de: 'Datenschutzerklärung gelesen' },
+  'sub.badEmail': { en: 'That does not look like an email address.', es: 'Eso no parece una dirección de correo.', pt: 'Isso não parece um endereço de email.', de: 'Das sieht nicht nach einer E-Mail-Adresse aus.' },
+  'sub.needConsent': { en: 'Tick the box to confirm you want the emails.', es: 'Marca la casilla para confirmar que quieres los correos.', pt: 'Marque a caixa para confirmar que quer os emails.', de: 'Setze das Häkchen, um die E-Mails zu bestätigen.' },
+  'sub.done': { en: 'Done — you are on the list.', es: 'Listo: estás en la lista.', pt: 'Pronto — você está na lista.', de: 'Fertig — du stehst auf der Liste.' },
+  'sub.already': { en: 'You were already on the list.', es: 'Ya estabas en la lista.', pt: 'Você já estava na lista.', de: 'Du warst schon auf der Liste.' },
+  'sub.failed': { en: 'That did not go through. Try again in a moment.', es: 'No se pudo completar. Inténtalo de nuevo en un momento.', pt: 'Não deu certo. Tente novamente em instantes.', de: 'Das hat nicht geklappt. Versuche es gleich noch einmal.' },
+
+  'botd.eyebrow': { en: 'Bet of the day', es: 'Apuesta del día', pt: 'Aposta do dia', de: 'Wette des Tages' },
+  'botd.lead': {
+    en: 'One pick a day: the highest-rated bet our model published, with the price it was taken at and the reasoning behind it. Most fixtures produce no official pick at all, so some days this page is empty — that is the point of it.',
+    es: 'Un pronóstico al día: la apuesta mejor valorada que publicó nuestro modelo, con la cuota a la que se tomó y el razonamiento detrás. La mayoría de los partidos no genera ningún pronóstico oficial, así que algunos días esta página está vacía — de eso se trata.',
+    pt: 'Um palpite por dia: a aposta mais bem avaliada que nosso modelo publicou, com a odd em que foi registrada e o raciocínio por trás. A maioria das partidas não gera palpite oficial, então em alguns dias esta página fica vazia — é esse o ponto.',
+    de: 'Ein Tipp pro Tag: die am höchsten bewertete Wette, die unser Modell veröffentlicht hat, mit der Quote zum Zeitpunkt der Aufnahme und der Begründung. Die meisten Spiele ergeben gar keinen offiziellen Tipp, an manchen Tagen bleibt diese Seite also leer — genau darum geht es.',
+  },
+  'botd.fair': { en: 'Model price', es: 'Precio del modelo', pt: 'Preço do modelo', de: 'Modellquote' },
+  'botd.offered': { en: 'Best offer', es: 'Mejor cuota', pt: 'Melhor odd', de: 'Beste Quote' },
+  'botd.gapLbl': { en: 'The bet lives in the gap', es: 'La apuesta vive en la diferencia', pt: 'A aposta vive na diferença', de: 'Die Wette lebt in der Differenz' },
+  'botd.gapNote': {
+    en: 'The model makes this outcome worth {fair}. A book is paying {offered}. That difference is the whole reason this pick exists — not a prediction that it will win.',
+    es: 'El modelo valora este resultado en {fair}. Una casa paga {offered}. Esa diferencia es toda la razón de este pronóstico — no una predicción de que vaya a ganar.',
+    pt: 'O modelo avalia este resultado em {fair}. Uma casa paga {offered}. Essa diferença é toda a razão deste palpite — não uma previsão de que vai ganhar.',
+    de: 'Das Modell bewertet diesen Ausgang mit {fair}. Ein Buchmacher zahlt {offered}. Diese Differenz ist der ganze Grund für diesen Tipp — keine Vorhersage, dass er aufgeht.',
+  },
+  'botd.saw': { en: 'What the model saw', es: 'Lo que vio el modelo', pt: 'O que o modelo viu', de: 'Was das Modell gesehen hat' },
+  // probabilities, not prices — the readout below the hero must not reuse the
+  // price labels or a 53% ends up captioned "model price"
+  'botd.pModel': { en: 'Model gives it', es: 'El modelo le da', pt: 'O modelo dá', de: 'Modell gibt ihm' },
+  'botd.pMarket': { en: 'Price implies', es: 'La cuota implica', pt: 'A odd implica', de: 'Quote impliziert' },
+  'botd.likely': { en: 'Likeliest score', es: 'Marcador más probable', pt: 'Placar mais provável', de: 'Wahrscheinlichstes Ergebnis' },
+  'botd.limits': { en: 'What could make this wrong', es: 'Qué podría desmentirlo', pt: 'O que pode desmentir isso', de: 'Was daran falsch sein könnte' },
+  'botd.limitsBody': {
+    en: 'The model reads scoring and conceding rates from finished matches. It does not know who is injured, who is rested, who is suspended or what the manager plans. A first-choice striker missing from the teamsheet is not priced in here — check the lineup before you act on this.',
+    es: 'El modelo lee tasas de goles marcados y encajados de partidos terminados. No sabe quién está lesionado, quién descansa, quién está sancionado ni qué planea el entrenador. La ausencia de un delantero titular no está reflejada aquí — comprueba la alineación antes de actuar.',
+    pt: 'O modelo lê taxas de gols marcados e sofridos de partidas encerradas. Ele não sabe quem está lesionado, quem descansa, quem está suspenso nem o que o treinador planeja. A ausência de um atacante titular não está precificada aqui — confira a escalação antes de agir.',
+    de: 'Das Modell liest Tor- und Gegentorraten aus abgeschlossenen Spielen. Es weiß nicht, wer verletzt ist, wer geschont wird, wer gesperrt ist oder was der Trainer plant. Ein fehlender Stammstürmer ist hier nicht eingepreist — prüfe die Aufstellung, bevor du danach handelst.',
+  },
+  'botd.full': { en: 'Full analysis of this match', es: 'Análisis completo del partido', pt: 'Análise completa da partida', de: 'Vollständige Analyse des Spiels' },
+  'botd.others': { en: 'Other official picks that day', es: 'Otros pronósticos oficiales de ese día', pt: 'Outros palpites oficiais do dia', de: 'Weitere offizielle Tipps an dem Tag' },
+  'botd.noneH': { en: 'No pick cleared the threshold', es: 'Ningún pronóstico superó el umbral', pt: 'Nenhum palpite passou do limite', de: 'Kein Tipp hat die Schwelle erreicht' },
+  'botd.noneP': {
+    en: 'Nothing on the board beats its price by enough to publish. We would rather show you an empty page than manufacture a bet — the full board of fixtures is still there if you want to judge the prices yourself.',
+    es: 'Nada en el tablero supera su cuota lo suficiente para publicarlo. Preferimos mostrarte una página vacía antes que fabricar una apuesta — el tablero completo sigue ahí si quieres juzgar las cuotas por tu cuenta.',
+    pt: 'Nada no quadro supera sua odd o bastante para publicar. Preferimos mostrar uma página vazia a fabricar uma aposta — o quadro completo continua ali se você quiser julgar as odds por conta própria.',
+    de: 'Nichts auf dem Board schlägt seine Quote deutlich genug, um es zu veröffentlichen. Lieber eine leere Seite als eine erfundene Wette — das vollständige Spielangebot steht weiterhin bereit, wenn du die Quoten selbst beurteilen willst.',
+  },
+  'botd.stamp': { en: 'Price at publication', es: 'Cuota en el momento de publicar', pt: 'Odd no momento da publicação', de: 'Quote bei Veröffentlichung' },
+  'botd.moves': {
+    en: 'Odds move. If the price has shortened past the model price above, the reason for this pick is gone.',
+    es: 'Las cuotas se mueven. Si la cuota ha bajado por debajo del precio del modelo, la razón de este pronóstico ha desaparecido.',
+    pt: 'As odds se movem. Se a odd caiu abaixo do preço do modelo, a razão deste palpite deixou de existir.',
+    de: 'Quoten bewegen sich. Ist die Quote unter die Modellquote gefallen, ist der Grund für diesen Tipp verschwunden.',
+  },
   'conf.High': { en: 'High', es: 'Alta', pt: 'Alta', de: 'Hoch' },
   'conf.Medium': { en: 'Medium', es: 'Media', pt: 'Média', de: 'Mittel' },
   'conf.Value': { en: 'Value', es: 'Valor', pt: 'Valor', de: 'Value' },

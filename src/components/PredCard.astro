@@ -1,5 +1,5 @@
 ---
-import { abbr, badgeColor, confidenceLabel, kickoffLabel, matchSlug, slugify } from '../lib/utils.js';
+import { abbr, badgeColor, confidenceLabel, kickoffLabel, matchSlug, slugify, topScoreline } from '../lib/utils.js';
 import { t, localizeMarket, lhref } from '../i18n/index.js';
 
 const { tip, lang = 'en' } = Astro.props;
@@ -9,6 +9,7 @@ const rec = tip.recommendation ?? {};
 const conf = Number(rec.confidence ?? 60);
 const { label, cls } = confidenceLabel(conf);
 const href = lhref(lang, `/predictions/${matchSlug(tip)}`);
+const score = topScoreline(tip);
 ---
 <article class="pred" data-cat={slugify(tip.league)} data-kickoff={tip.kickoff ?? ''}>
   <div class="pred-top">
@@ -21,7 +22,9 @@ const href = lhref(lang, `/predictions/${matchSlug(tip)}`);
         <div class="badge" style={`background:${badgeColor(tip.home)}`}>{abbr(tip.home)}</div>
         <div class="nm">{tip.home}</div>
       </div>
-      <div class="vs">VS</div>
+      {score
+        ? <div class="vs vs-pred"><span class="vs-lbl">{T('card.modelScore')}</span><span class="vs-sc">{score}</span></div>
+        : <div class="vs">VS</div>}
       <div class="team">
         <div class="badge" style={`background:${badgeColor(tip.away)}`}>{abbr(tip.away)}</div>
         <div class="nm">{tip.away}</div>

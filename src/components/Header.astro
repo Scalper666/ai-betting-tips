@@ -24,6 +24,7 @@ const langs = ['en', ...ALT_LANGS];
     <nav class="nav">
       <div class={`nav-item${is('predictions')}`}><button>{T('nav.predictions')} <span class="caret">▼</span></button>
         <div class="dropdown">
+          <a href={L('/bet-of-the-day')}><span class="ic">📌</span>{T('botd.eyebrow')}</a>
           <a href={L('/screener')}><span class="ic">🔍</span>{T('nav.screener')}</a>
           <a href={L('/predictions')}><span class="ic">⚽</span>{T('nav.allTips')}</a>
           {navLeagues.map((lg) => (

@@ -386,7 +386,7 @@ const schema = {
                 <div class="res-row">
                   <span class={`res-mark ${h.status === 'won' ? 'w' : h.status === 'lost' ? 'l' : 'v'}`}>{h.status === 'won' ? 'W' : h.status === 'lost' ? 'L' : 'V'}</span>
                   <span class="res-date">{h.kickoff ? new Date(h.kickoff).toLocaleDateString(dloc, { day: 'numeric', month: 'short', year: '2-digit' }) : ''}</span>
-                  <div class="res-match"><b>{localizeMarket(lang, h.market)}</b><span>{h.score && h.score !== 'simulated' ? F('mp.finalScoreLow', { score: h.score }) : h.league}</span></div>
+                  <div class="res-match"><b>{localizeMarket(lang, h.market)}</b><span>{h.score && h.score !== 'simulated' ? F('mp.finalScoreLow', { score: h.score }) : h.void_reason ? T('mp.voidRelisted') : h.league}</span></div>
                   <span class="res-odds">{Number(h.odds ?? 0).toFixed(2)}</span>
                   <span class={`res-profit ${(h.profit ?? 0) > 0 ? 'pos' : (h.profit ?? 0) < 0 ? 'neg' : 'zero'}`}>{(h.profit ?? 0) > 0 ? '+' : ''}{Number(h.profit ?? 0).toFixed(2)}u</span>
                 </div>

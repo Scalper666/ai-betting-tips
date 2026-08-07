@@ -1,0 +1,81 @@
+---
+import { t, lhref } from '../i18n/index.js';
+
+// Newsletter signup. Hidden until PUBLIC_NEWSLETTER=1, because the endpoint
+// needs a KV binding that has to be created in the Cloudflare dashboard — a
+// visible form with nowhere to store addresses is worse than no form.
+const { lang = 'en', source = 'footer' } = Astro.props;
+const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
+const enabled = import.meta.env.PUBLIC_NEWSLETTER === '1';
+---
+{enabled && (
+  <form class="sub" data-source={source} novalidate
+        data-bad-email={T('sub.badEmail')}
+        data-need-consent={T('sub.needConsent')}
+        data-done={T('sub.done')}
+        data-already={T('sub.already')}
+        data-failed={T('sub.failed')}>
+    <div class="sub-copy">
+      <h4>{T('sub.h')}</h4>
+      <p>{T('sub.p')}</p>
+    </div>
+    <div class="sub-row">
+      <label class="sr-only" for={`sub-email-${source}`}>{T('sub.label')}</label>
+      <input class="sub-input" id={`sub-email-${source}`} type="email" name="email"
+             autocomplete="email" required placeholder={T('sub.ph')} />
+      <button class="btn btn-mint sub-btn" type="submit">{T('sub.cta')}</button>
+    </div>
+    <label class="sub-consent">
+      <input type="checkbox" name="consent" required />
+      <span>{T('sub.consent')} <a href={L('/privacy')}>{T('sub.privacy')}</a>.</span>
+    </label>
+    {/* hidden from people, tempting to form bots */}
+    <div class="sub-hp" aria-hidden="true">
+      <label for={`sub-co-${source}`}>Company</label>
+      <input id={`sub-co-${source}`} type="text" name="company" tabindex="-1" autocomplete="off" />
+    </div>
+    <p class="sub-msg" role="status" aria-live="polite"></p>
+  </form>
+)}
+
+<script>
+  document.querySelectorAll('form.sub').forEach((form) => {
+    const msg = form.querySelector('.sub-msg');
+    const btn = form.querySelector('.sub-btn');
+    const say = (text, state) => { msg.textContent = text; msg.dataset.state = state; };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = form.querySelector('input[name="email"]').value.trim();
+      const consent = form.querySelector('input[name="consent"]').checked;
+      if (!email || !/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(email)) return say(form.dataset.badEmail, 'err');
+      if (!consent) return say(form.dataset.needConsent, 'err');
+
+      btn.disabled = true;
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({
+            email,
+            consent: true,
+            company: form.querySelector('input[name="company"]').value,
+            source: form.dataset.source,
+          }),
+        });
+        const out = await res.json().catch(() => ({}));
+        if (out.ok) {
+          say(out.already ? form.dataset.already : form.dataset.done, 'ok');
+          form.querySelector('input[name="email"]').value = '';
+        } else {
+          say(form.dataset.failed, 'err');
+        }
+      } catch {
+        say(form.dataset.failed, 'err');
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  });
+</script>
