@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-08-07T15:49:47+00:00",
+ "updated_at": "2026-08-07T17:18:34+00:00",
  "entries": {
   "match:corinthians-vs-remo": {
    "intro": "Corinthians host Remo in this Brasileirao fixture as clear favourites according to the market. The home side is priced at 1.55 with Matchbook, which translates to an implied probability of roughly 65%. Remo, meanwhile, are the outsiders at 7.8 on Betfair, implying only about 13% chance of an away win, while the draw sits at 4.3, or around 23%. That is a substantial gap in the prices and reflects strong market confidence in Corinthians. Rather than backing the match result, our model leans toward the goals market, recommending Under 2.5 goals at 1.93 with Matchbook, carrying a market-implied confidence of about 52%. It is worth noting the value edge here is marginally negative at -0.36%, so this is a close call rather than a standout opportunity in the Corinthians versus Remo clash.",
@@ -19150,6 +19150,82 @@
    "_usage": {
     "in": 1279,
     "out": 844
+   }
+  },
+  "match:fc-utrecht-vs-az-alkmaar": {
+   "intro": "This Eredivisie meeting between FC Utrecht and AZ Alkmaar sees the hosts installed as narrow favourites by the market. Utrecht are priced at 2.41 with 1xBet, translating to an implied probability of roughly 41%, while AZ Alkmaar sit at 2.78 for about 36%. The draw is offered at 3.75 by Coolbet, worth around 27% in implied terms. Those numbers point to a genuinely close contest, with only a modest edge in Utrecht's favour rather than a clear divide between the sides. Our model instead looks to the goals market, flagging Over 3.0 goals at 2.03 with Coolbet. That price carries a market-implied confidence of about 46%, but the value edge comes out at -5.73%, meaning it currently sits below fair value on our numbers. It is a preview built around tight match odds and an appealing but not underpriced total, so any staking should reflect the uncertainty.",
+   "key_factors": [],
+   "verdict": "",
+   "faq": [
+    {
+     "q": "",
+     "a": ""
+    }
+   ],
+   "_kind": "match",
+   "_model": "claude-opus-4-8",
+   "_hash": "ddb397271d0023aa",
+   "_generated_at": "2026-08-07T17:18:29+00:00",
+   "_usage": {
+    "in": 1284,
+    "out": 354
+   }
+  },
+  "combo:match-result:eliteserien": {
+   "intro": "The Eliteserien Match Result market, commonly labelled 1X2, asks a single question: will the home side win, will the visitors win, or will the match end level? Our approach starts with the price. We convert the best available odds for each of the three outcomes into implied probabilities, then compare those figures against our model's own estimate. A tip is only flagged when the price offers more value than the implied probability suggests it should, not simply because an outcome looks likely. Norway's top flight can produce tight, evenly matched fixtures, which is exactly where careful pricing matters most. Every Eliteserien selection is archived before kick-off and settled transparently afterwards, win or lose, so you can see how the method holds up over time.",
+   "faq": [
+    {
+     "q": "What does 1X2 mean in Eliteserien betting?",
+     "a": "1X2 is the match result market with three options: 1 for a home win, X for a draw, and 2 for an away win. You are betting on the outcome after regulation time, and only one of the three can be correct."
+    },
+    {
+     "q": "How do you decide which Eliteserien match result to tip?",
+     "a": "We turn the best available odds into implied probabilities and compare them with our model's estimate for each outcome. A selection is published only when the price looks generous relative to that estimate, which means we skip plenty of matches rather than tip for the sake of it."
+    },
+    {
+     "q": "Are draws worth backing in the Eliteserien?",
+     "a": "The draw can be a sensible pick when the market prices two teams closely and the odds on X offer value against our probability estimate. It is never an automatic choice; each fixture is judged on its own numbers, and outcomes always carry risk, so stake responsibly."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "df9dbd293170c9ca",
+   "_generated_at": "2026-08-07T17:18:31+00:00",
+   "_usage": {
+    "in": 1025,
+    "out": 542
+   }
+  },
+  "match:if-elfsborg-vs-vasteras-sk": {
+   "intro": "This Allsvenskan clash sends IF Elfsborg out against Västerås SK, and the market leaves little doubt about who it sees as the stronger side. At 2.18, Elfsborg carry the shortest price, implying roughly a 46% chance of taking the three points. Västerås SK are the clear outsiders at 3.4, which translates to about 29% in probability terms, while the draw is priced at 3.65, or around 27%. That spread points to a home team favoured but far from dominant, with plenty of room for a competitive contest. Our model's attention falls not on the result line but on the goals market: Under 2.5 goals at 1.93 with a market-implied confidence of around 47%. Notably, that selection shows a negative value edge of -8.5%, meaning the price does not offer an advantage over the market at this stage. Treat it as a lean rather than a recommendation to back with conviction.",
+   "key_factors": [
+    "Elfsborg are favourites at 2.18 (about 46% implied), with Västerås SK the outsiders at 3.4 (roughly 29%).",
+    "The draw is priced at 3.65, implying around 27%, which keeps a stalemate firmly in play.",
+    "The gap between home and away prices is moderate rather than wide, signalling a match the market sees as competitive.",
+    "The recommended Under 2.5 goals at 1.93 carries a negative value edge of -8.5%, so it does not clear our value threshold."
+   ],
+   "verdict": "The model leans towards Under 2.5 goals at 1.93, reflecting a near-even 47% expectation on the goals line. However, the -8.5% value edge means the price is unfavourable versus the market, so this is a low-conviction pick. Stake modestly, if at all, and manage your bankroll sensibly.",
+   "faq": [
+    {
+     "q": "Who is the favourite for Elfsborg vs Västerås SK?",
+     "a": "IF Elfsborg are the market favourites at 2.18, implying about a 46% chance of winning. Västerås SK are outsiders at 3.4, roughly 29%."
+    },
+    {
+     "q": "What are the odds on the draw?",
+     "a": "The draw is priced at 3.65 with Unibet (SE), which equates to an implied probability of around 27%."
+    },
+    {
+     "q": "Is there any value in this match?",
+     "a": "No selection clears our value threshold here. The recommended Under 2.5 goals at 1.93 actually shows a negative value edge of -8.5%, meaning the price is not in the bettor's favour."
+    }
+   ],
+   "_kind": "match",
+   "_model": "claude-opus-4-8",
+   "_hash": "8e3bef0d86749951",
+   "_generated_at": "2026-08-07T17:18:34+00:00",
+   "_usage": {
+    "in": 1292,
+    "out": 815
    }
   }
  }
