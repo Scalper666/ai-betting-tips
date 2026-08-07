@@ -75,6 +75,18 @@ const description = isLive
 
 const bestOdds = Object.entries(tip?.best_h2h ?? {});
 
+// Full per-bookmaker board (odds_board). Ships from the pipeline sorted
+// sharpest-book-first; absent on data produced before the field existed, so
+// the section falls back to the best-price-only table. Best price per column
+// is computed here rather than trusting order, since ties are possible.
+const board = tip?.odds_board ?? [];
+const boardCols = [tip?.home, 'Draw', tip?.away].filter(
+  (c) => c && board.some((r) => r.prices?.[c] != null)
+);
+const bestInCol = Object.fromEntries(
+  boardCols.map((c) => [c, Math.max(...board.map((r) => Number(r.prices?.[c] ?? 0)))])
+);
+
 // additional model-scored markets for this fixture (from the screener feed)
 const extraPicks = isLive
   ? (screener.rows ?? []).filter((r) => r.home === home && r.away === away && r.market !== rec.text)
@@ -334,21 +346,52 @@ const schema = {
         {bestOdds.length > 0 && (
           <section>
             <div class="sec-head"><h2 class="sec-title">{T('mp.oddsPre')} <b>{T('mp.oddsBold')}</b> {T('mp.oddsPost')}</h2></div>
-            <div class="odds-table"><div class="scr-scroll">
-              <table class="otbl">
-                <thead><tr><th style="text-align:left">{T('mp.thOutcome')}</th><th>{T('mp.thBestPrice')}</th><th>{T('mp.thBookmaker')}</th><th>{T('mp.thImplied')}</th></tr></thead>
-                <tbody>
-                  {bestOdds.map(([name, info]) => (
-                    <tr>
-                      <td class="o-match" style="font-weight:700">{localizeMarket(lang, name === home || name === away ? name : name)}</td>
-                      <td class="o-cell hot"><span class="cb">{Number(info.price).toFixed(2)}</span></td>
-                      <td class="o-cell"><span>{info.bookmaker}</span></td>
-                      <td class="o-cell"><span class="cb">{(100 / Number(info.price)).toFixed(1)}%</span></td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div></div>
+            {board.length >= 2 ? (
+              <>
+                <div class="odds-table"><div class="scr-scroll">
+                  <table class="otbl">
+                    <thead><tr>
+                      <th style="text-align:left">{T('mp.thBookmaker')}</th>
+                      {boardCols.map((c) => (
+                        <th>{c === 'Draw' ? 'X' : `${c === home ? '1' : '2'} · ${abbr(c)}`}</th>
+                      ))}
+                    </tr></thead>
+                    <tbody>
+                      {board.map((r) => (
+                        <tr>
+                          <td class="o-match" style="font-weight:700">{r.bookmaker}</td>
+                          {boardCols.map((c) => {
+                            const p = Number(r.prices?.[c] ?? 0);
+                            return (
+                              <td class={`o-cell${p && p === bestInCol[c] ? ' hot' : ''}`}>
+                                <span class="cb">{p ? p.toFixed(2) : '—'}</span>
+                              </td>
+                            );
+                          })}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div></div>
+                <p class="res-note">{T('mp.boardNote')}</p>
+              </>
+            ) : (
+              <div class="odds-table"><div class="scr-scroll">
+                <table class="otbl">
+                  <thead><tr><th style="text-align:left">{T('mp.thOutcome')}</th><th>{T('mp.thBestPrice')}</th><th>{T('mp.thBookmaker')}</th><th>{T('mp.thImplied')}</th></tr></thead>
+                  <tbody>
+                    {bestOdds.map(([name, info]) => (
+                      <tr>
+                        <td class="o-match" style="font-weight:700">{localizeMarket(lang, name === home || name === away ? name : name)}</td>
+                        <td class="o-cell hot"><span class="cb">{Number(info.price).toFixed(2)}</span></td>
+                        <td class="o-cell"><span>{info.bookmaker}</span></td>
+                        <td class="o-cell"><span class="cb">{(100 / Number(info.price)).toFixed(1)}%</span></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div></div>
+            )}
           </section>
         )}
 

@@ -59,6 +59,7 @@ export const FR = {
   'card.analysis': 'Analyse →',
   'nav.model': 'Notre modèle',
   'mp.voidRelisted': 'Annulé — match reprogrammé et réinscrit',
+  'mp.boardNote': "Cotes à notre dernière actualisation, meilleure cote par issue en surbrillance. Les bookmakers sont classés par marge — les plus serrés d'abord — et non par alphabet.",
   'sub.h': 'Le pronostic, par e-mail',
   'sub.p': "Un message quand le modèle publie un pronostic officiel : le pari, la cote et le raisonnement. Aucun message les jours sans publication, c'est-à-dire la plupart.",
   'sub.label': 'Adresse e-mail',

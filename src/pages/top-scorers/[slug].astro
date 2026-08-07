@@ -21,6 +21,15 @@ export function getStaticPaths() {
 const { sk, lg, name } = Astro.props;
 const scorers = lg.scorers ?? [];
 const top = scorers[0];
+
+// Assists view, honestly scoped: the feed returns the top scorers BY GOALS,
+// so the league's true assist leader may not be in it at all. This is a
+// re-sort of the same list, and the page says so — it is "playmakers among
+// the leading scorers", never "top assists" as if it were the full table.
+const byAssists = scorers
+  .filter((p) => Number(p.assists ?? 0) > 0)
+  .sort((a, b) => (b.assists ?? 0) - (a.assists ?? 0) || (b.goals ?? 0) - (a.goals ?? 0))
+  .slice(0, 5);
 const hasTable = (lg.standings ?? []).some((r) => (r.p ?? 0) > 0);
 const others = Object.entries(fdData.leagues ?? {}).filter(([k, l]) => k !== sk && (l.scorers ?? []).length > 0);
 
@@ -92,6 +101,34 @@ const schema = { '@context': 'https://schema.org', ...faqSchema(faq) };
             </table>
           </div></div>
         </section>
+
+        {byAssists.length >= 3 && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">Playmakers <b>among the leading scorers</b></h2></div>
+            <div class="odds-table"><div class="scr-scroll">
+              <table class="otbl">
+                <thead><tr><th>#</th><th style="text-align:left">Player</th><th style="text-align:left">Club</th><th>Assists</th><th>Goals</th><th>G+A</th></tr></thead>
+                <tbody>
+                  {byAssists.map((p, i) => (
+                    <tr>
+                      <td class="o-cell"><span>{i + 1}</span></td>
+                      <td class="o-match" style="font-weight:700">{p.name}</td>
+                      <td class="o-match">
+                        {hasTeamPage(p.team ?? '')
+                          ? <a href={`/team/${slugify(p.team)}`} style="color:inherit">{p.team}</a>
+                          : p.team}
+                      </td>
+                      <td class="o-cell hot"><span class="cb">{p.assists}</span></td>
+                      <td class="o-cell"><span>{p.goals}</span></td>
+                      <td class="o-cell"><span>{Number(p.goals ?? 0) + Number(p.assists ?? 0)}</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div></div>
+            <p class="res-note">Assist counts within the top {scorers.length} goalscorers only — the data source ranks by goals, so a pure creator outside this list will not appear. Treat it as goal involvement among the league's main finishers, not the full assists table.</p>
+          </section>
+        )}
 
         <section class="seo">
           <h2>What scoring charts tell a bettor (and what they don't)</h2>

@@ -828,6 +828,12 @@ const D = {
   'mp.oddsBold': { en: 'odds', es: 'cuotas', pt: 'odds', de: 'Quoten' },
   'mp.oddsPost': { en: 'across bookmakers', es: 'entre casas de apuestas', pt: 'entre casas de apostas', de: 'im Buchmacher-Vergleich' },
   'mp.thOutcome': { en: 'Outcome', es: 'Resultado', pt: 'Resultado', de: 'Ausgang' },
+  'mp.boardNote': {
+    en: 'Prices as of our last refresh, best price per outcome highlighted. Books are ordered by margin — the sharpest price-setters first — not alphabetically.',
+    es: 'Cuotas de nuestra última actualización, con la mejor por resultado resaltada. Las casas van ordenadas por margen — primero las más ajustadas — no alfabéticamente.',
+    pt: 'Odds da nossa última atualização, com a melhor por resultado destacada. As casas estão ordenadas por margem — as mais justas primeiro — e não por alfabeto.',
+    de: 'Quoten vom letzten Abruf, beste Quote je Ausgang hervorgehoben. Die Anbieter sind nach Marge sortiert — die schärfsten zuerst — nicht alphabetisch.',
+  },
   'mp.thBestPrice': { en: 'Best price', es: 'Mejor cuota', pt: 'Melhor odd', de: 'Bester Preis' },
   'mp.thBookmaker': { en: 'Bookmaker', es: 'Casa', pt: 'Casa', de: 'Buchmacher' },
   'mp.thImplied': { en: 'Implied', es: 'Implícita', pt: 'Implícita', de: 'Implizit' },

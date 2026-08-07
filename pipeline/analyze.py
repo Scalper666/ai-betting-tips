@@ -32,6 +32,28 @@ def best_h2h_odds(event: dict) -> dict[str, dict]:
     return best
 
 
+def h2h_board(event: dict, limit: int = 6) -> list[dict]:
+    """Per-bookmaker 1X2 prices for the on-page comparison table.
+
+    best_h2h keeps only the single best price per outcome, which is what the
+    tip needs — but the page can show the reader the actual spread. Sorted by
+    overround, sharpest book first, so the ordering itself is information
+    rather than an alphabet. Capped so a page never ships thirty rows.
+    """
+    rows = []
+    for bm in event.get("bookmakers", []):
+        for market in bm.get("markets", []):
+            if market.get("key") != "h2h":
+                continue
+            prices = {o["name"]: round(float(o["price"]), 2)
+                      for o in market.get("outcomes", []) if o.get("price")}
+            if prices:
+                rows.append({"bookmaker": bm.get("title", "—"), "prices": prices})
+            break
+    rows.sort(key=lambda r: sum(1.0 / p for p in r["prices"].values() if p > 0))
+    return rows[:limit]
+
+
 def best_totals(event: dict) -> dict[str, dict]:
     """
     Best Over/Under per (point, side).
@@ -365,6 +387,7 @@ def _tip_obj(event, meta, home, away, best_h2h, recommendation, value_picks, mod
             name: {"price": round(info["price"], 2), "bookmaker": info["bookmaker"]}
             for name, info in best_h2h.items()
         },
+        "odds_board": h2h_board(event),
         "recommendation": recommendation,
         "model": ({"xg_home": model_probs["lambda_home"], "xg_away": model_probs["lambda_away"],
                    "p_home": model_probs["p_home"], "p_draw": model_probs["p_draw"],
