@@ -28,17 +28,8 @@ except Exception:
 ROOT = Path(__file__).resolve().parent.parent
 HISTORY = ROOT / "data" / "history.json"
 
-# Tips are attributed to a tipster deterministically so a given match/market
-# always belongs to the same person (stats stay consistent across runs).
-TIPSTERS = ["Aleksandar K.", "Kate R.", "Marco S."]
-
-
 def tip_key(event_id: str, market: str) -> str:
     return f"{event_id}|{market}"
-
-
-def tipster_for(key: str) -> str:
-    return TIPSTERS[sum(map(ord, key)) % len(TIPSTERS)]
 
 
 def load() -> dict:
@@ -94,7 +85,6 @@ def add_from_predictions(predictions: dict) -> tuple[int, int]:
             "bookmaker": rec.get("bookmaker"),
             "basis": rec.get("basis"),
             "model": "v2",               # selective era: official picks only
-            "tipster": tipster_for(key),
             "published_at": now,
             "status": "pending",
             "profit": None,

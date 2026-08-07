@@ -22,11 +22,6 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "data" / "stats.json"
 
 
-def initials(name: str) -> str:
-    parts = [p for p in name.replace(".", " ").split() if p]
-    return (parts[0][0] + (parts[1][0] if len(parts) > 1 else "")).upper() if parts else "?"
-
-
 def summarise(tips: list[dict]) -> dict:
     won = sum(1 for t in tips if t["status"] == "won")
     lost = sum(1 for t in tips if t["status"] == "lost")
@@ -42,19 +37,6 @@ def summarise(tips: list[dict]) -> dict:
     }
 
 
-def current_streak(tips: list[dict]) -> int:
-    """Consecutive wins counting back from the most recently settled tip."""
-    ordered = sorted([t for t in tips if t["status"] in ("won", "lost")],
-                     key=lambda t: t.get("settled_at") or "", reverse=True)
-    n = 0
-    for t in ordered:
-        if t["status"] == "won":
-            n += 1
-        else:
-            break
-    return n
-
-
 def main() -> None:
     h = history.load()
     all_tips = list(h.get("tips", {}).values())
@@ -68,26 +50,11 @@ def main() -> None:
     overall["pending"] = len(pending)
     overall["tips_total"] = len(all_tips)
 
-    # per tipster
-    by_tipster: dict[str, list[dict]] = {}
-    for t in graded:
-        by_tipster.setdefault(t.get("tipster") or "—", []).append(t)
-    tipsters = []
-    for name, tips in by_tipster.items():
-        s = summarise(tips)
-        # the sport this tipster covers most
-        sports: dict[str, int] = {}
-        for t in tips:
-            lg = t.get("league") or "—"
-            sports[lg] = sports.get(lg, 0) + 1
-        s.update({
-            "name": name,
-            "initials": initials(name),
-            "streak": current_streak(tips),
-            "top_league": max(sports, key=sports.get) if sports else "—",
-        })
-        tipsters.append(s)
-    tipsters.sort(key=lambda x: (-x["roi"], -x["won"]))
+    # NOTE: this file used to compute a per-"tipster" table from invented names
+    # (Aleksandar K. / Kate R. / Marco S.) that history.py hash-assigned to
+    # bets. The site's whole editorial stance is "no fictional experts" — the
+    # honest by-market tracks in ModelTracks.astro replaced the personas on
+    # every page, so the fabricated grouping is gone from the data too.
 
     # per league
     by_league: dict[str, list[dict]] = {}
@@ -103,7 +70,6 @@ def main() -> None:
     out = {
         "updated_at": datetime.now(timezone.utc).isoformat(),
         "overall": overall,
-        "tipsters": tipsters,
         "leagues": leagues[:12],
     }
     OUT.parent.mkdir(parents=True, exist_ok=True)
@@ -111,8 +77,8 @@ def main() -> None:
 
     print(f"✓ stats.json — {overall['settled']} settled, {overall['pending']} pending")
     print(f"  Overall: {overall['win_rate']}% win, ROI {overall['roi']:+}%, profit {overall['profit']:+}u")
-    for t in tipsters:
-        print(f"  {t['name']:<16} {t['settled']:>3} bets | {t['win_rate']:>5}% | ROI {t['roi']:+}% | {t['profit']:+}u")
+    for lg in leagues[:6]:
+        print(f"  {lg['name']:<24} {lg['settled']:>3} bets | {lg['win_rate']:>5}% | ROI {lg['roi']:+}%")
 
 
 if __name__ == "__main__":

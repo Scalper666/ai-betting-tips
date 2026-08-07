@@ -80,14 +80,6 @@ export const CASINO_SCORE_LABELS = {
   safety: 'Safety & licensing',
 };
 
-export const AVATAR_STYLES = [
-  'background:linear-gradient(135deg,#fcd535,#f0b90b);color:#0b0e11',
-  'background:linear-gradient(135deg,#ff8a5c,#ff5c8a)',
-  'background:linear-gradient(135deg,#3ad,#27e)',
-  'background:linear-gradient(135deg,#b06cff,#7b3cff)',
-  'background:linear-gradient(135deg,#5ce0d6,#2cab9e);color:#04221a',
-];
-
 export const signed = (v) => `${v >= 0 ? '+' : ''}${v}`;
 
 const KICKOFF_WORDS = {
