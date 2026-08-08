@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-08-08T17:03:30+00:00",
+ "updated_at": "2026-08-08T18:44:44+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -22014,6 +22014,16 @@
     },
     {
      "pos": 2,
+     "team": "Go Ahead",
+     "p": 1,
+     "w": 1,
+     "d": 0,
+     "l": 0,
+     "gd": 3,
+     "pts": 3
+    },
+    {
+     "pos": 3,
      "team": "Telstar",
      "p": 1,
      "w": 1,
@@ -22023,8 +22033,8 @@
      "pts": 3
     },
     {
-     "pos": 3,
-     "team": "Go Ahead",
+     "pos": 4,
+     "team": "Sittard",
      "p": 1,
      "w": 0,
      "d": 1,
@@ -22033,8 +22043,8 @@
      "pts": 1
     },
     {
-     "pos": 3,
-     "team": "Willem II",
+     "pos": 4,
+     "team": "PSV",
      "p": 1,
      "w": 0,
      "d": 1,
@@ -22043,7 +22053,7 @@
      "pts": 1
     },
     {
-     "pos": 5,
+     "pos": 6,
      "team": "Den Haag",
      "p": 0,
      "w": 0,
@@ -22053,7 +22063,7 @@
      "pts": 0
     },
     {
-     "pos": 5,
+     "pos": 6,
      "team": "Ajax",
      "p": 0,
      "w": 0,
@@ -22063,7 +22073,7 @@
      "pts": 0
     },
     {
-     "pos": 5,
+     "pos": 6,
      "team": "AZ",
      "p": 0,
      "w": 0,
@@ -22073,7 +22083,7 @@
      "pts": 0
     },
     {
-     "pos": 5,
+     "pos": 6,
      "team": "Groningen",
      "p": 0,
      "w": 0,
@@ -22083,7 +22093,7 @@
      "pts": 0
     },
     {
-     "pos": 5,
+     "pos": 6,
      "team": "Twente",
      "p": 0,
      "w": 0,
@@ -22093,7 +22103,7 @@
      "pts": 0
     },
     {
-     "pos": 5,
+     "pos": 6,
      "team": "Utrecht",
      "p": 0,
      "w": 0,
@@ -22103,7 +22113,7 @@
      "pts": 0
     },
     {
-     "pos": 5,
+     "pos": 6,
      "team": "Feyenoord",
      "p": 0,
      "w": 0,
@@ -22113,17 +22123,7 @@
      "pts": 0
     },
     {
-     "pos": 5,
-     "team": "Sittard",
-     "p": 0,
-     "w": 0,
-     "d": 0,
-     "l": 0,
-     "gd": 0,
-     "pts": 0
-    },
-    {
-     "pos": 5,
+     "pos": 6,
      "team": "Zwolle",
      "p": 0,
      "w": 0,
@@ -22133,17 +22133,7 @@
      "pts": 0
     },
     {
-     "pos": 5,
-     "team": "PSV",
-     "p": 0,
-     "w": 0,
-     "d": 0,
-     "l": 0,
-     "gd": 0,
-     "pts": 0
-    },
-    {
-     "pos": 5,
+     "pos": 6,
      "team": "Heerenveen",
      "p": 0,
      "w": 0,
@@ -22153,7 +22143,7 @@
      "pts": 0
     },
     {
-     "pos": 5,
+     "pos": 6,
      "team": "Sparta",
      "p": 0,
      "w": 0,
@@ -22163,13 +22153,23 @@
      "pts": 0
     },
     {
-     "pos": 17,
+     "pos": 16,
      "team": "NEC",
      "p": 1,
      "w": 0,
      "d": 0,
      "l": 1,
      "gd": -1,
+     "pts": 0
+    },
+    {
+     "pos": 17,
+     "team": "Willem II",
+     "p": 1,
+     "w": 0,
+     "d": 0,
+     "l": 1,
+     "gd": -3,
      "pts": 0
     },
     {
@@ -22185,9 +22185,10 @@
    ],
    "crests": {
     "Excelsior": "/crests/excelsior.png",
-    "Telstar": "/crests/telstar.png",
     "Go Ahead": "/crests/go-ahead.png",
-    "Willem II": "/crests/willem-ii.png",
+    "Telstar": "/crests/telstar.png",
+    "Sittard": "/crests/sittard.png",
+    "PSV": "/crests/psv.png",
     "Den Haag": "/crests/den-haag.png",
     "Ajax": "/crests/ajax.png",
     "AZ": "/crests/az.png",
@@ -22195,12 +22196,11 @@
     "Twente": "/crests/twente.png",
     "Utrecht": "/crests/utrecht.png",
     "Feyenoord": "/crests/feyenoord.png",
-    "Sittard": "/crests/sittard.png",
     "Zwolle": "/crests/zwolle.png",
-    "PSV": "/crests/psv.png",
     "Heerenveen": "/crests/heerenveen.png",
     "Sparta": "/crests/sparta.png",
     "NEC": "/crests/nec.png",
+    "Willem II": "/crests/willem-ii.png",
     "Cambuur": "/crests/cambuur.png"
    },
    "results": [
@@ -24410,6 +24410,38 @@
      "assists": null,
      "pens": null,
      "played": 1
+    },
+    {
+     "name": "Søren Tengstedt",
+     "team": "Go Ahead",
+     "goals": 1,
+     "assists": null,
+     "pens": null,
+     "played": 1
+    },
+    {
+     "name": "Melle  Meulensteen",
+     "team": "Go Ahead",
+     "goals": 1,
+     "assists": 1,
+     "pens": null,
+     "played": 1
+    },
+    {
+     "name": "Erik Flataker",
+     "team": "Go Ahead",
+     "goals": 1,
+     "assists": null,
+     "pens": null,
+     "played": 1
+    },
+    {
+     "name": "Julius Dirksen",
+     "team": "Go Ahead",
+     "goals": 1,
+     "assists": null,
+     "pens": null,
+     "played": 1
     }
    ]
   },
@@ -24429,7 +24461,17 @@
      "pts": 3
     },
     {
-     "pos": 2,
+     "pos": 1,
+     "team": "Arouca",
+     "p": 1,
+     "w": 1,
+     "d": 0,
+     "l": 0,
+     "gd": 1,
+     "pts": 3
+    },
+    {
+     "pos": 3,
      "team": "Famalicão",
      "p": 1,
      "w": 0,
@@ -24439,7 +24481,7 @@
      "pts": 1
     },
     {
-     "pos": 2,
+     "pos": 3,
      "team": "Estoril Praia",
      "p": 1,
      "w": 0,
@@ -24449,27 +24491,7 @@
      "pts": 1
     },
     {
-     "pos": 4,
-     "team": "Arouca",
-     "p": 1,
-     "w": 0,
-     "d": 1,
-     "l": 0,
-     "gd": 0,
-     "pts": 1
-    },
-    {
-     "pos": 4,
-     "team": "Vitória SC",
-     "p": 1,
-     "w": 0,
-     "d": 1,
-     "l": 0,
-     "gd": 0,
-     "pts": 1
-    },
-    {
-     "pos": 6,
+     "pos": 5,
      "team": "Acad. Viseu",
      "p": 0,
      "w": 0,
@@ -24479,7 +24501,7 @@
      "pts": 0
     },
     {
-     "pos": 6,
+     "pos": 5,
      "team": "CD Nacional",
      "p": 0,
      "w": 0,
@@ -24489,7 +24511,7 @@
      "pts": 0
     },
     {
-     "pos": 6,
+     "pos": 5,
      "team": "Santa Clara",
      "p": 0,
      "w": 0,
@@ -24499,7 +24521,7 @@
      "pts": 0
     },
     {
-     "pos": 6,
+     "pos": 5,
      "team": "Amadora",
      "p": 0,
      "w": 0,
@@ -24509,7 +24531,7 @@
      "pts": 0
     },
     {
-     "pos": 6,
+     "pos": 5,
      "team": "Alverca",
      "p": 0,
      "w": 0,
@@ -24519,7 +24541,7 @@
      "pts": 0
     },
     {
-     "pos": 6,
+     "pos": 5,
      "team": "Porto",
      "p": 0,
      "w": 0,
@@ -24529,7 +24551,7 @@
      "pts": 0
     },
     {
-     "pos": 6,
+     "pos": 5,
      "team": "Gil Vicente",
      "p": 0,
      "w": 0,
@@ -24539,7 +24561,7 @@
      "pts": 0
     },
     {
-     "pos": 6,
+     "pos": 5,
      "team": "Moreirense",
      "p": 0,
      "w": 0,
@@ -24549,7 +24571,7 @@
      "pts": 0
     },
     {
-     "pos": 6,
+     "pos": 5,
      "team": "Rio Ave",
      "p": 0,
      "w": 0,
@@ -24559,7 +24581,7 @@
      "pts": 0
     },
     {
-     "pos": 6,
+     "pos": 5,
      "team": "SL Benfica",
      "p": 0,
      "w": 0,
@@ -24569,7 +24591,7 @@
      "pts": 0
     },
     {
-     "pos": 6,
+     "pos": 5,
      "team": "Braga",
      "p": 0,
      "w": 0,
@@ -24579,7 +24601,7 @@
      "pts": 0
     },
     {
-     "pos": 6,
+     "pos": 5,
      "team": "Sporting CP",
      "p": 0,
      "w": 0,
@@ -24589,8 +24611,18 @@
      "pts": 0
     },
     {
-     "pos": 18,
+     "pos": 17,
      "team": "Casa Pia",
+     "p": 1,
+     "w": 0,
+     "d": 0,
+     "l": 1,
+     "gd": -1,
+     "pts": 0
+    },
+    {
+     "pos": 17,
+     "team": "Vitória SC",
      "p": 1,
      "w": 0,
      "d": 0,
@@ -24601,10 +24633,9 @@
    ],
    "crests": {
     "Marítimo": "/crests/maritimo.png",
+    "Arouca": "/crests/arouca.png",
     "Famalicão": "/crests/famalicao.png",
     "Estoril Praia": "/crests/estoril-praia.png",
-    "Arouca": "/crests/arouca.png",
-    "Vitória SC": "/crests/vitoria-sc.png",
     "Acad. Viseu": "/crests/acad-viseu.png",
     "CD Nacional": "/crests/cd-nacional.png",
     "Santa Clara": "/crests/santa-clara.png",
@@ -24617,7 +24648,8 @@
     "SL Benfica": "/crests/sl-benfica.png",
     "Braga": "/crests/braga.png",
     "Sporting CP": "/crests/sporting-cp.png",
-    "Casa Pia": "/crests/casa-pia.png"
+    "Casa Pia": "/crests/casa-pia.png",
+    "Vitória SC": "/crests/vitoria-sc.png"
    },
    "results": [
     {
@@ -26783,6 +26815,14 @@
     {
      "name": "Raphael Guzzo",
      "team": "Marítimo",
+     "goals": 1,
+     "assists": null,
+     "pens": null,
+     "played": 1
+    },
+    {
+     "name": "Barbero",
+     "team": "Arouca",
      "goals": 1,
      "assists": null,
      "pens": null,
