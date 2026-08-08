@@ -86,6 +86,13 @@ jobs:
           cache: npm
 
       - name: Build site
+        env:
+          # Renders the newsletter form (components/Subscribe.astro). Only set
+          # because the KV namespace is bound as SUBSCRIBERS on the Pages
+          # project — without that binding /api/subscribe answers 503 and the
+          # form must stay hidden. Astro reads this at BUILD time, so the flag
+          # lives here and not in the Cloudflare dashboard.
+          PUBLIC_NEWSLETTER: "1"
         run: |
           npm ci
           npm run build
