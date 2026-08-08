@@ -29,11 +29,40 @@ MAX_GOALS = 10         # Poisson grid size
 STOP = {"fc", "cf", "cd", "rcd", "sc", "ac", "afc", "ca", "cfc", "club", "clube",
         "do", "de", "la", "sp", "pr", "mg", "rj", "albion", "town", "county"}
 GENERIC = {"city", "united", "real", "deportivo", "sporting", "racing"}
-ALIAS = {"barcelona": "Barça", "atletico madrid": "Atleti"}
+
+# odds-feed name (normalised) -> exact source spelling. None means REFUSE the
+# fixture: the fuzzy matcher found a plausible-looking wrong club (Celta Vigo
+# hit "Ceuta" through the edit-distance bridge) and a silent wrong fit is worse
+# than no fit. Entries from "racing club" down serve the football-data.co.uk
+# import, whose abbreviations the matcher can't bridge (STOP/GENERIC penalties).
+ALIAS = {
+    "barcelona": "Barça", "atletico madrid": "Atleti",
+    "racing club": "Racing Club",            # racing=GENERIC + club=STOP score 0.3
+    "estudiantes": "Estudiantes L.P.",
+    "gimnasia la plata": "Gimnasia L.P.",
+    "belgrano de cordoba": "Belgrano",
+    "instituto de cordoba": "Instituto",
+    "argentinos juniors": "Argentinos Jrs",
+    "basaksehir": "Buyuksehyr",              # co.uk's historic spelling
+    "club brugge": "Club Brugge",            # club=STOP left one token tied with Cercle
+    "d c united": "DC United",               # d/c both under the 3-char floor
+    "los angeles fc": "Los Angeles FC",      # ties with LA Galaxy on los+angeles
+    "tokyo verdy": "Verdy",
+    "dundee fc": "Dundee",                   # ties with Dundee United
+    "wisla krakow": "Wisla",                 # ties with Wieczysta Krakow on krakow
+    "cracovia krakow": "Cracovia",
+    "celta vigo": None,                      # BLOCK: matched Ceuta (ed-distance 1)
+}
+
+# Letters NFD can't decompose — same table as slugify in generate_content.py.
+# Without it "Wisła Płock" normalises to "wis a p ock" and no token survives.
+_LIG = str.maketrans({"ß": "ss", "ø": "o", "ł": "l", "đ": "d", "þ": "th",
+                      "æ": "ae", "œ": "oe", "ð": "d", "ı": "i"})
 
 
 def _norm(s: str) -> str:
-    s = unicodedata.normalize("NFD", str(s or "").lower())
+    s = str(s or "").lower().translate(_LIG)
+    s = unicodedata.normalize("NFD", s)
     s = "".join(c for c in s if not unicodedata.combining(c))
     return re.sub(r"[^a-z0-9]+", " ", s).strip()
 
@@ -197,6 +226,23 @@ class GoalModel:
                     names.add(r["h"]); names.add(r["a"])
                 self._names[sk] = sorted(n for n in names if n)
 
+        # football-data.co.uk import (pipeline/import_fdcouk.py) covers the
+        # leagues the free football-data.org tier can't — MLS, Argentina, the
+        # second divisions. Same row shape, same fuzzy name resolution;
+        # football-data.org keeps priority where both exist.
+        try:
+            imp = json.loads((ROOT / "data" / "results-import.json").read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            imp = {}
+        for sk, lg in (imp.get("leagues") or {}).items():
+            res = lg.get("results") or []
+            if sk not in self.leagues and len(res) >= 60:
+                self.leagues[sk] = _League(res)
+                names = set()
+                for r in res:
+                    names.add(r["h"]); names.add(r["a"])
+                self._names[sk] = sorted(n for n in names if n)
+
         # our own archive fills the gaps (MLS): names already match The Odds API
         try:
             arch = json.loads((ROOT / "data" / "results-archive.json").read_text(encoding="utf-8"))
@@ -218,7 +264,11 @@ class GoalModel:
         key = (sk, odds_name)
         if key in self._match_cache:
             return self._match_cache[key]
-        found = ALIAS.get(_norm(odds_name))
+        nk = _norm(odds_name)
+        if nk in ALIAS:                 # explicit verdict, including None = refuse
+            self._match_cache[key] = ALIAS[nk]
+            return ALIAS[nk]
+        found = None
         if not found:
             nt = _toks(odds_name)
             best, bs, sec = None, 0.0, 0.0

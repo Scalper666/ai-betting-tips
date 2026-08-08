@@ -24,7 +24,11 @@ const ALIAS = {
   'internacional': 'Internacional',
 };
 
-export const norm = (s) => String(s ?? '').toLowerCase().normalize('NFD')
+// ß/ø/ł and friends survive NFD as-is, so without the map they are simply
+// deleted and "Bodø" tokenises as "bod". Mirror of pipeline/model.py _LIG.
+const LIG = { ß: 'ss', ø: 'o', ł: 'l', đ: 'd', þ: 'th', æ: 'ae', œ: 'oe', ð: 'd', ı: 'i' };
+export const norm = (s) => String(s ?? '').toLowerCase()
+  .replace(/[ßøłđþæœðı]/g, (c) => LIG[c]).normalize('NFD')
   .replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
 const toks = (s) => norm(s).split(' ').filter((t) => t.length >= 3 && !STOP.has(t));
 

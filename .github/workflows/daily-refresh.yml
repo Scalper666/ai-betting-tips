@@ -37,6 +37,13 @@ jobs:
       - name: Install pipeline deps
         run: pip install -r pipeline/requirements.txt
 
+      # Free historical results for the leagues football-data.org's tier can't
+      # cover — this is what lets the goal model price MLS, Argentina and the
+      # second divisions. Non-fatal: on any failure the previously committed
+      # results-import.json keeps serving and the build proceeds.
+      - name: Import football-data.co.uk results
+        run: python pipeline/import_fdcouk.py || echo "::warning::fd.co.uk import failed, using last committed data"
+
       - name: Fetch odds & archive tips
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
