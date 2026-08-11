@@ -489,10 +489,14 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
   overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,border-color .2s,box-shadow .2s}
 .news-card:hover{transform:translateY(-4px);border-color:var(--border-3);box-shadow:var(--shadow-sm)}
 .news-thumb{height:140px;position:relative;display:grid;place-items:center;font-size:44px}
+/* chips sit on dark glass in EVERY skin, so their ink is fixed light rather
+   than following --text — in Day the theme text is near-black and would
+   vanish against the glass */
 .news-thumb .tag{position:absolute;top:11px;left:11px;padding:4px 10px;border-radius:7px;
-  background:rgba(7,10,17,.8);border:1px solid var(--border-2);font-size:10px;font-weight:800;letter-spacing:.05em}
+  background:rgba(7,10,17,.8);border:1px solid rgba(255,255,255,.14);font-size:10px;font-weight:800;
+  letter-spacing:.05em;color:#e8eef4}
 .news-thumb .when{position:absolute;top:11px;right:11px;padding:4px 10px;border-radius:7px;
-  background:rgba(7,10,17,.8);font-size:10px;color:var(--text-dim);font-weight:600}
+  background:rgba(7,10,17,.8);font-size:10px;color:#b9c6d2;font-weight:600}
 .news-body{padding:16px;display:flex;flex-direction:column;gap:12px;flex:1}
 .news-body h4{margin:0;font-size:14.5px;line-height:1.35;flex:1}
 .news-body h4:hover{color:var(--mint)}
@@ -1055,6 +1059,17 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
       color-mix(in oklab, var(--ca, #1d2a4d), #0e141d 62%) 0 50%,
       color-mix(in oklab, var(--cb, #4d1d2a), #0e141d 62%) 50% 100%);
   overflow:hidden}
+/* Day: same two club colours, mixed toward paper instead of night — the
+   covers keep each fixture's identity as pastel fields instead of sitting on
+   the light page as dark slabs. Badges on top carry the saturated hit. */
+:root[data-skin="day"] .news-thumb,
+:root[data-skin="day"] .feature-article .fa-img{
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0) 55%, rgba(23,43,77,.10) 100%),
+    linear-gradient(90deg,
+      color-mix(in oklab, var(--ca, #1d2a4d), #f4f7fa 76%) 0 50%,
+      color-mix(in oklab, var(--cb, #4d1d2a), #f4f7fa 76%) 50% 100%);
+}
 .news-thumb .tag, .news-thumb .when{z-index:3}
 .cover-vs{position:relative;z-index:2;display:flex;align-items:center;gap:16px}
 .cvb{width:60px;height:60px;border-radius:14px;display:grid;place-items:center;color:#fff;
