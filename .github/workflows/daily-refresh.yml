@@ -106,8 +106,11 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: npx wrangler pages deploy dist --project-name ai-betting-tips --branch main --commit-dirty=true
 
+      # Exit 1 = every batch was rejected. Surface that as a warning rather
+      # than failing the job: the deploy has already happened and the snapshot
+      # commit after this step must never be lost to a dead ping endpoint.
       - name: Ping IndexNow (Bing/Yandex instant indexing)
-        run: python pipeline/indexnow.py
+        run: python pipeline/indexnow.py || echo "::warning::IndexNow rejected every batch — see step log"
 
       - name: Commit data snapshot (settled history must persist between runs)
         run: |
