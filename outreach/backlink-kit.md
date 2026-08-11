@@ -67,6 +67,59 @@
 
 ---
 
+## 2.5. Каталоги: прямые ссылки на формы + тексты для полей
+
+Проверено 8 авг 2026 (403 = защита от ботов, в браузере открывается).
+
+| Площадка | Форма подачи | Что подавать | Аккаунт |
+|---|---|---|---|
+| There's An AI For That | theresanaiforthat.com/submit/ | /tools/acca-builder | нужен |
+| Futurepedia | futurepedia.io/submit-tool | /tools/acca-builder | нужен |
+| TopAI.tools | topai.tools/submit | /tools/acca-builder | нужен |
+| Insidr.ai | insidr.ai/submit-tools/ | сайт целиком | нет (форма) |
+| SaaSHub | saashub.com/submit | сайт целиком | нужен |
+| AlternativeTo | alternativeto.net (кнопка Add application) | /tools (альтернатива odds-converter-сайтам) | нужен |
+| Kaggle | kaggle.com/datasets → New Dataset | датасет из results-archive (скажи мне — соберу CSV) | нужен |
+
+В AI-каталоги подаём **/tools/acca-builder**, а не главную: их формат — «инструмент», и конкретный AI-билдер купонов проходит модерацию легче, чем «сайт прогнозов». Ссылка на главную всё равно будет в профиле листинга.
+
+### Поля форм (копипаст, EN)
+
+**Name:** `AI Betting Tips — Acca Builder` (для AI-каталогов) / `AI Betting Tips` (для остальных)
+
+**Tagline / short (до 80 зн., 3 варианта — чередуй, не вставляй один и тот же текст везде):**
+1. `AI football predictions with a fully transparent, settled track record`
+2. `Poisson-model football tips — every pick archived, graded and published`
+3. `Free AI acca builder + football predictions with open methodology`
+
+**Description ~160 зн. (для карточек, 2 варианта):**
+1. `AI football predictions for 28 leagues: Poisson model, value screener, acca builder and free calculators. Every pick is archived and settled openly — losses included.`
+2. `Free football betting tips from a versioned statistical model. Full settled log, closing-line-value tracking, odds comparison and no-signup betting calculators.`
+
+**Long description (300–600 зн., 2 варианта):**
+
+Вариант 1 (AI-каталоги):
+> AI Betting Tips generates football predictions for 28 leagues with a time-decayed Poisson model blended with market prices. The Acca Builder assembles accumulator coupons from the model's screened value picks and shows honestly how hit rate falls with every leg. Unlike typical tipster sites, the full track record is published and settled automatically against real scores — losing runs and closing line value included. Free, no signup, updated twice daily.
+
+Вариант 2 (общие каталоги):
+> An independent football predictions site built on a documented statistical model rather than invented experts. Covers 28 leagues with daily tips, an AI value screener, odds comparison, H2H stats, league tables and free betting calculators (odds converter, accumulator, margin, Kelly). Radical transparency is the core feature: every published pick is archived before kick-off and graded against the final score, with the complete log — wins and losses — public.
+
+**Tags/категории:** `Sports` `Betting` `Predictions` `Data & Analytics` (что есть из этого списка)
+**Pricing:** `Free`
+**Логотип:** https://ai-betting-tips.com/apple-touch-icon.png · **Обложка:** https://ai-betting-tips.com/og.png (1200×630). Скриншоты для галереи — главная и /screener.
+
+### Правила публикации (чтобы Google это засчитал, а не наказал)
+
+1. **Анкор — только бренд или URL** («AI Betting Tips», «ai-betting-tips.com»). Никогда не «best betting tips» и подобные коммерческие анкоры — переоптимизация анкоров это единственный реальный риск санкций на этом этапе.
+2. **Описания варьировать** — выше по 2-3 варианта; один и тот же текст на 10 площадках выглядит как автоспам и хуже модерируется.
+3. **Темп: 3–5 площадок в неделю**, не всё за вечер. Резкий всплеск одинаковых ссылок — паттерн, который Google дисконтирует.
+4. **nofollow — тоже ссылка.** Каталоги часто ставят nofollow; это всё равно трафик, брендовые сигналы и путь краулеру. Не гнаться только за dofollow.
+5. **Заполнять профиль целиком** (лого, скрины, категории) — полупустые заявки чаще отклоняют.
+6. **Не платить за featured/premium** в каталогах-помойках. Бесплатное размещение в нормальном каталоге > платное в мусорном.
+7. **Проверка результата — GSC → Ссылки, через 2–4 недели.** Ссылки индексируются медленно; судить на следующий день бессмысленно.
+
+---
+
 ## 3. Готовые тексты — Reddit
 
 ### R1 — r/algobetting (пост)
