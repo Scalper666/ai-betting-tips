@@ -112,6 +112,13 @@ const favicon = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'
     // text-size preference: apply before paint (default "l" = slightly larger)
     try { document.documentElement.setAttribute('data-fz', localStorage.getItem('abt-fz') || 'l'); }
     catch (e) { document.documentElement.setAttribute('data-fz', 'l'); }
+    // colour scheme too: app.js re-applies this later, but it loads after
+    // paint — fine while every skin was dark, a white flashbang now that Day
+    // exists. Same guard, same key as app.js.
+    try {
+      var s = localStorage.getItem('sharptips-skin');
+      if (s && s !== 'azure') document.documentElement.setAttribute('data-skin', s);
+    } catch (e) {}
   </script>
   <!-- Google Analytics 4 -->
   <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-6BCWRLQQ2Y"></script>

@@ -36,6 +36,8 @@
   --ink:#ffffff;              /* text/icon colour on top of the accent fill */
   --halo:rgba(var(--accent-rgb),.09); /* ambient background glow */
   --accent-rgb:51,144,236;    /* accent as RGB for glows / shadows */
+  /* sticky header glass — a token because the Day skin needs it light */
+  --hdr-bg:rgba(7,10,17,.82);
 }
 
 /* ===== Amber skin (data-skin="amber") ===== */
@@ -107,6 +109,38 @@
     radial-gradient(880px 400px at 74% -16%, rgba(255,196,120,.07), transparent 60%),
     radial-gradient(1200px 520px at 50% 116%, rgba(78,200,178,.05), transparent 65%);
 }
+
+/* ===== Day skin (data-skin="day") — Telegram's day theme, the one light scheme.
+   Paper-white cards on the soft grey-blue field Telegram uses behind chats;
+   accent is their daytime blue #2481cc (darker than the night accent so text
+   links keep AA contrast on white). Ink colour is the dark skins' canvas —
+   the two themes mirror each other. Two rules invert here: borders sit DARKER
+   than surfaces (light UIs draw edges down, not up), and shadows drop to a
+   tenth of the dark weights or every card looks smudged. Money-green CTAs
+   stay global, same as every other skin. */
+:root[data-skin="day"]{
+  color-scheme:light;
+  --bg-0:#eef1f5; --bg-1:#e7ebf0; --bg-2:#f4f6f9; --bg-3:#e2e7ed;
+  --surface:#ffffff; --surface-2:#f7f9fb; --surface-3:#edf1f5;
+  --border:#e3e8ee; --border-2:#d5dce4; --border-3:#bfc9d4;
+  --text:#17212b; --text-dim:#516375; --text-mute:#5f7386;
+  --mint:#2481cc; --mint-d:#1c6dad; --mint-soft:rgba(var(--accent-rgb),.12);
+  --violet:#3390ec; --violet-soft:rgba(51,144,236,.13);
+  --cyan:#1a7fb8;
+  --gold:#b07d00;
+  --danger:#d6423f; --danger-soft:rgba(214,66,63,.12);
+  --win:#2f9e44; --lose:#d6423f; --push:#8194a5;
+  --grad-mint:linear-gradient(135deg,#3390ec 0%,#2481cc 100%);
+  --grad-violet:linear-gradient(135deg,#40a7e3 0%,#2481cc 100%);
+  --grad-head:linear-gradient(180deg,#ffffff 0%,#f4f6f9 100%);
+  --shadow-sm:0 4px 14px rgba(23,43,77,.08);
+  --shadow:0 16px 40px rgba(23,43,77,.12);
+  --glow-mint:0 0 0 1px rgba(var(--accent-rgb),.35),0 8px 26px rgba(var(--accent-rgb),.14);
+  --ink:#ffffff;
+  --halo:rgba(var(--accent-rgb),.05);
+  --accent-rgb:36,129,204;
+  --hdr-bg:rgba(255,255,255,.86);
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 html,body{margin:0;padding:0;overflow-x:clip}
@@ -124,7 +158,7 @@ h1,h2,h3,h4,h5{font-family:'Space Grotesk',sans-serif;font-weight:700;letter-spa
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
 button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit}
-::selection{background:var(--mint-soft);color:#fff}
+::selection{background:var(--mint-soft);color:var(--text)}
 .container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 .muted{color:var(--text-mute)}
 .dim{color:var(--text-dim)}
@@ -141,7 +175,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
 .btn-violet{background:var(--grad-violet);color:#fff;box-shadow:0 8px 22px rgba(14,203,129,.3)}
 .btn-violet:hover{box-shadow:0 12px 30px rgba(14,203,129,.46)}
 .btn-outline{background:transparent;border-color:var(--border-2);color:var(--text)}
-.btn-outline:hover{border-color:var(--mint);color:#fff;box-shadow:0 0 0 3px var(--mint-soft)}
+.btn-outline:hover{border-color:var(--mint);color:var(--text);box-shadow:0 0 0 3px var(--mint-soft)}
 .btn-ghost{background:var(--surface-2);border-color:var(--border-2);color:var(--text-dim)}
 .btn-ghost:hover{border-color:var(--border-3);color:var(--text)}
 .btn-dark{background:var(--bg-3);border-color:var(--border);color:var(--text)}
@@ -155,7 +189,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
   font-size:11px;line-height:1.5;text-align:center;padding:6px 18px}
 
 /* ===== Header ===== */
-.hdr{position:sticky;top:0;z-index:80;background:rgba(7,10,17,.82);
+.hdr{position:sticky;top:0;z-index:80;background:var(--hdr-bg);
   backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .hdr-bar{display:flex;align-items:center;gap:18px;height:64px}
 .logo{display:flex;align-items:center;gap:10px;flex-shrink:0;font-family:'Space Grotesk',sans-serif}
@@ -271,7 +305,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
 .hero-cta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:0}
 .hero-cta .btn{padding:7px 13px;font-size:12.5px;border-radius:9px}
 .hero-stats{display:flex;gap:24px;flex-wrap:wrap}
-.hstat .n{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:800;line-height:1;color:#fff}
+.hstat .n{font-family:'Space Grotesk',sans-serif;font-size:19px;font-weight:800;line-height:1;color:var(--text)}
 .hstat .n em{font-style:normal;color:var(--mint)}
 .hstat .l{font-size:11px;color:var(--text-mute);margin-top:3px;font-weight:600}
 
@@ -320,7 +354,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
 .pred-tip{margin-top:16px;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r-md);
   padding:12px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .pred-tip .lbl{font-size:10.5px;color:var(--text-mute);text-transform:uppercase;letter-spacing:.07em;font-weight:700}
-.pred-tip .val{font-size:14.5px;font-weight:800;color:#fff;font-family:'Space Grotesk',sans-serif;margin-top:3px}
+.pred-tip .val{font-size:14.5px;font-weight:800;color:var(--text);font-family:'Space Grotesk',sans-serif;margin-top:3px}
 .pred-tip .val em{font-style:normal;color:var(--mint)}
 .odd-box{text-align:center;background:var(--surface-3);border:1px solid var(--border-2);
   border-radius:10px;padding:7px 14px;min-width:64px}
@@ -356,11 +390,11 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
 .bk-brand h4{margin:0 0 5px;font-size:16px;font-family:'Space Grotesk',sans-serif}
 .bk-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .bk-meta .rate{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:800;color:var(--gold)}
-.bk-meta .rate b{color:#fff;font-family:'Space Grotesk',sans-serif}
+.bk-meta .rate b{color:var(--text);font-family:'Space Grotesk',sans-serif}
 .bk-meta .tc{font-size:10px;color:var(--text-mute)}
 .bk-bonus{border-left:1px solid var(--border);padding-left:18px}
 .bk-bonus .blbl{font-size:10px;color:var(--text-mute);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:4px}
-.bk-bonus .amt{font-size:15px;font-weight:800;color:#fff;line-height:1.25;font-family:'Space Grotesk',sans-serif}
+.bk-bonus .amt{font-size:15px;font-weight:800;color:var(--text);line-height:1.25;font-family:'Space Grotesk',sans-serif}
 .bk-bonus .amt em{font-style:normal;color:var(--mint)}
 .bk-score{text-align:center}
 .bk-score .ring{width:62px;height:62px;border-radius:50%;display:grid;place-items:center;margin:0 auto 4px;
@@ -545,7 +579,7 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
 .mt-tc a:hover{color:var(--mint)}
 /* highlighted #1 row */
 .bk-mini.top{background:var(--mint-soft);box-shadow:inset 3px 0 0 var(--mint)}
-.bk-mini.top h5{color:#fff}
+.bk-mini.top h5{color:var(--text)}
 .bk-mini.top .ava{position:relative;box-shadow:0 0 0 2px var(--mint-soft),0 6px 16px rgba(var(--accent-rgb),.35)}
 .mini-tip .rank1{position:absolute;top:-7px;right:-7px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;
   background:var(--grad-mint);color:var(--ink);font-size:10px;font-weight:800;display:grid;place-items:center;
@@ -714,7 +748,7 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
 .scr-match .ic{font-size:16px;flex-shrink:0}
 .scr-match .mt b{font-weight:700}
 .scr-match .mt .lg{display:block;font-size:10.5px;color:var(--text-mute);font-weight:600;margin-top:1px}
-.scr-tip{font-weight:700;color:#fff;white-space:nowrap}
+.scr-tip{font-weight:700;color:var(--text);white-space:nowrap}
 .scr-when{color:var(--text-dim);font-weight:600;white-space:nowrap}
 .scr-odds{font-family:'Space Grotesk',sans-serif;font-weight:800;color:var(--mint)}
 .edge{font-family:'Space Grotesk',sans-serif;font-weight:800}
