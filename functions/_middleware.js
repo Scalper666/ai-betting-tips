@@ -9,6 +9,7 @@ const BLOCKED = new Set([
   'ID', // Indonesia — gambling illegal
   'PK', // Pakistan — gambling illegal
   'BD', // Bangladesh — gambling illegal
+  'KZ', // Kazakhstan — licensed-local-only market, offshore promotion banned
 ]);
 
 export async function onRequest(context) {
