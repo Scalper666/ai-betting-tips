@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-08-10T17:20:26+00:00",
+ "updated_at": "2026-08-11T00:38:56+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -24660,6 +24660,26 @@
     },
     {
      "pos": 5,
+     "team": "CD Nacional",
+     "p": 1,
+     "w": 0,
+     "d": 1,
+     "l": 0,
+     "gd": 0,
+     "pts": 1
+    },
+    {
+     "pos": 5,
+     "team": "Santa Clara",
+     "p": 1,
+     "w": 0,
+     "d": 1,
+     "l": 0,
+     "gd": 0,
+     "pts": 1
+    },
+    {
+     "pos": 5,
      "team": "Amadora",
      "p": 1,
      "w": 0,
@@ -24709,7 +24729,7 @@
      "pts": 1
     },
     {
-     "pos": 11,
+     "pos": 13,
      "team": "Famalicão",
      "p": 1,
      "w": 0,
@@ -24719,7 +24739,7 @@
      "pts": 1
     },
     {
-     "pos": 11,
+     "pos": 13,
      "team": "Estoril Praia",
      "p": 1,
      "w": 0,
@@ -24727,26 +24747,6 @@
      "l": 0,
      "gd": 0,
      "pts": 1
-    },
-    {
-     "pos": 13,
-     "team": "CD Nacional",
-     "p": 0,
-     "w": 0,
-     "d": 0,
-     "l": 0,
-     "gd": 0,
-     "pts": 0
-    },
-    {
-     "pos": 13,
-     "team": "Santa Clara",
-     "p": 0,
-     "w": 0,
-     "d": 0,
-     "l": 0,
-     "gd": 0,
-     "pts": 0
     },
     {
      "pos": 15,
@@ -24795,6 +24795,8 @@
     "Arouca": "/crests/arouca.png",
     "Gil Vicente": "/crests/gil-vicente.png",
     "Acad. Viseu": "/crests/acad-viseu.png",
+    "CD Nacional": "/crests/cd-nacional.png",
+    "Santa Clara": "/crests/santa-clara.png",
     "Amadora": "/crests/amadora.png",
     "Moreirense": "/crests/moreirense.png",
     "SL Benfica": "/crests/sl-benfica.png",
@@ -24802,8 +24804,6 @@
     "Sporting CP": "/crests/sporting-cp.png",
     "Famalicão": "/crests/famalicao.png",
     "Estoril Praia": "/crests/estoril-praia.png",
-    "CD Nacional": "/crests/cd-nacional.png",
-    "Santa Clara": "/crests/santa-clara.png",
     "Casa Pia": "/crests/casa-pia.png",
     "Rio Ave": "/crests/rio-ave.png",
     "Vitória SC": "/crests/vitoria-sc.png",
@@ -27007,9 +27007,24 @@
      "a": "Acad. Viseu",
      "hs": 2,
      "as": 2
+    },
+    {
+     "d": "2026-08-10",
+     "h": "Santa Clara",
+     "a": "CD Nacional",
+     "hs": 2,
+     "as": 2
     }
    ],
    "scorers": [
+    {
+     "name": "Gonçalo Paciência",
+     "team": "Santa Clara",
+     "goals": 2,
+     "assists": null,
+     "pens": null,
+     "played": 1
+    },
     {
      "name": "Georgios Koutsias",
      "team": "Famalicão",
@@ -27120,14 +27135,6 @@
      "goals": 1,
      "assists": null,
      "pens": null,
-     "played": 1
-    },
-    {
-     "name": "Héctor Hernández",
-     "team": "Gil Vicente",
-     "goals": 1,
-     "assists": null,
-     "pens": 1,
      "played": 1
     }
    ]
