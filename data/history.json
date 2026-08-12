@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-11T17:24:57.603433+00:00",
+  "updated_at": "2026-08-12T04:20:18.675253+00:00",
   "tips": {
     "mock_0|Home total over 1.5": {
       "key": "mock_0|Home total over 1.5",
@@ -10189,10 +10189,13 @@
       "basis": "model+market",
       "model": "v2",
       "published_at": "2026-08-10T06:52:28.211909+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "void",
+      "profit": 0.0,
+      "settled_at": "2026-08-12T04:20:16.422283+00:00",
+      "score": null,
+      "void_reason": "fixture re-listed by the feed under a new id",
+      "close_odds": 1.82,
+      "clv_pct": -2.2
     },
     "6ba35bfd1258e3e284f60968ef6d8cf3|Under 2.25 goals": {
       "key": "6ba35bfd1258e3e284f60968ef6d8cf3|Under 2.25 goals",
@@ -10945,6 +10948,31 @@
       "basis": "model+market",
       "model": "v2",
       "published_at": "2026-08-11T17:24:55.432424+00:00",
+      "status": "pending",
+      "profit": null,
+      "settled_at": null,
+      "score": null
+    },
+    "b48faf8d6b6d22c11c30232a169bcf73|Union Santa Fe to win": {
+      "key": "b48faf8d6b6d22c11c30232a169bcf73|Union Santa Fe to win",
+      "event_id": "b48faf8d6b6d22c11c30232a169bcf73",
+      "sport_key": "soccer_argentina_primera_division",
+      "league": "Liga Profesional",
+      "home": "Aldosivi Mar del Plata",
+      "away": "Union Santa Fe",
+      "kickoff": "2026-08-21T17:30:00Z",
+      "market": "Union Santa Fe to win",
+      "type": "h2h",
+      "side": null,
+      "point": null,
+      "outcome": "Union Santa Fe",
+      "odds": 2.75,
+      "confidence": 38,
+      "edge_pct": 5.22,
+      "bookmaker": "Unibet (SE)",
+      "basis": "model+market",
+      "model": "v2",
+      "published_at": "2026-08-12T04:20:16.410685+00:00",
       "status": "pending",
       "profit": null,
       "settled_at": null,
