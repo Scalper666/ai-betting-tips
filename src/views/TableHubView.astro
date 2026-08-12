@@ -5,6 +5,13 @@ import fdData from '../data/football-data.json';
 import { slugify, BUILD_ISO, fmtDate } from '../lib/utils.js';
 import { leagueName } from '../lib/leagues.js';
 import { t, lhref } from '../i18n/index.js';
+import { buildSeasonTables } from '../lib/seasonTables.js';
+
+// completed-season archives; plain EN hrefs on purpose — the archive pages
+// are EN-only, same convention as the footer's /seasons and /table links
+const archives = buildSeasonTables().map((s) => ({
+  name: s.league, slug: s.slug, season: s.season,
+}));
 
 const { lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
@@ -78,6 +85,16 @@ const schema = {
             <a class="tm" href={L(`/table/${slugify(x.name)}`)}><span class="dot"></span>{x.name}</a>
           ))}
         </div>
+        {archives.length > 0 && (
+          <div class="box">
+            <div class="box-h"><span class="hi">🗄️</span> {T('tb.archives')}</div>
+            {archives.map((a) => (
+              <a class="tm" href={`/table/${a.slug}/${a.season}`}>
+                <span class="dot"></span>{a.name} {a.season.replace('-', '/')}
+              </a>
+            ))}
+          </div>
+        )}
         <div class="box">
           <div class="box-h"><span class="hi">⚡</span> {T('tb.livePages')}</div>
           <a class="tm" href={L('/results')}><span class="dot"></span>{T('ft.leagueResults')}</a>

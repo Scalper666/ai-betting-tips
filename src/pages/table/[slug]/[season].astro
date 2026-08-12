@@ -1,0 +1,103 @@
+---
+import Base from '../../../layouts/Base.astro';
+import ToolsBox from '../../../components/ToolsBox.astro';
+import { buildSeasonTablePaths, buildSeasonTables } from '../../../lib/seasonTables.js';
+import { hasTablePage, hasLeaguePage } from '../../../lib/links.js';
+import { slugify, fmtDate } from '../../../lib/utils.js';
+
+// ── Archived final table for the last completed season, computed from raw
+//    results. Evergreen: "premier league table 2025/26" keeps its search
+//    demand for years after the season ends.
+export function getStaticPaths() {
+  return buildSeasonTablePaths();
+}
+
+const { league, season, matches, table, lastMatch } = Astro.props;
+const seasonLabel = season.includes('-') ? season.replace('-', '/') : season;
+const champion = table[0];
+const others = buildSeasonTables()
+  .filter((s) => s.league !== league)
+  .map((s) => ({ name: s.league, slug: s.slug, season: s.season }));
+
+const title = `${league} Table ${seasonLabel} — Final Standings`;
+const description = `The final ${league} ${seasonLabel} table: ${champion.team} finished top with ${champion.pts} points from ${champion.p} games. Full standings computed from all ${matches} recorded results.`;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Table',
+  about: `${league} ${seasonLabel} final league table`,
+};
+---
+<Base title={title} description={description} schema={schema} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href="/">Home</a><span>/</span><a href="/table">Tables</a><span>/</span>{league} {seasonLabel}
+      </div>
+      <h1>{league} table <em>{seasonLabel}</em></h1>
+      <p class="lead">Final standings of the {seasonLabel} season, computed from {matches} recorded results: {champion.team} took the title with {champion.pts} points. Kept as a permanent archive.</p>
+      <p class="upd-line">Season's last recorded match: {fmtDate(lastMatch)} · <a href="/editorial-policy">how we work</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">Final <b>{seasonLabel} standings</b></h2>
+            {hasTablePage(league) && <a href={`/table/${slugify(league)}`} class="more-link">Current table →</a>}
+          </div>
+          <div class="odds-table"><div class="scr-scroll">
+            <table class="otbl">
+              <thead><tr>
+                <th>#</th><th style="text-align:left">Team</th>
+                <th>P</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Pts</th>
+              </tr></thead>
+              <tbody>
+                {table.map((r, i) => (
+                  <tr>
+                    <td class="o-cell"><span>{i + 1}</span></td>
+                    <td class="o-match" style="font-weight:700">{r.team}</td>
+                    <td class="o-cell"><span>{r.p}</span></td>
+                    <td class="o-cell"><span>{r.w}</span></td>
+                    <td class="o-cell"><span>{r.d}</span></td>
+                    <td class="o-cell"><span>{r.l}</span></td>
+                    <td class="o-cell"><span>{r.gf}</span></td>
+                    <td class="o-cell"><span>{r.ga}</span></td>
+                    <td class="o-cell"><span>{r.gf - r.ga > 0 ? '+' : ''}{r.gf - r.ga}</span></td>
+                    <td class="o-cell hot"><span class="cb">{r.pts}</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div></div>
+          <p class="res-note">Computed from match results at 3-1-0 points. Administrative points deductions, playoffs and tie-break rules beyond goal difference are NOT applied — where a federation adjusted the table off the pitch, the official record may differ from this computed one.</p>
+        </section>
+
+        <section class="seo">
+          <h2>About this archive</h2>
+          <p>This is the {league} {seasonLabel} season as the results themselves tell it: every recorded match aggregated into the final table, kept as a permanent reference after the season closed. The current season's live table, where we track it, sits at the link above and updates twice a day with the rest of our data.</p>
+          <p>Final tables are also the raw material of our models: two seasons of these results, time-decayed, are what the goal model fits its attack and defence rates from. The historical record and the forward-looking probabilities on our match pages are two views of the same dataset.</p>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">🏆</span> {league}</div>
+          {hasTablePage(league) && <a class="tm" href={`/table/${slugify(league)}`}><span class="dot"></span>Current {league} table</a>}
+          {hasLeaguePage(league) && <a class="tm" href={`/league/${slugify(league)}`}><span class="dot"></span>{league} predictions</a>}
+          <a class="tm" href="/seasons"><span class="dot"></span>Season hubs</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🗄️</span> Other season archives</div>
+          {others.map((o) => (
+            <a class="tm" href={`/table/${o.slug}/${o.season}`}>
+              <span class="dot"></span>{o.name} {o.season.replace('-', '/')}
+            </a>
+          ))}
+        </div>
+        <ToolsBox lang="en" />
+      </aside>
+    </div>
+  </div>
+</Base>

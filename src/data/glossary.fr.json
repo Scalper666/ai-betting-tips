@@ -724,6 +724,937 @@
       ],
       "_src_hash": "c50087ed518f0a33",
       "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "handicap-betting",
+      "term": "Pari Handicap (Européen)",
+      "short": "Un marché où une équipe commence avec un déficit ou une avance imaginaire d'un but, avec des cotes en trois voies incluant le résultat ajusté.",
+      "definition": [
+        "Le pari handicap européen donne à une équipe une avance ou un déficit d'un but entier avant le coup d'envoi, puis valorise le résultat ajusté comme un marché normal en trois voies : domicile, match nul ajusté, extérieur. Misez sur Arsenal −1 et l'équipe doit gagner par deux buts ou plus ; une victoire d'un seul but aboutit exactement au match nul ajusté et votre pari perd.",
+        "C'est le piège pour les débutants et toute la différence avec la version asiatique : les handicaps européens n'ont pas de remboursement. La troisième issue (le match nul ajusté) est une possibilité réelle et tarifée qui bat les deux côtés du handicap, c'est pourquoi les cotes semblent plus généreuses que les lignes asiatiques sur le même match."
+      ],
+      "example": "Arsenal −1 à 2.60 contre Fulham. Arsenal gagne 2–0 : le pari gagne. Arsenal gagne 2–1 : le −1 fait passer le score à 1–1 — le match nul ajusté gagne et votre pari perd, tandis qu'un −1 asiatique aurait remboursé la mise.",
+      "related": [
+        "asian-handicap",
+        "match-result",
+        "draw-no-bet"
+      ],
+      "see": [],
+      "_src_hash": "64badaff59079f4c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "half-time-full-time",
+      "term": "Mi-temps/Temps plein (MT/TP)",
+      "short": "Un seul pari sur le résultat à la mi-temps ET à la fin du match — neuf combinaisons, cotes longues, aucun crédit partiel.",
+      "definition": [
+        "MT/TP vous demande de désigner le leader à la pause et le vainqueur à la fin en un seul pari : Domicile/Domicile, Nul/Domicile, Extérieur/Domicile et les six autres combinaisons. Les deux volets doivent se concrétiser — une équipe qui traîne à la mi-temps et gagne tard annule un ticket Domicile/Domicile même si le résultat final vous a favorisé.",
+        "L'attrait du marché réside dans les cotes : les combinaisons rapportent bien plus que le simple résultat, car vous tarifez deux événements corrélés. Cette corrélation est exactement pourquoi les bookmakers l'apprécient — la plupart des parieurs surévaluent la probabilité que les favoris mènent aux deux points de contrôle, et la marge sur neuf résultats est plus grasse que sur trois."
+      ],
+      "example": "Nul/Domicile sur un favori à 4.75 : le favori doit être à égalité à la mi-temps puis gagner. S'il mène 1–0 à la pause et gagne 3–0, l'option Domicile/Domicile à 2.30 qui semblait plus probable était le ticket gagnant — MT/TP pénalise le fait d'avoir grossièrement raison.",
+      "related": [
+        "match-result",
+        "correct-score",
+        "double-chance"
+      ],
+      "see": [],
+      "_src_hash": "5c87a4ea737acac3",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "clean-sheet",
+      "term": "Feuille blanche",
+      "short": "Un marché sur le fait qu'une équipe encaisse zéro but — coté à partir des taux de défense et d'attaque adverse.",
+      "definition": [
+        "Un pari feuille blanche gagne si l'équipe choisie encaisse aucun but sur l'ensemble du match. C'est le miroir défensif des BTTS : « Feuille blanche équipe A — oui » est proche de « les deux équipes marquent — non » pondéré d'un côté.",
+        "La façon honnête de le coter est à partir des taux de marque : si l'adversaire encaisse en moyenne 1,2 but par match face à des défenses similaires, un modèle de Poisson place la probabilité de zéro but autour de 30%, ce qui donne des cotes justes d'environ 3,30. Toute cote plus courte a besoin d'une raison — attaquants absents, autobus garé — que les moyennes n'ont pas encore captée."
+      ],
+      "example": "Buts attendus encaissés contre cette défense : 1,2. P(0 but) = e^−1,2 ≈ 30,1%, cotes justes ≈ 3,32. Un bookmaker affichant 2,80 vous facture ~16% au-dessus du juste prix ; 3,60 vous paie pour prendre la variance.",
+      "related": [
+        "btts",
+        "over-under",
+        "xg"
+      ],
+      "see": [
+        {
+          "label": "BTTS model estimates per fixture",
+          "href": "/tips/btts"
+        }
+      ],
+      "_src_hash": "986e19371908b143",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "anytime-goalscorer",
+      "term": "Buteur à Tout Moment",
+      "short": "Un pari sur un joueur nommé pour marquer à tout moment du match — coté selon les minutes, le rôle et l'attente de buts de l'équipe.",
+      "definition": [
+        "Le marché buteur à tout moment paie si votre joueur marque au moins une fois — les buts contre son camp sont généralement exclus, et le pari exige typiquement que le joueur foule effectivement le terrain. Les cotes reflètent trois éléments : l'attente totale de buts de l'équipe, la part du joueur (les penalties aident énormément), et les minutes attendues.",
+        "La fuite classique est de parier sur la réputation : un attaquant vedette commençant sur le banc, ou un joueur dont l'équipe crée peu, affiche une cote bien plus basse que sa vraie chance. Vérifiez l'équipe de départ et les chiffres offensifs de l'équipe avant la notoriété."
+      ],
+      "example": "Un attaquant prenant ~30% d'une équipe attendue pour marquer 1,6 buts a grosso modo une chance d'environ 1 − e^(−0,48) ≈ 38% — cotes justes environ 2,60. Les bookmakers le cotent à 2,00 sur la notoriété seule ; cet écart est la marge que vous consentez à payer.",
+      "related": [
+        "xg",
+        "value-bet",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "fd5937261b90a11a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "first-goalscorer",
+      "term": "Premier buteur",
+      "short": "Un pari sur un joueur nommé pour ouvrir le score — variance élevée, marge importante, et fortement dépendant des penaltys et du temps de jeu.",
+      "definition": [
+        "Le pari premier buteur ne rapporte que si votre joueur marque le premier but du match. C'est le marché « à tout moment » avec un pile ou face supplémentaire par-dessus : non seulement « va-t-il marquer » mais « son but arrivera-t-il en premier » — ce qui multiplie la variance et, pratiquement pour le bookmaker, la marge intégrée dans chaque cote.",
+        "Les tireurs de penaltys et les titulaires des premières minutes dominent l'honnête liste restreinte. Un super-sub qui marque beaucoup mais entre en jeu à la 70e minute est structurellement mauvais ici, peu importe ce que ses chiffres « à tout moment » laissent paraître."
+      ],
+      "example": "Si la cote anytime d'un joueur est de 38% et que son équipe a autant de chances de marquer en premier ou en deuxième, sa cote premier buteur est à peu près la moitié de la part des premiers buts du match que son équipe possède — souvent 15–18%, cote équitable 5.50–6.60. Les bookmakers citent régulièrement 4.50 : une marge à deux chiffres cachée à la vue de tous.",
+      "related": [
+        "anytime-goalscorer",
+        "bookmaker-margin",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "589dfe0d5c431899",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "corners-betting",
+      "term": "Paris sur les Corners",
+      "short": "Marchés Over/Under et handicap sur le nombre de corners — déterminés par le volume de tirs et le style de jeu, non par le résultat du match.",
+      "definition": [
+        "Les marchés de corners évaluent le nombre de corners : totaux du match (over/under 9,5 est la ligne classique), totaux par équipe et handicaps de corners. Le nombre de corners suit le volume d'attaques et la largeur du jeu — une équipe dominante canalisée vers les ailes par une défense basse génère des corners indépendamment du score.",
+        "L'erreur courante est de traiter les corners comme un élément aléatoire. Ils corrèlent avec les tirs et le contrôle du jeu, donc le même raisonnement qui établit les cotes sur les totaux s'applique : les équipes qui attaquent par les ailes contre des défenses compactes enregistrent des totaux élevés, les paires en contre-attaque des totaux bas."
+      ],
+      "example": "Deux équipes moyennant 10,8 corners combinés contre une opposition similaire font du over 9,5 environ une proposition à 58% — cotes justes ~1,72. Une cote de 1,90 a de la valeur si l'historique derrière cette moyenne est fiable ; la même cote est un piège après trois matchs atypiquement ouverts.",
+      "related": [
+        "over-under",
+        "sample-size",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "0b2cfeaf81fcec85",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "cards-betting",
+      "term": "Paris sur les cartons / Avertissements",
+      "short": "Marchés sur les cartons jaunes et rouges — où la moyenne personnelle de l'arbitre compte autant que la tension du match.",
+      "definition": [
+        "Les marchés de cartons évaluent les avertissements totaux (souvent en points : jaune 10, rouge 25) ou les simples comptages de cartons. Deux facteurs dominent : l'enjeu du match — les derbies et les luttes pour le maintien montent en température — et l'arbitre, dont la moyenne personnelle de cartons par match est une statistique publique et stable que la plupart des parieurs occasionnels ne consultent jamais.",
+        "Ce chiffre d'arbitre est le signal le plus proche d'une opportunité gratuite sur ce marché. Le même match peut avoir une attente de cartons écartée de 30% selon qui siffle."
+      ],
+      "example": "Un arbitre affichant une moyenne de 4,8 jaunes par match dirige un derby dont les cinq dernières rencontres ont enregistré 5,2 cartons en moyenne. Une ligne over 4,5 cartons à cotes égales valorise correctement la combinaison ; la même ligne sous un arbitre affichant une moyenne de 3,1 nécessiterait que la tension du derby fasse tout le travail.",
+      "related": [
+        "variance",
+        "sample-size",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "89575455dd41503d",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "outright-betting",
+      "term": "Outright (Futures) Betting",
+      "short": "Un pari sur une compétition entière — vainqueur de ligue, meilleur buteur, relégation — réglé plusieurs mois plus tard, avec marge et argent immobilisé à l'appui.",
+      "definition": [
+        "Les cotes outrights reflètent les résultats sur la saison : champion, top quatre, relégation, Ballon d'Or. Deux coûts structurels les distinguent des paris sur match : la marge du bookmaker sur un champ de 20 chevaux est bien plus importante que sur un match à trois issues, et votre mise est bloquée pendant des mois — de l'argent mort qui aurait pu se capitaliser ailleurs.",
+        "L'argument honnête pour les outrights est un désaccord précoce et marqué avec le marché que vous comptez voir se résoudre. Parier sur le favori en août à une cote que vous auriez pu battre en attendant, c'est le cas classique de payer pour son impatience."
+      ],
+      "example": "Additionnez les probabilités implicites de chaque cote titre d'une ligue à 20 équipes et vous trouverez souvent 115–125% — une marge de 15–25%, contre 4–6% sur un seul match. Le même bankroll réparti sur des paris de match coûte beaucoup moins cher au total.",
+      "related": [
+        "bookmaker-margin",
+        "expected-value",
+        "bankroll-management"
+      ],
+      "see": [
+        {
+          "label": "Season hubs with live tables",
+          "href": "/seasons"
+        }
+      ],
+      "_src_hash": "8b6639c4b5210df4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "each-way-betting",
+      "term": "Pari Mutuel à Cheval",
+      "short": "Deux paris en un — victoire et place — essentiellement un produit hippique, occasionnellement proposé sur les paris d'équipe à l'issue entière.",
+      "definition": [
+        "Un pari à cheval divise votre mise : moitié sur la victoire nette, moitié sur une « place » (terminer dans un ensemble de positions défini) à une fraction des cotes de victoire. Au football il apparaît sur les paris d'issue — terminer dans le top 4 comme place sur un pari de titre, par exemple.",
+        "La question de valeur porte toujours sur la fraction de place : à un quart des cotes de 8.00, la place rapporte 2.00 contre une probabilité top-4 que le marché peut coter plus près de 1.60 ou 2.60. Les deux moitiés ne forment qu'une seule décision sur le bulletin — évaluez-les comme deux paris distincts, car c'est ce qu'ils sont."
+      ],
+      "example": "£10 à cheval (total £20) sur une équipe à 8.00 pour le titre, place ¼ cotes top-4. Manquer le titre mais top-4 réussi : la moitié victoire perd £10, la moitié place rapporte £10 × (1 + 7/4) = £27.50 — solde +£7.50. Si cette cote de place a battue sa véritable chance est la véritable question de valeur.",
+      "related": [
+        "outright-betting",
+        "expected-value",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "0e5e1cd7d7e0951c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "banker",
+      "term": "Banker",
+      "short": "La sélection dans un pari combiné traitée comme quasi-certaine — le point d'achoppement silencieux de tout accumulateur.",
+      "definition": [
+        "Un banker est la jambe sur laquelle les parieurs ancrent un pari combiné — le favori à 1,25 'juste pour améliorer les cotes'. L'arithmétique que la plupart des glissements ignorent : une cote de 1,25 implique un taux d'échec de 20% même à la tarification optimiste du bookmaker, et cet échec tue tout l'accumulateur.",
+        "Les bankers portent aussi la pire valeur du plateau : les gros favoris sont là où l'argent récréatif s'accumule, donc leurs cotes sont souvent en dessous du juste prix plus que tout autre segment. En ajouter un à un pari améliore généralement la marge, pas la sécurité."
+      ],
+      "example": "Un quatre-tiers à 6,00 devient 7,50 avec un banker à 1,25 ajouté. Le banker échoue une fois sur cinq à son taux implicite — vous avez échangé un gain de 25% sur le payout contre 20% de chance de transformer chaque pari gagnant en cendres.",
+      "related": [
+        "accumulator",
+        "longshot-bias",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Build a coupon from model-screened picks",
+          "href": "/tools/acca-builder"
+        }
+      ],
+      "_src_hash": "5519628f9b88ad26",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "system-bet",
+      "term": "Pari Système",
+      "short": "Un ensemble structuré d'accumulateurs sur les mêmes sélections — Trixie, Yankee, Lucky 15 — versant des gains partiels quand seulement certaines branches arrivent.",
+      "definition": [
+        "Un pari système place chaque accumulateur possible d'une taille donnée parmi vos sélections : un Trixie sur trois pronostics fait trois doubles plus un triple (4 paris), un Yankee sur quatre pronostics fait six doubles, quatre triples et un quadruplé (11 paris). Une branche perdante ne tue plus tout — les combinaisons sans elle comptent toujours.",
+        "Le coût est la fragmentation de la mise : chaque combinaison porte sa propre mise, donc un « Yankee 1€ » coûte 11€. Les systèmes convertent le profil tout-ou-rien de l'accumulateur en un profil plus lisse au prix de devoir avoir plus de branches justes simplement pour rentrer dans ses frais."
+      ],
+      "example": "Trixie 1€ (3€ + 1€ total : 3 doubles + 1 triple) sur des cotes à 2,0 / 2,0 / 2,0. Les trois arrivent : rapporte 4€ × ... les doubles rapportent 3×4€=12€ ? — chaque double rapporte 1€×4=4€, le triple 8€, total 20€ pour 4€ misés. Deux arrivent : un double survit, 4€ récupérés pour 4€ misés. L'équilibre du système a besoin de deux sur trois, pas un.",
+      "related": [
+        "accumulator",
+        "trixie",
+        "yankee"
+      ],
+      "see": [],
+      "_src_hash": "dce756f0cd33838e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "trixie",
+      "term": "Trixie",
+      "short": "Trois sélections, quatre paris : chaque double plus le triple. Deux gagnants vous remboursent ; trois rapportent vraiment.",
+      "definition": [
+        "Un Trixie combine trois sélections en quatre paris — les trois doubles possibles et le triple. Contrairement à un triple simple, deux jambes gagnantes retournent quand même quelque chose : le double qu'elles forment survit à l'échec de la troisième jambe.",
+        "La mise totale est de quatre unités. La structure convient aux pronostics autour de la cote 1.50 ; sur les favoris courts les doubles paient trop peu pour justifier les unités supplémentaires, et sur les outsiders le triple simple rapporte généralement plus que l'assurance."
+      ],
+      "example": "Trixie de £1 (£4 au total) sur trois pronostics à 2.10. Tous gagnent : 3 doubles × £4,41 + triple £9,26 ≈ £22,50. Deux gagnent : un double rapporte £4,41 — presque la totalité de la mise £4 récupérée. Un triple simple de £4 aurait payé £37 pour les trois mais zéro pour deux.",
+      "related": [
+        "system-bet",
+        "yankee",
+        "accumulator"
+      ],
+      "see": [],
+      "_src_hash": "1545b6c564f5f4e1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "yankee",
+      "term": "Yankee",
+      "short": "Quatre sélections, onze paris : six doubles, quatre triples, un quatre-fold. Deux gagnants commencent à payer.",
+      "definition": [
+        "Un Yankee répartit quatre sélections sur les onze multi-paris possibles : 6 doubles + 4 triples + 1 quatre-fold. Au minimum deux jambes doivent se concrétiser avant tout retour ; la courbe de gain s'accentue ensuite fortement à chaque gagnant supplémentaire.",
+        "Onze unités, c'est de l'argent réel pour l'assurance proposée. La comparaison honnête est contre quatre doubles séparés ou un simple quatre-fold : le Yankee gagne cette comparaison seulement quand vos picks gravitent autour de la cote égale et que vous attendez réellement deux ou trois gagnants plus souvent que quatre."
+      ],
+      "example": "£1 Yankee (£11) sur quatre picks à 2.00. Deux gagnants : un double paie £4 — perte nette de £7. Trois gagnants : 3 doubles (£12) + 1 triple (£8) = £20 — profit modeste. Les quatre : £12 + £32 + £16 = £60. La structure paie les quasi-réussites avec la majeure partie du jackpot.",
+      "related": [
+        "system-bet",
+        "trixie",
+        "lucky-15"
+      ],
+      "see": [],
+      "_src_hash": "1960586662f10906",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "lucky-15",
+      "term": "Lucky 15",
+      "short": "Quatre sélections, quinze paris : un Yankee plus les quatre simples — un seul gagnant rapporte déjà quelque chose.",
+      "definition": [
+        "Un Lucky 15 est un Yankee auquel on ajoute les quatre simples : 4 simples + 6 doubles + 4 triples + 1 quadruplé = 15 paris. Les simples signifient qu'un seul gagnant rapporte de l'argent, et les bookmakers rehaussent souvent le produit — cotes doublées sur un seul gagnant, bonus si les quatre sortent.",
+        "Les bonifications existent parce que le produit de base supporte quinze unités de marge. Tarifier l'ensemble : quinze paris à une marge typique de 5 % coûte environ 0,75 unité en espérance avant que tout bonus ne restitue une partie. Les prix consolateurs sont réels mais modestes ; le produit est tarifé pour qu'ils paraissent plus importants qu'ils ne le sont vraiment."
+      ],
+      "example": "Lucky 15 de £1 (£15) sur des picks à 3.00 chacun. Un gagnant avec « cotes doublées sur un seul gagnant » : le simple rapporte £1 × 5.00 = £5 (au lieu de £3) — une perte nette de £10 tout de même. Les quatre : simples £12 + doubles £54 + triples £108 + quadruplé £81 = £255. Les prix de consolation sont réels mais réduits ; le produit est tarifé sur le fait qu'ils paraissent plus importants qu'ils ne le sont.",
+      "related": [
+        "yankee",
+        "system-bet",
+        "bookmaker-margin"
+      ],
+      "see": [],
+      "_src_hash": "41186e48996f97f0",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "patent",
+      "term": "Patent",
+      "short": "Trois sélections, sept paris : simples, doubles et le triple — l'assurance complète du Trixie.",
+      "definition": [
+        "Un Patent couvre trois sélections avec tous les sept paris possibles : 3 simples + 3 doubles + 1 triple. C'est un Trixie plus des simples, donc même une seule sélection gagnante rapporte quelque chose.",
+        "Sept unités de mise achètent une couverture complète, ce qui convient aux sélections assurées à des cotes élevées — les simples ont du poids réel à 3.00+. À des cotes faibles, les simples rapportent des miettes et la structure devient une assurance coûteuse sur assurance."
+      ],
+      "example": "1 £ Patent (7 £) sur trois sélections à 3.50. Un gagnant : son simple rapporte 3.50 £ — la moitié de la mise récupérée. Deux : 2 simples (7 £) + 1 double (12.25 £) = 19.25 £. Les trois : 10.50 £ + 36.75 £ + 42.88 £ ≈ 90 £. Comparez le triple seul à 7 £ : 0 £, 0 £, 150 £ — le Patent échange le jackpot contre le plancher.",
+      "related": [
+        "trixie",
+        "system-bet",
+        "accumulator"
+      ],
+      "see": [],
+      "_src_hash": "d12659ca22b4ca57",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "round-robin",
+      "term": "Round Robin",
+      "short": "Tous les doubles (et souvent les triples) à partir d'une sélection donnée — la recette générale derrière les Trixies et les Yankees.",
+      "definition": [
+        "Un round robin parie chaque combinaison d'une taille donnée sur vos sélections — généralement tous les doubles à partir de quatre, cinq ou six pronostics. Trixie et Yankee ne sont que des round robins de tailles fixes avec une marque ; la forme générale vous permet de choisir la largeur.",
+        "La combinatoire explose rapidement : tous les doubles à partir de six pronostics font quinze paris, tous les triples vingt. Chaque combinaison porte sa propre mise et sa propre marge, donc la structure multiplie la part du bookmaker exactement au même rythme qu'elle multiplie votre couverture."
+      ],
+      "example": "Tous les doubles à partir de cinq pronostics = 10 paris. Avec une marge de 5% par double, le paquet intègre environ 0,5 unité de coût attendu. Trois gagnants sur cinq donnent 3 doubles : aux cotes de 2,00 chacun, cela rapporte 4 unités — 12 de retour sur 10, avant que la variance ne se soit prononcée.",
+      "related": [
+        "system-bet",
+        "yankee",
+        "bookmaker-margin"
+      ],
+      "see": [],
+      "_src_hash": "ebabd3db75914eac",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fold",
+      "term": "Fold (4-Fold, 5-Fold…)",
+      "short": "Terminologie des bookmakers pour désigner la taille d'un cumul : le nombre de sélections qui doivent toutes être gagnantes.",
+      "definition": [
+        "Le « fold » compte les sélections d'un cumul : un 4-fold a quatre sélections, un 6-fold en a six, et chaque sélection doit être gagnante. Les cotes se multiplient, tout comme les modes de défaillance — chaque sélection ajoutée multiplie le gain par sa cote et la probabilité de survie du coupon par quelque chose de moins que un.",
+        "Le nombre de folds est le contrôle d'honnêteté le plus rapide sur n'importe quel coupon : avec des marges typiques de 5% par sélection, un n-fold laisse au bookmaker environ n×5% de valeur attendue. Un 6-fold est une taxation d'environ 30% présentée comme un ticket de loterie."
+      ],
+      "example": "Cinq sélections à 1.80 chacune : le 5-fold paie 18.9. Vraie probabilité si chaque sélection a une chance équitable de 55% : 0.55⁵ ≈ 5.0% — cotes justes 19.9. L'écart entre 18.9 et 19.9 représente cinq marges empilées ; il s'accroît avec chaque fold que vous ajoutez.",
+      "related": [
+        "accumulator",
+        "bookmaker-margin",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Accumulator calculator",
+          "href": "/tools/accumulator-calculator"
+        }
+      ],
+      "_src_hash": "94a6586ebee2ec9e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "single",
+      "term": "Simple",
+      "short": "Une sélection, un pari — l'unité de référence à laquelle comparer toutes les autres structures de paris.",
+      "definition": [
+        "Un simple mise une certaine somme sur un seul résultat à une seule cote. C'est l'expression la plus pure d'une opinion de pari et la base de comparaison pour juger toute structure plus complexe : tout accumulateur, système ou constructeur de pari n'est que des simples assemblés ensemble avec une marge supplémentaire.",
+        "Les professionnels parient presque exclusivement en simples pour exactement cette raison — chaque pari tient sur sa propre valeur, paie la marge une seule fois, et se règle sans entraîner d'autres opinions vers le bas avec lui."
+      ],
+      "example": "Trois opinions à 2.00 chacune, une unité totale à déployer. Trois simples de ⅓-unité : chacun paie 0.67 de profit quand c'est juste, indépendamment des autres. La même unité sur un tiercé paie 7× quand les trois arrivent (≈13% du temps aux cotes équitables) et zéro sinon — mêmes opinions, marge triple, profil tout ou rien.",
+      "related": [
+        "accumulator",
+        "flat-staking",
+        "expected-value"
+      ],
+      "see": [],
+      "_src_hash": "1f80d8238ba69ff4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "double",
+      "term": "Double",
+      "short": "Un pari sur deux sélections : les deux doivent être gagnantes, les cotes se multiplient, les marges s'accumulent.",
+      "definition": [
+        "Un double multiplie deux cotes en un seul pari qui demande que les deux sélections gagnent. C'est le plus petit combiné et l'illustration la plus claire de son économie : la probabilité se multiplie à la baisse tandis que la marge du bookmaker s'accumule.",
+        "Les doubles ont un seul cas d'usage honnête : deux sélections véritablement sous-cotées, où multiplier deux avantages positifs les renforce. Deux sélections correctement cotées en double sont strictement moins intéressantes que les mêmes en paris simples."
+      ],
+      "example": "Deux sélections à 2.10, équitablement un pile ou face : le double paie 4.41 contre 25 % de chance réelle (équitable 4.00) — attends, il y a de la valeur seulement si les sélections étaient cotées PLUS HAUT que l'équitable. À cotes équitables de 2.00, une sélection à 2.10 porte de la valeur ; deux d'entre elles composent à 4.41 contre équitable 4.00. Des sélections à 1.90 chargées de marge composent mal : 3.61 payé contre équitable 4.00.",
+      "related": [
+        "accumulator",
+        "treble",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "4cbefc0335830c43",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "treble",
+      "term": "Treble",
+      "short": "Un accumulateur à trois branches — les cotes se multiplient sur trois prix, comme la marge du bookmaker.",
+      "definition": [
+        "Un treble exige que trois sélections gagnent, avec les trois cotes multipliées en un seul gain. Aux marges typiques, chaque branche contribue à environ 5% de perte attendue, donc la structure consume approximativement 15% avant le coup d'envoi — le prix du nombre plus élevé sur le bulletin.",
+        "Le profil de variance est le vrai produit : les trebles à cotes modérées arrivent assez souvent pour sembler accessibles tout en payant assez pour ressembler à une victoire. Les sentiments sont le produit ; la marge est le coût."
+      ],
+      "example": "Trois branches à 1.90 (juste 2.00) : le treble paie 6.86 contre une juste valeur de 8.00 — vous acceptez 86% de la juste valeur, soit une décote structurelle de 14%, pour le plaisir d'un seul gain plus important au lieu de trois gains équitables.",
+      "related": [
+        "double",
+        "accumulator",
+        "fold"
+      ],
+      "see": [],
+      "_src_hash": "713f96eff080d608",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "stake",
+      "term": "Mise",
+      "short": "Le montant risqué sur un pari — le chiffre sur lequel s'appuient tous les gains, pertes et plans de mise en place.",
+      "definition": [
+        "La mise est ce que vous risquez. Les cotes décimales l'incluent dans le rendement annoncé (cotes × mise = total remboursé, mise comprise) ; les cotes fractionnelles expriment le bénéfice par rapport à celle-ci. Toute discussion sensée sur la mise concerne le dimensionnement de ce chiffre, pas le choix des gagnants.",
+        "Deux disciplines couvrent l'essentiel : dimensionner les mises en tant que fraction fixe et mineure d'une bankroll dédiée, et ne jamais augmenter la mise pour rattraper une perte. Les mathématiques de la ruine sont pilotées presque entièrement par le dimensionnement de la mise, pas par la qualité des pronostics."
+      ],
+      "example": "10 £ à 2,50 en cotes décimales rapporte 25 £ au total — 15 £ de bénéfice plus la mise de 10 £. Le même pari en cotes fractionnelles est 6/4 : 15 £ de bénéfice par 10 £ misés. Même pari, même argent, deux formulations.",
+      "related": [
+        "flat-staking",
+        "bankroll-management",
+        "unit"
+      ],
+      "see": [],
+      "_src_hash": "725de29c74bc72a5",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "unit",
+      "term": "Unité",
+      "short": "La mise standard d'un parieur — généralement 1–2% du bankroll — la devise dans laquelle les records honnêtes sont tenus.",
+      "definition": [
+        "Une unité est une mise standard personnelle, typiquement 1–2% du bankroll. Les pronostiqueurs et les registres de cotes citent les profits en unités ('+14,2u') parce que cela sépare le jugement de la taille du portefeuille : +14 unités signifie la même chose qu'une unité soit de 2£ ou de 200£.",
+        "Les unités exposent aussi la discipline de mise. Un record citant des '10-unités certains' et des '0,5-unité cotes longues' vous dit que la confiance varie énormément d'un pari à l'autre — ce qui historiquement est corrélé avec des records qui cessent d'être publiés."
+      ],
+      "example": "Bankroll de 1 000£, unité 1% = 10£. Une saison terminée à +18,4u a rapporté 184£ aux mises plates. Notre propre record publié utilise des mises plates de 1 unité pour exactement cette raison — le chiffre ne peut pas être gonflé en redimensionnant les paris après de bonnes séries.",
+      "related": [
+        "flat-staking",
+        "bankroll-management",
+        "roi-and-yield"
+      ],
+      "see": [
+        {
+          "label": "Our settled record, flat 1u",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "195038bc8d5b4bef",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-on-odds-against",
+      "term": "Cotes Favorites / Cotes Outsiders",
+      "short": "Indique si une cote implique une probabilité supérieure ou inférieure à 50% — en dessous ou au-dessus de 2,00 en décimales.",
+      "definition": [
+        "Cotes favorites signifie que la cote implique une meilleure chance qu'un match nul : décimale inférieure à 2,00, fractionnelle avec le plus grand nombre à droite (1/2). Cotes outsiders est l'inverse : décimale supérieure à 2,00, fractionnelle 2/1 et plus. Pair (2,00) est la limite.",
+        "La terminologie compte parce que la psychologie diffère de chaque côté. Les favoris à cotes basses semblent sûrs et sont systématiquement surenchéris par l'argent des joueurs récréatifs ; les outsiders à cotes hautes ressemblent à des billets de loterie. Ni l'un ni l'autre sentiment n'a quelque chose à voir avec la valeur, qui ne réside que dans l'écart entre la cote et la probabilité réelle."
+      ],
+      "example": "1/2 fractionnelle = 1,50 décimale = 66,7% implicite : cotes favorites. 5/2 = 3,50 = 28,6% implicite : cotes outsiders. Un favori à 1,50 qui remporte vraiment 60% du temps est un mauvais pari ; un outsider à 3,50 qui gagne un tiers du temps est un bon.",
+      "related": [
+        "odds-formats",
+        "implied-probability",
+        "longshot-bias"
+      ],
+      "see": [
+        {
+          "label": "Odds converter",
+          "href": "/tools/odds-converter"
+        }
+      ],
+      "_src_hash": "250380da66bc1f85",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "vig",
+      "term": "Vig (Vigorish / Juice)",
+      "short": "Le nom américain de la marge du bookmaker — les frais intégrés dans chaque paire de cotes.",
+      "definition": [
+        "Vig, vigorish ou juice est l'argot américain pour la commission du bookmaker — la même chose que ce que les parieurs européens appellent marge ou surround. Ce n'est pas un élément distinct sur votre ticket ; c'est caché dans les cotes qui ensemble impliquent plus de 100% de probabilité.",
+        "L'expression américaine classique est -110/-110 sur un écart de points : miser 110 pour gagner 100 de chaque côté. Chaque côté implique 52,4%, la paire totalise 104,8%, et les 4,8% constituent le vig."
+      ],
+      "example": "-110 des deux côtés : 52,38% implicite de chaque côté, total 104,76%. Un parieur choisissant les écarts au hasard perd 4,76 centimes par dollar misé sur la durée — c'est le vig qui fonctionne, aucune malchance nécessaire.",
+      "related": [
+        "bookmaker-margin",
+        "overround",
+        "point-spread"
+      ],
+      "see": [
+        {
+          "label": "Margin calculator",
+          "href": "/tools/margin-calculator"
+        }
+      ],
+      "_src_hash": "3a6a05972381e3bc",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "moneyline",
+      "term": "Moneyline",
+      "short": "Format de cotes américain : les nombres négatifs indiquent votre mise pour gagner 100, les positifs ce que 100 rapporte — et le nom américain du marché gagnant.",
+      "definition": [
+        "Une cote moneyline de -150 signifie miser 150 pour gagner 100 (décimal 1,67) ; +240 signifie que 100 rapporte 240 (décimal 3,40). Le négatif marque les favoris, le positif les outsiders. « Moneyline » désigne aussi le marché lui-même — parier sur le vainqueur sans écart de points, qui au football inclut le match nul comme ligne distincte.",
+        "La conversion est mécanique : décimal = 1 + 100/|ML| pour les négatifs, 1 + ML/100 pour les positifs. Le calculer mentalement — ou laisser un convertisseur le faire — est l'étape première pour comparer les cotes en format US contre n'importe quel autre."
+      ],
+      "example": "-125 = 1,80 décimal = 55,6% implicite. +210 = 3,10 = 32,3%. Une moneyline trois voies au football de -125 / +260 / +330 implique 55,6 + 27,8 + 23,3 = 106,7% — une marge de 6,7% sur les trois.",
+      "related": [
+        "odds-formats",
+        "vig",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "Odds converter",
+          "href": "/tools/odds-converter"
+        }
+      ],
+      "_src_hash": "668a9894bd102ded",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "point-spread",
+      "term": "Écart de points",
+      "short": "Le handicap américain : une ligne de points autour de laquelle les deux camps sont cotés près de la parité, avec remboursement des nuls sur les nombres entiers.",
+      "definition": [
+        "Un écart de points handicape le favori d'une marge fixe — coter -6.5 points signifie qu'il doit gagner par sept. Les deux camps sont cotés près de -110, le profit du bookmaker provenant de la marge plutôt que de cotes décalées. Les écarts à nombre entier peuvent aboutir exactement à ce niveau (un nul) et remboursent les mises ; les lignes à demi-point ne le peuvent pas.",
+        "C'est la même idée que le handicap asiatique au football : transformer un déséquilibre en pile ou face et facturer la conversion. La spécificité du football est que le faible nombre de buts rend les lignes à demi-but dominantes, tandis que les sports américains gravitent autour des 3.5 et 6.5."
+      ],
+      "example": "Favori -3 à -110 : gagner par exactement 3 fait un nul (mise remboursée), par 4+ gagne, par moins perd. Le -110 sur les deux camps signifie que vous devez battre l'écart 52.4% du temps juste pour atteindre le seuil de rentabilité — le chiffre contre lequel chaque record « contre l'écart » devrait être jugé.",
+      "related": [
+        "asian-handicap",
+        "vig",
+        "push"
+      ],
+      "see": [],
+      "_src_hash": "d706c29ea8be4e8f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "push",
+      "term": "Push",
+      "short": "Un pari qui tombe exactement sur la ligne — mise remboursée, ni gain ni perte, et n'entre pas en compte dans les exigences de mise en jeu.",
+      "definition": [
+        "Un push se produit quand le résultat correspond exactement à une ligne entière : moins de 3,0 buts avec le match à 3, un handicap de -3 remporté par 3. La mise est restituée ; le pari est sans effet. Les handicaps asiatiques fonctionnent selon le même mécanisme sur leurs lignes entières et semi-split.",
+        "Deux conséquences pratiques : les paris poussés ne comptent pas vers la mise en jeu des bonus chez la plupart des bookmakers, et dans les accumulateurs une jambe poussée sort généralement — le coupon se recalcule aux cotes restantes plutôt que de s'annuler."
+      ],
+      "example": "Over 2.5/3.0 (un total asiatique split) avec le match se terminant 3–0 : la moitié 2.5 gagne, la moitié 3.0 push — vous encaissez sur la moitié de la mise et récupérez l'autre moitié. Sur un simple over 3.0, la mise entière serait simplement remboursée.",
+      "related": [
+        "asian-handicap",
+        "void-bet",
+        "over-under"
+      ],
+      "see": [],
+      "_src_hash": "f34f6898ef0dc5cf",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-exchange",
+      "term": "Échange de paris",
+      "short": "Un marché où les parieurs parient les uns contre les autres — miser pour ou contre n'importe quel résultat, l'opérateur prélevant une commission au lieu de construire une marge.",
+      "definition": [
+        "Un échange apparie les clients entre eux : l'un mise pour un résultat, l'autre contre, et la plateforme prélève une petite commission sur les gains nets au lieu de construire une marge dans les cotes. Les cotes sont déterminées par l'offre et la demande, ce qui explique pourquoi les prix de l'échange servent de référence aux parieurs avertis pour comparer les bookmakers.",
+        "Le problème est la liquidité : une cote d'échange n'existe que dans le volume que d'autres clients sont disposés à offrir. Les gros marchés de football sont profonds ; les ligues obscures et les marchés exotiques peuvent être des déserts où la meilleure cote théorique ne peut pas réellement être prise."
+      ],
+      "example": "Un bookmaker propose 2.00 sur une équipe que l'échange négocie à 2.10. Après 2% de commission, le back à l'échange rend 2.10 − (1.10 × 0,02) ≈ 2,078 — toujours mieux que 2.00. Cet écart, mesuré honnêtement dans le temps, représente à peu près le coût de la marge du bookmaker.",
+      "related": [
+        "lay-betting",
+        "closing-line-value",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "ff50d3cd02feb876",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "lay-betting",
+      "term": "Lay Betting",
+      "short": "Parier que quelque chose ne se produira PAS — jouer le rôle du bookmaker sur un exchange.",
+      "definition": [
+        "Faire un lay, c'est accepter le pari back de quelqu'un d'autre : vous gagnez sa mise si l'outcome échoue, vous payez à la cote s'il se réalise. Votre responsabilité sur un lay à 4.00 est trois fois la mise du backer — l'asymétrie que les débutants sous-estiment.",
+        "Le lay complète l'arsenal : les marchés de football à trois voies peuvent être attaqués des deux côtés ('cette favorite est trop courte' devient actionnelle sans choisir qui gagne'), et couvrir une position devient une question de faire un lay sur ce que vous aviez précédemment backé."
+      ],
+      "example": "Lay £10 à 4.00 : si l'outcome échoue vous gagnez £10 ; s'il se réalise vous payez £30. Le pari implicite est 'cela se produit moins de 25% du temps' — tarifé, dimensionné et réglé exactement comme n'importe quelle autre conviction.",
+      "related": [
+        "betting-exchange",
+        "hedging",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "ba976ad193de42aa",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "dutching",
+      "term": "Dutching",
+      "short": "Répartition des mises sur plusieurs issues de sorte que tout gagnant génère le même profit — couverture, non arbitrage.",
+      "definition": [
+        "Le Dutching consiste à répartir votre mise sur deux ou plusieurs issues proportionnellement à leurs cotes, de façon que le gagnant rapporte le même montant. Couvrir trois scores exacts ou deux buteurs de cette manière transforme plusieurs anticipations en une seule position avec un rendement connu.",
+        "Le piège est de confondre couverture et sécurité : les issues que vous n'avez PAS couvertes perdent quand même la totalité de la mise. Un Dutching sous 100% de probabilité implicite combinée n'est pas un arbitrage — c'est un pari ordinaire dont la branche perdante est tout ce qui se situe en dehors de votre ensemble."
+      ],
+      "example": "Parier sur 1-1 à 7.0, 2-1 à 9.0, 1-0 à 10.0 avec un total de £20 réparti 8.87/6.90/6.21... l'une de ces trois issues rapporte ≈£62 (couverture implicite ~32%). Les 68% d'autres scores perdent la totalité des £20 — c'est le pari que vous avez réellement placé.",
+      "related": [
+        "hedging",
+        "correct-score",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "Dutching calculator",
+          "href": "/tools/dutching-calculator"
+        }
+      ],
+      "_src_hash": "9bae402a7a10c3e1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "hedging",
+      "term": "Hedging",
+      "short": "Placer un pari opposé pour verrouiller un profit ou limiter une perte sur une position existante — payé en marge, deux fois.",
+      "definition": [
+        "Le hedging ferme ou réduit une position en pariant du côté opposé : lay l'équipe que vous aviez soutenue en ante-post, back le match nul contre la dernière sélection de votre accumulation gagnante, cash out (ce qui revient simplement à ce que le bookmaker fasse le hedging pour vous, à son prix). Exécuté à des cotes équitables, un hedge convertit la variance en un nombre certain.",
+        "Le coût est de payer la marge sur un second pari. Faire systématiquement le hedging de chaque position gagnante est une taxe sur votre propre succès ; les usages honnêtes sont rares et spécifiques — verrouiller une accumulation qui change la vie, ou sortir d'une position dont la logique a disparu avec les actualités de l'équipe."
+      ],
+      "example": "£10 four-fold à 15.0 avec trois sélections gagnées ; la dernière sélection s'échange à 2.5 sur un exchange. Lay/back pour égaliser verrouille ≈£45 peu importe le résultat du dernier match, contre £150-ou-rien sans hedge. Que ce trade soit judicieux dépend du prix, non pas des nerfs.",
+      "related": [
+        "cash-out",
+        "lay-betting",
+        "dutching"
+      ],
+      "see": [
+        {
+          "label": "Hedging calculator",
+          "href": "/tools/hedging-calculator"
+        }
+      ],
+      "_src_hash": "265417d8376be4b6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "overround",
+      "term": "Overround",
+      "short": "Le montant par lequel les probabilités implicites d'un marché dépassent 100% — la marge, du point de vue du marché.",
+      "definition": [
+        "Additionnez les probabilités implicites de chaque issue sur un marché et l'excédent par rapport à 100% est l'overround : un 1X2 totalisant 105,5% porte un overround de 5,5%. C'est le même concept que la marge du bookmaker, simplement mesuré sur tout le marché plutôt que décrit comme une commission.",
+        "L'overround varie selon le marché et le bookmaker — les ligues principales chez les opérateurs avisés affichent 2–5%, les marchés exotiques et les petites ligues 8–15%. Le vérifier prend trente secondes et vous indique quel est le coût avant toute analyse."
+      ],
+      "example": "Les cotes 1.95 / 3.60 / 4.10 impliquent 51,3% + 27,8% + 24,4% = 103,5% — un overround de 3,5%, correct. Le même match ailleurs à 1.83 / 3.40 / 3.90 implique 107,7% — vous payez le double du coût pour des opinions identiques.",
+      "related": [
+        "bookmaker-margin",
+        "vig",
+        "fair-odds"
+      ],
+      "see": [
+        {
+          "label": "Live margin research across our leagues",
+          "href": "/research"
+        }
+      ],
+      "_src_hash": "7ac9166d8f6aa038",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "goal-line",
+      "term": "Ligne de But (Total Asiatique)",
+      "short": "Totals avec la mécanique asiatique : lignes entières, demi et mixtes où un résultat exact rembourse partiellement ou totalement la mise.",
+      "definition": [
+        "La ligne de but est un over/under avec le système de remboursement du handicap asiatique. Les lignes entières (3,0) font match nul si le total tombe exactement ; les lignes mixtes (2,5/3,0) règlent la moitié de la mise sur chaque composante ; les demi-lignes (2,5) fonctionnent comme le marché classique.",
+        "Les remboursements coûtent en cotes : over 2,5/3,0 paie moins que over 2,5 car une partie de votre risque a été supprimée. Que cet échange en vaille la peine est une question de cotation, et les lignes mixtes sont où les bookmakers cachent leurs prix les plus inégaux — comparez avec la ligne simple avant d'en prendre une."
+      ],
+      "example": "Over 2,75 (c'est-à-dire 2,5/3,0 mixte) avec £10 : le match se termine 3–1 — les deux moitiés gagnent. Se termine 3–0... total 3 : la moitié 2,5 gagne, la moitié 3,0 fait match nul → encaissez £5, remboursement £5. Se termine 2–0 : les deux moitiés perdent. La « ligne quart » n'est que ces deux paris attachés ensemble.",
+      "related": [
+        "over-under",
+        "asian-handicap",
+        "push"
+      ],
+      "see": [],
+      "_src_hash": "ff9d0b027c55b632",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bet-builder",
+      "term": "Bet Builder (Combiné Intra-Match)",
+      "short": "Combinaison de plusieurs marchés d'UN SEUL match dans une seule mise — où la tarification des corrélations avantage discrètement la maison.",
+      "definition": [
+        "Un générateur de paris multiplie des sélections du même match — résultat, BTTS, cartons, buteur — en une seule cote. Comme les jambes sont corrélées (une équipe gagnant 3–0 rend beaucoup plus probable que son attaquant marque), une tarification équitable exige de modéliser la probabilité conjointe, et non de multiplier les indépendantes.",
+        "Cette corrélation est la cachette de l'avantage maison : les bookmakers tarifent les combos populaires positivement corrélés bien en dessous de la multiplication naïve, et la marge sur les générateurs double régulièrement le vigorish du marché unique. Le produit est amusant par conception et onéreux par construction."
+      ],
+      "example": "Équipe gagnante (2.00) + plus de 2.5 (2.00) comme indépendantes se multiplient à 4.00, mais les résultats se chevauchent fortement — une cote conjointe équitable serait environ 3.20. Le générateur affiche 2.90. Vous payez à la fois l'ajustement de corrélation ET une couche de marge supplémentaire pour la commodité d'un seul bulletin.",
+      "related": [
+        "accumulator",
+        "bookmaker-margin",
+        "btts"
+      ],
+      "see": [
+        {
+          "label": "Model-screened combinations instead",
+          "href": "/tools/acca-builder"
+        }
+      ],
+      "_src_hash": "fe2be9f9ee3080ae",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "acca-insurance",
+      "term": "Assurance Acca",
+      "short": "Une promo remboursant un accumulteur qui échoue sur exactement une jambe — généralement sous forme de pari gratuit, toujours tarifée dans le produit.",
+      "definition": [
+        "L'assurance acca rembourse les coupons où une seule jambe vous abandonne — généralement 5+ jambes requises, remboursement plafonné et versé en pari gratuit sans enjeu conservé, jamais en espèces. Le déclenchement (exactement un perdant) est plus rare qu'il n'y paraît : les coupons échouent le plus souvent sur deux jambes ou plus.",
+        "Tarifez le produit en tant que package : la valeur attendue de l'assurance aux taux réalistes de perte d'une jambe est une fraction de la marge supplémentaire que porte l'accumulteur éligible. Elle adoucit la psychologie de la variance ; elle ne change pas le signe arithmétique."
+      ],
+      "example": "Cinq jambes à 60% chacune en probabilité réelle : P(exactement une échoue) = 5 × 0,4 × 0,6⁴ ≈ 25,9%. Un remboursement de £10 en tant que pari gratuit SNR vaut ~£7 quand déclenché → ≈£1,80 de valeur attendue, contre ~£2,50 de marge supplémentaire cumulée sur le five-fold lui-même.",
+      "related": [
+        "accumulator",
+        "free-bet",
+        "stake-not-returned"
+      ],
+      "see": [],
+      "_src_hash": "ec3bd1c5d6af93ee",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "price-boost",
+      "term": "Price Boost (Boost de cotes)",
+      "short": "Une cote améliorée par le bookmaker sur un résultat choisi — parfois une véritable valeur, toujours à vérifier par rapport au marché sans boost.",
+      "definition": [
+        "Un boost de cotes augmente les cotes sur une sélection choisie par le bookmaker, généralement avec une limite de mise. Puisque la cote de base inclut la marge du bookmaker, un boost ramène souvent simplement à la cote équitable — mais occasionnellement, surtout sur les marchés comparables aux exchanges, il dépasse réellement la valeur juste.",
+        "La vérification est mécanique : comparez la cote boostée contre la meilleure cote non boostée et l'exchange. Un boost de 2.20 alors que les sharp books cotent 2.10 représente une véritable valeur sur une mise plafonnée ; un boost de 2.20 alors que la cote juste est 2.35 relève de l'arithmétique marketing."
+      ],
+      "example": "Boost : 2.00 → 2.20, mise max £10. L'exchange négocie le même résultat à 2.16, soit environ 2.12 juste après commission. Prendre le boost génère (2.20 / 2.12 − 1) ≈ +3.8% d'espérance mathématique sur la mise plafonnée — intéressant à prendre, sans extrapoler pour autant aux cotes non boostées du bookmaker.",
+      "related": [
+        "value-bet",
+        "closing-line-value",
+        "free-bet"
+      ],
+      "see": [],
+      "_src_hash": "02171ba706bfb8f8",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "stake-not-returned",
+      "term": "Enjeu Non Restitué (ENR)",
+      "short": "La règle de règlement du pari gratuit : les gains sont payés, le crédit lui-même jamais — réduisant de moitié la valeur du crédit à la parité.",
+      "definition": [
+        "ENR signifie qu'un pari gratuit retourne uniquement les gains : un crédit de 25 € à 2,00 rapporte 25 €, non 50 €, car l'enjeu n'a jamais été votre argent. Presque tous les paris gratuits se règlent ainsi, ce qui fixe leur vraie valeur — un crédit se convertit à (cote−1)/cote de sa valeur faciale aux prix équitables.",
+        "La conséquence : les crédits rapportent moins aux plus hautes cotes (50% de la valeur à 2,00, 75% à 4,00) et sont gaspillés sur les favoris proches. C'est le fait le plus utile sur les paris gratuits et le moins publicisé."
+      ],
+      "example": "Crédit de 25 € ENR : à 1,40 il ne peut gagner que 10 € — 40% de la valeur perdu avant le coup d'envoi. À 5,00 il gagne 100 €, convertissant ~80% de la valeur faciale en attente à un prix équitable. Même crédit, doublé de vraie valeur, une seule décision.",
+      "related": [
+        "free-bet",
+        "expected-value",
+        "wagering-requirements"
+      ],
+      "see": [
+        {
+          "label": "Free bets explained in full",
+          "href": "/guides/free-bets-explained"
+        }
+      ],
+      "_src_hash": "e29e3c9a2f1ebcf5",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "poisson-distribution",
+      "term": "Distribution de Poisson",
+      "short": "Le modèle statistique derrière la plupart des cotations au football — les buts comme événements rares et indépendants à un taux moyen connu.",
+      "definition": [
+        "La distribution de Poisson donne la probabilité de k événements quand les événements arrivent indépendamment à un taux moyen λ : P(k) = e^−λ·λᵏ/k!. Alimentez-la avec les buts attendus d'une équipe et elle produit la chance de 0, 1, 2, 3… — et les distributions de deux équipes se combinent en scores finaux, 1N2, totaux et BTTS.",
+        "Elle est imparfaite de façons connues — les buts se regroupent légèrement, les matchs nuls ressortent légèrement sous-cotés — et chaque modèle sérieux au football, y compris le nôtre, part de là et corrige ensuite. Sa puissance réside en transformer un seul paramètre honnête (les buts attendus) en une surface de probabilités complète."
+      ],
+      "example": "λ = 1.4 buts attendus : P(0) = e^−1.4 ≈ 24.7%, P(1) ≈ 34.5%, P(2) ≈ 24.2%. Deux distributions de Poisson indépendantes à 1.4 et 1.1 donnent P(1–1) ≈ 34.5% × 36.6% ≈ 12.6% — l'arithmétique derrière chaque cote de score exact que vous avez jamais vue.",
+      "related": [
+        "xg",
+        "expected-value",
+        "correct-score"
+      ],
+      "see": [
+        {
+          "label": "How our model works",
+          "href": "/model"
+        }
+      ],
+      "_src_hash": "c003f1cd5ff1fdfb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "regression-to-the-mean",
+      "term": "Régression vers la Moyenne",
+      "short": "Les séries extrêmes reviennent vers le vrai niveau — la force statistique derrière « la forme est passagère, la classe est permanente ».",
+      "definition": [
+        "Quand la performance s'écarte loin au-dessus ou en dessous du niveau réel d'une équipe, la période suivante tend à se rapprocher de ce niveau — non pas à cause de la dynamique ou d'une malédiction, mais parce que les extrêmes sont en partie dus à la chance, et la chance ne se répète pas sur commande. Un attaquant convertissant 35% de ses tirs se rapprochera de ses 12% de carrière le mois prochain.",
+        "Pour les parieurs, la leçon porte sur l'évaluation des récits : le marché extrapole souvent les séries gagnantes juste quand la régression est la plus probable, c'est pourquoi contrer les extrêmes aux cotes gonflées est un angle durable et les suivre est une fuite durable."
+      ],
+      "example": "Une équipe de milieu de tableau remporte six matchs de suite, trois d'une seule longueur avec des écarts xG importants. Ses chiffres sous-jacents évaluent le match suivant à 45% de probabilité de victoire ; le marché suiveur de série l'évalue à 58%. La régression ne garantit pas une perte — elle dit que 1.72 sur une chance de 45% est le mauvais prix.",
+      "related": [
+        "variance",
+        "sample-size",
+        "xg"
+      ],
+      "see": [],
+      "_src_hash": "a5cb887c49a4a007",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "sample-size",
+      "term": "Sample Size",
+      "short": "Le nombre d'observations derrière une statistique — la différence entre une preuve et une anecdote, en un seul chiffre.",
+      "definition": [
+        "Chaque statistique de pari est une estimation dont la fiabilité augmente avec le nombre d'observations qui la soutient. Cinq matchs de données BTTS ne te disent presque rien ; cinquante t'en disent quelque chose ; cinq cents précisent le taux. L'erreur-type diminue avec la racine carrée de n — multiplie les données par quatre pour diviser le bruit par deux.",
+        "Le filtre pratique : avant d'agir sur un taux quelconque (« ils ont marqué plus de 2,5 buts dans 8 des 10 matchs »), demande-toi quel est n et ce que le taux de base indique. La plupart des « tendances » vendues aux parieurs sont des échantillons de dix matchs d'une pièce qui a toujours tourné près de 50 %."
+      ],
+      "example": "Un taux de 60% sur plus de 2,5 buts à partir de 10 matchs a une erreur-type de ±15,5 % — le taux réel est plausiblement n'importe où entre 45 % et 75 %, couvrant « parier sur plus » et « parier sur moins ». Le même 60 % à partir de 200 matchs (±3,5 %) est réellement une information.",
+      "related": [
+        "variance",
+        "regression-to-the-mean",
+        "win-rate"
+      ],
+      "see": [],
+      "_src_hash": "0259ad38e8f46e75",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "longshot-bias",
+      "term": "Biais Favori–Outsider",
+      "short": "Le déséquilibre documenté du marché : les outsiders sont systématiquement surpayés par la demande, les favoris comparativement justes.",
+      "definition": [
+        "À travers des décennies d'études et de marchés, les paris à cotes élevées rendent moins bien que les paris à cotes basses : l'argent récréatif adore les gains loterie, les bookmakers ajustent les cotes des outsiders en conséquence, et la marge du bookmaker se concentre exactement là où sont les rêves.",
+        "Le biais est l'un des rares faits du marché assez stables pour construire des règles dessus : soyez méfiant de votre propre enthousiasme pour les outsiders, exigez une survaleur supplémentaire avant de prendre du 6.0+, et rappelez-vous que la plupart des « valeurs » qu'un modèle naïf trouve aux gros cotes sont le biais qui rit du modèle. Notre propre v1 a fait 0 sur 8 précisément sur cette commission."
+      ],
+      "example": "Résultat typique : les paris à 1.50 rendent ~97p par £1 misé ; les paris à 15.0 rendent ~85p. Même sport, mêmes bookmakers, même jour — la différence est là où la marge se cache. Un modèle qui ignore cela « trouvera » ses plus gros avantages précisément là où les cotes sont les pires.",
+      "related": [
+        "value-bet",
+        "variance",
+        "bookmaker-margin"
+      ],
+      "see": [
+        {
+          "label": "Our model's odds caps and why",
+          "href": "/model"
+        }
+      ],
+      "_src_hash": "365d89426d4636e4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "home-advantage",
+      "term": "Avantage à Domicile",
+      "short": "L'avantage structurel de jouer à domicile — valant environ 0,3–0,4 buts, variable selon la ligue, l'époque et l'affluence.",
+      "definition": [
+        "Les équipes à domicile marquent plus et encaissent moins que ces mêmes équipes en déplacement — historiquement environ 0,3–0,4 buts par match, dû aux effets de la foule sur les joueurs et arbitres, aux déplacements et à la familiarité du terrain. L'effet est réel, propre à chaque ligue, et diminue lentement dans le football.",
+        "Tout modèle sérieux intègre des taux distincts à domicile et en déplacement plutôt qu'une seule force d'équipe ; le nôtre le fait. L'angle parieur ne réside pas dans l'existence de l'avantage à domicile — le marché le sait — mais dans la TAILLE variable selon la ligue et la saison, et les cotes fixées sur la moyenne mondiale dévaluent les extrêmes."
+      ],
+      "example": "Dans nos ligues calibrées, le taux de buts à domicile s'élève à ~1,4 contre ~1,1 en déplacement — un avantage de 0,3 but valant environ 8–10 points de probabilité de victoire dans un match équilibré. Une ligue dont la saison en cours s'écarte matériellement de sa propre moyenne est où les cotes sur les totaux et les 1N2 commencent à dévier en premier lieu.",
+      "related": [
+        "poisson-distribution",
+        "xg",
+        "regression-to-the-mean"
+      ],
+      "see": [
+        {
+          "label": "Home advantage by league — live research",
+          "href": "/research/home-advantage"
+        }
+      ],
+      "_src_hash": "9838d9bf65548ef4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "team-form",
+      "term": "Forme",
+      "short": "Résultats récents comme signal — très faiblement prédictif seul, utile seulement pondéré contre la qualité de l'opposition et les statistiques sous-jacentes.",
+      "definition": [
+        "La forme résume les résultats récents — VVNDVV s'affiche sur chaque site de stats. La forme brute est un mauvais prédicteur : cinq résultats contiennent énormément de bruit, la qualité de l'opposition varie énormément, et un but dévié change une lettre. Les taux sous-jacents (tirs, xG, position sur le terrain) prédisent le prochain match mieux que les lettres ne le font.",
+        "La forme trouve sa place quand elle est pondérée (les matchs récents plus lourdement), ajustée selon l'opposition affrontée, et vérifiée par rapport aux chiffres sous-jacents. Notre modèle applique une décroissance temporelle exactement pour cette raison — un résultat de la semaine dernière en dit plus qu'un d'octobre, mais aucun des deux ne surpasse une saison entière de taux."
+      ],
+      "example": "Équipe A : NNVNN contre les cinq premiers de la ligue. Équipe B : VVVVV contre les cinq derniers. Les lettres disent que B vole de ses propres ailes ; les taux ajustés à l'opposition disent souvent que A est l'équipe plus forte à égalité — et le prix du marché se situe généralement entre les deux histoires.",
+      "related": [
+        "sample-size",
+        "regression-to-the-mean",
+        "xg"
+      ],
+      "see": [],
+      "_src_hash": "aa8eabb6547b8832",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "head-to-head",
+      "term": "Confrontation directe (H2H)",
+      "short": "Les rencontres passées entre deux équipes — largement commercialisées, faiblement prédictives, occasionnellement informatives en agrégat.",
+      "definition": [
+        "Les records H2H rassemblent les rencontres précédentes entre deux équipes. Les effectifs se renouvellent et les entraîneurs changent, donc un 4–0 d'il y a trois saisons décrit des équipes qui n'existent plus — en tant que prédicteur du prochain résultat, l'historique H2H n'ajoute presque rien une fois la force actuelle prise en compte.",
+        "Les usages défendables sont les agrégats : des appariements qui maintiennent régulièrement des totaux de buts élevés ou bas à travers de nombreuses rencontres, ou des modèles spécifiques au terrain avec de vrais échantillons. Du contexte, pas du signal — notre modèle ignore entièrement le H2H et fonctionne à partir des taux de scoring actuels."
+      ],
+      "example": "Dix rencontres avec une moyenne de 3,4 buts contre une norme de ligue de 2,6 mérite un coup d'œil sur la ligne des totaux — comme point de départ pour vérifier les taux d'attaque actuels, pas comme pari. Trois rencontres avec n'importe quel total, c'est un souvenir qu'on chérit.",
+      "related": [
+        "sample-size",
+        "team-form",
+        "over-under"
+      ],
+      "see": [
+        {
+          "label": "H2H records for every covered pairing",
+          "href": "/h2h"
+        }
+      ],
+      "_src_hash": "32642792464a4500",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fixture-congestion",
+      "term": "Encombrement du calendrier",
+      "short": "Accumulation midweek-weekend : risque de rotation, jambes fatiguées et dérive des totaux avec un retard sur les cotes du marché.",
+      "definition": [
+        "L'encombrement c'est trois matches en huit jours — midweeks coupes, trajets continentaux, accumulations de décembre. Les effets sont mesurables : alignements modifiés, légère baisse de la sortie haute intensité, et légèrement moins de buts causés par les jambes fatiguées en fin d'accumulation.",
+        "La pertinence pour les paris est le timing : les cotes fixées tôt en semaine peuvent accuser un retard sur la rotation confirmée, et les paris sur le marché des joueurs (buteurs, cartons) sont les plus exposés à l'absence d'un élément titulaire. Vérifiez les infos d'équipe confirmées avant tout pari sensible à l'encombrement."
+      ],
+      "example": "Une équipe disputant son troisième match en sept jours, après un déplacement européen, sort quatre titulaires de son onze. Le 1X2 bouge à peine (le marché valorise l'effectif), mais l'attaquant coté 2.10 but à tout moment est sur le banc — le pari s'est éteint à la feuille de match, pas au coup d'envoi.",
+      "related": [
+        "team-form",
+        "anytime-goalscorer",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "32368c4d7bd11aef",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "dead-rubber",
+      "term": "Dead Rubber",
+      "short": "Un match sans enjeu pour l'une ou les deux équipes — où la motivation casse les modèles et les cotes.",
+      "definition": [
+        "Un dead rubber ne décide rien : le groupe est déjà qualifié, la sécurité déjà assurée, la dernière journée d'un championnat plié. Les asymétries de motivation de cette ampleur cassent les modèles basés sur les cotes — une équipe forte sans enjeu fait reposer ses titulaires et navigue tranquille, et sa force « réelle » temporairement n'est pas sa force.",
+        "Ce sont les matches où les probabilités des modèles (les nôtres compris) méritent le moins de confiance et où l'avantage informationnel du marché — qui a vraiment besoin des points — compte le plus. Les fixtures de fin de saison et de dernier tour de poule méritent une vérification de la motivation avant tout pari."
+      ],
+      "example": "Dernier tour de poule : l'équipe qualifiée (cote de victoire basée sur le modèle 60%) se déplace chez une formation ayant besoin d'un point pour survivre. L'historique de telles asymétries suggère que la cote effective de la favorite tombe 10–15 points plus bas — 1.67 sur une favorite qui navigue tranquille est le piège classique du dead rubber.",
+      "related": [
+        "team-form",
+        "fixture-congestion",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "ebba46dd36eb2f3e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "maximum-payout",
+      "term": "Paiement Maximum",
+      "short": "Le plafond de ce qu'un bookmaker versera pour un pari unique ou par client par jour — les conditions générales qui réduisent les gains des accumulations.",
+      "definition": [
+        "Chaque bookmaker plafonne les paiements — par pari, par marché, par client par jour — les limites variant selon la ligue et le sport : les grandes compétitions offrent les plafonds les plus élevés, les obscures bien plus bas. Une accumulation à 12 sélections dont le paiement nominal dépasse le plafond verse le plafond, peu importe le multiplicateur du bulletin.",
+        "Vérifiez le plafond avant de construire un truc loterie, et notez quelle ligue sur votre coupon porte le plafond LE PLUS BAS — les accumulations mixtes sont plafonnées par leur composant le plus faible chez beaucoup de bookmakers."
+      ],
+      "example": "Le bulletin indique £2 × 8,000 = £16,000 ; les conditions générales plafonnent les paiements sur cette ligue à £10,000. Six sélections étaient mainstream mais un choix de ligue de réserve biélorusse a traîné tout le coupon sous le plafond bas — la différence de £6,000 était dans les conditions générales depuis le début.",
+      "related": [
+        "accumulator",
+        "fold",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "d4c8a143702c5985",
+      "_model": "claude-haiku-4-5-20251001"
     }
   ]
 }

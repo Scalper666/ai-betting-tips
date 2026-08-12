@@ -731,6 +731,937 @@
       ],
       "_src_hash": "c50087ed518f0a33",
       "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "handicap-betting",
+      "term": "Handicap-Wette (European)",
+      "short": "Ein Wettmarkt, bei dem ein Team mit einem imaginären Tor-Rückstand oder Vorsprung startet, mit Drei-Wege-Quoten inklusive des adjustierten Unentschieden.",
+      "definition": [
+        "Bei europäischen Handicap-Wetten bekommt eine Seite vor Spielbeginn einen ganzen Tor-Vorsprung oder Rückstand, dann werden das adjustierte Ergebnis als normaler Drei-Wege-Markt bepreist: Heimsieg, adjustiertes Unentschieden, Auswärtssieg. Bei Arsenal −1 müssen die Gunners mit mindestens zwei Toren gewinnen; ein Eins-Tor-Sieg landet genau auf dem adjustierten Unentschieden und Ihre Wette verliert.",
+        "Dieser letzte Punkt ist die Falle für Anfänger und der komplette Unterschied zur asiatischen Variante: Europäische Handicaps haben keine Rückerstattungen. Das dritte Ergebnis (das adjustierte Unentschieden) ist ein echtes, bepreistes Szenario, das beide Seiten der Handicap-Wette schlägt, weshalb die Quoten großzügiger aussehen als asiatische Linien für dasselbe Spiel."
+      ],
+      "example": "Arsenal −1 zu 2,60 gegen Fulham. Arsenal gewinnt 2:0: Wette gewinnt. Arsenal gewinnt 2:1: die −1 macht es 1:1 — das adjustierte Unentschieden gewinnt und Ihre Wette verliert, wobei ein asiatisches −1 die Einsätze zurückerstattet hätte.",
+      "related": [
+        "asian-handicap",
+        "match-result",
+        "draw-no-bet"
+      ],
+      "see": [],
+      "_src_hash": "64badaff59079f4c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "half-time-full-time",
+      "term": "Halbzeit/Endstand (HZ/ES)",
+      "short": "Eine einzelne Wette auf das Ergebnis zur Halbzeit UND zum Endstand — neun Kombinationen, hohe Quoten, kein Teilgewinn.",
+      "definition": [
+        "HZ/ES verlangt von dir, den Führenden zur Pause und den Gewinner am Ende in einer Wette zu nennen: Heim/Heim, Unentschieden/Heim, Auswärts/Heim und die anderen sechs Kombinationen. Beide Teile müssen treffen — ein Team, das zur Halbzeit hinten liegt und spät gewinnt, macht ein Heim/Heim-Ticket kaputt, obwohl das Endergebnis in deine Richtung ging.",
+        "Der Reiz des Marktes liegt im Kurs: Kombinationen zahlen deutlich mehr als das einfache Ergebnis, weil du zwei korrelierte Ereignisse bewertest. Die Korrelation ist genau der Grund, warum Buchmacher das mögen — die meisten Wetter überschätzen Favoriten darin, zu beiden Zeitpunkten zu führen, und die Marge auf neun Ausgänge ist größer als auf drei."
+      ],
+      "example": "Unentschieden/Heim auf einen Favoriten zu 4,75: Der Favorit muss zur Halbzeit gleichstehen und dann gewinnen. Wenn er zur Pause 1:0 führt und 3:0 gewinnt, war das wahrscheinlicher aussehende Heim/Heim zu 2,30 das Ticket, das landete — HZ/ES bestraft es, ungefähr recht zu haben.",
+      "related": [
+        "match-result",
+        "correct-score",
+        "double-chance"
+      ],
+      "see": [],
+      "_src_hash": "5c87a4ea737acac3",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "clean-sheet",
+      "term": "Zu Null",
+      "short": "Ein Markt darauf, ob ein Team kein Tor kassiert — bepreist basierend auf Defensiv- und gegnerischen Angriffsquoten.",
+      "definition": [
+        "Eine Zu-Null-Wette gewinnt, wenn das ausgewählte Team während des Spiels kein Tor kassiert. Sie ist das defensive Spiegelbild von BTTS: ‚Team A zu Null — ja' entspricht ungefähr ‚beide Teams treffen — nein', gewichtet auf eine Seite.",
+        "Die ehrliche Berechnungsmethode nutzt Torquoten: Wenn der Gegner im Durchschnitt 1,2 Tore pro Spiel gegen ähnliche Abwehren erzielt, ergibt ein Poisson-Modell die Wahrscheinlichkeit für null Tore auf etwa 30%, was faire Quoten von etwa 3,30 bedeutet. Jede kürzere Quote braucht einen Grund — fehlende Stürmer, defensive Taktik — den die Durchschnittswerte noch nicht erfasst haben."
+      ],
+      "example": "Erwartete Gegentore gegen diese Abwehr: 1,2. P(0 Tore) = e^−1,2 ≈ 30,1 %, faire Quote ≈ 3,32. Ein Bookie mit 2,80 berechnet dir ~16% Gewinnmarge; 3,60 zahlt dir, um das Risiko zu tragen.",
+      "related": [
+        "btts",
+        "over-under",
+        "xg"
+      ],
+      "see": [
+        {
+          "label": "BTTS model estimates per fixture",
+          "href": "/tips/btts"
+        }
+      ],
+      "_src_hash": "986e19371908b143",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "anytime-goalscorer",
+      "term": "Anytime Goalscorer",
+      "short": "Eine Wette, dass ein namentlich genannter Spieler zu irgendeinem Zeitpunkt des Spiels trifft — bewertet anhand von Spielminuten, Position und Torerwartung des Teams.",
+      "definition": [
+        "Der Anytime-Goalscorer-Markt zahlt, wenn Ihr Spieler mindestens einmal trifft — Eigentore werden normalerweise ausgeschlossen, und die Wette erfordert üblicherweise, dass der Spieler tatsächlich auf dem Platz steht. Die Quoten werden von drei Faktoren bestimmt: der Gesamttorerwartung des Teams, dem Spieleranteil daran (Elfmeter helfen enorm) und den erwarteten Spielminuten.",
+        "Das klassische Leck entsteht durch das Wetten auf Reputation: ein berühmter Stürmer, der auf der Bank beginnt, oder einer, dessen Team wenig kreiert, trägt eine Quote, die viel niedriger ist als seine tatsächliche Chance. Überprüfen Sie die Aufstellung und die Angriffszahlen des Teams vor dem Namen."
+      ],
+      "example": "Ein Stürmer, der etwa 30 % der Tore eines Teams auf sich nimmt, das 1,6 Tore erwartet, hat ungefähr eine 1 − e^(−0,48) ≈ 38 % Anytime-Chance — faire Quote etwa 2,60. Buchmacher zitieren ihn mit 2,00 nur aufgrund des Namens; diese Differenz ist die Marge, die Sie freiwillig zahlen.",
+      "related": [
+        "xg",
+        "value-bet",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "fd5937261b90a11a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "first-goalscorer",
+      "term": "Erste Torschütze",
+      "short": "Eine Wette auf einen benannten Spieler, der als Erstes das Tor öffnet — hohe Volatilität, hohe Marge und stark abhängig von Elfmeterschützen und Spielminuten.",
+      "definition": [
+        "Erste Torschütze zahlt nur, wenn Ihr Spieler das erste Tor des Spiels erzielt. Es ist das Anytime-Markt mit einem zusätzlichen Münzwurf obendrauf: nicht nur ‚wird er treffen' sondern ‚kommt sein Tor zuerst' — was Volatilität vervielfacht und, praktischerweise für den Buchmacher, die Marge in jedem Kurs versteckt.",
+        "Elfmeterschützen und frühe Startspieler dominieren die ehrliche Favoritenliste. Ein Super-Sub, der reichlich trifft, aber erst in Minute 70 eingewechselt wird, ist strukturell furchtbar hier, egal wie seine Anytime-Chancen aussehen."
+      ],
+      "example": "Wenn die Anytime-Chance eines Spielers 38% beträgt und sein Team mit gleicher Wahrscheinlichkeit zuerst oder zweites Tor erzielt, liegt seine Erste-Torschütze-Chance ungefähr auf der Hälfte des Anteils an erstem Tor pro Spiel, den sein Team hält — oft 15–18%, faire Quote 5,50–6,60. Bücher kalkulieren routinemäßig 4,50: eine zweistellige Marge, die unscheinbar versteckt ist.",
+      "related": [
+        "anytime-goalscorer",
+        "bookmaker-margin",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "589dfe0d5c431899",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "corners-betting",
+      "term": "Eckenquoten",
+      "short": "Over/Under- und Handicap-Märkte auf Eckenanzahlen – bestimmt durch Schussvolumen und Spielweise, nicht durch den Spielausgang.",
+      "definition": [
+        "Eckenmärkte bewerten die Anzahl der Ecken: Gesamtquoten (Over/Under 9,5 ist die klassische Linie), Teamtotale und Ecken-Handicaps. Eckenzahlen folgen dem Angriffsvolumen und der Spielfeldbreite – ein dominierendes Team, das von einer tiefen Abwehr an den Flügel gezwungen wird, erzielt Ecken unabhängig vom Spielstand.",
+        "Der häufigste Fehler ist, Ecken als Zufallsfaktor zu behandeln. Sie korrelieren mit Schüssen und Ballbesitz, daher gilt die gleiche Logik wie bei der Bewertung von Gesamttoren: Teams, die über die Flügel gegen dicht gestaffelte Abwehrreihen angreifen, generieren hohe Eckenzahlen, während Konter-Paarungen niedrige Zahlen aufweisen."
+      ],
+      "example": "Zwei Teams mit durchschnittlich 9,8 Ecken kombiniert gegen ähnliche Gegner machen Over 9,5 ungefähr zu einer 58%-Proposition – faire Quote ~1,72. Eine Quote von 1,90 ist Value, wenn die Stichprobe hinter dem Durchschnitt solide ist; die gleiche Quote ist eine Falle nach drei ungewöhnlich offenen Spielen.",
+      "related": [
+        "over-under",
+        "sample-size",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "0b2cfeaf81fcec85",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "cards-betting",
+      "term": "Karten-/Verwarnungs-Wetten",
+      "short": "Märkte auf Gelbe und Rote Karten — wo die Durchschnittsquote des Schiedsrichters genauso wichtig ist wie die Intensität des Spiels.",
+      "definition": [
+        "Kartenmärkte kalkulieren Gesamtverwarnungen (oft als Punkte: Gelb 10, Rot 25) oder reine Kartenzahlen. Zwei Faktoren dominieren: Die Spielintensität — Derbys und Abstiegskämpfe sind heiß umstritten — und der Schiedsrichter, dessen persönlicher Durchschnitt bei Verwarnungen pro Spiel eine öffentliche, stabile Statistik ist, die die meisten Freizeitwetter ignorieren.",
+        "Diese Schiedsrichter-Kennzahl ist das nächstkommende kostenlose Signal in diesem Markt. Dasselbe Spiel kann je nach Schiedsrichter eine Verwarnungserwartung mit 30 % Abweichung haben."
+      ],
+      "example": "Ein Schiedsrichter mit Durchschnitt von 4,8 Gelben pro Spiel pfeift ein Derby, in dessen letzten fünf Begegnungen durchschnittlich 5,2 Karten gezeigt wurden. Eine Over 4,5-Karten-Linie bei Eins-zu-eins-Quote bewertet diese Kombination angemessen; dieselbe Linie unter einem Schiedsrichter mit 3,1er-Durchschnitt würde die Derby-Hitze allein tragen müssen.",
+      "related": [
+        "variance",
+        "sample-size",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "89575455dd41503d",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "outright-betting",
+      "term": "Outright (Futures) Wetten",
+      "short": "Eine Wette auf einen ganzen Wettbewerb — Ligasieger, Torschützenkönig, Abstieg — wird Monate später abgerechnet, mit Marge und Kapitalgebundenheit entsprechend.",
+      "definition": [
+        "Outrights bewerten saisonale Ergebnisse: Meister, Top Vier, Abstieg, Torschützenkönig. Zwei strukturelle Kosten unterscheiden sie von Einzelspielen: Die Quote des Buchmachers über ein 20er-Feld ist deutlich höher als bei einem Dreiwege-Spiel, und dein Einsatz ist für Monate gebunden — totes Kapital, das anderswo hätte wachsen können.",
+        "Der ehrliche Fall für Outrights ist eine starke Uneinigkeit mit dem Markt in der Vorsaison, die sich deiner Meinung nach noch ändern wird. Den Favoriten im August zu einer Quote zu wetten, die du durch Warten schlagen könntest, ist die klassische Version von Ungeduld."
+      ],
+      "example": "Summierst du die implizierten Wahrscheinlichkeiten aller Titelquoten in einer 20er-Liga, findest du oft 115–125% — eine Marge von 15–25%, gegen 4–6% bei einem Einzelspiel. Das gleiche Bankroll über Einzelspiele verursacht deutlich weniger Gesamtgebühren.",
+      "related": [
+        "bookmaker-margin",
+        "expected-value",
+        "bankroll-management"
+      ],
+      "see": [
+        {
+          "label": "Season hubs with live tables",
+          "href": "/seasons"
+        }
+      ],
+      "_src_hash": "8b6639c4b5210df4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "each-way-betting",
+      "term": "Each-Way Wette",
+      "short": "Zwei Wetten in einer — Sieg und Platzierung — hauptsächlich bei Pferderennen, gelegentlich bei Fußball-Quoten für Gesamtsieger angeboten.",
+      "definition": [
+        "Eine Each-Way Wette teilt deinen Einsatz: die Hälfte auf den direkten Sieg, die Hälfte auf eine 'Platzierung' (Erreichen einer definierten Ranggruppe) zu einem Bruchteil der Siegquote. Im Fußball erscheint sie bei Quoten für Gesamtsieger — beispielsweise eine Top-4-Platzierung als Platzierungsteil bei einer Meisterschaftswette.",
+        "Die Frage nach dem Wert stellt sich immer bei der Platzierungsquote: bei einem Viertel der Quote von 8.00 zahlt die Platzierung 2.00 gegen eine Top-4-Wahrscheinlichkeit, die der Markt möglicherweise näher bei 1.60 oder 2.60 bewertet. Die beiden Hälften sind eine Entscheidung auf dem Wettschein — bewerte sie als zwei separate Wetten, denn das sind sie faktisch."
+      ],
+      "example": "£10 Each-Way (Gesamt £20) auf ein Team zu 8.00 für den Titel, Platzierung ¼ Quote Top-4. Titel nicht erreicht, aber Top-4 geschafft: die Sieghälfte verliert £10, die Platzierungshälfte zahlt £10 × (1 + 7/4) = £27.50 — Netto +£7.50. Ob diese Platzierungsquote die reale Wahrscheinlichkeit geschlagen hat, ist die eigentliche Wertfrage.",
+      "related": [
+        "outright-betting",
+        "expected-value",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "0e5e1cd7d7e0951c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "banker",
+      "term": "Banker",
+      "short": "Die Auswahl in einem Wettschein, die als quasi sicher behandelt wird — der stille Ausfallpunkt jedes Akkumulators.",
+      "definition": [
+        "Ein Banker ist die Quote, auf der Wettende einen Schein aufbauen — der 1,25er-Favorit „nur um die Quoten zu verbessern'. Die Arithmetik, die die meisten Schlupfstellen ignorieren: Eine 1,25er-Quote impliziert eine Ausfallquote von 20%, selbst nach den eigenen optimistischen Prognosen des Buchmachers, und dieser Ausfall zerstört den ganzen Akkumulator.",
+        "Banker tragen auch die schlechteste Value auf dem Spielplan: Schwere Favoriten sind dort, wo Freizeitwetter ihr Geld häufen, daher laufen ihre Quoten öfter unter Fair-Value als jedes andere Segment. Einen Banker zu einem Schein hinzuzufügen bedeutet normalerweise, mehr Marge hinzuzufügen, nicht mehr Sicherheit."
+      ],
+      "example": "Eine Viererkombi bei 6,00 wird 7,50 mit einem 1,25er-Banker hinzugefügt. Der Banker fällt einmal von fünf bei seiner eigenen impliziten Quote aus — du hast einen 25%-Auszahlungsboost gegen eine 20%-Chance getauscht, jeden gewinnenden Schein in Asche zu verwandeln.",
+      "related": [
+        "accumulator",
+        "longshot-bias",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Build a coupon from model-screened picks",
+          "href": "/tools/acca-builder"
+        }
+      ],
+      "_src_hash": "5519628f9b88ad26",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "system-bet",
+      "term": "System Wette",
+      "short": "Eine strukturierte Sammlung von Mehrfachwetten über die gleichen Auswahlen — Trixie, Yankee, Lucky 15 — mit Teilgewinnen, wenn nur einige Tipps treffen.",
+      "definition": [
+        "Eine System Wette platziert jede mögliche Mehrfachwette einer bestimmten Größe über deine Auswahlen: eine Trixie bei drei Tipps ist drei Doppel plus eine Dreifach (4 Wetten), ein Yankee bei vier Tipps ist sechs Doppel, vier Dreifach und eine Vierfach (11 Wetten). Ein verlorener Tipp zerstört nicht mehr alles — die Kombinationen ohne ihn zählen dennoch.",
+        "Eine System Wette teilt den Einsatz auf alle möglichen Kombinationen auf: jede Kombination trägt ihren eigenen Anteil, sodass ein „1 EUR Yankee"
+      ],
+      "example": "1 EUR Trixie (3 Wetten, 4 EUR Gesamteinsatz: 3 Doppel + 1 Dreifach) auf Quoten 2.0 / 2.0 / 2.0. Alle drei treffen: Gewinn 4×... Doppel zahlen 3×4=12 EUR? — jedes Doppel zahlt 1 EUR×4=4 EUR, die Dreifach 8 EUR, insgesamt 20 EUR aus 4 EUR Einsatz. Zwei treffen: ein Doppel überlebt, 4 EUR Rückzahlung aus 4 EUR gesetzt. Die System Wette braucht zwei von drei zum Gewinn, nicht einen.",
+      "related": [
+        "accumulator",
+        "trixie",
+        "yankee"
+      ],
+      "see": [],
+      "_src_hash": "dce756f0cd33838e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "trixie",
+      "term": "Trixie",
+      "short": "Drei Auswahlen, vier Wetten: jede Kombination aus zwei Auswahlen plus die Dreierkombination. Zwei Gewinner bringen Geld zurück; drei zahlen richtig aus.",
+      "definition": [
+        "Eine Trixie kombiniert drei Auswahlen in vier Wetten — die drei möglichen Zweierkombs und eine Dreierkombination. Anders als ein reines Trixie-Treble bringen zwei gewonnene Beine noch etwas zurück: die Zweierkombination, die sie bilden, überlebt den Ausfall des dritten Beins.",
+        "Gesamteinsatz beträgt vier Einheiten. Die Struktur eignet sich für Quoten um die 2,0; bei kurzen Favoriten zahlen die Zweierkombs zu wenig, um die zusätzlichen Einheiten zu rechtfertigen, und bei Außenseitern zahlt sich das reine Treble mit höherer Quote meist besser aus als die Absicherung."
+      ],
+      "example": "£1 Trixie (£4 insgesamt) auf drei Auswahlen à 2,10. Alle gewinnen: 3 Zweierkombs × £4,41 + Treble £9,26 ≈ £22,50. Zwei gewinnen: eine Zweierkombination zahlt £4,41 — fast der gesamte £4-Einsatz zurück. Ein reines £4-Treble hätte für alle drei £37 bezahlt, aber null für zwei.",
+      "related": [
+        "system-bet",
+        "yankee",
+        "accumulator"
+      ],
+      "see": [],
+      "_src_hash": "1545b6c564f5f4e1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "yankee",
+      "term": "Yankee",
+      "short": "Vier Auswahl, elf Wetten: sechs Doppel, vier Dreifach, ein Vierfach. Zwei Treffer beginnen mit Auszahlung.",
+      "definition": [
+        "Ein Yankee verteilt vier Auswahl auf alle elf Mehrfach-Wetten, die sie bilden können: 6 Doppel + 4 Dreifach + 1 Vierfach. Mindestens zwei Beine müssen treffen, bevor etwas zurückkommt; die Auszahlungskurve steigt dann steil mit jedem zusätzlichen Treffer an.",
+        "Elf Einheiten ist echtes Geld für die gebotene Absicherung. Der ehrliche Vergleich ist gegen vier separate Doppel oder einen einfachen Vierfach: Der Yankee gewinnt diesen Vergleich nur, wenn Ihre Tipps um die Quote 2,00 herum liegen und Sie wirklich erwarten, zwei oder drei Treffer häufiger zu landen als vier."
+      ],
+      "example": "£1 Yankee (£11) auf vier Auswahl à 2,00. Zwei Treffer: ein Doppel zahlt £4 — £7 Nettoverlust. Drei Treffer: 3 Doppel (£12) + 1 Dreifach (£8) = £20 — bescheidener Gewinn. Alle vier: £12 + £32 + £16 = £60. Die Struktur zahlt sich bei Knapp-daneben-Tipps aus und verhindert, dass Sie den ganzen Jackpot verlieren.",
+      "related": [
+        "system-bet",
+        "trixie",
+        "lucky-15"
+      ],
+      "see": [],
+      "_src_hash": "1960586662f10906",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "lucky-15",
+      "term": "Lucky 15",
+      "short": "Vier Auswahlen, fünfzehn Wetten: ein Yankee plus die vier Einzelwetten — schon ein Treffer bringt einen Gewinn.",
+      "definition": [
+        "Ein Lucky 15 ist ein Yankee mit zusätzlichen vier Einzelwetten: 4 Einzelwetten + 6 Doppel + 4 Vierfach-Kombis + 1 Fünffach-Kombi = 15 Wetten. Die Einzelwetten sorgen dafür, dass ein einzelner Treffer noch Geld zurückbringt, und Wettanbieter versüßen das Produkt häufig — doppelte Quoten auf einen Treffer, Boni bei vier Gewinnern.",
+        "Die Zusatzboni existieren, weil das Basisprodukt fünfzehn Einheiten Marge trägt. Bei typischen Quoten von 3,00 kostet die gesamte Wette mit etwa 5% Marge kalkulatorisch rund 0,75 Einheiten Erwartungswert, bevor Boni einen Teil davon zurückgeben."
+      ],
+      "example": "£1 Lucky 15 (£15) auf vier Favoriten zu 3,00. Ein Treffer mit 'doppelte Quoten auf einen Treffer': die Einzelwette zahlt £1 × 5,00 = £5 (statt £3) — trotzdem ein Nettoverlust von £10. Alle vier Treffer: Einzelwetten £12 + Doppel £54 + Vierfach-Kombis £108 + Fünffach-Kombi £81 = £255. Die Trostpreise sind real, aber klein; das Produkt ist darauf kalkuliert, dass sie größer wirken, als sie tatsächlich sind.",
+      "related": [
+        "yankee",
+        "system-bet",
+        "bookmaker-margin"
+      ],
+      "see": [],
+      "_src_hash": "41186e48996f97f0",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "patent",
+      "term": "Patent",
+      "short": "Drei Auswahlen, sieben Wetten: Einzelwetten, Kombiwetten und Dreierkombi — die vollständig abgesicherte Trixie.",
+      "definition": [
+        "Ein Patent deckt drei Auswahlen mit allen sieben möglichen Wetten ab: 3 Einzelwetten + 3 Kombiwetten + 1 Dreierkombi. Es ist eine Trixie plus Einzelwetten, daher bringt schon ein Gewinn etwas zurück.",
+        "Sieben Einheiten Einsatz kaufen vollständige Absicherung, was zu selbstbewussten Picks bei höheren Quoten passt — die Einzelwetten haben echtes Gewicht ab 3,00+. Bei niedrigen Quoten werfen die Einzelwetten Kleingeld ab und die Struktur wird zur teuren Versicherung auf Versicherung."
+      ],
+      "example": "£1 Patent (£7) auf drei Picks à 3,50. Ein Gewinn: seine Einzelwette bringt £3,50 zurück — die Hälfte des Einsatzes. Zwei: 2 Einzelwetten (£7) + 1 Kombi (£12,25) = £19,25. Alle drei: £10,50 + £36,75 + £42,88 ≈ £90. Vergleich mit der £7 Dreierkombi allein: £0, £0, £150 — das Patent handelt den Jackpot gegen eine Absicherung.",
+      "related": [
+        "trixie",
+        "system-bet",
+        "accumulator"
+      ],
+      "see": [],
+      "_src_hash": "d12659ca22b4ca57",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "round-robin",
+      "term": "Round Robin",
+      "short": "Alle Doppelwetten (und oft Dreifachwetten) über eine Auswahl von Tipps — das Grundprinzip hinter Trixies und Yankees.",
+      "definition": [
+        "Eine Round-Robin-Wette kombiniert alle möglichen Wettscheine einer bestimmten Größe aus deinen Tipps — üblicherweise alle Doppelwetten aus vier, fünf oder sechs Tipps. Trixie und Yankee sind einfach vordefinierte Round Robins in fester Größe; die allgemeine Form lässt dich die Breite selbst wählen.",
+        "Die Kombinatorik wächst schnell: alle Doppelwetten aus sechs Tipps ergeben fünfzehn Wetten, alle Dreifachwetten zwanzig. Jede Kombination hat ihren eigenen Einsatz und ihre eigene Marge, daher multipliziert die Struktur den Gewinn des Buchmachers genau so schnell, wie sie deine Abdeckung multipliziert."
+      ],
+      "example": "Alle Doppelwetten aus fünf Tipps = 10 Wetten. Bei einer 5%-Marge pro Doppelwette enthält das Paket ~0,5 Einheiten erwartete Kosten. Drei von fünf Gewinnern ergeben 3 Doppelwetten: bei 2,00er Quoten zahlt sich das 4 Einheiten — 12 zurück aus 10, bevor die Varianz überhaupt etwas dazu gesagt hat.",
+      "related": [
+        "system-bet",
+        "yankee",
+        "bookmaker-margin"
+      ],
+      "see": [],
+      "_src_hash": "ebabd3db75914eac",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fold",
+      "term": "Fold (4-Fold, 5-Fold…)",
+      "short": "Buchmacher-Kurzform für Akkumulatoren-Größe: die Anzahl der Wetten, die alle gewinnen müssen.",
+      "definition": [
+        "'Fold' zählt die Spiele in einem Akkumulator: ein 4er-Fold hat vier Positionen, ein 6er-Fold sechs, und jede Position muss gewinnen. Die Quoten multiplizieren sich, und damit auch die Ausfallmechanismen – jede hinzugefügte Position multipliziert die Auszahlung mit ihrer Quote und die Überlebenswahrscheinlichkeit des Scheins mit etwas weniger als eins.",
+        "Die Fold-Zahl ist die schnellste Integritätsprüfung für jeden Schein: Bei typischen 5% Margen pro Spiel behält der Buchmacher bei einem n-Fold ungefähr n×5% des Erwartungswerts. Ein 6er-Fold ist eine ~30% Gebühr, verpackt als Lotterieschein."
+      ],
+      "example": "Fünf Spiele à 1,80: 5er-Fold zahlt 18,9. Echte Chance, wenn jedes Spiel fair zu 55% steht: 0,55⁵ ≈ 5,0% – faire Quote 19,9. Die Differenz zwischen 18,9 und 19,9 sind fünf aufgestapelte Margen; sie wächst mit jedem Fold, den du hinzufügst.",
+      "related": [
+        "accumulator",
+        "bookmaker-margin",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Accumulator calculator",
+          "href": "/tools/accumulator-calculator"
+        }
+      ],
+      "_src_hash": "94a6586ebee2ec9e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "single",
+      "term": "Single",
+      "short": "Eine Auswahl, eine Wette — die Referenzeinheit, an der alle anderen Wettstrukturen gemessen werden.",
+      "definition": [
+        "Eine Single setzt einen festen Betrag auf ein Ergebnis zu einem festen Kurs. Sie ist der klarste Ausdruck einer Wettmeinung und die Grundlage zur Beurteilung aller komplexeren Strukturen: jeder Accumulator, jedes System oder Builder ist nur Singles, die mit zusätzlicher Marge zusammengeklebt sind.",
+        "Profis setzen fast ausschließlich in Singles — genau deswegen. Jede Wette hat ihren eigenen Value, zahlt die Marge nur einmal und wird abgerechnet, ohne andere Meinungen mit sich zu ziehen."
+      ],
+      "example": "Drei Meinungen à 2.00, ein Unit Gesamteinsatz. Drei Single-Wetten à ⅓-Unit: jede bringt 0,67 Gewinn bei Erfolg, unabhängig von den anderen. Derselbe Unit auf ein Trixie zahlt das 7-Fache bei Erfolg aller drei (≈13% der Fälle bei fairen Quoten) und null sonst — dieselben Meinungen, dreifache Marge, Alles-oder-Nichts-Profil.",
+      "related": [
+        "accumulator",
+        "flat-staking",
+        "expected-value"
+      ],
+      "see": [],
+      "_src_hash": "1f80d8238ba69ff4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "double",
+      "term": "Double",
+      "short": "Ein zweibeiniger Kombiwette: beide Auswahlen müssen treffen, Quoten multiplizieren sich, Margen stapeln sich doppelt.",
+      "definition": [
+        "Ein Double multipliziert zwei Quoten in einer Wette, bei der beide Beine landen müssen. Es ist der kleinste Kombiwette und die klarste Veranschaulichung der Wirtschaft dieser Familie: Die Wahrscheinlichkeit multipliziert sich nach unten, während die Buchmacher-Marge sich aufstapelt.",
+        "Doubles haben einen ehrlichen Anwendungsfall: zwei echte Underpreisauswahlen, bei denen die Multiplikation zweier positiver Edges diese verstärkt. Zwei fair bewertete Auswahlen in einem Double sind strikt schlechter als dieselben Auswahlen als Einzelwetten."
+      ],
+      "example": "Zwei Beine à 2,10, jeweils fair ein Münzwurf: das Double zahlt 4,41 gegen eine echte 25%-Chance (fair 4,00) — Moment, das ist Value nur, wenn die Beine ÜBER der fairen Quote waren. Bei fairen 2,00er Beinen trägt ein 2,10er Double-Bein Edge; zwei davon verstärken zu 4,41 gegen fair 4,00. Margenbelastete 1,90er Beine verstärken sich falsch herum: 3,61 gezahlt gegen fair 4,00.",
+      "related": [
+        "accumulator",
+        "treble",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "4cbefc0335830c43",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "treble",
+      "term": "Treble",
+      "short": "Ein dreifacher Kombiwette — die Quoten multiplizieren sich über drei Kurse, und so auch der Buchmacher-Gewinn.",
+      "definition": [
+        "Eine Treble benötigt drei Auswahlen, die alle gewinnen müssen, wobei die drei Quoten zu einer Auszahlung multipliziert werden. Bei typischen Margen trägt jedes Bein etwa 5% des erwarteten Verlusts bei, daher gibt die Struktur vor Spielbeginn ungefähr 15% ab — der Preis der höheren Zahl auf dem Coupon.",
+        "Das Varianzprofil ist das eigentliche Produkt: Trebles mit moderaten Quoten treffen oft genug ein, um erreichbar zu wirken, während sie genug auszahlen, um wie ein Gewinn zu wirken. Gefühle sind das Produkt; die Marge ist der Kostenpunkt."
+      ],
+      "example": "Drei Beine zu 1,90 (fair 2,00): die Treble zahlt 6,86 gegen einen fairen Wert von 8,00 — du akzeptierst 86% des fairen Wertes, also einen strukturellen Aufschlag von 14%, für das Vergnügen einer einzigen größeren Auszahlung statt drei fairer.",
+      "related": [
+        "double",
+        "accumulator",
+        "fold"
+      ],
+      "see": [],
+      "_src_hash": "713f96eff080d608",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "stake",
+      "term": "Einsatz",
+      "short": "Der Betrag, den Sie bei einer Wette riskieren — die Zahl, auf die alle Gewinne, Verluste und Einsatzpläne bezogen sind.",
+      "definition": [
+        "Der Einsatz ist das Geld, das Sie setzen. Dezimalquoten beinhalten den Einsatz in der angegebenen Gesamtauszahlung (Quote × Einsatz = Gesamtgewinn inklusive Einsatz); Bruchquoten geben den Gewinn relativ zum Einsatz an. Jedes vernünftige Gespräch über Einsätze dreht sich um die Größe dieser Zahl, nicht um die Auswahl von Siegern.",
+        "Zwei Disziplinen decken das Wesentliche ab: Einsätze als kleiner fester Anteil einer dedizierten Bankroll dimensionieren und niemals erhöhen, um einen Verlust auszugleichen. Die Mathematik des Ruins wird fast ausschließlich von der Einsatzgröße bestimmt, nicht von der Qualität der Tipps."
+      ],
+      "example": "£10 bei Quote 2,50 bringt £25 insgesamt — £15 Gewinn plus £10 Einsatz. Die gleiche Wette in Bruchquoten ist 6/4: £15 Gewinn pro £10 Einsatz. Gleiche Wette, gleiches Geld, zwei Notationen.",
+      "related": [
+        "flat-staking",
+        "bankroll-management",
+        "unit"
+      ],
+      "see": [],
+      "_src_hash": "725de29c74bc72a5",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "unit",
+      "term": "Unit",
+      "short": "Der Standard-Einsatz eines Wetters — üblicherweise 1–2% der Bankroll — die Währung, in der ehrliche Aufzeichnungen geführt werden.",
+      "definition": [
+        "Eine Unit ist ein persönlicher Standard-Einsatz, typischerweise 1–2% der Bankroll. Tippgeber und Record-Halter geben Gewinne in Units an ('+14,2u'), weil dies Urteilskraft von der Wallet-Größe trennt: +14 Units bedeutet das Gleiche, ob eine Unit £2 oder £200 ist.",
+        "Units offenbaren auch Einsatz-Disziplin. Ein Record mit '10-Unit Locks' und '0,5-Unit Longshots' zeigt dir, dass das Selbstvertrauen von Wette zu Wette wildly schwankt — was historisch mit Records korreliert, die nicht mehr veröffentlicht werden."
+      ],
+      "example": "Bankroll £1.000, Unit 1% = £10. Eine Saison, die +18,4u endete, brachte £184 bei flachen Einsätzen ein. Unser eigener veröffentlichter Record verwendet flache 1-Unit-Stakes genau aus diesem Grund — die Zahl kann nicht durch Anpassung der Einsätze nach guten Serien aufgeblasen werden.",
+      "related": [
+        "flat-staking",
+        "bankroll-management",
+        "roi-and-yield"
+      ],
+      "see": [
+        {
+          "label": "Our settled record, flat 1u",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "195038bc8d5b4bef",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-on-odds-against",
+      "term": "Quote-Favorit / Quote-Außenseiter",
+      "short": "Ob eine Quote eine höhere oder niedrigere Wahrscheinlichkeit als 50% impliziert — unter oder über 2,00 im Dezimalformat.",
+      "definition": [
+        "Quote-Favorit bedeutet, die Quote impliziert eine bessere als gerade Chance: Dezimal unter 2,00, Bruch mit der größeren Zahl rechts (1/2). Quote-Außenseiter ist das Gegenteil: Dezimal über 2,00, Bruch 2/1 und höher. Gleichstand (2,00) ist die Grenze.",
+        "Die Begrifflichkeit zählt, weil die Psychologie auf jeder Seite unterschiedlich funktioniert. Favoriten fühlen sich sicher an und werden systematisch von Freizeitwettern überrepräsentiert; Außenseiter wirken wie Lottoscheine. Kein Gefühl hat etwas mit Value zu tun, der nur in der Lücke zwischen Quote und echter Wahrscheinlichkeit existiert."
+      ],
+      "example": "1/2 Bruch = 1,50 Dezimal = 66,7% impliziert: Quote-Favorit. 5/2 = 3,50 = 28,6% impliziert: Quote-Außenseiter. Ein 1,50-Favorit, der wirklich 60% der Zeit gewinnt, ist ein schlechter Wett; ein 3,50-Außenseiter, der ein Drittel der Zeit gewinnt, ist ein guter.",
+      "related": [
+        "odds-formats",
+        "implied-probability",
+        "longshot-bias"
+      ],
+      "see": [
+        {
+          "label": "Odds converter",
+          "href": "/tools/odds-converter"
+        }
+      ],
+      "_src_hash": "250380da66bc1f85",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "vig",
+      "term": "Vig (Vigorish / Juice)",
+      "short": "Die amerikanische Bezeichnung für die Buchmachermarge — die eingebaute Gebühr, die in jedem Quotenpaar steckt.",
+      "definition": [
+        "Vig, Vigorish oder Juice ist US-amerikanischer Wettslangs für die Buchmachergebühr — das gleiche, das europäische Wettende Marge oder Overround nennen. Es ist kein eigener Posten auf Ihrem Wettschein; es versteckt sich in Quoten, die zusammen eine Wahrscheinlichkeit von mehr als 100% implizieren.",
+        "Der klassische amerikanische Ausdruck ist -110/-110 auf einen Point Spread: 110 setzen, um 100 auf einer der beiden Seiten zu gewinnen. Jede Seite impliziert 52,4%, das Paar summiert sich auf 104,8%, und die 4,8% sind der Vig."
+      ],
+      "example": "-110 auf beiden Seiten: implizierte 52,38% je Seite, Summe 104,76%. Ein Wettender, der zufällig Spreads pickt, verliert langfristig 4,76 Cent pro eingesetztem Dollar — das ist der Vig bei der Arbeit, kein Pech erforderlich.",
+      "related": [
+        "bookmaker-margin",
+        "overround",
+        "point-spread"
+      ],
+      "see": [
+        {
+          "label": "Margin calculator",
+          "href": "/tools/margin-calculator"
+        }
+      ],
+      "_src_hash": "3a6a05972381e3bc",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "moneyline",
+      "term": "Moneyline",
+      "short": "US-Odds-Format: negative Zahlen zeigen den Einsatz für einen Gewinn von 100, positive Zahlen zeigen, was 100 gewinnt — und der US-Name für den Siegmarkt.",
+      "definition": [
+        "Eine Moneyline-Quote von -150 bedeutet 150 einsetzen, um 100 zu gewinnen (Dezimal 1,67); +240 bedeutet 100 gewinnt 240 (Dezimal 3,40). Negative Zahlen markieren Favoriten, positive Zahlen Außenseiter. ‚Moneyline' bezeichnet auch den Markt selbst — auf den Sieger wetten ohne Spread, was im American Football das Unentschieden als eigene Linie einschließt.",
+        "Die Umrechnung ist mechanisch: Dezimal = 1 + 100/|ML| für negative, 1 + ML/100 für positive. Dies im Kopf zu rechnen — oder einen Converter benutzen zu lassen — ist der erste Schritt, um US-quotierte Preise mit allem anderen zu vergleichen."
+      ],
+      "example": "-125 = 1,80 Dezimal = 55,6% impliziert. +210 = 3,10 = 32,3%. Eine Drei-Wege-Fußball-Moneyline von -125 / +260 / +330 impliziert 55,6 + 27,8 + 23,3 = 106,7% — eine 6,7% Marge auf die drei Wetten.",
+      "related": [
+        "odds-formats",
+        "vig",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "Odds converter",
+          "href": "/tools/odds-converter"
+        }
+      ],
+      "_src_hash": "668a9894bd102ded",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "point-spread",
+      "term": "Point Spread",
+      "short": "Das amerikanische Handicap: eine Punktelinie, bei der beide Seiten mit nahezu gleichen Quoten um die -110 herum gepreist sind, bei ganzen Zahlen erfolgt Rückzahlung bei Unentschieden.",
+      "definition": [
+        "Ein Point Spread handicapiert den Favoriten um eine feste Marge — legen Sie -6,5 Punkte fest und er muss um mindestens sieben gewinnen. Beide Seiten werden mit nahezu -110 gepreist, der Gewinn des Bookmakers liegt im Vig statt in manipulierten Siegquoten. Spreads mit ganzen Zahlen können genau landen (ein Push) und Einsätze zurückgeben; Linien mit halben Punkten nicht.",
+        "Es ist die gleiche Idee wie das asiatische Handicap im Fußball: eine Fehlpaarung in einen fairen Münzwurf umwandeln und Gebühren dafür berechnen. Die fußballspezifische Besonderheit ist, dass niedriges Toraufkommen halbe Torlinien dominiert, während US-Sports auf 3,5er und 6,5er setzen."
+      ],
+      "example": "Favorit -3 bei -110: Sieg um genau 3 führt zu Push (Einsatz zurück), um 4+ gewinnt, um weniger verliert. Die -110 auf beiden Seiten bedeutet, dass Sie den Spread 52,4 % der Zeit schlagen müssen, um nur die Gewinnschwelle zu erreichen — die Zahl, an der jede „Against-the-Spread",
+      "related": [
+        "asian-handicap",
+        "vig",
+        "push"
+      ],
+      "see": [],
+      "_src_hash": "d706c29ea8be4e8f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "push",
+      "term": "Push",
+      "short": "Eine Wette, die genau auf der Linie landet — Einsatz wird zurückerstattet, kein Gewinn, kein Verlust und keine Anrechnung auf Umsatzanforderungen.",
+      "definition": [
+        "Ein Push tritt auf, wenn das Ergebnis genau eine Ganzzahl-Linie trifft: unter 3,0 Toren bei einem Spielstand von 3, ein -3 Handicap mit exakt 3 Toren Differenz. Der Einsatz wird zurückgegeben; die Wette ist bedeutungslos. Asian Handicaps verwenden denselben Mechanismus bei ihren Ganzzahl- und Halbzahl-Linien.",
+        "Zwei praktische Folgen: gepushte Wetten zählen bei den meisten Wettanbietern nicht zu den Bonus-Umsatzanforderungen, und bei Kombiwetten fällt ein gepushtes Bein normalerweise aus — der Wettschein wird mit den verbleibenden Quoten neu berechnet, statt ungültig zu werden."
+      ],
+      "example": "Über 2,5/3,0 (ein geteiltes Asian Total) mit Spielende 3–0: die 2,5er Hälfte gewinnt, die 3,0er Hälfte pusht — Sie kassieren die Hälfte des Einsatzes und bekommen die andere Hälfte zurück. Bei einem einfachen Über 3,0 würde der gesamte Einsatz einfach zurückerstattet.",
+      "related": [
+        "asian-handicap",
+        "void-bet",
+        "over-under"
+      ],
+      "see": [],
+      "_src_hash": "f34f6898ef0dc5cf",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-exchange",
+      "term": "Wettbörse",
+      "short": "Ein Marktplatz, auf dem Wetter untereinander wetten – Sie können jedes Ergebnis backed oder gelaid werden, wobei der Betreiber eine Kommission statt einer Marge nimmt.",
+      "definition": [
+        "Eine Börse matched Kunden untereinander: einer backed ein Ergebnis, ein anderer laid es, und die Plattform nimmt eine kleine Kommission auf Nettogewinne statt Marge in die Quoten einzubauen. Die Quoten entstehen durch Angebot und Nachfrage, weshalb Börsenkurse der Benchmark sind, gegen die scharfsinnige Wetter Buchmacher bewerten.",
+        "Der Nachteil ist Liquidität: eine Börsenkurse existieren nur in der Größe, die andere Kunden matchen möchten. Große Fußballmärkte sind tief; obskure Ligen und exotische Märkte können Wüsten sein, wo die theoretisch bessere Quote nicht wirklich genommen werden kann."
+      ],
+      "example": "Ein Buchmacher quoted 2.00 auf ein Team, das die Börse bei 2.10 handelt. Nach 2% Kommission bringt der Börsen-Back 2.10 − (1.10 × 0.02) ≈ 2.078 – immer noch besser als 2.00. Diese Spanne, ehrlich über die Zeit gemessen, ist ungefähr das, was die Marge des Buchmachers Sie kostet.",
+      "related": [
+        "lay-betting",
+        "closing-line-value",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "ff50d3cd02feb876",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "lay-betting",
+      "term": "Lay Betting",
+      "short": "Darauf wetten, dass etwas NICHT eintritt — auf der Seite des Buchmachers in einem Exchange agieren.",
+      "definition": [
+        "Eine Quote zu legen bedeutet, die Back-Wette einer anderen Person anzunehmen: Du gewinnst ihren Einsatz, wenn das Ergebnis ausbleibt, zahlst die Quote aus, wenn es eintritt. Deine Haftung bei einer Lay-Wette von 4.00 ist dreimal so hoch wie der Einsatz des Backers — eine Asymmetrie, die Anfänger unterschätzen.",
+        "Laying komplettiert das Toolkit: Dreiweg-Fußballmärkte können von beiden Seiten angegriffen werden ('dieser Favorit ist zu kurz bewertet' wird umsetzbar, ohne zu entscheiden, wer gewinnt), und eine Position abzusichern ist dann eine Frage, das früher Gebackte zu legen."
+      ],
+      "example": "Lay £10 bei 4.00: Wenn das Ergebnis ausbleibt, gewinnst Du £10; wenn es eintritt, zahlst Du £30. Die implizierte Wette ist 'dies tritt weniger als 25% der Zeit auf' — bewertet, dimensioniert und abgewickelt wie jede andere Einschätzung.",
+      "related": [
+        "betting-exchange",
+        "hedging",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "ba976ad193de42aa",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "dutching",
+      "term": "Dutching",
+      "short": "Einsätze auf mehrere Ergebnisse verteilt, sodass jeder Gewinner denselben Gewinn bringt — Abdeckung, keine Arbitrage.",
+      "definition": [
+        "Dutching verteilt deinen Einsatz proportional zu den Quoten auf zwei oder mehr Ergebnisse, sodass jeder Sieg denselben Betrag auszahlt. Das Absichern von drei Endergebnissen oder zwei Torschützen auf diese Weise macht mehrere Ansichten zu einer Position mit bekanntem Ertrag.",
+        "Die Falle ist, Abdeckung mit Sicherheit zu verwechseln: Die Ergebnisse, die du NICHT abgedeckt hast, verlieren den gesamten Einsatz. Dutching unter 100% kombinierter implizierter Wahrscheinlichkeit ist keine Arbitrage — es ist eine normale Wette, deren Verlustfall alles außerhalb deiner Gruppe ist."
+      ],
+      "example": "1-1 mit Quote 7.0 absichern, 2-1 mit Quote 9.0, 1-0 mit Quote 10.0 mit insgesamt £20 aufgeteilt 8.87/6.90/6.21... jedes der drei Ergebnisse bringt ≈£62 zurück (implizierte Abdeckung ~32%). Die anderen 68% der Endergebnisse verlieren die gesamten £20 — das ist die Wette, die du tatsächlich platziert hast.",
+      "related": [
+        "hedging",
+        "correct-score",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "Dutching calculator",
+          "href": "/tools/dutching-calculator"
+        }
+      ],
+      "_src_hash": "9bae402a7a10c3e1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "hedging",
+      "term": "Absicherung",
+      "short": "Platzierung einer Gegenwette zur Sicherung von Gewinnen oder Begrenzung von Verlusten bei einer bestehenden Position — bezahlt durch Margin auf zwei Wetten.",
+      "definition": [
+        "Absicherung schließt oder reduziert eine Position durch eine Gegenwette: das Team, das Sie ante-post gespielt haben, legen, das Unentschieden gegen das letzte Leg Ihres Gewinneraccumulators spielen, Cash-out (was letztlich nur der Buchmacher für Sie mit seinen Quoten absichert). Bei fairen Quoten wandelt eine Absicherung Varianz in eine sichere Summe um.",
+        "Die Kosten entstehen durch Margin auf eine zweite Wette. Systematische Absicherung jeder gewinnenden Position ist eine Steuer auf Ihren eigenen Erfolg; die ehrlichen Anwendungsfälle sind selten und spezifisch — Sicherung eines lebensverändernden Accumulators oder Ausstieg aus einer Position, deren Grundlage durch News zum Team gestorben ist."
+      ],
+      "example": "£10 Vierfach zu 15.0 mit drei gewonnenen Legs; das Leg des Gegners wird an einer Exchange mit 2.5 gehandelt. Legen/Spielen zur Ausgeglichenheit sichert ≈£45 unabhängig davon ab, wie das letzte Spiel ausgeht, gegen £150-oder-nichts ungesichert. Ob dieser Trade richtig ist, hängt von den Quoten ab, nicht von Nerven.",
+      "related": [
+        "cash-out",
+        "lay-betting",
+        "dutching"
+      ],
+      "see": [
+        {
+          "label": "Hedging calculator",
+          "href": "/tools/hedging-calculator"
+        }
+      ],
+      "_src_hash": "265417d8376be4b6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "overround",
+      "term": "Overround",
+      "short": "Der Betrag, um den die implizierten Wahrscheinlichkeiten eines Marktes 100% übersteigen — die Marge, aus der Marktsicht betrachtet.",
+      "definition": [
+        "Addiere die implizierten Wahrscheinlichkeiten aller Ausgänge in einem Markt und der Überschuss über 100% ist der Overround: eine 1X2, die sich auf 105,5% summiert, trägt einen Overround von 5,5%. Es ist dasselbe wie die Buchmacher-Marge, nur gemessen auf den gesamten Markt statt als Gebühr beschrieben.",
+        "Der Overround variiert je nach Markt und Buchmacher — etablierte Ligen bei scharfsinnigen Buchmachern liegen bei 2–5%, exotische Märkte und kleinere Ligen bei 8–15%. Ihn zu prüfen dauert dreißig Sekunden und zeigt dir die Spielregeln, bevor eine Meinung ins Spiel kommt."
+      ],
+      "example": "Quoten 1,95 / 3,60 / 4,10 implizieren 51,3% + 27,8% + 24,4% = 103,5% — ein Overround von 3,5%, anständig. Dasselbe Match anderswo bei 1,83 / 3,40 / 3,90 impliziert 107,7% — du zahlst das Doppelte der Gebühr für identische Meinungen.",
+      "related": [
+        "bookmaker-margin",
+        "vig",
+        "fair-odds"
+      ],
+      "see": [
+        {
+          "label": "Live margin research across our leagues",
+          "href": "/research"
+        }
+      ],
+      "_src_hash": "7ac9166d8f6aa038",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "goal-line",
+      "term": "Tor-Linie (Asian Total)",
+      "short": "Gesamt-Wetten mit Asian-Handicap-Mechanik: Ganz-, Halb- und Splitlinien, bei denen eine exakte Landung einen Teil oder die gesamte Einsatzrückerstattung bewirkt.",
+      "definition": [
+        "Die Tor-Linie ist Over/Under mit der Rückerstattungsmechanik des Asian Handicaps. Ganzlinien (3,0) gehen unentschieden auf, wenn die Gesamtheit exakt landet; Splitlinien (2,5/3,0) regeln die halbe Einsatzrückerstattung auf jede Komponente; Halblinien (2,5) verhalten sich wie der klassische Markt.",
+        "Die Rückerstattungen kosten Quoten: Over 2,5/3,0 zahlt weniger als Over 2,5, weil ein Teil Ihres Nachteilsrisikos entfernt wurde. Ob sich dieser Tausch lohnt, ist eine Preisfrage, und Splitlinien sind der Ort, an dem Wettanbieter ihre unausgeglichensten Quoten verstecken — vergleichen Sie mit der einfachen Linie, bevor Sie eine annehmen."
+      ],
+      "example": "Over 2,75 (das heißt 2,5/3,0 Split) mit £10: Das Match endet 3–1 — beide Hälften gewinnen. Endet 3–0... Gesamtstand 3: die 2,5er Hälfte gewinnt, die 3,0er Hälfte geht unentschieden → kassieren Sie £5, erhalten £5 zurück. Endet 2–0: beide Hälften verlieren. Die ‚Viertel-Linie' ist einfach diese beiden Wetten zusammengeheftet.",
+      "related": [
+        "over-under",
+        "asian-handicap",
+        "push"
+      ],
+      "see": [],
+      "_src_hash": "ff9d0b027c55b632",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bet-builder",
+      "term": "Bet Builder (Same-Game Multi)",
+      "short": "Mehrere Märkte aus EINEM Spiel in einer Quote kombinieren — die Korrelationskalkulation begünstigt dabei still das Haus.",
+      "definition": [
+        "Ein Bet Builder multipliziert Wetten aus demselben Spiel — Ausgang, beide Teams treffen, Karten, Torschütze — in einer Quote. Da die Beine korreliert sind (ein 3:0-Sieg macht es viel wahrscheinlicher, dass der Stürmer trifft), erfordert faire Bepreisung die Modellierung der gemeinsamen Wahrscheinlichkeit, nicht die Multiplikation unabhängiger Ergebnisse.",
+        "Diese Korrelation ist der verborgene Gewinnvorteil des Hauses: Buchmacher bepreisen beliebte, positiv korrelierte Kombinationen deutlich unter der naiven Multiplikation, und die Marge auf Builder ist routinemäßig doppelt so hoch wie der Vig auf Einzelmärkte. Das Produkt ist spielerisch attraktiv konzipiert und konstruktiv teuer."
+      ],
+      "example": "Sieg der Mannschaft (2,00) + über 2,5 Tore (2,00) als unabhängige Wetten ergibt multipliziert 4,00, aber die Ergebnisse überlappen stark — eine faire gemeinsame Quote wäre 3,20. Der Builder wird mit 2,90 notiert. Du zahlst sowohl die Korrelationsanpassung als auch eine zusätzliche Margenebene für die Bequemlichkeit eines einzelnen Scheins.",
+      "related": [
+        "accumulator",
+        "bookmaker-margin",
+        "btts"
+      ],
+      "see": [
+        {
+          "label": "Model-screened combinations instead",
+          "href": "/tools/acca-builder"
+        }
+      ],
+      "_src_hash": "fe2be9f9ee3080ae",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "acca-insurance",
+      "term": "Acca-Versicherung",
+      "short": "Eine Promotion, die einen Accumulator erstattet, der bei genau einem Tipp scheitert — üblicherweise als Gratisw­ette, immer in die Produktkalkulation eingepreist.",
+      "definition": [
+        "Acca-Versicherung erstattet Systemw­etten, bei denen genau ein Tipp verliert — typischerweise 5+ Tipps erforderlich, Erstattung gedeckelt und als Quotenfreisatz-Freiwette (SNR) ausgezahlt, nicht bar. Das Auslöseereignis (genau ein Verlust) tritt seltener ein, als es sich anfühlt: Systemwetten scheitern zumeist an zwei oder mehr Tipps.",
+        "Die Promo als Paket kalkulieren: Der Erwartungswert der Versicherung bei realistischen Einzeltipp-Ausfall­raten ist ein Bruchteil der Extramarge, die der qualifizierende Accumulator mit sich trägt. Sie mindert die psychologische Volatilität; sie ändert jedoch nichts am arithmetischen Vorzeichen."
+      ],
+      "example": "Fünf Tipps zu je 60% echter Gewinnwahrscheinlichkeit: P(genau einer scheitert) = 5 × 0,4 × 0,6⁴ ≈ 25,9%. Eine £10-Erstattung als SNR-Freiwette ist bei Auslösung ~£7 wert → ≈£1,80 Erwartungswert, gegenüber ~£2,50 Extramarge auf dem Fünfer selbst.",
+      "related": [
+        "accumulator",
+        "free-bet",
+        "stake-not-returned"
+      ],
+      "see": [],
+      "_src_hash": "ec3bd1c5d6af93ee",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "price-boost",
+      "term": "Price Boost (Quoten-Boost)",
+      "short": "Ein Marketing-verstärkter Kurs auf ein vom Buchmacher gewähltes Ergebnis — manchmal echter Mehrwert, immer einen Vergleich mit dem unboosted Markt wert.",
+      "definition": [
+        "Ein Quoten-Boost erhöht die Quote auf eine Auswahl, die der Buchmacher wählt, normalerweise mit Einsatzlimit. Da der Basiskurs bereits die Marge des Buchmachers enthält, bringt ein Boost oft nur dich zurück zur fairen Quote — aber gelegentlich, besonders auf Börsen-vergleichbaren Märkten, übersteigt er sie wirklich.",
+        "Die Überprüfung ist mechanisch: vergleiche den boosted Kurs gegen den besten unboosted Kurs und die Börse. Boosted 2.20, wo scharfsinnige Bücher 2.10 quotieren, ist echter Mehrwert in begrenzter Größe; boosted 2.20, wo der faire Kurs 2.35 ist, ist Marketing-Arithmetik."
+      ],
+      "example": "Boost: 2.00 → 2.20, max £10 Einsatz. Die Börse handelt das gleiche Ergebnis zu 2.16, ungefähr 2.12 fair nach Gebühren. Den Boost zu nehmen trägt (2.20 / 2.12 − 1) ≈ +3.8% erwarteten Wert beim begrenzten Einsatz — lohnt sich zu nehmen, und lohnt sich nicht zu extrapolieren auf die unboosted Kurse des Betreibers.",
+      "related": [
+        "value-bet",
+        "closing-line-value",
+        "free-bet"
+      ],
+      "see": [],
+      "_src_hash": "02171ba706bfb8f8",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "stake-not-returned",
+      "term": "Einsatz nicht zurück (ENZ)",
+      "short": "Die Gratistwetten-Abwicklungsregel: Gewinne werden ausgezahlt, der Gutschein selbst nie — der Wert eines Gutscheins wird bei Quote 2,00 halbiert.",
+      "definition": [
+        "ENZ bedeutet, dass eine Gratistwette nur Gewinne zurückgibt: Ein 25-€-Gutschein bei 2,00 zahlt 25€ aus, nicht 50€, da der Einsatz nie dein Geld war. Fast alle Gratistwetten funktionieren so, was ihren echten Wert bestimmt — ein Gutschein wird bei fairen Quoten mit (Quote−1)/Quote des Nominalwerts umgewandelt.",
+        "Die Folge: Gutscheine bringen bei höheren Quoten mehr ein (50% des Nominalwerts bei 2,00, 75% bei 4,00) und sind bei kurzen Favoriten verschwendet. Das ist die wertvollste und am wenigsten beworbene Tatsache über Gratistwetten."
+      ],
+      "example": "25-€-ENZ-Gutschein: Bei 1,40 kann er höchstens 10€ gewinnen — 40% des Nominalwerts weg vor Spielbeginn. Bei 5,00 gewinnt er 100€, was bei fairer Quote etwa 80% des Nominalwerts entspricht. Gleicher Gutschein, doppelter Realwert, eine Entscheidung.",
+      "related": [
+        "free-bet",
+        "expected-value",
+        "wagering-requirements"
+      ],
+      "see": [
+        {
+          "label": "Free bets explained in full",
+          "href": "/guides/free-bets-explained"
+        }
+      ],
+      "_src_hash": "e29e3c9a2f1ebcf5",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "poisson-distribution",
+      "term": "Poisson-Verteilung",
+      "short": "Das statistische Modell hinter den meisten Fußball-Quoten — Tore als seltene, unabhängige Ereignisse mit bekannter Durchschnittsrate.",
+      "definition": [
+        "Die Poisson-Verteilung gibt die Wahrscheinlichkeit von k Ereignissen an, wenn Ereignisse unabhängig voneinander mit bekannter Durchschnittsrate λ eintreffen: P(k) = e^−λ·λᵏ/k!. Mit den erwarteten Toren eines Teams gefüttert, liefert sie die Chancen für 0, 1, 2, 3… Tore — und die Verteilungen zweier Teams kombinieren sich zu Spielständen, 1X2, Torwetten und BTTS.",
+        "Sie ist auf bekannte Weise unvollkommen — Tore häufen sich leicht, Unentschieden werden etwas unterbewertet — und jedes ernstzunehmende Fußball-Modell, einschließlich unseres, beginnt damit und korrigiert von dort aus. Ihre Kraft liegt darin, einen ehrlichen Input (erwartete Tore) in eine vollständige Wahrscheinlichkeitsfläche umzuwandeln."
+      ],
+      "example": "λ = 1,4 erwartete Tore: P(0) = e^−1,4 ≈ 24,7%, P(1) ≈ 34,5%, P(2) ≈ 24,2%. Zwei unabhängige Poisson-Verteilungen bei 1,4 und 1,1 ergeben P(1–1) ≈ 34,5% × 36,6% ≈ 12,6% — die Arithmetik hinter jeder korrekten Torquote, die du jemals gesehen hast.",
+      "related": [
+        "xg",
+        "expected-value",
+        "correct-score"
+      ],
+      "see": [
+        {
+          "label": "How our model works",
+          "href": "/model"
+        }
+      ],
+      "_src_hash": "c003f1cd5ff1fdfb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "regression-to-the-mean",
+      "term": "Regression zum Mittelwert",
+      "short": "Extreme Leistungsphasen driften zurück zum echten Leistungsniveau — die statistische Kraft hinter 'Form ist vorübergehend, Klasse ist dauerhaft'.",
+      "definition": [
+        "Wenn die Leistung weit über oder unter dem grundlegenden Niveau eines Teams liegt, tendiert die nächste Phase dazu, sich diesem Niveau zu nähern — nicht wegen Schwung oder Fluch, sondern weil Extreme teils Glück sind und Glück wiederholt sich nicht nach Bestellung. Ein Stürmer, der 35% seiner Schüsse verwandelt, wird nächsten Monat näher an seine Karriere-Quote von 12% kommen.",
+        "Für Wetter liegt die Lektion im Preis der Narratives: Der Markt extrapoliert heiße Serien oft genau dann, wenn Regression am wahrscheinlichsten ist — deshalb ist das Faden von Extremen zu aufgeblähten Quoten ein haltbarer Edge und das Jagen derselben ein haltbarer Fehler."
+      ],
+      "example": "Ein Mittelfeld-Team gewinnt sechs Spiele hintereinander, drei mit Eintor-Abständen bei starken xG-Defiziten. Seine Grunddaten preisen das nächste Spiel mit 45% Gewinnwahrscheinlichkeit; der serien-folgende Markt mit 58%. Regression garantiert keinen Verlust — es sagt, dass 1,72 bei einer 45%-Chance der falsche Preis ist.",
+      "related": [
+        "variance",
+        "sample-size",
+        "xg"
+      ],
+      "see": [],
+      "_src_hash": "a5cb887c49a4a007",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "sample-size",
+      "term": "Sample Size",
+      "short": "Wie viele Beobachtungen hinter einer Statistik stecken — der Unterschied zwischen Beweis und Anekdote in einer Zahl.",
+      "definition": [
+        "Jede Wettstatistik ist eine Schätzung, deren Zuverlässigkeit mit der Anzahl der Beobachtungen wächst. Fünf Spiele BTTS-Daten sagen dir fast nichts; fünfzig sagen dir etwas; fünfhundert legen die Quote fest. Der Standardfehler sinkt mit der Quadratwurzel von n — vervierfache die Daten, um das Rauschen zu halbieren.",
+        "Der praktische Filter: Bevor du auf eine Quote wetten willst ('sie treffen über 2.5 in 8 von 10'), frag dich, wie groß n ist und was die Basisquote sagt. Die meisten 'Trends', die an Wetter verkauft werden, sind Zehn-Spiele-Stichproben einer Münze, die immer schon bei etwa 50% war."
+      ],
+      "example": "Eine 60%-Quote für über 2.5 aus 10 Spielen hat einen Standardfehler von ±15,5% — die wahre Quote könnte überall zwischen 45% und 75% liegen und deckt sowohl 'wette über' als auch 'wette unter' ab. Die gleichen 60% aus 200 Spielen (±3,5%) sind tatsächlich Information.",
+      "related": [
+        "variance",
+        "regression-to-the-mean",
+        "win-rate"
+      ],
+      "see": [],
+      "_src_hash": "0259ad38e8f46e75",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "longshot-bias",
+      "term": "Favorit–Außenseiter-Bias",
+      "short": "Die dokumentierte Marktverzerrung: Außenseiter werden durch Nachfrage systematisch überbewertet, Favoriten sind dagegen relativ fair bepreist.",
+      "definition": [
+        "Über Jahrzehnte hinweg zeigen Studien und Märkte, dass Wetten mit langen Quoten schlechter rentieren als Wetten mit kurzen Quoten: Freizeitspieler lieben lotterieartige Auszahlungen, Wettbüros passen die Außenseiter-Quoten entsprechend an, und die Buchmacher-Marge konzentriert sich genau dort, wo die Träume sind.",
+        "Der Bias ist eines der wenigen stabilen Marktfakten, auf denen man Regeln aufbauen kann: Seien Sie skeptisch gegenüber Ihrer eigenen Außenseiter-Begeisterung, fordern Sie zusätzliche Vorteile, bevor Sie 6.0+ nehmen, und denken Sie daran, dass der meiste ‚Value', den ein naives Modell bei hohen Quoten findet, genau dieser Bias ist, der sich über das Modell lustig macht. Unser eigenes v1 ging 0:8 bei exakt diesem Rake."
+      ],
+      "example": "Typischer Befund: Wetten mit 1.50 rentieren ~97p pro £1 Einsatz; Wetten mit 15.0 rentieren ~85p. Gleicher Sport, gleiche Bücher, gleicher Tag – der Unterschied ist, wo die Marge versteckt ist. Ein Modell, das dies ignoriert, wird seine größten Vorteile genau dort ‚finden', wo die Quoten am schlechtesten sind.",
+      "related": [
+        "value-bet",
+        "variance",
+        "bookmaker-margin"
+      ],
+      "see": [
+        {
+          "label": "Our model's odds caps and why",
+          "href": "/model"
+        }
+      ],
+      "_src_hash": "365d89426d4636e4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "home-advantage",
+      "term": "Heimvorteil",
+      "short": "Der strukturelle Vorteil des Heimspiels — etwa 0,3–0,4 Tore wert, je nach Liga, Ära und Zuschauerzahl.",
+      "definition": [
+        "Heimmannschaften erzielen mehr Tore und kassieren weniger als dieselben Teams auswärts — historisch etwa 0,3–0,4 Tore pro Spiel, getrieben durch Zuschauereffekte auf Spieler und Schiedsrichter, Reisen und Vertrautheit. Der Effekt ist real, ligaspezifisch und nimmt über alle Fußball-Ligen hinweg langsam ab.",
+        "Jedes seriöse Modell rechnet mit separaten Heim- und Auswärtsquoten statt einer Teamstärke — unseres auch. Der Wettwinkel liegt nicht darin, dass Heimvorteil existiert — der Markt weiß das — sondern dass seine GRÖSSE je nach Liga und Saison variiert, und Quoten, die auf dem globalen Durchschnitt basieren, die Extreme falsch bewerten."
+      ],
+      "example": "In unseren gefitteten Ligen liegt die Heim-Torquote bei ~1,4 gegenüber ~1,1 auswärts — ein Vorteil von 0,3 Toren, der in einem ausgeglichenen Spiel etwa 8–10 Punkte Gewinnwahrscheinlichkeit wert ist. Eine Liga, deren aktuelle Saison deutlich über oder unter ihrem Eigendurchschnitt läuft, ist dort, wo die Gesamttor- und 1X2-Quoten zuerst abweichen.",
+      "related": [
+        "poisson-distribution",
+        "xg",
+        "regression-to-the-mean"
+      ],
+      "see": [
+        {
+          "label": "Home advantage by league — live research",
+          "href": "/research/home-advantage"
+        }
+      ],
+      "_src_hash": "9838d9bf65548ef4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "team-form",
+      "term": "Form",
+      "short": "Aktuelle Ergebnisse als Signal — für sich allein schwach vorhersagekräftig, nützlich nur gewichtet gegen die Qualität der Gegner und zugrunde liegende Kennzahlen.",
+      "definition": [
+        "Form fasst die letzten Ergebnisse zusammen — SSUVSS auf allen Statistik-Seiten. Rohe Form ist ein schwacher Prädiktor: Fünf Ergebnisse enthalten enormes Rauschen, die Gegnerqualität variiert stark, und ein abgelenktes Tor ändert einen Buchstaben. Zugrunde liegende Quoten (Schüsse, xG, Feldposition) sagen das nächste Spiel besser voraus als die Buchstaben.",
+        "Form hat seinen Platz, wenn es gewichtet wird (neuere Spiele mehr), für die Gegner angepasst wird und gegen die zugrunde liegenden Zahlen abgeglichen wird. Unser Modell verwendet Zeitverfall genau aus diesem Grund — ein Ergebnis von letzter Woche sagt mehr aus als eines von Oktober, aber keines überschreibt eine Saison von Quoten."
+      ],
+      "example": "Team A: UUVUU gegen die Top Five der Liga. Team B: SSSSS gegen die Bottom Five. Die Buchstaben sagen, B läuft großartig; gegnerangepasste Quoten zeigen oft, dass A die stärkere Seite bei gleichem Stand ist — und der Marktpreis liegt normalerweise irgendwo zwischen den beiden Szenarien.",
+      "related": [
+        "sample-size",
+        "regression-to-the-mean",
+        "xg"
+      ],
+      "see": [],
+      "_src_hash": "aa8eabb6547b8832",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "head-to-head",
+      "term": "Head-to-Head (H2H)",
+      "short": "Die bisherigen Aufeinandertreffen der beiden Teams — stark vermarktet, schwach aussagekräftig, gelegentlich in aggregierter Form informativ.",
+      "definition": [
+        "H2H-Bilanzen sammeln frühere Begegnungen zwischen zwei Mannschaften. Kader wechseln und Trainer ändern sich, daher beschreibt ein 4–0 von vor drei Saisons Teams, die es nicht mehr gibt – als Vorhersage für das nächste Ergebnis trägt H2H-Historie fast nichts bei, sobald die aktuelle Spielstärke berücksichtigt wird.",
+        "Die vertretbaren Anwendungen sind Aggregate: Paarungen, die über viele Treffen hinweg konstant hohe oder niedrige Torquoten aufweisen, oder ortsgebundene Muster mit echten Stichprobengrößen. Kontext, keine Signale – unser Modell ignoriert H2H vollständig und arbeitet mit aktuellen Torquoten."
+      ],
+      "example": "Zehn Treffen mit durchschnittlich 3,4 Toren gegenüber einer Ligaorm von 2,6 ist einen Blick auf die Torquoten wert – als Anlass, aktuelle Angriffsquoten zu prüfen, nicht als Wettanlass. Drei Treffen, die irgendetwas durchschnittlich aufweisen, sind ein gerne in Erinnerung behaltenes Münzwurf-Ergebnis.",
+      "related": [
+        "sample-size",
+        "team-form",
+        "over-under"
+      ],
+      "see": [
+        {
+          "label": "H2H records for every covered pairing",
+          "href": "/h2h"
+        }
+      ],
+      "_src_hash": "32642792464a4500",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fixture-congestion",
+      "term": "Fixture Congestion",
+      "short": "Midweek-Weekend-Häufungen: Rotations-Risiko, müde Beine und eine verzögerte Marktbewegung bei Quoten.",
+      "definition": [
+        "Congestion bedeutet drei Spiele in acht Tagen — Cup-Mittwoche, internationale Reisen, Dezember-Häufungen. Die Effekte sind messbar: rotierte Aufstellungen, ein leichter Rückgang der Hochintensitätsleistung und moderat weniger Tore durch erschöpfte Spieler am Ende der Häufungen.",
+        "Die Wettrelevanz liegt im Timing: Früh in der Woche gesetzte Quoten können bestätigte Rotationen nicht ausreichend abbilden, und Spieler-Wetten (Torschützen, Verwarnungen) sind am stärksten exponiert, wenn ein Name einfach nicht in der Startaufstellung steht. Immer die bestätigte Teaminfo vor sensiblen Congestion-Wetten checken."
+      ],
+      "example": "Ein Team bestreitet sein drittes Spiel in sieben Tagen nach internationaler Reise und rotiert vier Stammspieler. Die 1X2 bewegt sich kaum (der Markt preist den Kader), aber der Stürmer mit 2.10 Anytime-Quote sitzt auf der Bank — die Wette scheitert beim Teamsheet, nicht beim Anpfiff.",
+      "related": [
+        "team-form",
+        "anytime-goalscorer",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "32368c4d7bd11aef",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "dead-rubber",
+      "term": "Dead Rubber",
+      "short": "Ein Spiel, bei dem für eine oder beide Seiten nichts auf dem Spiel steht — wo Motivation die Modelle und die Quoten durcheinanderbringt.",
+      "definition": [
+        "Ein Dead Rubber entscheidet nichts: die Gruppe ist bereits gewonnen, die Rettung bereits gesichert, die letzte Runde einer entschiedenen Liga. Motivationsasymmetrien dieser Größenordnung brechen quotenbasierte Modelle — ein starkes Team ohne etwas zu spielen, ruht Spieler aus und bewegt sich gemächlich, und seine ‚echte' Stärke ist vorübergehend nicht seine Stärke.",
+        "Dies sind die Spiele, bei denen Modellwahrscheinlichkeiten (einschließlich unserer) das geringste Vertrauen verdienen und bei denen der Informationsvorteil des Marktes — wer tatsächlich die Punkte braucht — am meisten zählt. Spiele in der späten Saison und in der letzten Gruppenrunde sollten vor jeder Wette einer Motivationsprüfung unterzogen werden."
+      ],
+      "example": "Letzte Gruppenrunde: qualifiziertes Team (quotenbasierte Gewinnchance 60%) besucht ein Team, das einen Punkt zur Rettung benötigt. Die Historie solcher Asymmetrien deutet darauf hin, dass die effektive Chance des Favoriten um 10–15 Punkte niedriger läuft — 1,67 für einen gemächlichen Favoriten ist die klassische Dead-Rubber-Falle.",
+      "related": [
+        "team-form",
+        "fixture-congestion",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "ebba46dd36eb2f3e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "maximum-payout",
+      "term": "Maximale Auszahlung",
+      "short": "Die Obergrenze, die ein Buchmacher pro Wette oder Kunde pro Tag auszahlt — das Kleingedruckte, das Jackpot-Akkumulatoren schrumpfen lässt.",
+      "definition": [
+        "Jeder Buchmacher setzt Auszahlungsgrenzen — pro Wette, pro Markt, pro Kunde pro Tag — mit Limits, die je nach Liga und Sportart variieren: Top-Wettbewerbe haben die höchsten Obergrenzen, obskure deutlich niedrigere. Ein 12er-Accumulator, dessen theoretische Auszahlung die Obergrenze übersteigt, zahlt die Obergrenze aus, egal welche Multiplikatoren auf dem Wettschein stehen.",
+        "Prüfe die Obergrenze, bevor du etwas Lotterieähnliches aufbaust, und merke dir, welche Liga auf deinem Wettschein die NIEDRIGSTE Obergrenze trägt — gemischte Akkumulatoren werden bei vielen Büchern durch ihre schwächste Komponente begrenzt."
+      ],
+      "example": "Wettschein sagt €2 × 8.000 = €16.000; die Bedingungen deckeln Auszahlungen auf dieser Liga bei €10.000. Sechs Beine waren Mainstream, aber ein Pick aus der belarussischen Reserveliga zog den gesamten Coupon unter die Niedrig-Tier-Obergrenze — die €6.000 Differenz stand die ganze Zeit im Kleingedruckten.",
+      "related": [
+        "accumulator",
+        "fold",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "d4c8a143702c5985",
+      "_model": "claude-haiku-4-5-20251001"
     }
   ]
 }

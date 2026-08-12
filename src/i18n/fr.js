@@ -58,6 +58,7 @@ export const FR = {
   'card.modelScore': 'Modèle',
   'card.analysis': 'Analyse →',
   'nav.model': 'Notre modèle',
+  'tb.archives': 'Tableaux finaux (archives)',
   'mp.voidRelisted': 'Annulé — match reprogrammé et réinscrit',
   'mp.boardNote': "Cotes à notre dernière actualisation, meilleure cote par issue en surbrillance. Les bookmakers sont classés par marge — les plus serrés d'abord — et non par alphabet.",
   'sub.h': 'Le pronostic, par e-mail',

@@ -1,6 +1,6 @@
 {
   "set": "Betting Guides",
-  "updated": "2026-08-07",
+  "updated": "2026-08-13",
   "guides": [
     {
       "slug": "how-to-read-betting-odds",
@@ -1896,6 +1896,1162 @@
         {
           "href": "/tools/odds-converter",
           "label": "Convert a token's odds into implied probability before deciding where to place it"
+        }
+      ]
+    },
+    {
+      "slug": "betting-in-the-uk",
+      "title": "Betting in the UK: How It Works",
+      "nav": "Betting in the UK",
+      "country": "uk",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "How UKGC licensing shapes British betting: GAMSTOP, affordability checks, the credit-card ban, tax-free winnings and what all of it means when you pick a site.",
+      "sections": [
+        {
+          "h": "Is betting legal in the UK?",
+          "ps": [
+            "Yes — and the UK is the reference case for a tightly regulated market. Online sports betting is legal, and any operator serving British customers must hold a licence from the UK Gambling Commission, which brings strict rules on advertising, affordability checks and player protection.",
+            "The maturity cuts both ways. You get real consumer protections: complaint routes that operators must honour, segregated-funds disclosures, and a regulator that actually revokes licences. In exchange, expect more friction than anywhere else — identity checks before your first withdrawal are standard, and affordability checks can pause an account that suddenly stakes more than its history suggests."
+          ]
+        },
+        {
+          "h": "Payments: the credit-card ban and what works",
+          "ps": [
+            "Credit cards have been banned for gambling since April 2020 — a UKGC rule, not an operator choice, so no licensed site will take one. Debit cards, PayPal and Apple Pay are the standard routes, and all three settle deposits instantly at licensed books.",
+            "The practical tip is to withdraw to the same method you deposited from. UK books enforce closed-loop rules fairly strictly, and a mismatched withdrawal method is the single most common cause of a delayed first payout."
+          ]
+        },
+        {
+          "h": "GAMSTOP and the safety net",
+          "ps": [
+            "Every UKGC licensee must participate in GAMSTOP, the national self-exclusion register. One registration blocks you from every licensed operator at once — which is exactly why betting with unlicensed offshore sites, where none of this applies, forfeits the entire safety net the British framework exists to provide.",
+            "If a site advertising to UK players is not on the Gambling Commission's public register, that absence is the only review of it you need."
+          ]
+        },
+        {
+          "h": "Taxes and the bottom line",
+          "ps": [
+            "Winnings are not taxed for the player — the point-of-consumption tax is paid by operators. What you win is what you keep, which makes the UK one of the simplest places to reason about betting value: the only costs are the bookmaker's margin and your own mistakes.",
+            "That margin is where our data helps: the model prices every fixture independently, and the odds comparison on each match page shows who is paying most for the same outcome."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is online betting legal in the UK?",
+          "a": "Yes. Online sports betting is legal and regulated by the UK Gambling Commission. Any operator serving UK customers needs a UKGC licence, with strict rules on advertising, affordability checks and player protection."
+        },
+        {
+          "q": "Can I use a credit card to bet in the UK?",
+          "a": "No — credit cards have been banned for gambling since April 2020 across all licensed operators. Debit cards, PayPal and Apple Pay are the standard alternatives."
+        },
+        {
+          "q": "Are betting winnings taxed in the UK?",
+          "a": "Not for the player. Operators pay the tax; your winnings are yours in full. This has been the case since the point-of-consumption regime replaced the old betting duty."
+        }
+      ],
+      "related": [
+        "betting-in-ireland",
+        "how-betting-bonuses-work",
+        "value-betting-explained"
+      ],
+      "glossary": [
+        "odds-formats",
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Convert fractional UK odds to decimal and implied probability"
+        }
+      ]
+    },
+    {
+      "slug": "betting-in-germany",
+      "title": "Betting in Germany: How It Works",
+      "nav": "Betting in Germany",
+      "country": "de",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Germany's 2021 State Treaty explained for bettors: the GGL licence, the cross-operator deposit limit, restricted live markets and the turnover tax some books pass on.",
+      "sections": [
+        {
+          "h": "Is betting legal in Germany?",
+          "ps": [
+            "Yes — regulated nationally under the 2021 State Treaty on Gambling (Glücksspielstaatsvertrag), with the GGL as the joint federal-state regulator. Licensed operators may offer sports betting legally, but the German framework is noticeably stricter than most of Europe's.",
+            "Strict shows up in three places you will feel directly: a cross-operator monthly deposit limit that applies by default, live betting restricted to a limited set of markets, and a betting turnover tax. None of these are operator quirks — they are the licence conditions themselves."
+          ]
+        },
+        {
+          "h": "The deposit limit and how it actually works",
+          "ps": [
+            "The default deposit cap applies across all licensed operators combined, not per site — a central file (LUGAS) tracks it. Opening a second account does not reset the ceiling, and that is precisely the design.",
+            "For most recreational bettors the limit never binds. If it binds for you, treat that as information about your staking rather than a bureaucratic obstacle: the cap exists because unlimited deposits plus loss-chasing is the classic ruin pattern."
+          ]
+        },
+        {
+          "h": "The turnover tax — the quiet 5%",
+          "ps": [
+            "Germany taxes betting turnover, and some licensed operators pass that cost to the customer — as a fee on each bet, shaved odds, or reduced payouts. Two books quoting the same nominal price can therefore return different amounts, depending on how each handles the tax.",
+            "This makes line shopping matter more in Germany than almost anywhere: compare the net payout, not the displayed odds. Our odds comparison shows the raw prices; always check the operator's tax policy against them before assuming the best number wins."
+          ]
+        },
+        {
+          "h": "Live betting and market depth",
+          "ps": [
+            "The treaty restricts in-play betting to a limited set of markets — final result and next-goal style bets, with the exotic live menus common elsewhere absent at licensed books. If a site offers you deep live markets under a German flag, check its licence: that depth is usually the mark of an unlicensed operator.",
+            "Pre-match, the market works as anywhere else, and that is where our model does its work: probabilities for 1X2 and totals, priced independently of the books."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is online betting legal in Germany?",
+          "a": "Yes, under the 2021 State Treaty on Gambling. Licensed operators are supervised by the GGL; the framework includes a default cross-operator deposit limit and restricted live-betting markets."
+        },
+        {
+          "q": "Why are my odds worse than advertised in Germany?",
+          "a": "A betting turnover tax applies, and some operators pass it to the customer via fees or shaved payouts. Compare the net return between books, not the displayed price."
+        },
+        {
+          "q": "Why can't I find many live markets on German sites?",
+          "a": "The State Treaty limits in-play betting to a narrow set of markets at licensed operators. Deep live menus on a site targeting Germany usually signal a missing licence."
+        }
+      ],
+      "related": [
+        "betting-in-the-uk",
+        "bookmaker-margin-explained",
+        "how-to-read-betting-odds"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "odds-formats"
+      ],
+      "tools": [
+        {
+          "href": "/tools/margin-calculator",
+          "label": "Measure the real margin after tax adjustments on German prices"
+        }
+      ]
+    },
+    {
+      "slug": "betting-in-tanzania",
+      "title": "Betting in Tanzania: How It Works",
+      "nav": "Betting in Tanzania",
+      "country": "tz",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Tanzania's Gaming Act framework: how the Gaming Board licenses operators, why M-Pesa runs the market, and the gaming tax on winnings you should price in.",
+      "sections": [
+        {
+          "h": "Is betting legal in Tanzania?",
+          "ps": [
+            "Yes — sports betting is legal under the Gaming Act and overseen by the Gaming Board of Tanzania, which publishes lists of licensed operators openly. Licensed local books dominate the market, which is unusual for the region and makes the licence check genuinely easy: if an operator is not on the Board's list, it is not licensed.",
+            "That transparency is worth using. A licensed operator answers to a regulator you can actually reach; an offshore one answers to nobody when a withdrawal stalls."
+          ]
+        },
+        {
+          "h": "Mobile money runs everything",
+          "ps": [
+            "M-Pesa (Vodacom), Tigo Pesa and Airtel Money cover nearly all deposits — cards are a rounding error. Deposits land in seconds; withdrawals to the same wallet are usually the fastest route an operator offers.",
+            "The practical selection criterion is which wallet an operator supports natively. A book that makes you bridge between networks adds a fee and a failure point on every single transaction, and those costs compound faster than any bonus compensates."
+          ]
+        },
+        {
+          "h": "The gaming tax on winnings",
+          "ps": [
+            "Tanzania applies a gaming tax to winnings — deducted at source by licensed operators, so the payout that reaches your wallet is the net figure. Price this in when you compare offers: a bonus that looks generous gross can be ordinary after tax.",
+            "The tax also explains a pattern worth knowing: two operators paying identical odds can credit different amounts if one structures payouts differently. When in doubt, test with a small withdrawal before committing a bankroll."
+          ]
+        },
+        {
+          "h": "Choosing a site for the Tanzanian market",
+          "ps": [
+            "Prioritise, in order: a Gaming Board licence, native support for your wallet, and payout speed you have verified yourself. Only then look at odds quality — which is where our pages help, since the model prices every fixture independently of any operator.",
+            "Data costs matter too. Lightweight sites and apps that load on 2G/3G connections are a real advantage outside the big cities, and the difference between operators is large."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is sports betting legal in Tanzania?",
+          "a": "Yes, under the Gaming Act, regulated by the Gaming Board of Tanzania. The Board publishes lists of licensed operators, so verifying a licence takes a minute."
+        },
+        {
+          "q": "How do I deposit at Tanzanian betting sites?",
+          "a": "Mobile money covers nearly everything: M-Pesa, Tigo Pesa and Airtel Money. Pick an operator with native support for the wallet you already use."
+        },
+        {
+          "q": "Are betting winnings taxed in Tanzania?",
+          "a": "Yes — a gaming tax applies to winnings and licensed operators deduct it at source. The amount that reaches your wallet is the net figure."
+        }
+      ],
+      "related": [
+        "betting-in-kenya",
+        "betting-in-uganda",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "value-bet",
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ]
+    },
+    {
+      "slug": "betting-in-uganda",
+      "title": "Betting in Uganda: How It Works",
+      "nav": "Betting in Uganda",
+      "country": "ug",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Uganda's LGRB licensing, MTN MoMo and Airtel Money deposits, and the withholding tax on winnings that changes how you should compare offers.",
+      "sections": [
+        {
+          "h": "Is betting legal in Uganda?",
+          "ps": [
+            "Yes — betting is legal and regulated by the Lotteries and Gaming Regulatory Board (LGRB), and licensing is actually enforced rather than nominal. Operators must hold an LGRB licence to take bets legally.",
+            "Enforcement means the licence check is meaningful: a licensed operator has something to lose by mistreating customers. Offshore sites serving Uganda without a licence offer no such leverage when something goes wrong."
+          ]
+        },
+        {
+          "h": "MTN MoMo and Airtel Money first",
+          "ps": [
+            "Mobile money leads payments — MTN MoMo and Airtel Money above all, with Visa and Mastercard a distant second. Deposits are instant; withdrawal speed back to the wallet is the metric that actually separates operators.",
+            "Test it before you trust it: deposit small, place a bet, withdraw. An operator that pays a small withdrawal in minutes has passed the only review that matters; one that stalls on 20,000 shillings will not improve with larger amounts."
+          ]
+        },
+        {
+          "h": "The withholding tax on winnings",
+          "ps": [
+            "Uganda applies a withholding tax to betting winnings, deducted before payout. Check the current rate before you withdraw — it has moved over the years, and the net figure is what should drive any comparison between operators or offers.",
+            "The tax also reframes bonus maths: wagering a bonus generates turnover whose winnings are taxed, so the real value of an offer is lower than the same offer in an untaxed market. Our bonus guides walk through the exact formula."
+          ]
+        },
+        {
+          "h": "Picking a site that fits the market",
+          "ps": [
+            "The checklist: LGRB licence first, native support for your mobile wallet second, verified payout speed third, and only then odds quality and bonuses. Football dominates Ugandan betting volume, and English football especially — which is exactly the coverage our model prices deepest.",
+            "Use the odds comparison on our match pages to see who pays most for the same outcome before you place anything."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is sports betting legal in Uganda?",
+          "a": "Yes — regulated by the Lotteries and Gaming Regulatory Board. Operators need an LGRB licence, and licensing is enforced."
+        },
+        {
+          "q": "What's the best way to deposit at Ugandan betting sites?",
+          "a": "Mobile money: MTN MoMo and Airtel Money lead by a wide margin. Cards work at some operators but are the slower path."
+        },
+        {
+          "q": "Are betting winnings taxed in Uganda?",
+          "a": "Yes — a withholding tax applies to winnings. The rate has changed over time, so check the current figure before withdrawing and compare offers on the net amount."
+        }
+      ],
+      "related": [
+        "betting-in-kenya",
+        "betting-in-tanzania",
+        "how-betting-bonuses-work"
+      ],
+      "glossary": [
+        "wagering-requirements",
+        "expected-value"
+      ],
+      "tools": [
+        {
+          "href": "/tools/accumulator-calculator",
+          "label": "Price a multi-leg bet honestly before you place it"
+        }
+      ]
+    },
+    {
+      "slug": "betting-in-peru",
+      "title": "Betting in Peru: How It Works",
+      "nav": "Betting in Peru",
+      "country": "pe",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Peru's 2024 regulation under MINCETUR: what a licensed market means in practice, why Yape and Plin are the deposit routes that matter, and how to check an operator's registration.",
+      "sections": [
+        {
+          "h": "Is betting legal in Peru?",
+          "ps": [
+            "Yes — Peru formally regulated online sports betting in 2024 under MINCETUR, making it one of Latin America's newest licensed markets. Licensed operators may advertise and take bets legally, and they are registered with the ministry.",
+            "A new framework has a practical upside: the operator list is short and current, so verifying a licence is quick. It also has a transition quirk — brands that served Peru informally for years now split into licensed and unlicensed camps, and the difference matters the first time a payout is disputed."
+          ]
+        },
+        {
+          "h": "Yape and Plin run the deposits",
+          "ps": [
+            "The local wallets Yape and Plin are the fastest deposit routes, with PagoEfectivo covering cash-based top-ups. An operator with native Yape/Plin support settles deposits in seconds; one that routes through international card rails adds delay and decline risk.",
+            "As everywhere: withdraw to the method you deposited from, and verify the speed with a small amount before scaling anything."
+          ]
+        },
+        {
+          "h": "What the licensed market changes",
+          "ps": [
+            "Licensing brought advertising into the open — sponsorships and promotions from registered operators are now normal — and it created a complaints path that did not exist before. It also means promotional terms are subject to actual rules rather than operator whim.",
+            "The habit worth keeping from the grey-market years: read withdrawal terms before depositing. Regulation raises the floor, but the fine print still varies between books."
+          ]
+        },
+        {
+          "h": "Football, and how our data fits",
+          "ps": [
+            "Peruvian betting volume is football-first, split between the local league and the big European competitions. Our model prices the European leagues deepest — probabilities, fair odds and scoreline distributions per fixture — and the odds comparison shows which book pays most for the same outcome.",
+            "None of it is a promise of profit; it is the arithmetic a licensed market finally lets you use openly."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is online betting legal in Peru?",
+          "a": "Yes — regulated since 2024 under MINCETUR. Licensed operators are registered with the ministry and may advertise and take bets legally."
+        },
+        {
+          "q": "How do I deposit at Peruvian betting sites?",
+          "a": "The local wallets Yape and Plin are the fastest routes; PagoEfectivo covers cash top-ups. Operators with native wallet support settle deposits in seconds."
+        },
+        {
+          "q": "How do I check if a betting site is licensed in Peru?",
+          "a": "Licensed operators are registered with MINCETUR. The list is recent and short — if a brand serving Peru is not on it, it is operating outside the framework."
+        }
+      ],
+      "related": [
+        "betting-in-colombia",
+        "betting-in-chile",
+        "how-to-read-betting-odds"
+      ],
+      "glossary": [
+        "odds-formats",
+        "value-bet"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Convert American or fractional prices into decimal and probability"
+        }
+      ]
+    },
+    {
+      "slug": "betting-in-chile",
+      "title": "Betting in Chile: How It Works",
+      "nav": "Betting in Chile",
+      "country": "cl",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Chile's grey market honestly explained: no online framework yet, a bill in Congress, offshore sites in the meantime — and how to protect yourself until the rules land.",
+      "sections": [
+        {
+          "h": "Is betting legal in Chile?",
+          "ps": [
+            "Chile currently has no dedicated online betting framework: a regulation bill has been moving through Congress while offshore operators serve the market in the meantime. Land-based casinos are regulated separately (SCJ), but online sports betting sits in a grey zone — neither licensed locally nor effectively blocked.",
+            "Grey does not mean safe or unsafe by itself; it means you are on your own. No Chilean regulator will arbitrate a dispute with an offshore book, so the operator's own reputation is the only protection you have. Check the current legal status before signing up anywhere — this market can change with one vote."
+          ]
+        },
+        {
+          "h": "Living with a grey market",
+          "ps": [
+            "The defensive playbook: prefer operators with long track records and licences from serious foreign regulators, keep balances small and withdraw often, and document deposits in case terms change mid-relationship.",
+            "Bonuses deserve extra suspicion here. In licensed markets, promotional terms answer to a regulator; offshore, the terms are whatever the operator says they are today."
+          ]
+        },
+        {
+          "h": "Payments without a local framework",
+          "ps": [
+            "WebPay, bank transfers and cards are the practical routes, with the usual grey-market friction: some banks decline gambling-coded transactions, and intermediaries add fees. Test the full loop — deposit, bet, withdraw — with a small amount before trusting any operator with more.",
+            "When regulation lands, licensed operators will plug into local rails properly; until then, transaction friction is part of the real cost of betting in Chile."
+          ]
+        },
+        {
+          "h": "What changes when the bill passes",
+          "ps": [
+            "A licensed Chilean market would bring registered operators, a complaints path, taxed and protected payouts — and probably fewer, better books than the current offshore sprawl. Our country page will track the operator side as it firms up.",
+            "Until then our data works the same as anywhere: model probabilities and odds comparisons per fixture, independent of any operator."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is online betting legal in Chile?",
+          "a": "There is no dedicated online framework yet — a regulation bill is pending in Congress. Offshore sites serve the market in the meantime, in a grey zone without local licensing or protection. Check the current status before signing up."
+        },
+        {
+          "q": "Is it safe to use offshore betting sites from Chile?",
+          "a": "No regulator will back you in a dispute, so the operator's reputation is your only protection. Prefer long track records and serious foreign licences, keep balances small and withdraw often."
+        },
+        {
+          "q": "When will Chile regulate online betting?",
+          "a": "A bill has been moving through Congress; timing is politics and beyond prediction. When it passes, licensed operators and a complaints path will replace the grey market."
+        }
+      ],
+      "related": [
+        "betting-in-peru",
+        "betting-in-argentina",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bankroll-management",
+        "expected-value"
+      ],
+      "tools": [
+        {
+          "href": "/tools/kelly-calculator",
+          "label": "Size stakes to survive variance — doubly important without a safety net"
+        }
+      ]
+    },
+    {
+      "slug": "betting-in-colombia",
+      "title": "Betting in Colombia: How It Works",
+      "nav": "Betting in Colombia",
+      "country": "co",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Latin America's pioneer market: Coljuegos licensing since 2016, the .co domain rule of thumb, PSE and Nequi payments, and the tax threshold on big wins.",
+      "sections": [
+        {
+          "h": "Is betting legal in Colombia?",
+          "ps": [
+            "Yes — fully legal and regulated by Coljuegos, and Colombia got there first: it was the first Latin American country to regulate online betting, back in 2016. Only Coljuegos-licensed operators may legally serve Colombian players.",
+            "Eight-plus years of licensed operation shows. The market has a stable set of serious operators, established complaint routes, and a rule of thumb that makes licence-checking trivial: licensed sites operate on .co domains under Coljuegos. A brand serving Colombia from an offshore domain is telling you its regulatory status upfront."
+          ]
+        },
+        {
+          "h": "PSE, Nequi and the payment stack",
+          "ps": [
+            "PSE (the interbank transfer system) and the Nequi wallet dominate deposits, with cards covering the rest. Licensed operators integrate them natively, so money moves in minutes both ways.",
+            "This is one of the payment upsides of a mature licensed market: no intermediaries, no gambling-coded card declines, and withdrawal speed you can compare openly between books."
+          ]
+        },
+        {
+          "h": "The tax threshold on winnings",
+          "ps": [
+            "Winnings above a threshold are taxed, withheld by the operator at payout. Everyday wins mostly pass untouched; a big accumulator hit will arrive net of tax. Know the current threshold before celebrating the gross number.",
+            "The tax changes accumulator maths at the top end: the longshot payouts that justify a lottery-style ticket are exactly the ones taxed, so the effective odds are lower than the displayed ones. Our accumulator calculator prices coupons at face value — apply the tax mentally above the threshold."
+          ]
+        },
+        {
+          "h": "Using a mature market well",
+          "ps": [
+            "With licensing solved, your edge questions become the universal ones: which book pays most for the outcome you want, and whether the price beats the true probability. That is exactly what our model and per-match odds comparison are for.",
+            "Colombia's football calendar also gives the market unusual depth — local league, Libertadores and European competitions all carry liquid markets at licensed books."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is online betting legal in Colombia?",
+          "a": "Yes — fully regulated by Coljuegos since 2016, the first licensed online market in Latin America. Only Coljuegos-licensed operators may legally serve Colombian players."
+        },
+        {
+          "q": "How do I know a betting site is licensed in Colombia?",
+          "a": "Licensed sites operate on .co domains under Coljuegos. An operator serving Colombia from an offshore domain is unlicensed by definition."
+        },
+        {
+          "q": "Are betting winnings taxed in Colombia?",
+          "a": "Winnings above a threshold are taxed and withheld at payout. Everyday wins mostly fall under it; large hits arrive net. Check the current threshold figure."
+        }
+      ],
+      "related": [
+        "betting-in-peru",
+        "betting-in-brazil",
+        "what-is-an-accumulator"
+      ],
+      "glossary": [
+        "value-bet",
+        "expected-value"
+      ],
+      "tools": [
+        {
+          "href": "/tools/accumulator-calculator",
+          "label": "Price a coupon before tax — then apply the threshold to the payout"
+        }
+      ]
+    },
+    {
+      "slug": "betting-in-ecuador",
+      "title": "Betting in Ecuador: How It Works",
+      "nav": "Betting in Ecuador",
+      "country": "ec",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Ecuador's in-between market: the 2011 casino ban, offshore sites filling the gap, the new tax on online betting, and betting in US dollars.",
+      "sections": [
+        {
+          "h": "Is betting legal in Ecuador?",
+          "ps": [
+            "Ecuador sits between regimes. Land-based casinos were banned by referendum in 2011, and there is no dedicated online betting framework — offshore sites serve the market in a grey area. What has changed recently: the state introduced a tax on online betting, which is usually the first concrete step a country takes toward full regulation.",
+            "Until a framework lands, the grey-market rules apply: no local regulator will arbitrate disputes, so operator reputation is your only protection. Check the current rules before signing up — a market that has started taxing activity is a market preparing to regulate it."
+          ]
+        },
+        {
+          "h": "The new tax and what it signals",
+          "ps": [
+            "The tax applies to online betting operators and players — meaning part of the cost now lands on your side of the ledger. Factor it into any comparison of offers, and expect the mechanics (who withholds, at what rate) to keep evolving.",
+            "Taxation without licensing is an awkward phase, but it cuts one way for the future: governments that collect betting revenue rarely go back to pretending the market does not exist. Regulation is a when, not an if."
+          ]
+        },
+        {
+          "h": "Betting in dollars",
+          "ps": [
+            "Ecuador's official currency is the US dollar, which quietly removes a whole class of problems: no conversion spreads on deposits, no exchange-rate surprise between placing a bet and withdrawing the win, and easy comparison against internationally quoted prices.",
+            "Cards, bank transfers and PayPhone cover the practical payment routes. As in any unlicensed market, test the full deposit-bet-withdraw loop small before committing a real bankroll."
+          ]
+        },
+        {
+          "h": "Staying safe until regulation lands",
+          "ps": [
+            "The same defensive playbook as every grey market: operators with long track records and serious foreign licences, small balances, frequent withdrawals, and deep suspicion of bonus terms no regulator has reviewed.",
+            "Our data layer is jurisdiction-independent: model probabilities, fair odds and per-match comparisons work the same whether the market around you is licensed or not."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is online betting legal in Ecuador?",
+          "a": "There is no dedicated online framework: land-based casinos were banned by referendum in 2011, and offshore sites serve the online market in a grey area. A tax on online betting was introduced recently — usually the first step toward regulation. Check the current rules."
+        },
+        {
+          "q": "What currency do Ecuadorian betting sites use?",
+          "a": "The US dollar is Ecuador's official currency, so deposits, bets and withdrawals run in USD with no conversion cost — one genuine advantage of this market."
+        },
+        {
+          "q": "Is there a betting tax in Ecuador?",
+          "a": "Yes — a recently introduced tax touches online betting operators and players. The mechanics are still evolving, so verify the current rate and who withholds it."
+        }
+      ],
+      "related": [
+        "betting-in-colombia",
+        "betting-in-peru",
+        "value-betting-explained"
+      ],
+      "glossary": [
+        "expected-value",
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Compare USD-quoted prices across formats in one step"
+        }
+      ]
+    },
+    {
+      "slug": "betting-in-senegal",
+      "title": "Betting in Senegal: How It Works",
+      "nav": "Betting in Senegal",
+      "country": "sn",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Senegal's LONASE-supervised market: what state oversight means for bettors, why Orange Money and Wave run the payments, and how to pick a site that fits.",
+      "sections": [
+        {
+          "h": "Is betting legal in Senegal?",
+          "ps": [
+            "Yes — sports betting is permitted under the oversight of the state lottery LONASE, with both local and international operators serving the market. The LONASE model is common across francophone West Africa: rather than a standalone gambling commission, the national lottery anchors the legal framework.",
+            "For a bettor the practical meaning is simple: operators working under that oversight are the accountable ones. International sites outside it can offer better odds but answer to no one locally when a payout stalls."
+          ]
+        },
+        {
+          "h": "Orange Money and Wave run the payments",
+          "ps": [
+            "Mobile money dominates — Orange Money and Wave above all, with Free Money covering the rest. Wave's low-fee model has made it the challenger of choice, and an operator's native Wave support is now a genuine selection criterion.",
+            "Deposits land in seconds either way; the separating metric is withdrawal speed back to the same wallet. Test it with a small amount before trusting an operator with a real bankroll."
+          ]
+        },
+        {
+          "h": "Football first, and what that means for value",
+          "ps": [
+            "Football drives the vast majority of Senegalese betting volume — the national team, European leagues, and the big continental competitions. Liquid football markets mean tighter margins on mainstream bets and worse prices on exotics, the same pattern as everywhere.",
+            "Our model prices the European leagues fixture by fixture, and the odds comparison on each match page shows who pays most for the same outcome — arithmetic that works identically in XOF."
+          ]
+        },
+        {
+          "h": "Choosing a site for the Senegalese market",
+          "ps": [
+            "In order: standing under LONASE-era oversight, native support for the wallet you already use, verified payout speed, and only then bonuses. A welcome offer means little at an operator that takes a week to pay Wave withdrawals.",
+            "Data costs are a real factor too — lightweight sites that load fast on mobile connections beat heavy apps for most of the country."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is sports betting legal in Senegal?",
+          "a": "Yes — permitted under state oversight organised around the national lottery LONASE, with local and international operators serving the market."
+        },
+        {
+          "q": "How do I deposit at Senegalese betting sites?",
+          "a": "Mobile money dominates: Orange Money and Wave above all, plus Free Money. Native Wave support is worth checking for — its fees are the lowest."
+        },
+        {
+          "q": "What should I check before choosing a betting site in Senegal?",
+          "a": "Standing under the LONASE-era framework, support for your wallet, and payout speed you have tested yourself with a small withdrawal. Bonuses come last."
+        }
+      ],
+      "related": [
+        "betting-in-benin",
+        "betting-in-cote-divoire",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "value-bet",
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ]
+    },
+    {
+      "slug": "betting-in-cote-divoire",
+      "title": "Betting in Côte d'Ivoire: How It Works",
+      "nav": "Betting in Côte d'Ivoire",
+      "country": "ci",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Francophone Africa's biggest betting market: LONACI oversight, Orange Money / MTN MoMo / Wave payments, and how to separate serious operators from the rest.",
+      "sections": [
+        {
+          "h": "Is betting legal in Côte d'Ivoire?",
+          "ps": [
+            "Yes — betting is permitted under the oversight of the state lottery LONACI, and the Ivorian market is one of the largest in francophone West Africa. Local and international brands compete hard for it.",
+            "The LONACI framework is the accountability line: operators under it have local standing, while offshore sites serving the market from outside answer to nobody in Abidjan when a dispute arises. Size attracts both kinds, so the licence question matters more here, not less."
+          ]
+        },
+        {
+          "h": "Payments: three wallets, one rule",
+          "ps": [
+            "Orange Money, MTN MoMo and Wave cover essentially all deposits. The rule that matters: pick the operator that supports YOUR wallet natively, because bridging between networks costs a fee and a failure point on every transaction.",
+            "Withdrawal speed back to the same wallet is the real differentiator between books — test it small before you commit."
+          ]
+        },
+        {
+          "h": "A big market cuts both ways",
+          "ps": [
+            "Competition for Ivorian players means better bonuses and sharper prices than smaller neighbouring markets — but also more aggressive marketing and more brands of unknown provenance. A generous offer from an operator with no track record is not generosity; it is customer-acquisition maths betting you will not read the terms.",
+            "Our bonus guides price any offer in one formula (turnover × margin = clearing cost); it works in XOF exactly as anywhere else."
+          ]
+        },
+        {
+          "h": "Football and the data layer",
+          "ps": [
+            "Ivorian volume is football-first — Ligue 1, the Premier League, the Champions League and the national team. Our model prices those European fixtures independently of any operator: probabilities, fair odds, scorelines and a per-match odds comparison.",
+            "The point is not that a model wins — it is that you can check any price against an independent probability before you pay it."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is sports betting legal in Côte d'Ivoire?",
+          "a": "Yes — permitted under state lottery LONACI oversight. The market is one of francophone Africa's largest, served by local and international operators."
+        },
+        {
+          "q": "What payment methods work at Ivorian betting sites?",
+          "a": "Orange Money, MTN MoMo and Wave handle nearly everything. Choose an operator with native support for the wallet you already use."
+        },
+        {
+          "q": "How do I avoid bad betting sites in Côte d'Ivoire?",
+          "a": "Prefer operators with standing under the LONACI framework and a track record, test withdrawals with small amounts first, and treat rich bonuses from unknown brands as a warning rather than a gift."
+        }
+      ],
+      "related": [
+        "betting-in-senegal",
+        "betting-in-benin",
+        "how-betting-bonuses-work"
+      ],
+      "glossary": [
+        "wagering-requirements",
+        "value-bet"
+      ],
+      "tools": [
+        {
+          "href": "/tools/margin-calculator",
+          "label": "See what a bookmaker actually charges on any set of prices"
+        }
+      ]
+    },
+    {
+      "slug": "betting-in-cameroon",
+      "title": "Betting in Cameroon: How It Works",
+      "nav": "Betting in Cameroon",
+      "country": "cm",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Central Africa's biggest betting market: state licensing, Orange Money and MTN MoMo rails, and a practical checklist for choosing an operator in Cameroon.",
+      "sections": [
+        {
+          "h": "Is betting legal in Cameroon?",
+          "ps": [
+            "Yes — sports betting is permitted under state licensing with Ministry of Finance oversight, and it is hugely popular: Cameroon is one of central Africa's largest betting markets, with local licensees and international brands both active.",
+            "Licensing is the line that matters. A locally licensed operator has standing and something to lose; an offshore site serving Cameroon informally offers no local recourse at all."
+          ]
+        },
+        {
+          "h": "Orange Money and MTN MoMo",
+          "ps": [
+            "Payments are mobile-first to the point of exclusivity: Orange Money and MTN MoMo cover nearly all deposits and withdrawals in XAF. Deposits are instant; the separating test between operators is how fast money comes back.",
+            "Run the test before you trust: small deposit, one bet, withdrawal. Minutes is the standard the good operators set; a stalled small payout predicts a stalled large one."
+          ]
+        },
+        {
+          "h": "Football volume and market quality",
+          "ps": [
+            "Cameroonian betting is football-driven — the Indomitable Lions, European leagues, continental cups. High volume on mainstream markets keeps their margins tighter, which is where a disciplined bettor should stay anyway.",
+            "Use the odds comparison on our match pages to see which book pays most for the same outcome, and the model's probability to judge whether any price is worth paying at all."
+          ]
+        },
+        {
+          "h": "The selection checklist",
+          "ps": [
+            "Local licence first, your wallet supported natively second, verified payout speed third, odds quality fourth, bonuses last. That order is deliberate: each item earlier in the list can void everything after it.",
+            "And the standing rule for any market: money you cannot afford to lose has no place in a betting account. Our bankroll guide covers the mechanics."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is sports betting legal in Cameroon?",
+          "a": "Yes — permitted under state licensing with Ministry of Finance oversight. The market is one of central Africa's largest, with local and international operators."
+        },
+        {
+          "q": "How do I deposit at Cameroonian betting sites?",
+          "a": "Orange Money and MTN MoMo cover nearly all payments in XAF. Deposits are instant at operators with native wallet support."
+        },
+        {
+          "q": "What's the most important check before signing up in Cameroon?",
+          "a": "A local licence, then whether your mobile wallet is supported natively, then payout speed verified with a small withdrawal. Bonuses come last."
+        }
+      ],
+      "related": [
+        "betting-in-nigeria",
+        "betting-in-cote-divoire",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bankroll-management",
+        "expected-value"
+      ],
+      "tools": [
+        {
+          "href": "/tools/accumulator-calculator",
+          "label": "Price a coupon honestly before you place it"
+        }
+      ]
+    },
+    {
+      "slug": "betting-in-zambia",
+      "title": "Betting in Zambia: How It Works",
+      "nav": "Betting in Zambia",
+      "country": "zm",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Zambia's Betting Control Act framework: licensed local operators, MTN MoMo / Airtel Money / Zamtel Kwacha payments, and a fast-growing football-first market.",
+      "sections": [
+        {
+          "h": "Is betting legal in Zambia?",
+          "ps": [
+            "Yes — sports betting is legal under the Betting Control Act, administered through the Ministry of Finance's Betting Control and Licensing framework. Licensed local operators anchor the market.",
+            "The licence check is the first filter, as everywhere: a licensed Zambian operator answers to a local authority, an offshore one does not. With a market growing this fast, new brands appear constantly — the framework is what separates entrants from opportunists."
+          ]
+        },
+        {
+          "h": "Three wallets cover the market",
+          "ps": [
+            "MTN MoMo, Airtel Money and Zamtel Kwacha are the default payment rails; cards are marginal. Deposits land instantly at operators with native wallet integration.",
+            "The practical differentiator is withdrawal speed in kwacha back to your wallet — test it with a small amount before scaling. An operator that pays K100 in minutes has passed the only audit that matters."
+          ]
+        },
+        {
+          "h": "A young market's economics",
+          "ps": [
+            "Zambia's betting market is growing quickly, which means operators compete on bonuses. Price every offer with the one formula that matters — required turnover × margin = expected clearing cost — before treating it as free money.",
+            "Fast growth also means volatile operator quality: track records are short by definition, so small-stakes testing and frequent withdrawals are worth more here than in mature markets."
+          ]
+        },
+        {
+          "h": "Football and our data",
+          "ps": [
+            "Zambian volume follows football — Chipolopolo, the Premier League, the Champions League. Our model prices the European fixtures independently: probabilities, fair odds, most-likely scorelines, plus a per-match comparison of what each book pays.",
+            "None of it promises profit; it gives you an independent number to hold any price against."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is sports betting legal in Zambia?",
+          "a": "Yes — legal and licensed under the Betting Control Act, with oversight through the Ministry of Finance. Licensed local operators anchor the market."
+        },
+        {
+          "q": "How do I deposit at Zambian betting sites?",
+          "a": "Mobile money is the default: MTN MoMo, Airtel Money and Zamtel Kwacha. Pick an operator with native support for your wallet."
+        },
+        {
+          "q": "Are Zambian betting bonuses worth taking?",
+          "a": "Price them first: required turnover × typical margin = expected clearing cost. If the bonus comfortably exceeds that figure and the expiry is realistic, it carries real value; otherwise decline."
+        }
+      ],
+      "related": [
+        "betting-in-south-africa",
+        "betting-in-tanzania",
+        "wagering-requirements-explained"
+      ],
+      "glossary": [
+        "wagering-requirements",
+        "value-bet"
+      ],
+      "tools": [
+        {
+          "href": "/tools/margin-calculator",
+          "label": "The margin number that prices any bonus's clearing cost"
+        }
+      ]
+    },
+    {
+      "slug": "betting-in-togo",
+      "title": "Betting in Togo: How It Works",
+      "nav": "Betting in Togo",
+      "country": "tg",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Togo's LONATO-supervised market: Flooz and T-Money as the payment rails, European football as the volume driver, and how to bet sensibly in a small mobile-first market.",
+      "sections": [
+        {
+          "h": "Is betting legal in Togo?",
+          "ps": [
+            "Yes — betting falls under state oversight through the national lottery LONATO, the same lottery-anchored model as Togo's francophone neighbours. Local and international operators serve the market.",
+            "Small market, simple rule: operators with standing under the LONATO framework are the accountable ones. Everything offshore is convenience without recourse."
+          ]
+        },
+        {
+          "h": "Flooz and T-Money",
+          "ps": [
+            "The market is almost entirely mobile, and Flooz and T-Money (with Moov Money) handle most deposits and withdrawals in XOF. An operator's native support for your wallet is the first practical filter.",
+            "As everywhere, the reliability test is a small withdrawal. Run it before any serious deposit — payout speed is where operators differ most, and a small stall predicts a large one."
+          ]
+        },
+        {
+          "h": "European football drives the volume",
+          "ps": [
+            "Togolese betting interest concentrates on European leagues — the Premier League and Ligue 1 above all. Those are liquid markets with tight mainstream margins, which suits a disciplined bettor.",
+            "Our model covers those competitions fixture by fixture: probabilities, fair odds and an odds comparison per match, all independent of any operator's pricing."
+          ]
+        },
+        {
+          "h": "Betting small-market smart",
+          "ps": [
+            "In smaller markets, bonuses and odds boosts do more of the marketing work — price them with the turnover × margin formula before accepting anything. And keep the universal rules: money you can afford to lose, flat sensible stakes, withdrawals often.",
+            "Data costs matter too: lightweight sites that load on modest connections are a genuine advantage across most of the country."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is sports betting legal in Togo?",
+          "a": "Yes — under state oversight through the national lottery LONATO, with local and international operators active."
+        },
+        {
+          "q": "How do I deposit at Togolese betting sites?",
+          "a": "Flooz and T-Money handle most payments, with Moov Money covering the rest. Choose an operator with native support for your wallet."
+        },
+        {
+          "q": "Which football is most bet on in Togo?",
+          "a": "European leagues drive the volume — the Premier League and Ligue 1 in particular. Those are also the leagues our model prices deepest."
+        }
+      ],
+      "related": [
+        "betting-in-benin",
+        "betting-in-senegal",
+        "how-to-read-betting-odds"
+      ],
+      "glossary": [
+        "odds-formats",
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Any price into implied probability, one step"
+        }
+      ]
+    },
+    {
+      "slug": "betting-in-burkina-faso",
+      "title": "Betting in Burkina Faso: How It Works",
+      "nav": "Betting in Burkina Faso",
+      "country": "bf",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Burkina Faso's LONAB-anchored framework, Orange Money and Moov Money payments, and why app weight is a real selection criterion in this market.",
+      "sections": [
+        {
+          "h": "Is betting legal in Burkina Faso?",
+          "ps": [
+            "Yes — sports betting operates under state oversight centred on the national lottery LONAB, with international operators serving the market alongside local ones. It is the standard francophone West African model: the lottery anchors the licensed framework.",
+            "The accountability line runs through LONAB: operators under that oversight have local standing. Offshore brands may price better, but a stalled payout leaves you with no local recourse."
+          ]
+        },
+        {
+          "h": "Orange Money and Moov Money",
+          "ps": [
+            "Payments run almost entirely through mobile money — Orange Money and Moov Money dominate. Deposits in XOF land instantly at operators with native integration; withdrawal speed back to the wallet is the metric that separates books.",
+            "Small-amount testing before commitment is the rule here as everywhere: one quick payout tells you more than any review."
+          ]
+        },
+        {
+          "h": "Why app weight matters here",
+          "ps": [
+            "Data costs make lightweight apps a real selection criterion in Burkina Faso — a heavy site that burns megabytes per session costs real money over a season. The good operators ship lite versions; the difference between them is larger than most bonus gaps.",
+            "Our own pages are built light for the same reason: the data tables load in kilobytes, not megabytes."
+          ]
+        },
+        {
+          "h": "The bettor's checklist",
+          "ps": [
+            "LONAB-era standing first, your wallet supported natively second, verified payout speed third, app weight fourth, bonuses last. Each earlier item can void everything after it.",
+            "And the discipline rules are universal: flat stakes, money you can afford to lose, withdraw often. The bankroll guide covers the mechanics in detail."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is sports betting legal in Burkina Faso?",
+          "a": "Yes — under state oversight anchored by the national lottery LONAB, with local and international operators serving the market."
+        },
+        {
+          "q": "How do I deposit at betting sites in Burkina Faso?",
+          "a": "Orange Money and Moov Money dominate; payments run in XOF and land instantly at operators with native wallet support."
+        },
+        {
+          "q": "Why do people recommend lite betting apps in Burkina Faso?",
+          "a": "Data costs are significant, so a lightweight app or site saves real money over time. Treat app weight as a genuine selection criterion alongside payout speed."
+        }
+      ],
+      "related": [
+        "betting-in-mali",
+        "betting-in-benin",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bankroll-management",
+        "value-bet"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Lightweight odds conversion that works on any connection"
+        }
+      ]
+    },
+    {
+      "slug": "betting-in-mali",
+      "title": "Betting in Mali: How It Works",
+      "nav": "Betting in Mali",
+      "country": "ml",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Mali's lottery-anchored betting framework, Orange Money as the default rail, and how European football shapes what Malian bettors actually bet on.",
+      "sections": [
+        {
+          "h": "Is betting legal in Mali?",
+          "ps": [
+            "Yes — betting operates under state oversight organised around the national lottery framework, with international operators active alongside local ones. It is the same lottery-anchored model as Mali's francophone neighbours.",
+            "The practical line: operators with standing under that framework are accountable locally; offshore sites are not. In a market where new brands come and go, that distinction is the first filter."
+          ]
+        },
+        {
+          "h": "Orange Money is the default",
+          "ps": [
+            "Mobile money handles effectively all deposits and payouts, and Orange Money is the default rail, with Moov Money second. XOF deposits land in seconds at operators with native support.",
+            "Withdrawal speed is the differentiator — verify it with a small amount before trusting any operator with a bankroll. A payout that takes minutes at K5,000-scale is the only credential that transfers to larger sums."
+          ]
+        },
+        {
+          "h": "European football dominates",
+          "ps": [
+            "Malian betting interest concentrates on European football — the Premier League, Ligue 1 and the Champions League dominate coupons. Those leagues carry the most liquid markets and the tightest mainstream margins.",
+            "They are also where our model is deepest: independent probabilities, fair odds, most-likely scorelines and a per-match odds comparison, so you can hold any operator's price against a number it does not control."
+          ]
+        },
+        {
+          "h": "Discipline in a mobile-first market",
+          "ps": [
+            "The universal rules do the heavy lifting: bet money you can afford to lose, keep stakes flat, withdraw winnings often rather than letting a balance grow into temptation. Bonuses deserve the standard arithmetic — turnover × margin = what clearing really costs.",
+            "Lightweight sites matter here too: data costs reward operators (and information sources) that load lean."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is sports betting legal in Mali?",
+          "a": "Yes — under state oversight organised around the national lottery framework, with local and international operators active."
+        },
+        {
+          "q": "What's the main payment method for betting in Mali?",
+          "a": "Orange Money is the default rail, with Moov Money second. Mobile money handles effectively all deposits and payouts in XOF."
+        },
+        {
+          "q": "What do Malians bet on most?",
+          "a": "European football — the Premier League, Ligue 1 and the Champions League dominate. Those are also the most liquid markets with the tightest margins."
+        }
+      ],
+      "related": [
+        "betting-in-burkina-faso",
+        "betting-in-senegal",
+        "value-betting-explained"
+      ],
+      "glossary": [
+        "value-bet",
+        "expected-value"
+      ],
+      "tools": [
+        {
+          "href": "/tools/accumulator-calculator",
+          "label": "Price a coupon honestly before you place it"
+        }
+      ]
+    },
+    {
+      "slug": "betting-in-niger",
+      "title": "Betting in Niger: How It Works",
+      "nav": "Betting in Niger",
+      "country": "ne",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Niger's LONANI-anchored framework, Airtel Money and Orange Money rails, and sensible betting in one of the region's smallest mobile-first markets.",
+      "sections": [
+        {
+          "h": "Is betting legal in Niger?",
+          "ps": [
+            "Yes — betting falls under state oversight through the national lottery LONANI, the lottery-anchored framework standard across francophone West Africa. The market is small and almost entirely mobile.",
+            "Small markets attract fewer serious operators, which makes the accountability question sharper, not softer: prefer books with standing under the LONANI-era framework and a track record you can actually check."
+          ]
+        },
+        {
+          "h": "Airtel Money and Orange Money",
+          "ps": [
+            "Airtel Money and Orange Money handle most transactions, with Zamani Cash covering part of the rest. XOF deposits are instant at operators with native wallet support.",
+            "The one test that matters everywhere matters most here: a small withdrawal, timed. In a thin market, payout reliability varies more between operators than odds quality does."
+          ]
+        },
+        {
+          "h": "What a small market means for value",
+          "ps": [
+            "Thinner competition means fewer promotions and occasionally softer prices — both cut both ways. Price any bonus with the turnover × margin formula, and check odds against an independent probability rather than against another local book.",
+            "That independent number is what our model provides: fixture-by-fixture probabilities and fair odds for the European leagues that dominate Nigerien coupons."
+          ]
+        },
+        {
+          "h": "The essentials",
+          "ps": [
+            "Standing under the LONANI framework, native support for your wallet, verified payout speed, lightweight pages that respect data costs — then and only then bonuses. And the discipline rules are non-negotiable in any market: affordable money, flat stakes, frequent withdrawals.",
+            "Our bankroll guide covers the staking mechanics in detail."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is sports betting legal in Niger?",
+          "a": "Yes — under state oversight through the national lottery LONANI. The market is small and strongly mobile-first."
+        },
+        {
+          "q": "How do I deposit at betting sites in Niger?",
+          "a": "Airtel Money and Orange Money handle most transactions, with Zamani Cash also in use. Deposits run in XOF and are instant with native wallet support."
+        },
+        {
+          "q": "What should I check first before betting in Niger?",
+          "a": "An operator's standing under the LONANI-era framework, support for your wallet, and payout speed verified with a small timed withdrawal."
+        }
+      ],
+      "related": [
+        "betting-in-mali",
+        "betting-in-burkina-faso",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bankroll-management",
+        "odds-formats"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Convert any odds format on any connection"
+        }
+      ]
+    },
+    {
+      "slug": "betting-in-dr-congo",
+      "title": "Betting in DR Congo: How It Works",
+      "nav": "Betting in DR Congo",
+      "country": "cd",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "DR Congo's licensed-by-authorisation market: why verifying an operator's current licence matters most here, and how M-Pesa, Airtel and Orange Money move the money.",
+      "sections": [
+        {
+          "h": "Is betting legal in DR Congo?",
+          "ps": [
+            "Yes — sports betting is licensed through government authorisation, with several large operators active in one of Central Africa's biggest betting populations. The market is mobile-first and growing.",
+            "The single most important habit here: confirm an operator's current licence status before depositing. Authorisations change, brands trade under multiple names, and the difference between an authorised book and an informal one is the difference between having recourse and having none."
+          ]
+        },
+        {
+          "h": "M-Pesa, Airtel Money, Orange Money",
+          "ps": [
+            "Mobile money dominates payments — M-Pesa (Vodacom), Airtel Money and Orange Money between them cover nearly everything, with CDF the working currency. Deposits are instant at operators with native integration.",
+            "Withdrawal speed varies more between operators than anything else. The small-amount test — deposit, one bet, timed withdrawal — is the only review worth trusting."
+          ]
+        },
+        {
+          "h": "A big population, an uneven market",
+          "ps": [
+            "One of the region's largest betting populations attracts everything: serious licensed operators, thin resellers, and outright opportunists. Marketing volume tells you nothing; authorisation status and payout behaviour tell you everything.",
+            "Bonuses deserve the standard arithmetic — required turnover × margin = expected clearing cost — and extra scrutiny of expiry windows, which tend to be short."
+          ]
+        },
+        {
+          "h": "Football and the data layer",
+          "ps": [
+            "Congolese betting is football-first: the Leopards, European leagues, continental cups. Our model prices the European fixtures independently — probabilities, fair odds, likely scorelines — and the per-match odds comparison shows who pays most for the same outcome.",
+            "Independent numbers are the counterweight to marketing in any market; in an uneven one they are close to essential."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is sports betting legal in DR Congo?",
+          "a": "Yes — licensed through government authorisation, with several large operators active. Confirm an operator's current authorisation before depositing; statuses change."
+        },
+        {
+          "q": "How do I deposit at Congolese betting sites?",
+          "a": "Mobile money dominates: M-Pesa (Vodacom), Airtel Money and Orange Money, with CDF the working currency. Deposits are instant with native wallet support."
+        },
+        {
+          "q": "How do I check if a betting site is authorised in DR Congo?",
+          "a": "Verify current government authorisation before depositing — brands trade under multiple names and statuses change. An operator that cannot show its authorisation has answered the question."
+        }
+      ],
+      "related": [
+        "betting-in-cameroon",
+        "betting-in-zambia",
+        "how-betting-bonuses-work"
+      ],
+      "glossary": [
+        "wagering-requirements",
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/margin-calculator",
+          "label": "Price what any bonus really costs to clear"
         }
       ]
     }

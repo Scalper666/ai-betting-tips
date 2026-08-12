@@ -724,6 +724,937 @@
       ],
       "_src_hash": "c50087ed518f0a33",
       "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "handicap-betting",
+      "term": "Handicap Europeu",
+      "short": "Um mercado onde um time começa com um déficit de gol imaginário ou uma vantagem, com odds de três resultados incluindo o empate ajustado.",
+      "definition": [
+        "O handicap europeu oferece a um lado uma vantagem ou desvantagem de um gol inteiro antes do apito inicial, depois precifica o resultado ajustado como um mercado normal de três resultados: casa, empate ajustado, fora. Aposte em Arsenal −1 e ele deve vencer por dois ou mais gols; uma vitória por um gol cai exatamente no empate ajustado e sua aposta perde.",
+        "Esse último ponto é a armadilha para iniciantes e a diferença fundamental em relação à versão asiática: handicaps europeus não têm reembolsos. O terceiro resultado (o empate ajustado) é uma possibilidade real, precificada, que bate os dois lados do handicap, é por isso que as odds parecem mais generosas do que linhas asiáticas na mesma partida."
+      ],
+      "example": "Arsenal −1 a 2.60 contra Fulham. Arsenal vence 2–0: aposta vence. Arsenal vence 2–1: o −1 faz 1–1 — o empate ajustado vence e sua aposta perde, onde um −1 asiático teria devolvido a stake.",
+      "related": [
+        "asian-handicap",
+        "match-result",
+        "draw-no-bet"
+      ],
+      "see": [],
+      "_src_hash": "64badaff59079f4c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "half-time-full-time",
+      "term": "Intervalo/Final (Int/Fin)",
+      "short": "Uma única aposta no resultado no intervalo E ao final — nove combinações, odds elevadas, sem crédito parcial.",
+      "definition": [
+        "Int/Fin exige que você acerte o líder no intervalo e o vencedor ao final em uma única aposta: Casa/Casa, Empate/Casa, Fora/Casa e as outras seis combinações. Os dois tempos devem acertar — um time que está atrás no intervalo e vence no final invalida um bilhete Casa/Casa mesmo que o resultado final tenha favorecido você.",
+        "O apelo do mercado é o preço: as combinações pagam muito mais do que o resultado simples, porque você está precificando dois eventos correlacionados. A correlação é exatamente por isso que as casas de apostas gostam — a maioria dos apostadores superestima favoritos liderando em ambos os pontos de verificação, e a margem em nove resultados é maior do que em três."
+      ],
+      "example": "Empate/Casa em um favorito a 4.75: o favorito deve estar empatado no intervalo e depois vencer. Se lidera 1–0 no intervalo e vence 3–0, o resultado Home/Home a 2.30 que parecia mais provável era o bilhete que acertou — Int/Fin penaliza estar aproximadamente correto.",
+      "related": [
+        "match-result",
+        "correct-score",
+        "double-chance"
+      ],
+      "see": [],
+      "_src_hash": "5c87a4ea737acac3",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "clean-sheet",
+      "term": "Clean Sheet",
+      "short": "Um mercado sobre se um time sofre zero gols — precificado a partir das taxas de defesa e de ataque do oponente.",
+      "definition": [
+        "Uma aposta em clean sheet vence se o time escolhido sofre nenhum gol durante a partida. É o espelho defensivo do BTTS: 'Clean sheet do Time A — sim' é próximo a 'ambos os times marcam — não' ponderado para um lado.",
+        "A forma honesta de precificar é a partir das taxas de gols: se o oponente marca em média 1,2 gols por jogo contra defesas similares, um modelo de Poisson coloca a chance de zero gols em torno de 30%, tornando as odds justas cerca de 3,30. Qualquer preço menor precisa de um motivo — atacantes lesionados, uma defesa retrancada — que as médias ainda não capturaram."
+      ],
+      "example": "Gols esperados do oponente contra esta defesa: 1,2. P(0 gols) = e^−1,2 ≈ 30,1%, odds justas ≈ 3,32. Uma casa oferecendo 2,80 está cobrando de você ~16% acima do justo; 3,60 está pagando você para assumir a variância.",
+      "related": [
+        "btts",
+        "over-under",
+        "xg"
+      ],
+      "see": [
+        {
+          "label": "BTTS model estimates per fixture",
+          "href": "/tips/btts"
+        }
+      ],
+      "_src_hash": "986e19371908b143",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "anytime-goalscorer",
+      "term": "Marcador a Qualquer Momento",
+      "short": "Uma aposta em um jogador nomeado marcar em qualquer ponto da partida — precificada a partir de minutos, posição e expectativa de gols do time.",
+      "definition": [
+        "O mercado de marcador a qualquer momento paga se seu jogador marcar pelo menos uma vez — gols contra geralmente excluídos, e a aposta tipicamente precisa do jogador realmente entrar em campo para valer. Os preços rastreiam três coisas: a expectativa total de gols do time, a participação do jogador nela (pênaltis ajudam enormemente), e minutos esperados.",
+        "O vazamento clássico é apostar em reputação: um atacante famoso começando no banco, ou um cuja equipe cria pouco, carrega uma odd muito menor que sua chance real. Verifique o escalação e os números de ataque do time antes do nome."
+      ],
+      "example": "Um atacante participando de ~30% de um time esperado a marcar 1.6 gols tem aproximadamente uma chance anytime de 1 − e^(−0.48) ≈ 38% — odds justas cerca de 2.60. As casas o cotam a 2.00 apenas pelo valor do nome; esse gap é a margem que você voluntariamente paga.",
+      "related": [
+        "xg",
+        "value-bet",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "fd5937261b90a11a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "first-goalscorer",
+      "term": "Primeiro Goleador",
+      "short": "Aposta em um jogador nomeado para abrir o placar — alta variância, alta margem, e altamente dependente de pênaltis e minutos em campo.",
+      "definition": [
+        "Primeiro goleador paga apenas se seu jogador marcar o primeiro gol da partida. É o mercado 'a qualquer momento' com uma moeda extra no ar: não apenas 'ele vai marcar' mas 'seu gol será o primeiro' — o que multiplica a variância e, convenientemente para a casa, a margem embutida em cada odd.",
+        "Cobradores de pênaltis e titulares que entram cedo dominam a lista honesta. Um super-suplente que marca muito mas entra aos 70 minutos é estruturalmente horrível aqui, independentemente de seus números em 'a qualquer momento'."
+      ],
+      "example": "Se a chance de um jogador marcar a qualquer momento é 38% e seu time tem igual probabilidade de marcar primeiro ou segundo, sua chance de primeiro goleador é aproximadamente a metade da participação nos primeiros gols da partida — frequentemente 15–18%, odds justos 5.50–6.60. As casas rotineiramente oferecem 4.50: uma margem de dois dígitos escondida à vista de todos.",
+      "related": [
+        "anytime-goalscorer",
+        "bookmaker-margin",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "589dfe0d5c431899",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "corners-betting",
+      "term": "Apostas em Escanteios",
+      "short": "Mercados de mais/menos e handicap sobre a quantidade de escanteios — determinados pelo volume de chutes e estilo de jogo, não por quem vence a partida.",
+      "definition": [
+        "Os mercados de escanteios precificam a quantidade total: totais de partida (mais/menos 9.5 é a linha clássica), totais por time e handicaps de escanteio. A contagem de escanteios acompanha o volume de ataque e a largura do jogo — um time dominante forçado para as laterais por uma defesa baixa gera escanteios independentemente do placar.",
+        "O erro comum é tratar escanteios como algo aleatório. Eles se correlacionam com chutes e posse de campo, então o mesmo raciocínio que precifica totais se aplica: times que atacam pelas laterais contra defesas fechadas têm contagens altas, duplas de contra-ataque têm contagens baixas."
+      ],
+      "example": "Dois times com média combinada de 10.8 escanteios contra oposição similar fazem mais 9.5 uma proposição de aproximadamente 58% — odds justas ~1.72. Um preço de 1.90 é valor se a amostra por trás da média é honesta; o mesmo preço é uma armadilha vindo de três partidas atipicamente abertas.",
+      "related": [
+        "over-under",
+        "sample-size",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "0b2cfeaf81fcec85",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "cards-betting",
+      "term": "Apostas em Cartões / Advertências",
+      "short": "Mercados sobre cartões amarelos e vermelhos — onde a média pessoal do árbitro importa tanto quanto a temperatura da partida.",
+      "definition": [
+        "Mercados de cartões precificam advertências totais (frequentemente como pontos: amarelo 10, vermelho 25) ou contagens simples de cartões. Dois fatores dominam: o padrão do confronto — derbis e lutas contra rebaixamento esquentam — e o árbitro, cuja média pessoal de cartões por partida é um número público e estável que a maioria dos apostadores casuais nunca verifica.",
+        "Esse número do árbitro é o sinal mais próximo de gratuito neste mercado. O mesmo confronto pode carregar uma expectativa de cartões 30% diferente dependendo de quem apita."
+      ],
+      "example": "Um árbitro com média de 4,8 amarelos por partida apita um derbi cujos últimos cinco encontros registraram média de 5,2 cartões. Uma linha over 4,5 cartões em odds pares precifica bem a combinação; a mesma linha sob um árbitro com média de 3,1 precisaria do calor do derbi fazer todo o trabalho.",
+      "related": [
+        "variance",
+        "sample-size",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "89575455dd41503d",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "outright-betting",
+      "term": "Apostas em Resultados Finais (Outrights)",
+      "short": "Uma aposta no resultado de toda uma competição — campeão da liga, artilheiro, rebaixamento — liquidada meses depois, com margem e capital parado em jogo.",
+      "definition": [
+        "As odds de outrights precificam resultados ao longo da temporada: campeão, top 4, rebaixamento, chuteira de ouro. Dois custos estruturais as separam das apostas em partidas: a margem da casa em um campo de 20 concorrentes é muito maior do que em uma aposta de três vias, e seu stake fica travado por meses — capital parado que poderia ter se multiplicado em outro lugar.",
+        "O caso honesto para outrights é um desacordo forte com o mercado no início da temporada que você espera que se feche. Apostar no favorito em agosto por uma odd que você poderia vencer esperando é a versão clássica de pagar pela impaciência."
+      ],
+      "example": "Some as probabilidades implícitas de todas as odds de título em uma liga de 20 times e você frequentemente encontrará 115–125% — uma margem de 15–25%, contra 4–6% em uma partida única. O mesmo bankroll rolado em apostas de partidas paga um custo total muito menor.",
+      "related": [
+        "bookmaker-margin",
+        "expected-value",
+        "bankroll-management"
+      ],
+      "see": [
+        {
+          "label": "Season hubs with live tables",
+          "href": "/seasons"
+        }
+      ],
+      "_src_hash": "8b6639c4b5210df4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "each-way-betting",
+      "term": "Aposta Each-Way",
+      "short": "Duas apostas em uma — vitória e colocação — principalmente um produto de corridas, ocasionalmente oferecido em apostas de resultado final do futebol.",
+      "definition": [
+        "Uma aposta each-way divide sua stake: metade na vitória direta, metade em uma 'colocação' (terminar em um conjunto definido de posições) a uma fração das odds de vitória. No futebol aparece em resultados finais — chegada ao top-4 como colocação em uma aposta de título, por exemplo.",
+        "A questão de valor é sempre a fração de colocação: em um quarto das odds de 8.00, a colocação paga 2.00 contra uma probabilidade de top-4 que o mercado pode precificar mais perto de 1.60 ou 2.60. As duas metades são uma única decisão no bilhete — avalie-as como duas apostas separadas, porque é isso que elas são."
+      ],
+      "example": "£10 each-way (total £20) em um time a 8.00 pelo título, colocação ¼ odds top-4. Perde o título mas acerta o top-4: a metade de vitória perde £10, a metade de colocação retorna £10 × (1 + 7/4) = £27.50 — saldo +£7.50. Se esse preço de colocação bateu sua verdadeira chance é a questão real de valor.",
+      "related": [
+        "outright-betting",
+        "expected-value",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "0e5e1cd7d7e0951c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "banker",
+      "term": "Banker",
+      "short": "A seleção em um bilhete tratada como praticamente certa — o único ponto de falha silencioso de todo acumulador.",
+      "definition": [
+        "Um banker é o jogo que o apostador ancora em um bilhete — o favorito de 1.25 'apenas para aumentar as odds'. A aritmética que a maioria dos bilhetes ignora: uma odd de 1.25 implica uma taxa de falha de 20% mesmo na precificação otimista da própria casa de apostas, e essa falha mata todo o acumulador.",
+        "Bankers também carregam o pior valor da placa: os favoritos pesados são onde o dinheiro recreativo se acumula, então suas odds ficam abaixo do justo mais frequentemente que qualquer outro segmento. Adicionar um ao bilhete geralmente adiciona margem, não segurança."
+      ],
+      "example": "Um múltiplo de quatro a 6.00 se torna 7.50 com um banker de 1.25 adicionado. O banker falha uma vez em cinco na sua própria taxa implícita — você negociou um aumento de 25% no retorno por uma chance de 20% de transformar cada bilhete vencedor em cinzas.",
+      "related": [
+        "accumulator",
+        "longshot-bias",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Build a coupon from model-screened picks",
+          "href": "/tools/acca-builder"
+        }
+      ],
+      "_src_hash": "5519628f9b88ad26",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "system-bet",
+      "term": "Aposta de Sistema",
+      "short": "Um conjunto estruturado de acumuladas sobre as mesmas seleções — Trixie, Yankee, Lucky 15 — que retorna ganhos parciais quando apenas alguns resultados saem.",
+      "definition": [
+        "Uma aposta de sistema coloca todas as acumuladas possíveis de um determinado tamanho sobre suas seleções: uma Trixie em três palpites são três duplas mais uma tríplice (4 apostas), uma Yankee em quatro palpites são seis duplas, quatro tríplices e uma quádrupla (11 apostas). Um resultado perdido não destrói tudo — as combinações sem ele continuam contando.",
+        "O custo é a fragmentação da stake: cada combinação carrega sua própria stake, então um 'Yankee de £1' custa £11. Sistemas convertem o perfil tudo-ou-nada da acumulada em um mais suave pelo preço de precisar acertar mais resultados só para empatar."
+      ],
+      "example": "Trixie de £1 (£4 no total: 3 duplas + 1 tríplice) em palpites com odds 2.0 / 2.0 / 2.0. Os três saem: retorna £20 — cada dupla paga £1×4=£4, a tríplice £8, total £20 dos £4 investidos. Dois saem: uma dupla sobrevive, £4 de volta dos £4 apostados. O ponto de equilíbrio do sistema precisa de dois em três, não um.",
+      "related": [
+        "accumulator",
+        "trixie",
+        "yankee"
+      ],
+      "see": [],
+      "_src_hash": "dce756f0cd33838e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "trixie",
+      "term": "Trixie",
+      "short": "Três seleções, quatro apostas: todas as duplas mais a tríplice. Dois ganhadores devolvem parte da aposta; três vencem corretamente.",
+      "definition": [
+        "Uma Trixie agrupa três seleções em quatro apostas — as três duplas possíveis e a tríplice. Diferente de uma tríplice simples, dois palpites vencedores ainda retornam algo: a dupla que formam sobrevive à falha da terceira perna.",
+        "O stake total é de quatro unidades. A estrutura funciona bem com odds próximas de 1.00; em favoritos de odds curtas as duplas pagam pouco para justificar as unidades extras, e em longshots a tríplice simples geralmente bate o retorno com seguro."
+      ],
+      "example": "£1 Trixie (£4 total) em três palpites a 2.10. Todos vencem: 3 duplas × £4.41 + tríplice £9.26 ≈ £22.50. Dois vencem: uma dupla retorna £4.41 — quase todo o stake de £4 de volta. Uma tríplice simples de £4 teria pago £37 com os três acertos, mas zero com dois.",
+      "related": [
+        "system-bet",
+        "yankee",
+        "accumulator"
+      ],
+      "see": [],
+      "_src_hash": "1545b6c564f5f4e1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "yankee",
+      "term": "Yankee",
+      "short": "Quatro seleções, onze apostas: seis duplas, quatro triplas, uma quádrupla. Dois acertos começam a pagar.",
+      "definition": [
+        "Um Yankee distribui quatro seleções entre todas as onze apostas múltiplas que podem ser formadas: 6 duplas + 4 triplas + 1 quádrupla. No mínimo dois palpites precisam acertar antes de qualquer retorno; a curva de ganho então aumenta significativamente a cada acerto adicional.",
+        "Onze unidades é dinheiro real pela proteção oferecida. A comparação honesta é contra quatro duplas isoladas ou uma quádrupla simples: o Yankee vence essa comparação apenas quando seus palpites se concentram ao redor de odds pares e você realmente espera dois ou três acertos com mais frequência do que quatro."
+      ],
+      "example": "£1 Yankee (£11) em quatro palpites a 2.00. Dois acertos: uma dupla paga £4 — perda líquida de £7. Três acertos: 3 duplas (£12) + 1 tripla (£8) = £20 — lucro modesto. Todos os quatro: £12 + £32 + £16 = £60. A estrutura paga pelos quase-acertos com a maior parte do jackpot.",
+      "related": [
+        "system-bet",
+        "trixie",
+        "lucky-15"
+      ],
+      "see": [],
+      "_src_hash": "1960586662f10906",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "lucky-15",
+      "term": "Lucky 15",
+      "short": "Quatro seleções, quinze apostas: uma Yankee mais as quatro simples — um único vencedor já retorna algo.",
+      "definition": [
+        "Uma Lucky 15 é uma Yankee com as quatro simples adicionadas: 4 simples + 6 duplas + 4 triplas + 1 quádrupla = 15 apostas. As simples fazem com que um único vencedor ainda retorne dinheiro, e as casas de apostas frequentemente melhoram o produto — odds dobradas em um único vencedor, bônus para todas as quatro.",
+        "Os melhoradores existem porque o produto base carrega quinze unidades de margem. Precificar todo o pacote: quinze apostas com uma margem típica de 5% custa cerca de 0,75 unidades em expectativa antes de qualquer bônus devolver parte dela."
+      ],
+      "example": "£1 Lucky 15 (£15) em picks com odds 3.00 cada. Um vencedor com 'odds dobradas em um vencedor': a simples paga £1 × 5.00 = £5 (em vez de £3) — ainda uma perda de £10. Todas as quatro: simples £12 + duplas £54 + triplas £108 + quádrupla £81 = £255. Os prêmios de consolação são reais mas pequenos; o produto é precificado para parecerem maiores do que realmente são.",
+      "related": [
+        "yankee",
+        "system-bet",
+        "bookmaker-margin"
+      ],
+      "see": [],
+      "_src_hash": "41186e48996f97f0",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "patent",
+      "term": "Patent",
+      "short": "Três seleções, sete apostas: simples, duplas e a tríplice — o Trixie totalmente protegido.",
+      "definition": [
+        "Uma Patent cobre três seleções com todas as sete apostas possíveis: 3 simples + 3 duplas + 1 tríplice. É um Trixie mais as simples, então mesmo uma perna vencedora retorna algo.",
+        "Sete unidades de stake compra cobertura total, o que é adequado para picks confiantes em odds maiores — as simples têm peso real em 3.00+. Em odds curtas as simples retornam centavos e a estrutura se torna seguro caro sobre seguro."
+      ],
+      "example": "£1 Patent (£7) em três picks a 3.50. Um vencedor: sua simples retorna £3.50 — metade do investimento de volta. Dois: 2 simples (£7) + 1 dupla (£12.25) = £19.25. Os três: £10.50 + £36.75 + £42.88 ≈ £90. Compare a £7 tríplice sozinha: £0, £0, £150 — a Patent troca jackpot por piso.",
+      "related": [
+        "trixie",
+        "system-bet",
+        "accumulator"
+      ],
+      "see": [],
+      "_src_hash": "d12659ca22b4ca57",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "round-robin",
+      "term": "Round Robin",
+      "short": "Todas as duplas (e frequentemente triplas) em um conjunto de apostas — a fórmula geral por trás de Trixies e Yankees.",
+      "definition": [
+        "Um round robin aposta em todas as combinações de um tamanho escolhido em suas seleções — geralmente todas as duplas a partir de quatro, cinco ou seis picks. Trixie e Yankee são apenas round robins de tamanhos fixos; a forma geral permite escolher a largura.",
+        "A combinatória cresce rapidamente: todas as duplas de seis picks resulta em quinze apostas, todas as triplas em vinte. Cada combinação carrega seu próprio stake e sua própria margem, então a estrutura multiplica o lucro da casa exatamente tão rápido quanto multiplica sua cobertura."
+      ],
+      "example": "Todas as duplas de cinco picks = 10 apostas. Com uma margem de 5% por dupla, o pacote embutido custa aproximadamente 0,5 unidades em valor esperado. Três de cinco acertos resultam em 3 duplas: ao preço de 2.00 cada uma paga 4 unidades — 12 de retorno a partir de 10, antes da variância dizer algo.",
+      "related": [
+        "system-bet",
+        "yankee",
+        "bookmaker-margin"
+      ],
+      "see": [],
+      "_src_hash": "ebabd3db75914eac",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fold",
+      "term": "Fold (4-Fold, 5-Fold…)",
+      "short": "Abreviação de casas de apostas para o tamanho de um acumulador: o número de seleções que devem todas ganhar.",
+      "definition": [
+        "'Fold' conta as seleções em um acumulador: um 4-fold tem quatro seleções, um 6-fold tem seis, e todas as seleções devem ganhar. As odds se multiplicam assim como os cenários de perda — cada seleção adicional multiplica o prêmio por sua odd e a probabilidade de sucesso do bilhete por algo menor que um.",
+        "O número de folds é a verificação mais rápida de honestidade em qualquer bilhete: com margens típicas de 5% por seleção, um n-fold entrega à casa de apostas aproximadamente n×5% de valor esperado. Um 6-fold é uma taxa de ~30% disfarçada de bilhete de loteria."
+      ],
+      "example": "Cinco seleções a 1.80 cada: 5-fold paga 18.9. Probabilidade verdadeira se cada seleção é corretamente avaliada em 55%: 0.55⁵ ≈ 5.0% — odds justos 19.9. A diferença entre 18.9 e 19.9 são cinco margens empilhadas; cresce com cada fold que você adiciona.",
+      "related": [
+        "accumulator",
+        "bookmaker-margin",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Accumulator calculator",
+          "href": "/tools/accumulator-calculator"
+        }
+      ],
+      "_src_hash": "94a6586ebee2ec9e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "single",
+      "term": "Single",
+      "short": "Uma seleção, uma aposta — a unidade de referência contra a qual todas as outras estruturas de apostas devem ser comparadas.",
+      "definition": [
+        "Uma single coloca um valor em um único resultado com uma única odd. É a expressão mais limpa de uma opinião de apostador e a base para avaliar qualquer estrutura mais sofisticada: qualquer acumulada, sistema ou builder é apenas singles colados juntos com margem extra.",
+        "Apostadores profissionais apostam quase exclusivamente em singles exatamente por isso — cada aposta existe por seu próprio valor, paga a margem uma única vez e resolve sem arrastar outras opiniões junto com ela."
+      ],
+      "example": "Três opiniões a 2.00 cada, uma unidade total para usar. Três singles de ⅓-unidade: cada uma paga 0.67 de lucro quando acerta, independente das outras. A mesma unidade em uma trixeta paga 7× quando as três entram (≈13% das vezes com odds justas) e zero caso contrário — mesmas opiniões, tripla margem, perfil tudo ou nada.",
+      "related": [
+        "accumulator",
+        "flat-staking",
+        "expected-value"
+      ],
+      "see": [],
+      "_src_hash": "1f80d8238ba69ff4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "double",
+      "term": "Double",
+      "short": "Uma acumulada de dois palpites: ambas as seleções devem vencer, as odds se multiplicam, as margens se acumulam duas vezes.",
+      "definition": [
+        "Uma double multiplica dois preços em uma aposta que precisa de ambos os palpites ganharem. É a menor acumulada e a ilustração mais clara da economia dessa família: a probabilidade se multiplica para baixo enquanto a margem da casa se acumula para cima.",
+        "Doubles têm um caso de uso honesto: dois palpites genuinamente subavaliados, onde multiplicar duas margens positivas as potencializa. Dois palpites com preço justo em uma double são estritamente piores que os mesmos palpites como simples."
+      ],
+      "example": "Dois palpites a 2.10, cada um tecnicamente um 50/50: a double paga 4.41 contra uma chance real de 25% (fair 4.00) — espera, isso é valor apenas se os palpites fossem precificados ACIMA do fair. Em palpites fair de 2.00, um palpite double de 2.10 carrega valor; dois deles potencializam para 4.41 vs fair 4.00. Palpites carregados em 1.90 potencializam do jeito errado: 3.61 pagos vs fair 4.00.",
+      "related": [
+        "accumulator",
+        "treble",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "4cbefc0335830c43",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "treble",
+      "term": "Treble",
+      "short": "Um acumulador de três seleções — as odds se multiplicam através de três preços, e o lucro da casa de apostas também.",
+      "definition": [
+        "Um treble exige que três seleções ganhem, com as três odds multiplicadas em um único prêmio. Com margens típicas, cada perna contribui com ~5% de perda esperada, então a estrutura retira aproximadamente 15% antes do começo — o preço do número maior no cupom.",
+        "O perfil de variância é o verdadeiro produto: trebles em odds moderadas saem com frequência suficiente para parecer alcançável enquanto pagam o bastante para parecer uma vitória. Sentimentos são o produto; a margem é o custo."
+      ],
+      "example": "Três pernas a 1.90 (valor justo 2.00): treble paga 6.86 contra um valor justo de 8.00 — você aceita 86% do valor justo, ou seja, uma taxa estrutural de 14%, pelo prazer de um prêmio único maior em vez de três prêmios justos.",
+      "related": [
+        "double",
+        "accumulator",
+        "fold"
+      ],
+      "see": [],
+      "_src_hash": "713f96eff080d608",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "stake",
+      "term": "Stake",
+      "short": "O valor arriscado em uma aposta — o número em que todos os retornos, perdas e planos de apostas são denominados.",
+      "definition": [
+        "O stake é o que você coloca em risco. As odds decimais o incluem no retorno cotado (odds × stake = total recebido, incluindo o stake); as odds fracionárias cotam o lucro em relação a ele. Toda conversa sensata sobre apostas é sobre dimensionar este número, não sobre escolher vencedores.",
+        "Duas disciplinas cobrem a maior parte do que importa: dimensionar stakes como uma fração fixa pequena de um bankroll dedicado, e nunca aumentar o stake para perseguir uma perda. A matemática da ruína é impulsionada quase inteiramente pelo dimensionamento do stake, não pela qualidade das escolhas."
+      ],
+      "example": "£10 com odds decimais de 2.50 retorna £25 no total — £15 de lucro mais o stake de £10. A mesma aposta em termos de odds fracionárias é 6/4: £15 de lucro por £10 de stake. Mesma aposta, mesmo dinheiro, duas linguagens diferentes.",
+      "related": [
+        "flat-staking",
+        "bankroll-management",
+        "unit"
+      ],
+      "see": [],
+      "_src_hash": "725de29c74bc72a5",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "unit",
+      "term": "Unit",
+      "short": "A aposta padrão de um apostador — geralmente 1–2% do bankroll — a moeda em que registros honestos são mantidos.",
+      "definition": [
+        "Uma unit é uma aposta padrão pessoal, tipicamente 1–2% do bankroll. Tipsters e quem mantém registros citam lucro em units ('+14.2u') porque separa o julgamento do tamanho da carteira: +14 units significa a mesma coisa se uma unit é £2 ou £200.",
+        "Units também expõem disciplina de stakes. Um registro citando '10-unit locks' e '0.5-unit longshots' está dizendo que a confiança varia muito de aposta para aposta — o que historicamente se correlaciona com registros que param de ser publicados."
+      ],
+      "example": "Bankroll £1.000, unit 1% = £10. Uma temporada fechando +18.4u rendeu £184 com stakes fixas. Nosso próprio registro publicado usa stakes fixas de 1 unit exatamente por essa razão — o número não pode ser inflacionado redimensionando apostas após boas sequências.",
+      "related": [
+        "flat-staking",
+        "bankroll-management",
+        "roi-and-yield"
+      ],
+      "see": [
+        {
+          "label": "Our settled record, flat 1u",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "195038bc8d5b4bef",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-on-odds-against",
+      "term": "Odds-On / Odds-Against",
+      "short": "Se o preço implica mais ou menos de 50% de chance — abaixo ou acima de 2.00 em formato decimal.",
+      "definition": [
+        "Odds-on significa que o preço implica chance melhor que par: decimal abaixo de 2.00, fracional com o número maior à direita (1/2). Odds-against é o oposto: decimal acima de 2.00, fracional 2/1 e acima. Par (2.00) é o ponto de equilíbrio.",
+        "O vocabulário importa porque a psicologia difere em cada lado. Favoritos em odds-on parecem seguros e são sistematicamente supervalorizados pelo dinheiro amador; underdogs em odds-against parecem bilhetes de loteria. Nenhum desses sentimentos tem qualquer relação com valor, que só existe na lacuna entre preço e probabilidade real."
+      ],
+      "example": "1/2 fracional = 1.50 decimal = 66.7% implícito: odds-on. 5/2 = 3.50 = 28.6% implícito: odds-against. Um favorito de 1.50 que realmente vence 60% das vezes é uma aposta ruim; um outsider de 3.50 que vence um terço das vezes é uma boa aposta.",
+      "related": [
+        "odds-formats",
+        "implied-probability",
+        "longshot-bias"
+      ],
+      "see": [
+        {
+          "label": "Odds converter",
+          "href": "/tools/odds-converter"
+        }
+      ],
+      "_src_hash": "250380da66bc1f85",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "vig",
+      "term": "Vig (Vigorish / Juice)",
+      "short": "O nome americano para a margem da casa de apostas — a taxa embutida em cada par de odds.",
+      "definition": [
+        "Vig, vigorish ou juice é gíria de apostas dos EUA para a comissão da casa de apostas — a mesma coisa que apostadores europeus chamam de margem ou overround. Não é um item separado no seu comprovante; fica escondido dentro das odds que juntas implicam mais de 100% de probabilidade.",
+        "A expressão americana clássica é -110/-110 em um point spread: apostar 110 para ganhar 100 em qualquer lado. Cada lado implica 52,4%, o par soma 104,8%, e os 4,8% representam o vig."
+      ],
+      "example": "-110 em ambos os lados: 52,38% implícito em cada um, total 104,76%. Um apostador escolhendo spreads aleatoriamente perde 4,76 centavos por dólar apostado a longo prazo — esse é o vig fazendo seu trabalho, sem necessidade de má sorte.",
+      "related": [
+        "bookmaker-margin",
+        "overround",
+        "point-spread"
+      ],
+      "see": [
+        {
+          "label": "Margin calculator",
+          "href": "/tools/margin-calculator"
+        }
+      ],
+      "_src_hash": "3a6a05972381e3bc",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "moneyline",
+      "term": "Moneyline",
+      "short": "Formato de odds americano: números negativos mostram quanto você precisa apostar para ganhar 100, positivos mostram quanto 100 ganha — e é o nome americano para o mercado de vitória.",
+      "definition": [
+        "Uma odd moneyline de -150 significa apostar 150 para ganhar 100 (decimal 1,67); +240 significa 100 ganha 240 (decimal 3,40). Negativo marca favoritos, positivo marca azarões. 'Moneyline' também nomeia o mercado em si — apostar no vencedor sem spread, que no futebol inclui o empate como sua própria linha.",
+        "A conversão é mecânica: decimal = 1 + 100/|ML| para negativos, 1 + ML/100 para positivos. Fazer na cabeça — ou deixar um conversor fazer — é o primeiro passo para comparar preços cotados em US contra qualquer outra coisa."
+      ],
+      "example": "-125 = 1,80 decimal = 55,6% implícito. +210 = 3,10 = 32,3%. Uma moneyline de três caminhos no futebol de -125 / +260 / +330 implica 55,6 + 27,8 + 23,3 = 106,7% — uma margem de 6,7% no trio.",
+      "related": [
+        "odds-formats",
+        "vig",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "Odds converter",
+          "href": "/tools/odds-converter"
+        }
+      ],
+      "_src_hash": "668a9894bd102ded",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "point-spread",
+      "term": "Point Spread",
+      "short": "O handicap americano: uma linha de pontos onde ambos os lados são cotados próximo ao par, com empates (push) devolvidos em números inteiros.",
+      "definition": [
+        "Um point spread desfavorece o favorito por uma margem fixa — marque -6.5 pontos e ele deve vencer por sete. Ambos os lados são cotados próximo a -110, o lucro da casa vivendo no vigorish em vez de odds de vitória enviesadas. Spreads de números inteiros podem cair exatamente (um push) e devolvem as apostas; linhas de meio-ponto não podem.",
+        "É a mesma ideia do handicap asiático no futebol: converter um desequilíbrio em um lance de moeda e cobrar pela conversão. A particularidade do futebol é que a baixa pontuação torna as linhas de meio-gol dominantes, enquanto os esportes americanos vivem de 3.5s e 6.5s."
+      ],
+      "example": "Favorito -3 a -110: vitória por exatamente 3 resulta em push (stake devolvido), por 4+ vence, por menos perde. O -110 em ambos os lados significa que você deve ganhar do spread 52.4% das vezes apenas para se equilibrar — o número contra o qual todo recorde 'against the spread' deveria ser julgado.",
+      "related": [
+        "asian-handicap",
+        "vig",
+        "push"
+      ],
+      "see": [],
+      "_src_hash": "d706c29ea8be4e8f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "push",
+      "term": "Push",
+      "short": "Uma aposta que incide exatamente na linha — stake devolvido, sem ganho, sem perda e sem ajuda para cumprir requisitos de rollover.",
+      "definition": [
+        "Um push ocorre quando o resultado bate numa linha inteira exatamente: under 3.0 gols com a partida em 3, um spread -3 que perde por 3. O stake retorna; a aposta é um não-evento. Handicaps asiáticos usam a mesma mecânica em suas linhas inteiras e meia-unidade.",
+        "Duas consequências práticas: apostas em push não contam para rollover de bônus na maioria das casas, e em acumuladores um lance em push normalmente cai — o cupom recalcula nas odds restantes em vez de morrer."
+      ],
+      "example": "Over 2.5/3.0 (um total asiático dividido) com a partida terminando 3–0: a meia de 2.5 ganha, a de 3.0 faz push — você recebe metade do stake e fica com a outra metade de volta. Numa linha over 3.0 simples, todo o stake retornaria.",
+      "related": [
+        "asian-handicap",
+        "void-bet",
+        "over-under"
+      ],
+      "see": [],
+      "_src_hash": "f34f6898ef0dc5cf",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-exchange",
+      "term": "Bolsa de Apostas",
+      "short": "Um mercado onde apostadores apostam uns contra os outros — apoiar ou rejeitar qualquer resultado, com o operador cobrando uma comissão em vez de margem.",
+      "definition": [
+        "Uma bolsa faz a correspondência entre clientes: um apoia um resultado, outro o rejeita, e a plataforma cobra uma pequena comissão sobre ganhos líquidos em vez de embutir margem nos preços. As odds são definidas por oferta e demanda, razão pela qual os preços da bolsa são a referência que apostadores profissionais usam para comparar casas de apostas.",
+        "O porém é a liquidez: um preço da bolsa só existe no volume que outros clientes estão dispostos a corresponder. Grandes mercados de futebol são profundos; ligas obscuras e mercados exóticos podem ser desertos onde o preço teoricamente melhor não pode ser efetivamente tomado."
+      ],
+      "example": "Uma casa de apostas cota 2.00 em um time que a bolsa negocia a 2.10. Após 2% de comissão, o retorno de apoiar na bolsa é 2.10 − (1.10 × 0,02) ≈ 2.078 — ainda melhor que 2.00. Essa diferença, amostrada honestamente ao longo do tempo, é aproximadamente o custo da margem da casa de apostas.",
+      "related": [
+        "lay-betting",
+        "closing-line-value",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "ff50d3cd02feb876",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "lay-betting",
+      "term": "Lay Betting",
+      "short": "Apostar que algo NÃO acontecerá — atuar como a casa de apostas numa exchange.",
+      "definition": [
+        "Fazer uma lay é aceitar a aposta de outro: você ganha o stake dele se o resultado não sair, e paga na odd se sair. Seu liability numa lay de 4.00 é três vezes o stake do apostador — a assimetria que iniciantes subestimam.",
+        "Lay completa o arsenal: mercados de futebol de três vias podem ser atacados de qualquer lado ('esse favorito tem odd muito curta' vira acionável sem precisar escolher quem ganha), e fazer hedge de uma posição vira questão de fazer lay do que você apostou antes."
+      ],
+      "example": "Fazer lay de £10 a 4.00: se o resultado não sair você ganha £10; se sair você paga £30. A aposta implícita é 'isso acontece menos de 25% das vezes' — precificado, dimensionado e liquidado exatamente como qualquer outra opinião.",
+      "related": [
+        "betting-exchange",
+        "hedging",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "ba976ad193de42aa",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "dutching",
+      "term": "Dutching",
+      "short": "Distribuição de apostas entre vários resultados para que qualquer vencedor retorne o mesmo lucro — cobertura, não arbitragem.",
+      "definition": [
+        "Dutching distribui sua aposta entre dois ou mais resultados proporcionalmente às suas odds, para que qualquer um que vença pague o mesmo valor. Apostar em três placar corretos ou dois marcadores dessa forma transforma várias opiniões em uma única posição com retorno conhecido.",
+        "A armadilha é confundir cobertura com segurança: os resultados que você NÃO cobriu ainda perdem toda a aposta. Dutching com probabilidade implícita combinada abaixo de 100% não é arbitragem — é uma aposta normal cuja perda cobre tudo fora do seu conjunto."
+      ],
+      "example": "Apostar em 1-1 com odds 7.0, 2-1 com odds 9.0, 1-0 com odds 10.0 com um total de £20 divididos em 8.87/6.90/6.21... qualquer um dos três resultados retorna ≈£62 (cobertura implícita ~32%). Os outros 68% dos placares perdem os £20 inteiros — essa é a aposta que você realmente fez.",
+      "related": [
+        "hedging",
+        "correct-score",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "Dutching calculator",
+          "href": "/tools/dutching-calculator"
+        }
+      ],
+      "_src_hash": "9bae402a7a10c3e1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "hedging",
+      "term": "Hedge (Proteção de Aposta)",
+      "short": "Colocar uma aposta oposta para travar lucro ou limitar perda em uma posição existente — pago em margem, duas vezes.",
+      "definition": [
+        "Hedge fecha ou reduz uma posição apostando o outro lado: lay do time que você apoiou ante-post, back do empate contra a última perna do seu acumulador vencedor, cash out (que é apenas o bookmaker fazendo hedge para você, pela cotação dele). Feito com odds justas, um hedge converte variância em um número certo.",
+        "O custo é pagar margem em uma segunda aposta. Fazer hedge sistemático de cada posição vencedora é um imposto sobre seu próprio sucesso; os usos honestos são raros e específicos — travar um acumulador que muda a vida, ou sair de uma posição cuja premissa morreu com a notícia do time."
+      ],
+      "example": "£10 four-fold a 15.0 tem três pernas vencidas; o adversário da última perna está sendo negociado a 2.5 em uma exchange. Fazer lay/back para igualar tranca aproximadamente £45 de qualquer forma que a última partida termine, contra £150-ou-nada sem hedge. Se esse trade é certo depende da cotação, não dos nervos.",
+      "related": [
+        "cash-out",
+        "lay-betting",
+        "dutching"
+      ],
+      "see": [
+        {
+          "label": "Hedging calculator",
+          "href": "/tools/hedging-calculator"
+        }
+      ],
+      "_src_hash": "265417d8376be4b6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "overround",
+      "term": "Overround",
+      "short": "O valor pelo qual as probabilidades implícitas de um mercado excedem 100% — a margem, vista pelo lado da casa de apostas.",
+      "definition": [
+        "Some as probabilidades implícitas de cada resultado em um mercado e o excesso sobre 100% é o overround: um mercado 1X2 que soma 105,5% tem um overround de 5,5%. É o mesmo conceito que a margem da casa de apostas, apenas medido no mercado inteiro em vez de ser descrito como uma taxa.",
+        "O overround varia por mercado e casa de apostas — ligas principais em casas de apostas competitivas ficam em 2–5%, mercados exóticos e ligas pequenas entre 8–15%. Verificá-lo leva trinta segundos e mostra quais são os custos antes de qualquer análise entrar em jogo."
+      ],
+      "example": "Odds 1.95 / 3.60 / 4.10 implicam 51,3% + 27,8% + 24,4% = 103,5% — um overround de 3,5%, decente. O mesmo confronto em outro lugar com 1.83 / 3.40 / 3.90 implica 107,7% — você paga o dobro da taxa pelas mesmas probabilidades.",
+      "related": [
+        "bookmaker-margin",
+        "vig",
+        "fair-odds"
+      ],
+      "see": [
+        {
+          "label": "Live margin research across our leagues",
+          "href": "/research"
+        }
+      ],
+      "_src_hash": "7ac9166d8f6aa038",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "goal-line",
+      "term": "Goal Line (Total Asiático)",
+      "short": "Totais com mecânica asiática: linhas inteiras, meias e fracionadas onde aterrissar exatamente reembolsa parte ou todo o stake.",
+      "definition": [
+        "A goal line é over/under com a maquinaria de reembolso do handicap asiático. Linhas inteiras (3.0) empurram quando o total aterrissa exatamente; linhas fracionadas (2.5/3.0) liquidam metade do stake em cada componente; linhas meias (2.5) se comportam como o mercado clássico.",
+        "Os reembolsos custam odds: over 2.5/3.0 paga menos que over 2.5 porque parte do seu downside foi removida. Se essa troca vale a pena é uma questão de precificação, e linhas fracionadas são onde as casas escondem seus preços mais desiguais — compare contra a linha simples antes de aceitar uma."
+      ],
+      "example": "Over 2.75 (isto é 2.5/3.0 fracionado) com £10: partida termina 3–1 — ambas as metades vencem. Termina 3–0... total 3: a metade 2.5 vence, a metade 3.0 empurra → receba £5, reembolso £5. Termina 2–0: ambas as metades perdem. A 'quarter line' é apenas essas duas apostas agrafadas juntas.",
+      "related": [
+        "over-under",
+        "asian-handicap",
+        "push"
+      ],
+      "see": [],
+      "_src_hash": "ff9d0b027c55b632",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bet-builder",
+      "term": "Bet Builder (Same-Game Multi)",
+      "short": "Combinando vários mercados de UMA ÚNICA partida em uma única aposta — onde a precificação correlacionada favorece silenciosamente a casa.",
+      "definition": [
+        "Um bet builder multiplica seleções da mesma partida — resultado, ambos marcam, cartões, um goleador — em um único preço. Como as pernas são correlacionadas (um time vencendo 3–0 torna muito mais provável seu atacante marcar), a precificação justa exige modelar a probabilidade conjunta, não multiplicar valores independentes.",
+        "Essa correlação é o esconderijo da margem da casa: as casas precificam combinações populares positivamente correlacionadas bem abaixo da multiplicação ingênua, e a margem em builders rotineiramente dobra o vig do mercado único. O produto é divertido por design e caro por construção."
+      ],
+      "example": "Time para vencer (2.00) + acima de 2.5 (2.00) como independentes multiplicam para 4.00, mas os resultados se sobrepõem pesadamente — um preço conjunto justo poderia ser 3.20. O builder cota 2.90. Você paga tanto o ajuste de correlação QUANTO uma camada de margem extra pela conveniência de um único cupom.",
+      "related": [
+        "accumulator",
+        "bookmaker-margin",
+        "btts"
+      ],
+      "see": [
+        {
+          "label": "Model-screened combinations instead",
+          "href": "/tools/acca-builder"
+        }
+      ],
+      "_src_hash": "fe2be9f9ee3080ae",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "acca-insurance",
+      "term": "Acca Insurance",
+      "short": "Uma promoção que reembolsa um acumulador que falha em exatamente uma seleção — geralmente como aposta grátis, sempre precificada no produto.",
+      "definition": [
+        "Acca insurance reembolsa cupons onde uma seleção não sai — tipicamente 5+ seleções obrigatórias, reembolso limitado e pago como aposta grátis sem retorno (SNR), não em dinheiro. O gatilho (exatamente um perdedor) é mais raro do que parece: cupons geralmente falham em duas ou mais seleções.",
+        "Precifique o produto como um pacote: o valor esperado do seguro em taxas realistas de erro em uma seleção é uma fração da margem extra que o acumulador qualificador carrega. Ameniza a psicologia da variância; não altera o sinal aritmético."
+      ],
+      "example": "Cinco seleções a 60% cada chance real: P(exatamente uma falha) = 5 × 0,4 × 0,6⁴ ≈ 25,9%. Um reembolso de £10 como aposta grátis SNR vale ~£7 quando acionado → ≈£1,80 de valor esperado, contra ~£2,50 de margem extra empilhada na quíntupla em si.",
+      "related": [
+        "accumulator",
+        "free-bet",
+        "stake-not-returned"
+      ],
+      "see": [],
+      "_src_hash": "ec3bd1c5d6af93ee",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "price-boost",
+      "term": "Price Boost (Odds Boost)",
+      "short": "Uma odd melhorada em marketing em um resultado escolhido — às vezes com valor genuíno, sempre vale conferir contra o mercado sem boost.",
+      "definition": [
+        "Um price boost eleva as odds em uma seleção que a casa escolhe, geralmente com limite de stake. Como a odd base inclui margem, um boost frequentemente apenas o devolve ao preço justo — mas ocasionalmente, especialmente em mercados comparáveis com exchange, ele genuinamente ultrapassa isso.",
+        "A verificação é mecânica: compare a odd com boost contra a melhor odd sem boost e o exchange. Boosted 2.20 quando casas sharp cotam 2.10 é valor real em um tamanho limitado; boosted 2.20 quando o preço justo é 2.35 é aritmética de marketing."
+      ],
+      "example": "Boost: 2.00 → 2.20, máximo £10 de stake. O exchange negocia o mesmo resultado a 2.16, aproximadamente 2.12 justo após comissão. Aceitar o boost carrega (2.20 / 2.12 − 1) ≈ +3.8% de valor esperado no stake limitado — vale a pena aceitar, e não vale extrapolação para as odds sem boost da operadora.",
+      "related": [
+        "value-bet",
+        "closing-line-value",
+        "free-bet"
+      ],
+      "see": [],
+      "_src_hash": "02171ba706bfb8f8",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "stake-not-returned",
+      "term": "Stake Not Returned (SNR)",
+      "short": "A regra de liquidação de aposta grátis: os ganhos são pagos, o crédito em si nunca é — reduzindo o valor do crédito pela metade em odds pares.",
+      "definition": [
+        "SNR significa que uma aposta grátis retorna apenas os ganhos: um crédito de £25 com odds 2.00 paga £25, não £50, porque a aposta nunca foi seu dinheiro. Quase todas as apostas grátis liquidam desta forma, o que define seu valor real — um crédito converte em (odds−1)/odds do valor de face a preços justos.",
+        "A consequência: créditos extraem mais em odds maiores (50% do valor em 2.00, 75% em 4.00) e são desperdiçados em favoritos curtos. É o fato mais útil sobre apostas grátis e o menos divulgado."
+      ],
+      "example": "Crédito SNR de £25: com odds 1.40 só pode ganhar £10 — 40% do valor perdido antes do apito. Com odds 5.00 ganha £100, convertendo ~80% do valor de face na expectativa a um preço justo. Mesmo crédito, valor real dobrado, uma decisão.",
+      "related": [
+        "free-bet",
+        "expected-value",
+        "wagering-requirements"
+      ],
+      "see": [
+        {
+          "label": "Free bets explained in full",
+          "href": "/guides/free-bets-explained"
+        }
+      ],
+      "_src_hash": "e29e3c9a2f1ebcf5",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "poisson-distribution",
+      "term": "Distribuição de Poisson",
+      "short": "O modelo estatístico por trás da maioria das cotações de futebol — gols como eventos raros e independentes com taxa média conhecida.",
+      "definition": [
+        "A distribuição de Poisson fornece a probabilidade de k eventos quando eventos chegam independentemente a uma taxa média λ conhecida: P(k) = e^−λ·λᵏ/k!. Alimentada com os gols esperados de um time, ela produz a chance de 0, 1, 2, 3… — e as distribuições de dois times se combinam em placar, 1X2, totais e BTTS.",
+        "É imperfeita de formas conhecidas — gols se concentram ligeiramente, empates saem um tanto sub-precificados — e todo modelo de futebol sério, incluindo o nosso, parte dela e faz correções a partir daí. Seu poder está em transformar uma entrada honesta (gols esperados) em uma superfície de probabilidade completa."
+      ],
+      "example": "λ = 1,4 gols esperados: P(0) = e^−1,4 ≈ 24,7%, P(1) ≈ 34,5%, P(2) ≈ 24,2%. Duas distribuições de Poisson independentes em 1,4 e 1,1 geram P(1–1) ≈ 34,5% × 36,6% ≈ 12,6% — a aritmética dentro de cada odd de placar exato que você jamais viu.",
+      "related": [
+        "xg",
+        "expected-value",
+        "correct-score"
+      ],
+      "see": [
+        {
+          "label": "How our model works",
+          "href": "/model"
+        }
+      ],
+      "_src_hash": "c003f1cd5ff1fdfb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "regression-to-the-mean",
+      "term": "Regressão à Média",
+      "short": "Sequências extremas derivam de volta ao verdadeiro nível — a força estatística por trás de 'forma é temporária, qualidade é permanente'.",
+      "definition": [
+        "Quando o desempenho fica bem acima ou abaixo do nível subjacente de um time, o próximo período tende a ficar mais próximo daquele nível — não por causa do momentum ou uma maldição, mas porque extremos têm componente de sorte e sorte não se repete sob demanda. Um atacante convertendo 35% dos chutes converterá próximo aos seus 12% de carreira no próximo mês.",
+        "Para apostadores a lição é sobre precificação de narrativas: o mercado frequentemente extrapola sequências quentes justamente quando a regressão é mais provável, razão pela qual descontar extremos com odds inflacionadas é um ângulo durável e perseguir extremos é uma perda durável."
+      ],
+      "example": "Um time meio de tabela vence seis seguidas, três por um gol com xG deficits pesados. Seus números subjacentes precificam o próximo jogo em 45% de probabilidade de vitória; o mercado seguidor da sequência precifica 58%. A regressão não garante derrota — ela diz que 1.72 em uma chance de 45% é o preço errado.",
+      "related": [
+        "variance",
+        "sample-size",
+        "xg"
+      ],
+      "see": [],
+      "_src_hash": "a5cb887c49a4a007",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "sample-size",
+      "term": "Tamanho da Amostra",
+      "short": "Quantas observações sustentam uma estatística — a diferença entre evidência e anedota, em um número.",
+      "definition": [
+        "Toda estatística de apostas é uma estimativa cuja confiabilidade cresce com o número de observações por trás dela. Cinco jogos de dados de BTTS dizem quase nada; cinquenta dizem algo; quinhentos fixam a taxa. O erro padrão diminui com a raiz quadrada de n — quadruplique os dados para reduzir o ruído pela metade.",
+        "O filtro prático: antes de agir sobre qualquer taxa ('acertaram over 2.5 em 8 de 10'), pergunte qual é n e o que a taxa base diz. A maioria das 'tendências' vendidas aos apostadores são amostras de dez jogos de uma moeda que sempre esteve perto de 50%."
+      ],
+      "example": "Uma taxa de 60% de over-2.5 em 10 jogos tem um erro padrão de ±15.5% — a taxa verdadeira está plausivamente em qualquer lugar entre 45% e 75%, abrangendo 'apostar over' e 'apostar under'. Os mesmos 60% de 200 jogos (±3.5%) é de fato informação.",
+      "related": [
+        "variance",
+        "regression-to-the-mean",
+        "win-rate"
+      ],
+      "see": [],
+      "_src_hash": "0259ad38e8f46e75",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "longshot-bias",
+      "term": "Viés Favorito–Longshot",
+      "short": "A inclinação documentada do mercado: longshots são sistematicamente precificados acima do valor pela demanda, favoritos comparativamente justos.",
+      "definition": [
+        "Ao longo de décadas de estudos e mercados, apostas com odds altas retornam pior que apostas com odds baixas: dinheiro recreativo adora payouts em formato loteria, as casas ajustam os preços de longshots accordingly, e a margem da casa se concentra exatamente onde estão os sonhos.",
+        "O viés é um dos poucos fatos de mercado estável o suficiente para construir regras: desconfia do teu próprio entusiasmo por longshots, exija margem extra antes de pegar 6.0+, e lembre que a maioria do 'value' que um modelo ingênuo encontra em odds altas é o viés rindo do modelo. Nosso próprio v1 foi 0-por-8 exatamente nesse rake."
+      ],
+      "example": "Achado típico: apostas em 1.50 retornam ~97p por £1 investida; apostas em 15.0 retornam ~85p. Mesmo esporte, mesmas casas, mesmo dia — a diferença é onde a margem se esconde. Um modelo que ignora isso vai 'encontrar' suas maiores edges precisamente onde os preços são piores.",
+      "related": [
+        "value-bet",
+        "variance",
+        "bookmaker-margin"
+      ],
+      "see": [
+        {
+          "label": "Our model's odds caps and why",
+          "href": "/model"
+        }
+      ],
+      "_src_hash": "365d89426d4636e4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "home-advantage",
+      "term": "Vantagem de Mando",
+      "short": "A vantagem estrutural de jogar em casa — vale aproximadamente 0,3–0,4 gols, variando por liga, época e presença de torcida.",
+      "definition": [
+        "Times mandantes marcam mais e sofrem menos gols que os mesmos times visitantes — historicamente vale cerca de 0,3–0,4 gols por partida, impulsionado pelos efeitos da torcida sobre jogadores e árbitros, viagem e familiaridade. O efeito é real, específico de cada liga, e vem diminuindo lentamente no futebol.",
+        "Todo modelo sério carrega taxas separadas de mando e visitante em vez de uma única força do time; o nosso faz isso. O ângulo de apostas não é que a vantagem de mando exista — o mercado sabe — mas que seu TAMANHO varia por liga e temporada, e as odds definidas na média global precificam errado os extremos."
+      ],
+      "example": "Nas nossas ligas ajustadas a taxa de gols em mando gira em torno de ~1,4 vs ~1,1 visitante — uma vantagem de 0,3 gol que vale aproximadamente 8–10 pontos de probabilidade de vitória em um confronto equilibrado. Uma liga cuja temporada atual está rodando materialmente acima ou abaixo de sua própria média é onde as odds de totalizadores e 1X2 começam a errar primeiro.",
+      "related": [
+        "poisson-distribution",
+        "xg",
+        "regression-to-the-mean"
+      ],
+      "see": [
+        {
+          "label": "Home advantage by league — live research",
+          "href": "/research/home-advantage"
+        }
+      ],
+      "_src_hash": "9838d9bf65548ef4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "team-form",
+      "term": "Forma",
+      "short": "Resultados recentes como sinal — fracamente preditivo isoladamente, útil apenas ponderado contra a qualidade da oposição e números subjacentes.",
+      "definition": [
+        "Forma resume resultados recentes — VVEV aparece em todo site de estatísticas. Forma bruta é um preditor fraco: cinco resultados carregam ruído imenso, qualidade da oposição varia enormemente, e um gol desviado muda uma letra. Taxas subjacentes (chutes, xG, posição de campo) predizem o próximo jogo melhor do que as letras fazem.",
+        "Forma ganha relevância quando é ponderada (partidas recentes pesam mais), ajustada para quem foi enfrentado, e cruzada com os números subjacentes. Nosso modelo aplica decaimento temporal exatamente por isso — um resultado da semana passada diz mais do que um de outubro, mas nenhum dos dois anula uma temporada de taxas."
+      ],
+      "example": "Time A: DDVDD contra os cinco primeiros da liga. Time B: VVVVV contra os cinco últimos. As letras dizem que B está voando; taxas ajustadas pela oposição frequentemente mostram que A é o time mais forte em igualdade de condições — e o preço de mercado geralmente fica em algum lugar entre as duas histórias.",
+      "related": [
+        "sample-size",
+        "regression-to-the-mean",
+        "xg"
+      ],
+      "see": [],
+      "_src_hash": "aa8eabb6547b8832",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "head-to-head",
+      "term": "Confronto Direto (H2H)",
+      "short": "Os confrontos anteriores entre dois times — muito divulgado, pouco preditivo, ocasionalmente informativo em conjunto.",
+      "definition": [
+        "Registros de H2H coletam encontros anteriores entre dois times. Os elencos se renovam e técnicos mudam, então uma goleada de 3–0 de três temporadas atrás descreve times que não existem mais — como preditor do próximo resultado, o histórico de H2H adiciona quase nada uma vez que a força atual é considerada.",
+        "Os usos defensáveis são agregados: confrontos que persistentemente apresentam totais altos ou baixos de gols ao longo de vários encontros, ou padrões específicos de mandante com tamanhos reais de amostra. Contexto, não sinal — nosso modelo ignora H2H completamente e trabalha com base nas odds atuais de gols."
+      ],
+      "example": "Dez confrontos com média de 3,4 gols contra uma norma da liga de 2,6 vale a pena conferir a linha de totais — como um aviso para verificar as odds de ataque atuais, não como uma aposta. Três confrontos com qualquer média é uma lembrança guardada com carinho.",
+      "related": [
+        "sample-size",
+        "team-form",
+        "over-under"
+      ],
+      "see": [
+        {
+          "label": "H2H records for every covered pairing",
+          "href": "/h2h"
+        }
+      ],
+      "_src_hash": "32642792464a4500",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fixture-congestion",
+      "term": "Congestionamento de Fixtures",
+      "short": "Acúmulo de partidas entre semana e fim de semana: risco de rotação, jogadores cansados e drift nas odds dos totais com defasagem de mercado.",
+      "definition": [
+        "Congestionamento é três partidas em oito dias — copas entre semana, viagens continentais, acúmulos em dezembro. Os efeitos são mensuráveis: escalações rotacionadas, queda leve no rendimento de alta intensidade e menos gols dos jogadores cansados no final dos acúmulos.",
+        "A relevância nas apostas é temporal: odds definidas no início da semana podem ficar defasadas em relação a rotações confirmadas, e apostas em mercados de jogadores (artilheiros, cartões) são as mais expostas a um nome simplesmente não começar como titular. Confirme o boletim de time antes de qualquer aposta sensível a congestionamento."
+      ],
+      "example": "Um time que disputa sua terceira partida em sete dias, após viagem europeia, rotaciona quatro titulares. A odd de 1X2 quase não se move (o mercado precifica o elenco), mas o atacante cotado a 2.10 em qualquer momento está no banco — a aposta morreu no boletim de escalação, não na bola rolando.",
+      "related": [
+        "team-form",
+        "anytime-goalscorer",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "32368c4d7bd11aef",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "dead-rubber",
+      "term": "Dead Rubber",
+      "short": "Uma partida sem nada em jogo para um ou ambos os lados — onde a motivação quebra os modelos e as odds.",
+      "definition": [
+        "Um dead rubber não decide nada: o grupo já venceu, a segurança já foi garantida, a rodada final de um campeonato definido. Assimetrias de motivação tão grandes quebram modelos baseados em taxa — um time forte sem nada a jogar descansa jogadores e vai com calma, e sua força 'real' temporariamente não é sua força.",
+        "Essas são as partidas onde probabilidades de modelo (inclusive nossas) merecem a menor confiança e onde a vantagem informacional do mercado — quem realmente precisa dos pontos — importa mais. Partidas do final da temporada e da rodada final de grupo merecem uma checagem de motivação antes de qualquer aposta."
+      ],
+      "example": "Última rodada do grupo: time já qualificado (taxa de vitória 60%) visita um time que precisa de um ponto para sobreviver. O histórico de tais assimetrias sugere que a chance efetiva do favorito cai 10–15 pontos — 1.67 em um favorito desatento é a clássica armadilha do dead rubber.",
+      "related": [
+        "team-form",
+        "fixture-congestion",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "ebba46dd36eb2f3e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "maximum-payout",
+      "term": "Pagamento Máximo",
+      "short": "O limite que a casa de apostas pagará em uma única aposta ou cliente por dia — a letra miúda que reduz os prêmios de acumuladores.",
+      "definition": [
+        "Toda casa de apostas estabelece limites de pagamento — por aposta, por mercado, por cliente por dia — com limites variando conforme a liga e o esporte: competições de topo têm os maiores limites, as obscuras muito menores. Um acumulador de 12 seleções cujo pagamento nominal excede o limite paga apenas o limite, independentemente do que o bilhete multiplicou.",
+        "Verifique o limite antes de montar qualquer aposta tipo loteria, e note qual liga no seu bilhete tem o MENOR limite — acumuladores mistos são limitados pelo componente mais fraco em muitas casas."
+      ],
+      "example": "Bilhete diz R$ 2 × 8.000 = R$ 16.000; as condições limitam pagamentos naquela liga a R$ 10.000. Seis seleções eram ligas principais, mas uma seleção da reserve-league bielorrussa puxou todo o bilhete para o limite de tier baixo — a diferença de R$ 6.000 estava na letra miúda o tempo todo.",
+      "related": [
+        "accumulator",
+        "fold",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "d4c8a143702c5985",
+      "_model": "claude-haiku-4-5-20251001"
     }
   ]
 }

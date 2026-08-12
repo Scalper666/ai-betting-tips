@@ -2,7 +2,12 @@
 import Base from '../layouts/Base.astro';
 import predictions from '../data/predictions.json';
 import oddsHistory from '../data/odds_history.json';
-import { matchSlug, kickoffLabel } from '../lib/utils.js';
+import { matchSlug, kickoffLabel, slugify } from '../lib/utils.js';
+import { droppingByLeague } from '../lib/droppingOdds.js';
+
+const leaguePages = Object.entries(droppingByLeague())
+  .map(([l, r]) => ({ name: l, n: r.length }))
+  .sort((a, b) => b.n - a.n);
 
 // Biggest line moves across live fixtures, from our own price snapshots
 // (each refresh records the best price per tip when it changes).
@@ -82,6 +87,16 @@ const description = `Where the market is moving: ${rows.length} tracked prices h
           <p>Same data, scored: every value pick ranked with a live steam signal.</p>
           <a href="/screener" class="btn btn-mint btn-block">Open the screener</a>
         </div>
+        {leaguePages.length > 0 && (
+          <div class="box">
+            <div class="box-h"><span class="hi">📉</span> By league</div>
+            {leaguePages.map((l) => (
+              <a class="tm" href={`/dropping-odds/${slugify(l.name)}`}>
+                <span class="dot"></span>{l.name}<span class="cnt">{l.n}</span>
+              </a>
+            ))}
+          </div>
+        )}
         <div class="box">
           <div class="box-h"><span class="hi">🧮</span> Tools</div>
           <a class="tm" href="/tools/odds-converter"><span class="dot"></span>Odds converter</a>

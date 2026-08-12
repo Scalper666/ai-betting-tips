@@ -407,6 +407,7 @@ const D = {
   'tb.otherTables': { en: 'Other tables', es: 'Otras clasificaciones', pt: 'Outras classificações', de: 'Andere Tabellen' },
   'tb.snapshot': { en: 'Snapshot taken', es: 'Instantánea tomada el', pt: 'Snapshot obtido em', de: 'Snapshot vom' },
   'tb.livePages': { en: 'Live pages', es: 'Páginas en vivo', pt: 'Páginas ao vivo', de: 'Live-Seiten' },
+  'tb.archives': { en: 'Final tables (archive)', es: 'Tablas finales (archivo)', pt: 'Tabelas finais (arquivo)', de: 'Abschlusstabellen (Archiv)' },
   'tb.thTeam': { en: 'Team', es: 'Equipo', pt: 'Time', de: 'Team' },
   'tb.thPlayer': { en: 'Player', es: 'Jugador', pt: 'Jogador', de: 'Spieler' },
   'tb.thClub': { en: 'Club', es: 'Club', pt: 'Clube', de: 'Klub' },

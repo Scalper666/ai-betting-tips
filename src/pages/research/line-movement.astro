@@ -1,0 +1,128 @@
+---
+import Base from '../../layouts/Base.astro';
+import oddsHistory from '../../data/odds_history.json';
+import historyData from '../../data/history.json';
+import { BUILD_ISO, fmtDate } from '../../lib/utils.js';
+
+// ── How prices move between our first quote and the last one before kick-off,
+//    from the odds_history snapshots nothing else on the site studies. Every
+//    series is a published pick's price, sampled at each pipeline run; the
+//    join to history.json supplies the league. Mock-era keys are excluded.
+const byLeague = {};
+let seriesTotal = 0;
+for (const [key, series] of Object.entries(oddsHistory)) {
+  if (key.startsWith('mock')) continue;
+  if (!Array.isArray(series) || series.length < 2) continue;
+  const row = (historyData.tips ?? {})[key];
+  if (!row || !row.league) continue;
+  const first = Number(series[0].price);
+  const last = Number(series[series.length - 1].price);
+  if (!first || !last) continue;
+  const drift = (last - first) / first;
+  const b = (byLeague[row.league] ??= { n: 0, absSum: 0, shortened: 0, drifted: 0, maxDrop: 0, maxDropKey: '' });
+  b.n++;
+  b.absSum += Math.abs(drift);
+  if (last < first) b.shortened++;
+  if (last > first) b.drifted++;
+  if (drift < b.maxDrop) { b.maxDrop = drift; b.maxDropKey = `${row.home} v ${row.away} — ${row.market}`; }
+  seriesTotal++;
+}
+
+const rows = Object.entries(byLeague)
+  .filter(([, b]) => b.n >= 8)
+  .map(([league, b]) => ({
+    league,
+    n: b.n,
+    avgAbs: Math.round((b.absSum / b.n) * 1000) / 10,
+    shortened: Math.round((b.shortened / b.n) * 1000) / 10,
+    drifted: Math.round((b.drifted / b.n) * 1000) / 10,
+    maxDrop: Math.round(b.maxDrop * 1000) / 10,
+    maxDropKey: b.maxDropKey,
+  }))
+  .sort((a, b) => b.avgAbs - a.avgAbs);
+
+const covered = rows.reduce((s, r) => s + r.n, 0);
+const wAbs = covered ? Math.round((rows.reduce((s, r) => s + r.avgAbs * r.n, 0) / covered) * 10) / 10 : 0;
+
+const title = `How Betting Prices Move Before Kick-Off — ${covered} Tracked Picks`;
+const description = `Our published picks' prices, snapshotted at every pipeline run: the average line moves ${wAbs}% between first quote and kick-off, and the direction is informative. A study nothing markets to you — recomputed on every build.`;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  dateModified: BUILD_ISO,
+  author: { '@type': 'Organization', name: 'AI Betting Tips' },
+  description,
+};
+---
+<Base title={title} description={description} schema={schema} updated={BUILD_ISO} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/research">Research</a><span>/</span>Line movement</div>
+      <h1>How prices move <em>before kick-off</em></h1>
+      <p class="lead">Every published pick's price is snapshotted at each pipeline run. Across {covered} tracked picks the line moved {wAbs}% on average between our first quote and the last one before the match — and which way it moved is information about whose money arrived late.</p>
+      <p class="upd-line">Recomputed {fmtDate(BUILD_ISO)} · snapshots are pipeline-run frequency, so intraday spikes between runs are invisible · <a href="/editorial-policy">how we work</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        {rows.length > 0 ? (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">Movement <b>by league</b></h2></div>
+            <div class="odds-table"><div class="scr-scroll">
+              <table class="otbl">
+                <thead><tr>
+                  <th style="text-align:left">League</th><th>Picks tracked</th>
+                  <th>Avg move</th><th>Shortened</th><th>Drifted</th><th>Biggest drop</th>
+                </tr></thead>
+                <tbody>
+                  {rows.map((r) => (
+                    <tr>
+                      <td class="o-match" style="font-weight:700">{r.league}</td>
+                      <td class="o-cell"><span>{r.n}</span></td>
+                      <td class="o-cell hot"><span class="cb">{r.avgAbs.toFixed(1)}%</span></td>
+                      <td class="o-cell"><span>{r.shortened.toFixed(1)}%</span></td>
+                      <td class="o-cell"><span>{r.drifted.toFixed(1)}%</span></td>
+                      <td class="o-cell"><span title={r.maxDropKey}>{r.maxDrop.toFixed(1)}%</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div></div>
+            <p class="res-note">Avg move = mean absolute price change between first and last snapshot. Shortened = share of picks whose price fell (money arrived on them); drifted = share whose price rose. Leagues qualify at 8+ tracked picks; hover the biggest drop for the fixture.</p>
+          </section>
+        ) : (
+          <section class="seo">
+            <h2>Collecting data</h2>
+            <p>This study needs a few days of snapshots after each new season's picks start flowing. It fills automatically — no hand-editing, ever.</p>
+          </section>
+        )}
+
+        <section class="seo">
+          <h2>Why line movement matters</h2>
+          <p>A price that shortens after you bet it means later money agreed with you; a price that drifts means the market moved against your position. Aggregated honestly, that is the fastest feedback loop in betting — far faster than results, which need hundreds of bets to say anything. It is the same logic as closing line value, measured here across every pick we publish rather than curated highlights.</p>
+          <p>Two limits worth stating plainly. Our snapshots run at pipeline frequency, twice a day, so intraday spikes between runs are invisible — the true movement is larger than what this table can see. And movement is not profit: a shortening price validates the direction of a pick, not its size. The <a href="/research/clv-experiment">CLV experiment</a> is where we measure whether our picks systematically beat the close; this page shows the raw material that verdict is built from.</p>
+          <p>The practical use for a reader: leagues at the top of the table are where prices are least settled at our publish time — which is where early prices are most valuable and where line shopping pays most. The <a href="/dropping-odds">dropping odds</a> page tracks the current movers live.</p>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">🔬</span> More research</div>
+          <a class="tm" href="/research/clv-experiment"><span class="dot"></span>The CLV experiment</a>
+          <a class="tm" href="/research/bookmaker-margins"><span class="dot"></span>What betting really costs</a>
+          <a class="tm" href="/research/home-advantage"><span class="dot"></span>Home advantage by league</a>
+          <a class="tm" href="/research/league-predictability"><span class="dot"></span>The most unpredictable leagues</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">📉</span> Live movers</div>
+          <a class="tm" href="/dropping-odds"><span class="dot"></span>Dropping odds now</a>
+          <a class="tm" href="/glossary/line-movement"><span class="dot"></span>Line movement (glossary)</a>
+          <a class="tm" href="/glossary/closing-line-value"><span class="dot"></span>Closing line value (glossary)</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

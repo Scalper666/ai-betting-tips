@@ -1,0 +1,125 @@
+---
+import Base from '../../layouts/Base.astro';
+import fd from '../../data/football-data.json';
+import imported from '../../data/results-import.json';
+import { BUILD_ISO, fmtDate } from '../../lib/utils.js';
+
+// ── Home advantage measured per league, over every result we hold: the
+//    football-data.org snapshot plus the football-data.co.uk import. The
+//    predictability study lists outcome shares; this page isolates the one
+//    effect — how much playing at home is worth, in goals and in win share —
+//    because its SIZE varies by league and that variance is where prices set
+//    on the global average go wrong. Recomputed on every build.
+const sources = [];
+for (const lg of Object.values(fd.leagues ?? {})) {
+  if ((lg.results ?? []).length >= 100) sources.push({ name: lg.name, results: lg.results });
+}
+const seen = new Set(sources.map((s) => s.name));
+for (const [sk, lg] of Object.entries(imported.leagues ?? {})) {
+  const name = sk.replace(/^soccer_/, '').replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+  if ((lg.results ?? []).length >= 100 && !seen.has(name)) sources.push({ name, results: lg.results });
+}
+
+const rows = [];
+for (const s of sources) {
+  let hg = 0, ag = 0, hw = 0, dr = 0, aw = 0;
+  for (const r of s.results) {
+    hg += r.hs; ag += r.as;
+    if (r.hs > r.as) hw++; else if (r.hs === r.as) dr++; else aw++;
+  }
+  const n = s.results.length;
+  rows.push({
+    league: s.name, n,
+    hg: Math.round((hg / n) * 100) / 100,
+    ag: Math.round((ag / n) * 100) / 100,
+    edge: Math.round(((hg - ag) / n) * 100) / 100,
+    hw: Math.round((hw / n) * 1000) / 10,
+    aw: Math.round((aw / n) * 1000) / 10,
+    gap: Math.round(((hw - aw) / n) * 1000) / 10,
+  });
+}
+rows.sort((a, b) => b.edge - a.edge);
+const total = rows.reduce((s, r) => s + r.n, 0);
+const wEdge = Math.round((rows.reduce((s, r) => s + r.edge * r.n, 0) / total) * 100) / 100;
+const wGap = Math.round((rows.reduce((s, r) => s + r.gap * r.n, 0) / total) * 10) / 10;
+const top = rows[0];
+const bottom = rows[rows.length - 1];
+
+const title = `Home Advantage by League — ${total.toLocaleString('en-GB')} Matches Measured`;
+const description = `Playing at home is worth ${wEdge} goals and ${wGap} points of win share on average — but the spread between leagues runs from ${bottom.edge} (${bottom.league}) to ${top.edge} (${top.league}). Recomputed from our full results dataset on every build.`;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  dateModified: BUILD_ISO,
+  author: { '@type': 'Organization', name: 'AI Betting Tips' },
+  description,
+};
+---
+<Base title={title} description={description} schema={schema} updated={BUILD_ISO} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/research">Research</a><span>/</span>Home advantage</div>
+      <h1>Home advantage, <em>league by league</em></h1>
+      <p class="lead">Across {total.toLocaleString('en-GB')} matches in {rows.length} competitions, the home side outscores the away side by {wEdge} goals per game and wins {wGap} percentage points more often. The average is not the story — the spread between leagues is.</p>
+      <p class="upd-line">Recomputed {fmtDate(BUILD_ISO)} from the full results dataset · <a href="/editorial-policy">how we work</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Goal edge and win-share gap <b>per league</b></h2></div>
+          <div class="odds-table"><div class="scr-scroll">
+            <table class="otbl">
+              <thead><tr>
+                <th style="text-align:left">League</th><th>Matches</th>
+                <th>Home goals/g</th><th>Away goals/g</th><th>Goal edge</th>
+                <th>Home win %</th><th>Away win %</th><th>Win gap</th>
+              </tr></thead>
+              <tbody>
+                {rows.map((r) => (
+                  <tr>
+                    <td class="o-match" style="font-weight:700">{r.league}</td>
+                    <td class="o-cell"><span>{r.n}</span></td>
+                    <td class="o-cell"><span>{r.hg.toFixed(2)}</span></td>
+                    <td class="o-cell"><span>{r.ag.toFixed(2)}</span></td>
+                    <td class="o-cell hot"><span class="cb">+{r.edge.toFixed(2)}</span></td>
+                    <td class="o-cell"><span>{r.hw.toFixed(1)}%</span></td>
+                    <td class="o-cell"><span>{r.aw.toFixed(1)}%</span></td>
+                    <td class="o-cell"><span class="cb">+{r.gap.toFixed(1)}</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div></div>
+          <p class="res-note">Goal edge = home goals per game minus away goals per game. Win gap = home-win share minus away-win share, in percentage points. Leagues qualify at 100+ recorded matches.</p>
+        </section>
+
+        <section class="seo">
+          <h2>How to read this as a bettor</h2>
+          <p>The market prices home advantage into every 1X2 line, but it largely prices the <em>global</em> effect. When a league sits at the top of this table, generic pricing slightly underrates its home sides; at the bottom, it overrates them. The edges are small — a tenth of a goal moves an even-match win probability by two or three points — but they are systematic, which is more than can be said for most angles sold to bettors.</p>
+          <p>Two honest caveats. First, sample: a season of one league is a few hundred matches, and the extremes of any such table partly reflect noise that will regress. Second, home advantage is not constant — it has drifted downward across football for decades and moves with attendance, altitude and travel distances. That is exactly why this page recomputes from the live dataset on every build instead of quoting a study from five years ago.</p>
+          <p>Our own model carries separate home and away rates per team rather than one global constant, so league-level differences flow into every probability it publishes. The point of the table is transparency: you can see the raw effect the model sees.</p>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">🔬</span> More research</div>
+          <a class="tm" href="/research/league-predictability"><span class="dot"></span>The most unpredictable leagues</a>
+          <a class="tm" href="/research/bookmaker-margins"><span class="dot"></span>What betting really costs</a>
+          <a class="tm" href="/research/line-movement"><span class="dot"></span>How prices move before kick-off</a>
+          <a class="tm" href="/research/clv-experiment"><span class="dot"></span>The CLV experiment</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">📗</span> Related reading</div>
+          <a class="tm" href="/glossary/home-advantage"><span class="dot"></span>Home advantage (glossary)</a>
+          <a class="tm" href="/glossary/poisson-distribution"><span class="dot"></span>The Poisson model</a>
+          <a class="tm" href="/model"><span class="dot"></span>How our model works</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

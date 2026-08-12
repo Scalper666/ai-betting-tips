@@ -1,425 +1,1496 @@
 {
- "set": "AI Betting Tips Glossary",
- "terms": [
-  {
-   "slug": "value-bet",
-   "term": "Value Bet",
-   "short": "A bet where the odds on offer are higher than the true probability justifies — the only kind of bet that is profitable long-term.",
-   "definition": [
-    "A value bet exists when a bookmaker's odds imply a lower probability than the outcome's real chance of happening. If a team's true chance of winning is 50% but you can back it at odds of 2.20, the price is 'wrong' in your favour: over many repeats of that situation you would win more than the odds assume, so the bet has positive expected value.",
-    "Value has nothing to do with how likely the bet is to win. Backing a 5.00 outsider can be a value bet while backing a 1.20 favourite can be terrible value — what matters is the gap between price and probability, not the probability itself. That is why disciplined bettors hunt prices, not winners. Finding value systematically requires an independent estimate of the true probability, which is exactly what odds models and screeners attempt to produce."
-   ],
-   "example": "Suppose the fair chance of a home win is 40% (fair odds 2.50), but one bookmaker offers 2.75. Expected value per £1 staked = (0.40 × 2.75) − 1 = +0.10, i.e. a 10% edge. Individually the bet loses 60% of the time — but at scale, prices like this are where profit comes from.",
-   "related": ["expected-value", "implied-probability", "edge", "fair-odds"],
-   "see": [{ "label": "Live value picks in the AI screener", "href": "/screener" }]
-  },
-  {
-   "slug": "implied-probability",
-   "term": "Implied Probability",
-   "short": "The win chance a betting price suggests: 1 divided by the decimal odds.",
-   "definition": [
-    "Every betting price is a probability statement in disguise. Converting decimal odds to implied probability is simple: divide 1 by the odds. Odds of 2.00 imply 50%, odds of 4.00 imply 25%, odds of 1.25 imply 80%. This conversion is the foundation of every serious betting decision, because it turns 'is this price big?' into the answerable question 'is this probability too low?'.",
-    "Summing the implied probabilities of every outcome in a market reveals the bookmaker's margin: the total always exceeds 100%, and the excess is the operator's built-in edge. Removing that margin produces fair probabilities — the market's actual consensus view — against which value can be measured."
-   ],
-   "example": "A match priced at 2.10 (home), 3.60 (draw), 3.40 (away) implies 47.6% + 27.8% + 29.4% = 104.8%. The 4.8% excess is the bookmaker margin; the fair home probability after stripping it proportionally is 47.6 / 104.8 ≈ 45.4%.",
-   "related": ["bookmaker-margin", "fair-odds", "value-bet", "odds-formats"],
-   "see": []
-  },
-  {
-   "slug": "expected-value",
-   "term": "Expected Value (EV)",
-   "short": "The average profit or loss a bet would produce if it could be repeated many times at the same price.",
-   "definition": [
-    "Expected value answers one question: if you placed this exact bet a thousand times, would you end up ahead? It is calculated as (probability of winning × decimal odds) − 1, expressed per unit staked. Positive EV (+EV) means the price beats the true probability; negative EV means the bookmaker's margin or a mispriced view is working against you.",
-    "EV is a long-run concept. A +EV bet can lose many times in a row, and a −EV bet can land — variance dominates small samples. The discipline of profitable betting is refusing to judge decisions by single results and judging them by the price you took instead. Over hundreds of bets, results converge toward expectation."
-   ],
-   "example": "You estimate a draw at 30% probability and find odds of 3.75. EV = (0.30 × 3.75) − 1 = +0.125 — an expected 12.5p profit per £1 staked. If your probability estimate is right, betting this price repeatedly is profitable even though it loses 70% of the time.",
-   "related": ["value-bet", "edge", "kelly-criterion", "variance"],
-   "see": []
-  },
-  {
-   "slug": "edge",
-   "term": "Edge",
-   "short": "Your advantage over the price, usually expressed as expected value in percent.",
-   "definition": [
-    "Edge is the size of your advantage on a bet: how much better the odds are than the outcome's true probability warrants. An edge of 5% means that, per £100 staked, you expect £5 of profit in the long run. Edges in sports betting are small — professionals get excited about 2–5% — because betting markets are competitive and mostly efficient.",
-    "Claimed edges should be treated sceptically, including ours. The honest test of an edge is settlement over a large sample: if a method's graded record over hundreds of bets shows positive return, the edge is real; if not, it was noise. This is why we archive every tip before kick-off and publish the settled results, wins and losses alike."
-   ],
-   "example": "Best available price 2.30 against a fair probability of 46%: edge = (0.46 × 2.30) − 1 = +5.8%. At flat £10 stakes over 500 such bets, expected profit is about £290 — with substantial swings along the way.",
-   "related": ["value-bet", "expected-value", "closing-line-value", "sharp-and-soft-bookmakers"],
-   "see": [{ "label": "How our settled record is computed", "href": "/tipsters" }]
-  },
-  {
-   "slug": "odds-formats",
-   "term": "Odds Formats (Decimal, Fractional, American)",
-   "short": "Three ways of writing the same price: 2.50 = 6/4 = +150.",
-   "definition": [
-    "Decimal odds show the total return per unit staked, stake included: at 2.50, a £10 bet returns £25 (£15 profit plus the £10 stake). They are the default across Europe and the easiest format for calculation, which is why this site uses them everywhere.",
-    "Fractional odds (6/4) show profit relative to stake — win £6 for every £4 staked — and remain traditional in the UK. American odds use a plus or minus sign: +150 means a $100 stake wins $150; −200 means you must stake $200 to win $100. Converting: decimal = fractional + 1; positive American = (odds/100) + 1; negative American = (100/|odds|) + 1."
-   ],
-   "example": "Odds of 2.50, 6/4 and +150 are identical prices with an implied probability of 1 / 2.50 = 40%.",
-   "related": ["implied-probability", "odds-comparison"],
-   "see": []
-  },
-  {
-   "slug": "bookmaker-margin",
-   "term": "Bookmaker Margin (Overround / Vig)",
-   "short": "The profit a bookmaker builds into its prices — the reason all outcomes' implied probabilities sum above 100%.",
-   "definition": [
-    "Bookmakers do not offer fair odds. Each price is shaded slightly below its fair value so that, whatever the result, the book keeps a percentage. Sum the implied probabilities of every outcome and the excess over 100% is the margin — also called the overround, juice or vig. Typical football match-result margins run from about 2% at sharp bookmakers to 7%+ at recreational ones.",
-    "Margin is the default headwind every bettor faces: betting randomly, you lose the margin over time. That has two practical consequences. First, comparing prices across bookmakers matters enormously — the best available price often erases most of the margin. Second, beating the market means overcoming the margin and then some, which is why genuine long-term edges are rare and small."
-   ],
-   "example": "Two-outcome market priced 1.91 / 1.91: implied 52.4% + 52.4% = 104.8%, a 4.8% margin. The fair price for a genuine 50/50 would be 2.00 / 2.00.",
-   "related": ["implied-probability", "fair-odds", "odds-comparison", "sharp-and-soft-bookmakers"],
-   "see": []
-  },
-  {
-   "slug": "fair-odds",
-   "term": "Fair Odds",
-   "short": "What a price would be with the bookmaker's margin removed — the market's true probability estimate.",
-   "definition": [
-    "Fair odds are the margin-free version of a market: the prices that would make the book break even in the long run. The simplest way to estimate them is to take every outcome's implied probability, sum them, and scale each one down proportionally so the total equals exactly 100%. The rescaled probabilities convert back into fair odds.",
-    "Fair odds matter because they are the benchmark for value. A price only represents value if it exceeds the fair price, not merely if it 'looks big'. Averaging fair probabilities across many bookmakers produces a robust consensus that is hard for any single operator's pricing quirk to distort — this consensus-versus-best-price comparison is exactly how our model flags value picks."
-   ],
-   "example": "Implied probabilities 47.6% / 27.8% / 29.4% (total 104.8%) rescale to 45.4% / 26.5% / 28.1%. Fair home odds = 1 / 0.454 = 2.20. Any book offering more than 2.20 is paying above the market's own estimate.",
-   "related": ["bookmaker-margin", "implied-probability", "value-bet"],
-   "see": []
-  },
-  {
-   "slug": "kelly-criterion",
-   "term": "Kelly Criterion",
-   "short": "A staking formula that sizes bets in proportion to your edge — and a useful way to rank value bets.",
-   "definition": [
-    "The Kelly criterion computes the bankroll fraction that maximises long-term growth when you have an edge: stake = edge ÷ (decimal odds − 1). Bigger edges justify bigger stakes; longer odds justify smaller ones at the same edge, because the win happens less often and variance is higher. Full Kelly is aggressive — most practitioners use a half or quarter Kelly to smooth the swings.",
-    "Beyond staking, Kelly is an excellent ranking metric. Raw edge percentage flatters longshots: a 30% 'edge' on a 21.00 outsider is usually a pricing artefact, not an opportunity. Dividing the edge by (odds − 1) weights value by how often it actually lands, which is precisely how our screener orders its picks — a modest edge on a 1.80 favourite can outrank a large edge on a 6.00 shot."
-   ],
-   "example": "Edge 8% at odds 3.60: Kelly fraction = 0.08 / 2.60 ≈ 3.1% of bankroll. The same 8% edge at odds 1.60 gives 0.08 / 0.60 ≈ 13.3% — the shorter price justifies a much larger stake.",
-   "related": ["edge", "bankroll-management", "flat-staking", "expected-value"],
-   "see": [{ "label": "Kelly-ranked picks in the screener", "href": "/screener" }]
-  },
-  {
-   "slug": "bankroll-management",
-   "term": "Bankroll Management",
-   "short": "Treating your betting money as a fixed fund with staking rules — the discipline that keeps variance from ruining you.",
-   "definition": [
-    "A bankroll is money set aside exclusively for betting — an amount whose complete loss you could absorb without harm. Bankroll management is the set of rules governing how much of it any single bet may risk. Common approaches: flat staking (the same fixed unit every time), percentage staking (a fixed share of the current bankroll), or Kelly-based staking scaled to edge.",
-    "The purpose is survival through variance. Even a genuinely profitable strategy hits losing runs of ten or more bets; staking too large turns a normal downswing into ruin before the edge can express itself. Most disciplined bettors risk 1–2% of bankroll per bet. Just as important: never top up a bankroll to chase losses — that is the failure mode that turns betting from entertainment into a problem."
-   ],
-   "example": "With a £500 bankroll and 1.5% flat stakes (£7.50 per bet), a brutal 15-bet losing streak costs £112.50 — painful but survivable, leaving 77% of the fund intact.",
-   "related": ["flat-staking", "kelly-criterion", "variance", "self-exclusion"],
-   "see": [{ "label": "Responsible gambling tools & help", "href": "/responsible-gambling" }]
-  },
-  {
-   "slug": "flat-staking",
-   "term": "Flat Staking & Units",
-   "short": "Betting the same fixed amount — one unit — on every selection, making results comparable and honest.",
-   "definition": [
-    "Flat staking risks an identical amount, called a unit, on every bet regardless of confidence. A unit is usually 1–2% of bankroll. Its great virtue is honesty: profit measured in units cannot be flattered by convenient stake-weighting after the fact, which is why transparent tipsters publish results as '+8.40 units' rather than in currency.",
-    "All results on this site are settled at flat one-unit stakes: a winning bet at odds 2.50 books +1.50 units, any losing bet books −1.00, a void books 0. It is the plainest possible accounting — no 'confidence multipliers' applied in hindsight, no way to dress up a losing month."
-   ],
-   "example": "Ten flat-staked bets: 4 win at average odds 2.40, 6 lose. Profit = 4 × 1.40 − 6 × 1.00 = −0.40 units — a 40% win rate was not enough at those odds. The same record at average odds 2.80 would book +1.20 units.",
-   "related": ["bankroll-management", "roi-and-yield", "win-rate"],
-   "see": [{ "label": "Our settled results, in units", "href": "/tipsters" }]
-  },
-  {
-   "slug": "accumulator",
-   "term": "Accumulator (Acca / Parlay)",
-   "short": "One bet combining several selections — all must win, odds multiply, and so does the bookmaker's margin.",
-   "definition": [
-    "An accumulator combines two or more selections into a single bet whose odds are the product of the individual prices. Three picks at 1.50 × 1.72 × 1.85 pay 4.77 — attractive, which is why accas are heavily marketed. The catch: one losing leg sinks the whole ticket, and the bookmaker's margin compounds with every leg you add.",
-    "If each leg carries a 5% margin, a treble bakes in roughly a 14% house edge before kick-off. That makes long accumulators structurally poor value — entertainment first, investment never. If you do combine, keep legs few, hunt the best price on each individually, and stake small: the correct expectation for an acca is an occasional fun win, not steady profit."
-   ],
-   "example": "Three legs, each fairly 60% likely: combined true probability = 0.6³ = 21.6% (fair odds 4.63). Priced legs of 1.58 each give a payout of 3.94 — implying 25.4% and handing the book a compounded ~18% margin on the ticket.",
-   "related": ["bookmaker-margin", "double-chance", "expected-value"],
-   "see": [{ "label": "Accumulator tips", "href": "/tips/accumulator" }]
-  },
-  {
-   "slug": "btts",
-   "term": "Both Teams To Score (BTTS)",
-   "short": "A market on whether both sides score at least once — the final result doesn't matter.",
-   "definition": [
-    "BTTS (also 'goals galore' or GG/NG) settles Yes if each team scores at least one goal, No otherwise. A 3–1 is Yes; a 2–0 is No. The result of the match is irrelevant, which makes BTTS popular for games between attacking sides with shaky defences — you can be right about the game's character while being wrong about the winner.",
-    "Pricing BTTS well means estimating each team's scoring probability rather than who is better overall. Its close cousin is the over/under goals market: BTTS-Yes correlates strongly with Over 2.5, and comparing the two prices occasionally exposes inconsistencies in how a bookmaker has modelled the same fixture."
-   ],
-   "example": "If the home side scores in 75% of matches and the away side in 60% (roughly independent), BTTS-Yes ≈ 0.75 × 0.60 = 45% — fair odds 2.22. A price of 2.40 would be value; 1.95 would not.",
-   "related": ["over-under", "implied-probability"],
-   "see": [{ "label": "BTTS tips", "href": "/tips/btts" }]
-  },
-  {
-   "slug": "over-under",
-   "term": "Over/Under (Totals)",
-   "short": "Betting on the combined number of goals rather than the winner, against a line like 2.5.",
-   "definition": [
-    "A totals bet ignores who wins and asks only how many goals the match produces. The line is usually set at a half-goal (2.5) so there is no tie: Over 2.5 needs three or more goals, Under 2.5 wins with two or fewer. Whole-number lines (e.g. exactly 3.0) can 'push' — land exactly on the line — in which case stakes are returned as a void.",
-    "Totals are often better value hunting grounds than match results because casual money concentrates on picking winners, leaving goals markets slightly less efficiently priced. They also suit statistical modelling: goals follow reasonably stable patterns per team and league, which is why a large share of our model's recommendations are totals."
-   ],
-   "example": "Over 2.5 at 1.93 implies 51.8%. If your model rates three-plus goals at 55%, EV = (0.55 × 1.93) − 1 = +6.2% — a value bet even though it is nearly a coin flip.",
-   "related": ["btts", "void-bet", "asian-handicap"],
-   "see": [{ "label": "Over/Under tips", "href": "/tips/over-under" }]
-  },
-  {
-   "slug": "asian-handicap",
-   "term": "Asian Handicap",
-   "short": "A handicap market that eliminates the draw by giving one side a goal head start, often in quarter-goal steps.",
-   "definition": [
-    "Asian handicaps level a mismatch by adding virtual goals to one team before kick-off. Backing the favourite at −1.5 means they must win by two clear goals; backing the underdog at +1.5 wins if they avoid losing by two or more. Whole-number handicaps (−1.0) can push: if the favourite wins by exactly one, stakes are refunded.",
-    "Quarter lines (−0.75, +1.25) split your stake across the two adjacent lines — half on −0.5 and half on −1.0, for instance — so results can be half-wins and half-losses. Because the draw is engineered out, Asian handicap markets have only two outcomes, typically carry lower margins than 1X2, and are where much of the sharpest football money trades."
-   ],
-   "example": "£20 on the favourite at −0.75 (odds 1.95): a one-goal win pays the −0.5 half in full and refunds the −1.0 half — total return £29.75, a 'half-win'. A two-goal win pays both halves: £39.",
-   "related": ["match-result", "void-bet", "sharp-and-soft-bookmakers"],
-   "see": []
-  },
-  {
-   "slug": "double-chance",
-   "term": "Double Chance",
-   "short": "Covering two of the three match outcomes in one bet — much safer, much shorter odds.",
-   "definition": [
-    "Double chance combines two outcomes of the 1X2 market: home-or-draw (1X), away-or-draw (X2), or either-team-to-win (12). Only one of the three results beats you, so win probability is high — and the odds correspondingly short, often below 1.50 when a favourite is involved.",
-    "The market is functionally similar to Draw No Bet and the +0.5 Asian handicap; comparing all three prices for the same view sometimes reveals which packaging a bookmaker has priced most generously. The strategic caution: safety is not value. A 1X at 1.25 with a true chance of 78% is a losing bet dressed in safe clothing — short odds still need to beat the fair price."
-   ],
-   "example": "Home 45%, draw 28%: fair 1X probability = 73% → fair odds 1.37. A book offering 1.44 is paying value on the 'safe' option; one offering 1.28 is not.",
-   "related": ["match-result", "draw-no-bet", "asian-handicap"],
-   "see": [{ "label": "Double chance tips", "href": "/tips/double-chance" }]
-  },
-  {
-   "slug": "draw-no-bet",
-   "term": "Draw No Bet (DNB)",
-   "short": "Back a team; if the match is drawn, your stake is refunded.",
-   "definition": [
-    "Draw No Bet removes the draw from the equation: pick a side, and a drawn match returns your stake as a void rather than a loss. It is equivalent to the 0.0 Asian handicap and sits between the full 1X2 price (higher odds, draw loses) and double chance (lower odds, draw wins).",
-    "DNB suits situations where you fancy a side but respect a real draw risk — tight derbies, cagey away favourites. You can also construct it manually by splitting your stake between the win and the draw in the right proportion, which occasionally beats the packaged DNB price. As always, the packaging is only worth taking when the implied probability is below your estimate of the true chance."
-   ],
-   "example": "Team priced 2.30 to win, 3.30 the draw. DNB offered at 1.70: implied 58.8% for a market where the win chance (excluding draws) is 100 × 43.5/(43.5+26.3) ≈ 62% — a fair DNB would be ~1.61, so 1.70 carries value.",
-   "related": ["double-chance", "asian-handicap", "void-bet"],
-   "see": []
-  },
-  {
-   "slug": "match-result",
-   "term": "Match Result (1X2)",
-   "short": "The classic three-way market: home win (1), draw (X) or away win (2).",
-   "definition": [
-    "1X2 is football's headline market: back the home side, the draw, or the away side over 90 minutes plus stoppage time (extra time and penalties don't count unless stated). Its three outcomes make it structurally different from two-way markets — probabilities are split three ways, draws land far more often than casual bettors expect, and margins are usually higher than on Asian handicap lines.",
-    "The draw deserves particular respect: top-flight football draws roughly a quarter of the time, yet draw prices often drift generous because most recreational money wants a winner. That mispricing pattern is why value screens periodically flag draws — not because draws are predictable, but because they are systematically under-bet."
-   ],
-   "example": "A market at 2.05 / 3.50 / 3.90 implies 48.8% / 28.6% / 25.6% (margin 3%). If consensus fair probabilities are 46% / 27% / 27%, the away side at 3.90 (fair 3.70) is the value corner of the market.",
-   "related": ["double-chance", "draw-no-bet", "implied-probability"],
-   "see": []
-  },
-  {
-   "slug": "correct-score",
-   "term": "Correct Score",
-   "short": "Predicting the exact final scoreline — long odds, high variance, margin-heavy.",
-   "definition": [
-    "Correct score asks for the precise final result — 2–1, 0–0, 3–3 — with each scoreline priced individually, mostly at long odds. Because probability is spread across twenty-plus plausible scorelines, even the most likely single score (often 1–1 or 1–0) rarely exceeds a 12–13% chance.",
-    "The market's margins are typically among the widest a bookmaker offers, and variance is extreme: correct-score records swing wildly on tiny samples. Treat it as a fun, small-stakes market rather than a value strategy. If you have a genuine view on a game's goal pattern, the totals or BTTS markets usually express the same opinion at fairer prices."
-   ],
-   "example": "A 2–1 priced at 9.00 implies 11.1%. Poisson-style models with realistic scoring rates rarely put any scoreline much above 13% — so the price needs to be north of 7.70 before value is even conceivable.",
-   "related": ["over-under", "btts", "variance"],
-   "see": [{ "label": "Correct score tips", "href": "/tips/correct-score" }]
-  },
-  {
-   "slug": "closing-line-value",
-   "term": "Closing Line Value (CLV)",
-   "short": "Beating the final pre-kick-off price — the strongest statistical evidence a bettor has genuine edge.",
-   "definition": [
-    "The closing line is the last price available before an event starts, after the market has absorbed all news and money. It is generally the sharpest probability estimate in existence. Closing line value means having taken a better price earlier: you backed 2.20 and it closed at 2.00. Do that consistently and you almost certainly hold a real edge, because you are repeatedly out-predicting the market's final verdict.",
-    "CLV matters because it separates skill from luck far faster than profit does. Results over a few dozen bets are noise; consistently beating the close over the same sample is signal. It is also why prices move at all — early value gets bet away — and why acting quickly on flagged value matters."
-   ],
-   "example": "You take 2.20; the line closes 2.00. Implied probability moved from 45.5% to 50%. If the close is accurate, your bet carried EV = (0.50 × 2.20) − 1 = +10% — banked at the moment you beat the move, whatever the result.",
-   "related": ["line-movement", "edge", "sharp-and-soft-bookmakers"],
-   "see": []
-  },
-  {
-   "slug": "line-movement",
-   "term": "Line Movement & Steam",
-   "short": "How odds shift as money and news arrive — and the sharp-money surges known as steam.",
-   "definition": [
-    "Odds are living prices. They open from a bookmaker's model, then move as bets arrive, team news lands and sharper operators reposition. A shortening price ('steaming in') signals money backing that outcome; a drifting price signals the opposite. Most movement is routine rebalancing, but rapid, synchronised shortening across many books — steam — often marks respected money entering the market.",
-    "Movement matters to a value bettor in two ways. Taken early, a price that later steams in usually means you beat the closing line. And a price that drifts after you bet is a warning your view disagrees with informed money. Tracking our published price against later movement is one of the health checks behind the screener's signal column."
-   ],
-   "example": "A team opens 2.10 and is 1.85 an hour before kick-off across the market. Implied probability moved 47.6% → 54.1%. Anyone holding the 2.10 ticket now owns a bet the market itself rates as +14% EV.",
-   "related": ["closing-line-value", "sharp-and-soft-bookmakers", "value-bet"],
-   "see": [{ "label": "Signal column in the screener", "href": "/screener" }]
-  },
-  {
-   "slug": "sharp-and-soft-bookmakers",
-   "term": "Sharp vs Soft Bookmakers",
-   "short": "Sharps welcome winners and post accurate low-margin lines; softs court casual money and limit winners fast.",
-   "definition": [
-    "Sharp bookmakers (and betting exchanges) run low margins, accept large stakes, and shape their prices from the flow of professional money — their lines are treated as the market's reference truth. Soft bookmakers target recreational customers with bonuses and promotions, run higher margins, move slower on news, and restrict accounts that win consistently.",
-    "The practical edge map follows directly: value is found most often at softs whose slow or promotional pricing lags the sharp consensus. Comparing a soft book's price against the sharp/consensus fair line is precisely the pattern our value detection uses. The trade-off to know about: consistently taking those prices tends to earn stake limits at soft operators — a badge of honour, but a real constraint."
-   ],
-   "example": "Sharp consensus prices a side at 1.95 (fair ~51%); a soft book still shows 2.15 from yesterday. That 10% gap is a classic soft-book value spot — and exactly the kind of discrepancy that closes within hours.",
-   "related": ["bookmaker-margin", "closing-line-value", "line-movement"],
-   "see": [{ "label": "Bookmaker reviews", "href": "/bookmakers" }]
-  },
-  {
-   "slug": "arbitrage-betting",
-   "term": "Arbitrage Betting (Arbing)",
-   "short": "Covering every outcome across different bookmakers at prices that guarantee a small profit.",
-   "definition": [
-    "An arbitrage exists when discrepancies between bookmakers let you back every outcome and lock in profit regardless of the result — the combined implied probability of your chosen prices falls below 100%. Arbs appear when books disagree or lag on news, and typically pay 1–4% of total stakes.",
-    "The catches are practical. Arbs demand large turnover for small returns, precise stake calculations, and speed — prices vanish in minutes. Bookmakers detect the pattern quickly and respond with stake limits or account closures. Voided bets at one book can leave the other leg dangerously exposed. It is a real but grinding trade, closer to logistics than to betting."
-   ],
-   "example": "Book A: home 2.10 (47.6%). Book B: away+draw (X2) 2.15 (46.5%). Total 94.1% < 100%. Staking £51.20 and £48.80 respectively returns ~£107.50 whichever way the match goes — about +5.9% on £100 total.",
-   "related": ["bookmaker-margin", "value-bet", "sharp-and-soft-bookmakers"],
-   "see": []
-  },
-  {
-   "slug": "cash-out",
-   "term": "Cash Out",
-   "short": "Settling a bet early at a price the bookmaker offers — convenient, and almost always below fair value.",
-   "definition": [
-    "Cash out lets you close a live bet before the event ends: the bookmaker offers a buy-back amount based on the current likelihood of your bet winning. Winning positions can be banked early; losing ones salvaged in part. It feels like control, which is exactly why it is marketed so heavily.",
-    "The mechanics are less friendly: the cash-out quote is the fair current value of your ticket minus a fresh margin — often larger than the margin on the original bet. Routinely cashing out therefore leaks EV twice. If you find yourself wanting to trade positions actively, an exchange with transparent back/lay prices does the same job at honest prices; if you hold value bets, the discipline is usually to let them settle."
-   ],
-   "example": "Your £10 at 3.00 is 70% to win late in the game. Fair ticket value = 0.70 × £30 = £21. A typical cash-out quote of £18.50 quietly charges you £2.50 — a 12% haircut for the button.",
-   "related": ["expected-value", "in-play-betting"],
-   "see": []
-  },
-  {
-   "slug": "free-bet",
-   "term": "Free Bet",
-   "short": "A bookmaker token staking the operator's money — winnings are yours, the stake is not returned.",
-   "definition": [
-    "A free bet is promotional credit: place it, and if it wins you keep the winnings but not the stake itself ('stake not returned', SNR). A £10 free bet landing at 4.00 pays £30, not £40. Because the stake is never yours, the token's real value is roughly its face value times (1 − 1/odds) — which is why free bets extract more value on longer prices.",
-    "Free bets are the currency of welcome offers and promotions. Used carelessly on short favourites they return a fraction of face value; used deliberately at odds of 3.00–5.00 they convert to 65–80% of face value in expectation. Always read the attached terms: expiry windows, minimum odds and market restrictions decide what the token is actually worth."
-   ],
-   "example": "£20 free bet at odds 5.00: wins £80 profit 20% of the time → EV = £16, i.e. 80% of face value. The same token at 1.40 returns just £8 × ... ≈ EV £5.70 — under 30% of face value.",
-   "related": ["wagering-requirements", "expected-value"],
-   "see": [{ "label": "Current bonuses with real terms", "href": "/bonuses" }]
-  },
-  {
-   "slug": "wagering-requirements",
-   "term": "Wagering Requirements (Rollover)",
-   "short": "How many times a bonus must be staked before withdrawal — the number that decides whether an offer is worth anything.",
-   "definition": [
-    "A '£50 bonus, 5x wagering at min odds 1.5' means you must place £250 of qualifying bets before the bonus converts to withdrawable cash. Every forced bet pays the bookmaker's margin, so the true cost of clearing is roughly turnover × margin: the headline number shrinks with each required spin through the book.",
-    "Rollover is the single most important line in any bonus's terms — far more than the headline amount. A small bonus at 1x wagering routinely beats a big one at 10x. Watch the supporting clauses too: minimum odds (higher minimums force riskier clearing bets), market exclusions, maximum stake per bet, and expiry dates that quietly void unfinished bonuses."
-   ],
-   "example": "£40 bonus, 8x rollover, ~5% average margin: expected clearing cost ≈ £320 × 5% = £16. The bonus's realistic value is nearer £24 than £40 — and negative if a 7-day expiry forces sloppy bets.",
-   "related": ["free-bet", "bookmaker-margin"],
-   "see": [{ "label": "Offers compared with wagering shown", "href": "/bonuses" }]
-  },
-  {
-   "slug": "void-bet",
-   "term": "Void Bet (Push)",
-   "short": "A cancelled bet: stake returned, settled as neither won nor lost.",
-   "definition": [
-    "A bet is voided when it cannot be fairly settled: the match is postponed or abandoned, a named player doesn't start, a whole-number handicap or totals line lands exactly (a push), or the bookmaker cancels an obvious pricing error (palpable error, 'palp'). Your stake comes back and the bet is recorded as neither a win nor a loss.",
-    "Voids matter for record-keeping honesty. In our settled statistics a void books exactly 0 units — it is excluded from win-rate calculations and stakes are not counted as turnover. In accumulators, a voided leg doesn't sink the ticket; the leg is removed and the combined odds are recalculated without it."
-   ],
-   "example": "Asian handicap −1.0 and the favourite wins 2–1: the one-goal margin lands exactly on the line, the bet pushes, and your £15 stake is simply returned.",
-   "related": ["settlement", "asian-handicap", "over-under"],
-   "see": []
-  },
-  {
-   "slug": "settlement",
-   "term": "Settlement (Grading)",
-   "short": "Marking a bet won, lost or void against the official result — and the honesty test for any tipster.",
-   "definition": [
-    "Settlement is the act of grading a bet against the final result: won, lost or void, with profit computed from the odds actually taken. For an individual bettor it is bookkeeping; for anyone publishing tips it is the entire basis of credibility. A record only means something if every published tip is graded — at the published price, against the official score, with losses included.",
-    "The classic tipster scams are settlement scams: deleting losers, grading against better odds than were available, or quietly reclassifying losses as 'voids'. Our pipeline is built against exactly that: every tip is archived before kick-off with its price, results are graded automatically from official final scores, and nothing is edited afterwards — the archive pages stay up, wins and losses alike."
-   ],
-   "example": "Tip archived at 2.30 pre-match. Final score grades it a winner: +1.30 units at flat stakes. Had it lost, the same page would permanently show −1.00 — that permanence is the point.",
-   "related": ["void-bet", "flat-staking", "tipster"],
-   "see": [{ "label": "Browse settled days", "href": "/predictions/daily" }]
-  },
-  {
-   "slug": "roi-and-yield",
-   "term": "ROI / Yield",
-   "short": "Profit as a percentage of total stakes — the cleanest single number for comparing betting records.",
-   "definition": [
-    "Yield (often called ROI in betting) divides net profit by total amount staked: 100 bets of 1 unit returning 6 units of profit is a 6% yield. Because it normalises by turnover, yield lets you compare records of different sizes and odds profiles fairly — unlike raw profit, which rewards simply betting more.",
-    "Context for calibration: long-term yields of 3–8% are strong professional territory; double-digit yields over large samples are rare and usually shrink as sample size grows. A spectacular yield over 30 bets is variance, not skill — always read yield together with the number of settled bets, and be suspicious of any record that never shows a losing stretch."
-   ],
-   "example": "120 settled tips at flat 1-unit stakes, net +7.9 units: yield = 7.9 / 120 = 6.6%. The same +7.9 units over 400 bets would be a 2.0% yield — a materially weaker (though still positive) record.",
-   "related": ["win-rate", "flat-staking", "variance"],
-   "see": [{ "label": "Tipster ROI on the leaderboard", "href": "/tipsters" }]
-  },
-  {
-   "slug": "win-rate",
-   "term": "Win Rate (Strike Rate)",
-   "short": "The percentage of bets that win — meaningless on its own, meaningful next to average odds.",
-   "definition": [
-    "Win rate is the share of settled bets that won. In isolation it is the most abused number in betting marketing: an 80% win rate sounds spectacular and is trivially achieved by backing 1.10 favourites — while losing money. Conversely a 35% win rate is excellent if the average price taken is above 3.00.",
-    "The break-even win rate for any record is 1 divided by the average decimal odds: at average odds 2.50 you need 40% to stand still. Everything above break-even is edge; everything below is loss dressed in a percentage. Read win rate, average odds and yield together, over a stated number of bets — any record quoting win rate alone is hiding something."
-   ],
-   "example": "Average odds 2.20 → break-even 45.5%. A record of 48% at those odds yields (0.48 × 2.20) − 1 = +5.6%. The same 48% at average odds 2.00 loses 4% of turnover.",
-   "related": ["roi-and-yield", "flat-staking", "variance"],
-   "see": []
-  },
-  {
-   "slug": "variance",
-   "term": "Variance",
-   "short": "The natural swings between results and expectation — why good bets lose and bad records look good, for a while.",
-   "definition": [
-    "Variance is the statistical noise between what should happen on average and what actually happens in any finite sample. In betting it is brutal and unavoidable: a genuine 55%-probability bet loses nearly half the time; a portfolio with a real +5% edge can sit in loss after two hundred bets; a coin-flipping tout can post a glorious month.",
-    "Respecting variance changes behaviour. It sizes stakes (see bankroll management), it sets evaluation windows (hundreds of bets, not dozens), and it inoculates against both despair and euphoria. It is also why transparent full records matter more than hot streaks — over a long enough sample variance washes out and only edge, positive or negative, remains."
-   ],
-   "example": "500 independent bets at 50% / odds 2.10 (a real +5% edge): about one such bettor in six is still at a loss after all 500 bets — pure variance, no mistake made.",
-   "related": ["expected-value", "bankroll-management", "win-rate"],
-   "see": []
-  },
-  {
-   "slug": "in-play-betting",
-   "term": "In-Play (Live) Betting",
-   "short": "Betting while the event is running, at odds that reprice with every meaningful moment.",
-   "definition": [
-    "In-play betting keeps markets open during the match, repricing continuously as goals, cards and momentum arrive. It offers real analytical opportunities — reacting to game state faster or more rationally than the algorithm — but the environment is engineered for impulse: short suspension windows, flashing prices, and a feed delay that means the book usually knows more than your stream shows.",
-    "Two structural cautions. Live margins typically run wider than pre-match, so the average in-play price is worse. And frequency is the enemy of discipline: dozens of micro-decisions per match multiply exposure to both margin and tilt. If you bet live, pre-decide entry points and stakes before kick-off, and treat chasing an early loser 'back' as the red flag it is."
-   ],
-   "example": "A favourite priced 1.70 pre-match concedes early: live odds jump to 2.90 (implied 34%). If your pre-match model rated their comeback scenario nearer 42%, that repricing overshoot — not the excitement — is the only rational reason to bet.",
-   "related": ["cash-out", "line-movement", "bankroll-management"],
-   "see": []
-  },
-  {
-   "slug": "xg",
-   "term": "Expected Goals (xG)",
-   "short": "A shot-quality metric estimating how many goals a team 'should' have scored from its chances.",
-   "definition": [
-    "Expected goals assigns every shot a probability of scoring based on historical outcomes of similar chances — distance, angle, body part, assist type. Summing them gives a team's xG for a match or season: a measure of chance quality that strips out finishing luck. A team winning 1–0 with 0.4 xG against 2.3 rode its goalkeeper, whatever the table says.",
-    "For bettors, xG is a form signal that stabilises faster than results: teams massively over-performing their xG tend to regress, and the market sometimes lags that regression. Its limits are equally important — it ignores game state and shot context beyond its model, differs between providers, and one match of xG is nearly as noisy as one match of goals. Use it as an input, never a verdict."
-   ],
-   "example": "Over the last six matches a side scored 11 from 6.1 xG. Betting markets pricing them off those 11 goals may be overrating a finishing hot streak that xG says is running ~80% above sustainable rate.",
-   "related": ["variance", "line-movement"],
-   "see": []
-  },
-  {
-   "slug": "tipster",
-   "term": "Tipster",
-   "short": "Someone who publishes betting selections — trust the archive, never the screenshot.",
-   "definition": [
-    "A tipster publishes recommended bets, free or paid. The economics of attention make the field a minefield: winners get promoted loudly, losing records get deleted quietly, and screenshots prove nothing. The only meaningful evidence is a complete, timestamped record: every tip archived before the event, graded at the quoted odds, with losses displayed as permanently as wins.",
-    "A checklist worth applying to anyone (including us): Is the full history visible, with losing runs intact? Are the odds quoted actually available at publication time? Is profit stated in flat units over a stated sample size? Does the record survive at closing prices? Anyone refusing those questions is selling entertainment, not edge — pay for picks only if the verified record would still impress you at half its stated yield."
-   ],
-   "example": "Two claims: 'won 9 of my last 10!' versus '412 settled tips, +4.8% yield, average odds 2.31, full archive'. The first is a marketing sentence; the second is a record — and the archive is what makes it one.",
-   "related": ["settlement", "roi-and-yield", "win-rate"],
-   "see": [{ "label": "Our leaderboard with settled records", "href": "/tipsters" }]
-  },
-  {
-   "slug": "odds-comparison",
-   "term": "Odds Comparison",
-   "short": "Checking every bookmaker's price before betting — the simplest, most reliable edge that exists.",
-   "definition": [
-    "Different bookmakers price the same market differently, routinely by 5–10%. Taking 2.20 instead of 2.05 on the same outcome is a 7% improvement in return for zero additional risk — compounded across every bet, price shopping alone often separates a losing record from a break-even one, and a break-even one from profit.",
-    "This is the easiest professional habit to copy: hold accounts at several bookmakers and always take the best available price. It is also the backbone of value detection — our model compares each book's price against the margin-free consensus, and each match page lists the best available odds per outcome so the comparison is already done."
-   ],
-   "example": "Your average bet is at odds ~2.00 and you stake 100 × £10 a month. Systematically taking prices 4% better is worth about £40 a month — the entire margin handed back, before any predictive skill.",
-   "related": ["bookmaker-margin", "fair-odds", "sharp-and-soft-bookmakers"],
-   "see": [{ "label": "Best odds on every match page", "href": "/predictions" }]
-  },
-  {
-   "slug": "self-exclusion",
-   "term": "Self-Exclusion & Betting Limits",
-   "short": "Formal tools that lock you out of gambling — deposit caps, time-outs, and multi-operator exclusion schemes.",
-   "definition": [
-    "Every licensed operator must offer control tools: deposit, loss and stake limits; session reminders; short 'time-out' breaks; and full self-exclusion that closes the account for months or years. National schemes extend this across the whole market at once — GAMSTOP in the UK excludes you from every licensed operator with one registration, and blocking software like Gamban covers sites the schemes miss.",
-    "The honest framing: these are not tools for 'problem gamblers' only. Deposit limits set on a calm day are cheap insurance against a tilted evening; a time-out after a bad run is bankroll management for the mind. If betting has stopped feeling like entertainment — chasing losses, hiding stakes, betting money that had a job — the tools above plus free confidential helplines are the correct next bet."
-   ],
-   "example": "Setting a £100 monthly deposit limit takes two minutes in account settings. It cannot be raised in the heat of the moment: increases only take effect after a cooling-off period — the entire point.",
-   "related": ["bankroll-management"],
-   "see": [{ "label": "Responsible gambling help & tools", "href": "/responsible-gambling" }]
-  }
- ]
+  "set": "AI Betting Tips Glossary",
+  "terms": [
+    {
+      "slug": "value-bet",
+      "term": "Value Bet",
+      "short": "A bet where the odds on offer are higher than the true probability justifies — the only kind of bet that is profitable long-term.",
+      "definition": [
+        "A value bet exists when a bookmaker's odds imply a lower probability than the outcome's real chance of happening. If a team's true chance of winning is 50% but you can back it at odds of 2.20, the price is 'wrong' in your favour: over many repeats of that situation you would win more than the odds assume, so the bet has positive expected value.",
+        "Value has nothing to do with how likely the bet is to win. Backing a 5.00 outsider can be a value bet while backing a 1.20 favourite can be terrible value — what matters is the gap between price and probability, not the probability itself. That is why disciplined bettors hunt prices, not winners. Finding value systematically requires an independent estimate of the true probability, which is exactly what odds models and screeners attempt to produce."
+      ],
+      "example": "Suppose the fair chance of a home win is 40% (fair odds 2.50), but one bookmaker offers 2.75. Expected value per £1 staked = (0.40 × 2.75) − 1 = +0.10, i.e. a 10% edge. Individually the bet loses 60% of the time — but at scale, prices like this are where profit comes from.",
+      "related": [
+        "expected-value",
+        "implied-probability",
+        "edge",
+        "fair-odds"
+      ],
+      "see": [
+        {
+          "label": "Live value picks in the AI screener",
+          "href": "/screener"
+        }
+      ]
+    },
+    {
+      "slug": "implied-probability",
+      "term": "Implied Probability",
+      "short": "The win chance a betting price suggests: 1 divided by the decimal odds.",
+      "definition": [
+        "Every betting price is a probability statement in disguise. Converting decimal odds to implied probability is simple: divide 1 by the odds. Odds of 2.00 imply 50%, odds of 4.00 imply 25%, odds of 1.25 imply 80%. This conversion is the foundation of every serious betting decision, because it turns 'is this price big?' into the answerable question 'is this probability too low?'.",
+        "Summing the implied probabilities of every outcome in a market reveals the bookmaker's margin: the total always exceeds 100%, and the excess is the operator's built-in edge. Removing that margin produces fair probabilities — the market's actual consensus view — against which value can be measured."
+      ],
+      "example": "A match priced at 2.10 (home), 3.60 (draw), 3.40 (away) implies 47.6% + 27.8% + 29.4% = 104.8%. The 4.8% excess is the bookmaker margin; the fair home probability after stripping it proportionally is 47.6 / 104.8 ≈ 45.4%.",
+      "related": [
+        "bookmaker-margin",
+        "fair-odds",
+        "value-bet",
+        "odds-formats"
+      ],
+      "see": []
+    },
+    {
+      "slug": "expected-value",
+      "term": "Expected Value (EV)",
+      "short": "The average profit or loss a bet would produce if it could be repeated many times at the same price.",
+      "definition": [
+        "Expected value answers one question: if you placed this exact bet a thousand times, would you end up ahead? It is calculated as (probability of winning × decimal odds) − 1, expressed per unit staked. Positive EV (+EV) means the price beats the true probability; negative EV means the bookmaker's margin or a mispriced view is working against you.",
+        "EV is a long-run concept. A +EV bet can lose many times in a row, and a −EV bet can land — variance dominates small samples. The discipline of profitable betting is refusing to judge decisions by single results and judging them by the price you took instead. Over hundreds of bets, results converge toward expectation."
+      ],
+      "example": "You estimate a draw at 30% probability and find odds of 3.75. EV = (0.30 × 3.75) − 1 = +0.125 — an expected 12.5p profit per £1 staked. If your probability estimate is right, betting this price repeatedly is profitable even though it loses 70% of the time.",
+      "related": [
+        "value-bet",
+        "edge",
+        "kelly-criterion",
+        "variance"
+      ],
+      "see": []
+    },
+    {
+      "slug": "edge",
+      "term": "Edge",
+      "short": "Your advantage over the price, usually expressed as expected value in percent.",
+      "definition": [
+        "Edge is the size of your advantage on a bet: how much better the odds are than the outcome's true probability warrants. An edge of 5% means that, per £100 staked, you expect £5 of profit in the long run. Edges in sports betting are small — professionals get excited about 2–5% — because betting markets are competitive and mostly efficient.",
+        "Claimed edges should be treated sceptically, including ours. The honest test of an edge is settlement over a large sample: if a method's graded record over hundreds of bets shows positive return, the edge is real; if not, it was noise. This is why we archive every tip before kick-off and publish the settled results, wins and losses alike."
+      ],
+      "example": "Best available price 2.30 against a fair probability of 46%: edge = (0.46 × 2.30) − 1 = +5.8%. At flat £10 stakes over 500 such bets, expected profit is about £290 — with substantial swings along the way.",
+      "related": [
+        "value-bet",
+        "expected-value",
+        "closing-line-value",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [
+        {
+          "label": "How our settled record is computed",
+          "href": "/tipsters"
+        }
+      ]
+    },
+    {
+      "slug": "odds-formats",
+      "term": "Odds Formats (Decimal, Fractional, American)",
+      "short": "Three ways of writing the same price: 2.50 = 6/4 = +150.",
+      "definition": [
+        "Decimal odds show the total return per unit staked, stake included: at 2.50, a £10 bet returns £25 (£15 profit plus the £10 stake). They are the default across Europe and the easiest format for calculation, which is why this site uses them everywhere.",
+        "Fractional odds (6/4) show profit relative to stake — win £6 for every £4 staked — and remain traditional in the UK. American odds use a plus or minus sign: +150 means a $100 stake wins $150; −200 means you must stake $200 to win $100. Converting: decimal = fractional + 1; positive American = (odds/100) + 1; negative American = (100/|odds|) + 1."
+      ],
+      "example": "Odds of 2.50, 6/4 and +150 are identical prices with an implied probability of 1 / 2.50 = 40%.",
+      "related": [
+        "implied-probability",
+        "odds-comparison"
+      ],
+      "see": []
+    },
+    {
+      "slug": "bookmaker-margin",
+      "term": "Bookmaker Margin (Overround / Vig)",
+      "short": "The profit a bookmaker builds into its prices — the reason all outcomes' implied probabilities sum above 100%.",
+      "definition": [
+        "Bookmakers do not offer fair odds. Each price is shaded slightly below its fair value so that, whatever the result, the book keeps a percentage. Sum the implied probabilities of every outcome and the excess over 100% is the margin — also called the overround, juice or vig. Typical football match-result margins run from about 2% at sharp bookmakers to 7%+ at recreational ones.",
+        "Margin is the default headwind every bettor faces: betting randomly, you lose the margin over time. That has two practical consequences. First, comparing prices across bookmakers matters enormously — the best available price often erases most of the margin. Second, beating the market means overcoming the margin and then some, which is why genuine long-term edges are rare and small."
+      ],
+      "example": "Two-outcome market priced 1.91 / 1.91: implied 52.4% + 52.4% = 104.8%, a 4.8% margin. The fair price for a genuine 50/50 would be 2.00 / 2.00.",
+      "related": [
+        "implied-probability",
+        "fair-odds",
+        "odds-comparison",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": []
+    },
+    {
+      "slug": "fair-odds",
+      "term": "Fair Odds",
+      "short": "What a price would be with the bookmaker's margin removed — the market's true probability estimate.",
+      "definition": [
+        "Fair odds are the margin-free version of a market: the prices that would make the book break even in the long run. The simplest way to estimate them is to take every outcome's implied probability, sum them, and scale each one down proportionally so the total equals exactly 100%. The rescaled probabilities convert back into fair odds.",
+        "Fair odds matter because they are the benchmark for value. A price only represents value if it exceeds the fair price, not merely if it 'looks big'. Averaging fair probabilities across many bookmakers produces a robust consensus that is hard for any single operator's pricing quirk to distort — this consensus-versus-best-price comparison is exactly how our model flags value picks."
+      ],
+      "example": "Implied probabilities 47.6% / 27.8% / 29.4% (total 104.8%) rescale to 45.4% / 26.5% / 28.1%. Fair home odds = 1 / 0.454 = 2.20. Any book offering more than 2.20 is paying above the market's own estimate.",
+      "related": [
+        "bookmaker-margin",
+        "implied-probability",
+        "value-bet"
+      ],
+      "see": []
+    },
+    {
+      "slug": "kelly-criterion",
+      "term": "Kelly Criterion",
+      "short": "A staking formula that sizes bets in proportion to your edge — and a useful way to rank value bets.",
+      "definition": [
+        "The Kelly criterion computes the bankroll fraction that maximises long-term growth when you have an edge: stake = edge ÷ (decimal odds − 1). Bigger edges justify bigger stakes; longer odds justify smaller ones at the same edge, because the win happens less often and variance is higher. Full Kelly is aggressive — most practitioners use a half or quarter Kelly to smooth the swings.",
+        "Beyond staking, Kelly is an excellent ranking metric. Raw edge percentage flatters longshots: a 30% 'edge' on a 21.00 outsider is usually a pricing artefact, not an opportunity. Dividing the edge by (odds − 1) weights value by how often it actually lands, which is precisely how our screener orders its picks — a modest edge on a 1.80 favourite can outrank a large edge on a 6.00 shot."
+      ],
+      "example": "Edge 8% at odds 3.60: Kelly fraction = 0.08 / 2.60 ≈ 3.1% of bankroll. The same 8% edge at odds 1.60 gives 0.08 / 0.60 ≈ 13.3% — the shorter price justifies a much larger stake.",
+      "related": [
+        "edge",
+        "bankroll-management",
+        "flat-staking",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Kelly-ranked picks in the screener",
+          "href": "/screener"
+        }
+      ]
+    },
+    {
+      "slug": "bankroll-management",
+      "term": "Bankroll Management",
+      "short": "Treating your betting money as a fixed fund with staking rules — the discipline that keeps variance from ruining you.",
+      "definition": [
+        "A bankroll is money set aside exclusively for betting — an amount whose complete loss you could absorb without harm. Bankroll management is the set of rules governing how much of it any single bet may risk. Common approaches: flat staking (the same fixed unit every time), percentage staking (a fixed share of the current bankroll), or Kelly-based staking scaled to edge.",
+        "The purpose is survival through variance. Even a genuinely profitable strategy hits losing runs of ten or more bets; staking too large turns a normal downswing into ruin before the edge can express itself. Most disciplined bettors risk 1–2% of bankroll per bet. Just as important: never top up a bankroll to chase losses — that is the failure mode that turns betting from entertainment into a problem."
+      ],
+      "example": "With a £500 bankroll and 1.5% flat stakes (£7.50 per bet), a brutal 15-bet losing streak costs £112.50 — painful but survivable, leaving 77% of the fund intact.",
+      "related": [
+        "flat-staking",
+        "kelly-criterion",
+        "variance",
+        "self-exclusion"
+      ],
+      "see": [
+        {
+          "label": "Responsible gambling tools & help",
+          "href": "/responsible-gambling"
+        }
+      ]
+    },
+    {
+      "slug": "flat-staking",
+      "term": "Flat Staking & Units",
+      "short": "Betting the same fixed amount — one unit — on every selection, making results comparable and honest.",
+      "definition": [
+        "Flat staking risks an identical amount, called a unit, on every bet regardless of confidence. A unit is usually 1–2% of bankroll. Its great virtue is honesty: profit measured in units cannot be flattered by convenient stake-weighting after the fact, which is why transparent tipsters publish results as '+8.40 units' rather than in currency.",
+        "All results on this site are settled at flat one-unit stakes: a winning bet at odds 2.50 books +1.50 units, any losing bet books −1.00, a void books 0. It is the plainest possible accounting — no 'confidence multipliers' applied in hindsight, no way to dress up a losing month."
+      ],
+      "example": "Ten flat-staked bets: 4 win at average odds 2.40, 6 lose. Profit = 4 × 1.40 − 6 × 1.00 = −0.40 units — a 40% win rate was not enough at those odds. The same record at average odds 2.80 would book +1.20 units.",
+      "related": [
+        "bankroll-management",
+        "roi-and-yield",
+        "win-rate"
+      ],
+      "see": [
+        {
+          "label": "Our settled results, in units",
+          "href": "/tipsters"
+        }
+      ]
+    },
+    {
+      "slug": "accumulator",
+      "term": "Accumulator (Acca / Parlay)",
+      "short": "One bet combining several selections — all must win, odds multiply, and so does the bookmaker's margin.",
+      "definition": [
+        "An accumulator combines two or more selections into a single bet whose odds are the product of the individual prices. Three picks at 1.50 × 1.72 × 1.85 pay 4.77 — attractive, which is why accas are heavily marketed. The catch: one losing leg sinks the whole ticket, and the bookmaker's margin compounds with every leg you add.",
+        "If each leg carries a 5% margin, a treble bakes in roughly a 14% house edge before kick-off. That makes long accumulators structurally poor value — entertainment first, investment never. If you do combine, keep legs few, hunt the best price on each individually, and stake small: the correct expectation for an acca is an occasional fun win, not steady profit."
+      ],
+      "example": "Three legs, each fairly 60% likely: combined true probability = 0.6³ = 21.6% (fair odds 4.63). Priced legs of 1.58 each give a payout of 3.94 — implying 25.4% and handing the book a compounded ~18% margin on the ticket.",
+      "related": [
+        "bookmaker-margin",
+        "double-chance",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Accumulator tips",
+          "href": "/tips/accumulator"
+        }
+      ]
+    },
+    {
+      "slug": "btts",
+      "term": "Both Teams To Score (BTTS)",
+      "short": "A market on whether both sides score at least once — the final result doesn't matter.",
+      "definition": [
+        "BTTS (also 'goals galore' or GG/NG) settles Yes if each team scores at least one goal, No otherwise. A 3–1 is Yes; a 2–0 is No. The result of the match is irrelevant, which makes BTTS popular for games between attacking sides with shaky defences — you can be right about the game's character while being wrong about the winner.",
+        "Pricing BTTS well means estimating each team's scoring probability rather than who is better overall. Its close cousin is the over/under goals market: BTTS-Yes correlates strongly with Over 2.5, and comparing the two prices occasionally exposes inconsistencies in how a bookmaker has modelled the same fixture."
+      ],
+      "example": "If the home side scores in 75% of matches and the away side in 60% (roughly independent), BTTS-Yes ≈ 0.75 × 0.60 = 45% — fair odds 2.22. A price of 2.40 would be value; 1.95 would not.",
+      "related": [
+        "over-under",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "BTTS tips",
+          "href": "/tips/btts"
+        }
+      ]
+    },
+    {
+      "slug": "over-under",
+      "term": "Over/Under (Totals)",
+      "short": "Betting on the combined number of goals rather than the winner, against a line like 2.5.",
+      "definition": [
+        "A totals bet ignores who wins and asks only how many goals the match produces. The line is usually set at a half-goal (2.5) so there is no tie: Over 2.5 needs three or more goals, Under 2.5 wins with two or fewer. Whole-number lines (e.g. exactly 3.0) can 'push' — land exactly on the line — in which case stakes are returned as a void.",
+        "Totals are often better value hunting grounds than match results because casual money concentrates on picking winners, leaving goals markets slightly less efficiently priced. They also suit statistical modelling: goals follow reasonably stable patterns per team and league, which is why a large share of our model's recommendations are totals."
+      ],
+      "example": "Over 2.5 at 1.93 implies 51.8%. If your model rates three-plus goals at 55%, EV = (0.55 × 1.93) − 1 = +6.2% — a value bet even though it is nearly a coin flip.",
+      "related": [
+        "btts",
+        "void-bet",
+        "asian-handicap"
+      ],
+      "see": [
+        {
+          "label": "Over/Under tips",
+          "href": "/tips/over-under"
+        }
+      ]
+    },
+    {
+      "slug": "asian-handicap",
+      "term": "Asian Handicap",
+      "short": "A handicap market that eliminates the draw by giving one side a goal head start, often in quarter-goal steps.",
+      "definition": [
+        "Asian handicaps level a mismatch by adding virtual goals to one team before kick-off. Backing the favourite at −1.5 means they must win by two clear goals; backing the underdog at +1.5 wins if they avoid losing by two or more. Whole-number handicaps (−1.0) can push: if the favourite wins by exactly one, stakes are refunded.",
+        "Quarter lines (−0.75, +1.25) split your stake across the two adjacent lines — half on −0.5 and half on −1.0, for instance — so results can be half-wins and half-losses. Because the draw is engineered out, Asian handicap markets have only two outcomes, typically carry lower margins than 1X2, and are where much of the sharpest football money trades."
+      ],
+      "example": "£20 on the favourite at −0.75 (odds 1.95): a one-goal win pays the −0.5 half in full and refunds the −1.0 half — total return £29.75, a 'half-win'. A two-goal win pays both halves: £39.",
+      "related": [
+        "match-result",
+        "void-bet",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": []
+    },
+    {
+      "slug": "double-chance",
+      "term": "Double Chance",
+      "short": "Covering two of the three match outcomes in one bet — much safer, much shorter odds.",
+      "definition": [
+        "Double chance combines two outcomes of the 1X2 market: home-or-draw (1X), away-or-draw (X2), or either-team-to-win (12). Only one of the three results beats you, so win probability is high — and the odds correspondingly short, often below 1.50 when a favourite is involved.",
+        "The market is functionally similar to Draw No Bet and the +0.5 Asian handicap; comparing all three prices for the same view sometimes reveals which packaging a bookmaker has priced most generously. The strategic caution: safety is not value. A 1X at 1.25 with a true chance of 78% is a losing bet dressed in safe clothing — short odds still need to beat the fair price."
+      ],
+      "example": "Home 45%, draw 28%: fair 1X probability = 73% → fair odds 1.37. A book offering 1.44 is paying value on the 'safe' option; one offering 1.28 is not.",
+      "related": [
+        "match-result",
+        "draw-no-bet",
+        "asian-handicap"
+      ],
+      "see": [
+        {
+          "label": "Double chance tips",
+          "href": "/tips/double-chance"
+        }
+      ]
+    },
+    {
+      "slug": "draw-no-bet",
+      "term": "Draw No Bet (DNB)",
+      "short": "Back a team; if the match is drawn, your stake is refunded.",
+      "definition": [
+        "Draw No Bet removes the draw from the equation: pick a side, and a drawn match returns your stake as a void rather than a loss. It is equivalent to the 0.0 Asian handicap and sits between the full 1X2 price (higher odds, draw loses) and double chance (lower odds, draw wins).",
+        "DNB suits situations where you fancy a side but respect a real draw risk — tight derbies, cagey away favourites. You can also construct it manually by splitting your stake between the win and the draw in the right proportion, which occasionally beats the packaged DNB price. As always, the packaging is only worth taking when the implied probability is below your estimate of the true chance."
+      ],
+      "example": "Team priced 2.30 to win, 3.30 the draw. DNB offered at 1.70: implied 58.8% for a market where the win chance (excluding draws) is 100 × 43.5/(43.5+26.3) ≈ 62% — a fair DNB would be ~1.61, so 1.70 carries value.",
+      "related": [
+        "double-chance",
+        "asian-handicap",
+        "void-bet"
+      ],
+      "see": []
+    },
+    {
+      "slug": "match-result",
+      "term": "Match Result (1X2)",
+      "short": "The classic three-way market: home win (1), draw (X) or away win (2).",
+      "definition": [
+        "1X2 is football's headline market: back the home side, the draw, or the away side over 90 minutes plus stoppage time (extra time and penalties don't count unless stated). Its three outcomes make it structurally different from two-way markets — probabilities are split three ways, draws land far more often than casual bettors expect, and margins are usually higher than on Asian handicap lines.",
+        "The draw deserves particular respect: top-flight football draws roughly a quarter of the time, yet draw prices often drift generous because most recreational money wants a winner. That mispricing pattern is why value screens periodically flag draws — not because draws are predictable, but because they are systematically under-bet."
+      ],
+      "example": "A market at 2.05 / 3.50 / 3.90 implies 48.8% / 28.6% / 25.6% (margin 3%). If consensus fair probabilities are 46% / 27% / 27%, the away side at 3.90 (fair 3.70) is the value corner of the market.",
+      "related": [
+        "double-chance",
+        "draw-no-bet",
+        "implied-probability"
+      ],
+      "see": []
+    },
+    {
+      "slug": "correct-score",
+      "term": "Correct Score",
+      "short": "Predicting the exact final scoreline — long odds, high variance, margin-heavy.",
+      "definition": [
+        "Correct score asks for the precise final result — 2–1, 0–0, 3–3 — with each scoreline priced individually, mostly at long odds. Because probability is spread across twenty-plus plausible scorelines, even the most likely single score (often 1–1 or 1–0) rarely exceeds a 12–13% chance.",
+        "The market's margins are typically among the widest a bookmaker offers, and variance is extreme: correct-score records swing wildly on tiny samples. Treat it as a fun, small-stakes market rather than a value strategy. If you have a genuine view on a game's goal pattern, the totals or BTTS markets usually express the same opinion at fairer prices."
+      ],
+      "example": "A 2–1 priced at 9.00 implies 11.1%. Poisson-style models with realistic scoring rates rarely put any scoreline much above 13% — so the price needs to be north of 7.70 before value is even conceivable.",
+      "related": [
+        "over-under",
+        "btts",
+        "variance"
+      ],
+      "see": [
+        {
+          "label": "Correct score tips",
+          "href": "/tips/correct-score"
+        }
+      ]
+    },
+    {
+      "slug": "closing-line-value",
+      "term": "Closing Line Value (CLV)",
+      "short": "Beating the final pre-kick-off price — the strongest statistical evidence a bettor has genuine edge.",
+      "definition": [
+        "The closing line is the last price available before an event starts, after the market has absorbed all news and money. It is generally the sharpest probability estimate in existence. Closing line value means having taken a better price earlier: you backed 2.20 and it closed at 2.00. Do that consistently and you almost certainly hold a real edge, because you are repeatedly out-predicting the market's final verdict.",
+        "CLV matters because it separates skill from luck far faster than profit does. Results over a few dozen bets are noise; consistently beating the close over the same sample is signal. It is also why prices move at all — early value gets bet away — and why acting quickly on flagged value matters."
+      ],
+      "example": "You take 2.20; the line closes 2.00. Implied probability moved from 45.5% to 50%. If the close is accurate, your bet carried EV = (0.50 × 2.20) − 1 = +10% — banked at the moment you beat the move, whatever the result.",
+      "related": [
+        "line-movement",
+        "edge",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": []
+    },
+    {
+      "slug": "line-movement",
+      "term": "Line Movement & Steam",
+      "short": "How odds shift as money and news arrive — and the sharp-money surges known as steam.",
+      "definition": [
+        "Odds are living prices. They open from a bookmaker's model, then move as bets arrive, team news lands and sharper operators reposition. A shortening price ('steaming in') signals money backing that outcome; a drifting price signals the opposite. Most movement is routine rebalancing, but rapid, synchronised shortening across many books — steam — often marks respected money entering the market.",
+        "Movement matters to a value bettor in two ways. Taken early, a price that later steams in usually means you beat the closing line. And a price that drifts after you bet is a warning your view disagrees with informed money. Tracking our published price against later movement is one of the health checks behind the screener's signal column."
+      ],
+      "example": "A team opens 2.10 and is 1.85 an hour before kick-off across the market. Implied probability moved 47.6% → 54.1%. Anyone holding the 2.10 ticket now owns a bet the market itself rates as +14% EV.",
+      "related": [
+        "closing-line-value",
+        "sharp-and-soft-bookmakers",
+        "value-bet"
+      ],
+      "see": [
+        {
+          "label": "Signal column in the screener",
+          "href": "/screener"
+        }
+      ]
+    },
+    {
+      "slug": "sharp-and-soft-bookmakers",
+      "term": "Sharp vs Soft Bookmakers",
+      "short": "Sharps welcome winners and post accurate low-margin lines; softs court casual money and limit winners fast.",
+      "definition": [
+        "Sharp bookmakers (and betting exchanges) run low margins, accept large stakes, and shape their prices from the flow of professional money — their lines are treated as the market's reference truth. Soft bookmakers target recreational customers with bonuses and promotions, run higher margins, move slower on news, and restrict accounts that win consistently.",
+        "The practical edge map follows directly: value is found most often at softs whose slow or promotional pricing lags the sharp consensus. Comparing a soft book's price against the sharp/consensus fair line is precisely the pattern our value detection uses. The trade-off to know about: consistently taking those prices tends to earn stake limits at soft operators — a badge of honour, but a real constraint."
+      ],
+      "example": "Sharp consensus prices a side at 1.95 (fair ~51%); a soft book still shows 2.15 from yesterday. That 10% gap is a classic soft-book value spot — and exactly the kind of discrepancy that closes within hours.",
+      "related": [
+        "bookmaker-margin",
+        "closing-line-value",
+        "line-movement"
+      ],
+      "see": [
+        {
+          "label": "Bookmaker reviews",
+          "href": "/bookmakers"
+        }
+      ]
+    },
+    {
+      "slug": "arbitrage-betting",
+      "term": "Arbitrage Betting (Arbing)",
+      "short": "Covering every outcome across different bookmakers at prices that guarantee a small profit.",
+      "definition": [
+        "An arbitrage exists when discrepancies between bookmakers let you back every outcome and lock in profit regardless of the result — the combined implied probability of your chosen prices falls below 100%. Arbs appear when books disagree or lag on news, and typically pay 1–4% of total stakes.",
+        "The catches are practical. Arbs demand large turnover for small returns, precise stake calculations, and speed — prices vanish in minutes. Bookmakers detect the pattern quickly and respond with stake limits or account closures. Voided bets at one book can leave the other leg dangerously exposed. It is a real but grinding trade, closer to logistics than to betting."
+      ],
+      "example": "Book A: home 2.10 (47.6%). Book B: away+draw (X2) 2.15 (46.5%). Total 94.1% < 100%. Staking £51.20 and £48.80 respectively returns ~£107.50 whichever way the match goes — about +5.9% on £100 total.",
+      "related": [
+        "bookmaker-margin",
+        "value-bet",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": []
+    },
+    {
+      "slug": "cash-out",
+      "term": "Cash Out",
+      "short": "Settling a bet early at a price the bookmaker offers — convenient, and almost always below fair value.",
+      "definition": [
+        "Cash out lets you close a live bet before the event ends: the bookmaker offers a buy-back amount based on the current likelihood of your bet winning. Winning positions can be banked early; losing ones salvaged in part. It feels like control, which is exactly why it is marketed so heavily.",
+        "The mechanics are less friendly: the cash-out quote is the fair current value of your ticket minus a fresh margin — often larger than the margin on the original bet. Routinely cashing out therefore leaks EV twice. If you find yourself wanting to trade positions actively, an exchange with transparent back/lay prices does the same job at honest prices; if you hold value bets, the discipline is usually to let them settle."
+      ],
+      "example": "Your £10 at 3.00 is 70% to win late in the game. Fair ticket value = 0.70 × £30 = £21. A typical cash-out quote of £18.50 quietly charges you £2.50 — a 12% haircut for the button.",
+      "related": [
+        "expected-value",
+        "in-play-betting"
+      ],
+      "see": []
+    },
+    {
+      "slug": "free-bet",
+      "term": "Free Bet",
+      "short": "A bookmaker token staking the operator's money — winnings are yours, the stake is not returned.",
+      "definition": [
+        "A free bet is promotional credit: place it, and if it wins you keep the winnings but not the stake itself ('stake not returned', SNR). A £10 free bet landing at 4.00 pays £30, not £40. Because the stake is never yours, the token's real value is roughly its face value times (1 − 1/odds) — which is why free bets extract more value on longer prices.",
+        "Free bets are the currency of welcome offers and promotions. Used carelessly on short favourites they return a fraction of face value; used deliberately at odds of 3.00–5.00 they convert to 65–80% of face value in expectation. Always read the attached terms: expiry windows, minimum odds and market restrictions decide what the token is actually worth."
+      ],
+      "example": "£20 free bet at odds 5.00: wins £80 profit 20% of the time → EV = £16, i.e. 80% of face value. The same token at 1.40 returns just £8 × ... ≈ EV £5.70 — under 30% of face value.",
+      "related": [
+        "wagering-requirements",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Current bonuses with real terms",
+          "href": "/bonuses"
+        }
+      ]
+    },
+    {
+      "slug": "wagering-requirements",
+      "term": "Wagering Requirements (Rollover)",
+      "short": "How many times a bonus must be staked before withdrawal — the number that decides whether an offer is worth anything.",
+      "definition": [
+        "A '£50 bonus, 5x wagering at min odds 1.5' means you must place £250 of qualifying bets before the bonus converts to withdrawable cash. Every forced bet pays the bookmaker's margin, so the true cost of clearing is roughly turnover × margin: the headline number shrinks with each required spin through the book.",
+        "Rollover is the single most important line in any bonus's terms — far more than the headline amount. A small bonus at 1x wagering routinely beats a big one at 10x. Watch the supporting clauses too: minimum odds (higher minimums force riskier clearing bets), market exclusions, maximum stake per bet, and expiry dates that quietly void unfinished bonuses."
+      ],
+      "example": "£40 bonus, 8x rollover, ~5% average margin: expected clearing cost ≈ £320 × 5% = £16. The bonus's realistic value is nearer £24 than £40 — and negative if a 7-day expiry forces sloppy bets.",
+      "related": [
+        "free-bet",
+        "bookmaker-margin"
+      ],
+      "see": [
+        {
+          "label": "Offers compared with wagering shown",
+          "href": "/bonuses"
+        }
+      ]
+    },
+    {
+      "slug": "void-bet",
+      "term": "Void Bet (Push)",
+      "short": "A cancelled bet: stake returned, settled as neither won nor lost.",
+      "definition": [
+        "A bet is voided when it cannot be fairly settled: the match is postponed or abandoned, a named player doesn't start, a whole-number handicap or totals line lands exactly (a push), or the bookmaker cancels an obvious pricing error (palpable error, 'palp'). Your stake comes back and the bet is recorded as neither a win nor a loss.",
+        "Voids matter for record-keeping honesty. In our settled statistics a void books exactly 0 units — it is excluded from win-rate calculations and stakes are not counted as turnover. In accumulators, a voided leg doesn't sink the ticket; the leg is removed and the combined odds are recalculated without it."
+      ],
+      "example": "Asian handicap −1.0 and the favourite wins 2–1: the one-goal margin lands exactly on the line, the bet pushes, and your £15 stake is simply returned.",
+      "related": [
+        "settlement",
+        "asian-handicap",
+        "over-under"
+      ],
+      "see": []
+    },
+    {
+      "slug": "settlement",
+      "term": "Settlement (Grading)",
+      "short": "Marking a bet won, lost or void against the official result — and the honesty test for any tipster.",
+      "definition": [
+        "Settlement is the act of grading a bet against the final result: won, lost or void, with profit computed from the odds actually taken. For an individual bettor it is bookkeeping; for anyone publishing tips it is the entire basis of credibility. A record only means something if every published tip is graded — at the published price, against the official score, with losses included.",
+        "The classic tipster scams are settlement scams: deleting losers, grading against better odds than were available, or quietly reclassifying losses as 'voids'. Our pipeline is built against exactly that: every tip is archived before kick-off with its price, results are graded automatically from official final scores, and nothing is edited afterwards — the archive pages stay up, wins and losses alike."
+      ],
+      "example": "Tip archived at 2.30 pre-match. Final score grades it a winner: +1.30 units at flat stakes. Had it lost, the same page would permanently show −1.00 — that permanence is the point.",
+      "related": [
+        "void-bet",
+        "flat-staking",
+        "tipster"
+      ],
+      "see": [
+        {
+          "label": "Browse settled days",
+          "href": "/predictions/daily"
+        }
+      ]
+    },
+    {
+      "slug": "roi-and-yield",
+      "term": "ROI / Yield",
+      "short": "Profit as a percentage of total stakes — the cleanest single number for comparing betting records.",
+      "definition": [
+        "Yield (often called ROI in betting) divides net profit by total amount staked: 100 bets of 1 unit returning 6 units of profit is a 6% yield. Because it normalises by turnover, yield lets you compare records of different sizes and odds profiles fairly — unlike raw profit, which rewards simply betting more.",
+        "Context for calibration: long-term yields of 3–8% are strong professional territory; double-digit yields over large samples are rare and usually shrink as sample size grows. A spectacular yield over 30 bets is variance, not skill — always read yield together with the number of settled bets, and be suspicious of any record that never shows a losing stretch."
+      ],
+      "example": "120 settled tips at flat 1-unit stakes, net +7.9 units: yield = 7.9 / 120 = 6.6%. The same +7.9 units over 400 bets would be a 2.0% yield — a materially weaker (though still positive) record.",
+      "related": [
+        "win-rate",
+        "flat-staking",
+        "variance"
+      ],
+      "see": [
+        {
+          "label": "Tipster ROI on the leaderboard",
+          "href": "/tipsters"
+        }
+      ]
+    },
+    {
+      "slug": "win-rate",
+      "term": "Win Rate (Strike Rate)",
+      "short": "The percentage of bets that win — meaningless on its own, meaningful next to average odds.",
+      "definition": [
+        "Win rate is the share of settled bets that won. In isolation it is the most abused number in betting marketing: an 80% win rate sounds spectacular and is trivially achieved by backing 1.10 favourites — while losing money. Conversely a 35% win rate is excellent if the average price taken is above 3.00.",
+        "The break-even win rate for any record is 1 divided by the average decimal odds: at average odds 2.50 you need 40% to stand still. Everything above break-even is edge; everything below is loss dressed in a percentage. Read win rate, average odds and yield together, over a stated number of bets — any record quoting win rate alone is hiding something."
+      ],
+      "example": "Average odds 2.20 → break-even 45.5%. A record of 48% at those odds yields (0.48 × 2.20) − 1 = +5.6%. The same 48% at average odds 2.00 loses 4% of turnover.",
+      "related": [
+        "roi-and-yield",
+        "flat-staking",
+        "variance"
+      ],
+      "see": []
+    },
+    {
+      "slug": "variance",
+      "term": "Variance",
+      "short": "The natural swings between results and expectation — why good bets lose and bad records look good, for a while.",
+      "definition": [
+        "Variance is the statistical noise between what should happen on average and what actually happens in any finite sample. In betting it is brutal and unavoidable: a genuine 55%-probability bet loses nearly half the time; a portfolio with a real +5% edge can sit in loss after two hundred bets; a coin-flipping tout can post a glorious month.",
+        "Respecting variance changes behaviour. It sizes stakes (see bankroll management), it sets evaluation windows (hundreds of bets, not dozens), and it inoculates against both despair and euphoria. It is also why transparent full records matter more than hot streaks — over a long enough sample variance washes out and only edge, positive or negative, remains."
+      ],
+      "example": "500 independent bets at 50% / odds 2.10 (a real +5% edge): about one such bettor in six is still at a loss after all 500 bets — pure variance, no mistake made.",
+      "related": [
+        "expected-value",
+        "bankroll-management",
+        "win-rate"
+      ],
+      "see": []
+    },
+    {
+      "slug": "in-play-betting",
+      "term": "In-Play (Live) Betting",
+      "short": "Betting while the event is running, at odds that reprice with every meaningful moment.",
+      "definition": [
+        "In-play betting keeps markets open during the match, repricing continuously as goals, cards and momentum arrive. It offers real analytical opportunities — reacting to game state faster or more rationally than the algorithm — but the environment is engineered for impulse: short suspension windows, flashing prices, and a feed delay that means the book usually knows more than your stream shows.",
+        "Two structural cautions. Live margins typically run wider than pre-match, so the average in-play price is worse. And frequency is the enemy of discipline: dozens of micro-decisions per match multiply exposure to both margin and tilt. If you bet live, pre-decide entry points and stakes before kick-off, and treat chasing an early loser 'back' as the red flag it is."
+      ],
+      "example": "A favourite priced 1.70 pre-match concedes early: live odds jump to 2.90 (implied 34%). If your pre-match model rated their comeback scenario nearer 42%, that repricing overshoot — not the excitement — is the only rational reason to bet.",
+      "related": [
+        "cash-out",
+        "line-movement",
+        "bankroll-management"
+      ],
+      "see": []
+    },
+    {
+      "slug": "xg",
+      "term": "Expected Goals (xG)",
+      "short": "A shot-quality metric estimating how many goals a team 'should' have scored from its chances.",
+      "definition": [
+        "Expected goals assigns every shot a probability of scoring based on historical outcomes of similar chances — distance, angle, body part, assist type. Summing them gives a team's xG for a match or season: a measure of chance quality that strips out finishing luck. A team winning 1–0 with 0.4 xG against 2.3 rode its goalkeeper, whatever the table says.",
+        "For bettors, xG is a form signal that stabilises faster than results: teams massively over-performing their xG tend to regress, and the market sometimes lags that regression. Its limits are equally important — it ignores game state and shot context beyond its model, differs between providers, and one match of xG is nearly as noisy as one match of goals. Use it as an input, never a verdict."
+      ],
+      "example": "Over the last six matches a side scored 11 from 6.1 xG. Betting markets pricing them off those 11 goals may be overrating a finishing hot streak that xG says is running ~80% above sustainable rate.",
+      "related": [
+        "variance",
+        "line-movement"
+      ],
+      "see": []
+    },
+    {
+      "slug": "tipster",
+      "term": "Tipster",
+      "short": "Someone who publishes betting selections — trust the archive, never the screenshot.",
+      "definition": [
+        "A tipster publishes recommended bets, free or paid. The economics of attention make the field a minefield: winners get promoted loudly, losing records get deleted quietly, and screenshots prove nothing. The only meaningful evidence is a complete, timestamped record: every tip archived before the event, graded at the quoted odds, with losses displayed as permanently as wins.",
+        "A checklist worth applying to anyone (including us): Is the full history visible, with losing runs intact? Are the odds quoted actually available at publication time? Is profit stated in flat units over a stated sample size? Does the record survive at closing prices? Anyone refusing those questions is selling entertainment, not edge — pay for picks only if the verified record would still impress you at half its stated yield."
+      ],
+      "example": "Two claims: 'won 9 of my last 10!' versus '412 settled tips, +4.8% yield, average odds 2.31, full archive'. The first is a marketing sentence; the second is a record — and the archive is what makes it one.",
+      "related": [
+        "settlement",
+        "roi-and-yield",
+        "win-rate"
+      ],
+      "see": [
+        {
+          "label": "Our leaderboard with settled records",
+          "href": "/tipsters"
+        }
+      ]
+    },
+    {
+      "slug": "odds-comparison",
+      "term": "Odds Comparison",
+      "short": "Checking every bookmaker's price before betting — the simplest, most reliable edge that exists.",
+      "definition": [
+        "Different bookmakers price the same market differently, routinely by 5–10%. Taking 2.20 instead of 2.05 on the same outcome is a 7% improvement in return for zero additional risk — compounded across every bet, price shopping alone often separates a losing record from a break-even one, and a break-even one from profit.",
+        "This is the easiest professional habit to copy: hold accounts at several bookmakers and always take the best available price. It is also the backbone of value detection — our model compares each book's price against the margin-free consensus, and each match page lists the best available odds per outcome so the comparison is already done."
+      ],
+      "example": "Your average bet is at odds ~2.00 and you stake 100 × £10 a month. Systematically taking prices 4% better is worth about £40 a month — the entire margin handed back, before any predictive skill.",
+      "related": [
+        "bookmaker-margin",
+        "fair-odds",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [
+        {
+          "label": "Best odds on every match page",
+          "href": "/predictions"
+        }
+      ]
+    },
+    {
+      "slug": "self-exclusion",
+      "term": "Self-Exclusion & Betting Limits",
+      "short": "Formal tools that lock you out of gambling — deposit caps, time-outs, and multi-operator exclusion schemes.",
+      "definition": [
+        "Every licensed operator must offer control tools: deposit, loss and stake limits; session reminders; short 'time-out' breaks; and full self-exclusion that closes the account for months or years. National schemes extend this across the whole market at once — GAMSTOP in the UK excludes you from every licensed operator with one registration, and blocking software like Gamban covers sites the schemes miss.",
+        "The honest framing: these are not tools for 'problem gamblers' only. Deposit limits set on a calm day are cheap insurance against a tilted evening; a time-out after a bad run is bankroll management for the mind. If betting has stopped feeling like entertainment — chasing losses, hiding stakes, betting money that had a job — the tools above plus free confidential helplines are the correct next bet."
+      ],
+      "example": "Setting a £100 monthly deposit limit takes two minutes in account settings. It cannot be raised in the heat of the moment: increases only take effect after a cooling-off period — the entire point.",
+      "related": [
+        "bankroll-management"
+      ],
+      "see": [
+        {
+          "label": "Responsible gambling help & tools",
+          "href": "/responsible-gambling"
+        }
+      ]
+    },
+    {
+      "slug": "handicap-betting",
+      "term": "Handicap Betting (European)",
+      "short": "A market where one team starts with an imaginary goal deficit or head start, at three-way odds including the adjusted draw.",
+      "definition": [
+        "European handicap betting gives one side a whole-goal head start or deficit before kick-off, then prices the adjusted result as a normal three-way market: home, adjusted draw, away. Back Arsenal −1 and they must win by two or more; a one-goal win lands exactly on the adjusted draw and your bet loses.",
+        "That last point is the trap for newcomers and the whole difference from the Asian version: European handicaps have no refunds. The third outcome (the adjusted draw) is a real, priced possibility that beats both sides of the handicap, which is why the odds look more generous than Asian lines on the same match."
+      ],
+      "example": "Arsenal −1 at 2.60 against Fulham. Arsenal win 2–0: bet wins. Arsenal win 2–1: the −1 makes it 1–1 — the adjusted draw wins and your bet loses, where an Asian −1 would have refunded the stake.",
+      "related": [
+        "asian-handicap",
+        "match-result",
+        "draw-no-bet"
+      ],
+      "see": []
+    },
+    {
+      "slug": "half-time-full-time",
+      "term": "Half-Time/Full-Time (HT/FT)",
+      "short": "A single bet on the result at half-time AND at full-time — nine combinations, long odds, no partial credit.",
+      "definition": [
+        "HT/FT asks you to call the leader at the break and the winner at the end in one bet: Home/Home, Draw/Home, Away/Home and the other six combinations. Both legs must land — a team that trails at half-time and wins late kills a Home/Home ticket even though the final result went your way.",
+        "The market's appeal is price: combinations pay far more than the plain result, because you are pricing two correlated events. The correlation is exactly why bookmakers like it — most bettors overrate favourites to lead at both checkpoints, and the margin on nine outcomes is fatter than on three."
+      ],
+      "example": "Draw/Home on a favourite at 4.75: the favourite must be level at half-time and then win. If it leads 1–0 at the break and wins 3–0, the more likely-looking Home/Home at 2.30 was the ticket that landed — HT/FT punishes being roughly right.",
+      "related": [
+        "match-result",
+        "correct-score",
+        "double-chance"
+      ],
+      "see": []
+    },
+    {
+      "slug": "clean-sheet",
+      "term": "Clean Sheet",
+      "short": "A market on whether a team concedes zero goals — priced from defensive and opposing attack rates.",
+      "definition": [
+        "A clean sheet bet wins if the chosen team concedes no goals across the match. It is the defensive mirror of BTTS: 'Team A clean sheet — yes' is close to 'both teams to score — no' weighted to one side.",
+        "The honest way to price it is from scoring rates: if the opponent averages 1.2 goals per game against similar defences, a Poisson model puts the zero-goals chance around 30%, making fair odds about 3.30. Any shorter price needs a reason — missing strikers, a parked bus — that the averages have not caught yet."
+      ],
+      "example": "Opponent's expected goals against this defence: 1.2. P(0 goals) = e^−1.2 ≈ 30.1%, fair odds ≈ 3.32. A book offering 2.80 is charging you ~16% over fair; 3.60 is paying you to take the variance.",
+      "related": [
+        "btts",
+        "over-under",
+        "xg"
+      ],
+      "see": [
+        {
+          "label": "BTTS model estimates per fixture",
+          "href": "/tips/btts"
+        }
+      ]
+    },
+    {
+      "slug": "anytime-goalscorer",
+      "term": "Anytime Goalscorer",
+      "short": "A bet on a named player to score at any point in the match — priced from minutes, role and team goal expectation.",
+      "definition": [
+        "The anytime goalscorer market pays if your player scores at least once — own goals usually excluded, and the bet typically needs the player to actually take the pitch to stand. Prices track three things: the team's total goal expectation, the player's share of it (penalties help enormously), and expected minutes.",
+        "The classic leak is betting on reputation: a famous striker starting on the bench, or one whose team creates little, carries a price far shorter than his real chance. Check the lineup and the team's attacking numbers before the name."
+      ],
+      "example": "A striker taking ~30% of a team expected to score 1.6 goals has roughly a 1 − e^(−0.48) ≈ 38% anytime chance — fair odds about 2.60. Books quote him at 2.00 on name value alone; that gap is the margin you volunteer to pay.",
+      "related": [
+        "xg",
+        "value-bet",
+        "implied-probability"
+      ],
+      "see": []
+    },
+    {
+      "slug": "first-goalscorer",
+      "term": "First Goalscorer",
+      "short": "A bet on a named player to open the scoring — high variance, high margin, and highly dependent on penalties and minutes.",
+      "definition": [
+        "First goalscorer pays only if your player scores the first goal of the match. It is the anytime market with an extra coin flip on top: not just 'will he score' but 'will his goal come first' — which multiplies variance and, conveniently for the bookmaker, the margin baked into every price.",
+        "Penalty takers and early-minute starters dominate the honest shortlist. A super-sub who scores plenty but enters at 70 minutes is structurally terrible here, whatever his anytime numbers look like."
+      ],
+      "example": "If a player's anytime chance is 38% and his team is equally likely to score first or second, his first-scorer chance is roughly half the share of match first-goals his team owns — often 15–18%, fair odds 5.50–6.60. Books routinely quote 4.50: a double-digit margin hiding in plain sight.",
+      "related": [
+        "anytime-goalscorer",
+        "bookmaker-margin",
+        "variance"
+      ],
+      "see": []
+    },
+    {
+      "slug": "corners-betting",
+      "term": "Corners Betting",
+      "short": "Over/under and handicap markets on corner counts — driven by shot volume and playing style, not by which team wins.",
+      "definition": [
+        "Corners markets price the number of corners: match totals (over/under 9.5 is the classic line), team totals and corner handicaps. Corner counts follow attacking volume and width of play — a dominant team funnelled wide by a low block generates corners regardless of the score.",
+        "The common mistake is treating corners as random garnish. They correlate with shots and territory, so the same reasoning that prices totals applies: teams that attack down the wings against packed defences run high counts, counter-attacking pairs run low ones."
+      ],
+      "example": "Two teams averaging a combined 10.8 corners against similar opposition make over 9.5 roughly a 58% proposition — fair odds ~1.72. A price of 1.90 is value if the sample behind the average is honest; the same price is a trap coming off three atypically open games.",
+      "related": [
+        "over-under",
+        "sample-size",
+        "variance"
+      ],
+      "see": []
+    },
+    {
+      "slug": "cards-betting",
+      "term": "Cards / Bookings Betting",
+      "short": "Markets on yellow and red cards — where the referee's own average matters as much as the fixture's temperature.",
+      "definition": [
+        "Cards markets price total bookings (often as points: yellow 10, red 25) or plain card counts. Two inputs dominate: the fixture's edge — derbies and relegation fights run hot — and the referee, whose personal cards-per-game average is a public, stable statistic most casual bettors never check.",
+        "That referee number is the closest thing to a free signal in this market. The same fixture can carry a cards expectation 30% apart depending on who holds the whistle."
+      ],
+      "example": "A referee averaging 4.8 yellows per game takes a derby whose last five meetings averaged 5.2 cards. An over 4.5 cards line at even money prices the combination about right; the same line under a 3.1-average referee would need the derby heat to do all the work.",
+      "related": [
+        "variance",
+        "sample-size",
+        "in-play-betting"
+      ],
+      "see": []
+    },
+    {
+      "slug": "outright-betting",
+      "term": "Outright (Futures) Betting",
+      "short": "A bet on a whole competition — league winner, top scorer, relegation — settled months later, with margin and dead money to match.",
+      "definition": [
+        "Outrights price season-long outcomes: champion, top four, relegation, golden boot. Two structural costs separate them from match betting: the bookmaker's margin across a 20-runner field is far larger than on a three-way match, and your stake is locked for months — dead money that could have compounded elsewhere.",
+        "The honest case for outrights is a strong early-season disagreement with the market that you expect to close. Betting the favourite in August at a price you could beat by waiting is the classic version of paying for impatience."
+      ],
+      "example": "Sum the implied probabilities of every title price in a 20-team league and you will often find 115–125% — a 15–25% margin, against 4–6% on a single match. The same bankroll rolled over match bets pays a much smaller total toll.",
+      "related": [
+        "bookmaker-margin",
+        "expected-value",
+        "bankroll-management"
+      ],
+      "see": [
+        {
+          "label": "Season hubs with live tables",
+          "href": "/seasons"
+        }
+      ]
+    },
+    {
+      "slug": "each-way-betting",
+      "term": "Each-Way Betting",
+      "short": "Two bets in one — win and place — mostly a racing product, occasionally offered on football outrights.",
+      "definition": [
+        "An each-way bet splits your stake: half on the outright win, half on a 'place' (finishing in a defined set of positions) at a fraction of the win odds. In football it appears on outrights — top-4 finish as the place on a title bet, for example.",
+        "The value question is always the place fraction: at a quarter of odds of 8.00, the place pays 2.00 against a top-4 probability the market may price closer to 1.60 or 2.60. The two halves are one decision only in the slip — evaluate them as two separate bets, because that is what they are."
+      ],
+      "example": "£10 each-way (total £20) on a team at 8.00 for the title, place ¼ odds top-4. Title miss but top-4 hit: the win half loses £10, the place half returns £10 × (1 + 7/4) = £27.50 — net +£7.50. Whether that place price beat its true chance is the actual value question.",
+      "related": [
+        "outright-betting",
+        "expected-value",
+        "implied-probability"
+      ],
+      "see": []
+    },
+    {
+      "slug": "banker",
+      "term": "Banker",
+      "short": "The selection in a coupon treated as near-certain — every accumulator's silent single point of failure.",
+      "definition": [
+        "A banker is the leg bettors anchor a coupon on — the 1.25 favourite 'just to boost the odds'. The arithmetic most slips ignore: a 1.25 price implies a 20% failure rate even at the bookmaker's own optimistic pricing, and that failure kills the whole accumulator.",
+        "Bankers also carry the worst value on the board: heavy favourites are where recreational money piles in, so their prices run below fair more often than any other segment. Adding one to a coupon usually adds margin, not safety."
+      ],
+      "example": "A four-fold at 6.00 becomes 7.50 with a 1.25 banker added. The banker fails one time in five at its own implied rate — you traded a 25% payout boost for a 20% chance of turning every winning coupon into ash.",
+      "related": [
+        "accumulator",
+        "longshot-bias",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Build a coupon from model-screened picks",
+          "href": "/tools/acca-builder"
+        }
+      ]
+    },
+    {
+      "slug": "system-bet",
+      "term": "System Bet",
+      "short": "A structured set of accumulators over the same selections — Trixie, Yankee, Lucky 15 — paying partial returns when only some legs land.",
+      "definition": [
+        "A system bet places every possible accumulator of a given size across your selections: a Trixie on three picks is three doubles plus a treble (4 bets), a Yankee on four picks is six doubles, four trebles and a four-fold (11 bets). One losing leg no longer kills everything — the combinations without it still count.",
+        "The cost is stake fragmentation: each combination carries its own stake, so a '£1 Yankee' costs £11. Systems convert the accumulator's all-or-nothing profile into a smoother one at the price of needing more legs right just to break even."
+      ],
+      "example": "£1 Trixie (£3... £4 total: 3 doubles + 1 treble) on picks at 2.0 / 2.0 / 2.0. All three land: returns £4×... doubles pay 3×£4=£12? — each double pays £1×4=£4, the treble £8, total £20 from £4. Two land: one double survives, £4 back from £4 staked. The system's break-even needs two of three, not one.",
+      "related": [
+        "accumulator",
+        "trixie",
+        "yankee"
+      ],
+      "see": []
+    },
+    {
+      "slug": "trixie",
+      "term": "Trixie",
+      "short": "Three selections, four bets: every double plus the treble. Two winners get money back; three pay properly.",
+      "definition": [
+        "A Trixie wraps three selections into four bets — the three possible doubles and the one treble. Unlike a straight treble, two winning legs still return something: the double they form survives the third leg's failure.",
+        "Total stake is four units. The structure suits picks around evens; on short favourites the doubles pay too little to justify the extra units, and on longshots the plain treble's bigger payout usually beats the insurance."
+      ],
+      "example": "£1 Trixie (£4 total) on three picks at 2.10. All win: 3 doubles × £4.41 + treble £9.26 ≈ £22.50. Two win: one double returns £4.41 — nearly the whole £4 outlay back. A plain £4 treble would have paid £37 for all three but zero for two.",
+      "related": [
+        "system-bet",
+        "yankee",
+        "accumulator"
+      ],
+      "see": []
+    },
+    {
+      "slug": "yankee",
+      "term": "Yankee",
+      "short": "Four selections, eleven bets: six doubles, four trebles, one four-fold. Two winners start paying.",
+      "definition": [
+        "A Yankee spreads four selections across all eleven multi-bets they can form: 6 doubles + 4 trebles + 1 four-fold. Minimum two legs must land before anything returns; the payout curve then steepens sharply with each extra winner.",
+        "Eleven units is real money for the insurance offered. The honest comparison is against four separate doubles or a plain four-fold: the Yankee wins that comparison only when your picks cluster around evens and you genuinely expect two-or-three winners more often than four."
+      ],
+      "example": "£1 Yankee (£11) on four picks at 2.00. Two winners: one double pays £4 — £7 net loss. Three winners: 3 doubles (£12) + 1 treble (£8) = £20 — modest profit. All four: £12 + £32 + £16 = £60. The structure pays for near-misses with most of the jackpot.",
+      "related": [
+        "system-bet",
+        "trixie",
+        "lucky-15"
+      ],
+      "see": []
+    },
+    {
+      "slug": "lucky-15",
+      "term": "Lucky 15",
+      "short": "Four selections, fifteen bets: a Yankee plus the four singles — one winner already returns something.",
+      "definition": [
+        "A Lucky 15 is a Yankee with the four singles added: 4 singles + 6 doubles + 4 trebles + 1 four-fold = 15 bets. The singles mean a lone winner still returns money, and bookmakers often sweeten the product — double odds on a single winner, bonuses for all four.",
+        "The sweeteners exist because the base product carries fifteen units of margin. Price the whole package: fifteen bets at a typical 5% margin costs about 0.75 units in expectation before any bonus gives some of it back."
+      ],
+      "example": "£1 Lucky 15 (£15) on picks at 3.00 each. One winner with 'double odds on one winner': the single pays £1 × 5.00 = £5 (instead of £3) — still a £10 net loss. All four: singles £12 + doubles £54 + trebles £108 + four-fold £81 = £255. The consolation prizes are real but small; the product is priced on them feeling bigger than they are.",
+      "related": [
+        "yankee",
+        "system-bet",
+        "bookmaker-margin"
+      ],
+      "see": []
+    },
+    {
+      "slug": "patent",
+      "term": "Patent",
+      "short": "Three selections, seven bets: singles, doubles and the treble — the fully-insured Trixie.",
+      "definition": [
+        "A Patent covers three selections with all seven possible bets: 3 singles + 3 doubles + 1 treble. It is a Trixie plus singles, so even one winning leg returns something.",
+        "Seven units of stake buys full coverage, which suits confident picks at bigger prices — the singles carry real weight at 3.00+. At short odds the singles return pennies and the structure becomes expensive insurance on insurance."
+      ],
+      "example": "£1 Patent (£7) on three picks at 3.50. One winner: its single returns £3.50 — half the outlay back. Two: 2 singles (£7) + 1 double (£12.25) = £19.25. All three: £10.50 + £36.75 + £42.88 ≈ £90. Compare the £7 treble alone: £0, £0, £150 — the Patent trades jackpot for floor.",
+      "related": [
+        "trixie",
+        "system-bet",
+        "accumulator"
+      ],
+      "see": []
+    },
+    {
+      "slug": "round-robin",
+      "term": "Round Robin",
+      "short": "All the doubles (and often trebles) across a set of picks — the general recipe behind Trixies and Yankees.",
+      "definition": [
+        "A round robin bets every combination of a chosen size across your selections — commonly all doubles from four, five or six picks. Trixie and Yankee are just branded round robins of fixed sizes; the general form lets you choose the width.",
+        "The combinatorics grow fast: all doubles from six picks is fifteen bets, all trebles twenty. Each combination carries its own stake and its own margin, so the structure multiplies the bookmaker's cut exactly as fast as it multiplies your coverage."
+      ],
+      "example": "All doubles from five picks = 10 bets. At a 5% margin per double, the package embeds ~0.5 units of expected cost. Three of five winners land 3 doubles: at 2.00 prices each pays 4 units — 12 back from 10, before variance has said anything.",
+      "related": [
+        "system-bet",
+        "yankee",
+        "bookmaker-margin"
+      ],
+      "see": []
+    },
+    {
+      "slug": "fold",
+      "term": "Fold (4-Fold, 5-Fold…)",
+      "short": "Bookmaker shorthand for accumulator size: the number of legs that must all win.",
+      "definition": [
+        "'Fold' counts the legs in an accumulator: a 4-fold has four selections, a 6-fold six, and every leg must win. The odds multiply and so do the failure modes — each added leg multiplies the payout by its price and the coupon's survival probability by something less than one.",
+        "The fold number is the fastest honesty check on any coupon: at typical 5% margins per leg, an n-fold hands the bookmaker roughly n×5% of expected value. A 6-fold is a ~30% toll dressed as a lottery ticket."
+      ],
+      "example": "Five legs at 1.80 each: 5-fold pays 18.9. True chance if each leg is fairly 55%: 0.55⁵ ≈ 5.0% — fair odds 19.9. The gap between 18.9 and 19.9 is five stacked margins; it grows with every fold you add.",
+      "related": [
+        "accumulator",
+        "bookmaker-margin",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Accumulator calculator",
+          "href": "/tools/accumulator-calculator"
+        }
+      ]
+    },
+    {
+      "slug": "single",
+      "term": "Single",
+      "short": "One selection, one bet — the reference unit every other bet structure should be compared against.",
+      "definition": [
+        "A single stakes one amount on one outcome at one price. It is the cleanest expression of a betting opinion and the baseline for judging every fancier structure: any accumulator, system or builder is just singles glued together with extra margin.",
+        "Professionals bet almost exclusively in singles for exactly that reason — each bet stands on its own value, pays the margin once, and settles without dragging other opinions down with it."
+      ],
+      "example": "Three opinions at 2.00 each, one unit total to deploy. Three ⅓-unit singles: each pays 0.67 profit when right, independent of the others. The same unit on a treble pays 7× when all three land (≈13% of the time at fair prices) and zero otherwise — same opinions, triple margin, all-or-nothing profile.",
+      "related": [
+        "accumulator",
+        "flat-staking",
+        "expected-value"
+      ],
+      "see": []
+    },
+    {
+      "slug": "double",
+      "term": "Double",
+      "short": "A two-leg accumulator: both selections must win, odds multiply, margins stack twice.",
+      "definition": [
+        "A double multiplies two prices into one bet that needs both legs to land. It is the smallest accumulator and the clearest illustration of the family's economics: probability multiplies down while the bookmaker's margin stacks up.",
+        "Doubles have one honest use-case: two genuinely underpriced selections, where multiplying two positive edges compounds them. Two fairly-priced picks in a double are strictly worse than the same picks as singles."
+      ],
+      "example": "Two legs at 2.10, each fairly a coin flip: the double pays 4.41 against a true 25% chance (fair 4.00) — wait, that is value only if the legs were priced ABOVE fair. At fair 2.00 legs, a 2.10 double leg carries edge; two of them compound to 4.41 vs fair 4.00. Margin-laden 1.90 legs compound the wrong way: 3.61 paid vs fair 4.00.",
+      "related": [
+        "accumulator",
+        "treble",
+        "value-bet"
+      ],
+      "see": []
+    },
+    {
+      "slug": "treble",
+      "term": "Treble",
+      "short": "A three-leg accumulator — odds multiply through three prices, and so does the bookmaker's cut.",
+      "definition": [
+        "A treble needs three selections all to win, with the three prices multiplied into one payout. At typical margins each leg contributes ~5% of expected loss, so the structure hands over roughly 15% before kick-off — the price of the bigger number on the slip.",
+        "The variance profile is the real product: trebles at moderate odds land often enough to feel achievable while paying enough to feel like winning. Feelings are the product; the margin is the cost."
+      ],
+      "example": "Three legs at 1.90 (fair 2.00): treble pays 6.86 against a fair 8.00 — you accept 86% of fair value, i.e. a 14% structural toll, for the pleasure of one bigger payout instead of three fair ones.",
+      "related": [
+        "double",
+        "accumulator",
+        "fold"
+      ],
+      "see": []
+    },
+    {
+      "slug": "stake",
+      "term": "Stake",
+      "short": "The amount risked on a bet — the number every return, loss and staking plan is denominated in.",
+      "definition": [
+        "The stake is what you put at risk. Decimal odds include it in the quoted return (odds × stake = total back, including the stake); fractional odds quote profit relative to it. Every sensible staking conversation is about sizing this number, not about picking winners.",
+        "Two disciplines cover most of what matters: size stakes as a small fixed fraction of a dedicated bankroll, and never resize upward to chase a loss. The mathematics of ruin is driven almost entirely by stake sizing, not by pick quality."
+      ],
+      "example": "£10 at decimal 2.50 returns £25 total — £15 profit plus the £10 stake. The same bet in fractional terms is 6/4: £15 profit per £10 staked. Same bet, same money, two grammars.",
+      "related": [
+        "flat-staking",
+        "bankroll-management",
+        "unit"
+      ],
+      "see": []
+    },
+    {
+      "slug": "unit",
+      "term": "Unit",
+      "short": "A bettor's standard stake — usually 1–2% of bankroll — the currency honest records are kept in.",
+      "definition": [
+        "A unit is a personal standard stake, typically 1–2% of bankroll. Tipsters and record-keepers quote profit in units ('+14.2u') because it separates judgement from wallet size: +14 units means the same thing whether a unit is £2 or £200.",
+        "Units also expose staking discipline. A record quoting '10-unit locks' and '0.5-unit longshots' is telling you confidence varies wildly bet to bet — which historically correlates with records that stop being published."
+      ],
+      "example": "Bankroll £1,000, unit 1% = £10. A season ending +18.4u made £184 at flat stakes. Our own published record uses flat 1-unit staking for exactly this reason — the number cannot be inflated by resizing bets after good runs.",
+      "related": [
+        "flat-staking",
+        "bankroll-management",
+        "roi-and-yield"
+      ],
+      "see": [
+        {
+          "label": "Our settled record, flat 1u",
+          "href": "/tipsters"
+        }
+      ]
+    },
+    {
+      "slug": "odds-on-odds-against",
+      "term": "Odds-On / Odds-Against",
+      "short": "Whether a price implies more or less than a 50% chance — under or over 2.00 in decimal terms.",
+      "definition": [
+        "Odds-on means the price implies better than an even chance: decimal below 2.00, fractional with the bigger number on the right (1/2). Odds-against is the opposite: decimal above 2.00, fractional 2/1 and up. Evens (2.00) is the border.",
+        "The vocabulary matters because psychology differs on each side. Odds-on favourites feel safe and are systematically over-backed by recreational money; odds-against underdogs feel like lottery tickets. Neither feeling has anything to do with value, which lives only in the gap between price and true probability."
+      ],
+      "example": "1/2 fractional = 1.50 decimal = 66.7% implied: odds-on. 5/2 = 3.50 = 28.6% implied: odds-against. A 1.50 favourite that truly wins 60% of the time is a bad bet; a 3.50 outsider that wins a third of the time is a good one.",
+      "related": [
+        "odds-formats",
+        "implied-probability",
+        "longshot-bias"
+      ],
+      "see": [
+        {
+          "label": "Odds converter",
+          "href": "/tools/odds-converter"
+        }
+      ]
+    },
+    {
+      "slug": "vig",
+      "term": "Vig (Vigorish / Juice)",
+      "short": "The American name for the bookmaker's margin — the built-in fee baked into every pair of prices.",
+      "definition": [
+        "Vig, vigorish or juice is US betting slang for the bookmaker's commission — the same thing European bettors call margin or overround. It is not a line item on your slip; it hides inside prices that together imply more than 100% probability.",
+        "The classic American expression is -110/-110 on a point spread: bet 110 to win 100 on either side. Each side implies 52.4%, the pair sums to 104.8%, and the 4.8% is the vig."
+      ],
+      "example": "-110 both sides: implied 52.38% each, total 104.76%. A bettor picking spreads at random loses 4.76 cents per dollar staked in the long run — that is the vig doing its work, no bad luck required.",
+      "related": [
+        "bookmaker-margin",
+        "overround",
+        "point-spread"
+      ],
+      "see": [
+        {
+          "label": "Margin calculator",
+          "href": "/tools/margin-calculator"
+        }
+      ]
+    },
+    {
+      "slug": "moneyline",
+      "term": "Moneyline",
+      "short": "US odds format: negative numbers show what you stake to win 100, positive what 100 wins — and the US name for the win market.",
+      "definition": [
+        "A moneyline price of -150 means stake 150 to win 100 (decimal 1.67); +240 means 100 wins 240 (decimal 3.40). Negative marks favourites, positive marks underdogs. 'Moneyline' also names the market itself — betting the winner with no spread, which in football includes the draw as its own line.",
+        "Conversion is mechanical: decimal = 1 + 100/|ML| for negatives, 1 + ML/100 for positives. Doing it in your head — or letting a converter do it — is step one to comparing US-quoted prices against anything else."
+      ],
+      "example": "-125 = 1.80 decimal = 55.6% implied. +210 = 3.10 = 32.3%. A three-way football moneyline of -125 / +260 / +330 implies 55.6 + 27.8 + 23.3 = 106.7% — a 6.7% vig on the trio.",
+      "related": [
+        "odds-formats",
+        "vig",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "Odds converter",
+          "href": "/tools/odds-converter"
+        }
+      ]
+    },
+    {
+      "slug": "point-spread",
+      "term": "Point Spread",
+      "short": "The American handicap: a points line both sides are priced near evens around, with pushes refunded on whole numbers.",
+      "definition": [
+        "A point spread handicaps the favourite by a set margin — lay -6.5 points and they must win by seven. Both sides are priced near -110, the book's profit living in the vig rather than in shaded win odds. Whole-number spreads can land exactly (a push) and refund stakes; half-point lines cannot.",
+        "It is the same idea as the Asian handicap in football: convert a mismatch into a coin flip and charge for the conversion. The football-specific quirk is that low scoring makes half-goal lines dominant, where US sports live on 3.5s and 6.5s."
+      ],
+      "example": "Favourite -3 at -110: win by exactly 3 pushes (stake back), by 4+ wins, by less loses. The -110 on both sides means you must beat the spread 52.4% of the time just to break even — the number every 'against the spread' record should be judged against.",
+      "related": [
+        "asian-handicap",
+        "vig",
+        "push"
+      ],
+      "see": []
+    },
+    {
+      "slug": "push",
+      "term": "Push",
+      "short": "A bet that lands exactly on the line — stake refunded, no win, no loss, and no help toward wagering requirements.",
+      "definition": [
+        "A push happens when the result hits a whole-number line exactly: under 3.0 goals with the match at 3, a -3 spread won by 3. The stake returns; the bet is a non-event. Asian handicaps use the same mechanic on their whole and half-split lines.",
+        "Two practical consequences: pushed bets do not count toward bonus wagering at most books, and in accumulators a pushed leg usually drops out — the coupon recalculates at the remaining odds rather than dying."
+      ],
+      "example": "Over 2.5/3.0 (a split Asian total) with the match ending 3–0: the 2.5 half wins, the 3.0 half pushes — you collect on half the stake and get the other half back. On a plain over 3.0, the whole stake would simply return.",
+      "related": [
+        "asian-handicap",
+        "void-bet",
+        "over-under"
+      ],
+      "see": []
+    },
+    {
+      "slug": "betting-exchange",
+      "term": "Betting Exchange",
+      "short": "A marketplace where bettors bet against each other — back or lay any outcome, with the operator taking a commission instead of a margin.",
+      "definition": [
+        "An exchange matches customers against each other: one backs an outcome, another lays it, and the platform takes a small commission on net winnings instead of building margin into prices. Odds are set by supply and demand, which is why exchange prices are the benchmark sharp bettors compare bookmakers against.",
+        "The catch is liquidity: an exchange price only exists in the size other customers are willing to match. Big football markets are deep; obscure leagues and exotic markets can be deserts where the theoretical better price cannot actually be taken."
+      ],
+      "example": "A bookmaker quotes 2.00 on a team the exchange trades at 2.10. After 2% commission, the exchange back returns 2.10 − (1.10 × 0.02) ≈ 2.078 — still better than 2.00. That gap, sampled honestly over time, is roughly what the bookmaker's margin costs you.",
+      "related": [
+        "lay-betting",
+        "closing-line-value",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": []
+    },
+    {
+      "slug": "lay-betting",
+      "term": "Lay Betting",
+      "short": "Betting that something will NOT happen — playing the bookmaker's side of the trade on an exchange.",
+      "definition": [
+        "To lay an outcome is to accept someone else's back bet: you win their stake if the outcome fails, you pay out at the odds if it lands. Your liability on a lay at 4.00 is three times the backer's stake — the asymmetry newcomers underestimate.",
+        "Laying completes the toolbox: three-way football markets can be attacked from either side ('this favourite is too short' becomes actionable without picking who beats them), and hedging a position becomes a matter of laying what you earlier backed."
+      ],
+      "example": "Lay £10 at 4.00: if the outcome fails you win £10; if it lands you pay £30. The implied bet is 'this happens less than 25% of the time' — priced, sized and settled exactly like any other opinion.",
+      "related": [
+        "betting-exchange",
+        "hedging",
+        "implied-probability"
+      ],
+      "see": []
+    },
+    {
+      "slug": "dutching",
+      "term": "Dutching",
+      "short": "Splitting stakes across several outcomes so any winner returns the same profit — coverage, not arbitrage.",
+      "definition": [
+        "Dutching spreads your stake over two or more outcomes in proportion to their odds, so whichever wins pays the same amount. Backing three correct scores or two goalscorers this way turns several opinions into one position with a known return.",
+        "The trap is mistaking coverage for safety: the outcomes you did NOT cover still lose the entire stake. Dutching below 100% combined implied probability is not arbitrage — it is a normal bet whose loss branch is everything outside your set."
+      ],
+      "example": "Back 1-1 at 7.0, 2-1 at 9.0, 1-0 at 10.0 with a total of £20 split 8.87/6.90/6.21... any of the three landing returns ≈£62 (implied coverage ~32%). The other 68% of scorelines lose all £20 — that is the bet you actually placed.",
+      "related": [
+        "hedging",
+        "correct-score",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "Dutching calculator",
+          "href": "/tools/dutching-calculator"
+        }
+      ]
+    },
+    {
+      "slug": "hedging",
+      "term": "Hedging",
+      "short": "Placing an opposite bet to lock in profit or cap loss on an existing position — paid for in margin, twice.",
+      "definition": [
+        "Hedging closes or reduces a position by betting the other side: lay the team you backed ante-post, back the draw against your winning accumulator's last leg, cash out (which is just the bookmaker hedging for you, at their price). Done at fair odds, a hedge converts variance into a certain number.",
+        "The cost is paying margin on a second bet. Systematic hedging of every winning position is a tax on your own success; the honest uses are rare and specific — locking a life-changing accumulator, or exiting a position whose premise died with the team news."
+      ],
+      "example": "£10 four-fold at 15.0 has three legs won; the last leg's opponent trades at 2.5 on an exchange. Laying/backing to equalise locks ≈£45 whichever way the last match goes, against £150-or-nothing unhedged. Whether that trade is right depends on the price, not on nerves.",
+      "related": [
+        "cash-out",
+        "lay-betting",
+        "dutching"
+      ],
+      "see": [
+        {
+          "label": "Hedging calculator",
+          "href": "/tools/hedging-calculator"
+        }
+      ]
+    },
+    {
+      "slug": "overround",
+      "term": "Overround",
+      "short": "The amount by which a market's implied probabilities exceed 100% — the margin, viewed from the market side.",
+      "definition": [
+        "Sum the implied probabilities of every outcome in a market and the excess over 100% is the overround: a 1X2 summing to 105.5% carries a 5.5% overround. It is the same object as the bookmaker's margin, just measured on the whole market rather than described as a fee.",
+        "Overround varies by market and book — mainstream leagues at sharp books run 2–5%, exotic markets and small leagues 8–15%. Checking it takes thirty seconds and tells you what the table stakes are before any opinion enters."
+      ],
+      "example": "Prices 1.95 / 3.60 / 4.10 imply 51.3% + 27.8% + 24.4% = 103.5% — a 3.5% overround, decent. The same fixture elsewhere at 1.83 / 3.40 / 3.90 implies 107.7% — you pay double the toll for identical opinions.",
+      "related": [
+        "bookmaker-margin",
+        "vig",
+        "fair-odds"
+      ],
+      "see": [
+        {
+          "label": "Live margin research across our leagues",
+          "href": "/research"
+        }
+      ]
+    },
+    {
+      "slug": "goal-line",
+      "term": "Goal Line (Asian Total)",
+      "short": "Totals with Asian mechanics: whole, half and split lines where landing exactly refunds some or all of the stake.",
+      "definition": [
+        "The goal line is over/under with the Asian handicap's refund machinery. Whole lines (3.0) push when the total lands exactly; split lines (2.5/3.0) settle half the stake on each component; half lines (2.5) behave like the classic market.",
+        "The refunds cost odds: over 2.5/3.0 pays less than over 2.5 because part of your downside was removed. Whether that trade is worth it is a pricing question, and split lines are where books hide their most uneven prices — compare against the plain line before taking one."
+      ],
+      "example": "Over 2.75 (that is 2.5/3.0 split) with £10: match ends 3–1 — both halves win. Ends 3–0... total 3: the 2.5 half wins, the 3.0 half pushes → collect on £5, refund £5. Ends 2–0: both halves lose. The 'quarter line' is just those two bets stapled together.",
+      "related": [
+        "over-under",
+        "asian-handicap",
+        "push"
+      ],
+      "see": []
+    },
+    {
+      "slug": "bet-builder",
+      "term": "Bet Builder (Same-Game Multi)",
+      "short": "Combining several markets from ONE match into a single bet — where correlation pricing quietly favours the house.",
+      "definition": [
+        "A bet builder multiplies selections from the same match — result, BTTS, cards, a scorer — into one price. Because the legs are correlated (a team winning 3–0 makes its striker scoring far more likely), fair pricing requires modelling the joint probability, not multiplying independents.",
+        "That correlation is the house edge's hiding place: books price popular positively-correlated combos well below the naive multiplication, and the margin on builders routinely doubles the single-market vig. The product is fun by design and expensive by construction."
+      ],
+      "example": "Team to win (2.00) + over 2.5 (2.00) as independents multiply to 4.00, but the outcomes overlap heavily — a fair joint price might be 3.20. The builder quotes 2.90. You pay both the correlation adjustment AND an extra margin layer for the convenience of one slip.",
+      "related": [
+        "accumulator",
+        "bookmaker-margin",
+        "btts"
+      ],
+      "see": [
+        {
+          "label": "Model-screened combinations instead",
+          "href": "/tools/acca-builder"
+        }
+      ]
+    },
+    {
+      "slug": "acca-insurance",
+      "term": "Acca Insurance",
+      "short": "A promo refunding an accumulator that fails by exactly one leg — usually as a free bet, always priced into the product.",
+      "definition": [
+        "Acca insurance refunds coupons where one leg lets you down — typically 5+ legs required, refund capped and paid as a stake-not-returned free bet, not cash. The trigger (exactly one loser) is rarer than it feels: coupons mostly fail by two or more.",
+        "Price the product as a package: the insurance's expected value at realistic one-leg-miss rates is a fraction of the extra margin the qualifying accumulator carries. It softens variance psychology; it does not change the arithmetic sign."
+      ],
+      "example": "Five legs at 60% each true chance: P(exactly one misses) = 5 × 0.4 × 0.6⁴ ≈ 25.9%. A £10 refund as an SNR free bet is worth ~£7 when triggered → ≈£1.80 of expected value, against ~£2.50 of extra stacked margin on the five-fold itself.",
+      "related": [
+        "accumulator",
+        "free-bet",
+        "stake-not-returned"
+      ],
+      "see": []
+    },
+    {
+      "slug": "price-boost",
+      "term": "Price Boost (Odds Boost)",
+      "short": "A marketing-enhanced price on a chosen outcome — sometimes genuine value, always worth checking against the un-boosted market.",
+      "definition": [
+        "A price boost raises the odds on a selection the bookmaker chooses, usually stake-capped. Because the base price includes margin, a boost often merely returns you to fair — but occasionally, especially on exchange-comparable markets, it genuinely crosses above it.",
+        "The check is mechanical: compare the boosted price against the best un-boosted price and the exchange. Boosted 2.20 where sharp books quote 2.10 is real value in a capped size; boosted 2.20 where the fair price is 2.35 is marketing arithmetic."
+      ],
+      "example": "Boost: 2.00 → 2.20, max £10 stake. The exchange trades the same outcome at 2.16, roughly 2.12 fair after commission. Taking the boost carries (2.20 / 2.12 − 1) ≈ +3.8% expected value on the capped stake — worth taking, and worth not extrapolating to the operator's unboosted prices.",
+      "related": [
+        "value-bet",
+        "closing-line-value",
+        "free-bet"
+      ],
+      "see": []
+    },
+    {
+      "slug": "stake-not-returned",
+      "term": "Stake Not Returned (SNR)",
+      "short": "The free-bet settlement rule: winnings pay out, the token itself never does — halving a token's worth at evens.",
+      "definition": [
+        "SNR means a free bet returns winnings only: a £25 token at 2.00 pays £25, not £50, because the stake was never your money. Nearly all free bets settle this way, which sets their real value — a token converts at (odds−1)/odds of face value at fair prices.",
+        "The consequence: tokens extract more at bigger odds (50% of face at 2.00, 75% at 4.00) and are wasted on short favourites. It is the single most useful fact about free bets and the least advertised one."
+      ],
+      "example": "£25 SNR token: at 1.40 it can only ever win £10 — 40% of face gone before kick-off. At 5.00 it wins £100, converting ~80% of face value in expectation at a fair price. Same token, doubled real worth, one decision.",
+      "related": [
+        "free-bet",
+        "expected-value",
+        "wagering-requirements"
+      ],
+      "see": [
+        {
+          "label": "Free bets explained in full",
+          "href": "/guides/free-bets-explained"
+        }
+      ]
+    },
+    {
+      "slug": "poisson-distribution",
+      "term": "Poisson Distribution",
+      "short": "The statistical model behind most football pricing — goals as rare independent events at a known average rate.",
+      "definition": [
+        "The Poisson distribution gives the probability of k events when events arrive independently at a known average rate λ: P(k) = e^−λ·λᵏ/k!. Feed it a team's expected goals and it produces the chance of 0, 1, 2, 3… — and two teams' distributions combine into scorelines, 1X2, totals and BTTS.",
+        "It is imperfect in known ways — goals cluster slightly, draws come out a touch under-priced — and every serious football model, including ours, starts from it and corrects from there. Its power is turning one honest input (expected goals) into a full probability surface."
+      ],
+      "example": "λ = 1.4 expected goals: P(0) = e^−1.4 ≈ 24.7%, P(1) ≈ 34.5%, P(2) ≈ 24.2%. Two independent Poissons at 1.4 and 1.1 give P(1–1) ≈ 34.5% × 36.6% ≈ 12.6% — the arithmetic inside every correct-score price you have ever seen.",
+      "related": [
+        "xg",
+        "expected-value",
+        "correct-score"
+      ],
+      "see": [
+        {
+          "label": "How our model works",
+          "href": "/model"
+        }
+      ]
+    },
+    {
+      "slug": "regression-to-the-mean",
+      "term": "Regression to the Mean",
+      "short": "Extreme runs drift back toward true ability — the statistical force behind 'form is temporary, class is permanent'.",
+      "definition": [
+        "When performance runs far above or below a team's underlying level, the next stretch tends to land closer to that level — not because of momentum or a curse, but because extremes are part luck and luck does not repeat to order. A striker converting 35% of shots will convert closer to his career 12% next month.",
+        "For bettors the lesson is about pricing narratives: the market often extrapolates hot streaks exactly when regression is most likely, which is why fading extremes at inflated prices is a durable angle and chasing them a durable leak."
+      ],
+      "example": "A mid-table side wins six straight, three by one goal with heavy xG deficits. Its underlying numbers price the next match at 45% win probability; the streak-following market prices 58%. Regression does not guarantee a loss — it says 1.72 on a 45% chance is the wrong price.",
+      "related": [
+        "variance",
+        "sample-size",
+        "xg"
+      ],
+      "see": []
+    },
+    {
+      "slug": "sample-size",
+      "term": "Sample Size",
+      "short": "How many observations sit behind a statistic — the difference between evidence and anecdote, in one number.",
+      "definition": [
+        "Every betting statistic is an estimate whose reliability grows with the number of observations behind it. Five matches of BTTS data tell you almost nothing; fifty tell you something; five hundred pin the rate down. The standard error shrinks with the square root of n — quadruple the data to halve the noise.",
+        "The practical filter: before acting on any rate ('they hit over 2.5 in 8 of 10'), ask what n is and what the base rate says. Most 'trends' sold to bettors are ten-game samples of a coin that was always near 50%."
+      ],
+      "example": "A 60% over-2.5 rate from 10 games has a standard error of ±15.5% — the true rate is plausibly anywhere from 45% to 75%, spanning 'bet over' and 'bet under'. The same 60% from 200 games (±3.5%) is actually information.",
+      "related": [
+        "variance",
+        "regression-to-the-mean",
+        "win-rate"
+      ],
+      "see": []
+    },
+    {
+      "slug": "longshot-bias",
+      "term": "Favourite–Longshot Bias",
+      "short": "The documented market tilt: longshots are systematically overpriced by demand, favourites comparatively fair.",
+      "definition": [
+        "Across decades of studies and markets, bets at long odds return worse than bets at short odds: recreational money loves lottery-shaped payouts, books shade longshot prices accordingly, and the sportsbook margin concentrates exactly where the dreams are.",
+        "The bias is one of the few market facts stable enough to build rules on: be suspicious of your own longshot enthusiasm, demand extra edge before taking 6.0+, and remember that most 'value' a naive model finds at big prices is the bias laughing at the model. Our own v1 went 0-for-8 on exactly this rake."
+      ],
+      "example": "Typical finding: bets at 1.50 return ~97p per £1 staked; bets at 15.0 return ~85p. Same sport, same books, same day — the difference is where the margin hides. A model that ignores this will 'find' its biggest edges precisely where prices are worst.",
+      "related": [
+        "value-bet",
+        "variance",
+        "bookmaker-margin"
+      ],
+      "see": [
+        {
+          "label": "Our model's odds caps and why",
+          "href": "/model"
+        }
+      ]
+    },
+    {
+      "slug": "home-advantage",
+      "term": "Home Advantage",
+      "short": "The structural edge of playing at home — worth roughly 0.3–0.4 goals, varying by league, era and crowd.",
+      "definition": [
+        "Home teams score more and concede fewer than the same teams away — historically worth around 0.3–0.4 goals per match, driven by crowd effects on players and referees, travel, and familiarity. The effect is real, league-specific, and slowly shrinking across football.",
+        "Every serious model carries separate home and away rates rather than one team strength; ours does. The betting angle is not that home advantage exists — the market knows — but that its SIZE varies by league and season, and prices set on the global average misprice the extremes."
+      ],
+      "example": "In our fitted leagues the home goal rate runs ~1.4 vs ~1.1 away — a 0.3-goal edge worth roughly 8–10 points of win probability in an even matchup. A league whose current season runs materially above or below its own average is where the totals and 1X2 prices drift wrong first.",
+      "related": [
+        "poisson-distribution",
+        "xg",
+        "regression-to-the-mean"
+      ],
+      "see": [
+        {
+          "label": "Home advantage by league — live research",
+          "href": "/research/home-advantage"
+        }
+      ]
+    },
+    {
+      "slug": "team-form",
+      "term": "Form",
+      "short": "Recent results as a signal — weakly predictive on its own, useful only weighted against opposition quality and underlying numbers.",
+      "definition": [
+        "Form summarises recent results — WWDLW strips on every stats site. Raw form is a weak predictor: five results carry enormous noise, opposition quality varies wildly, and one deflected goal flips a letter. Underlying rates (shots, xG, field position) predict the next match better than the letters do.",
+        "Form earns a place when it is weighted (recent matches more), adjusted for who was played, and cross-checked against the underlying numbers. Our model applies time-decay for exactly this reason — a result from last week says more than one from October, but neither overrides a season of rates."
+      ],
+      "example": "Team A: LLWLL against the league's top five. Team B: WWWWW against the bottom five. The letters say B is flying; opposition-adjusted rates often say A is the stronger side at level terms — and the market price usually sits somewhere between the two stories.",
+      "related": [
+        "sample-size",
+        "regression-to-the-mean",
+        "xg"
+      ],
+      "see": []
+    },
+    {
+      "slug": "head-to-head",
+      "term": "Head-to-Head (H2H)",
+      "short": "The two teams' past meetings — heavily marketed, weakly predictive, occasionally informative in aggregate.",
+      "definition": [
+        "H2H records collect previous meetings between two sides. Squads turn over and managers change, so a 4–0 from three seasons ago describes teams that no longer exist — as a predictor of the next result, H2H history adds almost nothing once current strength is accounted for.",
+        "The defensible uses are aggregates: pairings that persistently run high or low on goals across many meetings, or venue-specific patterns with real sample sizes. Context, not signal — our model ignores H2H entirely and works from current scoring rates."
+      ],
+      "example": "Ten meetings averaging 3.4 goals against a league norm of 2.6 is worth a look at the totals line — as a prompt to check current attacking rates, not as a bet. Three meetings averaging anything is a coin remembered fondly.",
+      "related": [
+        "sample-size",
+        "team-form",
+        "over-under"
+      ],
+      "see": [
+        {
+          "label": "H2H records for every covered pairing",
+          "href": "/h2h"
+        }
+      ]
+    },
+    {
+      "slug": "fixture-congestion",
+      "term": "Fixture Congestion",
+      "short": "Midweek-weekend pileups: rotation risk, tired legs and totals drift the market prices with a lag.",
+      "definition": [
+        "Congestion is three matches in eight days — cup midweeks, continental travel, December pileups. Effects are measurable: rotated line-ups, a slight drop in high-intensity output, and modestly fewer goals from tired legs late in pileups.",
+        "The betting relevance is timing: prices set early in the week can lag confirmed rotation, and player-market bets (scorers, cards) are the most exposed to a name simply not starting. Check confirmed team news before anything congestion-sensitive."
+      ],
+      "example": "A side playing its third match in seven days, post-European travel, rotates four starters. The 1X2 barely moves (the market prices the squad), but the striker priced at 2.10 anytime is on the bench — the bet died at the teamsheet, not at kick-off.",
+      "related": [
+        "team-form",
+        "anytime-goalscorer",
+        "in-play-betting"
+      ],
+      "see": []
+    },
+    {
+      "slug": "dead-rubber",
+      "term": "Dead Rubber",
+      "short": "A match with nothing riding on it for one or both sides — where motivation breaks the models and the prices.",
+      "definition": [
+        "A dead rubber decides nothing: the group already won, safety already secured, the final round of a settled league. Motivation asymmetries this large break rate-based models — a strong team with nothing to play for rests players and coasts, and its 'true' strength temporarily is not its strength.",
+        "These are the matches where model probabilities (ours included) deserve the least trust and where the market's information edge — who actually needs the points — matters most. Late-season and final-group-round fixtures earn a motivation check before any bet."
+      ],
+      "example": "Last group round: qualified side (rate-based win chance 60%) visits a team needing a point to survive. History of such asymmetries suggests the favourite's effective chance runs 10–15 points lower — 1.67 on a coasting favourite is the classic dead-rubber trap.",
+      "related": [
+        "team-form",
+        "fixture-congestion",
+        "value-bet"
+      ],
+      "see": []
+    },
+    {
+      "slug": "maximum-payout",
+      "term": "Maximum Payout",
+      "short": "The cap on what a bookmaker will pay a single bet or customer per day — the fine print that shrinks jackpot accumulators.",
+      "definition": [
+        "Every bookmaker caps payouts — per bet, per market, per customer per day — with limits varying by league and sport: top competitions carry the highest caps, obscure ones far lower. A 12-leg accumulator whose nominal payout exceeds the cap pays the cap, no matter what the slip multiplied to.",
+        "Check the cap before building anything lottery-shaped, and note which league on your coupon carries the LOWEST cap — mixed accumulators are capped by their weakest component at many books."
+      ],
+      "example": "Slip says £2 × 8,000 = £16,000; the terms cap payouts on that league at £10,000. Six legs were mainstream but one Belarusian reserve-league pick dragged the whole coupon under the low-tier cap — the £6,000 difference was in the fine print all along.",
+      "related": [
+        "accumulator",
+        "fold",
+        "value-bet"
+      ],
+      "see": []
+    }
+  ]
 }
