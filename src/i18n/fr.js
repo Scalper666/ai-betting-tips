@@ -59,6 +59,8 @@ export const FR = {
   'card.analysis': 'Analyse →',
   'nav.model': 'Notre modèle',
   'tb.archives': 'Tableaux finaux (archives)',
+  'mp.noPick': 'ⓘ Aucun pronostic officiel n’a été publié pour ce match — il ne portait qu’une tendance du modèle tant que les cotes étaient actives. Les pronostics officiels exigent un avantage mesuré face à une cote réelle.',
+  'mp.descReg': '{home} vs {away} en {league} : bilan des confrontations, forme récente et détails du match.{score}',
   'mp.voidRelisted': 'Annulé — match reprogrammé et réinscrit',
   'mp.boardNote': "Cotes à notre dernière actualisation, meilleure cote par issue en surbrillance. Les bookmakers sont classés par marge — les plus serrés d'abord — et non par alphabet.",
   'sub.h': 'Le pronostic, par e-mail',

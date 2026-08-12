@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro';
+import ToolsBox from '../../components/ToolsBox.astro';
+import { BET_TYPES } from '../../lib/betTypes.js';
+import { BUILD_ISO, fmtDate } from '../../lib/utils.js';
+
+// ── /tips parent index. Search Console showed Google guessing this URL from
+//    the /tips/{type} children and eating 404s — the parent of a real page
+//    family should be a real page.
+const title = 'Football Betting Tips by Market — BTTS, Accas, Over/Under & More';
+const description = `Free football tips organised by market: ${BET_TYPES.map((b) => b.name).join(', ')}. Every pick archived and settled openly.`;
+---
+<Base title={title} description={description} updated={BUILD_ISO} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span>Tips</div>
+      <h1>Tips <em>by market</em></h1>
+      <p class="lead">Every market page carries what we can honestly offer there: model picks where the model prices the market, real base rates where it does not — never invented selections.</p>
+      <p class="upd-line">Updated {fmtDate(BUILD_ISO)} · <a href="/editorial-policy">how we work</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head"><h2 class="sec-title">All <b>markets</b></h2></div>
+          <div class="bt-grid">
+            {BET_TYPES.map((b) => (
+              <a href={`/tips/${b.slug}`} class="bt-tile">
+                <div class="ic">{b.emoji ?? '🎯'}</div>
+                <div><h4>{b.name}</h4><p>{b.long}</p></div>
+                <span class="arr">→</span>
+              </a>
+            ))}
+            <a href="/predictions" class="bt-tile">
+              <div class="ic">🏆</div>
+              <div><h4>Match Result Tips</h4><p>1X2 winner picks priced directly by the model — the full board</p></div>
+              <span class="arr">→</span>
+            </a>
+          </div>
+        </section>
+        <section class="seo">
+          <h2>How these pages work</h2>
+          <p>Our model prices match results and goal totals — those pages carry live picks with the published, settled record behind them. Markets the model does not price (BTTS, correct score, double chance) show real base rates from finished matches instead of manufactured tips, with the reasoning stated on each page. The full board of upcoming fixtures lives under <a href="/predictions">predictions</a>, and the acca builder assembles coupons from model-screened picks only.</p>
+        </section>
+      </main>
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">⚽</span> Start here</div>
+          <a class="tm" href="/predictions"><span class="dot"></span>All predictions</a>
+          <a class="tm" href="/bet-of-the-day"><span class="dot"></span>Bet of the day</a>
+          <a class="tm" href="/screener"><span class="dot"></span>AI value screener</a>
+          <a class="tm" href="/tools/acca-builder"><span class="dot"></span>Acca builder</a>
+        </div>
+        <ToolsBox lang="en" />
+      </aside>
+    </div>
+  </div>
+</Base>

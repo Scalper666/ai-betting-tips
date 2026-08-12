@@ -1,0 +1,64 @@
+---
+import Base from '../../layouts/Base.astro';
+import ToolsBox from '../../components/ToolsBox.astro';
+import countriesData from '../../data/countries.json';
+import guidesData from '../../data/guides.json';
+import { BUILD_ISO, fmtDate } from '../../lib/utils.js';
+
+// ── /countries parent index: every country edition in one place. Existed only
+//    as /countries/{slug} children before; Google guessed the parent and got
+//    404s. Groups follow the site's real coverage map.
+const countries = (Array.isArray(countriesData) ? countriesData : countriesData.countries ?? [])
+  .slice()
+  .sort((a, b) => a.name.localeCompare(b.name));
+const guideByCountry = {};
+for (const g of guidesData.guides ?? []) {
+  if (g.country) guideByCountry[g.country] = g.slug;
+}
+
+const title = `Betting by Country — ${countries.length} Local Editions`;
+const description = `Country-by-country betting pages: regulator, payment rails and market notes for ${countries.length} countries, each with a full how-it-works guide.`;
+---
+<Base title={title} description={description} updated={BUILD_ISO} active="sites">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span>Countries</div>
+      <h1>Betting <em>by country</em></h1>
+      <p class="lead">{countries.length} local editions: who regulates the market, which payment rails actually work, and what to check before signing up anywhere. Every country carries a full guide.</p>
+      <p class="upd-line">Updated {fmtDate(BUILD_ISO)} · <a href="/editorial-policy">how we work</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head"><h2 class="sec-title">All <b>country editions</b></h2></div>
+          <div class="team-grid">
+            {countries.map((c) => (
+              <a class="team-card" href={`/countries/${c.slug}`}>
+                <span class="badge" style="background:var(--surface-3);font-size:17px">{c.flag}</span>
+                <span class="tc-name">{c.name}</span>
+                <span class="tc-n">{c.currency.split(' ')[0]}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+        <section class="seo">
+          <h2>What a country page gives you</h2>
+          <p>Each edition answers the three questions that actually differ between markets: who regulates betting there (and whether that regulator has teeth), which payment rails are native to the market, and what the local tax or legal quirks mean for your net winnings. The paired guide goes deeper on each. What these pages deliberately avoid: pretending one global answer fits everywhere, or recommending operators we have not vetted — the operator listings ship as clearly-marked demo entries until real partnerships are in place.</p>
+        </section>
+      </main>
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">📗</span> Country guides</div>
+          {countries.slice(0, 12).map((c) => guideByCountry[c.slug] && (
+            <a class="tm" href={`/guides/${guideByCountry[c.slug]}`}><span class="dot"></span>Betting in {c.name}</a>
+          ))}
+          <a class="tm" href="/guides"><span class="dot"></span>All guides</a>
+        </div>
+        <ToolsBox lang="en" />
+      </aside>
+    </div>
+  </div>
+</Base>

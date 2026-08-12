@@ -13,7 +13,7 @@ import TeamMark from '../components/TeamMark.astro';
 
 // ── Programmatic SEO view (paths come from lib/matchPages.js): live and
 //    archived fixtures share this template in every site language.
-const { tip, archive, lang = 'en' } = Astro.props;
+const { tip, archive, lang = 'en', reg = null } = Astro.props;
 const T = (k) => t(lang, k);
 const L = (pth) => lhref(lang, pth);
 const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
@@ -22,10 +22,14 @@ const isLive = !!tip;
 const latest = archive[0] ?? null;
 
 // unified view-model (live tip shape wins; archive entries carry our published bet)
-const home = tip?.home ?? latest?.home;
-const away = tip?.away ?? latest?.away;
-const league = tip?.league ?? latest?.league ?? 'Football';
-const kickoffIso = tip?.kickoff ?? latest?.kickoff;
+// registry rows resurrect pages whose fixture left the feed without an
+// official pick — names/kickoff/score come from there when nothing else has them
+const home = tip?.home ?? latest?.home ?? reg?.h;
+const away = tip?.away ?? latest?.away ?? reg?.a;
+const league = tip?.league ?? latest?.league ?? (reg?.league || 'Football');
+const kickoffIso = tip?.kickoff ?? latest?.kickoff ?? reg?.ko;
+const regOnly = !tip && !latest && !!reg;
+const regScore = reg && reg.hs != null ? `${reg.hs}-${reg.as}` : null;
 const rec = tip?.recommendation ?? {
   text: latest?.market, price: latest?.odds, bookmaker: latest?.bookmaker,
   confidence: latest?.confidence, edge_pct: latest?.edge_pct,
@@ -49,7 +53,7 @@ const settledStates = ['won', 'lost', 'void'];
 const settled = !isLive && latest && settledStates.includes(latest.status);
 // a fixture can leave the feed BEFORE it is played (league rotation) — don't say "kicked off"
 const played = kickoffIso ? new Date(kickoffIso).getTime() < Date.now() : true;
-const resultScore = settled && latest.score && latest.score !== 'simulated' ? latest.score : null;
+const resultScore = (settled && latest.score && latest.score !== 'simulated' ? latest.score : null) ?? (regOnly ? regScore : null);
 const resWord = { won: 'Won', lost: 'Lost', void: 'Void' }[latest?.status] ?? 'Pending';
 const resCls = { won: 'w', lost: 'l', void: 'v' }[latest?.status] ?? 'v';
 const profit = Number(latest?.profit ?? 0);
@@ -70,8 +74,11 @@ const title = isLive
   : F('mp.titleRes', { home, away, score: resultScore ? ` (${resultScore})` : '' });
 const description = isLive
   ? F('mp.descLive', { home, away, league, tip: recText, price: Number(rec.price ?? 0).toFixed(2) })
-  : F('mp.descRes', { home, away, league, tip: recText, price: Number(rec.price ?? 0).toFixed(2),
-      result: resWord.toLowerCase() + (resultScore ? ` ${resultScore}` : '') });
+  : regOnly
+    // no bet copy on registry pages — there was no published pick to describe
+    ? F('mp.descReg', { home, away, league, score: resultScore ? ` Final score: ${resultScore}.` : '' })
+    : F('mp.descRes', { home, away, league, tip: recText, price: Number(rec.price ?? 0).toFixed(2),
+        result: resWord.toLowerCase() + (resultScore ? ` ${resultScore}` : '') });
 
 const bestOdds = Object.entries(tip?.best_h2h ?? {});
 
@@ -94,7 +101,7 @@ const extraPicks = isLive
   : [];
 
 // form / H2H / standings from football-data.org + our own results archive
-const sportKey = tip?.sport_key ?? latest?.sport_key ?? '';
+const sportKey = tip?.sport_key ?? latest?.sport_key ?? reg?.sk ?? '';
 const formHome = teamForm(sportKey, home);
 const formAway = teamForm(sportKey, away);
 const h2h = h2hBetween(sportKey, home, away);
@@ -176,16 +183,19 @@ const schema = {
                   <div class="nm">{away}</div>
                 </a>
               </div>
+              {!regOnly && (
               <div class="pred-tip">
                 <div><div class="lbl">{isLive && !rec.official ? T('mp.modelLean') : T('card.ourTip')}</div><div class="val">{recText}</div></div>
                 <div class="odd-box"><div class="ot">{T('card.odds')}</div><div class="ov">{Number(rec.price ?? 0).toFixed(2)}</div></div>
               </div>
+              )}
+              {regOnly && <div class="pk-flag lean">{T('mp.noPick')}</div>}
               {isLive && (rec.official ? (
                 <div class="pk-flag ofc">{T('mp.flagOfficial')}{rec.basis === 'model+market' ? T('mp.flagModel') : ''}</div>
               ) : (
                 <div class="pk-flag lean">{T('mp.flagLean')}</div>
               ))}
-              {isLive ? (
+              {regOnly ? null : isLive ? (
                 <div class="confidence">
                   <div class="cf-top"><span>{T('card.confidence')}</span><span class="pc">{T(`conf.${label}`)} · {conf}%</span></div>
                   <div class={`bar ${cls}`.trim()} data-val={conf}><i></i></div>

@@ -32,7 +32,9 @@ SRC = ROOT / "data"
 FILES = ["predictions.json", "screener.json", "stats.json", "history.json", "content.json",
          "football-data.json", "results-archive.json", "odds_history.json",
          # co.uk import: read by research/home-advantage and lib/seasonTables
-         "results-import.json"]
+         "results-import.json",
+         # eternal match-page registry: read by lib/matchPages
+         "match-registry.json"]
 
 
 def astro_data_dir() -> Path | None:

@@ -1,18 +1,13 @@
 ---
 import LeagueView from '../../views/LeagueView.astro';
 import predictions from '../../data/predictions.json';
-import historyData from '../../data/history.json';
-import { slugify } from '../../lib/utils.js';
+import { buildLeagueNames } from '../../lib/leaguePages.js';
 
 // Feed ∪ settlement-archive leagues: a league page never dies when the feed
 // rotates — it keeps its guide/standings with an honest "no live fixtures" note.
 export function getStaticPaths() {
   const tips = predictions.tips ?? [];
-  const names = new Map(tips.map((t) => [slugify(t.league), t.league]));
-  for (const h of Object.values(historyData.tips ?? {})) {
-    if (h.score === 'simulated' || String(h.event_id ?? '').startsWith('mock') || !h.league) continue;
-    if (!names.has(slugify(h.league))) names.set(slugify(h.league), h.league);
-  }
+  const names = buildLeagueNames();
   return [...names.entries()].map(([slug, league]) => ({
     params: { slug },
     props: { league, tips: tips.filter((t) => t.league === league) },

@@ -8,6 +8,6 @@ export function getStaticPaths() {
   return ALT_LANGS.flatMap((lang) =>
     base.map((pth) => ({ params: { lang, slug: pth.params.slug }, props: pth.props })));
 }
-const { tip, archive } = Astro.props;
+const { tip, archive, reg } = Astro.props;
 ---
-<MatchView lang={Astro.params.lang} tip={tip} archive={archive} />
+<MatchView lang={Astro.params.lang} tip={tip} archive={archive} reg={reg} />

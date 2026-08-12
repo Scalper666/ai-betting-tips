@@ -3,6 +3,8 @@
 // Astro gotcha noted in the project docs.
 import predictions from '../data/predictions.json';
 import historyData from '../data/history.json';
+import registry from '../data/match-registry.json';
+import { leagueName } from './leagues.js';
 import { slugify } from './utils.js';
 
 // Every club we have ever tipped on, grouped by the league it appears in.
@@ -22,6 +24,17 @@ export function teamDirectory() {
   }
   for (const t of predictions.tips ?? []) {
     touch(t.home, t.league); touch(t.away, t.league);
+  }
+  // registry clubs keep their pages after the feed rotates their league out;
+  // n stays 0-based on real tips, so labels never count registry rows
+  for (const m of Object.values(registry.matches ?? {})) {
+    const lg = m.league || leagueName(m.sk, '') || '';
+    for (const name of [m.h, m.a]) {
+      if (!name) continue;
+      const slug = slugify(name);
+      if (!teams.has(slug)) teams.set(slug, { name, leagues: new Set(), n: 0 });
+      if (lg) teams.get(slug).leagues.add(lg);
+    }
   }
 
   const byLeague = {};

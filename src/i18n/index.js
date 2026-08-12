@@ -155,6 +155,20 @@ const D = {
   // the labels have to keep those two straight without a legend.
   // shown in place of the final score on a bet voided because the feed
   // re-listed the fixture — a bare "V" with no reason reads as a hidden loss
+  // registry-resurrected match pages: the fixture had no official pick, so the
+  // page carries stats and result rather than a bet
+  'mp.noPick': {
+    en: 'ⓘ No official pick was published for this fixture — it carried a model lean only while the odds were live. Official picks require a measured edge against a real price.',
+    es: 'ⓘ No se publicó un pronóstico oficial para este partido: solo tuvo una inclinación del modelo mientras las cuotas estaban activas. Los pronósticos oficiales requieren una ventaja medida frente a una cuota real.',
+    pt: 'ⓘ Nenhum palpite oficial foi publicado para esta partida — houve apenas uma tendência do modelo enquanto as odds estavam ativas. Palpites oficiais exigem uma vantagem medida contra uma odd real.',
+    de: 'ⓘ Für dieses Spiel wurde kein offizieller Tipp veröffentlicht — es trug nur eine Modell-Tendenz, solange die Quoten live waren. Offizielle Tipps erfordern einen gemessenen Vorteil gegenüber einer realen Quote.',
+  },
+  'mp.descReg': {
+    en: '{home} vs {away} in {league}: head-to-head record, recent form and match details.{score}',
+    es: '{home} vs {away} en {league}: historial de enfrentamientos, forma reciente y detalles del partido.{score}',
+    pt: '{home} vs {away} na {league}: histórico de confrontos, forma recente e detalhes da partida.{score}',
+    de: '{home} vs {away} in der {league}: Head-to-Head-Bilanz, aktuelle Form und Spieldetails.{score}',
+  },
   'mp.voidRelisted': {
     en: 'Void — fixture rescheduled and re-listed',
     es: 'Anulada — partido reprogramado y vuelto a listar',

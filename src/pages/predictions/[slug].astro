@@ -5,6 +5,6 @@ import { buildMatchPaths } from '../../lib/matchPages.js';
 export function getStaticPaths() {
   return buildMatchPaths();
 }
-const { tip, archive } = Astro.props;
+const { tip, archive, reg } = Astro.props;
 ---
-<MatchView lang="en" tip={tip} archive={archive} />
+<MatchView lang="en" tip={tip} archive={archive} reg={reg} />

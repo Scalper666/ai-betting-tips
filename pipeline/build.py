@@ -185,6 +185,11 @@ def main():
     # and snapshot prices so the screener can show real line movement.
     try:
         new, total = history.add_from_predictions(result)
+        # every fixture that ever gets a page stays in the registry — pages
+        # must never 404 after the feed drops a matchday (GSC saw 49 of those)
+        import match_registry
+        reg_new, reg_total = match_registry.update()
+        print(f"  Registry: +{reg_new} fixtures, {reg_total} total")
         # after archiving, drop bets the feed stranded by re-listing a fixture
         # under a new id — they can never settle and would pad the record
         retired = history.retire_superseded(result)

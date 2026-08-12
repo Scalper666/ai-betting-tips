@@ -1,0 +1,71 @@
+---
+import Base from '../../layouts/Base.astro';
+import ToolsBox from '../../components/ToolsBox.astro';
+import fdData from '../../data/football-data.json';
+import { slugify, BUILD_ISO, fmtDate } from '../../lib/utils.js';
+import { leagueName } from '../../lib/leagues.js';
+
+// ── /top-scorers parent index. Lists the leagues that actually have scorer
+//    data (same filter as the [slug] route); grows on its own as seasons
+//    start feeding the endpoint.
+const leagues = Object.entries(fdData.leagues ?? {})
+  .filter(([, lg]) => (lg.scorers ?? []).length > 0)
+  .map(([sk, lg]) => {
+    const name = leagueName(sk, lg.name);
+    const top = lg.scorers[0];
+    return { name, slug: slugify(name), top };
+  })
+  .sort((a, b) => a.name.localeCompare(b.name));
+
+const title = 'Top Scorers by League — Goals, Assists and Appearances';
+const description = leagues.length
+  ? `Scoring charts for ${leagues.map((l) => l.name).join(', ')} — goals, assists and penalties, refreshed twice daily.`
+  : 'League scoring charts, refreshed twice daily as seasons run.';
+---
+<Base title={title} description={description} updated={BUILD_ISO} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span>Top scorers</div>
+      <h1>Top scorers <em>by league</em></h1>
+      <p class="lead">{leagues.length ? `Scoring charts for ${leagues.length} ${leagues.length === 1 ? 'league' : 'leagues'}, refreshed twice a day with the rest of our data. More appear as seasons kick off.` : 'Charts fill as seasons kick off — refreshed twice a day.'}</p>
+      <p class="upd-line">Snapshot {fmtDate(BUILD_ISO)} · <a href="/editorial-policy">how we work</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Leagues with <b>live charts</b></h2></div>
+          {leagues.length ? (
+            <div class="bt-grid">
+              {leagues.map((l) => (
+                <a href={`/top-scorers/${l.slug}`} class="bt-tile">
+                  <div class="ic">🥅</div>
+                  <div><h4>{l.name}</h4><p>{l.top ? `${l.top.name} leads with ${l.top.goals} goals` : 'Season starting'}</p></div>
+                  <span class="arr">→</span>
+                </a>
+              ))}
+            </div>
+          ) : (
+            <div class="box"><div class="box-pad dim">Between seasons — charts return with the first rounds.</div></div>
+          )}
+        </section>
+        <section class="seo">
+          <h2>Reading scoring charts as a bettor</h2>
+          <p>Goal tallies mix finishing skill with opportunity, and the two separate badly — which is why our model works from team scoring rates rather than star names. Where these charts genuinely help is context for goal and scorer markets: how concentrated a team's scoring is, what a striker's penalty share means for his anytime price, and which numbers are running ahead of sustainable rates. Each league page breaks that down.</p>
+        </section>
+      </main>
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">📊</span> League data</div>
+          <a class="tm" href="/table"><span class="dot"></span>League tables</a>
+          <a class="tm" href="/results"><span class="dot"></span>Latest results</a>
+          <a class="tm" href="/seasons"><span class="dot"></span>Season hubs</a>
+          <a class="tm" href="/predictions"><span class="dot"></span>All predictions</a>
+        </div>
+        <ToolsBox lang="en" />
+      </aside>
+    </div>
+  </div>
+</Base>

@@ -1,17 +1,12 @@
 ---
 import LeagueView from '../../../views/LeagueView.astro';
 import predictions from '../../../data/predictions.json';
-import historyData from '../../../data/history.json';
-import { slugify } from '../../../lib/utils.js';
+import { buildLeagueNames } from '../../../lib/leaguePages.js';
 import { ALT_LANGS } from '../../../i18n/index.js';
 
 export function getStaticPaths() {
   const tips = predictions.tips ?? [];
-  const names = new Map(tips.map((t) => [slugify(t.league), t.league]));
-  for (const h of Object.values(historyData.tips ?? {})) {
-    if (h.score === 'simulated' || String(h.event_id ?? '').startsWith('mock') || !h.league) continue;
-    if (!names.has(slugify(h.league))) names.set(slugify(h.league), h.league);
-  }
+  const names = buildLeagueNames();
   return ALT_LANGS.flatMap((lang) =>
     [...names.entries()].map(([slug, league]) => ({
       params: { lang, slug },

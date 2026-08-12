@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import predictions from '../../data/predictions.json';
 import historyData from '../../data/history.json';
+import registry from '../../data/match-registry.json';
 import content from '../../data/content.json';
 import AiFaq from '../../components/AiFaq.astro';
 import { matchSlug, abbr, badgeColor, kickoffLabel, slugify, faqSchema } from '../../lib/utils.js';
@@ -28,6 +29,11 @@ export function getStaticPaths() {
   for (const t of tips) {
     touch(t.home)?.upcoming.push(t);
     touch(t.away)?.upcoming.push(t);
+  }
+  // registry: clubs from fixtures that never carried an official pick keep
+  // their pages (empty record renders the honest "no tips yet" state)
+  for (const m of Object.values(registry.matches ?? {})) {
+    touch(m.h); touch(m.a);
   }
 
   return [...teams.entries()].map(([slug, data]) => ({ params: { slug }, props: data }));
