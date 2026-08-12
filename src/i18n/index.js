@@ -512,6 +512,7 @@ const D = {
   'gl.hubH1pre': { en: 'Betting', es: 'Glosario de', pt: 'Glossário de', de: 'Wett-' },
   'gl.hubH1em': { en: 'glossary', es: 'apuestas', pt: 'apostas', de: 'Glossar' },
   'gl.hubLead': { en: '{n} terms, written in plain English with a worked numeric example on every page — the vocabulary behind our predictions and screener.', es: '{n} términos en lenguaje claro, con un ejemplo numérico práctico en cada página: el vocabulario detrás de nuestros pronósticos y el screener.', pt: '{n} termos em linguagem clara, com um exemplo numérico prático em cada página — o vocabulário por trás dos nossos palpites e do screener.', de: '{n} Begriffe, klar formuliert und mit einem Zahlenbeispiel auf jeder Seite — das Vokabular hinter unseren Prognosen und dem Screener.' },
+  'top.aiNoteClose': { en: 'Dismiss this notice', es: 'Cerrar este aviso', pt: 'Fechar este aviso', de: 'Hinweis schließen' },
   'top.aiNote': {
     en: '⚠️ Our AI model is still learning from match data. All predictions are experimental statistical estimates for information purposes only — not financial advice and not an invitation to bet. Outcomes are never guaranteed. 18+ · Gamble responsibly.',
     es: '⚠️ Nuestro modelo de IA sigue aprendiendo de los datos de los partidos. Las predicciones son estimaciones estadísticas experimentales, solo informativas: no son asesoramiento financiero ni una incitación a apostar. Ningún resultado está garantizado. 18+ · Juega con responsabilidad.',

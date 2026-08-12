@@ -360,6 +360,7 @@ export const FR = {
   'gl.hubH1pre': 'Glossaire des',
   'gl.hubH1em': 'paris',
   'gl.hubLead': '{n} termes expliqués clairement, avec un exemple chiffré sur chaque page — le vocabulaire derrière nos pronostics et le screener.',
+  'top.aiNoteClose': 'Fermer cet avis',
   'top.aiNote': '⚠️ Notre modèle d’IA apprend encore à partir des données des matchs. Les pronostics sont des estimations statistiques expérimentales, fournies à titre informatif uniquement — ni conseil financier, ni incitation à parier. Aucun résultat n’est garanti. 18+ · Jouez de manière responsable.',
   'home.geo.noEdition': ' — pas encore d’édition {name} dédiée, voici donc notre liste internationale',
   'home.preds.pre': 'Pronostics foot',

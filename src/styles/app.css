@@ -184,9 +184,22 @@ button{font-family:inherit;cursor:pointer;border:0;background:none;color:inherit
 .btn-lg{padding:14px 26px;font-size:15px;border-radius:12px}
 .btn-block{width:100%}
 
-/* ===== Top AI-model disclaimer strip (legal: informational only, no inducement) ===== */
-.ai-note{background:var(--bg-2);border-bottom:1px solid var(--border);color:var(--text-mute);
-  font-size:11px;line-height:1.5;text-align:center;padding:6px 18px}
+/* ===== AI-model disclaimer (legal: informational only, no inducement) =====
+   Sticky at the document's end: pinned to the viewport bottom for the whole
+   scroll, yet it occupies real flow space after the footer — so nothing can
+   ever sit underneath it and no JS has to measure anything. Dismissible for
+   the session; the permanent copy lives in the footer. z-index between the
+   sticky header (80) and the mobile-nav overlay (190). */
+.ai-bar{position:sticky;bottom:0;z-index:120;display:flex;align-items:center;gap:10px;
+  background:var(--surface-2);border-top:1px solid var(--border-2);color:var(--text-mute);
+  font-size:11px;line-height:1.5;padding:7px 12px max(7px,env(safe-area-inset-bottom)) 16px;
+  box-shadow:0 -6px 24px rgba(0,0,0,.18)}
+:root[data-ainote="off"] .ai-bar{display:none}
+.ai-bar-txt{flex:1;text-align:center}
+.ai-bar-x{flex:none;width:30px;height:30px;border-radius:8px;display:grid;place-items:center;
+  font-size:13px;color:var(--text-dim);background:var(--surface-3);border:1px solid var(--border-2)}
+.ai-bar-x:hover{color:var(--text);border-color:var(--border-3)}
+.ai-bar-x:focus-visible{outline:2px solid var(--mint);outline-offset:1px}
 
 /* ===== Header ===== */
 .hdr{position:sticky;top:0;z-index:80;background:var(--hdr-bg);
@@ -845,7 +858,9 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
   .seo{padding:22px}
 
   /* --- mobile density pass: ranking above the fold --- */
-  .ai-note{font-size:9.5px;line-height:1.45;padding:5px 12px}
+  .ai-bar{font-size:9.5px;line-height:1.35;gap:8px;padding:5px 8px max(5px,env(safe-area-inset-bottom)) 10px}
+  .ai-bar-txt{text-align:left}
+  .ai-bar-x{width:28px;height:28px}
   .hdr-bar{height:54px}
   .hero{padding:7px 0 0}
   .hero-copy{gap:8px}

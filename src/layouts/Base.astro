@@ -119,6 +119,11 @@ const favicon = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'
       var s = localStorage.getItem('sharptips-skin');
       if (s && s !== 'azure') document.documentElement.setAttribute('data-skin', s);
     } catch (e) {}
+    // disclaimer bar dismissed this session → hide before paint, no flash
+    try {
+      if (sessionStorage.getItem('abt-ainote') === 'off')
+        document.documentElement.setAttribute('data-ainote', 'off');
+    } catch (e) {}
   </script>
   <!-- Google Analytics 4 -->
   <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-6BCWRLQQ2Y"></script>
@@ -143,10 +148,28 @@ const favicon = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'
   {orgSchema && <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />}
 </head>
 <body>
-  <div class="ai-note" role="note">{t(lang, 'top.aiNote')}</div>
   <Header active={active} lang={lang} i18nPath={i18nPath} />
   <slot />
   <Footer lang={lang} />
+
+  <!-- Legal note, pinned to the bottom edge and dismissible. Dismissal is
+       session-scoped on purpose: one click hides it for the whole visit, a
+       fresh visit shows it again — a warning that can be switched off forever
+       stops being a warning. The permanent copy stays in the footer. -->
+  <div class="ai-bar" id="aiBar" role="note">
+    <span class="ai-bar-txt">{t(lang, 'top.aiNote')}</span>
+    <button class="ai-bar-x" id="aiBarX" aria-label={t(lang, 'top.aiNoteClose')}>✕</button>
+  </div>
+  <script is:inline>
+    (function () {
+      var bar = document.getElementById('aiBar');
+      if (!bar) return;
+      document.getElementById('aiBarX').addEventListener('click', function () {
+        try { sessionStorage.setItem('abt-ainote', 'off'); } catch (e) {}
+        bar.remove();
+      });
+    })();
+  </script>
 
   <div class="mn-back" id="mnBack"></div>
   <nav class="mobile-nav" id="mobileNav">
