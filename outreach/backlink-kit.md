@@ -69,17 +69,27 @@
 
 ## 2.5. Каталоги: прямые ссылки на формы + тексты для полей
 
-Проверено 8 авг 2026 (403 = защита от ботов, в браузере открывается).
+Актуализировано 16 авг 2026: эра бесплатных AI-каталогов закончилась — верхняя тройка стала платной. Бесплатные — вверху, платные — с ценами, чтобы не тратить время на формы.
 
-| Площадка | Форма подачи | Что подавать | Аккаунт |
-|---|---|---|---|
-| There's An AI For That | theresanaiforthat.com/submit/ | /tools/acca-builder | нужен |
-| Futurepedia | futurepedia.io/submit-tool | /tools/acca-builder | нужен |
-| TopAI.tools | topai.tools/submit | /tools/acca-builder | нужен |
-| Insidr.ai | insidr.ai/submit-tools/ | сайт целиком | нет (форма) |
-| SaaSHub | saashub.com/submit | сайт целиком | нужен |
-| AlternativeTo | alternativeto.net (кнопка Add application) | /tools (альтернатива odds-converter-сайтам) | нужен |
-| Kaggle | kaggle.com/datasets → New Dataset | датасет из results-archive (скажи мне — соберу CSV) | нужен |
+**Бесплатные (делать сейчас):**
+
+| Площадка | Как | Что подавать |
+|---|---|---|
+| Product Hunt | producthunt.com — Launch (бесплатно, их основная модель) | /tools/acca-builder как продукт |
+| AlternativeTo | alternativeto.net → Add application | /tools |
+| SaaSHub | saashub.com/submit («free», подтверждено) | сайт |
+| Kaggle | New Dataset (датасет из архива результатов) | ссылка на сайт как источник |
+| GitHub awesome-списки | PR в awesome-sports-analytics / awesome-football-analytics | /research + /model |
+| Reddit / HN / IndieHackers / Quora | тексты R1-R3, H1, Q1 ниже | по текстам |
+
+**Платные (НЕ покупать до реальных партнёрок; это легальные review fee, не PBN — вопрос чисто экономический):**
+
+| Площадка | Цена | Вердикт |
+|---|---|---|
+| TopAI.tools | $47 fast-track (бесплатной очереди больше нет) | единственная осмысленная дешёвая покупка — потом |
+| There's An AI For That | $49 / $347 | $49 — когда будет монетизация; $347 — никогда (нецелевая рассылка) |
+| Futurepedia | $497 (базовый $247 «sold out») | нет: цена ссылки безумна для нашего этапа |
+| Insidr.ai | проверить при подаче — вероятно тоже платный | по обстоятельствам |
 
 В AI-каталоги подаём **/tools/acca-builder**, а не главную: их формат — «инструмент», и конкретный AI-билдер купонов проходит модерацию легче, чем «сайт прогнозов». Ссылка на главную всё равно будет в профиле листинга.
 
