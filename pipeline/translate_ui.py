@@ -48,6 +48,8 @@ TARGETS = {
            "bookmakers — English loanwords are fine where Hausa speakers use them)"),
     "yo": ("Yoruba (Nigeria, with correct diacritics; betting terms as actually used by "
            "Yoruba-speaking bettors — English loanwords are fine where natural)"),
+    "ig": ("Igbo (Nigeria, standard orthography with diacritics; betting terms as used by "
+           "Igbo-speaking bettors — English loanwords are fine where natural)"),
 }
 
 SYSTEM = (

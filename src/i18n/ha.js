@@ -533,7 +533,7 @@ export const HA = {
   "rs.desc": "Sakamakon {name} na kwanan nan tare da cikakken scores, da kadar gida da darujar gida na {n} wasannin da aka wuce da kuma yadda zaɓuɓɓun mu na da a buga a jin saman ya tsaya.",
   "rs.draws": "daidaitawa",
   "rs.faqA1": "Daga wacce faɗi data-data da ake ciki a gida gida da tebur liga, saitaccacce jiya. Sarin lokaci a saman jiya shafi yana nuna lokaci da aka buga shi.",
-  "rs.faqA2": "This page shows the most recent {n} matches; our dataset holds {total} finished {name} games in total, and the full history behind any specific pairing is on its head-to-head page.",
+  "rs.faqA2": "Wannan shafin ya nuna {n} makarantar na gida-gida; bayanan mu na ƙunshi {total} jami'an {name} wasan da aka gama, kuma cikakken tarihi na kowane nau'in makarantar yana akan shafin sa na gida-gida.",
   "rs.faqA3": "Kawai da jiya. Gajajajajajaja ne ya saura jiya, kuma kasuwa ta ba ya jiya ba. Jijajajajaja — bugatsu kowace wasa, gida ta rasa gida jiya a girki mara gida — sun dauki sigina fiye da kowace gajajajajajaja, wanda shine dalilin gida a mai jiya daffi na bukatun bukatun jiya da sauran lokaci a wajen jiya.",
   "rs.faqQ1": "A ina za a ji wadannan sakamakon {name}?",
   "rs.faqQ2": "Nawa ne sura da ya gida gwauraye?",

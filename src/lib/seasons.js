@@ -10,6 +10,7 @@ import sFR from '../data/seasons.fr.json';
 import sSW from '../data/seasons.sw.json';
 import sHA from '../data/seasons.ha.json';
 import sYO from '../data/seasons.yo.json';
+import sIG from '../data/seasons.ig.json';
 
 function merge(source, translated) {
   if (!translated) return source;
@@ -26,6 +27,7 @@ const S = {
   sw: merge(sEN.seasons, sSW.seasons),
   ha: merge(sEN.seasons, sHA.seasons),
   yo: merge(sEN.seasons, sYO.seasons),
+  ig: merge(sEN.seasons, sIG.seasons),
 };
 
 export const seasonsFor = (lang) => S[lang] ?? S.en;

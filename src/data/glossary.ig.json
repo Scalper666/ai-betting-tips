@@ -1,0 +1,1681 @@
+{
+  "lang": "ig",
+  "terms": [
+    {
+      "slug": "value-bet",
+      "term": "Value Bet",
+      "short": "Bet ebe odds mma karịa ihe probabiliti ziri ezi na-egosi — otu ụdị bet naanị na-enwe uru nʼogologo oge.",
+      "definition": [
+        "Value bet dị adị mgbe odds nke bookmaker na-egosi probabiliti dị ala karịa ezi ihe nwere ohere ijide. Ọ bụrụ na ozigbo nwere ohere 50% na-eme ihe ziri ezi mana ị nwere ike ibuo ya na odds 2.20, ọnụahịa ahụ bụ 'njehie' na-akpali gị: mgbe ọtụtụ mgbe a na-eme otu ihe ahụ, ị ga-eme ihe karịa odds na-ewere ha, ya mere bet ahụ nwere positive expected value.",
+        "Value enweghị ọrụ ya pụtara olee elu ijide bet ahụ ga-eme ka ọ mara. Ibuo outsider na odds 5.00 nwere ike ịbụ value bet mgbe ibuo favourite na 1.20 nwere ike ịbụ oke njehie — ihe dị mkpa bụ oghere dị n'etiti ọnụahịa na probabiliti, ọ bụghị probabiliti naanị. Ịdị mkpa bụ ihe mere ndị na-asụ asụ na-anya uri ọnụahịa, ọ bụghị ndị meriri. Ịchọta value nʼụzọ ziri ezi chọrọ etu ị nwere aka ịmata ezi probabiliti, nke akwụkwọ odds na screeners na-agbalị ịchọta."
+      ],
+      "example": "Oke na ozigbo iro nwere ohere 40% (ọnụahịa ziri ezi 2.50), mana otu bookmaker na-enye 2.75. Expected value kwa £1 a kpụrụ = (0.40 × 2.75) − 1 = +0.10, ya bụ advantage 10%. Naanị otu mgbe bet ahụ na-efuo 60% n'oge — mana mgbe o dị ọtụtụ, ọnụahịa dịka nke a bụ ebe uru na-esipụta.",
+      "related": [
+        "expected-value",
+        "implied-probability",
+        "edge",
+        "fair-odds"
+      ],
+      "see": [
+        {
+          "label": "Live value picks in the AI screener",
+          "href": "/screener"
+        }
+      ],
+      "_src_hash": "f37d30dbf5629570",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "implied-probability",
+      "term": "Ihe Ike Mmadi",
+      "short": "Ike mmadi na-egosipụta ọ na-aga nke ọ bụla na-akwụ ụgwo ihe mkpebi: 1 zipụrụ site n'ọdọ decimal.",
+      "definition": [
+        "Ọdọ ụgwo ọ bụla bụ nnọpụ ihe ike n'azụ. Ịgbanwe ọdọ decimal ka ihe ike mmadi dị mfe: zipụ 1 site n'ọdọ. Ọdọ 2.00 na-enwu 50%, ọdọ 4.00 na-enwu 25%, ọdọ 1.25 na-enwu 80%. Mgbanwe a bụ ntọala nke mmakọ ịbụ onye mma n'oge, n'ihi na ọ na-atụghari 'ọdọ a buru ibu?' ka 'ike mmadi a ala karị?' — ajụjụ nwere anya.",
+        "Itikọtụ ihe ike mmadi nke ikpeazụ nile n'ogbako ihe mkpebi na-ekpughe kalatị onye azụ mma: ọtụtụ agbapụtara 100%, ihe agbapụtara n'enweghị ezi ka oke egosipụ onye azụ mma. Iwepụ kalatị ahụ na-eme ihe ike ziri ezi — echiche ndị ahịa nyochaa mma — ebe a ga-amụta uru ma."
+      ],
+      "example": "Ego-mkpesa ụgbọ mmụta dọtụrụ 2.10 (ụlọ), 3.60 (na-agbalị), 3.40 (ala) na-enwu 47.6% + 27.8% + 29.4% = 104.8%. 4.8% agbapụtara bụ kalatị onye azụ mma; ihe ike ụlọ ziri ezi emesia wipu kalatị ya na-agbakọtụ ọrọ ọ bụ 47.6 / 104.8 ≈ 45.4%.",
+      "related": [
+        "bookmaker-margin",
+        "fair-odds",
+        "value-bet",
+        "odds-formats"
+      ],
+      "see": [],
+      "_src_hash": "f1a1df87792644ee",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "expected-value",
+      "term": "Expected Value (EV)",
+      "short": "Uru na-atụ anya nke uru ma ọ bụ ọnwụ nke bet ahụ ga-emepụta ma ọ bụrụ na e nwere ike ịme ya ọtụtụ oge na otu ọnụ ọgụgụ.",
+      "definition": [
+        "Expected value na-azụ otu ajụjụ: ọ bụrụ na ị tụbọ bet a kpọmkwem mgbe otu puku, ọ ga-adị gị elu? A na-agbakọ ya dị ka (nchikota nke mmeri × odds na-amụ ọnụ) − 1, si na dot site n'ihe obula e tinyere. Positive EV (+EV) pụtara na ọnụ ọgụgụ ahụ karịrị eziokwu n'ụka; negative EV pụtara na margin nke bukimakọ ma ọ bụ ihe amataghị akụkọ na-eme ihe megidị gị.",
+        "EV bụ echiche nke ogologo oge. A +EV bet nwere ike ịda ọtụtụ oge n'usoro, na −EV bet nwere ike ịpụta — variance na-achịkwa sampụl ntakiri. Ịmọ ihe ọma nke ura na-enwe uru bụ ịjụ ịtụnyere mkpebi site n'otu ihe atụlọ ma ịtụnyere ya site na ọnụ ọgụgụ i were dị ka. N'usoro bets na-adị iri, n'ụzo n'ụzo na-akpọtọ anya n'ihe a na-atụ anya."
+      ],
+      "example": "Ị na-eceta na draw dị 30% nchikota ma hụ odds nke 3.75. EV = (0.30 × 3.75) − 1 = +0.125 — uru na-atụ anya nke 12.5p maka £1 tinyere. Ọ bụrụ na ihe nchikota gị ziri ezi, itụ bet na ọnụ ọgụgụ a ọ ka na-enwe uru nwekọ na ọ wụ 70% nke oge.",
+      "related": [
+        "value-bet",
+        "edge",
+        "kelly-criterion",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "a2bb98856f4a259f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "edge",
+      "term": "Edge",
+      "short": "Otu ụwa gị na ọnụ ego, nke a na-akụkọ dị ka ihe tụrụ anya na pasent.",
+      "definition": [
+        "Edge bụ oke ụwa gị na bet: etu ọnụ ego dị mma karị ka ihe mgbe ọ na-ememerịrị. Edge nke 5% pụtara na, n'ọnụ £100 i tinyere, ị na-atụ anya £5 uru na maọbụ ogologo oge. Edges n'egwuregwu bet bụ nta — ndị ọzọ na-eche anya maka 2–5% — n'ihi na ahịa bet na-asọ mpi ọtụtụ ma kachiapụta.",
+        "Edges ọ kwuru kwuo kwesịrị ijide anya, gụnyere nke anyị. Ezi ule nke edge bụ njedebe n'otutu bet: ọ bụrụ na otu usoro ejiri eme ngwụcha nke ihe narị bet na-egosi ngrịnụ mmụta, edge bụ ihe eziokwu; ọ bụrụ na ọ bụghị, ọ bụ mkpọtụ. Nke a bụ ihe mere anyị na-echekwa tip nọọkọ tupu mgbapụ na bipụtakwu njedebe, ihe mmeri na ihe nlọghachi."
+      ],
+      "example": "Ọnụ ego kacha mma 2.30 megidị ihe mgbapụ eziokwu nke 46%: edge = (0.46 × 2.30) − 1 = +5.8%. Na £10 staka mgbe niile n'ihe 500, ihe tụrụ anya nke uru bụ ihe dị ka £290 — na nkali ike n'otu oge na otu oge.",
+      "related": [
+        "value-bet",
+        "expected-value",
+        "closing-line-value",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [
+        {
+          "label": "How our settled record is computed",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "24d98b3b4c4c1dd4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-formats",
+      "term": "Ihe nkwanye akụ (Decimal, Fractional, American)",
+      "short": "Ụzọ atọ nke ide njikere otu a: 2.50 = 6/4 = +150.",
+      "definition": [
+        "Decimal odds na-egosi ndi ihe gị ga-enweta nile tinyere ihe i tinyere: na 2.50, ọ bụ £10 bet na-aghara £25 (£15 uru tinyere £10 ndi i tinyere). Ọ bụ nde akwụkwọ nke mbu na ngwa ọ dị mfe maka ịgụ ihe, ya mere site a na-eji ya mgbe nile.",
+        "Fractional odds (6/4) na-egosi uru gbasara ihe i tinyere — merie £6 maka ọ bụla £4 i tinyere — ma ọ ka dị na ụdị ndị zụlọ na UK. American odds na-eji plus ma ọ bụ minus akara: +150 pụtara na $100 stake meriri $150; −200 pụtara na ị ga-atinyere $200 iji merite $100. Itugharị: decimal = fractional + 1; positive American = (odds/100) + 1; negative American = (100/|odds|) + 1."
+      ],
+      "example": "Njikere nke 2.50, 6/4 na +150 bụ otu njikere nke otu nha na ike ịchọ 1 / 2.50 = 40%.",
+      "related": [
+        "implied-probability",
+        "odds-comparison"
+      ],
+      "see": [],
+      "_src_hash": "71f987ece97c137a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bookmaker-margin",
+      "term": "Margin nke Onye Azụ Ego (Overround / Vig)",
+      "short": "Uru na-azụ onye azụ ego n'ime ya n'ịgba ajụjụ — ihe mere na akụkọ nile nke ihe ga-eme na-agbakwunyere karịa 100%.",
+      "definition": [
+        "Ndị azụ ego anaghị enye ajụjụ ezi omume. Ajụjụ ọ bụla ka a na-ewepụ ntakịrị n'okpuru ụlọ nke ezi omume ka a gbanwee, ire bụrụ ihe ọ bụla, akwụkwọ ahu na-ejide ụzọ mmadụ. Tinye ajụjụ nke ihe nile ga-eme wee gụkọ ha: ihe karịrị 100% bụ margin ahụ — a na-akpọkwa ya overround, juice ma ọ bụ vig. Margin nke egwu n'agbado na-adị site na ihe dị ka 2% na ụlọ azụ ego na-akụ mma, ruo 7%+ ma ọ bụ n'ụlọ azụ ego nke ụmụ mmadụ.",
+        "Margin bụ ihe ijide na-adị ọtụtụ: ọ bụrụ na ị gbara ajụjụ n'ụzọ esemokwu, ị na-afụ margin ahụ kemgbe mgbe. Nke a pụtara ihe abụọ. Nke mbu: tugharịa ịgba ajụjụ na ndị azụ ego dị iche iche—ajụjụ kacha mma na-enwebu ọtụtụ margin. Nke abụọ: iji onwe na-emekọ market pụtara ịkwada margin ahụ ma weruo ụtụ. N'ihi nke a, ike ziri ezi na ndụ ogologo oge adịghị ọtụtụ ma dị ntakịrị."
+      ],
+      "example": "Ahịa nke ihe abụọ tụpụtara 1.91 / 1.91: ọnụ 52.4% + 52.4% = 104.8%, margin 4.8%. Ajụjụ ezi omume maka ihe 50/50 ziri ezi bụ 2.00 / 2.00.",
+      "related": [
+        "implied-probability",
+        "fair-odds",
+        "odds-comparison",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "de2db94eb0eef4a6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fair-odds",
+      "term": "Fair Odds",
+      "short": "Ihe onye unyarịcha na-ewe ma olee ụgwọ ya n'ụkwụ — ihe atụmụtụ eziokwu nke ahịa.",
+      "definition": [
+        "Fair odds bụ ụdị ọnụ ọgụgụ na-enweghị akụ onye unyarịcha: ọnụ ọgụgụ ndị ga-eme ka akwụkwọ dị n'otu ihe na ogologo oge. Ụzọ kachasị mfe iji muta ha bụ iwere ihe onwu nke mmepeanya ọ bụla, tinye ya ọnụ, wee kpamkpam ya nke ọ dị otu ọ bụla iji mụta 100%. Ọnụ ọgụgụ ndị e gbagoro agbago ga-alaghachi n'ime fair odds.",
+        "Fair odds dị mkpa n'ihi na ha bụ ihe e ji akpa uru. Ọnụ ọgụgụ pụtara uru ma ọ bụrụ na ọ karịa ọnụ ọgụgụ ezie, mabụ n'ihi na ọ 'dị ukwu'. Ịsa n'otu ụzọ ọnụ ọgụgụ site na ọtụtụ onye unyarịcha na-emepụta ihe gbasara ndị ndị niile na-akpagide ekwu — otu a akpara nnọkọ ọnụ ọgụgụ karịa nke onye unyarịcha pụtara ihe ngosi uru n'akwụkwọ anyị."
+      ],
+      "example": "Ọnụ ọgụgụ a tinye na hypertension 47.6% / 27.8% / 29.4% (nsokoasụ 104.8%) ga-agbagoro agbago ruo 45.4% / 26.5% / 28.1%. Fair home odds = 1 / 0.454 = 2.20. Onye unyarịcha ọ bụla na-ewe karịa 2.20 na-akwụ karịa ihe atụmụtụ ezie nke ahịa ya.",
+      "related": [
+        "bookmaker-margin",
+        "implied-probability",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "7ee23ed1ce1ec170",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "kelly-criterion",
+      "term": "Kelly Criterion",
+      "short": "Usoro ijị ego maka ịgbatị ego nke na-ahazi ihe ị ga-etinye nʼihe ọzọ dabere na nnukwu otu ị nwere — ọkwa nke mma iji tụkọ ụmụ ihe dị mkpa.",
+      "definition": [
+        "Kelly criterion na-agụ ụdị ego site nʼụlọ ego nke na-eme ka nnukwu ìgbadoro ụlọ dị ogologo oge mgbe ị nwere nnukwu otu: ịtụ ego = nnukwu otu ÷ (odds nnata − 1). Nnukwu otu na-akwado nnukwu ịtụ ego; ogologo odds na-akwado obere ịtụ ego n'otu nnukwu otu, n'ihi na ihe ọ ga-emere dịla mgbe ọzọ karị na ụkwu ego adịghị mma. Full Kelly bụ ihe na-ewetara nsogbu — ọtụtụ ndị na-eyi ego na-eji half Kelly maọ̀ quarter Kelly iji dọpụ ngagharị.",
+        "Kelly bụ nnukwu ihe nwere mma iji tụkọ ụmụ ihe n'ozugbo igwe ego. Nnukwu otu pati zuru okè na-atọ isi n'ihe nke zuru ezie: nnukwu otu 30% na odds 21.00 bụ ihe a na-emepụta site n'ijikọ ọnụ ahịa, ọbụghị ohere ziri ezi. Ijikọ nnukwu otu nke ziri ezi sa (odds − 1) na-akụzi ihe dị mkpa site n'ọtụtụ oge ọ ga-emere, ọbụ ihe ahụ na-eme ihe screener anyị na-eji iji rụ ọrụ ya — nnukwu otu obere na odds 1.80 maka ihe ukwu nwere ike ika nnukwu otu ukwu na odds 6.00."
+      ],
+      "example": "Nnukwu otu 8% na odds 3.60: Kelly fraction = 0.08 / 2.60 ≈ 3.1% nke ego ụlọ. Otu nnukwu otu 8% na odds 1.60 na-enye 0.08 / 0.60 ≈ 13.3% — ọnụ ahịa dị mkpirikiti na-akwado ịtụ ego dị ibu karị.",
+      "related": [
+        "edge",
+        "bankroll-management",
+        "flat-staking",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Kelly-ranked picks in the screener",
+          "href": "/screener"
+        }
+      ],
+      "_src_hash": "8613ffe375f15d2e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bankroll-management",
+      "term": "Njikọ Ego Ojuọ",
+      "short": "Ijee ego ị tọrọ maka ajụju dị ka akụ nwere ụkọ mma — ọrụ nke na-egbochi ka mkpọjụ na-akpọ gị.",
+      "definition": [
+        "Ego ojuọ bụ ego ị tụọ anya na ajụju naanị — ego nke ọ ga-adị ya mma ma ọ bụrụ na ọ mụrụ. Njikọ ego ojuọ bụ iwu nke na-akọwa ebe ọ ga-arụ ihe n'otu ajụju. Ụzọ ndị a na-eme: staking ọkụ (ego otu n'otu kwa oge), staking nke pasent (akụkụ nke ego ojuọ ọ na-adị ugbu a), ma ọ bụ Kelly-staking mebiere na isi.",
+        "Ebumnuche ya bụ ịdụ gburugburu n'oge mkpọjụ. Ọbụladị na-amanye njikọ ego mara ilụ n'oge ọkụ iri ma ọ karịa; ijee oke na-atụ ihe ọ bụla na-atụ ego gịnị tupu isi nwee ike ikpebi onwe ya. Ọtụtụ ndị ajụju na-amabighị na-emeta 1–2% nke ego ojuọ n'otu ajụju. Ihe dịkwa mkpa: mgbe ego ojuọ mụrụ, ọ dịghị m ejee anya tupu ṅwa ụzọ — nke a bụ ụzọ na-abubukarịaka na-atụ ajụju site na ihe ụtọ na-agbake ka nsogbu."
+      ],
+      "example": "N'ego ojuọ £500 na staking ọkụ 1.5% (£7.50 kwa ajụju), ajụju ọkụ 15 na-akpọ £112.50 — o wutere ọnụ ma ọ̀ dị mma, na-eme ka 77% nke ego ojuọ ka dị.",
+      "related": [
+        "flat-staking",
+        "kelly-criterion",
+        "variance",
+        "self-exclusion"
+      ],
+      "see": [
+        {
+          "label": "Responsible gambling tools & help",
+          "href": "/responsible-gambling"
+        }
+      ],
+      "_src_hash": "06fcd7d277eef549",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "flat-staking",
+      "term": "Flat Staking & Units",
+      "short": "Ịkwa ego otu—otu yunitị—na ihe nile nke a ga-atụ ahụ, na-eme ka nsonaazụ dị mma na eziokwu.",
+      "definition": [
+        "Flat staking na-etinye ego nha otu, nke a na-akpọ yunitị, na bet nile n'agbanyeghị obi ọjọọ. Yunitị bụ nke ukwu 1–2% nke bankroll gị. Ụdị ya dị mma bụ eziokwu: uru gbakwunyere na yunitị agaghị eme ka ụnụ dị elu site na agbamakwụkwọ ego mgbe ozi gachara, nke mere ọpụrụ mma tipsters na-ebupụta nsonaazụ dịka '+8.40 units' karịa na ego nwere ụkọ.",
+        "Nsonaazụ nile na saịtị a na-eji otu yunitị flat staking: bet na iro na odds 2.50 na-eme +1.50 units, bet nile na ala na-eme −1.00, void na-eme 0. Ọ bụ akụkụ asị nke ọma — enweghị 'confidence multipliers' e sitere na ozi gachara, ụzọ ọ bụla iji tone akwa ruo n'otu ọnwa ọ bụla na-ebugharị azụ."
+      ],
+      "example": "Iri bet na flat-staked: 4 na-iro na average odds 2.40, 6 na-ala. Uru = 4 × 1.40 − 6 × 1.00 = −0.40 units — 40% win rate adịghị zaa na odds ndị ahụ. Nsonaazụ otu n'otu ahụ na average odds 2.80 ga-eme +1.20 units.",
+      "related": [
+        "bankroll-management",
+        "roi-and-yield",
+        "win-rate"
+      ],
+      "see": [
+        {
+          "label": "Our settled results, in units",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "a2154db69dabcdc1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "accumulator",
+      "term": "Accumulator (Acca / Parlay)",
+      "short": "Bet nke ijikọ ọtụtụ nhọrọ n'otu — ihe niile ga-enwere ike ịnwu, odds na-akọba, ụlọ akụ na-akọba karị.",
+      "definition": [
+        "Accumulator jikọtara nhọrọ abụọ ma ọ bụ karịa n'otu bet nke odds ya bụ ngwaahịa nke ọnụ ahu naa. Nhọrọ atọ na 1.50 × 1.72 × 1.85 na-enye 4.77 — ọ dị mma, ọkụkụ nke mere na accas a na-akwakwa nke mma. Ihe a pụtara: akpa otu dị ike ibu oké ticket ahụ niile, ụlọ akụ na-akọba aha nke kwa ụkụ ị họpụtara.",
+        "Ọ bụrụ na akpa ọ bụla nwere ihe dị iche iche 5%, treble na-eti na ihe dị iche iche nke ụlọ akụ ihe dị iche iche 14% na mbu. Nke a na-eme na accas ogologo n'ezie agbanyeghị uru — igelee oge a na-enwe obi ụtọ, maara ka ụgụ na-enwe ike ọ bụghị mgbe niile. Ọ bụrụ na ịbụ na ị jikọtụ, gbazie ụkụ ole ma ọ bụ ole, chọwa ọnụ ahụ kacha mma na ibe ọ bụla nke aka, ma na-etinye ego kacha ole: ihe a tụrụ anya maka acca bụ mmer ụfọdụ na-enwe obi ụtọ, ọ bụghị ego nke ọrụ mgbe niile.",
+        ""
+      ],
+      "example": "Ụkụ atọ, ọ bụla nwere ihe a tụrụ anya 60%: ngwakọta eziokwu = 0.6³ = 21.6% (odds eziokwu 4.63). Ụkụ emepụtara nke 1.58 ọ bụla na-enye mgbapụta 3.94 — ọ pụtara 25.4% ọ na-enye ụlọ akụ nke ijikọ iche iche nke 18% na ticket ahụ.",
+      "related": [
+        "bookmaker-margin",
+        "double-chance",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Accumulator tips",
+          "href": "/tips/accumulator"
+        }
+      ],
+      "_src_hash": "d6decdd7926e1ffb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "btts",
+      "term": "Both Teams To Score (BTTS)",
+      "short": "Ahịa maka anya ma otu otu ndị agha abụọ ga-etolite opekata otu ugboro — ihe ngwụ egwu ahụ anaghị akwụsị ya.",
+      "definition": [
+        "BTTS (nkwa ọzọ 'goals galore' ma ọ bụ GG/NG) na-agbaso Ee ma otu otu ndị agha ruo otu opekata, Mba ma e wela. 3–1 bụ Ee; 2–0 bụ Mba. Ngwụ egwu nke asọmpi ahụ anaghị akwụsị ihe, nke mere ka BTTS mma karị maka asọmpi dị n'etiti ndị agha na-aju iwe nwere obi oyi - ị nwere ike ịzọ otú asọmpi ahụ kwesịrị ịnọ n'ụzọ ruo mgbe ị wụ na onye mmeri.",
+        "Ịmụ ụtụ BTTS nke ọma putara ịlụ ihe pụtara mgbe otu otu agha na-etolite karị ihe onye mmeri. Ọ bụ ka ibe ya mma bụ ọnụ/okpuru ihe egwu ntinye ahụ: BTTS-Ee nweere oke nke ukwu na Over 2.5, yana ịtụnyere ọnụ abụọ ndị a mgbe ụfọdụ na-ekpughe àgwà onye ọkọ ụkọ metụtara otu ngwa ọrụ."
+      ],
+      "example": "Ma ụlọ nne agha na-etolite na 75% nke asọmpi na ndị ụta na 60% (ọ fọrọ nchịkọtá na-adọ onwe ya), BTTS-Ee ≈ 0.75 × 0.60 = 45% — ọnụ zọ́ 2.22. Ọnụ nke 2.40 ga-abụ uru; 1.95 agaghị abụ.",
+      "related": [
+        "over-under",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "BTTS tips",
+          "href": "/tips/btts"
+        }
+      ],
+      "_src_hash": "05b46df492098048",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "over-under",
+      "term": "Over/Under (Totals)",
+      "short": "Ịkwà gbasara ọtụtụ goals nke akụkụ abụọ tupu ịnwu, megidere ahịrị dị ka 2.5.",
+      "definition": [
+        "Ịkwà totals ahụ hụ anya na onye meriri ma jụọ naanị ọtụtụ goals egwuregwu ahụ ga-emepụta. A na-ahazi ahịrị na-enwu nwee ọkara-goal (2.5) ka ọ wụ ka enwu: Over 2.5 chọrọ goals atọ ma ọ bụrụ ihe karịa, Under 2.5 na-emenụ site na goals abụọ ma ọ bụrụ na-erè. Ahịrị whole-number (dị ka 2.5 kpọmkwụ) nwere ike 'push' — nọ n'ụdị ahịrị ziri — nke ọ bụ izu zara asụsụ dị ka ọ dị mma.",
+        "Totals na-abụkarị ebe kacha mma ịchọ ego karịa match results n'ihi na ego ndị na-emegide Ụlọ na-ekonkọ na ịpịa ndị meriri, na-ahapụ goals markets na-enweghị nso nke ná-edozi ala. Ha na-agbakwuna akụkụ ihe mgbapụta: goals na-esonye ụdị ezi nsonaazụ per team na league, nke mere na ihe ruru nnukwu 1 n'ụzọ ole nke anyị ihe mgbapụta na-ekwu ihe otú ị na-eleta totals."
+      ],
+      "example": "Over 2.5 na 1.93 na-eceta 51.8%. Ọ bụrụ na ihe mgbapụta gị na-atụmatụ goals atọ-ma ọ bụrụ ihe karịa na 55%, EV = (0.55 × 1.93) − 1 = +6.2% — ịkwà ego nke ezi uche kanyụ n'agbanyụ na ọ bụ fọọfụ nke nwere ike ịmepụta.",
+      "related": [
+        "btts",
+        "void-bet",
+        "asian-handicap"
+      ],
+      "see": [
+        {
+          "label": "Over/Under tips",
+          "href": "/tips/over-under"
+        }
+      ],
+      "_src_hash": "90644050aa93d2f1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "asian-handicap",
+      "term": "Asian Handicap",
+      "short": "Egwuregwu nke na-ewepụ ihe ọ bụla site na inyere otu ndị egwu otu goolu na-aga n'ihu, mgbe ụfọdụ na mgbazi-goolu.",
+      "definition": [
+        "Asian handicaps na-edozi mgbagwoju anya site n'inyere goolu na-adịghị adị n'ihu nke egwu. Ịgbazite onye mma-ike na −1.5 pụtara na ha ga-ekwesị ikwu site n'ike abụọ; ịgbazite onye nta-ike na +1.5 na-enwe ohere ọ na-ezupu site n'ikilide abụọ ma ọ bụ karịa. Handicap ụdị ọnụọnụ (−1.0) nwere ike ịdị n'agụụ: ma onye mma-ike merụ n'otu ụkọ nanị, a na-emeghachi ego.",
+        "Quarter lines (−0.75, +1.25) na-emeghapụ ego gị n'otutu ahịrị ndị agbatakwụkwọ — ọkara na −0.5 na ọkara na −1.0, ọ dịka ọmụmaatụ — ya mere ka ezigbo omume nwee ike ịbụ ọkara-mmeri na ọkara-ọsọ. N'ihi na egwu ike a na-edozi n'efu, Asian handicap markets nwere naanị ezigbo omume abụọ, na-ezo ya na nnukwu ohere na-erughị 1X2, yana ebe ọtụtụ ego nma-enwe n'ụlọ egwuregwu."
+      ],
+      "example": "£20 na onye mma-ike na −0.75 (odds 1.95): otu ụkọ merụ na-akwụ ọkara −0.5 kpam-kpam ma na-emeghachi ọkara −1.0 — ụdị mmụọ £29.75, 'ọkara-mmeri'. Ụkọ abụọ merụ na-akwụ ọkara abụọ: £39.",
+      "related": [
+        "match-result",
+        "void-bet",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "711a58b58d3b87dd",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "double-chance",
+      "term": "Double Chance",
+      "short": "Ịnụ abụọ n'ime ihe atọ nke egwu ahụ n'otu ego - nke dị mma, nke dị mkpirikiti.",
+      "definition": [
+        "Double Chance na-ejikọ ihe abụọ n'ime ihe atọ nke 1X2 market: ụlọ-ma ọ bụ ike-e (1X), azụ-ma ọ bụ ike-e (X2), ma ọ bụ otu otu otu egwu iji merie (12). Naanị otu n'ime ihe atọ a ọ ga-agbaga gị, ya mere ihe ike inwee ego dị elu - ma odds ya na-agba ọsọ, ọ na-abụ 1.50 ma ọ bụ karịa mgbe onye nma nke ọma dị na-ajụ.",
+        "Market a na-arụ ọrụ n'ụzọ yọ na Draw No Bet na +0.5 Asian handicap; na-atụle ọnụọnụ atọ a maka otu echiche na-egosi mgbe ụlọ akwụkwọ egwu ahụ elebewo nke kacha nma karị. Ihe mmanụ ọrụ: ịdị mma abụghị ihe bara uru. 1X na 1.25 ọ bụ ihe bara uru 78% bụ ego ike iku na uwe dị mma - mkpirikiti odds ka gas-agabiga ihe bara uru ziri ezi."
+      ],
+      "example": "Ụlọ 45%, ike-e 28%: ihe bara uru 1X probability = 73% → ihe bara uru odds 1.37. Ụlọ akwụkwọ egwu na-enye 1.44 na-akwụ ihe bara uru na 'ihe dị mma' a; nke na-enye 1.28 abụghị.",
+      "related": [
+        "match-result",
+        "draw-no-bet",
+        "asian-handicap"
+      ],
+      "see": [
+        {
+          "label": "Double chance tips",
+          "href": "/tips/double-chance"
+        }
+      ],
+      "_src_hash": "dd5f4515ac8590f3",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "draw-no-bet",
+      "term": "Draw No Bet (DNB)",
+      "short": "Gbaa otu otu; ọ bụrụ na egwu ahụ wụsara, ịnakụ gị a na-eweghachi.",
+      "definition": [
+        "Draw No Bet na-ewepụ wụsarị site na ihe niile: họpụta otu akụkụ, wụsarị dị na egwu ahụ na-eweghachi ịnakụ gị dịka ihe ewebeghị anya karịa ike. Ọ bụ ihe oyePropertyName 0.0 Asian handicap na-ọ dị n'etiti ọnụahịa zuru oke 1X2 (ọnụahịa dị elu, wụsarị na-ala) na double chance (ọnụahịa dị ala, wụsarị na-aga). Draw No Bet na-adaba nke ọma mgbe ịhụrụ otu otu mma kama na-atụ anya wụsarị ziri ezi — derbies dị ike, ndị ọmụmụ dị jụụ. Ị nwekwara ike ịrụ ọrụ ya nke ọma site n'ịkewa ịnakụ gị n'etiti mmeri na wụsarị site n'ụzọ ziri ezi, nke mgbe ụfọdụ na-adị mma ọnụahịa DNB rụpụtara. Dịka ọ na-adị mgbe niile, usoro a na-enwe uru naanị mgbe ihe a putara n'ime onodu pụtara dị ala karịa echiche gị banyere ohere ziri ezi."
+      ],
+      "example": "Otu otu e mere ihe 2.30 imeri, 3.30 wụsarị. DNB nyere 1.70: ihe putara n'ime onodu 58.8% maka ọnụnụ ebe ohere imeri (ewepụrụ wụsarị) bụ 100 × 43.5/(43.5+26.3) ≈ 62% — DNB ziri ezi ga-abụ ~1.61, nke mere 1.70 na-enwe uru.",
+      "related": [
+        "double-chance",
+        "asian-handicap",
+        "void-bet"
+      ],
+      "see": [],
+      "_src_hash": "554e9497dd446fe6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "match-result",
+      "term": "Match Result (1X2)",
+      "short": "Ahia-atụ ihe atọ: mmeri ụlọ (1), egbuchaobi (X) ma ọ bụ mmeri ọzọ (2).",
+      "definition": [
+        "1X2 bụ ahia isi nke balọọ: kwado otu ụlọ, egbuchaobi, ma ọ bụ otu ọzọ n'ime minutes 90 plus ndị oge dị iche iche (ndị oge agbakwunyere na ihe isi meere na-abụghị ihe mkpebi ma ọ bụrụ na e kwuru ya). N'ihe karịrị ahia abụọ — ihe agbapụta atọ na-abụ ike — o nwere ike na egbuchaobi bịa oge karị karị karị na nke ndị na-agba ego ala nke obi, na ụgụ mkpali a na-abụkarị elu karị na ahia Asian handicap.",
+        "Egbuchaobi akọ ihe: balọọ isi nke mma na-egbuchasi ihe n'ime otu n'otu ụbọchị, ma agaghị olu egbuchaobi pụta mma karị karị n'ihi na oke ego nke ndị na-agba ego ala chọrọ onye mmeri. Usoro ndị a ghara-enwe iche bụ ihe ndị na-ahụ ọtụtụ — ọ bụghị na egbuchaobi dị mma ịmara, ma na-adịka egbuchaobi adịghị agbakwunyere nke ọma."
+      ],
+      "example": "Ahia na 2.05 / 3.50 / 3.90 pụtara 48.8% / 28.6% / 25.6% (ụgụ mkpali 3%). Ọ bụrụ na ihe agbapụta ezi ezi bụ 46% / 27% / 27%, otu ọzọ na 3.90 (ezi 3.70) bụ ntuanụ uru nke ahia.",
+      "related": [
+        "double-chance",
+        "draw-no-bet",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "bd857024ed451f0a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "correct-score",
+      "term": "Akpụ Agha Ziri ezi",
+      "short": "Ịkọ echiche ihe ndị ọkwa ikpeazụ pụtara — ihe ndị odide ogologo, iji ihe dị iche iche, mgbakwasị obi dị ukwu.",
+      "definition": [
+        "Akpụ agha ziri ezi na-ajụ maka ihe pụrụ ịkọ echiche n'ụzọ ziri ezi — 2–1, 0–0, 3–3 — ọ bụla n'ụzọ onwe ya na ihe ndị odide dị ogologo. N'ihi na ike ihe pụtara ya guzobe na ihe ndị odide iri ise ma ọ bụ karịa, ọ bụ isi akpụ agha ndị a na-atụ anya (na-agbaghị anya 1–1 ma ọ bụ 1–0) ọ dịghị mgbe ọ karịa 12–13% ihe pụtara.",
+        "Mkpọsa ụlọ na-amaagha dị na ndị odide ndị a bụ n'etiti ndị kachasị ogologo onye na-akwụ ụgwọ na-enye, yana ihe dị iche iche dị nnewu: ndekọ akpụ agha ziri ezi jupụtara n'ụzọ dị nnọọ mma n'obere sampụl. Chee ya ka ihe ụtọ na-enweghị ego karị, ọ bụ ihe ndị ara ara. Ọ bụrụ na i nwere echiche ziri ezi maka ụdị ọkwa nke egwu ọ bụ n'ụzọ otherü, ihe ndị odide ọkwa ma ọ bụ BTTS na-akọwazie echiche ahụ otu n'ụzọ dị mma karị."
+      ],
+      "example": "Akpụ agha 2–1 na odide 9.00 pụtara 11.1%. Ụdị ihe ndị Poisson na ụdị ziri ezi na-akụ ọkwa ọ dịghị otu akpụ agha nke dị oke 13% — n'ihi nke a odide ahụ kwesịrị ịbụ 7.70 ma ọ bụ karịa tupu ike ihe pụtara ya ka o wee dị. Nkwado.",
+      "related": [
+        "over-under",
+        "btts",
+        "variance"
+      ],
+      "see": [
+        {
+          "label": "Correct score tips",
+          "href": "/tips/correct-score"
+        }
+      ],
+      "_src_hash": "b589a16b0efd68c4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "closing-line-value",
+      "term": "Closing Line Value (CLV)",
+      "short": "Ịnwụ ọnụ ọgugu dị n'ikpeazụ tupu egwu malitere — ihe ndị na-egosi n'ụkpụrụ okwu na onye na-agbapụta akwụkwọ nwere ike ezigbo.",
+      "definition": [
+        "Ọnụ ọgugu na-eme ngwụsị bụ ọnụ ikpeazụ dị adị tupu ihe omume ọ bụla amalite, mgbe ahịa achịchọla ụdị ozi na ego niile. Ọ bụ n'ozuzu ihe ọ bụ mma kachasị mma na ịtụta gbasara ihe pụtara. Closing line value pụtakwa na i jigidere ọnụ ọgugu ka mma na mbu: i gbakụtara na 2.20 ma ọ tupu 2.00 na ngwụsị. Ọ bụrụ na ị na-eme nke a n'ụzọ na-aga n'ihu, ị fọrọ n'ezie na-agwagi ọnụ ọgugu mma, n'ihi na ị na-ajụ aje ọnụ ọgugu mma a mgbe ọ na-agwụ ike.",
+        "Closing line value dị mkpa n'ihi na ọ na-ekewapụ ihe ọgụgụ ụlọ site na azụ azụ nke ọma karịa ụgwọ. Mma site n'ihe omume ole na ole mmadụ gụrụ bụ ihe na-agba ọkụ; na-abeghị nke mma mgbe ọ na-elu mma site n'ọnụ ọgugu na-agwụ ike n'otu anya. Otu ahụ pụtakwa ihe na-eme ọnụ ọgugu ma olu - a na-agbapụta azụ azụ mma na mbu - na ihe na-eme ka ọ dị mkpa ịpụ ọsọ ụkwu mgbe enwere azụ azụ."
+      ],
+      "example": "Ị were 2.20; ọnụ ọgugu tupu 2.00. Ihe pụtara n'olee cent sitere 45.5% ruo 50%. Ọ bụrụ na ndụ dị n'ọnụ tupu bụ nke ezigbo, gbapụta gị nwere EV = (0.50 × 2.20) − 1 = +10% — akụ n'otu ihe ọ bụ ọnụ ọgugu gị mma, ọ gịkere mma ma ọ bụ ụma.",
+      "related": [
+        "line-movement",
+        "edge",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "d542c47127cb6b0e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "line-movement",
+      "term": "Line Movement & Steam",
+      "short": "Etu ndị odds na-agbanwe ka ego na ozi na-abata — na mwu nke ndị ọkammụ ụmụ ọkụ nke a na-akpọ steam.",
+      "definition": [
+        "Odds bụ ọnụahịa dị ndụ. Ha na-emepụta site na ihe nlereanya nke onye na-eke ego, mgbe ahụ ha na-agbanwe ka bets na-abata, ozi gbasara otu mma na-akwụ, na ndị ọkammụ ụmụ ọkụ karịrị na-ahazi ọzọ. Ọnụ ahịa na-anọ nso ('steaming in') na-egosi ego na-akwado ihe ahụ; ọnụ ahịa na-adakwasị na-egosi ihe ọzọ. Ọtụtụ ngbanwe bụ ihe nlereanya nkamata nkamata, mana ngbanwe mbuzo, na-ejikọ ọnụ ahịa na-anọ nso karịrị ụlọ ihe ihe ọtụtụ — steam — na-achọtaghachị na-eme ka ego njọ mara wetụ ọkwụ nke ahụ.",
+        "Ngbanwe ahụ dị mkpa nye onye na-eme bets mara ụkpụ n'ụzọ abụọ. O wetụrụ n'oge, ọnụ ahịa nke emesịịrị steam ka emesịa n'ihe ọtụtụ pụtara na ị merụ ọnụ ahịa na-emecha. Na ọnụ ahịa na-adakwasị mgbe ị netụ bets bụ ịdọ mma na anya na ebe gị nụ dị iche na ego mara ụkpụ. Ilekọta ọnụ ahịa anyị bipụtara na ngbanwe emesịa bụ otu n'ime aje ike na azụ screener signal column."
+      ],
+      "example": "Otu mma na-emepụta 2.10 wee bụ 1.85 otu awa tupu ikike n'elu market niile. Ihe nkoma dị n'ihe 47.6% → 54.1%. Onye ọ bụla nwe ticket 2.10 ugbu a nwere bets nke market n'onwe ya na-atụle ya dị ka +14% EV.",
+      "related": [
+        "closing-line-value",
+        "sharp-and-soft-bookmakers",
+        "value-bet"
+      ],
+      "see": [
+        {
+          "label": "Signal column in the screener",
+          "href": "/screener"
+        }
+      ],
+      "_src_hash": "8230946f4d53d082",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "sharp-and-soft-bookmakers",
+      "term": "Sharp vs Soft Bookmakers",
+      "short": "Sharps na-anata ndị mmeri na-etinye ụkwụ dị mma na-eme njụ dị obere; softs na-akpọ ndị otu-otu ma na-eme ihe mwụda nye ndị mmeri ngwa ngwa.",
+      "definition": [
+        "Sharp bookmakers (na betting exchanges) na-arụ ọrụ na njụ dị obere, na-anata ego nnukwu, na-emepụta ọnụ ahụ site na azụmahụ nke ndị ọrụ ọkachamara — ụkwụ ha bụ ihe a na-akọwa mma n'ụwa ahụ. Soft bookmakers na-elekọta ndị na-eji bọọlụ n'ịpụ eluigwe na-enye ngwongwo na ihe ọka, na-emegharị ọsọ ọsọ na ụdị akụkụ, ma na-emelitata akaụntụ nke na-agi n'elu mgbe niile.",
+        "Mapa mma dị mfe na-esonye ozugbo: a na-achọta ụlọ kaadị nke softs nke ọnụ ahụ dị nnọọ ma ọ bụ ngwongwo ka na-agbajụ mma-consensus. Ịtụnyere ọnụ ahụ nke soft book megide sharp/consensus fair line bụ ihe a na-emepụta zuru ezu — ihe a na-achọta mgbe niile. Mgbagha a maara mma: iji ọnụ ahụ ahụ mgbe niile na-eweta njụ ka ego a na-ebuchisi na soft operators — akara ọchụ, mana njụ dị ezie."
+      ],
+      "example": "Sharp consensus na-etinye akụkụ otu n'aka na 1.95 (mma ~51%); soft book ka na-egosi 2.15 sitere n'echi gara aga. Gap 10% a bụ ihe soft-book value dị mma — ihe a na-eme kpọmkwem site n'awa ole na ole.",
+      "related": [
+        "bookmaker-margin",
+        "closing-line-value",
+        "line-movement"
+      ],
+      "see": [
+        {
+          "label": "Bookmaker reviews",
+          "href": "/bookmakers"
+        }
+      ],
+      "_src_hash": "089eebf382cf0e6f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "arbitrage-betting",
+      "term": "Arbitrage Betting (Arbing)",
+      "short": "Ị na-akọ mmadụ na otu n'otu ihe niile na ọtụtụ bookmakers na ọnụ ọgụgụ na-enyere ike iji wee nwee nta ụgain na-enweghị ịkwesị inwe egwu.",
+      "definition": [
+        "Arbitrage dị mgbe ụtụ ndị ọkọ ahịa dị iche iche na-enye gị ohere ịkwụ ego maka ihe nile ma tinye ụgain na-eche eche hapụ n'ihu — ihe niile na-ekwesị inwe elu nke ụnụ gị ezefụ rụrụ erughị 100%. Arbs pụtara mgbe ụtụ ndị ọkọ ahịa agaghị ekwu otu ihe ma ọ bụ ihe ọhụrụ na-abata ngwa ngwa, ma na-enye ụgain 1–4% nke ụmụ ego nile. ",
+        "Ọrụ ike ụtụ ọ dịgasị. Arbs chọrọ nnukwu mgbanwe mmadụ maka nta nta ụgain, ezi ihe ịgba ụgain, na ọtụ — ụtụ na-ada n'ime nkeji. Bookmakers chọpụta ụdị ụkọ ọzọ wee megide n'ụkọ ma ọ bụ imechi akụkụ. Ụgain ara na otu ọkọ ahịa nwere ike ịkpa ụka n'ụka ọzọ. Ọ bụ n'eziokwu mana na-ewute gara gara, nso n'ọrụ ndị na-azụ mma karịa ịgba ụgain."
+      ],
+      "example": "Ụtụ A: ụlọ 2.10 (47.6%). Ụtụ B: ọzọ+ndọ (X2) 2.15 (46.5%). Nile 94.1% < 100%. Ịkwụ ego £51.20 na £48.80 mezigharị na-eweta ~£107.50 n'otu n'otu ụzọ egbe ahu gwara — ihe dị ka +5.9% na £100 nile.",
+      "related": [
+        "bookmaker-margin",
+        "value-bet",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "c70334cf2d0ed4e6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "cash-out",
+      "term": "Cash Out",
+      "short": "Imechi ajụjụ bet n'oge na mma nke onye azụmahụ na-atụnye — mfe, mana ihe karịrị na ọ na-adị ala karị ihe ziri ezi.",
+      "definition": [
+        "Cash out na-eme ka ị gbutu live bet tupu ihe egwu rụchaa: onye azụmahụ na-atụnye mma nke ọnọdụ ịtụ egwu gị. Ụdị ajụjụ nwere ike ịpụta ego mgbe mma; ụdị mfu akwụ ụtụ ụtụ. O dị ka ị nwere njikwa, nke bụ ihe mere a na-akwado ya nke mma.",
+        "Usoro a adịghị mma: ọnụ ọchụchụ cash-out bụ ihe ziri ezi nke tiket gị ugbu a wepu ama nka ọhụrụ — na-adịkarị njikwa nke ukwu karị ama nka na ejuu azụ nke mbu. O kwesịrị na cash out agaghi agbanwe ego okwesọ mgbe niile. Ọ bụrụ na ị chọrọ ire-ere ụdị ịtụ egwu ngaghị, ahụ exchange nwere ụdị azụmahụ ihe pụtara ime otu ọrụ na mma ziri ezi; ọ bụrụ na ị jide value bets, ụkpụrụ bụ na-azọ ha ka ha rụchaa."
+      ],
+      "example": "Gị £10 na 3.00 bụ 70% imeri n'oge ihe egwu a na-achọ nke mma. Ihe karịrị tiket nzuzo = 0.70 × £30 = £21. Ọnụ ọchụchụ cash-out nke £18.50 na-eme na ị tụrụ ụgụ £2.50 — 12% mwepu maka bọtụnụ.",
+      "related": [
+        "expected-value",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "51e449202dcc787e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "free-bet",
+      "term": "Free Bet",
+      "short": "Akwụkwọ ụmụ onye nkwọ ọka — ego onye nkwọ ọka ka a na-eji, winnings gị bụ nke gị, ma stake ahụ agaghị alọta.",
+      "definition": [
+        "Free bet bụ credit promotional: tinye ya, ma ọ bụrụ na ọ meri, ị na-echekwa winnings ahụ ma ọ bụghị stake ('stake not returned', SNR). £10 free bet na odds 4.00 na-akwụ £30, ọ bụghị £40. Nʼihi na stake ahụ abụghị nke gị, otu nkwọ ọka ahụ dị ọtụtụ ihe mma ka ihe nkwọ face value ya mgbe (1 − 1/odds) — nʼihi ya free bets na-ewe oke ama karị na ụkwụ ndị na-ejikarị mgbe ndo dị n'anya.",
+        "Free bets bụ ego nke welcome offers na promotions. Ọ bụrụ na ị jikwa ya na-ezighị ezighi mma na favrit nke mfụ, ọ na-alọta okpukpu nke face value; ọ bụrụ na ị jikwa ya nʼọzọ na odds 3.00–5.00, ọ na-agbatị ịnụ ọka 65–80% nke face value na ihe atụmaụ. Gị onwe gị katasị adịghị eme ihe na nkwekọrịta ndị na-amegatụ ya: onye ihe ngwụ oge, minimum odds na market restrictions na-ekpebi ihe otu nkwọ ọka ahụ dị n'ezie mma.",
+        "Free bets na odds dị otu £20 nʼ5.00: ọ na-emeri 20% nke oge → EV = £16, m a putara 80% nke face value. Otu nkwọ ọka ahụ na odds 1.40 na-alọta £8 yana ... ≈ EV £5.70 — okpukpu karị 30% nke face value."
+      ],
+      "example": "£20 free bet na odds 5.00: ọ na-emeri £80 profit ihe karị 20% nke oge → EV = £16, maka 80% nke face value. Otu nkwọ ọka ahụ na 1.40 na-alọta ihe ka £8 yana ... ≈ EV £5.70 — okpukpu ihe karị 30% nke face value.",
+      "related": [
+        "wagering-requirements",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Current bonuses with real terms",
+          "href": "/bonuses"
+        }
+      ],
+      "_src_hash": "e8a48bb840d0fa67",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "wagering-requirements",
+      "term": "Wagering Requirements (Rollover)",
+      "short": "Ọ dị ukwu ole ka esi gasị akwa bonus tupu ị ga-enweta ego — namba nke na-ekpebi ma ọ bụ ihe ọ bụla nwere obi ụtọ.",
+      "definition": [
+        "'£50 bonus, 5x wagering at min odds 1.5' pụtara na ị ga-etinye £250 nʼinye mma tupu akwa bonus ahụ gbanwee ghọọ ego ị nwere ike ịgbapụta. Ọ bụla bet ụzọ niile na-enye bookmaker ahụ profit ya, ya mere ezi ọnụ ọgụgụ nke ikpughe site na turnover × margin: namba nnukwu ahụ na-amịkpu site ụbọchị ọ bụla ọ na-agabiga n'ụlọ akwụkwọ.",
+        "Rollover bụ ihe isi na ihe ndị ọzọ niile na-akọwaghị bon ọ bụla — karịa namba nnukwu na-akpọ akpọ. Akwa ọ dị ntakịrị na 1x turnover na-eme ike karịa nke buru ibu na 10x. Jide anya ka mma n'okwu ndị ọzọ: mgbaba dị ala na-enwe ihe (ihe ndị dị elu na-eme ka riskị dị njikere), isiokwu ndị agbanyeghị, ego kacha elu n'otu bet, na ụbọchị nnabata nke na-eme ka akwa edozi na mmabụ."
+      ],
+      "example": "£40 bonus, 8x rollover, ~5% average margin: ihe ọ dị ike nke imeghe ≈ £320 × 5% = £16. Ezi ọnụ ọgụgụ nke akwa ahụ bụ nso £24 karịa £40 — na mara mma ma ọ bụ njọ mma ọ bụrụ na ụbọchị 7 enyere ike ka ọ gbapụtanarị agbanyeghị.",
+      "related": [
+        "free-bet",
+        "bookmaker-margin"
+      ],
+      "see": [
+        {
+          "label": "Offers compared with wagering shown",
+          "href": "/bonuses"
+        }
+      ],
+      "_src_hash": "9640d67e0723ae88",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "void-bet",
+      "term": "Void Bet (Push)",
+      "short": "Bet a kagbuo: ego laghachiri, onwere oke ma oke.",
+      "definition": [
+        "Bet a na-akpo void mgbe o nweghị ụzọ ezi-omume iji kwubiri ya: egwu ahụ ebinyewo ma ọ bụ hapụrụ, onye akpọpụtara ahụ jụtụghị, ma ọ bụ njikọ ego ha dị n'otu ọnụ kpakpando (push), ma ọ bụ bookmaker wezụgara ya n'ihi njehie dị ugbu ugbu (palpable error, 'palp'). Ego gị na-alọghachikwa na bet ahụ na-edepụta dịka oke ma oke.",
+        "Voids dị mkpa maka ihe odide ziri-ezi. N'ime stat nke a gbara nke mma, void rụrụ exactly 0 units — a na-ewepụ ya n'ime ihe niile nke win-rate ma stake a na-agbakwunghị dị ka turnover. N'ime accumulator, leg nke void ahụ adịghị akwọ ticket ahụ; a na-ewepụ leg ya ma akwụkwọ combined odds a na-atụ okirikiri ma ọ bụrụ n'ewepụtụghị ya."
+      ],
+      "example": "Asian handicap −1.0 na favourite ahụ meriri 2–1: ngalaba otu-ihe na-akọ n'ụkọ ihe nnọchi na-adighi egwu, bet push na ego £15 gị na-alọghachikwa naanụ.",
+      "related": [
+        "settlement",
+        "asian-handicap",
+        "over-under"
+      ],
+      "see": [],
+      "_src_hash": "bdffd6863e31d20a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "settlement",
+      "term": "Settlement (Grading)",
+      "short": "Ịkwu mma ma ọ bụ ụfọdu site n'akụkụ ndendeanya ọhụrụ — na ihe ntụ ụka nye onye na-atụpụ ịchọ akwụkwọ.",
+      "definition": [
+        "Settlement bụ ọrụ ịche mma ma ọ bụ ụfọdu ma ọ bụ ogwugwu site n'akụkụ ndendeanya ikpeazụ: mma, ụfọdu, ma ọ bụ ogwugwu, yana uru a gbatara site n'odds ị nwetara n'ezie. Maka onye na-atụ ịchọ n'ụdị n'ụdị, ọ bụ akwụkwọ ụmụ akwụkwọ; maka onye ọ bụla na-ebipụta ntụpọ ọ bụ isi ihe kwuo ezi okwu. Nkwado ahụ pụtara ihe ma ọ bụrụ na a na-ịche mma tip ọ bụla e bipụtara — n'otu price ọ bipụtara, na mgbe ndendeanya ziri ezi, yana ụfọdu na-ekwu okwu.",
+        "Settlement scams nke a mara mma bụ: ihichapụ ndị tụrụ ụfọdu, ịche mma site n'odds ka mma karị ndị e nwere ike ịnweta, ma ọ bụ na-emegharị ụfọdu na-adọ aka n'ụkọ dị ka 'ogwugwu'. Ihe ọrụ anyị arụrụ agbanyụgho nke ahụ: tip ọ bụla na-edekọ tupu egwu malite n'ọnụ ya, akụkụ ndendeanya a na-ịche mma n'ụzọ otomatik site n'akụkụ ziri ezi, na a naghị emegharị ihe ọ bụla — akụkụ ndekọ ya na-anọgide elu, mma na ụfọdu ọnụ."
+      ],
+      "example": "Tip edekọrọ na 2.30 tupu egwu malite. Akụkụ ndendeanya ikpeazụ na-ịche mma: +1.30 units na stake otu otu. Ọ bụrụ na ọ tụrụ ụfọdu, ihu ihuike ahụ ga-egosi −1.00 ruo mgbe ebighi ebi — ẹdịdụ aka ahụ bụ ebumnobi.",
+      "related": [
+        "void-bet",
+        "flat-staking",
+        "tipster"
+      ],
+      "see": [
+        {
+          "label": "Browse settled days",
+          "href": "/predictions/daily"
+        }
+      ],
+      "_src_hash": "7ac0c0dd355ffceb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "roi-and-yield",
+      "term": "ROI / Yield",
+      "short": "Uru dị ka perentaị nke mkpụrụ ego a wụrụ — ọnụ ọgụgụ nke ụmụ ezigbo maka inyocha ndekọ njedebe.",
+      "definition": [
+        "Yield (a na-akpọkwa ROI na betting) na-ekewa uru dị ịrị nke ego site na ụmụ ego nile a wụrụ: ego 100 nke ịrị 1 na-azaghachi 6 ego nke uru bụ 6% yield. N'ihi na ọ na-edozi ya site na turnover, yield na-enyere gị aka inyocha ndekọ nke ọ dịghị otu nke na-achị ọrụ na profaịl odds — na-adịghị dị ka uru a na-echere, nke na-agbae naanị ego karị.",
+        "Nhọrọ maka otu-etu: long-term yields nke 3–8% bụ ike ọkaịntegụ; yields nke iri-iri na sampụl ukwu bụ ọnụ na-adabara ụkwụ, na a na-akụkụ ya mgbe ọnụ sampụl agbakọọ. Yield dị oke mma karị n'ihe 30 bụ variance, ọ bụghị ọgụgụ — kaa gị na edo settlement nke `settled bets`, na-agbaala anya mma nke ihe ọbụla na-egosi ndekọ na-eweghachikwu pịa."
+      ],
+      "example": "120 settled tips na ego 1-unit n'otu ụzọ, net +7.9 units: yield = 7.9 / 120 = 6.6%. Ego +7.9 units n'ihu 400 bets ga-abụ 2.0% yield — ndekọ dị njọ (ma ọ bụrụ na ọ ka mma) karị.",
+      "related": [
+        "win-rate",
+        "flat-staking",
+        "variance"
+      ],
+      "see": [
+        {
+          "label": "Tipster ROI on the leaderboard",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "5f6b7fb3c60444ed",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "win-rate",
+      "term": "Ọnụ Mmeri (Strike Rate)",
+      "short": "Njikọ nke bet ndị meriri — enweghị isi naanụ ya, ma ọ bụ ihe ọtụtụ ma e jikọta ya na njikọ odds.",
+      "definition": [
+        "Ọnụ mmeri bụ akụkụ nke bet ndị emere ka moriri. Naanụ ya, ọ bụ ibe nke a na-eji eme ịtụnanya n'ụwa mmetụta: ọnụ mmeri 80% na-ata ụtọ nke ukwu ma ọ dị mkpa na-emere ya site na igo akụkụ 1.10 ndị karịrị — emegharị ego. Tinyere nke ahụ, ọnụ mmeri 35% dị ụtọ ma ọbụrụ na njikọ odds dị elu karị 3.00.",
+        "Ọnụ mmeri a kọchapụtara maka record ọ bụla bụ 1 kewaa site n'ọkụ njikọ odds decimal: ma njikọ odds 2.50 ị chọrọ 40% ka ọ gụnye onwe ya. Ihe niile dị elu karị break-even bụ edge; ihe niile dị ala bụ mma tụọ ma na nsosoihe. Gụọ ọnụ mmeri, njikọ odds na yield ọnụ ọnụ, n'elu ọnụ ọnụ nke bet: record ọ bụla na-akọ ọnụ mmeri naanụ ya na-ezo ihe."
+      ],
+      "example": "Njikọ odds 2.20 → break-even 45.5%. Record nke 48% na njikọ ahụ na-enye (0.48 × 2.20) − 1 = +5.6%. Ọnụ mmeri 48% ahụ n'ọkụ njikọ odds 2.00 na-alọ 4% nke mmịghị ego.",
+      "related": [
+        "roi-and-yield",
+        "flat-staking",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "adaaf47d9aff3acd",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "variance",
+      "term": "Variance",
+      "short": "Ihe ndị na-agbagharị n'etiti nsonaazụ na ihe anya — gini mere ezi bet na-ada na ihe ọjọọ na-elekọta mma ruo oge.",
+      "definition": [
+        "Variance bụ ihe na-ejikọ na nọmba n'elu okwu — otu ihe kwesịrị ịbanye n'ikpe n'etiti oge na otu ihe pụtara n'ezie na nkeji ya. N'ihe banyere bet, ọ bụ nnukwu ihe: ezi bet nwere ohere 55%-probability na-adapu ihe fọrọ nke nta ka ọkara n'oge; portfolio nwere real +5% edge nwere ike ịnọ na ogwu ka nke 200 bet gasịrị; onye na-akọ akụkọ ihe natara ike na-ekwu ezi okwu mara nma n'ọnwa otu.",
+        "Ịtụle variance na-agbanwe omume. Ọ na-akọ stake (lee bankroll management), ọ na-atọ oge nyocha (ihe narị, ọbụghị iri na asaa), ma ọ na-agbadịkwa gị pụọ na obi ụjọ na obi ụtọ. Ọ bụkwa gini mere rekọọd ziri ezi na-akọ ihe karịa hot streaks — ka ogologo oge karịrị ọ gara aga variance na-apụkwa ma naanị edge, dị mma ma ọ bụ ọjọọ, na-anọ."
+      ],
+      "example": "500 ihe ndị mụmụ n'etiti onwe ha na 50% / odds 2.10 (ezi +5% edge): ihe fọrọ nke nta ka otu n'iti isii bet na-achọ akụ na-anọ na ogwu mgbe nke 500 bet gasịrị — naanị variance, nta mmerụ ọrụ abia.",
+      "related": [
+        "expected-value",
+        "bankroll-management",
+        "win-rate"
+      ],
+      "see": [],
+      "_src_hash": "d5852e771c63e316",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "in-play-betting",
+      "term": "In-Play (Live) Betting",
+      "short": "Ígwé n'oge emume, na odds na-agbanwe kwa ụzọ ọ bụla ihe dị mkpa na-eme.",
+      "definition": [
+        "In-play betting na-emeghe ụlọ ahịa n'oge egwuregwu, na-agbanwe mgbe ọzọ mgbe goolu, kaadi, na ihe na-eme n'ebe ahụ na-abia. Ọ na-enye ike iji mụta ihe — ịzaghachi n'elu ọtụtụ karị nma ma ọ bụ n'ụzọ nwere uche karị njikọ — mana ebe a arụpụtachara ọ bụ maka mkpali n'ụzọ obi: nnukwu oge mgbochi, ada na-enwu, na ọdụ nsọtụ na-egosi na ndị na-ere ụtụ karị ịmata ihe karị ihe a na-ekiri na mma ịhụ.",
+        "Ihe abụọ a chọrọ iche. Margin live na-agụ nke ukwu karị tupu emume malitere, ya mere na-adịghịkwa mma. Na ọtụtụ nkebi na-eweta nsogbu: ọtụtụ mkpebi n'oge obere n'ime egwuregwu na-agba ihe na-aka ndụ, ma na margin ma na mkpali obi. Ọ bụrụ na ị na-ígwé live, tegbaa ihe ị ga-eme na ego gị tupu emume malite, ma ilelee ịnwale ínagide onye ji akpachapụ aka n'elu ọtụtụ dị ka ihe ọjọọ."
+      ],
+      "example": "Onye na-eme ka ọ dị nnọọ, na a naghị ọ e 1.70 tupu egwuregwu malite, enweghara otu goal: live odds na-arịgo ruo 2.90 (na-ekute 34%). Ọ bụrụ na ụdị gị tupu emume malitere kwughị na ike ija n'azu ihe karị 42%, mgbanwe ahụ — ọ bụghị òkè — bụ ihe nanị na-eme ka ị na-ígwé nke ziri ezi.",
+      "related": [
+        "cash-out",
+        "line-movement",
+        "bankroll-management"
+      ],
+      "see": [],
+      "_src_hash": "6048484c8edf3b0c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "xg",
+      "term": "Expected Goals (xG)",
+      "short": "Ihe ntụkọ n'ịkọ mma na-atụmatụ ọnụ ọgụgụ nke ngozi emeela kwesịrị inwe mụbaa site n'ohere ndị a.",
+      "definition": [
+        "Expected goals na-enye shot nke ọbụla ihe nkọwa nke ihe ike mụbaa bụ́ dị based n'ihe ndị a mere na ole ọbụla na-eme - ude, ụlọ ụka, akụkụ ahụ, ụdị nhọrọ. Ịmakọ ha niile na-enye ndị otu tupu nke xG n'otu agha maọbụ otu oge-afọ: ihe nkọwa nke oke mma na-ewepụ ihe ụjụ nke ịmụba. Otu ndị otu meriri 1–0 site n'ọtụtụ 0.4 xG gbasara 2.3 ka na-ọkụ ndị eze egwu, ihe ọ bụla akụkụ ndị niile siri ike.",
+        "Maka ndị na-azụ azụ, xG bụ ihe nlọ nke ama na-akwụ ngwa ngwa karịa nsonaazụ: ndị otu na-emeri xG ha nke ukwuu na-alọta aza, na ahịa nkwụ azụ mgbe ụfọdụ na-adị ọtụtụ n'ụzọ nke lọta ahụ. Nsogbu ya dịkwa mkpa - ọ na-ahapụ ọnọdụ egwu na ntụnye xG karịa ihe nlọ ya, dị iche iche n'etiti ndị na-enye ihe, na otu agha nke xG na-abụ ihe nkụ dị ka otu agha nke ngozi. Jiri ụdị otu ihe m nyere aka, ka ọ bụghị ihe mkpebi."
+      ],
+      "example": "N'ime ise na otu agha, otu ndị otu mụbara 11 site n'ọtụtụ 6.1 xG. Ahịa nkwụ azụ na-atụ aka n'ụzọ nke 11 ngozi ahụ nwere ike ịkọ ụlọ ụka nke ime ihe ike nke ịmụba nke nwere ike inye mkpebi na-adị iche iche - ihe ọnụ ọnụ xG siri ike na-ekwu na-agbada ma gburugburu ihe zuru 80% karịa ihe nwere ike.",
+      "related": [
+        "variance",
+        "line-movement"
+      ],
+      "see": [],
+      "_src_hash": "be8ddc67f6613784",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "tipster",
+      "term": "Tipster",
+      "short": "Onye na-ekwupụta nhọrọ azụ — tụụ obi na ndekọ, ọ bụghị foto.",
+      "definition": [
+        "Tipster na-ekwupụta azụ ndụmọdụ, n'efu ma ọ bụ a na-akwụ ụgwọ. Ụdụ ngwangwa nke mmasị na-eme ọrụ a ghara ịbụ ụzụ: ndị mmeri na-akpọ ụja, ma ndekọ nweere mmalite na-apụ nkịta, ihe foto na-egosi ihe efu. Naanị ihe si ike n'obi bụ ihe ndekọ kọmplìti nwere oge: tip ọ bụla debere tupu ọganiihu, siri na odds a kwuru, ihe nwụrụ na-egosi dị mkpụmkpu otu na mmeri.",
+        "Ndepụta ihe nrụọ dị mma maka onye ọ bụla (gụnyere ọrụ ife ọ bụ nke anyị): Ọ na-enwu akụkọ ihe bụ ụkpụ isi, nwere inyeaka dara adaba? Odds akọwapụtara dị karị n'oge ndekọ? Uru ka a kọwaa na flat units gara n'ihu ọnụ ọnụ sampụl? Ọ ga-enwu ndekọ n'okpume njedebe? Onye ọ bụla na-ajụ ajụ ndị a na-ekwepụrụ na-erezi ntụ anya, ọ bụghị edege — kwụrụ ụgwọ maka azụ naanị ma ndekọ e nyocha ya ga-enwe ike ịtụ anya gị n'ọkara nweere ike ma ọ dị."
+      ],
+      "example": "Nkwupụta abụọ: 'meriri ihe 9 n'ihe iri nke m na-agị!' versus '412 azụ dabere, +4.8% uru, average odds 2.31, ndekọ zuru ezu'. Nke mbu bụ ahịrịokwu na-azụ ihe; nke abụọ bụ ndekọ — ma ndekọ zuru ezu bụ ihe mụtara ya.",
+      "related": [
+        "settlement",
+        "roi-and-yield",
+        "win-rate"
+      ],
+      "see": [
+        {
+          "label": "Our leaderboard with settled records",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "4790ca1012523b3c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-comparison",
+      "term": "Ntụ́ọkọ Odds",
+      "short": "Ịlé ụlọ akụkọ nke onye ọ bụla a na-ere ahịa tupu ịtụ ego — ihe kacha mfe ma kacha ezi tupu mma na ya.",
+      "definition": [
+        "Onye ere ahịa dị iche iche na-atụ otu nkea n'ụzọ dị iche iche, o nwere ụkpụ 5–10%. Ịkwere 2.20 na-agbanwe na 2.05 n'otu ihe tupu mma bụ mgbakwunye 7% n'ego nlọta na ihe ọjọọ ọ dịghị nwere — mgbe ọ gbasasịrị n'ọ bụla ntụ̀ ego, ntụ́ọkọ ahụ̀ na-emebere karị ihe ọmụma nwere ohere iji na-asa dị ka ụfọdụ pụtara, na ụfọdụ a pụtara n'ụfọdụ ego.",
+        "Ụgọ nke mma ọ dịkwa mfe iji gbakọ: jide akaụntụ̀ n'ọtụtụ onye ere ahịa na-agbapụtụ ọtụtụ mgbe ma ewepụta elu ego kacha mfe karịrị. Ọ bụkwa isi ihe nke ịchọpụta uru — ihe nlè anyị na-atụ ntụ́ọkọ nke onye ọ bụla ere ahịa na azụ ndụ na-enweghị ụtụ́, na isiokwu ọ bụla egwu a na-ego eli ihe kacha mfe karịrị n'ihe ọ bụla tupu mma, ya mere ọnọdu ya aka."
+      ],
+      "example": "Ntụ ego gị nkịta na-adị ihe dị ka 2.00 ma ị na-atụ 100 × £10 kwa ọnwa. Ị na-egbapụtụ ụtụ 4% mfe a na-adịka elu ego bụ ihe dị ka £40 kwa ọnwa — ọta niile a na-agụ ahụ, tupu ịmata ihe ga-eme.",
+      "related": [
+        "bookmaker-margin",
+        "fair-odds",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [
+        {
+          "label": "Best odds on every match page",
+          "href": "/predictions"
+        }
+      ],
+      "_src_hash": "558fd6fb31af123b",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "self-exclusion",
+      "term": "Self-Exclusion & Betting Limits",
+      "short": "Ngwá ọrụ n'ihe mma nke na-emechi gị n'ịga n'egwuregwu — deposit caps, time-outs, na multi-operator exclusion schemes.",
+      "definition": [
+        "Onye ọ bụla na-ebupụta betting license ga-enye ngwá ọrụ ijikwa: deposit, loss na stake limits; session reminders; short 'time-out' breaks; na full self-exclusion nke na-emechi akụ maka ọtụtụ ọnwa ma ọ bụ afọ. National schemes na-agbatị ihe a n'ofe ọ bụla n'ụtụtụ ahụ — GAMSTOP na UK na-ewepụ gị n'ọ bụla licensed operator site site, na blocking software dị ka Gamban na-ekpuchigide saịt ụdị ihe ndị a ghara ịnwe.",
+        "Ezi okwu n'eziokwu: ihe ndị a abụghị ngwá ọrụ maka 'problem gamblers' naanị. Deposit limits ịtọ na ụbọchị nke obi ụtọ bụ nnọọ mpụ maka mgbakwunye oyi n'anyasị; time-out ka ọ gachara n'ụjọ ọjọọ bụ bankroll management maka akwara. Ọ bụrụ na betting akwụala ịjọ ọnụ — na-achọ mgbapụ, izo stakes, jiri ego mara ọrụ — ngwá ọrụ dị n'elu na free confidential helplines bụ azụ mma nke kwesiri."
+      ],
+      "example": "Itọ £100 monthly deposit limit na abụ́ ole nkeji n'akụ settings. Apụtaghị itinye ya elu n'ọtụtụ oyi: ọ bụ naanị oge sochie nke karịrị nke kwesiri karị — ihe ụtọ ọ bụ.",
+      "related": [
+        "bankroll-management"
+      ],
+      "see": [
+        {
+          "label": "Responsible gambling help & tools",
+          "href": "/responsible-gambling"
+        }
+      ],
+      "_src_hash": "c50087ed518f0a33",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "handicap-betting",
+      "term": "Handicap Betting (European)",
+      "short": "Egwuregwu ebe otu ụmụ otu na-amalite site na ọkwa ihe agbụrụ maọbụ nduzie tupu asọmpi malite, na ihe atụ a na-agbanwe agbanwe tụrụ aka gụnyere ihe karịrị onye na-akpaghara.",
+      "definition": [
+        "European handicap betting na-enyere otu ụmụ ntụ ihe agbụrụ maọbụ nduzie tupu asọmpi malite, mgbe ahụ a na-eme ka ihe karịrị onye na-akpaghara na-abia dị ka usoro ntụ atụ: onye nile, ihe karịrị onye na-akpaghara agbanwere, gara ala. Gaa Arsenal −1 ma ha ga-eto mma site na ọkwa abụọ maọbụ karịa; eto mma nke otu ọkwa na-adabere na ihe karịrị onye na-akpaghara agbanwere na ego a na-eti bụ ihe a na-agbafu.",
+        "Nke ikpeazụ bụ ihe ụgọ maka ndị ọhụrụ na ihe niile dị iche na nke Asian: European handicaps enweghị ihe a na-eweghachite. Nsonaazụ nke atọ (ihe karịrị onye na-akpaghara agbanwere) bụ eziokwu, ihe arịrị na-emeri agbam abụọ nke handicap, ọ bụ dị mma na ihe arịrị a na-adị gbasara Asian ụstụ na egwuregwu otu."
+      ],
+      "example": "Arsenal −1 na 2.60 megide Fulham. Arsenal eto mma 2–0: ego agbatụ elu. Arsenal eto mma 2–1: −1 na-eme ka ọ bụ 1–1 — ihe karịrị onye na-akpaghara agbanwere eto mma na ego a na-eti bụ ihe a na-agbafu, ebe Asian −1 ga-eweghachite ego ahụ.",
+      "related": [
+        "asian-handicap",
+        "match-result",
+        "draw-no-bet"
+      ],
+      "see": [],
+      "_src_hash": "64badaff59079f4c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "half-time-full-time",
+      "term": "Half-Time/Full-Time (HT/FT)",
+      "short": "Bet otu na njedebe: ịkọ ndị mmeri na azụ (half-time) na azụ ụlọ (full-time) n'otu ihe — ihe itoolu dị iche iche, odds dị elu nke ukwu, enweghị otu ụzọ ka ịnweta akụkụ.",
+      "definition": [
+        "HT/FT na-ajụ gị ịkọ onye na-ele elu na azụ na onye mmeri na njedebe n'otu bet: Ụlọ/Ụlọ, Equụ/Ụlọ, Ọba/Ụlọ na ihe itoolu ọzọ. Akụkụ abụọ kwesịrị ịga nke ọma — agha na-agbụ na azụ ma merie mgbe ochie na-bibịa ụlọ na-egbu tiketi Ụlọ/Ụlọ gị, n'agbanyeghị na njedebe n'ikpeazụ bụrụ nke ị chọrọ.",
+        "Ihe na-anya ya bụ ọnụ isi: ngwa abụọ na-akwa ọtụtụ ikarị karị ihe dị mfe, n'ihi na ị na-akọwa ihe abụọ metụtara otu ụzọ. Njikọ ahụ bụ ezi ihe mere ihe ndị nkwanye ụkọ nwere mmasị — ọtụtụ ndị na-aza ajụjụ na-eme ka ndị ike karị dị ka ha na-apụ n'azụ abụọ, na nkeji na ihe itoolu dị mma karị na atọ.",
+        "example.igbo"
+      ],
+      "example": "Equụ/Ụlọ na agha ike n'ọnụ 4.75: agha ike ahụ kwesịrị ịbụ equụ na azụ ma mee ihe ike na njedebe. Ọ bụrụ na ọ bụ nke mbụ 1–0 na azụ ma merie 3–0, Ụlọ/Ụlọ na ọnụ 2.30 bụ tiketi zụtara — HT/FT na-ahụ ka ị nọrọ njikere zuru oke. Tiketi Equụ/Ụlọ gị wụrụ gị n'ọnụ akwụkwọ.",
+      "related": [
+        "match-result",
+        "correct-score",
+        "double-chance"
+      ],
+      "see": [],
+      "_src_hash": "5c87a4ea737acac3",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "clean-sheet",
+      "term": "Clean Sheet",
+      "short": "Ahịa maka ịma ma a na-agba ndị iro goolu - e na-atụ anya site na ụka nchekwa na ụka ọta ndị iro.",
+      "definition": [
+        "Bet clean sheet na-emenụ ma ọ bụrụ na a na-ahọpụtara ndị otu ụlọ ahụ gaghị ābụ goolu ụfọdu n'ime agha. Ọ bụ ihe ogụgụ nke BTTS: 'Team A clean sheet — yes' adịgh nso na 'both teams to score — no' na-agbatị n'otu akụkụ.",
+        "Ụzọ ezi obi iji mee ihe maka ya bụ site na ọnụọgụ ọta: ma ọ bụrụ na ndị iro na-eme nso 1.2 goolu kwa egwu megide ụka nchekwa dịka nke a, ihe Poisson model na-egosi na ohere goolu-efu dị ihe 30%, na-eme ka odds ziri ezi bụrụ ihe 3.30. Ọnụ ọkụ dị mkpụmkpụ nwere ike ime ka ihe ndị ọzọ - ndị na-agba goolu na-atụla anya, bus na-ajụ - na ndị na-atụ anya agbagọla nke abụrụ adịbeghị anakpu ya."
+      ],
+      "example": "Ndị iro na-atụla anya goolu megide nchekwa a: 1.2. P(0 goolu) = e^−1.2 ≈ 30.1%, odds ziri ezi ≈ 3.32. Usoro nkwado na-enye 2.80 na-abubaeze gị ~16% karịa ziri ezi; 3.60 na-akwụ gị ka i jide ụdị mgbanwe.",
+      "related": [
+        "btts",
+        "over-under",
+        "xg"
+      ],
+      "see": [
+        {
+          "label": "BTTS model estimates per fixture",
+          "href": "/tips/btts"
+        }
+      ],
+      "_src_hash": "986e19371908b143",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "anytime-goalscorer",
+      "term": "Onye Ọkụkọ N'oge Ọ Bụla",
+      "short": "Bet na onye ọkụkọ aha ya katọrọ ịkụ bọl n'oge ọ bụla na egwu — ọnụ ọgụgụ siri ike sitere n'ihe omimi, ọrụ na ihe atụ mgbaru gọl otu.",
+      "definition": [
+        "Mkpa ọkụkọ n'oge ọ bụla na-akwụ ma onye gị kụ bọl otu oge ma ọ karịa — akara bọl ọzọ a na-ewezụga ọtụtụ oge, nakwa bet a na-achọ ka onye ahụ banye n'ọha ala ka ụdị bet agbana ndụ. Ọnụ ọgụgụ na-achọgharị ihe ato: ihe atụ bọl nke otu ya niile, ụdị onye ya ka ihe atụ (bọl mgbapu na-enyere nnukwu aka), na ihe nke nkụ oge ngwọta.",
+        "Njehie ndị a na-eme taa bu idebe aha: onye ọkụkọ ama jọọ, malite ọdụ, ma ọ bụ onye otu ya mkpatanụ bọl kachasị mma, nwere ọnụ ọgụgụ makpuru obi karịa ihe n'ezie. Lele ndị na-aga n'ọha ala na ọnụ ọgụgụ mgbaru gọl otu tupu aha."
+      ],
+      "example": "Onye ọkụkọ na-ewere ~30% nke otu ọdịdị ka a tupu ima pụta 1.6 bọl nwere olee ihe atụ 1 − e^(−0.48) ≈ 38% onye ọkụkọ n'oge ọ bụla — ọnụ ọgụgụ ziri ezi bụ ihe 2.60. Ụlọ akwụkwọ machere n'akụkụ 2.00 naanị aha; agwakwa a bụ ihe gị tinyere ego gị.",
+      "related": [
+        "xg",
+        "value-bet",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "fd5937261b90a11a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "first-goalscorer",
+      "term": "Onye Mbụ Ṅa Agụ Bọl",
+      "short": "Bet na otu otu onye ka ga-agụ bọl mbụ n'ọgụ — ike egwu dị elu, ego nke onye nkuzi ka elu, na ya na-adependụ nke ọma na penalty na nkeji ịkwọ.",
+      "definition": [
+        "Onye mbụ ṅa agụ bọl na-akwụ naanị ma onye ahụ gụọ bọl mbụ nke ọgụ ahụ. Ọ bụ anytime market nwere ihe ọzọ: ọ bụ naanị 'ka ọ ga-agụ bọl' ka ọ bụ 'ọ ga-abụ bọl ya ka mbụ' — nke na-amụba ike egwu na, nke na-aba uru nye onye nkuzi, margin nke nọ na ime ihe ọmụmụ nke ọgụ.",
+        "Ndị otu onye nkuzi penalty na ndị gbatịrị ọtụtụ n'ihe oge mbụ na-eche lisit na ezi obi. Onye ịnoro bench nwere ike ibupụ nke ọma mana ọ banyere n'oge nkeji 70 na-adị ụtọ njọ ebe a, n'agbanyeghị ihe nke ya anytime lọ-akọ.",
+        " "
+      ],
+      "example": "Ma otu onye nwere ihe nke anytime bu 38% na otu ya nwere ohere obu n'otu amata goali mbụ ma ọ bụ nke abụọ, ihe nke ya first-scorer bụ ihe karịrị ụọ nke ọ gụrụ bọl mbụ nke ọgụ nke otu — ọtụtụ 15–18%, ezi odds 5.50–6.60. Akwụkwọ nkuzi na-akọwa 4.50: margin nwere ego iri na otu na-ezọ n'ihi nke na-ekiri.",
+      "related": [
+        "anytime-goalscorer",
+        "bookmaker-margin",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "589dfe0d5c431899",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "corners-betting",
+      "term": "Corners Betting",
+      "short": "Over/under na handicap markets na ụkọ iro — na-adependụ na shot volume na playing style, ọ bụ ghị na team nke meriri.",
+      "definition": [
+        "Corners markets na-eji obi ụkọ iro: match totals (over/under 9.5 bụ ihe a ma-ama nke ọma), team totals na corner handicaps. Ụkọ iro na-esote attacking volume na width nke egwu — dominant team a na-atụ akụkụ site na low block na-emepụta iro ma ọ dịghị akaụkụ nke ọ ga-esi meri.",
+        "Njehie a na-ama nke ọma bụ igosi corners dị ka ihe na-agbaghara anya. Ha na-ejikọta na shots na territory, ya mere ụzọ otu a na-ezie totals na-esonụ: teams na-awakpo akụkụ ibe megide defences na-akpụ iro n'elu, counter-attacking pairs na-ewerụ iro nta."
+      ],
+      "example": "Teams abụọ na-ebaghara nke iro 10.8 megide otu ihe dị iche iche mee over 9.5 ihe dị ka 58% — odds a kwesiri ~1.72. Ọnụahịa nke 1.90 bụ ihe ọ bara uru ma sampụl a nọ n'azụ avarage bụ ezigbo ihe; ọnụahịa ahụ ọzọ bụ ọjọọ na-esi na egwu atọ na-ebutebe.",
+      "related": [
+        "over-under",
+        "sample-size",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "0b2cfeaf81fcec85",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "cards-betting",
+      "term": "Cards / Bookings Betting",
+      "short": "Ihe banyere agụ na ụdọ na-adị — ihe ndị ọrụ nlọ mmadụ ihe ọrụ yiri ya dịka oke ego ego.",
+      "definition": [
+        "Oge ndị mkpọkọta agụ na ụdọ na-arụ ọrụ na njikọta nke anyị akpọ pointi: agụ ọjọọ 10, ụdọ 25, ma ọ bụ mepụtara karịa ọnụ ọgụgụ agụ. Ihe abụọ na-eso: ihe ọdịdị nke agha — ndị 'derby' na ọnwụ na-agba ọkụ — na onye ọrụ nlọ, nke nwere akọwapụtara, ike dịrị njikọta agụ maka ọrụ ọ bụla — ihe ndị ọtụtụ atụmatụ adịghị mara.",
+        "Ọnụ ọgụgụ onye ọrụ nlọ ahụ bụ ihe kacha dịchasị na eze n'ụlọ na market a. Otu agha ọ nwere ike izute ihe atụ agụ dịque 30 pasent na ire ya, dabere n'onye na-edabere na olu."
+      ],
+      "example": "Onye ọrụ nlọ na-arụ ọrụ na 4.8 agụ ọjọọ n'oge ọ bụla na-ebugo 'derby' nke nkebi ise gara aga na-akụtantaụ 5.2 agụ. 'Over 4.5 cards' ihe ahia na otu karịa na-akpa nkwupụta n'ụzọ ziri ezi; otu ihe ahia yiri ya n'okpuru onye ọrụ nlọ 3.1-rụtụ ka akpara ike derby ka ihe na-arụ ọrụ.",
+      "related": [
+        "variance",
+        "sample-size",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "89575455dd41503d",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "outright-betting",
+      "term": "Outright (Futures) Betting",
+      "short": "Bet na mma n'ụfọdụ asọmpi dum dum — onye nwere akụ n'ọchị, ndị ìgwè mmadụ, mwepu — agbazere mgbe ọtụtụ — nwere ego na ego dị mkpa.",
+      "definition": [
+        "Outrights na-ese oge-ọtọ n'ihe ndị a: onye isi asọmpi, ndị ìgwè mmadụ anọ, mwepu, akụ ọjịọ. Ụzọ abụọ nke onye gbụrụ ego ji kepu ha site na asọmpi nke ọkwa otu: ego ego ya na ọpụ ụlọ n'ọtụtụ onye asọmpi (20 onye) karịa asọmpi nke otu nke mma atọ, ká ụlọ gị nwere ike ịdọwụ ruo mgbe ọtụtụ ọnwa — ego aru nke enwere ike ka ebe ọzọ tụọ.",
+        "Ezi okwu maka outrights bụ site na mmụta mara mma n'ụbọchị mbu ebe mkpesa ego na-atụmanya zụ azụ na-adaa. Ịtụgharị mma nke asọmpi na Ọgọst na ego ị hụrụ ọnụ ihe nọ ala mma ma chere ruo mgbe ọzọ bụ ụzọ isi nke ịkwụ ụtụ maka mbọ iji gbasaa oge."
+      ],
+      "example": "Tinye ụka ihe nile nke ego kwa ọnụ nka n'ogbè asọmpi 20-nka, ị ga-achọta 115–125% — ụnụ 15–25%, megide 4–6% na asọmpi otu nke mma. Ego kachie kpakpando asọmpi nke mma na-akụ ụtụ nke obere karị.",
+      "related": [
+        "bookmaker-margin",
+        "expected-value",
+        "bankroll-management"
+      ],
+      "see": [
+        {
+          "label": "Season hubs with live tables",
+          "href": "/seasons"
+        }
+      ],
+      "_src_hash": "8b6639c4b5210df4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "each-way-betting",
+      "term": "Each-Way Betting",
+      "short": "Ego bets abụọ n'otu — mmeri na emebi — ihe ọtụtụ na ihe omume racing, mgbe-mgbe a na-enye na football outrights.",
+      "definition": [
+        "Bet each-way na-kewa gị ego: ọkara na mmeri zuru oke, ọkara na 'emebi' (ị gakwuru otu ụfọdụ ọnọdụ) na akụka ole na ole nke odds mmeri. Na football ọ pụtara na outrights — nkwado nne anọ dị mma maka ụrụ isi, ọmụmaatụ. ",
+        "Ajụjụ uru ya na ibe emebi: na akụka otu ụzọ anọ nke odds 8.00, emebi na-akwụghachi 2.00 megbuo ike ọnọdụ nne anọ ahụ ka ah ụmachapu nso na 1.60 ma 2.60. Ọkara abụọ ya bụ ihe otu naanị na slip — nyocha ha dị ka bets abụọ iche ichie, n'ihi na nke a bụ ihe ha bụ."
+      ],
+      "example": "£10 each-way (agụụ £20) na otu ìgwè na 8.00 maka ụrụ isi, emebi ¼ odds nkwado nne anọ. Ụrụ isi dapụ mana nkwado nne anọ akwatụ: ọkara mmeri ruo £10, ọkara emebi laghachi £10 × (1 + 7/4) = £27.50 — nkwụ +£7.50. Ma na-ebu ndụ emebi ah ya a riri ike ga-eza ajụjụ uru ziri ezi.",
+      "related": [
+        "outright-betting",
+        "expected-value",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "0e5e1cd7d7e0951c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "banker",
+      "term": "Banker",
+      "short": "Ntuli nke onye na-azụ mma na-edebere na coupon dị ka ihe kwadoro nke mma — otu nka nke accumulator nwere ike imebi ya.",
+      "definition": [
+        "Banker bụ ụkwụ nke onye na-azụ mma na-etinye na coupon—ihe dị ka 1.25 'naan'ị ka eme ka odds zaa'. Mgbakọ na mweh na-enwegh anya: 1.25 price na-egosi na 20% ụgwọ dị na ogwu ahụ, ma na-emebi accumulator nile.",
+        "Bankers na-ebukwa ụ́ọ́jị kacha mma n'elu bọọ́d́ụ: heavy favourites bụ ebe ego nke ndị ọchịchị na-ama na-abakọ, ya mere ọnụ-ọnụ ya na-ezo mgbe nile karịa akụkụ ọzọ. Ịtụnye otu na coupon na-agbacha omume adịbataụ, ọ bụghị ihe nchedo."
+      ],
+      "example": "Ụkwụ anọ na 6.00 ghọrọ 7.50 mgbe ịgbakọ banker 1.25. Banker na-apụ otu ugboro na ise na ọnụ-ọnụ ahụ ọ buwe — gbanwere 25% npe nke ụtụ-ụtụ maka 20% ike ka ihe nile nke coupon nwetara ugwu mehie nke ọma.",
+      "related": [
+        "accumulator",
+        "longshot-bias",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Build a coupon from model-screened picks",
+          "href": "/tools/acca-builder"
+        }
+      ],
+      "_src_hash": "5519628f9b88ad26",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "system-bet",
+      "term": "System Bet",
+      "short": "Ihe nke ụzụ nke accumulator dị iche iche n'elu otu ntuli ahu — Trixie, Yankee, Lucky 15 — na-enye ego mgbachi mgbe naanị ụfọdu akpa na-eme.",
+      "definition": [
+        "System bet na-etinye accumulator nwere ike nile nke nha ụfọdu gara n'otu ntuli: Trixie na ntuli atọ bụ doubles atọ yana treble (bet 4), Yankee na ntuli anọ bụ doubles isii, trebles anọ na four-fold (bet 11). Otu akpa na-ada adịghị akpọ ihe nile — nggborọ na-enweghị ya ka na-agbara ngwa ngwa.",
+        "Sistema na-ebuza ego: kwa nggborọ na-ewe ego ya sooro, n'ihi na '£1 Yankee' na-efu £11. Sistemu na-agbanwe accumulator nke 'ọma-ma-ọ dị mma' gaa na nke dị mma n'anya ma ọ bụ ịtụ ọtụtụ akpa ka ị kwuo isi."
+      ],
+      "example": "£1 Trixie (£4 n'okwu: doubles 3 + treble 1) na ntuli 2.0 / 2.0 / 2.0. Ntuli atọ nile na-apụta: a na-enweghị £4×... doubles na-ekwu £3×£4=£12? — kwa double na-akwu £1×4=£4, treble £8, okwesịbụ £20 site n'ego £4. Ntuli abụọ na-apụta: double otu na-enwelu, £4 laghachi site na £4 e zụrụ. Isi mgbochi nke sistemu na-achọ abụọ nke atọ, ọ bụghị otu.",
+      "related": [
+        "accumulator",
+        "trixie",
+        "yankee"
+      ],
+      "see": [],
+      "_src_hash": "dce756f0cd33838e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "trixie",
+      "term": "Trixie",
+      "short": "Nhọrọ atọ, bet anọ: double niile na treble otu. Mmadụ abụọ na-enweta ego azụ; atọ na-akwụ nke oma.",
+      "definition": [
+        "Trixie na-esonye nhọrọ atọ na bet anọ — double atọ nwere ike ịbụ na treble otu. Karịsịa mgbe treble sịrị nnukwu, mmadụ abụọ leg na-enweta ihe: double ha na-akọ na ihe ndị ọzọ n'obi pụtara na uche nke nke atọ ruo na mkpasị.",
+        "Nhapu n'ụbụ ka anọ otu. Ụkpụ a na-adọ mma na nhọrọ ndị dị gburugburu ya; na ndị a ma-ekwe nwee ike ka double yara azụ ole na ole ka ọ họrọ, na ndị ogologo elu-elu treble soso n'ụbụ karịa ọrụ-mgbochi na-ewere mma."
+      ],
+      "example": "£1 Trixie (£4 n'ụbụ) na nhọrọ atọ na 2.10. Nile merụ: double 3 × £4.41 + treble £9.26 ≈ £22.50. Abụọ merụ: double otu na-agbachi £4.41 — fọrọ nta ka ọ bụ £4 nhapu n'ụbụ megharia. Treble soso £4 (ọnụ isi) ka o na-agbachi £37 maka atọ nile ma zero maka abụọ.",
+      "related": [
+        "system-bet",
+        "yankee",
+        "accumulator"
+      ],
+      "see": [],
+      "_src_hash": "1545b6c564f5f4e1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "yankee",
+      "term": "Yankee",
+      "short": "Otu ihe ọhụ atọ anọ, bet iri na otu: doubled isii, treble anọ, otu four-fold. Mmadụ abụọ na-amalite ịkwụ.",
+      "definition": [
+        "Yankee na-agbapụta ihe ọhụ atọ anọ n'ime bet iri na otu niile ha nwere ike ime: 6 doubles + 4 trebles + 1 four-fold. Isi mpe abụọ ga-eme tupu ihe ọ bụla gaghị alọghachi; ụgwọ ọrụ ya na-agba ike n'elu mgbe ọ bụ na onye mma ọzọ na-akụba.",
+        "Iri na otu ụnụ bụ ezigbo ego maka nsọ a nwere. Ntụnyere kwesịrị inwe mma bụ tinyere otu doubles anọ dị iche iche ma ọ bụ plain four-fold: Yankee na-emenụ ntụnyere ahụ naanị mgbe ụkọ gị nọ gburugburu even ma ị nwere olileanya n'ezie na onye mmadụ abụọ-ma ọ bụ-atọ na-eme ihe karịa anọ."
+      ],
+      "example": "£1 Yankee (£11) na ihe ọhụ atọ anọ na 2.00. Mmadụ abụọ na-emenụ: otu double kwụ £4 — £7 ngalaba. Mmadụ atọ na-emenụ: 3 doubles (£12) + 1 treble (£8) = £20 — uto dị mkpa. Ndi anọ niile: £12 + £32 + £16 = £60. Nhazi ahụ na-akwụ maka abaghị agha nso mgbe ọ bụ na ihe ka nta ka nta nke jackpot.",
+      "related": [
+        "system-bet",
+        "trixie",
+        "lucky-15"
+      ],
+      "see": [],
+      "_src_hash": "1960586662f10906",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "lucky-15",
+      "term": "Lucky 15",
+      "short": "Nhọ mma anọ, ajụ ụjụ iri na ise: Yankee na nkeji mma anọ — onye mmeri otu na-enwegh ihe nkwuo.",
+      "definition": [
+        "Lucky 15 bụ Yankee ya na nkeji mma anọ yigidoro: nkeji mma 4 + ịkọ abụọ 6 + ịkọ atọ 4 + ịkọ anọ 1 = ajụ ụjụ 15. Nkeji mma na-egosi na ọ bụrụ na otu onye mmeri, gị na-enwegh ihe. Ndị na-azụ ajụ ụjụ na-aghọta ihe ọmụmụ taa — kayad abụọ ahịhịa maka otu mmeri, onyinye maka anọ niile.",
+        "Ihe ịchịkọ ndị a dị maka na ayụ ụjụ iri na ise na-ebu ụkwa. Tụọ paketi niile: ajụ ụjụ iri na ise na ihe 5% njide ọnụahịa karịrị 0.75 ihe ọmụmụ tupu onyinye ọbụla na-eweta ụfọdụ n'azụ."
+      ],
+      "example": "£1 Lucky 15 (£15) na nhọ mma na 3.00 ọ bụla. Otu mmeri na 'kayad abụọ ahịhịa maka otu mmeri': nkeji mma na-akwụ £1 × 5.00 = £5 (kama £3) — ọ bụ ihe rubeere £10 n'ụzọ ezi. Anọ niile: nkeji mma £12 + ịkọ abụọ £54 + ịkọ atọ £108 + ịkọ anọ £81 = £255. Onyinye mgbagwoju anya dị mma ma ntakịrị; a bụ ihe e zubere iji ka ha chọo ka ha karịrị ka ha dị.",
+      "related": [
+        "yankee",
+        "system-bet",
+        "bookmaker-margin"
+      ],
+      "see": [],
+      "_src_hash": "41186e48996f97f0",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "patent",
+      "term": "Patent",
+      "short": "Nhọ atọ, bet asaa: singles, doubles na treble — Trixie na-na-echekwa nke ọma.",
+      "definition": [
+        "Patent na-akpụ nhọ atọ ma nwee bet asaa niile: singles 3 + doubles 3 + treble 1. Ọ bụ Trixie na singles, ya mere ọbụlagụ otu legs na-emezu ihe.",
+        "Stake units asaa na-azụ njikwa zuru oke, nke dabara na picks confident na prices nnukwu — singles na-ebute ibu ezigbo na 3.00+. Ma short odds nke a, singles na-agbachi pennies na ihe nka na-aghọ akụ-ego gbanyụ ogwu na ogwu."
+      ],
+      "example": "£1 Patent (£7) na picks atọ na 3.50. Otu mmerụ: single ya na-agbachi £3.50 — ọkara nke ihe e tụrụ azụ. Abụọ: singles 2 (£7) + double 1 (£12.25) = £19.25. Ndi atọ nile: £10.50 + £36.75 + £42.88 ≈ £90. Tụnyere treble £7 n'ibe ya: £0, £0, £150 — Patent na-agbanwe jackpot maka floor.",
+      "related": [
+        "trixie",
+        "system-bet",
+        "accumulator"
+      ],
+      "see": [],
+      "_src_hash": "d12659ca22b4ca57",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "round-robin",
+      "term": "Round Robin",
+      "short": "Ụtụ ndị abụọ (na-aga ọsọ ụtụ atọ) n'ụkwụ ọsa nnọpụ gị — usoro izizi nke Trixies na Yankees.",
+      "definition": [
+        "Round robin na-etinye mgbakọ nke akụkụ ịchọpụtara n'elu nnọpụ gị — ụtụ ndị abụọ sitere na nnọpụ anọ, ise ma ọ bụ isii. Trixie na Yankee bụ naanị round robins a kọwapụtara n'ụkwụ akụkụ; ụdị izizi kwere ka ị họpụ nkiti.",
+        "Combinatorics na-eme ngwa ngwa: ụtụ ndị abụọ sitere na nnọpụ isii bụ ụtụ iri na ise, ụtụ atọ iri. Akụkụ ọ bụla na-eburu nkwado ya nwere onyonyo ya na akụkụ ya nwere uche, n'ihi ya usoro a na-amụnye ntụpọ akpọrọ ihe onwu nke onye nkwado ahụ kpọmkwem dịka ọ na-amụnye nnukwu ka nkpughe gị."
+      ],
+      "example": "Ụtụ ndị abụọ sitere na nnọpụ ise = ụtụ 10. N'ọnụ ụlọ ahụ 5% maka ụtụ ọ bụla abụọ, paketi a na-ekekọta nso ruo 0.5 units nke mgbaru. Ọnụ ọgụgụ atọ n'elu nnọpụ ise na-enwe 3 ụtụ abụọ: n'ọnụ ụlọ ahụ 2.00 nke ọ bụla na-akwụ 4 units — 12 laghachi site na 10, tupu ihe njọ gị kwuo ihe ọ bụla.",
+      "related": [
+        "system-bet",
+        "yankee",
+        "bookmaker-margin"
+      ],
+      "see": [],
+      "_src_hash": "ebabd3db75914eac",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fold",
+      "term": "Fold (4-Fold, 5-Fold…)",
+      "short": "Odeede ụlọ mgbapụta: ọnụ ọgụgụ nke mmekorita niile ga-emenụ ka otu.",
+      "definition": [
+        "'Fold' na-agụta mmekorita n'ime akpa: 4-fold nwere ihe anọ ọhọọ, 6-fold nwere isii, ma ọ bụ na mmekorita ọbụla ga-emenụ. Ndị okwu na-emepụta onwe ha wee na-emepụta ụzọ ịda — mmekorita ọbụla a-gwakwara na-emepụta ego site n'ụsọ ya yana ihe mgbabụ nke akpa ahụ site na ihe ole na ole karịa otu.",
+        "Ọnụ ọgụgụ fold bụ iji mụchaa ọnụnụ kachasị mabilis na akpa ọbụla: na mgbapụta 5% nke ọ na-abụ ọrụ n'ụkwụ akụkụ, n-fold na-enye ụlọ mgbapụta ihe dịka n×5% nke ụlọ anya na-atụ. 6-fold bụ ~30% akụ nke akpaaka ihe egwu."
+      ],
+      "example": "Aka isii na 1.80 ọbụla: 5-fold na-akwụ 18.9. Ezi ihe a ga-emenụ ma ọ bụ na ụkwụ nke ọbụla nwere ohere 55%: 0.55⁵ ≈ 5.0% — ezi ndị okwu 19.9. Iche dị n'etiti 18.9 na 19.9 bụ ise akụ nke mma kemkere; ọ na-atụtụ ka ọ na-agbakwu fold ọzọ.",
+      "related": [
+        "accumulator",
+        "bookmaker-margin",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Accumulator calculator",
+          "href": "/tools/accumulator-calculator"
+        }
+      ],
+      "_src_hash": "94a6586ebee2ec9e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "single",
+      "term": "Single",
+      "short": "Nhọ́ọ́ otu — ego ojuụ otu na otu ọnụ ọgụgụ na otu ego. Ọ bụ́ ihe ntụ́ọ́kwụ ndị ọzọ niile kwesịrị itunyere.",
+      "definition": [
+        "Single bụ́ ego otu na ihe otu na otu ọnụ ọgụgụ. Ọ pụ́rụ́ ikwu na ọ bụ́ echiche nke ụlọ betụ nke kacha cha, na otu ụbọchị, ruo na otu nzacha. Akụkụ nke ọzọ niile dị ka accumulator, system ma ọ bụ́ builder bụ́ naanị single ọbụ̀batị na marginụ nke ọzọ.",
+        "Ndị na-emeri betụ na-emegharị elu naanị single, karị ihe ọzọ — betụ nwere onwe ya, na-akwụ marginụ otu oge, na-azụ̀ azụ̀ na ihe ọzọ."
+      ],
+      "example": "Echiche atọ na 2.00 nwụnwụ, ego otu na mkpọ. Single atọ: otu n'otu na ego ⅓ — nke ọbụ̀la na-akwụ ego 0.67 mgbe ọ dị̀ mma, onwe ya. Ego ụ dị̀ ka treble na-akwụ 7× mgbe ha niile dị̀ mma (≈13% mgbe ọnụ ọgụgụ ziri ezi) ma zero karịa — ihe ọzọ niile, marginụ atọ, proụ́fụ̀ nwere sí na ọ sịrị.",
+      "related": [
+        "accumulator",
+        "flat-staking",
+        "expected-value"
+      ],
+      "see": [],
+      "_src_hash": "1f80d8238ba69ff4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "double",
+      "term": "Double",
+      "short": "Akụ abụọ n'otu: nhọrọ abụọ ga-aga, ọ na-amụba oke, mgbagwu otu ugwu.",
+      "definition": [
+        "Double na-amụba oke abụọ n'otu bet nke ga-aga abụọ leg. Ọ bụ ihe kacha ntakịrị na ntụpọ kacha mma nke ezinụlọ a: ihe pụtara anya na-amụba ala mgbe oke nke onye azụ na-atikọ na-abara elu.",
+        "Double nwere otu ihe nke eziokwu: nhọrọ abụọ nke eserese mma karị ihe, ebe ebe gara aga n'ala na-akpakọ ha. Nhọrọ abụọ nke ibe agbụ n'otu ihe kacha mma: singles kwuo ya nke ọma."
+      ],
+      "example": "Leg abụọ na 2.10, nke ọ bụ mma bụ ọnụ ọnụ: double neturu 4.41 megide ike 25% nke eziokwu (mma 4.00) — cheta, ọ bụ ihe oke naanị ma leg ndị a ruru 2.00 maọbụ karị. Na 1.90 leg nke ihe onye azụ na-atikọ na-abara elu, 3.61 m soro mgbagwu ụzọ nke njọ: 3.61 wee nye megide mma 4.00.",
+      "related": [
+        "accumulator",
+        "treble",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "4cbefc0335830c43",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "treble",
+      "term": "Treble",
+      "short": "Mkpokọta atọ — ihe atọ ọrụ — ọnụ ọgụgụ atọ na-emekorita, ma ụgụ ndị na-aru ụka ya emekotakwara.",
+      "definition": [
+        "Treble chọrọ ihe atọ ọrụ niile, ma ihe atọ ọnụ ọgụgụ na-emekorita n'ime ọnụ ọgụgụ otu. Na ụkpụ ndị na-emekorita, akụkụ ọ bụla na-enye mgbako akụkụ ~5%, ya mere usoro a nyere ihe dị ka 15% tupu egwu bụrụ — ọnụ ọgụgụ nnukwu ụmụ dị n'ime akwụkwọ.",
+        "Ihe a na-akpọ variance profile bụ ọ bụ ihe onwe; treble na ọnụ ọgụgụ na-adịnụ na-eba ụka oge niile ikpe na nke a nwere ike imechaa, ma nyeghachikwaa isi dị juu mma. Obi na nke ọzọ bụ ihe onwe; ụgụ bụ nnwale."
+      ],
+      "example": "Ihe atọ ọrụ na 1.90 ọ bụla (nke ziri ezi 2.00): treble na-ekwu gị 6.86 megide nke ziri ezi 8.00 — ị teriri 86% nke nke ziri ezi, ya bụ ụgụ 14% na usoro ya, maka obi ụtọ nke otu isi nnukwu ọnụ ọgụgụ karịa atọ nke ziri ezi.",
+      "related": [
+        "double",
+        "accumulator",
+        "fold"
+      ],
+      "see": [],
+      "_src_hash": "713f96eff080d608",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "stake",
+      "term": "Stake",
+      "short": "Ego mma gị na-etinye n'ihe iju — ọnụ ọgụgụ nke mbadandụ niile, ọmụmụ na atụmatụ stake ka a na-akọ na ya.",
+      "definition": [
+        "Stake bụ ihe ị na-etinye n'ihe iju. Odds decimal gụnyere ya n'ọnụ ọgụgụ na-alọghachi (odds × stake = elu mkpọ, ya gụnyere stake); odds fractional na-ekwu ihe ọ ga-eri na ya. Nkwu niile kwesiri inwe uche maka stake bụ maka ịta nke ọnụ ọgụgụ a, ọbụghị maka ịhọpụ ndị na-emeri.",
+        "Ụlọ ọrụ abụọ na-ụmụ ihe ka dị mkpa: tinye stake dịka ụkwụ obere nke steadị nke ego e detụtụ, ma emetụ onwe gị na-eme ka stake dị ukwu iji bunyere ọmụmụ. Mgbakọ nke ihe ọ pụtara na ala bụkwa ihe na-adakọ na stake sizing, ọbụghị na ịhọpụ ihe mma."
+      ],
+      "example": "£10 na decimal 2.50 na-alọghachi £25 ilu — £15 ọ ga-eri na £10 stake. Otu bet ahụ n'ụdị fractional bụ 6/4: £15 ọ ga-eri per £10 staked. Bet otu, ego otu, okwu abụọ.",
+      "related": [
+        "flat-staking",
+        "bankroll-management",
+        "unit"
+      ],
+      "see": [],
+      "_src_hash": "725de29c74bc72a5",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "unit",
+      "term": "Unit",
+      "short": "Ntụle nke onye na-atụ azụ — kachiaku 1–2% nke bankroll — ego ụmụ ezie a na-edekọ na ya.",
+      "definition": [
+        "Unit bụ ntụle pụrụ iche nke onye, nke kachiaku 1–2% nke bankroll. Ndị na-ebutụ ụmụ ezie na ndị na-edekọ ihe na-akọ uru na units ('+14.2u') n'ihi na ọ na-ekewapụ nkubido mma site na ego: +14 units pụtara otu ihe ma unit bụ £2 ma ọ bụ £200.",
+        "Units na-ekpughe nrụọ n'otu ntụle. Akwụkwọ ihe edekọ na-ekwu 'iri-unit locks' na '0.5-unit longshots' na-agwa gị na obi dị iche iche n'etụle ụtụtụ — nke kwụ kwụ na oge gara aga na-ejikọ ya na akwụkwọ ihe edekọ na-akwụ na agwaghị ya."
+      ],
+      "example": "Bankroll £1,000, unit 1% = £10. Ọgụ na-agwụ na +18.4u wetara £184n'otu ntụle nkwado. Akwụkwọ ihe edekọ nke anyị na-ebupụ ọrụ na otu-unit ntụle tupu ihe niile — nọmba ahụ apụtaghị ịtụ anya n'ihi mgbanwe ntụle ka ịna-aga nke ọma.",
+      "related": [
+        "flat-staking",
+        "bankroll-management",
+        "roi-and-yield"
+      ],
+      "see": [
+        {
+          "label": "Our settled record, flat 1u",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "195038bc8d5b4bef",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-on-odds-against",
+      "term": "Odds-On / Odds-Against",
+      "short": "Ọnụ ọgụgụ (odds) na-egosi ma ọ bụ ihe a na-atụ anya nke karị ma ọ bụ obere karị 50% — ruo n'okpuru ma ọ bụ n'elu 2.00 n'ụdị decimal.",
+      "definition": [
+        "Odds-on pụtara na ọnụ ọgụgụ ahụ na-egosi ike karị n'ihi ọnyịnya: decimal n'okpuru 2.00, fractional nwere nọmba buru ibu n'akụkụ nri (1/2). Odds-against bụ ihe ọzọ: decimal n'elu 2.00, fractional 2/1 ma ọ bụ elu. Evens (2.00) bụ ụzọ abụọ. Okwu a na-eme ka uche dị iche, n'ihi na mmetụta pụtara iche n'akụkụ abụọ. Odds-on favourites na-etu ụtụ na-abụ nke ndị na-eji ego akpagidewo; odds-against underdogs na-etu ụtụ na-abụ ihe lottery. Mmetụta abụọ a enweghị ihe jikọ na value, nke nọ naanị n'ọba n'etiti ọnụ ọgụgụ na ezigbo nta."
+      ],
+      "example": "1/2 fractional = 1.50 decimal = 66.7% na-egosi: odds-on. 5/2 = 3.50 = 28.6% na-egosi: odds-against. A 1.50 favourite nke n'ezie na-emenụ 60% oge a bụ njọ azụ; 3.50 outsider nke na-emenụ ihe otu n'atọ oge a bụ azụ mma.",
+      "related": [
+        "odds-formats",
+        "implied-probability",
+        "longshot-bias"
+      ],
+      "see": [
+        {
+          "label": "Odds converter",
+          "href": "/tools/odds-converter"
+        }
+      ],
+      "_src_hash": "250380da66bc1f85",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "vig",
+      "term": "Vig (Vigorish / Juice)",
+      "short": "Aha na-akpọ ya n'Amerịka — ego ole ma ụlọ ịntanetị gbakọrọ n'ime mmekorita ahụ — ụlọ ịntanetị na-ewe site n'ihe niile ị na-azụ.",
+      "definition": [
+        "Vig, vigorish ma ọ bụ juice bụ okwu ebo ndị Amerịka maka ego ole ma ụlọ ịntanetị — ihe omon yiri na-akpọ margin ma ọ bụ overround n'Ọrụ. O nweghị ndantị akwụkwọ; o zo n'ime ọnụahịa ndị na-eyi otu ogbe ịnụ na-agbakọ karịa 100% nke ụlọ mma.",
+        "Okwu Amerịka kacha mma bụ -110/-110 na point spread: tụkwasị 110 ka ị nwuo 100 n'akụkụ ọbụla. Akụkụ ọbụla pụtara 52.4%, ihe abụọ ahụ ruo 104.8%, na 4.8% bụ vig."
+      ],
+      "example": "-110 n'akụkụ abụọ: ima 52.38% ọbụla, napụta 104.76%. Onye agbamịghị spreads na ụdị ụdị na-atụfu 4.76% ngwụrụ kwa dọla mịrị n'ogologo oge — nke ahụ bụ vig na-arụ ọrụ ya, ọ bụghị ihe ụnụ adịghịzi.",
+      "related": [
+        "bookmaker-margin",
+        "overround",
+        "point-spread"
+      ],
+      "see": [
+        {
+          "label": "Margin calculator",
+          "href": "/tools/margin-calculator"
+        }
+      ],
+      "_src_hash": "3a6a05972381e3bc",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "moneyline",
+      "term": "Moneyline",
+      "short": "Usoro odds nke US: namba ndị na-ebi-ozi (negative) na-egosi ihe ọ bụ na-etinyere iji merie 100, ndị ọzọ (positive) na-egosi ihe 100 na-eme — aha US maka ahịa mmeri.",
+      "definition": [
+        "Moneyline price nke -150 pụtara ịtinye 150 iji merie 100 (decimal 1.67); +240 pụtara 100 na-eme 240 (decimal 3.40). Ndị na-ebi-ozi na-akacha mma, ndị ọzọ na-akacha mma dị. 'Moneyline' ọkwa ahịa — ịka nke onye nwere ihe ịga (na spread adịghị), nke na football gụnyere otu ahịa maka otu ihe.",
+        "Mgbanwe bụ ọrụ: decimal = 1 + 100/|ML| maka ndị na-ebi-ozi, 1 + ML/100 maka ndị ọzọ. Imekọ ya na isi gị — ma ọ bụ ka mgbanwe-ihe-ọrụ mee ya — bụ nzọ nke mbụ iji tụnyere US-akọọ ndị ọzọ."
+      ],
+      "example": "-125 = 1.80 decimal = 55.6% akọ-ihe. +210 = 3.10 = 32.3%. Moneyline nke ụzụ-ụzụ football nke -125 / +260 / +330 pụtara 55.6 + 27.8 + 23.3 = 106.7% — vig 6.7% na iri atọ.",
+      "related": [
+        "odds-formats",
+        "vig",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "Odds converter",
+          "href": "/tools/odds-converter"
+        }
+      ],
+      "_src_hash": "668a9894bd102ded",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "point-spread",
+      "term": "Point Spread",
+      "short": "Ahụ ndị Amerika na-eme: usoro ndị abụọ na-ekwu na oke ụlọ ahụ dị nso nso, mgbe ụlọ ahụ na-eme mgbe ọnụọnụ ziri ezi.",
+      "definition": [
+        "Point spread na-eme ka ọkọ ndị ọzọ nwere nnukwu oke site na ọnụ ụlọ — tụrụ -6.5 pointụ ọkara ọkọ ahụ ga-meri karị asaa. Akụkụ abụọ ihe na-eme ka -110, ụlọ ahụ na-akwụ ụgwọ ya na vig kama na oke ihe nnwere onwe. Ọnụ ọnụ ofu nwere ike ịzụta ụlọ ahụ nke ọma (a push) ma ọ bụ gbanwee ego — gbuo-elu linụ ahụ gaghị eme ihe ahụ.",
+        "Ihe a bụ otu ihe dị ka Asian handicap na bọọlụ ụkwụ: gbanwee ndị ụgwụ ụgwụ ka ọ bụrụ ihe ruo nma ịmụta ma sụrụ maka ngbanwe ahụ. Bọọlụ ụkwụ na-enweghị ike mkpali bụ na ọnụ ụlọ na-eme ka mkpali akwara karị, ebe ụmụ America bụ 3.5s na 6.5s."
+      ],
+      "example": "Onye na-eme ihe nnukwu -3 na -110: meri karị 3 tụ tụ tụ tụ (ego azụ), karị 4+ meriri, nta karị elu ahụ. -110 n'akụkụ abụọ pụtara na ị ga-aka spread 52.4% nke oge iji tụfuo mee — ọnụ ọnụ nke ' against the spread' akwụkwọ ụlọ kwesịrị ịleziọkwa ya.",
+      "related": [
+        "asian-handicap",
+        "vig",
+        "push"
+      ],
+      "see": [],
+      "_src_hash": "d706c29ea8be4e8f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "push",
+      "term": "Push",
+      "short": "Ego ịgalị na akụkụ isi nke ahịrị — ego ojúujú laghachiri, ọ bụghị mmeri, ọ bụghị mmebi, na ọ dịghị aka n'ọrụ ụgwo stake.",
+      "definition": [
+        "Push na-eme mgbe nsonaazụ ya tụ́tụ́ n'ụwa nke ọnụ ọgụgụ nke ụfọdụ: under 3.0 goals na egwu igu 3, ma ọ bụ -3 spread meriri n'ụwa 3. Ego ojúujú laghachiri; ego na-adịghị mma ma ọ dịghị mma. Asian handicaps na-eji usoro ahụ kwa na ha nile na ọkara-nkewapụta ahịrị.",
+        "Push bets adịghị agbakwụnye na bonus wagering n'ọtụtụ mma mmanụ, ma na akụkụkọ agbakwụnye, akụkụ ụzọ-push na-apụta - nkwupụta a na-arịọ na ndabere nke ụfọdụ karịa ịnwụ nile."
+      ],
+      "example": "Over 2.5/3.0 (nkewa Asian nke ọnụ ọgụgụ) na egwu igu na ụba 3–0: 2.5 ọkara na-enwe mmeri, 3.0 ọkara na-apụta — ị nwere ike ịnata ego pụta n'ọkara stake ma weghachite ọkara nke ọzọ. Na over 3.0 nke dị otu, nke dum ego ojúujú ga-elọ.",
+      "related": [
+        "asian-handicap",
+        "void-bet",
+        "over-under"
+      ],
+      "see": [],
+      "_src_hash": "f34f6898ef0dc5cf",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-exchange",
+      "term": "Betting Exchange",
+      "short": "Ụlọ azụmọ ebe ndị na-azụ ihe egwu na-azụ ihe egwu n'otu ọzọ — ị nwere ike ịkwado ma ọ bụ ịtụ ụtụ ihe ọ bụla, na onye ọrụ ya na-ewere ntinye obere, ọ bụghị ntinye opekata.",
+      "definition": [
+        "Exchange na-ejikọ ndị ole na ole: otu onye na-akwado ihe ị na-atụ anya, onye ọzọ na-atụ ụtụ ya, na ihe ngosi ahụ na-ewe ego ntinye ya karịa obere kọmishọn na ohere nke ndị merụ ụjụ. Ụkpụkpụ azụmọ a bụ ihe na-enwe ike na mkpa nke ka ọ dị ihe mgbagwojupụtụ ebe ndị na-eme ihe ọkọ mma liri ụwa na-eche ya.",
+        "Mfefe ya bụ ihe dị iche iche: ụkpụkpụ azụmọ na-adị nanị n'oke ndị ọzọ na-akwadebe ịnakwa. Onyinye bọọl ọrú ụlọ dị elu; oche ndị na-adịghị mara ma onyinye ndị ọjọọ ga-abụ ebe erugo ụkpụkpụ azụmọ siri ike ị nwere ike ịnara n'eziokwu."
+      ],
+      "example": "Onye na-eme ihe azụmọ na-akọ 2.00 n'otu tiim nke exchange na-azụ ihe ọ 2.10. Mgbe kọmishọn 2% gachara, azụ ihe ọ na-akwado na-eweghachị gị 2.10 − (1.10 × 0.02) ≈ 2.078 — ọ ka mma karịa 2.00. Njehie ya, nyocha ziri ezi otu oge, bụ ihe dị ka ego nke ntinye onye na-eme ihe azụmọ na-eru gị ọkụ.",
+      "related": [
+        "lay-betting",
+        "closing-line-value",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "ff50d3cd02feb876",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "lay-betting",
+      "term": "Lay Betting",
+      "short": "Iji were ihe a gaghị eme — iji akụkụ onye nchịkọ akwụkwọ na exchange.",
+      "definition": [
+        "Iji were bụ ịnata back bet nke onye ọzọ: ị na-enweta ego ha ma ọ bụrụ na ihe ahụ adịghị eme, ma ị na-akwụ ụgọ na odds ma ọ bụrụ na ọ dị. Ego gị nọ n'ihe ize ike na lay na 4.00 bụ okpukpu atọ nke ego onye na-akụ — eme ndị ọhụụ na-achọpụtaghị nke a.",
+        "Ijiwere na-emekọ ihe: pishi ego ọkwa atọ maka bọọlụ a pụrụ iji abụọ ala ('favourite a dị mma nke ukwuu' ghaa na ihe ị pụrụ ime na-agịkwa ịhọ onye ga-emeri ha), na iji were eme ka ọ bụ ụzọ ịchọrọ ihe ị tụrụ n'azụ."
+      ],
+      "example": "Iji were £10 na 4.00: ma ọ bụrụ na ihe ahụ adịghị eme ị na-enweta £10; ma ọ bụrụ na ọ dị ị na-akwụ £30. Ego a chọrọ bụ 'ihe a na-eme na-erughị 25% nke oge' — kacha, naanụ na iji ya ihe ka enwere ihe ọbụla ọzọ ji anya.",
+      "related": [
+        "betting-exchange",
+        "hedging",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "ba976ad193de42aa",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "dutching",
+      "term": "Dutching",
+      "short": "Ịnakọ ego n'ọtụtụ mmemme ka nwanne ọ bụla n'ime ha na-emeri wepu ego otu ụzọ — mkpuchi, ọ bụghị arbitrage.",
+      "definition": [
+        "Dutching na-ekesa gị ego n'elu mmemme abụọ ma ọ bụ karị n'usoro dabere n'odds ha, ka ọ bụrụ na onye ọ bụla n'ime ha meriri wepu ego nha ụkọ. Ịnakọ oru tatụ gbasara ụfọdụ ikike ma ọ bụ mmadụ abụọ nke ga-akụ bọọlụ otú a na-atụgharị ọtụtụ ihe ị chere mma ghọo otu ọrụ otu na nwere maara nwetaghachi.",
+        "Nsogbu bụ itụnanya mkpuchi na nchekwa: mmemme ndị ị wetalaghi gị mkpuchi hụ ka ọ dị ka akọ ọ niile na-asọpụ. Dutching n'okpuru 100% mejupụtara nnukwu ihe a pụtara na ọ bụghị arbitrage — ọ bụ bet nkịtị nke nwetaghachi azụ bụ ihe niile n'apụ n'ihe ị họpụtara."
+      ],
+      "example": "Back 1-1 at 7.0, 2-1 at 9.0, 1-0 at 10.0 site na ngụkọ nha ụkọ nke £20 wee kewee 8.87/6.90/6.21... ụfọdụ n'ime atọ ndị a lanarị na-ewepu ≈£62 (mkpuchi a maara ~32%). Ihe ọzọ 68% nke oru tatụ na-asọpụ £20 niile — nke ahụ bụ bet ị mere n'ezie.",
+      "related": [
+        "hedging",
+        "correct-score",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "Dutching calculator",
+          "href": "/tools/dutching-calculator"
+        }
+      ],
+      "_src_hash": "9bae402a7a10c3e1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "hedging",
+      "term": "Hedging",
+      "short": "Ịgba ihe pụtara na-abụ ihe ọzọ ka ị kpachapụ uru ma ọ bụ mewe nsogbu na ihe ị tinyere — a na-akwụ ụgwọ n'ụlọ ụka, abụọ.",
+      "definition": [
+        "Hedging na-emechi ma ọ bụ belata ọkwa site n'ịgba ihe pụtara na-abụ ihe ọzọ: dochie otu ị kwadoro tupu ụbọchị, kọwaa usoro na ihe ọzọ megide okwu ọzọ nke mgbakota gị nke ọ na-eri nri, ma ọ bụ wepụ ego (nke a bụ naanị bookmaker na-edochi gị, na ọnụ ọgụgụ ha). Mgbe ọnụ ọgụgụ ziri ezi, hedging na-agbanwe ihe na-agbanwe n'ụọ ọnụ ọgụgụ n'ụlọ ụka.",
+        "Ọnụ ọgụgụ bụ inye ego na ụlọ ụka n'ihe gbasara abụọ. Ịgba ihe ọzọ nke ọ bụla na-ewubeghị ụra n'ọnọdụ mmeri n'ụlọ ụka bụ ụtụ na nke gị n'onwe gị; ụzọ ziri ezi dị mfọrọ na mkpebi - mewe ogige nke ị na-agbanwe pụrụ iche, ma ọ bụ ighọ ọkwa nke ihe ọmụmatụ ya nwụrụ site n'ụkọ ịnụ ụzọ ozi."
+      ],
+      "example": "£10 anọ-fold na 15.0 nwere ihe atọ merụ; ụkwụ ikpeazụ nke 2.5 na mgbakọ n'ụlọ ụka. Ịdochi/ịkwado ka onye ọzọ na-echekwa ≈£45 n'ụzọ ọ bụla ihe egwu na-eme, megide £150-ma-ọ bụ-ihe efu na-enweghị hedging. Ma ọkwa ahụ dị mma na-adị iche na ọnụ ọgụgụ, ọ bụghị na obi ụtọ.",
+      "related": [
+        "cash-out",
+        "lay-betting",
+        "dutching"
+      ],
+      "see": [
+        {
+          "label": "Hedging calculator",
+          "href": "/tools/hedging-calculator"
+        }
+      ],
+      "_src_hash": "265417d8376be4b6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "overround",
+      "term": "Overround",
+      "short": "Ụka nke akwụkwọ ihe ọkụ na-agbazigharị ihe ike nke ọnụ ahụ karịrị 100% — mkpọmkpọ nke onye na-atụ azụ ihe, ebe a na-ele ya n'akụkụ ahịa.",
+      "definition": [
+        "Gbakọọ ihe ike nke ọnụ ahụ maka ọnụ na-ọnụ nile n'otu ahịa, ụka ahụ na-agabiga 100% bụ overround: ihe 1X2 nke na-enwu ruo 105.5% na-enwe 5.5% overround. Ọ bụ otu ihe dị ka mkpọmkpọ nke onye na-atụ azụ ihe, naanị a na-lụta ya n'aka ahịa nile karịa inye ya aha dị ka ụtụ.",
+        "Overround na-adịgide adịgide n'akụkụ ahịa na ụlọ ọkụ — ọkụ ọkọ nke ndi ahịa n'ụlọ ọkụ ndị dị ọnụ karịrị isi ruo 2–5%, ahịa pụrụ ụdị na liga nkịtị 8–15%. Ịlele ya na-ewere sekọnd iri na ụfọdụ, ọ na-agwa gị ihe ụdị ihe mgbe ọ dabeghị omume ụdị ihe gbasara otu onye anya."
+      ],
+      "example": "Ụnụ 1.95 / 3.60 / 4.10 pụtara ihe ike 51.3% + 27.8% + 24.4% = 103.5% — overround nke 3.5%, dị mma. Otu egwu a n'ebe ọzọ na-elere anya 1.83 / 3.40 / 3.90 pụtara ihe ike 107.7% — ị na-akwụ ụtụ abụọ nke ihe nnaji ahụ maka omume ịdị nsọ mgbe ọ dabeghị omume.",
+      "related": [
+        "bookmaker-margin",
+        "vig",
+        "fair-odds"
+      ],
+      "see": [
+        {
+          "label": "Live margin research across our leagues",
+          "href": "/research"
+        }
+      ],
+      "_src_hash": "7ac9166d8f6aa038",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "goal-line",
+      "term": "Goal Line (Asian Total)",
+      "short": "Totals nwere Asian handicap mechanics: buuzụ, ọkara na split lines ebe ọ bụrụ na total ahụ dọta n'otu ebe, ọtụtụ stake maọ niile na-alaghachi.",
+      "definition": [
+        "Goal line bụ over/under nwere Asian handicap refund system. Buuzụ lines (3.0) na-apụ mgbe total dọta n'otu; split lines (2.5/3.0) na-akọ ọkara stake n'otu ebe niile; ọkara lines (2.5) sọ dị ka mbupụ ahụ na-eme ihe karị.",
+        "Ndị refunds na-ebafu odds: over 2.5/3.0 na-ebupu ole ole karị ihe over 2.5 n'ihi na ụfọdụ oge gị na-edapụ. Ma ihe ahụ bụ ezi azụ ma ọ bụ mma bụ ajụjụ maka ọnụ ọgụgụ, ebe split lines nke ukwu bụ ebe ụlọ akwụkwọ na-ezo okwu - tutuo na-emekọ ọmụmụ ụwa n'ihu ka i wee mara ma ọ bụ ihe nma."
+      ],
+      "example": "Over 2.75 (nke a bụ 2.5/3.0 split) nwere £10: egwu rụchara 3–1 — ụfọdụ ọkara niile na-emenụ. Rụchara 3–0... total 3: ọkara 2.5 na-emenụ, ọkara 3.0 na-apụ → gbanwee na £5, laghachi £5. Rụchara 2–0: ụfọdụ ọkara niile na-ada. 'Quarter line' a bụ naanị ndị abụọ bets ahụ zụrụ ọnụ.",
+      "related": [
+        "over-under",
+        "asian-handicap",
+        "push"
+      ],
+      "see": [],
+      "_src_hash": "ff9d0b027c55b632",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bet-builder",
+      "term": "Bet Builder (Same-Game Multi)",
+      "short": "Ijikọ ọtụtụ ahịa site n'otu egwuregwu n'ime otu betụ — ebe ọnụ ọgụgụ na-ejikọ ihe ndị a na-eme nke ụlọ n'adịghị mma.",
+      "definition": [
+        "Bet Builder a na-amụba mkpọsa site n'otu egwuregwu — ihe ga-apụta, BTTS, kādi, onye na-eche— n'ime otu ọnụ ọgụgụ. N'ihi na akụkụ ndị a jikọtara (otu otu na-eme ka nke 3–0 ruo mma, onye na-eche ya ga-emesapụ ma mma), otu ọnụ ọgụgụ ziri ezi nakwuru gụnyere ihe ọ̀ pụtara n'ibe ya, ọ bụghị mụbaa naanị otu n'otu.",
+        "Njikọ ahụ bụ ebe ụlọ betụ na-ezu ike: akwụkwọ na-etụ ọnụ ọgụgụ ihe jikọtara ndị na-amasị mmadụ nke nwere mma karị ifo naanị mụbaa, na nkewa na Bet Builder a na-agba ọka mgbe abụọ ifo nke otu ahịa. Ihe a chọrọ ọchị site n'ụkpụrụ ma gbara ụgbọ ezi n'ụkpụrụ.",
+        "example",
+        ": ",
+        ": Otu na-eme (2.00) + karịa 2.5 (2.00) dịka ihe onye otu na-emesapụ na-amụba ruo 4.00, ma ihe ga-apụta ndị a jikọtara nke ọma — otu ọnụ ọgụgụ ziri ezi mara nwere ike ịbụ 3.20. Bet Builder na-akọ 2.90. Ị na-akwụ ọkụ maka njikọ ahụ NA nkewa na-abụ́ karịa maka ohere nke slịpụ otu.Otu na-eme (2.00) + karịa 2.5 (2.00) dịka ihe onye otu na-emesapụ na-amụba ruo 4.00, ma ihe ga-apụta ndị a jikọtara nke ọma — otu ọnụ ọgụgụ ziri ezi mara nwere ike ịbụ 3.20. Bet Builder na-akọ 2.90. Ị na-akwụ ọkụ maka njikọ ahụ NA nkewa na-abụ́ karịa maka ohere nke slịpụ otu.}{",
+        " ",
+        " ",
+        "Otu na-eme (2.00) + karịa 2.5 (2.00) dịka ihe onye otu na-emesapụ na-amụba ruo 4.00, ma ihe ga-apụta ndị a jikọtara nke ọma — otu ọnụ ọgụgụ ziri ezi mara nwere ike ịbụ 3.20. Bet Builder na-akọ 2.90. Ị na-akwụ ọkụ maka njikọ ahụ NA nkewa na-abụ́ karịa maka ohere nke slịpụ otu.}{",
+        " ",
+        " ",
+        "Otu na-eme (2.00) + karịa 2.5 (2.00) dịka ihe onye otu na-emesapụ na-amụba ruo 4.00, ma ihe ga-apụta ndị a jikọtara nke ọma — otu ọnụ ọgụgụ ziri ezi mara nwere ike ịbụ 3.20. Bet Builder na-akọ 2.90. Ị na-akwụ ọkụ maka njikọ ahụ NA nkewa na-abụ́ karịa maka ohere nke slịpụ otu.}{",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " ",
+        " |}}{​}}{​}{​}{​}{​}{​}{​}{​}{​}"
+      ],
+      "example": "Otu na-eme (2.00) + karịa 2.5 (2.00) dịka ihe onye otu na-emesapụ na-amụba ruo 4.00, ma ihe ga-apụta ndị a jikọtara nke ọma — otu ọnụ ọgụgụ ziri ezi mara nwere ike ịbụ 3.20. Bet Builder na-akọ 2.90. Ị na-akwụ ọkụ maka njikọ ahụ NA nkewa na-abụ́ karịa maka ohere nke slịpụ otu.",
+      "related": [
+        "accumulator",
+        "bookmaker-margin",
+        "btts"
+      ],
+      "see": [
+        {
+          "label": "Model-screened combinations instead",
+          "href": "/tools/acca-builder"
+        }
+      ],
+      "_src_hash": "fe2be9f9ee3080ae",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "acca-insurance",
+      "term": "Acca Insurance",
+      "short": "Ihe ngwọta nke na-eme ka e weghachi ego maka accumulator akpụkpọ nke furu efu site na ihe otu naanị — na-abụ mma dị nnọọ ma ọ bụ free bet, ụlọ ọrụ na-eso ya na ọnụ ọgụgụ.",
+      "definition": [
+        "Acca insurance na-eme ka a weghachigharị ego maka ọnụ ọgụgụ nke ihe otu ruo karịa bụ ihe efu — ọtụtụ mgbe ihe ise ma ọ bụ karịa ka achọrọ, ego weghachigharị nwere oke wee esi m'aka ebe a ọnụọ, ọ bụghị ego n'ezie. Ụkọ inye (ihe otu naanị ka adịghị akwụ) bụ ihe na-eme mgbe karịa ọ bụ ezi uche: ọtụtụ akpụkpọ na-esi efu site na ihe abụọ ma ọ bụ karịa.",
+        "Ị̀ka ụkọ ngwaahịa a dị ka otu ihe: ezi uche gbasara ego weghachigharị na ala ala nke ihe otu ka adịghị akwụ ka̋m adị, bụ karị nta nke ụnde kwadoro nke accumulator na-achọ. Ọ na-arụ ọrụ iji mezie ohere na uche ọ bụghị mma; ọ na-agbanwe mkpụrụ nke ihe gbasara mgbakwunye ma ọ bụ mbelata."
+      ],
+      "example": "Ihe ise na 60% okwu kwa otu ụkọ ezigbo: P(ihe otu na-adịghị akwụ naanị) = 5 × 0.4 × 0.6⁴ ≈ 25.9%. £10 weghachigharị dị ka SNR free bet ka mara ọnụ ~£7 mgbe e kpụkotara ya → ≈£1.80 nke ezi uche gbasara uru, megide ~£2.50 nke ụnde karịa a stị n'elu ihe ise akpụkpọ.",
+      "related": [
+        "accumulator",
+        "free-bet",
+        "stake-not-returned"
+      ],
+      "see": [],
+      "_src_hash": "ec3bd1c5d6af93ee",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "price-boost",
+      "term": "Price Boost (Odds Boost)",
+      "short": "Ụlọ azụ na-emepụta ala ọkwa na ihe a họpụtara — mgbe ụfọdụ ọ dị oké mma, ọ bụ ihe na-adị mkpa iji lelee ma olee ka ọ dị ebe akụkụ ọzọ.",
+      "definition": [
+        "Ala ọkwa na-amememe akụkụ onodu na ihe ụlọ azụ họpụtara, na-agbatị oke nhata. Nʻihi na ọnụ ala akụkụ gụnyere ujụ ụlọ azụ, ala ọkwa na-abụkarị ihe na-ebuweghị ihe — mana ụfọdụ oge, karịsịa na market ndị dị mfe, ọ siri ike gafee ya.",
+        "Ike mma: jụtụ ọkwa emepụtara ya na ọkwa kacha nma na-adịkwa emepụtara ya na exchange. Ọkwa emepụtara 2.20 ebe ụlọ azụ ezi obi siri ike na-asọ 2.10 bụ ezi oké mma na oke akụkụ zubere; ọkwa emepụtara 2.20 ebe ezi ọnụ bụ 2.35 bụ ọkịkọ ifo nke azụ."
+      ],
+      "example": "Ala ọkwa: 2.00 → 2.20, oke kacha elu £10. Exchange na-azụ otu ihe ahụ na 2.16, nsonaazụ 2.12 eze emebighị azụ. Ịnara ala ọkwa (2.20 / 2.12 − 1) ≈ +3.8% mgbọrọgwụ na-atụ anya na oke akụkụ emepụtara — ihe na-adị mkpa, na ihe na-adịkwa mkpa iji ghara imetụta olu ụlọ azụ ahụ.",
+      "related": [
+        "value-bet",
+        "closing-line-value",
+        "free-bet"
+      ],
+      "see": [],
+      "_src_hash": "02171ba706bfb8f8",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "stake-not-returned",
+      "term": "Stake Not Returned (SNR)",
+      "short": "Ụkọ ụfọdụ ike-azụ: mgbalị ọzọ na-abụghị ihe gị, naanị mmeri ka a na-ebubo — na-eleba ụkọ abụọ na ntinye nke 1 ọkwa.",
+      "definition": [
+        "SNR pụtara na ụkọ ụfọdụ na-ebugharị naanị mmeri: token £25 na 2.00 na-ebugharị £25, ọ bụ ghị £50, n'ihi na ụkọ ahụ abụ ghị gị. Ọtụtụ ụkọ ụfọdụ na-akwụ ụgwọ ụzọ a, nke na-ekpebisị ihe isi mkpa ha — token na-agbanwe na (ọnwa−1)/ọnwa nke ụkọ nkwụ ụgwọ na ọnwa ziri ezi.",
+        "Ihe putara: tokens na-ewepụ ihe karịa na ọnwa buru ibu (50% nke ụkọ na 2.00, 75% na 4.00) ma na-awụfu na ọnwa mwere mwere. Ọ bụ otu eziokwu kacha mkpa maka ụkọ ụfọdụ na ọ bụ nke kacha akwụ ụgwọ ike."
+      ],
+      "example": "Token £25 SNR: na 1.40 o nwere ike nweta naanị £10 — 40% nke ụkọ kwụsịrị tupu egwu — na 5.00 o nwere ike inwe £100, na-agbanwe ~80% nke ụkọ nkwụ ụgwọ ihe na-atụ anya na ọnwa ziri ezi. Ụkọ otu a, dozie mmeri abụọ, otu mkpebi.",
+      "related": [
+        "free-bet",
+        "expected-value",
+        "wagering-requirements"
+      ],
+      "see": [
+        {
+          "label": "Free bets explained in full",
+          "href": "/guides/free-bets-explained"
+        }
+      ],
+      "_src_hash": "e29e3c9a2f1ebcf5",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "poisson-distribution",
+      "term": "Poisson Distribution",
+      "short": "Usoro ihe omume ihe mgbe niile — ihe na-ebu ụkọ akụkọ nke ụlọ azụ ọyọ. Ụwa tụtụ ọkụ dị ka ihe onye ọbụ na-abịa ụlọ ọ mara nke nkịtị.",
+      "definition": [
+        "Poisson distribution na-enye ohere ọ dị ịhụ ihe omume k mgbe ihe ndị a na-abịa ọ naanị na-agbagharia nke nkịtị λ: P(k) = e^−λ·λᵏ/k!. Nyefuo ya ụlọ azụ ọyọ ibu anya wee na-etụ ohere nke 0, 1, 2, 3… — mana ndị ụlọ abụọ na-agakọta na mgbe ụlọ azụ, 1X2, nchịkọta na BTTS.",
+        "Ọ bụ ezigbo nke ọma nʻụlọ ụmụ ọtụtụ — tụtụ ọkụ na-adịtụ kpakpando, akwụ na-eme ka ọ dị mkpụrụ — mana ihe ọ bụla siri ike na-amakarị ihe, gụzobere nke anyị, na-amalite na ya ma na-ahazi site. Ike ya bụ iji ihe mgbe ọtụtụ na-agbanwe agbanwe (tụtụ ọkụ ibu anya) wee mee ụlọ azụ na-eme ihe niile."
+      ],
+      "example": "λ = 1.4 tụtụ ọkụ ibu anya: P(0) = e^−1.4 ≈ 24.7%, P(1) ≈ 34.5%, P(2) ≈ 24.2%. Ndị Poisson abụọ na-apụtagharị na 1.4 na 1.1 na-enye P(1–1) ≈ 34.5% × 36.6% ≈ 12.6% — mgbakọ na-ezo erie na ụlọ azụ mara nke ị hụla otú.",
+      "related": [
+        "xg",
+        "expected-value",
+        "correct-score"
+      ],
+      "see": [
+        {
+          "label": "How our model works",
+          "href": "/model"
+        }
+      ],
+      "_src_hash": "c003f1cd5ff1fdfb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "regression-to-the-mean",
+      "term": "Lọgọ-azụ nʼazụ",
+      "short": "Ọrụ dị ukwu karịa ma ọbụ karịchaa ihe nkamgbe na-alaghachi nʼazụ elu — ihe mgbakọ na mgbakọ nke na-anya ihu na 'ụdị ugbu a bụ ihe oge, ụdị akụ bụ ihe dabeere'.",
+      "definition": [
+        "Mgbe ọrụ na-agafe karịa ma ọbụ karịchaa ogo nke ime ụmụ agha ndị ahụ, ụdị ihe ndị esochi na-azụ nʼazụ elu nʼike nso n'ogo ahụ — ọ bụghị n'ihi ihe na-agba ọsọ ma ọbụ ọjọọ, kama n'ihi na ihe dị ukwu bụ akụkụ nkụ na nkụ adịghị eme ihe n'ụzọ nkwụ. Onye na-ebu bọọlụ nke na-ebutu 35% nke ndo ya ga-eme ihe nso na 12% nke ya n'ọtụtụ ụbọchị na-abịa.",
+        "Maka ndị na-abanye ego, ndụmọdụ bụ maka atụmatụ akwadoro: ahịa na-agbakwunyere ụzọ ike-ike na-eme ihe mgbe lọgọ-azụ nʼazụ ka mma, ya mere ihichapụ ihe ukwu n'ọnụ ọchịchị dị elu bụ uche nke na-adịgide ma soro ha bụ ihe na-emebi."
+      ],
+      "example": "Otu ụmụ agha dị n'etiti tebụl wetara ibu isii n'ọsọ, atọ site na otu nso nke nwere xG karịa elu. Onu ogugu ọrụ ya dị adị na 45% ike ịwu mụmụ n'agbanyeghị; ahịa na-esonụ ike-ike tụtụ 58%. Lọgọ-azụ nʼazụ anaghị akwado nnọkọ — o kwuru na 1.72 n'ohere 45% bụ ọnụ ọchịchị adịghị mma.",
+      "related": [
+        "variance",
+        "sample-size",
+        "xg"
+      ],
+      "see": [],
+      "_src_hash": "a5cb887c49a4a007",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "sample-size",
+      "term": "Sample Size",
+      "short": "Ọnụ ọgụgụ ntinye akụkọ na-ezo mụa ihe nnupụta — ọdịiche dị n'etiti ihe eziokwu na akụkọ ara — n'otu nọmba.",
+      "definition": [
+        "Ihe nnupụta dị na azụmahụ ntinye ego niile bụ atụmatụ nke nkwado ya na-owu ka ọnụ ọgụgụ ntinye ihe na-agbanwe. Eso ise nke BTTS data agwa gị ihe fọrọ nro; iri ise agwa gị ihe; narị atọ na-edozie ọnụ ọgụgụ ahụ. Mpịaji ihe nrụ ọkwa mma na-ebelata site na mgbọrọgwụ akụkụ n — mụbaa data ugboro anọ iji belata mkpekereanya. ",
+        "Nzero ọrụ: tulee ihe nnupụta ọ bụla ('ha kụrụ over 2.5 n'ime ise nke iri'), jụọ ụdị n bu ya na ụdị mmalite asị. Ọtụtụ 'ọkọ mkpọ' a na-ere ntinye ego ụlọ bụ ihe iri-egwu nke mkpụrụ akụ nke na-adịchaala nso 50%."
+      ],
+      "example": "Ọnụ ọgụgụ 60% over-2.5 sitere n'egwu iri nwere ihe nrụ standard nke ±15.5% — n'ihe onwu mere na-ga-abụ ihe ọ bụla n'etiti 45% na 75%, ga-agafe 'ntinye over' na 'ntinye under'. Ihe 60% otu ahu n'etiti ihe 200 (±3.5%) bụ ihe eziokwu.",
+      "related": [
+        "variance",
+        "regression-to-the-mean",
+        "win-rate"
+      ],
+      "see": [],
+      "_src_hash": "0259ad38e8f46e75",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "longshot-bias",
+      "term": "Ụtụ Ndị Mma–Ndị Pụrụ Iche na Ego (Favourite–Longshot Bias)",
+      "short": "Akwụkwọ ahụ edere ya: ndị na-azụ ego nwa-obi na-eyi ego ha karịa, ndị azụ ego nke oké ụtụ jụ ụtụ ya kwuo ya nke ọma.",
+      "definition": [
+        "N'afọ ọtụtụ na ụlọ akwụkwọ ego dị iche iche, ego e zipụrụ na ụtụ dị oké laghachiri nke ihe ojini: ego ndị na-egwu egwu mahụ isi ụlọ akwụkwọ ego ịta ego n'ụtụ dị oké, na ụlọ akwụkwọ ego ahụ azi ndị azụ ego nke na-eche mma nke ụtụ dị ukwu anya, na ngbaghara nke ụlọ akwụkwọ ego guzo ozugbo ma ebe ụmụ ego nọ.",
+        "Ụtụ a bụ otu n'ime ihe ole na ole nke ahịa pụtara na ha na-ezi akwụkwọ: nwekwara obi abụọ banyere obi gị na ego nke ụtụ oké, chọpụta ego mwerụ ka ọ karịrị 6.0+ tupu i were ya, ma cheta na ọtụtụ 'ego dị iche' modelụ na-akpata na ụtụ dị oké bụ ụtụ a na-akwa akwa. V1 nke anyị zụụ 0-for-8 na ihe a kọrọ."
+      ],
+      "example": "Ihe a chọpụtara nke ọtụtụ: ego e zipụrụ na 1.50 laghachiri ~97p n'ime £1 a zụrụ; ego e zipụrụ na 15.0 laghachiri ~85p. Egwuregwu otu, ụlọ akwụkwọ ego otu, ụbọchị otu — ihe ọbụla dị iche bụ ebe ngbaghara ahụ zọnụ. Modelụ na-ahụ ihe a pụtakwala ya ga-akpata 'ego dị iche' kachasị ukwu ya ozugbo ebe ụtụ kasị njọ.",
+      "related": [
+        "value-bet",
+        "variance",
+        "bookmaker-margin"
+      ],
+      "see": [
+        {
+          "label": "Our model's odds caps and why",
+          "href": "/model"
+        }
+      ],
+      "_src_hash": "365d89426d4636e4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "home-advantage",
+      "term": "Avantáje Ụlọ",
+      "short": "Isi ihe ịrị nke ịkpọ egwu n'ụlọ — ihe karịrị ihe karịrị 0.3–0.4 goals, dị iche iche n'otu oto, afọ, na ìgbàghàrị mmadụ.",
+      "definition": [
+        "Ndị otu ụlọ na-etiti ár̀à karịa na-agbana obere ihe tụnyere otu ndị a na-eso ụzọ — site na mbụ ruo ugbu a karịrị 0.3–0.4 goals kwa egwu, n'ihi mmetụta ìgbàghàrị mmadụ na ndị ọrụ, ụzọ, na ịmara mma. Ihe a bụ ezie, dị iche iche n'otu oto, ma na-agbaba nwayọ na football.",
+        "Ọrụ ọ bụla na-eme nke mma na-ewere isi mma dị iche iche maka ụlọ na ụzọ karịa otu ike otu; nke anyị na-eme ya. Akụkọ ihe gbasara ma avantáje ụlọ dị adị — ahịa mara — ma na-agụ ya dị iche iche n'otu oto na afọ, ma ùgwù tụrụ na nke zuru ezu n'ụwa nke karịrị ihe bụ nke karịrị ihe na-agba ụtụ nke oke."
+      ],
+      "example": "N'oto anyị gbarara, ọnụọgụ goal ụlọ na-agba ihe karịrị 1.4 vs 1.1 na ụzọ — avantáje 0.3-goal karịrị ihe karịrị 8–10 pointi nke mmeri na mma dị otu. Otu oto nke afọ ugbu a na-agba ihe karịrị ihe karịrị nke sarà onwe ya bụ ebe ùgwù goals na 1X2 na-agba ụtụ mbụ.",
+      "related": [
+        "poisson-distribution",
+        "xg",
+        "regression-to-the-mean"
+      ],
+      "see": [
+        {
+          "label": "Home advantage by league — live research",
+          "href": "/research/home-advantage"
+        }
+      ],
+      "_src_hash": "9838d9bf65548ef4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "team-form",
+      "term": "Àgbà (Àgbà Ihe Emesịrị)",
+      "short": "Nsonaazụ nke ụbọchị gara aga — ihe ọ bụ naanị obere ike mgbagha onwe ya, ọma naanị mgbe a tinyere ya na ike nke ndị iro.",
+      "definition": [
+        "Àgbà na-achụpụta nsonaazụ nke ụbọchị gara aga — ihe dị ka MMỌỊỊM pụtara na saịtị niile. Àgbà na-abụghị ihe ọ bụ ike mgbagha nke mma: ụmụ ihe ise na-enwe ihe ọ̀tụtụ nke na-ekwu ihe dị iche iche, ndị iro na-adịghi otu, na gọọl otu nwere ike ịgbanwe. Otu ihe (ọkụ, xG, ebe ịrụ mma) na-ebu ụkọ ihe na-eme n'ọlụ dị mma karịa ederede ahụ.",
+        "Àgbà na-enweta ebe ọ gị mgbe a tịnyesịrị ya (ihe nkejuru ụbọchị na-enwekarị), mgbe a hụkọla ndị iro, na mgbe a nyochachara anya na ụnụ ihe adịghị ekwu. Ụkpụ ihe anyị na-eme na-eme ihe a echiche — nsonaazụ sitere n'ọnyụụ gara aga na-ekwu ihe karịa nke sitere na October, mana ụmụ abụọ ahụ na-agbanwekwa na ihe ndị na-eme azụ."
+      ],
+      "example": "Ndị ọrụ A: MMÕĪĪM megide ndị isi ise nke asọmpi. Ndị ọrụ B: MMMM megide ndị ohị ise. Ederede na-asị B na-agaghari nke mma; ike nkejuru ndị iro na-ekwupụtakwara na A bụ òtù ike karịa na nka otu — na ọnụ ahịa ọla na-enọkarị ebe ụzọ abụọ ahụ na-ezutakọ.",
+      "related": [
+        "sample-size",
+        "regression-to-the-mean",
+        "xg"
+      ],
+      "see": [],
+      "_src_hash": "aa8eabb6547b8832",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "head-to-head",
+      "term": "Head-to-Head (H2H)",
+      "short": "Mgbakọ abụọ ndị otu ruo na mgbe gara aga — a na-akwado ya nke ukwuu, ọ na-ebute ihe nnukwu ama nke ezie, mgbe ụfọdụ na-eduga na amamihe mgbakọ.",
+      "definition": [
+        "H2H records na-ekopu mgbakọ ndị na-adịgide adịgide n'etiti ndị otu abụọ. Ndị otu na-agbanwe agbanwe na ndị ọchịchị na-agbanwee, ya mere 4–0 site n'ime afọ atọ gara aga na-akọwa ndị otu na-adịghị mma — dị ka ihe ama nke ịgụ mma maka nsopu ọzọ, H2H akụkọ ihe gara aga na-ejikwa ya obere oge ozugbo ihe ike ugbu a e-weere. ",
+        "Ụzọ ezi ọrụ dị na-ata mgbakọ: mgbakọ ndị na-adịgide adịgide na-ebupụ elu maọbụ ala n'elu ngwungwu n'elu ọtụtụ mgbakọ, maọbụ ụbọchị ụlọ dị iche iche nwere obere sampụl. Nsụtụ anya, ọ bụ ghara ịmara — ihe nnukwu ma n'ihu n'ụlọ anya anyị na-apụ H2H n'azụ wee rụọ ọrụ site n'ọnwa ugbu a na-etutu ngwungwu."
+      ],
+      "example": "Orie iri na mgbakọ na-agbakọ ngwungwu 3.4 n'ebe ọgbọ ihe na-atụ ụtụ 2.6 bụ ihe karịrị njiri anya na lịnị ngwungwu ụlọ — dị ka ọkwa iji lelee ọnwa ugbu a na-etutu ihe elu, ọ bụghara ndị na-agụ. Ọrie atọ na-agbakọ ihe ọ bụla bụ mma nke nwa ịbụ na-echefụ.",
+      "related": [
+        "sample-size",
+        "team-form",
+        "over-under"
+      ],
+      "see": [
+        {
+          "label": "H2H records for every covered pairing",
+          "href": "/h2h"
+        }
+      ],
+      "_src_hash": "32642792464a4500",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fixture-congestion",
+      "term": "Fixture Congestion",
+      "short": "Ọkwa mmemme n'etiti izu ole: njikwa ndị egwu, akụkụ mmụọ na ibu, ọnụ ọnụ na-agbanwe agbanwe na oge dị iche iche.",
+      "definition": [
+        "Congestion bụ ọkwa atọ n'ime ụbọchị asatọ — cup mmemme n'etiti izu ole, njem mba nkemkwa, na ụbọchị nke Disemba nke jupụtara. Ụdị ọrụ ya dị: ndị ịkụ nma na-agbanwe, ọ na-ebelata nke ike karịa karịa, yana ọwa ole na-iji nkume adịda na njedebe nke njikwa.",
+        "Ụdị ọrụ nke ịkwa n'oji bụ oge: ọnụ ọnụ na-arụ ọrụ na mmalite nke izu ole nwere ike iji oge dị iche iche, ma bet nke onye ịkụ nma (goals, red cards) bu ndị kasị na-akpagide n'aka njikwa eme. Nwee mma banyụ ndị egwu ọkwa tupu ihe ọbụla mere."
+      ],
+      "example": "Ndị ụka na-akụ ọkwa atọ n'ime ụbọchị asaa, mgbe e meworo njem mba, na-agbanwe ndị ịkụ nma anọ. Ọnụ ọnụ 1X2 anaghị ebu ike (ahịa na-azụ azụ ndị ụka), mana onye ịkụ nma akụ na 2.10 bu na-enarịrị — bet ahụ gụkwụrụ gụ na ndepụta ndị egwu, mana ọ gaghị abụ na mmalite egwu.",
+      "related": [
+        "team-form",
+        "anytime-goalscorer",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "32368c4d7bd11aef",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "dead-rubber",
+      "term": "Dead Rubber",
+      "short": "Egwuregwu enweghi ihe na-eso ya maka otu akụkụ abụọ — ebe aguu ọchị na-akwụ ụgwụ modelu na ọnụ ọgụgụ ihe karịrị.",
+      "definition": [
+        "Dead rubber akpụtaghị ihe ọbụla: otu ahụ merela, nchekwa zuru ezu, njedebe nke asọmụ ụlọọrụ a sụrụ edozi. Ụmụ ihe na-emekarị atụmatụ n'ụzọ a na-akwụ ụgwụ ihe — otu ike nwere ihe na-enwe n'aka yie nkwarụ ụmụ ndu na na-agalakwa nwayọọ, 'eziokwu' ya n'oge ahụ abụghị ike ya.",
+        "Ndị a bụ egwuregwu ebe ihe karịrị (nke anyị gụnyere) karịrị na-atụkwaghachi, na ihe ndị ahịa mara — onye chọrọ isi gozie — dị mkpa karị. Njedebe obi yana njedebe grọọpu zuru ezu na-achọ ntụle aguu tupu ihe ọbụla ị ga-akụ ego."
+      ],
+      "example": "Njedebe grọọpu: otu a-nabatara (orite-nke-ike 60%) na-agaghari gaa otu agha na-achọ isi ihe iji zọpụta. Akụkọ ihe na-emekarị tupu ka osimiri nkịtị dị ụdị a na-atụ ndụ na ike ihe ahụ zuru ezu na-akwụ ụgwụ — 1.67 na onye na-eme ntakpa abụghị atụmatụ ọjọọ mma karị.",
+      "related": [
+        "team-form",
+        "fixture-congestion",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "ebba46dd36eb2f3e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "maximum-payout",
+      "term": "Nnukwu ego a ga-akwụ",
+      "short": "Njedebe nke onye na-ebipụta ego kwesịrị ikwụ maka bet otu maọbụ onye mmadụ n'otu ụbọchị — ihe ndị dị nta na-ebelata ego nke jackpot accumulators.",
+      "definition": [
+        "Onye na-ebipụta ego nile na-echi njedebe ego — maka bet otu, maka market otu, maka onye mmadụ n'ụbọchị otu — site na ihe nke league na sport dị iche iche: ọgba asọmpi nke elu mara-mma na-enwe njedebe kachasị elu, ndị mkpọmkpu dị ala nke ọma. Accumulator nke 12-leg nke payout megwara karịa njedebe a na-akwụ naanị njedebe ahụ, n'agbanyeghị na slip rụpụtaara ọtụtụ.",
+        "Lelee njedebe ahụ tupu ibu ihe ọ bụla na-eji akara ihe akukwu, ma tụọ anya nke league na slip gị nke nwere NJEDEBE KACHA DI ALA — mixed accumulators na-echi site na akụkụ ha nke kasịrị laala n'ọtụtụ akwụkwọ."
+      ],
+      "example": "Slip na-ekwu £2 × 8,000 = £16,000; ọkwa okwu na-echi njedebe ego nke league ahụ na £10,000. Leg isii bụ ihe a na-ahụ ma otu Belarusian reserve-league nhọrọ dọbara coupon nile n'okpuru njedebe nke ala — £6,000 enyim ahụ bụ ihe dị nta na-akọ akụkọ ruo mgbe nile.",
+      "related": [
+        "accumulator",
+        "fold",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "d4c8a143702c5985",
+      "_model": "claude-haiku-4-5-20251001"
+    }
+  ]
+}

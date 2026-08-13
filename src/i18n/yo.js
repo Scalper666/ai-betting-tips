@@ -162,7 +162,7 @@ export const YO = {
   "crumb.home": "Ile",
   "day.lead": "{n} iṣedun-iṣeju fun {date} — gbogbo wọn ni ọna si ojú iwe ere ti o ni ifiweranko, iṣẹ aṣa ati imọ-jinlẹ ara.",
   "day.none": "Ko si ere ninu aaye yii fọwọ — pada wa ẹ ka ẹ ti iye-iwe data yii tun wa.",
-  "day.seoP": "Gbogbo iṣedun a ṣe ni ibare ifiweranko oniṣeԛu ilu: a yọ iwo-ajẹ lati inu to gba iyipada deede, fi hun pẹlu aworan iṣedun wa ti a ba ni ọkan, ki a ko awọn iṣedun nibiti orisun ti o dara julọ ṣẹ dariji iṣiro deede. Awọn iṣedun a ti tipa ni iwaju kilọ ati iṣẹ idarupọ ju - fikan wọn gẹgẹ bi awọn ọtitọ ti o niiye, kii ṣe ibi titọ. 18+.",
+  "day.seoP": "Gbogbo iṣedun a ṣe ni ibare ifiweranko oniṣequ ilu: a yọ iwo-ajẹ lati inu to gba iyipada deede, fi hun pẹlu aworan iṣedun wa ti a ba ni ọkan, ki a ko awọn iṣedun nibiti orisun ti o dara julọ ṣẹ dariji iṣiro deede. Awọn iṣedun a ti tipa ni iwaju kilọ ati iṣẹ idarupọ ju - fikan wọn gẹgẹ bi awọn ọtitọ ti o niiye, kii ṣe ibi titọ. 18+.",
   "day.tips": "awọn iṣedun",
   "day.today.crumb": "Onisinsin yi",
   "day.today.desc": "Gbogbo {n} ti iṣedun ewe-odo loni ({date}) pẹlu ifiweranko, igbẹkẹle ati itupalẹ ere ti o pẹ - tipa ni iwaju kilọ ati iṣẹ idarupọ ju.",

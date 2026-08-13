@@ -37,6 +37,7 @@ GROUPS = [
     ("i18n-sw",     lambda p: p.startswith("/sw/")),
     ("i18n-ha",     lambda p: p.startswith("/ha/")),
     ("i18n-yo",     lambda p: p.startswith("/yo/")),
+    ("i18n-ig",     lambda p: p.startswith("/ig/")),
     ("matches",     lambda p: p.startswith("/predictions/") and not p.startswith("/predictions/daily")),
     ("h2h",         lambda p: p.startswith("/h2h/")),
     ("teams",       lambda p: p.startswith("/team/") or p.startswith("/teams")),

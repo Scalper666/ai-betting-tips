@@ -1,550 +1,588 @@
 {
- "_readme": [
-  "One object per target market. Drives /countries/<slug>/ pages, which list the",
-  "bookmakers whose `countries` array contains this slug.",
-  "",
-  "IMPORTANT: gambling law changes often and varies by region. Verify every legal",
-  "line with a current source (and ideally a lawyer) before publishing — this is",
-  "YMYL content and Google holds it to a higher bar. `verify: true` marks entries",
-  "that have not been re-checked."
- ],
- "countries": [
-  {
-   "slug": "uk",
-   "name": "United Kingdom",
-   "flag": "🇬🇧",
-   "currency": "GBP (£)",
-   "regulator": "UK Gambling Commission (UKGC)",
-   "legal_summary": "Online sports betting is legal and tightly regulated. Operators serving UK players must hold a UKGC licence, which brings strict rules on advertising, affordability checks and player protection.",
-   "key_facts": [
-    "Credit cards cannot be used for gambling (banned since April 2020)",
-    "All licensed operators must participate in GAMSTOP self-exclusion",
-    "Winnings are not taxed for the player"
-   ],
-   "popular_payments": [
-    "Debit card",
-    "PayPal",
-    "Apple Pay",
-    "Bank transfer"
-   ],
-   "verify": true
-  },
-  {
-   "slug": "de",
-   "name": "Germany",
-   "flag": "🇩🇪",
-   "currency": "EUR (€)",
-   "regulator": "Gemeinsame Glücksspielbehörde der Länder (GGL)",
-   "legal_summary": "Regulated nationally under the 2021 State Treaty on Gambling. Licensed operators may offer sports betting, but the framework is noticeably stricter than in most of Europe.",
-   "key_facts": [
-    "Cross-operator monthly deposit limit applies by default",
-    "Live betting is restricted to a limited set of markets",
-    "A betting turnover tax applies and some operators pass it to the customer"
-   ],
-   "popular_payments": [
-    "Sofort",
-    "Giropay",
-    "PayPal",
-    "Visa",
-    "Skrill"
-   ],
-   "verify": true
-  },
-  {
-   "slug": "in",
-   "name": "India",
-   "flag": "🇮🇳",
-   "currency": "INR (₹)",
-   "regulator": "Regulated at state level — no single national licence",
-   "legal_summary": "Rules differ by state: several states permit online betting while others prohibit it outright. Many international operators accept Indian players, so check the law where you live before signing up.",
-   "key_facts": [
-    "Rules vary significantly between states",
-    "UPI and local wallets are the most common deposit methods",
-    "Winnings are subject to tax deducted at source"
-   ],
-   "popular_payments": [
-    "UPI",
-    "Paytm",
-    "Net banking",
-    "Crypto"
-   ],
-   "verify": true
-  },
-  {
-   "slug": "ng",
-   "name": "Nigeria",
-   "flag": "🇳🇬",
-   "currency": "NGN (₦)",
-   "regulator": "National Lottery Regulatory Commission and state boards",
-   "legal_summary": "Sports betting is legal and popular, with both locally licensed operators and international sites serving the market. Football, and the Premier League in particular, dominates betting volume.",
-   "key_facts": [
-    "Mobile-first market — most bets are placed on phones",
-    "Bank transfer and mobile money are the leading payment methods",
-    "Data-light apps matter because of connection costs"
-   ],
-   "popular_payments": [
-    "Bank transfer",
-    "Paystack",
-    "Flutterwave",
-    "USSD"
-   ],
-   "verify": true
-  },
-  {
-   "slug": "ke",
-   "name": "Kenya",
-   "flag": "🇰🇪",
-   "regulator": "Betting Control and Licensing Board (BCLB)",
-   "currency": "KES",
-   "popular_payments": [
-    "M-Pesa",
-    "Airtel Money",
-    "Visa/Mastercard"
-   ],
-   "key_facts": [
-    "One of Africa's highest betting participation rates — mobile-first market",
-    "M-Pesa dominates deposits and withdrawals",
-    "Stakes and winnings are taxed; rates change frequently, so check current rules"
-   ],
-   "legal_summary": "Sports betting is legal and licensed by the BCLB. Operators need a local licence, and betting taxes (on stakes and winnings) are a recurring political topic — rates change often.",
-   "verify": true
-  },
-  {
-   "slug": "gh",
-   "name": "Ghana",
-   "flag": "🇬🇭",
-   "regulator": "Gaming Commission of Ghana",
-   "currency": "GHS",
-   "popular_payments": [
-    "MTN Mobile Money",
-    "Telecel Cash",
-    "Visa/Mastercard"
-   ],
-   "key_facts": [
-    "Licensed operators are listed publicly by the Gaming Commission",
-    "Mobile money is the default payment rail",
-    "A withholding tax applies to winnings — check the current rate"
-   ],
-   "legal_summary": "Sports betting is legal and regulated by the Gaming Commission of Ghana. Only licensed operators may take bets, and a withholding tax on winnings has applied since 2023.",
-   "verify": true
-  },
-  {
-   "slug": "tz",
-   "name": "Tanzania",
-   "flag": "🇹🇿",
-   "regulator": "Gaming Board of Tanzania",
-   "currency": "TZS",
-   "popular_payments": [
-    "M-Pesa (Vodacom)",
-    "Tigo Pesa",
-    "Airtel Money"
-   ],
-   "key_facts": [
-    "Betting is licensed and openly regulated — the Gaming Board publishes operator lists",
-    "Mobile money covers nearly all deposits",
-    "Gaming tax applies to winnings"
-   ],
-   "legal_summary": "Sports betting is legal under the Gaming Act, overseen by the Gaming Board of Tanzania. Licensed local operators dominate, and winnings are subject to gaming tax.",
-   "verify": true
-  },
-  {
-   "slug": "ug",
-   "name": "Uganda",
-   "flag": "🇺🇬",
-   "regulator": "Lotteries and Gaming Regulatory Board (LGRB)",
-   "currency": "UGX",
-   "popular_payments": [
-    "MTN MoMo",
-    "Airtel Money",
-    "Visa/Mastercard"
-   ],
-   "key_facts": [
-    "Operators must hold an LGRB licence",
-    "Mobile money is the leading payment method",
-    "A tax on winnings applies — check the current rate before withdrawing"
-   ],
-   "legal_summary": "Betting is legal and regulated by the Lotteries and Gaming Regulatory Board. Licensing is enforced and a withholding tax applies to winnings.",
-   "verify": true
-  },
-  {
-   "slug": "za",
-   "name": "South Africa",
-   "flag": "🇿🇦",
-   "regulator": "Provincial gambling boards (national framework: NGB)",
-   "currency": "ZAR",
-   "popular_payments": [
-    "Visa/Mastercard",
-    "Instant EFT (Ozow)",
-    "SnapScan"
-   ],
-   "key_facts": [
-    "Online sports betting is legal via provincially licensed bookmakers",
-    "Online casino games are NOT legal — only licensed betting",
-    "Recreational winnings are generally not taxed"
-   ],
-   "legal_summary": "Online sports betting is legal when the bookmaker holds a provincial licence (e.g. Western Cape, Mpumalanga). Online casino gaming remains prohibited — a key distinction unique to South Africa.",
-   "verify": true
-  },
-  {
-   "slug": "pe",
-   "name": "Peru",
-   "flag": "🇵🇪",
-   "regulator": "MINCETUR",
-   "currency": "PEN",
-   "popular_payments": [
-    "Yape",
-    "Plin",
-    "PagoEfectivo",
-    "Visa/Mastercard"
-   ],
-   "key_facts": [
-    "Online betting has been formally regulated since 2024",
-    "Licensed operators are registered with MINCETUR",
-    "Local wallets Yape and Plin are the fastest deposit routes"
-   ],
-   "legal_summary": "Peru regulated online sports betting in 2024 under MINCETUR. Licensed operators may advertise and take bets legally — one of Latin America's newest regulated markets.",
-   "verify": true
-  },
-  {
-   "slug": "cl",
-   "name": "Chile",
-   "flag": "🇨🇱",
-   "regulator": "No dedicated online regulator yet (framework pending)",
-   "currency": "CLP",
-   "popular_payments": [
-    "WebPay",
-    "Bank transfer",
-    "Visa/Mastercard"
-   ],
-   "key_facts": [
-    "Online betting is a grey market — a regulation bill is pending in Congress",
-    "Land-based casinos are regulated separately (SCJ)",
-    "Offshore sites are widely used in the meantime"
-   ],
-   "legal_summary": "Chile has no dedicated online betting framework yet: offshore operators serve the market while a regulation bill moves through Congress. Check the current status before signing up.",
-   "verify": true
-  },
-  {
-   "slug": "co",
-   "name": "Colombia",
-   "flag": "🇨🇴",
-   "regulator": "Coljuegos",
-   "currency": "COP",
-   "popular_payments": [
-    "PSE",
-    "Nequi",
-    "Visa/Mastercard",
-    "Efecty"
-   ],
-   "key_facts": [
-    "First Latin American country to regulate online betting (2016)",
-    "Licensed sites operate on .co domains under Coljuegos",
-    "Winnings above a threshold are taxed"
-   ],
-   "legal_summary": "Online betting is fully legal and regulated by Coljuegos — Latin America's pioneer market. Only Coljuegos-licensed operators may legally serve Colombian players.",
-   "verify": true
-  },
-  {
-   "slug": "sn",
-   "name": "Senegal",
-   "flag": "🇸🇳",
-   "regulator": "LONASE (state oversight)",
-   "currency": "XOF",
-   "popular_payments": [
-    "Orange Money",
-    "Wave",
-    "Free Money"
-   ],
-   "key_facts": [
-    "Betting is permitted under state oversight via LONASE",
-    "Mobile money (Orange Money, Wave) dominates payments",
-    "Football betting drives the vast majority of volume"
-   ],
-   "legal_summary": "Sports betting is permitted in Senegal under the oversight of the state lottery LONASE, with both local and international operators serving the market.",
-   "verify": true
-  },
-  {
-   "slug": "ci",
-   "name": "Côte d'Ivoire",
-   "flag": "🇨🇮",
-   "regulator": "LONACI (state oversight)",
-   "currency": "XOF",
-   "popular_payments": [
-    "Orange Money",
-    "MTN MoMo",
-    "Wave",
-    "Moov Money"
-   ],
-   "key_facts": [
-    "Betting operates under the state lottery LONACI's oversight",
-    "Mobile money is the default deposit method",
-    "One of francophone Africa's largest betting markets"
-   ],
-   "legal_summary": "Betting is permitted in Côte d'Ivoire under LONACI oversight. The market is mobile-first and one of the largest in francophone West Africa.",
-   "verify": true
-  },
-  {
-   "slug": "br",
-   "name": "Brazil",
-   "flag": "🇧🇷",
-   "regulator": "SPA/MF (Secretaria de Prêmios e Apostas)",
-   "currency": "BRL",
-   "popular_payments": [
-    "PIX",
-    "Visa/Mastercard",
-    "Boleto"
-   ],
-   "key_facts": [
-    "Fixed-odds betting is federally licensed since January 2025",
-    "Licensed operators must use .bet.br domains",
-    "PIX instant payments dominate deposits and withdrawals"
-   ],
-   "legal_summary": "Brazil's regulated market went live in January 2025 under the Ministry of Finance's betting secretariat (SPA). Only licensed operators on .bet.br domains may legally serve Brazilian players.",
-   "verify": true
-  },
-  {
-   "slug": "mx",
-   "name": "Mexico",
-   "flag": "🇲🇽",
-   "regulator": "SEGOB (Dirección General de Juegos y Sorteos)",
-   "currency": "MXN",
-   "popular_payments": [
-    "SPEI",
-    "OXXO",
-    "Visa/Mastercard"
-   ],
-   "key_facts": [
-    "Online betting operates under SEGOB permits, often via land-based licence holders",
-    "OXXO cash vouchers remain a popular deposit route",
-    "A new gambling law has been debated for years — rules may change"
-   ],
-   "legal_summary": "Betting is legal in Mexico under SEGOB permits issued via the Federal Gaming Law. Many online brands operate under agreements with land-based permit holders while a modernised law remains pending.",
-   "verify": true
-  },
-  {
-   "slug": "ar",
-   "name": "Argentina",
-   "flag": "🇦🇷",
-   "regulator": "Provincial regulators (LOTBA, IPLyC PBA and others)",
-   "currency": "ARS",
-   "popular_payments": [
-    "Mercado Pago",
-    "Visa/Mastercard",
-    "Bank transfer"
-   ],
-   "key_facts": [
-    "Regulation is province-by-province — Buenos Aires City and Province license online operators",
-    "Mercado Pago is the default payment rail",
-    "Currency volatility makes payout speed matter more than usual"
-   ],
-   "legal_summary": "Online betting in Argentina is regulated at the provincial level: Buenos Aires City (LOTBA) and Buenos Aires Province license online operators, and other provinces run their own regimes. Check the rules for your province.",
-   "verify": true
-  },
-  {
-   "slug": "ca",
-   "name": "Canada",
-   "flag": "🇨🇦",
-   "regulator": "Provincial (AGCO/iGaming Ontario; provincial lotteries elsewhere)",
-   "currency": "CAD",
-   "popular_payments": [
-    "Interac e-Transfer",
-    "Visa/Mastercard",
-    "PayPal"
-   ],
-   "key_facts": [
-    "Single-event betting has been legal nationwide since 2021",
-    "Ontario runs a fully licensed open market (iGaming Ontario)",
-    "Recreational winnings are not taxed"
-   ],
-   "legal_summary": "Canada legalised single-event sports betting in 2021. Ontario operates an open licensed market under AGCO/iGaming Ontario, while other provinces offer betting through provincial lottery platforms — with offshore sites in a grey area outside Ontario.",
-   "verify": true
-  },
-  {
-   "slug": "ie",
-   "name": "Ireland",
-   "flag": "🇮🇪",
-   "regulator": "GRAI (Gambling Regulatory Authority of Ireland)",
-   "currency": "EUR",
-   "popular_payments": [
-    "Visa/Mastercard",
-    "PayPal",
-    "Apple Pay"
-   ],
-   "key_facts": [
-    "The Gambling Regulation Act 2024 created a new dedicated regulator (GRAI)",
-    "Bookmakers historically licensed via the Revenue Commissioners",
-    "Winnings are not taxed for the punter"
-   ],
-   "legal_summary": "Betting is fully legal in Ireland. Licensing is transitioning from the Revenue Commissioners to the new Gambling Regulatory Authority of Ireland under the Gambling Regulation Act 2024.",
-   "verify": true
-  },
-  {
-   "slug": "cm",
-   "name": "Cameroon",
-   "flag": "🇨🇲",
-   "regulator": "State licensing (Ministry of Finance oversight)",
-   "currency": "XAF",
-   "popular_payments": [
-    "Orange Money",
-    "MTN MoMo"
-   ],
-   "key_facts": [
-    "Betting is permitted with local licences and is hugely popular",
-    "Mobile money covers nearly all deposits",
-    "One of central Africa's largest betting markets"
-   ],
-   "legal_summary": "Sports betting is permitted in Cameroon under state licensing, with both local and international brands active. The market is mobile-first and football-driven.",
-   "verify": true
-  },
-  {
-   "slug": "ec",
-   "name": "Ecuador",
-   "flag": "🇪🇨",
-   "regulator": "No dedicated regulator — taxation of online betting introduced, framework evolving",
-   "currency": "USD",
-   "popular_payments": [
-    "Visa/Mastercard",
-    "Bank transfer",
-    "PayPhone"
-   ],
-   "key_facts": [
-    "Land-based casinos were banned by referendum in 2011; online betting is a grey area",
-    "A tax on online betting operators and players was introduced recently",
-    "The US dollar is the official currency — no conversion needed"
-   ],
-   "legal_summary": "Ecuador has no dedicated online betting framework: offshore sites serve the market while the state has begun taxing online betting — a sign regulation is evolving. Check the current rules before signing up.",
-   "verify": true
-  },
-  {
-   "slug": "zm",
-   "name": "Zambia",
-   "flag": "🇿🇲",
-   "regulator": "Betting Control and Licensing (Ministry of Finance)",
-   "currency": "ZMW",
-   "popular_payments": [
-    "MTN MoMo",
-    "Airtel Money",
-    "Zamtel Kwacha"
-   ],
-   "key_facts": [
-    "Betting is legal and licensed under the Betting Control Act",
-    "Mobile money is the default payment rail",
-    "A fast-growing market with little SEO competition"
-   ],
-   "legal_summary": "Sports betting is legal in Zambia under the Betting Control Act, with licensed local operators and mobile-money payments dominating the market.",
-   "verify": true
-  },
-  {
-   "slug": "bj",
-   "name": "Benin",
-   "flag": "🇧🇯",
-   "regulator": "State oversight (national lottery framework)",
-   "currency": "XOF",
-   "popular_payments": [
-    "MTN MoMo",
-    "Moov Money",
-    "Celtiis Cash"
-   ],
-   "key_facts": [
-    "Betting operates under state oversight built around the national lottery",
-    "Mobile money is the default deposit and withdrawal rail",
-    "Rules have been reformed repeatedly — check the current position"
-   ],
-   "legal_summary": "Sports betting in Benin operates under state oversight organised around the national lottery framework, with local and international operators serving a mobile-first market. The regime has been reorganised more than once in recent years, so confirm the current rules before signing up.",
-   "verify": true
-  },
-  {
-   "slug": "tg",
-   "name": "Togo",
-   "flag": "🇹🇬",
-   "regulator": "LONATO (state lottery oversight)",
-   "currency": "XOF",
-   "popular_payments": [
-    "Flooz",
-    "T-Money",
-    "Moov Money"
-   ],
-   "key_facts": [
-    "Betting sits under state oversight via the national lottery LONATO",
-    "Flooz and T-Money handle most deposits",
-    "Football, and European leagues in particular, drives the volume"
-   ],
-   "legal_summary": "Betting in Togo falls under state oversight through the national lottery LONATO. The market is small but almost entirely mobile, with local wallets handling deposits and withdrawals.",
-   "verify": true
-  },
-  {
-   "slug": "bf",
-   "name": "Burkina Faso",
-   "flag": "🇧🇫",
-   "regulator": "LONAB (state lottery oversight)",
-   "currency": "XOF",
-   "popular_payments": [
-    "Orange Money",
-    "Moov Money"
-   ],
-   "key_facts": [
-    "The state lottery LONAB anchors the licensed framework",
-    "Orange Money and Moov Money dominate payments",
-    "Data costs make lightweight apps a real selection criterion"
-   ],
-   "legal_summary": "Sports betting in Burkina Faso operates under state oversight centred on the national lottery LONAB, with international operators also serving the market. Payments run almost entirely through mobile money.",
-   "verify": true
-  },
-  {
-   "slug": "ml",
-   "name": "Mali",
-   "flag": "🇲🇱",
-   "regulator": "State oversight (national lottery framework)",
-   "currency": "XOF",
-   "popular_payments": [
-    "Orange Money",
-    "Moov Money"
-   ],
-   "key_facts": [
-    "Betting operates under state oversight via the national lottery framework",
-    "Orange Money is the default payment rail",
-    "European football dominates betting interest"
-   ],
-   "legal_summary": "Betting in Mali operates under state oversight organised around the national lottery, with international operators active alongside local ones. Mobile money handles effectively all deposits and payouts.",
-   "verify": true
-  },
-  {
-   "slug": "ne",
-   "name": "Niger",
-   "flag": "🇳🇪",
-   "regulator": "LONANI (state lottery oversight)",
-   "currency": "XOF",
-   "popular_payments": [
-    "Airtel Money",
-    "Orange Money",
-    "Zamani Cash"
-   ],
-   "key_facts": [
-    "The national lottery LONANI anchors state oversight of betting",
-    "Airtel Money and Orange Money handle most transactions",
-    "A small, strongly mobile-first market"
-   ],
-   "legal_summary": "Betting in Niger falls under state oversight through the national lottery LONANI. The market is small and mobile-first, with mobile money the practical way to fund an account.",
-   "verify": true
-  },
-  {
-   "slug": "cd",
-   "name": "DR Congo",
-   "flag": "🇨🇩",
-   "regulator": "Government licensing (Ministry of Finance / lottery authority)",
-   "currency": "CDF",
-   "popular_payments": [
-    "M-Pesa (Vodacom)",
-    "Airtel Money",
-    "Orange Money"
-   ],
-   "key_facts": [
-    "Operators need government authorisation to take bets legally",
-    "Mobile money (M-Pesa, Airtel Money, Orange Money) dominates",
-    "One of the largest betting populations in Central Africa"
-   ],
-   "legal_summary": "Sports betting is licensed in the Democratic Republic of the Congo through government authorisation, with several large operators active in a mobile-first market. Confirm an operator's current licence status before depositing.",
-   "verify": true
-  }
- ]
+  "_readme": [
+    "One object per target market. Drives /countries/<slug>/ pages, which list the",
+    "bookmakers whose `countries` array contains this slug.",
+    "",
+    "IMPORTANT: gambling law changes often and varies by region. Verify every legal",
+    "line with a current source (and ideally a lawyer) before publishing — this is",
+    "YMYL content and Google holds it to a higher bar. `verify: true` marks entries",
+    "that have not been re-checked."
+  ],
+  "countries": [
+    {
+      "slug": "uk",
+      "name": "United Kingdom",
+      "flag": "🇬🇧",
+      "currency": "GBP (£)",
+      "regulator": "UK Gambling Commission (UKGC)",
+      "legal_summary": "Online sports betting is legal and tightly regulated. Operators serving UK players must hold a UKGC licence, which brings strict rules on advertising, affordability checks and player protection.",
+      "key_facts": [
+        "Credit cards cannot be used for gambling (banned since April 2020)",
+        "All licensed operators must participate in GAMSTOP self-exclusion",
+        "Winnings are not taxed for the player"
+      ],
+      "popular_payments": [
+        "Debit card",
+        "PayPal",
+        "Apple Pay",
+        "Bank transfer"
+      ],
+      "verify": true
+    },
+    {
+      "slug": "de",
+      "name": "Germany",
+      "flag": "🇩🇪",
+      "currency": "EUR (€)",
+      "regulator": "Gemeinsame Glücksspielbehörde der Länder (GGL)",
+      "legal_summary": "Regulated nationally under the 2021 State Treaty on Gambling. Licensed operators may offer sports betting, but the framework is noticeably stricter than in most of Europe.",
+      "key_facts": [
+        "Cross-operator monthly deposit limit applies by default",
+        "Live betting is restricted to a limited set of markets",
+        "A betting turnover tax applies and some operators pass it to the customer"
+      ],
+      "popular_payments": [
+        "Sofort",
+        "Giropay",
+        "PayPal",
+        "Visa",
+        "Skrill"
+      ],
+      "verify": true
+    },
+    {
+      "slug": "in",
+      "name": "India",
+      "flag": "🇮🇳",
+      "currency": "INR (₹)",
+      "regulator": "Regulated at state level — no single national licence",
+      "legal_summary": "Rules differ by state: several states permit online betting while others prohibit it outright. Many international operators accept Indian players, so check the law where you live before signing up.",
+      "key_facts": [
+        "Rules vary significantly between states",
+        "UPI and local wallets are the most common deposit methods",
+        "Winnings are subject to tax deducted at source"
+      ],
+      "popular_payments": [
+        "UPI",
+        "Paytm",
+        "Net banking",
+        "Crypto"
+      ],
+      "verify": true
+    },
+    {
+      "slug": "ng",
+      "name": "Nigeria",
+      "flag": "🇳🇬",
+      "currency": "NGN (₦)",
+      "regulator": "National Lottery Regulatory Commission and state boards",
+      "legal_summary": "Sports betting is legal and popular, with both locally licensed operators and international sites serving the market. Football, and the Premier League in particular, dominates betting volume.",
+      "key_facts": [
+        "Mobile-first market — most bets are placed on phones",
+        "Bank transfer and mobile money are the leading payment methods",
+        "Data-light apps matter because of connection costs"
+      ],
+      "popular_payments": [
+        "Bank transfer",
+        "Paystack",
+        "Flutterwave",
+        "USSD"
+      ],
+      "verify": true
+    },
+    {
+      "slug": "ke",
+      "name": "Kenya",
+      "flag": "🇰🇪",
+      "regulator": "Betting Control and Licensing Board (BCLB)",
+      "currency": "KES",
+      "popular_payments": [
+        "M-Pesa",
+        "Airtel Money",
+        "Visa/Mastercard"
+      ],
+      "key_facts": [
+        "One of Africa's highest betting participation rates — mobile-first market",
+        "M-Pesa dominates deposits and withdrawals",
+        "Stakes and winnings are taxed; rates change frequently, so check current rules"
+      ],
+      "legal_summary": "Sports betting is legal and licensed by the BCLB. Operators need a local licence, and betting taxes (on stakes and winnings) are a recurring political topic — rates change often.",
+      "verify": true
+    },
+    {
+      "slug": "gh",
+      "name": "Ghana",
+      "flag": "🇬🇭",
+      "regulator": "Gaming Commission of Ghana",
+      "currency": "GHS",
+      "popular_payments": [
+        "MTN Mobile Money",
+        "Telecel Cash",
+        "Visa/Mastercard"
+      ],
+      "key_facts": [
+        "Licensed operators are listed publicly by the Gaming Commission",
+        "Mobile money is the default payment rail",
+        "A withholding tax applies to winnings — check the current rate"
+      ],
+      "legal_summary": "Sports betting is legal and regulated by the Gaming Commission of Ghana. Only licensed operators may take bets, and a withholding tax on winnings has applied since 2023.",
+      "verify": true
+    },
+    {
+      "slug": "tz",
+      "name": "Tanzania",
+      "flag": "🇹🇿",
+      "regulator": "Gaming Board of Tanzania",
+      "currency": "TZS",
+      "popular_payments": [
+        "M-Pesa (Vodacom)",
+        "Tigo Pesa",
+        "Airtel Money"
+      ],
+      "key_facts": [
+        "Betting is licensed and openly regulated — the Gaming Board publishes operator lists",
+        "Mobile money covers nearly all deposits",
+        "Gaming tax applies to winnings"
+      ],
+      "legal_summary": "Sports betting is legal under the Gaming Act, overseen by the Gaming Board of Tanzania. Licensed local operators dominate, and winnings are subject to gaming tax.",
+      "verify": true
+    },
+    {
+      "slug": "ug",
+      "name": "Uganda",
+      "flag": "🇺🇬",
+      "regulator": "Lotteries and Gaming Regulatory Board (LGRB)",
+      "currency": "UGX",
+      "popular_payments": [
+        "MTN MoMo",
+        "Airtel Money",
+        "Visa/Mastercard"
+      ],
+      "key_facts": [
+        "Operators must hold an LGRB licence",
+        "Mobile money is the leading payment method",
+        "A tax on winnings applies — check the current rate before withdrawing"
+      ],
+      "legal_summary": "Betting is legal and regulated by the Lotteries and Gaming Regulatory Board. Licensing is enforced and a withholding tax applies to winnings.",
+      "verify": true
+    },
+    {
+      "slug": "za",
+      "name": "South Africa",
+      "flag": "🇿🇦",
+      "regulator": "Provincial gambling boards (national framework: NGB)",
+      "currency": "ZAR",
+      "popular_payments": [
+        "Visa/Mastercard",
+        "Instant EFT (Ozow)",
+        "SnapScan"
+      ],
+      "key_facts": [
+        "Online sports betting is legal via provincially licensed bookmakers",
+        "Online casino games are NOT legal — only licensed betting",
+        "Recreational winnings are generally not taxed"
+      ],
+      "legal_summary": "Online sports betting is legal when the bookmaker holds a provincial licence (e.g. Western Cape, Mpumalanga). Online casino gaming remains prohibited — a key distinction unique to South Africa.",
+      "verify": true
+    },
+    {
+      "slug": "pe",
+      "name": "Peru",
+      "flag": "🇵🇪",
+      "regulator": "MINCETUR",
+      "currency": "PEN",
+      "popular_payments": [
+        "Yape",
+        "Plin",
+        "PagoEfectivo",
+        "Visa/Mastercard"
+      ],
+      "key_facts": [
+        "Online betting has been formally regulated since 2024",
+        "Licensed operators are registered with MINCETUR",
+        "Local wallets Yape and Plin are the fastest deposit routes"
+      ],
+      "legal_summary": "Peru regulated online sports betting in 2024 under MINCETUR. Licensed operators may advertise and take bets legally — one of Latin America's newest regulated markets.",
+      "verify": true
+    },
+    {
+      "slug": "cl",
+      "name": "Chile",
+      "flag": "🇨🇱",
+      "regulator": "No dedicated online regulator yet (framework pending)",
+      "currency": "CLP",
+      "popular_payments": [
+        "WebPay",
+        "Bank transfer",
+        "Visa/Mastercard"
+      ],
+      "key_facts": [
+        "Online betting is a grey market — a regulation bill is pending in Congress",
+        "Land-based casinos are regulated separately (SCJ)",
+        "Offshore sites are widely used in the meantime"
+      ],
+      "legal_summary": "Chile has no dedicated online betting framework yet: offshore operators serve the market while a regulation bill moves through Congress. Check the current status before signing up.",
+      "verify": true
+    },
+    {
+      "slug": "co",
+      "name": "Colombia",
+      "flag": "🇨🇴",
+      "regulator": "Coljuegos",
+      "currency": "COP",
+      "popular_payments": [
+        "PSE",
+        "Nequi",
+        "Visa/Mastercard",
+        "Efecty"
+      ],
+      "key_facts": [
+        "First Latin American country to regulate online betting (2016)",
+        "Licensed sites operate on .co domains under Coljuegos",
+        "Winnings above a threshold are taxed"
+      ],
+      "legal_summary": "Online betting is fully legal and regulated by Coljuegos — Latin America's pioneer market. Only Coljuegos-licensed operators may legally serve Colombian players.",
+      "verify": true
+    },
+    {
+      "slug": "sn",
+      "name": "Senegal",
+      "flag": "🇸🇳",
+      "regulator": "LONASE (state oversight)",
+      "currency": "XOF",
+      "popular_payments": [
+        "Orange Money",
+        "Wave",
+        "Free Money"
+      ],
+      "key_facts": [
+        "Betting is permitted under state oversight via LONASE",
+        "Mobile money (Orange Money, Wave) dominates payments",
+        "Football betting drives the vast majority of volume"
+      ],
+      "legal_summary": "Sports betting is permitted in Senegal under the oversight of the state lottery LONASE, with both local and international operators serving the market.",
+      "verify": true
+    },
+    {
+      "slug": "ci",
+      "name": "Côte d'Ivoire",
+      "flag": "🇨🇮",
+      "regulator": "LONACI (state oversight)",
+      "currency": "XOF",
+      "popular_payments": [
+        "Orange Money",
+        "MTN MoMo",
+        "Wave",
+        "Moov Money"
+      ],
+      "key_facts": [
+        "Betting operates under the state lottery LONACI's oversight",
+        "Mobile money is the default deposit method",
+        "One of francophone Africa's largest betting markets"
+      ],
+      "legal_summary": "Betting is permitted in Côte d'Ivoire under LONACI oversight. The market is mobile-first and one of the largest in francophone West Africa.",
+      "verify": true
+    },
+    {
+      "slug": "br",
+      "name": "Brazil",
+      "flag": "🇧🇷",
+      "regulator": "SPA/MF (Secretaria de Prêmios e Apostas)",
+      "currency": "BRL",
+      "popular_payments": [
+        "PIX",
+        "Visa/Mastercard",
+        "Boleto"
+      ],
+      "key_facts": [
+        "Fixed-odds betting is federally licensed since January 2025",
+        "Licensed operators must use .bet.br domains",
+        "PIX instant payments dominate deposits and withdrawals"
+      ],
+      "legal_summary": "Brazil's regulated market went live in January 2025 under the Ministry of Finance's betting secretariat (SPA). Only licensed operators on .bet.br domains may legally serve Brazilian players.",
+      "verify": true
+    },
+    {
+      "slug": "mx",
+      "name": "Mexico",
+      "flag": "🇲🇽",
+      "regulator": "SEGOB (Dirección General de Juegos y Sorteos)",
+      "currency": "MXN",
+      "popular_payments": [
+        "SPEI",
+        "OXXO",
+        "Visa/Mastercard"
+      ],
+      "key_facts": [
+        "Online betting operates under SEGOB permits, often via land-based licence holders",
+        "OXXO cash vouchers remain a popular deposit route",
+        "A new gambling law has been debated for years — rules may change"
+      ],
+      "legal_summary": "Betting is legal in Mexico under SEGOB permits issued via the Federal Gaming Law. Many online brands operate under agreements with land-based permit holders while a modernised law remains pending.",
+      "verify": true
+    },
+    {
+      "slug": "ar",
+      "name": "Argentina",
+      "flag": "🇦🇷",
+      "regulator": "Provincial regulators (LOTBA, IPLyC PBA and others)",
+      "currency": "ARS",
+      "popular_payments": [
+        "Mercado Pago",
+        "Visa/Mastercard",
+        "Bank transfer"
+      ],
+      "key_facts": [
+        "Regulation is province-by-province — Buenos Aires City and Province license online operators",
+        "Mercado Pago is the default payment rail",
+        "Currency volatility makes payout speed matter more than usual"
+      ],
+      "legal_summary": "Online betting in Argentina is regulated at the provincial level: Buenos Aires City (LOTBA) and Buenos Aires Province license online operators, and other provinces run their own regimes. Check the rules for your province.",
+      "verify": true
+    },
+    {
+      "slug": "ca",
+      "name": "Canada",
+      "flag": "🇨🇦",
+      "regulator": "Provincial (AGCO/iGaming Ontario; provincial lotteries elsewhere)",
+      "currency": "CAD",
+      "popular_payments": [
+        "Interac e-Transfer",
+        "Visa/Mastercard",
+        "PayPal"
+      ],
+      "key_facts": [
+        "Single-event betting has been legal nationwide since 2021",
+        "Ontario runs a fully licensed open market (iGaming Ontario)",
+        "Recreational winnings are not taxed"
+      ],
+      "legal_summary": "Canada legalised single-event sports betting in 2021. Ontario operates an open licensed market under AGCO/iGaming Ontario, while other provinces offer betting through provincial lottery platforms — with offshore sites in a grey area outside Ontario.",
+      "verify": true
+    },
+    {
+      "slug": "ie",
+      "name": "Ireland",
+      "flag": "🇮🇪",
+      "regulator": "GRAI (Gambling Regulatory Authority of Ireland)",
+      "currency": "EUR",
+      "popular_payments": [
+        "Visa/Mastercard",
+        "PayPal",
+        "Apple Pay"
+      ],
+      "key_facts": [
+        "The Gambling Regulation Act 2024 created a new dedicated regulator (GRAI)",
+        "Bookmakers historically licensed via the Revenue Commissioners",
+        "Winnings are not taxed for the punter"
+      ],
+      "legal_summary": "Betting is fully legal in Ireland. Licensing is transitioning from the Revenue Commissioners to the new Gambling Regulatory Authority of Ireland under the Gambling Regulation Act 2024.",
+      "verify": true
+    },
+    {
+      "slug": "cm",
+      "name": "Cameroon",
+      "flag": "🇨🇲",
+      "regulator": "State licensing (Ministry of Finance oversight)",
+      "currency": "XAF",
+      "popular_payments": [
+        "Orange Money",
+        "MTN MoMo"
+      ],
+      "key_facts": [
+        "Betting is permitted with local licences and is hugely popular",
+        "Mobile money covers nearly all deposits",
+        "One of central Africa's largest betting markets"
+      ],
+      "legal_summary": "Sports betting is permitted in Cameroon under state licensing, with both local and international brands active. The market is mobile-first and football-driven.",
+      "verify": true
+    },
+    {
+      "slug": "ec",
+      "name": "Ecuador",
+      "flag": "🇪🇨",
+      "regulator": "No dedicated regulator — taxation of online betting introduced, framework evolving",
+      "currency": "USD",
+      "popular_payments": [
+        "Visa/Mastercard",
+        "Bank transfer",
+        "PayPhone"
+      ],
+      "key_facts": [
+        "Land-based casinos were banned by referendum in 2011; online betting is a grey area",
+        "A tax on online betting operators and players was introduced recently",
+        "The US dollar is the official currency — no conversion needed"
+      ],
+      "legal_summary": "Ecuador has no dedicated online betting framework: offshore sites serve the market while the state has begun taxing online betting — a sign regulation is evolving. Check the current rules before signing up.",
+      "verify": true
+    },
+    {
+      "slug": "zm",
+      "name": "Zambia",
+      "flag": "🇿🇲",
+      "regulator": "Betting Control and Licensing (Ministry of Finance)",
+      "currency": "ZMW",
+      "popular_payments": [
+        "MTN MoMo",
+        "Airtel Money",
+        "Zamtel Kwacha"
+      ],
+      "key_facts": [
+        "Betting is legal and licensed under the Betting Control Act",
+        "Mobile money is the default payment rail",
+        "A fast-growing market with little SEO competition"
+      ],
+      "legal_summary": "Sports betting is legal in Zambia under the Betting Control Act, with licensed local operators and mobile-money payments dominating the market.",
+      "verify": true
+    },
+    {
+      "slug": "bj",
+      "name": "Benin",
+      "flag": "🇧🇯",
+      "regulator": "State oversight (national lottery framework)",
+      "currency": "XOF",
+      "popular_payments": [
+        "MTN MoMo",
+        "Moov Money",
+        "Celtiis Cash"
+      ],
+      "key_facts": [
+        "Betting operates under state oversight built around the national lottery",
+        "Mobile money is the default deposit and withdrawal rail",
+        "Rules have been reformed repeatedly — check the current position"
+      ],
+      "legal_summary": "Sports betting in Benin operates under state oversight organised around the national lottery framework, with local and international operators serving a mobile-first market. The regime has been reorganised more than once in recent years, so confirm the current rules before signing up.",
+      "verify": true
+    },
+    {
+      "slug": "tg",
+      "name": "Togo",
+      "flag": "🇹🇬",
+      "regulator": "LONATO (state lottery oversight)",
+      "currency": "XOF",
+      "popular_payments": [
+        "Flooz",
+        "T-Money",
+        "Moov Money"
+      ],
+      "key_facts": [
+        "Betting sits under state oversight via the national lottery LONATO",
+        "Flooz and T-Money handle most deposits",
+        "Football, and European leagues in particular, drives the volume"
+      ],
+      "legal_summary": "Betting in Togo falls under state oversight through the national lottery LONATO. The market is small but almost entirely mobile, with local wallets handling deposits and withdrawals.",
+      "verify": true
+    },
+    {
+      "slug": "bf",
+      "name": "Burkina Faso",
+      "flag": "🇧🇫",
+      "regulator": "LONAB (state lottery oversight)",
+      "currency": "XOF",
+      "popular_payments": [
+        "Orange Money",
+        "Moov Money"
+      ],
+      "key_facts": [
+        "The state lottery LONAB anchors the licensed framework",
+        "Orange Money and Moov Money dominate payments",
+        "Data costs make lightweight apps a real selection criterion"
+      ],
+      "legal_summary": "Sports betting in Burkina Faso operates under state oversight centred on the national lottery LONAB, with international operators also serving the market. Payments run almost entirely through mobile money.",
+      "verify": true
+    },
+    {
+      "slug": "ml",
+      "name": "Mali",
+      "flag": "🇲🇱",
+      "regulator": "State oversight (national lottery framework)",
+      "currency": "XOF",
+      "popular_payments": [
+        "Orange Money",
+        "Moov Money"
+      ],
+      "key_facts": [
+        "Betting operates under state oversight via the national lottery framework",
+        "Orange Money is the default payment rail",
+        "European football dominates betting interest"
+      ],
+      "legal_summary": "Betting in Mali operates under state oversight organised around the national lottery, with international operators active alongside local ones. Mobile money handles effectively all deposits and payouts.",
+      "verify": true
+    },
+    {
+      "slug": "ne",
+      "name": "Niger",
+      "flag": "🇳🇪",
+      "regulator": "LONANI (state lottery oversight)",
+      "currency": "XOF",
+      "popular_payments": [
+        "Airtel Money",
+        "Orange Money",
+        "Zamani Cash"
+      ],
+      "key_facts": [
+        "The national lottery LONANI anchors state oversight of betting",
+        "Airtel Money and Orange Money handle most transactions",
+        "A small, strongly mobile-first market"
+      ],
+      "legal_summary": "Betting in Niger falls under state oversight through the national lottery LONANI. The market is small and mobile-first, with mobile money the practical way to fund an account.",
+      "verify": true
+    },
+    {
+      "slug": "cd",
+      "name": "DR Congo",
+      "flag": "🇨🇩",
+      "regulator": "Government licensing (Ministry of Finance / lottery authority)",
+      "currency": "CDF",
+      "popular_payments": [
+        "M-Pesa (Vodacom)",
+        "Airtel Money",
+        "Orange Money"
+      ],
+      "key_facts": [
+        "Operators need government authorisation to take bets legally",
+        "Mobile money (M-Pesa, Airtel Money, Orange Money) dominates",
+        "One of the largest betting populations in Central Africa"
+      ],
+      "legal_summary": "Sports betting is licensed in the Democratic Republic of the Congo through government authorisation, with several large operators active in a mobile-first market. Confirm an operator's current licence status before depositing.",
+      "verify": true
+    },
+    {
+      "slug": "ao",
+      "name": "Angola",
+      "flag": "🇦🇴",
+      "regulator": "Instituto de Supervisão de Jogos (ISJ)",
+      "currency": "AOA (Kz)",
+      "popular_payments": [
+        "Multicaixa Express",
+        "Bank transfer",
+        "Unitel Money"
+      ],
+      "key_facts": [
+        "Sports betting is licensed and supervised by the ISJ under the Ministry of Finance",
+        "Multicaixa Express dominates deposits and withdrawals",
+        "European football drives most betting volume"
+      ],
+      "legal_summary": "Sports betting is legal in Angola under licensing supervised by the Instituto de Supervisão de Jogos (ISJ). Licensed local operators and international brands both serve the market, with payments running through Multicaixa Express and bank rails.",
+      "verify": true
+    },
+    {
+      "slug": "mz",
+      "name": "Mozambique",
+      "flag": "🇲🇿",
+      "regulator": "Inspecção-Geral de Jogos (gaming inspectorate)",
+      "currency": "MZN (MT)",
+      "popular_payments": [
+        "M-Pesa (Vodacom)",
+        "e-Mola",
+        "Visa/Mastercard"
+      ],
+      "key_facts": [
+        "Betting is licensed under Mozambique's gaming law, overseen by the state gaming inspectorate",
+        "M-Pesa and e-Mola mobile money handle most deposits",
+        "A gaming tax framework applies — check current rules before withdrawing"
+      ],
+      "legal_summary": "Sports betting is legal in Mozambique under the national gaming law, with licensing overseen by the state gaming inspectorate. Mobile money (M-Pesa, e-Mola) is the practical payment rail for most bettors.",
+      "verify": true
+    }
+  ]
 }
