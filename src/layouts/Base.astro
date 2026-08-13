@@ -2,7 +2,7 @@
 import '../styles/app.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { ALT_LANGS, homePath, t } from '../i18n/index.js';
+import { langsFor, homePath, t } from '../i18n/index.js';
 
 // lang: page language. i18nPath: the EN-relative path this page is translated
 // under (e.g. '/'), which switches on hreflang alternates + localized picker
@@ -18,7 +18,9 @@ const ogImage = new URL('/og.png', site).href;
 const langHref = (l) => (i18nPath
   ? new URL(l === 'en' ? i18nPath : `/${l}${i18nPath}`, site).href
   : new URL(homePath(l), site).href);
-const alternates = i18nPath ? ['en', ...ALT_LANGS].map((l) => ({ l, href: langHref(l) })) : [];
+// langsFor: match pages exist only in the full-parity languages — hreflang
+// must never advertise a compact-language variant that would 404
+const alternates = i18nPath ? langsFor(i18nPath).map((l) => ({ l, href: langHref(l) })) : [];
 
 // sitewide BreadcrumbList derived from the URL (rendered as its own JSON-LD)
 const segs = Astro.url.pathname.split('/').filter(Boolean);
@@ -58,7 +60,7 @@ const pageSchema = schema ? withDates(schema) : null;
 // No sameAs (we run no social profiles yet) and no SearchAction (no site
 // search): claiming either would be a false signal.
 const isHome = Astro.url.pathname.replace(/\/+$/, '') === '' ||
-  ALT_LANGS.some((l) => Astro.url.pathname.replace(/\/+$/, '') === `/${l}`);
+  langsFor('/').some((l) => Astro.url.pathname.replace(/\/+$/, '') === `/${l}`);
 const orgSchema = isHome
   ? {
       '@context': 'https://schema.org',

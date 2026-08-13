@@ -1,0 +1,1667 @@
+{
+  "lang": "yo",
+  "terms": [
+    {
+      "slug": "value-bet",
+      "term": "Value Bet",
+      "short": "Iyatisi ibadandun níbi tí ìdí àwọn odí tí a funni jẹ́ ọ̀pọ̀ ju ohun tí ìṣeeṣe gidi yóò fẹ́ — oníkò iranlọ́wọ́ kan nìkan tí yóò ní ohun àbá akoko giga.",
+      "definition": [
+        "Value bet wa nígbà tí odí ti onítájà yóò fún ara wọ́n ní ìṣeeṣe kékeré ju ìṣeeṣe gidi nínú àbá náà. Tí ìṣeeṣe gidi jẹ́ pé ẹgbẹ́ kan lè sè 50% ṣùgbọ́n o le se àbá pẹ̀lú odí 2.20, ìrọ̀jin náà jẹ́ 'àìtọ́' nínú ẹ̀fín rẹ: nígbà mélọ́pọ̀ tí ìfitára náà ba tẹ̀ le rí, iwájú lẹ̀ ju ohun tí odí ṣe àbá rọ́, nítorí náà àbá náà ní àábo ìṣeeṣe dúdú (positive expected value).",
+        "Value náà kò níkan pẹ̀lú bí àbá yóò sè tó àìṣiṣẹ́. Igbe lórí onìbàràwọ́ kan pẹ̀lú odí 5.00 lè jẹ́ àbá value, nígbà tí igbe lórí onímọ̀ kan pẹ̀lú odí 1.20 lè jẹ́ ibi àìtójú — ohun tí ó ṣe pàtàkì ni àgbọ̀ láàrin ìrọ̀jin àti ìṣeeṣe, kìí ṣe ìṣeeṣe náà ara. Nítorí náà àwọn onígbejádé ńtọ́jú ìrọ̀jin, àìnígbejádé. Ríṣèéṣè àwọn odí value nígbà rere yẹ òpin lórí akíyèsí ara-ẹni tí o dábá ara wọ́n nínú gidi, èyí ni ohun tí awọn onítájà àti àwọn onílọ̀tó n gbiyanju láti ṣe."
+      ],
+      "example": "Dúpẹ́ ìṣeeṣe gidi ti abájadè jẹ́ 40% (odí tí o lọ́ 2.50), ṣùgbọ́n onítájà kan fúnni ní 2.75. Àbá ìṣeeṣe dúdú fún £1 ti a lè se = (0.40 × 2.75) − 1 = +0.10, ìyẹn ni ìpamọ́ 10% yí. Àbá náà lẹ́ẹ̀ẹ̀ lo ní 60% tí àkókò — ṣùgbọ́n nínú ìlọ́pọ̀, ìrọ̀jin bí èyí ni ibi tí owó wá.",
+      "related": [
+        "expected-value",
+        "implied-probability",
+        "edge",
+        "fair-odds"
+      ],
+      "see": [
+        {
+          "label": "Live value picks in the AI screener",
+          "href": "/screener"
+        }
+      ],
+      "_src_hash": "f37d30dbf5629570",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "implied-probability",
+      "term": "Gbẹkẹlẹ Iṣẹ-aye (Implied Probability)",
+      "short": "Iṣẹ-aye igba ati olè kan ṣe patedale: 1 pin nipasẹ decimal odds.",
+      "definition": [
+        "Gbogbo iye-agbẹ ni alaye iṣẹ-aye aibikita. Isipada decimal odds si iṣẹ-aye gbẹkẹlẹ jẹ rọrun: pin 1 nipasẹ odds naa. Odds 2.00 tun han 50%, odds 4.00 tun han 25%, odds 1.25 tun han 80%. Isipada yii ni ipilẹ ati gbogbo ẹbọ-iwe ti o tunwi, nitori o gbe 'iye yii tobi?' pada si ibeere ti a le dahun: 'iṣẹ-aye yii kere ju?'",
+        "Afikun gbogbo gbẹkẹlẹ iṣẹ-aye ti gbogbo eni ti o le seun ni iyipada kan hihan ojuisoma alè: apapo naa nigbagbogbo kari 100%, ati iyokele yii jẹ ero ajẹ ti olè naa. Yiyọ ojuisoma yii kuro fun iṣẹ-aye tootoo — iṣagbagbe iyipada to tun — nibiti a le iyipada iye-agbẹ."
+      ],
+      "example": "Ere ti a pin 2.10 (ile), 3.60 (aarin), 3.40 (ita) hihan 47.6% + 27.8% + 29.4% = 104.8%. Iyokele 4.8% yii jẹ ojuisoma alè; iṣẹ-aye tootoo ti ile-aye lẹhin yiyọ ojuisoma jẹ 47.6 / 104.8 ≈ 45.4%.",
+      "related": [
+        "bookmaker-margin",
+        "fair-odds",
+        "value-bet",
+        "odds-formats"
+      ],
+      "see": [],
+      "_src_hash": "f1a1df87792644ee",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "expected-value",
+      "term": "Iye Ireti (EV)",
+      "short": "Iye aláìfẹ́ tàbí àjálọ́kan tí bèè yóò dá fún ìbàjẹ́ kan tí a bá ṣè lẹ́ẹ̀kan púpọ̀ ní iye náà kanna.",
+      "definition": [
+        "Iye Ireti dá a lóhùn ọ́rọ̀ kan: tí o bá fi ìbàjẹ́ yìí jà ẹgbẹ̀rún àkókò, à á kúrò láyé tàbí à á ní ẹ̀tàn? A ìròyìn rẹ̀ nípa (iye ìfẹ́ nípa ộkọ̀ọ̀ × iye ọ̀dún ẹ̀dà) − 1, tí a kà fún iye ọ̀rọ̀ kan. Iye Ireti tì o rọ̀ (+EV) túmọ̀ pé iye ni ní ẹ̀gbẹ̀ òfin pàtàkì; iye Ireti tì o lòógùn (−EV) túmọ̀ pé iye alábùkù tàbí èdìtan tí a kò mọ̀ dáa n ̣ iṣẹ́ sí ara rẹ̀.",
+        "Iye Ireti jẹ́ èrò tí ó ṣe pẹ̀lú àkókò oríkì. Ìbàjẹ́ tí ó ní +EV lè ṣubú lẹ́ẹ̀kan tí o le gba ìbàlúwo, àti ìbàjẹ́ tí ó ní −EV lè rí ní ìlẹ̀ — iyalẹnu nkan n ṣiṣẹ́ ní àwọn àpẹẹrẹ kékeré. Ìkúrò fun ìbàjẹ́ tí ó ní ọlọ́rọ̀ jẹ́ ìkọ̀ láti gbà iṣẹ́ nípa àbá ìbàjẹ́ kan, kí o gbà á nípa iye tí o gba dìde. Ní àwọn ọ̀gọ́rùn àwọn ìbàjẹ́, àwọn èjì ayè yẹ̀ yorisi sí ireti."
+      ],
+      "example": "O jẹ̀rú pé ìbádandún ní iye ìfẹ́ 30% àti iye 3.75 ní a rí. EV = (0.30 × 3.75) − 1 = +0.125 — iye ireti 12.5p lábùkù fún £1 tí a fi jà. Tí irírò iye rẹ dáa, jíjà iye yìí ní irìn púpọ̀ ni ìbàjẹ́ tí ó ní ọlọ́rọ̀ pátápátá bí o ṣe jẹ́ pé á ṣubú 70% tí ara.",
+      "related": [
+        "value-bet",
+        "edge",
+        "kelly-criterion",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "a2bb98856f4a259f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "edge",
+      "term": "Ede",
+      "short": "Àbùjá rẹ lórí idì, àti à máa sọ ní ìyìmó ìrètí nínú ìsọ̀ kan.",
+      "definition": [
+        "Ede jẹ́ ìwọ̀n tí àbùjá rẹ lórí ège kan: báwo ni odì ẹnì yẹn ti dára ju ohun tí ìtumọ̀ otítọ́ ti jẹ́ lọ. Ede tí ó jẹ́ 5% túmọ̀ pé, nínú ègbẹ̀ £100 tí o fi sílẹ̀, o létí ní láti rírà àwa £5 nínú igbáwo àkóbí. Ede nínú ège idaraya rẹ̀ kékeré — àwọn ọmọ ìmọ̀ máa dún nínú 2–5% — nítorí pé oníbàjẹ ège náà pọ̀, àti pé wọ́n ná timọ̀ ìgbà púpọ̀.",
+        "Ede tí o sọ wí pẹ̀lú gbọ́dọ̀ jẹ́ àwọn ọkọ́ ọlọ́ìyẹ, àti àwà pẹ̀lú. Ìdánwò oníjìnlẹ̀ ti ede jẹ́ irú àpèjọ nínú àpamọ́ nlá: bí òjò kìkì kan tí a ti ṣẹ̀ dá ní èkó ọ̀pọ̀ ẹ̀ ti fihàn ìtọ́ tí ó dára ju, nígbà náà ede náà jẹ́ òtítọ́; bí ò ba rí bẹ́ẹ̀, ó jẹ́ iyì nìkan. Àrà nítorí náà jẹ́ pé: a ṣẹ̀ dá gbogbo ìtúnú ṣáájú ìdádìró dé, àti pé a tún búlọ̀ àbòje àti tágbà tó gbé ọ̀dọ̀ ara wọn."
+      ],
+      "example": "Iye tí ó dára jù síbẹ̀ 2.30 à párị irú ohun tí títọ̀ otítọ́ rẹ̀ 46%: ede = (0.46 × 2.30) − 1 = +5.8%. Ní èké £10 líbúri nínú irun 500 tó wọ́n dàbí aṣọ, irètí ìkólá jẹ́ oníbẹ̀rẹ̀ £290 — pẹ̀lú àwọn ìgbadàligba tí ó ga gan-an ní ẹ̀tú àkóbí.",
+      "related": [
+        "value-bet",
+        "expected-value",
+        "closing-line-value",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [
+        {
+          "label": "How our settled record is computed",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "24d98b3b4c4c1dd4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-formats",
+      "term": "Àwọn Odds (Decimal, Fractional, American)",
+      "short": "Ọ̀nà mẹ́ta láti kọ iyé kanna: 2.50 = 6/4 = +150.",
+      "definition": [
+        "Decimal odds fihàn apá ìgbàkùn pátápátá fún ọ̀kọ̀ọ̀ tí a fi sílẹ̀, pẹ̀lú ọ̀kọ̀ọ̀ náà: ní 2.50, iyệ £10 máa padà £25 (àjèjì £15 pẹ̀lú ọ̀kọ̀ọ̀ £10). Wọ́n jẹ́ irúfẹ́ ìpilẹ̀ ní gbòógè Europe àti ìfẹ́ rí fún ìṣirò, èyí ni ìdí tí ààye yìí lo lọ́ nínú gbogbo ibi. Àwọn Fractional odds (6/4) fihàn àjèjì ní ìbáṣepọ̀ pẹ̀lú ọ̀kọ̀ọ̀ — ti à bá ṣèṣè £6 fún ọ̀kọ̀ọ̀ £4 — ó sì jẹ́ ìgbagbà ní Ìlú Gẹ̀ẹ́sì. American odds lo àmì àbùkù tàbí àìsí: +150 túmọ̀ pé ọ̀kọ̀ọ̀ $100 máa jìnnà $150; −200 túmọ̀ pé gbọ́dọ̀ fi ọ̀kọ̀ọ̀ $200 lówó láti jìnnà $100. Ìparọ́: decimal = fractional + 1; positive American = (odds/100) + 1; negative American = (100/|odds|) + 1."
+      ],
+      "example": "Odds 2.50, 6/4 àti +150 jẹ́ àwọn iyé kanna pẹ̀lú ìtumọ̀ ìfúnni tí ó dọ́gba 1 / 2.50 = 40%.",
+      "related": [
+        "implied-probability",
+        "odds-comparison"
+      ],
+      "see": [],
+      "_src_hash": "71f987ece97c137a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bookmaker-margin",
+      "term": "Ìgbèkèlè Alábojútó (Overround / Vig)",
+      "short": "Àlúbọ̀sá tí alábojútó fi gbé sínú àwọn ìsàájú rẹ̀ — idi tí àpapọ̀ àwọn ìmọ̀ràn gbogbo wá sẹ̀yìn ójú 100%.",
+      "definition": [
+        "Àwọn alábojútó kò fi àwọn ìsàájú òtítọ́ fún àní. Àwọn ìsàájú kọ̀ọ̀kan wá lẹ̀yìn nípa àpáta, báwo ni àbájáde tó máa wáyé, ibi tí iṣẹ́ náà máa pa àbò. Tí a bá fi àpapọ̀ àwọn ìmọ̀ràn tí àwọn àbájáde gbogbo pè ní (implied probabilities), àti ìyọkúu ó kàrú ju 100% lọ, niyìí ni ìgbèkèlè — àtúnwí: overround, juice tàbí vig. Àwọn ìgbèkèlè fún ìdáramẹ́jì ẹ̀fín kò̀ò̀kan wà láàrín 2% sí àwọn alábojútó àlàgbà títí dé 7%+ ní àwọn onídìje tàpẹ́.",
+        "Ìgbèkèlè ni àsálò tí gbogbo onídìje máa wọ́páde: tí a bá jẹ́ onídìje àìròyìn, a máa pàdánù ìgbèkèlè yẹn lójú ìgbà. Ìdálẹ̀ yìí ní àpapọ̀ ẹ̀rọ èjì. Àkọ́kọ́, íkawe àwọn ìsàájú kàrá àwọn alábojútó ọ̀tọ̀ ọ̀tọ̀ jẹ́ gbàgbọ́ nínú: ìsàájú tí ó dára jù rẹ̀ loọ ní irú ìgbà máa yí ìgbèkèlè padà. Èkejì, pípa ìmọ̀ràn ọba ni a fi òpìtàn àrékọ jẹ́, ìbígbé tí ìkányàn yẹ̀ẹ́ ní àìṣèwádìì ìgbèkèlè àti ohun àti ohun tún, nítorí ohun ìdí àìkàlẹ̀ò àtìmolẹ̀ jẹ́ ẹlẹ́gbẹ́ àti kékeré."
+      ],
+      "example": "Ọ̀pọ̀jú ìdáramẹ́jì ìsàájú 1.91 / 1.91: ìmọ̀ràn 52.4% + 52.4% = 104.8%, ìgbèkèlè 4.8%. Ìsàájú òtítọ́ fún òkan jẹ́ẹ́ 50/50 jẹ́ 2.00 / 2.00.",
+      "related": [
+        "implied-probability",
+        "fair-odds",
+        "odds-comparison",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "de2db94eb0eef4a6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fair-odds",
+      "term": "Odds Ewa",
+      "short": "Iye odds ti a ba yoyo margin ti bookmaker naa kuro — iṣeduro otitọ ti eto ayepada.",
+      "definition": [
+        "Odds ewa ni iyatọ iyipada ti eto: awọn oṣuwọn ti yoo jẹ ki iwe ṣe balanse ni opin akoko. Ọna ti o rọrun julọ lati ṣe irokuro wọn ni: ti o gba iṣeduro ti o ba le ṣẹlẹ fun kọọkan, ṣe apejọ wọn, ati sẹ̀ẹ̀ bọ kọọkan iye naa sẹ́jọ ti o ba dọ̀gba si nkan 100%. Awọn iṣeduro ti a gbẹ̀ kubu naa, ki wọn lilọ pada sinu awọn odds ewa.",
+        "Odds ewa ṣe pataki nitori iwọn nọ́ọ̀du ti o ti ní irú èyí. Oṣuwọn kan ko maa jẹ irú èyí ti a gba èrò pa ara rẹ̀ rẹ́ bi òun fi rí gidi nìkan — ṣùgbọ́n ti o ba wo awọn oṣuwọn ewa. Nipa igbakọ iṣeduro ewa ti awọn onkọwe-owó ọpọlọpọ, a ni ibadandun ti ara ẹni ti kii ṣe iyipada nipasẹ onkọwe-owó kan nikan — ibadandun yi nipa iyatọ awọn oṣuwọn ti o kẹ́kọ̀ọ́ jẹ́ ni ṣe ṣe ṣe ṣe aìmọ ihin."
+      ],
+      "example": "Awọn iṣeduro ti o le ṣẹlẹ 47.6% / 27.8% / 29.4% (apapọ 104.8%) ti a gbẹ̀ kubu pada si 45.4% / 26.5% / 28.1%. Odds ewa ti ile = 1 / 0.454 = 2.20. Ibi ti onkọwe-owó kan ba ṣe ṣọrọ ju 2.20 lọ, a tẹ̀ fún ní iye owo ti o ju irokuro eto naa lọ.",
+      "related": [
+        "bookmaker-margin",
+        "implied-probability",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "7ee23ed1ce1ec170",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "kelly-criterion",
+      "term": "Kelly Criterion",
+      "short": "Fọọmusọ̀ sisokẹ́ tí ó ya owó náà jáde lẹ́ẹ̀kan-án bí o ní àbájáde — àti ọ̀nà dára láti gbé awọn bẹ̀ẹ̀ ti iye lọ́wọ́.",
+      "definition": [
+        "Kelly criterion ń ṣe àpèjúwe apá owó-pò tí ó máa fà ìlọ́sìn gígùn-ọ̀nà nígbà tí o ní àbájáde: sisokẹ́ = àbájáde ÷ (decimal odds − 1). Àbájáde tó ga jù máa gbe sisokẹ́ tó ńlá; odds tó pò máa gbe sisokẹ́ kéré sáà nígbà owó àbájáde kan, torí pé ìgbà yíí kálukù kéré ati ilépa ó ńní ìtẹ̀ síi. Kelly fulù ó ní ìrìn àgbèrè púpọ̀ — ọ̀pọ̀ awọn olùgbè àìjọ tó máa lo Kelly ìdajì tàbí Quarter Kelly láti tunṣe awọn iyipada.",
+        "Kò kàn nílò fún sisokẹ́ nìkan, Kelly pẹ̀lú ń ṣiṣẹ́ àti irànlọ́wọ́ tó ga láti gbé iye lọ́wọ́. Àbájáde ìfojúsun-rè ń fojúwe iyalẹnu: àbájáde 30% ní ẹrọ owó 21.00 tí ò gbẹ́ kalẹ̀ jù máa jẹ́ ohun tó jẹ́ ìpinnu iye náà, kìí ṣe àǹfààní dáadáa. Tí a bá pin àbájáde náà lo (odds − 1) a ó le iye jáde nípa ìṣẹ̀ tí ó pẹ̀ tẹ́ wá, èyí tpẹ̀ ni dandan gidi — àbájáde kéré ní ẹrọ 1.80 ti tó bí í tẹ́ lo tó dà àbájáde ńlá ní ẹrọ 6.00."
+      ],
+      "example": "Àbájáde 8% ní odds 3.60: Kelly fraction = 0.08 / 2.60 ≈ 3.1% ti owó-pò rẹ. Àbájáde 8% náà ti odds 1.60 yó má ṣe 0.08 / 0.60 ≈ 13.3% — iye tó gáan jù máa fún sisokẹ́ tó ńlá púpọ̀.",
+      "related": [
+        "edge",
+        "bankroll-management",
+        "flat-staking",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Kelly-ranked picks in the screener",
+          "href": "/screener"
+        }
+      ],
+      "_src_hash": "8613ffe375f15d2e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bankroll-management",
+      "term": "Ìtọ́jú Owó Àgbàkù",
+      "short": "Ífẹ́ owó aládìá rẹ gẹ́gẹ́ bí àpò pátápátá pẹ̀lú àwọn ofin ìtẹ̀jáde — ẹ̀ká ìmọ̀ràn tí ó ń dáàbò bò ẹ láti ère tí kì í yẹ.",
+      "definition": [
+        "Àgbàkù ni owó tí a ti pípa sílẹ̀ sísọ̀rọ̀ fún àgbàkù nìkan — iye owó tí àyàn bata rẹ̀ tó lè jábọ̀ láibikita. Ìtọ́jú àgbàkù ni àwọn ofin tí ó ń sábà iye owó tí ètò kán máa lè gbà ní ẹ̀kọ́. Àwọn ọ̀nà tó wúlò: flat staking (pẹ̀lú iye kanna ni gbogbo ìgbà), percentage staking (àpò pátó tí ó dùn nínú àgbàkù yantan), tàbí Kelly-based staking tí a ti tún ṣe àsìkò fún ìdí ìmọ̀lè.",
+        "Ìtumọ̀ rẹ̀ ni fífẹ láti dúró nípasẹ̀ ìyalẹnu. Bẹ́ẹ̀ tíèlò sé wí pé ofin tó jẹ́ ṣíṣe lásán náà lọ wá àwọn ohun àìjagba mẹ́ rín oọ́dún lọ́wọ́; àgbàkù tó pọ̀ nì ìpò ìlòkùlò tí á ń pàdánù gbogbo nǹkan kí óxé fìyèsí. Àwọn olùtọ́jú ń ní ẹ̀rìmí-pú gbá 1–2% tí àgbàkù ní ètò kán. Ohun tó ní ìmọ̀ràn kanna: ká má ṣe àtúnkọ àgbàkù láti lépa jáde àìjágùn — ibẹ̀ ni ìkù tí ó ń yí ìtẹ̀jáde padà sí àṣìṣe tí á ń gba gidi sí iṣoro."
+      ],
+      "example": "Pẹ̀lú àgbàkù £500 àti 1.5% flat stakes (£7.50 ní ètò kán), ẹ̀kọ́ àíjágùn tó nìyí tí 15-ètò náà nìkan gbée £112.50 — ó wà nínú ìtumọ̀ ara àmọ́, sibẹ̀síbẹ̀, 77% tí àgbàkù ṭẹ̀ lẹ́.",
+      "related": [
+        "flat-staking",
+        "kelly-criterion",
+        "variance",
+        "self-exclusion"
+      ],
+      "see": [
+        {
+          "label": "Responsible gambling tools & help",
+          "href": "/responsible-gambling"
+        }
+      ],
+      "_src_hash": "06fcd7d277eef549",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "flat-staking",
+      "term": "Flat Staking & Units",
+      "short": "Ise titẹ owó kanna — iyọkan unit — lori gbogbo sísọri, ti o jẹ́ ki iriri dáa jẹ́ alaye ati otítọ.",
+      "definition": [
+        "Flat staking gbe iye kanna, ti a pe ni unit, lori gbogbo bẹ́ò laibikita imorí-inu. Unit kan ni igba melo 1–2% ti agbala-owo. Iye dáadáa rẹ ni otítọ: inawo isedí ti lẹ ka ni awọn unit ko le jẹ́ dídá-rọ nipa itọ́ igbamoje lẹhin, nítorí naa olurán àlá gbe àbájádé bi '+8.40 units' dajú julọ kikan ku ní iye-owo.",
+        "Gbogbo ifo awọ loju aaye yi a fin pade ni flat one-unit titẹ: owó sísọri ti ó bọ si bẹ́ò odds 2.50 sọ +1.50 units, bẹ́ò ti o kàn sọ −1.00, bẹ́ò ti o di ásán sọ 0. Iyé jẹ́ alaye to dúró lílo ju — ko si 'ikawe imorí-inu' ti a sá lokò lẹhin, ko si ọna lati ṣé ayokúnrin ọsẹ oṣu ti o kàn."
+      ],
+      "example": "Bẹ́ò mẹ́wa flat-staked: 4 tí ó bọ si ibadandun odds 2.40, 6 ti kàn. Inawo isedí = 4 × 1.40 − 6 × 1.00 = −0.40 units — aṣayan 40% ko to loni awọn odds yẹn. Iriri kanna ni average odds 2.80 yoo sọ +1.20 units.",
+      "related": [
+        "bankroll-management",
+        "roi-and-yield",
+        "win-rate"
+      ],
+      "see": [
+        {
+          "label": "Our settled results, in units",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "a2154db69dabcdc1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "accumulator",
+      "term": "Accumulator (Acca / Parlay)",
+      "short": "Odidi kan ti o ni àwọn àpilẹ̀kọ̀ọ̀kan — gbogbo wọn gbọdọ̀ segun, odidi naa ṣe ìdapọ̀, àti màrì̀jìn búkímákà pẹ̀lú.",
+      "definition": [
+        "Accumulator jẹ́ àpilẹ̀kọ̀ òkan tó nínítọ́ àwọn àpilẹ̀kọ̀ méjì tàbí ju, níbi tí odidi náà jẹ́ ìdapọ̀ tí àwọn odidi kọ̀ọ̀kan. Àwọn àpilẹ̀kọ̀ mẹ́ta ní 1.50 × 1.72 × 1.85 ń funni ní 4.77 — ó dùn, nítorí náà búkímákà naa ń tàn acca nínú akọ̀kọ́. Àfojúsùn naa: odidi kan tó bájẹ́ ń làyọ́ tikẹ́tì gbogbo naa, àti màrì̀jìn búkímákà naa ń lò sí omi níbi tí o bá ń fi àwọn òkè lápá. Tí odidi kọ̀ọ̀kan ní màrì̌jìn 5%, atẹ́ mẹ́ta gbà kòkòrò idí òkè tó ya ìdá 14% àìtọ́ níjà àtẹ́ìbẹ̀rẹ̀ ìdìje. Iyẹn ń ṣe pe acca oríkì nínú ilẹ̀ má lẹ́, jẹ́ ìdáralọ́ àkọ́kọ́, àìkà kò. Tí o bá ní ìtumọ́ láti dá àwọn odidi pọ̀, jáde kí àwọn òkè kù, wa odidi tó dáa jù láràá, àti fi ori kékeré sílẹ̀: ìrètí tó tọ́ fun acca jẹ́ ìdí àìmọ̀ tàn-ín-àn, àìkà nìkan, àìkà tí òkè."
+      ],
+      "example": "Àwọn òkè mẹ́ta, kọ̀ọ̀kan tó yẹ́ 60% nítijú: probability ti àpọ = 0.6³ = 21.6% (odidi tó tọ́ 4.63). Àwọn òkè ní odidi 1.58 kọ̀ọ̀kan ń funni ní ìtúnbá 3.94 — tó ń ṣe àfihàn 25.4% àti ń fun iwé naa ní màrì̀jìn 18% tó yọ orí.",
+      "related": [
+        "bookmaker-margin",
+        "double-chance",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Accumulator tips",
+          "href": "/tips/accumulator"
+        }
+      ],
+      "_src_hash": "d6decdd7926e1ffb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "btts",
+      "term": "Ìbágbéébó Kékeré Méjì (BTTS)",
+      "short": "Ìṣẹ̀mú náà ti wíwé pé ẹgbẹ́ méjì yóò kó golu ní kékeré kan — àbájáde ìdojúkọ náà kò ní pataki.",
+      "definition": [
+        "BTTS (pẹ̀lú 'golubere' tàbí GG/NG) ní ìfipari rẹ̀ Bẹ́ẹ̀ní wọ́n ní golu kan ní kékeré ju, Kò̀ sí ìfipari míìrán. Golu 3–1 jẹ́ Bẹ́ẹ̀ni; golu 2–0 jẹ́ Kò̀. Àbájáde ìdojúkọ náà kò ní àwọn ẹ̀kó ìṣẹ̀mú sí, èyí tó jẹ́ kí BTTS ni ìdọ̀sí fún ìdojúkọ ti àwọn ẹgbẹ́ tí wọ́n gbígbéyin ráá nípasẹ̀, àmà tí wọ́n ní ìdèkùn tó ní ẹrù — o lè dánú nítorí àṣà ìdojúkọ nàá àmà kàn dánú nípa ẹnití yóò jẹ́ olúpẹ̀lú.",
+        "BTTS kìkọ dáradára túmọ̀ sí àyẹ̀wò oòfin golu àwọn ẹgbẹ́ pọ̀ dárá ju ìwòye ẹnití ó dárá jù loore. Àbọ̀ rẹ̀ jẹ́ oòfin golu lórí/lábẹ̀: BTTS-Bẹ́ẹ̀ni dúr pọ̀ pẹ̀lú Golu 2.5 tókè jù, àti ibeere mejì pípe máa ní ìmọ̀ iye tí àkọ-òrò ti àkẹ́kóó ìdojúkọ kán nítán nítaan.",
+        "example → lẹ́kọ́ọ́kan ẹgbẹ́ kóó ní golu 75% nítorí títì àti ẹgbẹ́ kejì 60% (àpapọ̀ bẹ́ẹ̀ dí ẹ̀kó ẹjọ), BTTS-Bẹ́ẹ̀ni ≈ 0.75 × 0.60 = 45% — iye òdì tóótọ 2.22. Iye 2.40 jẹ́ ẹrì-ìmì; 1.95 kò̀ ní àṣe."
+      ],
+      "example": "Ibẹ̀rù kán ní golu ní 75% nípa àwọn ìdojúkọ àti ẹgbẹ́ oyè ní 60% (àpapọ̀ ní ìwọ̀n ẹ̀kó méjì), BTTS-Bẹ́ẹ̀ni ≈ 0.75 × 0.60 = 45% — iye òdì tóótọ 2.22. Iye 2.40 jẹ́ oòfin òye; 1.95 kò̀ ní àṣe.",
+      "related": [
+        "over-under",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "BTTS tips",
+          "href": "/tips/btts"
+        }
+      ],
+      "_src_hash": "05b46df492098048",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "over-under",
+      "term": "Over/Under (Àpapọ̀)",
+      "short": "Dígba lórí àpapọ̀ ófúù tí àwọn golu ṣe yíyá nígbà tí a kò níye tí ẹni tó bá ṣẹ̀gun, tí ó pé sí ìlà bíi 2.5.",
+      "definition": [
+        "Dígbà àpapọ̀ jẹ́ dígbà tí a kò níye tí ẹni tó bá ṣẹ̀gun, ó ní ìbéèrè nìkánkan nípa òpọ̀ golu tí ọ̀rọ̀ yíì máa ṣe. Ìlà nàá á máa ṣe sáwẹ́ ni aarín golu (2.5) àti bẹ́ẹ̀ kò lè jẹ́ apá méjì: Over 2.5 nílò mẹ́ta tàbí sìrí ju nìkan golu, Under 2.5 ń bájẹ́ pẹ̀lú méjì tàbí díẹ̀ jù. Àwọn ìlà ìlọ́pọ̀ (e.g., díẹ̀ dúró sí 3.0 àìsí) máa ń ṣe 'push' — ó dúró déédé lórí ìlà nàá — nípa ìpò èyí, àwọn àbá ń padà bí àwọn òkè tí ń dà.",
+        "Àwọn àpapọ̀ nígbà míìrán máa jẹ́ àgbégbé ìwà rere ju àwọn èpèsẹ̀ ṣiṣẹ́ wọ́n, nítorí pé àwọn ọmọ àgbé àrà dá léku lórí àwọn olùgbégbé tí á rí, tí ó fi golu ìṣẹ̀lẹ̀ kò níye àti ójú lọ́wọ́ púpọ̀. Wọ́n tún wá bẹ̀rẹ̀ fún èkó ìbámu: golu ń tẹ̀ síde nípa ìwọn tó ríi láṛà fún ẹ̀kó àti ayé agbé, nítorí ìyẹn olùbìnú tó tó àbì onje pátápátá àwọn ìpéníyànjú yẹn jẹ́ àwọn àpapọ̀."
+      ],
+      "example": "Over 2.5 níye 1.93 ní èyí dá léni pé 51.8%. Tí àwọn ìṣirò rẹ ní mẹ́ta jù tàbí sìrí àti golu ní 55%, EV = (0.55 × 1.93) − 1 = +6.2% — dígbà ìwà rere èkó tó ò bá jẹ́ apá méjì nípa onímọ̀.",
+      "related": [
+        "btts",
+        "void-bet",
+        "asian-handicap"
+      ],
+      "see": [
+        {
+          "label": "Over/Under tips",
+          "href": "/tips/over-under"
+        }
+      ],
+      "_src_hash": "90644050aa93d2f1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "asian-handicap",
+      "term": "Asian Handicap",
+      "short": "Ìdàmẹ̀ pẹ̀lú ìdí tó pa àwòkù wọ̀ nipẹ̀ nípa fún otu ẹgbẹ onà ní ìtẹ́jádé, nigbagbogbo ní àpẹẹrẹ́ ìdapo irinkanndun.",
+      "definition": [
+        "Àwòkù isinilẹ̀ àyíká ti ètú inu àtẹ́jádé nípa fífikún àwòkù onírúúpẹ̀ sí otu ẹgbẹ ṣáájú àti èrò ìbẹ̀rẹ̀. Gbígbẹ ẹ̀nìyàn to ní àkójú alépere ní −1.5 túmọ̀ pé wọn gba á nípa ìdí méjì dáadáa; gbígbẹ ẹ̀nìyàn aláìní àkójú ní +1.5 jẹ́ẹ ọ̀kộtá òdì ní méjì tàbí jù. Àwòkù nomba tòotó (−1.0) lè túsálẹ̀: bó bá jẹ́ pé ẹ̀nìyàn to ní àkójú alépere bá gbé ní idí ọ̀kàn soso, àwọn owó ìpele àti àbá ni a padà fún.",
+        "Àpẹẹrẹ́ ìdapo (−0.75, +1.25) pín owó rẹ sí àwòkù méjì tó tẹ̀ lé ẹ — isalẹ̀ ní −0.5 àti isalẹ̀ ní −1.0, fún àpẹẹrẹ́ — nítorí naa àbá lè jẹ́ isalẹ̀-àbá àti isalẹ̀-àìmúlẹ̀. Nítorí pé a ti yọ àwòkù wọ̀ ni ìpilẹ̀, àwòkù isinilẹ̀ àyíká sẹé ní àbá méjì soso, nigbagbogbo ní àtẹ̀jẹ́ kékeré ju 1X2 lọ, àti níbi tó ní nínú ọpọ̀lọpọ̀ ẹnìyàn ìriri to ní ìmọ̀ dó fún ìpadi bọọlu-ìsalẹ̀."
+      ],
+      "example": "£20 lórí to ní àkójú alépere ní −0.75 (àwòkù 1.95): kìkan-idí gba pípe sí àìsalẹ̀ −0.5 kìkìlọ́ pẹ̀lú àtúpadà àìsalẹ̀ −1.0 — gbigbó padà £29.75, 'isalẹ̀-àbá' kan. Méjì-idí gba pípe sí àwòkù méjì: £39.",
+      "related": [
+        "match-result",
+        "void-bet",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "711a58b58d3b87dd",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "double-chance",
+      "term": "Double Chance",
+      "short": "Ìgbésẹ̀ méjì nínú àwọn ìgbésẹ̀ mẹ́ta tí o ní ìwòye — ó máa dára, àti àwọn odds tó kùkù. Gbígbésẹ̀ méjì pẹ̀lú áwọn àbájádé méjì ní ọ̀rọ̀ 1X2.",
+      "definition": [
+        "Double chance jọ àwọn ìgbésẹ̀ méjì ní ọ̀rọ̀ 1X2: agbà-tàbí-ẹ̀ka (1X), ìsalẹ̀-tàbí-ẹ̀ka (X2), tàbí ẹ̀kún-méjì-láti-jẹ́ (12). Nipa ìgbésẹ̀ ométa ni ó máa ṣẹ̀ẹ́, nítorí náà ìkás í jẹ́ gíga — àti àwọn odds tó dà pẹ̀lú, nigbà míì kùkù sísí 1.50 nígbà tí iṣẹ́ ọ̀kan tí ó gálà ba wà nínú.",
+        "Ọ̀rọ̀ yìi jẹ́ kàbèéèsì pẹ̀lú Draw No Bet àti +0.5 Asian handicap; tí o ń kọ̀wé ẹ́ àti àwọn onítọ̀jú mẹ́tẹ̀ẹ̀ta nítorí àwòye kanna máa ṣàfihàn ẹ́ èwo nípa iṣẹ́ onítọ̀jú kan tó bu aya nù. Ìgbéṛ̀ẹ̀ séjú ká tábò: ìwọ̀ wù kò jẹ́ iye. 1X ní 1.25 pẹ̀lú àwòye òtítọ́ tó jẹ́ 78% jẹ́ ìgbésẹ̀ tó sọ ìwọ̀ — àwọn odds tó kùkù sásá níwájú àwòye òtítọ́."
+      ],
+      "example": "Agbà 45%, ẹ̀ka 28%: àwòye òtítọ́ 1X = 73% → àwọn odds òtítọ́ 1.37. Onítọ̀jú tí ó ń fi 1.44 dá ni ó ń gbé iye sórí \"ìwọ̀ wù\"; ọ̀kan tó fi 1.28 dá kò ní rárá.",
+      "related": [
+        "match-result",
+        "draw-no-bet",
+        "asian-handicap"
+      ],
+      "see": [
+        {
+          "label": "Double chance tips",
+          "href": "/tips/double-chance"
+        }
+      ],
+      "_src_hash": "dd5f4515ac8590f3",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "draw-no-bet",
+      "term": "Draw No Bet (DNB)",
+      "short": "Lo ṣe alabẹ̀ ẹ̀kan; ti àwọn ẹgbẹ́ méjì bá pẹ́, a máa fun ọ ní owó rẹ padà.",
+      "definition": [
+        "Draw No Bet ń yo ìdẹ̀ jáde lábẹ́ ìṣ̀e: yan akọ́ni kan, àti àwọn ẹgbẹ́ méjì pẹ́ máa rí owó rẹ gẹ́gẹ́ bíi ohun tó ṣẹ̀ṣẹ̀ (void) kì í jẹ́ àsìkò. Ó dọ́gba pẹ̀lú 0.0 Asian handicap àti ó wà láàrin owó 1X2 ńlá (odds ga, ìdẹ̀ padà-òkú) àti double chance (odds kékeré, ìdẹ̀ ṣe àlábẹ̀).",
+        "DNB dára níbi tí o má ṣe ojúdá ẹ̀kan ńso̧ láìká ìdẹ̀ — àwọn Dérìbì tó ya, àwọn oṣù rù gba lójà àìfẹ̀. O tún lè ṣe é fẹ́rẹ̀ nípa pípin owó rẹ láàrin ìṣe àti ìdẹ̀ ní ìṣìrò tó tọ́, èyí tó leekan kálimá àkórá DNB ò ní. Bí i ṣe àfikún, ẹ̀kó àdúkú náà ní iye nìkan nígbàtí iwọ̀n aríyísí (implied probability) wà púpọ̀ kúrò níbi tí o rò pé àbùdá òtítọ́ dúrò."
+      ],
+      "example": "Ẹgbẹ́ tá á àríyísí ní 2.30 láti ṣe àlábẹ̀, 3.30 ní ìdẹ̀. DNB ṣàlàyé ní 1.70: aríyísí 58.8% fún òkè ìwọ̀n tó yin àlábẹ̀ (àfìgba ìdẹ̀) jẹ́ 100 × 43.5/(43.5+26.3) ≈ 62% — DNB aídẹ̀ yoo jẹ́ ≈1.61, nítorí náà 1.70 ní iye tí ó tọ́.",
+      "related": [
+        "double-chance",
+        "asian-handicap",
+        "void-bet"
+      ],
+      "see": [],
+      "_src_hash": "554e9497dd446fe6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "match-result",
+      "term": "Ènìyàn Àkójọ (1X2)",
+      "short": "Ọ̀nà mẹ́ta tí a lò nìlẹ̀: ìdí ewu àgbà (1), ìdí dọ́gbadọ́gbà (X) tàbí ìdí ewu ará òde (2).",
+      "definition": [
+        "1X2 jẹ́ ọ̀nà tí wọ́n gbajúmọ̀ jù lọ nínú àbọ̀ bọ́ọ̀lù: rà omi fun àgbà, rà omi fun dọ́gbadọ́gbà, tàbí rà omi fun ará òde ní àsìkò 90 ìṣẹ́jú àti àsìkò ìparun rẹ̀ (àsìkò àfikún àti àwọn pẹ́nalti kò níye tí wọ́n kò sọ ṣiṣẹ́). Ọ̀nà mẹ́ta yìí ṣe ìyatọ̀ púpọ̀ kúrò ní àwọn ọ̀nà méjì — àwọn iṣẹ̀ lẹ̀ jìn ní ìbadọ̀, àwọn dọ́gbadọ́gbà wà tó lọ ní ìgbagbò púpọ̀ síi ju bí àwọn tí ò lóye rẹ̀ ṣe wí, àti àwọn itẹ̀síwájú ńgbà ńgbà jẹ́ gíga púpọ̀ síi ju lori àwọn ọ̀nà òde oríṣìríṣì.",
+        "Dọ́gbadọ́gbà gbọ́dọ̀ ní ìtara gidi: àbọ̀ bọ́ọ̀lù tí wọ́n sẹ̀ nìlẹ̀ dọ́gbadọ́gbà níbi àti níbi tí wọ́n pàáàlù ìgbà mẹ́rin, ṣùgbọ́n àwọn ọjọ́ dọ́gbadọ́gbà ńgbà ńgbà wà jẹ ní ọ̀nà tó tó nítorí pé ọ̀pọ̀ àwọn tí ó ní owó díẹ̀ ń fẹ́ eniyan tí yóò lára. Ìrírí ọ̀nà èyí jẹ́ lave wipe àwọn tí ó yẹ kù ní ọ̀nà — kì í ṣe pé àwọn dọ́gbadọ́gbà ṣe àgbáyanju, ṣùgbọ́n wípe wọ́n kò sábà ní àwọn tí ó ní fífún dọ́gbadọ́gbà."
+      ],
+      "example": "Ọ̀nà tí ara 2.05 / 3.50 / 3.90 fifi hàn 48.8% / 28.6% / 25.6% (áìlera 3%). Tí àwọn iṣirò òde oriṣirişi jẹ́ 46% / 27% / 27%, àgbà ará òde tí ara 3.90 (òde tẹ́ 3.70) jẹ́ iba ẹlẹ́riko tẹ́ pẹ̀lú.",
+      "related": [
+        "double-chance",
+        "draw-no-bet",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "bd857024ed451f0a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "correct-score",
+      "term": "Correct Score",
+      "short": "Èrosùn ṣe àpèjọ ṣèkùnù pẹ̀lú àbẹ́ — odds tí ó jìn, àìlocò tí ó ga, gíga èwe onigun ti onìbàárù.",
+      "definition": [
+        "Correct score beèrè nípa àbẹ́ nípa pẹ̀pẹ̀ — 2–1, 0–0, 3–3 — àti pé gbogbo ṣèkùnù kọ̀ọ̀kan ní iye ara rẹ̀, ju ìjọ méjìlélogún lórí. Nítorí ìkéde tó hala àfo lórí ìjọ ọ̀ọ̀dúnrin tàbí síi, ṣèkùnù kánkán tí ó jẹ́ àkójọ (jẹ́ẹ́ 1–1 tàbí 1–0) kò nípa réèrù ju 12–13% lọ.",
+        "Agbajà onìbàárù nínú è è èwo tí ó jẹ́ aláwéè ju ìwéè láyé kan àti àìlocò tí ó gbọn. Kò kí o rò iyàlẹ̀nu nǹkan-nǹkan bẹ̀ẹ̀ bII ẹ́yin àpilẹ̀kọ ṣe àmójút mẹ́rìndílọ́gọ́. Tí o níí orí tí o tun gan tí ìpè iló, iṣẹ́ tí àkùnrin àti àbìnrin máá ṣé ṣèkùnù (BTTS) tàbí market totals jẹ́ èwà nípá iye rẹ̀."
+      ],
+      "example": "2–1 nípa 9.00 n ṣàpèjọ 11.1%. Àwọn ìsiro Poisson tí ó ní iye ṣèkùnù tí o tun ga kò níí mú iye kan wáyé ju 13% lọ — nítorí gbogbo iye gbọdọ̀ jẹ́ kù lójú 7.70 kí a lè rò àbẹ́ ṛọ̀.",
+      "related": [
+        "over-under",
+        "btts",
+        "variance"
+      ],
+      "see": [
+        {
+          "label": "Correct score tips",
+          "href": "/tips/correct-score"
+        }
+      ],
+      "_src_hash": "b589a16b0efd68c4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "closing-line-value",
+      "term": "Closing Line Value (CLV)",
+      "short": "Ṣíṣẹ́ẹ̀ ni iye ti o kẹ́yìn jẹ́ tẹ́lẹ̀ — ẹ̀rí tí o kìlọ́ jù lọ́ pé oníbadandun ní ìbámu gidi.",
+      "definition": [
+        "Iye ti o kẹ́yìn jẹ́ tẹ́lẹ̀ ni idiyele tó kẹ́yìn ju lọ́ kí iṣẹ́ máa bẹ̀rẹ̀, lẹ́yìn tí paṇko ti gba gbogbo ìròyìn àti owó. A máa ní pé iye yìí ni iṣedijú tí o kìlọ́ gidi jù lọ́. Closing line value túmọ̀ pé o gba iye tó dáa ju tẹ́lẹ̀ lọ: o ṣẹ̀ḍà ní 2.20 ṣugbọ́n ó pa 2.00 ni tẹ́lẹ̀. Tí o ṣe èyí lábẹ̀ẹ̀ẹ̀ ju, o fẹ́kọ́ láéde tí o rọ́ oníbádandun gidi, nítorí ìgbà lọ́pọ̀ ni o ń yẹ fún ibá ìdílé iye.",
+        "CLV ṣe pàtàkì nítorí òun lọ yà àtẹ̀jọ́ nípa òǹkọ̀ láti sẹ́rẹ́ ní leé sẹ́. Èjẹ́ ní iṣẹ̀jọ́ kékeré ń jẹ́ àríìsíǹfáà; ṣùgbọ́n àwọ̀n oníbádandun tí wọ́n ń ṣẹ̀ḍà iye tẹ́lẹ̀ gbogbo ìgbà, èyẹn ni èrí gidi. Ó tún ní ọ̀rọ̀ sípa nítorí iye tlè nípa rẹ̀ — ohun tí o ní iye dáa ni a máa ṣe ẹ̀jì — ní ìdí tí gbígbé àyẹ́wò kò sàn."
+      ],
+      "example": "Ìwọ gba 2.20; iye pa 2.00 ni tẹ́lẹ̀. Iṣedijú tó ṣẹ́ yápá láti 45.5% sí 50%. Tí tẹ́lẹ̀ dó̩gba àbí, àdándun rẹ ní EV = (0.50 × 2.20) − 1 = +10% — tí wọ́n ti pípadánù ní ìkokò tí ìwọ ṣé iye yìí, bóyá kí kò kí kòjá.",
+      "related": [
+        "line-movement",
+        "edge",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "d542c47127cb6b0e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "line-movement",
+      "term": "Line Movement & Steam",
+      "short": "Báwo ni odds ń yípò bí owó àti ìròyìn dé — àti steam, igbésẹ̀ tí ólóye ọ̀rọ̀ náà gbé tọ́ wá.",
+      "definition": [
+        "Odds jẹ́ àwọn iye tí ń bẹ alágbára. Wọ́n ṣe àṣà láti inú àkọ̀sílẹ̀ ináwo nínú àṣà kan, sìyẹn ó ń yípò bí bẹ̀ẹ̀ dé, àkọ̀rọ̀ tẹ́èmú dé àti olódarí tó ní ise ńkede ara wọn yípo nọ́. Iye tó kúrú ('steaming in') ní àmì pé owó òkè àwọn fáwẹ̀lì ẹjẹ́ àyọ náà; iye tó kúrò dìdo sábè tí òun òkè. Ìpò ọ̀pọ̀lọpọ̀ jẹ́ ṣisẹ̀ isọ̀dúò tí ènìyàn lérò tiwọn dájú, ṣùgbọ́n ìpò tó yára, tí ó ké ara àwọn ìbòórí púpọ̀ kọjá — steam — ìgbà púpọ̀ ó máa rí owó láti ọ́kun tí a gba dógba.",
+        "Ìpò ní pàtàkì fún àwọn tí wọ́n dá dè láti ọ̀pọ̀lọpọ̀ ọ̀nà. Tí a gbé iye náà tẹ́tẹ̀, iye tí yóó steam lẹ́hìnná rere rere dájú ṣẹ́ pé o pẹ́ iye ìkẹ́kọ̀ òpópónà. Àti iye tí ó kúrò dìdo lẹ́yìn tí o gbé u ní ibadandun tòó, eré jẹ́ ìkìlọ́ tí àwọn iye tó ní ọ̀dì rẹ̀ kòkò àyọ̀ fún ìkúkú rẹ. Ìsúmọ́ iye tí a tẹ̀tẹ̀ túnde sí ìpò tí èyí kù nísinsin yìí ni ọ̀kan nínú àwọn ọ̀nà ìgbìmọ̀ àṣà láti àpilẹ̀kọ́ nínú àlọ́, sígbà tí a tún yí ìwé tótó tẹ́rẹ́."
+      ],
+      "example": "Ìhò kan ṣe àṣà 2.10 àti ó jẹ 1.85 wákàtì kan kí ó tó àgbà ìbadandun nínú ìparun àṣà gbogbo. Iye tí ènìyàn lérò tiwọn fúnrararẹ yípò 47.6% → 54.1%. Ẹnibi tó ní bẹ̀ẹ̀ tikẹ̀t 2.10 yìí àti ní dè tí òun ara àṣà náà fúnra rẹ ní iye +14% EV.",
+      "related": [
+        "closing-line-value",
+        "sharp-and-soft-bookmakers",
+        "value-bet"
+      ],
+      "see": [
+        {
+          "label": "Signal column in the screener",
+          "href": "/screener"
+        }
+      ],
+      "_src_hash": "8230946f4d53d082",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "sharp-and-soft-bookmakers",
+      "term": "Àwọn Onibere Agbele vs Onibere Alárọ̀",
+      "short": "Àwọn agbele ti o gba awọn oludé ati ti o fi iye kékeré sílẹ̀; àwọn alárọ̀ ti o gbà àwọn ènìyàn àìlọ́kọ̀ọ̀ ti o sí dinku àwọn akọni lójú.",
+      "definition": [
+        "Àwọn onibere agbele (àti àwọn pápá iyipada) lo iye ìdíkù, gba iye nla, ati se àwọn idiyele lati inu iyipada owo àwọn oludé ọlọ́gbọ́n — àwọn iye wọn jẹ́ ohun-ini tí a ka sí gidi tí iye ọjà nilo. Àwọn onibere alárọ̀ lo ìtumọ̀ sí àwọn alabara ènìyan àìlọ́kọ̀ọ̀ pẹ̀lú àwọn ẹbun àti iṣinṣin, lo iye agbele, gbigbe lọ́wọ́ igba tí ifiranṣẹ́ bá yí padà, ti o sí dinku àwọn akọ́ọ́ ti o ñ ṣẹ́gun.",
+        "Àpẹẹrẹ pàtó àrànwọ́ tòlúwá lati ibẹ̀rẹ̀: iye tí a rí ní igba pẹ́ ti i tọjú ni àwọn onibere alárọ̀ tí iye wọn lọ́wọ́ tàbí iye ọ̀fín yo le di rẹ́wẹ̀ síí, ní kọ̀kan àti kọ̀kan, ní ibadandun àti àw ìdíkù iṣayẹ. Pí iye onibere alárọ̀ sí àyè agbele tàbí iye àpapọ̀ tí o dara dúró jẹ́ orisí àyà tí a lo nígbà wọ̀nba àwọn àrànwọ́ iye wọ́n. Àwọn ẹ̀rọ òòrọ̀ òun tí o gbọ́dọ̀ mọ̀: wiwà iye tí aṣi ní ìrìn-àjò ti ní ìsẹ́jú tòsóna jẹ́ kí a le dinku àkọ́ọ́ òjúmi sí àwọn onibere alárọ̀ — a ní oríkì tó ní èwo, ṣùgbọ́n oonà tó gbesẹ̀."
+      ],
+      "example": "Àyè agbele gùn iye kan sí 1.95 (iye tó dara dúró ~51%); onibere alárọ̀ kan sì tún rí 2.15 lati òní kéjì. Àwo tí 10% yìi jẹ́ àpẹẹrẹ àpapọ̀ agbele onibere alárọ̀ tó dara — àti àyè tí a ṣe àpẹẹrẹ tí ó pa àá wálọ́ ní àwọn ìwọ̀n.",
+      "related": [
+        "bookmaker-margin",
+        "closing-line-value",
+        "line-movement"
+      ],
+      "see": [
+        {
+          "label": "Bookmaker reviews",
+          "href": "/bookmakers"
+        }
+      ],
+      "_src_hash": "089eebf382cf0e6f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "arbitrage-betting",
+      "term": "Arbitrage Betting (Arbing)",
+      "short": "Ṣe àboṣe gbogbo ìsinlẹ̀ lórí àwọn ọ̀pọ̀ bookmaker níbi tí iye-ojúdá náà ń gba ìtisọ́ kékeré tí a ṣẹ̀tán.",
+      "definition": [
+        "Arbitrage wà nígbà tí ìyatọ̀ láàrin àwọn ọ̀pọ̀ bookmaker ṣe é jẹ́ kí o tẹ̀jáde gbogbo ìsinlẹ̀ kí o sì dúró ní ìtisọ́ tí kò ní ìbáṣepọ̀ pẹ̀lú ìyọ̀ — àpapọ̀ iye-ojúdá àmì níbi tí o yàn ní ìsalẹ̀ 100%. Arbs ń túká nígbà tí àwọn ọ̀pọ̀ yẹ̀ẹ́kọ nípa nǹkan tàbí nígbà tí wọ́n bàjè nípa ìròyìn, àti pé ìtisọ́ jẹ́ ohun 1–4% ti gbogbo ìtásílẹ̀ rẹ.",
+        "Ṣùgbọ́n ìṣòro jẹ́ nǹkan tó wà. Arbs nilo iye ọtítọ́ tó gba lọ́wọ́lọ́wọ́ fún ìtisọ́ kékeré, iṣiro ìtásílẹ̀ tí ó ní ìṣẹ́rẹ́, àti ìyara — iye-ojúdá ń lọ kúrò nínú ìṣẹ́jú. Àwọn ọ̀pọ̀ ń ríí iyé náà kósè àti wọ́n náà ń dápadá fún un pẹ̀lú ìfipín ìtásílẹ̀ tàbí pípadì àkáun. Àwọn ẹ̀bẹ̀ tí wọ́n gbá ní ọ̀pọ̀ kán ló máa fi ẹ̀gbẹ́ òmìíràn sílẹ̀ nínú ìnira. Ó jẹ́ ohun tó wà tìrẹ̀ nísinsin náà, ṣùgbọ́n ó yẹ̀ẹ́rọ́, tó pẹ́ túmọ̀ sí iṣẹ́ ìtupilẹ̀ jù nípa ìtasílẹ̀ àtálárá.",
+        "example and ",
+        "example,例,:",
+        ": ",
+        "\"Book A: home 2.10 (47.6%). Book B: away+draw (X2) 2.15 (46.5%). Àpapọ̀ 94.1% < 100%. Ìtásílẹ̀ £51.20 àti £48.80 letílẹ̀ máa padà ~£107.50 bóòyá ọ̀rọ̀ kan tàbí òmíràn — ní àbí +5.9% lórí £100 àpapọ̀.}"
+      ],
+      "example": "Book A: home 2.10 (47.6%). Book B: away+draw (X2) 2.15 (46.5%). Àpapọ̀ 94.1% < 100%. Ìtásílẹ̀ £51.20 àti £48.80 letílẹ̀ máa padà ~£107.50 bóòyá ọ̀rọ̀ kan tàbí òmíràn — ní àbí +5.9% lórí £100 àpapọ̀.",
+      "related": [
+        "bookmaker-margin",
+        "value-bet",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "c70334cf2d0ed4e6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "cash-out",
+      "term": "Cash Out",
+      "short": "Ìṣẹ́gun bẹ́ẹ̀ tẹ́ẹ̀ ṣaájú àkọ́kọ́ pé bobinni nínú iṣẹ́ ìtẹ̀kọ̀rọ̀ — ó rẹ́wà, ṣùgbọ́n ó kéré ju ìyẹ̀n tí ó yẹ k'á máa gba.",
+      "definition": [
+        "Cash out ṛ báà fún ọ láti ṣẹ́gun iṣẹ́ ìtẹ̀kọ̀rọ̀ ṣaájú àkọ́kọ́ tó pé: bobinni nínú wàn fúnni ní iye ìṣẹ́gun tí ó dá lé òógún kan tí ó jẹ́ ní wájú. Àwọn iṣẹ́gun tó ń ṣèṣèfò le je ìfipamọ́ ṣaájú; àwọn tó ń ṣètọ́ le je tìrákòso díẹ̀. Ó dáàbò bí a ti ní ìmọ̀, èyí tí yìó jẹ́ ní ìlànà ìtánpá gígà.",
+        "Ìmọ̀-ìjìyè nìkan kò dá lílo: iye cash-out tí bobinni pè fún ọ jẹ́ ìyẹ̀ òógún tiẹ̀ níbẹ̀ yìí láìsí iye tuntun — èyí tó nìkan ń ìyẹ̀ lílo lójú iṣẹ́gun àkọ́kọ́. Ìgbà gbogbo àwọn ẹni tó ń ṣe cash-out kótán ara wọn níkọ̀kọ̀ lẹ́mẹ́jọ. Tí o bá rìn láti ṣe àgbékalẹ̀ àìpẹ̀ ni àkọ́kọ́, àwọn ilé ìtẹ̀kọ̀rọ̀ tí ó nígbà ní iye tó gbẹ́kẹ̀lẹ́ ló yíò wá se ẹ̀rò náà ní iye tó dara; tí o bá jẹ́ akẹ́kọ̀ó ìṣẹ́gun tó nílọ́ kùkù, òwe nìkan jẹ́ kí o fíìyè láti rọ́pò ọ́."
+      ],
+      "example": "Ọ̀ ẹ́ léo £10 ní 3.00, agbára rẹ̀ ọ̀ jẹ́ 70% láti ṣèṣèfò ní akòkò ìgbà. Iye òótítọ́ iṣẹ́gun = 0.70 × £30 = £21. Iye cash-out tí bobinni pè fún ọ nígbà mélòò £18.50 — èyí tó ń kàwọ̀ ẹ́ ní £2.50 túútúú, èyí tó jẹ́ 12% tí a rán sílẹ̀ nítorí bọ́tìnì náà.",
+      "related": [
+        "expected-value",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "51e449202dcc787e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "free-bet",
+      "term": "Bet Ọfẹ́",
+      "short": "Ìyẹn ìṣẹ́dọ tí olùkọ́kọ́ máa fi owo rẹ̀ dá — iṣẹ́ ibadandun ni ti ọ, ṣùgbọ́n iye nkan kò padà fún ọ.",
+      "definition": [
+        "Bet ọfẹ́ jẹ́ idiyele iṣẹ́dọ: fi í silẹ̀, ti ó ba ṣẹ̀yin iyẹn iṣẹ́ ibadandun nìkan ni a máa fún ọ ṣùgbọ́n kò títà nkan ('stake not returned', SNR). Bet ọfẹ́ £10 tó bá ṣẹ̀yin ní arandun 4.00 máa yi £30 lẹ́, kò si £40. Nítorí pé iye nkan kò jẹ́ ti ọ, iye gidi ti ìyẹn olùkọ́kọ́ yi jẹ́ iye nkan kan rẹ̀ soke (1 − 1/arandun) — èyí ni idi tí bet ọfẹ́ máa fi iye púpọ̀ sílẹ̀ ní arandun tó ga jù.",
+        "Bet ọfẹ́ jẹ́ ìyẹn tí a lo fún ìkékọ̀ọ̀ àwa ọ̀pọ̀ àti iṣẹ́dọ ìbáṣẹ. Ti a bá lo ọ̀nà àìfura lórí arandun tó kéré ìwọ̀n ọ̀gbọ̀n, èyi máa padà sísowùpo, èyí nìkan. Ti a bá lo ọ̀nà tó dídẹ̀ ní arandun 3.00–5.00, èyi máa tò jẹ́ 65–80% ní arandun nínú ìmèwe gidi. Kí o ma fi ojú kán ọ̀rọ̀ àbá tó wà nípasẹ̀: àkókò rìn, arandun tó kéré jù àti ìwé ìṣẹ́dọ tó pàtàkì ni a máa ń ṣe iye gidi ti ìyẹn olùkọ́kọ́ náà."
+      ],
+      "example": "Bet ọfẹ́ £20 ní arandun 5.00: ìṣẹ́yin ní 20% ìgbà → iṣẹ́ ibadandun £80, EV = £16, èyí ní 80% ti arandun iye nkan. Ìyẹn olùkọ́kọ́ kanna ní arandun 1.40 máa yi £8 lẹ́ — EV ní àpapọ̀ £5.70 — ìbẹ̀rẹ̀ 30% nìkan ti arandun iye nkan.",
+      "related": [
+        "wagering-requirements",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Current bonuses with real terms",
+          "href": "/bonuses"
+        }
+      ],
+      "_src_hash": "e8a48bb840d0fa67",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "wagering-requirements",
+      "term": "Iṣẹ Ásẹ Ìtọjú (Rollover)",
+      "short": "Àkóko méjì tí a gbọdọ fi ẹnìyàn fi ọwọ sílẹ̀ kí ó tó di owó tí a lè gba jáde — àpẹrẹ tí ó pinnu bóyá ìṣẹ́ rẹ̀ ló ya.",
+      "definition": [
+        "'Ẹnìkan £50, iṣẹ ásẹ ìtọjú 5x ní àwọn òde kékeré 1.5' túmọ̀ pé àwọn gbiwájú £250 tí a gbọdọ̀ jìnnì kí ó tó fà ìṣẹ̀ náà padà si owó tí a lè gba jáde. Gbiwájú kọ̀ọ̀kan fi ìbámusílẹ̀ álára aláìmọ̀ ìya ìlànà jìroro, nítorí kí iye òtítọ́ ti yọ àkọsílẹ̀ jẹ́ àpẹ̀rẹ̀ àbọ̀ × ìfúnni alákòóra: àpẹrẹ ìkọkó náà burú ní ìgbà kọ̀ọ̀kan tí a fi ré sóna nínú itọ́jú onítawe.",
+        "Rollover jẹ́ ìdajú tóbibí jùlọ nínú àkọsílẹ̀ ìtọjú kọ́ọ̀kan — ó jù àpẹrẹ àgbà tó rí lójú. Ìṣẹ̀ kékeré ní 1x rollover ó máa ṣeké nígba púpọ̀ ju èyí tí ó tóbi ní 10x. Wo àwọn alápìn tó wà níyìn pẹ̀lú: àwọn ìfúnni tó kéè jìnnì (àwọn ìfúnni tó jìnnì púpọ̀ fi alúfáà tí ó ní ewu dé tálábà àkọsílẹ̀), àwọn orisirisi àṣàṣegun tí a jẹ́, àwọn ọwọ́ tóbibí pẹ̀lú gbiwájú kọ̀ọ̀kan, àti àkókò tí ó ṣẹ́jú tí yóò ti èrò àwọn ìṣẹ̀ tí a kò pá kúrò."
+      ],
+      "example": "£40 ìṣẹ̀, 8x iṣẹ ásẹ ìtọjú, ~5% àbọ̀ àwọn àlùn àbídùn: iye àtúkọ̀ jùù àkọsílẹ̀ ≈ £320 × 5% = £16. Iye òtítọ́ ti ìṣẹ̀ náà jú £24 ju £40 lọ — àti búburú bí 7-ọjọ́ àkókò yóò fi alúfáà ènìyàn sílẹ̀.",
+      "related": [
+        "free-bet",
+        "bookmaker-margin"
+      ],
+      "see": [
+        {
+          "label": "Offers compared with wagering shown",
+          "href": "/bonuses"
+        }
+      ],
+      "_src_hash": "9640d67e0723ae88",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "void-bet",
+      "term": "Void Bet (Push)",
+      "short": "Ìbẹ̀ẹ̀ tí a ti fagile: owó rẹ̀ padà, ní ìbàjẹ́ tí kò sẹ́ ni iṣẹ́ tabi aiṣẹ́.",
+      "definition": [
+        "Ìbẹ̀ẹ̀ kan jẹ́ void nígbà tí ó ṣeé ṣe kí a ró ó dáadáa: àpilẹ̀kọ̀ ti ìṣẹ̀lú tabi ti fásáà, oníkòkò tí a pé ò gbẹ́, líle àpèjọ tabi totals tí ó lọ́ sínú ọ̀rọ̀ tútù (push), tàbí tì bookmaker náà ká ìbẹ̀ẹ̀ nítorí àṣìṣe ìsiro tí ó kàn (palpable error). Owó rẹ̀ padà àti ìbẹ̀ẹ̀ náà ti ṣe ìwájú gẹ́gẹ́ bí ohun tí kò sẹ́ ni iṣẹ́ tabi aiṣẹ́.",
+        "Void àwọn ìbẹ̀ẹ̀ ní ìdí nínú ṣíṣe àlaye àkóónú gidi. Nínú àwọn iṣedede àti ìfé-rà àwa ò, void kan ṣe ìwájú pẹ̀lú òǹká 0 — a tú u ní àwa àlaye owó ìfé-rà àti owó tí a rà ò ṣe alaye gẹ́gẹ́ bí jìjú yíyí. Nínú accumulators, ìbẹ̀ẹ̀ tí a void rẹ̀ kò dá tiket ìmusí sù; ìbẹ̀ẹ̀ náà tú síta àti agbakọ odds tún ṣe àpilẹ̀ nítòótọ́."
+      ],
+      "example": "Asian handicap −1.0 àti agbakọ́ bá di 2–1: ìfẹ́ oúnjẹ kan tó lọ́ sínú líle àpèjọ náà, ìbẹ̀ẹ̀ ṣe push, àti owó £15 rẹ̀ jẹ́ padà ni àlaye.",
+      "related": [
+        "settlement",
+        "asian-handicap",
+        "over-under"
+      ],
+      "see": [],
+      "_src_hash": "bdffd6863e31d20a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "settlement",
+      "term": "Ìṣètò (Ìtúkọ̀)",
+      "short": "Ṣíṣe àpẹ̀rẹ̀ bẹ̀ẹ̀ tí a ti ṣe àgbájú, asìkò tàbí àìní ní ọ̀dọ̀ àbájáde ìṣẹ́lẹ̀ — àti ìdánwò ìwọ̀ntúnwọ̀n fún òǹkọ́ tí o ń ṣe ìmoníìyè bẹ̀ẹ̀.",
+      "definition": [
+        "Ìṣètò jẹ́ iṣẹ́ ǹkan tí a ṣe kó wá ká tọ́ka bẹ̀ẹ̀ ní àbájáde tòótọ́: àgbájú, asìkò tàbí àìní, pẹ̀lú ìyẹ̀ rirẹ́ tí a ṣe ní iye-ọ̀wọ̀ tí a gba ní ìgbà tòótọ́ náà. Fún akọ̀ẹ̀ọ pẹ̀lú akọ̀pẹ̀ọ̀, ó jẹ́ ìwé ìṣiro; fún ẹnikẹ́ni tí ó ń tán ìmoníìyè bẹ̀ẹ̀ síta, ó ni fún ipin gbogbo ìgboyàn rẹ̀. Ìwe-ìyẹ̀ kò ní ìtumọ̀ tùútùú bẹ̀ẹ̀ ti kò bá ṣe kó ní ìtúkọ̀ fún gbogbo bẹ̀ẹ̀ tí a farahàn — ní iye-ọ̀wọ̀ tí ó hàn, ní ọ̀dọ̀ àbájáde ìṣẹ́lẹ̀ tòótọ́, pẹ̀lú asìkò tí a yọ̀.",
+        "Ìrírọ́ àìbáwọ́ àdó-tìyìnrìn jẹ́ asiri ìrírọ́ ìṣètò: yọ asìkò kúrò, ṣe ìtúkọ̀ sí iye-ọ̀wọ̀ tó dáa jù lọ ju àwọn tí ó wà láyé, tàbí ṣẹ́ kó tu asìkò padà sílẹ̀ gẹ́ẹ́ gẹ́ẹ́ gẹ́ẹ́ sí 'àìní'. Ìgbésẹ̀ wa ti a ṣe dáadáa ni àgéjù ohun ìyẹ̀ yìí: gbogbo bẹ̀ẹ̀ ni a síbẹ̀sẹ̀ kó yẹ ṣáájú ikédé, àbájáde rẹ̀ jẹ́ ìtúkọ̀ ní otitọ́ láti iye àbájáde ìṣẹ́lẹ̀ tòótọ́, àti ohun kankan kò túmọ̀ sẹ́yìn — àwọn ọ̀pá àgba ìyẹ̀ máa ń dúró, àgbájú àti asìkò pápọ̀."
+      ],
+      "example": "Bẹ̀ẹ̀ tí a síbẹ̀sẹ̀ ní 2.30 ṣáájú ikédé. Àbájáde tòótọ́ ni ó ní ìtúkọ̀ gẹ́gẹ́ eni tí ó ní àgbájú: +1.30 òpò nípa iye-ọ̀wọ̀ tí ó dọ́gba. Ti ó tilẹ̀ bá jẹ́ asìkò, ojúewé tí ó kan náà yóò máa ní hìhìn − 1.00 fún àìnílẹ̀kọ̀ọ́ − ìfarada tí ó kan ìwọ̀ntúnwọ̀n ni.",
+      "related": [
+        "void-bet",
+        "flat-staking",
+        "tipster"
+      ],
+      "see": [
+        {
+          "label": "Browse settled days",
+          "href": "/predictions/daily"
+        }
+      ],
+      "_src_hash": "7ac0c0dd355ffceb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "roi-and-yield",
+      "term": "ROI / Yield",
+      "short": "Iṣẹ́ ọrọ̀ gẹ́gẹ́ bí ìsọ onígbìmọ̀ — ọ̀kan nínú àwọn ọ̀ọ́dì dáradára jùlọ fún ìfi ọ̀rọ̀ bettings ká wé ara wọn.",
+      "definition": [
+        "Yield (ti a tún máa pè ní ROI nínú ìbẹ̀tì) fi ìsọ oníjìnnà síle nípa àpapọ̀ gbogbo nínú tí a fi ẹ̀ko ìlera: 100 bets tí ìrú rẹ̀ 1 unit ní ìhun àbájọ 6 units jẹ́ 6% yield. Nitori tó bá n ìbalẹ̀ àwọn nkan nípa ọ̀pọ́ tó la ṣe, yield yìí máa jẹ́ kí o lè ṣe àbòyè àwọn ẹ̀yà àwọn ọ̀rọ̀ tí ó yára àti àwọn ọ̀nà ìbalẹ̀ tó yára — kò dẹ̀ràn bi oníjìnnà níwo àbọ̀yẹ́kọ́, tó máa fún àwọn ènìyàn ní ìmọ̀ nítorí pé wọn n ṣe ìbẹ̀tì ìtẹ̀riba jù.",
+        "Ìgbẹ́yìn fún ìṣẹ́wò: àwọn yield ti ọ̀rin àfojúsun ti 3–8% jẹ́ ìran ọjà ḿú ọlọ́gbọ́n tó dá ara wẹ̀; àwọn yield tí ó kàn gbá ẹ̀wà méjì lọ nipa àpapọ̀ iye giga jẹ́ rìru, kò sì ọ̀rọ̀ wà tó da ara wẹ̀ — a ò mọ̀ láìka. Yield tó gbẹ́njẹ́ òyìíyi lori àwọn bets ọ̀ẹdọ̀gọ̀ẹdọ̀gọ̀ nkan jẹ́ àwè àìmọ̀jọ́, àìṣe ọ̀nà — ṣé á mọ̀ láìka pé yield náà àti iye àwọn bets tó bá pọ̀ lo ara wọn, kò sí àmúdé tí á ò rí tí ó ń ké níjòó àwọn àkúkọ́ kan."
+      ],
+      "example": "120 àmúdé settled lórí àpapọ̀ flat 1-unit, net +7.9 units: yield = 7.9 / 120 = 6.6%. Kanna +7.9 units lórí 400 bets yóò jẹ́ 2.0% yield — àmúdé tó lò nígbà onígbìmọ̀ (nítorí pé ó tún jẹ́ rere) — àìbáǹ lásán.",
+      "related": [
+        "win-rate",
+        "flat-staking",
+        "variance"
+      ],
+      "see": [
+        {
+          "label": "Tipster ROI on the leaderboard",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "5f6b7fb3c60444ed",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "win-rate",
+      "term": "Oníran Ìjèjú (Win Rate / Strike Rate)",
+      "short": "Ìgba kejì tí àwọn ìbéèrè ṣubú — kò ní lílo nínú ara rẹ̀, ṣùgbọ́n ó ní lílo níbígbe àwọn odds láàrín.",
+      "definition": [
+        "Oníran ìjèjú ni ìbáraẹ̀ àwọn ìbéèrè tí ṣubú. Nínú ara rẹ̀, ó jẹ́ ọ̀kan nínú àwọn nọ́mbà tí a lo àkọ jù lọ nínú ipolówó ìbéèrè: oníran ìjèjú 80% dàbí ìgbà ńlá jù, ó sì ṣe àwọn ẹ́ bàjọ́ nípa fífi ẹ̀kúnrẹ̀ sílé nínú 1.10 — ṣùgbọ́n ẹ́ ń pàdánù owó. Lóríiṣì, oníran ìjèjú 35% jẹ́ dídáa gidi tí àwọn odds àárín bá ga ju 3.00 lọ.",
+        "Oníran ìjèjú pé-díẹ̀ gidi nínú ìkéde enu kọọkan jẹ́ ìdìbí 1 dé àwọn odds decimal ìbáraẹ̀: ní àwọn odds àárín 2.50 ẹ nílò 40% láti dúró ní àárín kan. Ohun gbogbo tó pọ̀ si pé-díẹ̀ gidi ni ìlú-àwọ; ohun gbogbo tó kéré nítòó ni àkíkọ tì àìlera ṣẹ́ní ní ọ̀rọ̀ ìgba kejì. Ká ká oníran ìjèjú, àwọn odds àárín ati ìdásílẹ̀ (yield) níbò gbẹ̀ẹ́ tí wọ́n ń wé ara wọn, lórí nọ́mbà ìbéèrè tí wọ́n sọ̀rọ̀ — ìkéde enu kí ó ṣèye nípa oníran ìjèjú nìkan ní á ń pa ohun èlò sílẹ̀."
+      ],
+      "example": "Àwọn odds àárín 2.20 → pé-díẹ̀ gidi 45.5%. Ìkéde enu 48% ní àwọn odds wọ̀n yíèlú (0.48 × 2.20) − 1 = +5.6%. Àwọn 48% kanna ní àwọn odds àárín 2.00 ní á ń ti owó kúrò 4% ti ìdíkòó.",
+      "related": [
+        "roi-and-yield",
+        "flat-staking",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "adaaf47d9aff3acd",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "variance",
+      "term": "Ìyàtọ̀ (Variance)",
+      "short": "Àwọn ìyalẹ̀nu tó wà láàrin ìdí-àbá àti ìdí gidi — nìdí tí àwọn ibadandun tó dára báyìí máa ṣubú, àti nìdí tí àwọn ìtàn búburú máa rí báyi fún àkókò díẹ̀.",
+      "definition": [
+        "Ìyàtọ̀ jẹ́ àwọn àyọ́pọ̀ tí wọ́n kò jẹ́ àkúkú nínú ìyẹ̀n tí yẹ́ ṣẹ nígbà-àkókò àti ìyẹ̀n tí ó ṣe gidi nígbà kan. Nínú ibadandun, ó jẹ́ nnkan tó ṣe ìdanimọ̀ gan-an àti tí a kò lè ìgbèkèlé: àwọn ibadandun tó jẹ́ 55%-probability máa ṣubú ní wákati mẹ́tà-ìdámẹ́rin; ìṣúra tí ó ní gidi +5% edge lè wàhàla nípa owó lẹ́yìn àkọ̀tun ọ̀dún méjì; àti èkó tó ba wọ̀ owó irú gbogbo àìgbọ́ràn lè ní ọ̀sẹ̀ kan tí ó dára gàn-an.",
+        "Fífẹ̀ẹ́ ìyàtọ̀ ní ìbámu náà yí ìṣẹ̀dá rẹ̀. Ó ṣàtẹ̀jú fún iye owó tí a máa fàyé (wo bankroll management), ó ṣẹ̀ ìtàn àyẹ̀dẹ (ọ̀dún mẹ́ta tàbí mẹ́rin, kì í ṣe àpá ọ̀dún), àti ó mọ̀ọ̀kán lódiwọ̀n àwọn ọmo-èkó gíga àti àwọn ọmo-èkó ìbajẹ̀. Ọ̀ṣẹ́, ìdí tí àwọn ìtàn tí ó tún fún ara òun ní ìwòye lo ṣe ìyẹ̀ jùlọ ju àwọn ọ̀sẹ̀ tí ó jẹ́ ọ̀fẹ́ — nípa àkókò tí o ba gun tán tán, ìyàtọ̀ máa ṣegé níbi àti àkójọ́ ohun-èlò, tàbí tó jẹ́ àrékéreké tàbí òfin."
+      ],
+      "example": "Ọ̀dún 500 tí ó jẹ́ aláìsopọ̀ nínú ibadandun ní 50% / odds 2.10 (àkójọ́ gidi +5%): ọkan nínú ẹ̀ẹ́dokù òpò àwọn olùbadandun náà sì ní ìjìnlẹ̀ owó lẹ́yìn ọ̀dún 500 — ìyàtọ̀ níkan, kòkò ayé kò kórira rẹ̀.",
+      "related": [
+        "expected-value",
+        "bankroll-management",
+        "win-rate"
+      ],
+      "see": [],
+      "_src_hash": "d5852e771c63e316",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "in-play-betting",
+      "term": "Ìdálẹ̀ Akójọ Ìtẹ́jọ (Betting Ìgbà Ìṣẹ̀lẹ̀)",
+      "short": "Ìdálẹ̀ nígbà tí ìṣẹ̀lẹ̀ ń lọ, pẹ̀lú ìyẹ̀ ẹnìyan tó ń yípadà pẹ̀lú àkókò kọ̀ọ̀kan.",
+      "definition": [
+        "Ìdálẹ̀ akójọ ìtẹ́jọ ń jẹ́ kí ọ̀pọ̀ ètò tìtẹ́jọ ṣiṣẹ́ láti ìbẹ̀rẹ̀ dé òpin ìṣẹ̀lẹ̀, ìyẹ̀ ẹnìyan tí ń ṣe ìyípadà máà láti àlùbọ̀sà, bìi ọ̀run tí a ba ṣe, àti ìfarabalẹ̀ ìdùn tí ń yípadà. Ó fúnni ní àwọn ọ̀ràn àbùikọ̀ tó dá — ìtẹ̀ síwájú lori ìrírì ìṣẹ̀lẹ̀ lẹ́yìn ìhò igbakùn àbìkù — ṣùgbọ́n aṣà tó ń ṣiṣẹ́ ni a dá fún àìṣedéédé: ìgbà àgbéjáde inú, ìyẹ̀ ẹnìyan tó ń fẹ̀yìn fẹ̀yìn, àti ìsinmi tí òun ìjáréjáre mọ̀ wíwo púpọ̀.",
+        "Ọ̀wọ́ tí wọ́n àfihàn méjì nìyí. Ìlọ́wọ́ níbi oníjọ̀pọ̀ jẹ́ gígùn jù pẹ́ ẹ́ ṣe yọ, nítorí náà ìyẹ̀ ẹnìyan akójọ jẹ́ dọ́tun títán. Àti ìṣe ìdálẹ̀ igbakùn ní ọ̀̀rá: àwọn agúnmu ilọ́wọ́ merindinlogun lori ẹ̀jọ́ kan a ń múlọ́ àpọ́njú sí ìlọ́wọ́ ìdálẹ̀ àti ìdaraya ènìyàn. Ti o ba fẹ́ ṣe ìdálẹ̀ akójọ, ṣe agbáyanjú àtètè àgbà àáfín àkọ́kọ́ ẹ̀yin, àti gbé irú òkè oníjọ̀ tí a tìnú gbà padà si àfihàn ìdálẹ̀ tó dédé."
+      ],
+      "example": "Olótìì tí a pinpin sí 1.70 ṣáájú ìṣẹ̀lẹ̀: nígbà akójọ, àwọn ìyẹ̀ ẹnìyan fo sí 2.90 (ìkawe 34%). Ti iṣẹ̀ọ́ ẹ̀yịn jẹ́ wíwo tó ṣe òpè ìdíje gbìyànjú yíká 42%, àwọn ìyẹ̀ ẹnìyan tó jáde lọ́wọ́ yẹn — kìí ṣe ìdùn ẹnìkan — ni ìdí-è-dídí tí oníjọ̀pọ̀ ẹ̀yin ló tó ṣe ìdálẹ̀.",
+      "related": [
+        "cash-out",
+        "line-movement",
+        "bankroll-management"
+      ],
+      "see": [],
+      "_src_hash": "6048484c8edf3b0c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "xg",
+      "term": "Expected Goals (xG)",
+      "short": "Ìwọ̀n ìdá ìṣubọ̀ tí n ṣe àrọ̀ iye àwọn bọ́ọ̀lù tí ẹgbẹ́ kan yẹ̀ kí ó ṣubọ̀ láti àwọn àbájáde tí ó wà.",
+      "definition": [
+        "Expected goals fún gbogbo ìṣubọ̀ ní irinṣẹ̀ níbẹ̀ lásán bẹ́ẹ̀ bẹ́ẹ̀ (probability) ní ìpilẹ̀ àwọn ìjáde tó jọ̀ o — ìjìn ọ̀na, iwọ̀n àyíká, ẹ̀ka ara, ìrànlọ́wọ́ tí ó tẹ̀ lé. Tí a bá dá wọn pọ̀ àpò, yìí ni xG ẹgbẹ́ kan fuń àpá oore kan tabi ọdún: ìwọ̀n àtijọ́ àbájáde tí n kó àṣojú ìmọ̀ ti ìlọ́wọ́ ti araẹni. Ẹgbẹ́ kan tó ṣegun 1–0 pẹ̀lú 0.4 xG jáde sí 2.3 gba aláṣiri ìbaráẹnú, bẹ́ẹ̀ ni o ti ri nínú tábìlì.",
+        "Fún àwọn olubẹ̀jẹ́, xG jẹ́ irúfẹ́ ìsọfúnni tí n ṣe irọ́ kíakíá ju àwọn ìdáábọ̀: àwọn ẹgbẹ́ tí ó ń kọjá nínú xG wọn á máa ń padà sẹ́yìn, àti pé àgbájú onje nígbìmìì n kọ́ iròjú padà náà. Àwọn òkè rẹ̀ pẹ̀lú dandan — ó n fojú sítan lórí ìpele oore, tí ó le yatọ̀ láarin àwọn onímọ̀-irúfẹ́, àti pé ara oore kan xG yi fẹ́rẹ́ bí ara oore kan àwọn bọ́ọ̀lù. Lo ó gẹ́gẹ́ bí irúfẹ́ kan, àìṣe irúfẹ́ ìparádọ̀."
+      ],
+      "example": "Láàrín méjì ójó marun sẹ̀yìn, ẹgbẹ́ kan ṣubọ̀ 11 láti 6.1 xG. Àgbájú onje n sọ àwọn bọ́ọ̀lù tí wọ́n ṣubọ̀ (11) àní bọ́ọ̀lù tí wọ́n yẹ̀ kí ó ṣubọ̀ (6.1) ní àlápáadìrẹ́ lẹ́nu, àní xG ń ṣàlàyé pé àlápáadìrẹ́ mi ń gbẹ gẹ̀gẹ́birun ní iwọ̀n 80% ní isalẹ́ èrè tí o le gba lọ́ọ̀dún.",
+      "related": [
+        "variance",
+        "line-movement"
+      ],
+      "see": [],
+      "_src_hash": "be8ddc67f6613784",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "tipster",
+      "term": "Tipster",
+      "short": "Ọkọ́ tí ń ná àwọn àpádeé agbera — gbọ́ àkọ́jọ́ àtìlẹ́yìn nígbà gbogbo, ìwé àwòrán kì í ṣe ẹ̀rí.",
+      "definition": [
+        "Tipster ń ná àwọn àpádeé agbera tí á ní gbé dájú sí, bìi tàbí náíira. Ìjẹ́ẹ̀ àkíyèsi ń ní àbá sílẹ̀: àwọn tí wọ́n ní ìlèrí àjinlẹ̀ ní gbá gbé sóke, àwọn ìtíjú tí wọ́n kàn kù ní yóò jí dán, àti àwòrán kì í ṣe àbìyamọ̀ rere. Àkóónú ìlèrí tí ó dáa ni àkọ́jọ́ tí á tíìpẹ̀ àkókò, tí á gbé àtìlẹ́yìn kìkì: àwọn àpádeé gbogbo tí á pàkó ṣáájú àlẹ́, síbẹ̀ tí á wé sísọ ní àwọn odds tí a dárúkọ, àti àwọn àmúníìbà tí á dábí ìlèrí ní láti pẹ́ ilẹ̀.",
+        "Àyọkà ìlànà tí ó ye láti ní fún ẹnikẹ́ni (tí ẹ̀ní pẹ̀lú wa): Àkọ́jọ́ àtìlẹ́yìn gbogbo ní ì ríi, àti àwọn ìtíjú wà nínú rẹ̀? Àwọn odds tí á dárúkọ sé ní ìgbà tí a ró àpádeé náà lọ́? Ìnúká ní gbé sílẹ̀ ní oúnjẹ ìàgbà, lórí sàńko tí a sọ pátapátá? Àkọ́jọ́ náà sé ó dúró ní àkókò tí oríko àkóri yó dé ìpín? Ẹnìkan tó fà áwọn ìbéèrè wọ̀nyí kúrò lẹ́hìnn-ìn ní rèrè fún igyántì, kì í jẹ́ wàdún — rá àwọn àpádeé púpọ̀ nìkan tí àkọ́jọ́ tí á jẹ́rìísì yóò fi ìyá àrá ní ojúumọ́."
+      ],
+      "example": "'Mo palára àwọn ẹ̀kó mẹ́wá ní àwọn ìpínnu òdó ti mẹ́wà!' jóbá 'Àwọn àpádeé tí á dábí ìlèrí mẹ́rin-ọgọ́ta-mọ́kàndun, +4.8% ìjẹ́ẹ̀, àwọn odds ìgbàmìdógbà 2.31, àkọ́jọ́ gbogbo'. Àkọ́kọ́ jẹ́ ọ̀rọ̀ tí á ní fún tíìta; àrèékéèjì ni àkọ́jọ́ gidi — àti àkọ́jọ́ àtìlẹ́yìn ni nǹkan tí ó jẹ́ ẹ̀yà rẹ̀.",
+      "related": [
+        "settlement",
+        "roi-and-yield",
+        "win-rate"
+      ],
+      "see": [
+        {
+          "label": "Our leaderboard with settled records",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "4790ca1012523b3c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-comparison",
+      "term": "Ìwọ̀n Àre Fúnfún",
+      "short": "Ṣíṣe àyẹ̀wò ọ̀rọ̀ gbogbo àgbà ìtajà kí o tó dúbúlẹ̀ — àbí ìlànà àkóónú tí ó rọ́rùn jù lọ, tí ó sì tótọ́ jù.",
+      "definition": [
+        "Àgbà ìtajà ọ̀tọ̀ ń ṣe ìwọ̀n ọ̀rọ̀ àkérú náà lára ìwọ̀n tó yàtọ̀, ní àkótán 5–10%. Tí o ba gbà 2.20 kú 2.05 fún ìábá àkérú ìlò ìdahun yíì, ó jẹ́ ilọ́sí 7% ní ojú ipadá fún àìdanú tó un àkátà — àti pẹ̀lú, kíkà àti kíkà, àwọ́n ìtajà pẹ̀lú ara wọn ní ìmọ̀ìran rí ìjìmere tí wọ́n yíó bàjé, tàbí tí wọ́n yíó duro, tàbí tí wọ́n yíó pẹ́ lùú.",
+        "Èyí ni iṣẹ́ àkóónú tó rọ́rùn jù láti ṣe bíi onísẹ́: mú àkáàbò nílọ́jọ́ púpọ̀ àgbà ìtajà àti gbà ìwọ̀n tí ó dáa jù nígbà gbogbo. Ó sì ni gidi lábẹ́ nígbà tó búrísì iye — àpò ìmọ̀ áwa ń ṣe àyẹ̀wò ìwọ̀n ọ̀kọ̀ọ̀kan á àgbà ṣíṣe pẹ̀lú ìwọ̀n òfin àìlẹ̀kọ̀ọ̀, àti àwọ́n ìpele ọ̀rọ̀ àkérú ní àkìyèsí ìwọ̀n àgbà tó dáa jù fún gbogbo ipadá, nítorí náà àyẹ̀wò naa ti jẹ́ ìṣe."
+      ],
+      "example": "Àwọ́n ìtajà rẹ gidi jẹ́ ní ìwọ̀n ~2.00 àti o ń dùbúlẹ̀ 100 × £10 ní oṣù. Tí o ba ń gbà àwọ́n ìwọ̀n tí ó dáa 4% rí ìṣìlẹ, ó jẹ́ ní àgbájọ ~£40 ní oṣù — gbogbo àwộn ètò tí a gbà padà, kìí ṣe ọgbọ́n ìṣẹ́ ohun-ìní.",
+      "related": [
+        "bookmaker-margin",
+        "fair-odds",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [
+        {
+          "label": "Best odds on every match page",
+          "href": "/predictions"
+        }
+      ],
+      "_src_hash": "558fd6fb31af123b",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "self-exclusion",
+      "term": "Ìdálẹ̀ Ara Ẹni & Àwọn Ìlimítì Ìbẹ̀rẹ̀",
+      "short": "Àwọn ọ̀rọ̀ aládálẹ̀ tí ó ti pa ọ́ lọ́wọ́ láti máa ṣe ìbẹ̀rẹ̀ — ìlimítì náǹí owó, àsìkò ìhóhò, àti àwọn ètò ìdálẹ̀ ara ẹni tí ó kan àpapọ̀ ọpèreétọ̀.",
+      "definition": [
+        "Ọpèreétọ̀ tí ó ní ilẹ̀ẹ àṣẹ jẹ́ kí ó ṣeé kọ́ fúnni ní àwọn ọ̀rọ̀ ìtọ́jú: ìlimítì fífun owó, ìlimítì àdìémẹ́kọ, ìlimítì ìgbè; ìkìlọ̀ rẹ̀mọ́ọ̀dà àwọn ìṣẹ́jú; ìhóhò àpápá ní òkúta ọpọ̀ ọjọ́ tàbí ọdún; ati ìdálẹ̀ ara ẹni ìkẹ́kọ̀ọ́ tí ó tì ìṣẹ̀ ákáǹtì ní oríṣìrìsì àkókò. Àwọn èpò ìṣẹ̀ àgbáyé tí ó kan níwájú àpapọ̀ ọpèreétọ̀ — GAMSTOP ní Orílẹ̀-èdè Bírítìọ̀nù ó ìdálẹ̀ ọ ní gbogbo ọpèreétọ̀ alásàmọ́ pẹ̀lú ìlộ kọ́kan, àti sóftiwè ìka bíi Gamban tó bo àwọn wẹ̀bù tí àwọn èpò tẹ̀ kọ̀.",
+        "Ìtumọ̀ õ̀tọ̀õ̀ jẹ̀: àwọn ọ̀rọ̀ yìí kò ní wàn fún ẹ nìkan tí ó jẹ́ 'onibajẹ́ ìbẹ̀rẹ̀'. Ìdálẹ̀ owó tí o ṣètò ní ọjọ́ tútù jẹ́ onídídìò ó wúwo fúnra rẹ kúrò sí ìjà ọgbín kan; ìhóhò àpápá lẹ́yìn àkókò búburú jẹ́ ìṣòwò owó fún ọpọ̀lọ́ ara ẹni. Tí ìbẹ̀rẹ̀ ti wọ́ gba tèmi jẹ́ ohunsunú — òjìji àdìémẹ́kọ, fakitè owó, ìbẹ̀rẹ̀ owó tí ó lọ́ ní iṣẹ́ — àwọn ọ̀rọ̀ ní òkè àti àwọn línù iranlọ́wọ́ àìnítọ̀nítọ̀ aimọ̀ẹ̀ jẹ́ iṣẹ́ nípa ẹ̀yà tí ómo àrá tèmi gbọ̀."
+      ],
+      "example": "Ṣíṣètò ìlimítì fífun owó £100 ní èyí kèyìn ayéde ni ogójì ìṣẹ̀jú. A ò léé mu u gábeédì ní ìpòjú tití; àwọn ìgbèkúle àt'ẹ̀kọ́ẹ́lọ́ ní ìtọ́jú nìkan — nìyẹn ìlò rẹ̀ pẹ̀rẹ̀pẹ̀.",
+      "related": [
+        "bankroll-management"
+      ],
+      "see": [
+        {
+          "label": "Responsible gambling help & tools",
+          "href": "/responsible-gambling"
+        }
+      ],
+      "_src_hash": "c50087ed518f0a33",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "handicap-betting",
+      "term": "Ẹbẹ Iṣiro Handicap (Yúrópu)",
+      "short": "Ọjọ́ ara iṣiro níbi tí ẹgbẹ́ kan bá ní agutan gọọlu tàbí ìbẹ̀rẹ̀ ní iṣiro ìjẹ́ba àǹfàní, pẹ̀lú àwa ọdun-ọrun méta tí a ṣe àtúnṣe.",
+      "definition": [
+        "Ẹbẹ iṣiro handicap Yúrópu fún ẹgbẹ́ kan níí rí agutan gọọlu méjì tàbí ìbẹ̀rẹ̀ méjì ṣáájú igbá ìdìe yọ, nígbà náà á ṣe àtúnṣe àbájáde ní ọjọ́ara ìjẹ́ba àìjọ́ ọ̀kan: ìlé, ìjẹ́ba àìjọ́ tí a ṣe àtúnṣe, ọ̀dọ̀. Ẹyin Arsenal −1 àti pé wọ́n gbọ́dọ̀ ṣẹgun púpọ̀ méjì lókú tàbí ju; ṣẹgun ọ̀kan-gọọlu ní ìlé àtúnṣe àìjọ́ náà àti iṣiro rẹ padà.",
+        "Tí àkópọ̀ yìí ní ìkàńsíkan jẹ́ ẹ̀tẹ́ fún àwọn tuntun àti iyatọ́ lóòótọ́ láti àwa ẹlẹ́gbẹ́ Àṣíà: ẹbẹ iṣiro handicap Yúrópu kò níí kú. Ìpilẹ̀ kẹta (ìjẹ́ba àìjọ́ tí a ṣe àtúnṣe) jẹ́ ìṣẹ́lẹ̀ gidi, tí a ṣe ìfẹ́, tí ó dégbẹ́ àwọn ẹgbẹ́ méjì ti ẹbẹ iṣiro, tí ó ṣe ìdí pé àwọn òǹkà yì dùn púpọ̀ jù àwọn àpò Àṣíà lójú iṣirò kanna."
+      ],
+      "example": "Arsenal −1 ní 2.60 ní ìbátan pẹ̀lú Fulham. Arsenal ṣẹgun 2–0: iṣiro yin ṣẹgun. Arsenal ṣẹgun 2–1: −1 ná jẹ́ 1–1 — ìjẹ́ba àìjọ́ àtúnṣe yin ṣẹgun àti iṣiro rẹ padà, níbi tí Àṣíà −1 yóò jẹ́ kúkù pé iṣiro rẹ kú.",
+      "related": [
+        "asian-handicap",
+        "match-result",
+        "draw-no-bet"
+      ],
+      "see": [],
+      "_src_hash": "64badaff59079f4c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "half-time-full-time",
+      "term": "Àkókò Ìdáji/Àkókò Ìparí (HT/FT)",
+      "short": "Ètò kan lórí àbájáde ni àkókò ìdáji ATI àkókò ìparí — iṣẹ́jú mẹ́sán, oríṣun gidi, kò sí òpin iṣẹ́.",
+      "definition": [
+        "HT/FT beèrè fún ọ láti máa sọ ẹni tí ó ń ìbadandun ni àkókò ìdáji àti ẹni tí ó ń ìbadandun ni òpin àkókò ní ètò kan: Ilé/Ilé, Òdòdó/Ilé, Abẹ́kúta/Ilé àti ìṣẹ́jú mẹ́fà tí ó ń bẹ̀. A gbọ́dọ̀ wá àwọn ẹgbẹ́ méjì — àgbà tí ó jẹ́ ìkẹ́kọ́ ni àkókò ìdáji wọn kò lè yọ́ ni ẹ̀kó Title láìpẹ́ bí àbájáde ìkẹ́yìn bá jẹ́ nǹkan tó bá fẹ́ rẹ̀ gan-an.",
+        "Iroko ìtànkan yìí jẹ́ tí ìsun: iṣẹ́jú dá owó ju ètò aláìméèrán rò, nítorí pé o ń ṣé iṣiro iṣẹ́jú méjì tó bá ní ìbátan. Ìbátan náà jẹ́ idi ìwòye olóṣèà ṣe fẹ́ rẹ̀ — ọ̀pọ̀lọ́ àwọn olubere yẹ àlàgbà láti dé bójú sí àwọn iṣẹ́jú méjì, àti ilá oníṣun lórí iṣẹ́jú mẹ́sán ju ilá lórí mẹ́ta."
+      ],
+      "example": "Òdòdó/Ilé lórí alàgbà ní 4.75: alàgbà náà gbọ́dọ̀ wà nípa òdòdó ni àkókò ìdáji, kí ó lè yọ́ lẹ́hìn yìí. Bí ó wà 1–0 sẹ́hìn ni àkókò ìdáji tí ó yọ́ 3–0 lẹ́yìn, ètò Ilé/Ilé ní 2.30 tó rí dáradára túpo jẹ́ Ticket tó ṣiṣẹ́ — HT/FT ń pa ẹnikan tó ṣe pẹ̀lú àìkékòó.",
+      "related": [
+        "match-result",
+        "correct-score",
+        "double-chance"
+      ],
+      "see": [],
+      "_src_hash": "5c87a4ea737acac3",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "clean-sheet",
+      "term": "Ibadandun (Clean Sheet)",
+      "short": "Ìtẹ̀ǹdí lórí bóyá ẹgbẹ kan kò fi gool sílẹ̀ — iye-owo ti a ṣe lati èkó àbáyọ àti agbára àti àwọn ọlọ́pá tirẹ̀.",
+      "definition": [
+        "Ìtẹ̀ǹdí ibadandun tí o gba gọọlì tí kò sí: tí ẹgbẹ ti a yan ba jẹ́ kò fi gool sílẹ̀ ní iyasọ̀ máàrù nla. O jẹ́ ẹjọ afojúsun ti BTTS: 'Ẹgbẹ A ibadandun — bẹ́ẹ̀ ni' jẹ́ ní agbékọ̀ ti 'àwọn ẹgbẹ méjì láti dá gool — bẹ́ẹ̀kọ́' ti a tẹ̀ silẹ̀ lẹ́kan.",
+        "Ọ̀nà ótítọ́ láti ṣe iye-owo rẹ̀ jẹ́ láti iye ohun-ti-á-dá-gool: tí alápá ti á gbà tí o rọ̀ 1.2 gool fún iyasọ̀ kan nígbà àwọn àbáyọ ìkákankan, iṣẹ́ Poisson tẹ̀ẹ́dó ẹkọ́-owo alẹ́fo méjì ní kioro 30%, tí o jẹ́ pé iye-owo otitọ́ ní 3.30 ní agbára. Iye-owo ti kéré ju bee lọ nílò idi kan — àwọn alupá ẹléyẹ ti o jìnrẹ̀, tí a sọ wọ̀n àbáyọ — ti a kò jẹ́ tó lati iye ohun-ti-a-ní-nísẹ̀."
+      ],
+      "example": "Gool-ẹkó àti àbáyọ yii: 1.2. P(owo-ọ̀-kan) = e^−1.2 ≈ 30.1%, iye-owo otitọ́ ≈ 3.32. Ilé ìtẹ̀ǹdí tí o fi 2.80 hàn, ó ń jẹ́ ọ níbimọ̀ ~16%; 3.60 ló ń san ọ láti gba ìyalẹ̀nu.",
+      "related": [
+        "btts",
+        "over-under",
+        "xg"
+      ],
+      "see": [
+        {
+          "label": "BTTS model estimates per fixture",
+          "href": "/tips/btts"
+        }
+      ],
+      "_src_hash": "986e19371908b143",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "anytime-goalscorer",
+      "term": "Onímọ tí ó lè ṣe ìtànṣẹ nísinsin yí",
+      "short": "Bẹ́ẹ̀ tí ó ṣe àṣẹ̀ fún akóko kan pàtàkì láti ṣe ìtànṣẹ ní kékeré kan nínú apá ọkọ — iye dídá nípa ìkejì, ẹ̀rọ àti ìdánilójú ìtànṣẹ ẹ̀kọ́.",
+      "definition": [
+        "Ère ìtànṣẹ nísinsin yí san àwọn owó rẹ tí akóko rẹ ṣe ìtànṣẹ àkànṣọ́ kan — ìtànṣẹ ara ara màá jẹ́ ìdílọ́, àti bẹ́ẹ̀ náà gbogbo ìgbà pé akóko yìí gbọ́dọ̀ wá sílé pẹ̀lú kí a tó lè péṣẹ̀ bẹ́ẹ̀. Iye dídá dẹ́ nídí mẹ́ta: ìdánilójú ìtànṣẹ ẹ̀kọ́ lapapọ̀, àkúpa akóko nínú rẹ̀ (àwọn tipen ṣèníyàn pọ̀ pẹ̀lú), àti àkókò tí a má ní.",
+        "Ìlòórí yẹn ni ìgbà tí á ṣe bẹ́ẹ̀ lórí orúkọ: adáníṣẹ̀ tí a mọ̀ tí ó jòkòó nímu, tàbí èyí tí ẹ̀kọ́ rẹ̀ kò ṣe ìṣẹ̀dá ìtànṣẹ púpọ̀, àá fúnni ní iye dídá tí ó ṣoro ju ohun títọ́ lẹ. Ṣàyẹ̀wò àkúkọ àti àwoṣe ìtànṣẹ ẹ̀kọ́ ṣáájú ìgbà tí á rò nípa orúkọ."
+      ],
+      "example": "Adáníṣẹ̀ tó gbá àlẹ́ ~30% nínú ẹ̀kọ́ tí á ní ìfojúsùn ìtànṣẹ 1.6 àá ní àlẹ́ nípa 1 − e^(−0.48) ≈ 38% lóun gba ìtànṣẹ nísinsin yí — iye dídá títọ́ ní àlẹ́ 2.60. Àwọn ilé ibadandun yẹn ṣe ìfọ̀hùn ní 2.00 lórí orúkọ nìkan; èrè tí ó àárín ibẹ̀ náà ni owó tí o ṣe ojúyọ àti rí nǹkan kò dáa báyìí.",
+      "related": [
+        "xg",
+        "value-bet",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "fd5937261b90a11a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "first-goalscorer",
+      "term": "Olóko Àkọ́kọ́",
+      "short": "Bẹ́tì lórí ìrandírandi kan láti ṣẹ̀ ìbálòpọ̀ àkọ́kọ́ — ìlọ́rá gíga, àbùkù gíga, àti ó dá lé mímú ẹ̀kó àti àkókọ́ ìjà.",
+      "definition": [
+        "Olóko àkọ́kọ́ ní àwèjì nìkan tí ìrandírandi rẹ ba ṣẹ̀ ìbálòpọ̀ àkọ́kọ́ nínú ìjà náà. Ó jẹ́ àwèjì anytime tí a fi ẹ̀rọ̀ kan kàn lé e: kì í ṣe nìkan 'njẹ́ yóò bá ṣẹ̀ ìbálòpọ̀' ṣugbọn 'njẹ́ ìbálòpọ̀ rẹ yóò wá áfọ́kánlẹ̀' — èyí tó pọ̀ jù pé ìlọ́rá àti, nítorí àmúní ti bọọ̀ki, àbùkù tó kópa nínú iye kọ̀ọ̀kan.",
+        "Àwọn olófin ẹ̀kó àti ẹ̀gún ìbẹ̀rẹ̀ ìjà nìpin jù lójú àkúù onídanilójú. Olóko onídójú tí ó ṣẹ̀ ìbálòpọ̀ púpọ̀ ṣùgbọn wọlé ní àkókọ́ 70 jẹ́ àrìnrin burúkú níṣe, nígbàmìíràn kí iye rẹ anytime wọ́n ríi dáradára."
+      ],
+      "example": "Tí àwèjì anytime olóko kan jẹ́ 38% àti tí a lè ronú pé ìjà rẹ̀ yóò ṣabẹ́ tó tàbí ìwájú, àwèjì olóko àkọ́kọ́ rẹ̀ sì pé o kàn tó ní ìyàtọ̀ tó kalẹ̀ nínú àbùkù olóko àkọ́kọ́ ìjà — ọ̀pọ̀ lójú 15–18%, iye onídanilójú 5.50–6.60. Ó jẹ́ rìn àti rìn ní àwọn bọọ̀ki láti tàsíwájú 4.50: àbùkù ọ̀ọ̀dún-méwòó tó dónkóró nínú ojúlewu tán.",
+      "related": [
+        "anytime-goalscorer",
+        "bookmaker-margin",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "589dfe0d5c431899",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "corners-betting",
+      "term": "Ìdí Àgbásọ (Àgbásọ Kọ́rnà)",
+      "short": "Àwọn ìsọ̀kan ró/kò sí nínú iye àgbásọ — túmọ̀ sínú iye ìdè àti ìṣèpè iṣẹ̀, kìí ṣe bíi tí ẹyẹ wo ìmọ̀.",
+      "definition": [
+        "Àwọn ìsọ̀kan àgbásọ ń ṣẹ̀dá nínú iye àgbásọ jù: àpèjọ gbogbo (over/under 9.5 jẹ́ ìna àbara ní ìdánibí), àpèjọ ẹgbẹ́ àti àdálò àgbásọ. Iye àgbásọ tẹ̀ mọ́ iye ìdè àti gigun ìsèlẹ̀ tẹ́ — ẹgbẹ́ tí ó máa dè búburú fún ara òrìṣìríṣì ìdè pẹ̀lú gíga ìdìmulẹ̀ ń mú iye àgbásọ ga, àinkò ọ̀tun rẹ̀ tó kàn.",
+        "Àṣìṣẹ́ tó wà jẹ́ èyí tí a ń múlò àgbásọ gẹ́ẹ́ sẹ́ wọ̀n. Wọ́n bá iye ìdè àti ìgbè ilẹ̀ pọ̀ mọ́, nítorí náà ìdíjú tẹ́ ara ìwé iye àpèjọ: àwọn ẹgbẹ́ tí ó máa dè lórí òkè fún ẹgbẹ́ tí ó duro lùwà, pẹ̀lú gíga ìdèlódí ń mú iye kékeré."
+      ],
+      "example": "Ẹgbẹ́ méjì tí ó ń fo àgbásọ 10.8 tó pọ̀ fún àwọn ìṣélẹ̀ òdíkò jẹ́ẹ́ ní ílò iye àgbásọ ju 9.5 àjàdé rẹ̀ tó rí nìlégé ~1.72. Ìṣẹ̀dá 1.90 jẹ́ iye tí ó ga bíi iwọ̀n tí a pa lórí jẹ́ ìrònú; ìṣẹ̀dá náà jẹ́ apáta àti ẹjọ́ tí ó bá tẹ̀ lé àwọn iṣẹ̀ mẹ́ta tí ó ní ìrànwọ́sí tàbí rẹ̀ àkúko.",
+      "related": [
+        "over-under",
+        "sample-size",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "0b2cfeaf81fcec85",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "cards-betting",
+      "term": "Iṣẹ́ Kadi / Betting Lori Kadi",
+      "short": "Ọja lori awọn kadi elu ati kadi pupa — nibiti awọn ọna-ṣiṣẹ́ nla ara ẹni jẹ o ṣe pataki bi ooru iṣẹ́ naa.",
+      "definition": [
+        "Awọn ọja kadi ṣe iyẹn lapapọ awọn iṣẹ́ (nigbagbogbo gẹgẹ bi awọn inu: kadi elu 10, kadi pupa 25) tabi iṣiro kadi naa laini. Awọn ohun elo meji ni o dide: ero iṣẹ́ naa — awọn idije ati ija akanṣo ṣiṣẹ́ gbona — ati ọna-ṣiṣẹ́, eyiti awọn iyẹn kadi ti ara ẹni ti iṣẹ́ jẹ irolẹ̀ ti o han, ohun ìkóhùn isẹ̀ ti ọ̀ọ̀kan ti ọ̀pọ̀ awọn ṣoṣo iwe-ọ́wọ́ ṣoṣo kò ní àmọ̀.",
+        "Nọmba ọna-ṣiṣẹ́ yii jẹ ohun ti o sunmo lati wa ipolongo ọ̀fẹ́ ni ọja yii. Iṣẹ́ kanna le jẹ iyẹn kadi ọ̀tun awọn 30% ti o yatọ̀ depẹ̀ndinu si ẹniti o gbe inu aje naa."
+      ],
+      "example": "Ọna-ṣiṣẹ́ ti o ní iṣiro 4.8 kadi elu ti iṣẹ́ jẹ idije eyiti awọn oṣu marun ti o ṣan ara wọn ní iṣiro 5.2 kadi. Ila oba 4.5 kadi ni iye eto ewe jẹ iwọn nkà ohun elo meji naa ninu ironu; ila kanna labẹ ọna-ṣiṣẹ́ ti ní iṣiro 3.1 yoo nilo gbona idije naa lati ṣe iṣẹ́ gbogbo iṣẹ́ naa.",
+      "related": [
+        "variance",
+        "sample-size",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "89575455dd41503d",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "outright-betting",
+      "term": "Iṣère Agbaniyi (Futures Betting)",
+      "short": "Ibadandun lori idile iṣere kan — olugbe adifá, akọni ọkan, tujade — ti a yoo ṣe ipinnu ọdún kan sẹyin, pẹlu owó alábojútó ati owó ti o ku lójú.",
+      "definition": [
+        "Iṣère agbaniyi ṣe iwe awọn ìgbésẹ ọdún: olugbe, ẹrin akọkọ, tujade, akọni gbajumo. Awọn ohun elo ilera meji ni o yatọ wọn kúrò nínú ibadandun ere takuntakun: owó alábojútó ti akọle ibadandun àti ẹgbẹ ọgọọdún jẹ pọ ju ti ere ẹnila lọ, ati owó iṣe rẹ ti a ti di asiri fún ọdún — owó ti o ku lójú ti o lẹ jẹ iyọ ní ibadandun miiran.",
+        "Otitọ ti iṣère agbaniyi ni iṣesọ kíkikí ti akọle ti o kụngi awọn ibadandun akọkọ ti ara rẹ ti o nireti lati dinku. Ibadandun akọkọ ni oṣu kẹrin ni iwe ti o ja ọra rẹ ti o lẹ jinná ni ọjọ iṣere jẹ apeere alabẹ ti ibadandun ọjọ."
+      ],
+      "example": "Ṣàfikún gbogbo iṣiro iṣẹ tabi akọkọ ti gbogbo iwe akọle ni ẹgbẹ ọgọódún ati o han igbagbọ ti o wọọ́ 115–125% — alábojútó 15–25%, lodi si 4–6% lori ere ẹnila. Owó iṣe kan ti o tún ṣe ibadandun ere takuntakun fun owó alábojútó kere-kere patapata.",
+      "related": [
+        "bookmaker-margin",
+        "expected-value",
+        "bankroll-management"
+      ],
+      "see": [
+        {
+          "label": "Season hubs with live tables",
+          "href": "/seasons"
+        }
+      ],
+      "_src_hash": "8b6639c4b5210df4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "each-way-betting",
+      "term": "Each-Way Betting",
+      "short": "Èwo méjì nínú ìkan — ìgbésẹ̀ àti ibadandun — òfin nípa ìdárayá irú ẹlẹ́ṣẹ̀, tí a máa fọ́ níbìkan fún àgbájáde àkójọ.",
+      "definition": [
+        "Ìbẹ̀rẹ̀ each-way ní pín iye owo rẹ: pẹ̀lẹ́ méjì lórí ìgbésẹ̀ dẹ̀rẹ̀ dẹ̀rẹ̀, pẹ̀lẹ́ méjì lórí 'ibadandun' (íbadálẹ̀ nínú àwọn ipo tí a sọ̀rọ̀ ìfìdí) nínú ìbátan àwọn owo ìgbésẹ̀. Nínú àgbájáde fúláà, ó máa hàn lórí àgbájáde oríṣiríṣi — ìpò mẹ́rin lábẹ̀, àpẹrẹ, tí a máa àkìọlọ́ sí ìgbésẹ̀ àkọọlẹ̀, nítorí nínú àkapo owó ni.",
+        "Ìbẹ̀rẹ̀ àbùkù ni àlàye ìbátan ibadandun: ní pẹ̀lẹ́ ìbátan ìgbésẹ̀ 8.00, ibadandun naa ní ọ̀rọ̀ 2.00 àkúbúsẹ̀, sùgbọ́n iye àl̀ogọ̀dún ṣíìfẹ́ ẹmí àṣọ̀kan máa yé jẹ 1.60 tàbí 2.60. Pẹ̀lẹ́ méjì naa jẹ ìgbésẹ̀ kan nìkan lórí ẹ̀kó — ṣé wọ́n dẹ̀jì ìgbésẹ̀ ìyalẹ́nu, nítorí nítòótọ́ ìdí ṣe iyẹn ni."
+      ],
+      "example": "£10 each-way (àkóbáwo: £20) lárí àgbájáde kan nínú 8.00 àkójọ áluò, ibadandun ¼ owo iye ìpò mẹ́rin. Àwọn orí wọ̀ láìpẹ̀ àmọ́ ìpò mẹ́rin ló tégbé: ìgbésẹ̀ pẹ̀lẹ́ naa fọwọ́ £10, ibadandun pẹ̀lẹ́ ó padà £10 × (1 + 7/4) = £27.50 — ìbálẹ̀ +£7.50. Bẹ́ẹ̀ tàbí àbẹ́ ibadandun owo naa tẹ́ ó rà ìdí ẹtọ́ ṛẹ̀ lóríìré: èyí ni ìbẹ̀rẹ̀ àbùkù tó yẹ̀.",
+      "related": [
+        "outright-betting",
+        "expected-value",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "0e5e1cd7d7e0951c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "banker",
+      "term": "Banker",
+      "short": "Àpilẹkọ kan nínú akọ̀wọ́ tí a gbẹ́kẹ̀ lẹ́ẹ̀BI gẹ́gẹ́ bi nnkan tí kò lè ṣubú — ọ̀kan nínú àwọn ìparun rírọ tí kọ̀ọ̀kan le kàn.",
+      "definition": [
+        "Banker ni ìwé náà tí awọn alẹ̀gbin fi ṭaya re ọ̀tun — ọ̀dun 1.25 tí wọ́n péjọ 'láti ba iye lẹ́ẹ̀kọ́ ba ara wọn'. Àrídájú tí àwọn ọ̀pọ̀lọpọ̀ kò gbọ̀: iye 1.25 jẹ yẹ wípé ìkọ 20% le ṣẹlẹ̀ pẹ̀lú àkáò yìí, àti pé ti ìkọ yẹn kọjá, ohun gbogbo akọ̀wọ́ náà le dé ẹba.",
+        "Àwọn banker tun ji pẹ̀lú iye tí kò dára lọ jù lára ohun gbogbo: àwọn alẹ̀gbin tí iye wọ́n kéré gidi gidi ni àbi àwọn ìṣẹ̀kúsẹ̀ ku wọ́n, kí iye wọ́n tun kàn sóò. Fífi kan sí akọ̀wọ́ kan pò jẹ ìpinnu igbadun bii jẹ ìpalọ̀ nígbà míìràn, kìí ṣe irokeke tó tán."
+      ],
+      "example": "Fún ìpẹẹrẹ, 1.25 banker kan pẹ̀lú ẹgbẹ̀-fọ́ tí iye rẹ̀ jẹ 6.00 le jáde iye 7.50 wá. Banker náà le ṣubú ẹ̀kan nínú márùn-ún pẹ̀lú àkáò rẹ̀ — ẹ ti gba ìtàn 25% nínú ìrèwèsì àti iyá nínú ibadandun fún ìkọ 20% tí akọ̀wọ́ kí gbogbo ìbùsọ̀ rẹ̀ àṭapo le tó ẹra.",
+      "related": [
+        "accumulator",
+        "longshot-bias",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Build a coupon from model-screened picks",
+          "href": "/tools/acca-builder"
+        }
+      ],
+      "_src_hash": "5519628f9b88ad26",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "system-bet",
+      "term": "System Bet",
+      "short": "Àkójọ̀ tí a ṣe déédé ti awọn akamu lọ́wọ́kan — Trixie, Yankee, Lucky 15 — tí n tẹ̀tẹ̀ owó padà nígbà tí díẹ̀ nínú àwọn ẹ̀kó lọ.",
+      "definition": [
+        "System bet ń pa gbogbo akamu tí o ṣeé ṣe tí o kéré déédé lórí yọ̀ọ́ rẹ̀: Trixie lórí àlàyé mẹ́ẹ̀ta jẹ́ mẹ́ẹ̀ẹ́ta itẹ̀ méjì àti itẹ̀ mẹ́ẹ̀ẹ́ta kan (àkójọ̀ mẹ́rin), Yankee lórí àlàyé mẹ́rin jẹ́ mẹ́ẹ̀ẹ́ta méjì, mẹ́rin itẹ̀ mẹ́ẹ̀ẹ́ta àti itẹ̀ mẹ́rin kan (àkójọ̀ mọ́kàn-ún). Àlàyé kan tí kò tọ́ kò sì ní iyí láti pa gbogbo rẹ̀ — àwọn àkójọ̀ tí kò lóhun nítorí rẹ̀ nílo nífẹ̀ẹ́.",
+        "Iye owó ń tẹ̀ẹ̀: àkójọ̀ kìlò kan gba stake òunkOwó tara ara rẹ̀, nítorí naa '£1 Yankee' ń kọ £11. Systems ń yí ológun akamu ti 'gbogbo tàbí ko-ni' sí ẹ̀kan tó dúrójú púpọ̀ lórí owó iye gidi pẹ̀lú àifikún àgbalù tí o nílò àwọn ẹ̀kó tó kù jù láti gba owó padà síi."
+      ],
+      "example": "£1 Trixie (£3... £4 lapapọ̀: itẹ̀ méjì mẹ́ẹ̀ẹ́ta + itẹ̀ mẹ́ẹ̀ẹ́ta kan) lórí àlàyé ti 2.0 / 2.0 / 2.0. Gbogbo mẹ́ẹ̀ẹ́ta lọ: padabọ̀ £4×... itẹ̀ méjì tán 3×£4=£12? — itẹ̀ méjì kìlò kan ń tẹ̀ẹ̀ £1×4=£4, itẹ̀ mẹ́ẹ̀ẹ́ta £8, lapapọ̀ £20 láti £4. Méjì lọ: itẹ̀ méjì kan tún kù, £4 padà láti £4 tí a fi sílẹ̀. Break-even ti system nílò méjì nínú mẹ́ẹ̀ẹ́ta, kìí ṣe ọ̀kan.",
+      "related": [
+        "accumulator",
+        "trixie",
+        "yankee"
+      ],
+      "see": [],
+      "_src_hash": "dce756f0cd33838e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "trixie",
+      "term": "Trixie",
+      "short": "Àpejọ ìdojúkọ mẹ́ta, àgbájọ mérin: gbogbo àwọn ìdojúkọ méjì àti ìdojúkọ mẹ́ta. Àwọn olùjáde méjì gba owó padà; mẹ́ta sanra dáadáa.",
+      "definition": [
+        "Trixie yi ìdojúkọ mẹ́ta sínú àgbájọ mérin — gbogbo àwọn ìdojúkọ méjì ti o ṣeé ṣe àti ìdojúkọ mẹ́ta kan. Kò dabi ìdojúkọ mẹ́ta àkọ̀ọ̀kan, àwọn ẹ̀ká méjì tó bá ní ìṣègùn ò ní láti pa owó gba: àwọn ìdojúkọ méjì tó dé wà nígbé ìparun ẹ̀kẹ́ kẹta.",
+        "Apá ní tótó jẹ́ àwọn ìyìnú mẹ́rin. Ṣíṣe è ye fún àwọn yíyan ní ayika ìlò méjì; lórí àwọn olùfúnni aláìpẹ́ku àwọn ìdojúkọ méjì gba kò tó láti salaye àwọn ìyìnú àfikun, àti lórí àwọn ewu ńlá ìdojúkọ mẹ́ta àkọ̀ọ̀kan jọ dáadáa ju àbò yìí lọ."
+      ],
+      "example": "£1 Trixie (£4 ni tótó) lórí àwọn yíyan mẹ́ta ní 2.10. Gbogbo ní ìṣègùn: àwọn ìdojúkọ méjì 3 × £4.41 + ìdojúkọ mẹ́ta £9.26 ≈ £22.50. Méjì ní ìṣègùn: ìdojúkọ méjì kan padà £4.41 — fún àgbé gbogbo £4 nípa kúkúrú. Trixie aláìpẹ́ku £4 yóò ti gba £37 fun gbogbo mẹ́ta ṣùgbọ́n ìkò kìkì fún méjì.",
+      "related": [
+        "system-bet",
+        "yankee",
+        "accumulator"
+      ],
+      "see": [],
+      "_src_hash": "1545b6c564f5f4e1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "yankee",
+      "term": "Yankee",
+      "short": "Àwọn àgbapilẹ̀ẹ̀ mérin, àgbajadọ̀ àgbapilẹ̀ẹ̀: mérin méjeeji, mẹ́ta mẹ́ta, ọ̀kan mẹ́rin. Ìbọ̀jú méji tí ó bà jáde máa lo sí ìgbà rere.",
+      "definition": [
+        "Yankee náà ti a pa àwọn àgbapilẹ̀ẹ̀ mérin ká wọ́ gbogbo àgbajadọ̀ àgbapilẹ̀ẹ̀ tí wọ́n lè ṣe pẹ̀lú: 6 méjeeji + 4 mẹ́ta mẹ́ta + 1 mẹ́rin. Àwọn ìbọ̀jú méjì tí ó bà dé nípa lánà àṣà kì yóò fi owó padà; ídí àwọn owó tú sì yí àgba wà láìpẹ́ síbẹ̀ síbẹ̀ bí ọ́kan à túnù ba pọ̀",
+        "Àwọn ìdá-iye o̩kan mérinlógún ní̩ owó gidi para bò̩ ológun tí a rá. Ìbaramu àìnilẹ́ gbogbo jẹ́ ara e̩ ni̩ àwa tu ìwọ́ ní àwọn méjeeji àrákunrin kan-kan tàbí méjeeji àtátà nípa o̩kan mérin: Yankee náà níbàjẹ́ àrékọjá ẹ̀kó yìí nìkan, bíi àwọn àgbapilẹ̀ẹ̀ rẹ̀ gbó̩ wà níbi o̩gbó̩gbó̩ àti i̩ rò̩́ i̩ pé a máa já lẹ́meji-tàbí méta lò̩ẹ̀ò̩ ta o̩kan nípa o̩kan."
+      ],
+      "example": "£1 Yankee (£11) lórí àwọn àgbapilẹ̀ẹ̀ mérin ní 2.00. Ìbọ̀jú méjì: méjeeji ẹ̀kan máa san £4 — £7 àìmọ́. Ìbọ̀jú mẹ́ta: 3 méjeeji (£12) + 1 mẹ́ta mẹ́ta (£8) = £20 — àwítì kékeré. Gbogbo ẹ̀rin: £12 + £32 + £16 = £60. Àkọle náà máa san owó fún àwọn tí wọ́n kò fo̩kàn-àn pẹ̀lú ìjẹ́ òpo̩lọ́pọ̩ ti òsùwà.",
+      "related": [
+        "system-bet",
+        "trixie",
+        "lucky-15"
+      ],
+      "see": [],
+      "_src_hash": "1960586662f10906",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "lucky-15",
+      "term": "Lucky 15",
+      "short": "Àrò mẹ́rin, ìbáje mẹ́tàdìógún: Yankee àti àwọn ẹbẹ́ kan-nì-kan — olórí ẹlọ́ kan pẹ̀lú owó padà.",
+      "definition": [
+        "Lucky 15 jẹ́ Yankee pẹ̀lú àwọn ẹbẹ́ kan-nì-kan tí a fíí dàpọ̀: ẹbẹ́ kan-nì-kan mẹ́rin + ọ̀mọ̀-ọ̀mọ̀ mẹ́fà + ìdílé mẹ́ta mẹ́rin + ìdílé mẹ́rin dàkan = ìbáje mẹ́tàdìógún. Ẹbẹ́ kan-nì-kan nǹkan náà túmoṣì pé olórí ẹlọ́ kan nìkan tún máa rì owó, ati àwọn olù-ṣítá fẹ́ràn í rí owó àfikún — ìdìkòkò owó kan-nì-kan dúbìlẹ̀, àbá fún gbogbo mẹ́rin.",
+        "Àwọn àfikún ibe wà nítorí ìpìlẹ̀ nǹkan náà wò mẹ́tàdìógún ìbáje. Ìsìrò àkójọ nǹkan náà: ìbáje mẹ́tàdìógún ní 5% ìṣiro-ara ínú rẹ̀ lágbára logò 0.75 ìbáje ẹ̀kọ́ni tí àfikún kìí ba ìlòó sẹ́yìn ní ìbáje."
+      ],
+      "example": "£1 Lucky 15 (£15) ní àwọn yíyan ní 3.00 kọ̀ọ̀kan. Olórí ẹlọ́ ẹlọ́ kan pẹ̀lú 'ìdìkòkò owó dúbìlẹ̀ ní olórí ẹlọ́ kan': ẹbẹ́ kan-nì-kan náà ma tà £1 × 5.00 = £5 (àìfẹ́ £3) — àṣìṣẹ̀ £10 sáá. Gbogbo mẹ́rin: ẹbẹ́ kan-nì-kan £12 + ọ̀mọ̀-ọ̀mọ̀ £54 + ìdílé mẹ́ta £108 + ìdílé mẹ́rin £81 = £255. Àwọn owó ìlòó-ìlòó ní òòyè tótó ṣùgbọ́n kékeré; ìpìlẹ̀ nǹkan náà dá lé lórí wọń ní ìwọ̀n tó júlòó.",
+      "related": [
+        "yankee",
+        "system-bet",
+        "bookmaker-margin"
+      ],
+      "see": [],
+      "_src_hash": "41186e48996f97f0",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "patent",
+      "term": "Patent",
+      "short": "Àkósílẹ̀ mẹ́ta, ìdí mẹ́ta ún lẹ́dúnù: àwọn ìdí ọ̀ẹ̀kan, ìdí méjì àti ìdí mẹ́ta — Trixie tó pèsè gbogbo rẹ̀.",
+      "definition": [
+        "Patent bo ní àkósílẹ̀ mẹ́ta tó kàn gbogbo ìdí mẹ́ta ún lẹ́dúnù: àwọn ìdí ọ̀ẹ̀kan 3 + ìdí méjì 3 + ìdí mẹ́ta 1. Trixie níi ó jẹ́, àti ìdí ọ̀ẹ̀kan nó lẹ̀ẹ̀kan, nítorí náà akọ́ ìdí ọ̀ẹ̀kan kan ò gba nǹkan padà.",
+        "Àwọn ilẹ̀ mẹ́ta ti àkóṣẹ ńlòó sí àbùjátó gan-an, eyí tó dára fún àwọn èbùjátó tó já pé, lórí àwọn ìdí gúúdù — àwọn ìdí ọ̀ẹ̀kan kàn iye gan-an 3.00+. Lórí àwọn ìdí kúkẹ́ àwọn ìdí ọ̀ẹ̀kan padà ìsalẹ̀ àti ètò nó di àdánù ónà tí ó tutù gidi."
+      ],
+      "example": "£1 Patent (£7) lórí àkósílẹ̀ mẹ́ta 3.50. Ẹ̀yin ọ̀ẹ̀kan: ìdí ọ̀ẹ̀kan rẹ̀ padà £3.50 — àr̀un lẹ́dúnù nìyí. Méjì: ìdí ọ̀ẹ̀kan méjì (£7) + ìdí méjì ọ̀ẹ̀kan (£12.25) = £19.25. Àkósílẹ̀ mẹ́ta: £10.50 + £36.75 + £42.88 ≈ £90. Wé £7 ìdí mẹ́ta nìkan: £0, £0, £150 — Patent nìyí yíó yí ìwasè ńlá padà sí ilẹ̀.",
+      "related": [
+        "trixie",
+        "system-bet",
+        "accumulator"
+      ],
+      "see": [],
+      "_src_hash": "d12659ca22b4ca57",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "round-robin",
+      "term": "Round Robin",
+      "short": "Gbogbo awọ meji (ati nigbagbogbo awọ mẹta) lójú àkójọ àyípadà — ohun ilọ̀ṣe gẹ́nẹ̀ràlì tí Trixies àti Yankees lo máa lo.",
+      "definition": [
+        "Round robin bẹ́ẹ̀ jẹ́ ibẹ̀rẹ̀ gbogbo àpapọ̀ ti iye kan tó o fẹ́ lójú àyípadà rẹ — ní ìgbà púpọ̀ gbogbo awọ meji láti àyípadà mẹ̀rin, àmárún tabi ẹ̀rin wẹ́wẹ́. Trixie àti Yankee jẹ́ awọn round robin ti a fi orí sílẹ̀ pẹ̀lú awọn iye dídímu; irú gẹ́nẹ̀ràlì ń jẹ́ kí o yọ àṣà yíyan iye kan.",
+        "Àwọn ọ̀nà àbájọ̀ n ó má ń lọ giga gibigbe: gbogbo awọ meji láti àyípadà ẹ̀rin wẹ́wẹ́ jẹ́ igba mẹ̀ẹ̀dógún ibẹ̀rẹ̀, gbogbo awọ mẹta ìgbàjá. Àpapọ̀ kọ̀ọ̀kan jẹ́ ní ibẹ̀rẹ̀ tìrẹ̀ àti ní àǹfàní tìrẹ̀, nítorí gbogbo irú eéyí ń kún àǹfàní ọ̀dẹ altà dúró gẹ́gẹ́ bi o ṣe kún òǹkọ̀ rẹ."
+      ],
+      "example": "Gbogbo awọ meji láti àyípadà àmárún = ibẹ̀rẹ̀ mẹ̀wa. Ní àǹfàní kíkí 5% ní ẹ̀yin ibẹ̀rẹ̀ meji, àkójọ naa fi ~0.5 unit èrò abalẹ̀ àṣìkò. Ọ̀kẹ́ mẹ́ta nínú àárín àyípadà gbé àwọ meji mẹ́ta: ní awọ 2.00 kọ̀ọ̀kan ń sanwo 4 unit — 12 padà láti 10, àtúkú tó wáyé fún ohun àìyọ kẹ́kọ̀ọ̀.",
+      "related": [
+        "system-bet",
+        "yankee",
+        "bookmaker-margin"
+      ],
+      "see": [],
+      "_src_hash": "ebabd3db75914eac",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fold",
+      "term": "Fold (4-Fold, 5-Fold…)",
+      "short": "Ọ̀rọ̀ bookmaker: iye awọn ẹ̀ka ti o yẹ ko bàjẹ́ lọ́kọ̀ọ̀kan.",
+      "definition": [
+        "'Fold' ka iye awọn ẹ̀ka ninu accumulator: 4-fold ni awọn aṣayan mẹrin, 6-fold ni ẹ̀ẹ̀kan mẹfa, ati pe gbogbo ẹ̀ka yẹ ko ni iṣẹ́. Awọn odds pọ̀ ati awọn ọ̀nà ìkùnà tun pọ̀ — ẹ̀ka kọọkan tun pọ̀ akowe nipasẹ̀ iye rẹ̀ ati ohunyonyi-ijikọ nipasẹ̀ nkan ti o kere ju ọkan.",
+        "Nọ́mba fold ni iwọń ìdánrẹ̀ iyara lori eyikeyi coupon: ni awọn iwe-isẹ 5% dani ẹ̀ka, accumulator n-fold fun bookmaker takun 5% ti iṣesẹ̀ ti a retileẹ. 6-fold jẹ́ ~30% owó to fẹ́ rí bi ere-egbẹ."
+      ],
+      "example": "Ẹ̀ka marun ni 1.80 kọọkan: 5-fold sanwo 18.9. Iye otitọ ti o ba jẹ́ ẹ̀ka kọọkan 55% daadaa: 0.55⁵ ≈ 5.0% — odds otitọ 19.9. Alagbada labetweenu 18.9 ati 19.9 jẹ́ awọn iwe marun ti o daka; o gbooro bi fold-n ti o pọ.",
+      "related": [
+        "accumulator",
+        "bookmaker-margin",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Accumulator calculator",
+          "href": "/tools/accumulator-calculator"
+        }
+      ],
+      "_src_hash": "94a6586ebee2ec9e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "single",
+      "term": "Àkójọ Ẹ̀kúniyà",
+      "short": "Àyẹ̀wò ọ̀kan, ipa ọ̀kan — ẹ̀ka bẹ̀tì tó jẹ́ ibẹ̀rẹ̀ àwọn ẹ̀ka miiran.",
+      "definition": [
+        "Àkójọ ẹ̀kúniyà jẹ́ ohun tí a fi ẹ̀ka kan lójú ìsẹ̀dúpẹ ́kan lórí tí a ní oye kan. Rárá ni orísun ìjubá ìjòye, kò sì níí fọ́ ìmọ̀ nípa iṣu kan tó kéré sí i.",
+        "Àwọn oníjòye akọ̀kọ́ máa ń ṣe àkójọ ẹ̀kúniyà nìkan torí èyí — bẹ̀tì kọ̀ọ̀kan tẹ̀ lórìsìrìsì, a dá àlàfẹ́jô nìkan lẹ́ẹ̀kan, ẹ̀ka miiran kò sì níí tó bẹ̀tì tó rọ."
+      ],
+      "example": "Ìmọ̀ mẹ́ta lórí 2.00 kọ̀ọ̀kan, ẹ̀ka òkan lapá. Àkójọ ẹ̀kúniyà mẹ́ta: ẹ̀kan kọ̀ọ̀kan máa ní àbọ́ 0.67 nígbà tí ó tójú (kúkú àwọn ìmọ̀ tó dárá bámu). Ẹ̀ka òkan àanna lórí treble máa san àbọ́ 7× tí gbogbo ọ̀kan wá (≈13% nígbà àsìkò), àbò 0 tí kò bá wá — ìmọ̀ kanna, àlàfẹ́jô mẹ́ta àlà, àṣepọ̀ nîkan tó kójade.",
+      "related": [
+        "accumulator",
+        "flat-staking",
+        "expected-value"
+      ],
+      "see": [],
+      "_src_hash": "1f80d8238ba69ff4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "double",
+      "term": "Double",
+      "short": "Akójọ méjì: àwọn àpilẹ̀kọ méjì gbọdọ̀ sehin, àwọn iye kan pọ̀, àwọn onípadà dínà àpapọ̀.",
+      "definition": [
+        "Double kan ń gbé iye méjì dé ọ̀kan pẹ̀lú bẹ́ẹ̀ tí àwọn onípadà méjì dandan jẹ́ kí ó lọ́ pẹ́lú. Ó ń jẹ́ akkumúléétò kékeré jùlọ, àti àfihàn rere jùlọ ti ètò ìkò ọwọ́ tí àwọn nǹkan gbẹ̀dẹ̀: ìtúmọ̀ àbá dínà sósókè bí iye dúnradúnra sì pọ̀ àpapọ̀.",
+        "Double wọ̀n ní àmirinò òṣọ́kan patapata: àwọn àpilẹ̀kọ méjì olóòrẹ́ kékọ̀ọ́ dúnradúnra, níbi tí iye méjì jẹ́ arísèlé álà kan. Àwọn àpilẹ̀kọ méjì olóòrẹ́ kékọ̀ọ́ dúnradúnra ni àmáwọ́ dùn ju àwọn àpilẹ̀kọ yẹn bõ̀ọ̀ dà lósokè lápaala."
+      ],
+      "example": "Àwọn onípadà méjì ní 2.10, ọ̀ọ̀kan nídíè orí ẹ̀rúkèrúkèdò: double náà ń jẹ́ 4.41 lóòdì sí àìdáwọ́ òtítọ́ 25% (dúnradúnra 4.00) — dáadáa, ìlọ́wọ́ àna bá àwọn onípadà jẹ́ ÌJỌBA àkókò 2.00, àwọn onípadà 2.10 ju dúnradúnra lọ; méjì nínú wọn jẹ́ pò sí 4.41 dì òtítọ́ 4.00. Àwọn onípadà 1.90 tí ẹ̀rú pọ̀ tún ṣiṣẹ́ ṣiṣẹ́ kò tọ́: 3.61 ní ìbéèrè dì òtítọ́ 4.00.",
+      "related": [
+        "accumulator",
+        "treble",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "4cbefc0335830c43",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "treble",
+      "term": "Treble",
+      "short": "Akójọpọ̀ mẹ́tẹ̀ — iye-owo ìgbadọ̀ò tún ọ̀rọ̀ tábù àgbà àkójọpọ̀ pẹ̀lú.",
+      "definition": [
+        "Treble nílò àwọn àpilẹ̀kọ̀ mẹ́tẹ̀ láti gba, pẹ̀lú àwọn iye-owo ìgbadọ̀ò tí a tún ọ̀rọ̀ sínú owe ọ̀kan. Ní àwọn àbá àìwọ̀ jáde-jáde, ẹ̀kọ́ọ̀kan ṣiṣẹ ìyà ìlera tó pín ~5%, nítorí náà àrakò náà fi sílẹ̀ ní òpin ~15% ṣáájú àwọn èré — iye-owo ìye gígùnnu nì á ṣírò sí òhun pé òkúta nìkan.",
+        "Profaili ìyatọ́ jẹ́ ohun ìṣẹ̀dá gidi: àwọn treble tó ní iye-owo àbá-àìsẹ́ níilẹ̀ jáde gígùn dódó láti fífeé jẹ́ àṣiṣẹ̀, kó sì san ní òkúta láti dúnn pé ẹ̀ka gidi. Ìbánu àwọn ọmọ àgbà jẹ́ ohun ìṣẹ̀dá; àbá jẹ́ iye-owo."
+      ],
+      "example": "Àwọn àpilẹ̀kọ̀ mẹ́tẹ̀ ní 1.90 (iye-owo gidi 2.00): treble san 6.86 lòdì sí iye-owo gidi 8.00 — o gbádùn 86% ti iye-owo gidi, àyè sì, iye àrọfin 14%, ẹ̀rẹ̀ aráǹfání ọ̀kan tó ìlera ju àwọn òpó mẹ́tẹ̀ àìwọ̀.",
+      "related": [
+        "double",
+        "accumulator",
+        "fold"
+      ],
+      "see": [],
+      "_src_hash": "713f96eff080d608",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "stake",
+      "term": "Stake",
+      "short": "Iye owo ti a fi ara sile lori bet — nọmba ti gbogbo return, asise ati planning plan wa ti pinnu nipa rẹ.",
+      "definition": [
+        "Stake ni owo ti o wa ninu eewu. Decimal odds gba a ni quoted return (odds × stake = total back, pelu stake); fractional odds sọ profit relative si i. Gbogbo sensible staking talk wa nipa sizing nọmba yi, kii se nipa picking winners.",
+        "Meji discipline ti o bale ju: size stakes bi small fixed fraction ti dedicated bankroll, ati never resize upward lati chase loss. Mathematics ti ruin ni driven almost entirely nipa stake sizing, kii se nipa pick quality."
+      ],
+      "example": "£10 at decimal 2.50 return £25 total — £15 profit plus £10 stake. Same bet ni fractional terms ni 6/4: £15 profit per £10 staked. Same bet, same money, two grammars.",
+      "related": [
+        "flat-staking",
+        "bankroll-management",
+        "unit"
+      ],
+      "see": [],
+      "_src_hash": "725de29c74bc72a5",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "unit",
+      "term": "Unit",
+      "short": "Ẹrọ-aje ìyàtọ alárànṣẹ — ní àpapọ̀ 1–2% ti owó-aje akọkọ — ohun-ọjọ tí ìtúnnu ojúumọ́ gidi ti a ń ṣe nínú rẹ̀.",
+      "definition": [
+        "Unit jẹ́ ẹrọ-aje ìyàtọ alárànṣẹ tí ẹni-aje fúnra ara rẹ̀ ṣètò, ní àpapọ̀ 1–2% ti ìdókọ́ owó-aje rẹ̀. Àwọn onímọ̀ aje àti àwọn tí wọ́n ń ṣètò ìtúnnu sọ nínú unit (+14.2u') nitorinaa ó yàtọ àǹfàní tí a ní àti iye owó tí a ní: +14 unit jẹ́ ohun kanna bóyá unit kan jẹ́ £2 tàbí £200.",
+        "Unit naa ń ṣe àfihàn gbigbà oní ìdílé nínú aje. Ìtúnnu tí a ń sọ́ '10-unit locks' àti '0.5-unit longshots' ń sọ́ pé ẹkọ́ yìí yá tàbí kò yá lábẹ́ — èyí tí wọ́n ti rí nínú ìtàn pé ó ń so pẹ̀lú ìtúnnu tí a máa fi ọ́ hàn tẹ́ẹ̀kọ tí kò tún túbọ̀ gba ìjáde fún ọ̀sẹ̀ tó gbẹ́jọ̀ọ́."
+      ],
+      "example": "Ìdókọ́ owó-aje £1,000, unit 1% = £10. Àkọkọ-ọdún tí ó pári pẹ̀lú +18.4u rí owó £184 ní aje dídín. Ìtúnnu tí a fẹ́ tẹ́ (publish) fúnra wa wà ń lo dídín 1-unit aje nítorínaa — iye nàá kò lè ní agbéjáde nípa ìyípadà owó-aje lẹ́yìn ìwọ́ aje tó dáa.",
+      "related": [
+        "flat-staking",
+        "bankroll-management",
+        "roi-and-yield"
+      ],
+      "see": [
+        {
+          "label": "Our settled record, flat 1u",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "195038bc8d5b4bef",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-on-odds-against",
+      "term": "Odds-On / Odds-Against",
+      "short": "Ibakèji tabi àkójọ ojúṣe — ibakèji nínú àdúròṣìnṣìn tàbí lódì sí òǹko òǹko ó kú. Àpẹ́ jẹ́ 2.00 tàbí kò jẹ́ 2.00 nínú ìṣiro onígbọ̀n.",
+      "definition": [
+        "Odds-on jẹ́ pẹ́ tí ó fèhìnkú pé àbùké náà jẹ́ ìwájú ju òǹko òǹko lọ: decimal kéré ju 2.00 lọ, fractional pẹ̀lú nǹkan gígùn sì ọ̀tún (1/2). Odds-against jẹ́ òkìta: decimal ju 2.00 lọ, fractional 2/1 tàbí kò kéré. Evens (2.00) jẹ́ àpárádò.",
+        "Ọ̀rọ̀ àwọn ojúṣe wọ̀nyí ṣe pàtàkì nítorí pé ìbànújẹ́ yóò yàtọ̀. Ojúṣe àbùké nìgbà ìṣọ́kan dàbí ìgbàláǹgbà ati nígbà ìkáwò ojúàrá diẹ̀ ti wọn pa àwọn ènìyàn sílẹ̀; ojúṣe àjẹfu dàbí ìṣe àwè. Ṣùgbọ́n kó ṣe pé kò sí àbájáde tó dọ́gba nínú àwọn oníyebíyẹ̀ wọ̀nyí, èwo kàn tó wà nínú iyalẹ̀nu láàrín ojúṣe ati itumọ̀ òtítọ́."
+      ],
+      "example": "1/2 fractional = 1.50 decimal = 66.7% nípadà àbùké: odds-on. 5/2 = 3.50 = 28.6% nípadà àjẹfu: odds-against. 1.50 àbùké tí ó tẹ̀ lórí 60% tó gunjugate jẹ́ ìgbésẹ̀ búburú; 3.50 tí ó ní iṣẹ́ kíkílú gúdú lódidi kẹrin tàbí ẹ̀wo nínú àlàáfíà jẹ́ ìgbésẹ̀ olóòtítọ́.",
+      "related": [
+        "odds-formats",
+        "implied-probability",
+        "longshot-bias"
+      ],
+      "see": [
+        {
+          "label": "Odds converter",
+          "href": "/tools/odds-converter"
+        }
+      ],
+      "_src_hash": "250380da66bc1f85",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "vig",
+      "term": "Vig (Vigorish / Juice)",
+      "short": "Orúkọ Amẹ́rika fun àlè onítájà — ìdajọ́ tí a fi pamọ́ sínú iye àwọn ọlọ́jọ̀ kọ̀ọ̀kan.",
+      "definition": [
+        "Vig, vigorish tàbí juice jẹ́ ọ̀rọ̀ onítájà Amẹ́rika fun iyalẹ́nu onítájà — iyalẹ́nu kanna tí àwọn onítájà Yúrópu ń pè ní margin tàbí overround. Kò jẹ́ àkọsílẹ̀ lórí líìlì rẹ; ó ti pamọ́ nínú àwọn iye tí ó tún pò jù lọ ju ọ̀ ọ̀kà mẹ́fa (100%) lọ.",
+        "Ọ̀rọ̀ Amẹ́rika ìgbagbọ́ jẹ́ -110/-110 lórí point spread: tẹ 110 láti ṣẹ̀ 100 lọ́wọ́ ìkáà méjì. Ìkáà kọ̀ọ̀kan jẹ́ ọ̀ ọ̀kà mẹ́fa lọ́dọ̀ (52.4%), àwọn méjì pọ̀ jù lọ ju 104.8% lọ, àti ọ̀ ọ̀kà mẹ́fa tá kò (4.8%) ni vig."
+      ],
+      "example": "-110 ìkáà méjì: ọ̀ ọ̀kà mẹ́fa (52.38%) kọ̀ọ̀kan, ìsúm 104.76%. Onítájà tí ó yàtọ̀ ọ́pá lọ́dọ̀ àwọn iye spread ní àbẹ́ẹ̀ jà kúrò ọ̀ ọ̀kà mẹ́fa mẹ́fà (4.76%) sáyẹn fún ẹ̀ẹ̀kan tí ó tẹ — nìyẹn vig ń ṣiṣẹ̀, èkó tí kò pẹ́ kì í ṣe ìdí.",
+      "related": [
+        "bookmaker-margin",
+        "overround",
+        "point-spread"
+      ],
+      "see": [
+        {
+          "label": "Margin calculator",
+          "href": "/tools/margin-calculator"
+        }
+      ],
+      "_src_hash": "3a6a05972381e3bc",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "moneyline",
+      "term": "Moneyline",
+      "short": "Ìwọ̀n ooru Amẹ́ríìkà: nómíbà àìlúmọ̀ jẹ́ akọ́ tí o ńpèsè láti gbàn mílì 100, nómíbà rere jẹ́ ohun tí mílì 100 ńwá — àti orúkọ Amẹ́ríìkà fún market ní olùborí.",
+      "definition": [
+        "Ooru moneyline ti -150 túmọ̀: rán nìsòro 150 láti gbàn mílì 100 (ìwọ̀n odù 1.67); +240 túmọ̀ mílì 100 ńgba 240 (1.67). Àìlúmọ̀ túmọ̀ olùfẹ́, rere túmọ̀ alágbẹ̀. 'Moneyline' tún jẹ́ orúkọ market náìí — tètè olùborí pẹ̀lú àìní spread, èyí tí ní fútìbọ̀ṣu gbà draw gẹ́gẹ́ abẹ́ ìkìdé ara ẹ̀.",
+        "Àtúnhapọ̀ jẹ́ iṣẹ́ ìṣiro: decimal = 1 + 100/|ML| fún àìlúmọ̀, 1 + ML/100 fún rere. Ṣíṣe ẹ̀ láàrin orí rẹ — tàbí gba oniṣiro tẹ̀jọ̀ — jẹ́ àkọ́kọ́ ìlànà láti gbé ooru tí a ń pèsè ní Amẹ́ríìkà paragana àwọn míìrán."
+      ],
+      "example": "-125 = 1.80 decimal = 55.6% tí a bá lo. +210 = 3.10 = 32.3%. Market moneyline fútìbọ̀ṣu ní ibi mẹ́ta ti -125 / +260 / +330 túmọ̀ 55.6 + 27.8 + 23.3 = 106.7% — vig 6.7% lórí mẹ́ta yìí.",
+      "related": [
+        "odds-formats",
+        "vig",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "Odds converter",
+          "href": "/tools/odds-converter"
+        }
+      ],
+      "_src_hash": "668a9894bd102ded",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "point-spread",
+      "term": "Point Spread",
+      "short": "Àkójọ Améríkà: ìlà àwọn ojúewé tí àkójọ méjì máa ń lo ní ìbámu, pẹ̀lú àwọn gbígbẹ̀ padà lọ́wọ́ nígbà tí àwọn nọ́ọ̀mbà dúró.",
+      "definition": [
+        "Point spread máa n tẹ̀hìnwá àwo tí ó sámu púpọ̀ nípa àwọn ojúewé tí a pín sọ́nù — ti wọ́n ńlò -6.5 ojúewé, wọn gbọ́dọ̀ seré pẹ̀lú àwọn ojúewé méje tàbí ju. Àkójọ méjì máa ń dúró níní ìyẹn -110, èrè ìba nla ń máa wà nínú vig kìjì ju àwọn ojúewé tí a dèsin. Àwọn ìlà tí ó dúró ní iyẹn àfikún nọ́ọ̀mbà yìí le dúró níní idèwọ̀ kanna (push) ati ní padà lọ́wọ́ àwọn iye ẹ̀tọ́; àwọn ìlà tí ó ní àwọn ẹ̀kọ̀ kúkú kò le dúró níní idèwọ̀ kanna.",
+        "O jẹ́ ero kanna bi àkójọ Ásíà nínú bọ́ọ̀lù: tu àwọn àjọsọ sísọ di ẹlẹ́mejì ati ìtajà alaye. Ìyẹn tí ó túmọ̀ ní bọ́ọ̀lù ni òkè tí ódì tóo gídigìdi jẹ́ pé àwọn ìlà àwọn ẹ̀kọ̀ kúkú ńlò akẹ́kọ̀ọ́, líle Amẹ́ríkà máa ń máa lo 3.5 àti 6.5."
+      ],
+      "example": "Àwo tí ó sámu púpọ̀ -3 níní -110: bá wọ́n seré pẹ̀lú 3 ojúewé kanna, àwọn iye ẹ̀tọ́ padà lọ́wọ́ (push), níní 4 ojúewé lẹ́ní dé ju, wọ́n seré, níní jìnnà, wọ́n pajade. Nípa -110 lórí àkójọ méjì a nìkan pé o gbọ́dọ̀ kọjá àkójọ yìí 52.4% nínu àkójọ yìí láti fẹ́rọ̀ — àwọn nọ́ọ̀mbà tí gbogbo àkójọ 'opposite to spread' ti yẹ̀ jẹ́ wọ́n dèsín sí.",
+      "related": [
+        "asian-handicap",
+        "vig",
+        "push"
+      ],
+      "see": [],
+      "_src_hash": "d706c29ea8be4e8f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "push",
+      "term": "Push",
+      "short": "Ibadandun kan ti o ba di iye-eko nilẹ̀ — ọ̀ sílẹ̀ dúrò, kò sí ìgun, kò sí ìṣoro, kò sí ìrànlọ́wọ́ sí àwọn ibeere-iṣẹ́.",
+      "definition": [
+        "Push wà nígbà tí àbájáde ba jẹ iye-eko odidi: under 3.0 àwọn goals nígbà tí ere ba jẹ 3, -3 spread tí ṣẹgun nípa 3. Ọ̀ dúrò; ibadandun na jẹ iṣẹ́ tí kò pọ̀ sílẹ̀. Asian handicaps lo iyẹn ohun elo níbì àwọn odidi àti ìdáhùn-dáhùn lines.",
+        "Àwọn èjì àbájáde ti ìfọ́hùnṣo: ibadandun tí a ti gba dúrò kò kíyèsi sí bonus wagering ní ọ̀pọ̀ àwọn iṣúlẹ̀, ati nínú accumulators ẹgbẹ́ leg tí a gba dúrò lóríṣìíṣì máa yọ jáde — coupon na tún wo àwọn odds ìyokù dáadáa ju kí o tó bá wù.",
+        "Over 2.5/3.0 (Asian total ìdáhùn-dáhùn kan) nígbà tí ere ba ṣẹlẹ̀ 3–0: 2.5 ìdáhùn na ní ìgun, 3.0 ìdáhùn na gba dúrò — o ni ìgun lára ìdáhùn ọ̀ àti fifun ìdáhùn òmìíràn padà. Nílórí plain over 3.0, ọ̀ gbigbọ̀ nígbagbogbo máa dúrò ni.",
+        " iye ti ọ̀ àti tí o ba gba dúrò gan an."
+      ],
+      "example": "Over 2.5/3.0 (ìdáhùn Asian ìdáhùn-dáhùn) nígbà tí ere ba ṣẹlẹ̀ 3–0: ìdáhùn 2.5 ní ìgun, ìdáhùn 3.0 gba dúrò — o ni ìgun lára ìdáhùn ọ̀ àti fifun ìdáhùn òmìíràn padà. Nílórí plain over 3.0, ọ̀ gbigbọ̀ máa dúrò.",
+      "related": [
+        "asian-handicap",
+        "void-bet",
+        "over-under"
+      ],
+      "see": [],
+      "_src_hash": "f34f6898ef0dc5cf",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-exchange",
+      "term": "Betting Exchange",
+      "short": "Oja-iṣirò níbi tí àwọn oníṣirò máa ṣe àrọ pẹ̀lú ara wọn — lè ṣe atẹ́ tàbí dǹgba èyiìkèyìí, tí olúwá pẹ̀ńdé gba ìkò kan dípò owó ìtán.",
+      "definition": [
+        "Ọkọ̀ iṣirò náà máa ṣàápọ̀ àwọn oníṣirò: eni kan máa tẹ̀ wò èṣẹ̀, àkejì náà máa dǹgba á, iyẹn nígbà tí ìlúwá náà máa ṣe àkójọ kékeré lójú ìwà tí àmúfọ̀ débi. Taa ní ìkan léyìí, ojúì àṣọfúnfún máa máa ṣàkèpọ̀ ojúi. Èyó nìyi: àwọn tí ó ṣeré láòdún púpọ̀, tí wọ́n rírí kókóró wà níbi tí nǹkan náà tó dájú tó tó, kòsí owó tó ṣeé pẹ̀ kákà owó.",
+        "Ṣokò nìsìnsinì: awọn iṣirò tí ó wà níbi kan bẹ̀ẹ̀ nìkan tí àwọn tó dúpè bá ń múra. Àwọn ìlú ibadandun kan ní iṣu púpọ̀; àwọn tí ó ṣeré kékére àti àwọn ìlú tí ó kìkì lálò ní agbala àwọn, níbi tí taa tó dájú kò sẹ́ mú."
+      ],
+      "example": "Oníṣirò ológun kan ní ọ̀rọ̀ 2.00 sí otu tí ìlúwá náà ṇ ṣeré nígbà 2.10. Lẹ́yìn ìkò 2%, gbẹ̀yìn nígbà tí ó ba tẹ̀ wò èṣẹ̀ ní 2.10 − (1.10 × 0.02) ≈ 2.078 — tó ó lọ́ jù 2.00 lọ. Àgbéjáde tó gòjù nín, tí wọ́n ẹ̀ ro ojúrere lóju, òyìí kan ní owó àìtí tí oníṣirò náà máa wá fún yin.",
+      "related": [
+        "lay-betting",
+        "closing-line-value",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "ff50d3cd02feb876",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "lay-betting",
+      "term": "Ìdáwọ́ Aláìmúlẹ̀ (Lay Betting)",
+      "short": "Ìdáwọ́ tí ẹ̀yin ń gbà pé ohun kan kì yóò sẹlẹ̀ — ní àpá onímọ̀ aláàbò nínú ìparun ìdáwọ́.",
+      "definition": [
+        "Láti lay ìyàkítì jẹ́ láti gba ìdáwọ́ míìràn tí wọ́n ti dúpẹ̀ pàdé: iwọ yóò bẹ̀rẹ̀ èsù ẹni náà tí ìyàkítì náà ò bá iyè, iwọ máa sán owó pẹ̀lú àbáwọlọ́ tí ó bá di ìyè. Owó ìjọba rẹ nípa lay ní 4.00 jẹ́ mẹ́ta lọ́wọ́ nínú èsù tí ẹni tó dúpẹ̀ fi sílẹ̀ — àìbámu yìí ni àwọn alábojú kò tí í tumo rí.",
+        "Ìdáwọ́ àìmúlẹ̀ ń pé tẹ̀lẹ̀ ẹ̀kó: a lè tán àwọn ọkète bọ̀ọ̀lu ní ọ̀nà mẹ́ta láti ojú àá méjì ('ọlọ́gbọ́n yìí dé gidigidi tó' ò ń di iṣẹ́ láìṣẹ̀ kí a tó pè ẹni tó ò yóò bẹ̀rẹ̀ wọn), àti fífi àkóbá síbi síi di iṣẹ́ ti dídí tí nǹkan tí a ti dúpẹ̀ pàdé rí."
+      ],
+      "example": "Lay £10 ní 4.00: tí ìyàkítì ò bá iyè iwọ yóò bẹ̀rẹ̀ £10; tí ó bá iyè iwọ máa sán £30. Àpè ìdáwọ́ jẹ́ 'ohun yìí ò ṣẹlẹ̀ jù 25% lórí' — tí a ti òpó, ti a ti ìsúnwọ́n àti ti a ti múlẹ̀ bákan náà bí àwọn àkọ̀dun míìràn.",
+      "related": [
+        "betting-exchange",
+        "hedging",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "ba976ad193de42aa",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "dutching",
+      "term": "Dutching",
+      "short": "Fi pinpin stake lori ọpọlọpọ abajade ki eni ti o ba segun lo fun owo pataki kan — ifarada, kii se arbitrashi.",
+      "definition": [
+        "Dutching n fi stake re pin lori meji tabi diẹ sii ni ibamu pẹlu odds wọn, ki emi ti o ba segun ki o fun iyipada kan. Gbe atile-ore mẹta tabi alakuko meji ni onyii lo a tun ọpẹ merindilogun opini di ipo kan ti o ni ipadahanninu ti a mọ.",
+        "Ewu naa ni fifigba ifarada fun aabo: abajade ti iwọ ko ba ri ebe ni lati lo owu nkan: wọn pelu stake ni kaakaki. Dutching ti o kere ju 100% tani a ra ninu probability kii se arbitrashi — o je beti iye-nila ti ara ibi ibadandun re naa ni ohunkohun ti o wọ lara eto re."
+      ],
+      "example": "Gbe 1-1 ni 7.0, 2-1 ni 9.0, 1-0 ni 10.0 pelu apapọ £20 fin 8.87/6.90/6.21... bii eni ti o ba de ninu mẹta ti wọn ko tu padanu kabiyesi ≈£62 (ifarada ti a ra ninu ~32%). Iyara 68% ti awon alakuko miiran lo fa owu nkan naan — iyẹn ni beti ti iwọ ti ṣe gidi gidi.",
+      "related": [
+        "hedging",
+        "correct-score",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "Dutching calculator",
+          "href": "/tools/dutching-calculator"
+        }
+      ],
+      "_src_hash": "9bae402a7a10c3e1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "hedging",
+      "term": "Hedging",
+      "short": "Fifi owó kan lórí alekun tó yatoi sí i, láti paré iṣu tabi dinku asán — à ń gba owó méjì fún rẹ̀.",
+      "definition": [
+        "Hedging yọ tabi dinku ipo kan nipa fifi bet alekun: tu ẹgbẹ́ tí o ba àgbàlagba, tẹ̀ẹ́ oníṣẹ̀ sí fifi owó kaa lori ẹ̀yin akókó ti accumulator rẹ, tabi cash out (èyí tun jẹ́ olórí iṣe ti n ṣe hedging fun ọ, ni orisun wón). Nígbà tí a ba ṣe é ní orisun ọtún, hedging yiyipada awari si nkan tó dúró pátápátá.",
+        "Iye owó ní fifi gba owó méjì fún rẹ̀. Ṣíṣe hedging systemic ti gbogbo ipò tó kúnná jẹ́ ìba sórí àgbara rẹ ara; lilo onisinsin naa kere ati tákuntakun — paré accumulator ati nkan tó ri iyalẹnu, tabi jade ní ipo ẹ́ tí ìdí rẹ̀ ku lara odún tí a ro fún é."
+      ],
+      "example": "£10 mérin-fold ni orisun 15.0 ti etu ẹ̀yin mẹ́ta; ẹ̀yin akókó ti n bẹ́ nígbà tí exchange kópa ní 2.5. Tu/ba láti paré fifi ẹ̀yin sísé ≈£45 eyikeyii tó gbe tó ń lọ akókó, sí ilana 150-tabi-aidé tí o kò ba ṣe hedging. Iye owó bóyá jẹ́ ti o tó dípènú da lori orisun, kìi ṣe lori ewu inú ọkàn.",
+      "related": [
+        "cash-out",
+        "lay-betting",
+        "dutching"
+      ],
+      "see": [
+        {
+          "label": "Hedging calculator",
+          "href": "/tools/hedging-calculator"
+        }
+      ],
+      "_src_hash": "265417d8376be4b6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "overround",
+      "term": "Overround",
+      "short": "Iye ti awọn iṣeeṣe ti a ṣe iṣiro fun ọrọ tẹtẹ ju 100% lọ — iyasẹ ti onibere, ti a wo lati ẹgbẹ olutukudo.",
+      "definition": [
+        "Kun awọn iṣeeṣe ti a ṣe iṣiro fun gbogbo abajade ninu olupo kan, ati iyasẹ ti ó lọ ju 100% lọ ni overround: onibere 1X2 ti o sunmọ 105.5% ni overround 5.5%. Ọjọ yii jẹ ohun kanna bi iyasẹ olutukudo, ṣugbọn a le wo nigbagbogbo fun olupo dipo ṣiṣi bi owu.",
+        "Overround yatọ si olupo ati iwe — awọn olupo patakinn ni awọn iwe fufu ṣiṣẹ 2–5%, awọn olupo ẹya ati awọn ẹka kekere 8–15%. Iyannẹ rẹ gba aṣẹjú mejilɔgbọn ati ṣo ọ silẹ ki o ba mọ iye adashe ṣaaju ki ironu baa wọ."
+      ],
+      "example": "Awọn ideri 1.95 / 3.60 / 4.10 ṣe iṣiro 51.3% + 27.8% + 24.4% = 103.5% — overround 3.5%, o dara. Ere kanna ni aaye miiran ni 1.83 / 3.40 / 3.90 ṣe iṣiro 107.7% — o sanwo idakeji owu fun awọn ironu kanna.",
+      "related": [
+        "bookmaker-margin",
+        "vig",
+        "fair-odds"
+      ],
+      "see": [
+        {
+          "label": "Live margin research across our leagues",
+          "href": "/research"
+        }
+      ],
+      "_src_hash": "7ac9166d8f6aa038",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "goal-line",
+      "term": "Goal Line (Asian Total)",
+      "short": "Àkójọ ìdiyele pẹ̀lú iṣẹ̀ àwọn Asian: àwọn ìlà lọ́kọ̀ọ̀kan, ẹ̀kẹ́ ati àwọn ìlà ìpínpín nígbà tí ìlàkẹ́ ní ìdiyele gba bẹ́ẹ̀ yó pa ìyẹn nínú tàbí gbogbo agbèrè nǎ.",
+      "definition": [
+        "Goal line jẹ́ over/under pẹ̀lú iṣẹ̀ àwọn asiáà nígba tí o ní isinlẹ̀ ìdọ́tì. Àwọn ìlà lọ́kọ̀ọ̀kan (3.0) yó tẹ̀ jẹ́ nígbà tí agbèrè ba dọ́ lọ́kọ̀ọ̀kan; àwọn ìlà ìpínpín (2.5/3.0) ń ṣẹ́tọ̀ ẹ̀kẹ́ agbèrè ní ọ̀fẹ̀ kọ̀ọ̀kan; àwọn ìlà ẹ̀kẹ́ (2.5) ń ṣe gẹ́gẹ́ bí àwọn ìṣẹ̀ àdàkọ.",
+        "Àwọn ìdọ́tì ní iye: over 2.5/3.0 ń ba iye ju over 2.5 lọ níwọ̀n bí iye ìdákòórí rẹ ti tẹ̀ jẹ́ kuro. Bóyá èyí ṣèé ṣe báyìí tàbí kò ṃ jẹ́ ibeere pataka, ati àwọn ìlà ìpínpín ni ibi tí àwọn ide bóóku ń fi àwọn iye tí kò ìlera ju: kọ̀ka ní àwọn ìlà tẹ́ẹ̀ káárú kí o tó gba ẹ̀yìn kan."
+      ],
+      "example": "Over 2.75 (ẹ́yin ni 2.5/3.0 ìpínpín) pẹ̀lú £10: àwọn ìdánilójú pari 3–1 — àwọn ẹ̀kẹ́ méjì ṣẹ́. Pari 3–0... agbèrè 3: ẹ̀kẹ́ 2.5 ṣẹ́, ẹ̀kẹ́ 3.0 tẹ̀ jẹ́ → gba ní £5, paárù £5. Pari 2–0: àwọn ẹ̀kẹ́ méjì ṣọ̀. 'Quarter line' jẹ́ àwọn idánilójú méjìéjì yìí ní àpapọ̀.",
+      "related": [
+        "over-under",
+        "asian-handicap",
+        "push"
+      ],
+      "see": [],
+      "_src_hash": "ff9d0b027c55b632",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bet-builder",
+      "term": "Bet Builder (Same-Game Multi)",
+      "short": "Ìdìkó àwọn oríṣun ọ̀pọ̀ láti inú ìré kan náà sínú bẹ́ẹ̀tì kan — níbi tí iye-ẹ̀rọ̀ àbáwọn èyí ń tọ́ ìlú (pálá pẹ̀lú nídímú).",
+      "definition": [
+        "Bẹ́ẹ̀tì builder ń ṣe iye òpópọ̀ láti àwọn àpilẹ̀kọ̀ àti inú ìré kan — àbájáde, BTTS, àwọn káàdì, iye-agbasẹ — sínú iye kan. Nítorí pé àwọn ẹ̀ka náà jẹ́ àbáwọn ìsẹ̀sọ (tí bálẹ̀ẹ̀ ìbílẹ̀ ń ṣẹ́gun nípá 3–0, ó jẹ́ kí agbasẹ̀ rẹ̀ ń ṣẹ́gun ní ìsẹ̀dògan pọ̀nà jù), iye-ẹ̀rọ̀ tó dára nilo ìwé ayélọ̀pọ̀ oniruuru, kì í ṣe iye-ìsẹ̀dògan òkè awọ́n àkọsílẹ̀.",
+        "Àbáwọn ìsẹ̀sọ yìí níbi tí àríwá ilú ń pa: àwọn bírù ń ṣàfihàn àwọn agbékọ̀ olóríṣun tí jẹ́ àìtọ́jú ní ètò kéré jù àbàyẹ̀sín iye-ìsẹ̀dògan, àti àní-alè lórí àwọn builder jọ̀ỳẹ̀ẹ́ rọ́pọ̀ àní-alè lórí oríṣun-kan. Ìṣẹ́ èyí dígbà rere nípa diẹ̀ àti iye-owó pẹ̀pẹ̀ nípa àmọ̀."
+      ],
+      "example": "Bálẹ̀ẹ̀ láti ṣẹ́gun (2.00) + ní ìlò-ọ̀dù òkè 2.5 (2.00) ní ìdíjú ní iye-òkè láti èyí, ọ̀pọ̀ náà púpọ̀ — iye-ẹ̀rọ̀ pẹ̀pẹ̀ pípa àìtọ́jú yẹ̀ẹ́ ṣé tó rí nítòrí 3.20. Builder àìdábíbé náà wí pé 2.90. Àwọ̀ rẹ ń ṣe owó àbáwọn ìsẹ̀sọ ẹ̀ẹ́ àti alè àkọ̀ọ̀dì fún ifẹ́ tí iye-kan nílẹ̀.",
+      "related": [
+        "accumulator",
+        "bookmaker-margin",
+        "btts"
+      ],
+      "see": [
+        {
+          "label": "Model-screened combinations instead",
+          "href": "/tools/acca-builder"
+        }
+      ],
+      "_src_hash": "fe2be9f9ee3080ae",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "acca-insurance",
+      "term": "Acca Insurance",
+      "short": "Ìmolè akéko kan tí ó padà owó fun akéko òpópó tí ẹ̀kó kan nìkan wà nínú rẹ̀ — ìpìlẹ̀ rálẹ̀ ní onígbajọ̀, àti pé ó ti dá jáde sínú ìdándún ẹ̀kó náà.",
+      "definition": [
+        "Acca Insurance padà owó akéko níbi tí ẹ̀kó kan búburú nìkan — ìwọ̀n rálẹ̀ jẹ́ 5+ ẹ̀kó, owó ìpadà ni òpin àti a gba sí rálẹ̀ gẹ́gẹ́ akéko ìfúnárí (SNR), kìí ṣe owó gidi. Iṣẹ́lẹ̀ (ẹ̀kó kan nìkan tí ó kùnà) jẹ́ kiní ju ohun tí ó dùn lọ: akéko òpópó máa ń kùnà ní ẹ̀kó méjì tàbí ju nínú ìgbà púpọ̀.",
+        "Ṣe ìlò àkópọ̀ rálẹ̀ gẹ́gẹ́ ẹ̀kó ìdándún: iye àtẹ̀wọ́gbà ti akéko ìmolè ní ìgbà àìrápọ̀ ẹ̀kó kan àti àìbẹ̀rẹ̀ gbangba jẹ́ apá kan nìkan ti ìyè tí akéko òpópó ìjù kan gbà. Ó jẹ́ alábere tó tọ́jú aláìlẹ̀kọ̀ọ́ yí; bẹ́ẹ̀ kò tún yí ìsirò rẹ̀ padà."
+      ],
+      "example": "Ẹ̀kó márùn-ún ní 60% kọ̀ọ̀kan ní àìrápọ̀ ìtọ̀ jẹ́ ọ̀: P(ẹ̀kó kan nìkan búburú) = 5 × 0.4 × 0.6⁴ ≈ 25.9%. Ìpadà £10 gẹ́gẹ́ akéko ìfúnárí SNR ní iye ~£7 nígbà tí a ṣe ìmídímídì → ≈£1.80 ti iye àtẹ̀wọ́gbà bẹ̀rẹ̀, ní àkọpa si ~£2.50 ti ìyè tí akéko òpópó ìjù kan gbà lórí àwọn ẹ̀kó márùn-ún náà.",
+      "related": [
+        "accumulator",
+        "free-bet",
+        "stake-not-returned"
+      ],
+      "see": [],
+      "_src_hash": "ec3bd1c5d6af93ee",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "price-boost",
+      "term": "Price Boost (Odds Boost)",
+      "short": "Àyọ̀ ti a fi ara ẹkọ̀ jáde fún àpá kan ti àkójọ — lẹ́ẹ̀kọ̀ọ̀ tó jìǹde lẹ́ẹ̀kọ̀ tẹ́ẹ̀, àìlérò náà dá idí pẹ̀lú.",
+      "definition": [
+        "Àyọ̀ boost nàà fi ara ẹkọ̀ ga jáde fún àpá ti olúkót yọ̀ yan, àgbára akópa tí a fi àní pẹ̀ síbi. Nítorí pé ẹkọ̀ ìpìlẹ̀ jẹ́ alákò, boost naa lẹ́ẹ̀kọ̀ kan áti àti wà ní ẹ̀yin òótítọ̀ — ṣùgbọ́n ní ìgbà díẹ̀, pàápàá nígbà tí ẹ̀rọ pàdàsálà ba tọ̀jú rẹ̀, ó ní ìwé ẹkọ̀ gíga gígì.",
+        "Àyèfífin náà jẹ́ iṣẹ́ ìṣèkó: sộ ẹkọ̀ boost pẹ̀lú ẹkọ̀ tí kò boóstu tó dáa jùlọ, áti pẹ̀lú ẹ̀rọ pàdàsálà. Boóstu ó di 2.20 níbi tí àwọn ìtájà yíyá yin 2.10 jẹ́ ìwé ẹkọ̀ gíga gígì ní ìyípadà akópa tí a fi àní pẹ̀; boóstu ó di 2.20 níbi tí ẹkọ̀ òótítọ̀ ba jẹ́ 2.35 jẹ́ ìmọ̀ ìṣirò ti olúkót."
+      ],
+      "example": "Boost: 2.00 → 2.20, akópa ìtukupẹ̀ £10. Ẹ̀rọ pàdàsálà naa ná ẹ kọ̀wọ́ àyọ̀ náà ní 2.16, alákò tó jìǹde 2.12 lẹ́yìn àbájáde iyasálẹ̀. Ríbọ̀ boost náà gba (2.20 / 2.12 − 1) ≈ +3.8% ìyẹn-àkọ ní akópa tí a fi àní pẹ̀ — ó ní ìyó láti gba, kó sì ní ìyó pé kí o má ba kà sí àwọn ẹkọ̀ olúkót ti kò boóstu.",
+      "related": [
+        "value-bet",
+        "closing-line-value",
+        "free-bet"
+      ],
+      "see": [],
+      "_src_hash": "02171ba706bfb8f8",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "stake-not-returned",
+      "term": "Stake Not Returned (SNR)",
+      "short": "Ofin isalẹ ti free bet: owó tí a bá ṣẹ́gun ló máa padà, àmì náà àìṣẹ — tí ó fi iye token ẹ́ dé idaji nínú akójú líkò (evens).",
+      "definition": [
+        "SNR túmọ̀ sí pé free bet máa ṣàbá owó tí a bá ṣẹ́gun nìkan: token £25 níní 2.00 ó máa padà £25, kìí ṣe £50, nítorí pé àmì náà kò tẹ́ jẹ́ owó rẹ̀ àìféé. Àpò ìpilẹ̀ bákan-bákan ti free bet ni wọ́n fi orí sí ìtumọ̀ yìí, èyí tí ó ṣe àpèjúwe dájúdájú iye token náà — token kan á pa àwọn owó àti (odds−1)/odds ti iye agbèkálẹ̀ ní ìbi tí iye tó dínà bákan-bákan.",
+        "Àbùdá rẹ̀: tokens máa gba pẹ̀lú jù nínú awọn odds tó ga ju (50% ti agbèkálẹ̀ nínú 2.00, 75% nínú 4.00) àti a máa là á sójú nínú pẹ̀ẹ́ afojúbare tó kéré ju. Ó jẹ́ ohun òǹkọ̀wé ìtumọ̀ ọ̀kan tó dí múlẹ̀ jù nípa free bets àti ohun tí wọ́n kò ṣe àsọ̀nù nípa rẹ̀."
+      ],
+      "example": "Token SNR £25: nínú 1.40 òun ò le ṣẹ́gun ju £10 lọ — 40% ti agbèkálẹ̀ ti ń lọ kìí padà ṣáájú ìkórò nkọ. Nínú 5.00 òun ó máa ṣẹ́gun £100, tí ó fi iye token ẹ́ dé 80% nínú ìfojúbare owó àti gbà dájúdájú. Token kàńkàn, iye dúbúlẹ̀, ìpinnu ọ̀kan.",
+      "related": [
+        "free-bet",
+        "expected-value",
+        "wagering-requirements"
+      ],
+      "see": [
+        {
+          "label": "Free bets explained in full",
+          "href": "/guides/free-bets-explained"
+        }
+      ],
+      "_src_hash": "e29e3c9a2f1ebcf5",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "poisson-distribution",
+      "term": "Ìpínlẹ̀ Poisson",
+      "short": "Àwọn ìwọ̀n òdodo tó wà ní ẹ̀kó àpẹẹrẹ fún ọ̀pọ̀ àwọn ìsiro bọ́ọ̀lu — àwọn ìkúù gẹ́gẹ́ bí àwọn iṣẹ́ aláìsúnmọ̀ tó ní ìfipọn nítòótọ́ tí ẹ̀rò tó mọ̀.",
+      "definition": [
+        "Ìpínlẹ̀ Poisson fúnni nípa ìsirò àlábòjútó k àwọn iṣẹ́ nígbà tí àwọn iṣẹ́ nbọ̀ aláìsúnmọ̀ nípa ìfipọn tó rí nítòótọ́ λ: P(k) = e^−λ·λᵏ/k!. Fi ìtúmọ̀ gíga tí ilé-ìpádé kan ní dé inú rẹ̀ àti yóò sè kálúkù àlábòjútó 0, 1, 2, 3… — àti àwọn ìpínlẹ̀ ilé-ìpádé méjì jápọ̀ sínú àwọn ìsiro ìdílẹ̀ ìtọ́jú, 1X2, àkópọ̀ ati BTTS.",
+        "Kò jẹ́ dandan, àti a mọ̀ nípa àwọn ọ̀nà tí ò ye — àwọn ìkúù ń bá ara wọn lọ́sísísí, àwọn ìdílẹ̀ jáde nípa ìfojúrere tó kéré — àti òǹè òdodo bíi rẹ̀, pẹ̀lú àtijọ̀, lọ̀na àwòmọ́ kúrò nínú rẹ̀. Ìgbìmọ̀ rẹ̀ ni èyí pé ó ń fọ́ ìtúmọ̀ kán tó ní ìfojúrere (àwọn ìkúù tí a sùbọ̀) sínú àwọn òǹè nìgbà alàpilẹ̀kọ̀ọ́ àbúkù tò yẹ.",
+        "example_translated_begin"
+      ],
+      "example": "λ = 1.4 àwọn ìkúù tí a sùbọ̀: P(0) = e^−1.4 ≈ 24.7%, P(1) ≈ 34.5%, P(2) ≈ 24.2%. Àwọn ìpínlẹ̀ Poisson aláìsúnmọ̀ méjì ni 1.4 àti 1.1 yóò sè P(1–1) ≈ 34.5% × 36.6% ≈ 12.6% — àwọn ìsiro tó inú òǹè ìdílẹ̀ ìtọ́jú ìwọ̀n kòkò tí o ní irúfẹ́ àtijọ̀.",
+      "related": [
+        "xg",
+        "expected-value",
+        "correct-score"
+      ],
+      "see": [
+        {
+          "label": "How our model works",
+          "href": "/model"
+        }
+      ],
+      "_src_hash": "c003f1cd5ff1fdfb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "regression-to-the-mean",
+      "term": "Iyipada Sile si Gidi-ara",
+      "short": "Awọ iṣẹ lárá jáde lọ sọtọ tabi sísẹ kuru ju, nígbó ti wọn yoo padà sí iye òtítọ̀ ẹgbẹ yẹn — ero ìṣirò yii ni isálẹ̀ 'form lẹ́ẹ̀kan, àbínibí ni láìtí.'",
+      "definition": [
+        "Nígbá olójú yẹ tàbí ẹgbẹ kan ṣiṣẹ ju òtítọ̀ iye rẹ̀ lọ, tàbí kù ju, yara ẹkejì yẹ máa dé sí pé tó súnmọ́ iye yẹn naa — kìí ṣe nítorí ìféhìn tàbí òfin, ṣùgbọ́n nítorí pé awọ ipin lárá ní àlà̀pàdé tí àlà̀pàdé ò padà gẹ́gẹ́ bíi ìlọsiwájú rere. Adifà kan tó ń ṣí bọ́ọ̀lù sítá òmìnira 35% ló máa ṣí sítá súnmọ́ iye òṣu tuntun 12% àpèjọ rẹ̀.",
+        "Fún awọ̀nà ọlọ́wọ̀ ìtajà gídì, ẹ̀ kọ̀ nípa ìyọkúrò iye: àwọn onísọrọ̀ àgbáy ọlọ́wọ̀ jìnnà jẹ́ àwọ iṣẹ ìfẹ́ọ̀ tó pa mọ́tù, nígbà tó pé iyipada sile loń dọ̀kun sí i ju, ní idi èyí nítorí pé ìgbò awọ iṣẹ tí kòkòrò-kòkòrò síri ní àdìkò àwẹ̀ òye, ati pé ìyẹ gbigba iye yẹn àgbáy àkòkò jìnnà nígbà yẹ̀ ní àbá ní àdìkò, àti pé tẹ̀lé iye tí óra rẹ̀ náà ní àlá ti gidi."
+      ],
+      "example": "Ẹgbẹ ẹ tí ó wà ni àgbáy gídì ṣẹ́gun láàrù mẹ̀fa, mẹ́ta sí wọn nípa ètè wèékan pẹ̀lú xG tó kù ju lọ. Awọn iye òtítọ̀ rẹ̀ ń ṣe àdìkò iye ṣẹ́gun fún àpéjọ ní iye 45%; àwọn onísọrọ̀ àgbáy tí óra wọn ní iye àìfẹ́ẹ́ lẹ́ ṣe àdìkò iye 58%. Iyipada sile kò tíì ní ìsé láti báa ṣẹ̀ kù — ó sọ pé 1.72 fún iye 45% jẹ́ iye tó ò tọ́.",
+      "related": [
+        "variance",
+        "sample-size",
+        "xg"
+      ],
+      "see": [],
+      "_src_hash": "a5cb887c49a4a007",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "sample-size",
+      "term": "Iye Àwọn Àkójọ",
+      "short": "Mélọ̀ọ́ ni àwọn ìmọ̀ràn tí ó wà nìsálẹ̀ ọ̀rọ̀ kan — ìyatọ̀ láàrin ẹ̀rí àti ọ̀rọ̀ ẹnìkan, ní ọ̀kan oo.",
+      "definition": [
+        "Olóòótọ́, òkòó àwọn ìstaṭísììkì tí a ṣe pò ni ìmẹ̀ràn, èyí tó jẹ́ alaye nítorí àwọn ìmọ̀ràn tó póju. Àwọn ìdíjú márùún ni BTTS kò sọ ohun púpọ̀; àadọ́ta sọ nkan kan; ọ̀rọ̀ márùún igba ni a lè rò pé ó jẹ́ òtítọ́. Ìdíje àkósẹ̀ẹ́ yóò kéré bíi àgbẹ̀s ìgúnrogún ti n — láti lẹ̀ mẹ́rin igba ti àwọn data, à á lè sa ẹ̀nà báà lọ́ọ́dún.",
+        "Ìṣẹ̀dá arọ̀ ṣíṣẹ̀: ṣáájú kí o gbé àṣìṣe lórí òkòó okan ('wọ́n kan ṣẹ̀ṣẹ̀ over 2.5 ní 8 nítorí 10'), beèrè kí ni n àti kí ni àpèjọ akọkọ sọ. Ọ̀pọ̀ àwọn 'ẹkó-ẹ̀ẹ́' tí a ń ta fún àwọn alábójútó jẹ́ àwọn àpẹẹrẹ ìdíjú mẹ̀wàá ti owó tó dé nìsálẹ̀ 50%."
+      ],
+      "example": "Ìyẹn 60% tí over-2.5 kúkú láti 10 àwọn ìdíjú níṣẹ àkósẹ̀ẹ́ ìfẹ̀ẹ́ nínú ±15.5% — ìyẹn òtítọ́ jẹ́ẹ́ àlápa àtẹ̀ láti 45% sí 75%, tó múnipín 'kan alé' àti 'kan àrọ̀'. Ìyẹn ónìkan 60% láti 200 àwọn ìdíjú (±3.5%) jẹ́ ènìyàn gidi alaye.",
+      "related": [
+        "variance",
+        "regression-to-the-mean",
+        "win-rate"
+      ],
+      "see": [],
+      "_src_hash": "0259ad38e8f46e75",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "longshot-bias",
+      "term": "Aṣìṣe Favourite–Longshot",
+      "short": "Ìdánilójú ìṣúra tí a ti ṣàkìyèsì: àwọn àdìe gígùn jẹ́ iye ọrọ̀ iye tó ga jù ní àgbékalẹ̀, àwọn ìlépa kóokere sì dọ́gba àpẹ.",
+      "definition": [
+        "Ní ọdún ọ̀pọ̀ ti àwàrán ìṣèwádìí àti ìṣúra, àwọn áre ní àdìe gígùn máa padà kú ju àwọn áre ní àdìe kóokere: ìrànlọ́wọ́ onírere ń fẹ́ àwọn ìtọ́jos ìrísí ẹ̀yí, àwọn ibùkù ṣe àtúnṣe àwọn iye àdìe gígùn báyìí, àti àìlòwu ibùkù máa wá nitòsì níbi tí álá kúrò.",
+        "Aṣìṣe yìí jẹ́ ọ̀kan nínú àwọn ìmọ̀ ìṣúra díẹ̀ tó rọ́bọ̀ tó lè gbé irálẹ̀ dé ipò rọ̀: jẹ́ olódidè nípa àrára ìfẹ́ rẹ sí àdìe gígùn, béèrè àìlòwu àti àìbikítà kìkì ṣáájú kí ẹ gba 6.0+, ránti pé ọ̀pọ̀ 'iye tó dára' àgbéjáde àkóònú onígbàìmọ̀ ní àwọn iye nla jẹ́ aṣìṣe yìí ń rín ní arọ́ àkóònú yẹn. Àkóònú v1 wa fúnra ara ara ló kó 0-for-8 lóòótọ́ nípaà orí ìgbẹ̀kẹ̀lẹ̀ yìí."
+      ],
+      "example": "Ìrísí àpẹjọ́: àwọn áre ní 1.50 máa pa ≈97p fún gbogbo £1 tí a sì gbé; àwọn áre ní 15.0 máa pa ≈85p. Eré ìdáyatọ, àwọn ibùkù ìdáyatọ, ọjọ́ ìdáyatọ — ìyatọ náà jẹ́ níbi tí àìlòwu yìí wà. Àkóònú tí kò gbé ìmọ̀ yìí lò máa rí àìlòwu nínú àdìe tí iye wọ̀n kéré jù.",
+      "related": [
+        "value-bet",
+        "variance",
+        "bookmaker-margin"
+      ],
+      "see": [
+        {
+          "label": "Our model's odds caps and why",
+          "href": "/model"
+        }
+      ],
+      "_src_hash": "365d89426d4636e4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "home-advantage",
+      "term": "Àgbájà Ilé",
+      "short": "Olèkúlèkú tí àwọn ẹgbẹ́ tí ń bẹ́ ni ilé jẹ́ — ó ní iye ọdọ̀ 0.3–0.4 ìkúko, dípò sí díípò, àkókò àti àwọn ènìyàn.",
+      "definition": [
+        "Àwọn ẹgbẹ́ tí ń bẹ́ ni ilé ń ṣè kíka ọ̀nà díẹ̀ sí i àti àwọn ẹgbẹ́ jáde kúkú — déédé iyẹn ní iye ọdọ̀ 0.3–0.4 ìkúko fún ìdíbẹ̀, nígbà tí àwọn ènìyàn ti n ṣiṣẹ́ lórí àwọn ẹlòmọ̀ àti onídòjú, ìrìn àjò, àti ìmọ̀ ibẹ̀. Àbá yìí jẹ́ òtítọ́, yálàhun dípò, àti ó ń ṣubú lọ́wọ́ pẹ̀lú àsìkò.",
+        "Gbogbo àwọn awoṣe tó ní ẹ̀sìn jẹ́ kí wọ́n kó àwọn iye ilé àti jáde lọ́tun àti àrá ara wọn déèdéè láìpẹ̀; àwa ní. Ìkójú àgbájà kìí ṣe pé àgbájà ilé wà — òṣùkọ tí ń gbẹ́ tí a mọ̀ — ṣùgbọ́n pé awọn iye rẹ̀ yálàhun, àti pé àwọn olè àgbájà tí o ní iyò lógún àjùmọ́ ń rọ̀ àwọn ìpín ìwọ̀n tuntun."
+      ],
+      "example": "Nínú àwọn ìlànà tá ní, iye kíka ilé tẹ̀lé ~1.4 pẹ̀lú ~1.1 jáde — àgbájà 0.3 ìkúko tó ní iye ọdọ̀ 8–10 poínti ní ìyè dídì nínú àlàpáadé kan. Ìlànà kan tí àlàpáadé ìgbà báyìí ń rìn pínnì sórí tàbí ìsàlẹ̀ jù ìlànà rẹ̀ àtijọ́, níbi tí àwọn olè agbájà àti 1X2 ń bẹ̀rẹ̀ lọ́wọ́ kìngìn akọ́kọ́ ni.",
+      "related": [
+        "poisson-distribution",
+        "xg",
+        "regression-to-the-mean"
+      ],
+      "see": [
+        {
+          "label": "Home advantage by league — live research",
+          "href": "/research/home-advantage"
+        }
+      ],
+      "_src_hash": "9838d9bf65548ef4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "team-form",
+      "term": "Ọkọ-ìjà",
+      "short": "Àwọn èhìnkúlò tuntun bí ìfihàn — ìtúmọ̀ járe tútù nìkan, ilò nìkan lọ́wọ́ àwọn ẹ̀gbẹ́ inú yíò àti àwọn ónúmba ipò.",
+      "definition": [
+        "Ọkọ-ìjà ń ṣe àkójọ àwọn èhìnkúlò tuntun — àwọn ìbéèrè bí WWDLW ní gbogbo olúmọ́ ìfitánnì. Ọkọ-ìjà ìtíle jẹ́ àìtúmọ̀ alágbèéká: àwọn èhìnkúlò márùn-ún lo ńjẹ́ ìparun ni òde òní-ìrékójú, iye ẹ̀gbẹ́-inú yíò ń yípadà làálaa, àti iṣẹ́ kan tí ó pọ́nù jáde ń yípadà ìkùn kan. Àwọn iye ó lódìlò (àwọn ọfọ̀, xG, àyè-ìpa) máa ṣe àsọtẹ́lẹ̀ ìpa-ẹ̀jọ́ tí ó tó ju àwọn ìkùn lọ.",
+        "Ọkọ-ìjà ń gba ètò́ nígbà tí a ní wọ́n àlọ́ (àwọn ìpa tuntun dáa ju), tí a ń yípín fún àwọn ẹ̀gbẹ́ tí a ṣiṣẹ́ pẹ̀lú, àti tí a ń pèsè pẹ̀lú àwọn iye ó lódìlò. Àpẹ̀̀ rẹ̀ ń lo àkókò-ìbánu daradara nítorí eyi — àbá kan láti ọ̀sẹ̀ tí ó tì padà sọ̀rọ̀ pọ̀ ju ẹ̀ní nípa Oṣù Kẹ̀wá, ṣùgbọ́n ẹ̀ẹ̀ kò sáré kójú àwọn iye ìgba ọdun."
+      ],
+      "example": "Ẹgbẹ́ A: LLWLL lẹ̀hìn àwọn ẹ̀gbẹ́ ìkẹ́ àrunkúlè ni ìgba ìdíje. Ẹgbẹ́ B: WWWWW lẹ̀hìn àwọn ẹ̀gbẹ́ ìkẹ́ ìsalẹ́ ni ìgba ìdíje. Àwọn ìkùn sọ pé B ń fò; àwọn iye tí a ní wọ́n àlọ́ nípa ẹ̀gbẹ́-inú yíò máa sọ pé A jẹ́ ẹgbẹ́ tó lárá ju ní àpẹ̀ — àti iye ọja máa jẹ́ àwọn ohun kan tíntín laarínlárín àwọn ìtàn méjì.",
+      "related": [
+        "sample-size",
+        "regression-to-the-mean",
+        "xg"
+      ],
+      "see": [],
+      "_src_hash": "aa8eabb6547b8832",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "head-to-head",
+      "term": "Ojú-ojú (H2H)",
+      "short": "Àwọn ìdá méjì tí wọ́n pàde rí — nǹkan tí a máa kéde púpọ̀, ṣùgbọ́n kò lágbára fún àbá ìdánu, àìléèkèé ní ìgbá míìràn.",
+      "definition": [
+        "Àwọn ìténí ojú-ojú máa ṣeé kó àwọn ìpàdé tí àwọn ẹgbẹ̀ méjì tí wọ́n jẹ́ tẹ́lẹ̀. Àwọn ọkùnrin ìdílé yó lọ kiri, àti àwọn olùmúlẹ̀ yó yípadà, nítorí náà, àìgbà 4–0 láti ọ̀sẹ̀ mẹ́ta sẹ́yìn dárisílẹ̀ ìdí àwọn ẹgbẹ̀ tí wọ́n kò sì wà mọ́ — gẹ́gẹ́ bí àbá alàyè fún ìdánu tó ń bọ̀, àwọn ìténí ojú-ojú kò ṣeé sí ohun kan tó péye nígbà tí a ti ò wò àgbára tí wọ́n ní nísinsinì.",
+        "Àwọn ọ̀nà tí ẹniyan lè gbà ni àwọn àbá tó sàpá: àwọn ìpàdé tí wọ́n máa ṣe òfin pé wọ́n yóò ní oríkì tàbí òfin bá àwọn ìwè ìlọ́ kọ́jú-kọ́jú ní àwọn ìpàde púpọ̀, tàbí àwọn ètò àpò ní iyẹn pẹ̀lú àwọn nǹkan tó tọ́. Àbá ojú-ojú pàtàkì ní nísannú, kìí ṣe àbá, — àwọn ọ̀na tó lè rán ara wá lọ́wọ́ kò gbẹ̀yìn sẹ́ àwọn ìténí ojú-ojú àti o ṣeé ṣiṣẹ́ láti àwọn ìfẹ́ pẹ̀lú èwu tó súnmọ́, kìí ṣe ìdánu gidi.",
+        "example"
+      ],
+      "example": "Àwọn ìpàdé mẹ́wà tó máa ṣeé jẹ́ nínú 3.4 bẹ́bú tí a ṣe ìgbírìgbìrì ara wá gẹ́gẹ́ bí nò nílékànta 2.6 rẹ̀ pé ó ń ṣeé lọ́ ká wòó nínú àwọn ọ̀nà tó ní ọ̀pọ̀lọ́pọ̀ — gẹ́gẹ́ bí ẹ̀kọ́ láti ètò àwọn ìlúmọ́ tó ní àgbára nísinsinì, kìí ṣe àbá gidi. Àwọn ìpàdé mẹ́ta tó máa jẹ́ àwọn ohun kan tó ní ìjìnlẹ̀ ni ọkọ ènìyàn, ẹkó-ara ẹni lèékaán.",
+      "related": [
+        "sample-size",
+        "team-form",
+        "over-under"
+      ],
+      "see": [
+        {
+          "label": "H2H records for every covered pairing",
+          "href": "/h2h"
+        }
+      ],
+      "_src_hash": "32642792464a4500",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fixture-congestion",
+      "term": "Fixture Congestion",
+      "short": "Àwọn ọjọ́ ẹ̀kúnwọ̀: àwọn ẹ̀yà tuntun, àwọn ẹsẹ̀ táa rẹ, àti àwọn tótó ẹgbẹ́ tí wọ́n gbẹ àyíká pẹ̀lú ìlọ́wọ́sí.",
+      "definition": [
+        "Congestion jẹ́ àwọn ìdi mẹ́ta nínú ọjọ́ mẹ̀jọ — àwọn ọjọ́ ẹ̀kúnwọ̀ nínú ẹ̀kó, ìrìn ayo agbáko, àti àwọn ọjọ́ ọ̀rẹ̀ Oṣù Kejì. Àwọn ìpilẹ̀ṣẹ̀ jẹ́ ohun tí a lè ṣe àsusu: àwọn ẹ̀yà tuntun nínú tíìm, àtúntúnṣe ìpilẹ̀ṣẹ̀ nínú iṣẹ́ giga-giga, àti oríṣìrìṣì àwọn ọ̀gọ́ ìdí díẹ̀ láti àwọn ẹsẹ̀ táa rẹ nígbà òpin ìkúnwọ̀.",
+        "Àwọn àǹfààní bẹ̀tì gbọrọ̀hùn jẹ́ àkókò: àwọn ẹ̀rí tí a ṣètò ní àtẹ́kọ̀ ọ̀sè lè rà gbẹ àyíká ìtumọ̀ ẹ̀kúnwọ̀ tí a kéde, àti àwọn bẹ̀tì ẹ̀dá-ọkọ́ (àwọn onígòjì, àwọn kadi) nípa lọ́wọ́ ju nínú ọ̀rọ̀ ẹ̀dá kan pẹ̀lú làìbẹ́ẹ̀ láti dé àwọ́ báṣìṣẹ́. Ṣàyẹ̀wò ọ̀rọ̀ tíìm tí a kéde kí ìdí kan tí o níbàní ẹ̀kúnwọ̀ báṣẹ."
+      ],
+      "example": "Ẹ̀kó kan tí ó ṣe ọ̀rọ̀ ìdi mẹ́ta nínú ọjọ́ méje, lẹ́yìn ìrìn ayo agbáko, túnton àwọn àwọ́ ẹ̀rí mẹ́rin. 1X2 kò gba iyipada púpọ̀ (àyíká tíìm tí o kéde), ṣùgbọ́n ẹ̀kó ọ̀rọ̀ ìdi tí o ní iye 2.10 ayé anytime jẹ́ ẹ̀gbẹ́ — àkànsí rọ̀ nígbà àkọsílẹ̀ tíìm, kìí ṣẹ nígbà ọjọ́ bẹ̀rẹ̀.",
+      "related": [
+        "team-form",
+        "anytime-goalscorer",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "32368c4d7bd11aef",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "dead-rubber",
+      "term": "Dead Rubber",
+      "short": "Àgbájọ tí kò ní ohun tí ó wulo fún ọkọ tàbí meji — níbi tí ìfẹ́ àlùmọ́ṣe ba ja àwọn ìsiro àti àwọn iye-jẹ́.",
+      "definition": [
+        "Dead rubber kì í pinnu ohun kan: ẹgbẹ́ ti ṣẹṣẹ̀ ju àwọn míìrán lọ, àbò ti ti ní isẹ̀, àti iṣẹ̀ ìkẹyìn ti àka kan ti ní ipari. Ìyatọ̀ ìfẹ́ àlùmọ́ṣe ti ó báa ti tóbi báyìí n ṣubú àwọn ìsiro ti da lórí iye — ẹgbẹ́ alágbára tí kò ní nkàn tí ó ṣe yíò darí àwọn àlejò sẹ́yìn àti máa rin ní ìtara, àti 'otítọ̀' rẹ̀ ní àkókò yìí kì í ṣe ìrìn-àjò rẹ̀ lọ́nà àbá.",
+        "Àwọn àgbájọ yìí ni níbi tí àwọn ìsiro òfin-ìdánwó (àtilẹ̀ ti wa) gba iṣẹ̀ tí a kere jù — àti níbi tí ìṣiro-ìlànà ti ọja sọ̀rọ̀ ní ọ̀rọ̀ — sínan tí ó nílò àwọn àkóónú lorisun. Àwọn àgbájọ ọdún-ìpari àti iṣẹ̀ ìkẹyìn ẹgbẹ́ yẹ kí á gbalẹ̀ fún ìfẹ́ àlùmọ́ṣe kí á tó sin owó."
+      ],
+      "example": "Iṣẹ̀ ìkẹyìn ẹgbẹ́: ẹgbẹ́ ti ti ní ìyímọ̀ (iye-jẹ́ ti àwọn ìdáhùn 60%) tọ̀ ẹgbẹ́ tí ó nílò àkóónú kan láti sálà. Ìtàn ti àwọn ìyatọ̀ ìfẹ́ àlùmọ́ṣe báyìí n sọ̀ pé àwọn ìdáhùn gidi tí ẹgbẹ́ fẹ́ ní àláwọ́ yẹ wà nìmọ́ 10-15 àkóónú kékeré — 1.67 lórí ẹgbẹ́ ti ó ń rin ní ìtara ni ìkẹ́ dead-rubber tí a ríi nígbà míì.",
+      "related": [
+        "team-form",
+        "fixture-congestion",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "ebba46dd36eb2f3e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "maximum-payout",
+      "term": "Ìkéde Owó Játi Jáde",
+      "short": "Ìlànà àti ìmèdè tí olupápá tíìta fì múlẹ̀ fún ẹbọ kan tàbí alákòóso kan lójúmó — nǹkan tí ó máa dinku ayé ní ìkéde ìpilẹ̀ ákúmúlétò.",
+      "definition": [
+        "Gbogbo olupápá tíìta ní ìmèdè owó játi jáde — fún ẹbọ kan, fún ọjọ́ kan, fún alákòóso kan lójúmó — àti ìmèdè náà yàtọ̀ sí ìpìlẹ̀ àti iṣẹ́ ìbadandun: àwọn ìpìlẹ̀ ìgbéga ni ó jẹ́ ìmèdè tó ga jù, àwọn òkè iṣẹ́ kéékéé nípa jù. Ẹbọ akọ́ku mẹ́wà-ìdínlógún tí ìsupo rẹ̀ kò bá tètè jáde kàn ìmèdè máa sẹ́ sí ìmèdè náà, àilèbùú bóyá ikoko irò fún amọ̀.",
+        "Wo ìmèdè náà kí o tó kọ́ ohun tí ó dàbí ẹjọ̀ ayé, àti máa wo ìpìlẹ̀ tó ní ìmèdè KÉÉKÉÉ jù lórí ṣípu rẹ — àwọn ẹbọ álápò jẹ́ìmèdè nípa àwọn ìpìlẹ̀ tó kéékéé jù nínú wọn ní pápá fún ẹgbẹ̀ fún fún pápá."
+      ],
+      "example": "Ṣípu sọ pé £2 × 8,000 = £16,000; àwọn ìtumọ̀ mẹ́nu èru ìmèdè owó játi jáde lórí ìpìlẹ̀ yẹn ní £10,000. Èwè mẹ́fa dídé ní àrínní ipilẹ̀ àgbéjadé ṣùgbọ́n àfẹfẹ́ kan àti pẹ̀lú ìpìlẹ̀ Bẹ̀lásúrù tí ò tán lọ lọ́wọ́ dé pẹ́ — àwọn ìyipada £6,000 jẹ̀ nínú ẹkó àrẹ̀wẹ̀sì síì.",
+      "related": [
+        "accumulator",
+        "fold",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "d4c8a143702c5985",
+      "_model": "claude-haiku-4-5-20251001"
+    }
+  ]
+}

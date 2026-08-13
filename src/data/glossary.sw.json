@@ -1,0 +1,1639 @@
+{
+  "lang": "sw",
+  "terms": [
+    {
+      "slug": "implied-probability",
+      "term": "Uwezekano Unaojitokeza",
+      "short": "Nafasi ya kushinda ambayo bei ya kupiga kambi inapendekeza: 1 iliyogawanywa na odds za desimali.",
+      "definition": [
+        "Kila bei ya kupiga kambi ni kauli ya uwezekano iliyofichwa. Kubadili odds za desimali kuwa uwezekano unaojitokeza ni rahisi: gawanya 1 kwa odds. Odds za 2.00 zinapendekeza 50%, odds za 4.00 zinapendekeza 25%, odds za 1.25 zinapendekeza 80%. Ubadilisho huu ndio msingi wa kila uamuzi mkali wa kupiga kambi, kwa sababu inabadilisha 'je bei hii ni kubwa?' kuwa swali linaloweza kujibiwa 'je uwezekano huu ni chini sana?'.",
+        "Kusambaza uwezekano unaojitokeza wa kila matokeo katika soko kunafichua upeo wa mkutanishi: jumla huwa inazidi 100%, na ziada ni ukingo uliojengwa wa opereeta. Kuondoa upeo huo kunazaa uwezekano wa busara — mtazamo halisi wa makubaliano ya soko — ambao dhidi yake thamani inaweza kupimwa."
+      ],
+      "example": "Mechi yenye bei ya 2.10 (nyumbani), 3.60 (sare), 3.40 (nje) inapendekeza 47.6% + 27.8% + 29.4% = 104.8%. Ziada ya 4.8% ni upeo wa mkutanishi; uwezekano wa nyumbani wa busara baada ya kuondoa upeo kwa usawa ni 47.6 / 104.8 ≈ 45.4%.",
+      "related": [
+        "bookmaker-margin",
+        "fair-odds",
+        "value-bet",
+        "odds-formats"
+      ],
+      "see": [],
+      "_src_hash": "f1a1df87792644ee",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "expected-value",
+      "term": "Expected Value (EV)",
+      "short": "Faida au hasara ya wastani ambayo bet itazalisha ikiwa inaweza kurudiwa mara nyingi kwa bei sawa.",
+      "definition": [
+        "Expected value inajaza swali moja: ikiwa uliweka bet hii sawa elfu mara, je ungekuwa na faida? Inakokotwa kama (uwezekano wa kushinda × odds za desimali) − 1, kwa kila kitengo kilicho chiniwa. Chanya EV (+EV) maana bei inabebea kidogo kwa uwezekano wa kweli; hasi EV maana jumla ya kibuku au mitazamo iliyoathimika inakupinga.",
+        "EV ni dhana ya muda mrefu. Bet ya +EV inaweza kupoteza mara nyingi mfululizo, na bet ya −EV inaweza kukamatia — kutofautiana kunakuza sampuli ndogo. Nidhamu ya kubetting kwa faida ni kukataa kulinganisha maamuzi kwa matokeo ya mtu mmoja na kulingania kwa bei uliyochukua badala. Baada ya mamia ya beti, matokeo yanakofautiana karibu na harakati."
+      ],
+      "example": "Unakokotwa sauti sawa kwa asilimia 30 na kupata odds 3.75. EV = (0.30 × 3.75) − 1 = +0.125 — faida inatarajiwa ya 12.5p kwa kila £1 iliyochiniwa. Ikiwa makadirio yako ya uwezekano ni sahihi, kubet bei hii kwa kurudiwa ni kwa faida hata ingawa inapoteza asilimia 70 ya mara.",
+      "related": [
+        "value-bet",
+        "edge",
+        "kelly-criterion",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "a2bb98856f4a259f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "edge",
+      "term": "Edge",
+      "short": "Faida yako juu ya bei, kawaida inaonyeshwa kama thamani inayotarajiwa kama asilimia.",
+      "definition": [
+        "Edge ni saizi ya faida yako katika kamali: jinsi gani odds zinavyokuwa nzuri zaidi kuliko uwezekano halisi wa matokeo unavyokatisha. Edge ya 5% inamaanisha kwamba, kwa kila £100 unaocheza, unatarajiwa kupata faida ya £5 kwa muda mrefu. Edges katika michezo ya kubetaji ni ndogo — wataalamu huzama hadi 2–5% — kwa sababu soko la kamali linaingiliana na inaendelea kuwa na ufanisi.",
+        "Edges zinazodaiwa zinapaswa kukamatiana kwa kuwa na wasiwasi, ikiwa ni pamoja na zetu. Mtihani dhahiri wa edge ni uamuzi juu ya sampuli kubwa: ikiwa rekodi iliyokamatia ya njia juu ya mamia ya kamali inaonyesha kurudi chanya, edge ni halisi; kama sivyo, ilikuwa kelele. Hii ndio sababu tunakusudia kila kidokezo kabla ya mapumziko na kutangazia matokeo yaliyoamuliwa, ushindi na hasara kwa sawa."
+      ],
+      "example": "Bei bora inayopatikana 2.30 dhidi ya uwezekano wa haki wa 46%: edge = (0.46 × 2.30) − 1 = +5.8%. Katika stakes ya gorofa ya £10 juu ya kamali 500 kama hizo, faida inayotarajiwa ni takriban £290 — na mabadiliko makubwa wakati wa matembezi.",
+      "related": [
+        "value-bet",
+        "expected-value",
+        "closing-line-value",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [
+        {
+          "label": "How our settled record is computed",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "24d98b3b4c4c1dd4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-formats",
+      "term": "Muundo wa Odds (Decimal, Fractional, American)",
+      "short": "Njia tatu za kuandika bei sawa: 2.50 = 6/4 = +150.",
+      "definition": [
+        "Decimal odds zinaonyesha jumla ya kurudi kwa kila unit iliyobetwa, stake included: kwa 2.50, bet ya £10 inarudisha £25 (faida ya £15 plus stake ya £10). Ni muundo wa kawaida katika Europa na rahisi zaidi kwa hesabu, ndiyo sababu tovuti hii inatumia sehemu hii kila mahali.",
+        "Fractional odds (6/4) zinaonyesha faida inayohusiana na stake — fanya kazi £6 kwa kila £4 staked — na zinabaki jadi nchini UK. American odds hutumia ishara ya plus au minus: +150 inamaanisha stake ya $100 inafanya kazi $150; −200 inamaanisha lazima ubetwe $200 kufa $100. Uongofu: decimal = fractional + 1; positive American = (odds/100) + 1; negative American = (100/|odds|) + 1."
+      ],
+      "example": "Odds ya 2.50, 6/4 na +150 ni bei sawa na uwezekano uliofichwa wa 1 / 2.50 = 40%.",
+      "related": [
+        "implied-probability",
+        "odds-comparison"
+      ],
+      "see": [],
+      "_src_hash": "71f987ece97c137a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bookmaker-margin",
+      "term": "Mkato wa Bookmaker (Overround / Vig)",
+      "short": "Faida ambayo bookmaker huzalisha katika bei zake — sababu ya kuwa jumla ya probabilities zilizojumlishwa za matokeo yote inazidi 100%.",
+      "definition": [
+        "Bookmakers hawatoi odds zenye haki. Kila bei imepunguzwa kidogo chini ya thamani yake halisi ili kwamba, haijalishi matokeo yote, kitabu kizalisha asilimia. Jumlisha probabilities zilizojumlishwa za matokeo yote na ziada zaidi ya 100% ni mkato — pia inaitwa overround, juice au vig. Mkato wa kawaida wa matokeo ya mechi ya miguu unakwenda karibu 2% kwa bookmakers wenye akili hadi 7%+ kwa wale wa kufanya kazi kwa raha.",
+        "Mkato ni kizuizi kinarubia ambayo kila mcheza ana uso wake: kucheza bila mipango, kupoteza mkato kwa wakati. Hili lina matokeo mawili ya utendaji. Kwanza, kulinganisha bei kwa njia za bookmakers ni muhimu sana — bei inayopatikana vizuri mara nyingi huondoa mkato nyingi. Pili, kushinda soko inamaanisha kushinda mkato na kisha zaidi, ambayo ndiyo sababu kwa nini kingo halisi za muda mrefu ni nadra na ndogo."
+      ],
+      "example": "Soko la matokeo-mawili na bei 1.91 / 1.91: jibu 52.4% + 52.4% = 104.8%, mkato wa 4.8%. Bei halisi kwa 50/50 halisi itakuwa 2.00 / 2.00.",
+      "related": [
+        "implied-probability",
+        "fair-odds",
+        "odds-comparison",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "de2db94eb0eef4a6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fair-odds",
+      "term": "Fair Odds",
+      "short": "Bei nini itakuwa na margin ya kitabu iliyoondolewa — ukadiriaji wa kweli wa uwezekano wa soko.",
+      "definition": [
+        "Fair odds ni toleo lenye margin iliyoondolewa la soko: bei ambazo zingefanya kitabu kiteleze hata katika muda mrefu. Njia rahisi zaidi ya kuzikadirisha ni kuchukua uwezekano uliochomekwa wa kila matokeo, uzijumlishe, na kucheza kila moja kwa uwiano ili jumla iwe sawa na 100%. Uwezekano uliochezwa unakamatiana na fair odds.",
+        "Fair odds ni muhimu kwa sababu ni kiwango cha thamani. Bei inawakilisha thamani tu ikiwa inazidi bei ya haki, si tu kwa sababu 'inaonekana kubwa'. Kukamatiana na fair probabilities katika vitabu vingi kuzalisha muktadha imara ambayo haitegemzi quirk ya bei ya opereta yoyote — kulinganisha hiki cha muktadha-dhidi-bei-nzuri ndilo sawa na jinsi mfano wetu unagiza mahali pa thamani."
+      ],
+      "example": "Uwezekano uliochomekwa 47.6% / 27.8% / 29.4% (jumla 104.8%) unachezwa kuwa 45.4% / 26.5% / 28.1%. Fair odds za nyumbani = 1 / 0.454 = 2.20. Kitabu chochote kinachotoa zaidi ya 2.20 kinalipa zaidi ya ukadiriaji wa soko yenyewe.",
+      "related": [
+        "bookmaker-margin",
+        "implied-probability",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "7ee23ed1ce1ec170",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "kelly-criterion",
+      "term": "Kelly Criterion",
+      "short": "Fomula ya kuweka kamali ambayo inabainisha sehemu ya pesa yako — na njia muhimu ya kukaanga kamali zenye thamani.",
+      "definition": [
+        "Kelly criterion inakokotoa sehemu ya pesa yako ambayo inafikiri ukuaji mrefu wakati una faida: stake = faida ÷ (odds za decimal − 1). Faida kubwa inahitaji kamali kubwa; odds ndefu inahitaji kamali ndogo kwa faida sawa, kwa sababu ushindi hutokea mara chache na mlolongo umatafsiri zaidi. Kelly kamili ni hatari sana — wengi hutumia Kelly nusu au quarter ili kukamatia mlolongo.",
+        "Kando na kuweka, Kelly ni kipimo kinema cha kukaanga. Asilimia ya faida batili inatoa maajabu makubwa: 'faida' 30% kwa outsider 21.00 kawaida ni nadharia ya bei, si furaha. Kugawa faida kwa (odds − 1) inapima thamani kwa njia inayohusiana na matokeo, ambayo ni njia isiyofaa ya kusanikisha — faida ndogo kwa 1.80 favourite inaweza kukaanga faida kubwa kwa 6.00 shot.",
+        ""
+      ],
+      "example": "Faida 8% kwa odds 3.60: sehemu ya Kelly = 0.08 / 2.60 ≈ 3.1% ya pesa yako. Faida sawa 8% kwa odds 1.60 inatoa 0.08 / 0.60 ≈ 13.3% — bei fupi inahitaji kamali kubwa zaidi.",
+      "related": [
+        "edge",
+        "bankroll-management",
+        "flat-staking",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Kelly-ranked picks in the screener",
+          "href": "/screener"
+        }
+      ],
+      "_src_hash": "8613ffe375f15d2e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bankroll-management",
+      "term": "Usimamizi wa Akiba ya Betting",
+      "short": "Kutreata pesa yako ya betting kama akiba imara yenye kanuni za kuwekeza — nidhamu ambayo inakuokoa na kupoteza sana kutokana na tofauti za bahati.",
+      "definition": [
+        "Akiba ya betting ni pesa iliyowekwa kwa upekee kwa betting — kiasi ambacho kaweza kusalia bila madhara hata kama unaipoteza kabisa. Usimamizi wa akiba ya betting ndio kanuni inayoangazia kiasi gani cha akiba yako kila bet moja inaweza kuahakini. Njia za kawaida: kuweka sehemu sawa kila wakati (units sawa kila mara), kuweka asilimia sawa (sehemu isiyobadilika ya akiba yako ya sasa), au kuweka kulingana na Kelly formula iliyolinganiwa na advantage yako.",
+        "Madhumuni yake ni kusurvive katika miezi ya wanaotakwa. Hata mkakati unaofanya faida halisi hukutana na njia 10 au zaidi za kupoteza; kuweka kiasi kikubwa kunarudisha downswing ya kawaida kuwa kutobaki kabla ya advantage inajifanya. Kubettors wenye nidhamu huweka hatari ya 1–2% ya akiba kwa bet moja. Muhimu kwa hivo: hakikisha huwezi kuweka juu ya akiba ili kusambaza hasira za kupoteza — hilo ndilo njia ya kufa ambayo itabadilisha betting kutoka burudani kuwa tatizo."
+      ],
+      "example": "Kwa akiba ya £500 na staki ya 1.5% sawa (£7.50 kwa bet), njia 15 za kupoteza zinarudia kushindwa ni £112.50 — chungu lakini haiwezi kubadilik — inakuacha 77% ya akiba inayobaki.",
+      "related": [
+        "flat-staking",
+        "kelly-criterion",
+        "variance",
+        "self-exclusion"
+      ],
+      "see": [
+        {
+          "label": "Responsible gambling tools & help",
+          "href": "/responsible-gambling"
+        }
+      ],
+      "_src_hash": "06fcd7d277eef549",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "flat-staking",
+      "term": "Flat Staking & Units",
+      "short": "Kuweka kiasi sawa kabisa — unit moja — kwenye kila chaguo, na matokeo yanakuwa comparable na janga.",
+      "definition": [
+        "Flat staking huacha kiasi sawa, kinachoitwa unit, kwenye kila bet bila kujali kiwango cha ujinga. Unit kawaida ni 1–2% ya bankroll. Faida yake kubwa ni uwazi: faida inayopimwa kwa units haiwezi kujinga kwa kubadilisha stakes baada ya matokeo, ndiyo maana tipsters wenye uwazi huchapisha matokeo kama '+8.40 units' badala ya fedha za kweli.",
+        "Matokeo yote kwenye tovuti hii yanapatikana kwa flat one-unit stakes: bet inayoshinda kwa odds 2.50 inaandika +1.50 units, bet yoyote inayopoteza inaandika −1.00, void inaandika 0. Ni hesabu rahisi kabisa — hakuna 'confidence multipliers' zinazoongezwa baada ya matokeo, hakuna njia ya kupamba mwezi ambao umepoteza fedha."
+      ],
+      "example": "Kumi flat-staked bets: 4 zinaoshinda kwa average odds 2.40, 6 zinaopoteza. Faida = 4 × 1.40 − 6 × 1.00 = −0.40 units — win rate ya 40% haikuwa ya kutosha kwa odds hizo. Rekodi sawa kwa average odds 2.80 ingeandika +1.20 units.",
+      "related": [
+        "bankroll-management",
+        "roi-and-yield",
+        "win-rate"
+      ],
+      "see": [
+        {
+          "label": "Our settled results, in units",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "a2154db69dabcdc1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "accumulator",
+      "term": "Accumulator (Acca / Parlay)",
+      "short": "Kambi moja inayounganisha chaguzi kadhaa — zote lazima zishinde, odds zinazidishwa, na kama hiyo margin ya kitabu.",
+      "definition": [
+        "Accumulator inachanganya chaguzi mbili au zaidi katika kambi moja ambayo odds ni zao la bei za mtu binafsi. Chaguzi tatu za 1.50 × 1.72 × 1.85 hufanya 4.77 — inayokamatia, ndio maana accas husambazwa kwa nguvu. Kila kikwama: mguu mmoja unaoshindwa kunawazuza tiketi nzima, na margin ya kitabu inazidishwa na kila mguu unaoongezwa.",
+        "Ikiwa kila mguu una margin ya 5%, treble inakaa na ukingo wa nyumba wa takriban 14% kabla ya kuanzishwa. Hiyo inafanya accumulators ndefu kuwa na thamani duni kimuundo — burudani kwanza, uongezaji kamwe. Ikiwa utaunganisha, jaga miguu michache, tafuta bei nzuri zaidi kwenye kila moja binafsi, na weka stake ndogo: matarajio sahihi ya acca ni ushindi wa kufurahisha nadra mwezi, sio faida thabiti."
+      ],
+      "example": "Miguu mitatu, kila moja akilikwa 60%: uwezekano wa kweli pamoja = 0.6³ = 21.6% (odds ya kweli 4.63). Miguu yenye bei ya 1.58 kila moja inatoa malipo ya 3.94 — ikimaanisha 25.4% na inatoa kitabu margin ya jumla ya ~18% kwenye tiketi.",
+      "related": [
+        "bookmaker-margin",
+        "double-chance",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Accumulator tips",
+          "href": "/tips/accumulator"
+        }
+      ],
+      "_src_hash": "d6decdd7926e1ffb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "btts",
+      "term": "Both Teams To Score (BTTS)",
+      "short": "Soko ambayo unacheza kama timu zote mbili zitapiga angalau goli moja — matokeo ya mwisho hayahitajiki.",
+      "definition": [
+        "BTTS (pia 'mabao mengi' au GG/NG) humalizika Yes ikiwa kila timu itapiga angalau goli moja, No kama sivyo. Matokeo 3–1 ni Yes; 2–0 ni No. Matokeo ya mchezo ni yasiyo na maana, ambayo inafanya BTTS kupendwa sana katika michezo kati ya timu zenye uweza wa kushamiri lakini mhadharati katika ulinzi — unaweza kuwa sahihi kuhusu asili ya mchezo wakati ukawa si sahihi kuhusu mshindi.",
+        "Kuweka bei ya BTTS vizuri kumaanisha kukadiria uwezekano wa kila timu kupiga goli badala ya kukadiria ni timu ipi inayozuri. Soko lake jibu karibu lisililo na tofauti ni soko la jumla/chini ya mabao: BTTS-Yes inahusiana sana na Over 2.5, na kulinganisha bei hizo mara kwa mara kunafichua kutokubaliana katika jinsi ambavyo bookmaker imeandika muundo wa dosari moja."
+      ],
+      "example": "Ikiwa timu ya nyumba itapiga goli katika asilimia 75 ya michezo na timu ya wageni katika asilimia 60 (takriban huru), BTTS-Yes ≈ 0.75 × 0.60 = 45% — odds ya haki 2.22. Bei ya 2.40 ingekuwa thamani; 1.95 haingekuwa.",
+      "related": [
+        "over-under",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "BTTS tips",
+          "href": "/tips/btts"
+        }
+      ],
+      "_src_hash": "05b46df492098048",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "over-under",
+      "term": "Over/Under (Mabao Jumla)",
+      "short": "Kupia jumla ya mabao yatakayopatikana badala ya mkutanist, kwa kiwango kama 2.5.",
+      "definition": [
+        "Jumla-bet inazuia nchi inayoshinda na kuuliza mabao mangapi tu matapeu yatazalisha. Mstari kawaida umewekwa sehemu nzuri (2.5) ili kuweka hainawi: Over 2.5 inakuhusu mabao matatu au zaidi, Under 2.5 inashinda kwa mabao mawili au chini. Mistari yenye namba kamili (mfano 3.0 haswa) yanaweza 'push' — kutua hasa kwenye mstari — katika hali hiyo pesa zinarejelea kama batili.",
+        "Jumla bet mara nyingi ni vichumi vya thamani kuliko matokeo ya mechi kwa sababu pesa ya kawaida inafokus kwenye kuchagua washindi, ikiacha soko la mabao kiasi cha chini bila bei ya nakili. Pia zinafaa hisabati takwimu: mabao hufuata mizani imara sana kwa kila timu na ligi, ambayo ndiyo sababu sehemu kubwa ya mapendekezo ya modeli yetu ni jumla."
+      ],
+      "example": "Over 2.5 kwa 1.93 inamaanisha asilimia 51.8%. Ikiwa modeli yako itakadri mabao matatu au zaidi kwa asilimia 55%, EV = (0.55 × 1.93) − 1 = +6.2% — bet ya thamani hata ingawa ni karibu 50/50.",
+      "related": [
+        "btts",
+        "void-bet",
+        "asian-handicap"
+      ],
+      "see": [
+        {
+          "label": "Over/Under tips",
+          "href": "/tips/over-under"
+        }
+      ],
+      "_src_hash": "90644050aa93d2f1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "asian-handicap",
+      "term": "Asian Handicap",
+      "short": "Soko ya handicap ambayo huondoa matokeo ya usawa kwa kumpa timu moja mabao ya kuanzia, mara nyingi kwa hatua za robo mabao.",
+      "definition": [
+        "Asian handicaps hulazimisha tofauti kwa kuongeza mabao ya kufikiria kwa timu moja kabla ya kickoff. Kuunga mkakati timu inayofadhiliwa kwa −1.5 inamaanisha lazima iwine kwa mabao mawili safi; kuunga mkakati timu iliyokataliwa kwa +1.5 inashinda ikiwa inaepuka kupoteza kwa mabao mawili au zaidi. Handicap kamili (−1.0) zinaweza kusitish: ikiwa timu inayofadhiliwa inashinda kwa mabao moja haswa, stakeu zinarudishwa.",
+        "Mistari ya robo (−0.75, +1.25) hugawanya stakeu yako katikati ya mistari miwili inayokaribiana — nusu kwa −0.5 na nusu kwa −1.0, kwa mfano — hivyo matokeo yanaweza kuwa nusu-ushindi na nusu-hasara. Kwa sababu usawa umeondolewa kwa makini, soko za Asian handicap zina matokeo mawili tu, kawaida zinabeba hadii chini kuliko 1X2, na ndizo ambapo pesa nyingi kali za kandanda hubiashara."
+      ],
+      "example": "£20 kwa timu inayofadhiliwa kwa −0.75 (odds 1.95): ushindi wa mabao moja hulipa nusu ya −0.5 kamili na hurudisha nusu ya −1.0 — jumla ya mapato £29.75, nusu-ushindi. Ushindi wa mabao mawili hulipa nusu zote mbili: £39.",
+      "related": [
+        "match-result",
+        "void-bet",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "711a58b58d3b87dd",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "double-chance",
+      "term": "Double Chance",
+      "short": "Kufunika matokeo mawili kati ya matatu ya mechi katika bet moja — salama zaidi, odds fupi zaidi.",
+      "definition": [
+        "Double chance inachanganya matokeo mawili ya soko la 1X2: nyumbani-au-draw (1X), nje-au-draw (X2), au timu yeyote kuwa mwenye kazi (12. Matokeo matatu tu yanakugeuka, kwa hiyo uwezekano wa kushinda ni mkubwa — na odds kwa hiyo fupi, mara nyingi chini ya 1.50 wakati mkubwa anajihusika.",
+        "Soko hilo linafanya kazi sawa na Draw No Bet na handicap ya Asian +0.5; kulinganisha bei zote tatu kwa mtazamo sawa wakati mwingine hufichua ni ipi iliyoginwa zaidi na kitabu. Tahadhari ya kimkakati: usalama si thamani. 1X katika 1.25 na nafasi ya kweli ya 78% ni bet inayopoteza iliyovaa nguo salama — odds fupi bado inabidi kuua bei ya haki."
+      ],
+      "example": "Nyumbani 45%, draw 28%: uwezekano wa haki wa 1X = 73% → odds za haki 1.37. Kitabu kinachopeana 1.44 kinakufa thamani kwa chaguo 'salama'; kile kinachopeana 1.28 hakina.",
+      "related": [
+        "match-result",
+        "draw-no-bet",
+        "asian-handicap"
+      ],
+      "see": [
+        {
+          "label": "Double chance tips",
+          "href": "/tips/double-chance"
+        }
+      ],
+      "_src_hash": "dd5f4515ac8590f3",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "draw-no-bet",
+      "term": "Draw No Bet (DNB)",
+      "short": "Chagua timu; ikiwa laha itakuwa sawa, pesa yako inarudishwa.",
+      "definition": [
+        "Draw No Bet hondoa sawa kutoka kwa equation: chagua upande, na laha iliyoshindwa inarudisha stake yako kama void badala ya hasara. Ni sawa na Asian handicap 0.0 na inakaa kati ya bei ya 1X2 kamili (odds juu, sawa hupoteza) na double chance (odds chini, sawa hushinda).",
+        "DNB inafaa hali ambapo unapendelea upande lakini wewe heshimu hatari halisi ya sawa — derbies mvinyo, mashindano ya mbali yenye huzuni. Unaweza pia kuijenga kwa mkono kwa kugawanya stake yako kati ya ushindi na sawa kwa uwiano sahihi, ambayo wakati mwingine inashinda bei ya DNB iliyofungwa. Kama kawaida, kuzunguka kuna thamani tu tunapochukua wakati uwiano unamaanisha ni chini ya makadirio yako ya nafasi halisi."
+      ],
+      "example": "Timu bei 2.30 kushinda, 3.30 sawa. DNB inatolewa saa 1.70: inachukua 58.8% kwa soko ambapo nafasi ya ushindi (ukiondoa sawa) ni 100 × 43.5/(43.5+26.3) ≈ 62% — DNB ya haki itakuwa ~1.61, kwa hivyo 1.70 ina thamani.",
+      "related": [
+        "double-chance",
+        "asian-handicap",
+        "void-bet"
+      ],
+      "see": [],
+      "_src_hash": "554e9497dd446fe6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "match-result",
+      "term": "Match Result (1X2)",
+      "short": "Soko wa kawaida wa mabao matatu: ushindi wa nyumbani (1), sare (X) au ushindi wa wageni (2).",
+      "definition": [
+        "1X2 ni soko kuu la soka: jaza nyumbani, jaza sare, au jaza wageni katika dakika 90 pamoja na muda wa ziada (saa za ziada na penalti hazihesabiwi isipokuwa ilivyoelezwa). Matokeo yake matatu yanafanya iwe tofauti na soko la njia mbili — uwezekano unagawanywa njia tatu, sare hutokea mara nyingi zaidi kuliko wabaji wa kawaida wanavyotaka, na ujinga kawaida ni mkubwa kuliko kwenye mistari ya Asian handicap.",
+        "Sare inahitaji heshima maalum: soka za kiwango cha juu huzaa sare takribani robo ya mara, lakini bei ya sare mara nyingi huzuka nzuri kwa sababu pesa nyingi za wasambazaji wanataka fozi. Hiyo mfumo wa bei yenye hitilafu ndilo sababu kwa nini skrini za thamani mara kwa mara zinafanya sare kuonekana — si kwa sababu sare ni ya kutabiri, bali kwa sababu sare hazibetiwi kwa utamaduni.",
+        "Mfano: Soko sawa na 2.05 / 3.50 / 3.90 linamaanisha 48.8% / 28.6% / 25.6% (ujinga 3%). Ikiwa uwezekano wa haki wa saada ni 46% / 27% / 27%, upande wa wageni sawa na 3.90 (haki 3.70) ni kona ya thamani ya soko."
+      ],
+      "example": "A market at 2.05 / 3.50 / 3.90 implies 48.8% / 28.6% / 25.6% (margin 3%). If consensus fair probabilities are 46% / 27% / 27%, the away side at 3.90 (fair 3.70) is the value corner of the market.",
+      "related": [
+        "double-chance",
+        "draw-no-bet",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "bd857024ed451f0a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "correct-score",
+      "term": "Correct Score",
+      "short": "Kutabiri matokeo halisi ya mwisho — odds ndefu, tofauti kubwa, ujinga wa kila mtuhumiwa mkubwa.",
+      "definition": [
+        "Correct score inamaanisha matokeo halisi kabisa — 2–1, 0–0, 3–3 — kila mlinganyo unauzwa kando kwa odds ndefu. Kwa sababu uwezekano umegawanywa katikati ya mabao ishirini-na-kadhaa, hata mtokeo mmoja unaolingana sana (mara nyingi 1–1 au 1–0) hauzidi asilimia 12–13.",
+        "Ujinga wa soko huu ni miongano kubwa sana kati ya soko zote zinazopatikana kwa vitabu, na tofauti ni kali: marekodi ya correct score huzunguka kwa kasi sana katika sampuli ndogo. Tukio hili kama soko la kufanya, lililo na dola ndogo tu badala ya mkakati wa kuzuia. Ikiwa una maoni halisi kuhusu muundo wa mabao ya mchezo, soko la jumla au BTTS kwa kawaida hutumia wazo hilo kwa bei tulivu zaidi."
+      ],
+      "example": "2–1 inaoziwa saa 9.00 inamaanisha 11.1%. Mifano ya mtindo wa Poisson yenye viwango halisi vya mabao haizidi mabao yoyote zaidi ya 13% — kwa hivyo bei inahitaji kuwa juu ya 7.70 kabla ya kuzuia kumfikiria hata.",
+      "related": [
+        "over-under",
+        "btts",
+        "variance"
+      ],
+      "see": [
+        {
+          "label": "Correct score tips",
+          "href": "/tips/correct-score"
+        }
+      ],
+      "_src_hash": "b589a16b0efd68c4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "closing-line-value",
+      "term": "Closing Line Value (CLV)",
+      "short": "Kubeat bei ya mwisho kabla kuanza — dalili kali zaidi kwamba mcheza ana edge halisi.",
+      "definition": [
+        "Bei ya mwisho ni bei ya mwisho inayopatikana kabla hafla kuanza, baada ya soko kunywa habari zote na pesa. Kawaida ni makadirio makali zaidi ya uwezekano uliopatikana. Closing line value inamaanisha kuwa umechukua bei nzuri zaidi mapema: ulibet 2.20 na ikafunga 2.00. Fanya hivyo mara kwa mara na karibu hakika una edge halisi, kwa sababu unakadiria mara kwa mara kumtoka soko kwenye hotuba yake ya mwisho.",
+        "CLV inashida kwa sababu inasehemu ujinga kutoka bahati haraka zaidi kuliko faida inaweza. Matokeo katika bei kadhaa tu ni kelele; kubeat mwisho mara kwa mara katika sampuli hiyo ni alama. Pia ndiyo sababu bei zinahamia kwa yote — haraka ya awali inaosahau — na sababu kunukua haraka juu ya bei iliyobendera inashida."
+      ],
+      "example": "Unachukua 2.20; bei inafunga 2.00. Uwezekano uliofika umebadilika kutoka 45.5% hadi 50%. Ikiwa mwisho ni sahihi, bet yako ilikuwa na EV = (0.50 × 2.20) − 1 = +10% — ilihifadhiwa wakati ulibeat harakati, matokeo yeyote.",
+      "related": [
+        "line-movement",
+        "edge",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "d542c47127cb6b0e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "line-movement",
+      "term": "Mwendo wa Odds na Steam",
+      "short": "Jinsi odds zinavyobadilika kadri pesa na habari zinavyofika — na mwendo wa haraka wa pesa tajiri unaoitwa steam.",
+      "definition": [
+        "Odds ni bei zinazoishi. Zinavinguka kutoka kwa muundo wa kitabu cha bets, kisha zinarudi nyuma kadri bets zinavyofika, habari za timu zikifika na waendeshaji wenye uzoefu wanaposanisha upya. Bei inayokupiga haraka ('steaming in') inaonyesha pesa inayounga mkakati matokeo hayo; bei inayoondoka nyuma inaonyesha kinyume chake. Mwendo mwingi ni usawa wa kawaida wa kitabu, lakini kupiga haraka kwa mwendo mmoja katika vitabu vingi — steam — mara nyingi inaonyesha pesa ya waendeshaji walio na uzoefu inapoingiza soko.",
+        "Mwendo unajali mtu anayetafuta thamani kwa njia mbili. Ukichukua haraka, bei inayosteami baadaye kawaida inamaanisha umebara mstari wa kumalizakazi. Na bei inayoondoka nyuma baada ya kuweka bet yako ni onyo kwamba mtazamo wako hauafanani na pesa inayoitwa tajiri. Kufuatilia bei yetu iliyochapishwa dhidi ya mwendo baadaye ni mojawapo ya hekima za afya nyuma ya safu ya ishara ya kuzuia."
+      ],
+      "example": "Timu inafungua 2.10 na ni 1.85 saa moja kabla ya kick-off katika soko lote. Uwezekano unaoimplied ulibadilika 47.6% → 54.1%. Mtu yeyote anayehold karatasi ya 2.10 sasa ana bet ambayo soko lenyewe linakadiria kama +14% EV.",
+      "related": [
+        "closing-line-value",
+        "sharp-and-soft-bookmakers",
+        "value-bet"
+      ],
+      "see": [
+        {
+          "label": "Signal column in the screener",
+          "href": "/screener"
+        }
+      ],
+      "_src_hash": "8230946f4d53d082",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "sharp-and-soft-bookmakers",
+      "term": "Sharp vs Soft Bookmakers",
+      "short": "Sharp bookmakers wanakubali wanataji na kuweka odds na margin ndogo; soft bookmakers wanalenga casual bettors na kuweka limits kwa wanataji mabilis.",
+      "definition": [
+        "Sharp bookmakers (na betting exchanges) huendeshwa na margins ndogo, wanakubali stakes kubwa, na hutengeneza odds zao kutoka kwa mtiririko wa pesa za wataalamu — odds zao zinachukuliwa kama ukweli wa soko. Soft bookmakers wanalenga wanataji wasio na uzamili kwa bonuses na promotions, huendeshwa na margins kubwa, huacha haraka kwa habari, na kuweka limits kwa akaunti zinazofanya kazi vizuri.",
+        "Ramani ya edge ya vitendo inafuata moja kwa moja: thamani hupatikana zaidi katika soft books ambazo pricing yao polepole au yenye promotions inajibu consensus ya sharp. Kulinganisha price ya soft book na sharp/consensus fair line ni muundo kamili ambao value detection yetu inatumia. Trade-off ya kujua: kuchukua mara kwa mara prices hizo huelekeza kwa stake limits katika soft operators — ishara ya heshima, lakini kizuizi halisi."
+      ],
+      "example": "Sharp consensus inaweka upande kwa 1.95 (fair ~51%); soft book bado inaonyesha 2.15 kutoka jana. Gap ya 10% ni spot ya classic soft-book value — na muundo mmoja ambao unakamatia saa chache tu.",
+      "related": [
+        "bookmaker-margin",
+        "closing-line-value",
+        "line-movement"
+      ],
+      "see": [
+        {
+          "label": "Bookmaker reviews",
+          "href": "/bookmakers"
+        }
+      ],
+      "_src_hash": "089eebf382cf0e6f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "arbitrage-betting",
+      "term": "Arbitrage Betting (Arbing)",
+      "short": "Kufunika matokeo yote kwa wastani wa vibuku tofauti kwa bei zinazosanya faida ndogo iliyohakikishwa.",
+      "definition": [
+        "Arbitrage inaonekana wakati tofauti za bei kati ya vibuku vya bets vinakuruhusu kuunga mkono kila matokeo na kukamatia faida bila kujali matokeo — jumla ya implied probability ya bei uliyozichagua iko chini ya 100%. Arbitrages huonekana wakati vitabu vinatofautiana au kuchelewa kwa habari, na kawaida hulipa 1–4% ya jumla ya stakis.",
+        "Matatizo ni ya vitendo. Arbitrages inahitaji turnover kubwa kwa kurudi ndogo, hesabu za stake zinazopiga hadharani, na kasi — bei hupoteza ndani ya dakika chache. Vibuku vya bets hutambua mfumo haraka na kujibu kwa kuzuia stakis au kufunga akaunti. Bets zenye batili kwa vibuku moja zinaweza kusaini mguu mwingine kwa hatari. Ni biashara halisi lakini inayoumiza, karibu na logistiki kuliko betting."
+      ],
+      "example": "Kitabu A: nyumba 2.10 (47.6%). Kitabu B: wageni+jumba (X2) 2.15 (46.5%). Jumla 94.1% < 100%. Stakis ya £51.20 na £48.80 kwa mtiririko huo winarudi ~£107.50 kwa njia gani match inaendelea — kama +5.9% kwenye jumla ya £100.",
+      "related": [
+        "bookmaker-margin",
+        "value-bet",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "c70334cf2d0ed4e6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "cash-out",
+      "term": "Cash Out",
+      "short": "Kumaliza kamali ya kumfadhaili mwenyekiti kabla ya tukio kuishia — rahisi, lakini karibu daima chini ya thamani ya kweli.",
+      "definition": [
+        "Cash out inakuruhusu kufunga kamali iliyoishi kabla ya tukio kuishia: mwenyekiti wa kumfadhaili hutoa kiasi cha kununua upya kulingana na uwezekano wa sasa wa kamali yako kushinda. Nafasi zenye ushindi zinaweza kusumbua mapema; zile zinazopoteza zinaweza kuokoa sehemu. Inajisikia kwa udhibiti, ambayo ni haswa kwa nini inauzwa kwa nguvu sana.",
+        "Mechanics ni kichawi kidogo: kauli ya cash-out ni thamani ya kweli ya tikiti yako sasa minus dari mpya — mara nyingi kubwa kuliko dari katika kamali ya asili. Kukamatia cash out kila mara kunasika EV mara mbili. Ikiwa unaona kwamba unataka kufanya biashara nafasi kwa haraka, kubadilishana ambapo bei za kurudi/kuweka ni wazi inafanya kazi ile ile kwa bei dhaifu; ikiwa unashika kamali za thamani, nidhamu kawaida ni kuwacha kusimame.",
+        "example_swahili_kwanza"
+      ],
+      "example": "Yako £10 saa 3.00 ni asilimia 70 kushinda ushindani wa hivi karibuni. Thamani ya tikiti ya kweli = 0.70 × £30 = £21. Kauli ya kawaida ya cash-out ya £18.50 inakukamatia kwa utupu £2.50 — 12% katika kicheza kwa kitufe.",
+      "related": [
+        "expected-value",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "51e449202dcc787e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "free-bet",
+      "term": "Free Bet",
+      "short": "Token ya kumfanya mjumbe kumweka pesa yake — faida ni yako, stake hairejeswi.",
+      "definition": [
+        "Free bet ni mkakati wa kumhimiza mteja: weka pesa, na ukishereheka utapokea faida lakini si stake yenyewe ('stake not returned', SNR). Free bet ya £10 kwa odds 4.00 huleta £30, si £40. Kwa sababu stake si yako kamwe, thamani halisi ya token inakadiriwa kuwa takriban thamani yake mara (1 − 1/odds) — ndio sababu free bets hulipua thamani zaidi kwa odds ndefu.",
+        "Free bets ndio sarafu ya zabuni za karibu na matangazo. Ikitumika bila tahadhari kwa mabolaji mafupi, hurejesha sehemu ndogo tu ya thamani; ikitumika kwa makubaliano sawa kwa odds 3.00–5.00, inabadilika kuwa 65–80% ya thamani iliyotarajiwa. Soma sharti kila mara: muda wa kuisha, odds za chini kabisa na mipango ya soko huweka akiba ya nini kwa kweli thamani ya token."
+      ],
+      "example": "£20 free bet kwa odds 5.00: shereheka faida £80 mara 20% ya wakati → EV = £16, yaani 80% ya thamani halisi. Token sawa kwa odds 1.40 hurejesha £8 tu … ≈ EV £5.70 — chini ya 30% ya thamani halisi.",
+      "related": [
+        "wagering-requirements",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Current bonuses with real terms",
+          "href": "/bonuses"
+        }
+      ],
+      "_src_hash": "e8a48bb840d0fa67",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "wagering-requirements",
+      "term": "Mahitaji ya Kuweka Pesa (Rollover)",
+      "short": "Mara ngapi bonus lazima iweke kabla ya kutoa — nambari inayoamua kama offer ni nzuri au la.",
+      "definition": [
+        "'Bonus ya £50, wagering 5x kwa odds kwa chini 1.5' inamaanisha lazima uweke £250 ya mabets yanayofaa kabla bonus ibadilishe kuwa pesa inayoweza kutolewa. Kila bet iliyolazimishwa hulipwa margin ya bookmaker, kwa hivyo gharama halisi ya kumalizakuleta ni takriban turnover × margin: nambari ya magazeti inapungua kila mahali inakabilikapitia kitabu.",
+        "Rollover ndio mstari muhimu zaidi katika masharti yote ya bonus — zaidi ya nambari ya magazeti. Bonus ndogo kwa wagering 1x mara nyingi inashinda ile kubwa kwa 10x. Angalia pia maneno ya ziada: odds kwa chini (minimums ya juu kulazimisha mabets ya hatari), soko lisiloingizwa, stake ya juu kwa bet, na tarehe za kumalizakulera ambazo kwa kimya hukataza mabonuses yasiyokamilika."
+      ],
+      "example": "Bonus ya £40, rollover 8x, margin ya wastani ~5%: gharama inayotarajiwa ya kumalizakulera ≈ £320 × 5% = £16. Thamani halisi ya bonus ni karibu £24 kuliko £40 — na hasi kama kumalizakulera kwa siku 7 kulazimisha mabets yasiyo sawa.",
+      "related": [
+        "free-bet",
+        "bookmaker-margin"
+      ],
+      "see": [
+        {
+          "label": "Offers compared with wagering shown",
+          "href": "/bonuses"
+        }
+      ],
+      "_src_hash": "9640d67e0723ae88",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "void-bet",
+      "term": "Void Bet (Push)",
+      "short": "Bet iliyofutwa: pesa yako inagrudi, isijabu kama win au loss.",
+      "definition": [
+        "Bet inafutwa wakati haiweezi kukamatia kwa haki: mechi inaahirishwa au kuacha, mcheza anayetajwa hajaingia, handicap ya namba nzima au jumla ya mabao inakaa haswa (push), au mbookia inafuta bei iliyooza kwa wazi (palpable error, 'palp'). Pesa yako inagrudi na bet inakamatia kama si win wala loss.",
+        "Voids ni muhimu kwa uwazi wa kamatanishi. Katika takwimu zetu za kukamatia, void inakamatia haswa 0 units — inafutwa katika hesabu za win-rate na pesa hazikosomi kama turnover. Katika accumulators, mguu uliofutwa haupaswi kulangeza tikiti; mguu unafutwa na odds ya jumlisho inakamatia upya bila hiyo."
+      ],
+      "example": "Asian handicap −1.0 na mufariji anashinda 2–1: kiwango kimoja cha mabao kinakaa haswa juu ya mstari, bet inapush, na pesa yako ya £15 inagrudi tu.",
+      "related": [
+        "settlement",
+        "asian-handicap",
+        "over-under"
+      ],
+      "see": [],
+      "_src_hash": "bdffd6863e31d20a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "settlement",
+      "term": "Settlement (Grading)",
+      "short": "Kuweka alama ya bet imezoeleka, imepotea au batili dhidi ya matokeo rasmi — na mtihani wa uaminifu kwa kila mtoa arifa.",
+      "definition": [
+        "Settlement ni kitendo cha kuweka alama ya bet dhidi ya matokeo ya mwisho: imezoeleka, imepotea au batili, na faida inakokotwa kutoka kwa odds ulizokula kweli. Kwa mtu binafsi anayebeting ni akaunti; kwa yeyote anayochapisha arifa ni msingi mzima wa uaminifu. Rekodi inakuwa na maana ikiwa tu kila arifa iliyochapishwa inapewa alama — kwa bei iliyochapishwa, dhidi ya alama rasmi, na hasara zilizojumlishwa.",
+        "Udanganyifu wa kawaida wa mtoa arifa ni udanganyifu wa settlement: kuondoa watapoteza, kuweka alama dhidi ya odds nzuri zaidi kuliko zililokuwa sehemu, au kuburudika kurekebisha hasara kama 'batili'. Mfereji wetu umejengwa kupinga hasi: kila arifa inahifadhiwa kabla ya kifo cha mpira na bei yake, matokeo yanasimuliwa kiotomati kutoka kwa alama rasmi za mwisho, na hakuna kinachobadilishwa baadaye — kurasa za akifu zimebaki sehemu, ushindi na hasara sawa."
+      ],
+      "example": "Arifa ilichapishwa kwa 2.30 kabla ya mchezo. Alama ya mwisho inaiweka kama mshindi: +1.30 units kwa stakes sawa. Licha ya kuwa imepotea, kurasa ile ile ingekuwa na uthabiti inakuonyesha −1.00 — uthabiti huo ndio muhtasari.",
+      "related": [
+        "void-bet",
+        "flat-staking",
+        "tipster"
+      ],
+      "see": [
+        {
+          "label": "Browse settled days",
+          "href": "/predictions/daily"
+        }
+      ],
+      "_src_hash": "7ac0c0dd355ffceb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "roi-and-yield",
+      "term": "ROI / Yield",
+      "short": "Faida kama asilimia ya jumla ya pesa zilizowekwa — nambari moja safi kwa kulinganisha rekodi za kubeti.",
+      "definition": [
+        "Yield (inayoitwa ROI katika michezo ya kubeti) inagawanya faida halisi kwa jumla ya pesa zilizowekwa: mibeti 100 ya kitengo 1 inayorejea vitengo 6 vya faida ni yield ya 6%. Kwa sababu inasawazisha kwa kuzunguka kwa biashara, yield inakuruhusu kulinganisha rekodi za ukubwa tofauti na muundo wa odds kwa haki — tofauti na faida halisi, ambayo inakamatia tu kubeti zaidi.",
+        "Muktadha wa kuzuia: yields za muda mrefu wa 3–8% ni eneo la juu la kitaalamu; yields za tarakamu nyingi juu ya sampuli kubwa ni nadra na kawaida zinakua ndogo kadri sampuli inavyoongezeka. Yield ya ajabu juu ya mibeti 30 ni tofauti, si ustadi — soma yield daima pamoja na idadi ya mibeti iliyosalia, na kuwa na maandalizi juu ya rekodi yoyote ambayo haionyeshi sehemu ya kupoteza."
+      ],
+      "example": "Mialiko 120 iliyosalia na stakes za flat 1-unit, faida halisi +7.9 units: yield = 7.9 / 120 = 6.6%. Units +7.9 sawa juu ya mibeti 400 inaweza kuwa yield ya 2.0% — rekodi dhaifu zaidi (ingawa bado chanya) kwa kimsingi.",
+      "related": [
+        "win-rate",
+        "flat-staking",
+        "variance"
+      ],
+      "see": [
+        {
+          "label": "Tipster ROI on the leaderboard",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "5f6b7fb3c60444ed",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "win-rate",
+      "term": "Kiwango cha Ushindi (Strike Rate)",
+      "short": "Asilimia ya hati za kumimina — haina maana yenyewe, lakini ina maana pamoja na odds za wastani.",
+      "definition": [
+        "Kiwango cha ushindi ni sehemu ya hati zilizosettl ambazo zilishinda. Peke yake, ni namba iliyotumika sana zaidi katika uuzaji wa kamari: kiwango cha ushindi cha 80% kinasikika kirefu sana na kinaweza kupatikana kwa urahisi kwa kuunga mkono 1.10 favorites — wakati wa kupoteza pesa. Kinyume chake, kiwango cha ushindi cha 35% ni bora ikiwa bei ya wastani iliyochukuliwa ni zaidi ya 3.00.",
+        "Kiwango cha break-even kwa rekodi yoyote ni 1 iliyogawanywa na odds ya decimal ya wastani: kwa odds za wastani 2.50 unahitaji 40% kusimama mahali. Kila kitu hapo juu ya break-even ni faida; kila kitu chini ni hasara iliyofungwa katika asilimia. Soma kiwango cha ushindi, odds za wastani, na yield pamoja, kwa idadi maalum ya hati — rekodi yoyote inayonukuu kiwango cha ushindi peke yake inajificha kitu."
+      ],
+      "example": "Odds za wastani 2.20 → break-even 45.5%. Rekodi ya 48% kwa odds hizo hutoa (0.48 × 2.20) − 1 = +5.6%. Hiyo 48% sawa na odds za wastani 2.00 inapoteza 4% ya mzunguko wa pesa.",
+      "related": [
+        "roi-and-yield",
+        "flat-staking",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "adaaf47d9aff3acd",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "variance",
+      "term": "Tofauti",
+      "short": "Msitosito wa asili kati ya matokeo na matarajio — sababu mabets mazuri yanapoteza na rekodi mbaya inaonekana nzuri, kwa muda.",
+      "definition": [
+        "Tofauti ni kelele ya takwimu kati ya kile kinachopaswa kutokea wastani na kile kinachotokea kwa kweli katika sampuli yoyote iliyo na mipaka. Katika betting ni mbaya sana na haiwezi kuepukwa: bet ya kweli yenye uwezekano wa 55% inapoteza karibu nusu ya mara; kundi lenye ukingo halisi wa +5% linaweza kukataa baada ya mabets mia mbili; mtu anayeuzia mabets na nadhani nzuri anaweza kuandika mwezi mzuri.",
+        "Kuheshimu tofauti inabadilisha tabia. Inabamba kiasi cha benki (angalia usimamizi wa bankroll), inaweka madirisha ya tathmini (mamia ya mabets, si kumi na kumi), na inakamatia dhidi ya kutofautiana na furaha. Pia ndio sababu kwa nini rekodi kamili wazi zinashinda zaidi kuliko mlipuko wa moto — juu ya sampuli ya kutosha tofauti inayotaka tu ukingo, chanya au hasi, inabaki."
+      ],
+      "example": "Mabets 500 yanayojitegemea kwa 50% / odds 2.10 (ukingo halisi wa +5%): takriban mtu mmoja kati ya sita bado ana hasara baada ya mabets yote 500 — tofauti tu, hakuna kosa lililofanywa.",
+      "related": [
+        "expected-value",
+        "bankroll-management",
+        "win-rate"
+      ],
+      "see": [],
+      "_src_hash": "d5852e771c63e316",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "in-play-betting",
+      "term": "In-Play (Live) Betting",
+      "short": "Kuweka kamali wakati mchezo unakwenye, kwa odds inayobadilika kila wakati kuna tukio muhimu.",
+      "definition": [
+        "Kuweka kamali live inaweka soko wazi wakati wa mchezo, na bei ya odds inabadilika kila mara vile mabao, kadi nyekundu au kasi ya mchezo ikibadilika. Inatoa furaha nzuri ya uchambuzi — kujibu hali ya mchezo haraka zaidi au kwa akili zaidi kuliko algorithm — lakini mazingira yimeundwa kwa ajili ya haraka-haraka: muda mfupi wa kusimama, bei zinabingirika, na kuchelewa kwa mtiririko ambayo maana yake kitabu kawaida kinajua zaidi kuliko mkondo wako unaonyesha.",
+        "Onyo mbili za muundo. Bahati ya live kawaida ni pana zaidi kuliko kabla ya mchezo, hivyo bei ya wastani ya in-play ni mbaya. Na mzunguko ni adui wa nidhamu: machapisho makubwa ya maamuzi ya micro kwa kila mchezo yanazidisha marudio kwa bahati na neema. Ikiwa kuweka kamali live, amua mahali pa kuingia na pesa kabla ya kick-off, na tembea katika kumfuata waliopondeza mapema 'nyuma' kama bendera nyekundu yenye maana."
+      ],
+      "example": "Penzi linalofadhiliwa kuweka 1.70 kabla ya mchezo inakubali mabao mapema: odds ya live hurudia kwa 2.90 (implied 34%). Kama mfano wako wa kabla ya mchezo walikadiri hali ya kurudi nyuma karibu na 42%, hiyo kurudisha upya overshoot — si mshangao — ni sababu pekee ya busara kuweka kamali.",
+      "related": [
+        "cash-out",
+        "line-movement",
+        "bankroll-management"
+      ],
+      "see": [],
+      "_src_hash": "6048484c8edf3b0c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "xg",
+      "term": "Expected Goals (xG)",
+      "short": "Kipimo cha ubora wa picha kinachokadiri mabao ambayo timu 'inapaswa' kuwa imescore kutokana na fursa zake.",
+      "definition": [
+        "Expected goals hupeana kila picha uwezekano wa kuskore kulingana na matokeo ya nyingine sawa hapo awali — umbali, angle, sehemu ya mwili, aina ya assist. Kuzisuma hutoa xG ya timu kwa mechi au msimu: kipimo cha ubora wa fursa kinachoel toa bahati ya kumaliza. Timu inayoshinda 1–0 na xG ya 0.4 dhidi ya 2.3 ilikuwa inategemea kiper wake, haijalipii jedwali liseme nini.",
+        "Kwa wageni, xG ni fomu ya ishara inayokaa haraka zaidi kuliko matokeo: timu zinazowajibu zaidi kuliko xG yao kawaida hukejezeana, na soko wakati mwingine hukakamata hio regression. Kuzuia kwake ni muhimu vile vile — inanet kupuuza hali ya mechi na muktadha wa picha zaidi ya mtindo wake, inatofautiana kati ya watoaji, na xG moja ya mechi ni karibu msomeko kama mabao moja ya mechi. Iitumie kama pembejeo, si hukumu."
+      ],
+      "example": "Katika mechi sita za mwisho timu iliskore 11 kutokana na xG ya 6.1. Soko la kubeti likiaeza bei kulingana na mabao hayo 11 inaweza kuwa ikaona zaidi kwa gurudumu la kumaliza linaloendelea linalofanya kazi ~80% zaidi ya kiwango endelevu xG inasema.",
+      "related": [
+        "variance",
+        "line-movement"
+      ],
+      "see": [],
+      "_src_hash": "be8ddc67f6613784",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "tipster",
+      "term": "Tipster",
+      "short": "Mtu anayechapisha chaguo za kubetia — amini historia kamili, si picha ya skrini.",
+      "definition": [
+        "Tipster anachapisha mapendekezo ya kubetia, bila malipo au kwa sababu ya pesa. Uchumi wa makini unafanya uwanja kuwa hatari: wanaoshinda hupromoshwa kwa sauti, rekodi za kupoteza hufutwa bila masikio, na picha za skrini hawezi kuthibitisha kitu chochote. Ushahidi pekee unaofaa ni rekodi kamili, iliyoandikwa wakati huo: kila kidokezo kilicho archived kabla ya mchezo, kilikotathminiwa kwa odds inayopikezwa, na upotezaji unaonyeshwa kama kudumu kama ushindi.",
+        "Checklist inayofaa kwa mtu yeyote (ikiwa ni pamoja nasi): Je historia kamili inaonekana, na kukwama kwa sababu mzuri kuonekana? Je odds inayopikezwa inaweza kufikiwa wakati wa kuchapisha? Je faida imetajwa katika vitengo vya nyingi kwa kipindi kilichotajwa? Je rekodi inakamatia kwa bei za kumalizia? Mtu yeyote anayekataa maswali hayo anauza burudani, si pembetano — kulipa chaguo ikiwa tu rekodi iliyothibitishwa bado ingakukamatia kwa nusu ya kile kinachozungumzwa."
+      ],
+      "example": "Dai mbili: 'nilishinda 9 kati ya 10 za mwisho!' versus '412 kubetia kulizotukamatia, +4.8% yield, odds wastani 2.31, archive kamili'. La kwanza ni sentensi ya kubebeshia; la pili ni rekodi — na archive ndio kinachofanya kuwa rekodi.",
+      "related": [
+        "settlement",
+        "roi-and-yield",
+        "win-rate"
+      ],
+      "see": [
+        {
+          "label": "Our leaderboard with settled records",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "4790ca1012523b3c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-comparison",
+      "term": "Kulinganisha Odds",
+      "short": "Kuangalia bei ya kila bookmaker kabla ya kubeti — njia rahisi na amanfu zaidi inayopatikana kusambaza pesa.",
+      "definition": [
+        "Bookmakers tofauti wanaandika soko moja tofauti, mara nyingi 5–10%. Kuchukua 2.20 badala ya 2.05 kwa matokeo sawa ni kuboresha mavuno 7% bila hatari ya ziada — inayovunjika katika kila bet, shopping ya bei peke yake mara nyingi inasambaza rekodi ya kupoteza kutoka kwa hatua-sawa, na ya hatua-sawa kutoka kwa faida.",
+        "Hii ndiyo gewu rahisi ya kitaaluma nakili: kumiliki akaunti kwa bookmakers kadhaa na kunawa bei nzuri inayopatikana kila wakati. Pia ndiyo msingi wa ugunduzi wa thamani — mfano wetu unalinganisha bei ya kila kitabu dhidi ya konsensusi bila sawa, na kila ukurasa wa mechi unataja odds nzuri zaidi kwa matokeo kwa hivyo kulinganisha tayari kumalizwa."
+      ],
+      "example": "Bet yako ya kawaida iko kwa odds ~2.00 na unastaka 100 × £10 kila mwezi. Kwa kupiga debe bei 4% nzuri ni karibu £40 kwa mwezi — sehemu nzima iliyotolewa nyuma, kabla ya ujuzi wo haba.",
+      "related": [
+        "bookmaker-margin",
+        "fair-odds",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [
+        {
+          "label": "Best odds on every match page",
+          "href": "/predictions"
+        }
+      ],
+      "_src_hash": "558fd6fb31af123b",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "self-exclusion",
+      "term": "Self-Exclusion & Kuweka Mipango ya Bahati",
+      "short": "Zana rasmi zinazokuzuia kucheza bahati — vikomo vya amana, kupumzika kwa muda, na mifumo ya kutokuingilia katibu ya waendeshaji wengi.",
+      "definition": [
+        "Kila mtendaji aliyepewa leseni lazima kutoa zana za udhibiti: vikomo vya amana, hasara na kuweka bahati; onyo za kikao; mapumziko mafupi ya 'timeout'; na kuzuia kabisa kwa kujumuisha akaunti kwa miezi au miaka. Mifumo ya kitaifa inapanua hii katika soko lote mara moja — GAMSTOP nchini Uingereza inakuzuia kutoka kwa kila mtendaji aliyepewa leseni na usajili mmoja, na programu ya kuuzuia kama Gamban inaغطي tovuti ambazo mifumo inayomiss.",
+        "Upande wa kweli: hizi si zana kwa 'waichezaji wenye matatizo' tu. Kuweka mipango ya amana katika siku ya kumfikiria vizuri ni bima rahisi dhidi ya jioni iliyoingiwa na hasira; kupumzika baada ya mstari mbaya ni usimamizi wa akiba ya akili. Ikiwa kuweka bahata kimesimama kuhisi kama burudani — kufuatilia hasara, kuficha bahata, kuweka bahata pesa ambazo zilikuwa na kazi — zana hapo juu pamoja na mistari ya usaidizi wa bure iliyokadiliwa ni bahata inayofuata sahihi."
+      ],
+      "example": "Kuweka kikomo cha £100 kwa amana kila mwezi inachukua dakika mbili katika mipango ya akaunti. Haiwezi kuinuliwa katika joto la wakati: kuongezwa kwa tu kunacheza baada ya kipindi cha ubaridi — jambo lote la kusudi.",
+      "related": [
+        "bankroll-management"
+      ],
+      "see": [
+        {
+          "label": "Responsible gambling help & tools",
+          "href": "/responsible-gambling"
+        }
+      ],
+      "_src_hash": "c50087ed518f0a33",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "handicap-betting",
+      "term": "Handicap Betting (European)",
+      "short": "Soko ambapo timu moja huanza na hasara ya mabao au faida kabla ya kickoff, na odds tatu-njia zinazojumuisha matokeo yaliyobadilishwa.",
+      "definition": [
+        "Handicap betting ya Kieuropa inapeana upande mmoja faida au hasara ya mabao kamili kabla ya kuanza, kisha inapeana matokeo yaliyobadilishwa kama soko la kawaida la tatu-njia: nyumbani, mabao sawa yaliyobadilishwa, nje. Weka Arsenal −1 na lazima wawinde kwa mabao mawili au zaidi; ushindi wa mabao moja huanguka haswa kwa mabao sawa yaliyobadilishwa na bet yako inapoteza.",
+        "Hatua hiyo ya mwisho ndio kama kabaraka kwa wageni wapya na tofauti yote kutoka kwa toleo la Asian: handicap za Kieuropa hazina refund. Matokeo ya tatu (mabao sawa yaliyobadilishwa) ni fursa halisi yenye bei ambayo inatosha pande zote za handicap, ndiyo sababu odds zinaonekana generous zaidi kuliko mistari ya Asian kwenye mechi sawa."
+      ],
+      "example": "Arsenal −1 kwa 2.60 dhidi ya Fulham. Arsenal wawinda 2–0: bet inashinda. Arsenal wawinda 2–1: −1 inafanya kuwa 1–1 — mabao sawa yaliyobadilishwa yanashinda na bet yako inapoteza, ambapo Asian −1 ingalipunguza stake.",
+      "related": [
+        "asian-handicap",
+        "match-result",
+        "draw-no-bet"
+      ],
+      "see": [],
+      "_src_hash": "64badaff59079f4c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "half-time-full-time",
+      "term": "Half-Time/Full-Time (HT/FT)",
+      "short": "Kamali moja juu ya matokeo katika nusu ya kwanza NA matokeo kamili — mchanganyiko tisa, odds kubwa, hakuna sehemu za mkutano.",
+      "definition": [
+        "HT/FT inakuomba kupiga kelele kiongozi katika mstari wa nusu na mshindi mwishoni katika kamali moja: Nyumbani/Nyumbani, Sawa/Nyumbani, Nje/Nyumbani na mchanganyiko mingine sita. Sehemu zote mbili lazima zianguke — timu inayoathiriwa katika nusu ya kwanza na inashinda hivi karibuni huua tikiti ya Nyumbani/Nyumbani hata kama matokeo ya mwisho yalikuwa kwa upande wako.",
+        "Mvutano wa soko ni bei: mchanganyiko hulipa zaidi sana kuliko matokeo yenye maandishi kwa sababu unabei matukio mawili yanayohusiana. Urafiki huo ndio sababu tu ya jinsi waandishi wa vitabu wanayopenda — wengi wa wagamizi overrate wapenzi kuongoza katika checkpoint zote, na edge katika matokeo tisa ni mafuta zaidi kuliko katika matatu."
+      ],
+      "example": "Sawa/Nyumbani juu ya pendeza saa 4.75: pendeza lazima iwe sawa katika nusu ya kwanza kisha inashinda. Ikiwa inaongoza 1–0 katika mstari na inashinda 3–0, kinachoonekana kwa uwezekano zaidi-kuonekana Nyumbani/Nyumbani saa 2.30 ilikuwa tikiti ambayo ilianguka — HT/FT inahukumu kwa kuwa sahihi takriban.",
+      "related": [
+        "match-result",
+        "correct-score",
+        "double-chance"
+      ],
+      "see": [],
+      "_src_hash": "5c87a4ea737acac3",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "clean-sheet",
+      "term": "Clean Sheet",
+      "short": "Soko ya kubahatisha kama timu haisumbui mabao yoyote — bei zinaotokana na kiwango cha ulinzi na uvundo wa wapinzani.",
+      "definition": [
+        "Zabuni ya clean sheet inashinda ikiwa timu iliyochaguliwa haisumbui mabao katika mechi nzima. Ni kioo cha ulinzi wa BTTS: 'Team A clean sheet — yes' inafanana na 'both teams to score — no' lakini inaelekezwa upande mmoja.",
+        "Njia yenye uaminifu ya kuibei ni kutoka kwa kiwango cha kushumbulia: ikiwa wapinzani wana wastani wa mabao 1.2 kwa mechi kwa milinzi sawa, mtindo wa Poisson unabei fursa ya mabao sifuri karibu 30%, na kufikiri odds sawa ni takriban 3.30. Bei yoyote fupi zaidi inahitaji sababu — wanaosumbulia bora wanakosa, au kulinda daraja — ambayo wastani haujaushughulikia bado."
+      ],
+      "example": "Mabao yanatarajiwa dhidi ya ulinzi huu: 1.2. P(0 mabao) = e^−1.2 ≈ 30.1%, odds sawa ≈ 3.32. Kitabu kinachopeana 2.80 kinakutozea ~16% zaidi ya fair; 3.60 inakufa kukataa tofauti.",
+      "related": [
+        "btts",
+        "over-under",
+        "xg"
+      ],
+      "see": [
+        {
+          "label": "BTTS model estimates per fixture",
+          "href": "/tips/btts"
+        }
+      ],
+      "_src_hash": "986e19371908b143",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "anytime-goalscorer",
+      "term": "Mchezaji Yeyote Anayepiga Bao",
+      "short": "Bet kwamba mchezaji fulani atapiga bao angalau mara moja katika mchezo — bei inatokana na dakika, nafasi na mahitaji ya mabao ya timu.",
+      "definition": [
+        "Soko la mchezaji yeyote anayepiga bao hulipa ikiwa mchezaji wako atapiga bao angalau mara moja — mabao ya kuzipiga nafsi kawaida hayajumuishwa, na bet kawaida inahitaji mchezaji kucheza kweli kwenye uwanja. Bei inafuata mambo matatu: mahitaji ya jumla ya mabao ya timu, sehemu yake (penaltis husaidia sana), na dakika inayotarajiwa.",
+        "Kosa la kawaida ni kubet kwa jina tu: mchemaji maarufu anayeanza kutoka benchi, au anayewepo katika timu inayojenga kwa chini, ina bei fupi zaidi kuliko nafuu yake halisi. Angalia lineup na takwimu za shambuzi za timu kabla ya kumwamini jina."
+      ],
+      "example": "Mchemaji anayepiga ~30% ya timu inayotarajiwa kupiga 1.6 mabao ina karibu 1 − e^(−0.48) ≈ 38% nafuu ya mchezaji yeyote — bei ya haki takriban 2.60. Vitabu vina 2.00 kwa jina tu; pengo hili ndilo utajadiwaje kulipa kwa jina.",
+      "related": [
+        "xg",
+        "value-bet",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "fd5937261b90a11a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "first-goalscorer",
+      "term": "First Goalscorer",
+      "short": "Bet kwamba mchezaji fulani atafungua alama — variance kubwa sana, margin kubwa, na inategemea sana penalti na dakika za kucheza.",
+      "definition": [
+        "First goalscorer hulipa tu kama mchezaji wako anafungua alama kwanza katika mechi. Ni soko la anytime lakini kwa sarafu ya ziada: si tu 'atafungua alama' lakini 'alama yake itakuwa ya kwanza' — ambayo huongeza variance na, kwa furaha ya kitabu, margin iliyozaa kwenye kila bei.",
+        "Wanateja penalti na wachezaji wa dakika za mwanzo wanadongeza orofa. Mchezaji mwingine ambaye anafungua alama nyingi lakini huingia saa 70 ni dharura mbaya sana hapa, ingawa nambari zake za anytime ziwe nzuri."
+      ],
+      "example": "Kama nafasi ya mchezaji wa anytime ni 38% na timu yake ina uwezekano sawa wa kufungua alama kwanza au pili, nafasi yake ya first-scorer ni takriban nusu ya bahasha ya mabao ya kwanza ya timu — karibu 15–18%, odds sawa na haki 5.50–6.60. Vitabu vinasema 4.50 kawaida: margin ya nambari za double-digit inajificha kwa macho.",
+      "related": [
+        "anytime-goalscorer",
+        "bookmaker-margin",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "589dfe0d5c431899",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "corners-betting",
+      "term": "Corners Betting",
+      "short": "Over/under na handicap markets kwenye idadi ya corners — zinaendeshwa na kiasi cha shots na mtindo wa mchezo, si kwa timu ipi itashinda.",
+      "definition": [
+        "Soko la corners linaweka bei ya idadi ya corners: jumla ya mechi (over/under 9.5 ni mstari wa kawaida), jumla ya timu na corner handicaps. Idadi ya corners inafuata kiasi cha kushambulia na upana wa mchezo — timu inayodominisha iliyofunga upande na blokiresuli ndogo huzalisha corners bila kujali alama.",
+        "Hitilafu ya kawaida ni kutibu corners kama karamata bila maana. Zina uhusiano na shots na eneo, kwa hiyo upimbaji sawa unaotumiwa kuweka bei ya jumla unatumika: timu zinazoshambulia pembeni zinazokabiliwa na ulinzi mkubwa husambaza idadi ya juu, jozi za counter-attack husambaza idadi ya chini."
+      ],
+      "example": "Timu mbili zinazokadiria jumla ya 10.8 corners kupinga mpinzani sawa hufanya over 9.5 ni chaguo la kiasi cha asilimia 58 — odds za haki ~1.72. Bei ya 1.90 ni thamani ikiwa sampuli nyuma ya wastani ni halisi; bei sawa ni mtego ikiwa imekuja kwenye michezo mitatu ya kawaida isiyo ya kawaida.",
+      "related": [
+        "over-under",
+        "sample-size",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "0b2cfeaf81fcec85",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "cards-betting",
+      "term": "Zabuni ya Kadi / Kadi za Chakula",
+      "short": "Soko wa kadi za manjano na nyekundu — mahali ambapo wastani wa kadi za kumbumbu ni muhimu kama joto la uwanja.",
+      "definition": [
+        "Soko wa kadi huzunguza jumla ya chakula (mara nyingi kama alama: manjano 10, nyekundu 25) au hesabu za kadi tu. Vitu viwili vinasimama: ukingo wa mchezo — derbies na mapambano ya kuondolewa havina amani — na kumbumbu, ambaye wastani wake wa kadi kwa kila mchezo ni takwimu ya umma na imara ambayo wengi wa wageni hawajasikia.",
+        "Namba hiyo ya kumbumbu ni kitu kirefu zaidi cha kufa bila malipo katika soko hili. Mchezo mmoja unaweza kuwa na matarajio ya kadi tofauti 30% kulingana na nani anayeshikilia kumbumbu."
+      ],
+      "example": "Kumbumbu anayetosha wastani wa 4.8 manjano kwa kila mchezo anachukua derby ambayo mikutano mitano iliyopita ina wastani wa 5.2 kadi. Over 4.5 kadi ya line kwa pesa sawa inauzwa pamoja ni sawa; line sawa chini ya kumbumbu wa wastani wa 3.1 ingehitaji joto la derby kutengeneza kazi yote.",
+      "related": [
+        "variance",
+        "sample-size",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "89575455dd41503d",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "outright-betting",
+      "term": "Outright (Futures) Betting",
+      "short": "Zabuni ya matokeo ya kompetisheni nzima — mfumo wa ligi, mshambuliaji mwenye mabao mengi, kutengana — iliyosuluhishwa miezi baadaye, na faida na pesa zilizokamatia zinazolingana.",
+      "definition": [
+        "Outrights inaandaliwa matokeo ya msimu mzima: mfalme wa ligi, nne za juu, kutengana, bao kubwa. Gharama mbili za miundo hutofautiana nao kutoka kwa zabuni za mechi: faida ya mtayaji katika uwanja wa waharusi 20 ni kubwa zaidi kuliko katika mechi ya njia tatu, na mgao wako umefungwa kwa miezi — pesa zilizokamatia zinazoziwezesha kuwa uzito mahali pengine.",
+        "Kesi honesta kwa outrights ni kutokubaliana kwa haraka mwanzo wa msimu na soko linalotarajiwa kulipwa. Zabuni ya mpenzi katika Agosti kwa bei unayoweza kuanguka kwa kusubiri ni toleo la jadi la kulipia impatience."
+      ],
+      "example": "Jumlisha uwezekano unaoingia kwa bei ya kila mfalme katika ligi ya timu 20 na mara nyingi utapata 115–125% — faida ya 15–25%, dhidi ya 4–6% kwenye mechi moja. Mtaji huo huo uliozunguka zabuni za mechi hulipisha jumla ndogo kabisa.",
+      "related": [
+        "bookmaker-margin",
+        "expected-value",
+        "bankroll-management"
+      ],
+      "see": [
+        {
+          "label": "Season hubs with live tables",
+          "href": "/seasons"
+        }
+      ],
+      "_src_hash": "8b6639c4b5210df4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "each-way-betting",
+      "term": "Each-Way Betting",
+      "short": "Beti mbili katika moja — ushindi na mahali — bidhaa kuu ya mbio, wakati mwingine inatolewa kwa uchaguzi wa mpira.",
+      "definition": [
+        "Bet ya each-way inagawanya stake yako: nusu kwa ushindi halisi, nusu kwa 'mahali' (kuishia katika seti iliyofafanuliwa ya nafasi) kwa sehemu ya odds za ushindi. Kwa mpira inaonekana kwa uchaguzi — kuishia juu ya 4 kama mahali katika bet ya chuo, kwa mfano.",
+        "Swali la thamani ni sehemu ya mahali daima: kwa robo ya odds za 8.00, mahali hulipa 2.00 karibu na uwezekano wa juu-4 soko inaweza bei karibu 1.60 au 2.60. Nusu mbili ni uamuzi mmoja tu kwenye slip — tathmini kila moja kama beti mbili tofauti, kwa sababu ndio nini zinavyo."
+      ],
+      "example": "£10 each-way (jumla £20) kwa timu kwa 8.00 kwa chuo, mahali ¼ odds juu-4. Chuo limekosa lakini juu-4 lilishinda: nusu ya ushindi inapoteza £10, nusu ya mahali inarudi £10 × (1 + 7/4) = £27.50 — net +£7.50. Ikiwa bei ya mahali ilivunja nafasi yake halisi ni swali halisi la thamani.",
+      "related": [
+        "outright-betting",
+        "expected-value",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "0e5e1cd7d7e0951c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "banker",
+      "term": "Banker",
+      "short": "Uchaguzi katika kuponi unaotengenezwa kama karibu na hakika — hatua ya kushindwa kwa kila mkutaniani wa maamlisho.",
+      "definition": [
+        "Banker ni mguu ambao wabaji hunganisha kuponi — ile orodha 1.25 'tu kuongeza odds'. Hesabu ambayo wengi hunipuuza: bei ya 1.25 inamaanisha kiwango cha kushindwa cha 20% hata katika bei ya kitabu cha kufa yenyewe, na kushindwa hilo kunauza mkutaniani mzima.",
+        "Wabanki pia hubeba thamani mbaya zaidi kwenye bodi: wanapendelea wengi ndio mahali ambapo pesa ya wacheza vitabu huvimbia, kwa hivyo bei zao huchelewa chini ya haki mara nyingi kuliko sehemu nyingine yoyote. Kuongeza mmoja kwa kuponi kawaida kunaongeza margin, si usalama."
+      ],
+      "example": "Fourfold katika 6.00 inakuwa 7.50 na banker ya 1.25 inayoongezwa. Banker inashindwa mara moja kati ya tano katika kiwango chake cha maana yenyewe — umebadilisha kiwango cha payout cha 25% kwa ajili ya uwezekano wa 20% wa kugeuzwa kila kuponi inayoshinda kuwa majivu.",
+      "related": [
+        "accumulator",
+        "longshot-bias",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Build a coupon from model-screened picks",
+          "href": "/tools/acca-builder"
+        }
+      ],
+      "_src_hash": "5519628f9b88ad26",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "system-bet",
+      "term": "System Bet",
+      "short": "Seti iliyopangwa ya mkakati wa mabilioni juu ya uchaguzi sawa — Trixie, Yankee, Lucky 15 — inayolipa fidia kutokana jingine baadhi ya mguu tu unakuja.",
+      "definition": [
+        "Mkakati wa beti unaweka kila mkakati unaowezekana wa ukubwa fulani kwenye uchaguzi wako: Trixie juu ya tatu ni mabilioni mitatu pamoja na treble (mbeli 4), Yankee juu ya nne ni mabilioni sita, treble nne na nne-fold (mbeli 11). Mguu mmoja unaozaa haisemi tena kuua kila kitu — mchanganyiko bila hiyo bado huhesabu.",
+        "Gharama ni mgawanyiko wa stake: kila mchanganyiko unabeba stake yake mwenyewe, kwa hivyo '£1 Yankee' inagharimu £11. Mifumo hubadilisha profaili ya mkakati ya kila-au-hakuna kuwa laini zaidi kwa bei ya kuhitaji mabilioni zaidi tu ili kuwa na usawa."
+      ],
+      "example": "£1 Trixie (£4 jumla: mabilioni 3 + treble 1) juu ya uchaguzi saa 2.0 / 2.0 / 2.0. Watatu wote wanakuja: inarudisha £20 jumla — kila mabilioni inakufa £1×4=£4, treble £8, jumla £20 kwa £4. Wawili wanakuja: mabilioni moja inasalia, £4 nyuma kwa £4 stake. Break-even ya mifumo inahitaji mbili kwa tatu, si moja.",
+      "related": [
+        "accumulator",
+        "trixie",
+        "yankee"
+      ],
+      "see": [],
+      "_src_hash": "dce756f0cd33838e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "trixie",
+      "term": "Trixie",
+      "short": "Chaguo tatu, bahati nne: kila double pamoja na treble. Wawili wanaoshinda wanarudi pesa; watatu watalipa vizuri.",
+      "definition": [
+        "Trixie inajumuisha chaguo tatu katika bahati nne — doubles tatu zinazowezekana na treble moja. Tofauti na treble moja tu, miguu miwili inayoshinda bado inarudisha kitu: double wanayounda haisemi kuhusu mguu wa tatu wenye kushindwa.",
+        "Jumla ya stake ni vitengo vinne. Muundo huu unafaa kwa chaguo karibu na even; kwa favorites ndefu doubles hulipa kidogo sana kulinganisha na vitengo vya ziada, na kwa longshots treble ya kawaida huvuta kuliko bima."
+      ],
+      "example": "Trixie ya £1 (£4 jumla) kwa chaguo tatu na odds 2.10. Wote hushinda: doubles 3 × £4.41 + treble £9.26 ≈ £22.50. Wawili hushinda: double moja inarudi £4.41 — karibu na stake nzima ya £4. Treble ya £4 tu ingekuwa kulipa £37 kwa wote watatu lakini sifuri kwa wawili.",
+      "related": [
+        "system-bet",
+        "yankee",
+        "accumulator"
+      ],
+      "see": [],
+      "_src_hash": "1545b6c564f5f4e1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "yankee",
+      "term": "Yankee",
+      "short": "Uchaguzi nne, kambi kumi na moja: sehemu mbili sita, sehemu tatu nne, moja sehemu nne. Wajibu wawili wanaanza kulipa.",
+      "definition": [
+        "Yankee inasambaza uchaguzi nne katika kambi nyingi za multi-bet zinazoweza kuundwa: sehemu mbili 6 + sehemu tatu 4 + sehemu nne 1. Angalau miguu miwili lazima isogeze kabla hatagani chochote kirudi; mkondo wa mlipuko unakwea kwa haraka na kila mshindi wa ziada.",
+        "Vitengo kumi na moja ni pesa halisi kwa ajili ya uhakika unaotolewa. Kulinganisha kwa uaminifu ni dhidi ya sehemu mbili nne tofauti au sehemu nne safi: Yankee inashinda kulinganisha hicho tu wakati uchaguzi wako umefurika karibu na kufanana na evens na kweli unatarajiwa wajibu wawili-au-watatu kupangia mara nyingi kuliko nne."
+      ],
+      "example": "£1 Yankee (£11) kwa uchaguzi nne sa 2.00. Wajibu wawili: sehemu moja mbili inalipwa £4 — hasara halisi ya £7. Wajibu watatu: sehemu mbili 3 (£12) + sehemu moja tatu (£8) = £20 — faida ndogo. Zote nne: £12 + £32 + £16 = £60. Muundo unalipwa karibu-misses na sehemu kubwa ya jackpot.",
+      "related": [
+        "system-bet",
+        "trixie",
+        "lucky-15"
+      ],
+      "see": [],
+      "_src_hash": "1960586662f10906",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "lucky-15",
+      "term": "Lucky 15",
+      "short": "Uteuzi wa nne, kumi na matano ya kamali: Yankee pamoja na ushindi wa pekee nne — mnamo mmoja anayejua tayari zurura kitu fulani.",
+      "definition": [
+        "Lucky 15 ni Yankee na ushindi wa pekee nne unaongezwa: ushindi 4 wa pekee + doubles 6 + trebles 4 + four-fold 1 = kamali 15. Ushindi wa pekee unamaanisha kwamba hata mnamo mmoja tu anayejua anarudisha pesa, na waandishi wa kamali wanaongeza mwaliko — mara mbili odds kwa mnamo mmoja anayejua, bonasi kwa wote nne.",
+        "Mwaliko huu unakuwepo kwa sababu bidhaa ya msingi ina kamali kumi na matano inayobeba margin. Bei bidhaa nzima: kamali kumi na matano kwa margin ya kawaida 5% inakgharimu takriban 0.75 kamali katika matakwa kabla bonasi yeyote kurudisha baadhi yake."
+      ],
+      "example": "£1 Lucky 15 (£15) kwenye picks kwa 3.00 kila mmoja. Mnamo mmoja anayejua kwa 'mara mbili odds kwa mnamo mmoja anayejua': ushindi wa pekee hulipwa £1 × 5.00 = £5 (badala ya £3) — bado hasara ya £10 halisi. Wote nne: ushindi wa pekee £12 + doubles £54 + trebles £108 + four-fold £81 = £255. Bei za kinuni ni halisi lakini ndogo; bidhaa hiyo ni bei yenye kuzaa hissi ya kuwa kubwa kuliko yavyo.",
+      "related": [
+        "yankee",
+        "system-bet",
+        "bookmaker-margin"
+      ],
+      "see": [],
+      "_src_hash": "41186e48996f97f0",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "patent",
+      "term": "Patent",
+      "short": "Michakato mitatu, kambi saba: zote moja, zote mbili na zote tatu — Trixie iliyosalimiwa kabisa.",
+      "definition": [
+        "Patent inashughulikia michakato mitatu na kambi saba zote zinazowezekana: zote moja 3 + zote mbili 3 + zote tatu 1. Ni Trixie pamoja na zote moja, kwa hiyo hata mguu mmoja unayoshinda unarejesha kitu fulani.",
+        "Vitengo saba vya stake vina jangili kamili, ambayo inakamatiana na michakato yenye ujasiri kwa odds kubwa — zote moja zinabeba uzani halisi saa 3.00+. Kwa odds fupi zote moja zinarejesha kitu kidogo na muundo unakuwa bima ghali juu ya bima."
+      ],
+      "example": "£1 Patent (£7) kwa michakato mitatu kwa 3.50. Mshindi mmoja: zote moja yake inarejesha £3.50 — nusu ya matumizi yarejesha. Mbili: zote moja 2 (£7) + zote mbili 1 (£12.25) = £19.25. Zote tatu: £10.50 + £36.75 + £42.88 ≈ £90. Linganisha na treble tu ya £7: £0, £0, £150 — Patent inabadilisha jackpot kwa sakafu.",
+      "related": [
+        "trixie",
+        "system-bet",
+        "accumulator"
+      ],
+      "see": [],
+      "_src_hash": "d12659ca22b4ca57",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "round-robin",
+      "term": "Round Robin",
+      "short": "Mabao yote ya doubles (na mara nyingi trebles) katika seti ya michaguo — formula ya kawaida nyuma ya Trixies na Yankees.",
+      "definition": [
+        "Round robin hubeti kila mchanganyiko wa ukubwa ulioteuliwa katika michaguzi yako — kawaida doubles zote kutoka nne, tano au sita michaguo. Trixie na Yankee ni round robins tu zilizotengana na ukubwa uliowekwa; fomu ya jumla inakuruhusu kuchagua upana.",
+        "Hisabati inakua haraka: doubles zote kutoka sita michaguo ni bets kumi na tano, trebles ishirini. Kila mchanganyiko hubeba stake yake mwenyewe na margin yake mwenyewe, kwa hiyo muundo unazidisha kati ya kitabu kwa kasi sawa na inayozidisha suala lako."
+      ],
+      "example": "Doubles zote kutoka tano michaguo = bets 10. Kwa margin ya 5% kwa kila double, pakiti inajumuisha takriban vitengo 0.5 vya gharama inayotarajiwa. Watatu kati ya tano wanatupwa wanakuta doubles 3: kwa odds 2.00 kila mmoja hulipwa vitengo 4 — 12 nyuma kutoka 10, kabla tofauti kuwa na kitu.",
+      "related": [
+        "system-bet",
+        "yankee",
+        "bookmaker-margin"
+      ],
+      "see": [],
+      "_src_hash": "ebabd3db75914eac",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fold",
+      "term": "Fold (4-Fold, 5-Fold…)",
+      "short": "Kifupi cha bookmaker kwa ukubwa wa accumulator: idadi ya matangazo ambayo lazima yote yishinde.",
+      "definition": [
+        "'Fold' inahesabu matangazo katika accumulator: 4-fold ina matangazo manne, 6-fold ina sita, na kila tangazo lazima ishinde. Odds zinazidisha na hivyo pia njia za kushindwa — kila tangazo linalotambahwa linazidisha malipo kwa bei yake na uwezekano wa kuishi wa coupon kwa kitu chini ya moja.",
+        "Namba ya fold ni kiezo haraka cha uaminifu kwa coupon yoyote: kwa margins ya kawaida ya 5% kwa tangazo, n-fold inatoa bookmaker takriban n×5% ya thamani inayotarajiwa. 6-fold ni ~30% ya ada iliyovaliwa kama tiketi ya bahati."
+      ],
+      "example": "Matangazo matano kwa 1.80 kila mmoja: 5-fold inalipia 18.9. Nafasi ya kweli kama kila tangazo ni vizuri 55%: 0.55⁵ ≈ 5.0% — odds za haki 19.9. Pengo kati ya 18.9 na 19.9 ni margins tano zilizogawanywa; huzidi kwa kila fold unayotambaha.",
+      "related": [
+        "accumulator",
+        "bookmaker-margin",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Accumulator calculator",
+          "href": "/tools/accumulator-calculator"
+        }
+      ],
+      "_src_hash": "94a6586ebee2ec9e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "single",
+      "term": "Single",
+      "short": "Chaguo moja, kamali moja — kitengo cha msingi ambacho kila muundo mwingine wa kamali unapaswa kulinganishwa nalo.",
+      "definition": [
+        "Single inakakamata kiasi kimoja kwenye matokeo moja kwa bei moja. Ni maneno safi kabisa ya mtazamo wa kamali na kiwango cha msingi cha kuzingatia kila muundo changamano: mkutano wowote, mfumo au builder ni singles tu ziliozounganishwa pamoja na margin ya ziada.",
+        "Watumishi wa kamali humweka kamali karibu kabisa katika singles kwa sababu hiyo haswa — kila kamali inasimama kwa kujitegemea kwa thamani yake, hulipa margin mara moja, na kutatanisha bila kusukuma mitazamo mingine chini nayo."
+      ],
+      "example": "Mitazamo mitatu kwa 2.00 kila moja, jumla ya kitengo moja cha kusambaza. Singles tatu za ⅓-kitengo: kila moja hulipa faida ya 0.67 inapofanya vizuri, bila kumtegemea nyingine. Kitengo sawa kwa treble hulipa 7× inapokuja matatu yote (≈asilimia 13 kwa bei sawa) na sifuri zaidi — mitazamo sawa, margin tatu, muundo wa kila kitu au waliomwe.",
+      "related": [
+        "accumulator",
+        "flat-staking",
+        "expected-value"
+      ],
+      "see": [],
+      "_src_hash": "1f80d8238ba69ff4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "double",
+      "term": "Double",
+      "short": "Mkakati wa mabao mawili: chaguo zote mbili lazima zishinde, odds zinazidishwa, fadha ziko katika tabaka mbili.",
+      "definition": [
+        "Double inazidisha bei mbili kuwa bet moja inayohitaji mabao yote mawili kuja. Ni mkakati mdogo wa cumulative na kuonyesha wazi uchumi wa familia: uwezekano unazidishwa chini wakati fadha ya bookmaker inakamatia juu.",
+        "Doubles ina kesi moja ya kweli: chaguzi mbili zilizopewa bei ya chini sana, ambapo kuzidisha faida mbili nzuri kunazichanganya. Chaguzi mbili zenye bei sawa katika double ni mbaya kuliko chaguzi zile zile kama singles."
+      ],
+      "example": "Mabao mawili kwa 2.10, kila moja ni sawa na sarafu: double inalipa 4.41 dhidi ya uwezekano wa 25% (sawa 4.00) — nchi, hii ni thamani tu kama mabao yalikuwa na bei JUU ya sawa. Katika mabao sawa 2.00, leg ya 2.10 double ina faida; mbili zao zinachanganya hadi 4.41 dhidi ya sawa 4.00. Mabao yenye fadha ya bei 1.90 yanachanganya kwa njia mbaya: 3.61 inalipwa dhidi ya sawa 4.00.",
+      "related": [
+        "accumulator",
+        "treble",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "4cbefc0335830c43",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "treble",
+      "term": "Treble",
+      "short": "Mchanganyiko wa miguu mitatu — odds huzidishwa kupitia bei tatu, na hivyo pia kiwango cha kitabu.",
+      "definition": [
+        "Treble inahitaji michaguo mitatu ijapige, na bei tatu zikizidishwa katika malipo moja. Kwa kiwango cha kawaida kila mguu unatoa ~5% ya maajabu yanayotarajiwa, kwa hivyo muundo unakabidhi takriban 15% kabla ya kilobezi — bei ya namba kubwa kwenye karatasi.",
+        "Profaili ya tofauti ndio bidhaa halisi: treble kwa odds wastani hupiga mara nyingi vya kutosha kukamatia kama inawezekana lakini kulipa vya kutosha kujisikia kama kufaulu. Kujisikia ndio bidhaa; kiwango ni gharama."
+      ],
+      "example": "Miguu mitatu kwa 1.90 (adil 2.00): treble hulipa 6.86 dhidi ya adil 8.00 — unakubali 86% ya thamani adil, yaani kiwango cha 14% cha kimuundo, kwa furaha ya malipo moja makubwa badala ya matatu adil.",
+      "related": [
+        "double",
+        "accumulator",
+        "fold"
+      ],
+      "see": [],
+      "_src_hash": "713f96eff080d608",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "stake",
+      "term": "Stake",
+      "short": "Pesa unayopeana hatarini kwa kamata — namba kila kurejesha, kupoteza na mpango wa kumrundika unajitengeza kwa.",
+      "definition": [
+        "Stake ni pesa unayoweka hatarini. Odds za desimali zinajumuisha katika kurejesha kilichoquotwa (odds × stake = jumla ya kurudi, ikijumuisha stake); odds za sehemu zinaquote faida kulingana nayo. Kila mazungumzo ya stake yanayofanya akili ni kuhusu kupima namba hii, si kuhusu kuchagua wanashindwa.",
+        "Taaluma mbili zinafunika mengi ya kile kinachomuhimu: pima stakes kama sehemu ndogo iliyobainishwa ya bankroll iliyobainishwa, na kamwe usibadilishe kwa juu ili kujaribisha kupoteza. Hisabati ya uharibifu inadhibitiwa kabisa na stake sizing, si kwa ubora wa kamata."
+      ],
+      "example": "£10 kwa decimal 2.50 zurura £25 jumla — £15 faida pamoja na £10 stake. Kamata moja moja kwa desimali ni 6/4: £15 faida kwa kila £10 iliyowekwa hatarini. Kamata moja, pesa moja, lugha mbili.",
+      "related": [
+        "flat-staking",
+        "bankroll-management",
+        "unit"
+      ],
+      "see": [],
+      "_src_hash": "725de29c74bc72a5",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "unit",
+      "term": "Unit",
+      "short": "Mcheza wa kawaida wa mtu binafsi — kawaida 1–2% ya pesa za kubisha — sarafu inayotumiwa kuhifadhi rekodi za kweli.",
+      "definition": [
+        "Unit ni mcheza wa kawaida wa kibinafsi, kawaida 1–2% ya pesa za kubisha. Wanatoa vidokezo na wahadhi wa rekodi hutoa faida kwa units ('+14.2u') kwa sababu inatengana na hukumu na ukubwa wa mkoba: +14 units maana yake ni kitu kimoja bila kujali ikiwa unit ni £2 au £200.",
+        "Units pia zinakamatia nidhamu ya kubisha. Rekodi inayosema '10-unit locks' na '0.5-unit longshots' inakuambia kuwa imani inabadilika sana kwa kila bet — ambayo kihistoria inahusiana na rekodi ambazo hazichapishwa tena."
+      ],
+      "example": "Pesa za kubisha £1,000, unit 1% = £10. Msimu ukiishia +18.4u iliyofanya £184 kwa betting sawa. Rekodi yetu iliyochapishwa inatumia flat 1-unit betting kwa sababu hii haswa — nambari haiwezi kuongezwa kwa kubadilisha bets baada ya endeleo nzuri.",
+      "related": [
+        "flat-staking",
+        "bankroll-management",
+        "roi-and-yield"
+      ],
+      "see": [
+        {
+          "label": "Our settled record, flat 1u",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "195038bc8d5b4bef",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-on-odds-against",
+      "term": "Odds-On / Odds-Against",
+      "short": "Je operesheni ambayo bei inamaanisha zaidi au chini ya nafasi ya 50% — chini au juu ya 2.00 katika muundo wa desimali.",
+      "definition": [
+        "Odds-on maana yake bei inamaanisha nafasi nzuri kuliko sawa: desimali chini ya 2.00, sehemu ndogo na namba kubwa kulia (1/2). Odds-against ni kinyume: desimali juu ya 2.00, sehemu 2/1 na zaidi. Sawa (2.00) ni mpaka.",
+        "Istilahi hii ni muhimu kwa sababu mafikiria yanabadilika upande wa kila mmoja. Kuu za odds-on hisishi salama na wanakubaliana kwa kawaida na pesa ya wanariadha; underdogs za odds-against hisishi kama tiketi za bahati. Hisishi hii haimaanishi kitu kuhusu thamani, ambayo iko tu katika pengo kati ya bei na uwezekano wa kweli."
+      ],
+      "example": "1/2 sehemu = 1.50 desimali = 66.7% inayosistikiriana: odds-on. 5/2 = 3.50 = 28.6% inayosistikiriana: odds-against. Kuu ya 1.50 ambayo hushinda kwa kweli 60% ya muda ni zawadi mbaya; outsider ya 3.50 ambayo hushinda tatu ya mara ni zawadi nzuri.",
+      "related": [
+        "odds-formats",
+        "implied-probability",
+        "longshot-bias"
+      ],
+      "see": [
+        {
+          "label": "Odds converter",
+          "href": "/tools/odds-converter"
+        }
+      ],
+      "_src_hash": "250380da66bc1f85",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "vig",
+      "term": "Vig (Vigorish / Juice)",
+      "short": "Jina la Kiamericano kwa margin ya kitabu — malipo ya ndani yaliyoingizwa katika kila jozi ya bei.",
+      "definition": [
+        "Vig, vigorish au juice ni slang ya Kiamericano kwa ajira ya kitabu — kitu sawa wanaokiita margin au overround wabetteri wa Uropa. Sio kitu kilichoandikwa kwenye kiti chako; kinajificha ndani ya bei ambazo pamoja zinamaanisha zaidi ya 100% ya uwezekano.",
+        "Usemi wa kawaida wa Kiamericano ni -110/-110 kwenye kiwango cha uhakika: jaza 110 ili kushinda 100 kila upande. Kila upande kinamaanisha 52.4%, jozi inajumlisha 104.8%, na 4.8% ni vig."
+      ],
+      "example": "-110 pande zote mbili: 52.38% iliyotakikiana kila upande, jumla 104.76%. Mbetteri anayechagua spreads kwa bahati inakosa sentii 4.76 kwa kila dola iliyobanwa kwa muda mrefu — hiyo ni vig inayofanya kazi, hakuna bahati mbaya inayohitajika.",
+      "related": [
+        "bookmaker-margin",
+        "overround",
+        "point-spread"
+      ],
+      "see": [
+        {
+          "label": "Margin calculator",
+          "href": "/tools/margin-calculator"
+        }
+      ],
+      "_src_hash": "3a6a05972381e3bc",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "moneyline",
+      "term": "Moneyline",
+      "short": "Umbizo la odds wa Kiamericani: namba hasi zinaonyesha kile unachoweka ili kuwin dola 100, namba chanya zinaonyesha kile dola 100 itakuwin — na jina la Kiamericani kwa soko la kushinda.",
+      "definition": [
+        "Bei ya moneyline ya -150 inamaanisha weka 150 ili kuwin 100 (decimal 1.67); +240 inamaanisha 100 itakuwin 240 (decimal 3.40). Hasi inaashiria ahadimu, chanya inaashiria wasimu. 'Moneyline' pia inaita soko lenyewe — kuweka pesa juu ya washindi bila spread, ambayo kwa mpira wa miguu inajumuisha draw kama laini yake mwenyewe.",
+        "Uongezo ni kwa urahisi: decimal = 1 + 100/|ML| kwa namba hasi, 1 + ML/100 kwa chanya. Kufanya hivyo katika kichwa chako — au kuruhusu kibadilishaji kuifanya — ni hatua ya kwanza ya kulinganisha bei za Kiamericani na zingine zozote."
+      ],
+      "example": "-125 = 1.80 decimal = 55.6% inakubali. +210 = 3.10 = 32.3%. Moneyline ya mpira wa miguu yenye njia tatu ya -125 / +260 / +330 inakamatisha 55.6 + 27.8 + 23.3 = 106.7% — vig ya 6.7% juu ya trio.",
+      "related": [
+        "odds-formats",
+        "vig",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "Odds converter",
+          "href": "/tools/odds-converter"
+        }
+      ],
+      "_src_hash": "668a9894bd102ded",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "point-spread",
+      "term": "Point Spread",
+      "short": "Handicap ya Kiamericana: mstari wa pointi ambapo pande zote zina bei karibu sawa, na pushes za namba nzima zinarejeshwa.",
+      "definition": [
+        "Point spread inatoa handicap kwa favourite kwa tofauti fulani — kama -6.5 pointi, lazima washinde kwa pointi saba au zaidi. Pande zote zina bei karibu -110, faida ya kitabu iko katika vig badala ya odds zenye kupinduka. Spreads za namba nzima zinaweza kutua mahali halisi (push) na kureje stakes; mistari ya nusu-pointi haiwezi.",
+        "Ni wazo sawa na Asian handicap katika mpira: badilisha macheza yasiyo sawa kuwa sarafu na chaji kwa mabadiliko. Ujinga mahususi wa mpira ni kwamba kupiga mabao machache kumfanya mistari ya nusu-bao kuwa kuu, wakati michezo ya Kiamerika iko kwenye 3.5s na 6.5s."
+      ],
+      "example": "Favourite -3 kwa -110: kushinda kwa pointi 3 mahali halisi inakamatia (stake inarejeshwa), kwa 4+ kushinda, kwa chini yashindwa. -110 kwa pande zote ina maana lazima ubadilishe spread 52.4% ya wakati tu ili kuwa sawa — namba kila rekodi ya 'against the spread' inapaswa kutathminiwa juu yake.",
+      "related": [
+        "asian-handicap",
+        "vig",
+        "push"
+      ],
+      "see": [],
+      "_src_hash": "d706c29ea8be4e8f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "push",
+      "term": "Push",
+      "short": "Bet inayoanguka haswa kwenye mstari — stakı irundishwa, hakuna ushindi, hakuna hasara, na haisaidii mahitaji ya uenezaji wa bettingi.",
+      "definition": [
+        "Push hutokea wakati matokeo yanapiga mstari wa namba kamili haswa: chini ya mabao 3.0 na mechi ikimaliza 3, au spread -3 iliyoshindwa kwa 3. Stakı irudi; bet ni non-event. Asian handicaps hutumia mechanics sawa kwenye mistari yao ya namba kamili na nusu-split.",
+        "Matokeo mawili ya vitendo: bets za pushed hazihesabu kwa wagering wa bonus katika vitabu vingi, na kwenye accumulators mguu wa pushed kawaida huanguka — kupon hisabisha tena kwenye odds iliyobaki badala ya kufa."
+      ],
+      "example": "Over 2.5/3.0 (split Asian total) na mechi ikimaliza 3–0: nusu ya 2.5 inashinda, nusu ya 3.0 inapush — unakusanya kwa nusu ya stakı na kupokea nusu nyingine. Kwenye over 3.0 rahisi, stakı yote ingekuwa irudi tu.",
+      "related": [
+        "asian-handicap",
+        "void-bet",
+        "over-under"
+      ],
+      "see": [],
+      "_src_hash": "f34f6898ef0dc5cf",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-exchange",
+      "term": "Betting Exchange",
+      "short": "Soko ambapo wanatumia wanapokea bei kila mmoja — unaweza kusimama nyuma au kusimama mbele kwa matokeo yoyote, na mtendaji anatoa komishoni badala ya keeneza.",
+      "definition": [
+        "Kubadilishana mabetini kunaunganisha wateja kwa kila mmoja: mmoja anasimama nyuma kwa matokeo, mwingine anasimama mbele, na jukwaa linatoa komishoni ndogo kwa ajili ya faida halisi badala ya kujenga keeneza kwenye bei. Odds zimewekwa na mahitaji na ugavi, hivyo bei za kubadilishana ni wastani ambao wanatumia sharp wanaolinganisha kwa makamatia.",
+        "Matatizo ni ushindi: bei ya kubadilishana inakuwepo tu kwa kiwango ambacho wateja wengine wana kuwa wamesambazama. Soko kubwa la mpira ni kina; ligi zisizojulikana na soko za nje zinaweza kuwa jangwa ambapo bei nzuri na kwa nadharia haiwezi kupatikana."
+      ],
+      "example": "Kituo cha kupokea bei 2.00 kwa timu ambayo kubadilishana kinacheza 2.10. Baada ya komishoni ya 2%, nyuma ya kubadilishana imerejesha 2.10 − (1.10 × 0.02) ≈ 2.078 — bado nzuri kuliko 2.00. Hiyo pengo, likukupima kwa njia ya honesti kwa muda, ni takriban kile ambacho keeneza ya kituo cha kupokea bei inakukosa.",
+      "related": [
+        "lay-betting",
+        "closing-line-value",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "ff50d3cd02feb876",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "lay-betting",
+      "term": "Lay Betting",
+      "short": "Kubeti kwamba kitu HAKITAKUWA — kuwa upande wa bookmaker katika biashara ya kubadilisha odds.",
+      "definition": [
+        "Kulay matokeo ni kukubali bet ya mtu mwingine: unashinda pesa zake ikiwa matokeo hayakutokea, unalipa kwa odds ikiwa inatokea. Liability yako kwenye lay kwa 4.00 ni mara tatu stake ya backer — asymmetry hii wajinga wanaikamatia.",
+        "Laying humaliza toolbox: soko la mabao ya njia tatu linaweza kushambuliwa kutoka upande wowote ('favorite hii ni fupi sana' inakuwa actionable bila kuchagua nani anayeshinda), na kuhedge nafasi inakuwa jambo la kulay kile ulilokubali hapo awali."
+      ],
+      "example": "Lay £10 kwa 4.00: ikiwa matokeo hayatokea unashinda £10; ikiwa inatokea unalipa £30. Bet iliyoonywa ni 'hii inatokea chini ya 25% ya wakati' — priced, sized na settled kama maoni mengine yoyote.",
+      "related": [
+        "betting-exchange",
+        "hedging",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "ba976ad193de42aa",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "dutching",
+      "term": "Dutching",
+      "short": "Kugawanya jokeza katika matokeo kadhaa ili walimu yeyote arejesha faida sawa — kufunika, si arbitrage.",
+      "definition": [
+        "Dutching inagawanya jokeza lako katika matokeo mawili au zaidi kwa sehemu inayotegemea odds zao, hivyo yeyote anayeshinda analipwa kwa kiasi sawa. Kuunga mkono alama tatu tofauti au wapigia mabao wawili kwa njia hii hubadilisha maoni kadhaa kuwa nafasi moja yenye kurudi kinachojulikana.",
+        "Mtego ni kuchanganya kufunika na usalama: matokeo ambayo HAJ-ukugawanya bado yanapoteza jokeza lote. Dutching chini ya 100% ya uwezekano ulionekana pamoja sio arbitrage — ni jokeza kawaida ambalo kambuge yake ya kupoteza ni kila kitu nje ya seti yako."
+      ],
+      "example": "Unga mkono 1-1 katika 7.0, 2-1 katika 9.0, 1-0 katika 10.0 na jumla ya £20 iliyogawanywa 8.87/6.90/6.21... yeyote kati ya tatu akiingia arejesha ≈£62 (kufunika kilichojulikana ~32%). Alama nyingine 68% zinapoteza £20 zote — hiyo ndio jokeza ulilouliza kweli.",
+      "related": [
+        "hedging",
+        "correct-score",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "Dutching calculator",
+          "href": "/tools/dutching-calculator"
+        }
+      ],
+      "_src_hash": "9bae402a7a10c3e1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "hedging",
+      "term": "Kuokoa (Hedging)",
+      "short": "Kuweka kamali ya upande wa pili ili kufikiri faida au kupunguza hasara katika nafasi iliyopo — inakostisha margin mara mbili.",
+      "definition": [
+        "Kuokoa kunafunga au kupunguza nafasi kwa kuweka bet upande wa pili: lay timu iliyokupigania mapema, back sare dhidi ya mguu wa mwisho wa accumulator yako inayoweza kushinda, cash out (ambayo ni kuokoa kwa benki, kwa bei yao). Inapofanywa kwa odds za haki, kuokoa hubadilisha kutofautiana kuwa namba iliyothabbita.",
+        "Gharama ni kulipwa margin katika bet ya pili. Kuokoa kwa mfumo kila nafasi inayoshinda ni kodi juu ya mafanikio yako; matumizi ya kweli ni machache na mahususi — kuokoa accumulator inayobadilisha maisha, au kuondoka nafasi ambayo nadharia yake ilikufa na habari za timu."
+      ],
+      "example": "£10 four-fold kwa 15.0 ina miguu mitatu iliyoshinda; mguu wa mwisho unabadilishwa kwa 2.5 katika exchange. Kuweka lay/back kulingana sawa kuokoa ≈£45 kila njia ya mechi ya mwisho, dhidi ya £150-au-neno la tumbo lisilopatikana. Kama deni hilo ni sahihi inategemea bei, si hofu.",
+      "related": [
+        "cash-out",
+        "lay-betting",
+        "dutching"
+      ],
+      "see": [
+        {
+          "label": "Hedging calculator",
+          "href": "/tools/hedging-calculator"
+        }
+      ],
+      "_src_hash": "265417d8376be4b6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "overround",
+      "term": "Overround",
+      "short": "Kiasi ambacho uwezekano uliotengenezwa na soko kizuizi kinazidi 100% — marjini ya kitabu, iliyoangaliwa kutoka upande wa soko.",
+      "definition": [
+        "Jumlisha uwezekano uliotengenezwa wa matokeo yote katika soko na ile inayozidi 100% ni overround: 1X2 inayojumlisha hadi 105.5% ina overround ya 5.5%. Ni kitu kimoja na marjini ya bookmaker, lakini kipimo katika soko nzima badala ya kuelezewa kama ada.",
+        "Overround inatofautiana kwa soko na kitabu — ligi kuu katika vitabu vya pacha hutembea 2–5%, soko za ajabu na ligi ndogo 8–15%. Kuiangalia inachukua sekunde thelathini na inakuambia ni nini meza inakamatia kabla maoni yoyote kuingia."
+      ],
+      "example": "Bei 1.95 / 3.60 / 4.10 zinatengeza 51.3% + 27.8% + 24.4% = 103.5% — overround ya 3.5%, nzuri. Mechi ile ile mahali pengine kwa 1.83 / 3.40 / 3.90 inatengeza 107.7% — hulipwa bei mara mbili kwa maoni sawa.",
+      "related": [
+        "bookmaker-margin",
+        "vig",
+        "fair-odds"
+      ],
+      "see": [
+        {
+          "label": "Live margin research across our leagues",
+          "href": "/research"
+        }
+      ],
+      "_src_hash": "7ac9166d8f6aa038",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "goal-line",
+      "term": "Goal Line (Asian Total)",
+      "short": "Mabao sisi na mechanics ya Asian: mistari kamili, nusu na split ambapo kuua kabisa kulirejesha sehemu au kila kitu cha stake.",
+      "definition": [
+        "Goal line ni over/under yenye machinery ya refund ya Asian handicap. Mistari kamili (3.0) husafisha wakati mabao yanakua sawa kabisa; split lines (2.5/3.0) husambaza nusu ya stake kwenye kila sehemu; half lines (2.5) zinafanya kazi kama soko la kawaida.",
+        "Refunds zinagharimu odds: over 2.5/3.0 hulipa chini kuliko over 2.5 kwa sababu sehemu ya downside yako ilisirifiwa. Ikiwa biashara hiyo ni thamani yake ni swali la bei, na split lines ndiko kitabu kihundi ndicho kinachofanya bei ziziwe – linganisha dhidi ya mistari ya kawaida kabla ya kuchukua moja."
+      ],
+      "example": "Over 2.75 (yaani 2.5/3.0 split) na £10: mechi inaishia 3–1 — nusu zote zinashinda. Inaishia 3–0... mabao 3: nusu ya 2.5 inashinda, nusu ya 3.0 inasafisha → kukusanya £5, kulirejesha £5. Inaishia 2–0: nusu zote hupoteza. 'Quarter line' ni tu ma-bets hayo mawili yaliyounganishwa pamoja.",
+      "related": [
+        "over-under",
+        "asian-handicap",
+        "push"
+      ],
+      "see": [],
+      "_src_hash": "ff9d0b027c55b632",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bet-builder",
+      "term": "Bet Builder (Same-Game Multi)",
+      "short": "Kuchanganya soko kadhaa kutoka kwa MZANI MMOJA katika kambi moja — ambapo bei ya uwiano inafanya kazi kwa siri kwa ajili ya nyumba.",
+      "definition": [
+        "Bet builder inazidisha uchaguzi kutoka kwa mzani mmoja — matokeo, BTTS, karatasi, wakora — katika bei moja. Kwa sababu miguu inacorrelate (timu inayoshinda 3–0 inafanya wakora wake anavyezaa akali kwa uwezekano mkubwa), bei ya haki inahitaji kufanya kazi ya uwezekano wa pamoja, si kuzidisha kwa kujitegemea.",
+        "Uwiano huo ndio mahali ambapo ujinga wa nyumba hujificha: vitabu vinafanya bei za pamoja za positively-correlated inayopendekezwa kwa kiasi kikubwa chini ya kuzidisha na isimu, na margin kwenye wajenzi kawaida huongeza mara mbili vig ya soko moja. Bidhaa hiyo ni ya kufanya na nzuri na ghali kwa ujenzi."
+      ],
+      "example": "Timu kushinda (2.00) + zaidi ya 2.5 (2.00) kama kujitegemea kuzidisha hadi 4.00, lakini matokeo yanachorela sana — bei ya pamoja ya haki inaweza kuwa 3.20. Mjenzi anakudu 2.90. Kulipwa ni uwiano wa marekebisho NA safu nyingine ya margin kwa ajili ya rahisi ya kambi moja.",
+      "related": [
+        "accumulator",
+        "bookmaker-margin",
+        "btts"
+      ],
+      "see": [
+        {
+          "label": "Model-screened combinations instead",
+          "href": "/tools/acca-builder"
+        }
+      ],
+      "_src_hash": "fe2be9f9ee3080ae",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "acca-insurance",
+      "term": "Acca Insurance",
+      "short": "Promo inayorudisha acca iliyoshindwa kwa mguu mmoja tu — kawaida ni free bet, bei yake inajumuishwa katika bidhaa.",
+      "definition": [
+        "Acca insurance inarudisha kuponi ambapo mguu mmoja unakushindisha — kawaida legs 5+ zinahitajika, refund imefungwa na kulipwa kama free bet bila kurudi kwa stake, si pesa taslimu. Kigezo (mguu mmoja tu unayoshindwa) ni nadra kuliko inavyojisikiliza: kuponi kawaida hushindwa na mbili au zaidi.",
+        "Bei bidhaa kama pakiti: thamani inayotarajiwa ya insurance kwa viwango vya kweli vya mguu mmoja unakoshindwa ni sehemu ya ziada ya margin ambayo acca inayokweza inabeba. Inalaini saikolohia ya tofauti; haibadilishi operesheni ya hesabu."
+      ],
+      "example": "Mabao matano kwa 60% kila mmoja uwezekano wa kweli: P(mguu mmoja tu unashindwa) = 5 × 0.4 × 0.6⁴ ≈ 25.9%. Refund ya £10 kama free bet SNR ina thamani ~£7 inapotumbuika → ≈£1.80 ya thamani inayotarajiwa, dhidi ya ~£2.50 ya margin ya ziada kwenye five-fold yenyewe.",
+      "related": [
+        "accumulator",
+        "free-bet",
+        "stake-not-returned"
+      ],
+      "see": [],
+      "_src_hash": "ec3bd1c5d6af93ee",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "price-boost",
+      "term": "Price Boost (Odds Boost)",
+      "short": "Bei ya soko iliyoboostwa kwa matangazo — wakati mwingine ina thamani halisi, lakini daima ni vyema kulinganisha na bei isiyoboostwa.",
+      "definition": [
+        "Boost ya bei inainua odds kwenye kundi la matokeo ambalo bookmaker anachagua, kawaida yenye kikomo cha stake. Kwa sababu bei ya msingi ina margin ya bookmaker, boost mara nyingi inakurudi kwenye bei ya haki tu — lakini mara kwa mara, haswa kwa soko linalolinganiana na exchange, ina thamani halisi zaidi.",
+        "Njia ya kuangalia ni moja kwa moja: linganisha bei iliyoboostwa na bei nzuri bila boost na exchange. Boosted 2.20 ambapo vitabu vya sharp vinaquote 2.10 ni thamani halisi kwa stake iliyofungwa; boosted 2.20 ambapo bei ya haki ni 2.35 ni hesabu tu ya matangazo."
+      ],
+      "example": "Boost: 2.00 → 2.20, stake kubwa zaidi £10. Exchange inataka kile matokeo kwa 2.16, takriban 2.12 ya haki baada ya commission. Kuchukua boost kunabeba (2.20 / 2.12 − 1) ≈ +3.8% expected value kwenye stake iliyofungwa — ni vyema kuichukua, lakini si vyema kueneza hiyo sehemu kwa bei za bookmaker zisizoboos.",
+      "related": [
+        "value-bet",
+        "closing-line-value",
+        "free-bet"
+      ],
+      "see": [],
+      "_src_hash": "02171ba706bfb8f8",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "stake-not-returned",
+      "term": "Stake Not Returned (SNR)",
+      "short": "Sheria ya kukamatia pesa za bure: mabao yanalipwa, ishara yenyewe hailipwi kila wakati — kupunguza thamani ya ishara nusu kwa biashara sawa.",
+      "definition": [
+        "SNR inamaanisha pesa za bure hulipwa mabao tu: ishara ya £25 kwa 2.00 hulipwa £25, si £50, kwa sababu stake haikuwa pesa yako. Karibu pesa zote za bure zinasuluhishwa kwa njia hii, ambayo inabainisha thamani yao halisi — ishara inabadilika kwa (odds−1)/odds ya thamani ya uso kwa bei sawa.",
+        "Matokeo: ishara huondoa zaidi kwa odds kubwa (50% ya uso kwa 2.00, 75% kwa 4.00) na huzaa kwa wageni mafupi. Ni ukweli mmoja muhimu sana kuhusu pesa za bure na ndilo lililoangaziwa kidogo zaidi."
+      ],
+      "example": "Ishara ya £25 SNR: kwa 1.40 inaweza kushinda tu £10 — 40% ya uso iliyopotea kabla ya kickoff. Kwa 5.00 inashinda £100, inabadilika ~80% ya thamani ya uso katika matarajio kwa bei sawa. Ishara sawa, mabao ya halisi yaliyodoble, uamuzi mmoja.",
+      "related": [
+        "free-bet",
+        "expected-value",
+        "wagering-requirements"
+      ],
+      "see": [
+        {
+          "label": "Free bets explained in full",
+          "href": "/guides/free-bets-explained"
+        }
+      ],
+      "_src_hash": "e29e3c9a2f1ebcf5",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "poisson-distribution",
+      "term": "Poisson Distribution",
+      "short": "Mfano wa takwimu unaomaanisha bei za kila mchezo wa soka — mabao kama matukio machache sana yanayotokea kwa kujitegemea kwa kiwango kinachojulikana.",
+      "definition": [
+        "Poisson distribution inatoa uwezekano wa matukio k wakati matukio yanayofika kwa kujitegemea kwa kiwango wastani λ: P(k) = e^−λ·λᵏ/k!. Wezesha kwa mabao yanayotarajiwa ya timu nzima, itakupatia uwezekano wa 0, 1, 2, 3… — na mgawanyiko wa timu mbili unaunganisha matokeo ya mchezo, 1X2, jumla na BTTS.",
+        "Haina ukamilifu kwa njia zinazojulikana — mabao huwa yanajipiana kwa kidogo, matawali yanabulikwa kwa bei chini kwa kidogo — na kila muundo wa mchezo ambao unafanya kazi halisi, ikiwa pamoja na yetu, huanza kutoka hapa na kusahihisha kutoka hapa. Nguvu yake ni kubadilisha ingizo moja halisi (mabao yanayotarajiwa) kuwa sehemu nzima ya uwezekano."
+      ],
+      "example": "λ = 1.4 mabao yanayotarajiwa: P(0) = e^−1.4 ≈ 24.7%, P(1) ≈ 34.5%, P(2) ≈ 24.2%. Poisson mbili huru kwa 1.4 na 1.1 zinatoa P(1–1) ≈ 34.5% × 36.6% ≈ 12.6% — hesabu ndani ya kila bei ya alama halisi uliyoiona.",
+      "related": [
+        "xg",
+        "expected-value",
+        "correct-score"
+      ],
+      "see": [
+        {
+          "label": "How our model works",
+          "href": "/model"
+        }
+      ],
+      "_src_hash": "c003f1cd5ff1fdfb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "regression-to-the-mean",
+      "term": "Kurudi kwa Wastani",
+      "short": "Matokeo ya karibu sana yajitendea kurudi karibu na uwezo wa kweli — nguvu ya takwimu nyuma ya 'fomu ni ya muda, ubora ni wa daima'.",
+      "definition": [
+        "Wakati utendaji unakwenda sana juu au chini ya kiwango cha timu, mkutano ujao huwa karibu na kiwango hicho — si kwa sababu ya kasi au laana, lakini kwa sababu extremes huwa sehemu ya bahati na bahati haisemi kwa amri. Mshambuzi anayebadilisha risasi kwa 35% atabadilisha karibu na wastani wake wa karera wa 12% miezi ijayo.",
+        "Kwa waandamizi somo ni kuhusu bei za narrative: soko mara nyingi hueleza mifuatano ya kupaka sehemu sawa wakati regression ina uwezekano mkubwa, ndiyo sababu kufanya faraka extremes kwa bei iliyoinuka ni angle endelevu na kuzifuata ni kaboro endelevu."
+      ],
+      "example": "Timu ya katikati-meza inashinda sita mfululizo, tatu kwa mabao moja na xG kubwa bila upendo. Nambari zake za msingi huweka mechi ijayo kwa uwezekano wa 58% wa kupiga bao; soko linalofuata mifuatano huweka 58%. Regression haisemi hasara ya kawaida — inasema 1.72 kwa furaha 45% ni bei isiyo sahihi.",
+      "related": [
+        "variance",
+        "sample-size",
+        "xg"
+      ],
+      "see": [],
+      "_src_hash": "a5cb887c49a4a007",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "sample-size",
+      "term": "Sample Size",
+      "short": "Ni kundi ngapi za data zinasimamia takwimu — tofauti kati ya ushahidi halisi na hadithi, katika namba moja.",
+      "definition": [
+        "Kila takwimu ya kubeti ni kadirio ambalo utegemezi wake unakuwa mkubwa kadri idadi ya obsevasyon inavyoongezeka. Michezo mitano ya BTTS data haikupi chochote; hamsini hukupia kitu; mia mitano inabandika kiwango. Kosa la kawaida linapungua na mzizi wa mraba wa n — ongeza data mara nne ili kupunguza kelele kwa nusu.",
+        "Kuchuja kiufundi: kabla ya kutumia kiwango chochote ('walisoma over 2.5 katika migezo 8 ya 10'), uliza n ni nini na kiwango cha msingi kinasema nini. Wadau wengi 'wanaouza' kwa wabeti ni sampuli ya migezo kumi ya sarafu ambayo ilikuwa karibu 50% kila wakati."
+      ],
+      "example": "Kiwango cha 60% cha over-2.5 kutoka migezo 10 kina kosa la kawaida la ±15.5% — kiwango halisi kinaweza kuwa popote kati ya 45% na 75%, kinachospana 'bet over' na 'bet under'. 60% sawa kutoka migezo 200 (±3.5%) ni data halisi.",
+      "related": [
+        "variance",
+        "regression-to-the-mean",
+        "win-rate"
+      ],
+      "see": [],
+      "_src_hash": "0259ad38e8f46e75",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "longshot-bias",
+      "term": "Mcheza wa Kodi-Mstaafu na Bahati Ndefu",
+      "short": "Harakati inayothibitika sokoni: bahati ndefu huuziwa ghali sana kwa sababu ya mahitaji ya watumiaji, kodi ndogo zina bei sawa na burudani.",
+      "definition": [
+        "Katika masomo mengi na soko mbalimbali kwa miongo kadhaa, kazi za kamari na kodi ndefu hurudisha faida ndogo kuliko kazi zenye kodi ndogo: pesa ya wasichana wa chumba wanaopenda matokeo ya bahati nzuri, vitabu vya mchanaji hushufusha bei za bahati ndefu, na kiwango cha faida cha mnada unajenga ndipo ndipo ndipo kwa akili zile.",
+        "Mcheza huu ni moja ya ukweli wa sokoni unaotibetika kwa kutosha kujenga kanuni juu yake: kuwa na shaka katika joto lako lenyewe la kodi ndefu, omba kiwango cha ziada kabla ya kuchukua 6.0+, na kumbuka kwamba 'thamani' nyingi ambayo muundo wa kimaumbile hupata kwa bei kubwa ni utengano unaocheka muundo. v1 yetu mwenyewe ilienda 0-kwa-8 kwenye rake sawa na sawa."
+      ],
+      "example": "Matokeo ya kawaida: kazi za kamari saa 1.50 hurudisha ~97p kwa kila £1 iliyohifadhiwa; kazi za kamari saa 15.0 hurudisha ~85p. Michezo sawa, vitabu sawa, siku sawa — tofauti hiyo ni mahali ambapo faida inahifadhi. Muundo usiotaka hii utapata 'makali' makubwa ndani ya mahali ambapo bei ni mbaya zaidi.",
+      "related": [
+        "value-bet",
+        "variance",
+        "bookmaker-margin"
+      ],
+      "see": [
+        {
+          "label": "Our model's odds caps and why",
+          "href": "/model"
+        }
+      ],
+      "_src_hash": "365d89426d4636e4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "home-advantage",
+      "term": "Advantage ya Nyumbani",
+      "short": "Faida ya miundo ya kucheza nyumbani — thamani kwa kawaida 0.3–0.4 mabao, inabadilika kulingana na ligi, kipindi na umati.",
+      "definition": [
+        "Timu za nyumbani huandika mabao mengi na kupokea machache kuliko timu moja hiyohiyocho mbali — kwa historia thamani kwa kawaida 0.3–0.4 mabao kwa mchezo, inayoletwa na athari za umati kwa wacheza na wahakim, safari, na ujuzi wa mahali. Athari ni kweli, maalum kwa ligi, na polepole kupungua katika soka.",
+        "Kila mtindo wenye sura kubwa huchukua viwango tofauti vya nyumbani na mbali badala ya nguvu moja ya timu; yetu inafanya. Angle ya kupigia kamali si kwamba advantage ya nyumbani inapatikana — soko lina ujuzi — lakini ukubwa wake hubadilika kulingana na ligi na msimu, na bei zilizowekwa kwa wastani wa duniani huuza vibaya uimaumu."
+      ],
+      "example": "Katika ligi zetu zilizo na nguvu, kiwango cha mabao cha nyumbani kinaruka ~1.4 vs ~1.1 mbali — faida ya 0.3-mabao thamani takriban 8–10 pointi za uwezekano wa ushindi katika mchezo sawa. Ligi ambaye msimu wa sasa unakamatia zaidi au chini ya wastani wake mwenyewe ni mahali ambapo bei za jumla na 1X2 zinarudi vibaya kwanza.",
+      "related": [
+        "poisson-distribution",
+        "xg",
+        "regression-to-the-mean"
+      ],
+      "see": [
+        {
+          "label": "Home advantage by league — live research",
+          "href": "/research/home-advantage"
+        }
+      ],
+      "_src_hash": "9838d9bf65548ef4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "team-form",
+      "term": "Fomu",
+      "short": "Matokeo ya hivi karibuni kama dalili — wenye uwezo mdogo tu, ni muhimu tu ukiwekwa pamoja na ubora wa mpinzani na namba za msingi.",
+      "definition": [
+        "Fomu inaonyesha matokeo ya hivi karibuni — WWDLW inaonekana kwenye kila tovuti ya takwimu. Fomu safi ni dalili dhaifu: matokeo matano yana kelele kubwa, ubora wa mpinzani hutofautiana sana, na goli moja lenye kupiga upande kulibadilisha herufi. Kiwango cha msingi (picha, xG, nafasi ya uwanja) inatabiri mechi ijayo vizuri kuliko herufi.",
+        "Fomu inapata nafasi ukiwekwa uzani (mechi za karibuni zina uzani zaidi), kurekebisha kulingana na nani aliyecezwa, na kuvinjari tena kupitia namba za msingi. Mtindo wetu unatumia kupungua kwa wakati kwa sababu hii haswa — matokeo kutoka wiki iliyopita yanasema zaidi kuliko matokeo kutoka Oktoba, lakini hata matokeo hayo hayazui kama msimu mzima wa kiwango."
+      ],
+      "example": "Timu A: LLWLL dhidi ya watakatifu watano wa ligi. Timu B: WWWWW dhidi ya watakatifu watano wa chini. Herufi zinasema B inatembea haraka; kiwango kilichorekebishwa kwa mpinzani mara nyingi kinasema timu A ni upande wenye nguvu kwa masharti sawa — na bei ya soko kawaida inakaa mahali fulani kati ya hadithi hizi mbili.",
+      "related": [
+        "sample-size",
+        "regression-to-the-mean",
+        "xg"
+      ],
+      "see": [],
+      "_src_hash": "aa8eabb6547b8832",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "head-to-head",
+      "term": "Head-to-Head (H2H)",
+      "short": "Miradi ya timu mbili iliyopitia — inaagizwa kwa nguvu, huwezi kutabiri, wakati mwingine inafaa katika jumla.",
+      "definition": [
+        "Rekodi za H2H zinakusanya mikutano ya awali kati ya timu mbili. Waachaji hubadilika na wanamikakati wanabadilika, kwa hivyo 4–0 tangu miezi mitatu iliyopita inaeleza timu ambazo hazipo tena — kama utabiri wa matokeo yajayo, historia ya H2H haiongezi kitu karibuni mara tu kwa nguvu ya sasa inachukuliwa katika hesabu.",
+        "Matumizi yanayotetea ni jumla: mkutano ambao kila wakati husimamia kwa mabao machache au mengi kutokana na miradi mingi, au mifumo mahususi ya uwanja wenye sampuli halisi. Muktadha, si ishara — mtindo wetu hauinganishi H2H kabisa na unafanya kazi kutoka kwa viwango vya sasa vya kusambaza mabao."
+      ],
+      "example": "Miradi kumi inayoeneza wastani wa mabao 3.4 dhidi ya kawaida ya ligi ya 2.6 inastahili kuangalia mstari wa jumla — kama onyo kusoma viwango vya sasa vya kusambaza mabao, si kama bet. Miradi mitatu inayeneza kitu chochote ni sarafu iliyokumbuka kwa upendo.",
+      "related": [
+        "sample-size",
+        "team-form",
+        "over-under"
+      ],
+      "see": [
+        {
+          "label": "H2H records for every covered pairing",
+          "href": "/h2h"
+        }
+      ],
+      "_src_hash": "32642792464a4500",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fixture-congestion",
+      "term": "Mabadiliko ya Michezo Mingi",
+      "short": "Michezo midweek na wikendi mchanganyiko: hatari ya kubadilisha wachezaji, mwili unaojifanya kazi na jumla ya mabao huathiri bei za soko kwa chelewa.",
+      "definition": [
+        "Mabadiliko yanamaanisha michezo mitatu katika siku nane — kombe midweek, kusafiri kimataifa, mabadiliko ya Desemba. Madhimba yanaweza kupimika: mabadiliko ya waanzi, kupungua kidogo kwa kiwango cha juhudi ya juu, na mabao machache kutokana na mwili unaojifanya kazi mwishoni mwa mabadiliko.",
+        "Umuhimu wa kubeti ni wakati: bei zilizowekwa mapema wiki inaweza kuwa nyuma ya mabadiliko yaliyothibitishwa, na beti za wachezaji binafsi (waaskari wa mabao, kadi) zinaathiriwa zaidi na jina ambalo halijawekwa kuanzia. Angalia habari zilizothibitishwa za timu kabla ya kitu chochote kinachohusiana na mabadiliko."
+      ],
+      "example": "Timu inacheza michezo yake ya tatu katika siku saba, baada ya kusafiri nchi za nje, hubadilisha waanzi wanne. 1X2 haisonge karibu (soko linathamini timu), lakini mchezaji anaye pata mabao kwa bei 2.10 yuko benchi — bet ilifariki katika orodha ya waanzi, si katika mwanzo wa michezo.",
+      "related": [
+        "team-form",
+        "anytime-goalscorer",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "32368c4d7bd11aef",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "dead-rubber",
+      "term": "Wastani Mtupu",
+      "short": "Mechi ambayo hakuna kitu kinachotegemewa kwa upande mmoja au wote — mahali ambapo motisha huvunja miundo na bei.",
+      "definition": [
+        "Wastani mtupu hausemi kitu: kundi tayari limeshinda, usalama tayari limefungwa, raundi ya mwisho ya ligi iliyosettlewa. Tofauti za motisha kubwa hivi huvunja miundo kulingana na kiwango — timu imara bila kitu cha kucheza huweka wachezaji na kuondoka bila nguvu, na 'kweli' yake kwa muda si kuvuta kama kawaida.",
+        "Hizi ndizo micheza ambapo uwezekano wa miundo (yake pamoja) unatahili mtindi mdogo zaidi na mahali ambapo upande wa soko — nani kwa kweli anahitaji pointi — inakuwa maswali. Michezo ya mwisho wa kasum na raundi ya mwisho ya kundi inatakiwa kuangaliwa motisha kabla ya zabuni yoyote."
+      ],
+      "example": "Raundi ya mwisho ya kundi: timu iliyofaulu (uwezekano wa kushinda kulingana na kiwango 60%) inatembelea timu inayohitaji pointi kukamatia. Historia ya usawa huu wa motisha inapendekeza nafasi halisi ya timu iliyobobewa inakunyamlia pointi 10–15 chini — odds 1.67 kwenye timu inayoondoka bila nguvu ni mtego wa wastani mtupu wa kawaida.",
+      "related": [
+        "team-form",
+        "fixture-congestion",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "ebba46dd36eb2f3e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "maximum-payout",
+      "term": "Kiasi Cha Juu Cha Malipo",
+      "short": "Kiwango ambacho mkutanista haujalishi zaidi ya kiasi fulani kwa bahati moja au mteja kwa siku — maandishi machache yanayofinya malibu ya akamuleta.",
+      "definition": [
+        "Kila mkutanista ana kiwango cha juu cha malipo — kwa bahata moja, kwa soko moja, kwa mteja kwa siku moja — na vikomo vinavyobadilika kulingana na ligi na mchezo: mashindano makuu yana vikomo vya juu, yale yasiyojulikana yana vikomo vya chini sana. Akamuleta ya miguu 12 ambaye nominal yake inazidi kiwango cha juu hulipwa kiwango tu, bila kujali kile slip ilizidisha.",
+        "Angalia kiwango kabla ya kujenga kitu kinachofanana na bahati, na tambua ligi ipi kwenye karatasi yako ina kiwango cha CHINI — akamuleta mchanganyiko hulimbwa na kiasi chake dhaifu kwa vitabu vingi."
+      ],
+      "example": "Slip inasema £2 × 8,000 = £16,000; masharti yanakamatia malipo kwenye ligi hiyo £10,000. Miguu sita ilikuwa mainstream lakini chaguo moja la ligi ya akiba ya Belarus lilibomoa slip yote chini ya kiwango cha chini — tofauti ya £6,000 ilikuwa kwenye maandishi machache tangu mwanzo.",
+      "related": [
+        "accumulator",
+        "fold",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "d4c8a143702c5985",
+      "_model": "claude-haiku-4-5-20251001"
+    }
+  ]
+}

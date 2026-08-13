@@ -1,0 +1,2884 @@
+{
+  "lang": "yo",
+  "guides": [
+    {
+      "slug": "how-to-read-betting-odds",
+      "title": "Báwo ni a ṣe ka Odds",
+      "nav": "Kika odds",
+      "desc": "Decimal, fractional ati American odds àlaye pẹ̀lú ọ̀ràn kán tó ń lọ síbẹ̀ — àti báwo ni a ṣe le tu awọ price nígbà kọ̀ọ̀kan sínú ìmọ̀ràn ti a ń fojú rẹ̀.",
+      "cat": "Basics",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "Odds jẹ́ àwọ price, kìí ṣe àṣtẹ̀jáde",
+          "ps": [
+            "Odds ibadandun ṣiṣẹ́ iṣẹ́ meji lékan: ó ṣalaye ohun tí ìbajẹ́ tó ba nire yóó padà sí ọwọ́, àti pé ó mọ̀ bí bookmaker ṣe ń ròye ohun náà. Kìí ṣe ìgbésẹ̀ ení. Odds tí ó jẹ́ 1.50 kò túmọ̀ pé ẹgbẹ́ kan á ṣẹ́gun — túmọ̀ pé bookmaker ń gbe iyára kan tó báa jẹ́ ibadandun ní ìṣẹ́ tán-ín lọ́ 67%, yìí kúrò ní àrò rẹ̀ ara ẹni.",
+            "Níbà tí o bá jẹ́ ohun àwọ ní ijò kan, opò ọgbọ́n ibadandun á yé ọ lọ́wọ́. Àwọ price ná yoó yáripọ̀ láàrin bookmakers, wọn á gbe tí ọ́wọ́ àti ìròyìn túbọ̀, àti — bíi ìjò kan — áwọ díẹ̀ nìkan ni a ń wọ pẹ̀lú. Rirìn àwọ tó wọ̀ wọnú nìkan ní ohun àti ó fẹ́ gbọ́ fún awọ ibadandun tó ẹ."
+          ]
+        },
+        {
+          "h": "Decimal odds",
+          "ps": [
+            "Decimal odds nìkan ní ìpilẹ̀ sábà ní Europe, Africa àti múmú ibadandun sítì julọ́, àti pé ó jẹ́ ìtumọ̀ tó rọrun jù. Nọ́mbà náà nìkan ní gbogbo iyòhun tí a nilo làárin ibadandun àti èrèké, nìkan pẹ̀lú àgbà. Odds 2.75 túmọ̀ pé ìbajẹ́ €10 tó ba nire á padà sí €27.50 — àgbà €10 rẹ àti èrèké €17.50.",
+            "Òkè meji tó ńyẹ: ànyị jù 2.00 jẹ́ odds-on (ohun náà jẹ́ múmúrú ju àìmúrú lọ), àti àìmọ̀ àbúkù jẹ́ 1 tì nínú odds nìkan. 1 ÷ 2.75 ≈ 36.4%."
+          ]
+        },
+        {
+          "h": "Fractional odds",
+          "ps": [
+            "Fractional odds (5/2, 11/10, 4/6) jẹ́ àbí àgbàtánná UK àti Ireland. Èrèké náà jẹ́ èrèké níbáa tán ibadandun: 5/2 túmọ̀ pé €5 èrèké fún gbogbo €2 tí a ń ba, nítorí naa ìbajẹ́ €10 ní 5/2 yóó padà sí €35 níkan (€25 èrèké àti agbà rẹ).",
+            "Láti túmọ̀ sí decimal, pípin èèrèké àti kí o sí àgbà dá: 5/2 → 2.5 + 1 = 3.50. Èrèké tó kere jù 1 (gẹ́gẹ́ 4/6) jẹ́ odds-on iyalẹnu."
+          ]
+        },
+        {
+          "h": "American odds",
+          "ps": [
+            "American odds wá ní dájúdájú rọ́bọ́ tàbí àìdájúdájú rọ́bọ́ tó jẹ́ àìdájúdájú dé $100 ibadandun. Àìdájúdájú rọ́bọ́ (−150) ṣalaye ohun tí o nílò láti ba $100: riskù $150 láti ní $100 èrèké. Dájúdájú rọ́bọ́ (+220) ṣalaye èrèké ní $100 ibadandun: riskù $100 láti ní $220.",
+            "Túmọ̀ sí decimal: fún àìdájúdájú rọ́bọ́, 100 ÷ 150 + 1 = 1.67; fún dájúdájú rọ́bọ́, 220 ÷ 100 + 1 = 3.20. Tí o jẹ́ míì tí o ń ba pẹ̀lú decimal ijò, túmọ̀ American àwọ ṣaaju pípin ídi — converter wa níísálẹ̀ ṣe èyí níjìjìnú."
+          ]
+        },
+        {
+          "h": "Láti odds sí àìmọ̀ àbúkù",
+          "ps": [
+            "Àìmọ̀ àbúkù nìkan ní iṣẹ́ tí ìtumọ̀ yóó jẹ́ dáadáa. Fún decimal odds ìtumọ̀ nìkan jẹ́ 1 ÷ odds × 100. Odds 1.50 ṣowé 66.7%, odds 3.00 ṣowé 33.3%, odds 10.0 ṣowé 10%.",
+            "Da àwọ àìmọ̀ gbogbo ìpilẹ̀ tí o wà nínú ijò kan àti o yóó rí lẹ̀bi 100% — àkójọ 103–108% nínú football. Èyí tó kù nìkan jẹ́ àrò bookmaker, àti nítorí naa pípin àwọ kárí bookmakers ní pàtàkì: ohun tó mót nìkan, tí a ní ní 1.90 nínú ìlé kan àti 2.02 nínú ìlé míì, jẹ́ ìbajẹ́ tó yàtọ̀."
+          ]
+        },
+        {
+          "h": "Àpẹẹrẹ nìkan",
+          "ps": [
+            "Manchester City jẹ́ 1.44 láti ṣẹ́gun Fulham, ìdámu jẹ́ 4.80, Fulham jẹ́ 7.50. Àìmọ̀ àbúkù: 69.4% + 20.8% + 13.3% = 103.5%. Àwọ 3.5 ní orí 100 nìkan jẹ́ àrò. Tí èrèké rẹ ara ẹni ti City ní gá ju 69.4%, 1.44 yẹ́ jẹ́ ohun tí ó nilo; tí o ba kere, àwọ náà ń wá ibadandun rẹ àìrú báwo ní City ṣẹ́gun wá dùn."
+          ]
+        }
+      ],
+      "example": "Manchester City jẹ́ 1.44 láti ṣẹ́gun Fulham, ìdámu jẹ́ 4.80, Fulham jẹ́ 7.50. Àìmọ̀ àbúkù: 69.4% + 20.8% + 13.3% = 103.5%. Àwọ 3.5 ní orí 100 nìkan jẹ́ àrò. Tí èrèké rẹ ara ẹni ti City ní gá ju 69.4%, 1.44 yẹ́ jẹ́ ohun tí ó nilo; tí o ba kere, àwọ náà ní ibadandun rẹ nígbà nígbà nígbà àìrú báwo ní City ṣẹ́gun wá dùn.",
+      "takeaways": [
+        "Decimal odds = gbogbo iyòhun fún òkè ibadandun nìkan; 1 ÷ odds = àìmọ̀ àbúkù.",
+        "Fractional odds ṣowé èrèké níbáa tán ibadandun; American odds jẹ́ àìdájúdájú dé $100 ibadandun.",
+        "Gbogbo ijò àìmọ̀ àbúkù àkójọ sí èyí tó ju 100% lọ — èyí tó kù nìkan jẹ́ àrò bookmaker.",
+        "Ohun tó mót nìkan ní àwọ tó yàtọ̀ jẹ́ ìbajẹ́ tó yàtọ̀: pípin àwọ ṣaaju láti bu."
+      ],
+      "faq": [
+        {
+          "q": "Wọ́n ìtumọ̀ odds nìkan ni mo loye lo?",
+          "a": "Èyinú tí ìparun rẹ ń loye níì lọ́wọ́ — ṣùgbọ́n jẹ́ olòyè láti túmọ̀ sí decimal, nítorí àìmọ̀ àbúkù (1 ÷ odds) jẹ́ ohun tó rọrun jù láti ṣe ètò. Múmú ibadandun máa gbà á láti gílì àwọ nínú ìtumọ̀."
+        },
+        {
+          "q": "Ṣé àwọ kékeré túmọ̀ pé ìbajẹ́ ní ìfẹ́?",
+          "a": "Rárá. Odds 1.20 ṣowé bí 83% ìsẹ́, èyí tó á tẹ̀lẹ̀ nínú òkè kan tí ó kere. Odds iyalẹnu tó pọ̀ jù ló rẹ̀ ní ibadandun tí olójúkọ́ kan ní rú, àti íná àpó ní pẹ̀lú túbọ̀ jẹ́ èrò tó nira jù."
+        },
+        {
+          "q": "Kíni àdìnò tí bookmakers ṣowé odds tó yàtọ̀?",
+          "a": "Ọ̀kọ̀ọ̀kọ̀ ní àwọ rẹ ara ẹni láti àbí, ohun tí o nilo àti àrò. Àlàyé 5–10% ní ohun tó mót nìkan jẹ́ aláìṣe, nítorí naa pípin àwọ kárí bookmarks jù lo ní àbájáde tó dáa ní gbogbo ibadandun."
+        }
+      ],
+      "related": [
+        "value-betting-explained",
+        "bookmaker-margin-explained",
+        "how-ai-football-predictions-work"
+      ],
+      "glossary": [
+        "odds-formats",
+        "implied-probability",
+        "fair-odds"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Convert any price between decimal, fractional and American — with implied probability"
+        }
+      ],
+      "_src_hash": "fddfa037b18c77ae",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "what-is-an-accumulator",
+      "title": "Kí ni Ẹbẹ Accumulator?",
+      "nav": "Awọn Accumulator",
+      "desc": "Báwo ni odds ti accumulator ṣe ṣiṣẹ pọ̀, kí nkan yẹn ṣe wá di ohun tó ṣe jẹ́ ayọ rẹ̀, àti ìmọ̀ matemátíìkì gidi nípa èériìkiri tí accas máa ń san nla àti ti wọ́n máa ń pád.",
+      "cat": "Markets",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Ẹbẹ kan, ẹgbẹ́ọ̀kan púpọ̀",
+          "ps": [
+            "Accumulator (acca, parlay, combo) jọ ẹgbẹ́ọ̀kan púpọ̀ kan àárin ẹbẹ kan. Ẹgbẹ́ọ̀kan kọ̀ọ̀kan gbọ́dọ̀ ṣàkọ́; ẹgbẹ́ọ̀kan kan tí ó padanu máa ba ẹbẹ gbogbo nà. Dípò ẹyẹn, odds máa ṣiṣẹ pọ̀ dípò àdápe, èyí ni ọ̀nà tí isi apejọ tó kéré le máa pa ní owó nla.",
+            "Ẹgbẹ́ọ̀kan mẹ́ta ní 1.60, 1.75 àti 1.90 dápọ̀ sí 1.60 × 1.75 × 1.90 = 5.32. Acca €10 máa padà €53.20 bí gbogbo mẹ́ta bá jáde — pọ̀pọ̀lọ́pọ̀ jù lọ ju àwo €7.30 lẹ́kọọ̀kan tí €10 àìkọ́ sí ẹbẹ mẹ́ta àárin ara wọ́n yóò."
+          ]
+        },
+        {
+          "h": "Kí ní pọ̀ṣẹ̀ṣẹ̀ ṣe wá di ayọ rẹ̀",
+          "ps": [
+            "Odds máa ṣiṣẹ pọ̀, ṣugbọ́n àwọn ìwọ̀sẹ̀ tí wọ́n jẹ́ àkóníjú nípa inú — kó kù. Bí ẹgbẹ́ọ̀kan mẹ́ta wọ̀nyí ní ayọ gidi 60%, acca máa ṣàkọ́ 0.6 × 0.6 × 0.6 = 21.6% ní àkókò. Ẹgbẹ́ọ̀kan márùn: 7.8%. Ẹgbẹ́ọ̀kan mẹ́jọ: kó kù ju 2%.",
+            "Èyí ni àlàfo tí acca kọ́: awọn ìsàn nla, ayọ tó kù nla. Kò sí ohun aburú ní èyí bí o bá jẹ́ pé o mọ̀ rẹ̀ dáadáa àti bí o bá lo owó kéré ṣiṣẹ — ọ̀rọ̀ kéré, owó tí o le là gba tan ní tò."
+          ]
+        },
+        {
+          "h": "Owó àjà bookmaker yí náà pọ̀",
+          "ps": [
+            "Ẹgbẹ́ọ̀kan kọ̀ọ̀kan ní owó àjà bookmaker, àti pẹ́pẹ́ ẹgbẹ́ọ̀kan máa ta pẹ́pẹ́ owó àjà nàá pọ̀. Bí bookmaker bá tọ́jú ~5% fún ẹgbẹ́ọ̀kan kọ̀ọ̀kan, àtẹ́lẹ̀ àtọ́ta máa sá owó àjà ~14% láàrin gbogbo, àti àtẹ́lẹ̀ ẹ̀ẹ̀dẹ̀dẹ̀ nípa 25%. Awọn acca gígùn jẹ́ ètò kòtò tí ó sun ju awọn ẹbẹ miíràn lọ.",
+            "Èkó méjì ti òhun: pa accas jẹ́ gígi (2–4 ẹgbẹ́ọ̀kan), àti ṣayẹ̀wò owó ẹgbẹ́ọ̀kan kọ̀ọ̀kan ì-àárin ara wọ́n — owó kéré tó dára fún ẹgbẹ́ọ̀kan kọ̀ọ̀kan máa pọ̀ ní ìrírí rẹ ara kini ọ̀nà tí owó àjà máa pọ̀ ní ìrírí eniyan ìpín."
+          ]
+        },
+        {
+          "h": "Báwo ni ayelé wa ṣe pèsè awọn acca",
+          "ps": [
+            "Accumulator ọjọ́ wa jọ àwọn àgbé tó ní ìgbàgbọ́ sí ìdí àrán àti píìpí ẹgbẹ́ọ̀kan — ìgbàgbọ́ síbẹ̀síbẹ̀, àìlópin dádúró awọn ayatọ giga gúnnu sínú tìkìtì tó máa jọ ọ̀rọ̀ ìtasó. Odds tí wọ́n jọpọ̀ àti owó ẹgbẹ́ọ̀kan kọ̀ọ̀kan jẹ́ àkòyẹ́wò létí, àti akálkúù acca níbẹ̀ pẹ́ẹ́ gbà á tun ṣe àgbé tìkìtì tí o ṣe àgbéjádé rẹ̀ áti lílo ìmọ̀ matemátíìkì ṣaájú isi apejọ ohunkóhun.",
+            "Ṣe àgbé acca, tí ìkan ninu ara wa lẹ́ — àárin àìparun ní àwọn owó tó mọ̀, àìkọ́ áwoṇ àgbà ẹlẹ́rọ̀ bí. Àìkò ìfọ̀kan kan àwọn ọ̀nà àgbẹ̀rọ̀ líìlì àwọn ìdádúró yẹn."
+          ]
+        }
+      ],
+      "example": "Ẹgbẹ́ọ̀kan mẹ́rin ní 1.50 ẹgbẹ́ọ̀kan kọ̀ọ̀kan: odds tí wọ́n jọpọ̀ 5.06. Bí ayọ gidi ẹgbẹ́ọ̀kan kọ̀ọ̀kan bá jẹ́ 66.7% tí àwọn iye ẹ yẹ, acca máa jáde 19.7% ní àkókò — nípa ọ̀kan ní àwo ọ̀tun. Owó €50.60 tí a ó padà ní €10 isi apejọ ní ríó tó fẹ́ pé títí o dé tán ẹgbẹ́ọ̀kan mẹ́rin tí ó padanu nìyàngbe rẹ̀.",
+      "takeaways": [
+        "Gbogbo ẹgbẹ́ọ̀kan gbọ́dọ̀ ṣàkọ́; odds — àti owó àjà — máa ṣiṣẹ pọ̀.",
+        "Ayọ jáde kó kù nla pẹ̀lú ẹgbẹ́ọ̀kan kọ̀ọ̀kan: ẹgbẹ́ọ̀kan márùn 60% máa ṣàkọ́ kó kù ju 8% lọ ní àkókò.",
+        "Awọn acca gígi (2–4 ẹgbẹ́ọ̀kan) pẹ̀lú owó tó fúnrá ara wọ́n jẹ́ àgbé tó kèré jù ní ìṣàn inú ẹ̀yí.",
+        "Lo isi apejọ kéré: àwọn ìyalẹ́nu tí accumulator jẹ́ pé ọ̀pọ̀ wọn ni wọ́n máa padanu."
+      ],
+      "faq": [
+        {
+          "q": "Ṣé accumulator wà dara ju awọn ẹbẹ àárin ara wọ́n lọ?",
+          "a": "Gidi matemátíìkì buruju ní iye ní àwoṇ ṣìṣe, nítorí pé owó àjà máa pọ̀ láàrin ẹgbẹ́ọ̀kan. Awọn ẹbẹ àárin ara wọ́n tọ́jú owó tó pẹ̀ ju tí o bá ní ẹgbẹ́ọ̀kan kan tó dára; accas dúpẹ iye matemátíìkì nípa àì-ní àwoṇ ṣìṣe ní bí isi apejọ kéré sì ó lẹ̀ lọwọ́."
+        },
+        {
+          "q": "Kí ni yóò ṣẹlẹ̀ bí àwo kan ní acca mi bá jẹ́ ìgbòòrò?",
+          "a": "Ọ̀pọ̀ lára bookmakers máa kọ ẹgbẹ́ọ̀kan nàá àti gé acca nìpasẹ̀ odds ẹgbẹ́ọ̀kan tó kù tí wọ́n jọpọ̀, nítorí pé àtẹ́lẹ̀ ọ̀kan ìrin di àtẹ́lẹ̀ àtọ́. Wòo àwọn ìtọ́so bookmaker àárin ara wọ́n — ìdọ̀tí àwọn àwo tó padanu jẹ́ ọ̀nà."
+        },
+        {
+          "q": "Mélòó àwo ni acca gbọ́dọ̀ ní?",
+          "a": "Bí àìlópin gbọ́dọ̀ bá wà, 2–4. Kálukù owó àjà tó dápọ̀ àti ayọ tó dálẹ kó kù ní àwọn ẹgbẹ́ọ̀kan míìràn máa sè tìkìtì nàá di ìṣiṣẹ́ alorí — dáradára ní isi apejọ tí ó tobi ní àwo kéré, buruju àárin àgbé íyẹn."
+        },
+        {
+          "q": "Ẹwà tilẹ̀ ní iye 18 lẹ̀?",
+          "a": "Gbogbo àwọn ẹbẹ lò owó gidi ati rèsikí iye. Nípa akóńíjú àwo tó bá jáde, ẹkó séwùs: o le là gba tan ní tò. Ẹbẹ kò jẹ́ ọ̀nà gbágbó owó."
+        }
+      ],
+      "related": [
+        "bankroll-management-guide",
+        "common-betting-mistakes",
+        "how-to-read-betting-odds"
+      ],
+      "glossary": [
+        "accumulator",
+        "void-bet",
+        "variance"
+      ],
+      "tools": [
+        {
+          "href": "/tools/accumulator-calculator",
+          "label": "Build an acca and see combined odds, returns and implied probability"
+        }
+      ],
+      "_src_hash": "21bdb62c71e6f3dd",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bankroll-management-guide",
+      "title": "Ìpamọ́ Ègbè Àwọ̀n Ọlọ́ Ìbẹ̀rẹ̀",
+      "nav": "Ìpamọ́ ègbè àwọ̀n ọlọ́",
+      "desc": "Àwọ̀n ìyẹn, ìwé ìdọ̀gba, ìwé ìtúmọ̀, àti àwọ̀n ìpìnsẹ̀ — ètò ìwòótíì tí ó ní ìmọ̀ láti dá àbájáde àìbalẹ̀ tí o ló lójú tábí tó ní bẹ́ẹ̀ nìkan.",
+      "cat": "Strategy",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "Ìdí tí àwọ̀n ìyẹn ṣe ní ìdòpọ́ ju ìfilọ́lọ́",
+          "ps": [
+            "Àwọ̀n ọlọ̀ ìbẹ̀rẹ̀ méjì le gbà àwọ̀n ibẹ̀rẹ̀ kanna tí wọ́n rí àìpẹ́ òní ṣẹ̀ṣẹ̀ tí a tán, ṣùgbọ́n wọ́n le rí òpin ọdun ní àwọ̀n ayé ìlòpo: ẹni kan ní tútu, ẹ̀ẹ̀kan rẹ̀ṣẹ̀. Ìyatọ̀ náà jẹ ìyẹn. Àwọ̀n èso ibẹ̀rẹ̀ wá ni àwọ̀n ṣíṣì — àwọ̀n ìlọ́sẹ̀ méjìlá tó gbà tàbí ní mẹ̀wà jẹ nkankan àìdáa pẹ̀lú àwọ̀n ọlọ̀ tí o dá ara wọn níyẹ ní lọ́wọ́ — àti iye ìwé rẹ̀ búbúrú níbi àwọ̀n ohun ìní rẹ̀ ló ní ìmọ̀ láti sọ ìṣàkóbi àììtẹ̀síwájú.",
+            "Ègbè àwọ̀n ọlọ́ jẹ́ ní ìrìn ohun ìní tí a ṣẹ̀ ànì ibẹ̀rẹ̀ tí o rí àǹfàní láti padàmú fún ipilẹ̀. Kò nì àwọ̀n ọlọ́ iléwò, kò nì àwọ̀n àkójú ọkàn — omi àwùjọ̀ àní ìmọ̀ tíwọn ní ẹ̀rán ìdè. Ohun gbogbo ní àlàyé yìí dá àsírí tí ẹ̀rán yẹn ti jẹ tóóbì."
+          ]
+        }
+      ],
+      "example": "Ègbè €500, ìwé ìdọ̀gba 1-ìyẹn (€5), àwọ̀n ìyẹn àgbéjáde 2.00. Ìlọ́sẹ̀ tíìmọ̀ 10-ibẹ̀rẹ̀ kò ṣe rọ́pọ́ €50 — 10% ti ègbè, ìdámódún ṣùgbọ́n ọ̀gbẹ̀ níì gbẹ̀jú, àti ètò náà tẹ̀síwájú ní ìdọ̀gba. Àwọ̀n ibẹ̀rẹ̀ kanna, ìwé €50 'láti ṣe àgbèrò wòó náà yára' lo rọ́pọ́ ègbè nínú. Àwọ̀n àkójú kanna, àwọ̀n òpin ìlòpo.",
+      "takeaways": [
+        "Ègbè = ní ohun ìní tí o le rọ́pọ́ fúnfún; pín rẹ̀ sínú àwọ̀n ìyẹn 100.",
+        "Ìwé ìdọ̀gba 1-ìyẹn jẹ́ ẹ̀sẹ̀ ìwòótíì ìléwò; ìwé ìtúmọ̀ 1–2% jẹ́ àǹfàní tí o dára.",
+        "Ṣe ìwé ìdílẹ̀ ìlọ́ìlọ́, dáwọ̀ ní ọjọ̀ ìdílẹ̀, màá sẹ̀ ìṣàkóbi tóò.",
+        "Àwọ̀n ìwe àyoníláàrò gbé ìmọ̀rí — èso bọ̀ ní ìwé ìyẹn kára àwọ̀n ibẹ̀rẹ̀ ìgajà, kìí ṣe ìlọ́hùn.",
+        " {",
+        "q"
+      ],
+      "faq": [
+        {
+          "q": "Ègbè mi yẹn gbọdọ̀ ní kìkì wà?",
+          "a": "Ohun ìní eyikeyi tí o le padàmú tán fúnfún láìsí àwù ìlò — fún ọ̀pọ̀ àwọ̀n ènìyàn èyí jẹ́ kìkikí, àti èyí sàbí. Ètò náà ṣiṣẹ́ déédé ti €100 tàbí €10,000; kíhà ni ìdọ̀gba-ìyẹn, kìí ṣe àpapọ̀."
+        },
+        {
+          "q": "Ṣé mo yẹn ju àwọ̀n ibẹ̀rẹ̀ tí mo ní ìmọ̀rí nílòó?",
+          "a": "Ìmọ̀rí àti àǹfàní kò nì kanna, àti ìmọ̀rí ti pòpò àwọ̀n ọlọ̀ kò dà àbájáde pò. Tí o yẹn àwọ̀n nkan ìyatọ̀, jẹ́ẹ́ kéré (ìyẹn 1–2) tí o ní ìpamọ́ níbi ìmọ̀, kìí ṣe ìmọ̀rí."
+        },
+        {
+          "q": "Àkókò wo ni mo yẹ láti gba àwọ̀n èso owó tí mo ní?",
+          "a": "Àbájáde ará: ṣẹ̀ẹ́ (pẹ̀lú +50% lórí ègbè ìbẹ̀rẹ̀ rẹ̀), gba tí ó kù, àti tún ṣe. Ibi gbigba èso owó níkakání íjàba àṣà ègbè rẹ̀ tì ìlẹ̀kún ẹ̀rín kò."
+        }
+      ],
+      "related": [
+        "common-betting-mistakes",
+        "value-betting-explained",
+        "what-is-an-accumulator"
+      ],
+      "glossary": [
+        "bankroll-management",
+        "flat-staking",
+        "kelly-criterion",
+        "variance",
+        "self-exclusion"
+      ],
+      "tools": [
+        {
+          "href": "/tipsters",
+          "label": "See our model's real settled record, tracked in flat 1-unit stakes"
+        }
+      ],
+      "_src_hash": "3ba97f5af83e8b4e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "value-betting-explained",
+      "title": "Value Betting Explained",
+      "nav": "Value betting",
+      "desc": "Kini meaning nwa alaafia, bawo ni a ṣe iṣiro irisi iṣe (expected value), ati idi ti awọn alabaṣepọ ọlọjọ to ni ife wa fun awọn odindi ti a ko ba pe dandan bayi dani dipo awọn orisirisi ti o lagbara pẹlu iyipada iṣiro owo.",
+      "cat": "Strategy",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "Gbogbo awọn ero pataki ti ko le rii gbangba",
+          "ps": [
+            "Imọ akọkọ pataki ti akọ is ẹtan: igbewọlẹ ibadandun ati owo je ẹka ẹka oriṣiṛiṣi. Ibadandun kan lori alabaramu 90% pẹlu awọn odindi 1.05 gba aaye kan marun ni awọn ibadandun mẹsan ni akoko ati ko si owo, nitori iye naa sanwo kere ju ipo re loni. Ibadandun kan lori alabaramu 30% ti o jọja pẹlu 4.00 fo sitan ni awọn ibadandun mẹta ni akoko ati ri owo, nitori iye naa sanwo diẹ sii.",
+            "Value je iyatọ laarin awọn odindi ti a fun ati oye odidi to. Ibadandun je ọlọjọ to ni duro nikan nigba ti o ri awọn iye ti ko ba pe odidi to ju — ati nikan iwọn naa. Ohun miiran je igbadun pẹlu owu."
+          ]
+        },
+        {
+          "h": "Expected value (Irisi Iṣe) ninu imọran kan",
+          "ps": [
+            "Expected value pẹlu iye to rọyin: (probability × odindi) − 1. Ti o ba iyo ẹgbẹ kan si 45% ati iye naa je 2.40, EV = 0.45 × 2.40 − 1 = +0.08 — merindinlogun cent ti irisi iṣe lọdọ iye to rọyin. Ni 2.10 iyo naa naa fun −0.055: ibadandun ti o fo owo popoaiye ni iranti ti o ba de ni orita to ba ti hun.",
+            "Imọran naa je ti ara rere; iyo probability naa je ohun pataki. 45% rẹ gbọdọ jẹ sunmọ otitọ ju ẹtan ti iye ti a fun ni 41.7% (ni 2.40, iyatọ yiyọ, ka igbese ki lo lo) fun edge to jẹ otitọ. Eyan ti o ga ju lori awọn aje Premier League."
+          ]
+        },
+        {
+          "h": "Nibiti value ti wulo",
+          "ps": [
+            "Awọn aje nla bi Premier League dagba aye ti o da jẹ diẹ — ẹgbẹrẹgbẹ ti alapa gbajumo lo iye sunmọ otitọ. Awọn olukukuluku value wo nibiti ijẹkoo jẹ kekere: awọn aje kekere, awọn aje pataki, awọn ije alata ṣaaju ki irinajo ba tẹ, ati iyatọ odindi laarin awọn alabaṣepọ.",
+            "Line shopping je ikunra kan nikan ti value ti wa fun gbogbo eni pẹlu odindi alaafia: pinpin to dara jun ti o lo gbade pẹlu awọn alabaṣepọ je 3–8% ti to ju iye akọkọ loni. Gbe 2.02 ni gbigbe 1.90 lori orita naa ko nilo iṣiro otitọ, nikan tab iyalẹnuẹ kan."
+          ]
+        },
+        {
+          "h": "Bawo ni awọn screener wa ṣe lo ohun yii",
+          "ps": [
+            "Awọn model wa ba iyo probability lati awọn iye ibadandun to tẹ jẹ (framework Poisson ti a ro pẹlu awọn iye aje), ṣe iyipada si iye otitọ ati wọ pẹlu odindi to dara jun to wa. Nigba ti odindi ba ga ju iye otitọ ti model wa ni pe o ga, ijọba naa gba odindi irisi iṣe to dara — eyin je odindi ninu Edge onipin ti screener naa.",
+            "Awọn ikilọ otitọtọ: awọn iyo model je iròyìn pẹlu xirà, awọn irisi iṣe ti o jẹ diẹ je ẹtan ti a ṣe iwọn daadaa, ati paapaa awọn irisi iṣe otitọ fo giga — owo ibadandun wulo lori awọn ibadandun igba merindinlogun, ki lo lo ninu adiye kan. Ẹgbẹ iyatẹ closing-line-value wa wa ju lati lo bọ ibe awọn irisi iṣe model naa je otitọtọ."
+          ]
+        },
+        {
+          "h": "Apẹẹrẹ",
+          "ps": [
+            "O ba iyo iyatẹ si 30% (iye otitọ 3.33). Alabaṣepọ A lo odindi 3.10 — negative EV, lo kọja. Alabaṣepọ B lo odindi 3.60: EV = 0.30 × 3.60 − 1 = +0.08. Dagba naa, iyo naa, ibadandun kan ti o lo owo ati kan to dara. Iye naa pinnu eyii — ki lo lo iṣẹ to pari."
+          ]
+        },
+        {
+          "h": "Awọn ẹtan ti o wa ni ayika ",
+          "ps": [
+            "Value = odindi ti o ga ju probability otitọ; EV = (prob × odindi) − 1.",
+            "Awọn ibadandun ti o lagbara pẹlu awọn odindi ti kere je awọn ibadandun ti o buruju; awọn ti kere ni lagbara pẹlu awọn odindi ti o ga je awọn to dara.",
+            "Line shopping laarin awọn alabaṣepọ je value ti o wa fun, iyatẹ odindi yii ko nilo ero iṣiro.",
+            "Awọn irisi iṣe otitọtọ jẹ kekere, onibẹrẹ ati o han nikan lori awọn ibadandun igba merindinlogun."
+          ]
+        },
+        {
+          "h": "Awọn ibeere ati awọn idahun",
+          "ps": []
+        }
+      ],
+      "example": "O ba iyo iyatẹ si 30% (iye otitọ 3.33). Alabaṣepọ A lo odindi 3.10 — negative EV, lo kọja. Alabaṣepọ B lo odindi 3.60: EV = 0.30 × 3.60 − 1 = +0.08. Dagba naa, iyo naa, ibadandun kan ti o lo owo ati kan to dara. Iye naa pinnu eyii — ki lo lo iṣẹ to pari.",
+      "takeaways": [
+        "Value = odindi ti o ga ju probability otitọ; EV = (prob × odindi) − 1.",
+        "Awọn ibadandun ti o lagbara pẹlu awọn odindi ti kere je awọn ibadandun ti o buruju; awọn ti kere ni lagbara pẹlu awọn odindi ti o ga je awọn to dara.",
+        "Line shopping laarin awọn alabaṣepọ je value ti o wa fun, iyatẹ odindi yii ko nilo ero iṣiro.",
+        "Awọn irisi iṣe otitọtọ jẹ kekere, onibẹrẹ ati o han nikan lori awọn ibadandun igba merindinlogun."
+      ],
+      "faq": [
+        {
+          "q": "Bawo ni mo ṣe le mọ ti awọn iyo probability mi je ti o dara?",
+          "a": "Lo wọn pẹlu awọn odindi closing: ti o ba ji awọn odindi closing giga giga, awọn iyo rẹ gbe alaye. Eyan ti o han ninu awọn ọsẹ die, to gun kẹ loti irinajo owo."
+        },
+        {
+          "q": "Ṣe value betting je bẹẹ ji arbitrage?",
+          "a": "Rara. Arbitrage ti o ṣigbẹ owo kekere ti a fi han fun gbogbo awọn ipe laarin awọn alabaṣepọ; value betting gbe awo kan ni odindi ti o ba ye pe oje. Value betting le fo owo fun oṣu die paapaa ti a ba ṣe otitọtọ."
+        },
+        {
+          "q": "Njẹ mo le ṣe value betting pẹlu owo kekere?",
+          "a": "Iṣiro naa ṣiṣẹ ni gigun eyikeyi, ṣugbọn iyatẹ je iwọ: paapaa pẹlu irisi iṣe otitọtọ 5%, awọn ibadandun igba ọgọ ti o fo owo lo ṣẹlẹ. Iye ti o dọgba ati jija alabaṣepọ otitọ ni awọn ibeere, ki lo lo awọn pato."
+        }
+      ],
+      "related": [
+        "how-to-read-betting-odds",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "value-bet",
+        "expected-value",
+        "edge",
+        "closing-line-value",
+        "fair-odds"
+      ],
+      "tools": [
+        {
+          "href": "/screener",
+          "label": "The live value screener — model probabilities vs best available prices"
+        }
+      ],
+      "_src_hash": "36b3917c8edc9645",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bookmaker-margin-explained",
+      "title": "Ní Mọ̀ Kíkan Àlìkò: Atédógì Oníkò Àgbà",
+      "nav": "Atédógì oníkò àgbà",
+      "desc": "Báwo ni oníkò àgbà ṣe ń tẹ̀ léra sálà, báwo ni a ṣe le íròyìn rẹ̀ nínú àkókò mẹ́wàá ìkejì, àti àni ojúrere ọ̀pọ̀ ẹ̀ ti a ń firagbàdo fihàn.",
+      "cat": "Basics",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Èrò ẹ̀jọ́ oníkò, ní ènìyàn sìn mọ́le",
+          "ps": [
+            "Àwọn oníkò àgbà kò kaa làgbà nípa ìmọ̀ ojú ìgbajugba kuru ju ọ̀ lọ́; wọ́n kaa làgbà nípa ìtà ìgbajugba kọ̀ọ̀kan kán kò díran ara ẹ̀kú. Tọ́ pìlẹ̀ gbogbo ìmọ̀ ohùn nínú ọ̀nà tákò kan àti ìsùn jade nwọ́n lo ju 100% — àti iṣèkú nàá ni atédógì, pẹ̀lú mọ̀ orúkọ oníkò àgbà tàbí vig.",
+            "Ọ̀nà tí ó tọ́ ju 105% ní àkókò lo gba ẹ̀kú díẹ̀ 5 nínú ọ̀nà 100 tí a ṣe ìgbajugba fún, láìka àwọn ìdí. Atédógì àì sínú ìhìn àìmọ̀; ó wà níbẹ̀ nínú àwọn iye àgbà, dídẹ fún ọ̀pọ̀ tí ó jẹ́ ìròyìn."
+          ]
+        },
+        {
+          "h": "Ìròyìn ẹ̀ ara ẹ̀ ara",
+          "ps": [
+            "Fún ọ̀nà kọ̀ọ̀kan, gba 1 ÷ iye àgbà onílẹ̀; kóõ àpò; yọ 1. Ìgbájugba tí ó rí 2.10 / 3.40 / 3.60 fún 0.476 + 0.294 + 0.278 = 1.048 — atédógì 4.8%.",
+            "Ṣe èyí ló kìkan fún ọ̀nà oníkò kọ̀ọ̀kan tí ẹ lo àti àwọn ìyatọ̀ yóò di àkìyèsi. Nínú ìmọ̀ ara ẹ̀ tí ó bá ẹ̀ fún àwọn ìgbajugba ti a bá löwe, atédógì tí ó dára dáadaa lo tẹ̀ ní ayé 3%, kó tí àwọn atédógì oníkò kan àgbà nínú àwọn ìgbájugba kanna lo jẹ́ 5–7%. Àwọn ọ̀nà tí ó kìkan (kìkan àkọ̀, aláìmọ̀) lè gba 10%+ atédógì — èyí nìkan ni idi ti àwọn oníkò àgbà ń gbé ayé jáde."
+          ]
+        },
+        {
+          "h": "Kini atédógì ń kọ ọ̀ lórí ìgbà náà",
+          "ps": [
+            "Atédógì 5% túmọ̀ sí pé onígbajugba ologun padé ìṣòro 5 nínú 100 tí wọ́n bá ṣe — kò sí nínú 100 tí a wipe sílé, nínú 100 tí a ṣe ìgbajugba. Ṣe ìgbajugba 50 lẹ́meji nínú osù àti atédógì ní ìfẹ̀ ibi lo ye 260 nínú ọ̀dún, ṭíwọ̀n tábọ̀ iṣé tàbí àwọn èlẹ́RI tí wọ́n mọ̀ wẹ̀.",
+            "Atédógì tún ni ìdí tí ọ̀ ara ẹ̀ gbọ́dọ̀ dì kọjá: láti ní oúnjẹ nípa atédógì 5% oníkò, ìmọ̀ ohùn ẹ̀ ara ẹ̀ gbọ́dọ̀ jade tí ọ̀nà nípa 5%. Lọ̀ atédógì tí ẹ tẹ̀ — nípa ìwádìí iye — lo tẹ̀ iṣé tí a nílò."
+          ]
+        },
+        {
+          "h": "Líló atédógì láti àyẹ̀wu oníkò àgbà",
+          "ps": [
+            "Atédógì ní ọ̀nà kándídátì kan fún ifẹ́ àwọn oníkò àgbà, àti ọ̀kan nínú àwọn tí a kò gbé jáde. Èkúrẹ̀ ìdúnamẹ́ta tí a bá rí nínú osù àti atédógì 7% lo nípa ọ̀pọ̀ kékeré síí jìnnì nínú ìyọ̀ kan ju bii ló tán nípa atédógì 4% — èkúrẹ̀ nàá tún wà lẹ́ìkan, atédógì nìkan ní yóò tẹ̀ lórí gbogbo àgbà lèéré.",
+            "Ọ̀nà àjẹ ìyọ̀ lórí atédógì oníkò àgbà ní ìròyìn iye ohùn tó dúró sìn àkókò kọ̀ọ̀kan tí a bá ìgbé àlé, àti ẹ̀sìn níbẹ̀ tóò tè níṣẹ̀ tí ó ya atédógì kúrò nínú àwọn ọ̀nà tí ẹ bá tẹ̀."
+          ]
+        }
+      ],
+      "example": "Iye 1.90 / 1.90 lórí àkié tí ó dé àti kóò lọ: 0.526 + 0.526 = 1.053, atédógì 5.3%. Iye tí ó dára fún gúngun ìdí àjẹ́mi yóò ní 2.00 / 2.00. Ní 1.90 ẹ gbọ́dọ̀ bori 52.6% fún gúngun àwọn àgbà yẹn láti dán àti máa bẹ̀ — àwọn 2.6 àtìkálò tí ó kàn láarin 50% àti 52.6% ni kini atédógì ń kọ ọ̀.",
+      "takeaways": [
+        "Atédógì = (àpò 1/iye àgbà kàkà fún ọ̀nà àta) − 1; ó ni àjẹ tí oníkò àgbà ní tẹ̀.",
+        "Atédógì àgbá bá àgbájugba gú nípa: ~3% ní iye tí ó dára jù nínú awọn oníkò, 5–7% ní oníkò àgbà kan.",
+        "Atédógì ní àìfa nípa òrísun tí a ṣe ìgbajugba — ó ni tẹ̀ lórí ọ̀nà kọ̀ọ̀kan, kò sí kan.",
+        "Àwọn oníkò àgbà pẹ̀ atédógì lo tẹ̀ àwọn èkúrẹ̀ nípa òpin òǹà tí ó pẹ̀."
+      ],
+      "faq": [
+        {
+          "q": "Kilò ní ìdí tí atédógì ṣe yàtọ̀ nínú àwọn ọ̀nà?",
+          "a": "Ìgbajẹ àti ìbẹ̀rẹ̀. Iye àgbájugba àgbá nípa àwọn ìgbajugba tó níle ní ẹ̀kú tí a ń fẹ̀, nítorí ó wẹ kúrò. Àwọn ẹ̀kú tí àìfẹ̀ní inú tí ó wà àinú ìrànwọ̀ àti àwọn atédógì tí ó je ojúrere lónìì dákun nítorí àìpẹ́."
+        },
+        {
+          "q": "Ṣe atédógì 0% ṣeṣe?",
+          "a": "Nígbakugba oníkò àgbà bá ṣe iye ìgbajugba lẹ̀yìn ìdúnamẹ́ta, àti kàkà oníkò àgbà ọ̀nà tí ó dára jù nínú àwọn ìgbajugba àta lo tẹ̀ níbẹ̀ jù 100% — èyí ní ì arbitrage. Òun àti ìkan rí ayé àrá ẹ̀, kékeré àti àìpẹ́."
+        },
+        {
+          "q": "Ṣe atédógì túmọ̀ sí pé ẹ̀ kò le ní oúnjẹ?",
+          "a": "Ó túmọ̀ sí pé àkòsílẹ̀ tàbí àmúmúra àrá ẹ̀ jẹ́ ìjì pa lẹ́ ní ifẹ̀ atédógì. Ní oúnjẹ nílò àwọn èlẹ́RI (àìfẹ̀ẹ́ẹ̀ kìkan) tàbí ìmọ̀ ohùn tí ó jade tí ọ̀nà nípa atédógì ju (ìfẹ̀ẹ́ẹ̀ nípa fúnfún) — ó níṣé́ tùkì ṣe àìmọ̀."
+        }
+      ],
+      "related": [
+        "how-to-read-betting-odds",
+        "value-betting-explained",
+        "how-to-choose-a-betting-site"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "implied-probability",
+        "odds-comparison",
+        "sharp-and-soft-bookmakers"
+      ],
+      "tools": [
+        {
+          "href": "/tools/margin-calculator",
+          "label": "Paste any market's odds and see the exact margin"
+        }
+      ],
+      "_src_hash": "82d5113a6a774815",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "btts-explained",
+      "title": "Méjì Alùbalẹ̀ Láti Sé Gòòlu (BTTS) Àkúkú",
+      "nav": "BTTS",
+      "desc": "Báwo ni ìgbá méjì-alùbalẹ̀-láti-sé-gòòlu ṣe ń ṣe àbájade rẹ̀, kí nǹkan tí ó dríga ìbáṣepọ̀ ti BTTS, àti àwọn ìṣirò tí ó ṣé gàárà ju ìgbálọ gòòlu àtijọ́ lọ.",
+      "cat": "Markets",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Ọnà-àdábasọ̀ ti ó ní ìfẹ̀ díẹ̀ jù",
+          "ps": [
+            "Méjì Alùbalẹ̀ Láti Sé Gòòlu (BTTS) béèrè áyá kan: àjá méjì ará yóó gbé ọ̀kan láìpẹ́ nínú àkókò ìṣeré òde-ìlẹ̀ náà? 1-1, 4-1 tàbí 2-3 báyìí ṣe gani Òdodo; 0-0, 3-0 tàbí 0-2 ṣe gani Èérú. Àwọn gòòlu ẹgbẹ́ ara èniyan máa jẹ́ fún alùbalẹ̀ tí a fi sínú ìwé àbájade; àkókò àfikún kò máa dá ipa nínú àwọn ọnà àdábasọ̀ gíga.",
+            "Ohun tí ó jẹ́ ìfẹ̀ ré nìkan-àti ìtúmọ̀ funfun: àáre BTTS Òdodo kò máa parun nígbà-ènìyàn nínú ìṣeré, èyí tí ó jẹ́ ọ̀kan nínú àwọn ọnà ìgbálọ tí a máa wo nìgbà púpọ̀."
+          ]
+        },
+        {
+          "h": "Kí nǹkan tí ó dríga ìbáṣepọ̀ ti BTTS",
+          "ps": [
+            "BTTS Òdodo nílò ìṣeré àdájọ mẹ̀jì láti ṣiṣẹ́ àti àwọn ígbòǹdì àdájọ mẹ̀jì láti kùnà áìlópin. Àwọn nǹkan tí ó dríga àmì-ìṣirò ní ìlò sísé gòòlu ti alùbalẹ̀ ọ̀jọ́ kan àti ìlò tí wón máa gba gòòlu — àìṣe àpapọ̀ gòòlu. Alùbalẹ̀ tí ó máa wó 3-0 ká máa jẹ́ ohun tí kò dá ìdadúro nínú BTTS, nítorí pé alùbalẹ̀ yóó máa tẹ́ mọ́ àwọn ìṣeré àádìnì.",
+            "Nínú àwọn àyípadà Poisson (àwọn ohun ìgbásilẹ̀ tí àkúkú wa lò), àbájade BTTS Òdodo níìní iye kan sísé 1 − P(home tí wọ́n kò sé) − P(away tí wọ́n kò sé) + P(méjì kò sé). Àpilẹkọ àjà ọ́rṣun gíga ní BTTS Òdodo rìn ní ẹgbẹ́ 50–53%, èyí tí ó ń jẹ́ ìdí pé àwọn àbúkù máa jọ ní 1.80 àti 2.00 nínú àwọn orisun méjì."
+          ]
+        },
+        {
+          "h": "Sísè ìṣirò àìlójú ara ara ẹ",
+          "ps": [
+            "Àwọn àmì tí ó ní itumọ̀: àlẹ́kùn-òfo nínú àwọn ìgbálọ méjì, àlẹ́kùn sísé-àádìnì, àti àgbẹkù tí wón máa dá ara (xG ní ìdúró àti tí wón máa gba) dàgbà jù àwọn àbájàde ìgbálọ àtijọ́ lọ. Àwọn ákilẹ̀ àrọ mẹ̀ta BTTS Òdodo nínú àpilẹkọ àjà marun níìní wàhálà — àwọn àbúkù ọ́rṣun àti àlẹ́kùn-òfo ti alùbalẹ̀ máa ní ìtumọ̀ gúrúdù púpọ̀.",
+            "Ọ̀rọ̀ ti ó yípadà àbúkù: àwọn ọkunrin-gíga àgba ikoyi tàbí àwọn akọ́lẹ̀ tí wọ́n kò wa máa tẹ́ fún Òdodo; ìṣeré níbi àwọn ọlọ́jọ̀ kan bádi ní ilékè (alùbalẹ̀ nìkan níkù kúrò, àwọn olùtọ́ ní gún agbara) máa tẹ́ fún Èérú. Awí ìpadé àbákalẹ̀ a rò pé BTTS-oníbàtà; nípa ìtàn wọ́n ní àwọn abúkù gíga-gíga."
+          ]
+        },
+        {
+          "h": "Báwo ni a ṣe fi àbúkù ṣe",
+          "ps": [
+            "Àwọn àmì wa a gbéṣì ìlò sísé gòòlu ti alùbalẹ̀ láti ní àwọn àbájàde ìtàn líẹ̀pẹ̀, tí a má wà ìbáṣepọ̀ BTTS, àti tí a má já àwọn àbúkù àgbá — àwọn àbà BTTS máa ké nínú ohun-àkérò nígbà tí àbúkù lò ya àwọn àbúkù gálì tí alùbalẹ̀ wa wá. Gẹ́gẹ́ bò pẹ́ kìkà ọ̀kọ̀ọ́kan ní àwọn ọnà àdábasọ̀: àmì-ìbáṣepọ̀ ní àkìkì ìdádù, àwọn ìṣeré ká jẹ́ àwọn ìgbálọ ní àwọn tẹ̀fì ní àpáre rẹ̀, àti àìkan BTTS àdájọ̀ kò nìyí nǹkan gbòòró nínú ara ara yẹ̀."
+          ]
+        }
+      ],
+      "example": "Alùbalẹ̀ ilé máa sé nínú 78% ti àwọn ìṣeré ilé àti má gba nínú 55%; alùbalẹ̀ ìkùkù máa sé nínú 60% ti àwọn ìṣeré ìkùkù àti má gba nínú 70%. Àmì àòsídí: P(méjì ṣé) ≈ 0.78 × 0.60 tí a gbéṣì àwọn àbúkù — àmì wa dé ní 56%. Àbúkù gálì ≈ 1.79, nítorí 1.95 àbúkù pẹ̀lu iye itèlò dídùn; 1.70 àbúkù kò ní, bí ó ṣe máa ríi ìṣeré ti ó dé.",
+      "takeaways": [
+        "BTTS Òdodo = méjì alùbalẹ̀ máa sé nínú àsìkò 90 àgbajáde pò àti afikún; àkókò àfikún àkọ́jọ́sìn kò dá ipa.",
+        "Àwọn dríga ní orisun orisun-ọ̀jọ́kan sísé àti tí wón máa gba, àìṣe àpapọ̀ gòòlu.",
+        "Àlẹ́kùn-òfo àti àlẹ́kùn sísé-àádìnì máa ní ìfẹ̀ gúrúdù jù àwọn àbájàde ìgbálọ àtijọ́ lọ.",
+        "Àwọn àbúkù máa dìnà ní àbúkù àadìnì nítorí pé àwọn àbúkù ọ́rṣun dìnà ní ẹgbẹ́ 50%."
+      ],
+      "faq": [
+        {
+          "q": "Àkókò àfikún ó máa dá ipa nínú BTTS?",
+          "a": "Àwọn ọnà àdábasọ̀ BTTS gíga máa ké ní àsìkò 90 àgbajáde pò àti àfikún nìkan. Àwọn ọnà àdábasọ̀ "
+        }
+      ],
+      "related": [
+        "over-under-goals-explained",
+        "value-betting-explained",
+        "what-is-an-accumulator"
+      ],
+      "glossary": [
+        "btts",
+        "xg",
+        "implied-probability"
+      ],
+      "tools": [
+        {
+          "href": "/tips/btts",
+          "label": "Today's BTTS picks with model probabilities and best prices"
+        }
+      ],
+      "_src_hash": "4ffa10344feddda5",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "asian-handicap-explained",
+      "title": "Asian Handicap: Ìwé Onímọ̀ran Fún Alábere",
+      "nav": "Asian handicap",
+      "desc": "Báwo ni level, half, whole àti quarter handicaps ṣe pààrọ̀, kí ṣe tí ìdènà náà sọnù, àti àpẹ̀rẹ̀ tí a ṣiṣẹ́ fún gbogbo ìsọ̀kan tí ó ní ìdákẹ́.",
+      "cat": "Markets",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "Àbájadé méjì kò dì mẹ́ta",
+          "ps": [
+            "Asian handicap fún ẹnikan nínú ìbú méjì ní ìfojúsùn onígán jẹ́jẹ́, tí a ṣétì gidi mọ́ ipé ìdájú agbákádá-ọjọ́ 50/50, ó sì yọ ìdènà kúrò nínú àgbéjáde tí a lè ṣe àfihàn — àwo-owó tàbí ìwé-àṣà ní yíó mú u. O kù pẹ̀lú ọnà méjì tó kálukú evens àìkò méta tí ó fúnni ẹ̀yà oriṣiriṣi.",
+            "Yíyọ ìdènà lọ jẹ́ olu àìjọ ìfojúsùn: lè fojú ti alápáta-lọ́fọ̀ kan ní ọnà ojúrìn (nípa fifojú ẹ̀kọ́ràn), tàbí gbà olójú-ẹ̀kọ́ pẹ̀lú ìsànwọ́ (nípa gba wọn), láìjẹ ìdènà ní àwè."
+          ]
+        },
+        {
+          "h": "Whole àti half handicaps",
+          "ps": [
+            "Half handicaps (−0.5, −1.5) kò lè gbadura. Team A −0.5 jẹ́ dídún 'Team A daríjì'. Team A −1.5 nílò èjò-ogún; B +1.5 daríjì ní ìdènà, B-ni-daríjì, tàbí èjò kan yiyan A.",
+            "Whole handicaps (0, −1, −2) lè darí: A −1 pẹ̀lú èjò kan A wà fún akojú adúgbò laaye, gbogbo àwo-owó yíó padà. Ìwé level (0) — ìdènà kò jáde — padà ní ìdènà, ó jẹ́ ìbẹ̀rẹ̀ onímọ̀ran tí o taba jù."
+          ]
+        },
+        {
+          "h": "Quarter handicaps",
+          "ps": [
+            "Quarter lines (−0.25, −0.75, +1.25…) pin àwo-owó rẹ dáadaa níbẹ̀ ní ẹ̀rọ mẹ́jì tó yatọ̀. A −0.75 jẹ́ ìdá −0.5, ìdá −1.0: tí ẹ̀kọ́ rẹ bá jábá ní èjò kan dí, −0.5 ìdá daríjì àti −1.0 ìdá yíó padà — ìdákẹ́ daríjì.",
+            "Gbogbo ìpín Asian handicap tí ó ní ìdákẹ́ decomposes bẹ́ẹ̀: pin àwo-owó ní mẹ́jì, ṣe àgbéjáde kọ̀ọ̀kan tí ẹ́ ní ara rẹ̀, kan dé ọ̀kan. Àwa ẹ̀kọ́ tó múna lilo pinnu àkójádè jù fún tábìlì tí a gbà dó."
+          ]
+        },
+        {
+          "h": "Kí lò fún awọn ibájẹ tí wọ́n gálè-jìyan rẹ̀",
+          "ps": [
+            "Asian handicap àti totals jẹ́ ibí tí ìṣiro àgbáyé ti wa rò, nítorí margins yálọ́ lęẹ́mì jù àìrànlờwọ́ — láìlọ 2–4% ni sharp bookmakers láàrinú 5%+ lórí ogún àpápo. Margin tí ó kùrú jẹ́ ipò kúkúrú fun oríṣun àpá tí ìwọ̀ báa jọ.",
+            "Isé náà tún wa pé ò sàlakí dé ìfojúsùn ẹ̀rọ: àgbéjáde lõrô-ìbùkun ní a gba dí àmọ́ àtọ̀wọ́ fún ẹ̀yà ibi kọ̀ọ̀kan, ó jẹ́ ibidé ìdí fún àbájẹ̀ tí wọ́n ní ẹ̀rọ. Àlò àgbálàjẹ̀ jẹ́ àìmọ-àṣìwájú — àwọ́n ìwé yìí ti gbẹ̀, ní àwo-owó ìdì ọ̀pẹ̀."
+          ]
+        },
+        {
+          "h": "Why serious bettors like it",
+          "ps": [
+            "Asian handicap àti totals jẹ́ ibí tí ìṣiro àgbáyé ti wa rò, nítorí margins yálọ́ lęẹ́mì jù àìrànlờwọ́ — láìlọ 2–4% ni sharp bookmakers láàrinú 5%+ lórí ogún àpápo. Margin tí ó kùrú jẹ́ ipò kúkúrú fun oríṣun àpá tí ìwọ̀ báa jọ.",
+            "Isé náà tún wa pé ò sàlakí dé ìfojúsùn ẹ̀rọ: àgbéjáde lõrô-ìbùkun ní a gba dí àmọ́ àtọ̀wọ́ fún ẹ̀yà ibi kọ̀ọ̀kan, ó jẹ́ ibidé ìdí fún àbájẹ̀ tí wọ́n ní ẹ̀rọ. Àlò àgbálàjẹ̀ jẹ́ àìmọ-àṣìwájú — àwọ́n ìwé yìí ti gbẹ̀, ní àwo-owó ìdì ọ̀pẹ̀."
+          ]
+        },
+        {
+          "h": "Kí lò fún àpápo tí wọ́n ní jìyan rẹ̀",
+          "ps": [
+            "Asian handicap àti totals jẹ́ ibí tí ìṣiro àgbáyé ti wa rò, nítorí margins yálọ́ lęẹ́mì jù àìrànlờwọ́ — láìlọ 2–4% ni sharp bookmakers láàrinú 5%+ lórí ogún àpápo. Margin tí ó kùrú jẹ́ ipò kúkúrú fun oríṣun àpá tí ìwọ̀ báa jọ.",
+            "Isé náà tún wa pé ò sàlakí dé ìfojúsùn ẹ̀rọ: àgbéjáde lõrô-ìbùkun ní a gba dí àmọ́ àtọ̀wọ́ fún ẹ̀yà ibi kọ̀ọ̀kan, ó jẹ́ ibidé ìdí fún àbájẹ̀ tí wọ́n ní ẹ̀rọ. Àlò àgbálàjẹ̀ jẹ́ àìmọ-àṣìwájú — àwọ́n ìwé yìí ti gbẹ̀, ní àwo-owó ìdì ọ̀pẹ̀."
+          ]
+        }
+      ],
+      "example": "O gbà Arsenal −1.25 ní 2.00 pẹ̀lú €20: €10 lórí −1.0, €10 lórí −1.5. Arsenal ni ọ̀run 2-1: −1.0 ìdá yíó padà €10, −1.5 ìdá yíó paarọ̀ — jẹjẹ −€10. Arsenal ni ọ̀run 3-1: ẹ̀rọ mẹ́jì daríjì, jẹjẹ +€20. Arsenal ìdènà 1-1: ẹ̀rọ mẹ́jì yíó paarọ̀, jẹjẹ −€20. Ọnà kan, àbájadé mẹ́ta tí ó yẹ — àgbádá pin ṭèlẹ̀ ṭàbí ìfojúsùn.",
+      "takeaways": [
+        "Àšà yíyọ ìdènà kúrò: àdúgbò (whole lines) tàbí àšà fúnrá ara rẹ̀ mu u.",
+        "Half lines kò gbadura; whole lines lè padà; quarter lines jẹ́ àwo-owó mẹ́jì.",
+        "Decompose ẹ̀yà quarter tí o dì mẹ́jì dúgọ́ lẹ̀ fún àgbéjáde nísẹ́jọ̀.",
+        "Margins lórí àšà Asian yálọ́ kúkúrù ju 1X2 — ọja fútbol tí ó bòjúmọ̀ ju."
+      ],
+      "faq": [
+        {
+          "q": "Séé Asian handicap àti European handicap jẹ́ ohun kanna?",
+          "a": "Rárá. European (3-way) handicap dá ìdènà ní àgbéjáde ayẹwo lẹ́yìn tí a lo whole-goal handicaps, nítorí àdúgbò dí àìdájú láìfi àwo-owó ìdènà. Asian handicap yíó padà dípò. Àwọn orúkọ́ dìgba ju; àgbéjáde àìjọ."
+        },
+        {
+          "q": "Kí ni +0 (áfí level) ní ìfojúsùn fún?",
+          "a": "Ó jẹ́ ìdènà-kò-jáde: gbà àkójú, gba àdúgbò ní ìdènà. Dúró fún ìgbà tí ìwọ̀ báa gbọ́ àkójú tí wọ́n yóò ní àbẹ̀rẹ̀ àìpaarọ̀ àm̀à rárá ìgbà tí wọ́n yóò daríjì."
+        },
+        {
+          "q": "Kí ló fò àšà Asian yí jụ 1X2?",
+          "a": "Wọn ní ìṣiro tí ó jẹ́ àìfojúìfojú àgbáyé, nítorí nímẹ́ ìfohun tuntun (àwọn akójú, ọjọ́ ẹ̀jẹ̀, àwo-owó nlá) kanlẹ̀ hù ẹ́ ni àkọ́kọ́. Ìmúrà àšà Asian jẹ́ ọ̀nà ọ̀pọ̀lọpọ̀ láti lo àṣo ìgbà-jìyan tí ẹ́ kọlù."
+        }
+      ],
+      "related": [
+        "over-under-goals-explained",
+        "how-to-read-betting-odds",
+        "value-betting-explained"
+      ],
+      "glossary": [
+        "asian-handicap",
+        "draw-no-bet",
+        "line-movement",
+        "sharp-and-soft-bookmakers"
+      ],
+      "tools": [
+        {
+          "href": "/dropping-odds",
+          "label": "Watch where prices are moving across the markets we track"
+        }
+      ],
+      "_src_hash": "e8622c2de6f78fa2",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "common-betting-mistakes",
+      "title": "7 Àkọ̀ Ìbẹ̀rẹ̀ Nínú Àgbájọ Òṣùmàrè (àti Àwọn Ìtúnú Wọn)",
+      "nav": "Àwọn àkọ̀ ìbẹ̀rẹ̀",
+      "desc": "Ìwọ̀ àwọn ojú-ẹ̀rù, ìfẹ́ràn àwọn ìdì òpópónà, àti ìwádìí ẹ̀bùn láìkà àkọ̀sílẹ̀ — àwọn ìlà ìkùnà tí ń pa ówó òṣùmàrè rọ̀, gbogbo wọn pẹ̀lú ìtúnú àìlẹ̀kọ̀ọ́.",
+      "cat": "Strategy",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "1. Ìwọ̀ ojú-ẹ̀rù",
+          "ps": [
+            "Ìlà tí ń pa ìfinná nídìgbìn nínú òṣùmàrè: gbé sídè iye ẹ̀kọ́ lẹ́yìn òdún òṣùmàrè láti 'ṣe àbò' pé a máà ní iṣẹ́. Gbogbo ìgbésẹ̀ yìí gbọ̀dọ̀ ṣọ́ àwọn ẹ̀rù àráy̆ẹ̀ kó sì nílò ówó tó tóbi ju ní àkókò kan tí ìdá ò tòótọ́. Àwọn alẹ́ táta kò níka lágbájọ òṣùmàrè nítorí àwọn ẹ̀kọ́ àkọ́kọ́ àìfẹ́ràn, àmọ́ nítorí ìwọ̀ ojú-ẹ̀rù.",
+            "Ìtúnù: kọ sílẹ̀ àwọn ìlànà ìdèsílẹ̀ fún ọjọ́ òdún òṣùmàrè, àbèjù kíkí nígbà tí èkan jẹ́ àlágbèékaé. Nígbà tí àwọn ìlànà náà ṣe iṣẹ́ tán, ẹ jẹ́ múlẹ̀ — àwọn ègbè-ìtìkẹ́ máa wá padà ọ̀la."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Màá má ṣe gbé sídè iye àgbájọ láti ṣe àbò òdún òṣùmàrè — kọ àwọn ìlànà ẹ̀hìn ojú rẹ síwájú.",
+        "Jẹ́ẹ́ kúrò nínú àwọn iye òpópónà nípa àìfẹ́ràn; ète ń sẹ́gun àwọn iyà ènìyàn dáadáa.",
+        "Ṣàwárì àwọn iye lori gbogbo àgbájọ; yin àgbájọ nítorí ìlànà, kò sí nítorí ìmúkúrú.",
+        "Kà àwọn ìlànà ẹ̀bùn dodo nítòótọ́; àgbájọ ó ṣe ọ̀wọ̀ sí ówó tí ẹ̀rè kan pín."
+      ],
+      "faq": [
+        {
+          "q": "Kíni àkọ̀ ìbẹ̀rẹ̀ kan tó jẹ́ ídàrú ju gbogbo ẹ̀kọ́ lọ?",
+          "a": "Ìwọ̀ ojú-ẹ̀rù. Gbogbo ìbẹ̀rẹ̀ míìràn ń kó ẹ ní àsàn ìlànà; àmọ́ ìwọ̀ ojú-ẹ̀rù ń fipín àwọn òdún òṣùmàrè sínú alẹ́ kan. Tí ẹ̀kọ́ kan ní ọ̀kan, máa jẹ́ ìlànà ẹ̀dèsílẹ̀ òdún òṣùmàrè nìyen."
+        },
+        {
+          "q": "Báwo ni mo ṣe máa mọ̀ pé òṣùmàrè mi ọ̀kan jẹ́ ìdáràdúrà nígba ìsirú?",
+          "a": "Àwọn ajá ìtètí: ẹ àgbájọ ọ̀wọ̀ sí ówó tí ẹ̀rè kan pín nìkan, ìjìyà kò yí ìlérà yín padà fún akókò púpọ̀, ẹ kò níka fi ìfiyalé inú, àti dídúnamọ̀ fún ọ̀sẹ̀ kan jẹ́ ìṣe ìsàn. Tí ọ̀kankan báyìí yí padà, lo àwọn àrá ìlànà àti pè fún ìrànlọ́wọ́ — àkókò àkọ́kọ́ ni ìgbadùn rẹ."
+        },
+        {
+          "q": "Ṣé àwọn àkọ̀ ìbẹ̀rẹ̀ wọ̀nyí lábẹ̀ dáadáa pẹ̀lú ènìyàn púpọ̀?",
+          "a": "Wọn jẹ́ ìlànà àwọn òṣùmàrè, kò sí àkọ̀ ìbẹ̀rẹ̀ — ìdárinrin iṣẹ́ ẹ̀rè (àwọn ẹ̀bùn, iṣẹ́ àgbájọ, iye òpópónà tí ó ga) n ké ọ̀kankan ní wọn. Ṣe àkábọ̀ àwọn àbẹ̀ṣọ́ ṣe olóko òṛ̀à á yin yín àti yan títí dandan."
+        }
+      ],
+      "related": [
+        "bankroll-management-guide",
+        "value-betting-explained",
+        "what-is-an-accumulator"
+      ],
+      "glossary": [
+        "bankroll-management",
+        "wagering-requirements",
+        "variance",
+        "self-exclusion"
+      ],
+      "tools": [
+        {
+          "href": "/tipsters",
+          "label": "Our full settled record — losing runs included, flat-staked"
+        }
+      ],
+      "_src_hash": "0581f9d544c5f853",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "how-to-choose-a-betting-site",
+      "title": "Àbí Ẹ̀yà Iṣú Ẹṣin Láti Yàn",
+      "nav": "Yíyan iṣú ẹṣin tí ó ṣeé ṣe",
+      "desc": "Atokò ìṣẹ̀-bẹ̀rẹ̀ — iwe-ṣe, àájù, iyára fifun, àwọn òpó àti àwọn ẹ̀kọ́ — fun yíyan ará oṣù ẹṣin kan tí ó bá yẹ ara ẹ, pẹ̀lú àwọn ẹ̀kọ́ láti ìfihàn.",
+      "cat": "Bookmakers",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "Iwe-ṣe kọ́kọ́, ohun mìíràn kẹjọ",
+          "ps": [
+            "Iwe-ṣe láti ara-ìmọ̀ orisun ara ẹ jẹ́ ìyatọ̀ láarin ajá-oṣù eni tí ó ní ẹ̀rí — àbò owó, ọ̀nà àrébáre, àwọn irinṣẹ̀ ìfòyèjú ẹ̀jẹ̀-àìsàn — àti àkójú tí ó ní àwòó nìkan. Àwọn aladé àìsìnìṣìnì (regulated) lè ká ìbínú sí wọn, àwọn ẹ̀kọ́ wọn le ò, àti ìjẹ́ ẹ̀; àwọn tí kò ní iwe-ṣe le ṣọ̀pọ̀ títí lọ́pọ̀.",
+            "Àwọn òfin yàtọ̀ jù fún orile-èdè nípa orile-èdè (àwọn oju-iwe alè rà wọn tí wọn ṣeé ṣe fun àwọn orisun), àti wọn yipada. Nibikíbi ti o wà: sopẹ ìṣẹ̀ abẹ́ ara-ìmọ̀ tí o jẹ́ ni àkókò nìṣti nítorí ìfigbowó, àti ó máa tẹ̀jú iwe-ṣe tí ò sí tàbí ti a kò fihàn gbọ̀ọ̀nù jẹ́ òfin patì."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Iwe-ṣe àìsìnìṣìnì tí ó ní itẹ̀síwájú àkóónù — ìgbìmọ̀; ohun mìíràn jẹ́ èkẹ́jọ.",
+        "Àájù jẹ́ ísanwo àiwájú, ìbéèrè ẹ̀ nìkan: fi iṣú ẹṣin àájù kékeré sẹ́yìn.",
+        "Sopẹ ìdánìmọ̀ lẹ́yìn àtọ̀gbẹ́ ìpaṭẹ-ijẹ; yẹ àkojú iyára fifun gidi-gidi.",
+        "Kà ọ̀rọ̀ ìgbimọ̀ àájù, òpó fifun àti ìyẹni-owó nísáájú wọ́n ò nìkan ọ́ kà ọ."
+      ],
+      "faq": [
+        {
+          "q": "Ṣé mo yẹ jẹ́ níí orisun iṣú ẹṣin àwọn ará oṣù?",
+          "a": "Bẹ́ẹ̀ ni, àwọn mẹ́ta tàbí èjì tí a ní iwe-ṣe. Iforúbọ awo-òfin nìkan lo dúbulẹ̀ rẹ̀, àti ó máa dábobo ọ́ ti eni tí ó rọ́jú akaun rẹ tàbí dé fifun. Máa pò gbogbo akaun rẹ nìṣti ṣe ìdánìmọ̀ àti l'àtópin kan àárín iye owó ẹ dúdúdù."
+        },
+        {
+          "q": "Ṣé àwọn ará oṣù tí ó pé ní àgbà àṣeyìn ní dáadáa?",
+          "a": "Iye ará oṣù dúpẹ́ pẹ̀lú àyẹwo ara-ìmọ̀, kìí ṣe àrínu — ará oṣù nla rẹ̀ pẹ̀lú àájù ní ìtóbi àti ẹ̀rí ìnírí owó gbangba. Tó ní ìdárawọ dáadáa: ó ní iwe-ṣe ni ara ẹ ọjọ́ pẹ̀lú ìgbérí fifun tí ẹ̀ ṛìyèsì, nípa iye lílo."
+        },
+        {
+          "q": "Kí ló ṣe tí ará oṣù ẹṣin kò bá fẹ́ múú owó jáde?",
+          "a": "Ará oṣù tí ó ní iwe-ṣe: jẹ́ ìkéde lábẹ́ láti bẹ̀rẹ̀, sítan dìde sí ara-ìmọ̀ tàbí ara àìtósín tí a yàn — àwọn ọ̀nà wọ̀nyẹn ń ṣiṣẹ́ àti jẹ́ àwọn dahun iwe-ṣe ní gbogbo ìpín. Ará oṣù tí kò ní iwe-ṣe: ìwọ̀gbadé kìí wà rẹ̀, èyí jẹ́ àríníyin ti ìní-àkọ́ àkọkọ ni àlaye."
+        },
+        {
+          "q": "Àwọn nọ́ńbà tí ó dúpẹ́: àájù àti òpó",
+          "a": "Àájù jẹ́ ìsanwo tí ó máa pa ọ fun gbogbo àpere — àwọn àájù òfin-àkọkọ ní òpó àkójú ríro jẹ́ 5–7%, wọ́n tó ju àájù ní ọ̀pọ̀-ọ̀pọ̀ iṣú ẹṣin nìkan ó gbà sẹ̀yìn 3%. L'ọ́wọ́ ọjọ́ kan ti àpere àìfigbìmọ̀ owó jẹ́ tó lóore; l'ọ́wọ́ àwọn ọdun ó ju ìbéèrè nípa alákàlọ́ pẹ̀lú ọ̀pọ̀-ọ̀pọ̀ jù.  Àwọn òpó ní ìtẫná òmíràn: àwọn ará oṣù láàmù tí wọ́n ṣe ifẹ́ akaun tí ó senapè fẹ́rẹ́ kióẹ̀ níwájú, lẹ́ẹ̀kan si ni ogún aìníye. Tí o bá fẹ́ ké àpere nínú ìtaka, ìkìlọ̀ fun ìtùpalẹ̀ owó ibadandun jẹ́ ohun tó dé kole."
+        },
+        {
+          "q": "Àwọn ọ̀nà ifigbowó àti iyára fifun",
+          "a": "Àwọn ifigbowó jẹ́ èjàgbàdé níbikíbi; iyára fifun ni ibi tí àwọn ará oṣù ẹṣin yàtọ̀. Wá àwọn irinṣẹ̀ ifigbowó ara-ẹ (ìforúbọ ọlò, àwọn kadi, àti nínú ọ̀pọ̀ àwọn orisun rà ẹ tùkọ̀ bíi M-Pesa, MTN MoMo, PIX tàbí UPI), àwọn akókò fifun tí a sọ, àti — láti àwọn àkojú oníṣẹ́ — ibá àwọn akókò ọ̀wọ̀n náà dúrò títí gba. Ọ̀rọ̀ ìfáranà kan: báà ní ìdánìmọ̀ ìdánilójú (KYC) gbogan, ṣáájú àpere níwájú fifun nínú dájú. Ọ̀pọ̀ àwọn àríníyin 'fifun àìsíkà' jẹ́ ìlòòjù ìdánìmọ̀ tí a bá lẹ ní àkókò ìṣàn búburú nítòótọ́."
+        },
+        {
+          "q": "Àwọn ọ̀rọ̀, ìṣẹ̀ àti àwọn ìbáye patè tí ó nìtorí òtítọ́",
+          "a": "Kà ọ́ àwọn ohun mẹ̀rin nínú àwọn ẹ̀kọ́: àwọn ẹ̀rí àìbeèrè ìbéèrè, àwọn òpó fifun ibajiyà, ìyẹni-owó akaun tí kò níṣe, àti àwọn orisun ní ìwọ̀òó. Àwọn òpó fifun ibajiyà níti ó máa lo ìyalẹ̀nu àwọn tí ó ń ké àpere nípa ilò ẹgbẹ̀yìn-àwọn ní akókò tí kò dára.  Àwọn ohun tí ì-iṣẹ̀ — jìjá rárá, owó sílẹ̀, àpere-ẹ̀rísí, àìlabápin olórí — jẹ́ àwọn ohun láti tọ́wọ́ kán níwájú iwe-ṣe, àájù àti àwọn ifigbowó jẹ́ nísáájú. Wọ́n jẹ́ àwọn ọ̀rọ̀ tí ìrìnísìmọ̀ fun ọ; àwọn ẹ̀ta síà jẹ́ àwọn ọ̀rọ̀ tí àwọn owó rẹ dúrò.  Àwọn àkójú ará oṣù ẹṣin wa tú àwọn aladé nínú àwọn ọ̀kwọ̀ ẹ̀, fun orile-èdè, àti a máa ṣe àmì àwọn àkójú ẹ̀ nínú gbogbo ohun tí a ń ṣe nítòótọ́ dé ní kódì. Ṣe àgbéníjù àbúrò àkójú yíìkan — tìrẹ̀ pẹ̀lú — tí ó ọ̀ ní àwọn ohun tí a gbé kóọ̀."
+        }
+      ],
+      "related": [
+        "bookmaker-margin-explained",
+        "common-betting-mistakes",
+        "how-to-read-betting-odds"
+      ],
+      "glossary": [
+        "wagering-requirements",
+        "sharp-and-soft-bookmakers",
+        "cash-out",
+        "free-bet"
+      ],
+      "tools": [
+        {
+          "href": "/bookmakers",
+          "label": "Our scored bookmaker comparison, by market"
+        }
+      ],
+      "_src_hash": "2801fa5fb3a873f9",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-nigeria",
+      "title": "Ìbadandun ní Nàìjíríà: Báwo Ló Ṣiṣẹ",
+      "nav": "Ìbadandun ní Nàìjíríà",
+      "desc": "Àwọn ofin ìbadandun ní Nàìjíríà, ìwé iṣẹ̀ NLRC, gbigbe owó ní bank àti ìfowópamọ́ aládálá, àti ohun tí oníìtumọ̀ data-light gbé jade fún ayẹ̀ tí a fẹ̀.",
+      "cat": "Countries",
+      "country": "ng",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Njẹ́ ìbadandun jẹ́ ohun tí a ní àìláìfẹ́ ní Nàìjíríà?",
+          "ps": [
+            "Bẹ́ẹ̀ ni. Ìbadandun orin inú ìfẹ̀ jẹ́ àṣìṣẹ̀ ò ní àìláìfẹ́ ní Nàìjíríà, ó sì lọ́wọ́ National Lottery Regulatory Commission pẹ̀lú àwọn ọ̀ṣo àpẹ̀rẹ̀ ọ̀pọ̀ tí ó bá tí ní gidi ní Òkè Ìlẹ̀, tí wọ́n bá sì ń tún àjò àgbáye jẹ́ ìṣũ ẹ̀kẹ́. Àwọn ọmọ-ìṣòwọ́ tí a ní àìláìfẹ́ nílẹ̀ àti àwọn ile apapo àgbáye pẹ̀lú àwọn ẹ̀yà ìbàdòkọ́ ní ajọ tó wà nígbà tí wọ́n ń jẹ́ ìdarí ní ilé yìí, àti ère-bọ́ọ̀lù — Premier League jù lọ́ — ni a ń ṣiṣẹ̀ ní ìbadandun.",
+            "Àwọn iṣẹ̀ àmìnítìráfà láàrin àwọn ẹ̀jọ́ agbáye àti àwọn ilé apẹ̀rẹ̀ ọ̀pọ̀ ni a ní àìfẹ́ níwọ̀n-ún ní òwúrọ̀ yìí, nígbà tí òrò ìpinnu ní ìlé òjè dúró. Ìmọ̀ràn tó wúlò kéré ni pé: gbà ọ̀ràn àgbáye tí a ní àìláìfẹ́ fún ilé Nàìjíríà, àti wo ìṣàyẹ̀sì òní tíwọn ṣẹ̀kin owó rẹ."
+          ]
+        },
+        {
+          "h": "Ṣíṣẹ̀tán: akójọ iṣẹ̀ aṣàdúrà",
+          "ps": [
+            "Ní àpẹ̀rẹ̀ ọ̀pọ̀ tí a ní àìláìfẹ́ fún Nàìjíríà láábẹ̀ ìwé iṣẹ̀, tanran ìrántí rẹ búrúsù (BVN-ti ìfowópamọ́ nílówó bank ń mọ̀ kíá), owó ṣẹ̀kin ní naira, àti àkójọ ìsalàye kan lẹ́ẹ̀ ìwé rẹ—ìbadandun ní ìṣọ̀kan kọ̀ọ̀kan ní a ní è.",
+            "Nàìjíríà jẹ́ ilé-ẹ̀kẹ́ tí ó dúró nílówó aládálá pẹ̀lú iye data tó wúlò dáadáa, nítorí náà ìṣálò àáro ọ̀pọ̀lọpọ̀: àwọn ọmọ-ìṣòwọ́ tí ó dára jù lọ́ ní wọ́n ń jáde àáro tí kò nílò data ọpọ̀ àti ìbadandun USSD tàbí SMS fún àkójọ tí kò lójoojúmọ́. Rírò ọ̀nà imusọ fẹ́rẹ̀ owó òókè pẹ̀lú iye kéèké ṣáájú orí-ọ̀pọ̀ — ìgbẹ̀kẹ̀lé imusọ ni a hùn sí jáde laárá jù lọ́ kupé odds."
+          ]
+        },
+        {
+          "h": "Ìfowópamọ́: gbigbe bank àti owó aládálá",
+          "ps": [
+            "Gbigbe bank àti ìbáwọ̀ kadi ni nímọ́ ìdáramí, pẹ̀lú àwọn àǹfààní fintech (OPay, PalmPay, Moniepoint) ní a ń gbé gọ́ fún àwọn owó òró àráàbọ̀. Àwọn iye imusọ ni a máa gbé nípa gbigbe bank; ìiyara jẹ́ láti ìṣẹ̀jú kan dé ọ̀jọ́ méjì tàbí bí ọmọ-ìṣòwọ́ ò gbé wà.",
+            "Owó ṣẹ̀kin ní NGN àti bádándun ní NGN — ẹ̀ènìí ìfowópamọ́ màrìwò jẹ́ owó tí ó yàá. Níbì tí ọmọ-ìṣòwọ́ kan bá nṣẹ̀yin owó ní dọ́là fún àwọn èlòmọ̀ Nàìjíríà nìkan, èyí ni àmì pé kò dá fún ilé yìí lóòótọ́."
+          ]
+        },
+        {
+          "h": "Yíyà ile fun ìdakọ̀ba Nàìjíríà",
+          "ps": [
+            "Rọ̀ ìṣẹ̀ ìwé iṣẹ̀, ìyara imusọ ní naira, ìṣálò àáro, àti ìjìjú Ìdapò Àgbáye àti Champions League — àwọn ìdakọ̀ba tí àwọn ọmọ Nàìjíríà fi jẹ̀ìyà ní bádándun. Àwọn àlíko ọdọ́ di àlàfo láàrin àwọn ọmọ-ìṣòwọ́ pọ̀, nítorí náà gbé àlíko nítẹ̀ èwé kín kan pẹ̀lú lí ìṣẹ̀jú ìbadandun ẹ tó kọ̀ọ̀kan ṣáájú pé ẹ́ jẹ́ ohun àkọ́kọ́ yín.",
+            "Àwọn orí ẹ̀yà yìí ni a hùn sí yíyà àwọn ọmọ-ìṣòwọ́ nílóòótọ́ àwọn ẹ̀yà yìí, àti àwọn àkọ̀sílẹ̀ lórí èsíẹ̀ àti ìgbẹ̀kẹ̀lé owó ní a ñ di àṣàdúrà ní ibí gbogbo — níbí èyí pẹ̀lú. Badun ní owó tí ẹ ní agbára láti padà síla jáde; 18+."
+          ]
+        },
+        {
+          "h": "Ìbàdandun: àǹfààní ọpẹ̀rẹ̀ tó yá tú bẹ́ẹ̀kẹ̀ẹ̀",
+          "ps": [
+            "Àwọn ọmọ-ìṣòwọ́ tí ó dáadáa ní wọ́n ní àwọn àbá tí ó dáadáa àti ìwé iṣẹ̀, nígedu àlíko ọdọ́ tí a ní, àti ìgbékìnnà data fún àyẹ̀ nílówó aládálá. Kílọ̀ àwọn ẹ̀yà ní alálà níwọ̀n-ún fun oore gán-an, àti tẹ àyẹ̀ owó rẹ níwájúiwájú àgbádálùù gbà ní ipò bálè ṣaájú pé ẹ gbà àbá kan — ìfarakánmi ní àwọn iṣẹ̀ ní àìláìfẹ́ tí a máa jẹ́ bí ẹ̀ènìí àhí. Bádun ní owó tí ẹ ní agbára láti padà síla jáde; 18+."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Njẹ́ àwọn owó ẹ́ jáde ní ìtajà ní Nàìjíríà?",
+          "a": "Àwọn ọmọ-ìṣòwọ́ ni a ń jẹ́ ìpẹ̀rẹ̀ àti àmúniléèmù ẹ̀rin ní àwọn iṣẹ̀ ìwé iṣẹ̀; owó tí àwọn ọmọ-bádándun ba jáde ní ìtajà ni a kò tí jẹ́ ni àpilẹ́kọ àrówótọ́, àmmọ́ awọn ìpinnu ri ìgbà àhí àti. Àwọn ofin máa yìpadà — wo ìṣàyẹ̀sì òní pẹ̀lú ìfojúkọ àbíà owó ọ̀pọ̀ jù."
+        },
+        {
+          "q": "Àjo ẹ́ ní agbára bádandun ní ẹ̀kẹ́ aládálá tàbí USSD?",
+          "a": "Ọ̀pọ̀lọpọ̀ ọmọ-ìṣòwọ́ ní Nàìjíríà ní wọ́n ń jẹ́ àwọn ẹ̀jẹ́ ẹ̀jẹ́ USSD ní orí aládálá àti àwọn ilé ẹ̀kẹ́ òogòò nítorí àwọn àpẹrẹ ọ̀pọ̀ tí kò nílò-nílò data, àmma àwọn owó ṣẹ̀kin dúró nípa àwọn ila aláàbò bank tàbí àlájà padà ní ọ̀pọ̀ ìṣẹ̀. Rò àgé-ìfowópamọ́ àkọ̀kọ́ ẹ fún ohun tí ó yẹ̀ nítòótọ́."
+        },
+        {
+          "q": "Báwo ló mọ̀ pé ọmọ-ìṣòwọ́ kan ni a ní àìláìfẹ́ fún Nàìjíríà?",
+          "a": "Àwọn ọmọ-ìṣòwọ́ tí a ní àìláìfẹ́ ní wọ́n ń ṣàfihàn àwọn ìtàn NLRC tàbí iṣẹ̀ àpẹ̀rẹ̀ ọ̀pọ̀ ní ìpẹ̀rẹ̀ ilé, àti àwọn olùṣẹ̀ iṣẹ̀ ní wọ́n ń tẹ̀ẹ́ àwọn akójọ ọmọ-ìṣòwọ́. Tí ìtàn iṣẹ̀ ba yí padà tàbí kò dà, rìnmí gẹ́gẹ́ bí tí o kò ní àìláìfẹ́ — ọ̀pọ̀ àwọn iṣẹ̀ tí a ní àìláìfẹ́ jù tí ẹ máa nílò àkọ̀tun."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ng",
+          "label": "Ranked betting sites for Nigeria"
+        }
+      ],
+      "_src_hash": "585f6b2c0f197411",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-kenya",
+      "title": "Ìdajọ́ nínú Kẹ́nyà: Báwo Ni Ó Ṣe Lọ́ṛun",
+      "nav": "Ìdajọ́ nínú Kẹ́nyà",
+      "desc": "Iṣẹ́ alábòórùn BCLB tí Kẹ́nyà, ìfisílẹ̀ àti yíyọkúrù M-Pesa, àwọn ofin àbò ináwo tí ó lòó jẹ́ ní òpin, àti báwo ni a ṣe lè yàn aaye tí a ṣẹ́ṣẹ tó faramọ́ iyò.",
+      "cat": "Countries",
+      "country": "ke",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Njẹ́ ìdajọ́ jẹ́ ohun tí ó yẹ ní Kẹ́nyà?",
+          "ps": [
+            "Bẹ́ẹ̀ni. Ìdajọ́ iṣẹ́ jẹ́ ohun tí ó yẹ àti pe a tún rájìn wọn pẹ̀lú Betting Control and Licensing Board (BCLB), àti pe Kẹ́nyà ní ọ̀kan nínú àwọn àgbègbè tí a lọ́ jẹ́ ní ìdajọ́ jù lọ nínú Africa — iyò tí ó ti pé fòun ṣugbọn simu pàápàá.",
+            "Ìyẹn tí ó ń lọ yii jẹ́ ìmọ̀-ìjùàkàrí: àbò àti ìfisílẹ̀ adébolo ti yípò àti tún gùnrùn, ohun ríro tó ń lo ojúlówó. Aaye alábòórùn ti dákẹ́; àpẹ́rẹ̀ ináwo kì í dákẹ́ — wo àwọn oṣùwọ̀n lọ́wọ́ rí bíi o ti yẹ kó wo ìgbè rẹ."
+          ]
+        },
+        {
+          "h": "Ibẹ̀rẹ̀ àti M-Pesa",
+          "ps": [
+            "Ṣíṣẹ̀ rẹ kọjá nipa nọ́mba simu: pẹ̀lú ọ̀pọ̀lọ́pọ̀ alábòórùn, wọn dánilẹ̀ẹ rẹ nípa nọ́mba M-Pesa, tó ń mu kíkó rẹ yá kàn. Ìfisílẹ̀ nípa paybill M-Pesa tun yá kàn; yíyọkúrù sílẹ̀ si M-Pesa jẹ́ ohun tí ọ ṣe di akọ̀ nínú iyò yìi — àwọn alábòórùn tó dáa fìfúnni rírun nínú àkókò kàn.",
+            "Nítorí gbogbo rẹ̀ ni lọ́nà kan, ìlọ́jú yíyọkúrù jẹ́ ohun tí a tí lè túka àárín àwọn alábòórùn. Àwọn ìsọfúnni tó ti yẹ lọ́wọ́ àwọn ènìyàn nípá àkókò yíyọkúrù jẹ́ ohun tí o rọ̀ fúnni àti ó yẹ kí o kà rẹ̀ ní èkó iṣẹ́ àrin bíi o ti wíparawóò."
+          ]
+        },
+        {
+          "h": "Àbò ináwo: ohun tí àwọn alábòórùn Kẹ́nyà tún gbà nítálé",
+          "ps": [
+            "Kẹ́nyà ní àbò ináwo ní àwọn ìta: ès-és jẹ́ ké ní àwọn ìfisílẹ̀ àti àbò yíyọkúrù pẹ̀lú àwọn oṣùwọ̀n tí ó yipò ní ẹ̀ká-ẹ̀ní lọ. Èyí túmọ̀ jẹ́ kípé òǹká tòhun ìdajọ́ jẹ́ búburú ju àwọn ìpele nìkan lo — 1.90 pẹ̀lú ès-és ọ̀kan-ọ̀kan ń ṣiṣẹ́ bíi ìpele tó kéré ju.",
+            "A kì fìfúnni àwọn oṣùwọ̀n tàtàtà níhìn nítorí wọn ní àáre ó yipò; iṣẹ́ alábòórùn KRA jẹ́ ohun tí a gbọdọ̀ lo. Ohun tó bá yẹ kó máa rí ni ti yẹ: àbò ináwo ń ṣe kí ojúkòkò ọ̀ré ṣe ìyalẹ̀nu ju nínú Kẹ́nyà, bàá kì í ṣe dídì."
+          ]
+        },
+        {
+          "h": "Yìyan aaye fún iyò Kẹ́nyà",
+          "ps": [
+            "Wá àlábòórùn tí ó ní BCLB licence tó dúrò lọ́ní, yíyọkúrù M-Pesa tó yá kàn, àp app tó ní kíkéré àlá tàbí USSD tòhun tí ó gbójúwọ̀, àti àwọn ìpele tó ní irú oyè lórí Premier League Gẹ̀ẹ́sì — ohun tó jẹ́ alábèrè Kẹ́nyà. Àwọn ìṣẹ̀ jọkpọ́ tó dúró nínú iyò jẹ́ ohun tó wúlò àbí kàn àni okun ní irú ilé-ìṣèìdájọ́; túmọ̀ wọn bíi ohun ìdarí, bàá kì í ṣe ìlànà ináwo.",
+            "Àwọn ìtan Kẹ́nyà wa ń ṣàlàyé àwọn alábòórùn nípa àwọn ìbáàjẹ́ yìi. Àwọn ofin ìdíwọ̀n tó wà ní àwọn ìlànà ìgbìmọ̀ wa gba àṣe ní ibi tí àwọn ès-és ṣe — kéré, kéré, ní ìpele tó dáa ju. 18+, dájọ́ àáre."
+          ]
+        },
+        {
+          "h": "Àbò ináwo ti ìdajọ́ nínú Kẹ́nyà",
+          "ps": [
+            "Àbò yíyọkúrù ní winni ní ohun tí a fi àkíyèsì, àti pe àwọn alábòórùn kó ká ara wọn, ṣugbọn oṣùwọ̀n náà yipò ní ẹ̀ká-ẹ̀ní — wo iṣẹ́ alábòórùn KRA lọ́ní dípò kí o gbìmọ̀ àwọn nọ́mba tó ti da sílẹ̀, ati àwọn tí ìwé ìlànà fúnni."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Àbò mélo ni mo ti gb ináwo ní winni nínú Kẹ́nyà?",
+          "a": "Àbò ní yíyọkúrù ní winni wà àti àwọn alábòórùn kó ka árá wọn, ṣugbọn oṣùwọ̀n náà yipò ní ẹ̀ká-ẹ̀ní nínú àwọn ẹ̀ká ori — wo iṣẹ́ alábòórùn KRA tó dúrò lọ́ni àti kì í ṣe kìkìkòò ní àwọn nọ́mba tó yẹ kó fi sí ìná, pẹ̀lú àwọn tí ìwé ìlànà fúnni."
+        },
+        {
+          "q": "Njẹ́ mo lè dájọ́ láì ní simu àìfowọ́yí?",
+          "a": "Bẹ́ẹ̀ni — iyò Kẹ́nyà ti dàgbà lọ́ ara rẹ̀ ní SMS àti USSD ìdajọ́, àti pe ọ̀pọ̀lọ́pọ̀ àlábòórùn alábòórùn tún máa rún USSD iṣẹ́ ní búrúfí àìkunkunwọ̀. M-Pesa ní ìṣe tẹ̀kẹ̀ rírun ní ígbà tó dójú."
+        },
+        {
+          "q": "Njẹ́ àwọn aaye ìdajọ́ tí kìí ní BCLB alábòórùn jẹ́ àṣo ní aye gbígbé?",
+          "a": "Rárá. Àwọn aaye tí kìí fara sílẹ̀ dúró ní ìta ìlànà àgbèrù àti iṣẹ́ alábòórùn, àti àwọn aṣẹ Kẹ́nyà ní àìlópin ti jẹ́ ní ìyè gbogbo ẹ̀wo wọn. Bíi ọ̀pọ̀lọ́pọ̀ àlábòórùn alábòórùn tó yẹ àti ìfisílẹ̀ kàn-ún wà, kò sí ìdí tó wà fún gba ewu."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bankroll-management-guide",
+        "common-betting-mistakes"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ke",
+          "label": "Ranked betting sites for Kenya"
+        }
+      ],
+      "_src_hash": "8cb6c340ae83501a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-ghana",
+      "title": "Iré-ègbè ni Gána: Báwo ni Ó Ṣe Ṛiṣẹ",
+      "nav": "Iré-ègbè ni Gána",
+      "desc": "Ìforítilẹ̀ Gaming Commission of Ghana, rékọ MTN MoMo, àtúnbáwẹ́ àrin iná lórí owó ìjọ̀ba, àti atokò ayọ àìkọ́ abò fún tì-áayò oníṣẹ́.",
+      "cat": "Countries",
+      "country": "gh",
+      "minutes": 4,
+      "sections": [
+        {
+          "h": "Àjà nínú iré-ègbè ni Gána mó?",
+          "ps": [
+            "Bẹ́ẹ̀ ni. Iré-ègbè àwọn ìdíje ṣíṣe àti tí a ṣèkúlù nípa Gaming Commission of Ghana, tó jàre ìdíje àti tí a ín fìfún àkójù ìfìṣàárá — ohun ìmọ̀ràn tí ó dílà, ẹ̀kúun wàábù ti àkọsi kan jó ní bá kan àyọ.",
+            "Láti ọdún 2023 sílẹ̀, àjà kan jọwọ́ àrin iná fún owó ìjọ̀ba, tí a ṣe kọ́kọ́ nípa ọwọ́ oníṣẹ́ ní àkọ́kọ́. Iye àjà náà ti jìyà lékó tí a kọ̀kọ̀, ǹjẹ́ fi ìbéèrè lọ́dọ̀ GRA kí o máa dán ìlera ọ̀rọ̀ àrà àmú ẹ̀yan jọ ẹ́."
+          ]
+        },
+        {
+          "h": "Bíbẹ̀rẹ̀: fíílì àmó lẹ́kọ̀ọ̀ kẹ́kẹ́",
+          "ps": [
+            "Fíílì àmó ni ará nímọ̀ — MTN MoMo lórí gbogbo àyọ, àpò Vodafone Cash àti AirtelTigo tí a tẹ̀jáde fún ọ̀pọ̀ oníṣẹ́ tí a jàre. Ibá ìgbẹ́kẹ́ jẹ́ àkíìkí; fígbẹ́kẹ́ padà sí MoMo jọ̀ ní ìṣẹ́jú díẹ̀ dé ọ̀jọ́ kan dépè ní oníṣẹ́.",
+            "Forítilẹ̀ pẹ̀lú nọ́ńbà MoMo tí a tì ǹ sàkópa, ṣàjẹ́ inú ìdánímọ̀ tábí rírùdùrùdù lẹ́ẹ̀kẹ́tẹ́, àti gbìyànjú owó kékeré lánã kí o má tí ìfẹ́kúfẹ́ nísàlẹ̀ rìn. Iré-ègbè ní ìtálakà (cedis) ní gbogboòrò jẹ́ pú owó àtùnkọ̀ — ó dara dáadáa."
+          ]
+        },
+        {
+          "h": "Yíyàn tí-áayò fún àwọn oníṣẹ́ Gána",
+          "ps": [
+            "Ṣàyẹ̀wò àwọn nǹkan mẹ́ẹ̀ ní gbìgbé: ìfìlò ní àkójù àjà Gaming Commission, ìlẹ̀ ìgbẹ́kẹ́ MoMo nípa àwọn ẹni tí o báa lo, àti ìdogbadoke òwúrọ̀ (odds) nípa Premier League àti Ghana Premier League. Àrò iye àjà yátọ̀ láàrín oníṣẹ́ lójú — àtokò pẹ̀lú ìpínlẹ̀ òwúrọ̀ jẹ́ ìfìṣàárá tó já ní ìṣẹ́jú mẹ̀wà.",
+            "Àrì dìídì ní ìkòkò ní Gána; kà àwọn òfin ìṣìṣẹ́ kí o máa máa fi ìlera àrì ní ọwọ́. Àkójù Gána wa jẹ́ àṣírí àwọn oníṣẹ́ ní àwọn ìṣe yìí. 18+, jẹ́ kí iré-ègbè jẹ́ èyí tí o le lè ṣe."
+          ]
+        },
+        {
+          "h": "Pẹ̀lú àkúya àbò àti oníṣẹ́",
+          "ps": [
+            "Gbogbo iré-ègbè nì àìfọ́ọ́dì — àṣíwà owó àti ìjẹ́ẹ́ jẹ́ àyokà àti ní àìbá ìdí oníṣẹ́. Níbi 18+ pátápátá rí; owó iré-ègbè ṣe alẹ̀ owó tó kò níí lè ṣe ní owó áti àìfẹ́ rí tìjù."
+          ]
+        },
+        {
+          "h": "Àwọn ilérowó àti oriun àbò",
+          "ps": [
+            "Ìbá àbò owó tó wúlò fún iré-ègbè ni MTN MoMo àti Vodafone Cash àti AirtelTigi. Àẹ́rọ̀ ìjẹ́ẹ́ di égbé sí iwe ìyì. Ìtìlẹ̀ ìbá tí a ní àbò àrinà."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Owó àjà àrin iná àwọn iré-ègbè ni Gána pẹ̀lú",
+          "a": "Àjà owó àrin iná ní owó ìjọ̀ba jó abiyamọ̀ láti ọdún 2023, tí a dúkò sílẹ̀ nípa ọwọ́ oníṣẹ́ ní àkọ́kọ́ ìbá àbò. A ti tún ìye àjà náà sílẹ̀ — beere ní àkójù iwe ìyè GRA fún iye tó ṣe ní òní yìí."
+        },
+        {
+          "q": "Ìbá èwo ni dára jù lọ fun iré-ègbè ni Gána",
+          "a": "MTN MoMo ni a tẹ̀jáde ní gbogbo áyọ, tí ó ṣe ìgbẹ́kẹ́ òtìtọ́ ní oníṣẹ́ tó dárá dáadáa. Kadi jẹ́ fun ìgbẹ́kẹ́ àbò ṣùgbọ́n ipadà àbò jẹ́ dípè nípa fíílì àmó ilẹ̀ — MTN MoMo ilẹ̀ jẹ́ ònà tó rọ̀ lọ jù."
+        },
+        {
+          "q": "Báwo ni emi ṣe ìyèwò tí-áayò tó jàre ni Gána",
+          "a": "Gaming Commission of Ghana nì a ní àkójù àwọn oníṣẹ́ tó jàre. Tí tì-áayò kan ṣe ìfìlò Gána tí kò ní lórí àkójù, tàbí tí ó fi ìfítọ́ rẹ̀ palẹ̀, yàn ọ̀kan tí yoo ti àwọn tí à jàre."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "common-betting-mistakes"
+      ],
+      "glossary": [
+        "wagering-requirements",
+        "bookmaker-margin"
+      ],
+      "tools": [
+        {
+          "href": "/countries/gh",
+          "label": "Ranked betting sites for Ghana"
+        }
+      ],
+      "_src_hash": "41b9545fc5d9f1d2",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-south-africa",
+      "title": "Ìbáje ni Gúúsù Áfríkà: Báwo Ló Ṣe Ṣiṣẹ́",
+      "nav": "Ìbáje ni Gúúsù Áfríkà",
+      "desc": "Idi tí ìbáje iṣẹ́ jẹ́ onídùn ṣùgbọ́n ámusù aláyé òní kò ṣe, iṣẹ́ ifẹ́ ilẹ̀-ẹsẹ̀, ìfún EFT àti kadi, àti yiyan bookmaker tí a já.",
+      "cat": "Countries",
+      "country": "za",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Iyatọ̀ Gúúsù Áfríkà: ìbáje bẹ́ẹ̀, àmusù kò",
+          "ps": [
+            "Òfin Gúúsù Áfríkà ṣe ìyatọ̀ tí ọ̀pọ̀ ilẹ̀ kò ṣe: ìbáje iṣẹ́ nípa ayelujára jẹ́ onídùn nítòótọ́ nípa àwọn bookmaker tí ní íjẹ́rìísì ilẹ̀-ẹsẹ̀ (Ìwọ̀-oorun Ẹpo àti Mpumalanga ṣe íjẹ́rìísì ọ̀pọ̀ àmì òní), àtijáde àmusù aláyé — àwọn abẹ́ta, roulette, olómi-aláyé — wà àìsí oníjìnlẹ̀ ní ilẹ̀ ńlá.",
+            "Ìyẹn ṣe tàbi 'àmusù' tàbin àwọn ayelujára fi hàn ohun ìlọ́ Gúúsù Áfríkà ìfin-alárí, kii ṣe àǹfaani-orisun. Bookmaker ayé tí á já dáradára pẹ̀ ìbáje iṣẹ́, ìbáje ẹṣin àti ọrọ̀-àdúra tí a já, tí kó dẹ nítòó."
+          ]
+        },
+        {
+          "h": "Ìbẹ̀rẹ̀",
+          "ps": [
+            "Ṣiṣẹ́ pẹ̀lú bookmaker tí ní íjẹ́rìísì ilẹ̀-ẹsẹ̀, parí itoṣilẹ̀ FICA (àkójú àti àfiindé ibadandun — iṣẹ́ tí ó kù, jóo ṣe é lójúmọ̀), àti fún níìsora óde ọkọ̀ nípa kadi, EFT ìṣajú (Ozow, Zapper àgbègbè) tàbí àwọn àkòba owó étò.",
+            "Ohun-ìbadandun alágbàrá kò gbé ojúrere fún olùbáje — àǹfaani òdìtọ́ sórí àwọn ìṣẹ́ àkẹ́kọ̀ọ́ — èòòkan ìbáje ní ìṣẹ́ agba lè mú àgbàìméjì SARS. Ìlẹ́ owó padà yí àkókò lọ́wọ́: jáde-ìló kán níìsora ìló débi àwọn ọjọ́ púpọ̀; ìtumọ̀ olùlo ní kí lè sọ ọ́ fún ẹ."
+          ]
+        },
+        {
+          "h": "Yiyan tàbi fún ìṣẹ́ Gúúsù Áfríkà",
+          "ps": [
+            "Dáradára nígbà tí àkójú íjẹ́rìísì ilẹ̀-ẹsẹ̀ ní ìsàlẹ̀-ọjú, ṣe ìkejì owó owúrọ̀ Premier League àti PSL, tí kí ìwọ̀n ilẹ́ owó padà EFT. Iye àdáàsì ní àṣà: àwọn olùṣiṣẹ́ tó dáa tẹ́ PSL gidi, kii ṣe fotibọ̀ òní nìkan.",
+            "Ní ìbáje-àkọ́kọ́ wa ní Gúúsù Áfríkà, a ṣe ìkokò òǹkà ní irúfẹ́ wọ̀nyí. Àwọn ìtáradà ọ̀gá — owó owúrọ̀, bankroll, àṣiṣe — lo dí bọ̀. 18+, àti Ètò Àbìnúje Ìbáje-àkọ́kọ́ Ìgbésẹ̀ (0800 006 008) ni ẹgbẹ́ ìrànwọ́ ayé."
+          ]
+        },
+        {
+          "h": "Máàlà Ètò Aṣo-ìbáje ni Gúúsù Áfríkà - ìpẹ́rọ gida nígbà tí owó kiri",
+          "ps": [
+            "Kí ó má máa jẹ́ ríára gboyòò: nígbà tí owó kiri yòókù, ìdájó ìbáje ní owó tí a dídí nígbà tí a séìlẹ̀ (kódì tí a dílé) wà nítòótọ́ àìtìmọ̀. Èyí túmọ̀ sí pé iṣokan yẹn ní ìbáje-àkọ́kọ́ ni iṣẹ́ wa kò́ jẹ́ ìwáláṣẹ kí a lò àìmọ̀-iye ìsoro-èlòmọ̀."
+          ]
+        },
+        {
+          "h": "Gbígbé owó: àbẹ́ta, àìtùnúbẹ́ta, àti obìrin-ìbáje",
+          "ps": [
+            "Ọ̀pọ̀ bookmaker pẹ̀lú iṣegun ìṣẹ́ ní Gúúsù Áfríkà rí iná ìṣalaye ìfún owó nítòótọ́. Nígbà tí owó kiri yòókù síséda pẹ̀lú àbẹ́ta tàbí àìtùnúbẹ́ta, àńkà ní lónígbà tún owó àìtúnúbẹ́ta yíèè wà. Jọ̀wọ́ ìgbékèle irufẹ́ tí ẹlomììrí àkọ́kọ́ fi máa wé owó-padà àkókò-rere nígbà tí ìbáje."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Àmusù aláyé ní òdìtọ́ kí ní Gúúsù Áfríkà?",
+          "a": "Bẹ́ẹ̀ ni — iṣẹ́ àmusù aláyé kò sí oníjìnlẹ̀ nítòótòó, àti àṣè-ìfànìyàn sẹ̀ àwọn bookmaker aláyé àti nǹkan-ìbadandun náà wà. Ìbáje iṣẹ́ nípa bookmaker tí ní íjẹ́rìísì ilẹ̀-ẹsẹ̀ ni ìṣè ifẹ́ tí a já."
+        },
+        {
+          "q": "Ìko ojúrere owó ìbadandun ìbáje ní Gúúsù Áfríkà?",
+          "a": "Ohun-ìbadandun alágbàrá kò gbé ojúrere. Ìbáje nípa ìṣẹ́ tí a ṣe nítòótòó lè ṣe olùtèlẹ̀ owó fún SARS — òǹlà tí ọ̀pọ̀ olùbáje kò dé, ṣùgbọ́n ìmọ̀ pé ó wà ní okun."
+        },
+        {
+          "q": "Kíni ìtoṣilẹ̀ FICA?",
+          "a": "Àṣiṣe àkójú àti ibadandun tí àwọn bookmaker tí a já gbọ́dọ̀ ṣe nípa Ètò Àgbájọ Ìfún Ìmọ̀. Ó jẹ́ iṣẹ́ tí ó kù kìnìun owó lọ, nítòó pé fifun àwọn ìwé dé ìbẹ̀rẹ̀ — kii ṣe ní àkókò ìtàkúrá owó — ní ìfọ́-àwọ̀-òru."
+        },
+        {
+          "q": "Kíni ìlò àwọn bookmaker tí a já nípa PSL ní Gúúsù Áfríkà?",
+          "a": "Ọ̀pọ̀ bookmaker tí a já ni àmà PSL dáadaa nípa ììkojú iṣẹ́-àkọ́kọ́. Ìdajú-ìpínsẹ̀ àti owó owúrọ̀ yẹn ṣe ìyatọ̀ nípa PSL àti European iṣẹ́: olùṣiṣẹ́ ìdòsúní pẹ̀ PSL ní ìmọ̀ àkọ́kọ́-ìselu àti àsìwájú."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/countries/za",
+          "label": "Ranked betting sites for South Africa"
+        }
+      ],
+      "_src_hash": "d0729858b2038930",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-india",
+      "title": "Ìdíye-owó ní Indìà: Báwo ni O Ṣe Ń Ṣiṣẹ́",
+      "nav": "Ìdíye-owó ní Indìà",
+      "desc": "Àwọn ofin ìpínlẹ̀ tí ó yatọ̀ ní Indìà, àwọn àbùkù tó wà nígbà tí a fi owó ṣe, ìfipamọ́ UPI, àti báwo ni o ṣe ye kí a ronu nípa àwọn sítì ìdíye-owó gidi gidi.",
+      "cat": "Countries",
+      "country": "in",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Ìrísí olofin: mápù tí ó pín sí ìpínlẹ̀",
+          "ps": [
+            "Indìà kò ní àṣìsọ túndun olofin orisun kan. Ìdíye-owó jẹ́ ìṣẹ̀lẹ̀ àwọn ìpínlẹ̀ nìyí: ìpínlẹ̀ díẹ̀ ní ìṣàkójú olofin fún ọ̀pọ̀ ìṣé, ọ̀pọ̀ mìíràn ní àkópa lọ́wọ́, ati ọ̀pọ̀ jókòó ní àárín nípasẹ̀ àwọn ofin tí a kíkọ̀ ṣaájú ìgbà intanẹ́ẹ̀tì. Ọ̀pọ̀ àwọn mọ́ṣe alágbèéjàdó ń gba àwọn ọkùnrin-owó àti àwọn obìnrin-owó Indìà sínú oniruuru yìí.",
+            "Ìyẹn nìyí ìṣẹ̀lẹ̀ ìbẹ̀rẹ̀ ìfitúnmọ̀ ìgbà àkọ́kọ́ kan: ṣayẹ̀wo ofin ìpínlẹ̀ rẹ kí ó tó júwọ́ níbi tí o bá ń fẹ́ ṣe ìdíye-owó. Ìtọ́níbá yìí ṣe ìfitúnmọ̀ àti kò ní ìmọ̀ láti rán ọ nígbà tí ìpínlẹ̀ rẹ ní òfin tó ṣẹ ̀ lọ."
+          ]
+        },
+        {
+          "h": "Owó-ẹ̀bùn: àpá tó ní nídìnídìn",
+          "ps": [
+            "Àtàkò níbi tí ìṣàkójú jẹ́ àìmọ́, ofin ìdíye-owó Indìà sọ̀rọ̀ sísálẹ̀ nípa owó-ìkú ìdíye-owó: ìdíye-owó ni a ń ṣe kúrò lóri owó-ìkú ìdíye-owó ní oṣuwọ̀n ìfipamọ́ tó dúpẹ̀, àti àwọn ìyípadà GST ìgbà ẹ̀koṣó-ẹ̀yìn fi ìdíye-owó sí ègbè ibi tí owó-dúkú wá fún ìdíye-owó-owó ijáde abẹ́lé. Bákan náà ní ìpáìlera nígbà tí a ń lo ìdíye-owó kúrò ní Indìà.",
+            "Àwọn oṣuwọ̀n àti ìpọ̀sẹ̀ ọgbọ̀n ti iya ní àpò ìṣáájú 2023 — ṣayẹ̀wo iṣẹ TDS àti GST tó wà ní ìgbà àlàbájádé tí ó ṣẹ ̀. Ìwúnkúnkúnkùn nìkan wà: àwọn ìdíye-owó níhìn-ú yìí jẹ́ ìtú tó dúpẹ̀, ó ń ṣiṣẹ́ ara-ara, àti àyìnbo nipa ìdíye-owó-owó àgbayo tó pọ̀ ju ìmọ̀ àwọn ọkùnrin-owó àti àwọn obìnrin-owó yìí lọ."
+          ]
+        },
+        {
+          "h": "Ìfipamọ́: UPI ni ìbẹ̀rẹ̀",
+          "ps": [
+            "UPI ní ìgbà tí a ń wọ owó sínú ìṣajà tí ìṣàkójú ti ṣaáárín, pẹ̀lú àwọn apo-owó (Paytm, PhonePe) àti intanẹ́ẹ̀tì-ijẹ́ bàṅ́kì. Àwọn ìpọ̀sẹ̀ ìfipamọ́ àwọn mọ́ṣe alágbèéjàdó ní Indìà ní iyípada nípa igbagbógó — àwọn ìfipamọ́ tí kò sísún ní ìrẹ́ wa, àti ìṣẹ̀lẹ̀ ìyàtọ̀ tó yẹ.",
+            "Nínútọ́ owó sílẹ̀ ní ìyálẹ̀nu pò síi: fẹ́ràn àwọn mọ́ṣe tí ó ní ìyálẹ̀nu-àsìkò àti ìtàn-yíyára tí o lè ṣe àyẹ̀wò fún ọkùnrin-owó àti àwọn obìnrin-owó Indìà, àti jo nídìnídìn kékeré tí ó ṣẹ ̀. Àwọn ìyế-owó ìmọ̀-owó-Indìà (Rupee) ní ìtó ju àwọn ìyế-owó ọ̀pá-owó (Dollar) lọ nítorí ìdíye-ìbádandún ìgbàkúrò."
+          ]
+        },
+        {
+          "h": "Yíyàtọ̀ gidi-gidi ní orisun-èṣìn tó ń gbẹ́",
+          "ps": [
+            "Níbi tí ìṣàkójú ilékò kò wà, àwọn ìfúnra-ara àgbéká yẹn jẹ́ àìlágbèéjàdó síbẹ̀ bíkósi àìdùnúdùnú yẹn kò níṣòfin olofin alágbèéjàdó ní irú àwọn ọdún, ìtàn owó tí o ní nídìnídìn, àbáwo àtìlẹ́yìn, àti àwọn ìfitáfítà àti tó pé. Àpilẹ̀kọ́ ìdíye-owó Cricket ní isalu tí o ríí — àwọn mọ́ṣe tí ó tìkìtì Indìà ní àkọ́kọ́ ṣe àmú IPL nítorí ìṣẹ̀ tí ó dájú.",
+            "Àwọn mọ́ṣe Indìà wa tí a ṣe àkéde níwọ̀n àwọn ìpO. Ìdíye-owó ní orisun-èṣìn tí ó ń gbẹ́ ní abùkù búburú tí àsìtì Web níyí ń sérèsérè, síbẹ̀ àwọn ìkánún tí ó ti àní-òfin yìí gba dúrò: àwọn owó àìka, àwọn owó tí ó jẹ́ iṣàlẹ̀ túndun, àti ìmọ̀ gidi gidi nípa ofin ìpínlẹ̀ rẹ. 18+."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ṣé ìdíye-owó ijáde abẹ́lé jẹ́ òfin ní Indìà?",
+          "a": "Ó rìn dépèndì ní ìpínlẹ̀ rẹ. Ìpínlẹ̀ díẹ̀ ní ìṣàkójú àwọn ìṣé díẹ̀, àwọn mìíràn ní àkópa lọ́wọ́, àti ọ̀pọ̀ ní àwọn ofin olúkúlukù tí ó ṣẹ ̀. Indìà kò ní ìṣàkójú túndun orisun kan, síbẹ̀ ṣayẹ̀wo ìpínlẹ̀ rẹ — ìyẹn ni ìdáhùn tó gidi-gidi ni gbogbo ibilẹ̀ rẹ."
+        },
+        {
+          "q": "Báwo ni owó-ìkú ìdíye-owó wa ní ìdíye ní Indìà?",
+          "a": "Ìdíye-owó ni a ń ṣe kúrò lóri owó-ìkú ìdíye-owó ní oṣuwọ̀n ìfipamọ́ tó dúpẹ̀, àti àwọn ìyípadà GST ti fi ìdíye-owó sí ègbè ibi tí owó-dúkú wá. Àwọn oṣuwọ̀n wọ̀n ti iya ní àpò ìṣáájú 2023 — ṣayẹ̀wo àwọn ìkánún TDS àti GST tó wà ní ìgbà àlàbájádé, bíkósi síbẹ̀ àwọn àpá àìlọ́gbọ̀n."
+        },
+        {
+          "q": "Kìlódé tí àwọn ìpọ̀sẹ̀ ìfipamọ́ ń yípada nígbagbógó ní àwọn sítì ìdíye-owó ní Indìà?",
+          "a": "Àwọn mọ́ṣe alágbèéjàdó ní ìpọ̀sẹ̀ owó sí Indìà nípasẹ̀ àwọn alaṣàkójú tí ó ní àyípadà nígbà tí àwọn bàṅ́kì ní ìṣẹ̀lẹ̀ àwọn àwọ-ìjàgijàgi - síbẹ̀ àwọn mọ́ṣe tí ó ní àwọn ìpọ̀sẹ̀ ìfipamọ́ tó ti dùn-án àti tó ṣe àyẹ̀wò tí o lè ṣe fún àwọn ọkùnrin-owó àti àwọn obìnrin-owó Indìà jẹ́ ìjáde owúrọ nìkan àti ìyàlẹ̀nu tí ó dájú."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "common-betting-mistakes",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/countries/in",
+          "label": "Betting sites serving India"
+        }
+      ],
+      "_src_hash": "ede7d8338d0b5199",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-brazil",
+      "title": "Iṣe Idiyele ni Ilẹ̀ Brasilí: Báwo Ni Wọ́n Ṣe Ń Ṣiṣẹ́",
+      "nav": "Iṣe Idiyele ni Ilẹ̀ Brasilí",
+      "desc": "Ọjà tuntun ti Brasilí: àṣìṣe SPA/MF, àgbà .bet.br, píréjì PIX ati ohun tí ó yipada fún àwọn onílọ́wọ́ ní 2025.",
+      "cat": "Countries",
+      "country": "br",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Ọjà tí ó ṣe làárá nítòní",
+          "ps": [
+            "Ọjà tí a ṣe àmì òdì ni Brasilí bẹ̀rẹ̀ lásìkò Oṣù Kini 2025 labẹ́ iṣẹ́ Gíga Ìnawo ti Brasilí ati SPA/MF, ó ti lo ọjà afọ̀wọ́ tó tobi jù lọ nínú ayé ká padà sí ọjà tí wọ́n tún funfun kéré kéré.",
+            "Ohun tí wọ́n rí: àwọn aṣedámú tuntun ti máa lò àgbà .bet.br. Àpò kankan ti ó ń ṣiṣẹ́ fún Brasilí láti inú àgbà míìràn kò ń ṣiṣẹ́ labẹ́ ifẹ́ tuntun yìí — èyí ni ohun àkọbẹ̀rẹ̀ tí o kò léra láti ṣàyẹ̀wò rara."
+          ]
+        },
+        {
+          "h": "Ohun tí àṣìṣe yìí fún e",
+          "ps": [
+            "Àwọn aṣedámú tuntun ti máa ṣe ẹ̀rí fún àwọn onílọ́wọ́ Brasilí nípa àpamọ́ owó, ṣayẹ̀wò ìdánimọ̀ ati ìjẹ́ aṣọ, àwọn ìrinwòó ní ìdọ̀kan, ìṣẹ́ ipolongo, ati ọ̀nà lati gba àwọn ìṣòro — àwọn ìbinu tí ọjà afọ̀wọ́ tó ó ń gbà rí kù rí.",
+            "Àgbàjáde nàá túmọ̀ sí ìpilẹ̀ ìṣakópó: àwọn àṣedámú tí ń dọ̀kan, àwọn orúkọ tó jọ̀ nínú, àwọn míìràn ń ná àṣìṣe. Ayẹ̀wò ìṣẹ́ SPA/MF ti àṣedámú kan gbọ́ nà kéré nìyí ó ó di dandan."
+          ]
+        },
+        {
+          "h": "Píréjì: PIX ní ìjọ ba ọjà",
+          "ps": [
+            "PIX jẹ́ ohun tí o gba ìbá nínú ișẹ̀ ìfúnni ati gígbà owó padà — ohun tí ó rọ̀ù nìkan, ó ní ẹ̀kọ́, 24/7 — àwọn kálìdì ati boleto ti jẹ́ àkọ̀ni kejì. Àwọn aṣedámú tuntun ti máa gbà owó PIX padà ní ìṣẹ́ju àìpẹ́; ohunkankan tó sàn jù lọ jẹ́ ẹ̀kó tó burú nínú ọjà yìí pẹ̀lú, nítorí pé ara PIX ara rẹ̀ ní ìṣẹ́ju àìpẹ́.",
+            "Owó tí wọ́n tilọ́wọ́ tó kẹ́kẹ́ òwe iṣẹ́ nínú ifẹ́ tuntun náà ti máa ẹ̀rí fún owó ìtúbọ̀; àwọn ohun ìpínlẹ̀ ati ìbápadà jẹ́ tuntun ó ń yípadà, ṣo àkánte wò ìtẹ̀síwájú Receita Federal nítòótọ́."
+          ]
+        },
+        {
+          "h": "Yíyan àpò fún ọjà Brasilí",
+          "ps": [
+            "Ṣe àkánte wò .bet.br ati àṣìṣe SPA/MF, sìṣẹ̀jú àwọn owó ìbápadà lórí Série A ati Champions League, ati ṣàyẹ̀wò ìyara gígbà owó PIX padà nínú ìpínkọ ẹni kan. Ìmọ̀ èdè Pọ́túgíìsì rálẹ̀ yẹ àwọn aṣedámú tí wọ́n tún ọ̀nà rẹ̀ nínú Brasilí kúrò níl'àwọn tí ó ṣe ìtúmọ̀ àwòkọ onisìdúúsì.",
+            "Àgbà wa lórí Brasilí ti máa ṣe ìrònú àwọn aṣedámú lórí àwọn ìpìlẹ̀ yìí, ní èdè Pọ́túgíìsì níbi tí ó ṣe pàtàkì. Aposte com responsabilidade — 18+."
+          ]
+        },
+        {
+          "h": "Ìtohun: Iyipada píníín nínú olúkó",
+          "ps": [
+            "Brasilí tún àṣìṣe nígba tí àwọn aṣedámú tun òun rí nípa owó ìtúbọ̀ ẹlọ́mọ̀ ati ìwé ọjà — wọ́n ti rí ìrísí ní dídúró ati ìbápadà giga. Àwọn ọmọ olúkó tuntun ní oókan síko tí ó máa ṣe àkánte wò ẹ̀rí mẹ́ta tàbí mẹ́rin tí wọ́n yọ láti ibájìbọ̀."
+          ]
+        },
+        {
+          "h": "Àwọn àmì olúkó ní Brasilí",
+          "ps": [
+            "Àwọn áṣedámú tuntun jẹ́ olúkó gàpanù èbúkaní, ìtí ọ̀nà tí ó jẹ wé ta, ati iṣẹ̀ tó dájúdájú. Àwọn tí ó ń ṣiṣẹ́ lodo òòjọ́ wọ́n tún àṣọ nípa ìdúgádúgá tàbí ìbájìbọ̀ aláró tó burú — àwọn ìtohun tí ó máa ṣalejo ní òṣọ̀jù mẹ́wàá."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Báwo ni ó ṣe lè mò pé àpò idiyele kan jẹ́ alárò ni Brasilí?",
+          "a": "Àwọn aṣedámú tí a tún funfun ti máa lò àgbà .bet.br labẹ́ ìdúùn SPA/MF — ara àgbà ara rẹ̀ jẹ́ àmì. Àwọn àpò tí ó ń ṣiṣẹ́ fún Brasilí láti inú àgbà míìràn dúró nínú àìlò ifẹ́ tí ó ṣe tántán lásìkò Oṣù Kini 2025."
+        },
+        {
+          "q": "Njẹ owó tí wọ́n tilọ́wọ́ nínú idiyele jẹ́ eré ìtúbọ̀ ni Brasilí?",
+          "a": "Labẹ́ ifẹ́ tuntun, owó ìbápadà tó kẹ́kẹ́ òwe iṣẹ́ nínú ifẹ́ tuntun jẹ́ eré ìtúbọ̀. Àwọn òfin jẹ́ tuntun ó tọ́jú píníín tanpẹ́ níṛ ẹkú — ṣàkánte wò ìbìi ojúgbà Receita Federal nítòótọ́ fún àwọn ohun ìpínlẹ̀ ati àwọn owó."
+        },
+        {
+          "q": "Ṣé mo lè tìlẹ̀ lò àwọn àpò afọ̀wọ́ láti Brasilí?",
+          "a": "A dá ọjà alárò nílò láti mú àwọn onílọ́wọ́ lọ sí àwọn aṣedámú tuntun .bet.br, pẹ̀lú ìdìdí píréjì ati ọ̀nà-ìgbé kan sí àwọn àṣedámú tí wọ́n kò tunfun. Àwọn aṣedámú tuntun báná ti fúnni níl'àwọn èrò kan pẹ̀lú àtìlẹ́yìn gidi fún olúkó — ìpín gbèsè ti lọ po po."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/countries/br",
+          "label": "Ranked betting sites for Brazil"
+        }
+      ],
+      "_src_hash": "6ec379e9d60ecc6a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-mexico",
+      "title": "Àgbájà ní Meksìkò: Báwo ni a ń ṣe",
+      "nav": "Àgbájà ní Meksìkò",
+      "desc": "Sistẹ́mi àṣẹ SEGOB ní Meksìkò, àwọn ìgbéradà SPEI àti OXXO, àti báwo ni a ń gba àgbájà nípasẹ̀ ìlànà ngwọ́n ǹjẹ́ olóriṣiri ẹ̀kọ́ n àti pẹ̀lú ìlànà oníṣọ̀wọ́ tó tún wá gbajúmọ̀.",
+      "cat": "Countries",
+      "country": "mx",
+      "minutes": 4,
+      "sections": [
+        {
+          "h": "Njẹ́ àgbájà ní ìlànà ní Meksìkò?",
+          "ps": [
+            "Bẹ́ẹ̀ni. Àgbájà ń ṣiṣẹ́ nípasẹ̀ ìlànà labẹ́ àwọn àṣẹ SEGOB (nipasẹ̀ Dirección General de Juegos y Sorteos) tí a fúnra labẹ́ Federal Gaming Law — ìlànà ọdún 1947 tó ti ṣìṣebí sí ọkọ̀ ayélujára. Ọ̀pọ̀ nǹkan àgbájà ayelujára ń ṣiṣẹ́ nipasẹ̀ àdábà pẹ̀lú àwọn alágbèéká oníṣọ̀wọ́ tẹ́lẹ̀ nígbà tí ìlànà gbajúmọ̀ ti ń gbìjẹ̀ fún àwọn ọdún.",
+            "Fún àwọn olùgbájà àbájádé nítòótọ́ ni: àwọn alágbèéká tó ní ìdogbadun fihàn àwọn àyè SEGOB wọn. Ègò èyí jẹ́ àrẹ̀wa, ṣùgbọ́n ipilẹ̀ àṣẹ náà dé àti a lè ẹ̀ rotẹ́lẹ̀ ayé."
+          ]
+        },
+        {
+          "h": "Ìfipamọ́: SPEI, OXXO àti àwọn kadi",
+          "ps": [
+            "Àwọn ifipamọ́ banki SPEI ń ṣiṣẹ́ irú àyinrìn fìfi tóò rọ̀; àwọn tíkẹ́ẹ̀tì kejì OXXO tún jẹ́ ọ̀nà agbàrá fún ifipamọ́ fun àwọn ní ọ̀nà owó òkè — jẹ́ wá nílé ìkan ọ̀nà òkè, aṣẹ wà nínú ìwọ̀ aya ní ìsẹ́jú kékeré. Kadi ń ṣiṣẹ́ nibi gbogbo; àwọn ifipamọ́ padà ń gbẹ́ nipasẹ̀ SPEI.",
+            "Àwọn iṣẹ̀dà peso tí ó ba yè sọ̀rọ̀ ni láti ẹgbẹ̀ òkèrè dé ẹgbẹ̀ òkèrè tó ń gbé owó iyipada. Ìyara ifipamọ́ padà wà lara alágbèéká, lati ìwọ̀ aya tó ní irú àlú dé ọ̀jọ́ — ìsọ àwọn olùgbájà jẹ́ ìlànà rere tó bá dé irú àdéhùn yìí."
+          ]
+        },
+        {
+          "h": "Yan àfo alágbèéká fún ẹgbẹ̀ Meksìkò",
+          "ps": [
+            "Ẹ ṣe àyẹ́wò àṣẹ SEGOB, fipari ìdìga ọrẹ́ lórí Liga MX àti bọ́ọ̀lù ílú Yúròpu, àti ṣe àkíyèsi ìyara ifipamọ́ padà SPEI. Ìdìga owó Liga MX jẹ́ ìfi hànwa alágbèéká tó gbá àti tó ń fẹ́ — àwọn alágbèéká tó ni pẹ̀lú Meksìkò ní àyẹ́kú àdé rẹ̀, kì ìbá wá jé Premier League nìkan.",
+            "Ìmolẹ̀ Meksìkò wa ní àbùkù àfo alágbèéká lórí àwọn onígbájà yìí, ní ìèdè Spánìsì. Àwọn òfin ní máa ṣe ìyípadà nígbà tí ìlànà oníṣọ̀wọ́ tó tún wá gbajúmọ̀ tó ti dé — ẹ ṣayẹ́wò ìpìlẹ̀ àlàbí ní àsìkò. 18+, járe pẹ̀lú ìdọ̀kan."
+          ]
+        },
+        {
+          "h": "SEGOB àti àwọn àlápọ̀",
+          "ps": [
+            "Ìlànà oníṣọ̀wọ́ Meksìkò ti ní àrá olóriṣiri fún ọpọlọ́ ọdún. Àwọn alágbèéká lílo iyatọ̀ ní rárá — àpéjọ̀ SEGOB, àṣẹ bíi èké, àti àpẹrẹ ilé ayé. Ní lóri tí àfo wá pé, wọn ní àbọ́gbọ́n ìdí tó lo ara wọn nínú ẹ̀kọ́ tí wọ́n ní. Àyẹ́wò ipìlẹ̀ èyí nítorí pé àpẹkú gan-an ní ọ̀fín onígbájà Meksìkò."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ẹ ni owó àgbájà àgbádègbà ní Meksìkò?",
+          "a": "Ìdìlé aladìn ọ̀fín kan wà fún àwọn ìlèjọ̀ oníṣọ̀wọ́, pẹ̀lú ìyípadà ipò ilé. Àwọn nọ́mbà dé igbádùn púpọ̀ fún àwọn alùkọ́lò tí wọ́n ń gba àgbájà tí a bá lo àrá wọn, ṣùgbọ́n ayẹ́wò àwọn òfin SAT àlàbí nípa àgbájà ìlèjọ̀ nígbà tí o gba owó tó ń lọ — àrá owó àti nọ́mbà ìlèjọ̀ ní ìpìnlẹ̀ gidi ìyatọ̀ náà."
+        },
+        {
+          "q": "Ẹ lè fi owó kan ifipamọ́ ní Meksìkò?",
+          "a": "Bẹ́ẹ̀ni — àwọn tíkẹ́ẹ̀tì OXXO ń fi owó kan ifipamọ́ nílé ọ̀nà òkè kékeré tó ní ẹgbẹ̀ ìgba, pẹ̀lú aṣẹ tí ó ń wà nínú ìwọ̀ aya nínú ìsẹ́jú kékeré. Ó tún jẹ́ ọ̀nà ifipamọ́ tí ó ní iye tó ga jù nínú Meksìkò pẹ̀lú àwọn ifipamọ́ SPEI."
+        },
+        {
+          "q": "Báwo ni a ń tọ́ka àṣẹ SEGOB kan?",
+          "a": "Àwọn alágbèéká tí ní ìdogbadun fihàn nọ́mbà àṣẹ wọn (pòòpò tó ní ìmẹ̀ sí àwọn alágbèéká oníṣọ̀wọ́ tẹ́lẹ̀ tí wọn ń ṣiṣẹ́ labẹ́) nínú ẹkò ìtẹ́ ilé. Àìwà tìtìrí nọ́mbà àṣẹ kankan ni iye tó ṣeun ìdilẹ̀ ní bẹ̀rẹ̀."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "common-betting-mistakes"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/countries/mx",
+          "label": "Ranked betting sites for Mexico"
+        }
+      ],
+      "_src_hash": "331f8f09e3aeee2c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-argentina",
+      "title": "Iṣẹ agbemọ nínú Aṛẹtinà: Báwo ni ó ṣe ṣiṣẹ",
+      "nav": "Iṣẹ agbemọ nínú Aṛẹtinà",
+      "desc": "Iṣedọ Aṛẹtinà nipasẹ ipinlẹ, ìfipamọ Mercado Pago, ati idi ti iyara ifipamọ túbọ ní iyeida síbẹsíbẹ ju ètù meji lọ.",
+      "cat": "Countries",
+      "country": "ar",
+      "minutes": 4,
+      "sections": [
+        {
+          "h": "Iṣedọ nipasẹ ipinlẹ",
+          "ps": [
+            "Aṛẹtinà ṣe iṣedọ iṣẹ agbemọ online lapasẹ ipinlẹ: Ìlú Buenos Aires (LOTBA) ati Ipinlẹ Buenos Aires (IPLyC) ṣa ọjọ iṣẹ agbemọ online ti a gba iye, ati ipinlẹ mìíràn ṣa àkọsílẹ wọn papọ̀ ní ipele ònà ẹ̀yà. Kò sí iṣedọ ìpilẹ — ipinlẹ rẹ ṣe àwọn àpilẹkọ rẹ.",
+            "Àwọn olupilẹ ti a gba iye ṣe etu ipinlẹ pẹlú apilẹkọ eto, nitorinaa iyatọ jẹ ṣiṣẹ kọjá ilẹ. Ẹ wo atokọ olupilẹ ipinlẹ rẹ ti ara ara jẹ ona tó dara julọ."
+          ]
+        },
+        {
+          "h": "Ifipamọ ati iyara pẹ̀sò",
+          "ps": [
+            "Mercado Pago jẹ ọpọlọ alagbara, pẹlu ifipamọ ọkọ ati kaadi lẹhin. Ifigbasi jẹ iṣẹjú; iyara ifipamọ jẹ nibiti àwọn olupilẹ ṣe iyatọ — ati nínú Aṛẹtinà ó ní ìyatọ síbẹsíbẹ ju ohun mìíràn lọ, nitori kika pẹ̀sò túbọ lọ pẹ awo nínú alẹ.",
+            "Eyi ṣe iyara ifipamọ jẹ ìpilẹ àkọkọ ṣiṣẹ yiyan, kii ṣe ayaba dídùn. Ifipamọ Mercado Pago ní ọjọ kanna jẹ iṣedọ tó dára ti olupilẹ rere jẹ."
+          ]
+        },
+        {
+          "h": "Yan aje fun ọjọ Aṛẹtinà",
+          "ps": [
+            "Jẹrisi iṣedọ fun ipinlẹ rẹ, dadẹ iyara ifipamọ Mercado Pago lati iroyin olumulo ode oni, ati ṣapejọ iyatọ oriṣi owó lori Liga Profesional ati iṣẹ agbemọ otu ilẹ European. Ìtẹ liga agbegbe ṣe ifihan titobi pẹlu owó ninu ọjọ yii.",
+            "Aje Aṛẹtinà wa ṣe apilẹkọ àwọn olupilẹ lori awọn ipilẹ wọnyi, ninu ede Espania. Awọn ofin ipinlẹ ṣe iyipada — wo opo lẹsẹkẹsẹ níbi ti o wa. 18+, jugá con responsabilidad."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ṣe iṣẹ agbemọ online jẹ ofin ni èkò Aṛẹtinà?",
+          "a": "Rárá — iṣedọ jẹ nipa ipinlẹ. Ìlú Buenos Aires ati Ipinlẹ gba iṣedọ àwọn olupilẹ, ipinlẹ mìíràn nínú òpọ̀ lo ara wọn, ati diẹ ko si agbara. Iṣedọ ipinlẹ rẹ ṣe ohun ti a gba iye fun ọ."
+        },
+        {
+          "q": "Idi wo ni iyara ifipamọ túbọ ní ìdí nínu Aṛẹtinà?",
+          "a": "Kika pẹ̀sò: owó tó gba ọjọ láti de jẹ tó kéré lọ ju owó tó gba àsìkò ninu wákàti. Àwọn olupilẹ pẹlu ifipamọ Mercado Pago ní ọjọ kanna gbe ọ mọ lati èré ifúntúmú alẹ."
+        },
+        {
+          "q": "Ṣe a gba àyà lori aìbọ nínú Aṛẹtinà?",
+          "a": "Iṣedọ àyà iyatọ nipasẹ ipinlẹ ati oriṣi aìbọ, ati àwọn ofin ìpilẹ lori àyà iṣẹ agbemọ lo yipada ọpọlọpọ àkókò. Fun àwọn owó ti o pó, wo òde oni ẹ̀kọ AFIP ati ipinlẹ dípò imọ̀ran dídé."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bankroll-management-guide",
+        "bookmaker-margin-explained"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ar",
+          "label": "Ranked betting sites for Argentina"
+        }
+      ],
+      "_src_hash": "b7d7156d6527e86f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-canada",
+      "title": "Ìbẹ̀rẹ̀ ni Kanada: Bí a ṣe ń ṣe Iṣẹ́",
+      "nav": "Ìbẹ̀rẹ̀ ni Kanada",
+      "desc": "Ìbẹ̀rẹ̀ iṣẹ́kan-ọ̀rọ̀ láti ọdún 2021, ìpele-ìwé Ontario tí ó ṣí ìpìlẹ̀ àkọtun pẹ̀lú àwọn pìlẹ̀ ìpílẹ̀, àwọn ìbaṣisọ Interac àti fífo opin-ẹ̀rí tí kò níí pọ̀ funfun.",
+      "cat": "Countries",
+      "country": "ca",
+      "minutes": 4,
+      "sections": [
+        {
+          "h": "Kanada méjì: Ontario àti ibadandun míìrán",
+          "ps": [
+            "Kanada fúnrárẹ̀ irúfẹ́ iṣẹ́kan-ọ̀rọ̀ iṣẹ́-ẹgbẹ́ níbi àgbáyé ní ọdún 2021, ṣùgbọ́n oríṣun-ọ́má dà: Ontario ń ṣiṣẹ́ pẹ̀lú oríṣun-ìwé tí ó ṣí àwọn ọ̀pọ̀ alásọ̀dù tí wọ́n gba àṣẹ ìrísí AGCO/iGaming Ontario, bí àwọn ìpílẹ̀ mìíràn ṣe ń paṣẹ ìbẹ̀rẹ̀ nípa àwọn iṣẹ́ ibadandun-ilẹ̀ wọn (PROLINE+, Mise-o-jeu, PlayNow).",
+            "Níta àwọn ìpílẹ̀ Ontario, àwọn ìkika-ìwé tó ṣẹ̀ àṣẹ tí wọn ń ṣiṣẹ́ silẹ̀-ilẹ̀ kan rí àṣọ tó ìtumọ̀ — àti ìgbà, àmọ kìkì kò wà nínú àkópa òrò-ọ̀rọ̀ alábáṣiṣẹ. Àwọn ọmọ Ontario kò ní ìtumọ̀ bẹ́ẹ̀: oríṣun-ìwé tí ó ṣí pẹ̀lú ọ̀pọ̀ ìtìfẹ́, ó sí ní ìtìfẹ́-arẹ̀."
+          ]
+        },
+        {
+          "h": "Àwọn ìbaṣisọ àti irísí",
+          "ps": [
+            "Interac ni òkè iwájú gbogbo — àwọn ìbaṣisọ-ẹtọ́ àti awọ-gbadọ nípa ẹ̀rí alásọ̀dù — pẹ̀lú kadi àti àwọn ìbámu òrò-ìbankù tó ní onítọ́. Àwọ-gbadọ ní àwọn oníṣẹ́ tó dára dára dé ọdọ̀-ọjọ́ tabi àwọn ọ̀sẹ̀jọ́ méjì.",
+            "Àwọ-lílo Canada tó jẹ́: ẹ̀rí-irúfẹ́ ìbẹ̀rẹ̀ alábásisẹ kò ní irísí. Ọ̀ṣọ́ ràn àṣẹ: àgbẹ̀rẹ̀ ìbẹ̀rẹ̀ tí ẹ̀ṣẹ́ àgbẹ̀rẹ̀ àṣẹ-ìwé — àwọn ìṣẹ́ ìwé alábásisẹ CRA ṣe le ìtọ̀pẹ̀ àṣẹ-wà — àġbà àwọn ẹ̀rin-alábásisẹ kò dé èyí."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Irísí fún ẹ̀rí-irúfẹ́ ìbẹ̀rẹ̀ ni Kanada?",
+          "a": "Ẹ̀rí-irúfẹ́ alábásisẹ kò ní irísí. Àbàkúò ò jẹ́: ìbẹ̀rẹ̀ tí ẹ̀ṣẹ́ àgbẹ̀rẹ̀ àṣẹ-ìwé — ìṣẹ́ ìwé-alábásisẹ CRA le ìtọ̀pẹ̀ àṣẹ-wà, èyí tí ẹ̀rin-alábásisẹ kò dé."
+        },
+        {
+          "q": "Le mí ní ìlò àwọn ìkika-ìwé tó ṣẹ̀ níta Ontario?",
+          "a": "Wọ́n ṣeé péșẹ àti ọ̀pọ̀ ẹ̀rí ń lo wọn, bẹ́ẹ̀ ká nígbà tí wọ́n sìn kìkì níta irísí àkópa Kanada àti òkè-ìjìya. Àwọn iṣẹ́ ibadandun-ilẹ̀ ṣe àlábáṣiṣẹ ní lápá; àwọn ìkika-ìwé tó ṣẹ̀ nílò àkópa tó ní onítọ́ — àwọn àṣẹ tó rìn títí, ìrítiyọ̀ awọ-gbadọ àti irúfẹ́ kékeré."
+        },
+        {
+          "q": "Kíni iyàtọ̀ Ontario?",
+          "a": "Ontario ṣí oríṣun-ìwé tí ó ṣí lábẹ̀ AGCO/iGaming Ontario ní ọdún 2022, nítorí náà alásọ̀dù aráà ní àṣẹ-ilẹ̀, àlábáṣiṣẹ-wà àti òkè-ìjìya — àwọn iṣẹ́ ibadandun-ilẹ̀ mìíràn ó ṣe pẹ̀lú ojú rẹ̀wẹ̀ wọn dípò."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "cash-out"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ca",
+          "label": "Ranked betting sites for Canada"
+        }
+      ],
+      "_src_hash": "ddb9e14ab1951141",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-ireland",
+      "title": "Ìdàpọ̀ nínú Éire: Báwo Ni O Ṣe Ìṣẹ́",
+      "nav": "Ìdàpọ̀ nínú Éire",
+      "desc": "Ìṣẹ́rẹ́ GRAI tuntun ní Éire, Gambling Regulation Act 2024, àkójọ ewu tàìfì-ìdàpọ̀, àti yíyan bookmaker nínú àǹfààní dá.",
+      "cat": "Countries",
+      "country": "ie",
+      "minutes": 4,
+      "sections": [
+        {
+          "h": "Àǹfààní ogojì tó ń gba ìṣẹ́rẹ́ tuntun",
+          "ps": [
+            "Ìdàpọ̀ jẹ́ onígbagbọ́ kpatapata nínú Éire àti á sì dípò nínú àṣà — àwọ̀n àǹfààní kékeré ni à máa rí. Ìṣẹ́rẹ́ ìdàpọ̀ kó wà ní àpá ìyípadà: Gambling Regulation Act 2024 dá Gambling Regulatory Authority of Ireland (GRAI), tí ó gba àṣẹ iṣẹ́ọ́ tí ó túnde wà lówó Revenue Commissioners.",
+            "Fun àwọ̀n ọ̀tẹ́ ìdàpọ̀, iyípadà yìí ṣe àtẹ̀jáde ṣofo kìì ṣe àtẹ̀jáde iṣẹ́: àwọ̀n ì-ṣẹ̀dó tí wọ́n ní àṣẹ ṣofo, àti ìṣẹ̀dó tuntun ṣe àfikun àdábimọ̀ olùlò — àwọ̀n ìdẹ́kùn ipolówó, àkójọ ìjìnle ara ara àkúnrin — bí wọ́n ṣe ń ṣàfihàn kakaka."
+          ]
+        },
+        {
+          "h": "Ọ̀nà ìṣẹ̀dó àti àkójọ ewu",
+          "ps": [
+            "Kaadi, gbígbé banki àti PayPal ṣe òru àǹfààní; ìgbà ìgbéàwọ́ ní ọ̀pọ̀lọpọ̀ àwọ̀n ì-ṣẹ̀dó dé kan tàbí méjì ọjọ́. Ànfaani Éire tí ó dúró: àkójọ ewu ewu ìdàpọ̀ kìì ṣe àkójọ ewu fún ọ̀tẹ́ — duties ìdàpọ̀ á wẹ̀ ní orí àwọ̀n ì-ṣẹ̀dó.",
+            "Àwọ̀n ilana yíyan dájúkọ ni àwọ̀n ẹ̀kó àǹfààní: ìṣùnarópo ìlò, ìlànà ìgbéàwọ́ àti àlàyé ọrọ́ ìlọ́rí. Àwọ̀n ì-ṣẹ̀dó bí Éire ń ṣe ìjà lórí ìdàpọ̀ ẹ ìgbé àti GAA tinú gbogbo ìdàpọ̀ yóò ń búkù — ọ̀pọ̀ nínú ibẹ̀ máa ṣe àbẹ̀mí fún àwọ̀n ìṣẹ̀dó tí ó ṣe apá àkọkọ̀."
+          ]
+        },
+        {
+          "h": "Yíyan aaye fún àǹfààní Éire",
+          "ps": [
+            "Àyẹ̀wò àṣẹ iṣẹ́ọ́ ní Éire lóòjó yìí, ọ̀ṣọ́ ìṣùnarópo ọrọ́ Premier League àti ẹ ìgbé, àti ṣàyẹ̀wò fáwé àkũko ìgbéàwọ́. Nínú àǹfààní tó bá dán báyìí, kò sí oníìyẹ̀ láti gba ì-ṣẹ̀dó tí ó ní ìṣùnarópo gíga — tóbi ìwé ọrọ́ ẹ́ kọ̀kan àti ẹ mẹ́ta tí à ní àṣẹ ni èyí tí ó yẹ.",
+            "Ojúewé Ireland wa á ṣe ìtọ́ àwọ̀n ì-ṣẹ̀dó báyìí. 18+; GambleAware àti àwọ̀n ohun èlo GRAI tuntun ni ipilẹ̀ ìrànwọ́."
+          ]
+        },
+        {
+          "h": "Ibeere àti Idahun",
+          "ps": []
+        }
+      ],
+      "faq": [
+        {
+          "q": "Njẹ́ àkójọ ewu ìdàpọ̀ jẹ́ àkójọ ewu nínú Éire?",
+          "a": "Bẹẹ̀ kọ́ — àkójọ ewu ìdàpọ̀ àìdẹ́kùn fún ọ̀tẹ́. A ṣe àkójọ ewu ìdàpọ̀ lórí àwọ̀n ì-ṣẹ̀dó pẹ̀lú àlùmọ́ àkójọ ewu kìkì — nígbà tí àwọ̀n onígbágàje ti pín àkójọ ewu yìí kálúkálú kúrò nínú ìgbéàwọ́."
+        },
+        {
+          "q": "Kini àwọ̀n ìyípadà tí Gambling Regulation Act 2024 ṣe?",
+          "a": "Ìṣẹ̀rẹ́ àkọ́tun (GRAI) ṛo àwọ̀n ọ̀nà iṣẹ́ọ́ tó ò jẹ́ àlàkù opadọ, pẹ̀lú àwọ̀n ìdẹ́kùn ipolówó, àkójọ ara ara àkúnrin ìjìnle, àti àdábimọ̀ olùlò tó ní agbara sii bí àwọ̀n ìṣẹ̀dó ti ń kójú. Àwọ̀n ì-ṣẹ̀dó tí ó ní àṣẹ á ń sáre kálóò."
+        },
+        {
+          "q": "Njẹ́ ìdàpọ̀ ẹ ìgbé yà ṣofo pẹ̀lú ìdàpọ̀ yóò nínú ìbáláyé ìṣẹ̀dó?",
+          "a": "Bẹ̀ẹ̀ni — àwọ̀n méjì jẹ́ onígbagbọ́ kpatapata; ẹ ìgbé á jẹ́ ohun tí a kò lè dúró nínú àǹfààní Éire àti àṣẹ iṣẹ́ọ́ àkánnì ní òkan fún àwọ̀n méjì. Iyàtọ̀ àṣàyàn ni àgbàrá — àwọ̀n ì-ṣẹ̀dó tí wọ́n ní àṣẹ ní Éire ń jà lórí ẹ ìgbé àti GAA tìtọ́."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "value-betting-explained"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "self-exclusion"
+      ],
+      "tools": [
+        {
+          "href": "/countries/ie",
+          "label": "Ranked betting sites for Ireland"
+        }
+      ],
+      "_src_hash": "d5b3b659707f7f54",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-benin",
+      "title": "Ìbẹ̀rẹ̀ ní Benin: Báwo ni Ó Ṣe Iṣẹ́",
+      "nav": "Ìbẹ̀rẹ̀ ní Benin",
+      "desc": "Àwọn ofin ìbẹ̀rẹ̀ ní Benin, àwọn ètò ilé-owe àkúko, MTN MoMo àti Moov Money ṣíṣe-owo, àti báwo ni o ṣe le yan aaye ti a kọ́ fún iye ìfowòsọwọ́ gidi.",
+      "cat": "Countries",
+      "country": "bj",
+      "minutes": 5,
+      "sections": [
+        {
+          "h": "Njẹ́ ìbẹ̀rẹ̀ jẹ́ ohun ti a gba ní Benin?",
+          "ps": [
+            "Ìbẹ̀rẹ̀ ní Benin ń iṣẹ́ labẹ́n ifulufulu ijọba ní ayika ètò ilé-owe àkúko, nítorí ìṣẹ́ àlaà pẹ̀lú àwọn onítọ́jú àgbajabọ́ ti ara àìlò wà pẹ̀lú. Ohun ti ó ṣe iyatọ̀ Benin sí àwọn àgbègbè rẹ̀ ni irú ìgbà tí a ti túnkóra àwọn ìlànà: ẹ̀ka àṣẹ́ yii ti gba iwe lọ, ti túnkóra àti tí a ti ṣi sílẹ̀ lọ́pọ̀lọ́pọ̀ ìgba ní àwọn ọdún ìpẹ̀kúkú.",
+            "Àbájáde ìmọ̀ràn nìyẹn wípé kìlò òwó ti àpereò - èyí pẹ̀lú - yẹ kọ sílẹ̀ fun ohun gùnrindògún. Ṣe àyẹwo àṣeyọ àbẹ́rẹ̀ lọ́wọ́ ṛìi kí o ba ṣe iṣẹ́ olúwo, àti fẹ́ràn àwọn onítọ́jú ti ó sọ ìkéde-olè wọn pẹ̀lú àfihàn rẹ̀ dájúdájú ju àwọn tí a fihàn tán kúkú."
+          ]
+        },
+        {
+          "h": "Iye ọkọ̀ fòòn ń ṣe àgbájù iṣẹ́",
+          "ps": [
+            "Ìbẹ̀rẹ̀ ní Benin jẹ́ iṣẹ́ fòòn láti òpìnì tí a bẹ̀rẹ̀ sí òkèyìn. MTN MoMo àti Moov Money ń ṣe ṣe-owo ṭiwọ́n àti tubọ ilọ́ sẹ́ ìlọ́ọ́jú, pẹ̀lú Celtiis Cash tí wọ́n ń gba ní àwọn onítọ́jú mìíràn, àti iye-ow tu ní XOF bẹ́ẹ̀ pé o gbadà ìlọ́ọ́jú ìdálà owó.",
+            "Nítorí ohun gbogbo ti ó rọ̀ nípa àwọn iye-ọkọ̀ kanna, àsìkò àbájade jẹ́ ìwọ̀nba pẹ̀lú àti máa ṣe ìlánà àìkọ́ nígàá kí o bá fẹ́ràn àwọn onítọ́jú. Wọ àwọn iye-ọkọ̀ ní kékèré kí o ní bá ìmọ̀ràn ìtaka àìgbagbọ́ ìlọ́ọ́jú."
+          ]
+        },
+        {
+          "h": "Ohun tó ní pàtàkì gan-an nígbà tí a ti yan aaye",
+          "ps": [
+            "Èko rin, ní àfihàn-ìlànà: ìlánà aiye ti a àfihàn hàn dájúdájú, ìtaka àsìkò ilọ́ọ́jú iye ọkọ̀ fòòn láti àwọn ìgbalodé òtítọ́, iwọn ohun-èlò, àti iye-ìbẹ̀rẹ̀ ara ìlò dé àwọn ẹ̀kó tí o mọ̀ọ̀. Iye ìfowòsọwọ́ ń járe owó ní Benin, nítorí àpareò tí ó yẹ tàbí aaye tí ó bá jọ̀ dajú o tutu ni ohun-àṣẹ́ gidi, kìlò jẹ́ ohun ára-ẹ̀jẹ̀. Àwọn onítọ́jú àládé ń báye ohun-èlò iye-ow àìlọ àti àwọn aaye tí ó ṣẹ̀ẹ́ ní iye-ìfowòsọwọ́ tí a kò ní.",
+            "Nípa iye: ìtapá tótẹ̀ àrójú àlápàdí onítọ́jú rẹ̀ ti pọ̀ ju ohun-àyè ìbẹ̀rẹ̀ làárin.",
+            "Èkó ìtapá ìbẹ̀rẹ̀ wa ń fihàn báwo ni o ṣe le ìkó àwọn iye meji ní ìṣẹ́jú mẹ́wà, àti ìyatọ̀ nìyẹn ó ń fara dé bẹ̀rẹ̀ kọ̀ọ̀kan tí o bá ṣe."
+          ]
+        },
+        {
+          "h": "Báàjẹ́ fáájú, pẹ̀lú báàjẹ́ Ẹ̀ròpù lo",
+          "ps": [
+            "Ifẹ́ìbẹ̀rẹ̀ ní Benin tẹ̀lé ọjọ́ ọdún Ẹ̀ròpù — Premier League, Champions League àti àwọn èka iṣẹ́ àlágbèébè tóbi ní ìmàyè gidi, àwọn ẹ̀kó kanna tí a rí ní gbogbo Ìwọ̀ Ifẹ̀ Ẹ̀ròpù. Ohun yẹn jẹ́ àkọ́sẹ̀, nítorí àwọn ẹ̀kó wọn jẹ́ àwọn iye ìbẹ̀rẹ̀ àṭínta lójú àgbáyé: iye dáa, àti líìnì ojoojúmọ́ àárin onítọ́jú meji jẹ́ ife ti ó nìpẹ̀ ju ètò ìmọ̀ràn ojú òparun.",
+            "Àwòkọ ìmọ̀ràn wa ń ká àwọn ẹ̀kó 30 àti ń tú ìgbalaye apaṛẹ̀ ni agutan aṛa rẹ̀, pẹ̀lú àwọn àkọ̀kọ̀ tí a ṣẹ̀ṣẹ̀. Dábáa àwọn ìmọ̀ràn — àwòkọ wa pẹ̀lú — gẹ́gẹ́ bí ìrọ̀ìtọ́ológì dájúdájú àìkòpẹ́, àti àní ìbẹ̀rẹ̀ pẹ̀lú iye tí o ní iṣẹ́ àìyí kúkú. 18+, àti ìbẹ̀rẹ̀ nikan pẹ̀lú iye tí o ní iṣẹ́ làìtò àwáyé."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Njẹ́ àwọn aaye-ìbẹ̀rẹ̀ jẹ́ ohun-ofin ní Benin?",
+          "a": "Ìbẹ̀rẹ̀ ń iṣẹ́ ní àárín ètò ilé-owe àkúko labẹ́n ifulufulu ijọba, nítorí ìṣẹ́ àlaà àá dì. Àlàfo ètò àṣẹ́ ti túnkóra ọ̀pọ̀lọpọ̀ ìgba pẹ̀lú ẹ̀ka àṣẹ́, nítorí beere ìtúkọ àbẹ́rẹ̀ àjọ́ rí kí o ba ti aláà dájúdájú jù àna tán."
+        },
+        {
+          "q": "Kini àwọn ọ̀nà-iye tó ṣẹ̀ẹ́ dáradára fun ìbẹ̀rẹ̀ ní Benin?",
+          "a": "MTN MoMo àti Moov Money ń ṣe iṣẹ́ gbogbo àgbègbè, pẹ̀lú Celtiis Cash tí àwọn onítọ́jú mìíràn ń gba, gbogbo ní XOF. Ṣe àyẹwo àgbègbè òníkànnì onítọ́jú pé iye-ọkọ̀ rẹ ló ṣẹ̀ẹ́ fún ilọ́ sẹ́ ìlọ́ọ́jú bẹ̀ẹ̀ pé fún ṣíṣe-owo — àwọn méjìbọ̀ àyà àìkọ́."
+        },
+        {
+          "q": "Ṣé mi ní ṛìi iye aṭo lórí àwọn iye-ìbẹ̀rẹ̀ ní Benin?",
+          "a": "Àwọn onítọ́jú ní àná labẹ́n ètò àlànà; ìṭopin iye-ìbẹ̀rẹ̀ ẹ̀ẹ̀kú ti túnkóra pẹ̀lú ìtúnkóra ẹ̀ka àṣẹ́, nítorí beere ìtuníí àbẹ́rẹ̀ fún àwọn iye nìnú rí dájúdájú ju àna tán."
+        },
+        {
+          "q": "Báwo ni iwọn ohun-èlò máa ṣẹ́ àìtòò nígbà tí a ti yan aaye?",
+          "a": "Nítorí iye ìfowòsọwọ́ jẹ́ iye òtítọ́. Ohun-èlò iye-ow àìlọ tàbí aaye tí ó ṣẹ̀ẹ́ ní iye-ìfowòsọwọ́ tí a kò ní ń ṣe àkunléradé owó ní àwọn ìsalẹ̀ kọ̀ọ̀kan, èyí ni ìdí tí a ń yè ìgbàlọ̀ àìlọ àti iye-ìfowòsọwọ́ dájúdájú pẹ̀lú iye-ìbẹ̀rẹ̀ àti àsìkò-ilọ́ọ́jú."
+        }
+      ],
+      "related": [
+        "how-to-choose-a-betting-site",
+        "bookmaker-margin-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/countries/bj",
+          "label": "Betting sites for Benin"
+        }
+      ],
+      "_src_hash": "f6853d970eddce30",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "free-bets-explained",
+      "title": "Free Bets Explained: What a Token Is Really Worth",
+      "nav": "Free bets",
+      "desc": "Stake-not-returned mechanics, why longshots extract more from a token than favourites, and the qualifying-bet cost that quietly halves a 'bet €25 get €25' offer.",
+      "cat": "Bookmakers",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "Stake not returned: the rule that defines the product",
+          "ps": [
+            "Nearly every free bet is stake-not-returned (SNR): the token buys the winnings, never the stake. A €25 token on odds of 2.00 pays €25 if it wins — not €50 — because the €25 stake was never your money. Lose, and nothing leaves your balance; the token simply evaporates.",
+            "That one rule sets the token's real value. A cash bet at 2.00 returns stake plus winnings; the token returns winnings alone, so at 2.00 the token is worth at most half its face value even before the bookmaker's margin. People who treat a €25 free bet as €25 of money systematically overrate every offer built on one."
+          ]
+        },
+        {
+          "h": "Why longshots extract more",
+          "ps": [
+            "Because the stake is lost either way, the fraction of face value a token can return rises with the odds: winnings are stake × (odds − 1), so at 2.00 the token converts at most 50% of face, at 4.00 it converts 75%, at 6.00 around 83%. The favourite bet 'wastes' the token on returning a stake you never get.",
+            "This is arithmetic, not a system — the extra conversion is paid for with variance. An SNR token at 5.00 wins one time in five at fair prices; most tokens simply lose. Used across enough offers the arithmetic dominates, used once it is a lottery ticket with better-than-usual terms. Both descriptions are true, and an honest bettor keeps them both in view.",
+            "The same arithmetic is why exchange hedging around free bets became an industry. Backing with the token and laying the same outcome at an exchange locks in most of the token's expected value in cash. We describe the mechanics because they explain the pricing; whether the activity is worth your time — and your standing with the bookmaker, whose conduct clauses are aimed squarely at it — is a different question."
+          ]
+        },
+        {
+          "h": "Where tokens come from, and what the qualifying bet costs",
+          "ps": [
+            "Welcome offers of the 'bet €25, get €25' family require a qualifying cash bet first, and that bet has a cost: your €25 goes through the book's margin like any other stake, at perhaps €1–2 of expected cost, and usually at compulsory minimum odds. Add the SNR discount on the token itself, and 'bet €25 get €25' is realistically worth €15–18 of expectation to a careful bettor — a fine discount, but not €25, and the difference is the point of the design.",
+            "The other sources — bet-and-get streaks, in-play insurance ('money back as a free bet if…'), loyalty drops — follow the same two rules. First, refunds paid as free bets are worth their SNR value, roughly 70–80% of face at useful odds, not their face amount. Second, any offer that requires qualifying turnover has a computable cost on that turnover. Price both sides and most offers become easy to rank."
+          ]
+        },
+        {
+          "h": "The traps that void tokens",
+          "ps": [
+            "Expiry is brutal on free bets — 7 days is common, and unused tokens vanish without ceremony. Minimum odds often apply to the token as well as the qualifying bet, so parking it on a 1.20 favourite is not even allowed. Many tokens are single-use and indivisible: stake part of one and the remainder is gone. Some exclude each-way betting, system bets, cash-out, and entire market families.",
+            "Winnings from a token are normally withdrawable cash with no wagering attached — at reputable books. The exceptions exist, and 'free bet' with a wagering requirement bolted on is a materially worse product wearing the same name. It takes one line of the terms to check which product you are being offered."
+          ]
+        },
+        {
+          "h": "Using tokens without fooling yourself",
+          "ps": [
+            "Count the qualifying bet as a cost, use tokens at meaningful odds rather than on favourites, use them before they expire, and book their value at SNR rates when judging any offer. A free bet is a discount coupon with conditions — useful exactly to the extent you would have been betting anyway.",
+            "The one behaviour to refuse is letting a token generate bets that would not otherwise exist. An offer that changes your staking has already cost more than the token is worth, and the books' own pricing assumes most recipients will do precisely that. Being the exception is the entire game."
+          ]
+        }
+      ],
+      "example": "A €25 SNR token. At 2.00 it pays €25 on a win — at fair prices that is €12.50 of expected value, half of face. At 5.00 it pays €100 and converts about 80% of face, ≈ €20 of expectation, paid for with a four-in-five chance of nothing. Add a qualifying bet of €25 at 1.90 costing ~€1.30 in margin, and the whole 'bet €25 get €25' offer is worth ≈ €16–19 in expectation depending on how the token is used.",
+      "takeaways": [
+        "Stake-not-returned means the token buys winnings only — at 2.00 a token is worth at most half its face value.",
+        "Conversion rises with odds: ~50% of face at 2.00, ~75% at 4.00 — the premium is paid in variance.",
+        "Count the qualifying bet's margin cost against the offer; 'bet €25 get €25' is realistically €15–18 of expectation.",
+        "Tokens expire fast and carry odds floors — check expiry and minimum odds before planning anything around one."
+      ],
+      "faq": [
+        {
+          "q": "Do I get the stake back if my free bet wins?",
+          "a": "Almost never — the standard product is stake-not-returned, paying winnings only. A €25 token at 3.00 pays €50, not €75. The rare stake-returned tokens are worth face value and the terms will say so explicitly; assume SNR unless they do."
+        },
+        {
+          "q": "Are winnings from a free bet withdrawable?",
+          "a": "At reputable bookmakers, yes — token winnings are cash with no wagering attached. Some offers bolt a rollover onto free-bet winnings, which is a materially worse product under the same name. One line of the terms answers it; read that line before opting in."
+        },
+        {
+          "q": "Should I use a free bet on a favourite or a longshot?",
+          "a": "Higher odds convert more of the token's face value into expectation, because the lost stake matters less the bigger the potential winnings. Balance that against variance you can accept: at 5.00 the token usually returns nothing. What is clearly wasteful is burning a token at 1.30, where most of its face value evaporates on a stake you never receive."
+        }
+      ],
+      "related": [
+        "how-betting-bonuses-work",
+        "wagering-requirements-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "free-bet",
+        "expected-value",
+        "value-bet"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Convert a token's odds into implied probability before deciding where to place it"
+        }
+      ],
+      "_src_hash": "c920b412eff4f713",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-the-uk",
+      "title": "Ṣíṣe Agbègbè nílùú Ìngílẹ̀rẹ̀: Báwo ni ó ṣe lọ́run",
+      "nav": "Ṣíṣe Agbègbè nílùú Ìngílẹ̀rẹ̀",
+      "country": "uk",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Báwo UKGC licence ṣe ń ṣẹ ìwé ìjíṣẹ́ àgbègbè Ìngílẹ̀rẹ̀: GAMSTOP, ìdí owó, ìdẹ́kùn kādi kredí, àwọn ẹ̀jẹ́ tí kò nípa òde àti ohun tí gbogbo ìyẹn̄ túmọ̀ nígbà tí ó bá ṣe àyíkan fún sítì kan.",
+      "sections": [
+        {
+          "h": "Ṣíṣe agbègbè jẹ́ ohun tí a tìlẹ́kba nílùú Ìngílẹ̀rẹ̀?",
+          "ps": [
+            "Bẹ́ẹ̀ ni — àti pé Ìngílẹ̀rẹ̀ ni ìlà ìrísí fún pàtàkì tí a ṣ'éwé fún gidi. Ṣíṣe agbègbè àríwó ti nítòótò jẹ́ ohun tí a tìlẹ́kba, àti ohunkóhun aláṣọ tí ó ń ṣẹ fún àwọn olùṣọ̀ Ìngílẹ̀rẹ̀ gbọ́dọ̀ máa ní àṣẹ láti inú UK Gambling Commission, èyí tí ó mú ìkókò tí ó gì nípa ìkéde ogbóhun, ìdí owó àti ìtọ́jú alárogbó.",
+            "Ìdán̄ tí ó fáwé ojú méjì nì í. Ìwé ò rì àwọn olùṣọ̀: òkè ẹ̀jǫ́ tí aláṣọ gbọ́dọ̀ máa gbé, ìkéde tí owó àwọn ọ̀rọ̀ ń wà àbọ́ apá tí ó kìnní, àti aláṣẹ tí á ní ní òotítọ́ máa yọ àwọn licence sílẹ̀. Nígbà náà, ṣe àkíyèsi ìjà síì tí ó ju ohun gbogbo lọ — àwọn ìdánwó ẹ̀yìn ri kí a tó fà rẹ́ ikójọ́ àkọ́kọ́ jẹ́ ìgbagbó gidi, àti àwọn ìdí owó le máa dáhùn àkáun kan tí ó tóbi kó àrojó òṣùwọ̀n owó rẹ̀ gberè."
+          ]
+        },
+        {
+          "h": "Ìfún òkè: ìdẹ́kùn kādi kredí àti ohun tí ó ṣiṣẹ́",
+          "ps": [
+            "Àwọn kādi kredí ti jẹ́ àṣìkìsì fún ṣíṣe agbègbè láti April 2020 — ìkó UKGC, kì í ṣe àyè aláṣọ, nítorí náà àṣẹ tí a tìlẹ́kba kò níì wá á gba ọ̀kan. Àwọn kādi kredí tí a ń lo àṣẹ, PayPal àti Apple Pay ni àkọ́kọ́ ọ̀nà, àti gbogbo méta ń ṣiṣẹ́ sí ìfún àkójọ́ ní àṣìmọ̀ tí ó fara ìlú ìjíṣẹ́.",
+            "Ìdán̄ ìfẹ́ rẹ̀ ni láti túbọ̀ owó sí ọ̀nà ló ñ fà kí ó túwọ̀ wá rẹ̀. Àwọn ìjíṣẹ́ Ìngílẹ̀rẹ̀ jẹ́ àkó tí ó gì púpọ̀, àti ọ̀nà túbọ̀ owó tí kò jọ̀ ọ̀nà tí ó túwọ̀ ni ohun tí a ní pẹ̀lú jù lọ tí a ba ní àṣìṣe fà owó àkọ́kọ́."
+          ]
+        },
+        {
+          "h": "GAMSTOP àti ìgbálajo àrìnrìndílógún",
+          "ps": [
+            "Ohunkóhun aláṣọ UKGC gbọ́dọ̀ máa kópa nínú GAMSTOP, ìwé ìdapadà tí a ṣe fún àkún olómìnira ní gbangba. Àdálu kán nínú àkún kan le máa dẹ́kùn ó láti ohunkóhun aláṣọ tí a tìlẹ́kba — èyí túmọ̀ síi àdúrà tí ó dájú pé ṣíṣe agbègbè pẹ̀lú àwọn sítì ọ̀tọ́ tí kò nípa ìwé, láti yìn jáde àlupẹ̀ gbogbo tí ìkákó ìjíṣẹ́ olómìnira Ìngílẹ̀rẹ̀ dá.",
+            "Ti sítì kan bá ṣe ìkéde fún àwọn olùṣọ̀ Ìngílẹ̀rẹ̀ kì í ṣe ní àkójọ́ ìkéde tí Gambling Commission ní ní gbangba, àìní rẹ̀ ni áwòúhan tí ó nílò nikan."
+          ]
+        },
+        {
+          "h": "Àwòpadà owó àti òpò tí kìlòkìlò",
+          "ps": [
+            "Àwọn ẹ̀jẹ́ tí a bá jẹ́ kì í ní àwòpadà fún alárogbó — owó tí a jẹ́ nítòótò nípa ìdánwó tì aláṣọ. Ohun tí ó wa fún ọ ni ohun tí ó pa, eyí túmọ̀ sí pé Ìngílẹ̀rẹ̀ jẹ́ àkan ìjìnlẹ̀ kan tí a ṛò pé ẹ̀ẹ́ ni owó àbájáde ṣíṣe agbègbè: àwọn iye náì ní ìfèré aláṣọ àti àwọn àṣìṣe tìrẹ̀ àwọn ara ẹ̀.",
+            "Èyí ni ibi tí àwọn dátà wa le ránṣẹ́: àwòkò nánì ṣe dúró pé adúró irinájộ kọ̀ọ̀kan, àti àwòkò ilé ẹ̀gàn ní ibá ọ̀rọ̀ kọ̀ọ̀kan fihán tí ẹni tí ó gé owó púpọ̀ fún àkọkọ̀."
+          ]
+        },
+        {
+          "h": "Okùta kíìkìì àti Ṣíṣe Agbègbè",
+          "ps": [
+            "Ìṣẹ̀ ṣíṣe Agbègbè olówó nípa àṛà àti íjàgbà owó jẹ́ ohun tí à ó wulo pẹ̀lú nínú ìgbàagbà Ìngílẹ̀rẹ̀. Àdì àwòpadà lílọ nínú ọ̀rẹ àìlò olùṣọ̀ yọrù àti tẹ̀lẹ̀. Rírò nínú òpò àṛà ìta ọ̀rẹ kò tìmọ̀ níní ìdán̄ tàbí àwọ̀n ìdán̄ tó ṣe àṣìṣe àpèjẹ ìdí òpó àwọn kí ó tó kọ̀ọ̀kan ìgbè àwọn tó sìlẹ̀ tí yẹn."
+          ]
+        },
+        {
+          "h": "Àwọn ìdí owó ní nínu ìjòó àgbègbè Ìngílẹ̀rẹ̀",
+          "ps": [
+            "Àwọn iṣẹ́yu àgbègbè jẹ́ ohun tí a ya pẹ̀lú ìkídìì ìkó àti ìmitán ìgbàagbà. Iṣẹ́yu àgbègbè ní àgbègbè-ààbò níṣàti tó, tí kò ní pẹ̀lú ìdí owó ibádandun ọkọọ̀. Ìfẹ́ àkú àti àwọ̀ ìtẹ̀síwájú, rètí àti ríntí ilé àṣẹ, dè jéjé lójú tó pè rò ọtún. Àwọ̀ ìgbé tí oní ní ní gidigidi tí a ní diẹ̀ ké tẹ́ṛọ̀."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ṣíṣe agbègbè àríwó jẹ́ ohun tí a tìlẹ́kba nílùú Ìngílẹ̀rẹ̀?",
+          "a": "Bẹ́ẹ̀ ni. Ṣíṣe agbègbè àríwó ti nítòótò jẹ́ ohun tí a tìlẹ̀kba àti a ṣ'éwé fún gidi láti inú UK Gambling Commission. Ohunkóhun aláṣọ tí ó ń ṣẹ fún àwọn olùṣọ̀ Ìngílẹ̀rẹ̀ nílò àṣẹ UKGC, pẹ̀lú àwọn ìkó gidi nípa ìkéde ogbóhun, ìdí owó àti ìtọ́jú alárogbó."
+        },
+        {
+          "q": "Ṣé mo le máa lò kādi kredí kí ó towó nílùú Ìngílẹ̀rẹ̀?",
+          "a": "Rárá — àwọn kādi kredí ti jẹ́ àṣìkìsì fún ṣíṣe agbègbè láti April 2020 ní ohunkóhun aláṣọ tí a tìlẹ́kba. Àwọn kādi kredí tí a ń lo àṣẹ, PayPal àti Apple Pay ni àwọn àyè tó yàtọ̀."
+        },
+        {
+          "q": "Ṣé àwọn ẹ̀jẹ́ tí a bá jẹ́ nínú agbègbè ní àwòpadà owó nílùú Ìngílẹ̀rẹ̀?",
+          "a": "Rárá fún alárogbó. Àwọn aláṣọ ní fún àwòpadà owó; àwọn ẹ̀jẹ́ tí ó bá jẹ́ ni tìrẹ̀ nírí. Èyí ti ṣeé rí láti inú ìlà àwòpadà owó-líìkan tó dì àwọ̀ẹ́ tí ó ti ṣẹlẹ̀ tẹ́lẹ̀."
+        }
+      ],
+      "related": [
+        "betting-in-ireland",
+        "how-betting-bonuses-work",
+        "value-betting-explained"
+      ],
+      "glossary": [
+        "odds-formats",
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Convert fractional UK odds to decimal and implied probability"
+        }
+      ],
+      "_src_hash": "566c05d313db73cf",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-germany",
+      "title": "Ibadandun ni Jẹ́mánì: Báwo Ni Ó Ṣe Lọ",
+      "nav": "Ibadandun ni Jẹ́mánì",
+      "country": "de",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Ilànà Jẹ́mánì ti ọdún 2021 nipa ibadandun ti àkúkọ̀ rẹ̀: ìwé-aṣẹ GGL, ìdìlímítì gílo owó tí ó lọ kárì oníṣẹ̀ àpapọ̀, ìlímítì àgbájadé ibadandun tẹ́lẹ̀, àti àrá òpin ibadandun tí àwọn ṣofa àrìn-àjọ jẹ́ sábá fi ṣe.",
+      "sections": [
+        {
+          "h": "Njẹ́ ibadandun ló ní ìfẹ́ ní Jẹ́mánì?",
+          "ps": [
+            "Bẹ́ẹ̀ni — dídíjọ̀ lárayá ábẹ́ Ilànà Ìpínlẹ̀ Ibadandun ọdún 2021 (Glücksspielstaatsvertrag), pẹ̀lú GGL ní ipò àlábàṣepọ̀ àgbájọ owúpa-ìpínlẹ̀. Àwọn onípè tí ní ìwé-aṣẹ le pèsè ibadandun tó dúró ní ọ̀fẹ́, ṣùgbọ́n ètò Jẹ́mánì ní ìwọ̀n tí ó kuntúnkun ní òpọ̀ àbá ìgèríkì.",
+            "Íwọ̀n tí ó kuntúnkun lo yin ní àwọn òkè mẹ́ta tí ìwo yóò rí ní nídìnínú: ìdìlímítì gílo owó tí ó ba àwọn onípè ní àárin ọdúnù, ibadandun àgbájadé tó límítì nísi àwọn ìpele àrílo, àti àrá òpin ibadandun. Àìkan nínú èyí ni èré onípè — wọ́n ni àwọn òdì ti ìwé-aṣẹ ara rẹ̀."
+          ]
+        },
+        {
+          "h": "Ìdìlímítì gílo owó àti bí ó ṣe lo gbẹ́nu",
+          "ps": [
+            "Ìdìlímítì gílo owó tí ara ìpínlẹ̀ lo ní ní àpapọ̀ lára gbogbo onípè tí ní ìwé-aṣẹ, kì í ṣe fún ipò ọ̀kan kọ̀ọ̀kan — fáìlì àgbájọ (LUGAS) ń ṣe àmójútó rẹ̀. Ṣíṣe àkáwe kejì kì í í tun ìgílẹ̀ ìdìlímítì náà — àti pé òní ìpẹ́nú jẹ́ ètò rẹ̀.",
+            "Fún àwọn alákóso ibadandun tó rẹ́kúpa bí i, ìdìlímítì kọ́ níí jẹ́ àálan-èèrú. Tí ó jẹ́ àálan-èèrú fún ọ, rántí ìmọ̀ nípa erú ẹ ní ibigbogbo dájú ìdìlímítì náà: ìdìlímítì náà wà níṣẹ̀ nítorí pé owó àìlímítì lọ́pọ̀ pẹ̀lú ìrìn ibadandun jẹ́ ọ̀nà tó ṣofo ẹ̀ṣẹ̀."
+          ]
+        },
+        {
+          "h": "Àrá òpin ibadandun — àrá kékeré tí 5%",
+          "ps": [
+            "Jẹ́mánì ṣe àrá lára ibadandun, àti àwọn onípè tí ní ìwé-aṣẹ jẹ́ bí i jáde rẹ̀ sí alákóso — gẹ́gẹ́ bí iyago fún ibadandun kọ̀ọ̀kan, tàbí didìnkún òjò-ibadandun, tàbí lílo kékeré owó àbá. Àwọn ṣofa méjì tí ó sọ́yà ìwé owó tí ó báa pé dàna lẹ́yìn lẹ́ẹ̀kan le sábá fun owó yóò dífèrèṇti, bí i ṣe jẹ́ bí èkọ̀ọ̀kan ń lo àrá òpin náà.",
+            "Òní lo ní pàtàkì ju Jẹ́mánì lòó ju àwọn àbá míìrán lẹ́: àwí ìrópò tí kò ẹ̀dà, kì í ṣe òjò-ibadandun tí a ṣàfihàn. Àwí awewe àrìn-àjọ lo jẹ́ yẻ pá; ṣàyẹ̀wò ètò àrá òpin onípè náà ní àfahan wọ̀n, kí ọ má gẹ́ rò ìwé tí ó dára jù ní áyà ìgbésè àbá."
+          ]
+        },
+        {
+          "h": "Ibadandun àgbájadé àti ìyé pápé àrílo",
+          "ps": [
+            "Ilànà náà ṣe òwu lára ibadandun àgbájadé nísi àwọn ìpele àrílo díẹ̀ — àbá tí ó ké (ìrópè níparí, bẹ́ẹ̀jù) àti àwọn ibadandun tó báa àbá tó ló ṣàn-ìkẹ́, tí wọ̀n tí o kù kúrò ní àwọn onípè tí ní ìwé-aṣẹ. Tí àgbálowó kan ba fún ọ ní àwọn ìpele ibadandun àgbájadé tó ga jù kí ó sì jẹ́ ti Jẹ́mánì, ṣàyẹ̀wò ìwé-aṣẹ rẹ̀: ìyé pápé tí ó báa jẹ́ àmi tí ò ní ìwé-aṣẹ.",
+            "Níṣalẹ̀ àgbálowó, pápé àrílo ń lọ bí i ṣe lọ ní ibikibi mìírì, àti pé èkó íkẹ́ wa ní ní ibigbogbo: àmójútó fún 1X2 àti àwọn owó, tí kò rìnrìn àti àwọn ìwé àgbálowó."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Njẹ́ ibadandun àgbálowó ló ní ìfẹ́ ní Jẹ́mánì?",
+          "a": "Bẹ́ẹ̀ni, ábẹ́ Ilànà Ìpínlẹ̀ Ibadandun ọdún 2021. Àwọn onípè tí ní ìwé-aṣẹ jẹ́ òfin GGL; ètò náà jẹ́ àwọn ìdìlímítì gílo owó tí ó lọ kárì oníṣẹ̀ àpapọ̀ àti ìlímítì àgbájadé ibadandun tẹ́lẹ̀."
+        },
+        {
+          "q": "Kílódé tí òjò ẹ̀yin ní òpè ju tí a ṣàfihàn ní Jẹ́mánì?",
+          "a": "Àrá òpin ibadandun kan lo wà, àti àwọn onípè díẹ̀ jẹ́ sábá fun alákóso rẹ̀ nípa iyago tàbí ibadandun tí a ṣàfihàn tó kẹ̀jẹ̀. Àwí ìrópò tí kò ẹ̀dà láàrin àwọn ṣofa àrìn-àjọ, kì í ṣe òjò tí a ṣàfihàn."
+        },
+        {
+          "q": "Kílódé tí ẹ̀yin kò rí àwọn ìpele ibadandun àgbájadé púpọ̀ lórí àgbálowó Jẹ́mánì?",
+          "a": "Ilànà Ìpínlẹ̀ náà ṣe òwu lára ibadandun àgbájadé nísi àwọn ìpele díẹ̀ ní àwọn onípè tí ní ìwé-aṣẹ. Ìyé pápé àgbájadé tó ga ju lórí àgbálowó tí ó ba ń kíìyesi Jẹ́mánì jẹ́ àmi ìwé-aṣẹ tí ò sí àpá."
+        }
+      ],
+      "related": [
+        "betting-in-the-uk",
+        "bookmaker-margin-explained",
+        "how-to-read-betting-odds"
+      ],
+      "glossary": [
+        "bookmaker-margin",
+        "odds-formats"
+      ],
+      "tools": [
+        {
+          "href": "/tools/margin-calculator",
+          "label": "Measure the real margin after tax adjustments on German prices"
+        }
+      ],
+      "_src_hash": "278157d76d3a9e1f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-tanzania",
+      "title": "Ìbojú-ìwé ni Tanzania: Báwo ni a Ń Ṣe É",
+      "nav": "Ìbojú-ìwé ni Tanzania",
+      "country": "tz",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Iwé Ìṣe Gaming Act ti Tanzania: báwo ni Gaming Board ń fúnni ní ìwé-ọ̀rọ̀, éèkínì M-Pesa ń ṣakóso ìmò-ìjà, àti ìsanwo-ọ̀ì-èjú gidi tí o yẹ kí o ṣe ìtúmọ̀.",
+      "sections": [
+        {
+          "h": "Njẹ ìbojú-ìwé jẹ́ àiyipada ni Tanzania?",
+          "ps": [
+            "Bẹ́ẹ̀ ni — ìbojú-ìwé ẹ̀kọ́ jẹ́ onídajú labẹ́ Gaming Act àti ìtọ́jú Gaming Board ti Tanzania, èyí tí ó ti ń tẹ̀ àkojú àwọn aláṣepọ̀ tí ó ní ìwé-ọ̀rọ̀ ní àkàró tán. Àwọn aláṣepọ̀ ìbojú-ìwé àárin ìlúkungó ló dẹ́kun ẹ̀kọ́, èyí tí o ṣòro fún àgbègbè náà àti ó jẹ́ kí àkìyèsí ìwé-ọ̀rọ̀ jẹ́ iṣẹ́ ìrántí: bí aláṣepọ̀ kò bá wà nínú àkojú ti Board, kò ní ìwé-ọ̀rọ̀.",
+            "Ìfihàn ìmò yìí ń wúlò púpọ̀. Aláṣepọ̀ tí ó ní ìwé-ọ̀rọ̀ ń dá aṣẹ fún aláwá ìṣe tí o ti lè ṣe ọ̀rọ̀ wọ́n rẹ̀; eni kan ti ìtan ìhintìlẹ̀ kò dá aṣẹ fún ẹnikẹ́ni nígbà tí ifúntúnú ṣofo."
+          ]
+        },
+        {
+          "h": "Ise-owo ifòwópamọ́ ló ṣakóso ohun gbogbo",
+          "ps": [
+            "M-Pesa (Vodacom), Tigo Pesa àti Airtel Money ló ẹ̀kọ́ ọ̀pọ̀lọpọ̀ — àwọn kadi jẹ́ ẹ̀rù tí kò ní iye. Àwọn ìfúntúnú dé ní ìṣẹ́jú kán; àwọn ifúntúnú pamọ́ sí àpò kanna ń jẹ́ ọ̀nà tó yára jù lọ tí aláṣepọ̀ ń ṣe yìí.",
+            "Àgbé ìbojú àṣà yìí ni agbé àgbójú ìmò: irúfe ìpè tí aláṣepọ̀ ń pèsè nítorí ìbojú-ìwé. Olúbèè tí a ó rán láàrin àwọn nẹ́tíwọ́ọ̀kù ń kó iye ẹ̀rù àti ojúlùmọ̀ aláìgbàyìn lójú gbogbo ifúntúnú kan, àti irú iye tí o máa ń ṣe lẹ́nu yíya ju ohun àbí tí ibaṣepọ̀ tàbí apá míì."
+          ]
+        },
+        {
+          "h": "Ìsanwo-ọ̀ì-èjú gidi lórí àwọn èjú",
+          "ps": [
+            "Tanzania ń lo ìsanwo-ọ̀ì-èjú gidi lórí àwọn èjú — aláṣepọ̀ tí ó ní ìwé-ọ̀rọ̀ lo ó já nù nínú àṣà yìí, kí iye tí ó dé si apó rẹ níto iye tí a já nù yìí. Ḍani èyí ní tẹ́kọ̀ nígbà tí o ń bájẹ́jẹ́ àwọn ibaṣepọ̀: ibaṣepọ̀ tí ó dára dáadaa lokò lè jẹ́ iwacèwacè lẹ́hin ìsanwo-ọ̀ì-èjú.",
+            "Ìsanwo-ọ̀ì-èjú náà túmọ̀ ọ̀pọ̀lọpọ̀ ẹ̀kọ́ tí ó ń bá àwọn àgbé ọ̀pẹ̀ tí ó ní iyebíyelé: méjì aláṣepọ̀ tí ó ń lo iye tàbí kan-kan nílà ó lè ń funni ní iye tó yàtọ̀ bí eni kan bá ṣe àkójú ifúntúnú nífarada. Nígbà tí a ó rọ̀, lo ọ̀ra kékeré kan láti í búbáwo àti kí a ó sì ṣe òye iyì láti tẹ̀ síí pẹ̀lú idiyèn rẹ."
+          ]
+        },
+        {
+          "h": "Yíyan ibò fún ìmò-ìjà Tanzánìà",
+          "ps": [
+            "Gbé sí ìṣọ̀kan ní oríkì òfin: ìwé-ọ̀rọ̀ Gaming Board, ìtìjú rẹ̀ gidi fún àpó ìse-owo rẹ, àti ìlẹ̀ ifúntúnú pamọ́ tí o ti sè díẹ̀ tán. Ní ìbìnú ní àyìkó yìí, lo iye ẹ̀kọ́ tó dára — èyí nì ibòye wa ń gbé ní ọ̀rọ̀, nítorí àwọn ìwàdíí wa tiẹ̀ ń ṣe iye oríkì oséré bákan náà ti gbogbo aláṣepọ̀ èyíkéyìí.",
+            "Iye ìsòfọ̀ ni àbùkù púpọ̀ ní lóde òde yìí. Àwọn ibò àti àwọn ápp ìfọ̀pàdé tí ó dọ̀ àti tí ó ń ṣiṣẹ́ níṣe 2G/3G nìkan jẹ́ ìtushalẹ̀ tó lábẹ́ní ní àwọn ibùdó tí kò bá ìlú agbà, àti ìyàtọ̀ láàrin àwọn aláṣepọ̀ jẹ́ nìtorí-ìyìnú."
+          ]
+        },
+        {
+          "h": "Àgbé ìbojú àṣà tí a tábá rí",
+          "ps": [
+            "Àwọn àgbé ìbojú àṣà tí a tábá rí ní irú yìí: iya iye tó wà nínú fínáà tàbí bíi-èjìbí àwọn erù, àti irú àgbájọ àti ìmẹ́sẹ̀sìméje tí irúkè nfi nínú ifèkufè jẹ́ ònù wọn."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Njẹ ìbojú-ìwé ẹ̀kọ́ jẹ́ onídajú ni Tanzania?",
+          "a": "Bẹ́ẹ̀ ni, labẹ́ Gaming Act, tí Gaming Board ti Tanzania ń ṣakóso. Board ló ń tẹ̀ àkojú àwọn aláṣepọ̀ tí ó ní ìwé-ọ̀rọ̀, nítorí pípa ìwé-ọ̀rọ̀ ní àkàró dúró nísẹ́kẹ́sẹ̀ kan."
+        },
+        {
+          "q": "Báwo ni mo ṣe máa dáìfúntúnú sí àwọn ibò ìbojú-ìwé ti Tanzania?",
+          "a": "Ise-owo ifòwópamọ́ lo ẹ̀kọ́ ohun gbogbo: M-Pesa, Tigo Pesa àti Airtel Money. Yàn aláṣepọ̀ tí ó ní ìtìjú gidi fún àpó ìse-owo tí o ti ní tẹ́lẹ̀."
+        },
+        {
+          "q": "Njẹ àwọn èjú ìbojú-ìwé jẹ́ ise-ìsanwo ni Tanzania?",
+          "a": "Bẹ́ẹ̀ ni — ìsanwo-ọ̀ì-èjú gidi ń wa lórí àwọn èjú àti àwọn aláṣepọ̀ tí ó ní ìwé-ọ̀rọ̀ ló ń já nù nínú àṣà yìí. Iye tí ó dé si apó rẹ níto iye tí a já nù yìí."
+        }
+      ],
+      "related": [
+        "betting-in-kenya",
+        "betting-in-uganda",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "value-bet",
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ],
+      "_src_hash": "6d59a5acdd691569",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-uganda",
+      "title": "Ìbadandun ni Yuganda: Báwo ni á Ṣe Ń Ṣiṣẹ́",
+      "nav": "Ìbadandun ni Yuganda",
+      "country": "ug",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "LGRB ìwé-ẹ̀kọ́ ti Yuganda, MTN MoMo àti Airtel Money lilo, àti ìṣọ owó ti àbá yóò di ohun tí yóò rán ọ lọ́wọ́ láti ṣe àwọn ohun ìfihàn.",
+      "sections": [
+        {
+          "h": "Ṣé ìbadandun jẹ́ òfin ni Yuganda?",
+          "ps": [
+            "Bẹ́ẹ̀ ni — ìbadandun jẹ́ ọ̀fín àti a ń ṣe àmúṣìṣe rẹ̀ nipasẹ̀ Lotteries and Gaming Regulatory Board (LGRB), àti ìwé-ẹ̀kọ́ jẹ́ nǹkan tí a ń ṣe gidi gidi kìí ṣe nǹkan tó wà nìkan fún ara rẹ̀. Àwọn tó ń gbà ẹ̀bẹ̀ gbọ́dọ̀ ní LGRB ìwé-ẹ̀kọ́ láti gbà ẹ̀bẹ̀ ní ọ̀fín.",
+            "Ìdárasí ti ìwé-ẹ̀kọ́ túmọ̀ sí i pé àyẹ̀wò ìwé-ẹ̀kọ́ jẹ́ nǹkan tí ó ní ìtumọ̀: oníkòó tí ó ní LGRB ìwé-ẹ̀kọ́ ní nǹkan tí yóò páadà nípasẹ̀ ní bí kí ó bá ṣe ìyonu ènìyàn. Àwọn ọ̀pá àwọ̀ (offa site) tí ó ń ṣe ìbadandun fún Yuganda láìsí ìwé-ẹ̀kọ́ kò ní ìmọ̀ràn ọ̀kan bẹ́ẹ̀ nígbà tí nǹkan ba pa rárá."
+          ]
+        },
+        {
+          "h": "MTN MoMo àti Airtel Money kìkìrí",
+          "ps": [
+            "Ológun owó mobile jẹ́ abala tó pọ̀ jù lọ — MTN MoMo àti Airtel Money ju àwọn mìíràn lọ, pẹ̀lú Visa àti Mastercard tó jìnnà jẹ́ ẹ́kẹ́kẹ́. Lilo lọ́wọ́ ni àìpẹ́; ìyara fífun owó padà sínú àpò-ọrọ̀ ni ohun tó yàtọ̀ àwọn oníkòó.",
+            "Dádúrò kún ṣíṣẹ́ kìkìrí: sàpá kékeré lilo, fi ẹ̀bẹ̀ kan sílẹ̀, fífun padà. Oníkòó tí ó fi àwọn sàpá kékeré padà nínú àkókò mẹ́ta dé ní ọ̀ọ̀dúnrinní n ṣẹ̀ ọ̀nà tí dára jù; èkejì tí ó dákẹ́ sórí 20,000 shillings kò ní àlàfo pẹ̀lú àwọn iye líló tó gá."
+          ]
+        },
+        {
+          "h": "Ìṣọ owó tí a gba nínú àbá yóò",
+          "ps": [
+            "Yuganda ń gba ìṣọ owó fún àwọn àbá yóò ìbadandun, tí a gba kúrò ṣaájú àtẹ́jáde owó. Wo iye ìṣọ owó dí ìgbálòwó ṣáájú kìí-kìí — ó ti yí padà ní àwọn ọjọ́ tí kọ já, àti àwọn fún-fún tí o yóò ní ni ìdásílẹ̀ nígbà tí ẹ ń ṣe àwọn ohun ìfihàn pẹ̀lú àwọn oníkòó ọ̀tọ̀.",
+            "Ìṣọ owó naa tún ná ìṣòro àbá yóò mọ́ tuntun: lilo àbá yóò ná gbigbi alẹ́ tí ẹ̀ọjọ́ yóò tí ó ní ìṣọ owó, nítorí i iye òòrò tí ó gidi ni kékeré ju ìbálòwó kanna ní ohun ìjọba àìṣọ owó. Àwọn ìtọ́níkálẹ̀ àbá yóò wa ní ìtumọ̀ àwọn fólà tó péko."
+          ]
+        },
+        {
+          "h": "Yiyan ọ̀pá tí ó ṣe àṣàjú ara rẹ̀",
+          "ps": [
+            "Àkójú: LGRB ìwé-ẹ̀kọ́ kìkìrí, ṛokù iṛansẹ́ fún àpò-ọrọ̀ ológun owó rẹ ni àkọkọ́, ìyara àtẹ́jáde owó tí a tẹ̀síwájú ni ikeji, àti nígbà nìkan ní àrìnrín-àrin ìṣòro àti àbá yóò. Bọ́ọ̀lù dí iye tó gá jù lọ ní ìbadandun Yuganda, àti bọ́ọ̀lù Gẹ̀ẹ́sì púpọ̀ — èyí tí a ń ṣe ìyàtọ̀ iye dídára jù lọ.",
+            "Lo àkójú ohun ìfihàn iye tí á ṣe àjộpọ̀ ní àwọn ọ̀pá ìlò àrun láti wo ẹnikẹ́ni tí yóò sàn ní ide kanna kúrò ṣaájú kìí-kìí."
+          ]
+        },
+        {
+          "h": "Àwọn ibeere tí a nílékat",
+          "ps": [
+            "Ìdásílẹ̀ LGRB ìwé-ẹ̀kọ́, àti ìdárasí ìwé-ẹ̀kọ́ jẹ́ nǹkan tí a ń ṣe gidi gidi."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ṣé ìbadandun bọ́ọ̀lù jẹ́ ọ̀fín ni Yuganda?",
+          "a": "Bẹ́ẹ̀ ni — LGRB ní ìdárasí rẹ̀. Àwọn oníkòó gbọ́dọ̀ ní LGRB ìwé-ẹ̀kọ́, àti ìdárasí jẹ́ nǹkan tí a ń ṣe."
+        },
+        {
+          "q": "Kíni ọ̀nà tó dárà jù lọ fún lilo owó ní àwọn ọ̀pá ìbadandun Yuganda?",
+          "a": "Ológun owó mobile: MTN MoMo àti Airtel Money dí ní iye tó gá jù. Àwọn kadi ṣiṣẹ́ ní àwọn oníkòó díẹ̀ ṣugbọn wọn jẹ́ ọ̀nà tó lọ́wọ́ mọ́."
+        },
+        {
+          "q": "Ṣé wọn ń gba ìṣọ owó fún àwọn àbá yóò ìbadandun ni Yuganda?",
+          "a": "Bẹ́ẹ̀ ni — ìṣọ owó tí a gba ní nǹkan tí ó ṣe àsàfihàn. Iye ìṣọ owó ti yí padà, nítorí i wo iye dí ìgbálòwó ṣáájú kìí-kìí àti ṣe àjộpọ̀ àwọn ohun ìfihàn ní àwọn fún-fún tó wà."
+        }
+      ],
+      "related": [
+        "betting-in-kenya",
+        "betting-in-tanzania",
+        "how-betting-bonuses-work"
+      ],
+      "glossary": [
+        "wagering-requirements",
+        "expected-value"
+      ],
+      "tools": [
+        {
+          "href": "/tools/accumulator-calculator",
+          "label": "Price a multi-leg bet honestly before you place it"
+        }
+      ],
+      "_src_hash": "9763b803487c0fd4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-peru",
+      "title": "Ìbójì ní Perú: Báwo Ni O Ń Ṣiṣẹ́",
+      "nav": "Ìbójì ní Perú",
+      "country": "pe",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Ìlana Perú 2024 láàrin MINCETUR: kíní àwọn oníṣọ́ ní fẹ́ jẹ́ ní àṣìṣe, èéṣe tí Yape àti Plin ṣe àwọn ọ̀nà tó ṣe pàtàkì, àti báwo ni o ṣe lè ìmọ̀ rẹ̀ ọ́ pẹ̀lú àpẹjọ ọ̀fìisì.",
+      "sections": [
+        {
+          "h": "Njẹ́ ìbójì jẹ́ òfin ní Perú?",
+          "ps": [
+            "Bẹ́ẹ̀ ni — Perú dúró tán nínú ìlana ìbójì àgbáyé aláìdáǹgbàǹ ní ọdún 2024 láàrin MINCETUR, tó jẹ́ ọ̀kan lára àwọn aṣàrí nípa àpèjọ tuntun ní Gúúsù América. Àwọn oníṣọ́ tó ní ilé-ìṣẹ́ le ṣe ìfọ̀nídíjú ara wọn àti gbà àwọn ibọ lẹ́yi léglẹ́gẹ̀, àti pé wọ́n ti ìmọ̀ sínú ìṣẹ́júù.",
+            "Àlápilẹ̀ tuntun nín ní ìlọ́wọ́ òṣìṣe tó dára ju: àkójú oníṣọ́ jẹ́ kúkèrè àti ìruntikerun, bẹ́ẹ̀ ni ìmọ̀ rẹ̀ ọ́ yara. Ó tùn ní àsálẹ̀ ìdílogún — ọ̀pọ̀lọ́pọ̀ ọmọ ifáranwọ̀ tó ṣiṣẹ́ Perú pẹ̀lú àyaba tíì fúnrá rẹ̀ báyìí ti pín sí àwọn ìtumọ̀ nípa ilé-ìṣẹ́ àti àwọn tí wọ́n kọ̀ ni àiléṣẹ́, àti ẹ̀rò yìí ṣàn máyẹ ní akọkọ́ ìgbà tó bá ji ibọ ní àìmọ̀."
+          ]
+        },
+        {
+          "h": "Yape àti Plin máa ń ṣe ìrúfin",
+          "ps": [
+            "Àwọn agbalejo tí ní ibẹ̀rẹ̀ Yape àti Plin jẹ́ ọ̀nà ìrúfin tó yara jù, pẹ̀lú PagoEfectivo tó bo àwọn ibájẹ ní iye ẹmi. Oníṣọ́ tó ní ìtọ́sọ́ Yape/Plin tó dá hùn máa ń tún iye rúfin láìpẹ́; ọ̀kan tó ti ọ̀nà kọ̀ọ̀kan gburúngburúní níjì ìlù àwọn àgbà máa ń fi àkítà àti ẹ̀rò dándún.",
+            "Bí i ti ń jẹ́ níbikíbi: í padà sí oríṣìrìsì rẹ̀ ìbú yí, kó sì fi ìyẹ̀n búlọ̀ àkúkọ̀ bí a bá jẹ́ kékeré túmọ̀ áìmọ̀ kí a tó fi ọpọlọ́pọ̀ kan."
+          ]
+        },
+        {
+          "h": "Kíní àwọn ìlana tó di nínú oníṣọ́ ní rú",
+          "ps": [
+            "Ilé-ìṣẹ́ nìkan sẹ́ ìfọ̀nídíjú ara wọn sínú àwọn sísẹ́lẹ̀ — àwọn ìtọ́sọ́ ibẹ̀rẹ̀ àti ìgbéìmọ̀ lọ́wọ́ oníṣọ́ tó ní rú jẹ́ àwọn tí àkọkọ́ — àti pé ó dúró ina ìbáda àní tí àìwà ìlàna tí ó kù. Ó tùn túmọ̀ pé àwọn ọ̀rọ̀ ìgbéìmọ̀ jẹ́ ìmọ̀ sílẹ̀ àwọn òfin tó yẹ̀ júù bí a tó jẹ́ àyaba tí oníṣọ́ fúnrá rẹ̀.",
+            "Àdùn tó wọ̀ nínú iye ìlànà-àti-àbàyojú: ka àwọn òrò ìpadà àìkù áìmọ̀ kí a tó rúfin. Ilé-ìṣẹ́ máa ń gbé ìlànà sí ẹru, ṣùgbọ́n àkúnà àlàìpẹ́ ti yẹ̀ẹ̀ àtítọ́ níwájú àwọn ìtàn ìlànà."
+          ]
+        },
+        {
+          "h": "Ìbá bọ̀ọ́lù, àti báwo ni àwọn ìmọ̀sí ìlànà tí ń ṣiṣẹ́",
+          "ps": [
+            "Ìbójì Perú jẹ́ ìbá bọ̀ọ́lù lákojú, tó pín sí ẹ̀yà àlùfáà àti àwọn ìjáde owó gígì Yúròp. Àwọn àgbáyé Yúròp jẹ́ àwọn tí a ṛan àrẹ jù — àwọn nínú àmó, àwọn ibọ tó pé àti àwọn tí a jẹ́ ìṣojú — àti ìfiwéran ibọ nínú àpè ṣàn báwo ọ̀kan fúnrá rẹ̀ máa ń tura iye jù.",
+            "Àìkan òpin ní iye àìjẹ̀ rú; jẹ́ àríthimẹ́tìkì tó fúnrá rẹ̀ ni oníṣọ́ tó ní rú ní jẹ́ nípa àgbèǹkálè tẹ̀ ní àopin."
+          ]
+        },
+        {
+          "h": "À",
+          "ps": []
+        }
+      ],
+      "faq": [
+        {
+          "q": "Njẹ́ ìbójì àgbáyé jẹ́ òfin ní Perú?",
+          "a": "Bẹ́ẹ̀ ni — dúró tán nínú ìlana ní ọdún 2024 láàrin MINCETUR. Àwọn oníṣọ́ tó ní rú ti ìmọ̀ sínú àṣẹ̀ àti máa ń ṣe ìfọ̀nídíjú ara wọn àti gbà àwọn ibọ léglẹ́gẹ̀."
+        },
+        {
+          "q": "Báwo ni èmi ṣe lè rúfin sí àwọn ìṣẹ́ ìbójì ní Perú?",
+          "a": "Àwọn agbalejo tí ní ibẹ̀rẹ̀ Yape àti Plin jẹ́ ọ̀nà tó yara jù; PagoEfectivo bo àwọn ibájẹ níja rúfin. Oníṣọ́ pẹ̀lú ìtọ́sọ́ agbalejo máa ń tún iye rúfin láìpẹ́."
+        },
+        {
+          "q": "Báwo ni èmi ṣe lè ìmọ̀ bí ìṣẹ́ ìbójì jẹ́ òfin ní Perú?",
+          "a": "Àwọn oníṣọ́ tó ní rú ti ìmọ̀ sínú MINCETUR. Àkójú jẹ́ ìruntikerun àti tí a dá lẹ́ — bí ọ̀pọ̀lọ́pọ̀ tó ṣiṣẹ́ Perú kò ba wa lórí rẹ̀, pẹ̀ ó ṣiṣẹ́ ní apa ìlànà àìkan."
+        }
+      ],
+      "related": [
+        "betting-in-colombia",
+        "betting-in-chile",
+        "how-to-read-betting-odds"
+      ],
+      "glossary": [
+        "odds-formats",
+        "value-bet"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Convert American or fractional prices into decimal and probability"
+        }
+      ],
+      "_src_hash": "ae0d92498a6a4165",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-chile",
+      "title": "Iṣẹ́ Àgbèjọ́ní nínú Chile: Báwo Ni Ó Ṣe Lọ",
+      "nav": "Iṣẹ́ Àgbèjọ́ní nínú Chile",
+      "country": "cl",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Ológun aìmọ̀ Chile ti à fihàn gidi: kò sí àkọsílẹ̀ àlàgbà fún ìlọ́wọ́pọ̀ nípa Íńtánẹ́ţì, ìmọ̀ràn kan wà nínú Ìgbìmọ̀, àti àwọn ibadandun àìlànà ó ń lo ìtumọ̀ — àti báwo ni a ṣe lè dáàbò bo ara wa títi àwọn òfin yìí bá dé.",
+      "sections": [
+        {
+          "h": "Ṣé iṣẹ́ àgbèjọ́ní jẹ́ nǹkan tí ìlú ṣetán nínú Chile?",
+          "ps": [
+            "Chile kò nì àkọsílẹ̀ pàtó fún iṣẹ́ àgbèjọ́ní nípa Íńtánẹ́ţì: ìmọ̀ràn ìyẹ̀fun náà ti ń lo silẹ̀ nínú Ìgbìmọ̀ àti àwọn alákòóṣẹ àìlànà ó ń loṭọ̀ ọ́ nítòsí àk̀ọ́kọ́. Àwọn ilé ìdapo ní ilẹ̀ jẹ́ àìlànà kankan (SCJ), ṣùgbọ́n iṣẹ́ àgbèjọ́ní ìdárapọ̀ nílẹ̀ Íńtánẹ́ţì lo sí ilẹ̀ alọ́mọ̀ — kò ní ìṣẹ̀dá ní ibadandun àti kò ní àìlànà tọ́nà nítòó pẹ̀lú.",
+            "Alọ́mọ̀ kò lódi sí dídáàbò tàbí aìdídáàbò tìbí; ó túmọ̀ si pé ìwọ nìkan lo pa ara rẹ̀ mọ́. Alákòóṣẹ àìlànà kò ní àánú lórí ìjà kan pẹ̀lú ibadandun àìlànà kan, nítorí náà òfin àbójú ibadandun náà nìkan ni àbò tí ó nílò ní. Ṣàyẹ́wò àekóò òfin àìkakàlẹ̀ tíorí ẹ́ kí ó máa ní akàùnt níbí kan — ọjọ́ gbàtọ́ ti àwọn ẹbùn yìí lè yí padà."
+          ]
+        },
+        {
+          "h": "Gbé ayé nípa alọ́mọ̀ ojọ́ ibadandun",
+          "ps": [
+            "Ìdáná àbò: yíyá àwọn alákòóṣẹ tí wọ́n ní akọ̀ṣẹ́ búburú àti ìṣẹ̀dá láti àwọn àìlànà ìṣẹ̀dá tó ga, pa ọ́ràn kékeré àti ìgbẹ̀kúlẹ̀ nígbẹ̀kẹ̀, àti tẹ̀jú àwọn ìfipèsè wọ́n tí àwọn òfin bá yípadà nípa àìlànà.",
+            "Ìbẹ̀rẹ̀ gbọ́dọ̀ ní ìrò gìga nínú ibẹ́ ìlò yìí. Nínú àwọn ọmọ́ ìṣẹ̀dá, àwọn ọ̀rọ̀ ìtúmọ̀ ìbẹ̀rẹ̀ ní àsopọ̀ sí alákòóṣẹ; àyafi àìlànà, àwọn ọ̀rọ̀ náà jẹ́ ohun tí ibadandun sọ lọ́wọ́lówọ́."
+          ]
+        },
+        {
+          "h": "Ìṣẹ́ gírìdì láìsí àkọsílẹ̀ àìlànà kan",
+          "ps": [
+            "WebPay, ìfipèsè ìṣowo àti àwọn káràà jẹ́ àwọn ọ̀nà ìbáláyé, pẹ̀lú àwọn àìṣẹ̀dá alọ́mọ̀ àti ìwo: díẹ̀ nínú àwọn bàńkì ó ní irẹ́fúsì àwọn iṣẹ́ tí wọ́n jẹ́ rálẹ́ bí iṣẹ́ àgbèjọ́ní, àti àwọn àyégájú ó ṣí ìyọ̀kù. Ṣàyẹ́wò àbáta mì gbòòrò — gbígbéèkún, iṣẹ́ àgbèjọ́ní, àti ìyọ̀kù — pẹ̀lú ọ̀rọ̀ kékeré àní tó tẹ́ ìbadandun kan láti ó ba ní ìgbẹ̀kúlẹ̀ pọ̀ sípa.",
+            "Nígbà tí òfin bá dé, àwọn alákòóṣẹ ìṣẹ̀dá Chile yóò ní àkupọ̀ sípa àdásílẹ̀ dáadáa; títílẹ̀ nísinsin yìí, àìṣẹ̀dá ìfipèsè jẹ́ apá ìtumọ̀ gbàtọ́ ti iṣẹ́ iṣẹ́ àgbèjọ́ní ní Chile."
+          ]
+        },
+        {
+          "h": "Àwọn ohun tí yóò yípadà nígbà tí òfin bá pa sílẹ̀",
+          "ps": [
+            "Ọmọ́ ìṣẹ̀dá Chile tí a bá ní àṣọkan yóò mú àwọn alákòóṣẹ tí a pa sílẹ̀, ọ̀nà ìṣèwádìí — àti ní ọ̀pọ̀ àkábà, àwọn ibadandun tó kékeré, dáadáa sípa àlọ́mọ̀ ojọ́ ìdárapọ̀ kúkùrú gbàtọ́. Àwọn ọ̀rọ̀ ọ̀pá wa ò yípadà báti kítọ̀ìkan: ètúmọ̀ ìmọ̀ràn àti àwọn ìṣẹ́ nípa ódí kékeré wàhálà, àìlọ́wọ́pọ̀ sí àwọn ibadandun kan pàtó."
+          ]
+        },
+        {
+          "h": "Nígbà wo ni ìṣẹ́ àgbèjọ́ní ní líńṣ yóò di àṣọkan nínú Chile?",
+          "ps": [
+            "Ìmọ̀ràn àyalẹ́nu nípa ọmọ́ ìṣẹ̀dá kan wà lo nílọ́wọ́pọ̀; àkókó, pòlítìkù àti ayérayé. Nígbà tí òfin ba pa silẹ, àwọn alákòóṣẹ tí a pa sílẹ̀ àti ọ̀nà ìṣèwádìí yóò gba àgbà àìlànà ojọ́.",
+            "Títílẹ̀ nísinsin yìí tẹ́tẹ̀ ìbẹ̀wọ̀ wa ó ṣiṣẹ́ báti ibadandun ibátan: ètúmọ̀ ìmọ̀ràn àti àwọn ìṣẹ́ nípa àwọn odí, àìlọ́wọ́pọ̀ sí àwọn alákòóṣẹ pàtó."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ṣé iṣẹ́ àgbèjọ́ní nípa Íńtánẹ́ţì jẹ́ nǹkan tí ìlú ṣetán nínú Chile?",
+          "a": "Kò sí àkọsílẹ̀ pàtó fún ìlọ́wọ́pọ̀ nípa Íńtánẹ́ţì — ìmọ̀ràn ìyẹ̀fun kan ń jójúu nínú Ìgbìmọ̀. Àwọn ibadandun àìlànà ó ń loṭọ̀ ọ́ nítòsí àk̀ọ́kọ́, nínú alọ́mọ̀ láìsí ìṣẹ̀dá ní ibadandun àti àìdídáàbò. Ṣàyẹ́wò àekóò òfin àìkakàlẹ̀ túnrá kí o bá ní akàùnt níbí kan."
+        },
+        {
+          "q": "Ṣé dáadáa nínú to lo si àwọn ibadandun àìlànà láti Chile?",
+          "a": "Alákòóṣẹ àìlànà kò ní àánú lórí ìjà kan, nítorí náà òfin àbójú ibadandun náà nìkan ni àbò tí ó nílò ní. Yíyá àwọn alákòóṣẹ tí wọ́n ní akọ̀ṣẹ́ búburú àti ìṣẹ̀dá tó ga, pa ọ́ràn kékeré àti ìgbẹ̀kúlẹ̀ nígbẹ̀kẹ̀."
+        },
+        {
+          "q": "Nígbà wo ni Chile yóò máa ṣẹ̀dá iṣẹ́ àgbèjọ́ní nípa Íńtánẹ́ţì?",
+          "a": "Ìmọ̀ràn kan ti ń lọ silẹ̀ nínú Ìgbìmọ̀; àkókó jẹ́ nǹkan pòlítìkù tí a kò lè rò yẹ. Nígbà tí òfin ba pa silẹ, àwọn alákòóṣẹ tí a pa sílẹ̀ àti ọ̀nà ìṣèwádìí yóò gba àgbà alọ́mọ̀."
+        }
+      ],
+      "related": [
+        "betting-in-peru",
+        "betting-in-argentina",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bankroll-management",
+        "expected-value"
+      ],
+      "tools": [
+        {
+          "href": "/tools/kelly-calculator",
+          "label": "Size stakes to survive variance — doubly important without a safety net"
+        }
+      ],
+      "_src_hash": "c6f1156ced70ad04",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-colombia",
+      "title": "Ìdìbẹ̀ ni Kólómúbìà: Báwo ni a Ṣe Ń Ṣe É",
+      "nav": "Ìdìbẹ̀ ni Kólómúbìà",
+      "country": "co",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Ọ̀pá àkọ́kọ́ àwọn ẹ̀kó Amẹ́ríkà Gúúdú: ìwé-ṣíṣé Coljuegos látì 2016, ìtọ́sọ́ọ́ ilana .co, ìsanwo PSE àti Nequi, àti isin oriire lórí ohun ìdìbẹ̀ ńlá.",
+      "sections": [
+        {
+          "h": "Njẹ ìdìbẹ̀ jẹ́ jẹ́ láìní-bàjé ni Kólómúbìà?",
+          "ps": [
+            "Bẹ́ẹ̀ ni — jẹ́ jẹ́ láìní-bàjé fúlúfúlú àti Coljuegos ń ṣ'àbìṣẹ rẹ̀, àti Kólómúbìà ní oríṣun àkọ́kọ́: ó jẹ́ oríṣun àkọ́kọ́ àwọn jíjì Amẹ́ríkà Gúúdú tí ó gbé ìdìbẹ̀ ojúìwé ṣe bàjé, ní 2016. Àwọn ìṣèlópọ̀ tí Coljuegos fi ẹ̀kó sí nìkan ni èyí tó lè jẹ́ agbé Kólómúbìà dájúdájú.",
+            "Mẹ́jẹ̀ẹ́ta ìtan-ọjọ́ àwọn iṣẹ́ òpó rà gba ìfihàn. Ọ̀pá náà ní ìwé-ṣíṣé rere, ọ̀nà ìgbẹ̀jáde àìlòdì, àti ilana àpẹẹrẹ̀ tí ó jẹ́ ìsàlaye: àwọn àgbá tí Coljuegos fi ẹ̀kó sí ń bá à ní àgbégbé .co gidi gidi. Ọkùnrin kìnn tí a ń jọ Kólómúbìà láti àgbégbé ìfẹ́ yìí ń sọ̀ ìtòlẹ̀ àbúrọ̀ àṣàmòó rẹ̀ níro déédé."
+          ]
+        },
+        {
+          "h": "PSE, Nequi àti àdúrà ìsanwo àkọ̀kọ̀",
+          "ps": [
+            "PSE (àdúrà ìrínú ilé-ẹ̀kó) àti àpò Nequi ní gbógbó ìdáramú sísanwó ojúìwé, àwọn kadi tí wón ń ṣ'ipa ìbákàn. Àwọn ìṣèlópọ̀ tí Coljuegos fi ẹ̀kó sí ń pèsè àwọn ìbákàn wọ̀n pẹ̀lú oríṣìrìṣì, nítorí náà owó ń rìn kárú ìgbà nígbìn méjì.",
+            "Ìyẹn ni ọkọ̀ àbájáde ìsanwo àwọn ọ̀pá tí ó ti dáa: àìní olóòtitọ́, àìní ìkúnlẹ̀ àti kadi tí ìdìbẹ̀ ń ṣ'ipa rẹ̀, àti ìyara ìgbẹ̀jáde owó tí ó ṣe ẹ̀kó níbáamu pẹ̀lú àwọn ilé-ìdìbẹ̀."
+          ]
+        },
+        {
+          "h": "Isin oriire lórí àwọn ohun ìdìbẹ̀",
+          "ps": [
+            "Àwọn oriire tí ó ti pọ̀ jù lé ìṣe tán ní isin, tí àwọn ìṣèlópọ̀ ń yẹ̀ ní àgbà ìgbẹ̀jáde. Àwọn ohun ìdìbẹ̀ nìdá mò wà láìsi ìṣe; ìdìbẹ̀ ńlá yìí máa dé níwájú àti isin ò jé. Báwo ni àgbègbe ìṣe àinitàn wà kí o tó dùn àrá ìdìbẹ̀ rẹ̀ tó.",
+            "Isin ìṣe àwọn ohun ìdìbẹ̀ tí ó pẹ́ dé: àwọn oriire tí ó jẹ́ àbájáde tí ó jẹ́ ìdáramú fún àkàtá tí ó wí 'sódìkálóódìká' wọ̀n jẹ́ àwọn ohun tí wọ́n ní isin dé. À ń rírò pẹ̀lú àlábèrè àdúrà àwọn ohun ìdìbẹ̀ ìlowó — ṣ'àrípo isin àpápọ̀ ninu òfin gidi gidi nísinsìn nínu àwọn ọ̀pá tí ó tobi."
+          ]
+        },
+        {
+          "h": "Lílo ọ̀pá tí ó ti dáa tó tó",
+          "ps": [
+            "Nígbà tí ìwé-ṣíṣé ó ti yé ara rẹ̀, àwọn ìbéèrè àbùkù rẹ̀ dì sí àwọn èyí tí ó ní gbogboògbó: elòmíràn jè ìlé-ìdìbẹ̀ tí ó fún ìdìbẹ̀ ìyalẹ̀nu tó bẹ̀rẹ̀ rẹ̀, àti àbùkù ìsanwo àrìnúkúrí. Ìyẹn dájúdájú ni àwọn àbùkù ìdìbẹ̀ odi àti ìdánimọ̀ àlábèrè àrìnúkúrí níle.",
+            "Kálẹ̀ndà ìpádé bọ́ọ̀lù Kólómúbìà pẹ̀lú ní ìgbongbo àwọn ìyípadà oníiyè — ìpádé agbègbe, Libertadores àti àwọn ìṣèlópọ̀ Yúrópu gbogbo ní ọ̀pá ìlowó tí ó gòkè wà níle àwọn ilé-ìdìbẹ̀ tí wọ́n ní ẹ̀kó."
+          ]
+        },
+        {
+          "h": "Àwọn ọmọ itàkúnú ìdìbẹ̀ ni Kólómúbìà",
+          "ps": [
+            "Rírò àti ìdáramú ìdìbẹ̀ jẹ́ iṣẹ́ àbádábá fúlúfúlú. Ọ̀pá tí ó jẹ́ ìdìbẹ̀ ní temi àti tò ní ewé Coljuegos ní jẹ́ ìnawo àbùkù ó gbodoó ṣ'àrípo nísinsìn pẹ̀lú àwọn àpótí àwọn olóòtitọ́ àti àwọn ìdìbẹ̀ tí ó jẹ́ ìgbẹ̀jáde."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Njẹ ìdìbẹ̀ ojúìwé jẹ́ jẹ́ láìní-bàjé ni Kólómúbìà?",
+          "a": "Bẹ́ẹ̀ ni — fúlúfúlú àti Coljuegos ń ṣ'àbìṣẹ látì 2016, ọ̀pá àkọ́kọ́ tí ó gbé ìdìbẹ̀ ní ìwé-ṣíṣé ni Amẹ́ríkà Gúúdú. Àwọn ìṣèlópọ̀ tí Coljuegos fi ẹ̀kó sí nìkan ni èyí tó lè jẹ́ agbé Kólómúbìà."
+        },
+        {
+          "q": "Báwo ni mo ṣe le mọ ìdìbẹ̀ ojúìwé tí ó ní ẹ̀kó ni Kólómúbìà?",
+          "a": "Àwọn àgbá tí ó ní ẹ̀kó ń bá à ní .co gidi àti kílìnìkí Coljuegos. Ọkùnrin kìnn tí a ń jọ Kólómúbìà láti àgbégbé ìfẹ́ àìní ẹ̀kó gidi gidi."
+        },
+        {
+          "q": "Njẹ àwọn oriire ìdìbẹ̀ jẹ́ ẹ̀kó-isin ni Kólómúbìà?",
+          "a": "Àwọn oriire tí ó ti pọ̀ jù lé ìṣe tán ní isin àti àwọn ìṣèlópọ̀ ń yẹ̀ ní àgbà ìgbẹ̀jáde. Àwọn ohun ìdìbẹ̀ nìdá mò wà láìsi ìṣe; àwọn ohun ńlá dé níwájú àti isin ò jé. Dọ̀ tí ó ṣe ìṣe àinitàn rẹ̀."
+        }
+      ],
+      "related": [
+        "betting-in-peru",
+        "betting-in-brazil",
+        "what-is-an-accumulator"
+      ],
+      "glossary": [
+        "value-bet",
+        "expected-value"
+      ],
+      "tools": [
+        {
+          "href": "/tools/accumulator-calculator",
+          "label": "Price a coupon before tax — then apply the threshold to the payout"
+        }
+      ],
+      "_src_hash": "8e1711afa7e370fb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-ecuador",
+      "title": "Bẹ̀tì̀ ní Ẹkuádò: Báwo Ṣe Ṅ Ṣiṣẹ́",
+      "nav": "Bẹ̀tì̀ ní Ẹkuádò",
+      "country": "ec",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Ọ̀jọ́ Ẹkuádò láàárin àwọn ìṣedálẹ̀: ìdìwọ́ kasino ní ọdún 2011, àwọn aaye ìgbalodé tó n pè kórá ẹ̀, àti owó ọ̀tun tuntun lórí bẹ̀tì̀ àgbàtẹ̀rọ̀, ati bẹ̀tì̀ nínú US dollars.",
+      "sections": [
+        {
+          "h": "Njẹ bẹ̀tì̀ jẹ́ dídọ́gbọ̀n ní Ẹkuádò?",
+          "ps": [
+            "Ẹkuádò dúró láàárin àwọn ìyatọ̀ oníṣedálẹ̀. Wọ́n pa kasino tí wà ní ilẹ̀ si irú ìwòsúrú ní ọdún 2011, àti pẹ̀lú pe kò sí àkọ̀sẹ̀ ìṣedálẹ̀ dídacọ́ fún bẹ̀tì̀ àgbàtẹ̀rọ̀ — àwọn aaye ìgbalodé ń ṣiṣẹ́ nínú ayé àti òjíji. Ohun tó yipada ní kèkèkè: ìṣèlú nát bẹ tún àti owó lórí ìṣe bẹ̀tì̀ àgbàtẹ̀rọ̀, ẹkó ìbẹ̀rẹ̀ ti ìṣòwò lásán.",
+            "Títí obìnrin ìṣedálẹ̀ dé, àwọn ofin ayé-àti-òjíji nì ń ṣiṣẹ́: àkòsẹ̀ tí ẹyin òkè kò jẹ́ tí yíò rí ayẹ́ ó kù láti dídòsíkò. Ìfẹ́hìmọ̀ apò oníṣiṣẹ́ nìkan ló máa ṣèkúkú. Kọ̀jú àwọn ofin ti ìtúmo yìí kí o sìn nọ́mba — ayé tí ó ti bẹ̀rẹ̀ sísun owó tí gbégbé kò máa padà sí irú ìfẹ́ pé ayé náà kò sí."
+          ]
+        },
+        {
+          "h": "Owó ọ̀tun tuntun àti ohun tó ń sọ fún alaye oníjúmọ̀",
+          "ps": [
+            "Owó ná ń gbẹ lábẹ́ àwọn oníṣiṣẹ́ bẹ̀tì̀ àgbàtẹ̀rọ̀ àti àwọn tí n bẹ̀tì̀ — túmọ̀ pé àpá kan nínú ọrọ̀ nígbà àwọn tó kúnrin lára yín. Kọ̀ ó sínú èyíkéyìí èròjà tí o ń gbá wọn paapọ̀, á sì dúró fún ìgbésẹ̀ (ẹ̀ kú méèlò, nígbà irú) láti ṣàtúnkọ̀.",
+            "Owó jọ máìfẹ́ ti àṣìda ìṣedálẹ̀ jẹ́ ìgbamẹ́tí tó dùn, ṣùgbọ́n ó pọ̀ ọ́ ròyìn fún ọmọ ajúmọ̀: àwọn ìṣèlú tí ó bá ba àwọn owó tí bẹ̀tì̀ sẹ yíò padà sí irú ìfẹ́ pé ayé kò sí. Ìṣedálẹ̀ jẹ́ ìwájú, kì í ṣe ìbẹ̀rẹ̀."
+          ]
+        },
+        {
+          "h": "Bẹ̀tì̀ nínú dollars",
+          "ps": [
+            "US dollars jẹ́ owó tí Ẹkuádò ń gbẹ̀ — èyí tí ó ní, ó jí iléru tó tóbi kúrò: kò sí ìbẹ̀rẹ̀ ìrí owó nígbà ìsẹ̀lẹ̀ owó sínú àkáont, àti èrò ìtúmọ̀ láàárin gbìgbé ibẹ̀rẹ̀ àti sisugbọń owó tí ẹ ṣẹ, àti ìrọ̀rún níba àwọn olóju ojúàga tí wọ́n sọ níbùtọ̀.",
+            "Kadi, ìfiránṣẹ̀ apérẹ̀ àti PayPhone ní èyí tí wọ́n ń ní. Ní tí èyíkéyìí ayé àti òjíji, tẹ̀síwájú owó tí o ní kékeré kí o sé kọ́kọ́ gbìgbé-bẹ̀tì̀-sisugbọń àtíkó tí o ní owó kikún."
+          ]
+        },
+        {
+          "h": "Ìmọ̀ ìdèkúnde títí ìṣedálẹ̀ tó dé",
+          "ps": [
+            "Ìgbésẹ̀ ìdèkúnde kanna bí ayé àti òjíji kọ̀ọ̀kan: àwọn oníṣiṣẹ́ tí ó ní ìtúpo ọ̀dọ̀ àti àwọn ìṣedálẹ̀ tó níla láàárin àwọn olómìnira, àwọn ìdìnku tó kékeré, àti owó tí a n ṣàtúnkọ̀ níò pẹ̀lú ìdèkúnde sísọ̀rọ̀ lórí àwọn ìbẹ̀rẹ̀ tí àkòsẹ̀ awo kò ti ń rìyàwó.",
+            "Àpá oní àkọ̀sẹ̀ wa kì í dásàfihàn àwọn agbègbè: àkọ̀jù àríyànjiyàn, àwọn odds tó dóboro àti ìgbéjáde èkó kúrò níbòjú paapọ̀ nínú àwọn ayé àti òjíji tí ìṣedálẹ̀ tàbí kò sí."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Njẹ bẹ̀tì̀ àgbàtẹ̀rọ̀ jẹ́ dídọ́gbọ̀n ní Ẹkuádò?",
+          "a": "Kò sí àkọ̀sẹ̀ ìṣedálẹ̀ dídacọ́: wọ́n pa kasino tí wà ní ilẹ̀ si irú ìwòsúrú ní ọdún 2011, àti àwọn aaye ìgbalodé ń ṣiṣẹ́ nínú ayé àti òjíji. A ti ṣe owó ọ̀tun lórí bẹ̀tì̀ àgbàtẹ̀rọ̀ — ìbẹ̀rẹ̀ ìṣísẹ́ ń bẹ̀ tó ìṣedálẹ̀ ìgbàmẹ́. Kọ̀jú àwọn ofin ti ìtúmo yìí kí o sìn nọ́mba."
+        },
+        {
+          "q": "Kíni owó tí àwọn aaye bẹ̀tì̀ ní Ẹkuádò ń gbẹ?",
+          "a": "US dollars jẹ́ owó tí Ẹkuádò ń gbẹ̀, bẹ́ẹ̀ ni àwọn gbìgbé owó, àwọn bẹ̀tì̀ àti àwọn sisugbọń owó ń ṣiṣẹ́ nínú USD pẹ̀lú kò sí owó ìbẹ̀rẹ̀ — àpá tó fẹ́ fún ayé yìí."
+        },
+        {
+          "q": "Njẹ owó ọ̀tun bẹ̀tì̀ wà ní Ẹkuádò?",
+          "a": "Bẹ́ẹ̀ ni — owó ọ̀tun tuntun tó tó bẹ̀tì̀ àgbàtẹ̀rọ̀ àti àwọn oníṣiṣẹ́. Àwọn ọ̀rọ̀ ìtúmọ̀ ń dúro, bẹ́ẹ̀ ni ìwádìí ìṣiro tí ó jẹ́ ìtúmo àti èẹ ń gba á."
+        }
+      ],
+      "related": [
+        "betting-in-colombia",
+        "betting-in-peru",
+        "value-betting-explained"
+      ],
+      "glossary": [
+        "expected-value",
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Compare USD-quoted prices across formats in one step"
+        }
+      ],
+      "_src_hash": "0d54390e5f527830",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-senegal",
+      "title": "Ìbẹ̀rẹ̀ ni Sẹ̀nẹ̀gà: Báwo Ni Ó Ṣe Lọ",
+      "nav": "Ìbẹ̀rẹ̀ ni Sẹ̀nẹ̀gà",
+      "country": "sn",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Ojà LONASE tí ìjọba ń ṣàkóso: kí ìtọ́jú ẹ̀ẏà túmọ̀ fún àwọn olùbẹ̀rẹ̀, ìdí tí Orange Money àti Wave ń ṣiṣẹ́ lórí owó, àti báwo ni a ṣe yẹ̀ lati yan ojà tí ó bá ara ẹ.",
+      "sections": [
+        {
+          "h": "Ṣe ìbẹ̀rẹ̀ jẹ́ nǹkan tí a gba ni Sẹ̀nẹ̀gà?",
+          "ps": [
+            "Bẹ́ẹ̀ ni — ìbẹ̀rẹ̀ iṣẹ́ agbàlagba jẹ́ nǹkan tí a gba taara lábẹ̀ ìtọ́jú ẹ̀ẏà ní ìmọ̀ LONASE, pẹ̀lú àwọn ọ̀pá àjọ Sẹ̀nẹ̀gà àti àwọn ìjọba oriṣiriṣi ti ń fúnni ní ìṣẹ́ náà. Ẹ̀rọ́ LONASE yìí jẹ́ nnkan ti o lọ́pọ̀ ni gbogbo ìlú Afríìkà ní ìlà oshì: kòó sẹ̀ fẹ́ ofísì ajọ wáyàá kan, ṣugbọ́n ilé-àyè owó àjọ ìjọba ni ó múlẹ̀ ipìlẹ̀ tí ìwé-ẹ̀kọ́ tẹ̀ lórí.",
+            "Nítorí olùbẹ̀rẹ̀, ìtúmọ̀ tó ye tán ni: àwọn olùpèsè tí wọ́n ń ṣiṣẹ́ lábẹ̀ ìtọ́jú ẏẹ̀nì ni àwọn tí a lè bẹ̀rẹ̀ fun. Àwọn ojà àìjọba tí ó ń láti ibẹ̀rẹ̀ àjọ àbùkù lè gé àwọn bù dídùn díẹ̀, ṣugbọ́n wọ́n kò lè dáhùn ẹ̀nìyàn kan nílẹ̀ yẹn nígbà tí ifúnni kò dé bẹ̀."
+          ]
+        },
+        {
+          "h": "Orange Money àti Wave ń ṣiṣẹ́ lórí owó",
+          "ps": [
+            "Mobile money ní agbára — Orange Money àti Wave jẹ́ ẹlòmọ̀ àkọ́kọ́, pẹ̀lú Free Money tí ó bọ̀ ábẹ́. Ẹ̀rò kíkun Wave tí ó kéré ju rẹ̀ẹ̀ dájú pé ó jẹ́ ọ̀kan nínú àwọn nǹkan tí o ṣe pàtàkì nígbà tí a ń yan olùpèsè ìbẹ̀rẹ̀.",
+            "Owó àrẹ̀ máa dé nínú àwọn ìṣẹ́jú bẹ́ẹ̀jì nínú ọ̀kọ̀ ilẹ̀ tàbí òmìrán; nǹkan tí ó pín àwọn olùpèsè ni ìyára tí wọ́n ń bọ̀ owó padà sí wallet e nígbà tí a ń béere fún u. Ṣe àjọjọ́ pẹ̀lú iye owó kékeré kan tẹ́ẹ̀ ṣẹ́ pẹ̀lú olùpèsè kan kí o tó tẹ́ owó ó kéré tó tó máa je àìdùn júù."
+          ]
+        },
+        {
+          "h": "Bọ́ọ̀lù àkọ́kọ́, àti kí na túmọ̀ nítorí iye",
+          "ps": [
+            "Bọ́ọ̀lù ní agbára ti ìbẹ̀rẹ̀ — ẹ̀kó àjọ Sẹ̀nẹ̀gà, àwọn kejì àti kẹta ní Yúrópu, àti àwọn ìdójúkọ àgbà bí CAN. Ojà bọ̀ ń gbé méjì nínú àwọn ìbẹ̀rẹ̀ tí ara gbogbo ní wáyàá́ túmọ̀ sí àwọn bù tí ó kéré sí i fún àwọn ìbẹ̀rẹ̀ àkọ́kọ́ àti àwọn bù búburú fún àwọn ọ̀ṣẹ̀ àìfidí, ìwé-ẹ̀kọ́ kanna tí ó pé níbi gbogbo.",
+            "Ẹ̀rọ́ ara ẹ̀ àwọn kejì àti kẹta ni Yúrópu ní àwọn ọ̀pá ilẹ̀ kan ní kan, àti àwọn bù tó ṣeégbẹ̀ ní àpá ibẹ̀rẹ̀ kọ̀ọ̀kan máa fíhàn ẹnì tí ó ń gé owó pọ̀ jù fún àbùkù ìbẹ̀rẹ̀ kanna — iṣiro tí ó dójú ṣe nípa XOF."
+          ]
+        },
+        {
+          "h": "Yíyàn ojà nítorí ojà Sẹ̀nẹ̀gà",
+          "ps": [
+            "Báyìí ni: àwọn olùpèsè tí wọ́n ń ṣiṣẹ́ lábẹ̀ ìtọ́jú LONASE, ìfẹ̀ẹ́ fún walleti tí o tẹ̀ lo níjẹ́, iyara ifúnni tí a ti wo àkópa̩, àti ìraye funfun kìkì láàárín gbogbo. Ìraye alágbé túmọ̀ dídun púpọ̀ lẹ́ ẹ̀ tí olùpèsè kan kò le ṣe ìsin owó nínú ọ̀sẹ̀ kan.",
+            "Iye owó ìṣàkójú jẹ́ nǹkan tó pàtàkì púpọ̀ — àwọn ojà tí ó kékeré tí wọ́n máa lọ ní ìyára lórí aláàbò ọkọ ìfitánilẹ̀ jẹ́ ibẹ̀rẹ̀ dídun ju àwọn ìdí pẹ̀ fún ìdílé ẹ̀ ko Sẹ̀nẹ̀gà."
+          ]
+        },
+        {
+          "h": "Àwọn ibeere àti àwọn sèwu",
+          "ps": []
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ṣe ìbẹ̀rẹ̀ iṣẹ́ agbàlagba jẹ́ nǹkan tí a gba ni Sẹ̀nẹ̀gà?",
+          "a": "Bẹ́ẹ̀ ni — a gba ní lábẹ̀ ìtọ́jú ẹ̀ẏà tí a ṣeto ní ayíka LONASE, pẹ̀lú àwọn olùpèsè ìbẹ̀rẹ̀ ìlú àti jáde àìjọba ní fúnni ní ìṣẹ́."
+        },
+        {
+          "q": "Báwo ni mo ṣe máa fi owó sínú àwọn ojà ìbẹ̀rẹ̀ Sẹ̀nẹ̀gà?",
+          "a": "Mobile money ni ó ní agbára — Orange Money àti Wave jẹ́ ẹlòmọ̀ àkọ́kọ́, àti Free Money nì wà. Wàyò dáradára fún ìfẹ̀ẹ́ Wave jù — iye owó àrẹ̀ rẹ̀ jẹ́ ènìyàn tí ó kéké jù."
+        },
+        {
+          "q": "Kí ni àwọn nǹkan tó yẹ kí n ń wo àìtànná pẹ̀lú ojà ìbẹ̀rẹ̀ kan ni Sẹ̀nẹ̀gà?",
+          "a": "Ìfẹ̀ẹ́ fún àwọn olùpèsè tí wọ́n ní ojú àáfín LONASE, ìtọ́jú fún walleti tí o tẹ̀ lo, àti iyara ifúnni tí o ti ṣàyẹ̀wò fúnra ẹ pẹ̀lú àwọn ìsin kékeré kan. Àwọn ìraye funfun túmọ̀ jáde ní ipari."
+        }
+      ],
+      "related": [
+        "betting-in-benin",
+        "betting-in-cote-divoire",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "value-bet",
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ],
+      "_src_hash": "c55b0e68e6045055",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-cote-divoire",
+      "title": "Ìgbájà nínú Côte d'Ivoire: Báwo Ni Ó Ṣe Ṛ̀ún",
+      "nav": "Ìgbájà nínú Côte d'Ivoire",
+      "country": "ci",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Ìgbájà ìṣère tó tóbi jùlọ nínú Áfríkà ní ìkọkọ Faransé: àkéde LONACI, Orange Money / MTN MoMo / Wave ànúfọ̀kan, àti báwo ni a ṣe le yà àwọn olùṣe ìgbajà gidi kúrò nínú àwọn tí kò ye.",
+      "sections": [
+        {
+          "h": "Njẹ ìgbájà legal nínú Côte d'Ivoire?",
+          "ps": [
+            "Bẹẹ ni — ìgbájà jẹ́ oye fún, nínú àkéde LONACI tí ó jẹ́ pàpá alálò ìpín ìṣèlú, àti ìgbájà Ivorian nìkan jẹ́ ọ̀kan nínú tó tóbi jùlọ nínú Áfríkà ìṣère Faransé. Àwọn ìmoléwá àti àwọn kọ̀ọ̀kan járo lohun.",
+            "LONACI kóò ní irinṣè àìdíbo: àwọn olùṣe tó jẹ́ fún rẹ̀ ní àkéde ìgbájà ibádandun, àti àwọn ìmọ́lé àti àwọn kọ̀ọ̀kan tí wọ́n ṣe ìgbájà sí ìgbájà kúrò lodoṣi ibádandun kò lo ohun kankan nínú Abidjan bí òṣoro ba dìde. Nítorí iye ìgbájà tó ga, àwọn ojúèlò mejì jẹ́ àti àwọn ìfẹ̀ẹ̀mọ̀, nítorí ìbéèrè àṣẹ pàtàkì sí ibi yìí, kìí ṣe kó kéré."
+          ]
+        },
+        {
+          "h": "Àwọn ọ̀nà ìfigbalẹ̀: àwọn bag-ọ̀kan, òfin kan",
+          "ps": [
+            "Orange Money, MTN MoMo àti Wave ṣe àkójú àwọn òfin alẹ nítorí gbogbo àwọn rìbá. Òfin tí ó pàtàkì: yan olùṣe ìgbájà tí ó gba ọ̀pọ̀lọpọ̀ rẹ tìran, nítorí ọ̀na ìfigbalẹ̀ láàrin àwọn nẹ́tíwọ̀k ní iye àti ohun kan tí kò le ṣẹ̀ ní ọ̀pọ̀ ohun ara ara.",
+            "Ipari rìbá sí ìyẹn wúlù ẹyọ alẹ nìkan ni agbanyingba gidi láàrin àwọn olè — drili rẹ kékeré káàkiri rẹ tẹ̀ lójú kíkọ̀."
+          ]
+        },
+        {
+          "h": "Ìgbájà ìyé lo rò méjì",
+          "ps": [
+            "Ìtupale nínú àwọn olùṣe ìgbájà fún àwọn olùigba Ivorian túmọ̀ sí àwọn egun tó dára àti àwọn iye ìlé-ìtaun tó yíọ — ṣùgbọ́n púpọ̀ lórí ìgbeḳọ̀ tó rú aroko ìkánkan àti àwọn ìbátan gidi tí kò ye. Egun ńlá àti ìrawo túmọ̀ jẹ́ ọwọ tí kìí ṣe ẹ̀tọ́ àti ẹ̀mọ́ — ó jẹ́ ìṣèdógba-ọ̀dájúmọ̀ ti olùṣe íkòkan arawọ̀ẹ̀ níwájú ẹ tí a rò pé ìwo kìí gba àwọn ìlànà nìkan.",
+            "Àwọn ìtọ̀níjì ìgbeḳọ̀ wa ṣe ewò ní òfin àkúnná kan (turìnúbọ̀ × èrò ìfẹ́ = iye ìfowolọ́ rìbá); ó ṣe àwọn XOF gẹ́gẹ́ bí ìkọkọ gbogbo agbègbè tí ó jẹ́ nǹkan."
+          ]
+        },
+        {
+          "h": "Kíìkà Afará àti òkè ìmọ̀ìkọ̀",
+          "ps": [
+            "Ìgbájà Ivorian jẹ́ kíìkà Afára túmọ̀ — Ligue 1, Premier League, Champions League àti tẹ́èbù tí ó jẹ́ nílẹ̀. Agbérò wa tún àwọn ìpílanwọ̀ Yurópí búa wọ̀n dáradára láti àwọn olùṣe ìgbájà: àwọn òye, àwọn iye tó dárá, àwọn ìyẹ̀ẹ̀ níta àti ìbátan iye-fún-ẹyọ alẹ.",
+            "Ọ̀nà nìkan kò jẹ́ pé agbérò jẹ́ ẹ̀mẹ́ku — ó jẹ́ pé o le ayẹ̀wò iye àìwẹ́wẹ́ fún àwọn òye búa ohun tí a lo ṣẹ̀ tẹ̀lẹ̀."
+          ]
+        },
+        {
+          "h": "Kí ni iye ìgbájà kíìkà ní Côte d'Ivoire?",
+          "ps": [
+            "Àwọn iye ìgbájà jẹ́ àwọn kíìkà túmọ̀ — Ligue 1, Premier League, Champions League àti tẹ́èbù dílì jẹ́ àwọn tí ó tóbi jùlọ. Gídigbégbè àwọn olùṣe ìgbájà ní àwọn iye tí ó dá lórí àwọn ìtupale àti àwọn iye àkụkọ̀."
+          ]
+        },
+        {
+          "h": "Báwo ni a ṣe máa rìn ó lọ́wọ́ nínú àwọn olè ìgbájà nínú Côte d'Ivoire?",
+          "ps": [
+            "Yin àwọn olùṣe ìgbájà tí ó ní irinṣè nínú LONACI àti ìmọ̀ìkọ̀ gidi, drili rìbá nínú àwọn iye kékeré lójú kíkọ̀, àti kọ̀wé àwọn egun ńlá jáde nínú àwọn ìbátan tí kò ye bí àkìyèsi tó le ṣẹ̀ kúrò níbi ohun ìyílèẹ̀."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Njẹ ìgbájà kíìkà legal nínú Côte d'Ivoire?",
+          "a": "Bẹẹ ni — oye fún nínú àkéde LONACI. Ìgbájà nìkan jẹ́ ọ̀kan nínú tó tóbi jùlọ nínú Áfríkà ní ìkọkọ Faransé, olùṣe àti ìmoléwá àwọn kọ̀ọ̀kan járo lohun."
+        },
+        {
+          "q": "Kí ni àwọn ọ̀nà ìfigbalẹ̀ tó ṣe àwọn iṣẹ́ ìgbájà Ivorian?",
+          "a": "Orange Money, MTN MoMo àti Wave ṣe àkójú gbogbo. Yan olùṣe ìgbájà tí ó gba ọ̀pọ̀lọpọ̀ rẹ tìran."
+        },
+        {
+          "q": "Báwo ni a ṣe máa yà àwọn olè ìgbájà lórí Côte d'Ivoire?",
+          "a": "Yin àwọn olùṣe tó ní irinṣè nínú LONACI àti ìmọ̀ìkọ̀, drili rìbá nínú àwọn iye kékeré lójú kíkọ̀, àti rọ̀ àwọn egun ńlá jáde nínú àwọn ìbátan tí kò ye bí ìbẹ̀rù kósi egun dídùn."
+        }
+      ],
+      "related": [
+        "betting-in-senegal",
+        "betting-in-benin",
+        "how-betting-bonuses-work"
+      ],
+      "glossary": [
+        "wagering-requirements",
+        "value-bet"
+      ],
+      "tools": [
+        {
+          "href": "/tools/margin-calculator",
+          "label": "See what a bookmaker actually charges on any set of prices"
+        }
+      ],
+      "_src_hash": "6026482467da886a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-cameroon",
+      "title": "Ṣiṣe Ìtẹ̀jáde ni Cameroon: Báwo ni o Ṣiṣẹ́",
+      "nav": "Ṣiṣe Ìtẹ̀jáde ni Cameroon",
+      "country": "cm",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Ọdọ̀ ìtẹ̀jáde tó tobi jù lọ ni Àrin Afrika: iṣọ́ kan láti ọ̀fìṣì ìjọba, Orange Money àti MTN MoMo fúnra ara wọ́n, àti atokọ́ iṣẹ́-ìfidiótí fún yiyan onídọ̀ oníbaramu ni Cameroon.",
+      "sections": [
+        {
+          "h": "Ṣé ìtẹ̀jáde jẹ́ àṣẹ ni Cameroon?",
+          "ps": [
+            "Báyìí — ìtẹ̀jáde ere akíkọ́ jẹ́ àṣẹ láti ẹ̀kọ́ ìjọba pẹ̀lú ìtọ́sọ́ ti Ministry of Finance, ó sì jẹ́ nǹkan tó gbẹ̀ láàrín ènìyàn: Cameroon jẹ́ ọ̀kan nínú ọdọ̀ ìtẹ̀jáde tó tobi jù ni Àrin Afrika, níbi tí onídọ̀ ti àgbègbè àti àwọn ìbadandun àgbáwo ṣiṣẹ́ pápá.",
+            "Iṣọ́ ni ara tó máa ṣe: onídọ̀ tó ní iṣọ́ kan nínú àgbègbè ló ní èyí tó ríra àti nǹkan tó lè paniyan; pẹ̀pẹ́ tí ń ṣiṣẹ́ láìní àṣẹ ni àgbègbè náà kò fún ẹ ní ọna kan tó ṣẹ́ jù."
+          ]
+        },
+        {
+          "h": "Orange Money àti MTN MoMo",
+          "ps": [
+            "Ọna tó ṣiṣẹ́ pẹ̀lú simu nìkan àti púpọ̀ nǹkan: Orange Money àti MTN MoMo ní àkọ́kọ́ fún gbogbo ọna tó kọ̀ owó wá àti tó gbá owó padà ni XAF. Ọna tó kọ̀ owó wá jẹ́ kíákía; nǹkan tó yàtọ̀ onídọ̀ jù ni iyara tí owó padà ń wá.",
+            "Ìdánwò la kọ́ túmọ̀: owó kékeré kan, àré kan, ìgbépadà kan. Ìyara nínú ìṣẹ́ju-ìṣẹ́ju ni ara àwọn onídọ̀ tó dáa; owó kékeré tí ó dẹ́kun ṣíṣe àyẹ owó àlágbà."
+          ]
+        },
+        {
+          "h": "Iye bọ́ọ̀lù àti ìtúgbọ́sẹ́ ọdọ̀",
+          "ps": [
+            "Ìtẹ̀jáde Cameroon jẹ́ nǹkan tí bọ́ọ̀lù ń ṣe — Indomitable Lions, ìbadandun Yúrópu, àwọn ọlọ́ìpò àgbègbè. Iye tó tobi lórí ọdọ̀ ti ara àgbègbè ń ṣe kí àwọn álẹ́kùn ní ìlà di píìpín kékeré, àyẹ níbi tí olùṣiṣe àkíyèsí tó dógbó dide.",
+            "Lò èròjà ìwéran owó lórí àwọn ìpilẹ̀ àré wa láti wo ìbadandun tó fi owó púpo jù lọ fún àwọn àbájáde kanna, àti ìmòye ero ṣíṣe túmọ̀ bóyá iye kan lè ṣe ẹ̀ tó jẹ́ ìkà túmọ̀."
+          ]
+        },
+        {
+          "h": "Atokọ́ yíyan àjọ",
+          "ps": [
+            "Iṣọ́ ti àgbègbè kọ́kọ́, àlàfo rẹ̀ níní ìlayé tó kúkú kálọ̀ kejì, ìyara ìgbépadà àwòfin kẹtà, iye ọdọ̀ kẹrin, àwọn ìfara ẹwà dógún. Odidi ìṣẹ́ yẹn ní àyò: ohun kọ́kan tí ó ṣẹ́ ṣáájú nwọ́n lè gbé gbogbo nǹkan tí ó ṣẹ́ níẹ́yin dé ìparun.",
+            "Àti òfin tó ríra fún ọdọ̀ eyikeyi: owó tí o kò lè rìn àìlẹ́wù kò gbọdọ̀ sí àkáwo ìtẹ̀jáde rẹ. Ìtúkọsọ́ owó wa ní nǹkan tó ní ohun èlò."
+          ]
+        },
+        {
+          "h": "Àwọn ọ̀rọ̀ tí ènìyàn ń beèrè",
+          "ps": [
+            "Ṣé ìtẹ̀jáde ere akíkọ́ jẹ́ àṣẹ ni Cameroon?",
+            "Báyìí — àṣẹ nìkan pẹ̀lú iṣọ́ ti àgbègbè àti ìtọ́sọ́ ti Ministry of Finance. Ọdọ̀ iyẹn jẹ́ ọ̀kan nínú tó tobi jù ni Àrin Afrika, níbi tí ọ̀kan nínú àgbègbè àti àwọn ìbadandun àgbáwo ṣiṣẹ́."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ṣé ìtẹ̀jáde ere akíkọ́ jẹ́ àṣẹ ni Cameroon?",
+          "a": "Báyìí — àṣẹ nìkan pẹ̀lú iṣọ́ ti àgbègbè àti ìtọ́sọ́ ti Ministry of Finance. Ọdọ̀ iyẹn jẹ́ ọ̀kan nínú tó tobi jù ni Àrin Afrika, níbi tí onídọ̀ ti àgbègbè àti àwọn ìbadandun àgbáwo ṣiṣẹ́."
+        },
+        {
+          "q": "Báwo ni mo ṣe lè kọ̀ owó wá sí àwọn pẹ̀pẹ́ ìtẹ̀jáde Cameroon?",
+          "a": "Orange Money àti MTN MoMo ní àkọ́kọ́ fún gbogbo ọna ìsin iye ni XAF. Ọna tó kọ̀ owó wá jẹ́ kíákía níbi onídọ̀ tí ń gbalẹ̀ simu rẹ kìkì."
+        },
+        {
+          "q": "Kí ni ìdánwò tó ṣe ìwájú jù kí o bá rẹ gba àìlẹ́wù ni Cameroon?",
+          "a": "Iṣọ́ kan ti àgbègbè kọ́kọ́, ànísinní iṣọ́ kan pẹ̀lú simu rẹ kejì, iyara ìgbépadà tó ni ìfidiótí pẹ̀lú owó kékeré kẹtà. Àwọn ìfara ẹwà lòdì."
+        }
+      ],
+      "related": [
+        "betting-in-nigeria",
+        "betting-in-cote-divoire",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bankroll-management",
+        "expected-value"
+      ],
+      "tools": [
+        {
+          "href": "/tools/accumulator-calculator",
+          "label": "Price a coupon honestly before you place it"
+        }
+      ],
+      "_src_hash": "b3162a6904d62b6f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-zambia",
+      "title": "Àgbéjú Owó Ìbáji ní Zambia: Báwo Ni Yóò Ṣe Lọ",
+      "nav": "Àgbéjú Owó Ìbáji ní Zambia",
+      "country": "zm",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Irinṣẹ Betting Control Act Zambia: àwọn olupilẹ̀ẹ́ fún àkójọ, MTN MoMo / Airtel Money / Zamtel Kwacha ìṣẹ̀dá owó, àti pápá tí ìlọsíwájú owó bọ́ọ̀lù dá tó.",
+      "sections": [
+        {
+          "h": "Njẹ́ àgbéjú owó ìbáji jẹ́ ò?",
+          "ps": [
+            "Bẹ́ẹ̀ ni — àgbéjú owó ò ní ìfẹ́ labẹ́ Betting Control Act, tí Àgbáyé Ìyẹ̀ Owó ń ṣàkóso nípa Ìpilẹ̀ Aṣẹ Àgbéjú Owó Ìbáji. Àwọn olupilẹ̀ẹ́ fún àkójọ ní ibòdo Zambia ni ipilẹ̀ pápá.",
+            "Àwáríṣà fúnra rẹ̀ ní idají àkọ́kọ́, gẹ́gẹ́ bí ní ibikibi: olupilẹ̀ẹ́ ti Zambia tí a fúnra rẹ̀ ní àṣẹ dábọ̀ sí agbájọ tí ó wà níbìnú, ṣùgbọ́n èlòmọ̀ ibajẹ kò sì ṣe bẹ́ẹ̀. Pápá tí ó ń dà tó yíì, àwọn olùpilẹ̀ẹ́ títun ń dé ní gbogbo ìrèjì — ìpilẹ̀ irinṣẹ nì ó ṣe èyí tó di oníwo àbàdà kúrò nínú àwọn tí ó jẹ́ oníwo ìrékójú."
+          ]
+        },
+        {
+          "h": "Àwọn ibadandun mẹ́ta tá mu pápá",
+          "ps": [
+            "MTN MoMo, Airtel Money àti Zamtel Kwacha ní àwọn ìgbáyanjú owó tí a gba nísẹ̀lẹ̀; kadi awo ìdi òpó nìkan. Àwọn owó tí a fi sínú ọ́nà àdéhùn ń wá ogún ìsiégúnsiégún ni àwọn olupilẹ̀ẹ́ tí ó ní ìfẹ́wò owó tí ó pẹ́ níbòdò rẹ̀.",
+            "Ká tí ó ṣe pátàkì àpẹ́ẹ̀ rẹ̀ ní ìtẹ̀jú àti àbẹ̀lẹ owó padà sí ibadandun rẹ ní kwacha — ṣe àyẹ̀mọ̀ pẹ̀lú owó kékeré ṣaájú tí ó gbé owó tó pọ̀ sí ìlú. Olupilẹ̀ẹ́ tí ó san K100 ní ìwọ̀ntúnwọ̀ntún ti rú ìdáwọ́ọ̀ tí ó tọ́ka jù."
+          ]
+        },
+        {
+          "h": "Ìṣìṣẹ pápá tí ó tò kún",
+          "ps": [
+            "Pápá àgbéjú owó Zambia ń dà tó gan-an, èyí túmọ̀ pé àwọn olupilẹ̀ẹ́ ń pẹ̀lú ní àwọn ìbéèrè owó. Ẹ ká bàlò nípa ìbéèrè kọ̀ọ̀kan pẹ̀lú ìwọ̀n tí ó dè díẹ̀ — owó tí a beere ki àgbé ó san × ìjúìwọ̀ tú = iṣẹ́jọba owó rírò — kí o tó ṣe àgbéjú owó rẹ̀ ní òfin kò nìkan.",
+            "Ìlọsíwájú owó tó pẹ́ pẹ̀lú àbáyị́ ìgbé olupilẹ̀ẹ́: àwọn ìtàn àìlọ́gbẹ̀ jẹ́ pùpọ̀ kékéré níàká, nítorí ìpilẹ̀ pẹ̀pẹ̀, àgbé owó kékeré àti àbẹ̀lẹ owó ní àsìkò ẹ̀ẹ́kan ní iṣu jù lọ níbí àti yọ ni àwọn pápá tí ó ópọ̀."
+          ]
+        },
+        {
+          "h": "Bọ́ọ̀lù àti àwọn ìdá wa",
+          "ps": [
+            "Àwọn àgbéjú owó tó ní ifá ní Zambia tẹ̀lé bọ́ọ̀lù — Chipolopolo, Premier League, Champions League. Ìwọ̀n owó wa tú èdè àrọ kọ̀ọ̀kan: àgbádá ìlòrí, àwọn owó ó tọ́, àwọn àkórí àgbádá tó ní ìjìjì kù síi, àti ìwọ̀nba ìta níṣẹ̀lẹ̀ ti ohun ìbúkun kọ̀ọ̀kan náà.",
+            "Kò sí àmì pé á máa ṣe oó owó; á fún yin ní nọ́mbà àkọ́kọ́ láti dúró sí Price kọ̀ọ̀kan pẹ̀lú."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Njẹ́ àgbéjú owó ò ní ìfẹ́ ní Zambia?",
+          "a": "Bẹ́ẹ̀ ni — tí a fúnra rẹ̀ ní ìfẹ́ àti aṣẹ labẹ́ Betting Control Act, pẹ̀lú ìṣàkóso láti Àgbáyé Ìyẹ̀ Owó. Àwọn olupilẹ̀ẹ́ fún àkójọ ní ibòdo Zambia ni ipilẹ̀ pápá."
+        },
+        {
+          "q": "Báwo ni mo ó le fi owó sínú àwọn ẹ̀jà àgbéjú owó Zambia?",
+          "a": "Owó alárinṣẹ̀dá ní ipilẹ̀: MTN MoMo, Airtel Money àti Zamtel Kwacha. Yan olupilẹ̀ẹ́ tí ó ní ìfẹ́wò pẹ̀pẹ̀ fún ibadandun rẹ."
+        },
+        {
+          "q": "Njẹ́ àwọn ìbéèrè owó Zambia ní iye?",
+          "a": "Ẹ ká ìwọ̀n ìbéèrè kọ̀ọ̀kan: owó tí a beere ki àgbé ó san × àìrú ìkẹ̀kọ̀ọ̀ = iṣẹ́jọba owó rírò. Tí ìbéèrè owó dá àìrú náà ní ibalopọ̀ sẹ́yìn àti àkókò kìikií pẹ̀lú òníjèjè, ó ní iye ìgbàpadà; àìbá bẹ̀ẹ̀, ẹ kọ̀ í."
+        }
+      ],
+      "related": [
+        "betting-in-south-africa",
+        "betting-in-tanzania",
+        "wagering-requirements-explained"
+      ],
+      "glossary": [
+        "wagering-requirements",
+        "value-bet"
+      ],
+      "tools": [
+        {
+          "href": "/tools/margin-calculator",
+          "label": "The margin number that prices any bonus's clearing cost"
+        }
+      ],
+      "_src_hash": "4f1f8f26210c00ae",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-togo",
+      "title": "Ibadandun ni Togo: Bawo ni O Se Gbe",
+      "nav": "Ibadandun ni Togo",
+      "country": "tg",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Oja ibadandun Togo ti LONATO-dida: Flooz ati T-Money gege bi onirun-owo, football European bi ohun ti a gbe pupo, ati bawo ni o se le ibadandun ni oye ni oja-kekere ti mobile-akoko.",
+      "sections": [
+        {
+          "h": "Njẹ ibadandun ni ilana ni Togo?",
+          "ps": [
+            "Bẹẹni — ibadandun wa labẹ iyewo-ilu nipa ẹlẹgbẹ ẹtẹ-tẹ LONATO, irufin-ẹtẹ-tẹ kanna bi ẹgbẹ arẹwa-ilẹ French Togo. Awọn oniṣe ayelujara ati ijọba sin oja-yii.",
+            "Oja kekere, ofin ti a le: awọn oniṣe ti o ni ero labẹ LONATO ni awọn ti a le gbẹkẹle. Ohun gbogbo ti o ba tun si ilu ijirisi ko ni iretilẹyin."
+          ]
+        },
+        {
+          "h": "Flooz ati T-Money",
+          "ps": [
+            "Oja yii ye patapata mobile, ati Flooz ati T-Money (pẹlu Moov Money) máa se ọna fun ifun ati yiyọ-ife ninu XOF. Oniṣe kan ti o bá ni iranlọwọ ti o di ara-ara fun ọfọ rẹ jẹ iṣirẹ akọkọ ti ara.",
+            "Gẹgẹbi ojúkòkò nile-nile, idanwo ibadandun ni iyọ kekere. Lo iyọ naa ṣaaju ohun-ini ti o pọ — iyara ifun ni ibadandun ti awọn oniṣe ya sọto ni pataki, ati idilẹ kekere se asotele idilẹ ti o gara."
+          ]
+        },
+        {
+          "h": "Football European nfa oja",
+          "ps": [
+            "Ifẹ ibadandun Togo tẹjumọ ẹwà England ati ẹwà French — Premier League ati Ligue 1 loke-loke. Awọn oja yii ni ofin, pẹlu iwin-aje ti o sunmo ara, ti o dara fun onibadandun ti o dara.",
+            "Iriro wa se awọn iwe yii iṣẹlẹ-si-iṣẹlẹ: iṣeeṣe, aje-ti-o-di-tọ ati iwe-aje fun akanfiri, ohun gbogbo ti o sokan fun oniṣe."
+          ]
+        },
+        {
+          "h": "Ibadandun ni oja-kekere dara",
+          "ps": [
+            "Ni awọn oja ti o ke, awọn ọranyan ati sisẹ-iwin ma gbe ọranyan ti ayelujara — se iwin-aje-wọn pẹlu ṣiṣẹ oṣowo × iwin ṣaaju kigbe ohun nkamọ. Ati gba awọn ofin agbaye: owo ti o le pa-lo-run, owe ti o wulo, yiyọ ṣaaju.",
+            "Ogun-alaye rọ pẹlu: awọn oju-iwe ti o fẹẹ ti a lo ju ọra kere lo jẹ anfani ti ara-ara ni ohun gbogbo ti orile-ede."
+          ]
+        },
+        {
+          "h": "Awọn iwe-ẹbun (bonus) ati irun-iyin-iwin",
+          "ps": [
+            "Bonuses ni awọn oniṣe gbe nigbati o lo gbawọ pẹlu onibadandun-ọla. Ṣiṣẹ ariyanjiyan nile nipa ipin-araye (turnover requirement) ati iwin ati a se ariyanjiyan sida ti iyatọ rẹ.",
+            "Ilẹkun gibidi: aje-aye ti a yari ju ti bonuses lori agbere pẹlu oṣogun ti yiyọ-ife ọla — tan-an ojutu rẹ."
+          ]
+        },
+        {
+          "h": "Ṣiiṣẹ oloro-ilu (responsible gambling)",
+          "ps": [
+            "Iye owo fun ibadandun ni pẹlu itẹ-aro: ṣe itẹ-aro akoko-sẹ, ṣe itẹ-aro ọna akoko, ati duro ni agbara. Alaye ti LONATO ti o fẹ je ifẹ nile-nile.",
+            "Ojukọ ti o duro fun ọla lojiji ti ibadandun ti o ro: duro-mu ni ero-owo ti o ma gba ọla, ati gba iṣẹlẹ ti o ma gba bi arọ. 18+ nikan."
+          ]
+        },
+        {
+          "h": "Iwe-aje-aje (odds comparison)",
+          "ps": [
+            "Aje yi wọpọ fi si Togo — Premier League ti a yan fun akọkọ iwe-aje. Iwe ni ẹgbẹ iṣẹlẹ nini: 1.50 si 2.50 ni awọn iṣẹlẹ ti o jẹ agbara, 3.00 si 5.00 fun ita-ite.",
+            "Oniṣe rẹ yẹ ko yẹ kọ aje nifa ti iwin akoko-tẹ to ju itọtọ lori ọna-aiye."
+          ]
+        },
+        {
+          "h": "Flooz-ile ati T-Money-ile ti o dara julo",
+          "ps": [
+            "Ni Togo, Flooz ati T-Money ti o ni iyewo LONATO yẹ fun ibadandun. Jẹrisi wẹnwẹn — ijiya kekere ni xof, iyara ju oṣu kan lo.",
+            "Oniṣe gidi yẹ ko yẹ iye ifun ti o pọ niwaju itẹ-aro. Ifun ti o kere ninu XOF, iyin ti o rọ asiko-koko, ki o se ayipada."
+          ]
+        },
+        {
+          "h": "Aṣa ti o tọ fun onibadandun Togo",
+          "ps": [
+            "Owe kekere, ile-iwe akoko, duro ni agbara. Ake kekere ti ifun — 1-2% ti owo ti o ba wa — yẹ ko yẹ nkan naa lati se apo ti o dun dun.",
+            "18+ nikan. Oluwo ti o ba nilo iranlọwọ: LONATO ni ipadé iranlọwọ oloro-ilu ti o wa fun itọnisọna."
+          ]
+        },
+        {
+          "h": "Iparun ti o lẹkunja",
+          "ps": [
+            "Onibadandun ti o lo iye owo ti o kau ni inawo: nkan yii wa ni opolo ilẹ nitori aje ti iyatọ. Ọraṇ-ilu yii de: ỳàrá-tí-ẹ-àrá-ẹ fun iye-owo ti o gba akoni.",
+            "Oniṣe ti o fa akoni lẹkunja: yin.yin.com ati labarinko-ilẹ yẹ ko nilo iparun re"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Njẹ ibadandun ni ilana ni Togo?",
+          "a": "Bẹẹni — labẹ iyewo ilu nipa ẹlẹgbẹ ẹtẹ-tẹ LONATO, pẹlu awọn oniṣe ayelujara ati ijọba."
+        },
+        {
+          "q": "Bawo ni mo se iṣẹ owo ni awọn site ibadandun Togo?",
+          "a": "Flooz ati T-Money máa se ọna fun iye ifun, pẹlu Moov Money ti o fo iye nkamọ. Yan oniṣe ti o ni iranlọwọ di ara fun ọfọ rẹ."
+        },
+        {
+          "q": "Football ewo ni a gbe pupo ni Togo?",
+          "a": "Ẹwà England ati ẹwà French máa se ifun-aje — Premier League ati Ligue 1 loke-loke. Iriro wa se awọn ẹwà yii julo."
+        }
+      ],
+      "related": [
+        "betting-in-benin",
+        "betting-in-senegal",
+        "how-to-read-betting-odds"
+      ],
+      "glossary": [
+        "odds-formats",
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Any price into implied probability, one step"
+        }
+      ],
+      "_src_hash": "fe0a52d7487aaac9",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-burkina-faso",
+      "title": "Iwe-ẹbẹ ni Burkina Faso: Bawo ni O Ṣiṣẹ",
+      "nav": "Iwe-ẹbẹ ni Burkina Faso",
+      "country": "bf",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Ètò LONAB-idọ̀kan ti Burkina Faso, Orange Money ati Moov Money fun owo-iṣiro, ati idi ti aami-karoọ̀kan (app weight) jẹ́ àkọ́se-ọ̀nà gbajúmọ̀ gidi nínú ọjà yìí.",
+      "sections": [
+        {
+          "h": "Ṣe iwe-ẹbẹ jẹ́ ohun ti a ṣe-àṣẹ ni Burkina Faso?",
+          "ps": [
+            "Bẹ́ẹ̀ ni — iwe-ẹbẹ-akanṣe ṣiṣẹ́ lábẹ̀ akawe ìjọba tí ó dọ̀kan sí LONAB, ìlérò-ìjọba-ẹran agbègbè; ajé-ìjọ̀gbẹ́ àti àwọn olúṣiṣẹ́ aárin-nígbà tún n-iṣẹ́ níbo. Àwọn àkójọ Faranse nílẹ̀ West Africa nì ẹ̀kó nìyẹn: LONAB dá ipilẹ̀ fún ètò àṣẹ.",
+            "Ọna-ìdánilẹ̀ jo ṣe tẹ́lẹ̀ LONAB: olúṣiṣẹ́ làábẹ̀ akawe yẹn ní agbo-ibadandun nìhìn ilẹ̀. Àwọn akawe-ìjìn-ìlẹ̀ le máa ìṣiro dáadáa dájú, ṣùgbọ́n ẹbẹ tí ó dákẹ́ kò ní ìmọ̀ran òfin nìhìn ilẹ̀."
+          ]
+        },
+        {
+          "h": "Orange Money ati Moov Money",
+          "ps": [
+            "Iṣiro-owo tẹ́tẹ́ lọ́ gbinrin nítòrí ówó-fóònù — Orange Money ati Moov Money ní agbára ilẹ̀gbasán-un. Agbẹbọ XOF de ṣíṣẹ́ lẹ́yìn rọ́pọ̀ lẹ́sẹ̀kẹsẹ̀ sí awọn olúṣiṣẹ́ tí ó ní àtu-ìfẹ́sọfọ̀mọ ẹ̀mì-ilo; iyara sisankọ padà sí akọ̀ ẹda ni onka ijuwe ti o ya olúṣiṣẹ̀ lokan lọ́wọ́.",
+            "Idan kekere-kekere koko àjẹ́ ṣaájú ipẹ̀kú àti àbojúisẹ̀ ni òfin níyẹn bákan naa ní gbogbo eniyan: ṣíṣẹ́ rọ́pọ̀ kíkía kan ṣe àtẹ́ọ́yin fún ọ jù ìkẹkọ̀ọ eyíkéyìí."
+          ]
+        },
+        {
+          "h": "Idi ti aami-karoọ̀kan (app weight) ṣe pàtàkì níbi yìí",
+          "ps": [
+            "Àsè-ídìbá àmì ṣe onka gbajúmọ̀ gidi nínú Burkina Faso — àpilẹkọ abinibi ti ó rukú orí-ìṣiro méèméèsì-sìdì fun ooṣu kan le jẹ́ owó odù. Àwọn olúṣiṣẹ́ àmìnúra ju àwọn alẹ́jò òkùnkun lọ́; iyatọ̀ láárín wọn le tobi ju àyè-ẹbẹ pupọ̀ lọ́.",
+            "Àwọn ojúewé àtijọ wa naa a kin keko nìwájú fúnni idi kanna: àwọn tábìlì-ìdìjì de ní àlẹ́méèméèsì-bàítì, kìi ṣe àlẹ́méèméèsì-bàítì."
+          ]
+        },
+        {
+          "h": "Àkójọ-àṣèsù ti àjẹ̀-arankin",
+          "ps": [
+            "Agbo LONAB akọkọ́, akọ-owo-rẹ tí ó ṣe-àṣẹ lálẹ̀ kẹjì, iyara ẹbẹ tí a ṣe-èrìtítò kẹta, aami-karoọ̀kan kẹrin, àyè-ẹbẹ ìkẹhin. Àwọn nkan-àrídájú ti àrídájú tẹ̀ le tu òpọ̀ nkan ti wọ́n bẹ̀ẹ́ lẹ́yìn rẹ̀.",
+            "Àti òfin ìfẹ́nujijì jẹ́ àkótán: owo-ẹka ẹ̀dọ̀, owo ti o le rora lái lẹ̀, àtúrá ìgbìmì kìkía. Ìtọ́nà-àkánṣe ètò òkúta lo wí ìṣajú àkọnlé nìwájú."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ṣe iwe-ẹbẹ-akanṣe jẹ́ ohun ti a ṣe-àṣẹ ni Burkina Faso?",
+          "a": "Bẹ́ẹ̀ ni — lábẹ̀ akawe ìjọba tí ó dọ̀kan sí LONAB ìlérò-ìjọba-ẹran agbègbè, pẹ̀lú àwọn olúṣiṣẹ́ aárin-nígbà ati gbalẹ̀jọ n-iṣẹ́ nínú ọjà."
+        },
+        {
+          "q": "Báwo ni mo ṣe de ṣeé owo sí àwọn oju-iwe-ẹbẹ ni Burkina Faso?",
+          "a": "Orange Money ati Moov Money ní agbára ilẹ̀gbasán-un; iṣiro-owo ṣiṣẹ́ nínú XOF ati de ṣíṣẹ́ lẹ́sẹ̀kẹsẹ̀ sí awọn olúṣiṣẹ́ tí ó ní àtúgbà-akọ ẹdá."
+        },
+        {
+          "q": "Idi wo ni awọn eniyan n-ṣabọ̀n karoọ̀kan-aami-kekere nínú Burkina Faso?",
+          "a": "Àsè-ídìbá àmì n-fe ọnà gidi, níyẹn karoọ̀kan-aami-kekere tàbi oju-iwe tó kù-kù lówo ká lo nínú àtìtò-akókan. Je karoọ̀kan-aami níbi ìṣèkan-ọn ìpilẹ̀ kannáa àpọ̀ iyara ẹbẹ àti àyè-ẹbẹ."
+        }
+      ],
+      "related": [
+        "betting-in-mali",
+        "betting-in-benin",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bankroll-management",
+        "value-bet"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Lightweight odds conversion that works on any connection"
+        }
+      ],
+      "_src_hash": "9101c4007009c994",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-mali",
+      "title": "Ìdílẹ̀ Ajẹ̀ ní Máli: Báwo Ni Ó Ṣiṣẹ́",
+      "nav": "Ìdílẹ̀ Ajẹ̀ ní Máli",
+      "country": "ml",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Àpẹẹrẹ ajẹ̀ Máli tí a gbatẹ̀ ní agbálà mọ́ọ́tu ìjọba, Orange Money gẹ́gẹ́ bí ọ̀nà àìlọ́kọ̀, àti báwo ni fúdbọ̀ọ̀lù ìlẹ̀ Yúrópu ṣe ní ẹbọ̀ jù lára àwọn ẹ̀kó ajẹ̀ Máli.",
+      "sections": [
+        {
+          "h": "Ṣé ìdílẹ̀ ajẹ̀ jẹ́ bí ìjọba ló sábà ní Máli?",
+          "ps": [
+            "Báyìí — ìdílẹ̀ ajẹ̀ ń iṣẹ́ labẹ́ ìmọ̀ràn-oríṣun ìjọba, a kó nínú àpẹẹrẹ agbálà mọ́ọ́tu aládé, àti àwọn oníṣẹ́ tó wá láwa àti tí wá láti ìlú òkèrè ń ṣiṣẹ́ níbẹ̀. Ọ̀pẹ̀ ẹ̀dá ni ẹ̀dá à sàbẹ̀sàbẹ̀ àwọn ará Malijání ló ń lò.",
+            "Òpọ̀lọ́ àtẹ́jáde: àwọn oníṣẹ́ tó ní ẹ̀kó wàtà nínú ìfihàn inú àpẹẹrẹ yẹn ó dá léhìn ìjọba ní àgbèégbè; àwọn àgó ìlú ọjọ òkèrè kò dá léhìn ohun kankan. Níbi tí àwọn ẹ̀rọ tuntun máa ń bọ̀ lọ̀wọ́ àti máa ń máa lọ lávaraka, iyawo ìpín yẹn ni ìmọ̀ràn àkọ́kọ́."
+          ]
+        },
+        {
+          "h": "Orange Money ní ìdíwọ̀ ìṣẹ̀dìí",
+          "ps": [
+            "Owó fóònù ń ṣiṣẹ́ bí ìrísí gbogbo agbekalẹ̀ àti gbà àwọn owó jáde, Orange Money ni agbekalẹ̀ ìdíwọ̀ ìṣẹ̀dìí, Moov Money ni ẹ̀kẹ́jì. Agbekalẹ̀ XOF máa wá nínú àsìkò kékeré fún àwọn oníṣẹ́ tó ní ìlànà àgbèégbè tí ó jòjù.",
+            "Iyara gbà owó jáde ni ẹ̀yà tó ṣàyánì — gba ètò kan kékeré kí o ríran àti àyẹ ọkọ̀ ni àwọn olùṣẹ̀ ọnà ìkọ̀kọ̀ tún mọ̀. Gbà owó jáde tí ó wà lávaraka lọ́hùn ní iwọ̀n K5,000 ni àmì-oníìmọ̀ràn-inú tíìkọ̀kọ̀ tó ṣe ìlànà bákan náà fún owó ńlá."
+          ]
+        },
+        {
+          "h": "Fúdbọ̀ọ̀lù ìlẹ̀ Yúrópu ni ọ̀gbẹ́ rò",
+          "ps": [
+            "Àfetísí ẹ̀kó ajẹ̀ Máli dá lẹ̀ nínú fúdbọ̀ọ̀lù ìlẹ̀ Yúrópu — Premier League, Ligue 1 àti Champions League ní ẹ̀gbẹ́ ìrísí. Àwọn ìgbálódé wọ̀nyí ní ọ̀pọ̀ ọ̀nà ìpẹ́sẹ̀ àwọn àkàn àti ẹ́kó tí ó ṣoro jù.",
+            "Wọ́n pẹ̀lú níbi tí àpẹ̀ wa ní ní ọ̀gbọ́ ní mẹ́ta: ẹ̀ro-ìmọ̀ràn tí ẹ̀to ò láyẹ̀, àkàn tí ó dọ́gba, ìpẹ́sẹ̀ ijìdájú tó ni ìbùkun jù, àti ìkòkò àkàn àwọn oníṣẹ́ ara ibẹ̀, báwó ó ṣe lè mú àwọn owó-ẹ̀kó kákárí tí oníṣẹ́ kélòó ní ìbùkun."
+          ]
+        },
+        {
+          "h": "Ìrìnrọ̀ ní ọ̀jó tí fóònù ní agbára",
+          "ps": [
+            "Àwọn ofin àìrẹ́dìtì ń ṣiṣẹ́ nípa agbára nla: owó ajẹ̀ tí ó rúfin fún ọ ní àti lẹ́kẹ̀, dá owó ajẹ̀ kan-ní-owó, gba ọ̀dọ̀ ẹrù ẹ̀rò àti ẹ̀sẹ̀ pẹ̀lú dípò kí iwọ̀n owó máa lọ sí inú ìṣòro. Àwọn ẹ̀bùn ojúlọwọ́ gbọdọ̀ wá jìn àrìtmẹ̀tìkú àìkan — ìṣẹ̀pẹ́ ìlòwọ́ × agbárá ìtí = ohun tí ìnì àtúnfẹ́ jẹ́.",
+            "Àwọn ojú-ìdíwọ̀ kékeré ní ìbùkun níbẹ̀: iyara àkójú owó ó ṣe àfipilẹ̀ àwọn oníṣẹ́ (àti àwọn ìfihàn àlágbèéwò) tó tí wúli nípa nìbò tó kékeré."
+          ]
+        },
+        {
+          "h": "Ṣé ìdílẹ̀ fúdbọ̀ọ̀lù jẹ́ bí ìjọba ló sábà ní Máli?",
+          "ps": [
+            "Báyìí — labẹ́ ìmọ̀ràn-oríṣun ìjọba, a kó nínú àpẹẹrẹ agbálà mọ́ọ́tu aládé, àwọn oníṣẹ́ tó wá láwa àti láti ìlú òkèrè ń ṣiṣẹ́."
+          ]
+        },
+        {
+          "h": "Ohun tí àwọn ará Máli máa fún owó ajẹ̀ jù?",
+          "ps": [
+            "Fúdbọ̀ọ̀lù ìlẹ̀ Yúrópu — Premier League, Ligue 1 àti Champions League ni àwọn ijìdájú tí wọ́n ní agbára nla. Àwọn ọ̀nà ìpẹ́sẹ̀ wọ̀nyí pẹ̀lú àwọn à ní ọ̀pọ̀ àkàn àti ẹ́kó tí ó ṣoro jù."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ṣé ìdílẹ̀ ajẹ̀ fúdbọ̀ọ̀lù jẹ́ bí ìjọba ló sábà ní Máli?",
+          "a": "Báyìí — labẹ́ ìmọ̀ràn-oríṣun ìjọba, a kó nínú àpẹẹrẹ agbálà mọ́ọ́tu aládé, àwọn oníṣẹ́ tó wá láwa àti láti ìlú òkèrè ní iṣẹ́."
+        },
+        {
+          "q": "Kíni ọ̀nà agbekalẹ̀ àkọ́kọ́ fún ìdílẹ̀ ajẹ̀ ní Máli?",
+          "a": "Orange Money ni agbekalẹ̀ ìdíwọ̀ ìṣẹ̀dìí, Moov Money ni ẹ̀kẹ́jì. Owó fóònù ń ṣiṣẹ́ gbogbo agbekalẹ̀ àti gbà owó jáde ní XOF."
+        },
+        {
+          "q": "Kíni tí àwọn ará Máli máa fún owó ajẹ̀ jù?",
+          "a": "Fúdbọ̀ọ̀lù ìlẹ̀ Yúrópu — Premier League, Ligue 1 àti Champions League ní àwọn ijìdájú tí wọ́n ní agbára nla. Àwọn ọ̀nà ìpẹ́sẹ̀ wọ̀nyí pẹ̀lú àwọn ìṣẹ̀dìí tí ó dọ́gba jù."
+        }
+      ],
+      "related": [
+        "betting-in-burkina-faso",
+        "betting-in-senegal",
+        "value-betting-explained"
+      ],
+      "glossary": [
+        "value-bet",
+        "expected-value"
+      ],
+      "tools": [
+        {
+          "href": "/tools/accumulator-calculator",
+          "label": "Price a coupon honestly before you place it"
+        }
+      ],
+      "_src_hash": "09eedac6d2aeff51",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-niger",
+      "title": "Ìbẹ̀rẹ̀ Àgbájọ ni Niger: Báwo ni O Ṣe Ṣiṣẹ́",
+      "nav": "Ìbẹ̀rẹ̀ Àgbájọ ni Niger",
+      "country": "ne",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Ètò LONANI Niger, Airtel Money àti Orange Money, àti ìbẹ̀rẹ̀ àgbájọ ti ìwọ̀n ara ẹni ni ọ̀kan nínú àgbègbè tí ó kéré jù lọ nínú ìpaá ìbájọ pẹ̀lú òòjìá.",
+      "sections": [
+        {
+          "h": "Ṣe ìbẹ̀rẹ̀ àgbájọ jẹ́ onítọ̀ ni Niger?",
+          "ps": [
+            "Bẹ́ẹ̀ ni — ìbẹ̀rẹ̀ àgbájọ wà lábẹ́ ìṣàkóso ìbá nípa LONANI, ọ̀tá-jáde ílẹ̀ àgbègbè, ètò ìpaá tí a gúnrádíèsì kiri ìpaá Gúsu West Africa tí a sọ ní àrá Faransé. Ẹ̀kan ní ọ̀pọ̀ ìbájọ kọ́kọ́ pẹ̀lú ẹ̀kọ́ òóùjì.",
+            "Ẹ̀kan kéré ni òpópò àgbájọ ta àgbájọ àkọ́tun, ìwé ìbẹ̀rẹ̀ dín àkítá nì: pilẹ̀ àgbájọ tí wọ́n ní ìtì-ẹ̀rín lábẹ́ ètò LONANI àti ẹ̀rín àkúnlẹ̀ tí o lè ṣàyẹ̀wò kọ́ẹ́kan."
+          ]
+        },
+        {
+          "h": "Airtel Money àti Orange Money",
+          "ps": [
+            "Airtel Money àti Orange Money ní iṣẹ́ àṣà àgbà, pẹ̀lú Zamani Cash tí ó bo àpá tí a kù. XOF ìdíbẹ́ jẹ́ ìṣẹ́jú ní àgbájọ tí ó ní ìtìlẹ́yìn-ìpaá oóùjì.",
+            "Àbá tí ó ṣiṣẹ́ ní gbogbo ayé ṣe pataki jù lọ níhìnì: ẹ̀kan kéré nínú ìgbà, íṣẹ́jú-àkọ̀kọ̀. Nínú ẹ̀kan àgbájọ kéré, ígbé ìpadà nín pẹ̀lú àgbájọ òòkúnrin àkọ́tun-àkú ju ìyẹ̀ odì àgbájọ lọ."
+          ]
+        },
+        {
+          "h": "Kí nínú ẹ̀kan àgbájọ kéré ń ṣọ fún ẹ̀yà àgbájọ",
+          "ps": [
+            "Ìdápadà onísàkó nípa ẹ̀̀kan ìgbà ní a ó rí agbèròjìa kéère ìpaá àgbájọ òòkúnrin àkó — tí ó já áwọ̀n àpá méjì. Ìyẹ̀ agbèròjìa pẹ̀lú ètò ìbáamu iṣẹ́ × ẹ̀rín, àti ìdíbẹ́ odì kúkan lánà ẹ̀rín àbádábì àlàáfíà.",
+            "Nǹkan àbádábì yẹn ní kí ètò wa ní pèlé: àìpèlé-àgbájọ àti odì tí ara ẹ̀ni ní fún ọ̀nà-àgbájọ Yúrúpù tí ó bòwó ní ìlà àgbájọ Niger."
+          ]
+        },
+        {
+          "h": "Àwọn tó gbódò kàn",
+          "ps": [
+            "Ìtìlẹ́yìn lábẹ́ ètò LONANI, ìtìlẹ́yìn àșà fún ọ̀pá oóùjì rẹ, ìyẹ̀ ìpadà tí a dánilọ́jú àti àwọ̀n ojúelé tí ara-wọ́n ọ̀nà - i kìnnì agbèròjìa. Àti àwọ̀n òfìn ìgbé tó ṣe pàtàkì ní gbogbo ẹ̀kan: ẹ̀ka-àgbájọ oríko, ẹ̀ka-àlẹ̀ onínọ́, ìpadà ìbáasèyìn tó pẹ̀lú ẹ̀kan.",
+            "Ìwé àgbájọ-ẹ̀mi jẹ́ alábere àwọ̀n ètò ìbáamu iṣẹ́ nítorí pẹ̀lú."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Ṣe ìbẹ̀rẹ̀ àgbájọ àgbègbè jẹ́ onítọ̀ ni Niger?",
+          "a": "Bẹ́ẹ̀ ni — lábẹ́ ìṣàkóso ìbá nípa LONANI. Ẹ̀kan àgbájọ wa kéré àti ó ṣàìsàrọ́ pẹ̀lú ọ̀nà òóùjì lọ́wọ́."
+        },
+        {
+          "q": "Báwo ni mo ó lè ìdíbẹ́ ní ọ̀pá àgbájọ ni Niger?",
+          "a": "Airtel Money àti Orange Money ní iṣẹ́ àṣà àgbà, pẹ̀lú Zamani Cash tí ó wà nínú ní lílò. Ìdíbẹ́ jẹ́ nínú XOF àti ó jẹ́ ìṣẹ́jú pẹ̀lú ìtìlẹ́yìn-ìpaá oóùjì."
+        },
+        {
+          "q": "Kí nínú àwọ̀n àá gbódò ṣàyẹ̀wò kọ́kọ́ rí bíi agbájọ ni Niger?",
+          "a": "Ìtìlẹ́yìn ọ̀pá àgbájọ lábẹ́ ètò LONANI, ìtìlẹ́yìn àșà fún ọ̀pá oóùjì rẹ, àti ìyẹ̀ ìpadà tí a dánilọ́jú pẹ̀lú ẹ̀kan kéère ìgbà-tó."
+        }
+      ],
+      "related": [
+        "betting-in-mali",
+        "betting-in-burkina-faso",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "bankroll-management",
+        "odds-formats"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Convert any odds format on any connection"
+        }
+      ],
+      "_src_hash": "58404cc80534f341",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-dr-congo",
+      "title": "Ìbẹ̀rẹ̀ Bẹ̀tì ní Kóngó: Báwo Ni Ó Ṣẹ Gbé Àá",
+      "nav": "Ìbẹ̀rẹ̀ Bẹ̀tì ní Kóngó",
+      "country": "cd",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Ọjà DR Congo tí a gba ní ìwé ìṣẹ́: ìdí tí rírò àre-olè ès ní àkọ́kọ́ lóhun ti yìí, àti báwo M-Pesa, Airtel ati Orange Money ṣe rò àrọ́.",
+      "sections": [
+        {
+          "h": "Njẹ bẹ̀tì dúnídúní ní Kóngó?",
+          "ps": [
+            "Bẹ́ẹ̀ ni — ìbẹ̀rẹ̀ irinṣẹ́ oníkálúkọ́ àwè-gbaradà láti iléríìó, pẹ̀lú ọ̀pọ̀ alágbà tẹ̀lé ṣíṣẹ ní ọ̀kan nínú àwọn ọjà pẹ̀lú olùbẹ̀rẹ̀ tó bọ́ wájú jù ní Ìwọ̀ Àárín Áfríkà. Ọjà náà ní àkọ́kọ́ sí ọkọ olórí ati bí pè lọ.",
+            "Iṣẹ́ pàtàpàtà tó ṣe̩ ìjadara ni: șọ́dọ̀dun àre-olè ès nìkan tẹ̃ wà rẹ̀ kíkí dàbí. Ìwé-ìṣẹ́ ń yípadà, àwọn ọ̀rọ̀ ìjápa ṣe irinṣẹ́ lábẹ́ ọ̀pọ̀lọ́pọ̀ orúkọ, àti ìyàtọ̀ láàrin bóók ní ìwé ìṣẹ́ àti àrà ènìyàn jẹ́ ìyàtọ̀ láàrin ní wíwo àmì-òun àti wíwo àìní."
+          ]
+        },
+        {
+          "h": "M-Pesa, Airtel Money, Orange Money",
+          "ps": [
+            "Àrọ́ ọkọ olórí ní ìdakẹ́kọ́ — M-Pesa (Vodacom), Airtel Money ati Orange Money, nínú ara wọn ṣe òpó tó pé, pẹ̀lú CDF ní iyẹn tí a ṣe ìṣẹ́. Ìdásilẹ̀ àrọ́ jẹ́ lójú-ìnà àti àwọn alágbà alúkuq ní ìsopọ̀ tó ní àbùkù tódòwó.",
+            "Iyára ìpadà ọ̀gbér-àrọ́ ní ìyàtọ̀ sí ju ohun mìíràn lọ láàrin àwọn alágbà. Idanwo kan tí kékeré — ídásilẹ̀, bẹ̀tì kan, ìgbìjẹ̀ iyára — ni èyí tó ní òpúlọ́ tí a gbọ́dọ̀ gbà."
+          ]
+        },
+        {
+          "h": "Olùbẹ̀rẹ̀ pé-gbogbo, ọjà tí kò gbẹ́jọ́",
+          "ps": [
+            "Olùbẹ̀rẹ̀ tó bọ́ wájú jù ní ìwọ̀ àárín náà ń mú gbogbo wà: àwọn alágbà ní àkọ́kọ́, àwọn alátẹ̀jọ olọ́-kékeké, àti àwọn aráiyè méjì. Ìparapọ̀ ìwé-ìkiyè kò sọ̀rọ̀ fún yin dídá; àre-olè ès àti ìlàna gíbìn ọ̀gbér ni kí ó dá fún yin dídá.",
+            "Àwọn ìdáhùn-owó yẹ sì ní isẹ́ àrìtmẹ́tìk tí wọ́n ṣapá — ètò gbígbaì-owó × ìpín = iye àìparékọ̀ tó yẹsíìrẹ — àti ààpẹẹ hunkókó nínú àsìkò ìpàtan, èyí tí òṣì ṣe jẹ́ kékeré tó."
+          ]
+        },
+        {
+          "h": "Bẹ̀tì Ẹ̀kó àti ìhun àkéjọ́",
+          "ps": [
+            "Ìbẹ̀rẹ̀ Kóngó jẹ́ bẹ̀tì-ẹ̀kó nínú àkọ́kọ́: àwọn Ẹ̀kó Akọ́dàn-oníbosẹ̀ toile ati Àwọn Baba Ìlẹ̀ Ibadandun Erópu. Àpẹẹ rírò àrà wa ní pé lórí àbùkù àwọn pápá èkó Erópu — àwọn ìmọ̀ràn, àwọn ès tí o tó, àwọn ìṣújú tí àá pẹ́ — àti ìwíwé ès tí a rọ̀ pẹ̀lú pẹ̀pẹ́ fihàn ta ló fifúnni nínú òru akọ́kọ́.",
+            "Àwọn ónà-ìdanwo tí kò ní gbalà ni ìlànà ìgbòkè sí ìwé-ìkiyè ní ọ̀kọ̀ọ̀kan àwọn ọjà; ní ọjà kan tí kò gbẹ́jọ́, wọn dásọ́ ",
+            ", rí lọ́wọ́-ará."
+          ]
+        },
+        {
+          "h": "Àwọn iyañ Ẹ̀kó àti ìhun àkéjọ́",
+          "ps": [
+            "Ìbẹ̀rẹ̀ Kóngó jẹ́ bẹ̀tì-ẹ̀kó nínú àkọ́kọ́: àwọn Ẹ̀kó Kóngó, ộng Erópu, àti àwọn ọ̀rọ̀ ìjájátà àpò-oníbosẹ̀. Ròyín Adire-ès àrà wa níjọ̀ àwọn pápá èkó Erópu — ìmọ̀ràn, ès tí o tó, àwọn ìṣújú tí àá pẹ́ — àti ìwíwé ès pẹ̀lú pẹ̀pẹ́ fihàn ta ló fifúnni.",
+            "Àwọn ónà-ìdanwo àkùkọ̀ ni ìlànà ìgbòkè sí ìwé-ìkiyè ní ọ̀kọ̀ọ̀kan àwọn ọjà; ní ọjà kan tí kò gbẹ́jọ́, wọn dásọ́ nìkan pẹ̀lú ìfẹ́sẹ̀jú tí o rọ́ lẹ̀."
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "q": "Njẹ bẹ̀tì irinṣẹ́ dúnídúní ní DR Congo?",
+          "a": "Bẹ́ẹ̀ ni — gba ní ìwé-ìṣẹ́ àti ìgba ìsẹ́ láti iléríìó, pẹ̀lú ọ̀pọ̀ alágbà ní ìṣẹ́. Rò àre-olè ès oníkálúkọ́ àwè-gbaradà kíkí dàbí kí ìdásilẹ̀ àrọ́ yin; àwọn àre ń yípadà."
+        },
+        {
+          "q": "Báwo ni mo ṣe le ìdásilẹ̀ ní àwọn aaye ìbẹ̀rẹ̀ Kóngó?",
+          "a": "Àrọ́ ọkọ olórí ni ídákẹ́kọ́: M-Pesa (Vodacom), Airtel Money àti Orange Money, pẹ̀lú CDF ní iyẹn tí wọ́n ṣe ìṣẹ́. Ídásilẹ̀ jẹ́ lójú-ìnà pẹ̀lú ìlànà àlọ̀pọ̀ tódòwó."
+        },
+        {
+          "q": "Báwo ni mo ṣe le ìdánwò bóók bẹ̀tì ní àre-olè ès DR Congo?",
+          "a": "Rò àre-olè ès oníkálúkọ́ àwè-gbaradà kíkí dàbí kí ìdásilẹ̀ àrọ́ — àwọn ọ̀rọ̀ ìjápa ṣe irinṣẹ́ lábẹ́ ọ̀pọ̀lọ́pọ̀ orúkọ àti àwọn àre ń yípadà. Alágbà kan tí kò lè fi àre-olè ès hàn ni ó ti dahun ìbeèrè náà."
+        }
+      ],
+      "related": [
+        "betting-in-cameroon",
+        "betting-in-zambia",
+        "how-betting-bonuses-work"
+      ],
+      "glossary": [
+        "wagering-requirements",
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/margin-calculator",
+          "label": "Price what any bonus really costs to clear"
+        }
+      ],
+      "_src_hash": "d69f5973413bafd9",
+      "_model": "claude-haiku-4-5-20251001"
+    }
+  ]
+}

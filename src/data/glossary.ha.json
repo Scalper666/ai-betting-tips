@@ -1,0 +1,1660 @@
+{
+  "lang": "ha",
+  "terms": [
+    {
+      "slug": "value-bet",
+      "term": "Value Bet",
+      "short": "Baje inda odds dinsa ba su dace da gaskiyar yiwuwa - wannan nau'i ne kawai da ke da jiya a cikin dogon lokaci.",
+      "definition": [
+        "Value bet ya kasance jiya inda odds na bookmaker suka nuna ƙarancin yiwuwa fiye da ainihin yiwuwar sakamakon. Idan ainihin yiwuwar team din ta lashe shi ne 50% amma kaɗa ka iya bacewa a odds na 2.20, farashin ya \"kuskure\" ga jajinka: idan kaɗan haka ya sake faruwa haraka-haraka, babu a cikin abin da za ka bada fiye da abin da odds suka nuna, don haka kaɗan ta ba da ingancin gida.",
+        "Value bai da alaƙa da yiwuwar lashe kaɗa ba. Bacewa outsider mai yiwuwa 5.00 na iya zama value bet har ma bacewa favourite 1.20 na iya zama rashin amfani - abin da ya matukar matukar shi ne giwa tsakanin farashin da yiwuwa, ba yiwuwa kanta ba. Wannan shi ke sababbin masu cimma hankali suna neman farashin, ba lashe ba. Nemo value cikin tsarin kaidai yana buƙatar kaɗa takaitawa da kanta game da ainihin yiwuwa, kuma hiya shi ke abin da odds models da screeners ke yunka."
+      ],
+      "example": "A zama yiwuwar lashe gida hiya 40% (fair odds 2.50), amma baje bookmaker ya ba da 2.75. Expected value na ₦1 staked = (0.40 × 2.75) − 1 = +0.10, ma'ana edge na 10%. A gida kaɗan ba ya lashe 60% na lokaci — amma a cikin yawa, farashin kamar haka shi ne inda riba ta fita.",
+      "related": [
+        "expected-value",
+        "implied-probability",
+        "edge",
+        "fair-odds"
+      ],
+      "see": [
+        {
+          "label": "Live value picks in the AI screener",
+          "href": "/screener"
+        }
+      ],
+      "_src_hash": "f37d30dbf5629570",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "implied-probability",
+      "term": "Probability da Tumanin (Implied Probability)",
+      "short": "Nasarwar da fadar ce ta nuna: 1 raba da odds na decimal.",
+      "definition": [
+        "Kowane fadar cetiya ce ta gida. Juyar da decimal odds zuwa probability ta tumanin ba da wahala: raba 1 da odds. Odds na 2.00 ta nuna 50%, odds na 4.00 ta nuna 25%, odds na 1.25 ta nuna 80%. Juyar da wannan ne tushe na kowane yanke-shawarar cetiya mai muhimmanci, domin ya baje ta 'shin wannan fadar ba?' zuwa tambaya mai amsa 'shin wannan probability ba ya yi kaba?'.",
+        "Tara-tara probability da tumanin na kowane sakamako a kasuwar ce ta nuna margin na bookmaker: jumi duka ya wuce 100%, kuma yadda ya wuce shine gida na ma'aikin cetiya. Cire wannan margin ne ya ba da fair probabilities — ra'ayin kasuwar da gaske — da waje da ake auna value."
+      ],
+      "example": "Wasa da aka fadi a 2.10 (gida), 3.60 (jiya), 3.40 (baƙi) ta nuna 47.6% + 27.8% + 29.4% = 104.8%. Abin 4.8% shine margin na bookmaker; probability na gida da ya dace bayan cire shi daidai shine 47.6 / 104.8 ≈ 45.4%.",
+      "related": [
+        "bookmaker-margin",
+        "fair-odds",
+        "value-bet",
+        "odds-formats"
+      ],
+      "see": [],
+      "_src_hash": "f1a1df87792644ee",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "expected-value",
+      "term": "Expected Value (EV)",
+      "short": "Karfin da lodi ko asara da jirgin jirgi zai haifar da shi idan za'a iya maimaita kwalle a fadar gida daya.",
+      "definition": [
+        "Expected value ya amsa tambaya ɗaya: idan ka saka wannan kwalle gida dubu, za ka dauki gaba? Ana kirga shi ne (yiwuwar samun nasara × decimal odds) − 1, bayyana per unit staked. Positive EV (+EV) yana nufin farashin ya karya gaskiya yiwuwa; negative EV yana nufin margin na bookmaker ko dacewar fiye-fiye tana aiki a kakanki.",
+        "EV shine fasalin dogon lokaci. +EV kwalle na iya asara sau da yawa jeri, kuma −EV kwalle na iya saduwa — variance yana damre samari. Adalci na saye masu karfi shine ki'i yarda da hukunci ta duka sakamako gida kuma yi hukunci ta farashin da ka dauki maimaita. Sakamakon damifu da damifu, sakamakon ya zo jiya zua gida."
+      ],
+      "example": "Ka yi imani cewa zane shine kashi 30% yiwuwa kuma ka samo odds na 3.75. EV = (0.30 × 3.75) − 1 = +0.125 — karfin da aka yi jira 12.5p riba per £1 staked. Idan yankin yiwuwar ka dace, kwalle saka wannan farashin maimaita yana ba da riba ko da yake asara 70% na lokaci.",
+      "related": [
+        "value-bet",
+        "edge",
+        "kelly-criterion",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "a2bb98856f4a259f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "edge",
+      "term": "Edge",
+      "short": "Fa'idar kai a kan farashin, galibi ana bayyana shi azaman amsanin jiya a kashi.",
+      "definition": [
+        "Edge shine girman fa'idar kai mai a kan bet: mutum ya sami kyau fiye daga odds fiye da ainihin yuwuwar ya bugi. Edge na 5% yana nufin cewa, a kowane £100 da ka jera, ka tsamani ribar £5 a cikin gida mai tsawo. Edges a wasannin wasa suna karama — masu sana'a suna jin murna sosai game da 2–5% — saboda kasuwar betting ta kasua sosai kuma ta bugi kama.",
+        "Fa'idar da aka yi ikirari ya kamata a yi masa shaka, har da namu. Ainihin gwaji na edge shine yadda aka yarda a jiya kan babbar yadi: idan hanyar yin aiki ta bukaci a kan daji sama da dawowar kwance daga dawowar gida dama-dama dawowar shekarar, edge na ainihi ne; in ba, jiya ne kaini. Haka ne yasa muka adana kowane shawarwari kafin bugun gida kuma muka buga sakamakon da aka yarda, nasara da asara a duka."
+      ],
+      "example": "Mafi kyau farashin da ake samu 2.30 a kan yuwuwar gida na 46%: edge = (0.46 × 2.30) − 1 = +5.8%. A yadda daidai £10 a kan 500 irin waɗannan bets, jiya da ake tsamani shine kusan £290 — tare da matakin da ya danganta a jiya.",
+      "related": [
+        "value-bet",
+        "expected-value",
+        "closing-line-value",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [
+        {
+          "label": "How our settled record is computed",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "24d98b3b4c4c1dd4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-formats",
+      "term": "Nau'in Odds (Decimal, Fractional, American)",
+      "short": "Hanya uku na rubutawa farashin gida: 2.50 = 6/4 = +150.",
+      "definition": [
+        "Decimal odds suna nuna jimillar dawo gida kowaye naira da aka yi kudi, sanye da stake: a 2.50, stake na £10 yana dawo da £25 (riba na £15 plus stake na £10). Hiya shine tsayin aiki a duka Yankin Kasua, kuma hiya shine mafi saukin lissafi, wannan ne dalilin da gida na amfani da ita a ko'ina.",
+        "Fractional odds (6/4) suna nuna riba da take idan aka kwatanta da stake — naci £6 domin kowane £4 da ka jibga — kuma ita ta ci gida ga al'ada a Birtaniya. American odds suna amfani da alamar plus ko minus: +150 na nufin stake na $100 yana naci $150; −200 na nufin dole ne ka jibga $200 don naci $100. Canza: decimal = fractional + 1; positive American = (odds/100) + 1; negative American = (100/|odds|) + 1."
+      ],
+      "example": "Odds na 2.50, 6/4 da +150 sune kusan farashin gida da aka zama daidai tare da alamar yiwuwa na 1 / 2.50 = 40%.",
+      "related": [
+        "implied-probability",
+        "odds-comparison"
+      ],
+      "see": [],
+      "_src_hash": "71f987ece97c137a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bookmaker-margin",
+      "term": "Margin na Bookmaker (Overround / Vig)",
+      "short": "Riba da bookmaker ya giza cikin farashin - dalilin da ya sa jimillar yiwuwar kowane sakamako ya wuce 100%.",
+      "definition": [
+        "Bookmakers ba sa ba da farashin gida. Kowane farashin ana jawo kaɗan kaɗan daga ainihin daraja, ta haka, duk wace sakamako ta zo, littafi ya adana kashi. Idan ka tara yiwuwar lissafi na kowane sakamako, abin da ya fito sama da 100% shine margin - ana kira shi overround, juice ko vig. Margin na sabuwar wasa (football match-result) zai yi kusan 2% a bookmakers masu zani zuwa 7%+ a waɗanda ba sa da kaifi.",
+        "Margin shine kila kusan da bettor ya gida: idan ka baji shakatawa, ka lose margin a cikin lokaci. Wannan yana da matakala gida biyu. Na farko, gwada farashin a cikin bookmakers daban-daban ya yi muhimmi sosai - mafi kyawun farashin da ake samu sau da yawa ya kawo da waje akaba kauri da margin. Na biyu, samu da shuni shine wuce jiya margin da kuma wani abu, wanda aka saba shi, ainihin kauri na dogon lokaci kaɗa kuma kaɗan."
+      ],
+      "example": "Kasuwa mai sakamako biyu da farashin 1.91 / 1.91: yiwuwar lissafi 52.4% + 52.4% = 104.8%, margin 4.8%. Farashin gida don ainihin 50/50 zai zama 2.00 / 2.00.",
+      "related": [
+        "implied-probability",
+        "fair-odds",
+        "odds-comparison",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "de2db94eb0eef4a6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fair-odds",
+      "term": "Fair Odds",
+      "short": "Abin da farashin zai kasua idan an cire gidagen aiki na bookmaker — kimantarwar gaskiya ta kasuwa.",
+      "definition": [
+        "Fair odds shine nau'in farashin da ba shi da gida: farashi da za su sa littafi a daidai tsaye a gida. Mafi sauƙin hanya don karanta su shine daukar kowane faɗin yiwuwar, ƙara su, sannan sakaita kowansu daidai-daidai domin jami'i su kasua daidai 100%. Farashi masu sakaita suna komawa zuwa fair odds.",
+        "Fair odds suna da mahimmanci saboda su ne ma'aikacin kayyade ƙima. Farashin zai wakilta ƙima kawai idan ya wuce fair farashin, ba kawai idan 'yakin girma'. Lissafi na fair yiwuwar a gida da gida suna samar da asali da gaskiya da kowa daga aiki na daya ya iya kaici — wannan alkamarishin sakamakon sakamakon daidai shine yadda namu ake gane ƙima."
+      ],
+      "example": "Yiwuwanin yiwuwa 47.6% / 27.8% / 29.4% (jami'i 104.8%) suna sakaita zuwa 45.4% / 26.5% / 28.1%. Fair farashin gida = 1 / 0.454 = 2.20. Duk gida da ke biya fiye da 2.20 yana biyan saman kimantarwar kasuwa.",
+      "related": [
+        "bookmaker-margin",
+        "implied-probability",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "7ee23ed1ce1ec170",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "kelly-criterion",
+      "term": "Kelly Criterion",
+      "short": "Dabari na tsaga kudin jiya da ya dace da girman gida - hanya mai amfani don rangewa masu daraja matakin.",
+      "definition": [
+        "Kelly criterion yana ƙididdige pangare na jiya wanda ke haɓaka girman jiya lokacin da kake da karfi: tsaga = karfi ÷ (odds na decimal − 1). Karfin da ya fi girma yana ba da yabo ga tsaga mai girma; odds mai tsayi yana ba da yabo ga tsaga kaɗan a jiya daya, saboda nasarwa bata fadi sau da yawa kuma rashin ajiya yana fi. Full Kelly yana da kishiyar - masu hanya da yawa suna amfani da rabin ko kwata Kelly don lashe watsewa.",
+        "Wajin tsaga, Kelly babbar mizani ne don rangewa. Karfi kaman kama babbar matsala - karfi 30% akan outsider 21.00 da yawa lokaci shine aiki na maye kudin ba da kyau ba, ba halin da aka iya fita ba. Rarraba karfi da (odds − 1) yana timbaitawa daraja ta hanyar yadda ya fadi gida, wanda shine daidai yadda screener din ake rarraba zafinsa - karfi kaɗan akan favorite 1.80 zai iya samun matsayi sama da karfi mai girma akan shot 6.00."
+      ],
+      "example": "Karfi 8% a odds 3.60: Kelly fraction = 0.08 / 2.60 ≈ 3.1% na jiya. Karfi daya 8% a odds 1.60 yana ba da 0.08 / 0.60 ≈ 13.3% - price kaɗan yana ba da yabo ga tsaga mai girma sosai.",
+      "related": [
+        "edge",
+        "bankroll-management",
+        "flat-staking",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Kelly-ranked picks in the screener",
+          "href": "/screener"
+        }
+      ],
+      "_src_hash": "8613ffe375f15d2e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bankroll-management",
+      "term": "Sarrafi na Caca",
+      "short": "Duba kudin caca kamar ajiya tabbatacce tare da tsarin sata — halin da ke toshe kanki daga burburewa ta hanyar bambanci.",
+      "definition": [
+        "Kudin caca shine kudaden da ka keɓe kwatance don caca - adadin da zai iya kasua shi gaba daye ba tare da cutarki ba. Sarrafi na caca shine sauran ƙa'idodi da ke ƙula da nawa daga shi kwa kowane sata. Hanyoyi gida: satin daidai (akwatin ɗaya mai tsayi duk lokaci), satin kashi (sashi tabbatacce na kudin caca na yanzu), ko satin da aka ƙyale tare da edge.",
+        "Manufar ita ce tsira ta hanyar bambanci. Ko da strategy na ci gaba na gida ta ƙasa jiya bari, ta fita asara ga caca goma ko fiye; satin mai girma ya mayar da asara na yau zuwa kasuwa kafin edge ya iya bayyana kansa. Mafi yawa masu halin lafiya na caca suna sata 1–2% daga bankroll ga kowane sata. Mahimmin yana: kada saka bankroll saboda bin asara — wannan shine ka'idar ta kasa da ke mayar da caca daga nishaɗi zuwa matsala."
+      ],
+      "example": "Tare da bankroll na £500 da satin daidai na 1.5% (£7.50 ga kowane sata), asara tasar 15-sata ta yi zafi game da £112.50 — wahala kuɗi amma can ake tsira, barina 77% na kudin.",
+      "related": [
+        "flat-staking",
+        "kelly-criterion",
+        "variance",
+        "self-exclusion"
+      ],
+      "see": [
+        {
+          "label": "Responsible gambling tools & help",
+          "href": "/responsible-gambling"
+        }
+      ],
+      "_src_hash": "06fcd7d277eef549",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "flat-staking",
+      "term": "Flat Staking & Units",
+      "short": "Daukar kudin kada — adadi ɗaya kaɗai — akan kowane zaɓi, wanda ya sa sakamakon jiya zai iya ƙari da kimantawa sosai.",
+      "definition": [
+        "Flat staking yana ɗaukar adadi ɗaya kaɗai, wanda aka kira unit, akan kowane bet ko da yake ba ka da karfi. Unit shi ne yawanci 1–2% na bankroll. Abinsa mai kyau shi ne gaskiya: samun kuɗi a ƙididdige a cikin units ba za a iya yin magana a gida ne ta daukar nauyin ƙida bayan da abin ya faru, wanda yasa jefe-jefe masu gaskiya suna buga sakamakon kamar '+8.40 units' maimakon a cikin kuɗi.",
+        "Duk sakamakon akan wannan gida an ƙamata a jajere a flat unit ɗaya: bet mai nasara a odds 2.50 yana ɗauka +1.50 units, kowane bet mai yaudara yana ɗauka −1.00, void yana ɗauka 0. Shi ne sauƙin lissafi — babu 'confidence multipliers' da aka ɗauka bayan, babu hanya da za a iya yin gida wajen wata mai rashin nasara."
+      ],
+      "example": "Gida gida gida gida gida gida gida gida gida gida flat-staked: 4 suka nasara a average odds 2.40, 6 suka yaudara. Samun kuɗi = 4 × 1.40 − 6 × 1.00 = −0.40 units — win rate 40% ba ya ishe a waɗannan odds. Ɗayan ƙarya a average odds 2.80 zai ɗauka +1.20 units.",
+      "related": [
+        "bankroll-management",
+        "roi-and-yield",
+        "win-rate"
+      ],
+      "see": [
+        {
+          "label": "Our settled results, in units",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "a2154db69dabcdc1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "accumulator",
+      "term": "Accumulator (Acca / Parlay)",
+      "short": "Jama'a bayi da leɓi da yawa — dole ne dukansu su lashe, odd suka ninka, kuma aiki-gida kasuwa yana ninka.",
+      "definition": [
+        "Accumulator yana haɗe zaɓaɓɓu biyu ko fiye a cikin jama'ar baji guda ɗaya wanda odd ninka odd na kowane zaɓaɓɓu. Zaɓi uku a 1.50 × 1.72 × 1.85 yana biyan 4.77 — abin dadi, kawai wannan shine dalilin da kasuwanci-gida suke jajatawa acca sosai. Karasa: idan ɗaya ya lashe, tiket duka ya baje, kuma margin kasuwanci-gida ya ninka a kowane leɓi da ka ƙari.",
+        "Idan kowane leɓi yana ɗauke margin kusan 5%, treble yana dafawa roughly 14% gida-waje kabatun-jiya. Haka ne wadanda suka dade accumulator ɓa da karfi — nishaɗi da sha'awa akai, ba investmenti ba. Idan ka so ka haɗa, ka tsiranin leɓi ɗimaji, nema mafi kyau price a kowane ɗaya, kuma ƙarshi takas kaɗan: abin tsammani daidai ga acca shine wani nasarar baraza-baraza, ba saurin arzikin ba."
+      ],
+      "example": "Leɓi uku, kowannensu sauran 60% yiwuwa: haɗin yiwuwa gida = 0.6³ = 21.6% (daidai odd 4.63). Leɓi da aka taka a 1.58 kowannensu suna biya 3.94 — yana nuni 25.4% kuma yana ba kasuwanci-gida ninka ~18% margin a tiket.",
+      "related": [
+        "bookmaker-margin",
+        "double-chance",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Accumulator tips",
+          "href": "/tips/accumulator"
+        }
+      ],
+      "_src_hash": "d6decdd7926e1ffb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "btts",
+      "term": "Both Teams To Score (BTTS)",
+      "short": "Kasuwar game-yin inda za a tantance ko duka ƙungiyoyi za su zaci akalla gida — sakamakon gida ba shi da mahimmanci.",
+      "definition": [
+        "BTTS (har ma 'goals galore' ko GG/NG) ya kammale Yes idan kowane ƙungiya ta zaci akalla gida guda, No in ba haka ba. A 3–1 shine Yes; a 2–0 shine No. Sakamakon gida bai aiki ba, wanda ya sa BTTS ya zama sannu ga wasanni tsakanin ƙungiyoyi masu bugi da fassarawa marasa tsaro — kina iya zama daidai game-ye akan character-din wasanni yayin da kuna kaidewa game-win.",
+        "Pricing BTTS sosai yana nufin daidai ƙaddamar scoring probability na kowane ƙungiya maimakon wanda ya fi. Abokinsa kusa shine over/under goals market: BTTS-Yes yana da walawar gaske tare da Over 2.5, kuma ƙawarewa farashin biyu wani lokaci yana bude kurame-kurame a yadda bookmaker ya tsara game-din gida."
+      ],
+      "example": "Idan ƙungiya-gida ta zaci a cikin 75% na wasanni kuma ƙungiya-jiya a cikin 60% (kusan bainai), BTTS-Yes ≈ 0.75 × 0.60 = 45% — odds-in daidai 2.22. Farashin 2.40 zai zama value; 1.95 ba zai zama ba.",
+      "related": [
+        "over-under",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "BTTS tips",
+          "href": "/tips/btts"
+        }
+      ],
+      "_src_hash": "05b46df492098048",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "over-under",
+      "term": "Over/Under (Jami'in)",
+      "short": "Kudin shiga kan jami'in gida da baje da duka, ba kan wanda zai yi nasara ba, kasar ta wajen layi kamar 2.5.",
+      "definition": [
+        "Kudin jami'in baje don gida da baje ko duka, kuma yana tambayi kawai nawa gida da baje za a samu a gaida. Layin gida da baje a matsayin rabin baje (2.5) don kada kura tsakiya: Over 2.5 yana bukatawa jiya gida uku ko fiye, Under 2.5 yana cin nasara da gida biyu ko kaɗan. Laye masu lambar gida (kamar 2.5) zai iya kasua — safiya acikin layi — sannan kudin samba ake godiya.",
+        "Jami'in baje shine kasuwar mafi kyau don neman darajen saƙe fiye da sakamakon takaita saboda kudin marasa hankali yana tattare kan zaɓar wanda zai yi nasara, sauran kasuwar gida da baje ba ta daidaita sosai. Suna dace da ƙirar kididdiga: gida da baje suna biyayya daidai a bisan gida da ƙungiyar, wato babbar rabo na ƙirar mu ɗan gida da baje."
+      ],
+      "example": "Over 2.5 a 1.93 yana nufin 51.8%. Idan ƙirar ka ta ɗaba gida uku ko fiye a 55%, EV = (0.55 × 1.93) − 1 = +6.2% — kudin darajen ko da yake kusan jiya.",
+      "related": [
+        "btts",
+        "void-bet",
+        "asian-handicap"
+      ],
+      "see": [
+        {
+          "label": "Over/Under tips",
+          "href": "/tips/over-under"
+        }
+      ],
+      "_src_hash": "90644050aa93d2f1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "asian-handicap",
+      "term": "Asian Handicap",
+      "short": "Kasuwa handicap da ke soke jajiya ta hanyar ba wa gida ko baje gida batu kafin wasa, sau da yawa ta hanyar rabe-raben batu.",
+      "definition": [
+        "Asian handicaps suna dandanya rashin daidaituwa ta hanyar ƙari na batu masu laifi ga gida kafin jajiya. Bada goyo ga favorite a −1.5 yana nufin sunda dole ne su nasara da batu biyu a cikakken hanya; bada goyo ga underdog a +1.5 yana na mutu idan ba su yi firgici da batu biyu ko fiye. Adadin cikakke na handicap (−1.0) zai iya juyewa: idan favorite ya nasara ta daya kawai, kuɗin suke ana gida. ",
+        "Quarter lines (−0.75, +1.25) suna katsata kuɗin ku tsakanin layi gida biyu — rabin akan −0.5 da rabin akan −1.0, misali — don haka sakamakon iya zama rabin nasara da rabin asara. Saboda jajiya an cire shi, kasuwan Asian handicap suna da saka biyu kawai, suna ɗauki margins ƙanana fiye da 1X2, kuma shi ne kasuwa da maimakon kuɗi mafi kaifi yana canzawa."
+      ],
+      "example": "£20 akan favorite a −0.75 (odds 1.95): nasarar batu daya tana biyan rabin −0.5 cikakke kuma tana gida rabin −1.0 — gaida jimla £29.75, rabin nasara. Nasarar batu biyu tana biyan rabin biyu: £39.",
+      "related": [
+        "match-result",
+        "void-bet",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "711a58b58d3b87dd",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "double-chance",
+      "term": "Double Chance",
+      "short": "Rufe jiya koli uku daga cikin sakamakon wasa gida - m m babbar karfi, m m gajere odds.",
+      "definition": [
+        "Double chance ya haɗa da sakamakon biyu daga kasuwancin 1X2: gida-ko-jiya (1X), waje-ko-jiya (X2), ko kowa-zai-ri (12. Daga cikin sakamakon uku gida, akwai ɗaya kawai da za ta doke ka, saboda haka kakarin insiya yana da girma - kuma odds suna danɗe, sau da yawa kasa daga 1.50 idan sananne gida ke aiki.",
+        "Kasuwa ta yi aiki kamar Draw No Bet da +0.5 Asian handicap; yin bada daidai ga farashi guda uku don gani ɗaya wani lokaci yana bayyanar cewace bookmaker ya yi rate mafi jari. Jigon karfe: tsarki ba shine daidaito. 1X a 1.25 da gaske kakarinshi 78% babbar bakin ciniki ne a libis - m gajere odds na bukatar jin dadi har maimakon farashi."
+      ],
+      "example": "Gida 45%, jiya 28%: daidaitaccen 1X kakarinshi = 73% → daidaitaccen odds 1.37. Littafi da ke ba da 1.44 yana biyan dadi akan 'karfi' option; daya da ke ba da 1.28 ba.",
+      "related": [
+        "match-result",
+        "draw-no-bet",
+        "asian-handicap"
+      ],
+      "see": [
+        {
+          "label": "Double chance tips",
+          "href": "/tips/double-chance"
+        }
+      ],
+      "_src_hash": "dd5f4515ac8590f3",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "draw-no-bet",
+      "term": "Draw No Bet (DNB)",
+      "short": "Ka bugi wani gaida; idan wasan ya juye, abin jiya ka komawa.",
+      "definition": [
+        "Draw No Bet yana cire juyewa daga lissafin: zaɓi gida, kuma wasan da ya juye yana maimaita abin jiya a matsayin banza, ba asara ba. Wannan daidai yake da Asian handicap 0.0 da yake a tsakanin faɗi 1X2 gaba ɗaya (mafi girma odds, juyewa yana asara) da double chance (kasa odds, juyewa yana nasara).",
+        "DNB ya dace lokacin da ka so gida amma kana girmama kararin juyewa gaske — dakuna masu zafi, abokan rufe na gida. Kuma za ka iya gini shi kai tsaye ta hanyar raba abin jiya a tsakanin nasara da juyewa a hanya daidai, wanda a wasu lokutan ya fi faɗi DNB akwatin. A zahiri, akwatin yana da daraja ne kawai lokacin da yake da ƙadar ƙaifi da kasan ainihin karari."
+      ],
+      "example": "Gaida mai faɗi 2.30 don nasara, 3.30 juyewa. DNB bayarwa a 1.70: ƙadar ƙaifi 58.8% don kasuwar inda kararin nasara (ba tare da juyewa ba) shine 100 × 43.5/(43.5+26.3) ≈ 62% — DNB mai daidai zai zama kusan 1.61, saboda haka 1.70 yana da daƙilin ƙiši.",
+      "related": [
+        "double-chance",
+        "asian-handicap",
+        "void-bet"
+      ],
+      "see": [],
+      "_src_hash": "554e9497dd446fe6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "match-result",
+      "term": "Match Result (1X2)",
+      "short": "Kasuwar gida-jiya-bakin gida: naci gida (1), jiya (X) ko naci bakin gida (2).",
+      "definition": [
+        "1X2 shine babbar kasuwar faɗi: zaɓi gida, jiya, ko bakin gida cikin mintuna 90 da lokaci na ƙari (lokaci na yamma da ƙugon baki ba sa yawa sai an fada). Abin da ya sa haka ya bambanta: akwai hanyoyi uku, jiyoyi sukan fadi kusan-kusan kwata ɗaya, amma mutanen waje galibi ba sa bugun jiya. Kuma margin din gida waje sakan fi Asian handicap.",
+        "Jiya tana buƙatar kula: faɗi mai tsari sukan jiye kusan-kusan kwata ɗaya, amma farashin jiya sukan ragu saboda mutane sukan so naci gida ko bakin gida. Wannan malalacin shine dalilin da farashin jiya sukan kasua — ba saboda jiya na da hada-kai, amma saboda jinna sukan ƙoƙari naci bakin gida."
+      ],
+      "example": "Kasuwa a 2.05 / 3.50 / 3.90 tana nuna 48.8% / 28.6% / 25.6% (margin 3%). Idan firaun daidai suke 46% / 27% / 27%, bakin gida a 3.90 (daidai 3.70) shine makunin kasua.",
+      "related": [
+        "double-chance",
+        "draw-no-bet",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "bd857024ed451f0a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "correct-score",
+      "term": "Correct Score",
+      "short": "Tsinkaya ainihin scores na karshen wasa — odds mai tsayi, bambamba mai yawa, margin mafi girma.",
+      "definition": [
+        "Correct score yana bukatar ainihin sakamakon karshen wasa — 2–1, 0–0, 3–3 — kowane score an ba shi farashin nasa kai tsaye, galibi a cikin odds mai tsayi. Domin yiwuwa ta warware a cikin shida sha gida da fiye na scores da zai yiwu, har ma yadda akwai alama ya kasance (galibi 1–1 ko 1–0) bai wuce 12–13% ba.",
+        "Kasuwar lamunin ita ce tare da farin iska mafi girma da bookmaker ya bayar, kuma bambamba ta barbar: correct-score sanarwa ta bugi ta hanya mara daidai akan bandje marasa nauyi. Dauki ta azaman wasa mai saya, marasa banaji gida a takaice kawai. Idan kana da ainihin ra'ayi game's goal pattern, markets na totals ko BTTS sai su bayar da ra'ayin gida a farashin da ya fi adalci."
+      ],
+      "example": "2–1 a farashin 9.00 yana nuna 11.1%. Poisson-style models tare da ainihin rates na kirje bai sa wata score fiye 13% ba — sabili da haka farashin ya kamata ya kasance sama da 7.70 kafin value ko da zai koma gida.",
+      "related": [
+        "over-under",
+        "btts",
+        "variance"
+      ],
+      "see": [
+        {
+          "label": "Correct score tips",
+          "href": "/tips/correct-score"
+        }
+      ],
+      "_src_hash": "b589a16b0efd68c4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "closing-line-value",
+      "term": "Closing Line Value (CLV)",
+      "short": "Cin odds din kafin waje — shaida mafi karfi cewa mai sasu yana da gaske edge.",
+      "definition": [
+        "Closing line shine farashi na ƙarshe da ake samu kafin aiki ya fara, bayan kasuwa ya ɗauki duk labarai da kuɗi. Galibi shine ƙallin probability mafi kaifi. Closing line value nufin ka ɗauki farashi mafi kyau gida: ka dinga 2.20 kuma ya ƙare a 2.00. Idan ka yi haka jiya-jiya, gari ba shakka ba cewa ka na da edge na ainihi, domin ka damje-dinjiya jin hukuncin kasuwa na ƙarshe.",
+        "CLV ya yi matuƙa domin ya raba ƙwarai daga samu da sauri. Samuwa a dum-dum bets ne jita-jita; cin CLV jiya-jiya a gida gida shine shaida. Har ila yau, wannan shine dalilin farashi ke motsa — early value ake suna dinga — kuma dalilin da zai kamata ka yi aiki da sauri akan flagged value."
+      ],
+      "example": "Ka ɗauki 2.20; line ta ƙare a 2.00. Yiwuwar jiya ta motsa daga 45.5% zuwa 50%. Idan ƙarshe ya dace, sasu ka na EV = (0.50 × 2.20) − 1 = +10% — an tana a lokacin da ka cin motsin, ko duk da yaushe sakamakon.",
+      "related": [
+        "line-movement",
+        "edge",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "d542c47127cb6b0e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "line-movement",
+      "term": "Line Movement & Steam",
+      "short": "Yadda odds ke canza cikin ajiya da labarai — da kuma haɓakar kuɗi na masu gida da ake kira steam.",
+      "definition": [
+        "Odds sune farashin raye. Suna buɗe daga tsarin mai susta, sannan suna motsawa cikin ajiya na kuɗi, labarai na jama'a suna iso da masu gida na gida suna sake jujjuyawa. Farashin da ya gajere ('steaming in') yana nuna kuɗi da ke bubuɗe wannan sakamako; farashin da ya ɓaje yana nuna abin daban. Yawancin matsawa shi ne daidaita kuɗi na yau da kullun, amma matsawa da ta sauri, tabbatacciyya a cikin littattafai da yawa — steam — sau da yawa yana nuna kuɗi mai girmamawa da ke shiga kasuwar.",
+        "Matsawa yana da mahimmanci ga mai bet da ke neman daraja ta hanya biyu. An dauki da waje, farashin da daga gida ya ƙofa a cikin steam kuwa yawanci yana nufin kun tsaya layin rufewar. Da kuma farashin da ya ɓaje bayan kun bet shine gargadi cewa abubuwan da kuke ganin suna iya ƙofa da kudin masu sani. Binciken farashin da muka buga jiya akan matsawa da come gida daya ne daga abubuwan jari a bayan rufewar screener's signal column."
+      ],
+      "example": "Jama'a ta buɗe 2.10 da kuma kasua tana 1.85 sau daya kafin buɗe waje a littattafai duka. Yuwuwar da aka nuna ta motsawa 47.6% → 54.1%. Kowa da ya rike tikiti na 2.10 nan yanzu yana da bet da kasuwar kanta ta ƙididdige azaman +14% EV.",
+      "related": [
+        "closing-line-value",
+        "sharp-and-soft-bookmakers",
+        "value-bet"
+      ],
+      "see": [
+        {
+          "label": "Signal column in the screener",
+          "href": "/screener"
+        }
+      ],
+      "_src_hash": "8230946f4d53d082",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "sharp-and-soft-bookmakers",
+      "term": "Sharp vs Soft Bookmakers",
+      "short": "Sharp bookmakers sun karɓa masu nasara da suka buga ƙananan launi; soft bookmakers sun yi rankade kasua masu yawa kuma sun iyakance masu nasara cikin sauri.",
+      "definition": [
+        "Sharp bookmakers (da kuma betting exchanges) sun yi ƙananan launi, sun karɓa manyan kuɗi, kuma sun kula da farashinsu daga jerin kuɗin ƙwararru — farashinsu an kira shi gida na kasuwa. Soft bookmakers sun yi rankade ga masu shakatawa tare da gbege da tambayoyi, sun yi manyan launi, sun motsa saurin labarai, kuma sun iyakance asusuwan da ke nasartar jiya-jiya.",
+        "Taskar gida ta samu daidai: ƙimar kasuwa tana samuwa mafi yawa a soft books waɗanda jiya ko ɓangare farashinsu sun bace jama'ar gida-gida. Kwatanta farashin soft book a kan sharp/jama'a fair line shi ne daidai tsarin da mu ke ciki. Sakamakon da za mu sani: kasua jiya-jiya na farashinan sun kasance da iyakance kuɗi a soft operators — alama kuzari, amma ƙauri gida."
+      ],
+      "example": "Sharp jama'a sun buga gida a 1.95 (gida ~51%); soft book har yanzu sun nuna 2.15 jiya. Waccan 10% taba shi ne classic soft-book ƙimar tsarin — da daidai nau'in bambanta da ke rufe a cikin sa'a.",
+      "related": [
+        "bookmaker-margin",
+        "closing-line-value",
+        "line-movement"
+      ],
+      "see": [
+        {
+          "label": "Bookmaker reviews",
+          "href": "/bookmakers"
+        }
+      ],
+      "_src_hash": "089eebf382cf0e6f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "arbitrage-betting",
+      "term": "Arbitrage Betting (Arbing)",
+      "short": "Rufe kowane sakamako a cikin littattafai daban-daban a farashin da ke tabbatarwa da ƙaramin riba.",
+      "definition": [
+        "Arbitrage ya ƙarewa idan bambance-bambancen da ke tsakanin littattafai suna ba ka damar yin baka a kowane sakamako kuma kulla riba a takaice - jmlah probability da aka nuna na farashuwan da ka zaɓa ya rasa 100%. Arbs suna bayyana lokacin da littattafai suke sabani ko sun jira labari, kuma galibi suna ba da kyauta 1–4% na gaba dayan abin kuɗi. Matsalolin da ke cikin gida, arbitrage yana buƙatar mafi girma kasuwa don ƙaramin sakamakon, ƙididdiga masu aiki gida, da sauri — farashuwan suna ɓace a cikin mintuna. Littattafai suna gano tsarin nan in da sauri kuma suna amsa ta iyakance kuɗi ko ruɗewa asusun. Tsohuwar baka a littafi daya na iya barin waje kuma suna ci gaba da kasua. Shi ainihi ne amma matsa koli, kusa da hanyar logistik nesa daga baka.",
+        "Arbs suna neman turover mai yawa don riba kaɗan, lissafi na akiyar kuɗi, da suramar hanya — sai dai lokacin da littattafai suna yin sakamako mai mahimmanci ba a tsohuwa."
+      ],
+      "example": "Littafi A: gida 2.10 (47.6%). Littafi B: bakin gida+wajen (X2) 2.15 (46.5%). Jami'in 94.1% < 100%. Saukar £51.20 da £48.80 a jiya biyu suna dawo da kusan £107.50 ahali ta waje ko ta gida — kusan +5.9% akan £100 jami'i.",
+      "related": [
+        "bookmaker-margin",
+        "value-bet",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "c70334cf2d0ed4e6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "cash-out",
+      "term": "Cash Out",
+      "short": "Sashe jiya kudi daga baji kafin aiki ya kare — mai kyau, amma kusan koyaushe ba daidai ba ne.",
+      "definition": [
+        "Cash out yana ba ka damar rufe baji mai-aiki kafin aiki ya gama: bookmaker yana ba da kudin bugi-back dangane da halin laki na baji na ci gaba. Matsayin dala na nasara zai iya a ajiye jiya; na asara zai iya a ceza kadan. Yana kamar kai-dace, wato abin da aka yi nishi sosai.",
+        "Ilimin kera ya fi rashin alheri: cash-out kuri'a ita ce daidaita juyayya tsarin tikiti ragu margin sabo — sau da yawa ya fi margin na original baji. Sau da yawa kashe-outs saboda haka taba EV biyu. Idan kanka ka so mu canja matsayi aiki mai-aji, musaye tare da bayyana back/lay farashi yana aiki daidai shi a farashi gaskiya; idan ka riƙe value baji, ƙa'ida kusan kusan koyaushe shine su bar su sai gida."
+      ],
+      "example": "Jiya £10 na ke 3.00 an gasantagama 70% don bada nasara jiya aiki. Fair tikiti ƙarni = 0.70 × £30 = £21. Tilas cash-out kuri'a na 18.50 sannu-sannu yana jure ka £2.50 — gajeren ajiya 12% don butu.",
+      "related": [
+        "expected-value",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "51e449202dcc787e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "free-bet",
+      "term": "Free Bet",
+      "short": "Takamaiman jera daga bukimaka — waje ne waje, ba ba a bugi shi ba. Nasarar dole ne ta zama na kayarka, amma stake ba a bugi shi ba.",
+      "definition": [
+        "Free bet shine jerin takamaiman bukimaka: sa shi a waje, in ya ci kana janyo daidai nasarar amma ba stake ba ('stake not returned', SNR). Free bet na £10 da ya ci a cuotin 4.00 zai biya £30, ba £40 ba. Domin stake ba ta zama ta kayanka, daidai kimar takamaiman shine kusan daidai ta jerin daidai × (1 − 1/cuota) — shi shine domin free bets suna ɓata karami sosai a tsaka-tsakin gida. Free bets shine abin ciniki na mayar da kira da talallai. Idan ka yi amfani da shi ba sannu ba a hannun falo, zai koma waje gari; idan ka yi amfani da shi a cuotin 3.00–5.00 zai jiya zuwa kashi 65–80% na daidai kima a jita. Dai karanta shartunka: waje na yajiya, mafi karamin cuota da hani shuni shine su yanke abin kudin takamaiman gida daidai yake.",
+        "Free bets shine abin bukimaka na maraba da talallai. Idan a yi amfani da shi ba sannu ba a tsabakin falo, zai koma waje gari; idan a yi amfani da shi a cuotin 3.00–5.00 zai jiya zuwa kashi 65–80% na daidai kima a jita. Dai karanta shartunka: waje na yajiya, mafi karamin cuota da hani shuni shine su yanke abin kudin takamaiman gida daidai yake."
+      ],
+      "example": "Free bet na £20 a cuotin 5.00: nasara ne kashi 20% na lokaci → EV = £16, kusan kashi 80% na daidai. Takamaiman takamaiman da aka gida a cuotin 1.40 zai koma £8 × ... ≈ EV £5.70 — kaɗan kashi 30% na daidai.",
+      "related": [
+        "wagering-requirements",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Current bonuses with real terms",
+          "href": "/bonuses"
+        }
+      ],
+      "_src_hash": "e8a48bb840d0fa67",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "wagering-requirements",
+      "term": "Sharuwar Jari (Rollover)",
+      "short": "Yawan jari-jari da dole a yi tun kafin ka iya zara kudin — lambar da ta yanke hukunci ko jerin aiki yana da kyau ko a'a.",
+      "definition": [
+        "'Bonus na £50, jari 5x tare da mafi kankancin odds 1.5' yana nufin dole ne ka yi jari-jari na qualify na £250 kafin bonus ya zama kudin da za ka iya zara. Kowane jari da aka tilasta yana biyan margin-in bookmaker, don haka ainihin kudin da za a kashe don share-share shi ne kusan: lambar da aka fitowa × margin: alamar fitowa ta raguwa tare da kowane wajib a cikin littafin.",
+        "Rollover shine gida mafi mahimmanci a cikin sharaje na bonus — da yawa fiye da lambar da aka fitowa. Bonus karama a jari 1x yawanci ya riba wajen gida wajen jari 10x. Kula da clauses na gida kuma: mafi kankancin odds (mafi tsayin mafi kankancin sun tilasta jari-jari na haske), karyar kasuwa, matsakaicin kudin kula da jari, da ranar ƙarshe da a hankali ta ƙofa bonus da ba a gama ba."
+      ],
+      "example": "Bonus na £40, rollover 8x, ≈ 5% matsakaicin margin: jiran kudin share-share ≈ £320 × 5% = £16. Ainihin daraja na bonus yana kusa da £24 fiye da £40 — da mummunanin ko hali ya tsunduma kuma jari 7-yau ya tilasta kula da jari na rashin hankali.",
+      "related": [
+        "free-bet",
+        "bookmaker-margin"
+      ],
+      "see": [
+        {
+          "label": "Offers compared with wagering shown",
+          "href": "/bonuses"
+        }
+      ],
+      "_src_hash": "9640d67e0723ae88",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "void-bet",
+      "term": "Void Bet (Push)",
+      "short": "Waje da a soke: stake ya koma, an dace a matsayin ba a yi nasara ba ko ashe ba.",
+      "definition": [
+        "Ana soke waje lokacin da ba za a iya dace shi da gida ba: wasan ya jita ko an daina shi, mai suna ba ya fara, handicap ko totals line ya fadi daidai (push), ko ma'aikaci ya soke waje saboda kudi da ba daidai ba (palpable error, 'palp'). Stakek ya koma kuma an dace waje a matsayin ba nasara ba ko ashe ba.",
+        "Voids suna da mahaɗa wajen gida. A jikin statistics na dace, void yana aiki daidai 0 units — an cire shi daga calculus na win-rate kuma stakes ba a bugi su a matsayin turnover ba. A jikin accumulators, voided leg ba ya rushe tikiti ba; an cire idan kuma an sake ƙididdige combined odds jiya."
+      ],
+      "example": "Asian handicap −1.0 kuma mai suna ya nasara 2–1: ɓangare gida ɗaya ya fadi daidai a layi, waje ya push, kuma £15 stakek ya koma kawai.",
+      "related": [
+        "settlement",
+        "asian-handicap",
+        "over-under"
+      ],
+      "see": [],
+      "_src_hash": "bdffd6863e31d20a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "settlement",
+      "term": "Settlement (Grading)",
+      "short": "Marking a bet won, lost or void against the official result — and the honesty test for any tipster.",
+      "definition": [
+        "Settlement shine jiya ne na grading bet daidai da final result: won, lost or void, tare da profit computed daga odds actually taken. For individual bettor shine bookkeeping; for kowa publishing tips shine entire basis of credibility. A record only means something idan every published tip graded — at the published price, against the official score, tare da losses included.",
+        "The classic tipster scams shine settlement scams: deleting losers, grading against better odds than were available, or quietly reclassifying losses as 'voids'. Our pipeline built against exactly that: every tip archived before kick-off tare da its price, results graded automatically daga official final scores, kuma nothing edited afterwards — the archive pages stay up, wins and losses alike."
+      ],
+      "example": "Tip archived at 2.30 pre-match. Final score grades it a winner: +1.30 units at flat stakes. Had it lost, the same page would permanently show −1.00 — that permanence shine the point.",
+      "related": [
+        "void-bet",
+        "flat-staking",
+        "tipster"
+      ],
+      "see": [
+        {
+          "label": "Browse settled days",
+          "href": "/predictions/daily"
+        }
+      ],
+      "_src_hash": "7ac0c0dd355ffceb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "roi-and-yield",
+      "term": "ROI / Yield",
+      "short": "Riba a cikin kashi na duka kudi da ka saka — mafi kyau lambar ɗaya don kwatanta abubuwan cinikin kudin baji.",
+      "definition": [
+        "Yield (wanda aka kira ROI a cikin cinikin kudin baji) yana raba labarin net ta duka adadin da ka saka: 100 baji na raka 1 da ke dawowa raka 6 na labarin shine yield na kashi 6. Saboda yana daidaita ta hanyar jujjuyawa, yield yana ba ka damar kwatanta abubuwan cinikin daban-daban girma da bayanan bugi mai jiya — ba kamar labarin raw wanda ke giyaye basira kawai daga saka kuwa kauye.",
+        "Yanayin tunani: yields na dogon lokaci na kashi 3–8 suke cikin gida mai sana'a; yields na jiya sha sannu a cikin karkatau masu girma ba suke da yawa kuma yawan lokaci suna raguwa yayin da karkatau ya girma. Yield mafi ban mamaki a cikin baji 30 shine bambanci, ba sana'a — kula da karanta yield tare da adadin baji da aka yanke, kuma ji kumya ga duk wani abin cinikin da bai taɓa nuni da sanin asana ba."
+      ],
+      "example": "Baji 120 da aka yanke a cikin saka likita 1, net +7.9 raka: yield = 7.9 / 120 = kashi 6.6%. Daidai +7.9 raka a cikin baji 400 zai kasance yield na kashi 2.0% — abin cinikin da ya dankule sosai (koh kuma mai kyau) abin cinikin.",
+      "related": [
+        "win-rate",
+        "flat-staking",
+        "variance"
+      ],
+      "see": [
+        {
+          "label": "Tipster ROI on the leaderboard",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "5f6b7fb3c60444ed",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "win-rate",
+      "term": "Cikin Nasara (Strike Rate)",
+      "short": "Kashi-karshi na aljihu da suka nasara — ba zai da maana shi kanis, amma yana da maana tare da matsakaicin odds.",
+      "definition": [
+        "Cikin nasara shine karshona daga aljihu da suka kashe cewa sun nasara. A kansa kanis shi ne lamarin da aka fi yin amfani da shi a cikin kasuwar aljihu: cikin nasara 80% yana kamar abu mai mamaki, kuma ana iya samun shi sai dai ta hanyar yin baje-baje ga nau'i 1.10 — kuma ka rasa kudin. A sabansu cikin nasara 35% yana da kyau sosai idan matsakaicin fiye' da 3.00.",
+        "Break-even cikin nasara shine 1 raba da matsakaicin odds: idan matsakaicin odds 2.50 kana buƙatar 40% domin ka tsaya tsaye. Komai sama da break-even shine nasara; komai ƙasa shine asarar da aka damje cikin kashi-karshi. Karanta cikin nasara, matsakaicin odds da yield tare, sama da lambar aljihu da aka tsara — aljihu wanda ya kuwa magana cikin nasara shi kanis yana duba wani abu."
+      ],
+      "example": "Matsakaicin odds 2.20 → break-even 45.5%. Aljihu na 48% cikin odds na nan yana ba 'ambatar (0.48 × 2.20) − 1 = +5.6%. Sama 48% cikin matsakaicin odds 2.00 yana asara 4% na jami'ar saken.",
+      "related": [
+        "roi-and-yield",
+        "flat-staking",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "adaaf47d9aff3acd",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "variance",
+      "term": "Variance",
+      "short": "Jigogi tsakani sakamakon da abin da ya kamata ya faru — dalilin da yasa kyakkyawan baje abubuwan da sika kuɗi ta barke, akan waje.",
+      "definition": [
+        "Variance ita ce jigogi ta lissafi tsakani abin da ya kamata ya faru akan matsakaici da abin da aka samu a gaske a cikin ɗan gida. A cikin sika kuɗi ita ce aiki da jiya: sharedar da husu 55% za ta fadi kusan rabin lokaci; jerin baje abubuwan da aka rikito da +5% rikito na hakika kuma ana iya zama mara kuɗi bayan baje abubuwan 200; mai baje abubuwan da yake jujjuya kuɗi na iya tallafa na murnar ranar.",
+        "Girmamawa variance yana canza halaye. Yana tsarri adadin kuɗi-aban (duba bankroll management), yana saita lokacin kimantawa (jerin baje abubuwan, ba takwas ba), da yana ba jiya daga duka bakin ciki da damu. Shi kuma dalilin da yasa bayyanar cikakke ya fi mahimmanci fiye da yin kasua masu zafi — jiya lokaci mai yawa variance ta wuce da fiye da rikito kawai, tabbatacce ko mara, ya rage."
+      ],
+      "example": "Baje abubuwan 500 da suka dace ba gida ba a 50% / odds 2.10 (rikito na hakika na +5%): kusan daya a cikin shida mai baje abubuwan ya zauna mara kuɗi bayan duka baje abubuwan 500 — variance kawai, babu kuskure.",
+      "related": [
+        "expected-value",
+        "bankroll-management",
+        "win-rate"
+      ],
+      "see": [],
+      "_src_hash": "d5852e771c63e316",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "in-play-betting",
+      "term": "Ciyar-Ciyar (Live) Baje",
+      "short": "Baje yayin aiki na wasannin, tare da odds da ke sake tashin saman a kowane lokacin da muhimmin abubuwa suka faru.",
+      "definition": [
+        "Ciyar-ciyar baje tana bubugar kasuwa yayin aiki na wasa, tare da sake tashin saman nan da nan yayin da goals, kaadi, da jujjuyin wasannin suka faru. Yana ba da dama ga kididde — yin amsa ga halin wasannin da sauri ko da hankali fiye da algorithm — amma yanayin kasuwan ya taba a karɓa wulakantarwa: ɗan gajeren lokaci na yanke-yanke, faɗin kadiyon da ke gitare, da jinkirin sadarwa wanda ke nufin akasuar ya sani fiye da abin da funnel dinku yake nuni. Sannu biyu na gida. Margin na ciyar-ciyar yawanci ya fi girma fiye da na farko-wasanni, don haka tumanin gadarin ciyar-ciyar ba shi da kyau. Kuma yawan baje shine abokin rashin hankali: mutuwa-mutuwa na micro-yanke-yanke a wasa a nan yana bishe watau abokin margin da tilt. Idan ka baje ciyar-ciyar, tabbata ka yanke shawarar shiga da kaɗi kafin aiki, kuma sanya jurewa a-back masu babbar barazana na farko a matsayin gida mai haɗari."
+      ],
+      "example": "Abokin gida da aka yi masa kaɗi 1.70 kafin wasanni ya suka gida: kadiyon ciyar-ciyar ya tashi zuwa 2.90 (ummani 34%). Idan kididdar farko-wasanni dinku ya kimantaci yanayin sunzu-sunzu su fito fiye da 40%, tashin saman haka — ba kaicinsa ba — shi ne jiya abin da ya yi daidai don baje.",
+      "related": [
+        "cash-out",
+        "line-movement",
+        "bankroll-management"
+      ],
+      "see": [],
+      "_src_hash": "6048484c8edf3b0c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "xg",
+      "term": "Expected Goals (xG)",
+      "short": "Alamar jiya da ke ƙididdige ingancin harowa, wanda ke nuna adadi na kwallaye da suka kamata a samarwa daga damar da ta kasance.",
+      "definition": [
+        "Expected goals yana ba da yuwuwar gida ga kowane harowa bisa abin da ya faru jiya daga damar iri ɗaya — nisan, kusurwa, waje da aka yi amfani da shi. Idan a ɗemeta su gida a gida na suke lokacin caca ko kasar, za a sami xG na yunkuri — ma'aunin abubuwan da suka dade da ba sa yin lissafin saurin fuska. Yunkuri da ta zama 1–0 da xG 0.4 a gida 2.3 ta umarta alkyabbin tsaye, ko menu ce a teburin.",
+        "Ga masu sazawa, xG wani alamar jin hanya da za ta shigowa a sauri fiye da sakamakon: yunkuri da ke zargin xG sosai sukan bugi baya, kuma kasuwa ba si taƙaitacce kullum ga irin wannan bugi. Abubuwan cutarwa kuma suna da mahimmanci — basu lissafta halin waje da abin da ya zama ba sai abin da na cikin itacewar sa, suna bambanta tsakanin masu ba da info, kuma damar daya xG kusan daidai ce da damar daya gida. Yi amfani da shi a matsayin sanin bayani, kada a yi masa dokoki.",
+        "Jiya shida da suka gabata yunkuri ta samarwa 11 daga xG 6.1. Kasuwar sazawa da ta ɓaje su jiya daga waɗannan 11 gida na iya zama ta yauyin da aka cikakke sosai da xG ta ce ta gudu kusan kashi 80% sama da abin da za a iya cigaba da shi."
+      ],
+      "example": "Jiya shida da suka gabata yunkuri ta samarwa 11 daga xG 6.1. Kasuwar sazawa da ta ɓaje su jiya daga waɗannan 11 gida na iya zama ta yauyin da aka cikakke sosai da xG ta ce ta gudu kusan kashi 80% sama da abin da za a iya cigaba da shi.",
+      "related": [
+        "variance",
+        "line-movement"
+      ],
+      "see": [],
+      "_src_hash": "be8ddc67f6613784",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "tipster",
+      "term": "Tipster",
+      "short": "Wanda ke buga zaɓen sace-sace — amince da abin da aka ajiye, ba da siffar hoto.",
+      "definition": [
+        "Tipster yana buga zaɓen sace-sace da za a iya karɓa ba kyauta ko da kuɗi. Tattalin arziƙin can-ciki ya mai da wannan fage mai hadari: nasarar tiyaga za ta kashe jiya, abin da ba ya ci ƙarfi ba za ta buge, siffar hoto kuma ba ƙarfe ba. Jajin gida da ya jita aiki shine ƙarfin bayyani kawai — kowa sai a ajiye kafin aƙin, a ƙaddara da kuɗin da aka ba da shi a lokaci, bakin asalin babu dodo tare da nasara.",
+        "A checklist da ya kamata a yi wa kowa (har mamu): Shin tarihin gida duk jiya ana bugun shi, tare da lokacin da aka ci ƙarfi? Shin kuɗin da aka ba da shi sai a iya samun su a lokacin da aka buga zaɓi? Shin jiya ana bugun shi a ajiyoyi marƙaja a saka kasua? Shin tarihin kan tsaya a matakin sakatarwa? Duk wanda ba ya umarci waɗannan tambayoyi ba, yana sayar da nishaɗi, ba da yawa — ƙiyi karɓar zaɓi kawai idan tarihin da jajiya ya fi kimanta maka a rabin yawan da ake cewa."
+      ],
+      "example": "Asalin da ya dace biyu: 'na ci nasara a cikin 10 na karshe!' da 'zaɓen 412 da ya ƙamata, +4.8% jiya, kuɗi na yaji 2.31, duk ajiyoyi'. Na farko shine jaji cikin gida; na biyu shine tarihin gida — ajiyoyi kuwa shine da ya mai shi haɗa.",
+      "related": [
+        "settlement",
+        "roi-and-yield",
+        "win-rate"
+      ],
+      "see": [
+        {
+          "label": "Our leaderboard with settled records",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "4790ca1012523b3c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-comparison",
+      "term": "Kwatancin Odds",
+      "short": "Dubbawa kowane bookmaker's farashin kafin sai ka yi bet — mafi saukin, mafi tabbatacce gida da ke akwai.",
+      "definition": [
+        "Bookmakers daban-daban suna ba da farashin kasuwa iri daya ta hanyoyi daban-daban, a yau da kullun da kashi 5–10%. Karɓar 2.20 maimakon 2.05 akan sakamakon iri daya shine haɓaka 7% a getin koma bayanin, ba tare da ƙarin haɗari ba — idan aka haɗa gida da kowane bet, shopping for price ne kaɗai da yawanci ya keɓe rekodin da nasara daga wanda ba a ƙi buɗi gida, da kuma rekodin da buɗi gida daga wanda aka ƙi riba.",
+        "Wannan shine mafi saukin aiki na ƙwararru da za a iya ɗan gida: ajiye asusun a bookmakers da yawa kuma koda time karɓa mafi kyawun farashin akwai. Haka nan shine asali na gani da kima — namu model ya kwatanta kowane littafi's farashin da garuri-marje consensus, da kowane match page taya mafi kyawun odds per sakamakon don comparison ya ɗan gabatarwa."
+      ],
+      "example": "Jiyya bet naka ke a odds kusan 2.00 kuma ka saka 100 × £10 cikin wata. Idan ka dauki farashin 4% kyau a jiya ba ba, yana da daraja kusan £40 a wata — duk margin da aka ba da sake, kafin jiya sai da kaɗai kin aikin hasashe.",
+      "related": [
+        "bookmaker-margin",
+        "fair-odds",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [
+        {
+          "label": "Best odds on every match page",
+          "href": "/predictions"
+        }
+      ],
+      "_src_hash": "558fd6fb31af123b",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "self-exclusion",
+      "term": "Self-Exclusion & Betting Limits",
+      "short": "Kayan sarrafa kai da ƙetare damje — ƙayyadaddun ajiye kuɗi, lokacin hutawa, da tsarin ƙetare akan duk gidajen damje.",
+      "definition": [
+        "Kowane ɗin damje da lasisi dole ne ya ba da kayan sarrafa kai: ƙayyadaddun ajiye kuɗi, ƙayyadaddun hasara da jamaje; ranar tunatar da lokaci; lokacin hudawa gajere; da ƙetare cikakke wanda zai rufe asusu na watanni ko shekaru. Tsarin da gida suka tsara ba yar fari a duk kasuwar - GAMSTOP a Barkane ta ƙetare ka daga kowane ɗin lasisi tare da jirgin ɗaya, kuma software na ƙetare kamar Gamban ta rufe gidaje da tsarin ba sa isa.",
+        "Gaskiyar baje baje: waɗannan ba ne kayan damje na 'masu damje ba daidai ba'. Ƙayyadaddun ajiye kuɗi da aka saita a lokaci mai natsu yana karfi mai nufi a gida kan makasuwa daidai da gida; hutawa bayan sautin da yake baƙo ne samun jiya aiki. Idan damje ya dace na tunani - neman hasara, boye jamaje, damje kuɗi da ke aiki - kayan gida da warware gabatarwa kyauta da sirri ne ƙasuwar gida ta gida."
+      ],
+      "example": "Saitawa ƙayyadaddun £100 a jiya ajiye kuɗi yana ɗaukar mininti biyu a saitinsa asusu. Ba za a iya haɗa shi a lokaci na tududu: karuwar ƙayyadaddun ta fara a lokaci bayan lokacin tutubowa — haka ne buɗe makasuwa.",
+      "related": [
+        "bankroll-management"
+      ],
+      "see": [
+        {
+          "label": "Responsible gambling help & tools",
+          "href": "/responsible-gambling"
+        }
+      ],
+      "_src_hash": "c50087ed518f0a33",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "handicap-betting",
+      "term": "Jefa Handicap (European)",
+      "short": "Kasuwa inda wani ƙungiya ta fara da rashin gida ko sama, tare da odds na hanya uku wanda aka daidaita, bayar da jefa daidaitacciya.",
+      "definition": [
+        "Jefa handicap na European style yana ba da sarari na gida daya ko asari ga wani gida kafin wasan ya fara, sannan ya yi kasuwa na hanya uku na gida daidaitacciya: gida, jefa daidaitacciya, bakin gida. Idan ka bugi Arsenal −1, dole ne su naci da goals biyu ko sama; nasarwa ta goal guda ta waje a iyaka na jefa daidaitacciya kuma ka ɓata jefa.",
+        "Wannan batu ne abin damje ga sabbin masu cewa, da cikakken banbanci daga nau'in Asian: European handicaps babu maimaita. Sakamakon uku (jefa daidaitacciya) shine muhimmin samari na sarari wanda ya doke bangarorin biyu na handicap, shi ya ce odds sun bayyana ta gaske fiye da layin Asian sama da wasan gida."
+      ],
+      "example": "Arsenal −1 a kudi 2.60 a kaɗan Fulham. Arsenal sun naci 2–0: jefa ta naci. Arsenal sun naci 2–1: −1 ya mai ta 1–1 — jefa daidaitacciya ta naci kuma ka ɓata jefa, inda Asian −1 ya zama jiyer kuɗi.",
+      "related": [
+        "asian-handicap",
+        "match-result",
+        "draw-no-bet"
+      ],
+      "see": [],
+      "_src_hash": "64badaff59079f4c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "half-time-full-time",
+      "term": "Half-Time/Full-Time (HT/FT)",
+      "short": "Bet guda one akan sakamakon rabin lokaci DA kuma sakamakon lokacin cikakken wasa — haɗi gida da gida, zane, ketare, da sauran haɗin gida guda tara — cikakkin matakin jiya ba tare da matakin kashi ba.",
+      "definition": [
+        "HT/FT yana buƙatar ka sannan mai gida a rabin wasan da kuma mai gida a lokacin cikakken wasan cikin bet guda: Home/Home, Draw/Home, Away/Home da sauran haɗi gida guda shida. Duka alamomin biyu dole ne su tabbata — wasan da ya makale a rabin wasan kuma ya menene jiya yana bugi tikiti Home/Home ko da kuma sakamakon cikakken wasan ya tabbata.",
+        "Nauyin kasua shi ne farashin: haɗi gida na biyu suna biya fiye da sakamakon sakamako, saboda kina ƙididdige abubuwan da suka dace da juna biyu. Daidaitawa shi ne daidai gida — yawancin masu shashen kudi suna sannan mai gida a duka ƙayyadewa, kuma ɓangare a cikin sakamakon tara ya fi ɓangare a cikin uku."
+      ],
+      "example": "Draw/Home akan mai gida aka yi kasuwa a 4.75: mai gida dole ne ya kasance daidai a rabin wasan sannan ya menene. Idan ya bida 1–0 a rabin wasan ya menene 3–0, Home/Home da aka ɗam ga alama a 2.30 shine tikiti da ta tabbata — HT/FT yana azaba ka zama daidai ko kusan daidai.",
+      "related": [
+        "match-result",
+        "correct-score",
+        "double-chance"
+      ],
+      "see": [],
+      "_src_hash": "5c87a4ea737acac3",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "clean-sheet",
+      "term": "Clean Sheet",
+      "short": "Kasuwa akan ko kwalil ta gida ba ta karbar wata goal - ana ƙidarsa daga karfi tsaron da ƙarfin hari na abokin gida.",
+      "definition": [
+        "Clean sheet bet ya dace ta zama babbar idan kwalil da aka zaɓa ba ta karbar wata goal a jerin wasan. Shi ne nisan jinaye na BTTS: 'Team A clean sheet — yes' kusan daidai da 'duka jinayen da suka sako goals — ba' amma ana fifita gida.",
+        "Hanya da gaskiya don ƙidarta ta fito daga raƙuman hari: idan abokin gida ya karba matsakaita 1.2 goals a kowa wasan da tsaron yake daidai, Poisson model yana irinsa haɗa-haɗa shifar sifiri game da kusan 30%, ƙidarren gaskiya kusan 3.30. Wata ƙimar da ta yi karfi tabbas ana buƙatar dalilin - abokan hari ba su nan, ko gardamar wazira - wanda matsakaita ba su taɓa gani ba."
+      ],
+      "example": "Alkalamar goals da ake yiwuwa abokin gida ya karba gida: 1.2. P(0 goals) = e^−1.2 ≈ 30.1%, ƙidarren gaskiya ≈ 3.32. Kasuwa da ke ba da 2.80 ta fara kusan 16% sama da gaskiya; 3.60 tana ba da ka kudan caji don karɓar jujuyawar ƙidarren.",
+      "related": [
+        "btts",
+        "over-under",
+        "xg"
+      ],
+      "see": [
+        {
+          "label": "BTTS model estimates per fixture",
+          "href": "/tips/btts"
+        }
+      ],
+      "_src_hash": "986e19371908b143",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "anytime-goalscorer",
+      "term": "Mai Yin Gida a Kowane Lokaci",
+      "short": "Baji kan wani ƙwarwaren player don yin gida a kowane lokaci a cikin wasan — farashi suna ciki daga mintuna, matsayi da tunanin gidan ƙungiyar.",
+      "definition": [
+        "Kasuwar mai yin gida a kowane lokaci tana biyan kuɗi idan ƙwararren ka yin gida sau daya a daidai — gidan kansu galibi ba a kirga shi ba, kuma baji yana buƙatar ƙwararren ya shiga wasan domin ƙarfe ya ƙare. Farashi suna nuna ninka uku: tunanin jimillar gidan ƙungiyar, rabo na ƙwararren (faifai suna ba alheri sosai), da lokaci da ake sa hannu.",
+        "Babbar kasua itace baji a kan sunaye: ƙwarwaren da aka sani da suna wanda ya fadi kan bench, ko wanda ƙungiyarsa ba ta ƙira gida ba, yana da farashi mai gajiya fiye da ainihin karansa. Dubi jerin ƙwarwaren da lambobin kai na ƙungiyar kafin sunaye."
+      ],
+      "example": "Ƙwarwaren da ke yin gida kama 30% na ƙungiyar da ake sa ran ta yin gida 1.6 da suka yi jiya sai da 1 − e^(−0.48) ≈ 38% karansa a kowane lokaci — faffataccen farashi kusan 2.60. Kājin suna masa 2.00 saboda suna kaɗai; ga tsakanin haka ne mai jiya ne keɓe.",
+      "related": [
+        "xg",
+        "value-bet",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "fd5937261b90a11a",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "first-goalscorer",
+      "term": "Mai Zuma Gida",
+      "short": "Baje akan wani mai koli da aka saba ya bugi gida — babbar canji, babbar ribar babbar, da ya dogara sosai akan peniti da lokuta da aka buga.",
+      "definition": [
+        "Mai zuma gida ya baji kawai idan mai koli da kana baje ya zuma gida na farko na gaidan. Shine kasuwar koli a duk lokaci da wani ɗimbin gida kan jiya: ba kawai 'zai zuma' ba ne kawai 'shin zumansa zai zo na farko' — wanda ya ninka canji da, sai da aka gane, ribar da bookmaker ya sa a cikin kowane presyo.",
+        "Masu daukar peniti da masu fara-lokaci masu inganci suke gida cikin jerin karbalai. Mai karbo da ya zuma sosai amma ya shigo a tsanin 70 mintuna shine kasuwar mummunan gida, duk da lamarin zumansa a duk lokaci da yake ganin su."
+      ],
+      "example": "Idan izini zuma da wani mai koli shine 38% da jama'a su daidai yiwuwa su zuma gida na farko ko na biyu, izini zumansa na farko shi ke kusan rabin karbar gida mai koli da jama'a ta fito — sau da yawa 15–18%, presyo gaskiya 5.50–6.60. Littattafan komafarke sau da yawa suna bugi 4.50: ribar lamba gida da ke ɓoye a wurin gida.",
+      "related": [
+        "anytime-goalscorer",
+        "bookmaker-margin",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "589dfe0d5c431899",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "corners-betting",
+      "term": "Bets akan Nagode (Corner Bets)",
+      "short": "Over/under da handicap markets akan ƙasuwar nagode — abin da ke taƙaitawa shi shine yadda ake buga kwallon gida da tsarin waje, ba shine wanne gida ce za ta shi.",
+      "definition": [
+        "Kasuwar nagode yana bice adadin nagode: jimla gadun match (over/under 9.5 shine layin da aka sannu), jimlar gida kuma handicap nagode. Ƙasuwar nagode tana baci da girman ƙarin fada da nisan waje — gida mai karfi wanda aka damje zuwa gefen ta waje saboda kulawar tsarki yana ba da nagode sosai ko da ba shi da ƙwallonƙalla.",
+        "Karamin kuskure shine kallon nagode a matsayin abu mara muhimmi. Suna da dangantaka da ƙwallonƙalla da yankin waje, don haka fahimin da ke bacan jimla ya zama karuwa: gaida da suke baci da ƙwallonƙalla gefen waje kan tsarkin kulle suna da ƙasuwar nagode mai girma, gaida masu kin fada suna da karama."
+      ],
+      "example": "Gaida biyu da suke baci da haɗin nagode 10.8 a gida fiye da abin da za a gane sune over 9.5 kusan muhimmin ƙa'ida 58% — kyakkyawan farashin ~ 1.72. Farashin 1.90 shi ne tsohuwar kirji idan sanin da ke bayan matsakaicin adadin gaskiya; farashin gida yayi karasa idan ya zo daga wasannin buɗe uku.",
+      "related": [
+        "over-under",
+        "sample-size",
+        "variance"
+      ],
+      "see": [],
+      "_src_hash": "0b2cfeaf81fcec85",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "cards-betting",
+      "term": "Jimawa/Kaɗa Betting",
+      "short": "Kasuwa a bako da ja kaɗa — inda kaɗar mai sharhi ya yi aiki kamar har sai zafin gida da shi.",
+      "definition": [
+        "Kasuwan kaɗa ana yin faɗi jimillar kaɗoɗi (sau da yawa a maki: bako 10, ja 25) ko kaɗoɗi fiye-fiye. Abubuwa gida biyu suke damre: faɗin gida — ɗerbi da yaƙin tsaye suna zafi sosai — da mai sharhi, wanda kaɗaɗen sa cikin waje kowace waje shine bayanai jiya, abin dawowa da yawa cirewa da bettors na sauki ba sai suka duba.",
+        "Lambar mai sharhi wannan ita ce abin kuzari mafi kusa a wannan kasuwa. Gida gida ɗaya zai iya yin faɗi kaɗa da bambaɗi 30% zuwa jiya daga gida mai sharhi."
+      ],
+      "example": "Mai sharhi da ke dawaɗar kaɗoɗi 4.8 a waje kowane yana ɗerbi wanda sabewar gidanta biyar suka dawaɗa kaɗoɗi 5.2. Layin sama 4.5 kaɗoɗi a kuɗi daidai yana faɗi haɗe-haɗe a daidai; layin gida daya a gida mai sharhi da kaɗar 3.1-dawaɗa zai buƙaci zafin ɗerbi ya yi aiki gaba.",
+      "related": [
+        "variance",
+        "sample-size",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "89575455dd41503d",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "outright-betting",
+      "term": "Outright (Futures) Betting",
+      "short": "Kudin shiga akan duka gidan gaida — mai shawara kasuwa, mai sifa mafi girma, janyo — da aka yanke shuni a waje, tare da kusada da kudin da ba shi da aiki.",
+      "definition": [
+        "Outrights suna siffanta sakamako na kakakin kasuwa: mai shawara, hudu mafi girma, janyo, golden boot. Kusada biyu masu mahimmanci suna bambanta su da shiga waje: kusada makanikantarwa ta dan takin kudi a gwari mai tarun 20 masu tsada ya fi kasua dan takin kudi mai tsada — kuma kudin ka aka taba gida tsauke watanni — kudin da ba shi da aiki da wanda zai iya aikinsa duk kujerun.",
+        "Ainihin takaici don outrights shi ne ita ce kyakkyawan yanki na farko na kasuwa da ka zata yin bayani na gida da ka sa ran zai rufe. Shiga-shiga mai shawara nan jiya a faski da ka wasa in ka jira shi ne gida na abubuwa masu kusada karatu."
+      ],
+      "example": "Haɗa yiwuwa ta kowane faski na makanikantarwa a kasuwa mai tarun 20 da kuma idan ka lissafa zai zama 115–125% — kusada 15–25%, daidai da 4–6% a waje daya kawai. Kudin kunta iri ɗaya ya zame tsara da shiga-shiga sannan ya biya ƙarafi gida kaichi.",
+      "related": [
+        "bookmaker-margin",
+        "expected-value",
+        "bankroll-management"
+      ],
+      "see": [
+        {
+          "label": "Season hubs with live tables",
+          "href": "/seasons"
+        }
+      ],
+      "_src_hash": "8b6639c4b5210df4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "each-way-betting",
+      "term": "Each-Way Betting",
+      "short": "Kudin jiya biyu a gida — nawa da waje — yawancin aiki a tseren dakin, wani lokacin an bayar da shi akan bukatun ciki na fatalwa.",
+      "definition": [
+        "Each-way bet yana raba kudinki: rabin kudin akan nawan cikakke, rabin kudin akan 'waje' (yana kammala a cikin saitin halin da aka ayyana) a juzu'i na nawan dakin. A cikin fatalwa yana bayyanwa akan bukatun ciki — kammalawa a cikin babbar hudu a matsayin waje akan kweba ta jiya, alal misali.",
+        "Tambayar daraja koyaushe ita ce juzu'in waje: a juzu'i na ¼ na dakin 8.00, waje yana ba da biyan 2.00 dangane da yiwuwar kammalawa a cikin babbar hudu kasuwar zai iya kayada kusa da 1.60 ko 2.60. Rabin biyu gida ne kawai a cikin takaitawa — arika su biyu a matsayin kudin kugin daban-daban, saboda haka ne su haƙiƙa."
+      ],
+      "example": "£10 each-way (jamilar £20) akan waje 8.00 don jiya, waje ¼ dakin kammalawa a cikin babbar hudu. Jiya a gida amma waje a cikin hudu: rabin nawa yana rasa £10, rabin waje yana mai da £10 × (1 + 7/4) = £27.50 — jamilar +£7.50. Ko wannan farashin waje ya duka yiwuwar haƙiƙi ita ce tambayar daraja ta haƙiƙa.",
+      "related": [
+        "outright-betting",
+        "expected-value",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "0e5e1cd7d7e0951c",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "banker",
+      "term": "Banker",
+      "short": "Zaɓi a cikin kuɗi-kuɗi da aka ɗauka kuwa ba sa jiya — ƙaɓar kowane tarhuwa ta sanya daidai.",
+      "definition": [
+        "Banker shine reshe da masu sita aka danganta cikin kuɗi-kuɗi — 'favourite' na 1.25 da aka ɗauka ne kawai don ƙarfafa odds. Ilimin lissafi da yawancin mutane ba sa kuna: farashi na 1.25 yana nuna cewa akwai ƙimar kuskure na 20% ko da a cikin yanayin jiya na mai sita, kuma wannan kuskure yana murzela duk tarhuwa.",
+        "Bankers kuma suna ɗauka mafi muni na farashin a bera: masu karɓi masu nauyi suna waje inda kuɗi-kuɗi na mutane ta watarke, don haka farashinsu suna cikin gida fiye da kowane sashe. Ƙara ɗaya a cikin kuɗi-kuɗi yawanci yana ƙara margin, ba tsaro ba."
+      ],
+      "example": "Four-fold na 6.00 ya zama 7.50 tare da banker na 1.25 da aka ƙara. Banker yana tunkarar jiya sau daya a cikin biyar a cikin nufin jiha ta kanta — ka canja 25% ƙarfafawa na sanda da damlamewa na 20% don juyar da kowane kuɗi-kuɗin da ya nasara ta jiya zuwa wuta.",
+      "related": [
+        "accumulator",
+        "longshot-bias",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Build a coupon from model-screened picks",
+          "href": "/tools/acca-builder"
+        }
+      ],
+      "_src_hash": "5519628f9b88ad26",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "system-bet",
+      "term": "System Bet",
+      "short": "Jerin tsare na accumulator da yawa a kan zaɓaɓɓun abubuwan gida — Trixie, Yankee, Lucky 15 — suna ba da kutannin kuɗi kadan lokacin da wasu ƙashi kawai suka yi nasara.",
+      "definition": [
+        "System bet yana sanya kowane accumulator mai yiwuwa na girman da aka ƙunna a cikin zaɓaɓɓunk: Trixie akan zaɓaɓɓu uku shine doubles biyu da treble (baji 4), Yankee akan zaɓaɓɓu hudu shine doubles shida, trebles hudu da four-fold (baji 11). Ƙashi daya da suka kasa ba ya kashe komai — haɗin-haɗin wajen babu shi har yanzu suke ƙarfafa.",
+        "Farashin shi shi fragmentation na stake: kowane haɗi yana da stake nasu, don haka '£1 Yankee' ya kasua £11. Systems suna saita accumulator's all-or-nothing tsarin zuwa mai santsi a farashin buƙatun ƙarin ƙashi dama don affaka."
+      ],
+      "example": "£1 Trixie (£3... £4 jummula: doubles 3 + treble 1) a kan zaɓaɓɓu a 2.0 / 2.0 / 2.0. Dukansu uku suka yi nasara: komawa £4×... doubles suna biya 3×£4=£12? — kowane double yana biya £1×4=£4, treble £8, jummula £20 daga £4. Biyu suka yi nasara: double daya ya tsira, £4 komo daga £4 aka yi. System's break-even yana buƙatar biyu daga uku, ba daya ba.",
+      "related": [
+        "accumulator",
+        "trixie",
+        "yankee"
+      ],
+      "see": [],
+      "_src_hash": "dce756f0cd33838e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "trixie",
+      "term": "Trixie",
+      "short": "Zaɓi uku, kuɗi hudu: kowane biyu da kuma duka uku. Masu nasara biyu suna dawo da kuɗi; uku suna biya sosai.",
+      "definition": [
+        "Trixie ya tattara zaɓi uku cikin kuɗi hudu — zaɓi biyu uku da kuma duka uku. Ba kamar treble kai tsaye ba, gida biyu na nasara suna dawo da wani abu: biyu da suka nasara suna tsere wajen ciki na uku ya gazawa.",
+        "Juma'i kuɗi ita ce raka'a hudu. Tsarin nan ya dace da zaɓi kusa da daidai; akan gida mai sauloli, biyu sun biya kadan da basu dace da raka'o'i kari, da akan gida mai tsada, treble kai tsaye yake buɗe biya fiye."
+      ],
+      "example": "£1 Trixie (£4 duka) akan zaɓi uku a 2.10. Duka nasara: biyu 3 × £4.41 + treble £9.26 ≈ £22.50. Biyu nasara: biyu ɗaya ya dawo £4.41 — kusan duka £4 ba'a saka. Treble £4 kai tsaye zai biya £37 ga uku duka amma sifili ga biyu.",
+      "related": [
+        "system-bet",
+        "yankee",
+        "accumulator"
+      ],
+      "see": [],
+      "_src_hash": "1545b6c564f5f4e1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "yankee",
+      "term": "Yankee",
+      "short": "Zaɓi huɗu, taruffan gida goma sha daya: doubles gida shida, trebles huɗu, four-fold daya. Masu nasara biyu suka fara biyan jiya.",
+      "definition": [
+        "Yankee yana yada zaɓi huɗu a cikin duk taruffan multi goma sha daya da za su iya samuwa: doubles 6 + trebles 4 + four-fold 1. Aƙalla ginshikin biyu dole ne su zo kaɗai tun da za a biya wani abu; akwai kuma jeren biya mai tsayi tare da kowane nasara da aka ƙara.",
+        "Raka'a goma sha daya shine ainihin kuɗi don barantaccen amfani. Haka a yi ta yi bambanci a gida da doubles huɗu daban-daban ko four-fold zalla: Yankee yana nasara a bambancin da shi ne kawai lokacin da zaɓun ka kai kusan odds da soji kuma kake tsammani nasara biyu-ko-uku a yau da kullun fiye da huɗu."
+      ],
+      "example": "£1 Yankee (£11) akan zaɓi huɗu a 2.00. Masu nasara biyu: double daya yana biyan £4 — kimanin £7 rashin karɓa. Masu nasara uku: doubles 3 (£12) + treble 1 (£8) = £20 — karɓa mai ɗan sanyi. Duk huɗu: £12 + £32 + £16 = £60. Tsarin yana biyan ajiya tare da kusan rashin amfani da yawancin babbar gida.",
+      "related": [
+        "system-bet",
+        "trixie",
+        "lucky-15"
+      ],
+      "see": [],
+      "_src_hash": "1960586662f10906",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "lucky-15",
+      "term": "Lucky 15",
+      "short": "Zaɓin huɗu, kirjoji goma sha biyar: Yankee tare da zaɓin huɗu keɗai — yin nasara ɗaya na kawai ya bada abu.",
+      "definition": [
+        "Lucky 15 shine Yankee tare da zaɓin huɗu ƙari: zaɓin 4 (singles) + marubuciyoyi 6 (doubles) + marubuciyoyi 3 (trebles) + marubuciyoyi 4 (four-fold) = kirjoji 15. Zaɓin keɗai na nufin yin nasara ɗaya kawai na haɗa kuɗi, kuma bookmakers sai su dagaci danaɗi — kubla odds akan zaɓin ɗaya, danaɗi ga huɗu duka.",
+        "Danaɗin ƙari suna waje saboda abin kirja na tushe yana ɗauki waje tana 15. Satuwa kirja gabaɗaya: kirjoji 15 game da zaɗi tipical 5% na waje yana satuwa kuɗi ɗaya 0.75 kafin danaɗi ya ɗawo wasu."
+      ],
+      "example": "£1 Lucky 15 (£15) akan zaɓi a 3.00 kowane. Yin nasara ɗaya tare da 'kubla odds akan nasara ɗaya': zaɓin keɗai ya bada £1 × 5.00 = £5 (jiya £3) — shuni asali £10 na ɓacewar halin. Huɗu duka: zaɓi keɗai £12 + marubuciyoyi £54 + marubuciyoyi 3 £108 + marubuciyoyi 4 £81 = £255. Gane yanayin aljihu na gaske amma ƙarami; kirja na satuwa ƙayyadannawa akan su ganin akwai fiye da ainihi.",
+      "related": [
+        "yankee",
+        "system-bet",
+        "bookmaker-margin"
+      ],
+      "see": [],
+      "_src_hash": "41186e48996f97f0",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "patent",
+      "term": "Patent",
+      "short": "Zaɓi uku, ɓets bakwai: singles, doubles da treble — cikakken jiya Trixie.",
+      "definition": [
+        "Patent ya ɗauki zaɓi uku tare da duk zaɓuɓɓu bakwai masu yiwuwa: 3 singles + 3 doubles + 1 treble. Shine Trixie plus singles, don haka har ma da ɗaya win na gida ya dawo da wani abu.",
+        "Bakwai na jiya ya siyi cikakke jiya, wanda ya dace da ƙaɓɓuka mai ƙarfi a farkon farko — singles suna ɗauke babbar nauyi a 3.00+. A ƙaƙƙarfan odds singles suna dawo da kaɗi kaɗai kuma tsarin ya zama jiya mai tsada a jiya."
+      ],
+      "example": "£1 Patent (£7) akan zaɓi uku a 3.50. Daya win: singles ta shine £3.50 — rabin jiya ya dawo. Biyu: 2 singles (£7) + 1 double (£12.25) = £19.25. Dukansu uku: £10.50 + £36.75 + £42.88 ≈ £90. Kwatanta da £7 treble shi kaɗai: £0, £0, £150 — Patent ya sauya jackpot don gida.",
+      "related": [
+        "trixie",
+        "system-bet",
+        "accumulator"
+      ],
+      "see": [],
+      "_src_hash": "d12659ca22b4ca57",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "round-robin",
+      "term": "Round Robin",
+      "short": "Duk-duk-duk na guda (doubles da kuma trebles) a cikin zaɓin da ka zaɓa — babbar tsari na Trixies da Yankees.",
+      "definition": [
+        "Round robin tana yin bets ga kowane haɗi na girman da ka zaɓa a cikin zaɓininka — yawancin duk doubles daga huɗu, biyar ko shida zaɓi. Trixie da Yankee jiya ne kawai round robins masu ƙayyadadden girma; nau'in gaba jiya ya ba ka damar zaɓar girman da kika so.",
+        "Lissafi-lissafin ya tasi de-de: duk doubles daga shida zaɓi shine goma sha biyar bets, duk trebles ashirin. Haɗi kowa yana da stake nasu kuma yana da margin nasu, saboda haka tsarin ya ninka yanki na bookmaker daidai kamar yadda yake ninka-ninka jirgin motar keɓantaccen kula."
+      ],
+      "example": "Duk doubles daga biyar zaɓi = 10 bets. A 5% margin ga kowane double, kunshin ya ɓata kusan 0.5 units na tsammanin kudi. Uku daga biyar sābis suka samun 3 doubles: a farashi 2.00 kowa ya biya 4 units — 12 bakin jiya daga 10, kafin variance ya fadi wani abu.",
+      "related": [
+        "system-bet",
+        "yankee",
+        "bookmaker-margin"
+      ],
+      "see": [],
+      "_src_hash": "ebabd3db75914eac",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fold",
+      "term": "Fold (4-Fold, 5-Fold…)",
+      "short": "Gida na bookmaker don lissafin accumulator: adadin leggugan da dole su nasara.",
+      "definition": [
+        "'Fold' yana lissafin leggugan a cikin accumulator: 4-fold yana da zabin hudu, 6-fold yana da shida, kuma kowane leg dole ya nasara. Odds suna ninkowa kuma hanyoyin fahimta suna ninkowa — kowane leg da aka saka yana ninkowa bayar da jiya ta farashin sa kuma tunanin waje na kupon ta wani abu wanda sai yake karami.",
+        "Adadin fold shi ne saurin ture check akan kowane kupon: a typical 5% margins ga kowane leg, n-fold yana ba da bookmaker kimanin n×5% na ture value. 6-fold shi ne ~30% toll da aka dubi azaman juga-jugal."
+      ],
+      "example": "Leggugan biyar a 1.80 kowaye: 5-fold yana biya 18.9. Ainihin canji idan kowane leg ya kasance daidai 55%: 0.55⁵ ≈ 5.0% — fair odds 19.9. Wariya tsakanin 18.9 da 19.9 shi ne biyar tukurar margins; ya taba da kowane fold da ka saka.",
+      "related": [
+        "accumulator",
+        "bookmaker-margin",
+        "expected-value"
+      ],
+      "see": [
+        {
+          "label": "Accumulator calculator",
+          "href": "/tools/accumulator-calculator"
+        }
+      ],
+      "_src_hash": "94a6586ebee2ec9e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "single",
+      "term": "Single",
+      "short": "Zaɓe ɗaya, wata ƙuri ɗaya — abin gida wanda duk wasu tsarin ƙuri za su haɗa da shi.",
+      "definition": [
+        "Single ya ƙori adadi gida a kan sakamako ɗaya ne a ƙimar ɗaya. Shi ne tsarinsu mafi tsarki na tunanin ƙuri kuma gindin tantance duk wasu tsarin hadaddiyar: accumulator, system ko builder gida ne singles da aka haɗa tare da ƙarin karuwaci.",
+        "Masu ƙuri na dalubai suna yin ƙuri ne ta single kawai sakamakon wannan haka — kowa daga cikin ƙuri ya tsaya nawa nasa daraja, ya biya karuwaci sau ɗaya, kuma ya dace ba tare da jagorantar wasu tunanin ba."
+      ],
+      "example": "Tunanin uku a 2.00 kowa, jiya daya gida duka. Uku ⅓-jiya singles: kowa ya biya 0.67 riba lokacin da dama, ba tare da alaƙa da wasu ba. Gida ɗaya a kan treble ya biya 7× lokacin da duk uku suka isa (≈13% lokaci a ƙimomi masu jiya) kuma sifili ba tare da ba — tunanin ɗaya, karuwaci uku, tsarin duk-ko-abin sifili.",
+      "related": [
+        "accumulator",
+        "flat-staking",
+        "expected-value"
+      ],
+      "see": [],
+      "_src_hash": "1f80d8238ba69ff4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "double",
+      "term": "Double",
+      "short": "Jimla gida mai gage biyu: dole ne duka zaɓa biyu su yi nasara, darajar darajar ta ninka, iko na bookmaker ya taru sau biyu.",
+      "definition": [
+        "Double yana ninka darajoji biyu cikin baji gida daya da ya buƙata aji biyu su zo. Shi ne ƙanƙantar jimlar gida kuma mafi bayani game da tattalin arziƙi na gida: yuwuwar tana ninka saurin sauki yayin da iko na bookmaker ya taru.",
+        "Double suna da ainihin lokacin amfani: zaɓa biyu da gaske aka yi maki kaɗan, inda ninka zaɓa biyu na kinaye ta hadiye kaɗai. Zaɓa mai kyau biyu a cikin double ba su fi yawa ba fiye da zaɓa guda-guda."
+      ],
+      "example": "Aji biyu a 2.10, kowannemasu kai jiya: double ya biya 4.41 daya da yuwuwar gaske 25% (kyau 4.00) — jiya, wannan shine ƙima kawai idan aji biyu sun kasancewa SAMA da kyau. A aji kyau 2.00, aji double na 2.10 yana buƙata kinaye; biyu daga ciki sun hadiye zuwa 4.41 daya da kyau 4.00. Aji mai iko 1.90 ya hadiye ta hanya mara kyau: 3.61 an biya daya kyau 4.00.",
+      "related": [
+        "accumulator",
+        "treble",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "4cbefc0335830c43",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "treble",
+      "term": "Treble",
+      "short": "Accumulator mai gida uku — odds suka ninka ta hanyar farko uku, kuma kudin bookmaker yakan ninka hakanan.",
+      "definition": [
+        "Treble yana buƙatar zaɓi uku duk su nasara, da farko uku aka ninka cikin jiya daya. A yawan margins kowane gida yana ba ~5% na asarar da ake zata, saboda haka tsarin yana miƙa kuwa ~15% kafin farawa — farashin lambar babbar akan takarda.",
+        "Yankin variance shi ne ainihin kayan: trebles a farko mai yawa sukan zo sau da yawa domin tunani yana kamata, suna bayar kuwa isasshe domin tunani an yi nasara. Tun da haka tun da aka bar shi, margin shi ne farashin."
+      ],
+      "example": "Gida uku a 1.90 (nahawari 2.00): treble yana bayar 6.86 a gida nahawari 8.00 — ka karɓi 86% na nahawari gida, wato, toll na tsarin 14%, domin jin ƙaɓa da babbar jiya gida uku a madɗi gida.",
+      "related": [
+        "double",
+        "accumulator",
+        "fold"
+      ],
+      "see": [],
+      "_src_hash": "713f96eff080d608",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "stake",
+      "term": "Stake",
+      "short": "Adadin kuɗi da ka sa a harika a waje - lambar da kowane dawowa, asussu, da planni na saka aka yi lissafi a gida.",
+      "definition": [
+        "Stake shi ne kuɗin da ka saka a harika. Decimal odds suna haɗa shi a cikin jin da aka yi shelar (odds × stake = jamilar da za ka dawo, sannan da stake); fractional odds suna cewar riba mai dangane da shi. Kowane tattaunawa mai hankali game da stake ita ce ta sizin wannan lambar, ba kan zaɓi masu nasara ba.",
+        "Hanyoyi biyu ne suka lallasa mafi yawa dalilin da ke dacewa: sizin stakes a ƙaramin ɓatun ƙayyade na banki na musamman, da kuma mai ɗari kada a sake sizin sama don bin asussu na asussu. Ilimin lissafi na barna ya kasu kusan duka ta sizin stake, ba ta ƙimar zaɓi ba."
+      ],
+      "example": "£10 a decimal 2.50 yana dawowa £25 duka - £15 riba da £10 stake. Sautin gida gida a fractional ne 6/4: £15 riba per £10 staked. Sautin gida gida, kuɗin gida, kaidoyin gida.",
+      "related": [
+        "flat-staking",
+        "bankroll-management",
+        "unit"
+      ],
+      "see": [],
+      "_src_hash": "725de29c74bc72a5",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "unit",
+      "term": "Unit",
+      "short": "Shanyin da mai-zartatte ya fi amfani dashi - yawancin lokacin 1–2% na kadarwar jari - kudin da a yi rikodin da shi.",
+      "definition": [
+        "Unit shine shanyin da mai-zartatte ya zaɓa da kansa, yawancin 1–2% na kadarwar jari. Masu ba da shawarwari da masu rikodin profit suna ƙidaya cikin units ('+14.2u') saboda yana raba fahimta daga kadarwar kuɗi: +14 units yana nufin abin daya ko unit ɗin ya zama £2 ko £200.",
+        "Units kuma suna bayyana mana yadda ma'amala ke taka bayyana. Rikodin da ke faɗi '10-unit locks' da '0.5-unit longshots' yana gaya maka imani ya kasance daban-daban a kowane zartatte — kuma a tarihi haka ya yi alaƙa da rikodin da ba sa ci gaba ba a wallafa ba."
+      ],
+      "example": "Kadarwar jari £1,000, unit 1% = £10. Kasar da ta gama +18.4u ta sami £184 a cikin saita daidai. Rikodin da muke wallafa kaɗai yana amfani da saita daidai 1-unit saboda lambar ba za a iya yin kasar ba idan aka canja zartatte bayan kyautattun gudummawa.",
+      "related": [
+        "flat-staking",
+        "bankroll-management",
+        "roi-and-yield"
+      ],
+      "see": [
+        {
+          "label": "Our settled record, flat 1u",
+          "href": "/tipsters"
+        }
+      ],
+      "_src_hash": "195038bc8d5b4bef",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "odds-on-odds-against",
+      "term": "Odds-On / Odds-Against",
+      "short": "Ko farashin ya nuna saniya fiye da kashi 50% ko kasa da shi — kasa da 2.00 ko fiye da shi a decimal.",
+      "definition": [
+        "Odds-on nasu nufin farashin ya nuna saniya mafi kyau fiye da daidai: decimal kasa da 2.00, fractional tare da lambar babba a dama (1/2). Odds-against shine akasin haka: decimal fiye da 2.00, fractional 2/1 da fiye. Evens (2.00) shine gida.",
+        "Kalmomi suna da mahimmanci domin tuhuma ta kwantance ta sha'awa banban a kowane gida. Odds-on favourites suna da jiya lalacewa da aka yadda saba ta jari-jarin talakci; odds-against underdogs suna zama kamar jetti. Babu tuhuma daya da ake samu gida ta gida da ake samu ajiya. Value zai zauna ne a tsakanin farashin da gaske yiwuwa."
+      ],
+      "example": "1/2 fractional = 1.50 decimal = 66.7% nufin: odds-on. 5/2 = 3.50 = 28.6% nufin: odds-against. Favourite na 1.50 da gaske ya rinjayi 60% na lokaci shine bata; outsider na 3.50 da ya rinjayi bangare na uku shine kyakkyawa.",
+      "related": [
+        "odds-formats",
+        "implied-probability",
+        "longshot-bias"
+      ],
+      "see": [
+        {
+          "label": "Odds converter",
+          "href": "/tools/odds-converter"
+        }
+      ],
+      "_src_hash": "250380da66bc1f85",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "vig",
+      "term": "Vig (Vigorish / Juice)",
+      "short": "Sunin Hausa na gida — kuɗin da mai saji ya ɗora a cikin kowane faɗi na fadi, kuɗin aikin sa.",
+      "definition": [
+        "Vig, vigorish ko juice shine kalmar Amurka ta musu ɗorawa da mai saji saji yake — abin da bayen zuwa Turawa suke kira margin ko overround. Ba shi lambar daidai a kan takardin fadi ba; yana ɓoye a cikin faɗi waɗanda juna jiyu suna haɗe zuwa sama da kashi 100%. ",
+        "Tsohon kalmar Amurka ita ce -110/-110 a kan point spread: sai ka fadi 110 don samun 100 a gefen kowane. Kowane gefen zai nuna kashi 52.4%, jiyu akan juna suna haɗe zuwa kashi 104.8%, kuma kashi 4.8% shine vig din."
+      ],
+      "example": "-110 a gefen duka: wajen nuni 52.38% a kowane gefen, daidai 104.76%. Wanda ya zaɓi spreads ba tare da jiya ba zai hasara kuɗi 4.76 cents na kashi dara, jiya ba — shi ne vig din da ke aiki, ba rashin jiya ba ne kawai.",
+      "related": [
+        "bookmaker-margin",
+        "overround",
+        "point-spread"
+      ],
+      "see": [
+        {
+          "label": "Margin calculator",
+          "href": "/tools/margin-calculator"
+        }
+      ],
+      "_src_hash": "3a6a05972381e3bc",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "moneyline",
+      "term": "Moneyline",
+      "short": "Tsarin odds na Amurka: lambobi mara kyau suna nuna abin da kake saka don samun 100, lambobi kyau suna nuna abin da 100 zai samu — kuma shi ne sunan kasuwar neman nasara a Amurka.",
+      "definition": [
+        "Moneyline na -150 yana nufin saka 150 don samun 100 (decimal 1.67); +240 yana nufin 100 zai samu 240 (decimal 3.40). Mara kyau ya nuna mai nasara da sannu, kyau ya nuna wanda bai karba nasara ba. 'Moneyline' kuma ya nuna kasuwar kanta — saka wanda zai nasara ba tare da spread ba, wanda a wasan kwallon kafa ya haɗa jiya azaman layin nasa.",
+        "Juye shi ne masu sauƙi: decimal = 1 + 100/|ML| don mara kyau, 1 + ML/100 don kyau. Yin shi a zuciya — ko bari na'ura ta yi shi — shi ne matakin farko na kwatanta farashi da aka ambaci a Amurka da sauran."
+      ],
+      "example": "-125 = 1.80 decimal = 55.6% da aka nuna. +210 = 3.10 = 32.3%. Moneyline mai hanya uku na kwallon kafa na -125 / +260 / +330 ya nufin 55.6 + 27.8 + 23.3 = 106.7% — vig na 6.7% a kan uku.",
+      "related": [
+        "odds-formats",
+        "vig",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "Odds converter",
+          "href": "/tools/odds-converter"
+        }
+      ],
+      "_src_hash": "668a9894bd102ded",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "point-spread",
+      "term": "Point Spread",
+      "short": "Adireshin Amurka: layin da jiya a kusa da daidai akwai mataki na points, kuma zaɓe da lambobi shida ba zai latsa ba.",
+      "definition": [
+        "Point spread yana ba da handicap ga mai nasara ta wajan saitin nisa — saitin -6.5 points kuma sai su yi nasara da bakwai ko fiye. Gidajen sharati suna sa makasuwa a kusa da -110 masu, abubuwan tiyaga na littafi suna zama a cikin vig ba a cikin amincin nasara ba. Lambobi gaida-gaida na spreads na iya tumsewa daidai (push) da maimaita ajiya; layin rabin-point ba zai iya ba.",
+        "Gida ne kamar Asian handicap a wasan buɓu: sauya rashin daidaiti zuwa karɓa-karɓi kuma samu kudin sauya. Tushen wasan buɓu shine: tsababbar ƙira yakan sa rabin-goal lines a gida, inda wasannin Amurka suna zauna a 3.5s da 6.5s."
+      ],
+      "example": "Mai nasara -3 a -110: yi nasara daidai ta 3 na push (ajiya koma), ta 4+ na win, ta kasa na loss. -110 a kowane gida yana nufin sai ka yi nasara a spread 52.4% na lokaci sai ka kasance daidai — lambar da kowane fawayi 'against the spread' ya kamata a siffanta ta.",
+      "related": [
+        "asian-handicap",
+        "vig",
+        "push"
+      ],
+      "see": [],
+      "_src_hash": "d706c29ea8be4e8f",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "push",
+      "term": "Push",
+      "short": "Baji da ya bugi layin daidai — kudin jari ya koma, babu nasara, babu asara, kuma ba ya taimaka ga tilasin jari.",
+      "definition": [
+        "Push yana faruwa lokacin da sakamakon ya bugi layin lamba gida daidai: under 3.0 goals amma wasan ya yi 3, ko spread -3 da aka nasara da 3. Kudin jari ya koma; baji ba abu ba ne. Asian handicaps suna yin wai-yaya ne a wajen su akan wajen 'whole' da 'half-split' lines.",
+        "Tasiri biyu a zahiri: pushed bets ba su kirga zuwa bonus wagering a manyan bukunan ba, kuma a accumulator leg da ya push yawanci yana fita — coupon ta sake lissafta a sauran odds maimakon mutuwa."
+      ],
+      "example": "Over 2.5/3.0 (split Asian total) kuma wasan ya yi 3–0: rabin 2.5 ya nasara, rabin 3.0 ya push — ka karbi a rabin kudin jari kuma an mayar da rabin. A waje over 3.0 mai gida gida, duk kudin jari ya bugi kawai.",
+      "related": [
+        "asian-handicap",
+        "void-bet",
+        "over-under"
+      ],
+      "see": [],
+      "_src_hash": "f34f6898ef0dc5cf",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-exchange",
+      "term": "Betting Exchange",
+      "short": "Kasuwa inda masu soja suka yi waje da juna — ka iya samun ko jera kowane sakamakon, mai kasuwa ya ɗauki commission a maimakon margin.",
+      "definition": [
+        "Exchange yana daidaita abokan cinikin: ɗaya ya samun sakamakon, ɗayan ya jera shi, kuma platform yana ɗaukin ƙaramin commission akan ribar nasara a maimakon saka margin cikin farashi. Odds suna samuwa ta supply da demand, wannan shine dalilin da farashi na exchange ke zama benchmark da masu kira wajen yin kwatanta tsakanin bookmakers.",
+        "Matsalar shine liquidity: farashi na exchange yana wanzu kawai a cikin adadi da sauran abokan cinikin ke shirin daidaita. Kasuwa manyan baje na kwallon kafa tana zama mai zuwa; ƴan ƴan leagues da kasuwa na asali na abubuwa ba su da mai saitin kusan shi da salihu kyau ba."
+      ],
+      "example": "Bookmaker ya tambaya 2.00 akan mutum da exchange ke yi jaye a 2.10. Bayan 2% commission, samun back na exchange ya zama 2.10 − (1.10 × 0.02) ≈ 2.078 — har yanzu sannu da 2.00. Wannan gap, da aka yi aiki jiya sama da jiya, shine kusan abin da margin na bookmaker ke tsarone ka.",
+      "related": [
+        "lay-betting",
+        "closing-line-value",
+        "sharp-and-soft-bookmakers"
+      ],
+      "see": [],
+      "_src_hash": "ff50d3cd02feb876",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "lay-betting",
+      "term": "Lay Betting",
+      "short": "Kudi daka wanda abun da aka yi doka zai faru — kunna iyali da 'bookmaker' a kan gida na musayar kudi.",
+      "definition": [
+        "Lay (jiddewa) abun yadda ya fi dacewa shine karbar kudi dake baba: za ka yi nasara da kudi dake baba idan abin ba shi gamawa ba, ka biya kudi a maimakon oddsa idan ya faru. Damun ka a lay da oddsa 4.00 shine sau uku dake kudi dake baba — wannan sabawa da sabon masu daka ba sa gane sosai.",
+        "Jiddewa (lay) yana cika kayan aiki: kasuwar baba na wasa uku zai iya zama jiya daga kowane gida ('wannan babbar takara ta yi taƙaici') yana zama aiki tare da jida wai wawa suka fi shi), kuma karkarin mataki yana zama batun jiddewa wanda kake baba da anfani da gida."
+      ],
+      "example": "Jiddewa £10 a oddsa 4.00: idan abin ba ya gamawa ba ka yi nasara da £10; idan ya faru ka biya £30. Kudi da aka ƙididdige shi ne 'wannan abin ba shi faru ba fiye da 25% na lokaci' — da oddsa da girma da ƙayyadewa daidai da kidan kuma ra'ayi.",
+      "related": [
+        "betting-exchange",
+        "hedging",
+        "implied-probability"
+      ],
+      "see": [],
+      "_src_hash": "ba976ad193de42aa",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "dutching",
+      "term": "Dutching",
+      "short": "Rabuwa hannun kuɗi akan sakonnin da yawa don haka duk mene ya lashe ya bada riba daidai — rufe jiya, ba arbitrage.",
+      "definition": [
+        "Dutching yana rabuwa hannun kuɗin ka akan sakonnin biyu ko fiye cikin yadda gara ga odds nasu, don haka duk wane ya lashe ya bada jiya daidai. Sanin three correct scores ko goalscorers biyu ta wannan hanya yana juyar da ra'ayoyi da yawa zuwa muhimmin nisa mai sani jiya.",
+        "Damun shine yin kuskure tsakanin rufe jiya da karfi: sakonnin da ka saba sanin su har yanzu sun kaida hannun kuɗin gaba daya. Dutching kusan kasa 100% combined implied probability ba shi arbitrage ba — shi ne normal bet wanda branches rashin nasara shi ne duk waje da sakonin ka."
+      ],
+      "example": "Sanin 1-1 a 7.0, 2-1 a 9.0, 1-0 a 10.0 tare da jimilar £20 rabuwa 8.87/6.90/6.21... duk ɗaya daga cikin uku ya lashe ya bada kusan £62 (implied rufe jiya ~32%). Sauran 68% na scorelines sun kaida duk £20 — wannan shine bet da ka aiki kasua.",
+      "related": [
+        "hedging",
+        "correct-score",
+        "implied-probability"
+      ],
+      "see": [
+        {
+          "label": "Dutching calculator",
+          "href": "/tools/dutching-calculator"
+        }
+      ],
+      "_src_hash": "9bae402a7a10c3e1",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "hedging",
+      "term": "Hedging",
+      "short": "Sanya aiki-disa don tsara riba tabbas ko damka asusun jiya — wanda ke bukatar kudin margin, biyu.",
+      "definition": [
+        "Hedging yana rufe ko rage matsayin ta hanyar sanya kudin-jiya wajen gida: sanya jiya ga timiyin da ka goyi kafin gida, goyi kwana-sama tsakanin shirayen tare na damaje, ko kawar kudin (wanda shine kawai bookmaker ke yi hedging a gidansa, ta fihirin su). Idan an yi shi ta daidaita odds, hedging yana juyawa batawar su zuwa lambar da mutum ya tabbata.",
+        "Jita ita ce biya margin akan sanya kudin na biyu. Sanya hedging ga kowane shirayen da ya naci akai-akai shine haraji akan nasararka; kiyayen ainihi suna da kadan da kuma takaici — tsara accumulator na rayuwa, ko gaje daga matsayin da asasunsa ya mutu da labarin timu."
+      ],
+      "example": "£10 hudu-fold a 15.0 yana da kafa uku da suka naci; kafa na isi na gida ya sayi a 2.5 akan jujjuya. Sanya-jiya/goyi don daidaita yana tsara ≈£45 ko kamar haka hanyar shirayen na isi, tsakanin £150-ko-babu-komai da ba a hedging. Idan wannan gida daidai ne ya dogara da farashi, ba tare da tsoron jiya ba.",
+      "related": [
+        "cash-out",
+        "lay-betting",
+        "dutching"
+      ],
+      "see": [
+        {
+          "label": "Hedging calculator",
+          "href": "/tools/hedging-calculator"
+        }
+      ],
+      "_src_hash": "265417d8376be4b6",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "overround",
+      "term": "Overround",
+      "short": "Adadin da ke wuce kashi 100% a cikin kadarwar abubuwa — gindin da mai shari'a ke tsammanin sa.",
+      "definition": [
+        "Kada kadarwar abubuwa duka a kasuwan, kuma yadda take wuce 100%, gida ce ta overround: 1X2 da ya iso 105.5% yana da 5.5% overround. Shi ne abu iri daya da gindin mai shari'a, sai kawai ana daukinsa a duk kasuwan ba kashi-kashi ba.",
+        "Overround yana canji bisa kasuwa da littafi — kasuwar babbar kasuwa a karfin ƴan shari'a suna shuka 2–5%, kasuwar abin ban mamaki da ƴan ƴan kasuwa 8–15%. Binciken shi yana ɗauki sakonni talatin kuma ya gaya maka ainihin jiya kafin sharhi ko damje ya taba."
+      ],
+      "example": "Farashi 1.95 / 3.60 / 4.10 suna nuni 51.3% + 27.8% + 24.4% = 103.5% — 3.5% overround, kyakkyawa. Gida gida a waje a 1.83 / 3.40 / 3.90 suna nuni 107.7% — kana biya jiya biyu akai gida gida.",
+      "related": [
+        "bookmaker-margin",
+        "vig",
+        "fair-odds"
+      ],
+      "see": [
+        {
+          "label": "Live margin research across our leagues",
+          "href": "/research"
+        }
+      ],
+      "_src_hash": "7ac9166d8f6aa038",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "goal-line",
+      "term": "Goal Line (Asian Total)",
+      "short": "Totals tare da Asian handicap mechanics: lines mai gida, rabin da split sune inda ma iska daidai ya bugi wasu ko duka asusun.",
+      "definition": [
+        "Goal line shine over/under tare da Asian handicap refund system. Whole lines kamar 3.0 sai su push idan total ya land daidai; split lines kamar 2.5/3.0 sai su settle rabin stake akan kowane component; half lines kamar 2.5 sai su aiki kamar classic market.",
+        "Refunds sun yi kasu odds: over 2.5/3.0 yana bugi kadan fiye da over 2.5 saboda wani rabin downside kin bugi. Zaman cikin wannan sarrafi ya fi amfani ne su tambaya tare da pricing, kuma split lines sune inda bookmakers ke bugi mafi danye prices — gwada tare da plain line kafin ka ɗauka daya."
+      ],
+      "example": "Over 2.75 (wacce ita ce 2.5/3.0 split) tare da £10: match yana kare 3–1 — rabin biyu suka nasara. Yana kare 3–0... total 3: 2.5 half ta nasara, 3.0 half ta push → kwamata akan £5, return £5. Yana kare 2–0: rabin biyu sun fashe. 'Quarter line' shine kawai waɗannan yakoki biyu da aka ɗora tare.",
+      "related": [
+        "over-under",
+        "asian-handicap",
+        "push"
+      ],
+      "see": [],
+      "_src_hash": "ff9d0b027c55b632",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "bet-builder",
+      "term": "Bet Builder (Same-Game Multi)",
+      "short": "Haɗa kasusuwan da yawa daga waje gida DAYA cikin gida a cikin fiye daya — inda farashi da jajaye a hankali suna amfani da gida.",
+      "definition": [
+        "Bet builder yana ninkowa zaɓe daga fiye daya cikin gida — sakamakon fiye, BTTS, katunaɗe, mai kiwo — a cikin fiye daya farashi. Saboda waɗannan rabe-rabe suna da alaƙa (gida da nasara 3–0 yana buƙatar mai kiwoyi zai kiwowa fiye) madaidaicin farashi yana buƙatar yin taba aiki, ba kawai katakaitawa baɗi.",
+        "Wannan alaƙa ita ce waje gida da karfe: kasuwa yana farashi popular correlated abubuwan sosai kaɗan, kuma margin akan builders a yau yau yana ninkowa fiye-kasuwa vig. Aiki ita ce abubuwa da gida kuma fiye kuma bada gida."
+      ],
+      "example": "Gida zuwa nasara (2.00) + wuce 2.5 (2.00) a baɗi ninkowa zuwa 4.00, amma sakamakon waɗannan abubuwan yana buƙatar da juna sosai — fair joint farashi zai iya zama 3.20. Builder yana karɓa sayi 2.90. Kai ka biya duka alaƙa daidaita kuma kuma extra margin layer don amincin fiye daya slip.",
+      "related": [
+        "accumulator",
+        "bookmaker-margin",
+        "btts"
+      ],
+      "see": [
+        {
+          "label": "Model-screened combinations instead",
+          "href": "/tools/acca-builder"
+        }
+      ],
+      "_src_hash": "fe2be9f9ee3080ae",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "acca-insurance",
+      "term": "Acca Insurance",
+      "short": "Promo wanda ke bugi accumulator da ya tsinke ta hanya bakwai guda kawai — yawanci a matsayin free bet, koyaushe ana kirga ta a cikin farashin samfurin.",
+      "definition": [
+        "Acca insurance yana bugiwa coupons inda wannan waje ya same ka — yawanci ana bukaci mataki 5+ ko fiye, bugi ana iyakanta kuma ana biyan shi azaman free bet ba cash ba. Kusuri na aiwatar (babu waje gida) ya fi karala fiye da yadda ya rikita: coupons yawanci suna tsinke ta hanya biyu ko fiye.",
+        "Yi ƙisashin samfu azaman paket: jiyya wacce ita ke bugi akwai sa'a ne a cikin bugi-akwai daidai gida-tsinke yana da ƙarancin kumfa ɗan sassa ne kawai na haɓaka marjin wanda accumulator mai yawa ke ɗauka. Yana natsowar yadda jiya ta rikita; bai canza alamar tiyaga ba."
+      ],
+      "example": "Mataki biyar a 60% kowannen ainiyi na yuwuwa: P(babu waje gida ne kawai ya tsinke) = 5 × 0.4 × 0.6⁴ ≈ 25.9%. Bugi na £10 azaman SNR free bet yana kirga ~£7 lokacin da aka aiwata → ≈£1.80 jiyya da ake zuwa, kaɗai ~£2.50 haɓaka marjin a kan liyafa gida kanta.",
+      "related": [
+        "accumulator",
+        "free-bet",
+        "stake-not-returned"
+      ],
+      "see": [],
+      "_src_hash": "ec3bd1c5d6af93ee",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "price-boost",
+      "term": "Price Boost (Odds Boost)",
+      "short": "Farfeshin faɗa da jiya mai ɓooyaɗe akan zaɓe da jiya ta zaɓa — wani lokaci shi ne gida mai sani, koyaushe ya kamata a bincika dake tare da fassarar da ba a ɓooyaɗe ba.",
+      "definition": [
+        "Farfeshin faɗa mai ɓooyaɗe yana ƙara jiya a kan zaɓe wanda jiya ta zaɓa, yawanci mai iyaka na saman. Saboda farfeshiya na asali ya haɗa da iyakattaccen nau'i, farfeshin ƙara yawanci ya dawo kawai zuwa daidai — amma wani lokaci, musamman a kasuwa mara kariya, hakika yana tsaye sama da haka.",
+        "A binciken shi: kwatanta farfeshiya mai ɓooyaɗe tare da mafi kyau farfeshiya ba a ɓooyaɗe ba da jiya. Farfeshin ƓA 2.20 indai littattafai masu ƴa suna karantawa 2.10 shine gida mai sani a iyakattaccen girma; farfeshin ƓA 2.20 indai daidai farfeshiya shine 2.35 shine lissafi na farɗa."
+      ],
+      "example": "Boost: 2.00 → 2.20, saman mafi yawa £10. Jiya ta musulunci ta karantawa zaɓin nan a 2.16, kusan 2.12 daidai bayan kudin haɗi. Karbar farfeshiya yana ɗauka (2.20 / 2.12 − 1) ≈ +3.8% jiyar da ake zata a saman iyakattaccen — ya kamata a karba, kuma ba ya kamata a rawar da shi zuwa farfeshin da ba a ɓooyaɗe na jiya.",
+      "related": [
+        "value-bet",
+        "closing-line-value",
+        "free-bet"
+      ],
+      "see": [],
+      "_src_hash": "02171ba706bfb8f8",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "stake-not-returned",
+      "term": "Stake Not Returned (SNR)",
+      "short": "Dokar kaddamar da free-bet: abubuwan jiya kawai za su biya, babu maida ajiya — rabi ƙimar token a odds na gida.",
+      "definition": [
+        "SNR yana nufin free bet tana biya abubuwan jiya kawai: token na £25 a 2.00 yana biya £25, ba £50 ba, saboda ajiya ba nata kuɗi ba ne. Kusan duk free bets suna biya haka, wanda ya saita ainihin ƙimar token — a yadda daidai token tana juyawa a (odds−1)/odds na ƙimar fuska a yadda daidai.",
+        "Sakamakon: tokens suna cire fiye a mafi girma odds (kashi 50 na fuska a 2.00, kashi 75 a 4.00) kuma suna ɓata a mafi gajeren gida. Shi ne gaskiyar da ta fi amfani a game da free bets kuma ta fi gida annoye."
+      ],
+      "example": "Token SNR na £25: a 1.40 zai iya ayi ribayi £10 kawai — kashi 40 na fuska za a rasa kafin kɓari. A 5.00 zai ayi ribayi £100, juyawa ~kashi 80 na ƙimar fuska a abubuwan sa a yadda daidai. Token iri gida, ribayinsa linu, yanke shawara gida.",
+      "related": [
+        "free-bet",
+        "expected-value",
+        "wagering-requirements"
+      ],
+      "see": [
+        {
+          "label": "Free bets explained in full",
+          "href": "/guides/free-bets-explained"
+        }
+      ],
+      "_src_hash": "e29e3c9a2f1ebcf5",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "poisson-distribution",
+      "term": "Rarraba Poisson",
+      "short": "Misalin ilmin ƙididdiga da aka yi amfani dashi wajen ƙididdige fadar wasanni — kofar gida a matsayin abubuwan da ba su da alakar juna kuma ana san matsakaicin adadi.",
+      "definition": [
+        "Rarraba Poisson yana bayar da yiwuwar abubuwan k lokacin da abubuwan suka iso kai tsaye a sanannun matsakaicin matsa λ: P(k) = e^−λ·λᵏ/k!. Ki say wa shi matsakaicin kofar wasan gida na ƙungiya, to zai samar da yiwuwar 0, 1, 2, 3… — kuma rarraba ƙungiyoyi biyu suna haɗa gida zuwa sako, 1X2, jimillar kofar da BTTS.",
+        "Ba ta da kyau ta hanya sananniyya — kofar suna tsoguwa ɗan ɗan, jumla suna yin faɗi ƙarƙashin faɗar da ta kamata — kuma kowane misalin wasanni mai gida, gida da kansu, ya fara daga gida da kuma gyara daga can. Karfinsa shine canza bayani ɗaya mai gida (matsakaicin kofar wasan gida) zuwa cikakken fili na yiwuwar."
+      ],
+      "example": "λ = 1.4 matsakaicin kofar wasan gida: P(0) = e^−1.4 ≈ 24.7%, P(1) ≈ 34.5%, P(2) ≈ 24.2%. Rarraba Poisson mai zai-zai a 1.4 da 1.1 suna ba P(1–1) ≈ 34.5% × 36.6% ≈ 12.6% — ilimin lissafi a ciki kowane faɗar sako dama da ka taɓa gani.",
+      "related": [
+        "xg",
+        "expected-value",
+        "correct-score"
+      ],
+      "see": [
+        {
+          "label": "How our model works",
+          "href": "/model"
+        }
+      ],
+      "_src_hash": "c003f1cd5ff1fdfb",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "regression-to-the-mean",
+      "term": "Koma-komai Zuwa Tunani",
+      "short": "Aiki mafi girma ko ƙasa daga ainihin iko — karfin ƙididdiga bayan 'aiki na yanzu bai da darajar, iko bai da darajar'.",
+      "definition": [
+        "Lokacin da aiki ya tashi sosai ko ya fadi sosai daga ainihin mataki na ƴan wasan, batawar gida na gida ta yiyuwà a gida daga waccan mataki — ba saboda ɗaki ko mummuɗi, amma saboda mafi girma suna cikin sauƙi kuma sauƙi bai maimaita ba. Ƴar wasan da ke canza 35% na bugi zai canza kusa da ainihin 12% na ranar jiya.",
+        "Don mai saka kuɗi, iƙon koyi shine game da farashin bayanai: kasuwar ta yawanci ta wajen girma na tsirkai daidai lokacin da koma-komai mafi yiwuwa, saboda haka ƙetare girma a farashin mafi musamman aiki ne mai tsada kuma bi su aiki mai rashin ƙarfi."
+      ],
+      "example": "Gida a tsakiyar teburin sun yi nasara shida jere, uku daga gida gida tare da ƙananan xG kala-kala. Lambobin ƙullo sun farasuwa kara aiki na 45%; kasuwar jerat-bin ta farasuwa 58%. Koma-komai ba ya ƙaunarƴa asusun — yana cewa 1.72 a gutsun 45% shine farashin kuskure.",
+      "related": [
+        "variance",
+        "sample-size",
+        "xg"
+      ],
+      "see": [],
+      "_src_hash": "a5cb887c49a4a007",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "sample-size",
+      "term": "Sample Size",
+      "short": "Nawa jiya da ke bainar wani lissafi — bambanci tsakanin shaidiga da zarge-zarge, a gida daya.",
+      "definition": [
+        "Kowane lissafin kudin shiga shi ne kimanta wanda amibi shi ya karu da adadin abubuwan da aka lissafi. Wasanni biyar na BTTS ba su gaya maka abin yawa ba; hamsin suna gaya maka wani abu; jari biyar suna tsintsiha har tsaye. Standard error yana raguwa tare da tushen murabba'i na n — yi iji ikon bayani hudu don rage jita ɗaya.",
+        "Tatshin aiki: kafin ka yi aiki da kowane yawa ('sun buga over 2.5 a 8 daga 10'), tambaya nace n shine menene da kuma base rate ya ce. Yawancin 'trends' da aka lallasa wa dan kudin shiga su ne gidaje-gida biyar na baba wanda aka saba zai kasua kusa da 50%."
+      ],
+      "example": "Yawa 60% over-2.5 daga wasanni 10 yana da standard error na ±15.5% — yawa gaskiya itata zai iya zama daga 45% zuwa 75%, wanda ya bugi 'shiga over' da 'shiga under'. Kamannin 60% daga wasanni 200 (±3.5%) a zahiri shi ne bayani.",
+      "related": [
+        "variance",
+        "regression-to-the-mean",
+        "win-rate"
+      ],
+      "see": [],
+      "_src_hash": "0259ad38e8f46e75",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "longshot-bias",
+      "term": "Favourite–Longshot Bias",
+      "short": "Jinjin kasuwa da aka tabbatar da shi: longshots ana bugi su kai tsaye ta hanyar bukatar kudin, favourites da kyau sosai.",
+      "definition": [
+        "A cikin shekarun da suka wuce na nazarin da kasuwa, baje-baje a dogon gida suna ba da amfani mafi raunin fiye da baje-baje a gajeren gida: jama'ar waje suna son bayyannu mai siffa ta lotto, kasuwar littafi suna zuwa azaman yadda suke so, da margin na sportsbook ya taru a daidai inda alawar ke cikin gida.",
+        "Jinjin gida yana ɗaya cikin kaɗai kasuwar gida masu tsanani sosai don gina ƙa'idodi akan su: zama da shakku kan ka mafarki na longshot, bugi karfi a gida kafin ɗauki 6.0+, kuma tuna cewa yawancin 'daraja' da model mai naïveté ke gano a manyan farashin shine jinjin gida tana bakin dare. Namu v1 kanta ya tafi 0-for-8 a daidai wannan rake."
+      ],
+      "example": "Nemo na gida: baje-baje a 1.50 suna ba da ~97p per £1 staked; baje-baje a 15.0 suna ba da ~85p. Wasan gida guda, littafi guda, rana guda — bambanci shine inda margin ta ɓoye. Model da ta yi watsi da wannan ba za ta ki gano manyan gida na sa'a ta daidai inda farashin ke muni.",
+      "related": [
+        "value-bet",
+        "variance",
+        "bookmaker-margin"
+      ],
+      "see": [
+        {
+          "label": "Our model's odds caps and why",
+          "href": "/model"
+        }
+      ],
+      "_src_hash": "365d89426d4636e4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "home-advantage",
+      "term": "Gida-jiya",
+      "short": "Amfanin kasua na wasa a gida — kusan 0.3–0.4 gida, yana bambanta da jiya, zamani da taron.",
+      "definition": [
+        "Gawar gida suna sama da kuma suna kawar kaɗan fiye da gawar ɗaya a waje — a tarihi kusan 0.3–0.4 gida a kowane wasa, yana bugi da tasirin taron akan ɗan wasan da jajeme, tafiya, da sanin gida. Amfanin gida shine gaskiya, ya bambanta da jiya, kuma yana raguwa a laka-lakacin farko. ",
+        "Kowannen saurin iska na gayya yana ɗauke bambancin gida da waje maimakon ɗaya kawai; namu yana yi. Bakin batin kuɗi bashi kaɗan cewa gida-jiya ya wanzu — kasuwa ta sani — amma cewa girman sa ya bambanta da jiya da kakaushi, kuma farashin da aka saita akan jiya na duniya suna karfafa kuɗi masu bambanci."
+      ],
+      "example": "A cikin jiyoyin da muka dace, jimar gida yana tashi kusan 1.4 da kusan 1.1 a waje — amfanin kusan 0.3-gida mai daraja kusan 8–10 maki na nasara a gaije mai daidaici. Jiya wacce kakaushi na yanzu yake taushi sama ko kasa da jiya ta kanta shine inda jimar galadima da farashi na 1X2 suna bambace da karfi.",
+      "related": [
+        "poisson-distribution",
+        "xg",
+        "regression-to-the-mean"
+      ],
+      "see": [
+        {
+          "label": "Home advantage by league — live research",
+          "href": "/research/home-advantage"
+        }
+      ],
+      "_src_hash": "9838d9bf65548ef4",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "team-form",
+      "term": "Nuni",
+      "short": "Sakamakon jiya-jiya a matsayin alamari — babu karfin albashin da kansa, yana da amfani kawai idan aka hayyaye shi tare da ingancin abokan harika da lambar asali.",
+      "definition": [
+        "Nuni ya haifar da sakamakon jiya-jiya — WWDLW jeri a kowane gida na lissafi. Nuni mai tsauri ba shi da karfin albashin: sakamakon biyar suna kunshe da babbar hayaniya, ingancin abokan harika ya bambanta sosai, kuma gida daya wanda aka soke ya canja haruffin. Rabobin da suke irinwa (harkokin jawo, xG, matsayin filin) suna albashin waje na jiya mafi kyau fiye da haruffin.",
+        "Nuni ya sami mahalli lokacin da aka hayyaye shi (jiya-jiya sun haura karfin), an daidaita shi da nwa wanda aka fada, kuma an tantance shi da lambar da aka haifar. Nsu na gida yana amfani da lalatawar lokaci daidai daidai - sakamakon jiya jayyaye yana furta fiye da wanda dari daga Octoba, amma ba daya ba tata wace ta yanke matsayar kakarua - "
+      ],
+      "example": "Ƙungiya A: LLWLL tare da manyan biyar na lig. Ƙungiya B: WWWWW tare da ƙananan biyar. Haruffin suna cewa B tana tashi; yin daidai da ingancin abokan harika koli-koli suna cewa A ita ce ƙungiya mai karfi a ajiyoyin daidai — kuma farashin kasuwa yawanci yana zaune tsakanin labari biyu.",
+      "related": [
+        "sample-size",
+        "regression-to-the-mean",
+        "xg"
+      ],
+      "see": [],
+      "_src_hash": "aa8eabb6547b8832",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "head-to-head",
+      "term": "Head-to-Head (H2H)",
+      "short": "Tarihin wadatattun gaske tsakanin gida da bakin jiya — ana sayarwa da shi sosai, amma kuma ba shi da ƙarfi ga tsara — lokaci-lokaci dai yana ba da bayani.",
+      "definition": [
+        "H2H yana tarawa abubuwan da suka faru tsakanin ɗabi'u gida da bakin jiya. Sojojin suna canja wurin kuma manajoji suna canja, don haka 4–0 daga shekaru uku da suka wuce zai nuna ɗabi'u da ba su fi kasancewa - a matsayin tsara ga sakamakon gida na gida, tarihin H2H ba ya kara komai idan an ɗau ƙarfin jiya na yanzu.",
+        "Hanyoyin da za a iya amfani da su ne tarawa: dabi'u da sukan kasancewa tsakanin gida da bakin jiya don kwatancin ƙarfin hadi zuwa jiya ko wuri na bayani tare da bayani na gaske. Halin abu, ba sigina - namin yana watsi da H2H gaba ɗaya kuma aiki ne daga adadin kidaye na yanzu."
+      ],
+      "example": "Haduwa gida da bakin jiya gida ashirin ɗari saniye a matsakaicin kwatancewa 3.4 goals ƙungiyoyin ciki ga jiya na ligya 2.6 ba shi da mutumi - bari mu dubo adadin kidaye na yanzu, ba kasua. Haduwa uku saniyar wannan abu ize kuwa takaici ne ta tunawa saniye.",
+      "related": [
+        "sample-size",
+        "team-form",
+        "over-under"
+      ],
+      "see": [
+        {
+          "label": "H2H records for every covered pairing",
+          "href": "/h2h"
+        }
+      ],
+      "_src_hash": "32642792464a4500",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "fixture-congestion",
+      "term": "Fixture Congestion",
+      "short": "Tsakoki na waje-wikindi: hadarin juyawa, ƙwanƙoli da canza-canzar farashin kasuwa tare da jinkiri.",
+      "definition": [
+        "Tsakoki shine wasanni uku a cikin kwanakwanaki takwas — cup na tsakar jiya, tafiya ta kasuwanci, tsakoki na Disamba. Tasirin sa ana iya gida: juyawan magunguna, raunin kajen ƙwanƙoli, da ƙarami ƙarin koli daga ƙwanƙoli masu gida lokacin tsakoki.",
+        "Mahimmancin baji shine lokaci: farashin da aka saita a farkon mako zai iya jinkiri ga juyawa mai nuni, kuma baji na aljihu-kasuwa (masu fa'ida, karuwa) sune mafi bugi ga sunyi ba tilo kawai ba. Duba labarin ƙungiya mai jiya kafin kome da suka danganta da tsakoki."
+      ],
+      "example": "Ƙungiya da ke washe wasanni uku a cikin kwanakwanaki bakwai, bayan tafiya ta Turai, ta juyawa magunguna hudu. 1X2 ba sa motsa sosai (kasuwa ta sa farashin ƙungiya), amma striker da aka sa a 2.10 kowane lokaci ba shi tilo — baji ya mutu a share na ƙungiya, ba a filin wasa ba.",
+      "related": [
+        "team-form",
+        "anytime-goalscorer",
+        "in-play-betting"
+      ],
+      "see": [],
+      "_src_hash": "32368c4d7bd11aef",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "dead-rubber",
+      "term": "Dead Rubber",
+      "short": "Wasan da babu abin da ke cikin jiya ga gida ko bakin gida — inda bukatarwa ta karya models da farashin.",
+      "definition": [
+        "Dead rubber bai yanke abin da ya kamata ba: rukunin ya ci, tsaro ya tabbatatu, ko karshen jerin jerin da ya gaji. Karyan bukatarwa wannan baba ya karya models masu dogara da ƙimar — ƙarƙarsa mai ƙarfi da babu abin da zai buga ya niƙa maraye da ya yi soro, kuma 'ainiyin ƙarƙarsa a lokacin ba ƙarƙarsa bane.",
+        "Waɗannan su ne wasannin inda ƙiyasoshin models (mu kaɗai) suka karanta rashin aminci mafi yawa kuma inda keɓan informations na kasuwa — wanda ke bukatar nutin ɗin — suka kasance mafitantaka. Wasannin ƙarshen season da karshen jerin ƙungiya suna karkata yin bincike na bukatarwa kafin jerin barro."
+      ],
+      "example": "Jerin ƙarshe: gidan da ya samu izin (ƙiyasin ƙarfi na asali 60%) zuwa jami'an da ke bukatar ƙarin ɗin shiga tsaro. Tatsuniyar karyan bukatarwa haka yana nuna cewa dabarar da ake zata kin jiya tukuna saniye 10-15 mata ƙasa — 1.67 akan jami'an da ke yi soro shine alamu na dead-rubber da bawa ba daidai ba.",
+      "related": [
+        "team-form",
+        "fixture-congestion",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "ebba46dd36eb2f3e",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "maximum-payout",
+      "term": "Matakin Biya",
+      "short": "Gindin da bukimeker ya saka akan abin da zai biya mutum daya ko jiya — sirrinta da ke rage jackpot accumulators.",
+      "definition": [
+        "Kowane bukimeker yana saka gindin biya — per bet, per kasuwa, per customer jiya — da iyaka ta bambanta da gida da wasanni: babbar wasanni suna da matakin girma, abubuwan bakin gida suna da iyaka mara kyau. Accumulator mai kafau 12 wanda jiyya babassu ya wuce gindin ba zai biya ko da abin da tarhin ya ninka.",
+        "Duba gindin kafin gina abu daidai da aljihu, kuma lura wacce gida a kukunnan ka fiye kakaita — accumulator daban-daban ana sa shi iyaka ta ƙarami daga abin da ke kaura a marubuta masu karatu."
+      ],
+      "example": "Slip yana cewa £2 × 8,000 = £16,000; wasu shuruɗɗin wurin cin jiya suna saka gindin bayarwa a gida na karshe £10,000. Jiya shida sun zama mai yawa amma daya Belarusian reserve-league zaɓi ya jawo duk tarhin karkashin iyaka mara kyau — bambain £6,000 ya kasance a sirrinta duka.",
+      "related": [
+        "accumulator",
+        "fold",
+        "value-bet"
+      ],
+      "see": [],
+      "_src_hash": "d4c8a143702c5985",
+      "_model": "claude-haiku-4-5-20251001"
+    }
+  ]
+}

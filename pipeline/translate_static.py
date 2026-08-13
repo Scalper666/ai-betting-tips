@@ -48,6 +48,9 @@ LANGS = {
     "pt": "Brazilian Portuguese",
     "de": "German (Germany)",
     "fr": "French (France)",
+    "sw": "Swahili (Kenya/Tanzania standard; the betting vocabulary East African bookmakers use — 'odds' commonly stays English, goals = 'mabao')",
+    "ha": "Hausa (Nigeria/Niger, Latin script; betting terms as used by Nigerian bookmakers, English loanwords where natural)",
+    "yo": "Yoruba (Nigeria, correct diacritics; betting terms as actually used by Yoruba-speaking bettors, English loanwords where natural)",
 }
 
 SYSTEM = (
@@ -178,7 +181,7 @@ def run_collection(client, name: str, entries: list[dict], fields: dict,
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", choices=["guides", "glossary", "seasons"], default=None)
-    ap.add_argument("--langs", default="es,pt,de,fr")
+    ap.add_argument("--langs", default="es,pt,de,fr,sw,ha,yo")
     args = ap.parse_args()
     langs = [l.strip() for l in args.langs.split(",") if l.strip() in LANGS]
 

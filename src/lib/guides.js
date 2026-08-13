@@ -7,11 +7,17 @@ import gES from '../data/guides.es.json';
 import gPT from '../data/guides.pt.json';
 import gDE from '../data/guides.de.json';
 import gFR from '../data/guides.fr.json';
+import gSW from '../data/guides.sw.json';
+import gHA from '../data/guides.ha.json';
+import gYO from '../data/guides.yo.json';
 import glEN from '../data/glossary.json';
 import glES from '../data/glossary.es.json';
 import glPT from '../data/glossary.pt.json';
 import glDE from '../data/glossary.de.json';
 import glFR from '../data/glossary.fr.json';
+import glSW from '../data/glossary.sw.json';
+import glHA from '../data/glossary.ha.json';
+import glYO from '../data/glossary.yo.json';
 
 // English is the source of truth for WHICH entries exist; a translation file
 // only supplies display text. Adding a guide and building before running the
@@ -31,6 +37,9 @@ const G = {
   pt: merge(gEN.guides, gPT.guides, 'slug'),
   de: merge(gEN.guides, gDE.guides, 'slug'),
   fr: merge(gEN.guides, gFR.guides, 'slug'),
+  sw: merge(gEN.guides, gSW.guides, 'slug'),
+  ha: merge(gEN.guides, gHA.guides, 'slug'),
+  yo: merge(gEN.guides, gYO.guides, 'slug'),
 };
 const GL = {
   en: glEN.terms,
@@ -38,6 +47,9 @@ const GL = {
   pt: merge(glEN.terms, glPT.terms, 'slug'),
   de: merge(glEN.terms, glDE.terms, 'slug'),
   fr: merge(glEN.terms, glFR.terms, 'slug'),
+  sw: merge(glEN.terms, glSW.terms, 'slug'),
+  ha: merge(glEN.terms, glHA.terms, 'slug'),
+  yo: merge(glEN.terms, glYO.terms, 'slug'),
 };
 
 // Date the editor-written source last changed (translations follow it).

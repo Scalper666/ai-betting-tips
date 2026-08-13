@@ -1,11 +1,13 @@
 ---
 import MatchView from '../../../views/MatchView.astro';
 import { buildMatchPaths } from '../../../lib/matchPages.js';
-import { ALT_LANGS } from '../../../i18n/index.js';
+import { MATCH_LANGS } from '../../../i18n/index.js';
 
+// full-parity languages only: the compact African editions skip the ~500
+// per-language match pages until the crawl queue drains (see i18n MATCH_LANGS)
 export function getStaticPaths() {
   const base = buildMatchPaths();
-  return ALT_LANGS.flatMap((lang) =>
+  return MATCH_LANGS.flatMap((lang) =>
     base.map((pth) => ({ params: { lang, slug: pth.params.slug }, props: pth.props })));
 }
 const { tip, archive, reg } = Astro.props;

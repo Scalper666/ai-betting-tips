@@ -7,6 +7,9 @@ import sES from '../data/seasons.es.json';
 import sPT from '../data/seasons.pt.json';
 import sDE from '../data/seasons.de.json';
 import sFR from '../data/seasons.fr.json';
+import sSW from '../data/seasons.sw.json';
+import sHA from '../data/seasons.ha.json';
+import sYO from '../data/seasons.yo.json';
 
 function merge(source, translated) {
   if (!translated) return source;
@@ -20,6 +23,9 @@ const S = {
   pt: merge(sEN.seasons, sPT.seasons),
   de: merge(sEN.seasons, sDE.seasons),
   fr: merge(sEN.seasons, sFR.seasons),
+  sw: merge(sEN.seasons, sSW.seasons),
+  ha: merge(sEN.seasons, sHA.seasons),
+  yo: merge(sEN.seasons, sYO.seasons),
 };
 
 export const seasonsFor = (lang) => S[lang] ?? S.en;
