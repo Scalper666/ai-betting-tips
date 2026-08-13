@@ -253,6 +253,7 @@
 
 | Дата | Площадка | URL/статус | Ссылка появилась? |
 |---|---|---|---|
-| 2026-08-16 | Insidr.ai | форма отправлена (insidr.ai/submit-tools/), ждёт модерацию | проверить через неделю |
-| 2026-08-16 | SaaSHub | карточка создана: saashub.com/related-alternatives/ai-betting-tips — ждёт одобрения (Free-очередь до 32 дней) | проверить через месяц |
+| 2026-08-13 | Insidr.ai | форма отправлена (insidr.ai/submit-tools/), ждёт модерацию | проверить через неделю |
+| 2026-08-13 | SaaSHub | карточка создана: saashub.com/related-alternatives/ai-betting-tips — ждёт одобрения (Free-очередь до 32 дней); лого 1024px готово в outreach/logo/ — загрузить в Manage → Images | проверить через месяц |
 | 2026-08-14 | AlternativeTo | карточка создана + 6 альтернатив привязаны (Forebet, 1X2.TV, PredictLix, MetaPred, Daily Sport Pick, Vitibet); статус «waiting to be reviewed»; бесплатная очередь — МЕСЯЦЫ, за $5 — ревью за 1-2 дня (рекомендовано); после одобрения добавить скриншоты руками (их фетчер падал на og.png); ссылку не шарить до одобрения | ждёт ревью |
+| 2026-08-14 | Kaggle | датасет опубликован (Public, CC BY 4.0): kaggle.com/datasets/aibettingtips/football-betting-predictions-fully-settled-log — 2 CSV + README; в описании ссылки на ai-betting-tips.com и /model | да — в описании датасета |
