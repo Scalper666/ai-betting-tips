@@ -255,3 +255,4 @@
 |---|---|---|---|
 | 2026-08-16 | Insidr.ai | форма отправлена (insidr.ai/submit-tools/), ждёт модерацию | проверить через неделю |
 | 2026-08-16 | SaaSHub | карточка создана: saashub.com/related-alternatives/ai-betting-tips — ждёт одобрения (Free-очередь до 32 дней) | проверить через месяц |
+| 2026-08-14 | AlternativeTo | заявка отправлена + привязано 6 альтернатив (Forebet, 1X2.TV, PredictLix, MetaPred, Daily Sport Pick, Vitibet); скриншоты не загрузились (их фетчер падал на og.png) — добавить руками после одобрения | очередь до 32 дней |
