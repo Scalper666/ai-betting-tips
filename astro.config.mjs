@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import { SHOW_OPERATORS } from './src/lib/operators.js';
 
 // Sitemap lastmod: data-driven pages genuinely change on every rebuild (odds,
 // standings, settlements — twice daily via CI), while editor-written pages only
@@ -15,6 +16,8 @@ export default defineConfig({
   build: { format: 'directory' },      // /predictions/real-madrid-vs-man-city/
   trailingSlash: 'ignore',
   integrations: [sitemap({
+    // operator sections hidden: keep their (301-shadowed) pages out of sitemaps
+    filter: (page) => SHOW_OPERATORS || !/\/(bookmakers|bonuses|casinos|betting-apps)(\/|$)/.test(new URL(page).pathname),
     serialize(item) {
       const path = new URL(item.url).pathname.replace(/^\/(es|pt|de|fr)(?=\/|$)/, '') || '/';
       item.lastmod = STATIC_RE.test(path) ? CONTENT_UPDATED : BUILD_ISO;

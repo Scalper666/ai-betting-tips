@@ -1,8 +1,10 @@
 ---
 import BookmakerReviewView from '../../views/BookmakerReviewView.astro';
+import { SHOW_OPERATORS } from '../../lib/operators.js';
 import data from '../../data/bookmakers.json';
 
 export function getStaticPaths() {
+  if (!SHOW_OPERATORS) return [];
   return (data.bookmakers ?? []).map((bk) => ({ params: { slug: bk.slug }, props: { bk } }));
 }
 const { bk } = Astro.props;

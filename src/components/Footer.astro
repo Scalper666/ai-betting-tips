@@ -1,6 +1,7 @@
 ---
 import Subscribe from './Subscribe.astro';
 import { homePath, t, lhref } from '../i18n/index.js';
+import { SHOW_OPERATORS } from '../lib/operators.js';
 const { lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
 const L = (pth) => lhref(lang, pth);
@@ -16,7 +17,9 @@ const year = new Date().getFullYear();
         <Subscribe lang={lang} source="footer" />
       </div>
       <div class="fcol"><h5>{T('nav.predictions')}</h5><a href={L('/screener')}>{T('nav.screener')}</a><a href={L('/predictions')}>{T('nav.allTips')}</a><a href={L('/predictions/today')}>{T('day.today.crumb')}</a><a href={L('/predictions/weekend')}>{T('day.weekend.crumb')}</a><a href="/seasons">{T('ft.seasons')}</a><a href="/table">{T('ft.tables')}</a><a href="/results">{T('ft.leagueResults')}</a><a href={L('/h2h')}>H2H</a><a href={L('/teams')}>{T('ft.teamsAZ')}</a><a href={L('/glossary')}>{T('ft.glossary')}</a><a href={L('/tips/accumulator')}>{T('ft.accas')}</a><a href={L('/tips/btts')}>{T('nav.bttsTips')}</a><a href={L('/tips/over-under')}>{T('ft.overUnder')}</a><a href={L('/tools')}>{T('common.tools')}</a><a href={L('/tools/odds-converter')}>{T('ft.oddsConverter')}</a><a href={L('/tools/accumulator-calculator')}>{T('ft.accaCalc')}</a><a href="/tools/acca-builder">{T('ft.accaBuilder')}</a><a href={L('/tools/margin-calculator')}>{T('ft.marginCalc')}</a><a href={L('/dropping-odds')}>{T('ft.droppingOdds')}</a></div>
-      <div class="fcol"><h5>{T('nav.sites')}</h5><a href={L('/bookmakers')}>{T('ft.topBk')}</a><a href={L('/betting-apps')}>{T('nav.apps')}</a><a href={L('/casinos')}>{T('nav.casinos')}</a><a href={L('/bonuses')}>{T('nav.bonuses')}</a><a href={L('/countries/uk')}>{T('nav.byCountry')}</a></div>
+      {SHOW_OPERATORS
+        ? <div class="fcol"><h5>{T('nav.sites')}</h5><a href={L('/bookmakers')}>{T('ft.topBk')}</a><a href={L('/betting-apps')}>{T('nav.apps')}</a><a href={L('/casinos')}>{T('nav.casinos')}</a><a href={L('/bonuses')}>{T('nav.bonuses')}</a><a href={L('/countries/uk')}>{T('nav.byCountry')}</a></div>
+        : <div class="fcol"><h5>{T('nav.byCountry')}</h5><a href="/countries">{T('nav.byCountry')}</a><a href={L('/countries/uk')}>United Kingdom</a><a href={L('/countries/ng')}>Nigeria</a><a href={L('/countries/ke')}>Kenya</a><a href={L('/countries/us')}>United States</a><a href={L('/countries/et')}>Ethiopia</a></div>}
       <div class="fcol"><h5>{T('nav.results')}</h5><a href={L('/tipsters')}>{T('nav.performance')}</a><a href={L('/news/recap')}>{T('nav.weeklyRecaps')}</a><a href={L('/predictions/daily')}>{T('nav.resultsByDate')}</a><a href={L('/news')}>{T('nav.news')}</a></div>
       <div class="fcol"><h5>{T('ft.company')}</h5><a href={L('/about')}>{T('ft.aboutUs')}</a><a href={L('/model')}>{T('ft.ourModel')}</a><a href={L('/research')}>{T('ft.research')}</a><a href={L('/guides')}>{T('ft.guides')}</a><a href="/editorial-policy">{T('ft.editorial')}</a><a href={L('/contact')}>{T('ft.contact')}</a><a href={L('/responsible-gambling')}>{T('ft.rg')}</a><a href={L('/privacy')}>{T('ft.privacy')}</a><a href={L('/terms')}>{T('ft.terms')}</a></div>
     </div>

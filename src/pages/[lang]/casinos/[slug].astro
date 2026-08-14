@@ -1,9 +1,11 @@
 ---
 import CasinoReviewView from '../../../views/CasinoReviewView.astro';
+import { SHOW_OPERATORS } from '../../../lib/operators.js';
 import data from '../../../data/casinos.json';
 import { ALT_LANGS } from '../../../i18n/index.js';
 
 export function getStaticPaths() {
+  if (!SHOW_OPERATORS) return [];
   return ALT_LANGS.flatMap((lang) =>
     (data.casinos ?? []).map((c) => ({ params: { lang, slug: c.slug }, props: { casino: c } })));
 }

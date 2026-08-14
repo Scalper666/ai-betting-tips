@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import { SHOW_OPERATORS } from '../lib/operators.js';
 import BookmakerRow from '../components/BookmakerRow.astro';
 import CasinoRow from '../components/CasinoRow.astro';
 import countryData from '../data/countries.json';
@@ -37,7 +38,7 @@ const description = F('cn.desc', { name: country.name, reg: country.regulator })
   <div class="container">
     <div class="page-head">
       <div class="crumbs">
-        <a href={L('/')}>{T('crumb.home')}</a><span>/</span><a href={L('/bookmakers')}>{T('nav.sites')}</a><span>/</span>{country.name}
+        <a href={L('/')}>{T('crumb.home')}</a><span>/</span>{SHOW_OPERATORS ? <a href={L('/bookmakers')}>{T('nav.sites')}</a> : <a href="/countries">{T('nav.byCountry')}</a>}<span>/</span>{country.name}
       </div>
       <h1><img class="fl-ic" src={`/flags/${country.slug === 'uk' ? 'gb' : country.slug}.svg`} alt="" width="22" height="16" style="width:22px;height:16px" /> {T('cn.h1')} <em>{country.name}</em></h1>
       <p class="lead">{legalSummary}</p>
@@ -55,6 +56,7 @@ const description = F('cn.desc', { name: country.name, reg: country.regulator })
           </section>
         )}
 
+        {SHOW_OPERATORS && (
         <section>
           <div class="sec-head"><h2 class="sec-title">{T('cn.topSitesPre')} <b>{country.name}</b></h2></div>
           {list.length ? (
@@ -63,8 +65,9 @@ const description = F('cn.desc', { name: country.name, reg: country.regulator })
             <div class="box"><div class="box-pad dim">{T('cn.noOperators')}</div></div>
           )}
         </section>
+        )}
 
-        {casinoList.length > 0 && (
+        {SHOW_OPERATORS && casinoList.length > 0 && (
           <section>
             <div class="sec-head">
               <h2 class="sec-title">{T('cn.topCasinosPre')} <b>{country.name}</b></h2>
@@ -125,7 +128,7 @@ const description = F('cn.desc', { name: country.name, reg: country.regulator })
         </div>
         <div class="box">
           <div class="box-h"><span class="hi">🔗</span> {T('common.alsoSee')}</div>
-          <a class="tm" href={L('/bookmakers')}><span class="dot"></span>{T('rv.allBk')}</a>
+          {SHOW_OPERATORS && <a class="tm" href={L('/bookmakers')}><span class="dot"></span>{T('rv.allBk')}</a>}
           <a class="tm" href={L('/bonuses')}><span class="dot"></span>{T('nav.allOffers')}</a>
         </div>
       </aside>

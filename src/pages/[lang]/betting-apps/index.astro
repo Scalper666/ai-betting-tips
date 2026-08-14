@@ -1,8 +1,10 @@
 ---
 import AppsView from '../../../views/AppsView.astro';
+import { SHOW_OPERATORS } from '../../../lib/operators.js';
 import { ALT_LANGS } from '../../../i18n/index.js';
 
 export function getStaticPaths() {
+  if (!SHOW_OPERATORS) return [];
   return ALT_LANGS.map((lang) => ({ params: { lang } }));
 }
 const { lang } = Astro.params;

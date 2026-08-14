@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import ToolsBox from '../components/ToolsBox.astro';
 import PredCard from '../components/PredCard.astro';
 import BookmakerRow from '../components/BookmakerRow.astro';
+import { SHOW_OPERATORS } from '../lib/operators.js';
 import ModelTracks from '../components/ModelTracks.astro';
 import TeamMark from '../components/TeamMark.astro';
 import predictions from '../data/predictions.json';
@@ -140,6 +141,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
       <main class="content">
 
         <!-- TOP BOOKMAKERS (geo-aware: client script swaps country when detected) -->
+        {SHOW_OPERATORS && (
         <section id="geoBk" data-geo={JSON.stringify(geoCountries)} data-current="uk">
           <div class="sec-head">
             <h2 class="sec-title">{T('home.geo.pre')} <b data-geo-name><img class="fl-ic" data-geo-name-flag src="/flags/gb.svg" alt="" width="18" height="13" /> <span data-geo-name-txt>United Kingdom</span></b></h2>
@@ -154,6 +156,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
             ))}
           </div>
         </section>
+        )}
         <script is:inline define:vars={{ GEO_STR: { intl: T('home.geo.intl'), intlList: T('home.geo.intlList'), browsing: T('home.geo.browsing'), noEdition: T('home.geo.noEdition') }, PAGE_LANG: lang }}>
           (function () {
             var sec = document.getElementById('geoBk'); if (!sec) return;
@@ -427,6 +430,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
         </section>
 
         <!-- BONUSES (from bookmakers.json) -->
+        {SHOW_OPERATORS && (
         <section>
           <div class="sec-head">
             <h2 class="sec-title">{T('home.bon.pre')} <b>{T('home.bon.bold')}</b></h2>
@@ -452,6 +456,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
             ))}
           </div>
         </section>
+        )}
 
         <!-- WHY US -->
         <section>
@@ -533,6 +538,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
           ))}
         </div>
 
+        {SHOW_OPERATORS && (<>
         <div class="box">
           <div class="box-h"><span class="hi">🏆</span> {T('side.topBk')}</div>
           {bkList.slice(0, 3).map((bk, i) => (
@@ -558,6 +564,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
             <span class="tc-line">{T('bk.tc')} <a href="https://www.gambleaware.org" rel="nofollow noopener" target="_blank">GambleAware.org</a></span>
           </div>
         )}
+        </>)}
 
         <div class="box" id="matchCal" data-matches={JSON.stringify(calMatches)}>
           <div class="box-h"><span class="hi">📅</span> {T('side.cal')}</div>

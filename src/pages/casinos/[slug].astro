@@ -1,8 +1,10 @@
 ---
 import CasinoReviewView from '../../views/CasinoReviewView.astro';
+import { SHOW_OPERATORS } from '../../lib/operators.js';
 import data from '../../data/casinos.json';
 
 export function getStaticPaths() {
+  if (!SHOW_OPERATORS) return [];
   return (data.casinos ?? []).map((c) => ({ params: { slug: c.slug }, props: { casino: c } }));
 }
 const { casino } = Astro.props;

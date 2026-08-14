@@ -2,6 +2,7 @@
 import { LOCALES, langsFor, homePath, t, lhref } from '../i18n/index.js';
 import predictions from '../data/predictions.json';
 import { slugify } from '../lib/utils.js';
+import { SHOW_OPERATORS } from '../lib/operators.js';
 
 const { active = '', lang = 'en', i18nPath = null } = Astro.props;
 // top live leagues for the nav — hardcoded links 404 when a league leaves the feed
@@ -33,8 +34,10 @@ const langs = i18nPath ? langsFor(i18nPath) : ['en', ...langsFor('/').slice(1)];
           ))}
           <a href={L('/tips/accumulator')}><span class="ic">🎯</span>{T('nav.accaTips')}</a>
           <a href={L('/tips/btts')}><span class="ic">⚽</span>{T('nav.bttsTips')}</a>
+          {!SHOW_OPERATORS && <a href={L('/countries/uk')}><span class="ic">🌍</span>{T('nav.byCountry')}</a>}
         </div>
       </div>
+      {SHOW_OPERATORS && (<>
       <div class={`nav-item${is('bookmakers')}`}><button>{T('nav.sites')} <span class="caret">▼</span></button>
         <div class="dropdown">
           <a href={L('/bookmakers')}><span class="ic">🏆</span>{T('nav.topSites')}</a>
@@ -51,6 +54,7 @@ const langs = i18nPath ? langsFor(i18nPath) : ['en', ...langsFor('/').slice(1)];
       <div class={`nav-item${is('casinos')}`}><button>{T('nav.casinos')} <span class="caret">▼</span></button>
         <div class="dropdown"><a href={L('/casinos')}><span class="ic">🎰</span>{T('nav.topCasinos')}</a><a href={L('/casinos')}><span class="ic">🎥</span>{T('nav.liveCasino')}</a><a href={L('/casinos')}><span class="ic">🆕</span>{T('nav.newCasinos')}</a></div>
       </div>
+      </>)}
       <div class={`nav-item${is('tipsters')}`}><button>{T('nav.results')} <span class="caret">▼</span></button>
         <div class="dropdown"><a href={L('/tipsters')}><span class="ic">📈</span>{T('nav.performance')}</a><a href={L('/news/recap')}><span class="ic">🗓</span>{T('nav.weeklyRecaps')}</a><a href={L('/predictions/daily')}><span class="ic">📅</span>{T('nav.resultsByDate')}</a></div>
       </div>
