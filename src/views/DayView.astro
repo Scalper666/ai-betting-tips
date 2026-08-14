@@ -11,7 +11,7 @@ import { t, lhref } from '../i18n/index.js';
 const { lang = 'en', mode = 'today' } = Astro.props;
 const T = (k) => t(lang, k);
 const L = (pth) => lhref(lang, pth);
-const dloc = { en: 'en-GB', es: 'es-ES', pt: 'pt-BR', de: 'de-DE', fr: 'fr-FR', sw: 'sw-KE', ha: 'ha-NG', yo: 'yo-NG', ig: 'ig-NG' }[lang] ?? 'en-GB';
+const dloc = { en: 'en-GB', es: 'es-ES', pt: 'pt-BR', de: 'de-DE', fr: 'fr-FR', sw: 'sw-KE', ha: 'ha-NG', yo: 'yo-NG', ig: 'ig-NG', am: 'am-ET' }[lang] ?? 'en-GB';
 
 const dkey = (d) => d.toISOString().slice(0, 10);
 const now = new Date();

@@ -14,7 +14,7 @@ const { sk, lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
 const L = (pth) => lhref(lang, pth);
 const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
-const dloc = { en: 'en-GB', es: 'es-ES', pt: 'pt-BR', de: 'de-DE', fr: 'fr-FR', sw: 'sw-KE', ha: 'ha-NG', yo: 'yo-NG', ig: 'ig-NG' }[lang] ?? 'en-GB';
+const dloc = { en: 'en-GB', es: 'es-ES', pt: 'pt-BR', de: 'de-DE', fr: 'fr-FR', sw: 'sw-KE', ha: 'ha-NG', yo: 'yo-NG', ig: 'ig-NG', am: 'am-ET' }[lang] ?? 'en-GB';
 
 const lg = (fdData.leagues ?? {})[sk];
 const name = leagueName(sk, lg?.name ?? '');
