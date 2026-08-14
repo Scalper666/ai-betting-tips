@@ -258,5 +258,5 @@
 | 2026-08-14 | AlternativeTo | карточка создана + 6 альтернатив привязаны (Forebet, 1X2.TV, PredictLix, MetaPred, Daily Sport Pick, Vitibet); $5 priority ОПЛАЧЕН 08-14 → ревью 1–2 раб. дня (до недели в пик); после одобрения добавить скриншоты руками (их фетчер падал на og.png) | ревью до ~08-18 |
 | 2026-08-14 | Kaggle | датасет опубликован (Public, CC BY 4.0): kaggle.com/datasets/aibettingtips/football-betting-predictions-fully-settled-log — 2 CSV + README; в описании ссылки на ai-betting-tips.com и /model | да — в описании датасета |
 | 2026-08-14 | awesome-public-datasets (78k★) | PR в apd-core: github.com/awesomedata/apd-core/pull/567 (YAML в core/Sports, ссылка на Kaggle-датасет, publisher AI Betting Tips); мейнтейнер в отпуске до 24 авг — ревью после | ждёт мержа |
-| 2026-08-14 | openfootball/awesome-football (244★) | PR: github.com/openfootball/awesome-football/pull/275 (Football Datasets → Misc, Kaggle-датасет); репо активное (пуш 11 авг) | ждёт мержа |
+| 2026-08-14 | openfootball/awesome-football (244★) | PR github.com/openfootball/awesome-football/pull/275 СМЕРЖЕН мейнтейнером (Gerald Bauer) в тот же день — строка живёт в README | ✅ да, живая |
 | — | ianalloway/awesome-sports-betting | МЁРТВ: репо заархивировано (read-only), PR невозможен — вычеркнут | — |
