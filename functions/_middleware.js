@@ -10,6 +10,10 @@ const BLOCKED = new Set([
   'PK', // Pakistan — gambling illegal
   'BD', // Bangladesh — gambling illegal
   'KZ', // Kazakhstan — licensed-local-only market, offshore promotion banned
+  'AE', // UAE — gambling promotion criminalised; sports betting unlicensed
+  'SG', // Singapore — Remote Gambling Act criminalises offshore betting and its promotion
+  'KH', // Cambodia — online betting banned by 2019 decree
+  'NP', // Nepal — betting prohibited for citizens, promoters prosecuted
 ]);
 
 export async function onRequest(context) {
