@@ -7,6 +7,7 @@ import { SW } from './sw.js';
 import { HA } from './ha.js';
 import { YO } from './yo.js';
 import { IG } from './ig.js';
+import { AM } from './am.js';
 
 export const LOCALES = {
   en: { name: 'English', flag: '🇬🇧', cc: 'gb' },
@@ -18,8 +19,9 @@ export const LOCALES = {
   ha: { name: 'Hausa', flag: '🇳🇬', cc: 'ng' },
   yo: { name: 'Yorùbá', flag: '🇳🇬', cc: 'ng' },
   ig: { name: 'Igbo', flag: '🇳🇬', cc: 'ng' },
+  am: { name: 'አማርኛ', flag: '🇪🇹', cc: 'et' },
 };
-export const ALT_LANGS = ['es', 'pt', 'de', 'fr', 'sw', 'ha', 'yo', 'ig'];
+export const ALT_LANGS = ['es', 'pt', 'de', 'fr', 'sw', 'ha', 'yo', 'ig', 'am'];
 
 // African editions launch compact: every hub and content family, but NOT the
 // ~500 per-language match pages — the discovered-not-indexed queue sits at 2K
@@ -74,16 +76,20 @@ export function localizeMarket(lang, text) {
   let m;
   if ((m = s.match(/^Over ([\d.]+) goals$/)))
     return { es: `Más de ${m[1]} goles`, pt: `Mais de ${m[1]} gols`, de: `Über ${m[1]} Tore`, fr: `Plus de ${m[1]} buts`,
-             sw: `Zaidi ya mabao ${m[1]}`, ha: `Sama da ƙwallaye ${m[1]}`, yo: `Ju góòlù ${m[1]} lọ`, ig: `Karịa goolu ${m[1]}` }[lang] ?? s;
+             sw: `Zaidi ya mabao ${m[1]}`, ha: `Sama da ƙwallaye ${m[1]}`, yo: `Ju góòlù ${m[1]} lọ`, ig: `Karịa goolu ${m[1]}`,
+             am: `ከ${m[1]} ጎል በላይ` }[lang] ?? s;
   if ((m = s.match(/^Under ([\d.]+) goals$/)))
     return { es: `Menos de ${m[1]} goles`, pt: `Menos de ${m[1]} gols`, de: `Unter ${m[1]} Tore`, fr: `Moins de ${m[1]} buts`,
-             sw: `Chini ya mabao ${m[1]}`, ha: `Ƙasa da ƙwallaye ${m[1]}`, yo: `Kéré sí góòlù ${m[1]}`, ig: `Erughị goolu ${m[1]}` }[lang] ?? s;
+             sw: `Chini ya mabao ${m[1]}`, ha: `Ƙasa da ƙwallaye ${m[1]}`, yo: `Kéré sí góòlù ${m[1]}`, ig: `Erughị goolu ${m[1]}`,
+             am: `ከ${m[1]} ጎል በታች` }[lang] ?? s;
   if ((m = s.match(/^(.+) to win$/)))
     return { es: `Gana ${m[1]}`, pt: `${m[1]} vence`, de: `${m[1]} gewinnt`, fr: `Victoire de ${m[1]}`,
-             sw: `${m[1]} kushinda`, ha: `Nasarar ${m[1]}`, yo: `${m[1]} láti borí`, ig: `${m[1]} ga-emeri` }[lang] ?? s;
+             sw: `${m[1]} kushinda`, ha: `Nasarar ${m[1]}`, yo: `${m[1]} láti borí`, ig: `${m[1]} ga-emeri`,
+             am: `${m[1]} ያሸንፋል` }[lang] ?? s;
   if (s === 'Draw (X)' || s === 'Draw')
     return { es: 'Empate (X)', pt: 'Empate (X)', de: 'Unentschieden (X)', fr: 'Match nul (X)',
-             sw: 'Sare (X)', ha: 'Canjaras (X)', yo: 'Ìfẹsẹ̀wọnsẹ̀ dọ́gba (X)', ig: 'Nha nha (X)' }[lang] ?? s;
+             sw: 'Sare (X)', ha: 'Canjaras (X)', yo: 'Ìfẹsẹ̀wọnsẹ̀ dọ́gba (X)', ig: 'Nha nha (X)',
+             am: 'አቻ (X)' }[lang] ?? s;
   return s;
 }
 
@@ -1058,6 +1064,6 @@ const LBL = {
 };
 export const trLabel = (lang, label) => (lang === 'en' ? label : (LBL[label]?.[lang] ?? label));
 
-const OVERLAYS = { fr: FR, sw: SW, ha: HA, yo: YO, ig: IG };
+const OVERLAYS = { fr: FR, sw: SW, ha: HA, yo: YO, ig: IG, am: AM };
 export const t = (lang, key) =>
   (OVERLAYS[lang]?.[key] ?? D[key]?.[lang]) ?? D[key]?.en ?? key;

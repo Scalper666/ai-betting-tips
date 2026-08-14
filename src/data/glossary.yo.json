@@ -446,16 +446,12 @@
     {
       "slug": "arbitrage-betting",
       "term": "Arbitrage Betting (Arbing)",
-      "short": "Ṣe àboṣe gbogbo ìsinlẹ̀ lórí àwọn ọ̀pọ̀ bookmaker níbi tí iye-ojúdá náà ń gba ìtisọ́ kékeré tí a ṣẹ̀tán.",
+      "short": "Bibo àbájáde gbogbo eré ní àwọn bookmaker tó yàtọ̀ ní odds tí yóò rí i dájú pé o jàǹfààní kékeré.",
       "definition": [
-        "Arbitrage wà nígbà tí ìyatọ̀ láàrin àwọn ọ̀pọ̀ bookmaker ṣe é jẹ́ kí o tẹ̀jáde gbogbo ìsinlẹ̀ kí o sì dúró ní ìtisọ́ tí kò ní ìbáṣepọ̀ pẹ̀lú ìyọ̀ — àpapọ̀ iye-ojúdá àmì níbi tí o yàn ní ìsalẹ̀ 100%. Arbs ń túká nígbà tí àwọn ọ̀pọ̀ yẹ̀ẹ́kọ nípa nǹkan tàbí nígbà tí wọ́n bàjè nípa ìròyìn, àti pé ìtisọ́ jẹ́ ohun 1–4% ti gbogbo ìtásílẹ̀ rẹ.",
-        "Ṣùgbọ́n ìṣòro jẹ́ nǹkan tó wà. Arbs nilo iye ọtítọ́ tó gba lọ́wọ́lọ́wọ́ fún ìtisọ́ kékeré, iṣiro ìtásílẹ̀ tí ó ní ìṣẹ́rẹ́, àti ìyara — iye-ojúdá ń lọ kúrò nínú ìṣẹ́jú. Àwọn ọ̀pọ̀ ń ríí iyé náà kósè àti wọ́n náà ń dápadá fún un pẹ̀lú ìfipín ìtásílẹ̀ tàbí pípadì àkáun. Àwọn ẹ̀bẹ̀ tí wọ́n gbá ní ọ̀pọ̀ kán ló máa fi ẹ̀gbẹ́ òmìíràn sílẹ̀ nínú ìnira. Ó jẹ́ ohun tó wà tìrẹ̀ nísinsin náà, ṣùgbọ́n ó yẹ̀ẹ́rọ́, tó pẹ́ túmọ̀ sí iṣẹ́ ìtupilẹ̀ jù nípa ìtasílẹ̀ àtálárá.",
-        "example and ",
-        "example,例,:",
-        ": ",
-        "\"Book A: home 2.10 (47.6%). Book B: away+draw (X2) 2.15 (46.5%). Àpapọ̀ 94.1% < 100%. Ìtásílẹ̀ £51.20 àti £48.80 letílẹ̀ máa padà ~£107.50 bóòyá ọ̀rọ̀ kan tàbí òmíràn — ní àbí +5.9% lórí £100 àpapọ̀.}"
+        "Arbitrage máa ń wà nígbà tí ìyàtọ̀ láàrin àwọn bookmaker jẹ́ kí o lè bo gbogbo àbájáde tí ó lè ṣẹlẹ̀, kí o sì rí jàǹfààní dájú láìka bí eré náà ṣe parí sí — nígbà tí o bá kójọ implied probability ti gbogbo odds tí o yàn, yóò kéré sí 100%. Arbs máa ń farahàn nígbà tí àwọn bookmaker kò bá fi ọkàn ọ̀kan tàbí tí wọ́n fi ìròyìn sílẹ̀ lẹ́yìn, ó sì máa ń san ní bíi 1–4% ti gbogbo stake tí o fi sí i.",
+        "Àmọ́ ìṣòro rẹ̀ wà ní ìṣe gidi. Arbs nílò kí o fi owó púpọ̀ sí i kí o lè jàǹfààní kékeré, ó nílò ìṣirò stake tó pé gan-an, àti kánkán — nítorí odds náà lè pòórá láàrin ìṣẹ́jú méjì. Àwọn bookmaker máa ń mọ̀ pàtàkì yìí kíákíá, wọ́n a sì fi stake limit tàbí kí wọ́n padé account rẹ pátápátá gẹ́gẹ́ bí ìdáhùn. Bí bet kan bá di void ní bookmaker kan, ó lè fi ẹ̀gbẹ́ tó kù sínú ewu gidi. Ó jẹ́ ọ̀nà tí ó lè jàǹfààní ṣùgbọ́n tí ó le koko láti ṣe, ó sún mọ́ iṣẹ́ logistics ju eré tẹtẹ tòótọ́ lọ."
       ],
-      "example": "Book A: home 2.10 (47.6%). Book B: away+draw (X2) 2.15 (46.5%). Àpapọ̀ 94.1% < 100%. Ìtásílẹ̀ £51.20 àti £48.80 letílẹ̀ máa padà ~£107.50 bóòyá ọ̀rọ̀ kan tàbí òmíràn — ní àbí +5.9% lórí £100 àpapọ̀.",
+      "example": "Bookmaker A: home 2.10 (47.6%). Bookmaker B: away+draw (X2) 2.15 (46.5%). Total 94.1% < 100%. Bí o bá fi £51.20 àti £48.80 sí ẹ̀gbẹ́ méjèèjì, o máa gba ~£107.50 láìka ọ̀nà tí eré náà gbà kọjá — ìyẹn jẹ́ nǹkan bí +5.9% lórí £100 tí o fi sí i lápapọ̀.",
       "related": [
         "bookmaker-margin",
         "value-bet",
@@ -463,7 +459,7 @@
       ],
       "see": [],
       "_src_hash": "c70334cf2d0ed4e6",
-      "_model": "claude-haiku-4-5-20251001"
+      "_model": "claude-sonnet-5"
     },
     {
       "slug": "cash-out",

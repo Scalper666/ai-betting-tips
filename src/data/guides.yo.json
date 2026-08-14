@@ -650,6 +650,85 @@
       "_model": "claude-haiku-4-5-20251001"
     },
     {
+      "slug": "how-ai-football-predictions-work",
+      "title": "Bí Àwọn Ìtẹ̀tọ́mọ̀ Bọ́ọ̀lù AI Ṣe Ń Ṣiṣẹ́",
+      "nav": "Bí àwọn ìtẹ̀tọ́mọ̀ AI ṣe ń ṣiṣẹ́",
+      "desc": "Ohun tí ó wà gan-an nínú mọ́dẹ́lì ìtẹ̀tọ́mọ̀ bọ́ọ̀lù — tiwa pẹ̀lú — ni: àwọn oṣùwọ̀n Poisson, ìdàpọ̀ pẹ̀lú market, àwọn ààlà tòótọ́, àti bí a ṣe lè ṣàyẹ̀wò ẹ̀tọ́ tí tipster èyíkéyìí bá ń sọ.",
+      "cat": "Basics",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "Kò sí ọwọ́n ìdán, kìkì kíkà ni",
+          "ps": [
+            "Bí o bá bọ́ ìpolówó kúrò lára mọ́dẹ́lì ìtẹ̀tọ́mọ̀ bọ́ọ̀lù èyíkéyìí — tiwa pẹ̀lú — ohun tó ṣẹ́kù ni kíkà tí ó ní ìtòlẹ́sẹẹsẹ: bí àwọn ẹgbẹ́ ṣe ń ṣe góòlù nígbà mélòó, bí wọ́n ṣe ń gba góòlù nígbà mélòó, pẹ̀lú ìwọ̀n tí ó pọ̀ sí àwọn ìfẹsẹ̀wọnsẹ̀ tuntun, tí a sì ṣe àtúnṣe fún alátakò àti ibi tí wọ́n ti ń ṣeré. Láti inú àwọn oṣùwọ̀n wọ̀nyí ni pínpín ìṣeéṣe fún àbájáde ìfẹsẹ̀wọnsẹ̀ ti fi ìṣirò gbà jáde wá.",
+            "Ọ̀rọ̀ náà 'AI' kò fi ohunkóhun idán kún èyí. Iye tí mọ́dẹ́lì kan níjẹ́ ọ̀wọ̀ dá lórí ìṣirò tí ó ní ìbáwí àti òtítọ́ nínú ìwọ̀n rẹ̀, kì í ṣe orúkọ tí a fi pè é. Ẹnikẹ́ni tí ó bá ń sọ pé algorithm òun 'mọ̀' àbájáde ni ó ń ta ohun kan tí kì í ṣe òtítọ́."
+          ]
+        },
+        {
+          "h": "Nínú mọ́dẹ́lì wa, ní pàtó",
+          "ps": [
+            "Mọ́dẹ́lì v2 wa ń díwọ̀n agbára ìkọlù àti ìdábòbò ẹgbẹ́ kọ̀ọ̀kan pẹ̀lú ètò Poisson tí àkókò ń dín kù (time-decayed): àwọn ìfẹsẹ̀wọnsẹ̀ tuntun ní ìwúwo tí ó pọ̀ jù (half-life ní ìwọ̀n ọjọ́ 240), àwọn àpẹẹrẹ kékeré ni a ń fa padà sí ìwọ̀n league gbogbogbò kí a má bàa fesi jù, àwọn ẹgbẹ́ sì gbọ́dọ̀ ní iye ìfẹsẹ̀wọnsẹ̀ tí ó kéré jù kí a tó gbẹ́kẹ̀lé oṣùwọ̀n wọn rárá.",
+            "Àwọn oṣùwọ̀n wọ̀nyí ń mú pínpín àbájáde ìfẹsẹ̀wọnsẹ̀ jáde fún ìfẹsẹ̀wọnsẹ̀ kọ̀ọ̀kan, tó sì ń mú ìṣeéṣe wá fún gbogbo market tí a bò. A wá ń dàpọ̀ ìṣeéṣe mọ́dẹ́lì pẹ̀lú èyí tí market fi hàn (bí 40/60) — èyí jẹ́ ìjẹ́wọ́, tí a kọ́ sínú ìṣirò fúnra rẹ̀, pé market mọ àwọn nǹkan tí data wa kò mọ̀: ìfarapa, ìtara, ojú-ọjọ́, àwọn tí ó ṣeré.",
+            "Ìtẹ̀tọ́mọ̀ kan ni a ó tẹ̀ jáde gẹ́gẹ́ bí ti ìjọba nìkan nígbà tí ìṣeéṣe tí a dàpọ̀ bá kọjá owó náà ní ìwọ̀n tí ó tóbi, pẹ̀lú ààlà odds tí ó bọ́gbọ́n mu. Ọ̀pọ̀lọpọ̀ ìfẹsẹ̀wọnsẹ̀ kì í mú ìtẹ̀tọ́mọ̀ ìjọba kankan jáde; gbogbo ọ̀nà tí a ń gbà ṣiṣẹ́, ìtàn àwọn ẹ̀yà (versions), àti àwọn ààlà tí a mọ̀ wà lórí ojú-ìwé mọ́dẹ́lì wa."
+          ]
+        },
+        {
+          "h": "Ohun tí àwọn mọ́dẹ́lì kò lè ṣe",
+          "ps": [
+            "Mọ́dẹ́lì kan kò lè mọ̀ pé ògbójú kan sinmi olùkọlù rẹ̀, pé ẹgbẹ́ kan fò padà láti ìdíje cup ní aago mẹ́rin òwúrọ̀, tàbí pé òjò ti sọ pápá di ẹrẹ̀. Ó ń fún ìtàn di oṣùwọ̀n; ohunkóhun tí kò sí nínú ìtàn kò rí i.",
+            "Ohun pàtàkì jù ni pé: kódà ìṣeéṣe pípé kì í ṣe àsọtẹ́lẹ̀ fún ìfẹsẹ̀wọnsẹ̀ kan ṣoṣo. Ìpè tí ó ní 60% máa ń pàdánù nínú mẹ́rin lára mẹ́wàá gẹ́gẹ́ bí a ti kọ́ ọ. Àwọn mọ́dẹ́lì máa ń jẹ́rìí sí ẹ̀tọ́ wọn kọjá ọgọ́rọ̀ọ́rún tẹtẹ, nínú calibration — ṣé àwọn ìpè 60% máa ń ṣẹ ní ìwọ̀n 60% ìgbà? — kì í ṣe nínú fídíò àṣàyàn kúkúrú kankan."
+          ]
+        },
+        {
+          "h": "Bí a ṣe lè ṣàyẹ̀wò ìtẹ̀tọ́mọ̀ ẹnikẹ́ni, tiwa pẹ̀lú",
+          "ps": [
+            "Béèrè fún gbogbo ìtàn tí a ti parí (gbogbo ìtẹ̀tọ́mọ̀, kì í ṣe oṣù tí a ṣa yàn), àbájáde ní flat-staked units, iye àpẹẹrẹ tí ó dé ọgọ́rọ̀ọ́rún, àti — ìdánwò tí ó mú jù — closing line value: ṣé àwọn ìtẹ̀tọ́mọ̀ máa ń borí owó tí market parí sí déédéé? CLV ń yà ìmọ̀ọ́nùn kúrò lára oríire yára ju àwòrán èrè lọ.",
+            "A ń tẹ gbogbo èyí tí ó wà lókè jáde, tí ó fi kún àwọn àkókò ìpàdánù, lórí àwọn ojú-ìwé àbájáde wa — ìtàn ìjọ wa ní ìbẹ̀rẹ̀pẹ̀pẹ̀ ní àkókò kan tí ó kọ́ni lẹ́kọ̀ọ́ tí àwọn ìtẹ̀tọ́mọ̀ longshot lọ 0-fún-8 tí ó sì mú kí a ṣe àtúnyẹ̀wò mọ́dẹ́lì. Tipster èyíkéyìí tí ó bá ń fi ìṣẹ́gun nìkan hàn ọ́ ń fi ìpolówó hàn ọ́ ni."
+          ]
+        }
+      ],
+      "example": "Mọ́dẹ́lì náà díwọ̀n ìkọlù ẹgbẹ́ agbo ilé ní 1.6 expected goals lòdì sí ìdábòbò yìí, ẹgbẹ́ àlejò ní 0.9. Pínpín Poisson fún ìṣẹ́gun agbo ilé 52%, àbọ 24%, ìṣẹ́gun àlejò 24% — odds tí ó tọ́ 1.92 / 4.17 / 4.17. Market fi ẹgbẹ́ agbo ilé sí 2.10, tí ó túmọ̀ sí 47.6%. Ìdàpọ̀ náà dé ìwọ̀n ~50%, tí ó ṣì ga ju ohun tí owó náà fi hàn: edge tí ó dára wà, ìtẹ̀tọ́mọ̀ ìjọba ni. Ìṣẹ́jú ọgọ́ta lẹ́yìn náà, ìwé àwọn tí ó ṣeré tí ó jáde lè sọ ọ́ di aláìníláárí — ìdí nìyí tí a fi ń pe edge ní ìṣirò-ìṣẹ̀lẹ̀, kì í ṣe òtítọ́ tí ó dájú.",
+      "takeaways": [
+        "Àwọn mọ́dẹ́lì ìtẹ̀tọ́mọ̀ jẹ́ oṣùwọ̀n góòlù tí a wọ̀n ìwúwo → pínpín àbájáde ìfẹsẹ̀wọnsẹ̀ → ìṣeéṣe market.",
+        "Tiwa ń dàpọ̀ mọ́dẹ́lì pẹ̀lú market (40/60), ó sì ń tẹ̀ ìtẹ̀tọ́mọ̀ tí edge rẹ̀ ṣe kedere nìkan jáde — kò kọbi ara sí ọ̀pọ̀lọpọ̀ ìfẹsẹ̀wọnsẹ̀.",
+        "Àwọn mọ́dẹ́lì kò rí ìròyìn; a ń díwọ̀n ìṣeéṣe wọn ní calibration lórí ọgọ́rọ̀ọ́rún ìfẹsẹ̀wọnsẹ̀, kì í ṣe ìfẹsẹ̀wọnsẹ̀ kan ṣoṣo.",
+        "Ṣàyẹ̀wò tipster èyíkéyìí lórí ìtàn flat-staked pípé àti closing line value, kì í ṣe lórí oṣù tí ó dára jù."
+      ],
+      "faq": [
+        {
+          "q": "Iye ìṣedéédé wo ni àwọn mọ́dẹ́lì ìtẹ̀tọ́mọ̀ bọ́ọ̀lù ń ní?",
+          "a": "Lórí odds ìdíje mẹ́ta (three-way), àwọn mọ́dẹ́lì tí ó dára jù ń rí àbájáde tí ó tọ́ ní ìwọ̀n 50–55% ìgbà — tí ó kọjá díẹ̀ ju bí ẹni pé o máa ń tẹ́tẹ́ sí ẹni tí ó gbajúmọ̀ (favourite) nígbà gbogbo. Àti pé, ìṣedéédé kì í ṣe òṣùwọ̀n tí ó tọ́ rárá; calibration àti iye tí ó ju owó lọ ni ó máa ń san èrè, ìdí nìyí tí a fi ń jábọ̀ units àti CLV dípò rẹ̀."
+        },
+        {
+          "q": "Kí ló dé tí mọ́dẹ́lì máa ń yàtọ̀ sí ipò ẹgbẹ́ tí ó hàn kedere nígbà mìíràn?",
+          "a": "Nítorí pé 'ipò tí ó hàn kedere' sábà máa ń jẹ́ ìfẹsẹ̀wọnsẹ̀ márùn-ún tí kò ní ìtumọ̀ tó lágbára, mọ́dẹ́lì náà sì ń díwọ̀n oṣùwọ̀n ọdún méjì. Nígbà tí wọ́n bá yàtọ̀, àpẹẹrẹ tí ó gùn jù máa ń tọ́ ní ọ̀pọ̀ ìgbà — kì í ṣe nígbà gbogbo, kìkì ní ọ̀pọ̀ ìgbà, èyí sì ni gbogbo ohun tí mọ́dẹ́lì kan ń sọ."
+        },
+        {
+          "q": "Ṣé ẹ ń lo machine learning?",
+          "a": "Ìpìlẹ̀ rẹ̀ jẹ́ ìṣirò kíláásíìkì: oṣùwọ̀n Poisson tí àkókò ń dín kù pẹ̀lú shrinkage, tí a dàpọ̀ pẹ̀lú owó market. Ó ṣe kedere, ó rọrùn láti ṣàyẹ̀wò, a sì ti tẹ̀ ẹ́ jáde. Àwọn ètò tí ó díjú jù máa ń fi àṣírí kún un yára ju bí wọ́n ṣe ń fi ìṣedéédé bọ́ọ̀lù kún un lọ ní ìwọ̀n data tí a ní."
+        }
+      ],
+      "related": [
+        "value-betting-explained",
+        "how-to-read-betting-odds",
+        "common-betting-mistakes"
+      ],
+      "glossary": [
+        "xg",
+        "closing-line-value",
+        "fair-odds",
+        "win-rate"
+      ],
+      "tools": [
+        {
+          "href": "/model",
+          "label": "Our full model methodology, version history and known limits"
+        }
+      ],
+      "_src_hash": "b975728fd6bd973e",
+      "_model": "claude-sonnet-5"
+    },
+    {
       "slug": "common-betting-mistakes",
       "title": "7 Àkọ̀ Ìbẹ̀rẹ̀ Nínú Àgbájọ Òṣùmàrè (àti Àwọn Ìtúnú Wọn)",
       "nav": "Àwọn àkọ̀ ìbẹ̀rẹ̀",
@@ -771,6 +850,83 @@
         }
       ],
       "_src_hash": "2801fa5fb3a873f9",
+      "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "in-play-betting-guide",
+      "title": "Ìdìbò Ní Búlọ̀: Báwo ni Àwọn Ọjà Ní Yàre Ń Ṣiṣẹ́",
+      "nav": "Ìdìbò ní búlọ̀",
+      "desc": "Báwo ni a ṣe ń ṣe àwọn odds ní búlọ̀, idi tí margin ń gbóra lọ́kọ̀ọ̀kan ẹ̀kó, àbájadé ìkòkò, àti ìgbélowó tí ìdìbò ní búlọ̀ nílò.",
+      "cat": "Markets",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "Àwọn ọjà tí wọ́n ń tún àyè gbẹ́ẹ̀gbẹ́ẹ̀ kọ̀ọ̀kan",
+          "ps": [
+            "Ìdìbò ní búlọ̀ jẹ́ pé àwọn ọjà wà lọ́pọ̀lọ́ bayii tí ẹ̀kó ń lọ, àwọn odds ń yípadà tán tán láti àkókò, skó, àti àwọn iṣẹ̀lẹ̀ ní búlọ̀. Olùkọ́ 1.50 tí ó ní ìbáwọ̀n lójú tẹ́ kọjá tí ó yí sí 3.00 ni iṣẹ́jú kékeré; gbogbo goolu, kadi pupa, àti àyẹ̀wò VAR jẹ́ kí àwọn àyè yí sí àyò tuntun.",
+            "Ẹ̀rọ tí ó wà láàrin yin ni ìdíwọ́n ní ibadandun tí a lo láfi-match — goolu tí àgbà sílẹ̀ tó wà, àyè skó, ẹ̀kó tì ìpamọ́, àyẹ̀ẹ̀kó ní àkó-àìsàn, pẹ̀lú àbájadé ìkòkò àpaṣẹ tí ó ń dáwọ́ àwọn ọjà nígbà iṣẹ̀lẹ̀ lọ́wọ́."
+          ]
+        },
+        {
+          "h": "Kínni ó yí padà kúkúrú láti fi-match",
+          "ps": [
+            "Ọ̀nà ìyàtọ̀ mẹ́ta. Ìkìlọ, ìdìbò ní búlọ̀ jẹ́ kí margin lọ́ dá 1–3 pọ̀ ju àwọn ọjà kanna ní fi-match — ẹ ń san ìyípadà fún àkókò ní búlọ̀. Ìkejì, ìkòkò: àwọn ọjà dìdì nígbà tí goolu, ibadandun, àti àyẹ̀wò ń lọ, ìtanna pẹ́ẹ̀bú tí ẹ yóò fẹ́ láti ṣe. Kẹta, latency àló: fídíò tí ẹ wò ń lọ iṣẹ́jú kekeré lẹ́yìn dátà tí ó ń ṣe àyè, nítorí náà 'ìdáhùn sí ohun tí a kan ri' rò ni dáwọ́ àyè tí ó tí mọ tẹ̀lẹ̀.",
+            "Àpapọ̀, tí ó tumoṣe pé olùkọ́ àngà ní àwọn àyè tó burú jù, ní àkókò tó burú jù, pẹ̀lú àló burúmọ́ — à tílẹ̀ rísi àsọ̀tún tí ó néé ẹ gbọ̀ṛọ̀ kí ẹ tó ṣe."
+          ]
+        },
+        {
+          "h": "Àbi ìdìbò ní búlọ̀ jẹ́ nǹkan tó yẹ́",
+          "ps": [
+            "Àwọn ojúrere òtítọ́ wà. Àkòyẹ àyè-ẹ̀kó — ríí pé àpilẹ̀kọ 0-0 kì í ṣe àríyánjúǹ àga 1–0 tí ó fẹ́ — àtolè odíyọ tí kò ríí tò ò ṣoṣo ṣee ó yọ. Ìfọ̀kánlẹ̀ ṣíṣe (pinnu nípa fi-match pé a máa ṣè olùkọ́ tí ó ní ìbáwọ̀n àkọ́kọ́, ní àyè ìmulòó) jẹ́ kí tí alawọ̀ ní búlọ̀ ṣe àga tó dára.",
+            "Gbigba ní jáde rọ̀ ní iye òkan: ó jẹ́ búlọ̀ tí a ra padà ní àyè búlọ̀ pẹ̀lú margin tí a tún máa ṣe lẹ́mẹ́ — nítòkòtò, àwọn òtitò kọ̀ọ̀kan fún ìlappadè àìpè, àti àìṣéjiṣé ní àkúkú bila. Gbigba apá kan tẹ̀lẹ́ ṣiṣẹ́ ní àrìtmẹ̀tìkì kanna lórí à tí ìdìbò."
+          ]
+        },
+        {
+          "h": "Àbájadé ìgbélowó",
+          "ps": [
+            "Ìdìbò ní búlọ̀ ṣe àkòkò àmúìsàkúkù gbogbo ìdìbò di iṣẹ́jú kékeré mẹ́dógún: àwọn ohun ìpadànù wá ní àkókò tí ọkàn ń lọ pẹ̀lú àwọn bọ́tìnì tí wọ́n ṣíṣẹ́ tafí. Gbogbo àwọn òfin ìnà láti ìyệ̀ ndìbọ wà pẹ̀lú ìléwọ̀ẹ́wọ̀ rẹ̀, àti àwọn ìnà tí a gba múmu — èkó nípa búlọ̀, ṣoṣo — ni àìnọ́ ìdàgbàsóko tí ó lágbára jù. Ó jẹ́ kí ẹ le lo ìdìbò ní búlọ̀ pẹ̀lú ìfọ̀kánlẹ̀ ṣíṣẹ́, àwọn ìnà tí a pìnnù, àti àwọn òfin ìdúró tí a kọ sílẹ̀ nígbà tí ọkàn ẹ ní àlàáfíà."
+          ]
+        }
+      ],
+      "example": "Láfi-match: Over 2.5 ní 1.90 (margin ~5%). Iṣẹ́jú ogún tàìní-búlọ̀ lẹ́yìn, àdúkọ Over 2.5 jẹ́ 2.60 — ṣùgbọ́n pẹ̀lú margin búlọ̀ àyè ìtọ́ jẹ̀ ní 2.75 tó kúkúrú. Ẹ wò àwọn iṣẹ́jú ogún tó ṣe pataki tó fẹ́ Over; àwọn ọjà wò àwọn iṣẹ́jú kanna nípa dátà tó yáradì àti tí ó ní ilò tẹ̀lẹ̀. Ìbéèrè náà kò jẹ́ 'ṣe goolu yóò dé báyìí?' ṣùgbọ́n 'ṣe 2.60 rú ju ìdán goolu tá tó wà lójú nípa?' — àdúkọ iye kanna, ní àyè búlọ̀ tó rò dún.",
+      "takeaways": [
+        "Àwọn àyè búlọ̀ jẹ́ àrìtmẹ̀tìkì fi-match àyẹ̀ kọ̀ọ̀kan iṣẹ́jú — pẹ̀lú 1–3 pọ̀ margin rò.",
+        "Ìkòkò àti latency dátà tumoṣe pé ẹ ń tún ìdìbò sínú àyè tí ó tí mọ tẹ̀lẹ̀.",
+        "Àwọn ìfọ̀kánlẹ̀ ṣíṣẹ́ ní àwọn àyè ìmulòó ń yọrí búlọ̀ àtátùní; gbigba jáde ní àyè margin tá.",
+        "Ṣe àwọn ìnà àti òfin ìdúró nípa búlọ̀ — ìdìbò búlọ̀ ń gé àwọn ènìyàn tó gbẹ̀ḳe."
+      ],
+      "faq": [
+        {
+          "q": "Ní idi wo ni a gba ìdìbò búlọ̀ mi padà tàbí a dáwọ́ nígba akóko?",
+          "a": "Àwọn olùkọ́ ń tún ẹkó (5–10 iṣẹ́jú) fún àwọn ìdìbò búlọ̀ àti ṣe ìgbàṣẹ láti báwọ̀ àwọn ìdìbò tí àwọn àyè yí tàbí ìkòkò nínú rẹ̀. Ó jẹ́ ìdìtẹ̀ sí àwọn ẹlẹ́ tó ń lo latency àló — ìkoro àti àìrẹ̀pọ̀ àmọ̀ràn."
+        },
+        {
+          "q": "Ṣe gbigba jáde kó ń túmọ̀ nípa tẹ̀mẹ̀ kanna?",
+          "a": "Ìgbà kañ — nígbà tí ìdílé òní rẹ̀ ti parẹ̀ tòótòó (ợkọ́ ní àìníṣegilẹ̀, kadi pupa sí ọ) tàbí àyè ó tó gígá fún àlàáfíà. Gẹ́gẹ́ bí èkó àgba, a ń ṣe àwọn iye tí a segun sínú ẹbẹ àpapọ̀."
+        },
+        {
+          "q": "Ṣe mo ń le ṣòwọ́ áwọn ọjà búlọ̀ nípa àwọn ìrísí tó yáradì?",
+          "a": "Àwọn ẹnìyàn tí o ní dátà awoń óléjọ́ àti latency kékeré wà, àti àwọn ẹkó dáwọ́ ẹ̀rọ wà nítorí àwọn ènìyàn tí a sọ̀. Fún ẹnikẹ́ni lórí àwòkòko àgbáàgba, ijà latency ti ṣẹ tẹ̀lẹ̀ — ṣe àwọn ìfọ̀kánlẹ̀ ṣíṣẹ́ dítun àgbara dátà yìí."
+        }
+      ],
+      "related": [
+        "value-betting-explained",
+        "bankroll-management-guide",
+        "over-under-goals-explained"
+      ],
+      "glossary": [
+        "in-play-betting",
+        "cash-out",
+        "line-movement",
+        "settlement"
+      ],
+      "tools": [
+        {
+          "href": "/dropping-odds",
+          "label": "Live odds movement across the markets we track"
+        }
+      ],
+      "_src_hash": "34ebf3f04a20a645",
       "_model": "claude-haiku-4-5-20251001"
     },
     {
@@ -1560,6 +1716,176 @@
       ],
       "_src_hash": "f6853d970eddce30",
       "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "how-betting-bonuses-work",
+      "title": "Bí Àwọn Bonus Ìbétìnù Ṣe N Ṣiṣẹ́ Ní Ìmúlò",
+      "nav": "Bonuses 101",
+      "desc": "Ẹ̀kọ́ nípa ọrọ̀-ajé tó wà lẹ́yìn àwọn ọ̀rọ̀-ìdámọ̀ràn welcome: ohun tí àwọn nọ́mbà márùn-ún nínú terms túmọ̀ sí, iye tó máa ná ọ láti clear bonus kan gan-an, àti bí o ṣe lè ṣe ìyàtọ̀ láàrin ọ̀rọ̀-ìdámọ̀ràn tó dára àti èyí tí wọ́n ṣe lọ́ṣọ̀ọ́ láti tan ọ jẹ.",
+      "cat": "Bookmakers",
+      "minutes": 7,
+      "sections": [
+        {
+          "h": "Bonus jẹ́ owó, kì í ṣe ẹ̀bùn ọ̀fẹ́",
+          "ps": [
+            "Bíbọ̀wọ́mà tó fún ọ ní €100 kì í ṣe pé ó ń hàn oore-ọ̀fẹ́ — ó ń rà ohun kan. Ní pàtàkì, ó ń rà deposit rẹ, turnover rẹ nígbà tí o bá ń clear àwọn ipò náà, àti àǹfààní pé o ó dúró síbẹ̀ lẹ́yìn tí offer náà bá ti tán. Owó tí wọ́n ń ná fún marketing lẹ́yìn bonus welcome ni wọ́n ṣe iye rẹ̀ pẹ̀lú ìṣọ́ra kan náà tí wọ́n fi ń ṣe odds, àti pé terms tó so mọ́ ọn ni ibi tí iye yẹn ti kọ sílẹ̀.",
+            "Kò sí nínú èyí tó mú kí bonuses jẹ́ ìtànjẹ. Ó mú un jẹ́ ìṣòwò kan. Ọ̀rọ̀-ìdámọ̀ràn tó dára a máa fi iye tòótọ́ fún bettor tó ní ìdààmọ̀ ara-ẹni; èyí tí wọ́n ṣe lọ́ṣọ̀ọ́ a sì fẹ́ fún ọ ní nkan kan bí ó tilẹ̀ jẹ́ pé ó dà bí ẹni pé ó tóbi ju ìlọ́po méjì lọ. Ìyàtọ̀ náà kì í wà nínú nọ́mbà orí-àkọ́lé rárá — ó máa ń wà nínú àwọn ipò náà nìkan, ìdí nìyí tí ìtọ́sọ́nà yìí fi jẹ́ nípa kíka wọn dípò fífi banner wé banner."
+          ]
+        },
+        {
+          "h": "Àwọn nọ́mbà márùn-ún tó máa pinnu iye tó jẹ́ ti offer kan",
+          "ps": [
+            "Ìpín-ọ̀gọ́rùn-ún ìbáramu (match percentage) àti cap ni wọ́n máa n ṣe ààlà òkè: '100% up to €100' túmọ̀ sí pé bọ̀wọ́mà náà máa fi ọ́ ṣe ìbáramu deposit rẹ euro fún euro títí dórí cap. Wagering requirement ni ìlọ́po tó máa pinnu iye tí o gbọ́dọ̀ stake kí o tó lè withdraw — àti bóyá ó kan bonus nìkan tàbí deposit àti bonus pọ̀, èyí tí ó lè ṣe ìlọ́po iṣẹ́ náà lẹ́ẹ̀kan náà. Minimum qualifying odds ni wọ́n máa fi dá ọ dúró láti clear requirement náà nípasẹ̀ àwọn tó fẹ́rẹ̀ẹ́ dájú láti ṣẹlẹ̀. Expiry window náà ni yóò pinnu iye àkókò tí o ní kí gbogbo rẹ̀ tó di ohun tí a gbà kúrò lọ́wọ́ ọ.",
+            "Kà wọ́n ní ìtòsí yìí: wagering multiple ni àkọ́kọ́, lẹ́yìn náà ohun tí ó kan, lẹ́yìn náà minimum odds, lẹ́yìn náà expiry, lẹ́yìn náà cap. Offer kan tí kò tóbi púpọ̀ ṣùgbọ́n tí ó ní 5× wagering lórí bonus nìkan sábà máa ń tóbi jù ọ̀kan tó ní ìlọ́po méjì ìwọ̀n rẹ̀ pẹ̀lú 12× lórí deposit àti bonus pọ̀. Nọ́mbà karùn-ún tí ọ̀pọ̀ ènìyàn máa ń fojú fo — expiry — ni ó máa ń pa ọ̀pọ̀lọpọ̀ bonuses jẹ́ láìsí ariwo ju ọ̀rọ̀ mìíràn lọ: expiry ọjọ́ méje lórí requirement tó tóbi máa ń fipá mú ọ láti stake kánkán tàbí kí o pàdánù bonus náà pátápátá.",
+            "Ipò tuntun kọ̀ọ̀kan wà nítorí pé ẹnìkan ti lo àìsí ipò náà rí ní àǹfààní ṣáájú. Ó tọ́ láti rántí èyí nígbà tí ọ̀rọ̀ kan bá dà bí ẹni pé kò ṣe pàtàkì: ó ń dojúkọ ìlànà kan, tí ìlànà náà sì sábà máa ń jẹ́ bíbétì lọ́nà tí bettor onídùnnú kò lè fi bétì rárá. Àwọn ipò náà kì í ṣe pàkàsẹ̀ tí wọ́n gbé ka ọ ní pàtàkì — ṣùgbọ́n wọ́n máa dì ọ́ lọ́wọ́ bákan náà."
+          ]
+        },
+        {
+          "h": "Owó tó dì mọ́ ibùjókòó: ibi tí bonus náà gan-an wà",
+          "ps": [
+            "Ọ̀pọ̀lọpọ̀ bonuses ìbétìnù ni wọ́n máa ń fi sí bonus balance ọ̀tọ̀ tí a kò lè withdraw — ìwọ̀nba tí a lè stake nìkan. Ohun tí o lè withdraw nígbẹ̀yìn ni ohunkóhun tó bá yè kúrò lẹ́yìn wagering requirement. Àwọn bọ̀wọ́mà kan máa ń pa bonus náà rẹ́ tí o bá withdraw ohunkóhun nígbà tí o ṣì ń clear, kódà deposit tìrẹ fúnra rẹ̀. Ọ̀rọ̀ kan ṣoṣo yẹn máa ń yí 'Èmi yóò kàn withdraw àwọn èrè mi' padà sí 'Mo ti pàdánù offer náà pátápátá', ó sì jẹ́ ìyàlẹ́nu tí kò dùn tí ó wọ́pọ̀ jùlọ nínú irú yìí.",
+            "Free bets ni ẹbí mìíràn: àwọn token ìlò-ẹ̀ẹ̀kan dípò balance. Ó fẹ́rẹ̀ẹ́ jẹ́ gbogbo wọn ni stake-not-returned — token €25 tó ṣẹ́gun ní 2.00 máa san €25, kì í ṣe €50, nítorí pé stake náà kì í ṣe tìrẹ láéláé. Ìyàtọ̀ yìí máa ń yí iye tí token náà jẹ́ àti bí a ṣe yẹ kí a lò ó padà; ó tóbi tó bẹ́ẹ̀ tí a fi ń jíròrò free bets nínú ìtọ́sọ́nà tirẹ̀."
+          ]
+        },
+        {
+          "h": "Bí àwọn offer ṣe máa ń bàjẹ́ ní ìmúlò",
+          "ps": [
+            "Àwọn ọ̀nà ìkùnà náà máa ń tún padà. Ipò maximum-stake máa ń dí bí o ṣe lè yára clear tó, nítorí náà ètò tí a gbé kalẹ̀ lórí àwọn bétì díẹ̀ tó tóbi máa ń rú terms náà. Ìdíwọ́ market máa ń yọ àwọn bétì tí o gan-an fẹ́ kúrò — àwọn bọ̀wọ́mà kan kò ka each-way, system bets, tàbí ohunkóhun tí a cash out ní ìbẹ̀rẹ̀. Ìdíwọ́ ọ̀nà-ìsanwó ni àpẹẹrẹ àdáyanri: fi e-wallet kan pàtó ṣe deposit, offer náà kò lè ṣiṣẹ́ rárá. Bétì tí a fagilé tàbí tí a dá dúró kò ka sí wagering, èyí tí ó ṣe pàtàkì ní ọ̀sẹ̀ tó ní ọ̀pọ̀lọpọ̀ ìdásẹ́sí.",
+            "Lẹ́yìn náà ni ipò ìwà (conduct clause): gbogbo bọ̀wọ́mà ní ẹ̀tọ́ láti fa bonus padà kúrò lọ́dọ̀ àwọn account tí wọ́n rí i pé wọ́n ń 'ṣàṣejù promotions'. Ní ìmúlò, ìyẹn túmọ̀ sí àwọn àpẹẹrẹ bíbétì tí kò ní ìtumọ̀ mìíràn bí kò ṣe fún clearing bonus — bétì lórí ẹ̀gbẹ́ méjèèjì ní minimum-odds, ìgbìyànjú withdraw lẹ́sẹ̀kẹsẹ̀, ìbẹ̀wò ẹ̀ẹ̀kan. Ipò náà kò ṣe kedere lórí-ìdí, jíjà pẹ̀lú rẹ̀ lẹ́yìn tí ohun ti ṣẹlẹ̀ kò sábà ṣàṣeyọrí. Tí gbogbo àjọṣe rẹ pẹ̀lú bọ̀wọ́mà kan bá jẹ́ láti yọ welcome offer rẹ̀ nìkan, retí kí àjọṣe náà kúkúrú."
+          ]
+        },
+        {
+          "h": "Ọ̀nà tó bọ́gbọ́n mu láti lo bonuses",
+          "ps": [
+            "Fi bonus ṣe àdínkù owó lórí bíbétì tí o ti fẹ́ ṣe lọ́nàkọnà — má ṣe fi ṣe owó-ìwọlé láti lépa. Ìṣẹ́jú tí offer kan bá mú kí o stake ju bó ṣe yẹ lọ, ní odds tí o kò bá bá fi ṣe bétì bákan náà, lórí markets tí o kò gbèrò rárá, iye owó rẹ̀ ti kọjá iye tí ó jẹ́, láìka ìṣírò lọ. Ohun tí a ń béèrè láti clear rẹ̀ ni turnover, turnover nípasẹ̀ margin bọ̀wọ́mà kan sì ní iye owó tí a lè sọ tẹ́lẹ̀.",
+            "Ó rọrùn láti fojúsọ iye owó náà: sọ turnover tí a béèrè di ọ̀pọ̀ pẹ̀lú margin tó wọ́pọ̀ lórí markets tí o máa lò. Turnover €1,000 ní margin 5% máa ná ní àyíká €50 ní ìròyìn. Tí bonus náà bá jẹ́ €100, offer náà ní iye tòótọ́ fún bettor tó ní ìdààmọ̀ ara-ẹni; tí owó €100 kan náà bá béèrè turnover €3,000, iye owó tí a retí náà máa jẹ gbogbo bonus náà run, ọ̀ṣọ́ náà sì ti ṣe iṣẹ́ rẹ̀. Ṣe ìṣírò kan ṣoṣo yẹn kí o tó gba ohunkóhun, ọ̀pọ̀lọpọ̀ àwọn offer tí kò dára a sì máa yọ ara wọn kúrò fúnra wọn."
+          ]
+        }
+      ],
+      "example": "Ìbáramu 100% dórí €100 pẹ̀lú 5× wagering lórí deposit + bonus ní minimum odds 1.80, expiry ọjọ́ 30. Wagering base: €200, nítorí náà turnover tí a béèrè jẹ́ €1,000. Ní margin 5% tó wọ́pọ̀, turnover €1,000 máa ná ní àyíká €50 ní ìròyìn — lòdì sí bonus €100, offer náà ní iye tòótọ́ fún bettor tó ní ìdààmọ̀ ara-ẹni. Bonus kan náà ní 12× lórí deposit + bonus máa béèrè turnover €2,400 (~€120 iye tí a retí) yóò sì jẹ́ ohun tí kò tó nǹkan kan.",
+      "takeaways": [
+        "Bonus jẹ́ ìṣòwò: bọ̀wọ́mà ń rà deposit àti turnover rẹ, iye owó náà sì kọ sílẹ̀ nínú terms, kì í ṣe orí banner.",
+        "Wagering multiple × wagering base = turnover tí a béèrè; turnover × margin = iye tí clearing máa ná ọ ní ìròyìn.",
+        "Bóyá wagering kan bonus nìkan tàbí deposit + bonus pọ̀ máa yí iṣẹ́ náà padà ju ọ̀rọ̀ mìíràn èyíkéyìí lọ.",
+        "Tí offer kan bá yí bí o ṣe máa bétì padà lọ́nàkọnà — ìwọ̀n, odds, tàbí markets — iye owó rẹ̀ ti kọjá iye tí ó jẹ́ tán."
+      ],
+      "faq": [
+        {
+          "q": "Ṣé ó yẹ kí a gba bonuses ìbétìnù rárá?",
+          "a": "Nígbà mìíràn ni. Kọ́kọ́ ṣírò iye tí clearing yóò ná ọ: turnover tí a béèrè ìlọ́po margin tó wọ́pọ̀ ti markets tí o máa lò. Nígbà tí bonus náà bá ju iye yẹn lọ dáadáa tí expiry window náà sì bá bá bí o ṣe máa n stake lọ, offer náà máa fi iye tòótọ́ fún ọ. Tí kò bá rí bẹ́ẹ̀, kọ̀ ọ́ — bíbétì láìsí bonus wà nígbà gbogbo kò sì ní ipò kankan."
+        },
+        {
+          "q": "Kí ló dé tí bonus mi fi parẹ́ nígbà tí mo withdraw?",
+          "a": "Ọ̀pọ̀lọpọ̀ bọ̀wọ́mà máa ń pa bonus tó ṣì ń ṣiṣẹ́ rẹ́ lórí withdrawal kankan, kódà ti deposit rẹ fúnra rẹ̀, nítorí pé wọ́n ti ṣe iye owó offer náà lórí pé turnover rẹ máa ṣẹlẹ̀ ṣáájú. Ọ̀rọ̀ yìí wà nínú terms ọ̀pọ̀lọpọ̀ offers. Ṣàyẹ̀wò rẹ̀ kí o tó deposit dípò lẹ́yìn — bí ó bá ti ṣẹlẹ̀ tán, support máa fi ọwọ́ sí terms náà, ìyẹn sì ni ìgbàgbogbo òpin ọ̀rọ̀ náà."
+        },
+        {
+          "q": "Ṣé bọ̀wọ́mà kan lè kọ̀ láti san bonus tí mo ti clear?",
+          "a": "Ipò ìwà (conduct clause) máa fi àyè fún bọ̀wọ́mà láti fa promotions padà kúrò lọ́dọ̀ àwọn account tí bíbétì wọn kò ní ìtumọ̀ mìíràn bí kò ṣe fún yíyọ bonus — bíbétì lórí ẹ̀gbẹ́ méjèèjì, minimum-odds grinding, ìgbìyànjú withdraw lẹ́sẹ̀kẹsẹ̀. Tí ìṣe rẹ bá dà bí bíbétì lásán tí ó kàn lo offer kan, àríyànjiyàn kì í wọ́pọ̀. Tí ó bá dà bí iṣẹ́ clearing, retí pé wọn yóò fi ipò náà lò, ẹ̀bẹ̀ sì kì í máa ṣàṣeyọrí."
+        }
+      ],
+      "related": [
+        "wagering-requirements-explained",
+        "free-bets-explained",
+        "bankroll-management-guide"
+      ],
+      "glossary": [
+        "free-bet",
+        "wagering-requirements",
+        "expected-value"
+      ],
+      "tools": [
+        {
+          "href": "/tools/margin-calculator",
+          "label": "Measure the margin on any set of prices — the number that decides what clearing a bonus costs"
+        }
+      ],
+      "_src_hash": "48a04387cfd84045",
+      "_model": "claude-sonnet-5"
+    },
+    {
+      "slug": "wagering-requirements-explained",
+      "title": "Ohun tí Wagering Requirement Ń Béèrè Lọ́wọ́ Rẹ",
+      "nav": "Ìlànà Wagering",
+      "desc": "Ohun tí 5× tàbí 10× rollover ń béèrè gan-an lọ́wọ́ rẹ, formula kan ṣoṣo tó ń díye lé e, àti bí o ṣe lè mọ̀ requirement tí a lè clear yàtọ̀ sí èyí tí wọ́n ṣe láti jẹ bonus rẹ run.",
+      "cat": "Bookmakers",
+      "minutes": 6,
+      "sections": [
+        {
+          "h": "Ohun tí multiplier náà ń béèrè gan-an lọ́wọ́ rẹ",
+          "ps": [
+            "Wagering (tàbí rollover) requirement ni iye owó lápapọ̀ tí o gbọ́dọ̀ fi tẹ̀ẹ́ (stake) kí owó bonus tó di ọ̀kan tí o lè withdraw. Multiplier náà ni wọ́n máa ń fi sórí base kan, base yìí sì ni ọ̀rọ̀ tó ṣe pàtàkì jùlọ nínú terms náà: 5× lórí bonus €100 túmọ̀ sí turnover €500, ṣùgbọ́n 5× lórí deposit plus bonus túmọ̀ sí €1,000 fún ìdíye kan náà. Àwọn bookmakers mọ̀ pé ọ̀pọ̀lọpọ̀ readers kì í ṣàyẹ̀wò base wo ló wúlò — offers méjèèjì á sì máa dà bí ẹni pé wọ́n jọra nínú àdúrà (advert).",
+            "Turnover túmọ̀ sí àwọn stakes tí a ti settle, kì í ṣe àdánù nìkan. Bets tí o ṣẹ́gun ń kà sí i requirement náà gẹ́gẹ́ bí èyí tí o pàdánù; ohun tí wọ́n ń béèrè ni volume tó gba inú margin bookmaker, kì í ṣe owó rẹ fúnra rẹ̀. Ìyẹn gan-an ni ìdí tí requirement fi ní price tí a lè ṣírò, kì í ṣe kìkì coin flip."
+          ]
+        },
+        {
+          "h": "Formula kan ṣoṣo tó lè díye lé requirement èyíkéyìí",
+          "ps": [
+            "Expected clearing cost = turnover tí a béèrè × average margin ti àwọn markets tí o fi clear ẹ. Margin ni commission tí bookmaker ti kọ́ sínú odds — ó sábà máa ń jẹ́ 4–6% lórí àwọn 1X2 markets bọ́ọ̀lù pàtàkì, ó sì ga ju bẹ́ẹ̀ lọ lórí longshots àti leagues tí kò gbajúmọ̀. €600 turnover tí a béèrè pẹ̀lú margin 5% máa ná ó ní ìwọ̀n €30 ní expectation. Bóyá bonus náà á yè kúrò lẹ́yìn clearing rọrùn láti mọ̀: bonus yọ expected cost kúrò, kí o sì tún yọ èyíkéyìí value tí o pàdánù nítorí pé o fi bèdí bet ọ̀nà tó yàtọ̀ sí bí o ṣe máa ń bet lásán.",
+            "Èyí jẹ́ expectation, kì í ṣe àdánwò tí a ṣe rí i dájú — o lè máa gbóná, kí o sì pa gbogbo rẹ̀ mọ́, tàbí kí o rí ìṣòro, kí o sì sọ gbogbo rẹ̀ nù lójú ọ̀nà. Ṣùgbọ́n èyí ni ìwọ̀n òtítọ́. Offer tí expected clearing cost rẹ̀ ju iye bonus lọ kì í ṣe bonus rárá; turnover ni wọ́n ṣe wọ́ṣọ̀, kò sì sí àbájáde bets tó lè yí èyí padà ní gígùn.",
+            "Àwọn bonus casino ń mú kókó yìí le sí i pẹ̀lú game weighting: slots sábà máa ń kà 100% sí wagering nígbà tí table games á máa kà 10–20% tàbí kò kà rárá. Offer 'sportsbook + casino' tí a papọ̀, tí a bá sì clear lórí sportsbook nìkan, lè béèrè fún ìlọ́po márùn-ún turnover tí o rò. Bí weighting table bá wà nínú terms, kà á kí o tó ṣe ohunkóhun mìíràn."
+          ]
+        },
+        {
+          "h": "Ìdí tí minimum odds fi wà",
+          "ps": [
+            "Tí a kò bá dá ààlà, ẹnikẹ́ni lè clear requirement pẹ̀lú odds 1.01 láìsí ewu púpọ̀, ìdí nìyí tí gbogbo offer fi ní minimum qualifying price — tó sábà máa ń jẹ́ 1.50 sí 1.80. Bets tí kò dé ààlà yìí kì í kà rárá. Ààlà yìí ń fipá mú ọ láti kojú variance gidi, èyí gan-an ni ohun tí bookmaker san owó fún.",
+            "Ààlà yìí náà ni ó ń pinnu iye owó tó máa ná láti clear requirement náà. Margin lórí àwọn favourites tó le máa kéré ní ìwọ̀n, nítorí náà bookmakers máa ń gbé ààlà sí ibi tí margin wọn ti dára jù. Clearing pẹ̀lú odds tó bá minimum mu gan-an lórí àwọn markets tó ní liquidity ni ọ̀nà tó fẹ́rẹ̀ẹ́ jẹ́ èyí tó gbowó lórí jùlọ tí ó bá ìlànà mu: àwọn mainstream lines máa ń ní margin tó kéré jùlọ, kíkó legs sí i tàbí wíwá longshots á sì gbé margin tí o ń san sórí owó kọ̀ọ̀kan ga sí i."
+          ]
+        },
+        {
+          "h": "Expiry àti Sequencing — àwọn tó ń pa ẹ́ láìsí ìtàn",
+          "ps": [
+            "Requirements máa ń pari, ó sábà máa ń jẹ́ láàárín ọjọ́ 7 sí 30, tí requirement kan kò bá parí ṣáájú àkókò yẹn, ó sábà máa ń mú bonus àti gbogbo èrè tí o rí pẹ̀lú rẹ̀ lọ pátápátá. Kí o tó gba offer, pín turnover tí a béèrè sí iye ọjọ́ tó kù, kí o sì bi ara rẹ bóyá volume ọ̀sọ̀ọ̀sẹ̀ yẹn dà bí bí o ṣe máa ń bet ní gidi. Bí clearing bá nílò ìlọ́po márùn-ún volume rẹ lásán, offer náà kì í ṣe fún ọ.",
+            "Sequencing pẹ̀lú ṣe pàtàkì: ọ̀pọ̀lọpọ̀ bookmakers máa ń fi deposit balance rẹ ṣe stake ná àkọ́kọ́, kí wọ́n tó fọwọ́ bá bonus — clause tí ó máa ń yà gbogbo ènìyàn lẹ́nu ni pé wọ́n á fagilé gbogbo offer náà pátápátá bí o bá withdraw ohunkóhun kí requirement náà tó parí. Ìjọpọ̀ èyí túmọ̀ sí pé owó tìrẹ ni a ti fi sínú eré kí a tó fọwọ́ kan bonus rárá. Ka bí ohun ṣe ń tẹ̀lé ara wọn, kì í ṣe multiplier nìkan."
+          ]
+        },
+        {
+          "h": "Clear ẹ, tàbí kúrò lẹ́gbẹ̀ẹ́",
+          "ps": [
+            "Ìpinnu náà jẹ́ ìfiwéra kan ṣoṣo: iye value bonus lòdì sí expected clearing cost ní ìwọ̀n ìbá àti markets gidi tí o ń lò. Bí ó bá jẹ́ èrè, volume náà á sì bá bí o ṣe máa ń bet lásán mu, gba offer náà, kí o sì fi clear ẹ ní minimum odds tí ìlànà gbà lórí àwọn markets tó ní liquidity jùlọ tí o ti ń bet lé lórí. Bí ó bá jẹ́ àdánù — tàbí bí ó bá jẹ́ èrè kìkì bí o bá fi ìlọ́po mẹ́ta stakes rẹ — kọ̀ ọ́, o kò sì pàdánù ohunkóhun: bets kan náà wà nígbà gbogbo láìsí ìdíwọ́.",
+            "Ìlànà kan ṣoṣo ni ó bo ìyókù: má ṣe jẹ́ kí requirement tó ń ṣiṣẹ́ yí ìpinnu bet rẹ padà láéláé. Requirement jẹ́ ààlà ẹ̀yìn, kì í ṣe strategy. Ìgbà tí o bá bẹ̀rẹ̀ sí fi bet kún ‘láti lọ síwájú lórí rollover’, ni bookmaker ti yí owó tí ó ná lórí ìpolówó rẹ̀ padà sí turnover rẹ — èyí gan-an ni ète náà láti ìbẹ̀rẹ̀pẹ̀pẹ̀."
+          ]
+        }
+      ],
+      "example": "Bonus €50 ní 8× lórí bonus: turnover €400 ní minimum odds 1.80. Tí a bá clear lórí 1X2 bọ́ọ̀lù mainstream pẹ̀lú margin 5%, expected cost ≈ €20 — offer náà á sì fi ìwọ̀n €30 value gidi sílẹ̀. Bonus €50 kan náà ní 12× lórí deposit + bonus (base €100, turnover €1,200) á ná ó ní ìwọ̀n €60 ní expectation, ó sì kéré sí ohunkóhun kí variance tó tiẹ̀ sọ̀rọ̀.",
+      "takeaways": [
+        "Kọ́kọ́ wá base wagering náà: 'bonus' lòdì sí 'deposit + bonus' lè fi ìlọ́po méjì kún turnover pẹ̀lú multiplier kan náà.",
+        "Expected clearing cost = turnover × margin. Bí ó bá ju iye bonus lọ, offer náà jẹ́ turnover tí a wọ́ṣọ̀ fún, kì í ṣe bonus.",
+        "Ààlà minimum-odds ń fipá mú variance gidi; clearing ní ààlà yẹn lórí liquid markets sábà máa ń jẹ́ ọ̀nà tó gbowó lórí jùlọ tí ó bá ìlànà mu.",
+        "Pín turnover tí a béèrè sí iye ọjọ́ expiry — bí volume ọ̀sọ̀ọ̀sẹ̀ náà kò bá bá bí o ṣe máa ń bet lásán mu, kọ̀ ọ́."
+      ],
+      "faq": [
+        {
+          "q": "Ṣé bets tí mo ṣẹ́gun ń kà sí wagering requirement?",
+          "a": "Bẹ́ẹ̀ni. Requirement náà ń díwọ̀n volume tí a ti stake, kì í ṣe àdánù — bet tí a ti settle tí ó sì ṣẹ́gun kà gẹ́gẹ́ bí èyí tí ó pàdánù. Bets tí a voided, tí a cancel àti tí a cash-out kì í sábà kà, bets tí kò dé minimum odds náà kì í kà rárá."
+        },
+        {
+          "q": "Kí ni yóò ṣẹlẹ̀ bí mo bá withdraw kí wagering náà tó parí?",
+          "a": "Lábẹ́ ọ̀pọ̀lọpọ̀ terms, bonus àti gbogbo èrè tí ó jẹ mọ́ ọn á sọnù, àwọn bookmakers kan sì máa ń fagilé gbogbo offer náà pátápátá bí o bá withdraw ohunkóhun rárá, kódà owó deposit tìrẹ. Bí ó bá ṣeéṣe kí o fẹ́ owó náà lárin clearing, ṣàyẹ̀wò clause yẹn kí o tó gba offer náà dípò kí o máa jà pẹ̀lú support lẹ́yìn náà."
+        },
+        {
+          "q": "Ṣé 5× requirement máa ń dára jù 10× lọ nígbà gbogbo?",
+          "a": "Kìkì bí base àti odds floor bá jẹ́ ọ̀kan náà. 5× lórí deposit + bonus jẹ́ turnover tó ju 10× lórí bonus nìkan lọ nígbàkigbà tí deposit bá dọ́gba pẹ̀lú bonus. Fi turnover tí a ṣírò wéra — multiplier × base — má ṣe fi multiplier fúnra rẹ̀ wéra rí."
+        }
+      ],
+      "related": [
+        "how-betting-bonuses-work",
+        "free-bets-explained",
+        "value-betting-explained"
+      ],
+      "glossary": [
+        "wagering-requirements",
+        "expected-value",
+        "value-bet"
+      ],
+      "tools": [
+        {
+          "href": "/tools/margin-calculator",
+          "label": "The margin on your clearing markets × required turnover = what the requirement costs"
+        }
+      ],
+      "_src_hash": "f53e3bae2eff96cf",
+      "_model": "claude-sonnet-5"
     },
     {
       "slug": "free-bets-explained",
@@ -3106,6 +3432,80 @@
       ],
       "_src_hash": "64652fa3c9c35cc0",
       "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-ethiopia",
+      "title": "Ìbetì ní Ethiopia: Bí Ó Ṣe Ń Ṣiṣẹ́",
+      "nav": "Ìbetì ní Ethiopia",
+      "country": "et",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Ọjà tí NLA fún ní láìsẹnsì ní Ethiopia: kín ni láìsẹnsì National Lottery Administration túmọ̀ sí fún àwọn onítètẹ, ìdí tí telebirr fi ń darí àwọn ìsanwó, àti bí owó-orí 15% lórí èrè ṣe ń ṣiṣẹ́.",
+      "sections": [
+        {
+          "h": "Ṣé ìbetì lófin ní Ethiopia?",
+          "ps": [
+            "Bẹ́ẹ̀ni — ìbetì ere-ìdárayá lófin ní Ethiopia, ó sì ní láìsẹnsì láti ọwọ́ National Lottery Administration (NLA), èyí tí í ṣe ẹgbẹ́ àpapọ̀ tí ń bójú tó gbogbo àwọn eré-ìwo-nǹkan. Àwọn olùṣàkóso tí wọ́n ní láìsẹnsì ń ṣiṣẹ́ àwọn ilé-ìtajà ìbetì àti àwọn ìbetì orí-ayélujára pẹ̀lú, apá retail sì ṣòro fojú fo: àwọn ilé-ìtajà ìbetì wà ní gbogbo ìlú Ethiopia tó tóbi.",
+            "Láìsẹnsì NLA ni ìlà ìṣírò-ojúṣe. Olùṣàkóso tí ó ní láìsẹnsì gbọ́dọ̀ dá ìdáhùn fún alábòójútó agbègbè tí àríyànjiyàn owó-ìsanwó bá dìde; ojú-òpó òkèèrè kì í ṣe bẹ́ẹ̀. Níwọ̀n bí àwọn òfin ìdarí owó ilẹ̀-òkèèrè ti mú kí birr jẹ́ owó kan ṣoṣo tí ó wúlò fún ìtètẹ, ìwádìí láìsẹnsì ni àyẹ̀wò àkọ́kọ́ — kí ó tó dé sí odds tàbí bonus."
+          ]
+        },
+        {
+          "h": "Ìsanwó: telebirr kọ́kọ́",
+          "ps": [
+            "Ìbetì ní Ethiopia ń gbé lórí owó fóònù alágbèéká. telebirr — àpò-owó Ethio Telecom, tí a ṣe ìfilọ́lẹ̀ rẹ̀ ní 2021 — ni ọ̀nà ìsanwó àkọ́kọ́ fún ìfisílẹ̀ àti yíyọ owó ní àwọn ilé-ìtètẹ tí wọ́n ní láìsẹnsì, CBE Birr (àpò-owó Commercial Bank of Ethiopia) sì máa ń jẹ́ àṣàyàn kejì. M-Pesa wọ ọjà náà nígbà tí Safaricom Ethiopia ṣe ìfilọ́lẹ̀ rẹ̀ ní 2023, ó sì ń dàgbà kíákíá.",
+            "Kaadi ìdúró-ilẹ̀-òkèèrè kò fi bẹ́ẹ̀ wọ́pọ̀ ní ìṣesí: àwọn onítètẹ díẹ̀ ni ó ní wọ́n, àwọn òfin owó-ilẹ̀-òkèèrè sì mú kí ìlò kaadi ṣòro. Bí ojú-òpó tí o ń gbé yẹ̀wò kò bá san ní birr nípasẹ̀ ọ̀kan lára àwọn àpò-owó agbègbè, mú un gẹ́gẹ́ bí àmì-ìkìlọ̀, kì í ṣe àǹfààní."
+          ]
+        },
+        {
+          "h": "Owó-orí 15% lórí èrè",
+          "ps": [
+            "Ethiopia ń gba owó-orí lórí èrè láti inú eré-ìwo-nǹkan ní 15%, tí olùṣàkóso ń yọ kúrò kí ó tó san owó, àwọn èrè kékeré tí ó wà lábẹ́ ààlà òfin sì kò ní owó-orí kàn. Ààlà náà àti àwọn kúlẹ̀-kúlẹ̀ ìmúṣẹ ti yí padà ní ọ̀pọ̀ ọdún, nítorí náà kà á sí ohun tí ń yí padà — ìwé-ìjẹ́rìí owó-ìsanwó olùṣàkóso gbọ́dọ̀ fi ìyọkúrò náà hàn.",
+            "Fún àwọn onítètẹ tí ń wá iye-owó tí ó tọ́, èyí ṣe pàtàkì nínú ìṣírò: odds 2.00 di kúrú ní ìṣírò lẹ́sẹ̀kẹsẹ̀ tí 15% bá ti yọ kúrò lára èrè. Fi ìyọkúrò owó-orí yìí sí ìsírò èdge rẹ bí o ṣe máa ń ṣe pẹ̀lú owó ìlò-ìsanwó."
+          ]
+        },
+        {
+          "h": "Yíyan ojú-òpó ní Ethiopia",
+          "ps": [
+            "Bẹ̀rẹ̀ pẹ̀lú láìsẹnsì: NLA ń tẹ̀jáde àwọn olùṣàkóso tí ó ń bójú tó, ilé-ìtètẹ tí ó ní láìsẹnsì tí ó ń san ní birr pẹ̀lú yíyọ owó telebirr sì lóore ju odds tí ó dára díẹ̀ lórí ojú-òpó òkèèrè tí o kò lè fipá mú lẹ́jọ́. Lẹ́yìn náà fi wé àwọn ohun pàtàkì lásán — ìdíwọ̀n odds lórí àwọn ajọ-bọ́ọ̀lù tí o kúkú ń tẹ́tẹ́ sí, bí a ṣe ń yára yọ owó sí àpò-owó rẹ, àti bóyá àwọn ààlà ìtètẹ ni a bọ̀wọ̀ fún.",
+            "Ìsopọ̀ ayélujára jẹ́ apá kan ìṣírò náà pẹ̀lú: dátà fóònù alágbèéká ni ọ̀nà àkọ́kọ́ láti wọlé, nítorí náà ojú-òpó tí ó fi ojú-ewé alágbèéká fẹ́ẹ́rẹ́ tí kò lo dátà púpọ̀ hàn ń wúlò gan-an ju àkókò tí àkókò ìrọ̀lẹ́ ba fà lọ."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Ìbetì ere-ìdárayá lófin, ó sì ní láìsẹnsì, National Lottery Administration sì ń bójú tó",
+        "telebirr àti CBE Birr ni àwọn ọ̀nà ìsanwó tí ó ṣe pàtàkì; M-Pesa ń dàgbà láti ọdún 2023",
+        "Owó-orí ìyọkúrò 15% ń bá èrè lọ — fi kún ìṣírò èdge rẹ nígbà gbogbo",
+        "Fi birr tẹ́tẹ́ pẹ̀lú àwọn olùṣàkóso tí NLA ti fún ní láìsẹnsì; ojú-òpó òkèèrè kò fún ọ ní àǹfààní ìgbẹ́jọ́ agbègbè"
+      ],
+      "faq": [
+        {
+          "q": "Ṣé ìbetì ere-ìdárayá lófin ní Ethiopia?",
+          "a": "Bẹ́ẹ̀ni — ìbetì ere-ìdárayá lófin, ó sì ní láìsẹnsì láti ọwọ́ National Lottery Administration (NLA), tí ó ń bójú tó gbogbo eré-ìwo-nǹkan ní Ethiopia. Àwọn olùṣàkóso tí wọ́n ní láìsẹnsì ń ṣiṣẹ́ ilé-ìtajà àti ìbetì orí-ayélujára."
+        },
+        {
+          "q": "Báwo ni owó-orí ṣe ń ṣiṣẹ́ lórí èrè ìbetì ní Ethiopia?",
+          "a": "Èrè láti inú eré-ìwo-nǹkan ní owó-orí ìyọkúrò 15%, tí olùṣàkóso ń yọ kúrò kí ó tó san owó. Àwọn èrè kékeré tí ó wà lábẹ́ ààlà òfin kò ní owó-orí kàn; ààlà náà lè yí padà, nítorí náà kà àwọn òfin lọ́wọ́lọ́wọ́."
+        },
+        {
+          "q": "Kín ni àwọn ọ̀nà ìsanwó tí àwọn ojú-òpó ìbetì Ethiopia ń lò?",
+          "a": "Owó fóònù alágbèéká ni ó jẹ gàba: telebirr (Ethio Telecom) ni àkọ́kọ́, CBE Birr sì jẹ́ àṣàyàn tí ó wọ́pọ̀, M-Pesa sì ti ń dàgbà láti ìgbà tí Safaricom Ethiopia ṣe ìfilọ́lẹ̀ rẹ̀ ní 2023. Kaadi ìdúró-ilẹ̀-òkèèrè kò fi bẹ́ẹ̀ wúlò ní ìṣesí."
+        }
+      ],
+      "related": [
+        "betting-in-kenya",
+        "betting-in-tanzania"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ],
+      "_src_hash": "3379e6a9e84b323a",
+      "_model": "claude-sonnet-5"
     }
   ]
 }

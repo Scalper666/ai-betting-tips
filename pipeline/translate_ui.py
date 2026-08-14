@@ -50,6 +50,9 @@ TARGETS = {
            "Yoruba-speaking bettors — English loanwords are fine where natural)"),
     "ig": ("Igbo (Nigeria, standard orthography with diacritics; betting terms as used by "
            "Igbo-speaking bettors — English loanwords are fine where natural)"),
+    "am": ("Amharic (Ethiopia, Ge'ez/Fidel script; the betting vocabulary Ethiopian bookmakers "
+           "use — ውርርድ for betting, ትንበያ for prediction; English loanwords like 'odds' are fine "
+           "where Amharic-speaking bettors actually use them; numbers stay Western Arabic digits)"),
 }
 
 SYSTEM = (

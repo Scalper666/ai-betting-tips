@@ -1,6 +1,6 @@
 {
   "set": "Betting Guides",
-  "updated": "2026-08-15",
+  "updated": "2026-08-14",
   "guides": [
     {
       "slug": "how-to-read-betting-odds",
@@ -3188,6 +3188,78 @@
         {
           "href": "/tools/margin-calculator",
           "label": "Price what any bonus really costs to clear"
+        }
+      ]
+    },
+    {
+      "slug": "betting-in-ethiopia",
+      "title": "Betting in Ethiopia: How It Works",
+      "nav": "Betting in Ethiopia",
+      "country": "et",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Ethiopia's NLA-licensed market: what a National Lottery Administration licence means for bettors, why telebirr runs the payments, and how the 15% winnings tax works.",
+      "sections": [
+        {
+          "h": "Is betting legal in Ethiopia?",
+          "ps": [
+            "Yes — sports betting is legal in Ethiopia and licensed by the National Lottery Administration (NLA), the federal body that supervises all games of chance. Licensed operators run both retail betting shops and online books, and the retail side is hard to miss: betting shops are a fixture of every sizeable Ethiopian town.",
+            "The NLA licence is the accountability line. A licensed operator answers to a local supervisor when a payout dispute arises; an offshore site does not. With foreign-currency controls making birr the only practical playing currency anyway, the licence check is the first filter — before odds, before bonuses."
+          ]
+        },
+        {
+          "h": "Payments: telebirr first",
+          "ps": [
+            "Ethiopian betting runs on mobile money. telebirr — Ethio Telecom's wallet, launched in 2021 — is the default deposit and withdrawal rail at licensed books, with CBE Birr (the Commercial Bank of Ethiopia's wallet) the usual second option. M-Pesa joined the market when Safaricom Ethiopia launched it in 2023 and is growing fast.",
+            "International cards are rare in practice: few bettors hold them and foreign-currency rules make card processing awkward. If a site you are considering does not settle in birr through one of the local wallets, treat that as a warning sign rather than a feature."
+          ]
+        },
+        {
+          "h": "The 15% winnings tax",
+          "ps": [
+            "Ethiopia withholds tax on winnings from games of chance at 15%, deducted by the operator before payout, with small winnings below a legal threshold exempt. The threshold and enforcement details have changed over the years, so treat the exact numbers as moving parts — the operator's payout receipt should show the deduction.",
+            "For value bettors this matters arithmetically: a price of 2.00 is effectively shorter once 15% comes off the profit. Factor the withholding into any edge calculation the same way you would a payment fee."
+          ]
+        },
+        {
+          "h": "Choosing a site in Ethiopia",
+          "ps": [
+            "Start with the licence: the NLA publishes which operators it supervises, and a licensed book in birr with telebirr withdrawals beats a fractionally better price on an offshore site you cannot enforce. Then compare the usual fundamentals — odds margins on the leagues you actually bet, withdrawal speed to your wallet, and whether limits are honoured.",
+            "Connectivity is part of the calculus too: mobile data is the default access route, so a site that ships a light, low-bandwidth mobile page is worth real money over a season of slow evenings."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Sports betting is legal, licensed and supervised by the National Lottery Administration",
+        "telebirr and CBE Birr are the payment rails that matter; M-Pesa is growing since 2023",
+        "Winnings carry a 15% withholding tax — price it into every edge calculation",
+        "Bet in birr with NLA-licensed operators; offshore sites offer no local recourse"
+      ],
+      "faq": [
+        {
+          "q": "Is sports betting legal in Ethiopia?",
+          "a": "Yes — sports betting is legal and licensed by the National Lottery Administration (NLA), which supervises all games of chance in Ethiopia. Licensed operators run retail shops and online books."
+        },
+        {
+          "q": "How are betting winnings taxed in Ethiopia?",
+          "a": "Winnings from games of chance are subject to a 15% withholding tax, deducted by the operator before payout. Small winnings below a legal threshold are exempt; thresholds change, so check the current rules."
+        },
+        {
+          "q": "What payment methods do Ethiopian betting sites use?",
+          "a": "Mobile money dominates: telebirr (Ethio Telecom) is the default, CBE Birr the common alternative, and M-Pesa has been growing since Safaricom Ethiopia launched it in 2023. International cards are rarely practical."
+        }
+      ],
+      "related": [
+        "betting-in-kenya",
+        "betting-in-tanzania"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
         }
       ]
     }

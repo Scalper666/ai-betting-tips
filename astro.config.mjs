@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 // change when we edit them. Claiming "modified today" for a guide nobody
 // touched is a false signal, so the two groups get different dates.
 // Bump CONTENT_UPDATED whenever guides/glossary/tools/legal copy changes.
-const CONTENT_UPDATED = '2026-08-04T00:00:00.000Z';
+const CONTENT_UPDATED = '2026-08-14T00:00:00.000Z';
 const BUILD_ISO = new Date().toISOString();
 const STATIC_RE = /^\/(guides|glossary|tools|about|model|contact|privacy|terms|responsible-gambling|cookies)(\/|$)/;
 

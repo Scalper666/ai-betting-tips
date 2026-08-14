@@ -41,7 +41,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src" / "data"
 
 MODEL = os.getenv("TRANSLATE_MODEL", "claude-haiku-4-5-20251001")
-MAX_TOKENS = 4000
+MAX_TOKENS = 8000   # the long bonus-cluster guides overflow 4000 in verbose scripts
 WORKERS = 4
 LANGS = {
     "es": "Spanish (neutral Latin-American, usable in Spain too)",
@@ -52,6 +52,7 @@ LANGS = {
     "ha": "Hausa (Nigeria/Niger, Latin script; betting terms as used by Nigerian bookmakers, English loanwords where natural)",
     "yo": "Yoruba (Nigeria, correct diacritics; betting terms as actually used by Yoruba-speaking bettors, English loanwords where natural)",
     "ig": "Igbo (Nigeria, standard orthography with diacritics; betting terms as used by Igbo-speaking bettors, English loanwords where natural)",
+    "am": "Amharic (Ethiopia, Ge'ez/Fidel script; betting vocabulary Ethiopian bookmakers use — ውርርድ for betting, ትንበያ for prediction; English loanwords where Amharic bettors use them; numbers stay Western Arabic digits)",
 }
 
 SYSTEM = (
@@ -182,7 +183,7 @@ def run_collection(client, name: str, entries: list[dict], fields: dict,
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", choices=["guides", "glossary", "seasons"], default=None)
-    ap.add_argument("--langs", default="es,pt,de,fr,sw,ha,yo,ig")
+    ap.add_argument("--langs", default="es,pt,de,fr,sw,ha,yo,ig,am")
     args = ap.parse_args()
     langs = [l.strip() for l in args.langs.split(",") if l.strip() in LANGS]
 
