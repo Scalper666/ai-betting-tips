@@ -158,7 +158,7 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
           (function () {
             var sec = document.getElementById('geoBk'); if (!sec) return;
             var LIST = []; try { LIST = JSON.parse(sec.getAttribute('data-geo') || '[]'); } catch (e) {}
-            var ISO = { GB: 'uk', DE: 'de', IN: 'in', NG: 'ng', KE: 'ke', GH: 'gh', TZ: 'tz', UG: 'ug', ZA: 'za', PE: 'pe', CL: 'cl', CO: 'co', SN: 'sn', CI: 'ci', BR: 'br', MX: 'mx', AR: 'ar', CA: 'ca', IE: 'ie', CM: 'cm', EC: 'ec', ZM: 'zm', BJ: 'bj', TG: 'tg', BF: 'bf', ML: 'ml', NE: 'ne', CD: 'cd', AO: 'ao', MZ: 'mz', ET: 'et' };
+            var ISO = { GB: 'uk', DE: 'de', IN: 'in', NG: 'ng', KE: 'ke', GH: 'gh', TZ: 'tz', UG: 'ug', ZA: 'za', PE: 'pe', CL: 'cl', CO: 'co', SN: 'sn', CI: 'ci', BR: 'br', MX: 'mx', AR: 'ar', CA: 'ca', IE: 'ie', CM: 'cm', EC: 'ec', ZM: 'zm', BJ: 'bj', TG: 'tg', BF: 'bf', ML: 'ml', NE: 'ne', CD: 'cd', AO: 'ao', MZ: 'mz', ET: 'et', US: 'us', NL: 'nl', SE: 'se', PL: 'pl', CH: 'ch' };
             // timezone -> ISO country (offline first guess; trace refines on the live site)
             var TZ_CC = { 'Europe/London': 'GB', 'Europe/Berlin': 'DE', 'Europe/Busingen': 'DE',
                           'Asia/Kolkata': 'IN', 'Asia/Calcutta': 'IN', 'Africa/Lagos': 'NG',
@@ -174,7 +174,11 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
                           'Africa/Douala': 'CM', 'America/Guayaquil': 'EC', 'Africa/Lusaka': 'ZM',
                           'Africa/Porto-Novo': 'BJ', 'Africa/Lome': 'TG', 'Africa/Ouagadougou': 'BF',
                           'Africa/Bamako': 'ML', 'Africa/Niamey': 'NE', 'Africa/Kinshasa': 'CD',
-                          'Africa/Lubumbashi': 'CD', 'Africa/Luanda': 'AO', 'Africa/Maputo': 'MZ', 'Africa/Addis_Ababa': 'ET' };
+                          'Africa/Lubumbashi': 'CD', 'Africa/Luanda': 'AO', 'Africa/Maputo': 'MZ', 'Africa/Addis_Ababa': 'ET',
+                          'America/New_York': 'US', 'America/Chicago': 'US', 'America/Denver': 'US',
+                          'America/Los_Angeles': 'US', 'America/Phoenix': 'US', 'America/Detroit': 'US',
+                          'Europe/Amsterdam': 'NL', 'Europe/Stockholm': 'SE', 'Europe/Warsaw': 'PL',
+                          'Europe/Zurich': 'CH' };
             // section title: SVG flag + text (emoji flags render as letter codes on Windows)
             function setTitle(src, txt) {
               var f = sec.querySelector('[data-geo-name-flag]'); if (f) f.src = src;

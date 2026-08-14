@@ -602,6 +602,101 @@
       ],
       "legal_summary": "Sports betting is legal and licensed by the National Lottery Administration (NLA). Licensed operators run retail and online books in birr; offshore sites sit outside NLA supervision, so a payout dispute there has no local recourse.",
       "verify": true
+    },
+    {
+      "slug": "us",
+      "name": "United States",
+      "flag": "🇺🇸",
+      "regulator": "State gaming regulators (NJ DGE, PGCB, MGCB and peers)",
+      "currency": "USD",
+      "popular_payments": [
+        "Visa/Mastercard",
+        "PayPal",
+        "ACH / online banking"
+      ],
+      "key_facts": [
+        "Legal sports betting is licensed state by state — roughly 38 states plus DC since the 2018 PASPA repeal",
+        "Odds are quoted American-style (+150 / −200); every book runs its own state-approved app",
+        "Offshore sites are illegal in most states and attorneys general send cease-and-desist orders — stick to state-licensed operators"
+      ],
+      "legal_summary": "Sports betting is legal at the state level since the Supreme Court struck down PASPA in 2018. Each state licenses operators separately, so availability, taxes and even the minimum age differ across state lines; offshore books remain illegal in most states.",
+      "verify": true
+    },
+    {
+      "slug": "nl",
+      "name": "Netherlands",
+      "flag": "🇳🇱",
+      "regulator": "Kansspelautoriteit (KSA)",
+      "currency": "EUR",
+      "popular_payments": [
+        "iDEAL",
+        "Visa/Mastercard",
+        "PayPal"
+      ],
+      "key_facts": [
+        "Online betting has been licensed under the KOA Act since October 2021",
+        "CRUKS — the national self-exclusion register — is mandatory across every licensed operator",
+        "Advertising rules are among Europe's strictest: untargeted gambling ads have been banned since 2023"
+      ],
+      "legal_summary": "Fully regulated: online sports betting is legal with a Kansspelautoriteit licence under the KOA Act (2021). Unlicensed operators are actively fined, and the CRUKS self-exclusion register applies market-wide.",
+      "verify": true
+    },
+    {
+      "slug": "se",
+      "name": "Sweden",
+      "flag": "🇸🇪",
+      "regulator": "Spelinspektionen",
+      "currency": "SEK",
+      "popular_payments": [
+        "Swish",
+        "BankID + bank transfer",
+        "Visa/Mastercard"
+      ],
+      "key_facts": [
+        "Re-regulated in 2019: licensed private operators replaced the old monopoly",
+        "BankID verification is universal — registration and payouts are near-instant",
+        "Spelpaus.se self-exclusion covers every licensed site at once; bonuses are capped at one welcome offer per operator"
+      ],
+      "legal_summary": "Legal and licensed by Spelinspektionen since the 2019 re-regulation. Licensed sites must connect to Spelpaus (national self-exclusion) and may offer only a single welcome bonus — a deliberate consumer-protection trade-off.",
+      "verify": true
+    },
+    {
+      "slug": "pl",
+      "name": "Poland",
+      "flag": "🇵🇱",
+      "regulator": "Ministry of Finance",
+      "currency": "PLN",
+      "popular_payments": [
+        "BLIK",
+        "Bank transfer",
+        "Visa/Mastercard"
+      ],
+      "key_facts": [
+        "Only bookmakers licensed by the Ministry of Finance may operate; unlicensed domains go on the national block register",
+        "A 12% turnover tax on stakes is priced into Polish odds — factor it into any value calculation",
+        "BLIK dominates deposits and withdrawals at licensed books"
+      ],
+      "legal_summary": "Legal but tightly controlled: sports betting requires a Ministry of Finance licence, unlicensed sites are DNS-blocked via the state register, and a 12% turnover tax on stakes shapes the odds licensed books can offer.",
+      "verify": true
+    },
+    {
+      "slug": "ch",
+      "name": "Switzerland",
+      "flag": "🇨🇭",
+      "regulator": "Gespa (intercantonal gambling supervision)",
+      "currency": "CHF",
+      "popular_payments": [
+        "TWINT",
+        "PostFinance",
+        "Visa/Mastercard"
+      ],
+      "key_facts": [
+        "Sports betting is run by the Swisslos and Loterie Romande lottery societies under the 2019 Money Gaming Act",
+        "Unauthorised foreign betting sites are DNS-blocked by the authorities",
+        "Winnings from licensed Swiss games are tax-free up to CHF 1 million"
+      ],
+      "legal_summary": "Legal within a controlled system: the 2019 Money Gaming Act reserves sports betting for the cantonal lottery societies (Swisslos and Loterie Romande) under Gespa supervision, and unauthorised foreign sites are DNS-blocked.",
+      "verify": true
     }
   ]
 }

@@ -3389,6 +3389,376 @@
       ],
       "_src_hash": "3379e6a9e84b323a",
       "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-usa",
+      "title": "Paris sportifs aux États-Unis : comment ça marche",
+      "nav": "Paris sportifs aux États-Unis",
+      "country": "us",
+      "cat": "Countries",
+      "minutes": 6,
+      "desc": "Le marché américain état par état : ce que l'abrogation du PASPA en 2018 a changé, comment convertir les cotes américaines en cotes décimales, pourquoi les sites offshore sont la seule chose à éviter, et comment les gains sont imposés.",
+      "sections": [
+        {
+          "h": "Les paris sportifs sont-ils légaux aux États-Unis ?",
+          "ps": [
+            "Oui — mais la licence relève du niveau de l'État. Quand la Cour suprême a invalidé le PASPA en 2018, chaque État a obtenu le droit de réguler lui-même les paris sportifs, et environ 38 États plus Washington DC l'ont fait. Cela signifie que la possibilité de parier en ligne, les applications disponibles, l'âge minimum et le régime fiscal dépendent tous de l'État où vous vous trouvez — la géolocalisation est appliquée par chaque application agréée.",
+            "Les États qui restent en dehors (la Californie et le Texas sont les plus importants) sont exactement là où les sites offshore font le plus de marketing. C'est la ligne rouge à respecter sur le marché américain : les régulateurs d'État et les procureurs généraux envoient activement des mises en demeure aux opérateurs offshore, les prestataires de paiement signalent ces transactions, et un litige avec un book non agréé ne vous laisse aucun recours. Si votre État n'a pas encore de marché légal, la réponse honnête est d'attendre, pas de passer par l'offshore."
+          ]
+        },
+        {
+          "h": "Cotes américaines, réflexe décimal",
+          "ps": [
+            "Les books américains affichent des cotes moneyline : −200 signifie que vous misez 200 pour gagner 100, +150 signifie qu'une mise de 100 rapporte 150 de profit. La conversion vers les cotes décimales utilisées sur ce site est mécanique : les lignes négatives donnent 1 + 100/|ligne| (−200 → 1,50), les lignes positives donnent 1 + ligne/100 (+150 → 2,50). Notre convertisseur de cotes fait les deux sens et affiche la probabilité implicite en parallèle.",
+            "La logique du value betting ne change pas selon le format : une cote ne vaut la peine d'être prise que si votre estimation de la probabilité dépasse la probabilité implicite qu'elle contient. Les books américains sont pointus sur les marchés majeurs, mais la concurrence état par état fait que les tarifs promotionnels et les écarts de cotes entre books sont bien réels — comparer deux ou trois applications agréées dans votre État, c'est de l'argent gratuit sur une saison."
+          ]
+        },
+        {
+          "h": "Choisir un book : uniquement des sites agréés",
+          "ps": [
+            "Chaque État publie sa liste d'opérateurs agréés — les marques nationales (DraftKings, FanDuel, BetMGM, Caesars et consorts) plus des books régionaux. Une licence signifie des fonds joueurs séparés, un régulateur d'État qui traite les réclamations, et des outils de jeu responsable appliqués. Les sites offshore n'offrent rien de tout cela, et les utiliser est illégal dans la plupart des États.",
+            "Entre books agréés, ce sont les fondamentaux qui décident : la marge sur les ligues que vous pariez réellement, la rapidité des retraits vers votre banque, et si l'application respecte les parieurs gagnants. Comparer les cotes entre deux ou trois applications agréées par un État est légal, facile, et ce qui se rapproche le plus d'un avantage garanti sur le marché américain."
+          ]
+        },
+        {
+          "h": "Fiscalité : les gains sont un revenu",
+          "ps": [
+            "L'IRS traite les gains de jeu comme un revenu imposable. Les books émettent un formulaire W-2G pour les gros gains (le déclencheur classique est 600 $+ à une cote de 300/1, avec des seuils différents pour d'autres produits), et les parieurs occasionnels doivent l'impôt fédéral sur le revenu sur leurs gains nets, formulaire ou non. La plupart des États autorisant les paris ajoutent leur propre impôt d'État sur le revenu ; quelques-uns (comme le Nevada) n'en ont aucun.",
+            "Les pertes ne sont déductibles qu'à hauteur des gains et uniquement si vous détaillez vos déductions (itemized deductions) — une règle qui surprend beaucoup de parieurs occasionnels. Tenez un registre simple des dépôts, retraits et résultats ; notre approche du suivi des paris réglés sur ce site est exactement l'habitude que récompensent les règles fiscales américaines."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Légal depuis 2018, mais état par état — disponibilité, âge et fiscalité dépendent de l'endroit où vous vous trouvez",
+        "N'utilisez que des applications agréées par un État ; les sites offshore sont illégaux dans la plupart des États et sans recours possible partout",
+        "Les cotes américaines se convertissent mécaniquement en décimal — la logique de value est identique",
+        "Les gains sont un revenu imposable ; tenez un registre et attendez-vous à des formulaires W-2G sur les gros gains"
+      ],
+      "faq": [
+        {
+          "q": "Les paris sportifs en ligne sont-ils légaux aux États-Unis ?",
+          "a": "Dans environ 38 États plus DC, oui — chaque État agrée ses opérateurs séparément et les applications appliquent la géolocalisation. Dans les autres États, les paris sportifs en ligne ne sont pas encore légaux, et les sites offshore ne constituent pas une solution de contournement légale."
+        },
+        {
+          "q": "Puis-je utiliser des sites de paris offshore depuis les États-Unis ?",
+          "a": "C'est illégal dans la plupart des États et une mauvaise idée partout : les procureurs généraux d'État envoient des mises en demeure aux books offshore, les paiements sont signalés, et vous n'avez aucun recours local en cas de litige. Restez sur des opérateurs agréés par un État."
+        },
+        {
+          "q": "Comment les gains de paris sont-ils imposés aux États-Unis ?",
+          "a": "Comme un revenu ordinaire. Les gros gains déclenchent un formulaire W-2G, l'impôt fédéral sur le revenu s'applique aux gains nets, et la plupart des États autorisant les paris ajoutent leur propre impôt d'État. Les pertes ne sont déductibles qu'à hauteur des gains, et seulement si vous détaillez vos déductions."
+        }
+      ],
+      "related": [
+        "betting-in-canada",
+        "betting-in-mexico"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ],
+      "_src_hash": "c8ba9737b73e125c",
+      "_model": "claude-sonnet-5"
+    },
+    {
+      "slug": "betting-in-netherlands",
+      "title": "Parier aux Pays-Bas : comment ça marche",
+      "nav": "Paris aux Pays-Bas",
+      "country": "nl",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Le marché néerlandais KOA : ce que garantit une licence de la Kansspelautoriteit, comment fonctionne l'auto-exclusion CRUKS, pourquoi les publicités pour les jeux d'argent ont disparu de la télévision néerlandaise, et comment iDEAL gère les paiements.",
+      "sections": [
+        {
+          "h": "Parier est-il légal aux Pays-Bas ?",
+          "ps": [
+            "Oui — depuis l'entrée en vigueur de la loi sur les jeux d'argent à distance (KOA) en octobre 2021, les paris sportifs en ligne sont légaux avec une licence de la Kansspelautoriteit (KSA). La KSA est l'un des régulateurs les plus offensifs d'Europe : les opérateurs non licenciés qui ciblent des joueurs néerlandais écopent d'amendes à six chiffres, et les opérateurs licenciés sont surveillés de près sur la publicité, le devoir de vigilance et les limites imposées aux joueurs.",
+            "Pour les parieurs, la licence constitue une véritable garantie : fonds séparés, service client en néerlandais, et connexion obligatoire au registre national d'auto-exclusion. La KSA publie son registre des opérateurs licenciés — vérifier un site sur cette liste prend une minute et filtre le marché de façon totale."
+          ]
+        },
+        {
+          "h": "CRUKS et limites de jeu",
+          "ps": [
+            "CRUKS est le registre national d'auto-exclusion : une seule inscription vous bloque instantanément chez tous les opérateurs licenciés, en ligne comme en points de vente physiques. Depuis 2024, les opérateurs doivent aussi engager des discussions obligatoires sur les limites de dépôt et appliquer des plafonds plus stricts pour les jeunes joueurs — aux Pays-Bas, la fixation de limites est la norme par défaut, pas une option cachée dans les paramètres.",
+            "Cela influence directement l'ambiance du marché : les bookmakers néerlandais poussent beaucoup moins de promotions de rechargement agressives que sur les marchés gris, et la publicité est très encadrée — les publicités non ciblées pour les jeux d'argent (télévision, radio, panneaux d'affichage) sont interdites depuis mi-2023, avec un retrait progressif du sponsoring sportif dans la foulée."
+          ]
+        },
+        {
+          "h": "Paiements : iDEAL en priorité",
+          "ps": [
+            "iDEAL — le standard de paiement interbancaire néerlandais — est le moyen de dépôt par défaut chez tous les bookmakers licenciés, avec les cartes bancaires et PayPal comme options secondaires. Les retraits sont crédités sur le même compte bancaire, généralement sous 24 heures ; les moyens de paiement anonymes sont volontairement exclus du marché licencié.",
+            "La conséquence pratique : votre compte de paris est lié à votre identité bancaire vérifiée. C'est un choix délibéré (règles anti-blanchiment), et c'est aussi ce qui explique pourquoi le marché néerlandais licencié offre certains des retraits les plus rapides et les moins compliqués d'Europe."
+          ]
+        },
+        {
+          "h": "Choisir un site aux Pays-Bas",
+          "ps": [
+            "Partez du registre de la KSA et comparez les fondamentaux à l'intérieur de cette liste : les marges sur l'Eredivisie et les compétitions que vous jouez réellement, la profondeur du live betting, et la politique de limitation appliquée aux joueurs gagnants. La comparaison des bonus compte moins qu'ailleurs — la réglementation néerlandaise maintient des offres de bienvenue modestes et des conditions de mise clairement affichées.",
+            "Nos probabilités calculées par modèle et nos comparaisons de meilleures cotes fonctionnent exactement de la même façon pour les rencontres néerlandaises que partout ailleurs ; utilisez-les pour juger si une cote licenciée présente de la valeur, pas pour courir après des cotes sur des sites non licenciés qui n'ont légalement pas le droit de vous payer."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Légal depuis octobre 2021 avec une licence KSA ; les opérateurs non licenciés sont activement sanctionnés",
+        "L'auto-exclusion CRUKS et les limites de jeu par défaut s'appliquent à tout le marché licencié",
+        "La publicité non ciblée pour les jeux d'argent est interdite depuis 2023",
+        "iDEAL gère les paiements ; les retraits sont crédités sur votre compte bancaire vérifié"
+      ],
+      "faq": [
+        {
+          "q": "Les paris en ligne sont-ils légaux aux Pays-Bas ?",
+          "a": "Oui — avec une licence de la Kansspelautoriteit délivrée dans le cadre de la loi KOA, en vigueur depuis octobre 2021. La KSA publie le registre des opérateurs licenciés et sanctionne les opérateurs non licenciés qui ciblent des joueurs néerlandais."
+        },
+        {
+          "q": "Qu'est-ce que CRUKS ?",
+          "a": "Le registre national d'auto-exclusion. Une seule inscription bloque l'accès à tous les opérateurs licenciés des Pays-Bas simultanément, en ligne comme en points de vente physiques, pour la période que vous choisissez."
+        },
+        {
+          "q": "Quels moyens de paiement utilisent les sites de paris néerlandais ?",
+          "a": "iDEAL est le moyen de dépôt standard chez les bookmakers licenciés, avec les cartes bancaires et PayPal comme alternatives. Les retraits sont reversés sur votre compte bancaire vérifié, généralement sous 24 heures."
+        }
+      ],
+      "related": [
+        "betting-in-germany",
+        "betting-in-the-uk"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ],
+      "_src_hash": "d2bd569b9b2c7f92",
+      "_model": "claude-sonnet-5"
+    },
+    {
+      "slug": "betting-in-sweden",
+      "title": "Paris sportifs en Suède : comment ça marche",
+      "nav": "Paris sportifs en Suède",
+      "country": "se",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Le marché suédois re-régulé : ce que signifie une licence Spelinspektionen, pourquoi BankID rend tout instantané, la règle du bonus unique, et l'auto-exclusion Spelpaus.",
+      "sections": [
+        {
+          "h": "Les paris sportifs sont-ils légaux en Suède ?",
+          "ps": [
+            "Oui — la Suède a re-régulé son marché en janvier 2019, remplaçant l'ancien monopole de Svenska Spel sur les paris sportifs par un système de licences géré par Spelinspektionen. Des dizaines d'opérateurs privés détiennent désormais une licence suédoise, et l'entreprise publique n'est plus qu'un opérateur licencié parmi d'autres.",
+            "La licence s'accompagne d'obligations concrètes : connexion obligatoire au registre d'auto-exclusion Spelpaus, incitations à définir des limites de dépôt, et la règle emblématique de la Suède — chaque opérateur ne peut proposer qu'un seul bonus, l'offre de bienvenue. Les bonus de rechargement et les offres de réactivation VIP sont interdits, ce qui change la nature de la concurrence sur ce marché : elle se joue sur les cotes et le produit, pas sur les promotions."
+          ]
+        },
+        {
+          "h": "BankID : tout devient instantané",
+          "ps": [
+            "Chaque bookmaker suédois licencié vérifie ses joueurs via BankID, l'identité numérique nationale. L'inscription prend une minute, il n'y a pas de calvaire de téléchargement de documents, et les retraits via Swish ou virement bancaire s'effectuent généralement en quelques minutes plutôt qu'en plusieurs jours.",
+            "Le revers de la médaille, c'est une transparence totale : les comptes sont liés à votre numéro personnel, et le modèle « pay-n-play » signifie qu'il n'existe aucun jeu anonyme sur le marché licencié. Pour les parieurs qui privilégient des retraits rapides et fiables plutôt que l'anonymat, le dispositif suédois est ce qui se fait de mieux dans le monde des paris régulés."
+          ]
+        },
+        {
+          "h": "Spelpaus et la règle du bonus unique",
+          "ps": [
+            "Spelpaus.se est l'interrupteur national d'auto-exclusion : une seule inscription bloque simultanément tous les opérateurs licenciés, pour un mois, trois mois, six mois ou jusqu'à nouvel ordre. Les sites licenciés doivent vérifier ce statut à chaque connexion.",
+            "La règle du bonus unique mérite le respect du parieur plutôt que son agacement. Sur les marchés où la concurrence se joue à coups de bonus de rechargement illimités, cet argent est récupéré via des marges plus larges. La Suède force la concurrence à se jouer sur les cotes elles-mêmes — exactement là où un parieur orienté valeur veut qu'elle se joue."
+          ]
+        },
+        {
+          "h": "Choisir un site en Suède",
+          "ps": [
+            "Au sein du bassin d'opérateurs licenciés, comparez les marges sur l'Allsvenskan et les championnats européens que vous suivez, la qualité du live-betting, et la rapidité de paiement via Swish de chaque bookmaker. Le bonus de bienvenue unique mérite d'être lu une fois — les conditions de mise sont visibles et relativement honnêtes — mais il ne doit pas guider votre choix.",
+            "Utilisez nos probabilités modélisées pour juger si les cotes suédoises comportent de la valeur : avec des promotions plafonnées, tout se joue sur les cotes, et comparer les prix entre deux ou trois bookmakers licenciés permet de capter l'essentiel de l'avantage disponible."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Légal et licencié par Spelinspektionen depuis la re-régulation de 2019",
+        "La vérification BankID rend l'inscription et les retraits Swish quasi instantanés",
+        "Un seul bonus de bienvenue par opérateur — la concurrence se joue sur les cotes",
+        "Spelpaus bloque tous les sites licenciés en une seule inscription"
+      ],
+      "faq": [
+        {
+          "q": "Les paris sportifs en ligne sont-ils légaux en Suède ?",
+          "a": "Oui — licenciés par Spelinspektionen depuis janvier 2019, date à laquelle le système de licences a remplacé l'ancien monopole sur les paris sportifs. L'entreprise publique Svenska Spel n'est désormais qu'un opérateur licencié parmi d'autres."
+        },
+        {
+          "q": "Pourquoi les sites de paris suédois ne proposent-ils qu'un seul bonus ?",
+          "a": "La loi suédoise limite chaque opérateur à une seule offre de bienvenue ; les bonus de rechargement et VIP sont interdits. L'objectif est la protection des consommateurs, et l'effet secondaire est que les bookmakers licenciés se font concurrence sur les cotes et le produit plutôt que sur les promotions."
+        },
+        {
+          "q": "Les retraits sont-ils rapides sur les sites de paris suédois ?",
+          "a": "Généralement en quelques minutes : l'identification via BankID combinée à Swish ou au virement bancaire permet aux bookmakers licenciés de verser les gains presque instantanément dès qu'un retrait est demandé."
+        }
+      ],
+      "related": [
+        "betting-in-germany",
+        "betting-in-the-uk"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ],
+      "_src_hash": "99c927823162d8a2",
+      "_model": "claude-sonnet-5"
+    },
+    {
+      "slug": "betting-in-poland",
+      "title": "Les paris sportifs en Pologne : comment ça marche",
+      "nav": "Paris sportifs en Pologne",
+      "country": "pl",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Le marché polonais sous licence : la licence du ministère des Finances, la taxe de 12% sur les mises et son impact sur les cotes, le registre des domaines bloqués, et les paiements BLIK.",
+      "sections": [
+        {
+          "h": "Les paris sportifs sont-ils légaux en Pologne ?",
+          "ps": [
+            "Oui — les paris sportifs sont légaux avec une licence du ministère des Finances, et le marché sous licence (STS, Fortuna, Superbet et consorts) est vaste et concurrentiel. L'amendement de 2017 à la loi sur les jeux d'argent a donné du poids à cette licence : les domaines non licenciés sont inscrits au Registre national des domaines interdits et les FAI polonais doivent les bloquer, tandis que les prestataires de paiement n'ont pas le droit de traiter leurs transactions.",
+            "Pour le parieur, cela rend le marché particulièrement lisible : si un site fonctionne normalement depuis une connexion polonaise sans VPN, il est presque certainement sous licence. Jouer sur des sites bloqués via des contournements vous prive de toutes les protections prévues par la loi."
+          ]
+        },
+        {
+          "h": "La taxe de 12% sur les mises",
+          "ps": [
+            "La Pologne taxe le volume de mises, pas le profit de l'opérateur : 12% de chaque mise part à l'État avant même que le pari ne soit réglé. Les bookmakers sous licence intègrent cela dans leurs cotes, ce qui explique pourquoi les cotes polonaises sur un même match paraissent souvent plus courtes que les cotes allemandes ou britanniques.",
+            "La bonne façon de voir les choses : cette taxe fait partie du prix de la protection légale. Le value betting fonctionne toujours — notre modèle compare les probabilités aux cotes réellement proposées — mais attendez-vous à moins d'opportunités de valeur brute que sur des marchés moins taxés, et considérez toute offre 'sans taxe' d'un site non licencié comme le signal d'alarme qu'elle est. Les gains supérieurs à 2 280 PLN sont par ailleurs soumis à une taxe de 10% prélevée à la source."
+          ]
+        },
+        {
+          "h": "Les paiements : le pays du BLIK",
+          "ps": [
+            "BLIK — le standard polonais de paiement mobile — domine les dépôts et de plus en plus les retraits chez les bookmakers sous licence, aux côtés des virements bancaires et cartes classiques. Le règlement est rapide et lié à votre identité bancaire, comme l'exigent les règles de lutte contre le blanchiment d'argent.",
+            "Comme sur tout marché européen sous licence, les moyens de paiement anonymes sont exclus par principe. L'avantage concret, c'est des retraits garantis : un bookmaker polonais sous licence qui retarde un paiement doit rendre des comptes au ministère des Finances, pas à une boîte postale offshore."
+          ]
+        },
+        {
+          "h": "Choisir un site en Pologne",
+          "ps": [
+            "Au sein du bassin de bookmakers sous licence, la comparaison porte surtout sur les marges et le produit : quel bookmaker propose les cotes les plus serrées sur l'Ekstraklasa et vos championnats européens malgré la taxe sur les mises, quelle est la profondeur de l'offre en direct, et comment sont structurées les promotions (les bookmakers polonais misent plutôt sur les cotes boostées et l'assurance combiné que sur les bonus de dépôt bruts).",
+            "Les probabilités de notre modèle s'appliquent sans changement : convertissez toute cote polonaise en probabilité implicite, gardez à l'esprit que les 12% sont déjà intégrés, et ne pariez que là où votre avantage résiste à cette ponction."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Légal avec une licence du ministère des Finances ; les domaines non licenciés sont bloqués par les FAI via le registre d'État",
+        "Une taxe de 12% sur les mises est intégrée dans les cotes polonaises — les calculs de valeur doivent y résister",
+        "Les gains supérieurs à 2 280 PLN sont soumis à une taxe supplémentaire de 10% prélevée à la source",
+        "BLIK domine les paiements ; des retraits garantis, c'est la véritable valeur de la licence"
+      ],
+      "faq": [
+        {
+          "q": "Les paris sportifs en ligne sont-ils légaux en Pologne ?",
+          "a": "Oui — avec une licence du ministère des Finances. Les sites non licenciés sont inscrits au Registre national des domaines interdits, bloqués par les FAI polonais et coupés du traitement des paiements."
+        },
+        {
+          "q": "Pourquoi les cotes polonaises sont-elles plus basses qu'ailleurs ?",
+          "a": "Les opérateurs sous licence paient une taxe de 12% sur le volume de mises — chaque mise, gagnante ou perdante — et l'intègrent dans leurs cotes. C'est le prix d'un marché légalement garanti."
+        },
+        {
+          "q": "Les gains issus des paris sont-ils taxés en Pologne ?",
+          "a": "Les gains supérieurs à 2 280 PLN sur un seul pari sont soumis à une taxe de 10% prélevée par l'opérateur au moment du paiement, en plus de la taxe sur les mises déjà intégrée dans les cotes."
+        }
+      ],
+      "related": [
+        "betting-in-germany",
+        "betting-in-sweden"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ],
+      "_src_hash": "eb6b97e13800f161",
+      "_model": "claude-sonnet-5"
+    },
+    {
+      "slug": "betting-in-switzerland",
+      "title": "Les paris en Suisse : comment ça fonctionne",
+      "nav": "Paris en Suisse",
+      "country": "ch",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "Le marché contrôlé de la Suisse : pourquoi Swisslos et la Loterie Romande gèrent les paris sportifs, comment fonctionne la liste de blocage DNS, et le seuil d'exonération fiscale de 1 million CHF.",
+      "sections": [
+        {
+          "h": "Les paris sont-ils légaux en Suisse ?",
+          "ps": [
+            "Oui, mais dans un système volontairement restreint : la loi sur les jeux d'argent de 2019 réserve les paris sportifs aux deux sociétés loteries cantonales — Swisslos dans les cantons germanophones et italophones, et la Loterie Romande dans les cantons francophones — sous la supervision de Gespa, l'autorité intercantonale des jeux d'argent. Leurs marques Sporttip et JOUEZSPORT sont les seules offres de paris sportifs autorisées dans le pays.",
+            "Les bookmakers étrangers ne sont pas licenciés et ne peuvent pas l'être : la loi associe le monopole national à une liste de blocage DNS, et les fournisseurs d'accès suisses redirigent les domaines de jeu bloqués vers une page d'information. Utiliser un VPN pour accéder à un bookmaker étranger n'est pas poursuivi comme un délit du joueur, mais cela fait perdre toute protection légale, et de toute façon la plupart des bookmakers étrangers excluent formellement les clients suisses dans leurs conditions générales."
+          ]
+        },
+        {
+          "h": "Ce que signifie une tarification en situation de monopole",
+          "ps": [
+            "Un marché avec un seul opérateur par région linguistique ne fait face à aucune concurrence, et les cotes le montrent : les marges chez les bookmakers des sociétés loteries sont sensiblement plus larges que chez les bookmakers européens concurrentiels. Il n'y a pas de comparaison de cotes possible en Suisse, puisqu'il n'existe qu'une seule cote.",
+            "Cela rend la maîtrise des probabilités encore plus précieuse. Convertir n'importe quelle cote proposée en probabilité implicite — et la comparer à une estimation de modèle — indique quelle part du prix correspond à la marge. Certains marchés et offres boostées sont équitables ; beaucoup ne le sont pas. Parier moins, et uniquement là où le prix est le moins désavantageux, est la stratégie rationnelle en Suisse."
+          ]
+        },
+        {
+          "h": "Fiscalité et paiements",
+          "ps": [
+            "La Suisse adoucit ce marché contrôlé avec une règle fiscale réellement avantageuse : les gains issus de jeux suisses licenciés sont exonérés d'impôt jusqu'à 1 million CHF par an ; seuls les montants au-delà sont imposés comme revenu. Les paiements transitent par des circuits suisses — TWINT, PostFinance et cartes bancaires — avec la fiabilité qu'on attend d'opérateurs proches de l'État.",
+            "Les gains issus de sites étrangers non licenciés ne bénéficient d'aucune exonération de ce type et se situent dans une zone grise juridique — un argument discret de plus pour rester dans le système licencié malgré ses prix."
+          ]
+        },
+        {
+          "h": "Utiliser ce site depuis la Suisse",
+          "ps": [
+            "Nos pronostics, nos probabilités de modèle et notre historique de résultats fonctionnent de la même manière pour les utilisateurs suisses que partout ailleurs : ils indiquent à quoi ressemblerait un prix équitable pour un résultat donné. Comparez ce prix équitable à ce que proposent réellement Sporttip ou JOUEZSPORT, et vous saurez, marché par marché, quelle marge vous est facturée.",
+            "Considérez les paris en Suisse comme un divertissement payant plutôt qu'une chasse à la valeur : la marge structurelle rend un profit à long terme irréaliste, et le savoir dès le départ, c'est exactement le genre d'honnêteté pour laquelle ce site existe."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Les paris sportifs ne sont légaux qu'via Swisslos et la Loterie Romande, sous la loi sur les jeux d'argent de 2019",
+        "Les sites de paris étrangers sont bloqués par DNS ; il n'existe aucune alternative licenciée ni comparaison de cotes",
+        "Les gains issus de jeux suisses licenciés sont exonérés d'impôt jusqu'à 1 million CHF par an",
+        "Utilisez les probabilités de modèle pour repérer la marge dans les prix de monopole — et pariez en conséquence"
+      ],
+      "faq": [
+        {
+          "q": "Les paris sportifs en ligne sont-ils légaux en Suisse ?",
+          "a": "Oui, mais uniquement auprès des deux sociétés loteries cantonales — Swisslos (Sporttip) et la Loterie Romande (JOUEZSPORT) — supervisées par Gespa en vertu de la loi sur les jeux d'argent de 2019. Les bookmakers étrangers ne peuvent pas être licenciés et leurs domaines sont bloqués par DNS."
+        },
+        {
+          "q": "Les gains de paris sont-ils imposés en Suisse ?",
+          "a": "Les gains issus de jeux suisses licenciés sont exonérés d'impôt jusqu'à 1 million CHF par an ; les montants au-delà sont imposés comme revenu. Les gains issus de sites étrangers non licenciés ne bénéficient d'aucune exonération de ce type."
+        },
+        {
+          "q": "Pourquoi les cotes suisses sont-elles moins avantageuses que dans d'autres pays ?",
+          "a": "Il n'existe qu'un seul opérateur licencié par région linguistique et aucune concurrence, ce qui explique des marges plus larges que chez les bookmakers européens concurrentiels. Convertir les cotes en probabilité implicite montre précisément la marge intégrée dans chaque marché."
+        }
+      ],
+      "related": [
+        "betting-in-germany",
+        "betting-in-netherlands"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ],
+      "_src_hash": "9eabcec0f7bca552",
+      "_model": "claude-sonnet-5"
     }
   ]
 }

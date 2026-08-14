@@ -3378,6 +3378,376 @@
       ],
       "_src_hash": "3379e6a9e84b323a",
       "_model": "claude-haiku-4-5-20251001"
+    },
+    {
+      "slug": "betting-in-usa",
+      "title": "Apostas nos EUA: Como Funciona",
+      "nav": "Apostas nos EUA",
+      "country": "us",
+      "cat": "Countries",
+      "minutes": 6,
+      "desc": "O mercado americano estado a estado: o que a revogação da PASPA em 2018 mudou, como as odds americanas se convertem em decimais, por que sites offshore são a única coisa a evitar, e como os ganhos são tributados.",
+      "sections": [
+        {
+          "h": "Apostas esportivas são legais nos EUA?",
+          "ps": [
+            "Sim — mas a licença fica a cargo de cada estado. Quando a Suprema Corte derrubou a PASPA em 2018, cada estado ganhou o direito de regular suas próprias apostas esportivas, e cerca de 38 estados mais Washington DC já o fizeram. Isso significa que a possibilidade de apostar online, os apps disponíveis, a idade mínima e o tratamento fiscal dependem todos do estado onde você está — a geolocalização é imposta por todo app licenciado.",
+            "Os estados que ficaram de fora (Califórnia e Texas são os grandes exemplos) são justamente onde os sites offshore fazem mais marketing. Esse é o ponto que vale a pena respeitar no mercado dos EUA: os reguladores estaduais e procuradores-gerais enviam ativamente ordens de cessação a operadores offshore, os processadores de pagamento sinalizam essas transações, e uma disputa com uma casa não licenciada te deixa sem ninguém a quem recorrer. Se o seu estado ainda não tem mercado legal, a resposta honesta é esperar, não ir para o offshore."
+          ]
+        },
+        {
+          "h": "Odds americanas, mentalidade decimal",
+          "ps": [
+            "As casas dos EUA cotam odds no formato moneyline: −200 significa que você aposta 200 para ganhar 100, +150 significa que uma aposta de 100 retorna 150 de lucro. A conversão para as odds decimais usadas neste site é mecânica: linhas negativas são 1 + 100/|linha| (−200 → 1.50), linhas positivas são 1 + linha/100 (+150 → 2.50). Nosso conversor de odds faz isso nos dois sentidos e mostra a probabilidade implícita ao lado.",
+            "A matemática da aposta de valor não muda com o formato: um preço só vale a pena quando sua estimativa da probabilidade supera a probabilidade implícita nele. As casas americanas são afiadas nos mercados principais, mas a concorrência estado a estado faz com que preços promocionais e diferenças de linha entre casas sejam reais — comparar dois ou três apps licenciados no seu estado é dinheiro de graça ao longo de uma temporada."
+          ]
+        },
+        {
+          "h": "Escolhendo uma casa: só licenciadas",
+          "ps": [
+            "Cada estado publica sua lista de operadores licenciados — as marcas nacionais (DraftKings, FanDuel, BetMGM, Caesars e outras) mais casas regionais. Uma licença significa fundos de jogadores segregados, um regulador estadual que responde a reclamações, e ferramentas de jogo responsável aplicadas de fato. Sites offshore não oferecem nada disso, e usá-los é ilegal na maioria dos estados.",
+            "Entre casas licenciadas, o que decide são os fundamentos: a margem nas ligas que você realmente aposta, a velocidade de saque para sua conta bancária, e se o app respeita quem ganha. Comparar linhas entre dois ou três apps licenciados pelo estado é legal, fácil e a coisa mais próxima de uma vantagem garantida que o mercado americano oferece."
+          ]
+        },
+        {
+          "h": "Impostos: ganhos são renda",
+          "ps": [
+            "O IRS trata ganhos de apostas como renda tributável. As casas emitem um formulário W-2G em ganhos grandes (o gatilho clássico é $600+ em odds de 300/1, com limites diferentes para outros produtos), e apostadores casuais devem imposto de renda federal sobre ganhos líquidos independentemente de formulários. A maioria dos estados com apostas adiciona seu próprio imposto de renda estadual; alguns (como Nevada) não têm nenhum.",
+            "As perdas são dedutíveis apenas até o valor dos ganhos e apenas se você discriminar deduções — uma regra que surpreende muitos apostadores recreativos. Mantenha um registro simples de depósitos, saques e resultados; a abordagem de registro de apostas encerradas deste site é exatamente o hábito que as regras fiscais dos EUA recompensam."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Legal desde 2018, mas estado a estado — disponibilidade, idade e impostos dependem de onde você está",
+        "Use apenas apps licenciados pelo estado; sites offshore são ilegais na maioria dos estados e não têm respaldo legal em lugar nenhum",
+        "Odds americanas se convertem mecanicamente para decimal — a lógica de valor é idêntica",
+        "Ganhos são renda tributável; mantenha um registro e espere formulários W-2G em ganhos grandes"
+      ],
+      "faq": [
+        {
+          "q": "Apostas esportivas online são legais nos EUA?",
+          "a": "Em cerca de 38 estados mais DC, sim — cada estado licencia operadores separadamente e os apps aplicam geolocalização. Nos demais estados, apostas esportivas online ainda não são legais, e sites offshore não são uma alternativa legal."
+        },
+        {
+          "q": "Posso usar sites de apostas offshore a partir dos EUA?",
+          "a": "É ilegal na maioria dos estados e uma má ideia em qualquer lugar: procuradores-gerais estaduais enviam ordens de cessação a casas offshore, os pagamentos são sinalizados, e você não tem nenhum recurso local em caso de disputa. Fique com operadores licenciados pelo estado."
+        },
+        {
+          "q": "Como os ganhos de apostas são tributados nos EUA?",
+          "a": "Como renda comum. Ganhos grandes geram um formulário W-2G, o imposto de renda federal se aplica aos ganhos líquidos, e a maioria dos estados com apostas adiciona imposto de renda estadual. As perdas são dedutíveis apenas contra ganhos e apenas se você discriminar deduções."
+        }
+      ],
+      "related": [
+        "betting-in-canada",
+        "betting-in-mexico"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ],
+      "_src_hash": "c8ba9737b73e125c",
+      "_model": "claude-sonnet-5"
+    },
+    {
+      "slug": "betting-in-netherlands",
+      "title": "Apostas nos Países Baixos: Como Funciona",
+      "nav": "Apostas nos Países Baixos",
+      "country": "nl",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "O mercado holandês KOA: o que uma licença da Kansspelautoriteit garante, como funciona a autoexclusão CRUKS, por que a publicidade de apostas sumiu da TV holandesa e como o iDEAL comanda os pagamentos.",
+      "sections": [
+        {
+          "h": "Apostar é legal nos Países Baixos?",
+          "ps": [
+            "Sim — desde que a Lei de Jogos Remotos (KOA) entrou em vigor em outubro de 2021, as apostas esportivas online são legais mediante licença da Kansspelautoriteit (KSA). A KSA é um dos reguladores mais rigorosos da Europa: operadoras não licenciadas que atendem jogadores holandeses recebem multas de seis dígitos, e as licenciadas são fiscalizadas quanto à publicidade, dever de cuidado e limites do jogador.",
+            "Para o apostador, a licença é uma garantia concreta: fundos segregados, atendimento de reclamações em holandês e conexão obrigatória ao registro nacional de autoexclusão. A KSA publica seu registro de licenciados — checar um site nessa lista leva um minuto e filtra o mercado por completo."
+          ]
+        },
+        {
+          "h": "CRUKS e limites do jogador",
+          "ps": [
+            "O CRUKS é o registro nacional de autoexclusão: um único cadastro bloqueia o acesso a todas as operadoras licenciadas de uma vez, online e em casas físicas. Desde 2024, as operadoras também são obrigadas a conduzir conversas sobre limites de depósito e aplicar tetos mais rígidos para jogadores mais jovens — nos Países Baixos, definir limites é o padrão, não uma opção escondida nas configurações.",
+            "Isso influencia a sensação geral do mercado: as casas holandesas empurram bem menos promoções agressivas de recarga do que mercados cinzentos, e a publicidade é fortemente restrita — anúncios de apostas não direcionados (TV, rádio, outdoors) estão banidos desde meados de 2023, com o patrocínio esportivo sendo extinto gradualmente depois disso."
+          ]
+        },
+        {
+          "h": "Pagamentos: iDEAL em primeiro lugar",
+          "ps": [
+            "O iDEAL — o padrão holandês de pagamento interbancário — é a via padrão de depósito em toda casa licenciada, com cartões e PayPal como opções secundárias. Os saques retornam à mesma conta bancária, geralmente em até um dia; métodos de pagamento anônimos são deliberadamente excluídos do mercado licenciado.",
+            "A consequência prática: sua conta de apostas fica vinculada à sua identidade bancária verificada. Isso é proposital (regras contra lavagem de dinheiro) e também explica por que o mercado holandês licenciado tem alguns dos saques mais rápidos e menos burocráticos da Europa."
+          ]
+        },
+        {
+          "h": "Escolhendo um site nos Países Baixos",
+          "ps": [
+            "Comece pelo registro da KSA e compare os fundamentos dentro dele: margens na Eredivisie e nas ligas que você realmente aposta, profundidade das apostas ao vivo e política de limites para jogadores vencedores. A comparação de bônus importa menos aqui do que em outros lugares — as regras holandesas mantêm ofertas de boas-vindas modestas e termos de rollover visíveis.",
+            "Nossas probabilidades de modelo e comparações de melhor preço funcionam da mesma forma para jogos holandeses como em qualquer outro lugar; use-as para avaliar se uma odd licenciada tem valor, não para correr atrás de cotações em sites não licenciados que legalmente não podem lhe pagar."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Legal desde outubro de 2021 com licença da KSA; operadoras não licenciadas são ativamente multadas",
+        "A autoexclusão CRUKS e os limites padrão do jogador se aplicam a todo o mercado licenciado",
+        "A publicidade de apostas não direcionada está banida desde 2023",
+        "O iDEAL comanda os pagamentos; os saques retornam à sua conta bancária verificada"
+      ],
+      "faq": [
+        {
+          "q": "Apostar online é legal nos Países Baixos?",
+          "a": "Sim — com licença da Kansspelautoriteit sob a Lei KOA, em vigor desde outubro de 2021. A KSA publica o registro de licenciados e multa operadoras não licenciadas que atendem jogadores holandeses."
+        },
+        {
+          "q": "O que é o CRUKS?",
+          "a": "O registro nacional de autoexclusão. Um único cadastro bloqueia o acesso a todas as operadoras licenciadas nos Países Baixos de uma vez, online e em casas físicas, pelo período que você escolher."
+        },
+        {
+          "q": "Quais métodos de pagamento os sites de apostas holandeses usam?",
+          "a": "O iDEAL é o método padrão de depósito nas casas licenciadas, com cartões e PayPal como alternativas. Os saques retornam à sua conta bancária verificada, geralmente em até um dia."
+        }
+      ],
+      "related": [
+        "betting-in-germany",
+        "betting-in-the-uk"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ],
+      "_src_hash": "d2bd569b9b2c7f92",
+      "_model": "claude-sonnet-5"
+    },
+    {
+      "slug": "betting-in-sweden",
+      "title": "Apostas na Suécia: Como Funciona",
+      "nav": "Apostas na Suécia",
+      "country": "se",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "O mercado re-regulado da Suécia: o que significa uma licença da Spelinspektionen, por que o BankID torna tudo instantâneo, a regra do bônus único e a autoexclusão Spelpaus.",
+      "sections": [
+        {
+          "h": "Apostar é legal na Suécia?",
+          "ps": [
+            "Sim — a Suécia re-regulou o mercado em janeiro de 2019, substituindo o antigo monopólio da Svenska Spel sobre apostas esportivas por um sistema de licenciamento administrado pela Spelinspektionen. Dezenas de operadores privados agora possuem licenças suecas, e a empresa estatal compete como mais uma licenciada entre várias.",
+            "A licença traz obrigações reais: conexão obrigatória ao registro de autoexclusão Spelpaus, avisos de limite de depósito, e a regra marcante da Suécia — cada operador pode oferecer exatamente um bônus, a oferta de boas-vindas. Bônus de recarga e ofertas de reativação VIP são ilegais, o que muda a forma como o mercado compete: em preço e produto, não em promoções."
+          ]
+        },
+        {
+          "h": "BankID: tudo instantâneo",
+          "ps": [
+            "Todo site licenciado na Suécia verifica os jogadores através do BankID, a identidade digital nacional. O cadastro leva um minuto, não há purgatório de upload de documentos, e os saques via Swish ou transferência bancária costumam ser processados em minutos, não em dias.",
+            "O outro lado da moeda é a transparência total: as contas são vinculadas ao seu número pessoal, e o modelo pay-n-play significa que não existe jogo anônimo no mercado licenciado. Para apostadores que valorizam pagamentos rápidos e confiáveis mais do que privacidade, a estrutura sueca é praticamente o que há de melhor em apostas regulamentadas."
+          ]
+        },
+        {
+          "h": "Spelpaus e a regra do bônus único",
+          "ps": [
+            "O Spelpaus.se é o interruptor nacional de autoexclusão: um único cadastro bloqueia todos os operadores licenciados simultaneamente, por um mês, três meses, seis meses ou até segunda ordem. Os sites licenciados são obrigados a verificá-lo a cada login.",
+            "A regra do bônus único merece o respeito do apostador, não sua irritação. Mercados que competem com infinitas ofertas de recarga recuperam esse dinheiro através de margens mais largas; a Suécia força a concorrência para dentro das próprias odds, que é exatamente onde um apostador de valor quer que ela esteja."
+          ]
+        },
+        {
+          "h": "Escolhendo um site na Suécia",
+          "ps": [
+            "Dentro do conjunto de operadores licenciados, compare as margens no Allsvenskan e nas ligas europeias que você acompanha, a qualidade das apostas ao vivo, e a rapidez de cada casa em pagar via Swish. Vale a pena ler o bônus único de boas-vindas uma vez — os termos de rollover são visíveis e comparativamente honestos — mas isso não deve ser o fator decisivo.",
+            "Use nossas probabilidades de modelo para avaliar se as odds suecas carregam valor: com as promoções limitadas, as odds são o jogo inteiro, e comparar preços entre duas ou três casas licenciadas captura a maior parte da vantagem disponível."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Legal e licenciado pela Spelinspektionen desde a re-regulação de 2019",
+        "A verificação por BankID torna o cadastro e os pagamentos via Swish quase instantâneos",
+        "Um bônus de boas-vindas por operador — a concorrência acontece nas odds",
+        "O Spelpaus bloqueia todos os sites licenciados com um único cadastro"
+      ],
+      "faq": [
+        {
+          "q": "Apostar online é legal na Suécia?",
+          "a": "Sim — licenciado pela Spelinspektionen desde janeiro de 2019, quando o sistema de licenciamento substituiu o antigo monopólio sobre apostas esportivas. A estatal Svenska Spel agora compete como mais uma licenciada entre várias."
+        },
+        {
+          "q": "Por que os sites de apostas suecos oferecem apenas um bônus?",
+          "a": "A lei sueca limita cada operador a uma única oferta de boas-vindas; bônus de recarga e VIP são ilegais. A intenção é a proteção do consumidor, e o efeito colateral é que as casas licenciadas competem em odds e produto, em vez de promoções."
+        },
+        {
+          "q": "Quão rápidos são os saques nos sites de apostas suecos?",
+          "a": "Geralmente minutos: a identidade via BankID somada ao Swish ou transferência bancária permite que as casas licenciadas paguem quase instantaneamente assim que o saque é solicitado."
+        }
+      ],
+      "related": [
+        "betting-in-germany",
+        "betting-in-the-uk"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ],
+      "_src_hash": "99c927823162d8a2",
+      "_model": "claude-sonnet-5"
+    },
+    {
+      "slug": "betting-in-poland",
+      "title": "Apostas na Polônia: Como Funciona",
+      "nav": "Apostas na Polônia",
+      "country": "pl",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "O mercado licenciado da Polônia: a licença do Ministério das Finanças, o imposto de 12% sobre o volume apostado e seu efeito nas odds, o registro de bloqueio de domínios e os pagamentos via BLIK.",
+      "sections": [
+        {
+          "h": "Apostar é legal na Polônia?",
+          "ps": [
+            "Sim — as apostas esportivas são legais com licença do Ministério das Finanças, e o mercado licenciado (STS, Fortuna, Superbet e concorrentes) é grande e competitivo. A emenda de 2017 à Lei de Jogos de Azar deu força à licença: domínios não licenciados entram no Registro Nacional de Domínios Proibidos, os provedores de internet poloneses são obrigados a bloqueá-los, e os provedores de pagamento ficam proibidos de processar suas transações.",
+            "Para quem aposta, isso torna o mercado incomumente claro: se um site funciona normalmente a partir de uma conexão polonesa sem VPN, é quase certo que seja licenciado. Apostar em sites bloqueados usando contornos deixa você fora de qualquer proteção prevista em lei."
+          ]
+        },
+        {
+          "h": "O imposto de 12% sobre o volume apostado",
+          "ps": [
+            "A Polônia tributa o volume apostado, não o lucro do operador: 12% de cada aposta vai para o Estado antes mesmo de a aposta ser resolvida. As casas licenciadas embutem isso nas odds, por isso as cotações polonesas para o mesmo jogo costumam parecer mais baixas do que as alemãs ou britânicas.",
+            "A forma honesta de encarar isso: o imposto é parte do preço da proteção legal. Apostas de valor ainda funcionam — nosso modelo compara probabilidades com as odds efetivamente oferecidas — mas espere menos oportunidades de valor bruto do que em mercados com tributação menor, e trate qualquer promessa de 'sem impostos' de um site não licenciado como o sinal de alerta que ela realmente é. Ganhos acima de 2.280 PLN também sofrem retenção de 10% de imposto sobre ganhos na fonte."
+          ]
+        },
+        {
+          "h": "Pagamentos: o país do BLIK",
+          "ps": [
+            "O BLIK — o padrão polonês de pagamento móvel — domina os depósitos e cada vez mais também os saques nas casas licenciadas, ao lado das transferências bancárias e cartões tradicionais. A liquidação é rápida e vinculada à identidade bancária do usuário, como exigem as regras de prevenção à lavagem de dinheiro.",
+            "Como em todo mercado europeu licenciado, rotas de pagamento anônimas são excluídas por design. O benefício prático é o pagamento garantido por lei: uma casa polonesa licenciada que atrasa um saque responde ao Ministério das Finanças, não a uma caixa postal offshore."
+          ]
+        },
+        {
+          "h": "Escolhendo um site na Polônia",
+          "ps": [
+            "Dentro do conjunto licenciado, a comparação gira principalmente em torno de margens e produto: qual casa oferece as odds mais justas para a Ekstraklasa e para as ligas europeias apesar do imposto sobre o volume, quão robusta é a oferta ao vivo, e como as promoções são estruturadas (as casas polonesas apostam mais em odds boost e seguro de combinadas do que em bônus de depósito brutos).",
+            "As probabilidades do nosso modelo se aplicam sem alteração: converta qualquer cotação polonesa em probabilidade implícita, lembre-se de que os 12% já estão embutidos nela, e aposte apenas onde sua vantagem sobrevive a esse desconto."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Legal com licença do Ministério das Finanças; domínios não licenciados são bloqueados pelos provedores via registro estatal",
+        "Um imposto de 12% sobre o volume apostado é embutido nas odds polonesas — os cálculos de valor precisam sobreviver a isso",
+        "Ganhos acima de 2.280 PLN sofrem retenção adicional de 10% de imposto",
+        "O BLIK domina os pagamentos; pagamentos garantidos são o real valor da licença"
+      ],
+      "faq": [
+        {
+          "q": "Apostar online é legal na Polônia?",
+          "a": "Sim — com licença do Ministério das Finanças. Sites não licenciados são incluídos no Registro Nacional de Domínios Proibidos, bloqueados pelos provedores poloneses de internet e cortados do processamento de pagamentos."
+        },
+        {
+          "q": "Por que as odds polonesas são mais baixas do que em outros lugares?",
+          "a": "Os operadores licenciados pagam um imposto de 12% sobre o volume apostado — cada aposta, ganhando ou perdendo — e embutem isso nas odds. É o custo de um mercado legalmente garantido."
+        },
+        {
+          "q": "Os ganhos de apostas são tributados na Polônia?",
+          "a": "Ganhos acima de 2.280 PLN em uma única aposta sofrem retenção de 10% de imposto pelo operador no momento do pagamento, além do imposto sobre o volume já embutido nas odds."
+        }
+      ],
+      "related": [
+        "betting-in-germany",
+        "betting-in-sweden"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ],
+      "_src_hash": "eb6b97e13800f161",
+      "_model": "claude-sonnet-5"
+    },
+    {
+      "slug": "betting-in-switzerland",
+      "title": "Apostas na Suíça: Como Funciona",
+      "nav": "Apostas na Suíça",
+      "country": "ch",
+      "cat": "Countries",
+      "minutes": 5,
+      "desc": "O mercado controlado da Suíça: por que Swisslos e Loterie Romande operam as apostas esportivas, como funciona a lista de bloqueio DNS e o limite de isenção fiscal de CHF 1 milhão.",
+      "sections": [
+        {
+          "h": "Apostar é legal na Suíça?",
+          "ps": [
+            "Sim, dentro de um sistema deliberadamente restrito: a Lei de Jogos de Dinheiro de 2019 reserva as apostas esportivas às duas sociedades cantonais de loteria — a Swisslos, nos cantões de língua alemã e italiana, e a Loterie Romande, nos de língua francesa — sob supervisão da Gespa, a autoridade intercantonal de jogos de azar. Suas marcas Sporttip e JOUEZSPORT são as únicas ofertas licenciadas de apostas esportivas no país.",
+            "Casas de apostas estrangeiras não são licenciadas e não podem ser: a lei combina o monopólio doméstico com uma lista de bloqueio DNS, e os provedores de internet suíços redirecionam os domínios de apostas bloqueados para uma página informativa. Usar uma VPN para acessar uma casa estrangeira não é processado como crime do apostador, mas retira toda proteção legal — e a maioria das casas estrangeiras já exclui formalmente clientes suíços em seus termos de uso."
+          ]
+        },
+        {
+          "h": "O que significa o preço de monopólio",
+          "ps": [
+            "Um mercado com um único operador por região linguística não compete com ninguém, e as odds mostram isso: as margens nas casas de apostas das sociedades de loteria são visivelmente mais largas do que nas casas europeias competitivas. Não há comparação de odds dentro da Suíça, porque só existe uma linha de preços.",
+            "Isso torna o conhecimento de probabilidades ainda mais valioso, não menos. Converter qualquer preço oferecido em probabilidade implícita — e compará-la com uma estimativa de modelo — mostra quanto do preço é margem. Alguns mercados e ofertas turbinadas são justos; muitos não são. Apostar menos, e só onde o preço é menos injusto, é a estratégia racional na Suíça."
+          ]
+        },
+        {
+          "h": "Impostos e pagamentos",
+          "ps": [
+            "A Suíça adoça o mercado controlado com uma regra fiscal genuinamente boa: os ganhos de jogos suíços licenciados são isentos de impostos até CHF 1 milhão por ano; só os valores acima desse limite são tributados como renda. Os pagamentos passam por canais suíços — TWINT, PostFinance e cartões — com a confiabilidade que se espera de operadores próximos ao Estado.",
+            "Ganhos em sites estrangeiros não licenciados não têm essa isenção e ficam numa zona cinzenta legal — mais um argumento discreto para permanecer dentro do sistema licenciado, apesar dos preços."
+          ]
+        },
+        {
+          "h": "Usando este site a partir da Suíça",
+          "ps": [
+            "Nossas previsões, probabilidades de modelo e histórico de resultados funcionam da mesma forma para usuários suíços que em qualquer outro lugar: eles mostram como seria um preço justo para um resultado. Compare esse preço justo com o que a Sporttip ou a JOUEZSPORT realmente oferecem, e você saberá, mercado por mercado, quanta margem está sendo cobrada.",
+            "Trate as apostas na Suíça como entretenimento com preço, não como uma busca por valor: a margem estrutural torna o lucro de longo prazo irrealista, e saber disso de antemão é exatamente o tipo de honestidade para o qual este site existe."
+          ]
+        }
+      ],
+      "takeaways": [
+        "As apostas esportivas só são legais através da Swisslos e da Loterie Romande, sob a Lei de Jogos de Dinheiro de 2019",
+        "Sites de apostas estrangeiros são bloqueados por DNS; não há alternativa licenciada nem comparação de odds",
+        "Os ganhos em jogos suíços licenciados são isentos de impostos até CHF 1 milhão por ano",
+        "Use probabilidades de modelo para enxergar a margem dentro dos preços de monopólio — e aposte de acordo"
+      ],
+      "faq": [
+        {
+          "q": "As apostas esportivas online são legais na Suíça?",
+          "a": "Sim, mas apenas com as duas sociedades cantonais de loteria — Swisslos (Sporttip) e Loterie Romande (JOUEZSPORT) — supervisionadas pela Gespa sob a Lei de Jogos de Dinheiro de 2019. Casas de apostas estrangeiras não podem ser licenciadas e seus domínios são bloqueados por DNS."
+        },
+        {
+          "q": "Os ganhos de apostas são tributados na Suíça?",
+          "a": "Os ganhos de jogos suíços licenciados são isentos de impostos até CHF 1 milhão por ano; valores acima disso são tributados como renda. Ganhos em sites estrangeiros não licenciados não têm essa isenção."
+        },
+        {
+          "q": "Por que as odds suíças são piores do que em outros países?",
+          "a": "Existe um único operador licenciado por região linguística e nenhuma concorrência, então as margens são mais largas do que nas casas europeias competitivas. Converter os preços em probabilidade implícita mostra exatamente quanta margem cada mercado carrega."
+        }
+      ],
+      "related": [
+        "betting-in-germany",
+        "betting-in-netherlands"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ],
+      "_src_hash": "9eabcec0f7bca552",
+      "_model": "claude-sonnet-5"
     }
   ]
 }
