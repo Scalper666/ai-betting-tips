@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-08-14T07:00:10+00:00",
+ "updated_at": "2026-08-14T17:27:43+00:00",
  "entries": {
   "match:corinthians-vs-remo": {
    "intro": "Corinthians host Remo in this Brasileirao fixture as clear favourites according to the market. The home side is priced at 1.55 with Matchbook, which translates to an implied probability of roughly 65%. Remo, meanwhile, are the outsiders at 7.8 on Betfair, implying only about 13% chance of an away win, while the draw sits at 4.3, or around 23%. That is a substantial gap in the prices and reflects strong market confidence in Corinthians. Rather than backing the match result, our model leans toward the goals market, recommending Under 2.5 goals at 1.93 with Matchbook, carrying a market-implied confidence of about 52%. It is worth noting the value edge here is marginally negative at -0.36%, so this is a close call rather than a standout opportunity in the Corinthians versus Remo clash.",
@@ -23797,6 +23797,68 @@
    "_usage": {
     "in": 1300,
     "out": 830
+   }
+  },
+  "team:viborg-ff": {
+   "intro": "Viborg FF turn up regularly in our Danish Superliga coverage, and this page gathers everything we publish on their fixtures in one place. The approach is simple: whenever we cover a Viborg FF match, we post a data-driven tip, archive it before kick-off, and settle it honestly against the final score. That way the record stays transparent whether the calls land or miss. To read our tips, start with the odds. We translate prices into implied probability, then look for spots where our read differs enough to suggest value. So far our Viborg FF selections have centred on match result and totals markets. Treat each tip as one input, stake within your means, and remember that no outcome is ever certain.",
+   "faq": [],
+   "_kind": "team",
+   "_model": "claude-opus-4-8",
+   "_hash": "5bae9a94e2448395",
+   "_generated_at": "2026-08-14T17:27:38+00:00",
+   "_usage": {
+    "in": 1108,
+    "out": 227
+   }
+  },
+  "team:kilmarnock": {
+   "intro": "This page tracks Kilmarnock fixtures in the Scottish Premiership through a value lens. Every match we cover gets a data-driven tip that is archived before kick-off and later settled against the final score, so the record here reflects results as they actually happened rather than how they felt afterwards. Our approach starts with the odds: we convert prices into implied probability, then look for spots where our read differs enough to suggest an edge. Much of our Kilmarnock work has centred on totals markets, where goals expectations and pricing can diverge. Read each tip as a probability estimate, not a certainty, and treat staking with care. Betting carries risk, and no angle removes it, so use these notes as one input among several.",
+   "faq": [
+    {
+     "q": "What markets do you tip on Kilmarnock matches?",
+     "a": "Our Kilmarnock coverage has focused mainly on totals markets, such as over or under goal lines. We publish a tip whenever we identify a pricing gap between the bookmaker's implied probability and our own read of the fixture."
+    },
+    {
+     "q": "How do you decide if a Kilmarnock bet has value?",
+     "a": "We convert the odds into an implied probability and compare that with our own estimate for the outcome. When our estimate is meaningfully higher than what the price implies, we flag it as a potential value edge, though value never guarantees the bet will win."
+    },
+    {
+     "q": "Are Kilmarnock betting tips profitable?",
+     "a": "No tipster can promise profit, and short samples can swing either way, so results should be judged over time rather than by any single match. Every tip we post on Kilmarnock is archived before kick-off and settled honestly against the final score. Only stake what you can afford to lose."
+    }
+   ],
+   "_kind": "team",
+   "_model": "claude-opus-4-8",
+   "_hash": "47dd07aa3571b458",
+   "_generated_at": "2026-08-14T17:27:42+00:00",
+   "_usage": {
+    "in": 1111,
+    "out": 550
+   }
+  },
+  "combo:match-result:greek-super-league": {
+   "intro": "Match Result tips for the Greek Super League cover the classic 1X2 market: you back the home win, the draw, or the away win over a full 90 minutes. Our approach starts with the price. We convert the best available odds into an implied probability, then compare that figure with our own model's estimate of how likely each outcome is. When our number suggests the market is offering more than the true chance warrants, that gap is where potential value sits. No selection is a certainty, and prices move, so we focus on disciplined staking rather than chasing results. Every tip is published before kick-off with the reasoning attached, then settled openly once the match ends, whether it wins or loses, so the record stays honest.",
+   "faq": [
+    {
+     "q": "What does a Match Result tip actually mean in football betting?",
+     "a": "A Match Result, or 1X2, tip is a pick on the outcome after 90 minutes plus stoppage time: home win, draw, or away win. Extra time and penalties in cup situations are not counted for this market. It is one of the simplest bets to follow, which makes it a good starting point for tracking value over time."
+    },
+    {
+     "q": "How do you decide which Greek Super League team to back?",
+     "a": "We turn the best available odds into an implied probability and weigh that against our model's own estimate for each result. When our figure points to a better chance than the price implies, we consider that a value opportunity. The aim is long-term edge, not winning every single bet."
+    },
+    {
+     "q": "Is a draw a reasonable pick in these matches?",
+     "a": "Yes, the draw is a legitimate 1X2 selection and can carry value when two sides look closely matched or the market underprices a stalemate. We flag it whenever our model rates it higher than the odds suggest. As with any pick, it carries risk and no outcome is assured."
+    }
+   ],
+   "_kind": "combo",
+   "_model": "claude-opus-4-8",
+   "_hash": "a5e63130bf4b5d0d",
+   "_generated_at": "2026-08-14T17:27:43+00:00",
+   "_usage": {
+    "in": 1025,
+    "out": 571
    }
   }
  }
