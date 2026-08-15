@@ -17,6 +17,13 @@ const BLOCKED = new Set([
 ]);
 
 export async function onRequest(context) {
+  // canonical host: www serves the same Pages project — fold it into the apex
+  // with a 301 so Google stops crawling a full duplicate mirror
+  const url = new URL(context.request.url);
+  if (url.hostname === 'www.ai-betting-tips.com') {
+    url.hostname = 'ai-betting-tips.com';
+    return Response.redirect(url.toString(), 301);
+  }
   const country = context.request.cf?.country;
   if (country && BLOCKED.has(country)) {
     return new Response(
