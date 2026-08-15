@@ -1,0 +1,9 @@
+---
+// Odds value wrapped for the client-side format switcher (decimal → default,
+// american, fractional — public/app.js rewrites .ox spans from data-o).
+// Non-numeric / degenerate input renders an em-dash, matching table fallbacks.
+const { v } = Astro.props;
+const n = Number(v);
+const ok = Number.isFinite(n) && n > 1;
+---
+{ok ? <span class="ox" data-o={n}>{n.toFixed(2)}</span> : <span>—</span>}

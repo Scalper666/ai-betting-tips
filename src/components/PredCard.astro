@@ -1,6 +1,7 @@
 ---
 import { abbr, badgeColor, confidenceLabel, kickoffLabel, matchSlug, slugify, topScoreline } from '../lib/utils.js';
 import { t, localizeMarket, lhref } from '../i18n/index.js';
+import Ox from './Ox.astro';
 
 const { tip, lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
@@ -32,7 +33,7 @@ const score = topScoreline(tip);
     </div>
     <div class="pred-tip">
       <div><div class="lbl">{T('card.ourTip')}</div><div class="val">{localizeMarket(lang, rec.text)}</div></div>
-      <div class="odd-box"><div class="ot">{T('card.odds')}</div><div class="ov">{Number(rec.price ?? 0).toFixed(2)}</div></div>
+      <div class="odd-box"><div class="ot">{T('card.odds')}</div><div class="ov"><Ox v={rec.price} /></div></div>
     </div>
     <div class="confidence">
       <div class="cf-top"><span>{T('card.confidence')}</span><span class="pc">{T(`conf.${label}`)} · {conf}%</span></div>

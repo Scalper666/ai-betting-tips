@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Ox from '../components/Ox.astro';
 import ToolsBox from '../components/ToolsBox.astro';
 import PredCard from '../components/PredCard.astro';
 import content from '../data/content.json';
@@ -75,7 +76,7 @@ const leagues = [...new Set(shown.map((x) => x.league))].filter((lg) => hasLeagu
         {type.slug === 'accumulator' && legs.length >= 2 && (
           <section>
             <div class="sec-head">
-              <h2 class="sec-title">{T('tt.accaTitle')} <b>×{accaOdds.toFixed(2)}</b></h2>
+              <h2 class="sec-title">{T('tt.accaTitle')} <b>×<Ox v={accaOdds} /></b></h2>
               <a href="/tools/acca-builder" class="more-link">{T('tt.accaCta')} →</a>
             </div>
             <div class="acca">
@@ -87,7 +88,7 @@ const leagues = [...new Set(shown.map((x) => x.league))].filter((lg) => hasLeagu
                     <span>{r.league} · {kickoffLabel(r.kickoff, lang)}</span>
                   </div>
                   <span class="acca-pick">{localizeMarket(lang, r.recommendation?.text)}</span>
-                  <span class="acca-odds">{Number(r.recommendation?.price ?? 0).toFixed(2)}</span>
+                  <span class="acca-odds"><Ox v={r.recommendation?.price} /></span>
                 </div>
               ))}
               <div class="acca-foot">
@@ -115,7 +116,7 @@ const leagues = [...new Set(shown.map((x) => x.league))].filter((lg) => hasLeagu
                       </td>
                       <td class="o-cell"><span>{f.xg}</span></td>
                       <td class="o-cell hot"><span class="cb">{f.pct}%</span></td>
-                      <td class="o-cell"><span>{f.fair.toFixed(2)}</span></td>
+                      <td class="o-cell"><span><Ox v={f.fair} /></span></td>
                     </tr>
                   ))}
                 </tbody>
@@ -190,7 +191,7 @@ const leagues = [...new Set(shown.map((x) => x.league))].filter((lg) => hasLeagu
                       <td class="o-cell" style="font-weight:700"><span>{s.score}</span></td>
                       <td class="o-cell"><span>{s.n}</span></td>
                       <td class="o-cell"><span>{s.pct}%</span></td>
-                      <td class="o-cell hot"><span class="cb">{s.fair.toFixed(2)}</span></td>
+                      <td class="o-cell hot"><span class="cb"><Ox v={s.fair} /></span></td>
                     </tr>
                   ))}
                 </tbody>

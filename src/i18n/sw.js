@@ -496,6 +496,7 @@ export const SW = {
   "nav.model": "Modeli Yetu",
   "nav.newCasinos": "Casinos Mpya",
   "nav.news": "Habari",
+  "nav.oddsFmt": "Umbizo la Odds",
   "nav.performance": "Utendaji wa Modeli",
   "nav.predictions": "Utabiri",
   "nav.premier": "Premier League",

@@ -158,3 +158,57 @@
     });
   });
 })();
+
+/* ---- Odds format switcher (decimal / american / fractional) ---- */
+(function () {
+  'use strict';
+  var KEY = 'abt-odds';
+  function gcd(a, b) { return b ? gcd(b, a % b) : a; }
+  function frac(d) {
+    var v = d - 1;
+    if (v <= 0) return '0/1';
+    var bp = 1, bq = 1, be = Infinity;
+    for (var q = 1; q <= 50; q++) {
+      var p = Math.round(v * q);
+      if (p < 1) continue;
+      var e = Math.abs(v - p / q);
+      if (e < be - 1e-9) { be = e; bp = p; bq = q; }
+    }
+    var g = gcd(bp, bq);
+    return (bp / g) + '/' + (bq / g);
+  }
+  function us(d) {
+    return d >= 2 ? '+' + Math.round((d - 1) * 100) : '-' + Math.round(100 / (d - 1));
+  }
+  function label(f) { return f === 'us' ? '+150' : f === 'frac' ? '1/2' : '1.50'; }
+  function apply(f) {
+    document.documentElement.setAttribute('data-odds', f);
+    document.querySelectorAll('.ox').forEach(function (el) {
+      var d = parseFloat(el.getAttribute('data-o'));
+      if (!isFinite(d) || d <= 1) return;
+      el.textContent = f === 'us' ? us(d) : f === 'frac' ? frac(d) : d.toFixed(2);
+    });
+    var sw2 = document.querySelector('.odds-switch');
+    if (sw2) sw2.querySelectorAll('[data-odds-set]').forEach(function (b) {
+      b.classList.toggle('active', b.getAttribute('data-odds-set') === f);
+    });
+    var btn2 = document.querySelector('[data-odds-btn]');
+    if (btn2) btn2.textContent = label(f);
+  }
+  var saved = 'dec';
+  try { saved = localStorage.getItem(KEY) || 'dec'; } catch (e) {}
+  apply(saved);
+  var sw = document.querySelector('.odds-switch');
+  if (!sw) return;
+  var btn = sw.querySelector('[data-odds-btn]');
+  if (btn) btn.addEventListener('click', function (e) { e.stopPropagation(); sw.classList.toggle('open'); });
+  sw.querySelectorAll('[data-odds-set]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var f = b.getAttribute('data-odds-set');
+      apply(f);
+      try { localStorage.setItem(KEY, f); } catch (e) {}
+      sw.classList.remove('open');
+    });
+  });
+  document.addEventListener('click', function () { sw.classList.remove('open'); });
+})();

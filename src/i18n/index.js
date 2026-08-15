@@ -138,6 +138,7 @@ export const D = {
   'nav.premier': { en: 'Premier League', es: 'Premier League', pt: 'Premier League', de: 'Premier League' },
   'nav.serieA': { en: 'Serie A', es: 'Serie A', pt: 'Série A', de: 'Serie A' },
   'nav.colourScheme': { en: 'Colour scheme', es: 'Esquema de color', pt: 'Esquema de cores', de: 'Farbschema' },
+  'nav.oddsFmt': { en: 'Odds format', es: 'Formato de cuotas', pt: 'Formato de odds', de: 'Quotenformat' },
   'nav.language': { en: 'Language', es: 'Idioma', pt: 'Idioma', de: 'Sprache' },
   // footer
   'ft.about1': {

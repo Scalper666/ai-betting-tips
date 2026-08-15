@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Ox from '../components/Ox.astro';
 import PredCard from '../components/PredCard.astro';
 import ToolsBox from '../components/ToolsBox.astro';
 import predictions from '../data/predictions.json';
@@ -156,7 +157,7 @@ const schema = { '@context': 'https://schema.org', ...faqSchema(s.faq) };
                     <div class="res-row">
                       <span class={`res-mark ${t2.status === 'won' ? 'w' : t2.status === 'lost' ? 'l' : 'v'}`}>{t2.status === 'won' ? 'W' : t2.status === 'lost' ? 'L' : 'V'}</span>
                       <div class="res-match"><b>{t2.home} v {t2.away}</b><span>{t2.market}</span></div>
-                      <span class="res-odds">{Number(t2.odds ?? 0).toFixed(2)}</span>
+                      <span class="res-odds"><Ox v={t2.odds} /></span>
                       <span class={`res-profit ${(t2.profit ?? 0) > 0 ? 'pos' : (t2.profit ?? 0) < 0 ? 'neg' : 'zero'}`}>{signed(Math.round((t2.profit ?? 0) * 100) / 100)}u</span>
                     </div>
                   ))}

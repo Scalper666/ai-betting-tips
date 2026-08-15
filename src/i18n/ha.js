@@ -496,6 +496,7 @@ export const HA = {
   "nav.model": "Tsarawan Mu",
   "nav.newCasinos": "Sabbin Casinos",
   "nav.news": "Labaru",
+  "nav.oddsFmt": "Tsarin Odds",
   "nav.performance": "Aiki na Tsarawa",
   "nav.predictions": "Hasashe",
   "nav.premier": "Premier League",

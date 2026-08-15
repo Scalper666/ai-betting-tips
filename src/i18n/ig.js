@@ -496,6 +496,7 @@ export const IG = {
   "nav.model": "Ụkpụrụ Anyị",
   "nav.newCasinos": "Casinos Ọhụrụ",
   "nav.news": "Akụkọ",
+  "nav.oddsFmt": "Nhazi Odds",
   "nav.performance": "Ọrụ Ụkpụrụ",
   "nav.predictions": "Amụma",
   "nav.premier": "Premier League",

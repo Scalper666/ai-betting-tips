@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Ox from '../components/Ox.astro';
 import ToolsBox from '../components/ToolsBox.astro';
 import { betOfTheDay, fairOdds } from '../lib/betOfDay.js';
 import { abbr, badgeColor, matchSlug, kickoffLabel, fmtDate, topScoreline, BUILD_ISO } from '../lib/utils.js';
@@ -80,12 +81,12 @@ const schema = tip
               <div class="botd-prices">
                 <div class="pr">
                   <span class="pr-lbl">{T('botd.fair')}</span>
-                  <span class="pr-v">{fair.toFixed(2)}</span>
+                  <span class="pr-v"><Ox v={fair} /></span>
                 </div>
                 <div class="pr-gap" aria-hidden="true"><b>+{Number(rec.edge_pct ?? 0).toFixed(1)}%</b></div>
                 <div class="pr pr-best">
                   <span class="pr-lbl">{T('botd.offered')}</span>
-                  <span class="pr-v">{offered.toFixed(2)}</span>
+                  <span class="pr-v"><Ox v={offered} /></span>
                   {rec.bookmaker && <span class="pr-bk">{rec.bookmaker}</span>}
                 </div>
               </div>
@@ -96,7 +97,7 @@ const schema = tip
               </p>
 
               <p class="botd-stamp">
-                {T('botd.stamp')}: {offered.toFixed(2)} · {fmtDate(BUILD_ISO, lang)}. {T('botd.moves')}
+                {T('botd.stamp')}: <Ox v={offered} /> · {fmtDate(BUILD_ISO, lang)}. {T('botd.moves')}
               </p>
             </section>
 
@@ -127,7 +128,7 @@ const schema = tip
                   {sel.others.map((o) => (
                     <a class="tm" href={L(`/predictions/${matchSlug(o)}`)}>
                       <span class="dot"></span>{o.home} v {o.away} — {localizeMarket(lang, o.recommendation.text)}
-                      <span class="cnt">{Number(o.recommendation.price).toFixed(2)}</span>
+                      <span class="cnt"><Ox v={o.recommendation.price} /></span>
                     </a>
                   ))}
                 </div>

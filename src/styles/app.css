@@ -1351,3 +1351,6 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
   .sub-row{flex-direction:column}
   .sub-btn{width:100%}
 }
+
+/* odds-format switcher: reuses .theme-switch dropdown; button shows current format */
+.odds-btn{font-weight:800;font-size:12px;min-width:46px;letter-spacing:.02em}

@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import Ox from '../components/Ox.astro';
 import { t, localizeMarket, trLabel, lhref } from '../i18n/index.js';
 import content from '../data/content.json';
 import AiFaq from '../components/AiFaq.astro';
@@ -80,7 +81,7 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
                 <td class="num"><span class={`score-badge ${scoreCls(r.score)}`}>{r.score}</span></td>
                 <td><div class="scr-match"><span class="ic">{r.icon}</span><div class="mt"><b>{r.home} v {r.away}</b><span class="lg">{r.league}</span></div></div></td>
                 <td class="scr-tip">{localizeMarket(lang, r.market)}</td>
-                <td class="num scr-odds">{Number(r.odds).toFixed(2)}</td>
+                <td class="num scr-odds"><Ox v={r.odds} /></td>
                 <td class={`num edge ${r.edge > 0 ? 'pos' : 'neg'}`}>{r.edge > 0 ? '+' : ''}{r.edge}%</td>
                 <td class="num">{r.confidence}%</td>
                 <td><span class={(steamHtml[r.steam] ?? steamHtml.flat)[0]}>{T((steamHtml[r.steam] ?? steamHtml.flat)[1])}</span></td>

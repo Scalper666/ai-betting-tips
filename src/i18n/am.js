@@ -496,6 +496,7 @@ export const AM = {
   "nav.model": "የእኛ ሞዴል",
   "nav.newCasinos": "አዲስ ካዚኖዎች",
   "nav.news": "ዜናዎች",
+  "nav.oddsFmt": "የግብርታ ቅርጸት",
   "nav.performance": "የሞዴል አፈጻጸም",
   "nav.predictions": "ትንበያዎች",
   "nav.premier": "ፕሪሚየር ሊግ",

@@ -496,6 +496,7 @@ export const YO = {
   "nav.model": "Àwọ Wa",
   "nav.newCasinos": "Kasino Tuntun",
   "nav.news": "Ìròyìn",
+  "nav.oddsFmt": "Ọ̀rọ̀ Àdóbálẹ̀",
   "nav.performance": "Ìṣẹ̀ Àwọ",
   "nav.predictions": "Asọtẹlẹ",
   "nav.premier": "Premier League",
