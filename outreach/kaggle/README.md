@@ -7,14 +7,14 @@ survivorship bias; this one is the opposite experiment.
 
 ## Files
 
-**settled_predictions.csv** — 436 published picks (214 settled).
+**settled_predictions.csv** — 535 published picks (356 settled).
 Columns: kickoff_utc, league, home, away, market, odds (decimal, at
 publication), model_confidence_pct (blended model probability), edge_pct
 (expected value vs the best available price), status (won/lost/void/pending),
 profit_units (flat 1-unit staking), final_score, closing_odds (last tracked
 price before kick-off), clv_pct (closing line value).
 
-**match_results.csv** — 183 final scores collected alongside the
+**match_results.csv** — 343 final scores collected alongside the
 predictions (the settlement source).
 
 ## Method, honestly

@@ -94,10 +94,10 @@ point.
 
 **Title:**
 ```
-[OC] I built a football betting model and publish every pick's result — the fully settled record so far: 179 picks, basically break-even
+[OC] I built a football betting model and publish every single pick's result — 318 settled picks later: -5.7 units, losses and all
 ```
 
-**Обязательный комментарий (правило сабреддита — источник и инструмент):**
+**Обязательный комментарий (правило сабреддита — источник и инструмент, запостить сразу):**
 ```
 Data source: our own public prediction log — every pick archived before kick-off
 and auto-settled against real final scores (CC BY 4.0):
@@ -105,10 +105,12 @@ https://www.kaggle.com/datasets/aibettingtips/football-betting-predictions-fully
 Tool: matplotlib.
 
 Context: picks are published only when a Poisson goal model blended with market
-odds clears the best available price. Flat 1-unit stakes. The early -5.4u hole
-and the grind back are exactly why we publish everything — cherry-picked tipster
-records are survivorship bias in action. Happy to answer questions about the
-model or the data.
+odds clears the best available price. Flat 1-unit stakes. The -8.2u drawdown and
+the swings back are exactly why we publish everything — cherry-picked tipster
+records are survivorship bias in action. Average closing-line value sits at
+-0.5% over 300+ picks, which honestly says the model has no proven edge yet;
+the public log is the experiment. Happy to answer questions about the model or
+the data.
 ```
 
 Не вставляй ссылку на сайт в сам пост — только Kaggle в комментарии-источнике
