@@ -120,22 +120,12 @@ const upcoming = (predictions.tips ?? [])
 const upLabel = (iso) => (iso ? new Date(iso).toLocaleDateString(dloc, { day: 'numeric', month: 'short', timeZone: 'UTC' }) + ' ' + new Date(iso).toISOString().slice(11, 16) : '');
 const px = (t2, k) => { const p = t2.best_h2h?.[k]?.price; return p ? Number(p).toFixed(2) : '—'; };
 
-const eventSchema = {
-  '@type': 'SportsEvent',
-  name: `${home} vs ${away}`,
-  startDate: kickoffIso,
-  sport: 'Football',
-  eventStatus: isLive ? 'https://schema.org/EventScheduled' : 'https://schema.org/EventCompleted',
-  competitor: [
-    { '@type': 'SportsTeam', name: home },
-    { '@type': 'SportsTeam', name: away },
-  ],
-  superEvent: { '@type': 'SportsOrganization', name: league },
-};
-const schema = {
-  '@context': 'https://schema.org',
-  '@graph': [eventSchema, ...(ai?.faq?.length ? [faqSchema(ai.faq)] : [])],
-};
+// SportsEvent markup dropped (17 Aug 2026): Google's Events rich result
+// requires location/offers we cannot honestly provide for fixtures, so GSC
+// flagged 100% of match pages as "not eligible" forever. FAQ markup stays.
+const schema = ai?.faq?.length
+  ? { '@context': 'https://schema.org', '@graph': [faqSchema(ai.faq)] }
+  : null;
 ---
 <Base lang={lang} i18nPath={`/predictions/${Astro.params.slug}`} title={title} description={description} schema={schema} active="predictions">
   <div class="container">

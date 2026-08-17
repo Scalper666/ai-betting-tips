@@ -24,6 +24,17 @@ const tlong = T(`btype.${type.slug}.long`);
 const ai = (content.entries ?? {})[lang === 'en' ? `tips:${type.slug}` : `${lang}:tips:${type.slug}`];
 const schema = ai?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(ai.faq) } : null;
 
+// "ai accumulator tips" / "ai acca builder" are our top-clicked queries and the
+// SERP is held by small dedicated landings — the EN accumulator page targets
+// the exact phrase instead of the generic template title.
+const enAcca = lang === 'en' && type.slug === 'accumulator';
+const pageTitle = enAcca
+  ? 'AI Accumulator Tips — Today’s Model Acca & Free Builder'
+  : F('tt.title', { name: tname });
+const pageDesc = enAcca
+  ? 'Free AI accumulator tips: a daily acca built by our Poisson model from its highest-confidence picks, plus an AI acca builder, honest variance maths and our fully settled record.'
+  : F('tt.desc', { name: tname.toLowerCase() });
+
 const picks = picksForType(type.slug);
 const record = recordForType(type.slug);
 const legs = type.slug === 'accumulator' ? accaLegs(3) : [];
@@ -40,8 +51,8 @@ const shown = picks.length ? picks : legs;
 const leagues = [...new Set(shown.map((x) => x.league))].filter((lg) => hasLeaguePage(lg));
 ---
 <Base lang={lang} i18nPath={`/tips/${type.slug}`}
-  title={F('tt.title', { name: tname })}
-  description={F('tt.desc', { name: tname.toLowerCase() })}
+  title={pageTitle}
+  description={pageDesc}
   schema={schema}
   updated={BUILD_ISO}
   active="predictions">
@@ -49,7 +60,7 @@ const leagues = [...new Set(shown.map((x) => x.league))].filter((lg) => hasLeagu
   <div class="container">
     <div class="page-head">
       <div class="crumbs"><a href={L('/')}>{T('crumb.home')}</a><span>/</span><a href={L('/predictions')}>{T('nav.predictions')}</a><span>/</span>{tname}</div>
-      <h1>{type.emoji} {tname}</h1>
+      <h1>{type.emoji} {enAcca ? 'AI Accumulator Tips' : tname}</h1>
       <p class="lead">{F('tt.lead', { name: tname.toLowerCase(), long: tlong })}</p>
       <p class="upd-line">{T('common.oddsUpdated')} {fmtDate(BUILD_ISO, lang)} · <a href="/editorial-policy">{T('common.howWeWrite')}</a></p>
     </div>
@@ -97,6 +108,19 @@ const leagues = [...new Set(shown.map((x) => x.league))].filter((lg) => hasLeagu
               </div>
             </div>
             <p class="res-note">{T('tt.accaRisk')}</p>
+            {enAcca && (
+              <section class="seo" style="margin-top:18px">
+                <h2>How to use AI accumulator tips</h2>
+                <ul>
+                  <li><b>Keep the slip short — 2–4 legs.</b> Every leg multiplies the bookmaker's margin as well as the odds: three legs at a typical 5% margin already cost ~14% of fair value before kick-off.</li>
+                  <li><b>Only combine positive-value legs.</b> An acca of coin-flips is entertainment; an acca where each leg beats its fair price is the only version with a positive expected value. Our builder starts from the model's highest-confidence picks, not the longest odds.</li>
+                  <li><b>Avoid correlated legs.</b> Two picks from the same match — or a favourite plus "their striker scores" — are not independent, and books price that correlation against you.</li>
+                  <li><b>Treat it as high variance by design.</b> Even a good 4-leg acca lands well under half the time; stake flat and small, and judge results over dozens of slips, not one weekend.</li>
+                  <li><b>Check every price before placing.</b> Odds move twice a day here — a leg that drifted past the model's fair value no longer belongs on the slip.</li>
+                </ul>
+                <p>The daily acca above is built automatically from the model's picks and re-priced twice a day; the <a href="/tools/acca-builder">AI acca builder</a> lets you assemble your own from the full screener, with the honest hit-rate maths shown as you add legs. Every combined slip we publish settles publicly in <a href="/tipsters">our record</a> — losses included.</p>
+              </section>
+            )}
           </section>
         )}
 
