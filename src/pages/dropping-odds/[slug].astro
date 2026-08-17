@@ -6,9 +6,9 @@ import { matchSlug, kickoffLabel, slugify, BUILD_ISO, fmtDate } from '../../lib/
 import { hasLeaguePage } from '../../lib/links.js';
 
 // ── Per-league dropping odds: same snapshots as the hub, one competition per
-//    page. Pages exist only where 3+ tracked prices actually moved (see
-//    lib/droppingOdds.js), so a league without live movement has no page
-//    rather than an empty one.
+//    page. Pages are eternal (lib/droppingOdds.js builds the league union);
+//    a quiet or dormant league renders an honest no-movement state instead of
+//    404ing between builds.
 export function getStaticPaths() {
   return buildDroppingPaths();
 }
@@ -20,10 +20,12 @@ const others = Object.entries(droppingByLeague())
   .sort((a, b) => b.n - a.n);
 
 const droppers = rows.filter((r) => r.move < 0).length;
-const biggest = rows[0];
+const biggest = rows[0] ?? null;
 
 const title = `${league} Dropping Odds — Biggest Line Moves`;
-const description = `${rows.length} tracked ${league} prices have moved since opening, ${droppers} shortening. The biggest: ${biggest.t.home} v ${biggest.t.away} (${biggest.move > 0 ? '+' : ''}${biggest.move}%). From our own snapshots, refreshed twice a day.`;
+const description = biggest
+  ? `${rows.length} tracked ${league} prices have moved since opening, ${droppers} shortening. The biggest: ${biggest.t.home} v ${biggest.t.away} (${biggest.move > 0 ? '+' : ''}${biggest.move}%). From our own snapshots, refreshed twice a day.`
+  : `No tracked ${league} prices are moving right now — a quiet book. This page refreshes twice a day and fills the moment the market stirs.`;
 ---
 <Base title={title} description={description} updated={BUILD_ISO} active="predictions">
   <div class="container">
@@ -32,7 +34,9 @@ const description = `${rows.length} tracked ${league} prices have moved since op
         <a href="/">Home</a><span>/</span><a href="/dropping-odds">Dropping odds</a><span>/</span>{league}
       </div>
       <h1>{league} <em>dropping odds</em></h1>
-      <p class="lead">{rows.length} tracked prices in {league} have moved since we first quoted them — {droppers} shortening, {rows.length - droppers} drifting. Shortening odds usually mean money arriving on that outcome.</p>
+      {rows.length > 0
+        ? <p class="lead">{rows.length} tracked prices in {league} have moved since we first quoted them — {droppers} shortening, {rows.length - droppers} drifting. Shortening odds usually mean money arriving on that outcome.</p>
+        : <p class="lead">Nothing is moving in {league} right now — either the market is quiet or the competition is between rounds. Movement appears here automatically as our snapshots pick it up.</p>}
       <p class="upd-line">Snapshots refreshed {fmtDate(BUILD_ISO)} · <a href="/editorial-policy">how we work</a></p>
     </div>
   </div>
@@ -45,6 +49,10 @@ const description = `${rows.length} tracked ${league} prices have moved since op
             <h2 class="sec-title">Line moves in <b>{league}</b></h2>
             {hasLeaguePage(league) && <a href={`/league/${slugify(league)}`} class="more-link">League tips →</a>}
           </div>
+          {rows.length === 0 && (
+            <div class="box"><div class="box-pad dim">No tracked line movement in {league} at the moment. Our pipeline snapshots prices twice a day — the table below fills as soon as a quoted market moves.</div></div>
+          )}
+          {rows.length > 0 && (
           <div class="odds-table"><div class="scr-scroll">
             <table class="otbl">
               <thead><tr>
@@ -67,7 +75,10 @@ const description = `${rows.length} tracked ${league} prices have moved since op
               </tbody>
             </table>
           </div></div>
+          )}
+          {rows.length > 0 && (
           <p class="res-note">"Opened" is the first price we tracked for our tip's market, not the bookmaker's true opening line. Snapshots run at pipeline frequency, so moves between refreshes are invisible — treat these as a floor on the real movement.</p>
+          )}
         </section>
 
         <section class="seo">

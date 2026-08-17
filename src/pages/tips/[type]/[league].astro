@@ -7,6 +7,7 @@ import content from '../../../data/content.json';
 import AiFaq from '../../../components/AiFaq.astro';
 import { slugify, faqSchema } from '../../../lib/utils.js';
 import { MATRIX, matrixFilters } from '../../../lib/betTypes.js';
+import { buildLeagueNames } from '../../../lib/leaguePages.js';
 
 // ── pSEO matrix: bet-type × league combo pages ("Over/Under tips Premier League").
 //    Only DATA-BACKED types are emitted, and only combos that actually have
@@ -18,7 +19,11 @@ export function getStaticPaths() {
   const hist = Object.values(historyData.tips ?? {}).filter(
     (h) => h.score !== 'simulated' && !String(h.event_id ?? '').startsWith('mock')
   );
-  const leagues = [...new Set([...tips.map((t) => t.league), ...hist.map((h) => h.league)].filter(Boolean))];
+  // eternal combo set: every league we have ever covered (feed ∪ archive ∪
+  // registry) × every market. The old ≥2-items threshold made URLs flicker
+  // in and out between builds — GSC read that as intermittent 404s. Thin
+  // combos now render the honest zero-state the template already has.
+  const leagues = [...buildLeagueNames().values()];
 
   const paths = [];
   for (const m of MATRIX) {
@@ -26,7 +31,6 @@ export function getStaticPaths() {
     for (const league of leagues) {
       const live = tips.filter((t) => t.league === league && f.live(t));
       const past = hist.filter((h) => h.league === league && f.hist(h));
-      if (live.length + past.length < 2) continue;   // skip thin combos
       paths.push({
         params: { type: m.type, league: slugify(league) },
         props: { m, league, live, past },
@@ -50,15 +54,8 @@ const stats = {
   profit: Math.round(settled.reduce((s, h) => s + (h.profit ?? 0), 0) * 100) / 100,
 };
 
-// sibling combos that actually exist (same >=2 threshold as getStaticPaths)
-const comboExists = (kindKey) => {
-  const f = matrixFilters(kindKey);
-  const liveN = (predictions.tips ?? []).filter((t) => t.league === league && f.live(t)).length;
-  const histN = Object.values(historyData.tips ?? {}).filter(
-    (h) => h.score !== 'simulated' && !String(h.event_id ?? '').startsWith('mock') && h.league === league && f.hist(h)
-  ).length;
-  return liveN + histN >= 2;
-};
+// every combo exists now (eternal matrix — see getStaticPaths)
+const comboExists = () => true;
 
 const liveLeagues = new Set((predictions.tips ?? []).map((t) => slugify(t.league)));
 const leagueHref = liveLeagues.has(slugify(league)) ? `/league/${slugify(league)}` : '/predictions';

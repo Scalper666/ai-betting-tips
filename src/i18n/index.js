@@ -23,11 +23,11 @@ export const LOCALES = {
 };
 export const ALT_LANGS = ['es', 'pt', 'de', 'fr', 'sw', 'ha', 'yo', 'ig', 'am'];
 
-// African editions launch compact: every hub and content family, but NOT the
-// ~500 per-language match pages — the discovered-not-indexed queue sits at 2K
-// and tripling it would starve the crawl of the pages that earn trust. Match
-// routes and hreflang both consult this list; widen it when the queue drains.
-export const MATCH_LANGS = ['es', 'pt', 'de', 'fr'];
+// Full match-page parity across every language (widened 17 Aug 2026: GSC
+// indexed the entire site — 7.7K pages — so the crawl-budget rationale for
+// keeping African editions compact retired). Match routes and hreflang both
+// consult this list.
+export const MATCH_LANGS = [...ALT_LANGS];
 
 const MATCH_PATH = /^\/predictions\/(?!daily(\/|$)|today$|tomorrow$|weekend$)[^/]+$/;
 // which language versions exist for a given localized path

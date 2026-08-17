@@ -12,7 +12,8 @@ import { slugify } from './utils.js';
 import { leagueName } from './leagues.js';
 import { buildH2hPairs } from './h2h.js';
 import { teamDirectory } from './teams.js';
-import { MATRIX, matrixFilters } from './betTypes.js';
+import { MATRIX } from './betTypes.js';
+import { buildLeagueNames } from './leaguePages.js';
 
 const realTip = (h) => !(h.score === 'simulated' || String(h.event_id ?? '').startsWith('mock'));
 
@@ -46,21 +47,12 @@ const { teams, byLeague } = teamDirectory();
 const teamsHubSlugs = new Set(Object.keys(byLeague).map((l) => slugify(l)));
 const teamSlugs = new Set(teams.keys());
 
-// /tips/{type}/{league} — mirrors pages/tips/[type]/[league].astro: a combo
-// page only exists when the type has at least two live or settled items in
-// that league (no thin doorway pages)
+// /tips/{type}/{league} — mirrors pages/tips/[type]/[league].astro: the
+// eternal matrix builds every covered league × every market
 const comboSlugs = new Set();
 {
-  const tips = predictions.tips ?? [];
-  const hist = Object.values(historyData.tips ?? {}).filter(realTip);
-  const leagues = [...new Set([...tips.map((t) => t.league), ...hist.map((h) => h.league)].filter(Boolean))];
   for (const m of MATRIX) {
-    const f = matrixFilters(m.type);
-    for (const league of leagues) {
-      const live = tips.filter((t) => t.league === league && f.live(t)).length;
-      const past = hist.filter((h) => h.league === league && f.hist(h)).length;
-      if (live + past >= 2) comboSlugs.add(`${m.type}/${slugify(league)}`);
-    }
+    for (const slug of buildLeagueNames().keys()) comboSlugs.add(`${m.type}/${slug}`);
   }
 }
 
