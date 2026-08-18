@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-08-17T16:56:22+00:00",
+ "updated_at": "2026-08-18T06:01:15+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -2950,6 +2950,26 @@
     },
     {
      "pos": 6,
+     "team": "Deportivo",
+     "p": 1,
+     "w": 0,
+     "d": 1,
+     "l": 0,
+     "gd": 0,
+     "pts": 1
+    },
+    {
+     "pos": 6,
+     "team": "Elche",
+     "p": 1,
+     "w": 0,
+     "d": 1,
+     "l": 0,
+     "gd": 0,
+     "pts": 1
+    },
+    {
+     "pos": 8,
      "team": "Athletic",
      "p": 0,
      "w": 0,
@@ -2959,7 +2979,7 @@
      "pts": 0
     },
     {
-     "pos": 6,
+     "pos": 8,
      "team": "Atleti",
      "p": 0,
      "w": 0,
@@ -2969,7 +2989,7 @@
      "pts": 0
     },
     {
-     "pos": 6,
+     "pos": 8,
      "team": "Osasuna",
      "p": 0,
      "w": 0,
@@ -2979,27 +2999,7 @@
      "pts": 0
     },
     {
-     "pos": 6,
-     "team": "Deportivo",
-     "p": 0,
-     "w": 0,
-     "d": 0,
-     "l": 0,
-     "gd": 0,
-     "pts": 0
-    },
-    {
-     "pos": 6,
-     "team": "Elche",
-     "p": 0,
-     "w": 0,
-     "d": 0,
-     "l": 0,
-     "gd": 0,
-     "pts": 0
-    },
-    {
-     "pos": 6,
+     "pos": 8,
      "team": "Barça",
      "p": 0,
      "w": 0,
@@ -3009,7 +3009,7 @@
      "pts": 0
     },
     {
-     "pos": 6,
+     "pos": 8,
      "team": "Málaga",
      "p": 0,
      "w": 0,
@@ -3019,7 +3019,7 @@
      "pts": 0
     },
     {
-     "pos": 6,
+     "pos": 8,
      "team": "Celta",
      "p": 0,
      "w": 0,
@@ -3029,7 +3029,7 @@
      "pts": 0
     },
     {
-     "pos": 6,
+     "pos": 8,
      "team": "Real Betis",
      "p": 0,
      "w": 0,
@@ -3039,7 +3039,7 @@
      "pts": 0
     },
     {
-     "pos": 6,
+     "pos": 8,
      "team": "Real Madrid",
      "p": 0,
      "w": 0,
@@ -3049,7 +3049,7 @@
      "pts": 0
     },
     {
-     "pos": 6,
+     "pos": 8,
      "team": "Real Sociedad",
      "p": 0,
      "w": 0,
@@ -3059,7 +3059,7 @@
      "pts": 0
     },
     {
-     "pos": 6,
+     "pos": 8,
      "team": "Valencia",
      "p": 0,
      "w": 0,
@@ -3105,11 +3105,11 @@
     "Sevilla FC": "/crests/sevilla-fc.png",
     "Santander": "/crests/santander.png",
     "Villarreal": "/crests/villarreal.png",
+    "Deportivo": "/crests/deportivo.png",
+    "Elche": "/crests/elche.png",
     "Athletic": "/crests/athletic.png",
     "Atleti": "/crests/atleti.png",
     "Osasuna": "/crests/osasuna.png",
-    "Deportivo": "/crests/deportivo.png",
-    "Elche": "/crests/elche.png",
     "Barça": "/crests/barca.png",
     "Málaga": "/crests/malaga.png",
     "Celta": "/crests/celta.png",
@@ -5809,6 +5809,13 @@
      "a": "Levante",
      "hs": 3,
      "as": 0
+    },
+    {
+     "d": "2026-08-17",
+     "h": "Deportivo",
+     "a": "Elche",
+     "hs": 1,
+     "as": 1
     }
    ],
    "scorers": [
@@ -5903,6 +5910,22 @@
     {
      "name": "Tyrhys Dolan",
      "team": "Espanyol",
+     "goals": 1,
+     "assists": null,
+     "pens": null,
+     "played": 1
+    },
+    {
+     "name": "Pierre-Emerick Aubameyang",
+     "team": "Deportivo",
+     "goals": 1,
+     "assists": null,
+     "pens": null,
+     "played": 1
+    },
+    {
+     "name": "Marc Aguado",
+     "team": "Elche",
      "goals": 1,
      "assists": null,
      "pens": null,
@@ -13656,6 +13679,16 @@
     },
     {
      "pos": 16,
+     "team": "Internacional",
+     "p": 23,
+     "w": 5,
+     "d": 9,
+     "l": 9,
+     "gd": -4,
+     "pts": 24
+    },
+    {
+     "pos": 17,
      "team": "Mirassol",
      "p": 22,
      "w": 6,
@@ -13665,24 +13698,14 @@
      "pts": 23
     },
     {
-     "pos": 17,
-     "team": "Internacional",
-     "p": 22,
-     "w": 5,
-     "d": 8,
-     "l": 9,
-     "gd": -4,
-     "pts": 23
-    },
-    {
      "pos": 18,
      "team": "Clube do Remo",
-     "p": 22,
+     "p": 23,
      "w": 5,
-     "d": 7,
+     "d": 8,
      "l": 10,
      "gd": -10,
-     "pts": 22
+     "pts": 23
     },
     {
      "pos": 19,
@@ -13721,8 +13744,8 @@
     "São Paulo": "/crests/sao-paulo.png",
     "Santos": "/crests/santos.png",
     "Grêmio": "/crests/gremio.png",
-    "Mirassol": "/crests/mirassol.png",
     "Internacional": "/crests/internacional.png",
+    "Mirassol": "/crests/mirassol.png",
     "Clube do Remo": "/crests/clube-do-remo.png",
     "Vasco da Gama": "/crests/vasco-da-gama.png",
     "Chapecoense": "/crests/chapecoense.png"
@@ -17955,6 +17978,13 @@
      "a": "Cruzeiro",
      "hs": 1,
      "as": 2
+    },
+    {
+     "d": "2026-08-17",
+     "h": "Internacional",
+     "a": "Clube do Remo",
+     "hs": 1,
+     "as": 1
     }
    ],
    "scorers": [
@@ -22328,6 +22358,13 @@
      "a": "West Ham",
      "hs": 2,
      "as": 2
+    },
+    {
+     "d": "2026-08-17",
+     "h": "Cardiff",
+     "a": "Wrexham",
+     "hs": 1,
+     "as": 1
     }
    ],
    "scorers": [
