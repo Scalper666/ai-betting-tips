@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-08-19T17:14:05+00:00",
+ "updated_at": "2026-08-19T20:58:31+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -2930,6 +2930,16 @@
     },
     {
      "pos": 4,
+     "team": "Atleti",
+     "p": 1,
+     "w": 1,
+     "d": 0,
+     "l": 0,
+     "gd": 1,
+     "pts": 3
+    },
+    {
+     "pos": 5,
      "team": "Santander",
      "p": 1,
      "w": 0,
@@ -2939,7 +2949,7 @@
      "pts": 1
     },
     {
-     "pos": 4,
+     "pos": 5,
      "team": "Villarreal",
      "p": 1,
      "w": 0,
@@ -2949,7 +2959,7 @@
      "pts": 1
     },
     {
-     "pos": 6,
+     "pos": 7,
      "team": "Deportivo",
      "p": 1,
      "w": 0,
@@ -2959,7 +2969,7 @@
      "pts": 1
     },
     {
-     "pos": 6,
+     "pos": 7,
      "team": "Elche",
      "p": 1,
      "w": 0,
@@ -2969,7 +2979,7 @@
      "pts": 1
     },
     {
-     "pos": 8,
+     "pos": 9,
      "team": "Athletic",
      "p": 0,
      "w": 0,
@@ -2979,17 +2989,7 @@
      "pts": 0
     },
     {
-     "pos": 8,
-     "team": "Atleti",
-     "p": 0,
-     "w": 0,
-     "d": 0,
-     "l": 0,
-     "gd": 0,
-     "pts": 0
-    },
-    {
-     "pos": 8,
+     "pos": 9,
      "team": "Osasuna",
      "p": 0,
      "w": 0,
@@ -2999,7 +2999,7 @@
      "pts": 0
     },
     {
-     "pos": 8,
+     "pos": 9,
      "team": "Barça",
      "p": 0,
      "w": 0,
@@ -3009,17 +3009,7 @@
      "pts": 0
     },
     {
-     "pos": 8,
-     "team": "Málaga",
-     "p": 0,
-     "w": 0,
-     "d": 0,
-     "l": 0,
-     "gd": 0,
-     "pts": 0
-    },
-    {
-     "pos": 8,
+     "pos": 9,
      "team": "Celta",
      "p": 0,
      "w": 0,
@@ -3029,7 +3019,7 @@
      "pts": 0
     },
     {
-     "pos": 8,
+     "pos": 9,
      "team": "Real Betis",
      "p": 0,
      "w": 0,
@@ -3039,7 +3029,7 @@
      "pts": 0
     },
     {
-     "pos": 8,
+     "pos": 9,
      "team": "Real Madrid",
      "p": 0,
      "w": 0,
@@ -3049,7 +3039,7 @@
      "pts": 0
     },
     {
-     "pos": 8,
+     "pos": 9,
      "team": "Real Sociedad",
      "p": 0,
      "w": 0,
@@ -3059,7 +3049,7 @@
      "pts": 0
     },
     {
-     "pos": 8,
+     "pos": 9,
      "team": "Valencia",
      "p": 0,
      "w": 0,
@@ -3069,8 +3059,18 @@
      "pts": 0
     },
     {
-     "pos": 18,
+     "pos": 17,
      "team": "Rayo Vallecano",
+     "p": 1,
+     "w": 0,
+     "d": 0,
+     "l": 1,
+     "gd": -1,
+     "pts": 0
+    },
+    {
+     "pos": 18,
+     "team": "Málaga",
      "p": 1,
      "w": 0,
      "d": 0,
@@ -3103,21 +3103,21 @@
     "Alavés": "/crests/alaves.png",
     "Espanyol": "/crests/espanyol.png",
     "Sevilla FC": "/crests/sevilla-fc.png",
+    "Atleti": "/crests/atleti.png",
     "Santander": "/crests/santander.png",
     "Villarreal": "/crests/villarreal.png",
     "Deportivo": "/crests/deportivo.png",
     "Elche": "/crests/elche.png",
     "Athletic": "/crests/athletic.png",
-    "Atleti": "/crests/atleti.png",
     "Osasuna": "/crests/osasuna.png",
     "Barça": "/crests/barca.png",
-    "Málaga": "/crests/malaga.png",
     "Celta": "/crests/celta.png",
     "Real Betis": "/crests/real-betis.png",
     "Real Madrid": "/crests/real-madrid.png",
     "Real Sociedad": "/crests/real-sociedad.png",
     "Valencia": "/crests/valencia.png",
     "Rayo Vallecano": "/crests/rayo-vallecano.png",
+    "Málaga": "/crests/malaga.png",
     "Getafe": "/crests/getafe.png",
     "Levante": "/crests/levante.png"
    },
@@ -5926,6 +5926,14 @@
     {
      "name": "Marc Aguado",
      "team": "Elche",
+     "goals": 1,
+     "assists": null,
+     "pens": null,
+     "played": 1
+    },
+    {
+     "name": "Kang-in Lee",
+     "team": "Atleti",
      "goals": 1,
      "assists": null,
      "pens": null,
