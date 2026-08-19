@@ -12,7 +12,9 @@ import { SHOW_OPERATORS } from '../lib/operators.js';
 // `updated`: ISO date this page's content last changed. Data-driven pages pass
 // the build time (odds refresh twice daily); editor-written pages pass the date
 // their source file changed. It feeds dateModified in Article-type schema.
-const { title, description = '', active = '', schema = null, lang = 'en', i18nPath = null, updated = null } = Astro.props;
+// `langs` overrides langsFor when a page family's language set depends on data
+// rather than on the path alone (h2h: localized per league — see lib/h2h.js).
+const { title, description = '', active = '', schema = null, lang = 'en', i18nPath = null, updated = null, langs = null } = Astro.props;
 const site = Astro.site ?? 'https://ai-betting-tips.com';
 const canonical = new URL(Astro.url.pathname, site).href;
 const ogImage = new URL('/og.png', site).href;
@@ -21,7 +23,7 @@ const langHref = (l) => (i18nPath
   : new URL(homePath(l), site).href);
 // langsFor: match pages exist only in the full-parity languages — hreflang
 // must never advertise a compact-language variant that would 404
-const alternates = i18nPath ? langsFor(i18nPath).map((l) => ({ l, href: langHref(l) })) : [];
+const alternates = i18nPath ? (langs ?? langsFor(i18nPath)).map((l) => ({ l, href: langHref(l) })) : [];
 
 // sitewide BreadcrumbList derived from the URL (rendered as its own JSON-LD)
 const segs = Astro.url.pathname.split('/').filter(Boolean);
@@ -151,7 +153,7 @@ const favicon = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'
   {orgSchema && <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />}
 </head>
 <body>
-  <Header active={active} lang={lang} i18nPath={i18nPath} />
+  <Header active={active} lang={lang} i18nPath={i18nPath} langs={langs} />
   <slot />
   <Footer lang={lang} />
 

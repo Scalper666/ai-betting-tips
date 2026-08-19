@@ -74,3 +74,27 @@ export function buildH2hPairs(minMeetings = 2) {
   }
   return out;
 }
+
+// ── Which languages each h2h league ships in.
+//    Cloudflare Pages refuses deployments over 20,000 files, and h2h is our
+//    largest family (~1700 pairs): all of it in 9 languages was 27k files and
+//    failed the deploy. Localizing every pair into every language was never
+//    right anyway — a Spanish reader searches La Liga and Champions League
+//    head-to-heads, not Danish ones. Each language gets its own leagues plus
+//    the two everyone follows (Premier League, Champions League).
+//    Everything else links to the English page through lhref.
+const UNIVERSAL = ['Premier League', 'Champions League'];
+export const H2H_LEAGUES = {
+  es: [...UNIVERSAL, 'La Liga', 'Serie A'],
+  pt: [...UNIVERSAL, 'Brasileirão', 'Primeira Liga'],
+  de: [...UNIVERSAL, 'Bundesliga', 'Eredivisie'],
+  fr: [...UNIVERSAL, 'Ligue 1', 'Serie A'],
+};
+
+/** Languages a given league's h2h pages exist in (for hreflang). */
+export const h2hLangsFor = (league) =>
+  ['en', ...Object.keys(H2H_LEAGUES).filter((l) => H2H_LEAGUES[l].includes(league))];
+
+/** Does /{lang}/h2h/... exist for this league? */
+export const hasH2hIn = (lang, league) =>
+  lang === 'en' || (H2H_LEAGUES[lang] ?? []).includes(league);

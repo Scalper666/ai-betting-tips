@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import ToolsBox from '../components/ToolsBox.astro';
 import predictions from '../data/predictions.json';
-import { buildH2hPairs, pairSlug } from '../lib/h2h.js';
+import { buildH2hPairs, pairSlug, h2hLangsFor, hasH2hIn } from '../lib/h2h.js';
 import { resolveTeam } from '../lib/form.js';
 import { matchSlug, slugify } from '../lib/utils.js';
 import { t, lhref } from '../i18n/index.js';
@@ -58,7 +58,7 @@ const schema = {
   mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
 };
 ---
-<Base lang={lang} i18nPath={`/h2h/${p.slug}`} title={title} description={description} schema={schema} active="predictions">
+<Base lang={lang} langs={h2hLangsFor(p.league)} i18nPath={`/h2h/${p.slug}`} title={title} description={description} schema={schema} active="predictions">
   <div class="container">
     <div class="page-head">
       <div class="crumbs">

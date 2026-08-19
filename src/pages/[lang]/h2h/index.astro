@@ -1,9 +1,9 @@
 ---
 import H2hHubView from '../../../views/H2hHubView.astro';
-import { MATCH_LANGS } from '../../../i18n/index.js';
+import { H2H_LEAGUES } from '../../../lib/h2h.js';
 
 export function getStaticPaths() {
-  return MATCH_LANGS.map((lang) => ({ params: { lang } }));
+  return Object.keys(H2H_LEAGUES).map((lang) => ({ params: { lang } }));
 }
 const { lang } = Astro.params;
 ---

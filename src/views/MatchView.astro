@@ -8,7 +8,7 @@ import screener from '../data/screener.json';
 import content from '../data/content.json';
 import { matchSlug, abbr, badgeColor, kickoffLabel, confidenceLabel, slugify, faqSchema, BUILD_ISO, fmtDate } from '../lib/utils.js';
 import { teamForm, h2hBetween, leagueTable, resolveTeam } from '../lib/form.js';
-import { pairSlug } from '../lib/h2h.js';
+import { pairSlug, hasH2hIn } from '../lib/h2h.js';
 import { t, localizeMarket, lhref } from '../i18n/index.js';
 import TeamMark from '../components/TeamMark.astro';
 
@@ -106,7 +106,10 @@ const sportKey = tip?.sport_key ?? latest?.sport_key ?? reg?.sk ?? '';
 const formHome = teamForm(sportKey, home);
 const formAway = teamForm(sportKey, away);
 const h2h = h2hBetween(sportKey, home, away);
+// h2h exists per league per language (lib/h2h.js) — a language without
+// this league links to the EN page rather than a 404
 const h2hHref = h2h.length >= 2 ? `/h2h/${pairSlug(resolveTeam(sportKey, home) ?? home, resolveTeam(sportKey, away) ?? away)}` : null;
+const h2hLink = h2hHref ? (hasH2hIn(lang, league) ? L(h2hHref) : h2hHref) : null;
 const table = leagueTable(sportKey);
 const hlNames = new Set([resolveTeam(sportKey, home), resolveTeam(sportKey, away)].filter(Boolean));
 const shortDate = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString(dloc, { day: 'numeric', month: 'short', year: '2-digit', timeZone: 'UTC' });
@@ -326,7 +329,7 @@ const schema = ai?.faq?.length
           <section>
             <div class="sec-head">
               <h2 class="sec-title">{T('mp.h2hPre')} <b>{home} v {away}</b></h2>
-              {h2hHref && lang === 'en' && <a href={h2hHref} class="more-link">Full H2H history →</a>}
+              {h2hLink && (lang === 'en' || hasH2hIn(lang, league)) && <a href={h2hLink} class="more-link">{T('mp.fullH2h')}</a>}
             </div>
             <div class="res-list">
               {h2h.map((g) => (

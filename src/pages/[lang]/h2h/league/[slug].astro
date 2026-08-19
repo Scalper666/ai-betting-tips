@@ -1,18 +1,19 @@
 ---
 import H2hLeagueView from '../../../../views/H2hLeagueView.astro';
-import { buildH2hPairs } from '../../../../lib/h2h.js';
+import { buildH2hPairs, H2H_LEAGUES } from '../../../../lib/h2h.js';
 import { slugify } from '../../../../lib/utils.js';
-import { MATCH_LANGS } from '../../../../i18n/index.js';
 
 export function getStaticPaths() {
   const byLeague = {};
   for (const p of buildH2hPairs()) (byLeague[p.league] ??= []).push(p);
-  const entries = Object.entries(byLeague).map(([league, list]) => ({
-    league,
-    list: list.sort((a, b) => a.teamA.localeCompare(b.teamA) || a.teamB.localeCompare(b.teamB)),
-  }));
-  return MATCH_LANGS.flatMap((lang) =>
-    entries.map((e) => ({ params: { lang, slug: slugify(e.league) }, props: e }))
+  return Object.entries(H2H_LEAGUES).flatMap(([lang, leagues]) =>
+    leagues.filter((lg) => byLeague[lg]).map((lg) => ({
+      params: { lang, slug: slugify(lg) },
+      props: {
+        league: lg,
+        list: byLeague[lg].sort((a, b) => a.teamA.localeCompare(b.teamA) || a.teamB.localeCompare(b.teamB)),
+      },
+    }))
   );
 }
 const { league, list } = Astro.props;

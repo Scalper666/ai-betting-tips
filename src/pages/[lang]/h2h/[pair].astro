@@ -1,13 +1,13 @@
 ---
 import H2hPairView from '../../../views/H2hPairView.astro';
-import { buildH2hPairs } from '../../../lib/h2h.js';
-import { MATCH_LANGS } from '../../../i18n/index.js';
+import { buildH2hPairs, H2H_LEAGUES } from '../../../lib/h2h.js';
 
-// h2h pages ship only in the full-parity languages (same gate as match pages)
+// Localized per league, not per language — see H2H_LEAGUES for why.
 export function getStaticPaths() {
   const pairs = buildH2hPairs();
-  return MATCH_LANGS.flatMap((lang) =>
-    pairs.map((p) => ({ params: { lang, pair: p.slug }, props: { p } }))
+  return Object.entries(H2H_LEAGUES).flatMap(([lang, leagues]) =>
+    pairs.filter((p) => leagues.includes(p.league))
+      .map((p) => ({ params: { lang, pair: p.slug }, props: { p } }))
   );
 }
 const { p } = Astro.props;

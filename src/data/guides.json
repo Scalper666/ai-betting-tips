@@ -1,6 +1,6 @@
 {
   "set": "Betting Guides",
-  "updated": "2026-08-14",
+  "updated": "2026-08-18",
   "guides": [
     {
       "slug": "how-to-read-betting-odds",
@@ -3612,6 +3612,973 @@
       "related": [
         "betting-in-germany",
         "betting-in-netherlands"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ]
+    },
+    {
+      "slug": "betting-with-mpesa",
+      "title": "Betting with M-Pesa: How Deposits and Withdrawals Work",
+      "nav": "M-Pesa",
+      "cat": "Payments",
+      "minutes": 5,
+      "desc": "M-Pesa is the default betting rail in Kenya, Tanzania, Mozambique, the DRC and now Ethiopia. How paybill deposits and withdrawals actually flow, what the charges depend on, and the safety habits that matter.",
+      "sections": [
+        {
+          "h": "Where M-Pesa works for betting",
+          "ps": [
+            "M-Pesa is Safaricom's mobile wallet in Kenya — the market where mobile money and sports betting grew up together — and runs as Vodacom M-Pesa in Tanzania, Mozambique and the DRC. Safaricom launched M-Pesa Ethiopia in 2023, which is why it now appears alongside telebirr on Ethiopian betting sites.",
+            "Practically, that means a single habit transfers across five of the markets we cover: you fund a betting account straight from your phone balance, without a bank account or card in the loop. It is also why licensed operators in these countries compete on withdrawal speed to M-Pesa rather than on card processing."
+          ]
+        },
+        {
+          "h": "How a deposit and a withdrawal flow",
+          "ps": [
+            "Deposits use a paybill (Kenya) or a similar business number: you open the M-Pesa menu or app, choose the pay-bill option, enter the operator's business number, put your betting account ID in the account field, enter the amount and confirm with your PIN. The credit is usually instant, and the confirmation SMS is your receipt — keep it, because a disputed deposit is resolved with that transaction code.",
+            "Withdrawals go the other way: you request the payout inside the betting account and the money lands in the same M-Pesa number you deposited from. Operators enforce the same-number rule for anti-money-laundering reasons, so a wallet registered to someone else will fail verification. Payouts to M-Pesa are typically minutes rather than days, which is the single biggest practical advantage of the rail."
+          ]
+        },
+        {
+          "h": "Charges, limits and what to check",
+          "ps": [
+            "Two different fee schedules touch your money: the operator's (many licensed books absorb deposit fees and pay out gross) and Safaricom's or Vodacom's own tariff for the transaction type. Both change, and both are published — check the current tariff on the telco's site rather than trusting a blog table, this one included. Daily and per-transaction wallet limits also apply and are raised or lowered by regulators from time to time.",
+            "In Kenya, remember that betting taxes sit on top of the payment mechanics: excise on stakes and withholding on winnings are deducted regardless of how you funded the account. That is a legal matter, not an M-Pesa one, but it changes the arithmetic of a bet — which is exactly what our value calculations are for."
+          ]
+        },
+        {
+          "h": "Safety habits that actually help",
+          "ps": [
+            "Never share your M-Pesa PIN, and treat any message asking you to 'confirm a betting payout' by entering it as fraud — operators never need it. Deposit only through the paybill number published inside your betting account, not one sent to you in a WhatsApp group; recycled fake paybills are the most common scam in these markets.",
+            "Use the wallet's transaction history as your betting ledger. Deposits and withdrawals in one place make it trivial to see what you actually staked over a month — the number most bettors underestimate, and the one that decides whether this is entertainment or a problem."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Works for betting in Kenya, Tanzania, Mozambique, the DRC and Ethiopia",
+        "Deposits go through a paybill/business number with your account ID; keep the SMS receipt",
+        "Withdrawals return to the same registered number — this is an AML rule, not a preference",
+        "Check current telco tariffs and wallet limits at the source; they change often"
+      ],
+      "faq": [
+        {
+          "q": "Can I withdraw betting winnings to M-Pesa?",
+          "a": "Yes — licensed operators in M-Pesa markets pay out to the same registered number you deposited from, usually within minutes. Payouts to a different number are blocked by anti-money-laundering rules."
+        },
+        {
+          "q": "Which countries can I use M-Pesa betting sites in?",
+          "a": "Kenya (Safaricom), Tanzania, Mozambique and the DRC (Vodacom), plus Ethiopia since Safaricom launched M-Pesa there in 2023."
+        },
+        {
+          "q": "Are there fees for M-Pesa betting deposits?",
+          "a": "Two schedules can apply: the operator's and the telco's own tariff for that transaction type. Many licensed books absorb deposit fees. Both change, so check the current tariff on the telco's own site."
+        }
+      ],
+      "related": [
+        "betting-with-airtel-money",
+        "betting-in-kenya"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ]
+    },
+    {
+      "slug": "betting-with-airtel-money",
+      "title": "Betting with Airtel Money: Deposits, Payouts and Limits",
+      "nav": "Airtel Money",
+      "cat": "Payments",
+      "minutes": 4,
+      "desc": "Airtel Money covers six of the markets we track — Kenya, Tanzania, Uganda, Zambia, Niger and the DRC. How betting deposits and withdrawals work, and where it differs from M-Pesa.",
+      "sections": [
+        {
+          "h": "The second rail in East and Central Africa",
+          "ps": [
+            "Airtel Money is the wallet attached to Airtel's mobile network, and in our country set it serves Kenya, Tanzania, Uganda, Zambia, Niger and the DRC. In several of those markets it is the main alternative to a dominant rival — M-Pesa in Kenya and Tanzania, MTN MoMo in Uganda and Zambia — which is why licensed betting sites there almost always list both.",
+            "That competition works in a bettor's favour. Where two wallets are supported, an operator that is slow or fee-heavy on one rail is easy to compare against, and you keep a working fallback when one network has an outage — a real consideration on a matchday."
+          ]
+        },
+        {
+          "h": "Depositing and cashing out",
+          "ps": [
+            "The flow mirrors other mobile-money rails: dial the Airtel Money USSD code or open the app, choose the payments option, enter the operator's business or merchant number, add your betting account ID, confirm with your PIN. Credits are near-instant and the confirmation SMS carries the transaction ID you will need for any dispute.",
+            "Withdrawals are requested inside the betting account and return to the same registered Airtel number. Expect verification checks the first time — a name mismatch between the wallet registration and the betting account is the usual reason a first payout stalls, and it is fixed with documents, not with a support argument."
+          ]
+        },
+        {
+          "h": "What to check before you rely on it",
+          "ps": [
+            "Wallet limits differ by market and by how far you have completed KYC on the wallet itself: an unverified Airtel Money account will hit a daily ceiling far below a fully registered one, and that ceiling — not the betting site — is what usually blocks a large withdrawal. Raising it is a telco process.",
+            "Cross-network cost matters too. Sending from Airtel Money to an operator that banks with another network can carry an interconnect charge in some markets. If your book supports both rails, one may be quietly cheaper; a single test deposit on each answers the question better than any table."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Available for betting in Kenya, Tanzania, Uganda, Zambia, Niger and the DRC",
+        "USSD or app → business number → your betting account ID → PIN; credit is near-instant",
+        "Payouts return to the same registered number; name mismatches stall first withdrawals",
+        "Daily ceilings usually come from your wallet's KYC level, not from the betting site"
+      ],
+      "faq": [
+        {
+          "q": "Which betting markets support Airtel Money?",
+          "a": "Among the countries we cover: Kenya, Tanzania, Uganda, Zambia, Niger and the DRC. Licensed operators there typically list it alongside the local market leader."
+        },
+        {
+          "q": "Why was my Airtel Money betting withdrawal rejected?",
+          "a": "The two common causes are a name mismatch between the wallet registration and the betting account, and a daily wallet limit tied to your KYC level. Both are resolved with the telco, not the bookmaker."
+        },
+        {
+          "q": "Is Airtel Money slower than M-Pesa for betting?",
+          "a": "In practice both settle in minutes on licensed sites. Differences come from the operator's payout processing, not the rail itself — which is why testing a small withdrawal on each is worth doing."
+        }
+      ],
+      "related": [
+        "betting-with-mpesa",
+        "betting-with-mtn-mobile-money"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ]
+    },
+    {
+      "slug": "betting-with-mtn-mobile-money",
+      "title": "Betting with MTN Mobile Money (MoMo)",
+      "nav": "MTN MoMo",
+      "cat": "Payments",
+      "minutes": 4,
+      "desc": "MTN MoMo is the betting rail across Ghana, Uganda, Cameroon, Côte d'Ivoire, Zambia and Benin. How MoMo deposits and payouts work and what the merchant-code step means for safety.",
+      "sections": [
+        {
+          "h": "Africa's widest mobile-money footprint",
+          "ps": [
+            "MTN Mobile Money — MoMo — runs wherever MTN is the dominant network, and among the markets we cover that means Ghana, Uganda, Cameroon, Côte d'Ivoire, Zambia and Benin. It is the rail with the broadest reach in West and Central Africa, and licensed betting sites in those countries treat it as the default deposit option rather than an alternative.",
+            "Because MoMo spans both anglophone and francophone markets, the same wallet habit works whether the betting site is in English or French. What changes across borders is the local tariff and the regulator, not the mechanics."
+          ]
+        },
+        {
+          "h": "How the payment actually runs",
+          "ps": [
+            "Deposits use a merchant code: you open the MoMo menu or app, choose to pay a merchant, enter the operator's code, add your betting account reference and approve with your PIN. Newer MoMo versions push an approval prompt to your phone instead of asking for the code up front — approving a prompt you did not initiate is the single most common way accounts get drained, so treat an unexpected one as fraud.",
+            "Withdrawals are requested in the betting account and land in the same MoMo number. First payouts trigger identity checks in most markets; MoMo accounts are tied to a national ID, so the name on the wallet and the name on the betting account must match."
+          ]
+        },
+        {
+          "h": "Fees, limits and the practical checks",
+          "ps": [
+            "MoMo charges are set per market and revised regularly, and several governments in the region have layered mobile-money levies on top at various times. That makes any fee figure printed on a betting blog unreliable within months — check the current tariff inside the MoMo app, which always shows the charge before you confirm.",
+            "Limits scale with your registration level, exactly as on other wallets. If you plan to withdraw meaningful amounts, complete full KYC on the wallet first; that is where most 'the bookmaker won't pay me' stories actually end."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Covers Ghana, Uganda, Cameroon, Côte d'Ivoire, Zambia and Benin in our country set",
+        "Deposits go to a merchant code with your account reference; the app shows the fee before you confirm",
+        "Never approve a MoMo prompt you did not start — that is the standard fraud pattern",
+        "Withdrawal ceilings follow your wallet's KYC level"
+      ],
+      "faq": [
+        {
+          "q": "Which countries support MTN MoMo betting deposits?",
+          "a": "Among the markets we cover: Ghana, Uganda, Cameroon, Côte d'Ivoire, Zambia and Benin. MoMo is usually the default rather than a secondary option there."
+        },
+        {
+          "q": "How long do MoMo betting withdrawals take?",
+          "a": "Minutes at licensed operators once identity checks are done. The first payout is the slow one, because that is when the name and ID on the wallet are matched against the betting account."
+        },
+        {
+          "q": "What are the fees for MoMo betting deposits?",
+          "a": "They vary by country and change with local levies. The MoMo app displays the exact charge before you confirm the payment — that figure, not a published table, is the reliable one."
+        }
+      ],
+      "related": [
+        "betting-with-airtel-money",
+        "betting-with-orange-money"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ]
+    },
+    {
+      "slug": "betting-with-orange-money",
+      "title": "Betting with Orange Money in Francophone Africa",
+      "nav": "Orange Money",
+      "cat": "Payments",
+      "minutes": 4,
+      "desc": "Orange Money is the main betting rail in Senegal, Côte d'Ivoire, Cameroon, Burkina Faso, Mali, Niger and the DRC. How deposits work in CFA francs and what to verify before your first payout.",
+      "sections": [
+        {
+          "h": "The francophone default",
+          "ps": [
+            "Orange Money is the wallet of Orange's mobile network and, across the francophone markets we cover — Senegal, Côte d'Ivoire, Cameroon, Burkina Faso, Mali, Niger and the DRC — it is the payment method licensed betting sites list first. Most of those countries share the CFA franc, so the same wallet balance behaves identically across borders even though the betting regulator changes at each one.",
+            "In several of these markets the national lottery holds the betting licence or supervises it, and its authorised operators are the ones plugged into Orange Money. That linkage is useful: if a site cannot take Orange Money in a country where everyone else can, it is worth asking why."
+          ]
+        },
+        {
+          "h": "Making a deposit and taking a payout",
+          "ps": [
+            "The flow is USSD-first: dial the Orange Money code, choose the merchant payment option, enter the operator's merchant number, add your betting account reference, confirm with your secret code. The confirmation SMS carries the transaction reference you will need if a credit goes missing — keep it until the balance shows up.",
+            "Withdrawals return to the same Orange number, and the wallet's own limits govern how much can arrive in a day. Where an operator supports both Orange Money and a rival wallet such as MTN MoMo or Moov Money, keeping one of each registered is genuinely useful on a busy matchday when one network is congested."
+          ]
+        },
+        {
+          "h": "Currency, limits and honest expectations",
+          "ps": [
+            "CFA balances are quoted in whole francs and betting stakes there are small by European standards, which makes fixed transaction fees proportionally heavier: a levy that looks trivial on a large deposit can be several percent of a modest one. Depositing once rather than five times a week is the practical answer, and it happens to be good bankroll discipline too.",
+            "Limits and tariffs are set per country and updated regularly by Orange and by regulators. Verify them in the app or at an Orange agent rather than trusting any figure published elsewhere, including here."
+          ]
+        }
+      ],
+      "takeaways": [
+        "The default rail in Senegal, Côte d'Ivoire, Cameroon, Burkina Faso, Mali, Niger and the DRC",
+        "USSD merchant payment with your betting account reference; keep the SMS reference",
+        "Fixed fees hurt small deposits most — deposit less often, in larger amounts",
+        "Register a second wallet where supported, as an outage fallback"
+      ],
+      "faq": [
+        {
+          "q": "Which betting sites accept Orange Money?",
+          "a": "In francophone Africa, licensed operators supervised by the national lottery or gaming authority almost always do. If a site serving those markets cannot take Orange Money, treat that as a reason to check its licence."
+        },
+        {
+          "q": "Can I use Orange Money across different countries?",
+          "a": "The wallet is registered in one country and governed by that country's rules and limits, even where the CFA franc is shared. Betting operators check the registration country as part of verification."
+        },
+        {
+          "q": "What does an Orange Money betting deposit cost?",
+          "a": "It depends on the country and the current tariff, which Orange revises periodically. The app and Orange agents show the applicable charge; published tables age badly."
+        }
+      ],
+      "related": [
+        "betting-with-mtn-mobile-money",
+        "betting-in-senegal"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ]
+    },
+    {
+      "slug": "betting-with-telebirr",
+      "title": "Betting with telebirr in Ethiopia",
+      "nav": "telebirr",
+      "cat": "Payments",
+      "minutes": 4,
+      "desc": "telebirr is Ethiopia's dominant mobile wallet and the standard betting rail at NLA-licensed books. How deposits and withdrawals work in birr, and how the 15% winnings tax interacts with payouts.",
+      "sections": [
+        {
+          "h": "Ethiopia's default wallet",
+          "ps": [
+            "telebirr launched in 2021 as Ethio Telecom's mobile wallet and reached tens of millions of users within a few years — in a country where card penetration is low and foreign-currency rules make international processing awkward, it became the practical way to move money. Betting sites licensed by the National Lottery Administration settle in birr through telebirr, with CBE Birr as the usual second option and M-Pesa Ethiopia growing since 2023.",
+            "For a bettor that concentration is convenient but worth a caution: if a site asks you to fund an account through a personal transfer to an individual's telebirr number rather than a business account, that is not how a licensed operator collects deposits."
+          ]
+        },
+        {
+          "h": "How the money moves",
+          "ps": [
+            "Deposits run through the telebirr app or USSD: choose the payment option, enter the operator's business short code, add your betting account ID, approve with your PIN. Credits are effectively immediate and the transaction reference in the confirmation is your evidence in any dispute.",
+            "Withdrawals return to the same telebirr number and are subject to the wallet's own daily and monthly ceilings, which depend on your registration level. Because the ceilings are modest by design, a large payout may arrive in instalments across days — that is a wallet rule, not an operator stalling."
+          ]
+        },
+        {
+          "h": "The 15% withholding, in practice",
+          "ps": [
+            "Ethiopia withholds tax on winnings from games of chance at 15%, deducted by the operator before payout, with small wins below a legal threshold exempt. What arrives in your telebirr wallet is therefore the net figure, and the payout receipt should show the deduction. The exact threshold has moved over the years, so treat it as a moving part.",
+            "Price it into your bets rather than discovering it at payout: a 2.00 shot returning 15% less profit is effectively a shorter price, and any edge you think you have has to survive that haircut. Our odds converter turns a price into implied probability so the comparison is explicit."
+          ]
+        }
+      ],
+      "takeaways": [
+        "telebirr is the standard betting rail at NLA-licensed Ethiopian books; CBE Birr and M-Pesa follow",
+        "Deposit only to a business short code shown in your betting account, never to a personal number",
+        "Wallet ceilings depend on registration level and can split a large payout across days",
+        "Winnings carry a 15% withholding — the wallet receives the net amount"
+      ],
+      "faq": [
+        {
+          "q": "Can I deposit to a betting site with telebirr?",
+          "a": "Yes — licensed Ethiopian operators accept telebirr through a business short code, with your betting account ID as the reference. The credit is immediate."
+        },
+        {
+          "q": "How is the 15% tax applied to telebirr payouts?",
+          "a": "The operator withholds it before paying out, so the amount reaching your wallet is net of tax. Small winnings below the legal threshold are exempt; the receipt should show the deduction."
+        },
+        {
+          "q": "Why did my telebirr withdrawal arrive in parts?",
+          "a": "Daily and monthly wallet ceilings tied to your registration level cap how much can land at once. Raising the level is a telebirr process, not a betting-site one."
+        }
+      ],
+      "related": [
+        "betting-in-ethiopia",
+        "betting-with-mpesa"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ]
+    },
+    {
+      "slug": "betting-with-flutterwave-and-paystack",
+      "title": "Betting Payments in Nigeria: Flutterwave, Paystack and USSD",
+      "nav": "Flutterwave & Paystack",
+      "cat": "Payments",
+      "minutes": 5,
+      "desc": "How Nigerian betting deposits actually work: the payment gateways behind the buttons, bank transfer and USSD codes, and why payouts go to a bank account rather than a wallet.",
+      "sections": [
+        {
+          "h": "Gateways, not wallets",
+          "ps": [
+            "Flutterwave and Paystack are payment gateways: they sit between a betting site and Nigeria's banking system rather than holding a balance for you. When you tap 'deposit' and see a checkout page offering card, bank transfer or USSD, you are almost certainly on one of them. That distinction matters because your money never lives with the gateway — it moves from your bank to the operator's, and disputes are resolved with those two parties.",
+            "The practical upside is choice. The same checkout usually exposes a debit card path, a one-time virtual account number for a transfer, and a USSD string you can dial from a feature phone, so a failing card is not the end of the attempt."
+          ]
+        },
+        {
+          "h": "Bank transfer and USSD, the reliable paths",
+          "ps": [
+            "Nigerian cards decline for many reasons that have nothing to do with your balance — issuer rules on gambling merchant categories among them. When a card fails, the transfer option generates a dedicated account number for that single payment; sending the exact amount credits your betting account automatically, usually within a minute.",
+            "USSD works the same way without data: the checkout shows a code, you dial it, approve with your PIN, and the gateway matches the payment. Both routes are tied to a bank account in your own name, which is the whole point — Nigerian operators run BVN-based verification and will not pay winnings to a third party's account."
+          ]
+        },
+        {
+          "h": "Withdrawals, verification and the checks that matter",
+          "ps": [
+            "Payouts go to your Nigerian bank account, not back through the card, and the name on that account has to match the betting account. Getting verification done before you need a withdrawal — rather than after a winning weekend — is the single best way to avoid a weekend of support tickets. Bank transfers in Nigeria settle quickly, so the delay you experience is usually the operator's review queue, not the rail.",
+            "Two habits protect you. First, deposit only from inside the betting site's own checkout — screenshots of account numbers circulating in Telegram groups are a standard scam. Second, keep the gateway's reference for every transaction; when something goes missing, that reference is what lets support trace it in minutes rather than days."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Flutterwave and Paystack are gateways to your bank, not wallets that hold your money",
+        "When a card declines, the virtual-account transfer or USSD path usually works",
+        "Payouts land in a bank account in your own name — BVN verification is enforced",
+        "Complete verification before you need a withdrawal, and keep every transaction reference"
+      ],
+      "faq": [
+        {
+          "q": "Why did my card deposit to a betting site fail in Nigeria?",
+          "a": "Card declines on gambling merchant categories are common and come from the issuer, not the betting site. The bank-transfer or USSD option on the same checkout normally goes through."
+        },
+        {
+          "q": "Can I withdraw betting winnings to Flutterwave or Paystack?",
+          "a": "No — they are gateways for collecting payments. Withdrawals are paid to your Nigerian bank account, which must be in the same name as the betting account."
+        },
+        {
+          "q": "How fast are Nigerian betting withdrawals?",
+          "a": "The bank rail itself is fast. Delays almost always come from the operator's review queue, and the first payout is the slow one because that is when verification is checked."
+        }
+      ],
+      "related": [
+        "betting-in-nigeria",
+        "betting-with-mtn-mobile-money"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ]
+    },
+    {
+      "slug": "betting-with-pix",
+      "title": "Betting with PIX in Brazil",
+      "nav": "PIX",
+      "cat": "Payments",
+      "minutes": 5,
+      "desc": "PIX is the instant payment system behind almost every Brazilian betting deposit. How keys and QR codes work, why payouts must return to an account in your own name, and what the regulated market changed.",
+      "sections": [
+        {
+          "h": "Why PIX took over Brazilian betting",
+          "ps": [
+            "PIX is the Central Bank of Brazil's instant payment system, launched in late 2020: transfers settle in seconds, around the clock, between any two participating institutions. In a market where card processing for gambling was awkward and boletos took days, that combination made PIX the default betting rail almost immediately.",
+            "The regulated Brazilian betting market that took shape from 2025 reinforced it. Licensed operators are required to identify players with a CPF and to move money through accounts in the player's own name — which PIX, tied to CPF-registered keys, makes straightforward to enforce."
+          ]
+        },
+        {
+          "h": "Keys, QR codes and how a deposit runs",
+          "ps": [
+            "A PIX key is an alias for an account: a CPF number, a phone number, an email or a random string. Betting deposits usually skip keys entirely and show a QR code or a copy-and-paste code — you open your banking app, choose PIX, paste the code, confirm the amount and approve. The credit appears in seconds and carries an end-to-end ID you can quote in any dispute.",
+            "Because the code is generated for that single payment, never reuse an old one and never send to a key someone shares with you in chat. Paying the operator's static key from a group message is the most common Brazilian betting scam, and the money is gone the moment it settles."
+          ]
+        },
+        {
+          "h": "Withdrawals, CPF and taxes",
+          "ps": [
+            "Payouts return by PIX to a key registered to your own CPF — a licensed operator will refuse a third-party account, and that rule is what makes account-selling schemes fail. Withdrawals typically arrive within minutes once verification is complete, so a first payout that takes hours is nearly always the operator's checks rather than the rail.",
+            "Brazilian rules on taxing winnings have changed with the regulated market, and the operator applies whatever withholding is current at payout. Treat the net figure as the real return when you judge whether a price carried value, and keep your PIX statements as the record of what you actually staked over a season."
+          ]
+        }
+      ],
+      "takeaways": [
+        "PIX settles in seconds, 24/7, and is the default deposit rail for Brazilian betting",
+        "Deposit through the QR or copy-and-paste code inside your betting account, never a key from chat",
+        "Payouts return to a key registered to your own CPF — third-party accounts are refused",
+        "Withholding on winnings is applied at payout; judge value on the net figure"
+      ],
+      "faq": [
+        {
+          "q": "Is PIX the best way to deposit at Brazilian betting sites?",
+          "a": "It is the standard one: instant, free for individuals in most cases, and available at every licensed operator. The alternatives — cards and boleto — are slower and decline more often."
+        },
+        {
+          "q": "Can someone else send a PIX deposit for me?",
+          "a": "No. Licensed Brazilian operators require money to move through accounts in the player's own CPF, and third-party deposits are reversed or frozen during verification."
+        },
+        {
+          "q": "How long do PIX betting withdrawals take?",
+          "a": "Usually minutes once your account is verified. Longer waits come from the operator's review queue, since the PIX rail itself settles in seconds at any hour."
+        }
+      ],
+      "related": [
+        "betting-in-brazil",
+        "betting-with-flutterwave-and-paystack"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ]
+    },
+    {
+      "slug": "betting-with-paypal",
+      "title": "Betting with PayPal: What It Does and Doesn't Cover",
+      "nav": "PayPal",
+      "cat": "Payments",
+      "minutes": 5,
+      "desc": "PayPal is accepted at licensed betting sites in the UK, Ireland, Germany, the Netherlands, the US and Canada. How gambling payments differ from ordinary ones, why buyer protection does not apply, and the bonus trap.",
+      "sections": [
+        {
+          "h": "Where PayPal is actually available for betting",
+          "ps": [
+            "PayPal supports gambling payments only in markets where it holds the relevant permissions and only with licensed operators — among the countries we cover that means the UK, Ireland, Germany, the Netherlands, the US and Canada. In markets without local licensing, the option simply does not appear, and a site advertising PayPal where it should not is a warning sign rather than a feature.",
+            "The appeal is speed on the way out. Where card withdrawals crawl through banking rails, PayPal payouts from licensed books often land the same day, which is why bettors who care about cash-out speed default to it."
+          ]
+        },
+        {
+          "h": "No buyer protection, and other things people assume wrongly",
+          "ps": [
+            "PayPal's buyer protection does not cover gambling transactions. A losing bet is not a faulty product and a dispute will not claw it back; if an operator refuses a legitimate payout your recourse is the gambling regulator, not a PayPal case. Understanding that before you deposit prevents the most common false sense of security.",
+            "Currency conversion is the second surprise. If your PayPal balance and the betting account run in different currencies, PayPal's conversion spread applies on the way in and again on the way out — an invisible few percent that dwarfs the edge on most bets. Holding a balance in the account's own currency, where PayPal allows it, removes the leak."
+          ]
+        },
+        {
+          "h": "The bonus exclusion trap",
+          "ps": [
+            "Many licensed operators exclude PayPal deposits from welcome bonuses, alongside other e-wallets. It is legal, it is disclosed in the terms, and it catches people every week: deposit with the wallet, qualify for nothing, then discover the exclusion afterwards. If a bonus matters to you, read the funding clause before the first deposit, not after.",
+            "The same clause often applies to wagering contributions and to withdrawals — some books require you to cash out to the method you deposited from, which means a PayPal deposit locks the payout route. That is usually convenient, occasionally not."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Available for betting only in licensed markets — UK, Ireland, Germany, Netherlands, US, Canada in our set",
+        "Buyer protection does not apply to gambling; disputes go to the regulator instead",
+        "Watch currency conversion — the spread applies both ways and outweighs most edges",
+        "E-wallet deposits are frequently excluded from welcome bonuses; check the funding clause first"
+      ],
+      "faq": [
+        {
+          "q": "Which betting sites accept PayPal?",
+          "a": "Licensed operators in markets where PayPal supports gambling: the UK, Ireland, Germany, the Netherlands, the US and Canada among the countries we cover. Its absence elsewhere is a licensing matter, not a choice by the site."
+        },
+        {
+          "q": "Does PayPal buyer protection cover betting losses?",
+          "a": "No. Gambling transactions are excluded from buyer protection. If a licensed operator withholds a legitimate payout, the complaint goes to the gambling regulator."
+        },
+        {
+          "q": "Why did my PayPal deposit not qualify for the welcome bonus?",
+          "a": "Most operators exclude e-wallet deposits from bonus eligibility, and the clause sits in the promotion terms. Reading the funding condition before depositing is the only fix."
+        }
+      ],
+      "related": [
+        "betting-with-skrill",
+        "betting-with-debit-cards"
+      ],
+      "glossary": [
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ]
+    },
+    {
+      "slug": "betting-with-skrill",
+      "title": "Betting with Skrill and Neteller",
+      "nav": "Skrill",
+      "cat": "Payments",
+      "minutes": 4,
+      "desc": "Skrill and Neteller are the classic betting e-wallets: fast payouts, wide operator coverage, and three costs people miss — conversion spread, withdrawal fees and bonus exclusions.",
+      "sections": [
+        {
+          "h": "Why bettors use them",
+          "ps": [
+            "Skrill and Neteller (both part of the same group) were built around exactly this use case, and they remain the widest-accepted e-wallets at European licensed books. The practical appeal is the payout: money leaves the operator to the wallet in hours rather than days, and moving between books through a wallet avoids repeatedly handing card details around.",
+            "A second, quieter benefit is separation. Money in a betting wallet is not sitting in your current account, which makes a monthly limit easier to hold to than 'I will stop when I feel like it'."
+          ]
+        },
+        {
+          "h": "The three costs",
+          "ps": [
+            "First, currency conversion: if the wallet holds euros and the betting account runs in another currency, a spread applies each way. Second, withdrawal fees from the wallet to your bank, which are a fixed or percentage charge depending on the route and are easy to forget when you are looking at the operator's 'free withdrawals' banner. Third, inactivity fees — dormant wallets are charged monthly in many regions.",
+            "None of these is hidden, and all three are published in the wallet's fee schedule. Read it once, because on typical betting stakes they can outweigh the value edge you are chasing several times over."
+          ]
+        },
+        {
+          "h": "Bonus exclusions and account rules",
+          "ps": [
+            "As with PayPal, most operators exclude Skrill and Neteller deposits from welcome bonuses and sometimes from wagering contributions. If you plan to claim a promotion, fund it with a different method and keep the wallet for withdrawals — a split that is explicitly allowed at most books, though the return-to-source rule may still route part of the payout back to your original method.",
+            "Wallet accounts must be in your own name and verified; operators match the wallet identity against the betting account, and a mismatch stops the payout. Verify both before a big weekend rather than during one."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Widest e-wallet acceptance at European licensed books, with same-day payouts",
+        "Three costs to check: conversion spread, wallet-to-bank withdrawal fees, inactivity fees",
+        "Usually excluded from welcome bonuses — fund promotions another way",
+        "Wallet must be verified and in your own name or the payout stalls"
+      ],
+      "faq": [
+        {
+          "q": "Is Skrill better than a card for betting?",
+          "a": "For withdrawal speed, usually yes. For total cost, not always — conversion spreads and wallet-to-bank fees can exceed what a card costs, so it depends on your currencies and how often you cash out."
+        },
+        {
+          "q": "Why can't I claim a bonus with a Skrill deposit?",
+          "a": "Operators exclude e-wallet deposits from most welcome offers, and the term is in the promotion conditions. Fund the bonus with an eligible method and use the wallet for withdrawals instead."
+        },
+        {
+          "q": "Are Skrill and Neteller the same thing?",
+          "a": "They are separate brands under the same owner with near-identical mechanics and acceptance. Choosing between them usually comes down to which one a specific operator supports and the fee schedule in your region."
+        }
+      ],
+      "related": [
+        "betting-with-paypal",
+        "betting-with-debit-cards"
+      ],
+      "glossary": [
+        "wagering-requirements"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ]
+    },
+    {
+      "slug": "betting-with-ideal",
+      "title": "Betting with iDEAL in the Netherlands",
+      "nav": "iDEAL",
+      "cat": "Payments",
+      "minutes": 4,
+      "desc": "iDEAL is the standard deposit method at KSA-licensed Dutch betting sites. How the bank-redirect flow works, why payouts return to the same account, and how CRUKS fits in.",
+      "sections": [
+        {
+          "h": "The Dutch bank rail",
+          "ps": [
+            "iDEAL is the shared payment standard of the Dutch banks: instead of entering card details you pick your bank at checkout, approve the payment in its own app, and land back at the merchant with the money already moved. It is not a wallet and holds no balance — the transfer happens directly between your bank account and the operator's.",
+            "At KSA-licensed betting sites it is the default deposit option, and the reason is regulatory as much as practical: money moving through a named Dutch bank account satisfies the identification requirements of the KOA Act far more cleanly than anonymous instruments would."
+          ]
+        },
+        {
+          "h": "Deposits, payouts and identity",
+          "ps": [
+            "Deposits credit within seconds and cannot be reversed by you afterwards — iDEAL has no chargeback mechanism, which is the trade-off for the speed. Withdrawals go back to the same bank account, tied to the same name, so buying or lending accounts simply does not work in this market.",
+            "Because your betting account is bound to a verified bank identity, the licensed Dutch market also enforces player protections through it: CRUKS, the national self-exclusion register, blocks access at every licensed operator at once, and deposit-limit rules apply market-wide rather than per site."
+          ]
+        },
+        {
+          "h": "What to check",
+          "ps": [
+            "Only two things matter in practice: that the operator holds a KSA licence — the register is public and takes a minute to check — and that the iDEAL checkout is reached from inside your betting account rather than a link someone sent you. Phishing pages that imitate the bank-selection screen are the main fraud pattern on this rail.",
+            "Unlicensed sites cannot offer iDEAL, so its presence is itself a useful signal. The absence of it on a site targeting Dutch players is a reason to walk away, not a payment inconvenience."
+          ]
+        }
+      ],
+      "takeaways": [
+        "iDEAL is a bank redirect, not a wallet — money moves directly between accounts",
+        "Deposits are instant and non-reversible; payouts return to the same named account",
+        "Only KSA-licensed operators can offer it, which makes it a licence signal",
+        "CRUKS self-exclusion and market-wide deposit limits attach to the same verified identity"
+      ],
+      "faq": [
+        {
+          "q": "Which Dutch betting sites accept iDEAL?",
+          "a": "Effectively all KSA-licensed operators. Sites that cannot offer iDEAL to Dutch players are generally outside the licensed market, which is a reason for caution."
+        },
+        {
+          "q": "Can I get an iDEAL betting deposit reversed?",
+          "a": "No. iDEAL transfers are final and have no chargeback mechanism — that is the price of instant settlement. Disputes about an operator's conduct go to the KSA."
+        },
+        {
+          "q": "How fast are iDEAL betting withdrawals?",
+          "a": "Usually within a day at licensed operators, back to the same bank account you deposited from. The delay is the operator's review, not the rail."
+        }
+      ],
+      "related": [
+        "betting-in-netherlands",
+        "betting-with-blik"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ]
+    },
+    {
+      "slug": "betting-with-blik",
+      "title": "Betting with BLIK in Poland",
+      "nav": "BLIK",
+      "cat": "Payments",
+      "minutes": 4,
+      "desc": "BLIK is the mobile payment standard behind most Polish betting deposits. How the six-digit code works, why payouts go by bank transfer, and how the 12% turnover tax sits on top.",
+      "sections": [
+        {
+          "h": "How BLIK works",
+          "ps": [
+            "BLIK is run jointly by Poland's major banks: you open your banking app, generate a six-digit code valid for a couple of minutes, paste it into the merchant's checkout and confirm the payment back in the app. There is no card number, no wallet balance and no stored credential — which is precisely why it spread so fast.",
+            "At Ministry of Finance-licensed Polish bookmakers it is the standard deposit route, credited instantly. Unlicensed sites blocked on the national domain register cannot offer it, so BLIK availability is a rough proxy for a legal operator."
+          ]
+        },
+        {
+          "h": "Deposits, withdrawals and the code rule",
+          "ps": [
+            "The single safety rule is absolute: a BLIK code is generated by you, for one payment, at the moment you pay. Anyone who asks you to read a code out — 'to verify your account', 'to receive a bonus' — is taking your money, and the transfer is irreversible. That scam is common enough in Poland that banks warn about it in-app.",
+            "Withdrawals do not go back through BLIK: payouts are made by ordinary bank transfer to an account in your own name, usually within a working day. Verification is checked before the first one, so complete it early."
+          ]
+        },
+        {
+          "h": "The tax that changes your maths",
+          "ps": [
+            "Poland taxes betting turnover at 12% — every stake, win or lose — and licensed operators price it into their odds. That is why Polish prices look shorter than German or British ones on the same match, and it has nothing to do with which payment method you use.",
+            "On top of that, single-bet winnings above 2,280 PLN carry a 10% tax withheld at payout. Neither figure is a payments issue, but both decide whether a price carries value: convert the offered odds to an implied probability, then ask whether your estimate still beats it after the haircut."
+          ]
+        }
+      ],
+      "takeaways": [
+        "A six-digit code from your banking app, valid for minutes, for one payment only",
+        "Never share a BLIK code with anyone — that is the standard Polish payment scam",
+        "Deposits are instant; withdrawals arrive by bank transfer to an account in your name",
+        "The 12% turnover tax is already inside Polish odds; winnings over 2,280 PLN carry 10% more"
+      ],
+      "faq": [
+        {
+          "q": "Do Polish betting sites accept BLIK?",
+          "a": "Licensed ones do — it is the default deposit method. Sites on the national register of prohibited domains cannot process it, which makes BLIK support a useful legality signal."
+        },
+        {
+          "q": "Can I withdraw betting winnings with BLIK?",
+          "a": "No. BLIK handles deposits; payouts are made by bank transfer to an account in your own name, normally within a working day."
+        },
+        {
+          "q": "Why are Polish betting odds shorter?",
+          "a": "Licensed operators pay a 12% tax on turnover and price it into the odds. It applies regardless of payment method and is the cost of a legally enforceable market."
+        }
+      ],
+      "related": [
+        "betting-in-poland",
+        "betting-with-ideal"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ]
+    },
+    {
+      "slug": "betting-with-swish",
+      "title": "Betting with Swish and BankID in Sweden",
+      "nav": "Swish",
+      "cat": "Payments",
+      "minutes": 4,
+      "desc": "Sweden's licensed market runs on BankID identity and Swish payments — near-instant deposits and withdrawals, one welcome bonus per operator, and Spelpaus attached to the same identity.",
+      "sections": [
+        {
+          "h": "Identity first, payment second",
+          "ps": [
+            "Every Spelinspektionen-licensed Swedish site verifies players through BankID, the national digital identity. There is no document upload and no anonymous play: registration takes a minute, and the account is bound to your personal number from the first click. Swish, the banks' instant payment app, then moves the money on the same identity rails.",
+            "The result is the fastest legal betting cashflow in Europe. Deposits are immediate and withdrawals often land in minutes, because the operator does not need to run identity checks it already completed at signup."
+          ]
+        },
+        {
+          "h": "What the licence buys you",
+          "ps": [
+            "Swedish rules cap operators at a single welcome bonus each — reload and VIP offers are illegal. That looks restrictive until you consider where promotional money comes from: markets that compete on endless bonuses recover the cost in wider margins. Sweden forces the competition into the odds themselves, which is where a value bettor wants it.",
+            "Spelpaus.se, the national self-exclusion register, attaches to the same BankID identity and blocks every licensed operator simultaneously. Licensed sites check it on every login, so exclusion is real rather than a per-site setting."
+          ]
+        },
+        {
+          "h": "Practical notes",
+          "ps": [
+            "Money moves only between accounts in your own name — pay-n-play is built on that assumption, so there is no way to fund an account for someone else. If a site serving Swedish players cannot offer BankID and Swish, it is operating outside the licensed market and none of the above protections apply.",
+            "For bettors, the honest summary is that Sweden trades privacy for speed and enforceability. If fast, reliable payouts matter more to you than anonymity, it is close to the best-regulated setup available."
+          ]
+        }
+      ],
+      "takeaways": [
+        "BankID identity plus Swish payments make deposits and payouts near-instant",
+        "One welcome bonus per operator by law — competition happens in the odds",
+        "Spelpaus blocks every licensed site at once, tied to the same identity",
+        "No third-party funding: accounts and payments must be in your own name"
+      ],
+      "faq": [
+        {
+          "q": "How fast are Swedish betting withdrawals?",
+          "a": "Often minutes. Identity is verified at signup through BankID, so a payout to Swish or a bank account does not wait on document checks."
+        },
+        {
+          "q": "Why do Swedish betting sites only offer one bonus?",
+          "a": "Swedish law caps each licensed operator at a single welcome offer; reload and loyalty bonuses are prohibited. The intent is consumer protection."
+        },
+        {
+          "q": "What is Spelpaus?",
+          "a": "Sweden's national self-exclusion register. One registration blocks access to every licensed operator at once for the chosen period, checked at every login."
+        }
+      ],
+      "related": [
+        "betting-in-sweden",
+        "betting-with-twint"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ]
+    },
+    {
+      "slug": "betting-with-twint",
+      "title": "Betting with TWINT in Switzerland",
+      "nav": "TWINT",
+      "cat": "Payments",
+      "minutes": 4,
+      "desc": "TWINT and PostFinance are the payment rails at Switzerland's two licensed sports betting operators. How the closed market shapes what you can pay with — and what the CHF 1 million tax rule means.",
+      "sections": [
+        {
+          "h": "A closed market with local rails",
+          "ps": [
+            "Switzerland reserves sports betting for the two cantonal lottery societies — Swisslos in the German- and Italian-speaking regions, Loterie Romande in the French-speaking ones — under the 2019 Money Gaming Act. Their platforms take TWINT, the Swiss banks' mobile payment app, alongside PostFinance and cards.",
+            "Foreign bookmakers are not licensed and their domains are DNS-blocked, so the payment question in Switzerland is settled before it is asked: if a site is reachable and legal, it takes Swiss rails; if it needs a VPN, no payment method makes it safe."
+          ]
+        },
+        {
+          "h": "How TWINT payments run",
+          "ps": [
+            "TWINT links to your Swiss bank account or card and settles through a QR code or a phone-number match, confirmed with a PIN or biometrics in the app. Deposits are instant; payouts return to the same account, since the operators are state-adjacent and run full identity checks.",
+            "There is no chargeback path — TWINT is a bank transfer in a friendlier wrapper — which is fine when the counterparty is a cantonal lottery society and would be alarming with anyone else."
+          ]
+        },
+        {
+          "h": "Monopoly pricing and the tax rule",
+          "ps": [
+            "One operator per language region means no line shopping and visibly wider margins than competitive European books. That is the structural cost of the Swiss system, and no payment method changes it. What helps is knowing the size of the margin: convert the offered odds into implied probability and compare against a model estimate before betting.",
+            "The compensation is genuinely good tax treatment: winnings from licensed Swiss games are tax-free up to CHF 1 million per year, with only the excess taxed as income. Winnings from unlicensed foreign sites enjoy no such exemption."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Only Swisslos and Loterie Romande are licensed; they take TWINT, PostFinance and cards",
+        "TWINT settles instantly with no chargeback path — acceptable given a state-adjacent counterparty",
+        "One operator per region means no line shopping and wider margins",
+        "Licensed winnings are tax-free up to CHF 1 million per year"
+      ],
+      "faq": [
+        {
+          "q": "Can I use TWINT at foreign betting sites?",
+          "a": "No. Foreign bookmakers are unlicensed in Switzerland and DNS-blocked, and Swiss payment rails do not serve them. Only the cantonal lottery societies' platforms accept TWINT."
+        },
+        {
+          "q": "Are Swiss betting winnings taxed?",
+          "a": "Winnings from licensed Swiss games are tax-free up to CHF 1 million per year; above that they are taxed as income. Winnings from unlicensed foreign sites have no exemption."
+        },
+        {
+          "q": "Why are Swiss odds worse than elsewhere?",
+          "a": "There is one licensed operator per language region and no competition, so margins are wider. Converting prices to implied probability shows exactly how much margin each market carries."
+        }
+      ],
+      "related": [
+        "betting-in-switzerland",
+        "betting-with-swish"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ]
+    },
+    {
+      "slug": "betting-with-upi",
+      "title": "Betting with UPI in India: What to Know",
+      "nav": "UPI",
+      "cat": "Payments",
+      "minutes": 5,
+      "desc": "UPI dominates Indian payments, and betting sits in a legally fragmented space. How UPI works, why gambling payments are unreliable through it, and what the state-by-state picture means.",
+      "sections": [
+        {
+          "h": "The legal picture comes first",
+          "ps": [
+            "India's gambling law is a patchwork: a colonial-era federal act, state legislatures with their own rules, and an unsettled line between games of skill and games of chance. Some states ban online betting outright, others regulate parts of it, and enforcement varies. Anyone telling you the position is simple is selling something.",
+            "That matters more than any payment detail. Before considering a deposit, establish what your state's law says — and understand that a site accepting Indian players is not evidence that it is legal where you live."
+          ]
+        },
+        {
+          "h": "Why UPI often fails for betting",
+          "ps": [
+            "UPI is the National Payments Corporation of India's instant rail — virtual payment addresses, QR codes, real-time settlement, and it handles a staggering share of Indian transactions. Banks and payment service providers do, however, apply their own rules to gambling merchant categories, and blocked or reversed transactions are common.",
+            "The workarounds people find — paying an intermediary's personal UPI ID, using a third-party 'agent' — are exactly where money disappears. A personal UPI transfer has no merchant protection, no dispute path, and no way to prove the payment was meant to fund a betting account."
+          ]
+        },
+        {
+          "h": "If you bet anyway, the honest checklist",
+          "ps": [
+            "Never send a UPI payment to a personal ID on someone's instruction, treat any request to route money through an 'agent' as fraud, and keep every transaction reference. Understand that a blocked deposit is a bank policy decision, not a technical glitch to be engineered around.",
+            "Our predictions and model probabilities work the same way for Indian fixtures as for any other, and reading them costs nothing. The payment question is separate — and in India it is a legal question first, a banking question second, and a convenience question a distant third."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Indian gambling law is state-by-state and unsettled — check your state first",
+        "Banks and PSPs frequently block gambling transactions on UPI; that is policy, not a bug",
+        "Never route deposits through a personal UPI ID or an 'agent' — there is no recourse",
+        "A site accepting Indian players is not proof it is legal where you live"
+      ],
+      "faq": [
+        {
+          "q": "Can I use UPI for betting deposits in India?",
+          "a": "Sometimes, but banks and payment providers often block gambling transactions, and the legality depends on your state. Blocked payments are a policy decision rather than a technical fault."
+        },
+        {
+          "q": "Is online betting legal in India?",
+          "a": "It varies by state and the law is unsettled, with a shifting line between games of skill and chance. Check your own state's position before doing anything else."
+        },
+        {
+          "q": "What happens if I pay a betting agent by UPI?",
+          "a": "You lose every protection. A personal UPI transfer has no merchant dispute path, and the payment cannot be traced to a betting account. Treat any such request as fraud."
+        }
+      ],
+      "related": [
+        "betting-in-india",
+        "betting-with-debit-cards"
+      ],
+      "glossary": [
+        "bankroll-management"
+      ],
+      "tools": [
+        {
+          "href": "/tools/odds-converter",
+          "label": "Turn any price into implied probability before you bet"
+        }
+      ]
+    },
+    {
+      "slug": "betting-with-debit-cards",
+      "title": "Betting with Debit Cards: Rules, Declines and Speed",
+      "nav": "Debit cards",
+      "cat": "Payments",
+      "minutes": 5,
+      "desc": "Cards are the most universal betting deposit method and the most misunderstood. Why credit cards are banned in some markets, what causes declines, and how card withdrawals really work.",
+      "sections": [
+        {
+          "h": "Debit yes, credit increasingly not",
+          "ps": [
+            "Several regulated markets have banned credit-card gambling outright — the UK did so in 2020, and other jurisdictions have followed with their own restrictions. The reasoning is straightforward: betting with borrowed money is where the worst harm concentrates. Where the ban applies, a credit card will simply be refused at the cashier.",
+            "Debit cards remain the most widely accepted method almost everywhere, precisely because they move money you already have and carry the identity checks banks already performed."
+          ]
+        },
+        {
+          "h": "Why card deposits get declined",
+          "ps": [
+            "The commonest cause has nothing to do with your balance: card issuers assign gambling a specific merchant category code and many block it by default, particularly on cards issued to younger customers or on accounts with gambling-block features enabled. The decline comes from your bank, so the betting site's support cannot fix it.",
+            "Other frequent causes are 3-D Secure failing on an old phone number, a mismatch between the cardholder name and the betting account, and cross-border rules where the issuer blocks foreign gambling merchants. In markets where a local rail exists — iDEAL, BLIK, PIX, mobile money — that rail is usually the faster answer than fighting the card."
+          ]
+        },
+        {
+          "h": "Withdrawals and the return-to-source rule",
+          "ps": [
+            "Card payouts follow a rule most bettors meet only once: money returns to the card it came from, up to the amount deposited, before any surplus can go elsewhere. That is an anti-money-laundering requirement, not an operator preference, and it explains why a payout sometimes arrives split across two methods.",
+            "Card withdrawals also settle more slowly than instant rails — typically one to five working days depending on the issuer — even when the operator approves them immediately. If speed matters, deposit with the method you intend to be paid by."
+          ]
+        }
+      ],
+      "takeaways": [
+        "Credit-card gambling is banned in the UK and restricted elsewhere; debit remains universal",
+        "Most declines come from your issuer's gambling merchant-category rules, not the betting site",
+        "Payouts return to the source card first — an AML rule that can split a withdrawal",
+        "Card withdrawals take days; local instant rails are faster where they exist"
+      ],
+      "faq": [
+        {
+          "q": "Why does my debit card keep getting declined at betting sites?",
+          "a": "Usually your issuer blocks the gambling merchant category, or a gambling block is enabled on the account. It is a bank decision — the betting site cannot override it."
+        },
+        {
+          "q": "Can I use a credit card for betting?",
+          "a": "Not in the UK, where credit-card gambling has been banned since 2020, and not in several other regulated markets. Debit cards remain accepted."
+        },
+        {
+          "q": "How long do card withdrawals take?",
+          "a": "Typically one to five working days after the operator approves them, depending on the issuer. Instant local rails are considerably faster where available."
+        }
+      ],
+      "related": [
+        "betting-with-paypal",
+        "betting-with-skrill"
       ],
       "glossary": [
         "bankroll-management"

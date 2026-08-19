@@ -4,7 +4,7 @@ import predictions from '../data/predictions.json';
 import { slugify } from '../lib/utils.js';
 import { SHOW_OPERATORS } from '../lib/operators.js';
 
-const { active = '', lang = 'en', i18nPath = null } = Astro.props;
+const { active = '', lang = 'en', i18nPath = null, langs: langsProp = null } = Astro.props;
 // top live leagues for the nav — hardcoded links 404 when a league leaves the feed
 const _counts = {};
 for (const tp of (predictions.tips ?? [])) _counts[tp.league] = (_counts[tp.league] ?? 0) + 1;
@@ -15,7 +15,8 @@ const L = (pth) => lhref(lang, pth);
 // picker target: same page in the other language when translated, else its home
 const langHref = (l) => (i18nPath ? (l === 'en' ? i18nPath : `/${l}${i18nPath}`) : homePath(l));
 // on match pages the picker offers only the languages that page exists in
-const langs = i18nPath ? langsFor(i18nPath) : ['en', ...langsFor('/').slice(1)];
+// langsProp: families whose language set depends on data, not the path (h2h)
+const langs = langsProp ?? (i18nPath ? langsFor(i18nPath) : ['en', ...langsFor('/').slice(1)]);
 ---
 <header class="hdr">
   <div class="container hdr-bar">

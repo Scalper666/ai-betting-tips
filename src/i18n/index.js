@@ -29,15 +29,22 @@ export const ALT_LANGS = ['es', 'pt', 'de', 'fr', 'sw', 'ha', 'yo', 'ig', 'am'];
 // consult this list.
 export const MATCH_LANGS = [...ALT_LANGS];
 
+// H2H pages are the biggest page family we own (~1700 pairs), and Cloudflare
+// Pages refuses a deployment over 20,000 files — 9 languages of them blew the
+// limit (27k) and failed the deploy outright. They ship in the four languages
+// whose markets actually search "team vs team h2h"; the compact African
+// editions link to the EN pages via lhref, as they already do for matches.
+// Budget check before widening: `find dist -type f | wc -l` must stay < 20000.
+export const H2H_LANGS = ['es', 'pt', 'de', 'fr'];
+
 const MATCH_PATH = /^\/predictions\/(?!daily(\/|$)|today$|tomorrow$|weekend$)[^/]+$/;
 // h2h pages exist only in the full-parity languages (same set as match pages)
 const H2H_PATH = /^\/h2h(\/|$)/;
 // which language versions exist for a given localized path
 export const langsFor = (path) => {
   const clean = String(path ?? '').replace(/\/+$/, '') || '/';
-  return MATCH_PATH.test(clean) || H2H_PATH.test(clean)
-    ? ['en', ...MATCH_LANGS]
-    : ['en', ...ALT_LANGS];
+  if (H2H_PATH.test(clean)) return ['en', ...H2H_LANGS];
+  return MATCH_PATH.test(clean) ? ['en', ...MATCH_LANGS] : ['en', ...ALT_LANGS];
 };
 export const homePath = (lang) => (lang === 'en' ? '/' : `/${lang}/`);
 
@@ -69,8 +76,9 @@ export const lhref = (lang, path) => {
   if (!path || lang === 'en' || !String(path).startsWith('/')) return path;
   const clean = String(path).replace(/\/+$/, '') || '/';
   if (!I18N_PATHS.some((re) => re.test(clean))) return path;
-  // compact editions carry no per-match or h2h pages — link those to the EN page
-  if ((MATCH_PATH.test(clean) || H2H_PATH.test(clean)) && !MATCH_LANGS.includes(lang)) return path;
+  // families that don't exist in every language link to the EN page instead
+  if (MATCH_PATH.test(clean) && !MATCH_LANGS.includes(lang)) return path;
+  if (H2H_PATH.test(clean) && !H2H_LANGS.includes(lang)) return path;
   return clean === '/' ? `/${lang}/` : `/${lang}${clean}`;
 };
 
@@ -146,6 +154,7 @@ export const D = {
   'nav.oddsFmt': { en: 'Odds format', es: 'Formato de cuotas', pt: 'Formato de odds', de: 'Quotenformat' },
   // h2h pages (pair + hub + league hub)
   'hh.crumb': { en: 'H2H', es: 'H2H', pt: 'H2H', de: 'H2H' },
+  'mp.fullH2h': { en: 'Full H2H history →', es: 'Historial completo H2H →', pt: 'Retrospecto completo →', de: 'Komplette H2H-Historie →' },
   'hh.title': { en: '{a} vs {b} — Head-to-Head Record & Past Results', es: '{a} vs {b} — Historial de enfrentamientos y resultados', pt: '{a} x {b} — Retrospecto de confrontos e resultados', de: '{a} gegen {b} — Direkter Vergleich & bisherige Ergebnisse' },
   'hh.desc': { en: '{a} vs {b} head-to-head: {n} meetings — {aw} {a} wins, {d} draws, {bw} {b} wins. {avg} goals per game on average, full match list inside.', es: 'Cara a cara {a} vs {b}: {n} partidos — {aw} victorias de {a}, {d} empates, {bw} de {b}. {avg} goles por partido de media, con la lista completa.', pt: 'Confronto direto {a} x {b}: {n} jogos — {aw} vitórias do {a}, {d} empates, {bw} do {b}. Média de {avg} gols por jogo, lista completa na página.', de: 'Direkter Vergleich {a} gegen {b}: {n} Duelle — {aw} Siege {a}, {d} Remis, {bw} Siege {b}. Im Schnitt {avg} Tore pro Spiel, komplette Spielliste auf der Seite.' },
   'hh.h1em': { en: 'head-to-head', es: 'cara a cara', pt: 'confronto direto', de: 'im direkten Vergleich' },
@@ -594,6 +603,7 @@ export const D = {
   'gd.catStrategy': { en: 'Strategy', es: 'Estrategia', pt: 'Estratégia', de: 'Strategie' },
   'gd.catBookmakers': { en: 'Bookmakers', es: 'Casas de apuestas', pt: 'Casas de apostas', de: 'Buchmacher' },
   'gd.catCountries': { en: 'Countries', es: 'Países', pt: 'Países', de: 'Länder' },
+  'gd.catPayments': { en: 'Payments', es: 'Pagos', pt: 'Pagamentos', de: 'Zahlungen' },
   'gd.workedExample': { en: 'Worked example', es: 'Ejemplo práctico', pt: 'Exemplo prático', de: 'Rechenbeispiel' },
   'gd.takeaways': { en: 'Key takeaways', es: 'Ideas clave', pt: 'Pontos-chave', de: 'Das Wichtigste' },
   'gd.faqTitle': { en: 'Frequently asked questions', es: 'Preguntas frecuentes', pt: 'Perguntas frequentes', de: 'Häufige Fragen' },
@@ -618,6 +628,7 @@ export const D = {
   'gd.blurbStrategy': { en: 'Staking, value and the mistakes that empty bankrolls.', es: 'Staking, valor y los errores que vacían bancas.', pt: 'Staking, valor e os erros que esvaziam bancas.', de: 'Einsätze, Value und die Fehler, die Bankrolls leeren.' },
   'gd.blurbBookmakers': { en: 'Picking and using betting sites without getting burned.', es: 'Elegir y usar casas de apuestas sin quemarse.', pt: 'Escolher e usar sites de apostas sem se queimar.', de: 'Wettanbieter wählen und nutzen, ohne sich zu verbrennen.' },
   'gd.blurbCountries': { en: 'How betting actually works market by market — rules, payments, taxes.', es: 'Cómo funcionan las apuestas mercado a mercado: reglas, pagos, impuestos.', pt: 'Como as apostas funcionam mercado a mercado — regras, pagamentos, impostos.', de: 'Wie Wetten Markt für Markt funktionieren — Regeln, Zahlungen, Steuern.' },
+  'gd.blurbPayments': { en: 'Deposit and withdrawal rails explained: speed, fees, limits and what to check.', es: 'Métodos de depósito y retiro explicados: velocidad, comisiones, límites y qué revisar.', pt: 'Métodos de depósito e saque explicados: velocidade, taxas, limites e o que verificar.', de: 'Ein- und Auszahlungswege erklärt: Tempo, Gebühren, Limits und worauf zu achten ist.' },
   'gd.seoH2': { en: 'Learn first, bet less, choose better', es: 'Aprende primero, apuesta menos, elige mejor', pt: 'Aprenda primeiro, aposte menos, escolha melhor', de: 'Erst verstehen, weniger wetten, besser wählen' },
   'gd.seoP': { en: "These guides exist because most betting losses are structural, not unlucky: paying high margins, misreading bonus terms, staking emotionally, chasing longshots. Each article explains one mechanic with real numbers, links the calculator or live page where you can see it working, and points to the glossary for quick definitions. Our own model's settled record — wins and losses alike — is published on the results pages, so every claim here can be checked against real data. Betting involves risk; nothing on this site is financial advice. 18+, please gamble responsibly.", es: 'Estas guías existen porque la mayoría de las pérdidas en apuestas son estructurales, no mala suerte: pagar márgenes altos, malinterpretar términos de bonos, apostar con emociones, perseguir cuotas altas. Cada artículo explica un mecanismo con números reales, enlaza la calculadora o página en vivo donde verlo funcionar y remite al glosario para definiciones rápidas. El historial liquidado de nuestro modelo — victorias y derrotas — está publicado en las páginas de resultados. Apostar implica riesgo; nada en este sitio es asesoramiento financiero. 18+, juega con responsabilidad.', pt: 'Estes guias existem porque a maioria das perdas em apostas é estrutural, não azar: pagar margens altas, interpretar mal termos de bônus, apostar com emoção, perseguir odds altas. Cada artigo explica um mecanismo com números reais, aponta a calculadora ou página ao vivo onde vê-lo funcionando e remete ao glossário para definições rápidas. O histórico liquidado do nosso modelo — vitórias e derrotas — está publicado nas páginas de resultados. Apostar envolve risco; nada neste site é aconselhamento financeiro. 18+, jogue com responsabilidade.', de: 'Diese Ratgeber existieren, weil die meisten Wettverluste strukturell sind, nicht Pech: hohe Margen zahlen, Bonusbedingungen falsch lesen, emotional setzen, Außenseitern hinterherjagen. Jeder Artikel erklärt einen Mechanismus mit echten Zahlen, verlinkt den Rechner oder die Live-Seite dazu und verweist aufs Glossar für schnelle Definitionen. Die abgerechnete Bilanz unseres Modells — Siege wie Niederlagen — ist auf den Ergebnisseiten veröffentlicht. Wetten birgt Risiken; nichts auf dieser Seite ist Finanzberatung. 18+, bitte spiele verantwortungsvoll.' },
   // glossary UI

@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import ToolsBox from '../components/ToolsBox.astro';
-import { buildH2hPairs } from '../lib/h2h.js';
+import { buildH2hPairs, hasH2hIn } from '../lib/h2h.js';
 import { slugify, BUILD_ISO, fmtDate } from '../lib/utils.js';
 import { t, lhref } from '../i18n/index.js';
 
@@ -12,7 +12,8 @@ const T = (k) => t(lang, k);
 const L = (pth) => lhref(lang, pth);
 const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
 
-const pairs = buildH2hPairs();
+// a localized hub lists only the leagues that language actually has
+const pairs = buildH2hPairs().filter((p) => hasH2hIn(lang, p.league));
 const byLeague = {};
 for (const p of pairs) (byLeague[p.league] ??= []).push(p);
 

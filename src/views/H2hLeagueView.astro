@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import ToolsBox from '../components/ToolsBox.astro';
-import { buildH2hPairs } from '../lib/h2h.js';
+import { buildH2hPairs, h2hLangsFor, hasH2hIn } from '../lib/h2h.js';
 import { slugify, BUILD_ISO, fmtDate } from '../lib/utils.js';
 import { hasLeaguePage, hasTablePage } from '../lib/links.js';
 import { t, lhref } from '../i18n/index.js';
@@ -15,7 +15,7 @@ const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`
 
 const allPairs = buildH2hPairs();
 const otherLeagues = [...new Set(allPairs.map((p) => p.league))]
-  .filter((l) => l !== league)
+  .filter((l) => l !== league && hasH2hIn(lang, l))
   .map((l) => ({ name: l, n: allPairs.filter((p) => p.league === l).length }))
   .sort((a, b) => b.n - a.n);
 
@@ -42,7 +42,7 @@ const schema = {
   })),
 };
 ---
-<Base lang={lang} i18nPath={`/h2h/league/${slugify(league)}`} title={title} description={description} schema={schema} updated={BUILD_ISO} active="predictions">
+<Base lang={lang} langs={h2hLangsFor(league)} i18nPath={`/h2h/league/${slugify(league)}`} title={title} description={description} schema={schema} updated={BUILD_ISO} active="predictions">
   <div class="container">
     <div class="page-head">
       <div class="crumbs">

@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { SHOW_OPERATORS } from '../lib/operators.js';
+import { paymentGuide } from '../lib/payments.js';
 import BookmakerRow from '../components/BookmakerRow.astro';
 import CasinoRow from '../components/CasinoRow.astro';
 import countryData from '../data/countries.json';
@@ -86,7 +87,10 @@ const description = F('cn.desc', { name: country.name, reg: country.regulator })
               <tbody>
                 <tr><td class="o-match" style="font-weight:700">{T('cn.regulator')}</td><td class="o-cell"><span class="cb">{country.regulator}</span></td></tr>
                 <tr><td class="o-match" style="font-weight:700">{T('cn.currency')}</td><td class="o-cell"><span class="cb">{country.currency}</span></td></tr>
-                <tr><td class="o-match" style="font-weight:700">{T('cn.popularPayments')}</td><td class="o-cell"><span class="cb">{country.popular_payments.join(', ')}</span></td></tr>
+                <tr><td class="o-match" style="font-weight:700">{T('cn.popularPayments')}</td><td class="o-cell"><span class="cb">{country.popular_payments.map((pm, i) => {
+                  const gslug = paymentGuide(pm);
+                  return (<>{i > 0 && ', '}{gslug ? <a href={L(`/guides/${gslug}`)}>{pm}</a> : pm}</>);
+                })}</span></td></tr>
               </tbody>
             </table>
           </div></div>
