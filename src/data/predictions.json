@@ -1,72 +1,16 @@
 {
-  "updated_at": "2026-08-19T21:09:55.867983+00:00",
+  "updated_at": "2026-08-19T21:30:50.644353+00:00",
   "source": "the-odds-api.com",
-  "quota_remaining": "13274",
+  "quota_remaining": "13166",
   "stats": {
-    "total": 294,
+    "total": 293,
     "by_sport": {
-      "⚽": 294
+      "⚽": 293
     },
     "high_confidence": 0,
-    "avg_edge_pct": 0.04
+    "avg_edge_pct": -0.07
   },
   "tips": [
-    {
-      "id": "857e387be2e9f73e825ad02a2ec74cc3",
-      "sport_key": "soccer_spain_la_liga",
-      "sport_icon": "⚽",
-      "league": "La Liga",
-      "league_short": "LL",
-      "kickoff": "2026-08-19T19:00:00Z",
-      "home": "Atlético Madrid",
-      "away": "Málaga",
-      "best_h2h": {
-        "Atlético Madrid": {
-          "price": 1.09,
-          "bookmaker": "Betfair"
-        },
-        "Málaga": {
-          "price": 210.0,
-          "bookmaker": "Betfair"
-        },
-        "Draw": {
-          "price": 100.0,
-          "bookmaker": "Betclic (FR)"
-        }
-      },
-      "odds_board": [
-        {
-          "bookmaker": "Betfair",
-          "prices": {
-            "Atlético Madrid": 1.09,
-            "Málaga": 210.0,
-            "Draw": 11.5
-          }
-        },
-        {
-          "bookmaker": "Betclic (FR)",
-          "prices": {
-            "Atlético Madrid": 1.0,
-            "Málaga": 100.0,
-            "Draw": 100.0
-          }
-        }
-      ],
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 34.0,
-        "bookmaker": "Nordic Bet",
-        "confidence": 4,
-        "edge_pct": 37.23,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5,
-        "official": false,
-        "basis": "market"
-      },
-      "model": null,
-      "value_picks": []
-    },
     {
       "id": "5272777a4297a857ce64730e5acad9c0",
       "sport_key": "soccer_usa_mls",
@@ -78,7 +22,7 @@
       "away": "Chicago Fire",
       "best_h2h": {
         "Chicago Fire": {
-          "price": 2.48,
+          "price": 2.5,
           "bookmaker": "Betfair"
         },
         "Orlando City SC": {
@@ -94,16 +38,16 @@
         {
           "bookmaker": "Betfair",
           "prices": {
-            "Chicago Fire": 2.48,
-            "Orlando City SC": 2.78,
+            "Chicago Fire": 2.5,
+            "Orlando City SC": 2.74,
             "Draw": 4.1
           }
         },
         {
           "bookmaker": "Matchbook",
           "prices": {
-            "Chicago Fire": 2.48,
-            "Orlando City SC": 2.78,
+            "Chicago Fire": 2.5,
+            "Orlando City SC": 2.74,
             "Draw": 4.1
           }
         },
@@ -113,14 +57,6 @@
             "Chicago Fire": 2.33,
             "Orlando City SC": 2.65,
             "Draw": 4.46
-          }
-        },
-        {
-          "bookmaker": "Pinnacle",
-          "prices": {
-            "Chicago Fire": 2.41,
-            "Orlando City SC": 2.68,
-            "Draw": 4.08
           }
         },
         {
@@ -137,6 +73,14 @@
             "Chicago Fire": 2.4,
             "Orlando City SC": 2.69,
             "Draw": 4.06
+          }
+        },
+        {
+          "bookmaker": "Pinnacle",
+          "prices": {
+            "Chicago Fire": 2.44,
+            "Orlando City SC": 2.65,
+            "Draw": 4.04
           }
         }
       ],
@@ -193,8 +137,8 @@
           "bookmaker": "1xBet",
           "fair_prob": 0.2375,
           "implied_prob": 0.2242,
-          "edge_pct": 5.92,
-          "kelly": 0.0171,
+          "edge_pct": 5.94,
+          "kelly": 0.0172,
           "confidence": 24
         }
       ]
@@ -210,11 +154,11 @@
       "away": "New England Revolution",
       "best_h2h": {
         "D.C. United": {
-          "price": 2.68,
+          "price": 2.7,
           "bookmaker": "Matchbook"
         },
         "New England Revolution": {
-          "price": 2.74,
+          "price": 2.7,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -224,19 +168,19 @@
       },
       "odds_board": [
         {
-          "bookmaker": "Matchbook",
+          "bookmaker": "Betfair",
           "prices": {
             "D.C. United": 2.68,
-            "New England Revolution": 2.74,
+            "New England Revolution": 2.7,
             "Draw": 3.75
           }
         },
         {
-          "bookmaker": "Betfair",
+          "bookmaker": "Matchbook",
           "prices": {
-            "D.C. United": 2.66,
-            "New England Revolution": 2.74,
-            "Draw": 3.75
+            "D.C. United": 2.7,
+            "New England Revolution": 2.7,
+            "Draw": 3.7
           }
         },
         {
@@ -251,8 +195,8 @@
           "bookmaker": "Pinnacle",
           "prices": {
             "D.C. United": 2.66,
-            "New England Revolution": 2.63,
-            "Draw": 3.61
+            "New England Revolution": 2.64,
+            "Draw": 3.6
           }
         },
         {
@@ -323,13 +267,134 @@
           "outcome": "Draw",
           "best_price": 3.94,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2667,
+          "fair_prob": 0.267,
           "implied_prob": 0.2538,
-          "edge_pct": 5.09,
-          "kelly": 0.0173,
+          "edge_pct": 5.19,
+          "kelly": 0.0176,
           "confidence": 27
         }
       ]
+    },
+    {
+      "id": "b0008918d077b2578c42dfc8e47054b4",
+      "sport_key": "soccer_usa_mls",
+      "sport_icon": "⚽",
+      "league": "MLS",
+      "league_short": "MLS",
+      "kickoff": "2026-08-19T23:30:00Z",
+      "home": "Philadelphia Union",
+      "away": "Inter Miami CF",
+      "best_h2h": {
+        "Inter Miami CF": {
+          "price": 2.8,
+          "bookmaker": "LeoVegas (SE)"
+        },
+        "Philadelphia Union": {
+          "price": 2.4,
+          "bookmaker": "Matchbook"
+        },
+        "Draw": {
+          "price": 4.54,
+          "bookmaker": "1xBet"
+        }
+      },
+      "odds_board": [
+        {
+          "bookmaker": "Matchbook",
+          "prices": {
+            "Inter Miami CF": 2.72,
+            "Philadelphia Union": 2.4,
+            "Draw": 4.5
+          }
+        },
+        {
+          "bookmaker": "Betfair",
+          "prices": {
+            "Inter Miami CF": 2.74,
+            "Philadelphia Union": 2.38,
+            "Draw": 4.5
+          }
+        },
+        {
+          "bookmaker": "1xBet",
+          "prices": {
+            "Inter Miami CF": 2.76,
+            "Philadelphia Union": 2.23,
+            "Draw": 4.54
+          }
+        },
+        {
+          "bookmaker": "Pinnacle",
+          "prices": {
+            "Inter Miami CF": 2.72,
+            "Philadelphia Union": 2.27,
+            "Draw": 4.41
+          }
+        },
+        {
+          "bookmaker": "BetOnline.ag",
+          "prices": {
+            "Inter Miami CF": 2.68,
+            "Philadelphia Union": 2.28,
+            "Draw": 4.48
+          }
+        },
+        {
+          "bookmaker": "BetAnything",
+          "prices": {
+            "Inter Miami CF": 2.68,
+            "Philadelphia Union": 2.28,
+            "Draw": 4.48
+          }
+        }
+      ],
+      "recommendation": {
+        "text": "Over 3.5 goals",
+        "price": 1.9,
+        "bookmaker": "1xBet",
+        "confidence": 52,
+        "edge_pct": -0.7,
+        "type": "totals",
+        "side": "Over",
+        "point": 3.5,
+        "official": false,
+        "basis": "model+market"
+      },
+      "model": {
+        "xg_home": 1.995,
+        "xg_away": 1.924,
+        "p_home": 0.4092,
+        "p_draw": 0.2092,
+        "p_away": 0.3816,
+        "scorelines": [
+          {
+            "score": "1-1",
+            "p": 0.0762
+          },
+          {
+            "score": "2-1",
+            "p": 0.076
+          },
+          {
+            "score": "1-2",
+            "p": 0.0733
+          },
+          {
+            "score": "2-2",
+            "p": 0.0732
+          },
+          {
+            "score": "3-1",
+            "p": 0.0506
+          },
+          {
+            "score": "3-2",
+            "p": 0.0487
+          }
+        ],
+        "p_btts": 0.7379
+      },
+      "value_picks": []
     },
     {
       "id": "1a74c0910d0889eee77b071464bdd425",
@@ -346,8 +411,8 @@
           "bookmaker": "LeoVegas (SE)"
         },
         "Columbus Crew SC": {
-          "price": 1.79,
-          "bookmaker": "Betfair"
+          "price": 1.8,
+          "bookmaker": "Matchbook"
         },
         "Draw": {
           "price": 4.48,
@@ -367,8 +432,8 @@
           "bookmaker": "Matchbook",
           "prices": {
             "CF Montreal": 4.7,
-            "Columbus Crew SC": 1.79,
-            "Draw": 4.2
+            "Columbus Crew SC": 1.8,
+            "Draw": 4.1
           }
         },
         {
@@ -377,14 +442,6 @@
             "CF Montreal": 4.34,
             "Columbus Crew SC": 1.73,
             "Draw": 4.48
-          }
-        },
-        {
-          "bookmaker": "Pinnacle",
-          "prices": {
-            "CF Montreal": 4.48,
-            "Columbus Crew SC": 1.76,
-            "Draw": 4.1
           }
         },
         {
@@ -402,14 +459,22 @@
             "Columbus Crew SC": 1.74,
             "Draw": 4.18
           }
+        },
+        {
+          "bookmaker": "Pinnacle",
+          "prices": {
+            "CF Montreal": 4.47,
+            "Columbus Crew SC": 1.76,
+            "Draw": 4.06
+          }
         }
       ],
       "recommendation": {
         "text": "Under 3.0 goals",
-        "price": 1.94,
+        "price": 1.89,
         "bookmaker": "Pinnacle",
-        "confidence": 46,
-        "edge_pct": 11.89,
+        "confidence": 47,
+        "edge_pct": 11.19,
         "type": "totals",
         "side": "Under",
         "point": 3.0,
@@ -455,10 +520,10 @@
           "outcome": "Draw",
           "best_price": 4.48,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2333,
+          "fair_prob": 0.2338,
           "implied_prob": 0.2232,
-          "edge_pct": 4.5,
-          "kelly": 0.0129,
+          "edge_pct": 4.73,
+          "kelly": 0.0136,
           "confidence": 23
         }
       ]
@@ -478,7 +543,7 @@
           "bookmaker": "Betfair"
         },
         "New York Red Bulls": {
-          "price": 2.8,
+          "price": 2.84,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -488,60 +553,60 @@
       },
       "odds_board": [
         {
-          "bookmaker": "Matchbook",
-          "prices": {
-            "Nashville SC": 2.54,
-            "New York Red Bulls": 2.8,
-            "Draw": 3.9
-          }
-        },
-        {
           "bookmaker": "Betfair",
           "prices": {
             "Nashville SC": 2.54,
-            "New York Red Bulls": 2.8,
+            "New York Red Bulls": 2.84,
+            "Draw": 3.85
+          }
+        },
+        {
+          "bookmaker": "Matchbook",
+          "prices": {
+            "Nashville SC": 2.54,
+            "New York Red Bulls": 2.84,
             "Draw": 3.85
           }
         },
         {
           "bookmaker": "1xBet",
           "prices": {
-            "Nashville SC": 2.43,
-            "New York Red Bulls": 2.64,
+            "Nashville SC": 2.4,
+            "New York Red Bulls": 2.68,
             "Draw": 4.16
           }
         },
         {
           "bookmaker": "Pinnacle",
           "prices": {
-            "Nashville SC": 2.49,
-            "New York Red Bulls": 2.7,
-            "Draw": 3.81
+            "Nashville SC": 2.5,
+            "New York Red Bulls": 2.73,
+            "Draw": 3.74
           }
         },
         {
           "bookmaker": "BetOnline.ag",
           "prices": {
-            "Nashville SC": 2.49,
-            "New York Red Bulls": 2.7,
+            "Nashville SC": 2.45,
+            "New York Red Bulls": 2.75,
             "Draw": 3.8
           }
         },
         {
           "bookmaker": "BetAnything",
           "prices": {
-            "Nashville SC": 2.49,
-            "New York Red Bulls": 2.7,
+            "Nashville SC": 2.45,
+            "New York Red Bulls": 2.75,
             "Draw": 3.8
           }
         }
       ],
       "recommendation": {
         "text": "Under 3.0 goals",
-        "price": 1.99,
+        "price": 1.98,
         "bookmaker": "Pinnacle",
         "confidence": 46,
-        "edge_pct": 13.12,
+        "edge_pct": 12.97,
         "type": "totals",
         "side": "Under",
         "point": 3.0,
@@ -587,10 +652,10 @@
           "outcome": "Draw",
           "best_price": 4.16,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2541,
+          "fair_prob": 0.2544,
           "implied_prob": 0.2404,
-          "edge_pct": 5.71,
-          "kelly": 0.0181,
+          "edge_pct": 5.85,
+          "kelly": 0.0185,
           "confidence": 25
         }
       ]
@@ -606,11 +671,11 @@
       "away": "Charlotte FC",
       "best_h2h": {
         "Charlotte FC": {
-          "price": 3.0,
-          "bookmaker": "Betfair"
+          "price": 3.05,
+          "bookmaker": "Matchbook"
         },
         "Toronto FC": {
-          "price": 2.4,
+          "price": 2.42,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -620,19 +685,19 @@
       },
       "odds_board": [
         {
-          "bookmaker": "Betfair",
+          "bookmaker": "Matchbook",
           "prices": {
-            "Charlotte FC": 3.0,
-            "Toronto FC": 2.4,
-            "Draw": 3.8
+            "Charlotte FC": 3.05,
+            "Toronto FC": 2.42,
+            "Draw": 3.75
           }
         },
         {
-          "bookmaker": "Matchbook",
+          "bookmaker": "Betfair",
           "prices": {
             "Charlotte FC": 3.0,
-            "Toronto FC": 2.4,
-            "Draw": 3.8
+            "Toronto FC": 2.42,
+            "Draw": 3.75
           }
         },
         {
@@ -646,8 +711,8 @@
         {
           "bookmaker": "Pinnacle",
           "prices": {
-            "Charlotte FC": 2.97,
-            "Toronto FC": 2.35,
+            "Charlotte FC": 2.94,
+            "Toronto FC": 2.37,
             "Draw": 3.69
           }
         },
@@ -719,10 +784,10 @@
           "outcome": "Draw",
           "best_price": 4.05,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2606,
+          "fair_prob": 0.2597,
           "implied_prob": 0.2469,
-          "edge_pct": 5.53,
-          "kelly": 0.0181,
+          "edge_pct": 5.19,
+          "kelly": 0.017,
           "confidence": 26
         }
       ]
@@ -743,10 +808,10 @@
         },
         "New York City FC": {
           "price": 4.1,
-          "bookmaker": "Betfair"
+          "bookmaker": "Matchbook"
         },
         "Draw": {
-          "price": 4.51,
+          "price": 4.53,
           "bookmaker": "1xBet"
         }
       },
@@ -754,7 +819,7 @@
         {
           "bookmaker": "Matchbook",
           "prices": {
-            "FC Cincinnati": 1.88,
+            "FC Cincinnati": 1.86,
             "New York City FC": 4.1,
             "Draw": 4.4
           }
@@ -763,24 +828,16 @@
           "bookmaker": "Betfair",
           "prices": {
             "FC Cincinnati": 1.87,
-            "New York City FC": 4.1,
+            "New York City FC": 4.0,
             "Draw": 4.4
           }
         },
         {
           "bookmaker": "1xBet",
           "prices": {
-            "FC Cincinnati": 1.84,
-            "New York City FC": 3.77,
-            "Draw": 4.51
-          }
-        },
-        {
-          "bookmaker": "Pinnacle",
-          "prices": {
             "FC Cincinnati": 1.83,
-            "New York City FC": 3.94,
-            "Draw": 4.26
+            "New York City FC": 3.81,
+            "Draw": 4.53
           }
         },
         {
@@ -798,6 +855,14 @@
             "New York City FC": 3.76,
             "Draw": 4.06
           }
+        },
+        {
+          "bookmaker": "BetOnline.ag",
+          "prices": {
+            "FC Cincinnati": 1.88,
+            "New York City FC": 3.7,
+            "Draw": 4.28
+          }
         }
       ],
       "recommendation": {
@@ -805,7 +870,7 @@
         "price": 2.24,
         "bookmaker": "Matchbook",
         "confidence": 44,
-        "edge_pct": -0.82,
+        "edge_pct": -0.51,
         "type": "totals",
         "side": "Over",
         "point": 3.5,
@@ -848,146 +913,26 @@
       },
       "value_picks": [
         {
+          "outcome": "Draw",
+          "best_price": 4.53,
+          "bookmaker": "1xBet",
+          "fair_prob": 0.2305,
+          "implied_prob": 0.2208,
+          "edge_pct": 4.4,
+          "kelly": 0.0125,
+          "confidence": 23
+        },
+        {
           "outcome": "New York City FC",
           "best_price": 4.1,
-          "bookmaker": "Betfair",
-          "fair_prob": 0.2535,
+          "bookmaker": "Matchbook",
+          "fair_prob": 0.2518,
           "implied_prob": 0.2439,
-          "edge_pct": 3.94,
-          "kelly": 0.0127,
+          "edge_pct": 3.25,
+          "kelly": 0.0105,
           "confidence": 25
-        },
-        {
-          "outcome": "Draw",
-          "best_price": 4.51,
-          "bookmaker": "1xBet",
-          "fair_prob": 0.2311,
-          "implied_prob": 0.2217,
-          "edge_pct": 4.23,
-          "kelly": 0.012,
-          "confidence": 23
         }
       ]
-    },
-    {
-      "id": "b0008918d077b2578c42dfc8e47054b4",
-      "sport_key": "soccer_usa_mls",
-      "sport_icon": "⚽",
-      "league": "MLS",
-      "league_short": "MLS",
-      "kickoff": "2026-08-19T23:30:00Z",
-      "home": "Philadelphia Union",
-      "away": "Inter Miami CF",
-      "best_h2h": {
-        "Inter Miami CF": {
-          "price": 2.85,
-          "bookmaker": "Nordic Bet"
-        },
-        "Philadelphia Union": {
-          "price": 2.32,
-          "bookmaker": "Betfair"
-        },
-        "Draw": {
-          "price": 4.54,
-          "bookmaker": "1xBet"
-        }
-      },
-      "odds_board": [
-        {
-          "bookmaker": "Betfair",
-          "prices": {
-            "Inter Miami CF": 2.82,
-            "Philadelphia Union": 2.32,
-            "Draw": 4.5
-          }
-        },
-        {
-          "bookmaker": "Matchbook",
-          "prices": {
-            "Inter Miami CF": 2.82,
-            "Philadelphia Union": 2.32,
-            "Draw": 4.5
-          }
-        },
-        {
-          "bookmaker": "1xBet",
-          "prices": {
-            "Inter Miami CF": 2.76,
-            "Philadelphia Union": 2.23,
-            "Draw": 4.54
-          }
-        },
-        {
-          "bookmaker": "Pinnacle",
-          "prices": {
-            "Inter Miami CF": 2.8,
-            "Philadelphia Union": 2.23,
-            "Draw": 4.39
-          }
-        },
-        {
-          "bookmaker": "BetOnline.ag",
-          "prices": {
-            "Inter Miami CF": 2.79,
-            "Philadelphia Union": 2.22,
-            "Draw": 4.41
-          }
-        },
-        {
-          "bookmaker": "BetAnything",
-          "prices": {
-            "Inter Miami CF": 2.79,
-            "Philadelphia Union": 2.22,
-            "Draw": 4.41
-          }
-        }
-      ],
-      "recommendation": {
-        "text": "Inter Miami CF to win",
-        "price": 2.85,
-        "bookmaker": "Nordic Bet",
-        "confidence": 36,
-        "edge_pct": 3.13,
-        "type": "h2h",
-        "outcome": "Inter Miami CF",
-        "official": true,
-        "basis": "model+market"
-      },
-      "model": {
-        "xg_home": 1.995,
-        "xg_away": 1.924,
-        "p_home": 0.4092,
-        "p_draw": 0.2092,
-        "p_away": 0.3816,
-        "scorelines": [
-          {
-            "score": "1-1",
-            "p": 0.0762
-          },
-          {
-            "score": "2-1",
-            "p": 0.076
-          },
-          {
-            "score": "1-2",
-            "p": 0.0733
-          },
-          {
-            "score": "2-2",
-            "p": 0.0732
-          },
-          {
-            "score": "3-1",
-            "p": 0.0506
-          },
-          {
-            "score": "3-2",
-            "p": 0.0487
-          }
-        ],
-        "p_btts": 0.7379
-      },
-      "value_picks": []
     },
     {
       "id": "4da3791663bf9bd12cbe9ac812822ed3",
@@ -1014,18 +959,18 @@
       },
       "odds_board": [
         {
+          "bookmaker": "Betfair",
+          "prices": {
+            "Sporting Kansas City": 4.2,
+            "St. Louis City SC": 1.88,
+            "Draw": 4.2
+          }
+        },
+        {
           "bookmaker": "Matchbook",
           "prices": {
             "Sporting Kansas City": 4.2,
             "St. Louis City SC": 1.88,
-            "Draw": 4.1
-          }
-        },
-        {
-          "bookmaker": "Betfair",
-          "prices": {
-            "Sporting Kansas City": 4.2,
-            "St. Louis City SC": 1.87,
             "Draw": 4.1
           }
         },
@@ -1046,15 +991,15 @@
           }
         },
         {
-          "bookmaker": "Pinnacle",
+          "bookmaker": "BetOnline.ag",
           "prices": {
-            "Sporting Kansas City": 4.02,
-            "St. Louis City SC": 1.85,
+            "Sporting Kansas City": 4.15,
+            "St. Louis City SC": 1.82,
             "Draw": 4.09
           }
         },
         {
-          "bookmaker": "BetOnline.ag",
+          "bookmaker": "BetAnything",
           "prices": {
             "Sporting Kansas City": 4.15,
             "St. Louis City SC": 1.82,
@@ -1115,18 +1060,18 @@
           "bookmaker": "1xBet",
           "fair_prob": 0.2391,
           "implied_prob": 0.2288,
-          "edge_pct": 4.48,
-          "kelly": 0.0133,
+          "edge_pct": 4.5,
+          "kelly": 0.0134,
           "confidence": 24
         },
         {
           "outcome": "Sporting Kansas City",
           "best_price": 4.2,
           "bookmaker": "Betfair",
-          "fair_prob": 0.2464,
+          "fair_prob": 0.2461,
           "implied_prob": 0.2381,
-          "edge_pct": 3.49,
-          "kelly": 0.0109,
+          "edge_pct": 3.36,
+          "kelly": 0.0105,
           "confidence": 25
         }
       ]
@@ -1142,7 +1087,7 @@
       "away": "Atlanta United FC",
       "best_h2h": {
         "Atlanta United FC": {
-          "price": 5.1,
+          "price": 5.2,
           "bookmaker": "Betfair"
         },
         "Minnesota United FC": {
@@ -1158,17 +1103,17 @@
         {
           "bookmaker": "Matchbook",
           "prices": {
-            "Atlanta United FC": 5.1,
-            "Minnesota United FC": 1.71,
-            "Draw": 4.4
+            "Atlanta United FC": 5.2,
+            "Minnesota United FC": 1.69,
+            "Draw": 4.5
           }
         },
         {
           "bookmaker": "Betfair",
           "prices": {
-            "Atlanta United FC": 5.1,
-            "Minnesota United FC": 1.7,
-            "Draw": 4.4
+            "Atlanta United FC": 5.2,
+            "Minnesota United FC": 1.68,
+            "Draw": 4.5
           }
         },
         {
@@ -1255,11 +1200,21 @@
           "outcome": "Draw",
           "best_price": 4.58,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2257,
+          "fair_prob": 0.2255,
           "implied_prob": 0.2183,
-          "edge_pct": 3.37,
-          "kelly": 0.0094,
+          "edge_pct": 3.29,
+          "kelly": 0.0092,
           "confidence": 23
+        },
+        {
+          "outcome": "Atlanta United FC",
+          "best_price": 5.2,
+          "bookmaker": "Betfair",
+          "fair_prob": 0.1983,
+          "implied_prob": 0.1923,
+          "edge_pct": 3.1,
+          "kelly": 0.0074,
+          "confidence": 20
         }
       ]
     },
@@ -1278,45 +1233,37 @@
           "bookmaker": "LeoVegas (SE)"
         },
         "Seattle Sounders FC": {
-          "price": 1.86,
+          "price": 1.85,
           "bookmaker": "Betfair"
         },
         "Draw": {
-          "price": 4.28,
+          "price": 4.27,
           "bookmaker": "1xBet"
         }
       },
       "odds_board": [
         {
-          "bookmaker": "Betfair",
+          "bookmaker": "Matchbook",
           "prices": {
-            "Austin FC": 4.4,
-            "Seattle Sounders FC": 1.86,
+            "Austin FC": 4.5,
+            "Seattle Sounders FC": 1.85,
             "Draw": 4.1
           }
         },
         {
-          "bookmaker": "Matchbook",
+          "bookmaker": "Betfair",
           "prices": {
             "Austin FC": 4.4,
-            "Seattle Sounders FC": 1.86,
+            "Seattle Sounders FC": 1.85,
             "Draw": 4.1
           }
         },
         {
           "bookmaker": "1xBet",
           "prices": {
-            "Austin FC": 4.19,
+            "Austin FC": 4.21,
             "Seattle Sounders FC": 1.79,
-            "Draw": 4.28
-          }
-        },
-        {
-          "bookmaker": "Pinnacle",
-          "prices": {
-            "Austin FC": 4.34,
-            "Seattle Sounders FC": 1.82,
-            "Draw": 3.92
+            "Draw": 4.27
           }
         },
         {
@@ -1333,6 +1280,14 @@
             "Austin FC": 4.28,
             "Seattle Sounders FC": 1.83,
             "Draw": 3.91
+          }
+        },
+        {
+          "bookmaker": "Pinnacle",
+          "prices": {
+            "Austin FC": 4.34,
+            "Seattle Sounders FC": 1.82,
+            "Draw": 3.9
           }
         }
       ],
@@ -1385,12 +1340,12 @@
       "value_picks": [
         {
           "outcome": "Draw",
-          "best_price": 4.28,
+          "best_price": 4.27,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2425,
-          "implied_prob": 0.2336,
-          "edge_pct": 3.78,
-          "kelly": 0.0115,
+          "fair_prob": 0.2423,
+          "implied_prob": 0.2342,
+          "edge_pct": 3.48,
+          "kelly": 0.0106,
           "confidence": 24
         }
       ]
@@ -1424,7 +1379,7 @@
           "prices": {
             "FC Dallas": 3.7,
             "Real Salt Lake": 2.06,
-            "Draw": 3.9
+            "Draw": 3.95
           }
         },
         {
@@ -1432,7 +1387,7 @@
           "prices": {
             "FC Dallas": 3.7,
             "Real Salt Lake": 2.06,
-            "Draw": 3.9
+            "Draw": 3.95
           }
         },
         {
@@ -1462,8 +1417,8 @@
         {
           "bookmaker": "Pinnacle",
           "prices": {
-            "FC Dallas": 3.68,
-            "Real Salt Lake": 2.02,
+            "FC Dallas": 3.65,
+            "Real Salt Lake": 2.03,
             "Draw": 3.73
           }
         }
@@ -1519,10 +1474,10 @@
           "outcome": "Draw",
           "best_price": 4.33,
           "bookmaker": "1xBet",
-          "fair_prob": 0.249,
+          "fair_prob": 0.2488,
           "implied_prob": 0.2309,
-          "edge_pct": 7.83,
-          "kelly": 0.0235,
+          "edge_pct": 7.74,
+          "kelly": 0.0232,
           "confidence": 25
         }
       ]
@@ -1538,12 +1493,12 @@
       "away": "Los Angeles FC",
       "best_h2h": {
         "Colorado Rapids": {
-          "price": 2.55,
-          "bookmaker": "BetOnline.ag"
+          "price": 2.58,
+          "bookmaker": "Matchbook"
         },
         "Los Angeles FC": {
-          "price": 2.88,
-          "bookmaker": "Matchbook"
+          "price": 2.86,
+          "bookmaker": "Betfair"
         },
         "Draw": {
           "price": 3.96,
@@ -1552,18 +1507,18 @@
       },
       "odds_board": [
         {
+          "bookmaker": "Matchbook",
+          "prices": {
+            "Colorado Rapids": 2.58,
+            "Los Angeles FC": 2.86,
+            "Draw": 3.75
+          }
+        },
+        {
           "bookmaker": "Betfair",
           "prices": {
             "Colorado Rapids": 2.54,
             "Los Angeles FC": 2.86,
-            "Draw": 3.8
-          }
-        },
-        {
-          "bookmaker": "Matchbook",
-          "prices": {
-            "Colorado Rapids": 2.54,
-            "Los Angeles FC": 2.88,
             "Draw": 3.75
           }
         },
@@ -1602,10 +1557,10 @@
       ],
       "recommendation": {
         "text": "Los Angeles FC to win",
-        "price": 2.88,
-        "bookmaker": "Matchbook",
+        "price": 2.86,
+        "bookmaker": "Betfair",
         "confidence": 39,
-        "edge_pct": 11.9,
+        "edge_pct": 10.99,
         "type": "h2h",
         "outcome": "Los Angeles FC",
         "official": true,
@@ -1650,10 +1605,10 @@
           "outcome": "Draw",
           "best_price": 3.96,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2645,
+          "fair_prob": 0.2648,
           "implied_prob": 0.2525,
-          "edge_pct": 4.74,
-          "kelly": 0.016,
+          "edge_pct": 4.87,
+          "kelly": 0.0165,
           "confidence": 26
         }
       ]
@@ -1673,7 +1628,7 @@
           "bookmaker": "LeoVegas (SE)"
         },
         "San Diego FC": {
-          "price": 3.5,
+          "price": 3.45,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -1686,7 +1641,7 @@
           "bookmaker": "Betfair",
           "prices": {
             "Portland Timbers": 2.04,
-            "San Diego FC": 3.5,
+            "San Diego FC": 3.45,
             "Draw": 4.3
           }
         },
@@ -1694,7 +1649,7 @@
           "bookmaker": "Matchbook",
           "prices": {
             "Portland Timbers": 2.04,
-            "San Diego FC": 3.5,
+            "San Diego FC": 3.45,
             "Draw": 4.3
           }
         },
@@ -1715,15 +1670,15 @@
           }
         },
         {
-          "bookmaker": "BetOnline.ag",
+          "bookmaker": "Pinnacle",
           "prices": {
-            "Portland Timbers": 1.97,
-            "San Diego FC": 3.37,
-            "Draw": 4.33
+            "Portland Timbers": 1.99,
+            "San Diego FC": 3.39,
+            "Draw": 4.23
           }
         },
         {
-          "bookmaker": "BetAnything",
+          "bookmaker": "BetOnline.ag",
           "prices": {
             "Portland Timbers": 1.97,
             "San Diego FC": 3.37,
@@ -1782,10 +1737,10 @@
           "outcome": "Draw",
           "best_price": 4.54,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2309,
+          "fair_prob": 0.2311,
           "implied_prob": 0.2203,
-          "edge_pct": 4.85,
-          "kelly": 0.0137,
+          "edge_pct": 4.94,
+          "kelly": 0.0139,
           "confidence": 23
         }
       ]
@@ -1819,7 +1774,7 @@
           "prices": {
             "LA Galaxy": 2.24,
             "San Jose Earthquakes": 3.05,
-            "Draw": 4.1
+            "Draw": 4.2
           }
         },
         {
@@ -1827,7 +1782,7 @@
           "prices": {
             "LA Galaxy": 2.24,
             "San Jose Earthquakes": 3.05,
-            "Draw": 4.1
+            "Draw": 4.2
           }
         },
         {
@@ -1914,10 +1869,10 @@
           "outcome": "Draw",
           "best_price": 4.4,
           "bookmaker": "1xBet",
-          "fair_prob": 0.242,
+          "fair_prob": 0.2402,
           "implied_prob": 0.2273,
-          "edge_pct": 6.48,
-          "kelly": 0.0191,
+          "edge_pct": 5.71,
+          "kelly": 0.0168,
           "confidence": 24
         }
       ]
@@ -1933,12 +1888,12 @@
       "away": "Houston Dynamo",
       "best_h2h": {
         "Houston Dynamo": {
-          "price": 6.25,
-          "bookmaker": "LeoVegas (SE)"
+          "price": 6.0,
+          "bookmaker": "Betfair"
         },
         "Vancouver Whitecaps FC": {
-          "price": 1.6,
-          "bookmaker": "Betfair"
+          "price": 1.65,
+          "bookmaker": "LeoVegas (SE)"
         },
         "Draw": {
           "price": 4.73,
@@ -1950,7 +1905,7 @@
           "bookmaker": "Betfair",
           "prices": {
             "Houston Dynamo": 6.0,
-            "Vancouver Whitecaps FC": 1.6,
+            "Vancouver Whitecaps FC": 1.62,
             "Draw": 4.6
           }
         },
@@ -1987,11 +1942,11 @@
           }
         },
         {
-          "bookmaker": "Pinnacle",
+          "bookmaker": "LeoVegas (SE)",
           "prices": {
-            "Houston Dynamo": 5.64,
-            "Vancouver Whitecaps FC": 1.57,
-            "Draw": 4.48
+            "Houston Dynamo": 5.75,
+            "Vancouver Whitecaps FC": 1.65,
+            "Draw": 3.95
           }
         }
       ],
@@ -2046,10 +2001,10 @@
           "outcome": "Draw",
           "best_price": 4.73,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2214,
+          "fair_prob": 0.2224,
           "implied_prob": 0.2114,
-          "edge_pct": 4.73,
-          "kelly": 0.0127,
+          "edge_pct": 5.21,
+          "kelly": 0.014,
           "confidence": 22
         }
       ]
@@ -2069,8 +2024,8 @@
           "bookmaker": "Coolbet"
         },
         "Rayo Vallecano": {
-          "price": 2.36,
-          "bookmaker": "1xBet"
+          "price": 2.38,
+          "bookmaker": "Betfair"
         },
         "Draw": {
           "price": 3.15,
@@ -2081,16 +2036,16 @@
         {
           "bookmaker": "Betfair",
           "prices": {
-            "Alavés": 3.85,
-            "Rayo Vallecano": 2.36,
+            "Alavés": 3.8,
+            "Rayo Vallecano": 2.38,
             "Draw": 3.1
           }
         },
         {
           "bookmaker": "Matchbook",
           "prices": {
-            "Alavés": 3.85,
-            "Rayo Vallecano": 2.36,
+            "Alavés": 3.8,
+            "Rayo Vallecano": 2.38,
             "Draw": 3.1
           }
         },
@@ -2132,7 +2087,7 @@
         "price": 1.61,
         "bookmaker": "1xBet",
         "confidence": 65,
-        "edge_pct": 4.21,
+        "edge_pct": 4.27,
         "type": "totals",
         "side": "Over",
         "point": 1.5,
@@ -2140,38 +2095,38 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 1.496,
-        "xg_away": 0.944,
-        "p_home": 0.5006,
-        "p_draw": 0.2612,
-        "p_away": 0.2382,
+        "xg_home": 1.502,
+        "xg_away": 0.942,
+        "p_home": 0.5028,
+        "p_draw": 0.2606,
+        "p_away": 0.2367,
         "scorelines": [
           {
             "score": "1-0",
-            "p": 0.1304
+            "p": 0.1305
           },
           {
             "score": "1-1",
-            "p": 0.1231
+            "p": 0.1228
           },
           {
             "score": "2-0",
-            "p": 0.0976
+            "p": 0.098
           },
           {
             "score": "2-1",
-            "p": 0.0921
+            "p": 0.0922
           },
           {
             "score": "0-0",
-            "p": 0.0872
+            "p": 0.0869
           },
           {
             "score": "0-1",
-            "p": 0.0823
+            "p": 0.0818
           }
         ],
-        "p_btts": 0.474
+        "p_btts": 0.4741
       },
       "value_picks": []
     },
@@ -2186,12 +2141,12 @@
       "away": "Bradford City",
       "best_h2h": {
         "Bradford City": {
-          "price": 3.05,
-          "bookmaker": "Matchbook"
+          "price": 3.0,
+          "bookmaker": "Betfair"
         },
         "Sheffield Wednesday": {
           "price": 2.5,
-          "bookmaker": "Betfair"
+          "bookmaker": "Matchbook"
         },
         "Draw": {
           "price": 3.55,
@@ -2202,7 +2157,7 @@
         {
           "bookmaker": "Matchbook",
           "prices": {
-            "Bradford City": 3.05,
+            "Bradford City": 3.0,
             "Sheffield Wednesday": 2.5,
             "Draw": 3.55
           }
@@ -2211,7 +2166,7 @@
           "bookmaker": "Betfair",
           "prices": {
             "Bradford City": 3.0,
-            "Sheffield Wednesday": 2.5,
+            "Sheffield Wednesday": 2.48,
             "Draw": 3.55
           }
         },
@@ -2226,9 +2181,17 @@
         {
           "bookmaker": "BetOnline.ag",
           "prices": {
-            "Bradford City": 2.78,
+            "Bradford City": 2.8,
             "Sheffield Wednesday": 2.44,
-            "Draw": 3.45
+            "Draw": 3.4
+          }
+        },
+        {
+          "bookmaker": "1xBet",
+          "prices": {
+            "Bradford City": 2.79,
+            "Sheffield Wednesday": 2.4,
+            "Draw": 3.42
           }
         },
         {
@@ -2238,24 +2201,16 @@
             "Sheffield Wednesday": 2.4,
             "Draw": 3.4
           }
-        },
-        {
-          "bookmaker": "1xBet",
-          "prices": {
-            "Bradford City": 2.77,
-            "Sheffield Wednesday": 2.39,
-            "Draw": 3.42
-          }
         }
       ],
       "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 1.88,
-        "bookmaker": "Matchbook",
-        "confidence": 51,
-        "edge_pct": -3.33,
+        "text": "Over 2.5 goals",
+        "price": 1.99,
+        "bookmaker": "Pinnacle",
+        "confidence": 48,
+        "edge_pct": -3.59,
         "type": "totals",
-        "side": "Under",
+        "side": "Over",
         "point": 2.5,
         "official": false,
         "basis": "market"
@@ -2517,7 +2472,7 @@
         "price": 1.85,
         "bookmaker": "Betfair",
         "confidence": 56,
-        "edge_pct": 4.28,
+        "edge_pct": 4.3,
         "type": "h2h",
         "outcome": "IK Sirius",
         "official": true,
@@ -2562,10 +2517,10 @@
           "outcome": "BK Hacken",
           "best_price": 4.2,
           "bookmaker": "Unibet (SE)",
-          "fair_prob": 0.2457,
+          "fair_prob": 0.2454,
           "implied_prob": 0.2381,
-          "edge_pct": 3.18,
-          "kelly": 0.0099,
+          "edge_pct": 3.08,
+          "kelly": 0.0096,
           "confidence": 25
         }
       ]
@@ -2706,8 +2661,8 @@
           "bookmaker": "Betfair"
         },
         "Union Santa Fe": {
-          "price": 2.3,
-          "bookmaker": "Unibet (SE)"
+          "price": 2.22,
+          "bookmaker": "Betfair"
         },
         "Draw": {
           "price": 3.06,
@@ -2719,7 +2674,7 @@
           "bookmaker": "Betfair",
           "prices": {
             "Aldosivi Mar del Plata": 4.0,
-            "Union Santa Fe": 2.24,
+            "Union Santa Fe": 2.22,
             "Draw": 3.05
           }
         },
@@ -2750,8 +2705,8 @@
         {
           "bookmaker": "1xBet",
           "prices": {
-            "Aldosivi Mar del Plata": 3.79,
-            "Union Santa Fe": 2.19,
+            "Aldosivi Mar del Plata": 3.82,
+            "Union Santa Fe": 2.18,
             "Draw": 3.0
           }
         },
@@ -2887,10 +2842,10 @@
       ],
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.78,
+        "price": 1.79,
         "bookmaker": "1xBet",
         "confidence": 54,
-        "edge_pct": -3.03,
+        "edge_pct": -2.74,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -2970,17 +2925,17 @@
         {
           "bookmaker": "1xBet",
           "prices": {
-            "Cracovia Kraków": 2.0,
-            "Wieczysta Kraków": 3.49,
-            "Draw": 3.48
+            "Cracovia Kraków": 1.99,
+            "Wieczysta Kraków": 3.5,
+            "Draw": 3.5
           }
         },
         {
-          "bookmaker": "BetOnline.ag",
+          "bookmaker": "Marathon Bet",
           "prices": {
-            "Cracovia Kraków": 2.0,
-            "Wieczysta Kraków": 3.45,
-            "Draw": 3.45
+            "Cracovia Kraków": 1.97,
+            "Wieczysta Kraków": 3.5,
+            "Draw": 3.5
           }
         }
       ],
@@ -3002,10 +2957,10 @@
           "outcome": "Draw",
           "best_price": 3.75,
           "bookmaker": "Coolbet",
-          "fair_prob": 0.2788,
+          "fair_prob": 0.2786,
           "implied_prob": 0.2667,
-          "edge_pct": 4.54,
-          "kelly": 0.0165,
+          "edge_pct": 4.48,
+          "kelly": 0.0163,
           "confidence": 28
         }
       ]
@@ -3351,7 +3306,7 @@
         "price": 2.07,
         "bookmaker": "Coolbet",
         "confidence": 55,
-        "edge_pct": 12.96,
+        "edge_pct": 13.07,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -3359,35 +3314,35 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 2.149,
-        "xg_away": 1.19,
-        "p_home": 0.5925,
-        "p_draw": 0.2036,
-        "p_away": 0.2039,
+        "xg_home": 2.158,
+        "xg_away": 1.188,
+        "p_home": 0.5951,
+        "p_draw": 0.2028,
+        "p_away": 0.2021,
         "scorelines": [
           {
             "score": "2-1",
-            "p": 0.0975
+            "p": 0.0974
           },
           {
             "score": "1-1",
-            "p": 0.0907
+            "p": 0.0903
           },
           {
             "score": "2-0",
-            "p": 0.0819
+            "p": 0.0821
           },
           {
             "score": "1-0",
-            "p": 0.0762
+            "p": 0.076
           },
           {
             "score": "3-1",
-            "p": 0.0698
+            "p": 0.0701
           },
           {
             "score": "3-0",
-            "p": 0.0587
+            "p": 0.059
           }
         ],
         "p_btts": 0.6147
@@ -3461,9 +3416,9 @@
         {
           "bookmaker": "Marathon Bet",
           "prices": {
-            "Córdoba": 3.06,
-            "Girona FC": 2.18,
-            "Draw": 3.48
+            "Córdoba": 3.0,
+            "Girona FC": 2.21,
+            "Draw": 3.5
           }
         }
       ],
@@ -3595,14 +3550,6 @@
       },
       "odds_board": [
         {
-          "bookmaker": "Pinnacle",
-          "prices": {
-            "Estudiantes de Río Cuarto": 3.14,
-            "San Lorenzo": 2.69,
-            "Draw": 2.79
-          }
-        },
-        {
           "bookmaker": "BetOnline.ag",
           "prices": {
             "Estudiantes de Río Cuarto": 3.14,
@@ -3619,10 +3566,18 @@
           }
         },
         {
+          "bookmaker": "Pinnacle",
+          "prices": {
+            "Estudiantes de Río Cuarto": 3.14,
+            "San Lorenzo": 2.68,
+            "Draw": 2.79
+          }
+        },
+        {
           "bookmaker": "1xBet",
           "prices": {
-            "Estudiantes de Río Cuarto": 3.1,
-            "San Lorenzo": 2.69,
+            "Estudiantes de Río Cuarto": 3.12,
+            "San Lorenzo": 2.68,
             "Draw": 2.79
           }
         },
@@ -4193,7 +4148,7 @@
         {
           "bookmaker": "BetOnline.ag",
           "prices": {
-            "Avispa Fukuoka": 4.9,
+            "Avispa Fukuoka": 5.0,
             "Kashima Antlers": 1.76,
             "Draw": 3.4
           }
@@ -4315,8 +4270,8 @@
           "bookmaker": "BetOnline.ag",
           "prices": {
             "Fagiano Okayama": 2.19,
-            "Tokyo Verdy": 3.85,
-            "Draw": 2.96
+            "Tokyo Verdy": 3.8,
+            "Draw": 2.98
           }
         },
         {
@@ -4566,7 +4521,7 @@
           "prices": {
             "Kyoto Purple Sanga": 2.08,
             "Mito HollyHock": 3.5,
-            "Draw": 3.35
+            "Draw": 3.4
           }
         },
         {
@@ -4891,19 +4846,19 @@
           }
         },
         {
+          "bookmaker": "BetOnline.ag",
+          "prices": {
+            "Jeonbuk Hyundai Motors": 2.06,
+            "Ulsan Hyundai FC": 3.3,
+            "Draw": 3.55
+          }
+        },
+        {
           "bookmaker": "Marathon Bet",
           "prices": {
             "Jeonbuk Hyundai Motors": 2.04,
             "Ulsan Hyundai FC": 3.32,
             "Draw": 3.56
-          }
-        },
-        {
-          "bookmaker": "BetOnline.ag",
-          "prices": {
-            "Jeonbuk Hyundai Motors": 2.06,
-            "Ulsan Hyundai FC": 3.3,
-            "Draw": 3.5
           }
         }
       ],
@@ -5551,10 +5506,10 @@
       ],
       "recommendation": {
         "text": "Under 2.5 goals",
-        "price": 2.01,
-        "bookmaker": "Pinnacle",
+        "price": 2.04,
+        "bookmaker": "Matchbook",
         "confidence": 52,
-        "edge_pct": 4.82,
+        "edge_pct": 6.43,
         "type": "totals",
         "side": "Under",
         "point": 2.5,
@@ -5773,8 +5728,8 @@
         "text": "Under 2.5 goals",
         "price": 1.94,
         "bookmaker": "Matchbook",
-        "confidence": 50,
-        "edge_pct": -2.26,
+        "confidence": 51,
+        "edge_pct": -2.01,
         "type": "totals",
         "side": "Under",
         "point": 2.5,
@@ -6459,7 +6414,7 @@
       "best_h2h": {
         "Blackburn Rovers": {
           "price": 3.65,
-          "bookmaker": "Matchbook"
+          "bookmaker": "Betfair"
         },
         "Middlesbrough": {
           "price": 2.2,
@@ -6475,14 +6430,14 @@
           "bookmaker": "Matchbook",
           "prices": {
             "Blackburn Rovers": 3.65,
-            "Middlesbrough": 2.14,
+            "Middlesbrough": 2.16,
             "Draw": 3.55
           }
         },
         {
           "bookmaker": "Betfair",
           "prices": {
-            "Blackburn Rovers": 3.6,
+            "Blackburn Rovers": 3.65,
             "Middlesbrough": 2.16,
             "Draw": 3.5
           }
@@ -6596,7 +6551,7 @@
           "bookmaker": "Matchbook",
           "prices": {
             "Preston North End": 4.4,
-            "Wolverhampton Wanderers": 1.88,
+            "Wolverhampton Wanderers": 1.89,
             "Draw": 3.9
           }
         },
@@ -7127,7 +7082,7 @@
           "bookmaker": "Matchbook",
           "prices": {
             "Southampton": 1.67,
-            "Stoke City": 5.0,
+            "Stoke City": 5.1,
             "Draw": 4.3
           }
         },
@@ -7135,7 +7090,7 @@
           "bookmaker": "Betfair",
           "prices": {
             "Southampton": 1.68,
-            "Stoke City": 4.9,
+            "Stoke City": 5.0,
             "Draw": 4.3
           }
         },
@@ -7240,7 +7195,7 @@
         },
         "Draw": {
           "price": 3.4,
-          "bookmaker": "Unibet (SE)"
+          "bookmaker": "Marathon Bet"
         }
       },
       "odds_board": [
@@ -7256,32 +7211,32 @@
           "bookmaker": "Unibet (SE)",
           "prices": {
             "Aberdeen": 3.2,
-            "Motherwell": 2.07,
-            "Draw": 3.4
+            "Motherwell": 2.08,
+            "Draw": 3.35
           }
         },
         {
           "bookmaker": "Unibet (NL)",
           "prices": {
             "Aberdeen": 3.2,
-            "Motherwell": 2.07,
-            "Draw": 3.4
+            "Motherwell": 2.08,
+            "Draw": 3.35
           }
         },
         {
           "bookmaker": "PMU (FR)",
           "prices": {
             "Aberdeen": 3.15,
-            "Motherwell": 2.05,
-            "Draw": 3.35
+            "Motherwell": 2.06,
+            "Draw": 3.3
           }
         },
         {
           "bookmaker": "LeoVegas (SE)",
           "prices": {
-            "Aberdeen": 3.15,
-            "Motherwell": 2.02,
-            "Draw": 3.3
+            "Aberdeen": 3.1,
+            "Motherwell": 2.04,
+            "Draw": 3.25
           }
         }
       ],
@@ -7290,7 +7245,7 @@
         "price": 2.1,
         "bookmaker": "Marathon Bet",
         "confidence": 52,
-        "edge_pct": 8.55,
+        "edge_pct": 8.16,
         "type": "h2h",
         "outcome": "Motherwell",
         "official": true,
@@ -7391,17 +7346,17 @@
         {
           "bookmaker": "1xBet",
           "prices": {
-            "Huddersfield Town": 2.59,
+            "Huddersfield Town": 2.6,
             "Milton Keynes Dons": 2.6,
-            "Draw": 3.32
+            "Draw": 3.3
           }
         },
         {
           "bookmaker": "Marathon Bet",
           "prices": {
-            "Huddersfield Town": 2.59,
+            "Huddersfield Town": 2.6,
             "Milton Keynes Dons": 2.6,
-            "Draw": 3.32
+            "Draw": 3.3
           }
         }
       ],
@@ -7435,8 +7390,8 @@
           "bookmaker": "Matchbook"
         },
         "Peterborough United": {
-          "price": 2.94,
-          "bookmaker": "Matchbook"
+          "price": 2.92,
+          "bookmaker": "Betfair"
         },
         "Draw": {
           "price": 3.9,
@@ -7448,7 +7403,7 @@
           "bookmaker": "Matchbook",
           "prices": {
             "Mansfield Town": 2.44,
-            "Peterborough United": 2.94,
+            "Peterborough United": 2.92,
             "Draw": 3.85
           }
         },
@@ -7648,25 +7603,25 @@
           "bookmaker": "GTbets"
         },
         "Draw": {
-          "price": 3.8,
-          "bookmaker": "Betfair"
+          "price": 3.75,
+          "bookmaker": "Coolbet"
         }
       },
       "odds_board": [
-        {
-          "bookmaker": "Betfair",
-          "prices": {
-            "Watford": 4.1,
-            "Wrexham AFC": 1.97,
-            "Draw": 3.8
-          }
-        },
         {
           "bookmaker": "Matchbook",
           "prices": {
             "Watford": 4.1,
             "Wrexham AFC": 1.97,
-            "Draw": 3.8
+            "Draw": 3.75
+          }
+        },
+        {
+          "bookmaker": "Betfair",
+          "prices": {
+            "Watford": 4.1,
+            "Wrexham AFC": 1.96,
+            "Draw": 3.75
           }
         },
         {
@@ -7704,10 +7659,10 @@
       ],
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.93,
+        "price": 1.9,
         "bookmaker": "Matchbook",
         "confidence": 51,
-        "edge_pct": -2.27,
+        "edge_pct": -3.52,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -7866,7 +7821,7 @@
           "bookmaker": "Matchbook",
           "prices": {
             "Bolton Wanderers": 4.1,
-            "Queens Park Rangers": 2.0,
+            "Queens Park Rangers": 1.99,
             "Draw": 3.85
           }
         },
@@ -8285,7 +8240,7 @@
           "prices": {
             "Cardiff City": 4.1,
             "Derby County": 2.04,
-            "Draw": 3.65
+            "Draw": 3.6
           }
         },
         {
@@ -8333,8 +8288,8 @@
         "text": "Over 2.5 goals",
         "price": 2.02,
         "bookmaker": "Matchbook",
-        "confidence": 48,
-        "edge_pct": -2.09,
+        "confidence": 49,
+        "edge_pct": -1.83,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -8349,8 +8304,8 @@
           "bookmaker": "Matchbook",
           "fair_prob": 0.2521,
           "implied_prob": 0.2439,
-          "edge_pct": 3.37,
-          "kelly": 0.0109,
+          "edge_pct": 3.36,
+          "kelly": 0.0108,
           "confidence": 25
         }
       ]
@@ -9099,7 +9054,7 @@
           "prices": {
             "Académico de Viseu": 4.1,
             "CS Maritimo": 2.0,
-            "Draw": 3.45
+            "Draw": 3.4
           }
         },
         {
@@ -9314,7 +9269,7 @@
         {
           "bookmaker": "Betfair",
           "prices": {
-            "Athletic Bilbao": 1.76,
+            "Athletic Bilbao": 1.77,
             "Sevilla": 5.6,
             "Draw": 3.8
           }
@@ -9354,10 +9309,10 @@
       ],
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 2.28,
+        "price": 2.3,
         "bookmaker": "1xBet",
-        "confidence": 47,
-        "edge_pct": 6.31,
+        "confidence": 46,
+        "edge_pct": 6.86,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -9365,38 +9320,38 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 1.616,
-        "xg_away": 1.134,
-        "p_home": 0.4856,
-        "p_draw": 0.247,
-        "p_away": 0.2674,
+        "xg_home": 1.623,
+        "xg_away": 1.132,
+        "p_home": 0.4879,
+        "p_draw": 0.2464,
+        "p_away": 0.2657,
         "scorelines": [
           {
             "score": "1-1",
-            "p": 0.1171
+            "p": 0.1169
           },
           {
             "score": "1-0",
-            "p": 0.1033
+            "p": 0.1032
           },
           {
             "score": "2-1",
-            "p": 0.0947
+            "p": 0.0948
           },
           {
             "score": "2-0",
-            "p": 0.0834
+            "p": 0.0838
           },
           {
             "score": "0-1",
-            "p": 0.0725
+            "p": 0.072
           },
           {
             "score": "1-2",
-            "p": 0.0664
+            "p": 0.0661
           }
         ],
-        "p_btts": 0.5436
+        "p_btts": 0.5439
       },
       "value_picks": [
         {
@@ -9405,7 +9360,7 @@
           "bookmaker": "Betfair",
           "fair_prob": 0.1862,
           "implied_prob": 0.1786,
-          "edge_pct": 4.28,
+          "edge_pct": 4.29,
           "kelly": 0.0093,
           "confidence": 19
         }
@@ -9518,7 +9473,7 @@
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 4.57,
+          "price": 4.58,
           "bookmaker": "1xBet"
         }
       },
@@ -9526,9 +9481,9 @@
         {
           "bookmaker": "1xBet",
           "prices": {
-            "Auxerre": 5.63,
+            "Auxerre": 5.74,
             "RC Lens": 1.61,
-            "Draw": 4.57
+            "Draw": 4.58
           }
         },
         {
@@ -9550,8 +9505,8 @@
         {
           "bookmaker": "Marathon Bet",
           "prices": {
-            "Auxerre": 5.55,
-            "RC Lens": 1.59,
+            "Auxerre": 5.65,
+            "RC Lens": 1.58,
             "Draw": 4.5
           }
         },
@@ -9560,7 +9515,7 @@
           "prices": {
             "Auxerre": 5.8,
             "RC Lens": 1.57,
-            "Draw": 4.5
+            "Draw": 4.4
           }
         },
         {
@@ -9568,7 +9523,7 @@
           "prices": {
             "Auxerre": 5.8,
             "RC Lens": 1.57,
-            "Draw": 4.5
+            "Draw": 4.4
           }
         }
       ],
@@ -9744,10 +9699,10 @@
           "outcome": "Draw",
           "best_price": 3.6,
           "bookmaker": "Coolbet",
-          "fair_prob": 0.2862,
+          "fair_prob": 0.2861,
           "implied_prob": 0.2778,
-          "edge_pct": 3.03,
-          "kelly": 0.0117,
+          "edge_pct": 3.01,
+          "kelly": 0.0116,
           "confidence": 29
         }
       ]
@@ -9907,9 +9862,9 @@
         {
           "bookmaker": "BetOnline.ag",
           "prices": {
-            "FC Lausanne-Sport": 3.3,
-            "FC Luzern": 1.97,
-            "Draw": 3.85
+            "FC Lausanne-Sport": 3.25,
+            "FC Luzern": 1.98,
+            "Draw": 3.9
           }
         }
       ],
@@ -10512,134 +10467,13 @@
           "outcome": "Udinese",
           "best_price": 5.25,
           "bookmaker": "Unibet (SE)",
-          "fair_prob": 0.2038,
+          "fair_prob": 0.2039,
           "implied_prob": 0.1905,
-          "edge_pct": 6.98,
-          "kelly": 0.0164,
+          "edge_pct": 7.03,
+          "kelly": 0.0165,
           "confidence": 20
         }
       ]
-    },
-    {
-      "id": "d0358260dc3ba713ae9e9e0a6c8cc7e6",
-      "sport_key": "soccer_netherlands_eredivisie",
-      "sport_icon": "⚽",
-      "league": "Eredivisie",
-      "league_short": "ERE",
-      "kickoff": "2026-08-22T16:45:00Z",
-      "home": "Sparta Rotterdam",
-      "away": "FC Utrecht",
-      "best_h2h": {
-        "FC Utrecht": {
-          "price": 2.65,
-          "bookmaker": "1xBet"
-        },
-        "Sparta Rotterdam": {
-          "price": 2.67,
-          "bookmaker": "1xBet"
-        },
-        "Draw": {
-          "price": 3.65,
-          "bookmaker": "Unibet (NL)"
-        }
-      },
-      "odds_board": [
-        {
-          "bookmaker": "Unibet (NL)",
-          "prices": {
-            "FC Utrecht": 2.63,
-            "Sparta Rotterdam": 2.65,
-            "Draw": 3.65
-          }
-        },
-        {
-          "bookmaker": "1xBet",
-          "prices": {
-            "FC Utrecht": 2.65,
-            "Sparta Rotterdam": 2.67,
-            "Draw": 3.46
-          }
-        },
-        {
-          "bookmaker": "Betfair",
-          "prices": {
-            "FC Utrecht": 2.62,
-            "Sparta Rotterdam": 2.62,
-            "Draw": 3.55
-          }
-        },
-        {
-          "bookmaker": "Coolbet",
-          "prices": {
-            "FC Utrecht": 2.6,
-            "Sparta Rotterdam": 2.6,
-            "Draw": 3.6
-          }
-        },
-        {
-          "bookmaker": "Pinnacle",
-          "prices": {
-            "FC Utrecht": 2.64,
-            "Sparta Rotterdam": 2.64,
-            "Draw": 3.43
-          }
-        },
-        {
-          "bookmaker": "BetOnline.ag",
-          "prices": {
-            "FC Utrecht": 2.64,
-            "Sparta Rotterdam": 2.64,
-            "Draw": 3.42
-          }
-        }
-      ],
-      "recommendation": {
-        "text": "Over 2.5 goals",
-        "price": 1.75,
-        "bookmaker": "1xBet",
-        "confidence": 55,
-        "edge_pct": -3.93,
-        "type": "totals",
-        "side": "Over",
-        "point": 2.5,
-        "official": false,
-        "basis": "model+market"
-      },
-      "model": {
-        "xg_home": 1.297,
-        "xg_away": 1.496,
-        "p_home": 0.329,
-        "p_draw": 0.2518,
-        "p_away": 0.4192,
-        "scorelines": [
-          {
-            "score": "1-1",
-            "p": 0.1188
-          },
-          {
-            "score": "0-1",
-            "p": 0.0916
-          },
-          {
-            "score": "1-2",
-            "p": 0.0889
-          },
-          {
-            "score": "1-0",
-            "p": 0.0795
-          },
-          {
-            "score": "2-1",
-            "p": 0.0771
-          },
-          {
-            "score": "0-2",
-            "p": 0.0685
-          }
-        ],
-        "p_btts": 0.5638
-      },
-      "value_picks": []
     },
     {
       "id": "4b5ea5feace9ff9415a07fe92ad37ef5",
@@ -10709,8 +10543,8 @@
           "bookmaker": "1xBet",
           "prices": {
             "Dundee FC": 3.35,
-            "Dundee United": 2.12,
-            "Draw": 3.36
+            "Dundee United": 2.13,
+            "Draw": 3.34
           }
         }
       ],
@@ -10719,7 +10553,7 @@
         "price": 2.32,
         "bookmaker": "Betfair",
         "confidence": 45,
-        "edge_pct": 4.84,
+        "edge_pct": 4.74,
         "type": "h2h",
         "outcome": "Dundee United",
         "official": true,
@@ -10764,13 +10598,133 @@
           "outcome": "Dundee United",
           "best_price": 2.32,
           "bookmaker": "Betfair",
-          "fair_prob": 0.4465,
+          "fair_prob": 0.4458,
           "implied_prob": 0.431,
-          "edge_pct": 3.58,
-          "kelly": 0.0271,
+          "edge_pct": 3.42,
+          "kelly": 0.0259,
           "confidence": 45
         }
       ]
+    },
+    {
+      "id": "d0358260dc3ba713ae9e9e0a6c8cc7e6",
+      "sport_key": "soccer_netherlands_eredivisie",
+      "sport_icon": "⚽",
+      "league": "Eredivisie",
+      "league_short": "ERE",
+      "kickoff": "2026-08-22T16:45:00Z",
+      "home": "Sparta Rotterdam",
+      "away": "FC Utrecht",
+      "best_h2h": {
+        "FC Utrecht": {
+          "price": 2.68,
+          "bookmaker": "Betfair"
+        },
+        "Sparta Rotterdam": {
+          "price": 2.7,
+          "bookmaker": "Betfair"
+        },
+        "Draw": {
+          "price": 3.65,
+          "bookmaker": "Unibet (NL)"
+        }
+      },
+      "odds_board": [
+        {
+          "bookmaker": "Betfair",
+          "prices": {
+            "FC Utrecht": 2.68,
+            "Sparta Rotterdam": 2.7,
+            "Draw": 3.55
+          }
+        },
+        {
+          "bookmaker": "Unibet (NL)",
+          "prices": {
+            "FC Utrecht": 2.63,
+            "Sparta Rotterdam": 2.65,
+            "Draw": 3.65
+          }
+        },
+        {
+          "bookmaker": "1xBet",
+          "prices": {
+            "FC Utrecht": 2.65,
+            "Sparta Rotterdam": 2.67,
+            "Draw": 3.46
+          }
+        },
+        {
+          "bookmaker": "Coolbet",
+          "prices": {
+            "FC Utrecht": 2.6,
+            "Sparta Rotterdam": 2.6,
+            "Draw": 3.6
+          }
+        },
+        {
+          "bookmaker": "Pinnacle",
+          "prices": {
+            "FC Utrecht": 2.64,
+            "Sparta Rotterdam": 2.64,
+            "Draw": 3.43
+          }
+        },
+        {
+          "bookmaker": "BetOnline.ag",
+          "prices": {
+            "FC Utrecht": 2.64,
+            "Sparta Rotterdam": 2.64,
+            "Draw": 3.42
+          }
+        }
+      ],
+      "recommendation": {
+        "text": "FC Utrecht to win",
+        "price": 2.68,
+        "bookmaker": "Betfair",
+        "confidence": 39,
+        "edge_pct": 3.6,
+        "type": "h2h",
+        "outcome": "FC Utrecht",
+        "official": true,
+        "basis": "model+market"
+      },
+      "model": {
+        "xg_home": 1.297,
+        "xg_away": 1.496,
+        "p_home": 0.329,
+        "p_draw": 0.2518,
+        "p_away": 0.4192,
+        "scorelines": [
+          {
+            "score": "1-1",
+            "p": 0.1188
+          },
+          {
+            "score": "0-1",
+            "p": 0.0916
+          },
+          {
+            "score": "1-2",
+            "p": 0.0889
+          },
+          {
+            "score": "1-0",
+            "p": 0.0795
+          },
+          {
+            "score": "2-1",
+            "p": 0.0771
+          },
+          {
+            "score": "0-2",
+            "p": 0.0685
+          }
+        ],
+        "p_btts": 0.5638
+      },
+      "value_picks": []
     },
     {
       "id": "cbc24f633e082a6d864b947e96889d6e",
@@ -10787,8 +10741,8 @@
           "bookmaker": "Betfair"
         },
         "Iraklis FC": {
-          "price": 14.7,
-          "bookmaker": "Pinnacle"
+          "price": 18.0,
+          "bookmaker": "Betfair"
         },
         "Draw": {
           "price": 7.6,
@@ -10800,16 +10754,16 @@
           "bookmaker": "Betfair",
           "prices": {
             "AEK Athens": 1.2,
-            "Iraklis FC": 14.5,
+            "Iraklis FC": 18.0,
             "Draw": 7.6
           }
         },
         {
           "bookmaker": "Pinnacle",
           "prices": {
-            "AEK Athens": 1.16,
-            "Iraklis FC": 14.7,
-            "Draw": 7.23
+            "AEK Athens": 1.17,
+            "Iraklis FC": 14.51,
+            "Draw": 7.12
           }
         },
         {
@@ -10938,7 +10892,7 @@
         "price": 2.0,
         "bookmaker": "Coolbet",
         "confidence": 52,
-        "edge_pct": 3.18,
+        "edge_pct": 3.17,
         "type": "h2h",
         "outcome": "Estoril",
         "official": true,
@@ -11297,10 +11251,10 @@
       ],
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 2.12,
+        "price": 2.09,
         "bookmaker": "BetOnline.ag",
-        "confidence": 46,
-        "edge_pct": -1.78,
+        "confidence": 47,
+        "edge_pct": -2.43,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -11615,8 +11569,8 @@
           "bookmaker": "Betsson"
         },
         "Sturm Graz": {
-          "price": 1.35,
-          "bookmaker": "Betfair"
+          "price": 1.34,
+          "bookmaker": "Betsson"
         },
         "Draw": {
           "price": 5.8,
@@ -11628,7 +11582,7 @@
           "bookmaker": "Betfair",
           "prices": {
             "Austria Lustenau": 8.8,
-            "Sturm Graz": 1.35,
+            "Sturm Graz": 1.34,
             "Draw": 5.4
           }
         },
@@ -11693,7 +11647,7 @@
           "bookmaker": "Tipico",
           "fair_prob": 0.183,
           "implied_prob": 0.1724,
-          "edge_pct": 6.16,
+          "edge_pct": 6.13,
           "kelly": 0.0128,
           "confidence": 18
         }
@@ -11895,10 +11849,10 @@
       ],
       "recommendation": {
         "text": "Under 2.5 goals",
-        "price": 1.98,
-        "bookmaker": "Coolbet",
+        "price": 2.04,
+        "bookmaker": "BetOnline.ag",
         "confidence": 53,
-        "edge_pct": 5.18,
+        "edge_pct": 7.46,
         "type": "totals",
         "side": "Under",
         "point": 2.5,
@@ -12745,7 +12699,7 @@
           "prices": {
             "Genoa": 5.2,
             "Napoli": 1.86,
-            "Draw": 3.45
+            "Draw": 3.4
           }
         },
         {
@@ -12826,7 +12780,7 @@
           "bookmaker": "1xBet",
           "fair_prob": 0.1956,
           "implied_prob": 0.1898,
-          "edge_pct": 3.08,
+          "edge_pct": 3.06,
           "kelly": 0.0072,
           "confidence": 20
         }
@@ -13351,6 +13305,14 @@
       },
       "odds_board": [
         {
+          "bookmaker": "Matchbook",
+          "prices": {
+            "Fluminense": 1.43,
+            "Remo": 8.4,
+            "Draw": 4.6
+          }
+        },
+        {
           "bookmaker": "1xBet",
           "prices": {
             "Fluminense": 1.44,
@@ -13363,14 +13325,6 @@
           "prices": {
             "Fluminense": 1.44,
             "Remo": 7.5,
-            "Draw": 4.5
-          }
-        },
-        {
-          "bookmaker": "Matchbook",
-          "prices": {
-            "Fluminense": 1.41,
-            "Remo": 8.4,
             "Draw": 4.5
           }
         },
@@ -13741,11 +13695,11 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 1.136,
-        "xg_away": 1.551,
-        "p_home": 0.2785,
-        "p_draw": 0.2525,
-        "p_away": 0.469,
+        "xg_home": 1.141,
+        "xg_away": 1.548,
+        "p_home": 0.2803,
+        "p_draw": 0.2526,
+        "p_away": 0.4671,
         "scorelines": [
           {
             "score": "1-1",
@@ -13753,26 +13707,26 @@
           },
           {
             "score": "0-1",
-            "p": 0.1056
+            "p": 0.1052
           },
           {
             "score": "1-2",
-            "p": 0.093
+            "p": 0.0929
           },
           {
             "score": "0-2",
-            "p": 0.0819
+            "p": 0.0814
           },
           {
             "score": "1-0",
-            "p": 0.0773
+            "p": 0.0775
           },
           {
             "score": "2-1",
-            "p": 0.0681
+            "p": 0.0684
           }
         ],
-        "p_btts": 0.5349
+        "p_btts": 0.5357
       },
       "value_picks": []
     },
@@ -14265,8 +14219,8 @@
         {
           "bookmaker": "1xBet",
           "prices": {
-            "CF Montreal": 2.22,
-            "LA Galaxy": 2.98,
+            "CF Montreal": 2.23,
+            "LA Galaxy": 2.97,
             "Draw": 4.08
           }
         },
@@ -14550,14 +14504,6 @@
           }
         },
         {
-          "bookmaker": "Betfair",
-          "prices": {
-            "Orlando City SC": 1.92,
-            "Real Salt Lake": 3.55,
-            "Draw": 4.1
-          }
-        },
-        {
           "bookmaker": "Coolbet",
           "prices": {
             "Orlando City SC": 1.82,
@@ -14570,6 +14516,14 @@
           "prices": {
             "Orlando City SC": 1.87,
             "Real Salt Lake": 3.69,
+            "Draw": 4.1
+          }
+        },
+        {
+          "bookmaker": "Betfair",
+          "prices": {
+            "Orlando City SC": 1.92,
+            "Real Salt Lake": 3.5,
             "Draw": 4.1
           }
         }
@@ -14625,10 +14579,10 @@
           "outcome": "Draw",
           "best_price": 4.62,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2244,
+          "fair_prob": 0.2243,
           "implied_prob": 0.2165,
-          "edge_pct": 3.66,
-          "kelly": 0.0101,
+          "edge_pct": 3.64,
+          "kelly": 0.01,
           "confidence": 22
         }
       ]
@@ -14905,7 +14859,7 @@
           "bookmaker": "BetOnline.ag"
         },
         "Draw": {
-          "price": 4.64,
+          "price": 4.63,
           "bookmaker": "1xBet"
         }
       },
@@ -14914,8 +14868,8 @@
           "bookmaker": "1xBet",
           "prices": {
             "FC Cincinnati": 1.83,
-            "Seattle Sounders FC": 3.71,
-            "Draw": 4.64
+            "Seattle Sounders FC": 3.7,
+            "Draw": 4.63
           }
         },
         {
@@ -14953,18 +14907,18 @@
         {
           "bookmaker": "Betsson",
           "prices": {
-            "FC Cincinnati": 1.88,
+            "FC Cincinnati": 1.85,
             "Seattle Sounders FC": 3.7,
-            "Draw": 3.85
+            "Draw": 4.05
           }
         }
       ],
       "recommendation": {
         "text": "Over 3.5 goals",
-        "price": 2.01,
+        "price": 2.02,
         "bookmaker": "1xBet",
         "confidence": 48,
-        "edge_pct": -3.13,
+        "edge_pct": -2.89,
         "type": "totals",
         "side": "Over",
         "point": 3.5,
@@ -15008,12 +14962,12 @@
       "value_picks": [
         {
           "outcome": "Draw",
-          "best_price": 4.64,
+          "best_price": 4.63,
           "bookmaker": "1xBet",
-          "fair_prob": 0.2336,
-          "implied_prob": 0.2155,
-          "edge_pct": 8.41,
-          "kelly": 0.0231,
+          "fair_prob": 0.2326,
+          "implied_prob": 0.216,
+          "edge_pct": 7.69,
+          "kelly": 0.0212,
           "confidence": 23
         }
       ]
@@ -15539,8 +15493,8 @@
           "bookmaker": "LeoVegas (SE)"
         },
         "St. Louis City SC": {
-          "price": 2.07,
-          "bookmaker": "GTbets"
+          "price": 2.08,
+          "bookmaker": "Coolbet"
         },
         "Draw": {
           "price": 4.1,
@@ -15565,19 +15519,19 @@
           }
         },
         {
+          "bookmaker": "Coolbet",
+          "prices": {
+            "Houston Dynamo": 3.25,
+            "St. Louis City SC": 2.08,
+            "Draw": 3.85
+          }
+        },
+        {
           "bookmaker": "GTbets",
           "prices": {
             "Houston Dynamo": 3.35,
             "St. Louis City SC": 2.07,
             "Draw": 3.73
-          }
-        },
-        {
-          "bookmaker": "Coolbet",
-          "prices": {
-            "Houston Dynamo": 3.3,
-            "St. Louis City SC": 2.05,
-            "Draw": 3.85
           }
         },
         {
@@ -15648,10 +15602,10 @@
           "outcome": "Houston Dynamo",
           "best_price": 3.75,
           "bookmaker": "LeoVegas (SE)",
-          "fair_prob": 0.2792,
+          "fair_prob": 0.2795,
           "implied_prob": 0.2667,
-          "edge_pct": 4.7,
-          "kelly": 0.0171,
+          "edge_pct": 4.8,
+          "kelly": 0.0175,
           "confidence": 28
         }
       ]
@@ -16458,7 +16412,7 @@
       "away": "Atlas",
       "best_h2h": {
         "Atlas": {
-          "price": 6.75,
+          "price": 6.5,
           "bookmaker": "Coolbet"
         },
         "Cruz Azul": {
@@ -16466,8 +16420,8 @@
           "bookmaker": "BetOnline.ag"
         },
         "Draw": {
-          "price": 4.38,
-          "bookmaker": "GTbets"
+          "price": 4.4,
+          "bookmaker": "Coolbet"
         }
       },
       "odds_board": [
@@ -16482,9 +16436,9 @@
         {
           "bookmaker": "Coolbet",
           "prices": {
-            "Atlas": 6.75,
+            "Atlas": 6.5,
             "Cruz Azul": 1.5,
-            "Draw": 4.3
+            "Draw": 4.4
           }
         },
         {
@@ -16583,7 +16537,7 @@
           "bookmaker": "GTbets"
         },
         "SonderjyskE": {
-          "price": 3.78,
+          "price": 3.76,
           "bookmaker": "Marathon Bet"
         },
         "Draw": {
@@ -16836,8 +16790,8 @@
         {
           "bookmaker": "BetOnline.ag",
           "prices": {
-            "Gwangju FC": 4.7,
-            "Incheon United": 1.72,
+            "Gwangju FC": 4.5,
+            "Incheon United": 1.74,
             "Draw": 3.6
           }
         },
@@ -16868,20 +16822,20 @@
           "outcome": "Gwangju FC",
           "best_price": 5.2,
           "bookmaker": "Tipico",
-          "fair_prob": 0.22,
+          "fair_prob": 0.2204,
           "implied_prob": 0.1923,
-          "edge_pct": 14.39,
-          "kelly": 0.0343,
+          "edge_pct": 14.6,
+          "kelly": 0.0348,
           "confidence": 22
         },
         {
           "outcome": "Draw",
           "best_price": 3.68,
           "bookmaker": "Pinnacle",
-          "fair_prob": 0.2818,
+          "fair_prob": 0.2817,
           "implied_prob": 0.2717,
-          "edge_pct": 3.69,
-          "kelly": 0.0138,
+          "edge_pct": 3.68,
+          "kelly": 0.0137,
           "confidence": 28
         }
       ]
@@ -16937,8 +16891,8 @@
         {
           "bookmaker": "BetOnline.ag",
           "prices": {
-            "FC Machida Zelvia": 1.77,
-            "Urawa Red Diamonds": 4.7,
+            "FC Machida Zelvia": 1.78,
+            "Urawa Red Diamonds": 4.6,
             "Draw": 3.5
           }
         },
@@ -17440,8 +17394,8 @@
           "bookmaker": "Unibet (SE)"
         },
         "IFK Goteborg": {
-          "price": 2.6,
-          "bookmaker": "Pinnacle"
+          "price": 2.62,
+          "bookmaker": "Betfair"
         },
         "Draw": {
           "price": 3.55,
@@ -17468,8 +17422,8 @@
         {
           "bookmaker": "Betfair",
           "prices": {
-            "IF Elfsborg": 2.64,
-            "IFK Goteborg": 2.6,
+            "IF Elfsborg": 2.62,
+            "IFK Goteborg": 2.62,
             "Draw": 3.55
           }
         },
@@ -17699,11 +17653,11 @@
           }
         },
         {
-          "bookmaker": "BetOnline.ag",
+          "bookmaker": "1xBet",
           "prices": {
-            "Kalmar FF": 2.58,
-            "Västerås SK": 2.64,
-            "Draw": 3.3
+            "Kalmar FF": 2.55,
+            "Västerås SK": 2.63,
+            "Draw": 3.34
           }
         }
       ],
@@ -17712,7 +17666,7 @@
         "price": 2.71,
         "bookmaker": "GTbets",
         "confidence": 39,
-        "edge_pct": 6.53,
+        "edge_pct": 6.52,
         "type": "h2h",
         "outcome": "Västerås SK",
         "official": true,
@@ -17929,16 +17883,16 @@
         {
           "bookmaker": "1xBet",
           "prices": {
-            "Radomiak Radom": 2.34,
-            "Zagłębie Lubin": 2.93,
+            "Radomiak Radom": 2.35,
+            "Zagłębie Lubin": 2.92,
             "Draw": 3.28
           }
         },
         {
           "bookmaker": "Marathon Bet",
           "prices": {
-            "Radomiak Radom": 2.32,
-            "Zagłębie Lubin": 2.91,
+            "Radomiak Radom": 2.33,
+            "Zagłębie Lubin": 2.9,
             "Draw": 3.28
           }
         },
@@ -18143,8 +18097,8 @@
           "bookmaker": "Unibet (SE)"
         },
         "Manchester City": {
-          "price": 1.53,
-          "bookmaker": "Matchbook"
+          "price": 1.52,
+          "bookmaker": "Betfair"
         },
         "Draw": {
           "price": 5.2,
@@ -18153,15 +18107,15 @@
       },
       "odds_board": [
         {
-          "bookmaker": "Matchbook",
+          "bookmaker": "Betfair",
           "prices": {
             "Bournemouth": 6.4,
-            "Manchester City": 1.53,
+            "Manchester City": 1.52,
             "Draw": 5.0
           }
         },
         {
-          "bookmaker": "Betfair",
+          "bookmaker": "Matchbook",
           "prices": {
             "Bournemouth": 6.4,
             "Manchester City": 1.52,
@@ -18866,7 +18820,7 @@
         "price": 2.22,
         "bookmaker": "Coolbet",
         "confidence": 48,
-        "edge_pct": 5.64,
+        "edge_pct": 5.62,
         "type": "h2h",
         "outcome": "IF Brommapojkarna",
         "official": true,
@@ -18911,10 +18865,10 @@
           "outcome": "Degerfors IF",
           "best_price": 3.85,
           "bookmaker": "Unibet (SE)",
-          "fair_prob": 0.2686,
+          "fair_prob": 0.2688,
           "implied_prob": 0.2597,
-          "edge_pct": 3.41,
-          "kelly": 0.012,
+          "edge_pct": 3.47,
+          "kelly": 0.0122,
           "confidence": 27
         }
       ]
@@ -18930,7 +18884,7 @@
       "away": "Feyenoord",
       "best_h2h": {
         "Feyenoord": {
-          "price": 1.33,
+          "price": 1.32,
           "bookmaker": "Betfair"
         },
         "SC Cambuur": {
@@ -18946,7 +18900,7 @@
         {
           "bookmaker": "Betfair",
           "prices": {
-            "Feyenoord": 1.33,
+            "Feyenoord": 1.32,
             "SC Cambuur": 9.8,
             "Draw": 6.0
           }
@@ -19018,8 +18972,8 @@
       "away": "Villarreal",
       "best_h2h": {
         "Atlético Madrid": {
-          "price": 1.93,
-          "bookmaker": "Betfair"
+          "price": 1.94,
+          "bookmaker": "Matchbook"
         },
         "Villarreal": {
           "price": 4.3,
@@ -19032,15 +18986,15 @@
       },
       "odds_board": [
         {
-          "bookmaker": "Betfair",
+          "bookmaker": "Matchbook",
           "prices": {
-            "Atlético Madrid": 1.93,
+            "Atlético Madrid": 1.94,
             "Villarreal": 4.3,
             "Draw": 3.8
           }
         },
         {
-          "bookmaker": "Matchbook",
+          "bookmaker": "Betfair",
           "prices": {
             "Atlético Madrid": 1.93,
             "Villarreal": 4.3,
@@ -19084,8 +19038,8 @@
         "text": "Over 2.5 goals",
         "price": 1.93,
         "bookmaker": "1xBet",
-        "confidence": 55,
-        "edge_pct": 5.74,
+        "confidence": 54,
+        "edge_pct": 5.09,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -19093,38 +19047,38 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 1.744,
-        "xg_away": 1.323,
-        "p_home": 0.4739,
-        "p_draw": 0.2344,
-        "p_away": 0.2917,
+        "xg_home": 1.757,
+        "xg_away": 1.272,
+        "p_home": 0.4882,
+        "p_draw": 0.2341,
+        "p_away": 0.2776,
         "scorelines": [
           {
             "score": "1-1",
-            "p": 0.1074
+            "p": 0.1081
           },
           {
             "score": "2-1",
-            "p": 0.0937
+            "p": 0.095
           },
           {
             "score": "1-0",
-            "p": 0.0812
-          },
-          {
-            "score": "1-2",
-            "p": 0.0711
+            "p": 0.085
           },
           {
             "score": "2-0",
-            "p": 0.0708
+            "p": 0.0747
           },
           {
-            "score": "2-2",
-            "p": 0.062
+            "score": "1-2",
+            "p": 0.0687
+          },
+          {
+            "score": "0-1",
+            "p": 0.0615
           }
         ],
-        "p_btts": 0.6053
+        "p_btts": 0.5955
       },
       "value_picks": []
     },
@@ -19263,21 +19217,21 @@
           "bookmaker": "Coolbet"
         },
         "Le Havre": {
-          "price": 3.92,
+          "price": 3.9,
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 4.13,
-          "bookmaker": "Pinnacle"
+          "price": 4.11,
+          "bookmaker": "1xBet"
         }
       },
       "odds_board": [
         {
           "bookmaker": "1xBet",
           "prices": {
-            "AS Monaco": 1.93,
-            "Le Havre": 3.92,
-            "Draw": 4.12
+            "AS Monaco": 1.94,
+            "Le Havre": 3.9,
+            "Draw": 4.11
           }
         },
         {
@@ -19307,8 +19261,8 @@
         {
           "bookmaker": "Marathon Bet",
           "prices": {
-            "AS Monaco": 1.9,
-            "Le Havre": 3.86,
+            "AS Monaco": 1.91,
+            "Le Havre": 3.84,
             "Draw": 4.05
           }
         },
@@ -19323,10 +19277,10 @@
       ],
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 1.64,
+        "price": 1.65,
         "bookmaker": "1xBet",
         "confidence": 60,
-        "edge_pct": -1.6,
+        "edge_pct": -1.4,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -19394,15 +19348,15 @@
       },
       "odds_board": [
         {
-          "bookmaker": "Matchbook",
+          "bookmaker": "Betfair",
           "prices": {
-            "Liverpool": 1.99,
+            "Liverpool": 1.98,
             "Newcastle United": 4.0,
             "Draw": 4.0
           }
         },
         {
-          "bookmaker": "Betfair",
+          "bookmaker": "Matchbook",
           "prices": {
             "Liverpool": 1.98,
             "Newcastle United": 4.0,
@@ -19495,7 +19449,7 @@
           "bookmaker": "Betfair",
           "fair_prob": 0.2587,
           "implied_prob": 0.25,
-          "edge_pct": 3.48,
+          "edge_pct": 3.47,
           "kelly": 0.0116,
           "confidence": 26
         }
@@ -20037,8 +19991,8 @@
         {
           "bookmaker": "1xBet",
           "prices": {
-            "OFI Crete": 2.14,
-            "Volos FC": 3.35,
+            "OFI Crete": 2.13,
+            "Volos FC": 3.37,
             "Draw": 3.32
           }
         },
@@ -20368,19 +20322,19 @@
           }
         },
         {
+          "bookmaker": "Matchbook",
+          "prices": {
+            "Frosinone": 8.0,
+            "Juventus": 1.48,
+            "Draw": 4.7
+          }
+        },
+        {
           "bookmaker": "1xBet",
           "prices": {
             "Frosinone": 7.65,
             "Juventus": 1.48,
             "Draw": 4.75
-          }
-        },
-        {
-          "bookmaker": "Matchbook",
-          "prices": {
-            "Frosinone": 8.0,
-            "Juventus": 1.47,
-            "Draw": 4.7
           }
         },
         {
@@ -20438,8 +20392,8 @@
           "bookmaker": "1xBet"
         },
         "Sabadell FC": {
-          "price": 6.0,
-          "bookmaker": "Coolbet"
+          "price": 5.9,
+          "bookmaker": "Betfair"
         },
         "Draw": {
           "price": 4.32,
@@ -20467,8 +20421,8 @@
           "bookmaker": "Coolbet",
           "prices": {
             "CD Castellón": 1.55,
-            "Sabadell FC": 6.0,
-            "Draw": 4.2
+            "Sabadell FC": 5.75,
+            "Draw": 4.3
           }
         },
         {
@@ -20488,10 +20442,10 @@
           }
         },
         {
-          "bookmaker": "Unibet (NL)",
+          "bookmaker": "BetOnline.ag",
           "prices": {
-            "CD Castellón": 1.51,
-            "Sabadell FC": 5.5,
+            "CD Castellón": 1.52,
+            "Sabadell FC": 5.4,
             "Draw": 4.1
           }
         }
@@ -20769,7 +20723,7 @@
         },
         "Real Racing Club de Santander": {
           "price": 4.3,
-          "bookmaker": "Betfair"
+          "bookmaker": "Unibet (SE)"
         },
         "Draw": {
           "price": 3.08,
@@ -20778,19 +20732,19 @@
       },
       "odds_board": [
         {
-          "bookmaker": "Betfair",
-          "prices": {
-            "Getafe": 2.26,
-            "Real Racing Club de Santander": 4.3,
-            "Draw": 3.0
-          }
-        },
-        {
           "bookmaker": "Matchbook",
           "prices": {
             "Getafe": 2.26,
             "Real Racing Club de Santander": 4.2,
             "Draw": 3.05
+          }
+        },
+        {
+          "bookmaker": "Betfair",
+          "prices": {
+            "Getafe": 2.26,
+            "Real Racing Club de Santander": 4.2,
+            "Draw": 3.0
           }
         },
         {
@@ -20870,7 +20824,7 @@
           "prices": {
             "Estudiantes": 2.4,
             "Sarmiento de Junin": 3.5,
-            "Draw": 2.96
+            "Draw": 2.94
           }
         },
         {
@@ -21741,7 +21695,7 @@
         "price": 2.85,
         "bookmaker": "Tipico",
         "confidence": 37,
-        "edge_pct": 4.14,
+        "edge_pct": 4.15,
         "type": "h2h",
         "outcome": "Panetolikos Agrinio",
         "official": true,
@@ -22535,7 +22489,7 @@
         {
           "bookmaker": "Matchbook",
           "prices": {
-            "Barcelona": 1.35,
+            "Barcelona": 1.34,
             "Elche CF": 10.0,
             "Draw": 6.2
           }
@@ -22543,8 +22497,8 @@
         {
           "bookmaker": "Betfair",
           "prices": {
-            "Barcelona": 1.35,
-            "Elche CF": 9.4,
+            "Barcelona": 1.34,
+            "Elche CF": 9.6,
             "Draw": 6.2
           }
         },
@@ -22586,7 +22540,7 @@
         "price": 1.75,
         "bookmaker": "1xBet",
         "confidence": 60,
-        "edge_pct": 4.64,
+        "edge_pct": 4.65,
         "type": "totals",
         "side": "Under",
         "point": 3.5,
@@ -22594,38 +22548,38 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 1.117,
-        "xg_away": 1.866,
-        "p_home": 0.2255,
-        "p_draw": 0.2257,
-        "p_away": 0.5488,
+        "xg_home": 1.12,
+        "xg_away": 1.862,
+        "p_home": 0.2269,
+        "p_draw": 0.2261,
+        "p_away": 0.547,
         "scorelines": [
           {
             "score": "1-1",
-            "p": 0.1055
+            "p": 0.1057
           },
           {
             "score": "1-2",
-            "p": 0.0985
+            "p": 0.0984
           },
           {
             "score": "0-1",
-            "p": 0.0945
+            "p": 0.0943
           },
           {
             "score": "0-2",
-            "p": 0.0882
+            "p": 0.0878
           },
           {
             "score": "1-3",
-            "p": 0.0613
+            "p": 0.0611
           },
           {
             "score": "2-1",
-            "p": 0.0589
+            "p": 0.0592
           }
         ],
-        "p_btts": 0.5686
+        "p_btts": 0.5692
       },
       "value_picks": []
     },
@@ -22762,7 +22716,7 @@
       "best_h2h": {
         "Almería": {
           "price": 2.3,
-          "bookmaker": "Coolbet"
+          "bookmaker": "Betfair"
         },
         "Tenerife": {
           "price": 3.33,
@@ -22801,7 +22755,7 @@
         {
           "bookmaker": "Betfair",
           "prices": {
-            "Almería": 2.28,
+            "Almería": 2.3,
             "Tenerife": 3.3,
             "Draw": 3.15
           }
@@ -22817,7 +22771,7 @@
         {
           "bookmaker": "BetOnline.ag",
           "prices": {
-            "Almería": 2.26,
+            "Almería": 2.24,
             "Tenerife": 3.2,
             "Draw": 3.1
           }
@@ -23238,9 +23192,9 @@
         {
           "bookmaker": "1xBet",
           "prices": {
-            "Chapecoense": 3.7,
+            "Chapecoense": 3.73,
             "Sao Paulo": 2.09,
-            "Draw": 3.42
+            "Draw": 3.4
           }
         },
         {
@@ -23893,20 +23847,20 @@
         {
           "bookmaker": "1xBet",
           "prices": {
-            "Boca Juniors": 2.61,
-            "Racing Club": 3.07,
+            "Boca Juniors": 2.62,
+            "Racing Club": 3.06,
             "Draw": 2.91
           }
         }
       ],
       "recommendation": {
-        "text": "Under 1.5 goals",
-        "price": 2.43,
+        "text": "Over 1.5 goals",
+        "price": 1.57,
         "bookmaker": "1xBet",
-        "confidence": 39,
-        "edge_pct": -4.99,
+        "confidence": 60,
+        "edge_pct": -5.09,
         "type": "totals",
-        "side": "Under",
+        "side": "Over",
         "point": 1.5,
         "official": false,
         "basis": "model+market"
@@ -24016,7 +23970,7 @@
           "prices": {
             "Necaxa": 3.69,
             "Pumas": 1.95,
-            "Draw": 3.45
+            "Draw": 3.46
           }
         }
       ],
@@ -24563,7 +24517,7 @@
           "prices": {
             "CA Osasuna": 1.86,
             "Levante": 4.6,
-            "Draw": 3.65
+            "Draw": 3.7
           }
         },
         {
@@ -24604,38 +24558,38 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 1.612,
-        "xg_away": 1.049,
-        "p_home": 0.5048,
-        "p_draw": 0.2484,
-        "p_away": 0.2468,
+        "xg_home": 1.618,
+        "xg_away": 1.047,
+        "p_home": 0.5065,
+        "p_draw": 0.2479,
+        "p_away": 0.2456,
         "scorelines": [
           {
             "score": "1-1",
-            "p": 0.1182
+            "p": 0.1179
           },
           {
             "score": "1-0",
-            "p": 0.1127
+            "p": 0.1126
           },
           {
             "score": "2-1",
-            "p": 0.0952
+            "p": 0.0954
           },
           {
             "score": "2-0",
-            "p": 0.0908
+            "p": 0.0911
           },
           {
             "score": "0-1",
-            "p": 0.0733
+            "p": 0.0729
           },
           {
             "score": "0-0",
-            "p": 0.0699
+            "p": 0.0696
           }
         ],
-        "p_btts": 0.52
+        "p_btts": 0.5203
       },
       "value_picks": []
     },
@@ -24875,7 +24829,7 @@
         {
           "bookmaker": "Matchbook",
           "prices": {
-            "Chelsea": 1.99,
+            "Chelsea": 1.98,
             "Fulham": 4.0,
             "Draw": 3.95
           }
@@ -24883,7 +24837,7 @@
         {
           "bookmaker": "Betfair",
           "prices": {
-            "Chelsea": 1.99,
+            "Chelsea": 1.98,
             "Fulham": 4.0,
             "Draw": 3.9
           }
@@ -25105,8 +25059,8 @@
           "bookmaker": "Unibet (NL)"
         },
         "Málaga": {
-          "price": 2.76,
-          "bookmaker": "Betfair"
+          "price": 2.74,
+          "bookmaker": "Matchbook"
         },
         "Draw": {
           "price": 3.17,
@@ -25118,7 +25072,7 @@
           "bookmaker": "Matchbook",
           "prices": {
             "Deportivo La Coruña": 3.1,
-            "Málaga": 2.76,
+            "Málaga": 2.74,
             "Draw": 3.1
           }
         },
@@ -25126,8 +25080,8 @@
           "bookmaker": "Betfair",
           "prices": {
             "Deportivo La Coruña": 3.1,
-            "Málaga": 2.76,
-            "Draw": 3.05
+            "Málaga": 2.72,
+            "Draw": 3.1
           }
         },
         {
@@ -25193,7 +25147,7 @@
           "bookmaker": "Tipico"
         },
         "Mallorca": {
-          "price": 2.6,
+          "price": 2.58,
           "bookmaker": "Betfair"
         },
         "Draw": {
@@ -25214,7 +25168,7 @@
           "bookmaker": "Betfair",
           "prices": {
             "Granada CF": 3.05,
-            "Mallorca": 2.6,
+            "Mallorca": 2.58,
             "Draw": 3.0
           }
         },
@@ -25227,27 +25181,27 @@
           }
         },
         {
+          "bookmaker": "Unibet (SE)",
+          "prices": {
+            "Granada CF": 3.05,
+            "Mallorca": 2.43,
+            "Draw": 3.1
+          }
+        },
+        {
+          "bookmaker": "Unibet (NL)",
+          "prices": {
+            "Granada CF": 3.05,
+            "Mallorca": 2.43,
+            "Draw": 3.1
+          }
+        },
+        {
           "bookmaker": "Marathon Bet",
           "prices": {
             "Granada CF": 2.97,
             "Mallorca": 2.48,
             "Draw": 3.02
-          }
-        },
-        {
-          "bookmaker": "BetOnline.ag",
-          "prices": {
-            "Granada CF": 2.96,
-            "Mallorca": 2.52,
-            "Draw": 2.92
-          }
-        },
-        {
-          "bookmaker": "Tipico",
-          "prices": {
-            "Granada CF": 3.1,
-            "Mallorca": 2.4,
-            "Draw": 2.9
           }
         }
       ],
@@ -25406,7 +25360,7 @@
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 3.2,
+          "price": 3.25,
           "bookmaker": "Coolbet"
         }
       },
@@ -25417,6 +25371,14 @@
             "Atletico Paranaense": 3.52,
             "Botafogo": 2.32,
             "Draw": 3.06
+          }
+        },
+        {
+          "bookmaker": "Coolbet",
+          "prices": {
+            "Atletico Paranaense": 3.4,
+            "Botafogo": 2.25,
+            "Draw": 3.25
           }
         },
         {
@@ -25433,14 +25395,6 @@
             "Atletico Paranaense": 3.53,
             "Botafogo": 2.32,
             "Draw": 2.98
-          }
-        },
-        {
-          "bookmaker": "Coolbet",
-          "prices": {
-            "Atletico Paranaense": 3.4,
-            "Botafogo": 2.25,
-            "Draw": 3.2
           }
         },
         {
@@ -25673,7 +25627,7 @@
           "bookmaker": "1xBet",
           "prices": {
             "Rosario Central": 2.87,
-            "Talleres": 2.75,
+            "Talleres": 2.76,
             "Draw": 2.93
           }
         },
@@ -25707,7 +25661,7 @@
         "price": 2.99,
         "bookmaker": "Pinnacle",
         "confidence": 35,
-        "edge_pct": 4.78,
+        "edge_pct": 4.79,
         "type": "h2h",
         "outcome": "Rosario Central",
         "official": true,
@@ -26043,45 +25997,45 @@
         "price": 2.79,
         "bookmaker": "1xBet",
         "confidence": 38,
-        "edge_pct": 5.27,
+        "edge_pct": 5.45,
         "type": "h2h",
         "outcome": "Valencia",
         "official": true,
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 1.457,
-        "xg_away": 1.296,
-        "p_home": 0.4097,
-        "p_draw": 0.2543,
-        "p_away": 0.336,
+        "xg_home": 1.463,
+        "xg_away": 1.294,
+        "p_home": 0.4116,
+        "p_draw": 0.254,
+        "p_away": 0.3344,
         "scorelines": [
           {
             "score": "1-1",
-            "p": 0.1203
+            "p": 0.1202
           },
           {
             "score": "1-0",
-            "p": 0.0928
+            "p": 0.0929
           },
           {
             "score": "2-1",
-            "p": 0.0877
+            "p": 0.0879
           },
           {
             "score": "0-1",
-            "p": 0.0826
+            "p": 0.0821
           },
           {
             "score": "1-2",
-            "p": 0.078
+            "p": 0.0778
           },
           {
             "score": "2-0",
-            "p": 0.0677
+            "p": 0.0679
           }
         ],
-        "p_btts": 0.5573
+        "p_btts": 0.5578
       },
       "value_picks": []
     },
@@ -26312,12 +26266,12 @@
       "away": "Dinamo Zagreb",
       "best_h2h": {
         "Dinamo Zagreb": {
-          "price": 2.95,
+          "price": 2.93,
           "bookmaker": "1xBet"
         },
         "Viking FK": {
-          "price": 2.47,
-          "bookmaker": "Pinnacle"
+          "price": 2.45,
+          "bookmaker": "Unibet (NL)"
         },
         "Draw": {
           "price": 3.75,
@@ -26328,9 +26282,9 @@
         {
           "bookmaker": "1xBet",
           "prices": {
-            "Dinamo Zagreb": 2.95,
-            "Viking FK": 2.42,
-            "Draw": 3.65
+            "Dinamo Zagreb": 2.93,
+            "Viking FK": 2.44,
+            "Draw": 3.63
           }
         },
         {
@@ -26344,17 +26298,9 @@
         {
           "bookmaker": "Pinnacle",
           "prices": {
-            "Dinamo Zagreb": 2.77,
-            "Viking FK": 2.47,
-            "Draw": 3.47
-          }
-        },
-        {
-          "bookmaker": "Tipico",
-          "prices": {
-            "Dinamo Zagreb": 2.95,
-            "Viking FK": 2.3,
-            "Draw": 3.4
+            "Dinamo Zagreb": 2.84,
+            "Viking FK": 2.33,
+            "Draw": 3.65
           }
         },
         {
@@ -26367,6 +26313,14 @@
         },
         {
           "bookmaker": "Unibet (SE)",
+          "prices": {
+            "Dinamo Zagreb": 2.7,
+            "Viking FK": 2.45,
+            "Draw": 3.45
+          }
+        },
+        {
+          "bookmaker": "PMU (FR)",
           "prices": {
             "Dinamo Zagreb": 2.7,
             "Viking FK": 2.45,
@@ -26662,38 +26616,38 @@
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 2.608,
-        "xg_away": 0.971,
-        "p_home": 0.7244,
-        "p_draw": 0.1581,
-        "p_away": 0.1175,
+        "xg_home": 2.62,
+        "xg_away": 0.969,
+        "p_home": 0.7267,
+        "p_draw": 0.1571,
+        "p_away": 0.1163,
         "scorelines": [
           {
             "score": "2-0",
-            "p": 0.0949
+            "p": 0.0948
           },
           {
             "score": "2-1",
-            "p": 0.0921
+            "p": 0.0919
           },
           {
             "score": "3-0",
-            "p": 0.0825
+            "p": 0.0828
           },
           {
             "score": "3-1",
-            "p": 0.0801
+            "p": 0.0802
           },
           {
             "score": "1-0",
-            "p": 0.0728
+            "p": 0.0724
           },
           {
             "score": "1-1",
-            "p": 0.0707
+            "p": 0.0701
           }
         ],
-        "p_btts": 0.5754
+        "p_btts": 0.5753
       },
       "value_picks": []
     },
@@ -26863,34 +26817,34 @@
         "price": 1.43,
         "bookmaker": "1xBet",
         "confidence": 73,
-        "edge_pct": 4.46,
+        "edge_pct": 4.55,
         "type": "h2h",
         "outcome": "Barcelona",
         "official": true,
         "basis": "model+market"
       },
       "model": {
-        "xg_home": 2.824,
-        "xg_away": 0.741,
-        "p_home": 0.8026,
-        "p_draw": 0.1268,
-        "p_away": 0.0707,
+        "xg_home": 2.834,
+        "xg_away": 0.74,
+        "p_home": 0.8042,
+        "p_draw": 0.1259,
+        "p_away": 0.0699,
         "scorelines": [
           {
             "score": "2-0",
-            "p": 0.1128
+            "p": 0.1127
           },
           {
             "score": "3-0",
-            "p": 0.1062
+            "p": 0.1064
           },
           {
             "score": "2-1",
-            "p": 0.0836
+            "p": 0.0833
           },
           {
             "score": "1-0",
-            "p": 0.0799
+            "p": 0.0795
           },
           {
             "score": "3-1",
@@ -26898,10 +26852,10 @@
           },
           {
             "score": "4-0",
-            "p": 0.075
+            "p": 0.0754
           }
         ],
-        "p_btts": 0.4924
+        "p_btts": 0.492
       },
       "value_picks": []
     },
@@ -27284,6 +27238,22 @@
           }
         },
         {
+          "bookmaker": "Winamax (DE)",
+          "prices": {
+            "Atlético Huracán": 1.5,
+            "Estudiantes de Río Cuarto": 6.0,
+            "Draw": 3.35
+          }
+        },
+        {
+          "bookmaker": "Winamax (FR)",
+          "prices": {
+            "Atlético Huracán": 1.48,
+            "Estudiantes de Río Cuarto": 5.8,
+            "Draw": 3.25
+          }
+        },
+        {
           "bookmaker": "Betclic (FR)",
           "prices": {
             "Atlético Huracán": 1.46,
@@ -27397,19 +27367,19 @@
           }
         },
         {
+          "bookmaker": "Winamax (DE)",
+          "prices": {
+            "Sarmiento de Junin": 4.3,
+            "Union Santa Fe": 1.68,
+            "Draw": 3.2
+          }
+        },
+        {
           "bookmaker": "LeoVegas (SE)",
           "prices": {
             "Sarmiento de Junin": 4.6,
             "Union Santa Fe": 1.65,
             "Draw": 3.15
-          }
-        },
-        {
-          "bookmaker": "Unibet (FR)",
-          "prices": {
-            "Sarmiento de Junin": 4.4,
-            "Union Santa Fe": 1.68,
-            "Draw": 3.05
           }
         }
       ],
@@ -28891,12 +28861,12 @@
           "bookmaker": "Codere (IT)"
         },
         "Velez Sarsfield BA": {
-          "price": 3.3,
+          "price": 3.05,
           "bookmaker": "Unibet (SE)"
         },
         "Draw": {
-          "price": 2.85,
-          "bookmaker": "Unibet (SE)"
+          "price": 2.8,
+          "bookmaker": "1xBet"
         }
       },
       "odds_board": [
@@ -28905,23 +28875,23 @@
           "prices": {
             "Deportivo Riestra": 2.98,
             "Velez Sarsfield BA": 2.77,
-            "Draw": 2.81
+            "Draw": 2.8
           }
         },
         {
           "bookmaker": "Unibet (SE)",
           "prices": {
-            "Deportivo Riestra": 2.4,
-            "Velez Sarsfield BA": 3.3,
-            "Draw": 2.85
+            "Deportivo Riestra": 2.6,
+            "Velez Sarsfield BA": 3.05,
+            "Draw": 2.8
           }
         },
         {
           "bookmaker": "Marathon Bet",
           "prices": {
-            "Deportivo Riestra": 2.92,
+            "Deportivo Riestra": 2.93,
             "Velez Sarsfield BA": 2.72,
-            "Draw": 2.76
+            "Draw": 2.75
           }
         },
         {
@@ -28943,18 +28913,18 @@
         {
           "bookmaker": "LeoVegas (SE)",
           "prices": {
-            "Deportivo Riestra": 2.25,
-            "Velez Sarsfield BA": 3.1,
-            "Draw": 2.65
+            "Deportivo Riestra": 2.4,
+            "Velez Sarsfield BA": 2.85,
+            "Draw": 2.63
           }
         }
       ],
       "recommendation": {
         "text": "Under 1.5 goals",
-        "price": 2.29,
+        "price": 2.28,
         "bookmaker": "1xBet",
         "confidence": 47,
-        "edge_pct": 7.84,
+        "edge_pct": 7.72,
         "type": "totals",
         "side": "Under",
         "point": 1.5,
@@ -28998,13 +28968,13 @@
       "value_picks": [
         {
           "outcome": "Velez Sarsfield BA",
-          "best_price": 3.3,
+          "best_price": 3.05,
           "bookmaker": "Unibet (SE)",
-          "fair_prob": 0.3413,
-          "implied_prob": 0.303,
-          "edge_pct": 12.62,
-          "kelly": 0.0549,
-          "confidence": 34
+          "fair_prob": 0.3464,
+          "implied_prob": 0.3279,
+          "edge_pct": 5.66,
+          "kelly": 0.0276,
+          "confidence": 35
         }
       ]
     },
@@ -29156,8 +29126,8 @@
         {
           "bookmaker": "1xBet",
           "prices": {
-            "Gimnasia La Plata": 4.47,
-            "Rosario Central": 1.92,
+            "Gimnasia La Plata": 4.41,
+            "Rosario Central": 1.93,
             "Draw": 3.23
           }
         },
@@ -29172,8 +29142,8 @@
         {
           "bookmaker": "Marathon Bet",
           "prices": {
-            "Gimnasia La Plata": 4.4,
-            "Rosario Central": 1.89,
+            "Gimnasia La Plata": 4.33,
+            "Rosario Central": 1.9,
             "Draw": 3.18
           }
         },
@@ -29203,13 +29173,13 @@
         }
       ],
       "recommendation": {
-        "text": "Under 2.5 goals",
-        "price": 1.54,
+        "text": "Over 2.5 goals",
+        "price": 2.45,
         "bookmaker": "1xBet",
-        "confidence": 62,
-        "edge_pct": -5.0,
+        "confidence": 39,
+        "edge_pct": -5.06,
         "type": "totals",
-        "side": "Under",
+        "side": "Over",
         "point": 2.5,
         "official": false,
         "basis": "model+market"
@@ -29265,7 +29235,7 @@
           "bookmaker": "LeoVegas (SE)"
         },
         "Seattle Sounders FC": {
-          "price": 2.65,
+          "price": 2.7,
           "bookmaker": "LeoVegas (SE)"
         },
         "Draw": {
@@ -29278,43 +29248,43 @@
           "bookmaker": "LeoVegas (SE)",
           "prices": {
             "Chicago Fire": 2.5,
-            "Seattle Sounders FC": 2.65,
+            "Seattle Sounders FC": 2.7,
             "Draw": 3.8
           }
         },
         {
           "bookmaker": "Unibet (SE)",
           "prices": {
-            "Chicago Fire": 2.45,
-            "Seattle Sounders FC": 2.55,
+            "Chicago Fire": 2.43,
+            "Seattle Sounders FC": 2.6,
             "Draw": 3.65
           }
         },
         {
           "bookmaker": "Unibet (NL)",
           "prices": {
-            "Chicago Fire": 2.45,
-            "Seattle Sounders FC": 2.55,
+            "Chicago Fire": 2.43,
+            "Seattle Sounders FC": 2.6,
             "Draw": 3.65
           }
         },
         {
           "bookmaker": "PMU (FR)",
           "prices": {
-            "Chicago Fire": 2.38,
+            "Chicago Fire": 2.35,
             "Seattle Sounders FC": 2.5,
             "Draw": 3.5
           }
         }
       ],
       "recommendation": {
-        "text": "Over 3.5 goals",
-        "price": 2.33,
+        "text": "Under 3.5 goals",
+        "price": 1.6,
         "bookmaker": "Unibet (SE)",
-        "confidence": 40,
-        "edge_pct": -6.2,
+        "confidence": 59,
+        "edge_pct": -5.98,
         "type": "totals",
-        "side": "Over",
+        "side": "Under",
         "point": 3.5,
         "official": false,
         "basis": "model+market"
@@ -29487,12 +29457,12 @@
       "away": "Lanus",
       "best_h2h": {
         "Boca Juniors": {
-          "price": 1.79,
+          "price": 1.78,
           "bookmaker": "1xBet"
         },
         "Lanus": {
-          "price": 5.6,
-          "bookmaker": "Codere (IT)"
+          "price": 5.65,
+          "bookmaker": "1xBet"
         },
         "Draw": {
           "price": 3.5,
@@ -29503,8 +29473,8 @@
         {
           "bookmaker": "1xBet",
           "prices": {
-            "Boca Juniors": 1.79,
-            "Lanus": 5.54,
+            "Boca Juniors": 1.78,
+            "Lanus": 5.65,
             "Draw": 3.18
           }
         },
@@ -29519,8 +29489,8 @@
         {
           "bookmaker": "Marathon Bet",
           "prices": {
-            "Boca Juniors": 1.76,
-            "Lanus": 5.45,
+            "Boca Juniors": 1.75,
+            "Lanus": 5.55,
             "Draw": 3.12
           }
         },
@@ -31494,7 +31464,7 @@
           "bookmaker": "1xBet"
         },
         "Draw": {
-          "price": 3.23,
+          "price": 3.21,
           "bookmaker": "1xBet"
         }
       },
@@ -31502,17 +31472,17 @@
         {
           "bookmaker": "1xBet",
           "prices": {
-            "Banfield": 5.04,
+            "Banfield": 5.09,
             "River Plate": 1.83,
-            "Draw": 3.23
+            "Draw": 3.21
           }
         },
         {
           "bookmaker": "Marathon Bet",
           "prices": {
-            "Banfield": 4.95,
+            "Banfield": 5.0,
             "River Plate": 1.8,
-            "Draw": 3.18
+            "Draw": 3.16
           }
         },
         {
@@ -31550,10 +31520,10 @@
       ],
       "recommendation": {
         "text": "Over 2.5 goals",
-        "price": 2.4,
+        "price": 2.37,
         "bookmaker": "1xBet",
         "confidence": 40,
-        "edge_pct": -5.09,
+        "edge_pct": -5.2,
         "type": "totals",
         "side": "Over",
         "point": 2.5,
@@ -31599,10 +31569,10 @@
           "outcome": "Banfield",
           "best_price": 5.6,
           "bookmaker": "Codere (IT)",
-          "fair_prob": 0.1862,
+          "fair_prob": 0.1857,
           "implied_prob": 0.1786,
-          "edge_pct": 4.25,
-          "kelly": 0.0092,
+          "edge_pct": 3.96,
+          "kelly": 0.0086,
           "confidence": 19
         }
       ]
@@ -32102,12 +32072,12 @@
       "away": "Gimnasia Mendoza",
       "best_h2h": {
         "Gimnasia Mendoza": {
-          "price": 6.5,
+          "price": 6.4,
           "bookmaker": "Marathon Bet"
         },
         "Independiente": {
-          "price": 1.58,
-          "bookmaker": "Betclic (FR)"
+          "price": 1.59,
+          "bookmaker": "Marathon Bet"
         },
         "Draw": {
           "price": 3.6,
@@ -32118,9 +32088,9 @@
         {
           "bookmaker": "Marathon Bet",
           "prices": {
-            "Gimnasia Mendoza": 6.5,
-            "Independiente": 1.58,
-            "Draw": 3.5
+            "Gimnasia Mendoza": 6.4,
+            "Independiente": 1.59,
+            "Draw": 3.48
           }
         },
         {
