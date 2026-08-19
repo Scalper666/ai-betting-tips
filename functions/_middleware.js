@@ -1,4 +1,14 @@
-// Edge geo-block (Cloudflare Pages Functions). Countries where promoting
+// Edge middleware (Cloudflare Pages Functions): redirect table, geo-block and
+// the www canonical, applied at the CDN before any page is served.
+//
+// The redirects live here rather than in _redirects because Cloudflare only
+// honours roughly the first 100 entries of that file on our plan — we have 600+,
+// and the ones past the cap silently did nothing for weeks (GSC kept failing its
+// 404 validation while the file looked complete). A Map has no such limit.
+// Regenerate redirects.json with scratchpad/mkredirects.py.
+import REDIRECTS from './redirects.json';
+
+// Edge geo-block. Countries where promoting
 // offshore betting is actively prosecuted get HTTP 451 instead of the site.
 // Runs at the CDN before any page is served; Googlebot (US) is unaffected.
 // Edit BLOCKED to adjust policy.
@@ -24,6 +34,15 @@ export async function onRequest(context) {
     url.hostname = 'ai-betting-tips.com';
     return Response.redirect(url.toString(), 301);
   }
+  // exact-match redirect table (slug migrations, retired family parents)
+  const path = url.pathname.replace(/\/+$/, '') || '/';
+  const target = REDIRECTS[path];
+  if (target) {
+    const dest = new URL(target, url.origin);
+    dest.search = url.search;
+    return Response.redirect(dest.toString(), 301);
+  }
+
   const country = context.request.cf?.country;
   if (country && BLOCKED.has(country)) {
     return new Response(
