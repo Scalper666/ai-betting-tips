@@ -1188,3 +1188,17 @@
 # table page never existed for this league (no standings source) — send to the hub
 /table/liga-profesional/ /table/ 301
 /table/liga-profesional /table/ 301
+
+# Leagues we price but football-data has no standings for (MLS): the /table page
+# was indexed when the snapshot briefly carried them. Point at the league page
+# rather than leaving a 404 — deleting these once the source covers the league.
+/table/mls /league/mls 301
+/table/mls/ /league/mls/ 301
+/es/table/mls /es/league/mls 301
+/es/table/mls/ /es/league/mls/ 301
+/pt/table/mls /pt/league/mls 301
+/pt/table/mls/ /pt/league/mls/ 301
+/de/table/mls /de/league/mls 301
+/de/table/mls/ /de/league/mls/ 301
+/fr/table/mls /fr/league/mls 301
+/fr/table/mls/ /fr/league/mls/ 301

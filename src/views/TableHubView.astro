@@ -18,12 +18,15 @@ const T = (k) => t(lang, k);
 const L = (pth) => lhref(lang, pth);
 const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
 
+// Mirrors tablePaths(): a league is listed as soon as it has a standings
+// shape. Leagues whose new season hasn't kicked off show no leader yet — the
+// tile says so instead of the hub silently dropping them (and 404ing).
 const tables = Object.entries(fdData.leagues ?? {})
-  .filter(([, lg]) => (lg.standings ?? []).some((r) => (r.p ?? 0) > 0))
+  .filter(([, lg]) => (lg.standings ?? []).length > 0)
   .map(([sk, lg]) => ({
     sk,
     name: leagueName(sk, lg.name),
-    leader: lg.standings[0],
+    leader: (lg.standings ?? []).some((r) => (r.p ?? 0) > 0) ? lg.standings[0] : null,
     clubs: lg.standings.length,
   }));
 
@@ -64,7 +67,7 @@ const schema = {
                 <div class="ic">📊</div>
                 <div>
                   <h4>{x.name}</h4>
-                  <p>{F('tb.hubClubs', { n: x.clubs, team: x.leader.team, pts: x.leader.pts })}</p>
+                  <p>{x.leader ? F('tb.hubClubs', { n: x.clubs, team: x.leader.team, pts: x.leader.pts }) : F('tb.hubPre', { n: x.clubs })}</p>
                 </div>
                 <span class="arr">→</span>
               </a>

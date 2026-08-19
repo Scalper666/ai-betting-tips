@@ -8,6 +8,7 @@ import seasonsData from '../data/seasons.json';
 import { slugify, faqSchema, BUILD_ISO, fmtDate } from '../lib/utils.js';
 import { leagueName } from '../lib/leagues.js';
 import { hasTeamPage, hasH2hHub, hasTeamsHub, hasLeaguePage, hasResultsPage, hasScorersPage } from '../lib/links.js';
+import { buildSeasonTables } from '../lib/seasonTables.js';
 import { t, lhref } from '../i18n/index.js';
 
 // League standings, localized. Data comes from the football-data snapshot the
@@ -21,6 +22,8 @@ const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`
 const lg = (fdData.leagues ?? {})[sk];
 const name = leagueName(sk, lg?.name ?? '');
 const rows = lg?.standings ?? [];
+// last completed season's final table, for the pre-season state below
+const archive = buildSeasonTables().find((s) => s.sportKey === sk) ?? null;
 
 // Live table or last season's final one? Two signals, because the round-robin
 // test alone misreads formats like the 36-club UEFA league phase.
@@ -40,7 +43,7 @@ const upcoming = (predictions.tips ?? [])
 
 const season = (seasonsData.seasons ?? []).find((s) => s.sport_key === sk) ?? null;
 const others = Object.entries(fdData.leagues ?? {})
-  .filter(([k, l]) => k !== sk && (l.standings ?? []).some((r) => (r.p ?? 0) > 0));
+  .filter(([k, l]) => k !== sk && (l.standings ?? []).length > 0);
 
 const title = completed ? F('tb.titleFinal', { name }) : F('tb.titleLive', { name });
 const description = completed
@@ -66,7 +69,9 @@ const schema = { '@context': 'https://schema.org', ...faqSchema(faq) };
       <p class="lead">
         {completed
           ? F('tb.leadFinal', { name, n: rows.length, p: played })
-          : F('tb.leadLive', { name, n: rows.length })}
+          : played === 0
+            ? F('tb.preLead', { name })
+            : F('tb.leadLive', { name, n: rows.length })}
       </p>
       <p class="upd-line">{T('tb.snapshot')} {fmtDate(BUILD_ISO, lang)} · <a href="/editorial-policy">{T('common.howWeWrite')}</a></p>
     </div>
@@ -80,6 +85,18 @@ const schema = { '@context': 'https://schema.org', ...faqSchema(faq) };
             <h2 class="sec-title">{completed ? T('tb.secFinal') : T('tb.secLive')} <b>{F('tb.standings', { name })}</b></h2>
             {hasLeaguePage(name) && <a href={L(`/league/${slugify(name)}`)} class="more-link">{T('tb.leagueTips')} →</a>}
           </div>
+          {played === 0 && (
+            <div class="box" style="margin-bottom:14px">
+              <div class="box-pad">
+                <h3 style="margin:0 0 6px">{F('tb.preH', { name })}</h3>
+                <p class="dim" style="margin:0">{T('tb.preP')}</p>
+                <div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+                  {archive && <a href={L(`/table/${archive.slug}/${archive.season}`)} class="btn btn-mint btn-sm">{F('tb.secFinal2', { season: archive.season })}</a>}
+                  {hasLeaguePage(name) && <a href={L(`/league/${slugify(name)}`)} class="btn btn-ghost btn-sm">{T('tb.leagueTips')}</a>}
+                </div>
+              </div>
+            </div>
+          )}
           <div class="odds-table"><div class="scr-scroll">
             <table class="otbl">
               <thead><tr><th>#</th><th style="text-align:left">{T('tb.thTeam')}</th><th>P</th><th>W</th><th>D</th><th>L</th><th>GD</th><th>Pts</th></tr></thead>
