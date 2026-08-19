@@ -1,0 +1,16 @@
+---
+import H2hPairView from '../../../views/H2hPairView.astro';
+import { buildH2hPairs } from '../../../lib/h2h.js';
+import { MATCH_LANGS } from '../../../i18n/index.js';
+
+// h2h pages ship only in the full-parity languages (same gate as match pages)
+export function getStaticPaths() {
+  const pairs = buildH2hPairs();
+  return MATCH_LANGS.flatMap((lang) =>
+    pairs.map((p) => ({ params: { lang, pair: p.slug }, props: { p } }))
+  );
+}
+const { p } = Astro.props;
+const { lang } = Astro.params;
+---
+<H2hPairView p={p} lang={lang} />

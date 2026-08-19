@@ -1,0 +1,10 @@
+---
+import H2hHubView from '../../../views/H2hHubView.astro';
+import { MATCH_LANGS } from '../../../i18n/index.js';
+
+export function getStaticPaths() {
+  return MATCH_LANGS.map((lang) => ({ params: { lang } }));
+}
+const { lang } = Astro.params;
+---
+<H2hHubView lang={lang} />

@@ -1,0 +1,167 @@
+---
+import Base from '../layouts/Base.astro';
+import ToolsBox from '../components/ToolsBox.astro';
+import predictions from '../data/predictions.json';
+import { buildH2hPairs, pairSlug } from '../lib/h2h.js';
+import { resolveTeam } from '../lib/form.js';
+import { matchSlug, slugify } from '../lib/utils.js';
+import { t, lhref } from '../i18n/index.js';
+
+// One page per pair with ≥2 recorded meetings — "Arsenal vs Chelsea head to
+// head". Localized wave 2: EN + MATCH_LANGS share this view (hh.* keys).
+const { p, lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
+const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
+const dloc = { en: 'en-GB', es: 'es-ES', pt: 'pt-BR', de: 'de-DE', fr: 'fr-FR', sw: 'sw-KE', ha: 'ha-NG', yo: 'yo-NG', ig: 'ig-NG', am: 'am-ET' }[lang] ?? 'en-GB';
+
+const s = p.stats;
+const pct = (n) => Math.round((n / s.n) * 100);
+const shortDate = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString(dloc, { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+
+const upcoming = (predictions.tips ?? []).find((t2) => {
+  const th = resolveTeam(t2.sport_key, t2.home) ?? t2.home;
+  const ta = resolveTeam(t2.sport_key, t2.away) ?? t2.away;
+  return pairSlug(th, ta) === p.slug;
+});
+
+const liveLeagues = new Set((predictions.tips ?? []).map((t2) => slugify(t2.league)));
+const leagueHref = liveLeagues.has(slugify(p.league)) ? `/league/${slugify(p.league)}` : '/predictions';
+
+const others = buildH2hPairs()
+  .filter((x) => x.league === p.league && x.slug !== p.slug)
+  .sort((a, b) => b.stats.n - a.stats.n)
+  .slice(0, 8);
+
+const title = F('hh.title', { a: p.teamA, b: p.teamB });
+const description = F('hh.desc', { a: p.teamA, b: p.teamB, n: s.n, aw: s.aW, d: s.draws, bw: s.bW, avg: s.avgGoals });
+
+const lead = s.aW > s.bW
+  ? F('hh.leadWins', { team: p.teamA, w: s.aW, l: s.bW })
+  : s.bW > s.aW
+    ? F('hh.leadWins', { team: p.teamB, w: s.bW, l: s.aW })
+    : F('hh.level', { w: s.aW });
+const seoBody = F('hh.seoBody', {
+  n: s.n, lead, draws: s.draws, avg: s.avgGoals, over: pct(s.over25), btts: pct(s.btts),
+  soon: upcoming ? T('hh.seoSoon') : '',
+});
+
+const faq = [
+  { q: F('hh.faq1q', { a: p.teamA, b: p.teamB }),
+    a: F('hh.faq1a', { n: s.n, a: p.teamA, aw: s.aW, b: p.teamB, bw: s.bW, d: s.draws }) },
+  { q: F('hh.faq2q', { a: p.teamA, b: p.teamB }),
+    a: F('hh.faq2a', { avg: s.avgGoals, over: pct(s.over25), btts: pct(s.btts) }) },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+<Base lang={lang} i18nPath={`/h2h/${p.slug}`} title={title} description={description} schema={schema} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href={L('/')}>{T('crumb.home')}</a><span>/</span>
+        <a href={L('/h2h')}>{T('hh.crumb')}</a><span>/</span><a href={L(`/h2h/league/${slugify(p.league)}`)}>{p.league}</a><span>/</span>
+        {p.teamA} vs {p.teamB}
+      </div>
+      <h1>{p.teamA} vs {p.teamB} <em>{T('hh.h1em')}</em></h1>
+      <p class="lead">{F('hh.lead', { n: s.n, league: p.league })}</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+
+        {upcoming && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">{T('hh.againPre')} <b>{T('hh.againBold')}</b></h2></div>
+            <div class="res-sum">
+              <a class="res-chip win" href={L(`/predictions/${matchSlug(upcoming)}`)} style="text-decoration:none">
+                <b>{upcoming.home} v {upcoming.away}</b><span>{T('hh.readPred')}</span>
+              </a>
+            </div>
+          </section>
+        )}
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{T('hh.recordPre')} <b>{T('hh.recordBold')}</b></h2></div>
+          <div class="res-sum">
+            <div class="res-chip"><b>{s.n}</b><span>{T('hh.meetings')}</span></div>
+            <div class="res-chip win"><b>{s.aW}</b><span>{F('hh.wins', { team: p.teamA })}</span></div>
+            <div class="res-chip"><b>{s.draws}</b><span>{T('hh.drawsLbl')}</span></div>
+            <div class="res-chip lose"><b>{s.bW}</b><span>{F('hh.wins', { team: p.teamB })}</span></div>
+            <div class="res-chip"><b>{s.aG}–{s.bG}</b><span>{T('hh.goalsLbl')}</span></div>
+          </div>
+          <div class="res-sum" style="margin-top:10px">
+            <div class="res-chip"><b>{s.avgGoals}</b><span>{T('hh.avgGoals')}</span></div>
+            <div class="res-chip"><b>{pct(s.over25)}%</b><span>{T('hh.over25')}</span></div>
+            <div class="res-chip"><b>{pct(s.btts)}%</b><span>BTTS</span></div>
+          </div>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{T('hh.pastPre')} <b>{T('hh.pastBold')}</b></h2></div>
+          <div class="res-list">
+            {p.meetings.map((m) => {
+              const aHome = m.home === p.teamA;
+              const ga = aHome ? m.hs : m.as, gb = aHome ? m.as : m.hs;
+              const res = ga > gb ? 'w' : gb > ga ? 'l' : 'v';
+              return (
+                <div class="res-row">
+                  <span class={`res-mark ${res}`}>{res === 'w' ? 'W' : res === 'l' ? 'L' : 'D'}</span>
+                  <span class="res-date">{shortDate(m.d)}</span>
+                  <div class="res-match"><b>{m.home} {m.hs}–{m.as} {m.away}</b><span>{p.league}</span></div>
+                  <span class="res-odds" style="visibility:hidden"></span>
+                  <span class="res-profit zero"></span>
+                </div>
+              );
+            })}
+          </div>
+          <p class="res-note">{F('hh.wdlNote', { team: p.teamA })}</p>
+        </section>
+
+        <section class="seo">
+          <h2>{F('hh.numbersH', { a: p.teamA, b: p.teamB })}</h2>
+          <p>{seoBody}</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{T('hh.faqPre')} <b>{T('hh.faqBold')}</b></h2></div>
+          <div class="faq">
+            {faq.map((f, i) => (
+              <div class={`faq-item${i === 0 ? ' open' : ''}`}>
+                <div class="faq-q">{f.q}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{f.a}</p></div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>🔍 {T('nav.screener')}</h4>
+          <p>{T('hh.scrBody')}</p>
+          <a href={L('/screener')} class="btn btn-mint btn-block">{T('hh.scrOpen')}</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">⚔️</span> {F('hh.morePairs', { league: p.league })}</div>
+          {others.map((x) => (
+            <a class="tm" href={L(`/h2h/${x.slug}`)}><span class="dot"></span>{x.teamA} v {x.teamB}</a>
+          ))}
+          <a class="tm" href={L(`/h2h/league/${slugify(p.league)}`)}><span class="dot"></span>{F('hh.allLeague', { league: p.league })}</a>
+          <a class="tm" href={L('/h2h')}><span class="dot"></span>{T('hh.everyComp')}</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🏆</span> {p.league}</div>
+          <a class="tm" href={L(leagueHref)}><span class="dot"></span>{F('hh.leaguePred', { league: p.league })}</a>
+          <a class="tm" href={L('/predictions')}><span class="dot"></span>{T('hh.todayTips')}</a>
+        </div>
+        <ToolsBox lang={lang} />
+      </aside>
+    </div>
+  </div>
+</Base>

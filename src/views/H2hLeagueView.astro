@@ -1,0 +1,118 @@
+---
+import Base from '../layouts/Base.astro';
+import ToolsBox from '../components/ToolsBox.astro';
+import { buildH2hPairs } from '../lib/h2h.js';
+import { slugify, BUILD_ISO, fmtDate } from '../lib/utils.js';
+import { hasLeaguePage, hasTablePage } from '../lib/links.js';
+import { t, lhref } from '../i18n/index.js';
+
+// Per-league H2H hub (crawlability split of the ~1700 pair pages).
+// Localized wave 2 (hh.* keys).
+const { league, list, lang = 'en' } = Astro.props;
+const T = (k) => t(lang, k);
+const L = (pth) => lhref(lang, pth);
+const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
+
+const allPairs = buildH2hPairs();
+const otherLeagues = [...new Set(allPairs.map((p) => p.league))]
+  .filter((l) => l !== league)
+  .map((l) => ({ name: l, n: allPairs.filter((p) => p.league === l).length }))
+  .sort((a, b) => b.n - a.n);
+
+const mostPlayed = [...list].sort((a, b) => b.stats.n - a.stats.n).slice(0, 6);
+const totalMeetings = list.reduce((a, p) => a + p.stats.n, 0);
+const avgGoals = list.length
+  ? Math.round((list.reduce((a, p) => a + p.stats.avgGoals * p.stats.n, 0) / totalMeetings) * 100) / 100
+  : 0;
+
+const title = F('hh.lgTitle', { league });
+const description = F('hh.lgDesc', { n: list.length, league });
+
+const urlPrefix = lang === 'en' ? '' : '/' + lang;
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `${league} head-to-head records`,
+  numberOfItems: list.length,
+  itemListElement: mostPlayed.map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: `${p.teamA} vs ${p.teamB} head-to-head`,
+    url: `https://ai-betting-tips.com${urlPrefix}/h2h/${p.slug}/`,
+  })),
+};
+---
+<Base lang={lang} i18nPath={`/h2h/league/${slugify(league)}`} title={title} description={description} schema={schema} updated={BUILD_ISO} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs">
+        <a href={L('/')}>{T('crumb.home')}</a><span>/</span><a href={L('/h2h')}>{T('hh.crumb')}</a><span>/</span>{league}
+      </div>
+      <h1>{league} <em>{T('hh.lgH1em')}</em></h1>
+      <p class="lead">{F('hh.lgLead', { n: list.length, meetings: totalMeetings, avg: avgGoals })}</p>
+      <p class="upd-line">{T('hh.refreshed')} {fmtDate(BUILD_ISO, lang)} · <a href="/editorial-policy">{T('common.howWeWrite')}</a></p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">{league} <b>{T('hh.mpBold')}</b></h2>
+            {hasLeaguePage(league) && <a href={L(`/league/${slugify(league)}`)} class="more-link">{T('hh.leagueTips')}</a>}
+          </div>
+          <div class="bt-grid">
+            {mostPlayed.map((p) => (
+              <a href={L(`/h2h/${p.slug}`)} class="bt-tile">
+                <div class="ic">⚔️</div>
+                <div>
+                  <h4>{p.teamA} v {p.teamB}</h4>
+                  <p>{F('hh.tileMeta', { n: p.stats.n, rec: [p.stats.aW, p.stats.draws, p.stats.bW].join('–'), avg: p.stats.avgGoals })}</p>
+                </div>
+                <span class="arr">→</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{F('hh.allPairings', { league })} <b>({list.length})</b></h2></div>
+          <div class="team-grid">
+            {list.map((p) => (
+              <a class="tm" href={L(`/h2h/${p.slug}`)}>
+                <span class="dot"></span>{p.teamA} v {p.teamB}
+                <span class="cnt">{p.stats.n}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section class="seo">
+          <h2>{F('hh.usingH', { league })}</h2>
+          <p>{T('hh.using1')}</p>
+          <p>{F('hh.using2', { avg: avgGoals })}</p>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">🏆</span> {league}</div>
+          {hasLeaguePage(league) && <a class="tm" href={L(`/league/${slugify(league)}`)}><span class="dot"></span>{F('hh.leaguePred', { league })}</a>}
+          {hasTablePage(league) && <a class="tm" href={L(`/table/${slugify(league)}`)}><span class="dot"></span>{F('hh.lgTable', { league })}</a>}
+          <a class="tm" href={L('/predictions/today')}><span class="dot"></span>{T('hh.todayFx')}</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">⚔️</span> {T('hh.byLeague')}</div>
+          {otherLeagues.map((l) => (
+            <a class="tm" href={L(`/h2h/league/${slugify(l.name)}`)}>
+              <span class="dot"></span>{l.name}<span class="cnt">{l.n}</span>
+            </a>
+          ))}
+          <a class="tm" href={L('/h2h')}><span class="dot"></span>{T('hh.everyComp')}</a>
+        </div>
+        <ToolsBox lang={lang} />
+      </aside>
+    </div>
+  </div>
+</Base>

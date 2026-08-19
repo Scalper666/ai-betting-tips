@@ -1,15 +1,8 @@
 ---
-import Base from '../../../layouts/Base.astro';
-import ToolsBox from '../../../components/ToolsBox.astro';
+import H2hLeagueView from '../../../views/H2hLeagueView.astro';
 import { buildH2hPairs } from '../../../lib/h2h.js';
-import { slugify, BUILD_ISO, fmtDate } from '../../../lib/utils.js';
-import { hasLeaguePage, hasTablePage } from '../../../lib/links.js';
+import { slugify } from '../../../lib/utils.js';
 
-// ── Per-league H2H hub. Exists for crawlability: /h2h once listed all ~1700
-//    pair pages on a single screen, which is far past the point where search
-//    engines follow every link. Splitting by league gives each pair page a
-//    short path from the site root (home → h2h → league → pair) and keeps
-//    every hub in the low hundreds of links.
 export function getStaticPaths() {
   const byLeague = {};
   for (const p of buildH2hPairs()) (byLeague[p.league] ??= []).push(p);
@@ -18,109 +11,6 @@ export function getStaticPaths() {
     props: { league, list: list.sort((a, b) => a.teamA.localeCompare(b.teamA) || a.teamB.localeCompare(b.teamB)) },
   }));
 }
-
 const { league, list } = Astro.props;
-
-const allPairs = buildH2hPairs();
-const otherLeagues = [...new Set(allPairs.map((p) => p.league))]
-  .filter((l) => l !== league)
-  .map((l) => ({ name: l, n: allPairs.filter((p) => p.league === l).length }))
-  .sort((a, b) => b.n - a.n);
-
-// most-played pairings lead the page: these are the fixtures people search
-const mostPlayed = [...list].sort((a, b) => b.stats.n - a.stats.n).slice(0, 6);
-const totalMeetings = list.reduce((a, p) => a + p.stats.n, 0);
-const avgGoals = list.length
-  ? Math.round((list.reduce((a, p) => a + p.stats.avgGoals * p.stats.n, 0) / totalMeetings) * 100) / 100
-  : 0;
-
-const title = `${league} Head-to-Head Records — All Fixtures`;
-const description = `Head-to-head records for ${list.length} ${league} pairings: wins, draws, average goals and every past meeting in our dataset.`;
-
-const schema = {
-  '@context': 'https://schema.org',
-  '@type': 'ItemList',
-  name: `${league} head-to-head records`,
-  numberOfItems: list.length,
-  itemListElement: mostPlayed.map((p, i) => ({
-    '@type': 'ListItem',
-    position: i + 1,
-    name: `${p.teamA} vs ${p.teamB} head-to-head`,
-    url: `https://ai-betting-tips.com/h2h/${p.slug}/`,
-  })),
-};
 ---
-<Base title={title} description={description} schema={schema} updated={BUILD_ISO} active="predictions">
-  <div class="container">
-    <div class="page-head">
-      <div class="crumbs">
-        <a href="/">Home</a><span>/</span><a href="/h2h">H2H</a><span>/</span>{league}
-      </div>
-      <h1>{league} <em>head-to-head records</em></h1>
-      <p class="lead">{list.length} pairings, {totalMeetings} recorded meetings, {avgGoals} goals per game on average across the competition. Every pairing links to its full match history.</p>
-      <p class="upd-line">Dataset refreshed {fmtDate(BUILD_ISO)} · <a href="/editorial-policy">how we work</a></p>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="layout">
-      <main class="content">
-        <section>
-          <div class="sec-head">
-            <h2 class="sec-title">Most-played <b>{league} fixtures</b></h2>
-            {hasLeaguePage(league) && <a href={`/league/${slugify(league)}`} class="more-link">League tips →</a>}
-          </div>
-          <div class="bt-grid">
-            {mostPlayed.map((p) => (
-              <a href={`/h2h/${p.slug}`} class="bt-tile">
-                <div class="ic">⚔️</div>
-                <div>
-                  <h4>{p.teamA} v {p.teamB}</h4>
-                  <p>{p.stats.n} meetings · {p.stats.aW}–{p.stats.draws}–{p.stats.bW} · {p.stats.avgGoals} goals/game</p>
-                </div>
-                <span class="arr">→</span>
-              </a>
-            ))}
-          </div>
-        </section>
-
-        <section>
-          <div class="sec-head"><h2 class="sec-title">All <b>{league} pairings</b> ({list.length})</h2></div>
-          <div class="team-grid">
-            {list.map((p) => (
-              <a class="tm" href={`/h2h/${p.slug}`}>
-                <span class="dot"></span>{p.teamA} v {p.teamB}
-                <span class="cnt">{p.stats.n}</span>
-              </a>
-            ))}
-          </div>
-        </section>
-
-        <section class="seo">
-          <h2>Using {league} head-to-head records properly</h2>
-          <p>H2H history is the most over-weighted statistic in football betting. Squads turn over, managers change, and a 4–0 from three seasons ago tells you about a team that no longer exists. Where these records genuinely carry information is in the aggregate: repeated tactical mismatches, venues where one side reliably struggles, and pairings whose games consistently run high or low on goals.</p>
-          <p>That last one is the practical use. A pairing averaging well above or below the {avgGoals}-goal competition norm across a decent sample is worth checking against the current totals line — not as a signal on its own, but as a prompt to look closer. Our model ignores H2H history entirely and works from each club's current scoring and conceding rates, which is the more reliable base; treat these pages as context, not as a system.</p>
-        </section>
-      </main>
-
-      <aside class="sidebar">
-        <div class="box">
-          <div class="box-h"><span class="hi">🏆</span> {league}</div>
-          {hasLeaguePage(league) && <a class="tm" href={`/league/${slugify(league)}`}><span class="dot"></span>{league} predictions</a>}
-          {hasTablePage(league) && <a class="tm" href={`/table/${slugify(league)}`}><span class="dot"></span>{league} table</a>}
-          <a class="tm" href="/predictions/today"><span class="dot"></span>Today's fixtures</a>
-        </div>
-        <div class="box">
-          <div class="box-h"><span class="hi">⚔️</span> H2H by league</div>
-          {otherLeagues.map((l) => (
-            <a class="tm" href={`/h2h/league/${slugify(l.name)}`}>
-              <span class="dot"></span>{l.name}<span class="cnt">{l.n}</span>
-            </a>
-          ))}
-          <a class="tm" href="/h2h"><span class="dot"></span>All head-to-heads</a>
-        </div>
-        <ToolsBox lang="en" />
-      </aside>
-    </div>
-  </div>
-</Base>
+<H2hLeagueView league={league} list={list} lang="en" />
