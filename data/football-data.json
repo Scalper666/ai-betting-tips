@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-08-20T17:02:53+00:00",
+ "updated_at": "2026-08-21T01:49:15+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -2901,15 +2901,15 @@
     {
      "pos": 1,
      "team": "Alavés",
-     "p": 1,
+     "p": 2,
      "w": 1,
-     "d": 0,
+     "d": 1,
      "l": 0,
      "gd": 3,
-     "pts": 3
+     "pts": 4
     },
     {
-     "pos": 1,
+     "pos": 2,
      "team": "Espanyol",
      "p": 1,
      "w": 1,
@@ -2980,6 +2980,16 @@
     },
     {
      "pos": 9,
+     "team": "Rayo Vallecano",
+     "p": 2,
+     "w": 0,
+     "d": 1,
+     "l": 1,
+     "gd": -1,
+     "pts": 1
+    },
+    {
+     "pos": 10,
      "team": "Athletic",
      "p": 0,
      "w": 0,
@@ -2989,7 +2999,7 @@
      "pts": 0
     },
     {
-     "pos": 9,
+     "pos": 10,
      "team": "Osasuna",
      "p": 0,
      "w": 0,
@@ -2999,7 +3009,7 @@
      "pts": 0
     },
     {
-     "pos": 9,
+     "pos": 10,
      "team": "Barça",
      "p": 0,
      "w": 0,
@@ -3009,7 +3019,7 @@
      "pts": 0
     },
     {
-     "pos": 9,
+     "pos": 10,
      "team": "Celta",
      "p": 0,
      "w": 0,
@@ -3019,7 +3029,7 @@
      "pts": 0
     },
     {
-     "pos": 9,
+     "pos": 10,
      "team": "Real Betis",
      "p": 0,
      "w": 0,
@@ -3029,7 +3039,7 @@
      "pts": 0
     },
     {
-     "pos": 9,
+     "pos": 10,
      "team": "Real Madrid",
      "p": 0,
      "w": 0,
@@ -3039,7 +3049,7 @@
      "pts": 0
     },
     {
-     "pos": 9,
+     "pos": 10,
      "team": "Real Sociedad",
      "p": 0,
      "w": 0,
@@ -3049,23 +3059,13 @@
      "pts": 0
     },
     {
-     "pos": 9,
+     "pos": 10,
      "team": "Valencia",
      "p": 0,
      "w": 0,
      "d": 0,
      "l": 0,
      "gd": 0,
-     "pts": 0
-    },
-    {
-     "pos": 17,
-     "team": "Rayo Vallecano",
-     "p": 1,
-     "w": 0,
-     "d": 0,
-     "l": 1,
-     "gd": -1,
      "pts": 0
     },
     {
@@ -3108,6 +3108,7 @@
     "Villarreal": "/crests/villarreal.png",
     "Deportivo": "/crests/deportivo.png",
     "Elche": "/crests/elche.png",
+    "Rayo Vallecano": "/crests/rayo-vallecano.png",
     "Athletic": "/crests/athletic.png",
     "Osasuna": "/crests/osasuna.png",
     "Barça": "/crests/barca.png",
@@ -3116,7 +3117,6 @@
     "Real Madrid": "/crests/real-madrid.png",
     "Real Sociedad": "/crests/real-sociedad.png",
     "Valencia": "/crests/valencia.png",
-    "Rayo Vallecano": "/crests/rayo-vallecano.png",
     "Málaga": "/crests/malaga.png",
     "Getafe": "/crests/getafe.png",
     "Levante": "/crests/levante.png"
@@ -5823,9 +5823,24 @@
      "a": "Málaga",
      "hs": 2,
      "as": 0
+    },
+    {
+     "d": "2026-08-20",
+     "h": "Rayo Vallecano",
+     "a": "Alavés",
+     "hs": 1,
+     "as": 1
     }
    ],
    "scorers": [
+    {
+     "name": "Mariano Díaz",
+     "team": "Alavés",
+     "goals": 2,
+     "assists": 2,
+     "pens": null,
+     "played": 2
+    },
     {
      "name": "Roberto Fernández",
      "team": "Espanyol",
@@ -5840,15 +5855,7 @@
      "goals": 1,
      "assists": null,
      "pens": null,
-     "played": 1
-    },
-    {
-     "name": "Mariano Díaz",
-     "team": "Alavés",
-     "goals": 1,
-     "assists": 2,
-     "pens": null,
-     "played": 1
+     "played": 2
     },
     {
      "name": "Mikel Rodríguez",
@@ -5856,7 +5863,7 @@
      "goals": 1,
      "assists": null,
      "pens": null,
-     "played": 1
+     "played": 2
     },
     {
      "name": "Álvaro García",
@@ -5864,7 +5871,7 @@
      "goals": 1,
      "assists": null,
      "pens": null,
-     "played": 1
+     "played": 2
     },
     {
      "name": "Jon Guridi",
