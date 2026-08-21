@@ -1,6 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import historyData from '../../../data/history.json';
+import registry from '../../../data/match-registry.json';
 import { slugify } from '../../../lib/utils.js';
 
 // ── One page per calendar day we published tips for: "Football predictions
@@ -13,6 +14,21 @@ export function getStaticPaths() {
     const d = String(h.kickoff ?? '').slice(0, 10);
     if (!/^\d{4}-\d{2}-\d{2}$/.test(d)) continue;
     (byDate[d] ??= []).push(h);
+  }
+  // registry fixtures without a published bet still get a row: the date page
+  // is the one guaranteed inbound link every archived match page has — an
+  // internal-link audit found 187 match pages nothing else pointed at.
+  const seen = new Set(
+    Object.values(byDate).flat().map((h) => slugify(`${h.home}-vs-${h.away}`))
+  );
+  for (const [slug, m] of Object.entries(registry.matches ?? {})) {
+    const d = String(m.ko ?? '').slice(0, 10);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(d) || seen.has(slug)) continue;
+    (byDate[d] ??= []).push({
+      home: m.h, away: m.a, league: m.league, kickoff: m.ko,
+      score: m.hs != null ? `${m.hs}-${m.as}` : null,
+      regOnly: true, slug,
+    });
   }
   const dates = Object.keys(byDate).sort();
   return dates.map((date, i) => ({
@@ -32,21 +48,23 @@ const pretty = new Date(date + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 
 const prettyShort = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
 
 const settledStates = ['won', 'lost', 'void'];
-const settled = entries.filter((h) => settledStates.includes(h.status));
+const bets = entries.filter((h) => !h.regOnly);
+const extras = entries.filter((h) => h.regOnly);
+const settled = bets.filter((h) => settledStates.includes(h.status));
 const stats = {
-  tips: entries.length,
+  tips: bets.length,
   settled: settled.length,
   won: settled.filter((h) => h.status === 'won').length,
   lost: settled.filter((h) => h.status === 'lost').length,
   profit: Math.round(settled.reduce((s, h) => s + (h.profit ?? 0), 0) * 100) / 100,
 };
-const leagues = [...new Set(entries.map((h) => h.league).filter(Boolean))];
+const leagues = [...new Set(bets.map((h) => h.league).filter(Boolean))];
 const isPast = new Date(date + 'T23:59:59Z').getTime() < Date.now();
 
 const title = `Football Predictions ${pretty} — Tips${settled.length ? ' & Results' : ''}`;
 const description = settled.length
-  ? `All ${entries.length} football tips we published for ${pretty}, settled openly: ${stats.won} won, ${stats.lost} lost (${stats.profit > 0 ? '+' : ''}${stats.profit.toFixed(2)}u at flat stakes).`
-  : `${entries.length} football predictions for ${pretty} across ${leagues.join(', ')} — every tip archived before kick-off and settled against the final score.`;
+  ? `All ${bets.length} football tips we published for ${pretty}, settled openly: ${stats.won} won, ${stats.lost} lost (${stats.profit > 0 ? '+' : ''}${stats.profit.toFixed(2)}u at flat stakes).`
+  : `${bets.length} football predictions for ${pretty} across ${leagues.join(', ')} — every tip archived before kick-off and settled against the final score.`;
 
 const timeOf = (iso) => (iso ? new Date(iso).toISOString().slice(11, 16) : '');
 ---
@@ -60,7 +78,7 @@ const timeOf = (iso) => (iso ? new Date(iso).toISOString().slice(11, 16) : '');
         {pretty}
       </div>
       <h1>Predictions for <em>{pretty}</em></h1>
-      <p class="lead">{entries.length} tip{entries.length === 1 ? '' : 's'} across {leagues.join(' · ')} — published before kick-off, settled against the final score, never edited.</p>
+      <p class="lead">{bets.length} tip{bets.length === 1 ? '' : 's'} across {leagues.join(' · ')} — published before kick-off, settled against the final score, never edited.</p>
     </div>
   </div>
 
@@ -86,7 +104,7 @@ const timeOf = (iso) => (iso ? new Date(iso).toISOString().slice(11, 16) : '');
         <section>
           <div class="sec-head"><h2 class="sec-title">All <b>tips</b> for {prettyShort(date)}</h2></div>
           <div class="res-list">
-            {entries.map((h) => {
+            {bets.map((h) => {
               const st = settledStates.includes(h.status) ? h.status : 'pending';
               return (
                 <a class="res-row" href={`/predictions/${slugify(`${h.home}-vs-${h.away}`)}`} style="text-decoration:none;color:inherit">
@@ -103,6 +121,24 @@ const timeOf = (iso) => (iso ? new Date(iso).toISOString().slice(11, 16) : '');
             <p class="res-note">Kick-offs are shown in UTC. Results are graded automatically after full time.</p>
           )}
         </section>
+
+        {extras.length > 0 && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">Also played — <b>no official pick</b></h2></div>
+            <div class="res-list">
+              {extras.sort((a, b) => String(a.kickoff).localeCompare(String(b.kickoff))).map((m) => (
+                <a class="res-row" href={`/predictions/${m.slug}`} style="text-decoration:none;color:inherit">
+                  <span class="res-mark v">•</span>
+                  <span class="res-date">{timeOf(m.kickoff)}</span>
+                  <div class="res-match"><b>{m.home} v {m.away}</b><span>{m.score ? `final ${m.score}` : m.league || 'Football'}</span></div>
+                  <span class="res-odds" style="visibility:hidden"></span>
+                  <span class="res-profit zero"></span>
+                </a>
+              ))}
+            </div>
+            <p class="res-note">Fixtures we priced and tracked that day without publishing an official pick — most matches clear no value bar, and that discipline is deliberate.</p>
+          </section>
+        )}
 
         <!-- date chain: strong internal linking between day pages -->
         <section>

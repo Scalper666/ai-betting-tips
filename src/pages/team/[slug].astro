@@ -6,6 +6,8 @@ import registry from '../../data/match-registry.json';
 import content from '../../data/content.json';
 import AiFaq from '../../components/AiFaq.astro';
 import { matchSlug, abbr, badgeColor, kickoffLabel, slugify, faqSchema } from '../../lib/utils.js';
+import { buildH2hPairs } from '../../lib/h2h.js';
+import { resolveTeam } from '../../lib/form.js';
 
 // ── Team hub pages: one evergreen page per club we have ever tipped on.
 //    Built from the current feed ∪ the settlement archive — upcoming fixtures,
@@ -40,6 +42,19 @@ export function getStaticPaths() {
 }
 
 const { name, entries, upcoming } = Astro.props;
+
+// H2H pairs involving this club. Pair names come from the results dataset
+// (football-data short names), team pages from the odds feed — resolveTeam
+// bridges the two. This box is what meshes the h2h tail: an audit found
+// 1,606 of 1,714 pair pages with two or fewer inbound links.
+const sks = [...new Set([...entries, ...upcoming].map((x) => x.sport_key).filter(Boolean))];
+const resolvedNames = new Set(
+  [name, ...sks.map((sk) => resolveTeam(sk, name)).filter(Boolean)]
+);
+const teamPairs = buildH2hPairs()
+  .filter((pr) => resolvedNames.has(pr.teamA) || resolvedNames.has(pr.teamB))
+  .sort((a, b) => b.stats.n - a.stats.n)
+  .slice(0, 12);
 const ai = (content.entries ?? {})[`team:${slugify(name)}`];
 
 const settledStates = ['won', 'lost', 'void'];
@@ -181,6 +196,18 @@ const schema = {
               </a>
             ))}
             <a class="tm" href="/teams"><span class="dot"></span>All teams A–Z</a>
+          </div>
+        )}
+        {teamPairs.length > 0 && (
+          <div class="box">
+            <div class="box-h"><span class="hi">⚔️</span> {name} head-to-heads</div>
+            {teamPairs.map((pr) => (
+              <a class="tm" href={`/h2h/${pr.slug}`}>
+                <span class="dot"></span>{pr.teamA} v {pr.teamB}
+                <span class="cnt">{pr.stats.n}</span>
+              </a>
+            ))}
+            <a class="tm" href="/h2h"><span class="dot"></span>All head-to-heads</a>
           </div>
         )}
       </aside>

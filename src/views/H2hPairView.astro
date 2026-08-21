@@ -28,10 +28,19 @@ const upcoming = (predictions.tips ?? []).find((t2) => {
 const liveLeagues = new Set((predictions.tips ?? []).map((t2) => slugify(t2.league)));
 const leagueHref = liveLeagues.has(slugify(p.league)) ? `/league/${slugify(p.league)}` : '/predictions';
 
-const others = buildH2hPairs()
-  .filter((x) => x.league === p.league && x.slug !== p.slug)
+// Sibling pairs that share a team with this one. The old "league top-8 by
+// meetings" sent every sidebar link to the same few famous pairs and left the
+// tail with nothing; sharing a team spreads links across all of them and is
+// what a reader of THIS pair actually wants next.
+// on a localized page a sibling is linkable only if ITS league ships in this
+// language (the per-league model) — L() would otherwise mint dead /de/h2h/...
+const all = buildH2hPairs().filter((x) => lang === 'en' || hasH2hIn(lang, x.league));
+const siblings = all
+  .filter((x) => x.slug !== p.slug && (x.teamA === p.teamA || x.teamB === p.teamA || x.teamA === p.teamB || x.teamB === p.teamB))
   .sort((a, b) => b.stats.n - a.stats.n)
-  .slice(0, 8);
+  .slice(0, 10);
+const others = siblings.length >= 4 ? siblings
+  : all.filter((x) => x.league === p.league && x.slug !== p.slug).sort((a, b) => b.stats.n - a.stats.n).slice(0, 8);
 
 const title = F('hh.title', { a: p.teamA, b: p.teamB });
 const description = F('hh.desc', { a: p.teamA, b: p.teamB, n: s.n, aw: s.aW, d: s.draws, bw: s.bW, avg: s.avgGoals });

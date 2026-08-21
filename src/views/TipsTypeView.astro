@@ -8,7 +8,9 @@ import { slugify, faqSchema, signed, kickoffLabel, BUILD_ISO, fmtDate } from '..
 import { t, lhref, localizeMarket } from '../i18n/index.js';
 import { BET_TYPES } from '../lib/betTypes.js';
 import { picksForType, recordForType, bttsRates, commonScores, outcomeSplit, accaLegs, bttsForecasts, scorelineForecasts } from '../lib/tipTypes.js';
-import { hasLeaguePage } from '../lib/links.js';
+import { hasLeaguePage, hasComboPage } from '../lib/links.js';
+import historyData from '../data/history.json';
+import predictions from '../data/predictions.json';
 
 // One page per bet type. Each shows what is genuinely true for its market: the
 // model's live picks where it makes them, our settled record in that market,
@@ -46,6 +48,13 @@ const split = type.slug === 'double-chance' ? outcomeSplit() : null;
 const bttsFx = type.slug === 'btts' ? bttsForecasts() : [];
 const scoreFx = type.slug === 'correct-score' ? scorelineForecasts() : [];
 
+// per-league combo pages for this market (/tips/{type}/{league}): the type hub
+// is their strongest natural parent, and until now it never linked them
+const comboLeagues = [...new Set([
+  ...(predictions.tips ?? []).map((x) => x.league),
+  ...Object.values(historyData.tips ?? {}).map((x) => x.league),
+])].filter((lg) => lg && hasComboPage(type.slug, lg)).sort();
+
 // league chips: only leagues actually represented in what this page shows
 const shown = picks.length ? picks : legs;
 const leagues = [...new Set(shown.map((x) => x.league))].filter((lg) => hasLeaguePage(lg));
@@ -63,6 +72,14 @@ const leagues = [...new Set(shown.map((x) => x.league))].filter((lg) => hasLeagu
       <h1>{type.emoji} {enAcca ? 'AI Accumulator Tips' : tname}</h1>
       <p class="lead">{F('tt.lead', { name: tname.toLowerCase(), long: tlong })}</p>
       <p class="upd-line">{T('common.oddsUpdated')} {fmtDate(BUILD_ISO, lang)} · <a href="/editorial-policy">{T('common.howWeWrite')}</a></p>
+      {comboLeagues.length > 0 && (
+        <div class="chips" style="margin-top:10px">
+          <span class="chip active">{F('tt.comboByLeague', { name: tname })}</span>
+          {comboLeagues.map((lg) => (
+            <a class="chip" href={L(`/tips/${type.slug}/${slugify(lg)}`)}>{lg}</a>
+          ))}
+        </div>
+      )}
     </div>
   </div>
 
