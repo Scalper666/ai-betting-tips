@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-08-21T17:00:04+00:00",
+ "updated_at": "2026-08-22T05:59:45+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -8,6 +8,16 @@
    "standings": [
     {
      "pos": 1,
+     "team": "Arsenal",
+     "p": 1,
+     "w": 1,
+     "d": 0,
+     "l": 0,
+     "gd": 3,
+     "pts": 3
+    },
+    {
+     "pos": 2,
      "team": "Bournemouth",
      "p": 0,
      "w": 0,
@@ -17,17 +27,7 @@
      "pts": 0
     },
     {
-     "pos": 1,
-     "team": "Arsenal",
-     "p": 0,
-     "w": 0,
-     "d": 0,
-     "l": 0,
-     "gd": 0,
-     "pts": 0
-    },
-    {
-     "pos": 1,
+     "pos": 2,
      "team": "Aston Villa",
      "p": 0,
      "w": 0,
@@ -37,7 +37,7 @@
      "pts": 0
     },
     {
-     "pos": 1,
+     "pos": 2,
      "team": "Brentford",
      "p": 0,
      "w": 0,
@@ -47,7 +47,7 @@
      "pts": 0
     },
     {
-     "pos": 1,
+     "pos": 2,
      "team": "Brighton Hove",
      "p": 0,
      "w": 0,
@@ -57,7 +57,7 @@
      "pts": 0
     },
     {
-     "pos": 1,
+     "pos": 2,
      "team": "Chelsea",
      "p": 0,
      "w": 0,
@@ -67,17 +67,7 @@
      "pts": 0
     },
     {
-     "pos": 1,
-     "team": "Coventry City",
-     "p": 0,
-     "w": 0,
-     "d": 0,
-     "l": 0,
-     "gd": 0,
-     "pts": 0
-    },
-    {
-     "pos": 1,
+     "pos": 2,
      "team": "Crystal Palace",
      "p": 0,
      "w": 0,
@@ -87,7 +77,7 @@
      "pts": 0
     },
     {
-     "pos": 1,
+     "pos": 2,
      "team": "Everton",
      "p": 0,
      "w": 0,
@@ -97,7 +87,7 @@
      "pts": 0
     },
     {
-     "pos": 1,
+     "pos": 2,
      "team": "Fulham",
      "p": 0,
      "w": 0,
@@ -107,7 +97,7 @@
      "pts": 0
     },
     {
-     "pos": 1,
+     "pos": 2,
      "team": "Hull City",
      "p": 0,
      "w": 0,
@@ -117,7 +107,7 @@
      "pts": 0
     },
     {
-     "pos": 1,
+     "pos": 2,
      "team": "Ipswich Town",
      "p": 0,
      "w": 0,
@@ -127,7 +117,7 @@
      "pts": 0
     },
     {
-     "pos": 1,
+     "pos": 2,
      "team": "Leeds United",
      "p": 0,
      "w": 0,
@@ -137,7 +127,7 @@
      "pts": 0
     },
     {
-     "pos": 1,
+     "pos": 2,
      "team": "Liverpool",
      "p": 0,
      "w": 0,
@@ -147,7 +137,7 @@
      "pts": 0
     },
     {
-     "pos": 1,
+     "pos": 2,
      "team": "Man City",
      "p": 0,
      "w": 0,
@@ -157,7 +147,7 @@
      "pts": 0
     },
     {
-     "pos": 1,
+     "pos": 2,
      "team": "Man United",
      "p": 0,
      "w": 0,
@@ -167,7 +157,7 @@
      "pts": 0
     },
     {
-     "pos": 1,
+     "pos": 2,
      "team": "Newcastle",
      "p": 0,
      "w": 0,
@@ -177,7 +167,7 @@
      "pts": 0
     },
     {
-     "pos": 1,
+     "pos": 2,
      "team": "Nottingham",
      "p": 0,
      "w": 0,
@@ -187,7 +177,7 @@
      "pts": 0
     },
     {
-     "pos": 1,
+     "pos": 2,
      "team": "Sunderland",
      "p": 0,
      "w": 0,
@@ -197,7 +187,7 @@
      "pts": 0
     },
     {
-     "pos": 1,
+     "pos": 2,
      "team": "Tottenham",
      "p": 0,
      "w": 0,
@@ -205,16 +195,25 @@
      "l": 0,
      "gd": 0,
      "pts": 0
+    },
+    {
+     "pos": 20,
+     "team": "Coventry City",
+     "p": 1,
+     "w": 0,
+     "d": 0,
+     "l": 1,
+     "gd": -3,
+     "pts": 0
     }
    ],
    "crests": {
-    "Bournemouth": "/crests/bournemouth.png",
     "Arsenal": "/crests/arsenal.png",
+    "Bournemouth": "/crests/bournemouth.png",
     "Aston Villa": "/crests/aston-villa.png",
     "Brentford": "/crests/brentford.png",
     "Brighton Hove": "/crests/brighton-hove.png",
     "Chelsea": "/crests/chelsea.png",
-    "Coventry City": "/crests/coventry-city.png",
     "Crystal Palace": "/crests/crystal-palace.png",
     "Everton": "/crests/everton.png",
     "Fulham": "/crests/fulham.png",
@@ -227,7 +226,8 @@
     "Newcastle": "/crests/newcastle.png",
     "Nottingham": "/crests/nottingham.png",
     "Sunderland": "/crests/sunderland.png",
-    "Tottenham": "/crests/tottenham.png"
+    "Tottenham": "/crests/tottenham.png",
+    "Coventry City": "/crests/coventry-city.png"
    },
    "results": [
     {
@@ -2889,9 +2889,41 @@
      "a": "Leeds United",
      "hs": 3,
      "as": 0
+    },
+    {
+     "d": "2026-08-21",
+     "h": "Arsenal",
+     "a": "Coventry City",
+     "hs": 3,
+     "as": 0
     }
    ],
-   "scorers": []
+   "scorers": [
+    {
+     "name": "Kai Havertz",
+     "team": "Arsenal",
+     "goals": 1,
+     "assists": null,
+     "pens": null,
+     "played": 1
+    },
+    {
+     "name": "Bukayo Saka",
+     "team": "Arsenal",
+     "goals": 1,
+     "assists": null,
+     "pens": null,
+     "played": 1
+    },
+    {
+     "name": "Martin Ødegaard",
+     "team": "Arsenal",
+     "goals": 1,
+     "assists": null,
+     "pens": null,
+     "played": 1
+    }
+   ]
   },
   "soccer_spain_la_liga": {
    "code": "PD",
@@ -2940,6 +2972,16 @@
     },
     {
      "pos": 5,
+     "team": "Real Betis",
+     "p": 1,
+     "w": 1,
+     "d": 0,
+     "l": 0,
+     "gd": 1,
+     "pts": 3
+    },
+    {
+     "pos": 6,
      "team": "Santander",
      "p": 1,
      "w": 0,
@@ -2949,7 +2991,7 @@
      "pts": 1
     },
     {
-     "pos": 5,
+     "pos": 6,
      "team": "Villarreal",
      "p": 1,
      "w": 0,
@@ -2959,7 +3001,7 @@
      "pts": 1
     },
     {
-     "pos": 7,
+     "pos": 8,
      "team": "Deportivo",
      "p": 1,
      "w": 0,
@@ -2969,7 +3011,7 @@
      "pts": 1
     },
     {
-     "pos": 7,
+     "pos": 8,
      "team": "Elche",
      "p": 1,
      "w": 0,
@@ -2979,7 +3021,7 @@
      "pts": 1
     },
     {
-     "pos": 9,
+     "pos": 10,
      "team": "Rayo Vallecano",
      "p": 2,
      "w": 0,
@@ -2989,7 +3031,7 @@
      "pts": 1
     },
     {
-     "pos": 10,
+     "pos": 11,
      "team": "Athletic",
      "p": 0,
      "w": 0,
@@ -2999,7 +3041,7 @@
      "pts": 0
     },
     {
-     "pos": 10,
+     "pos": 11,
      "team": "Osasuna",
      "p": 0,
      "w": 0,
@@ -3009,7 +3051,7 @@
      "pts": 0
     },
     {
-     "pos": 10,
+     "pos": 11,
      "team": "Barça",
      "p": 0,
      "w": 0,
@@ -3019,7 +3061,7 @@
      "pts": 0
     },
     {
-     "pos": 10,
+     "pos": 11,
      "team": "Celta",
      "p": 0,
      "w": 0,
@@ -3029,17 +3071,7 @@
      "pts": 0
     },
     {
-     "pos": 10,
-     "team": "Real Betis",
-     "p": 0,
-     "w": 0,
-     "d": 0,
-     "l": 0,
-     "gd": 0,
-     "pts": 0
-    },
-    {
-     "pos": 10,
+     "pos": 11,
      "team": "Real Madrid",
      "p": 0,
      "w": 0,
@@ -3049,8 +3081,8 @@
      "pts": 0
     },
     {
-     "pos": 10,
-     "team": "Real Sociedad",
+     "pos": 11,
+     "team": "Valencia",
      "p": 0,
      "w": 0,
      "d": 0,
@@ -3059,13 +3091,13 @@
      "pts": 0
     },
     {
-     "pos": 10,
-     "team": "Valencia",
-     "p": 0,
+     "pos": 17,
+     "team": "Real Sociedad",
+     "p": 1,
      "w": 0,
      "d": 0,
-     "l": 0,
-     "gd": 0,
+     "l": 1,
+     "gd": -1,
      "pts": 0
     },
     {
@@ -3104,6 +3136,7 @@
     "Espanyol": "/crests/espanyol.png",
     "Atleti": "/crests/atleti.png",
     "Sevilla FC": "/crests/sevilla-fc.png",
+    "Real Betis": "/crests/real-betis.png",
     "Santander": "/crests/santander.png",
     "Villarreal": "/crests/villarreal.png",
     "Deportivo": "/crests/deportivo.png",
@@ -3113,10 +3146,9 @@
     "Osasuna": "/crests/osasuna.png",
     "Barça": "/crests/barca.png",
     "Celta": "/crests/celta.png",
-    "Real Betis": "/crests/real-betis.png",
     "Real Madrid": "/crests/real-madrid.png",
-    "Real Sociedad": "/crests/real-sociedad.png",
     "Valencia": "/crests/valencia.png",
+    "Real Sociedad": "/crests/real-sociedad.png",
     "Málaga": "/crests/malaga.png",
     "Getafe": "/crests/getafe.png",
     "Levante": "/crests/levante.png"
@@ -5830,6 +5862,13 @@
      "a": "Alavés",
      "hs": 1,
      "as": 1
+    },
+    {
+     "d": "2026-08-21",
+     "h": "Real Betis",
+     "a": "Real Sociedad",
+     "hs": 1,
+     "as": 0
     }
    ],
    "scorers": [
@@ -13540,9 +13579,41 @@
      "a": "Angers SCO",
      "hs": 1,
      "as": 1
+    },
+    {
+     "d": "2026-08-21",
+     "h": "Marseille",
+     "a": "Strasbourg",
+     "hs": 4,
+     "as": 0
     }
    ],
-   "scorers": []
+   "scorers": [
+    {
+     "name": "Amine Gouiri",
+     "team": "Marseille",
+     "goals": 2,
+     "assists": null,
+     "pens": 1,
+     "played": 1
+    },
+    {
+     "name": "Keyliane Abdallah",
+     "team": "Marseille",
+     "goals": 1,
+     "assists": null,
+     "pens": null,
+     "played": 1
+    },
+    {
+     "name": "Pierre Emile Højbjerg",
+     "team": "Marseille",
+     "goals": 1,
+     "assists": null,
+     "pens": null,
+     "played": 1
+    }
+   ]
   },
   "soccer_brazil_campeonato": {
    "code": "BSA",
