@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-08-23T16:52:59+00:00",
+ "updated_at": "2026-08-23T21:46:58+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -87,17 +87,27 @@
      "pts": 3
     },
     {
-     "pos": 8,
-     "team": "Newcastle",
+     "pos": 9,
+     "team": "Liverpool",
      "p": 1,
-     "w": 1,
-     "d": 0,
+     "w": 0,
+     "d": 1,
      "l": 0,
-     "gd": 1,
-     "pts": 3
+     "gd": 0,
+     "pts": 1
     },
     {
-     "pos": 10,
+     "pos": 9,
+     "team": "Newcastle",
+     "p": 1,
+     "w": 0,
+     "d": 1,
+     "l": 0,
+     "gd": 0,
+     "pts": 1
+    },
+    {
+     "pos": 11,
      "team": "Chelsea",
      "p": 0,
      "w": 0,
@@ -107,7 +117,7 @@
      "pts": 0
     },
     {
-     "pos": 10,
+     "pos": 11,
      "team": "Fulham",
      "p": 0,
      "w": 0,
@@ -117,7 +127,7 @@
      "pts": 0
     },
     {
-     "pos": 12,
+     "pos": 13,
      "team": "Bournemouth",
      "p": 1,
      "w": 0,
@@ -127,7 +137,7 @@
      "pts": 0
     },
     {
-     "pos": 12,
+     "pos": 13,
      "team": "Sunderland",
      "p": 1,
      "w": 0,
@@ -137,17 +147,7 @@
      "pts": 0
     },
     {
-     "pos": 14,
-     "team": "Liverpool",
-     "p": 1,
-     "w": 0,
-     "d": 0,
-     "l": 1,
-     "gd": -1,
-     "pts": 0
-    },
-    {
-     "pos": 14,
+     "pos": 15,
      "team": "Nottingham",
      "p": 1,
      "w": 0,
@@ -216,12 +216,12 @@
     "Ipswich Town": "/crests/ipswich-town.png",
     "Man City": "/crests/man-city.png",
     "Leeds United": "/crests/leeds-united.png",
+    "Liverpool": "/crests/liverpool.png",
     "Newcastle": "/crests/newcastle.png",
     "Chelsea": "/crests/chelsea.png",
     "Fulham": "/crests/fulham.png",
     "Bournemouth": "/crests/bournemouth.png",
     "Sunderland": "/crests/sunderland.png",
-    "Liverpool": "/crests/liverpool.png",
     "Nottingham": "/crests/nottingham.png",
     "Crystal Palace": "/crests/crystal-palace.png",
     "Man United": "/crests/man-united.png",
@@ -2945,6 +2945,13 @@
      "a": "Aston Villa",
      "hs": 4,
      "as": 0
+    },
+    {
+     "d": "2026-08-23",
+     "h": "Newcastle",
+     "a": "Liverpool",
+     "hs": 2,
+     "as": 2
     }
    ],
    "scorers": [
@@ -3107,6 +3114,16 @@
     },
     {
      "pos": 4,
+     "team": "Barça",
+     "p": 1,
+     "w": 1,
+     "d": 0,
+     "l": 0,
+     "gd": 5,
+     "pts": 3
+    },
+    {
+     "pos": 5,
      "team": "Espanyol",
      "p": 2,
      "w": 1,
@@ -3116,7 +3133,7 @@
      "pts": 3
     },
     {
-     "pos": 5,
+     "pos": 6,
      "team": "Real Madrid",
      "p": 1,
      "w": 1,
@@ -3126,7 +3143,7 @@
      "pts": 3
     },
     {
-     "pos": 6,
+     "pos": 7,
      "team": "Real Betis",
      "p": 1,
      "w": 1,
@@ -3136,7 +3153,17 @@
      "pts": 3
     },
     {
-     "pos": 7,
+     "pos": 8,
+     "team": "Getafe",
+     "p": 2,
+     "w": 1,
+     "d": 0,
+     "l": 1,
+     "gd": -2,
+     "pts": 3
+    },
+    {
+     "pos": 9,
      "team": "Villarreal",
      "p": 2,
      "w": 0,
@@ -3146,28 +3173,8 @@
      "pts": 2
     },
     {
-     "pos": 8,
-     "team": "Santander",
-     "p": 1,
-     "w": 0,
-     "d": 1,
-     "l": 0,
-     "gd": 0,
-     "pts": 1
-    },
-    {
-     "pos": 9,
+     "pos": 10,
      "team": "Deportivo",
-     "p": 1,
-     "w": 0,
-     "d": 1,
-     "l": 0,
-     "gd": 0,
-     "pts": 1
-    },
-    {
-     "pos": 9,
-     "team": "Elche",
      "p": 1,
      "w": 0,
      "d": 1,
@@ -3197,6 +3204,16 @@
     },
     {
      "pos": 13,
+     "team": "Santander",
+     "p": 2,
+     "w": 0,
+     "d": 1,
+     "l": 1,
+     "gd": -1,
+     "pts": 1
+    },
+    {
+     "pos": 13,
      "team": "Rayo Vallecano",
      "p": 2,
      "w": 0,
@@ -3206,7 +3223,17 @@
      "pts": 1
     },
     {
-     "pos": 14,
+     "pos": 15,
+     "team": "Elche",
+     "p": 2,
+     "w": 0,
+     "d": 1,
+     "l": 1,
+     "gd": -5,
+     "pts": 1
+    },
+    {
+     "pos": 16,
      "team": "Osasuna",
      "p": 0,
      "w": 0,
@@ -3216,17 +3243,7 @@
      "pts": 0
     },
     {
-     "pos": 14,
-     "team": "Barça",
-     "p": 0,
-     "w": 0,
-     "d": 0,
-     "l": 0,
-     "gd": 0,
-     "pts": 0
-    },
-    {
-     "pos": 16,
+     "pos": 17,
      "team": "Real Sociedad",
      "p": 1,
      "w": 0,
@@ -3236,7 +3253,7 @@
      "pts": 0
     },
     {
-     "pos": 17,
+     "pos": 18,
      "team": "Athletic",
      "p": 1,
      "w": 0,
@@ -3246,7 +3263,7 @@
      "pts": 0
     },
     {
-     "pos": 18,
+     "pos": 19,
      "team": "Málaga",
      "p": 1,
      "w": 0,
@@ -3256,17 +3273,7 @@
      "pts": 0
     },
     {
-     "pos": 19,
-     "team": "Getafe",
-     "p": 1,
-     "w": 0,
-     "d": 0,
-     "l": 1,
-     "gd": -3,
-     "pts": 0
-    },
-    {
-     "pos": 19,
+     "pos": 20,
      "team": "Levante",
      "p": 1,
      "w": 0,
@@ -3280,22 +3287,22 @@
     "Sevilla FC": "/crests/sevilla-fc.png",
     "Alavés": "/crests/alaves.png",
     "Atleti": "/crests/atleti.png",
+    "Barça": "/crests/barca.png",
     "Espanyol": "/crests/espanyol.png",
     "Real Madrid": "/crests/real-madrid.png",
     "Real Betis": "/crests/real-betis.png",
+    "Getafe": "/crests/getafe.png",
     "Villarreal": "/crests/villarreal.png",
-    "Santander": "/crests/santander.png",
     "Deportivo": "/crests/deportivo.png",
-    "Elche": "/crests/elche.png",
     "Celta": "/crests/celta.png",
     "Valencia": "/crests/valencia.png",
+    "Santander": "/crests/santander.png",
     "Rayo Vallecano": "/crests/rayo-vallecano.png",
+    "Elche": "/crests/elche.png",
     "Osasuna": "/crests/osasuna.png",
-    "Barça": "/crests/barca.png",
     "Real Sociedad": "/crests/real-sociedad.png",
     "Athletic": "/crests/athletic.png",
     "Málaga": "/crests/malaga.png",
-    "Getafe": "/crests/getafe.png",
     "Levante": "/crests/levante.png"
    },
    "results": [
@@ -6035,6 +6042,27 @@
      "a": "Real Madrid",
      "hs": 1,
      "as": 2
+    },
+    {
+     "d": "2026-08-23",
+     "h": "Atleti",
+     "a": "Villarreal",
+     "hs": 2,
+     "as": 2
+    },
+    {
+     "d": "2026-08-23",
+     "h": "Getafe",
+     "a": "Santander",
+     "hs": 1,
+     "as": 0
+    },
+    {
+     "d": "2026-08-23",
+     "h": "Elche",
+     "a": "Barça",
+     "hs": 0,
+     "as": 5
     }
    ],
    "scorers": [
@@ -6053,6 +6081,22 @@
      "assists": null,
      "pens": null,
      "played": 2
+    },
+    {
+     "name": "Raphinha",
+     "team": "Barça",
+     "goals": 2,
+     "assists": null,
+     "pens": 1,
+     "played": 1
+    },
+    {
+     "name": "Fermín López",
+     "team": "Barça",
+     "goals": 2,
+     "assists": null,
+     "pens": null,
+     "played": 1
     },
     {
      "name": "Nahuel Tenaglia",
@@ -6141,22 +6185,6 @@
      "assists": null,
      "pens": null,
      "played": 1
-    },
-    {
-     "name": "Marc Aguado",
-     "team": "Elche",
-     "goals": 1,
-     "assists": null,
-     "pens": null,
-     "played": 1
-    },
-    {
-     "name": "Kang-in Lee",
-     "team": "Atleti",
-     "goals": 1,
-     "assists": null,
-     "pens": null,
-     "played": 2
     }
    ]
   },
@@ -6186,8 +6214,18 @@
      "pts": 3
     },
     {
-     "pos": 3,
-     "team": "Cagliari",
+     "pos": 2,
+     "team": "Lecce",
+     "p": 1,
+     "w": 1,
+     "d": 0,
+     "l": 0,
+     "gd": 2,
+     "pts": 3
+    },
+    {
+     "pos": 4,
+     "team": "Milan",
      "p": 1,
      "w": 1,
      "d": 0,
@@ -6197,6 +6235,36 @@
     },
     {
      "pos": 4,
+     "team": "Atalanta",
+     "p": 1,
+     "w": 1,
+     "d": 0,
+     "l": 0,
+     "gd": 1,
+     "pts": 3
+    },
+    {
+     "pos": 6,
+     "team": "Cagliari",
+     "p": 1,
+     "w": 1,
+     "d": 0,
+     "l": 0,
+     "gd": 1,
+     "pts": 3
+    },
+    {
+     "pos": 6,
+     "team": "Juventus",
+     "p": 1,
+     "w": 1,
+     "d": 0,
+     "l": 0,
+     "gd": 1,
+     "pts": 3
+    },
+    {
+     "pos": 8,
      "team": "Como 1907",
      "p": 1,
      "w": 0,
@@ -6206,7 +6274,7 @@
      "pts": 1
     },
     {
-     "pos": 4,
+     "pos": 8,
      "team": "Udinese",
      "p": 1,
      "w": 0,
@@ -6214,56 +6282,6 @@
      "l": 0,
      "gd": 0,
      "pts": 1
-    },
-    {
-     "pos": 6,
-     "team": "Frosinone",
-     "p": 1,
-     "w": 0,
-     "d": 1,
-     "l": 0,
-     "gd": 0,
-     "pts": 1
-    },
-    {
-     "pos": 6,
-     "team": "Juventus",
-     "p": 1,
-     "w": 0,
-     "d": 1,
-     "l": 0,
-     "gd": 0,
-     "pts": 1
-    },
-    {
-     "pos": 6,
-     "team": "Lecce",
-     "p": 1,
-     "w": 0,
-     "d": 1,
-     "l": 0,
-     "gd": 0,
-     "pts": 1
-    },
-    {
-     "pos": 6,
-     "team": "Venezia FC",
-     "p": 1,
-     "w": 0,
-     "d": 1,
-     "l": 0,
-     "gd": 0,
-     "pts": 1
-    },
-    {
-     "pos": 10,
-     "team": "Milan",
-     "p": 0,
-     "w": 0,
-     "d": 0,
-     "l": 0,
-     "gd": 0,
-     "pts": 0
     },
     {
      "pos": 10,
@@ -6278,16 +6296,6 @@
     {
      "pos": 10,
      "team": "Roma",
-     "p": 0,
-     "w": 0,
-     "d": 0,
-     "l": 0,
-     "gd": 0,
-     "pts": 0
-    },
-    {
-     "pos": 10,
-     "team": "Atalanta",
      "p": 0,
      "w": 0,
      "d": 0,
@@ -6316,27 +6324,37 @@
      "pts": 0
     },
     {
-     "pos": 10,
+     "pos": 14,
      "team": "Sassuolo",
-     "p": 0,
+     "p": 1,
      "w": 0,
      "d": 0,
-     "l": 0,
-     "gd": 0,
+     "l": 1,
+     "gd": -1,
      "pts": 0
     },
     {
-     "pos": 10,
+     "pos": 14,
      "team": "Torino",
-     "p": 0,
+     "p": 1,
      "w": 0,
      "d": 0,
-     "l": 0,
-     "gd": 0,
+     "l": 1,
+     "gd": -1,
      "pts": 0
     },
     {
-     "pos": 18,
+     "pos": 16,
+     "team": "Frosinone",
+     "p": 1,
+     "w": 0,
+     "d": 0,
+     "l": 1,
+     "gd": -1,
+     "pts": 0
+    },
+    {
+     "pos": 16,
      "team": "Parma",
      "p": 1,
      "w": 0,
@@ -6346,8 +6364,18 @@
      "pts": 0
     },
     {
-     "pos": 19,
+     "pos": 18,
      "team": "Genoa",
+     "p": 1,
+     "w": 0,
+     "d": 0,
+     "l": 1,
+     "gd": -2,
+     "pts": 0
+    },
+    {
+     "pos": 18,
+     "team": "Venezia FC",
      "p": 1,
      "w": 0,
      "d": 0,
@@ -6369,23 +6397,23 @@
    "crests": {
     "Inter": "/crests/inter.png",
     "Napoli": "/crests/napoli.png",
+    "Lecce": "/crests/lecce.png",
+    "Milan": "/crests/milan.png",
+    "Atalanta": "/crests/atalanta.png",
     "Cagliari": "/crests/cagliari.png",
+    "Juventus": "/crests/juventus.png",
     "Como 1907": "/crests/como-1907.png",
     "Udinese": "/crests/udinese.png",
-    "Frosinone": "/crests/frosinone.png",
-    "Juventus": "/crests/juventus.png",
-    "Lecce": "/crests/lecce.png",
-    "Venezia FC": "/crests/venezia-fc.png",
-    "Milan": "/crests/milan.png",
     "Fiorentina": "/crests/fiorentina.png",
     "Roma": "/crests/roma.png",
-    "Atalanta": "/crests/atalanta.png",
     "Bologna": "/crests/bologna.png",
     "Lazio": "/crests/lazio.png",
     "Sassuolo": "/crests/sassuolo.png",
     "Torino": "/crests/torino.png",
+    "Frosinone": "/crests/frosinone.png",
     "Parma": "/crests/parma.png",
     "Genoa": "/crests/genoa.png",
+    "Venezia FC": "/crests/venezia-fc.png",
     "Monza": "/crests/monza.png"
    },
    "results": [
@@ -9076,6 +9104,34 @@
      "a": "Cagliari",
      "hs": 0,
      "as": 1
+    },
+    {
+     "d": "2026-08-23",
+     "h": "Frosinone",
+     "a": "Juventus",
+     "hs": 0,
+     "as": 1
+    },
+    {
+     "d": "2026-08-23",
+     "h": "Venezia FC",
+     "a": "Lecce",
+     "hs": 0,
+     "as": 2
+    },
+    {
+     "d": "2026-08-23",
+     "h": "Atalanta",
+     "a": "Sassuolo",
+     "hs": 2,
+     "as": 1
+    },
+    {
+     "d": "2026-08-23",
+     "h": "Torino",
+     "a": "Milan",
+     "hs": 1,
+     "as": 2
     }
    ],
    "scorers": [
@@ -9160,8 +9216,40 @@
      "played": 1
     },
     {
-     "name": "Thierry Correia",
-     "team": "Venezia FC",
+     "name": "Bremer",
+     "team": "Juventus",
+     "goals": 1,
+     "assists": null,
+     "pens": null,
+     "played": 1
+    },
+    {
+     "name": "Olaf Gorter",
+     "team": "Lecce",
+     "goals": 1,
+     "assists": null,
+     "pens": null,
+     "played": 1
+    },
+    {
+     "name": "Tiago Gabriel",
+     "team": "Lecce",
+     "goals": 1,
+     "assists": null,
+     "pens": null,
+     "played": 1
+    },
+    {
+     "name": "Giacomo Raspadori",
+     "team": "Atalanta",
+     "goals": 1,
+     "assists": null,
+     "pens": null,
+     "played": 1
+    },
+    {
+     "name": "Cas Odenthal",
+     "team": "Sassuolo",
      "goals": 1,
      "assists": null,
      "pens": null,
@@ -13911,6 +13999,20 @@
      "a": "Lille",
      "hs": 0,
      "as": 3
+    },
+    {
+     "d": "2026-08-23",
+     "h": "Le Havre",
+     "a": "Monaco",
+     "hs": 0,
+     "as": 1
+    },
+    {
+     "d": "2026-08-23",
+     "h": "PSG",
+     "a": "Stade Rennais",
+     "hs": 2,
+     "as": 2
     }
    ],
    "scorers": [
@@ -13928,6 +14030,14 @@
      "goals": 2,
      "assists": 1,
      "pens": 2,
+     "played": 1
+    },
+    {
+     "name": "Ferrán Torres",
+     "team": "PSG",
+     "goals": 2,
+     "assists": null,
+     "pens": null,
      "played": 1
     },
     {
@@ -14025,14 +14135,6 @@
      "assists": null,
      "pens": null,
      "played": 1
-    },
-    {
-     "name": "Malick Fofana",
-     "team": "Olympique Lyon",
-     "goals": 1,
-     "assists": null,
-     "pens": null,
-     "played": 1
     }
    ]
   },
@@ -14044,12 +14146,12 @@
     {
      "pos": 1,
      "team": "Palmeiras",
-     "p": 23,
-     "w": 14,
+     "p": 24,
+     "w": 15,
      "d": 6,
      "l": 3,
-     "gd": 21,
-     "pts": 48
+     "gd": 24,
+     "pts": 51
     },
     {
      "pos": 2,
@@ -14094,15 +14196,25 @@
     {
      "pos": 6,
      "team": "Bahia",
-     "p": 23,
-     "w": 8,
+     "p": 24,
+     "w": 9,
      "d": 10,
      "l": 5,
-     "gd": 4,
-     "pts": 34
+     "gd": 6,
+     "pts": 37
     },
     {
      "pos": 7,
+     "team": "Bragantino",
+     "p": 23,
+     "w": 10,
+     "d": 5,
+     "l": 8,
+     "gd": 5,
+     "pts": 35
+    },
+    {
+     "pos": 8,
      "team": "Mineiro",
      "p": 23,
      "w": 9,
@@ -14110,16 +14222,6 @@
      "l": 8,
      "gd": 3,
      "pts": 33
-    },
-    {
-     "pos": 8,
-     "team": "Bragantino",
-     "p": 22,
-     "w": 9,
-     "d": 5,
-     "l": 8,
-     "gd": 4,
-     "pts": 32
     },
     {
      "pos": 9,
@@ -14154,41 +14256,41 @@
     {
      "pos": 12,
      "team": "Vitória",
-     "p": 23,
+     "p": 24,
      "w": 8,
      "d": 5,
-     "l": 10,
-     "gd": -10,
+     "l": 11,
+     "gd": -12,
      "pts": 29
     },
     {
      "pos": 13,
      "team": "São Paulo",
-     "p": 22,
+     "p": 23,
      "w": 7,
-     "d": 6,
+     "d": 7,
      "l": 9,
      "gd": 1,
-     "pts": 27
+     "pts": 28
     },
     {
      "pos": 14,
      "team": "Santos",
-     "p": 22,
+     "p": 23,
      "w": 6,
-     "d": 7,
+     "d": 8,
      "l": 9,
      "gd": -3,
-     "pts": 25
+     "pts": 26
     },
     {
      "pos": 15,
      "team": "Grêmio",
-     "p": 22,
+     "p": 23,
      "w": 6,
      "d": 7,
-     "l": 9,
-     "gd": -6,
+     "l": 10,
+     "gd": -7,
      "pts": 25
     },
     {
@@ -14204,12 +14306,12 @@
     {
      "pos": 17,
      "team": "Mirassol",
-     "p": 22,
+     "p": 23,
      "w": 6,
-     "d": 5,
+     "d": 6,
      "l": 11,
      "gd": -10,
-     "pts": 23
+     "pts": 24
     },
     {
      "pos": 18,
@@ -14224,22 +14326,22 @@
     {
      "pos": 19,
      "team": "Vasco da Gama",
-     "p": 22,
+     "p": 23,
      "w": 5,
      "d": 7,
-     "l": 10,
-     "gd": -11,
+     "l": 11,
+     "gd": -14,
      "pts": 22
     },
     {
      "pos": 20,
      "team": "Chapecoense",
-     "p": 22,
+     "p": 23,
      "w": 1,
-     "d": 8,
+     "d": 9,
      "l": 13,
      "gd": -23,
-     "pts": 11
+     "pts": 12
     }
    ],
    "crests": {
@@ -14249,8 +14351,8 @@
     "Fluminense": "/crests/fluminense.png",
     "Cruzeiro": "/crests/cruzeiro.png",
     "Bahia": "/crests/bahia.png",
-    "Mineiro": "/crests/mineiro.png",
     "Bragantino": "/crests/bragantino.png",
+    "Mineiro": "/crests/mineiro.png",
     "Corinthians": "/crests/corinthians.png",
     "Coritiba": "/crests/coritiba.png",
     "Botafogo": "/crests/botafogo.png",
@@ -18520,6 +18622,27 @@
      "a": "Flamengo",
      "hs": 2,
      "as": 1
+    },
+    {
+     "d": "2026-08-23",
+     "h": "Bragantino",
+     "a": "Grêmio",
+     "hs": 1,
+     "as": 0
+    },
+    {
+     "d": "2026-08-23",
+     "h": "Palmeiras",
+     "a": "Vasco da Gama",
+     "hs": 4,
+     "as": 1
+    },
+    {
+     "d": "2026-08-23",
+     "h": "Vitória",
+     "a": "Bahia",
+     "hs": 0,
+     "as": 2
     }
    ],
    "scorers": [
@@ -18545,7 +18668,7 @@
      "goals": 10,
      "assists": 1,
      "pens": 1,
-     "played": 20
+     "played": 21
     },
     {
      "name": "John Kennedy",
@@ -18554,6 +18677,14 @@
      "assists": 1,
      "pens": null,
      "played": 19
+    },
+    {
+     "name": "José Manuel López",
+     "team": "Palmeiras",
+     "goals": 8,
+     "assists": 4,
+     "pens": null,
+     "played": 21
     },
     {
      "name": "Breno Lopes",
@@ -18569,7 +18700,7 @@
      "goals": 8,
      "assists": 2,
      "pens": 1,
-     "played": 16
+     "played": 17
     },
     {
      "name": "Danilo dos Santos de Oliveira",
@@ -18585,7 +18716,7 @@
      "goals": 7,
      "assists": 1,
      "pens": 1,
-     "played": 19
+     "played": 20
     },
     {
      "name": "Arthur Cabral",
@@ -18601,15 +18732,7 @@
      "goals": 7,
      "assists": 1,
      "pens": 2,
-     "played": 18
-    },
-    {
-     "name": "José Manuel López",
-     "team": "Palmeiras",
-     "goals": 6,
-     "assists": 4,
-     "pens": null,
-     "played": 20
+     "played": 19
     },
     {
      "name": "Luciano",
@@ -18617,7 +18740,15 @@
      "goals": 6,
      "assists": 1,
      "pens": null,
-     "played": 18
+     "played": 19
+    },
+    {
+     "name": "Mauricio",
+     "team": "Palmeiras",
+     "goals": 6,
+     "assists": 1,
+     "pens": null,
+     "played": 22
     },
     {
      "name": "Matheus Pereira",
@@ -18634,14 +18765,6 @@
      "assists": null,
      "pens": 3,
      "played": 17
-    },
-    {
-     "name": "Neymar",
-     "team": "Santos",
-     "goals": 6,
-     "assists": 2,
-     "pens": 2,
-     "played": 10
     }
    ]
   },
@@ -25618,6 +25741,13 @@
      "a": "Groningen",
      "hs": 5,
      "as": 1
+    },
+    {
+     "d": "2026-08-23",
+     "h": "Cambuur",
+     "a": "Feyenoord",
+     "hs": 2,
+     "as": 5
     }
    ],
    "scorers": [
@@ -25634,6 +25764,22 @@
      "team": "Groningen",
      "goals": 3,
      "assists": null,
+     "pens": null,
+     "played": 3
+    },
+    {
+     "name": "Rafik el Arguioui",
+     "team": "Cambuur",
+     "goals": 3,
+     "assists": null,
+     "pens": null,
+     "played": 2
+    },
+    {
+     "name": "Gjivai Zechiël",
+     "team": "Feyenoord",
+     "goals": 3,
+     "assists": 1,
      "pens": null,
      "played": 3
     },
@@ -25710,22 +25856,6 @@
      "played": 3
     },
     {
-     "name": "Rafik el Arguioui",
-     "team": "Cambuur",
-     "goals": 2,
-     "assists": null,
-     "pens": null,
-     "played": 2
-    },
-    {
-     "name": "Gjivai Zechiël",
-     "team": "Feyenoord",
-     "goals": 2,
-     "assists": 1,
-     "pens": null,
-     "played": 3
-    },
-    {
      "name": "Ayase Ueda",
      "team": "Feyenoord",
      "goals": 2,
@@ -25750,6 +25880,16 @@
    "standings": [
     {
      "pos": 1,
+     "team": "Porto",
+     "p": 3,
+     "w": 3,
+     "d": 0,
+     "l": 0,
+     "gd": 6,
+     "pts": 9
+    },
+    {
+     "pos": 2,
      "team": "Sporting CP",
      "p": 3,
      "w": 2,
@@ -25759,7 +25899,7 @@
      "pts": 7
     },
     {
-     "pos": 2,
+     "pos": 3,
      "team": "Marítimo",
      "p": 3,
      "w": 2,
@@ -25769,27 +25909,27 @@
      "pts": 7
     },
     {
-     "pos": 3,
-     "team": "Arouca",
-     "p": 2,
-     "w": 2,
-     "d": 0,
-     "l": 0,
-     "gd": 5,
-     "pts": 6
-    },
-    {
      "pos": 4,
-     "team": "Porto",
-     "p": 2,
+     "team": "Santa Clara",
+     "p": 3,
      "w": 2,
-     "d": 0,
+     "d": 1,
      "l": 0,
-     "gd": 4,
-     "pts": 6
+     "gd": 2,
+     "pts": 7
     },
     {
      "pos": 5,
+     "team": "Arouca",
+     "p": 3,
+     "w": 2,
+     "d": 0,
+     "l": 1,
+     "gd": 3,
+     "pts": 6
+    },
+    {
+     "pos": 6,
      "team": "SL Benfica",
      "p": 2,
      "w": 1,
@@ -25799,22 +25939,12 @@
      "pts": 4
     },
     {
-     "pos": 6,
+     "pos": 7,
      "team": "CD Nacional",
      "p": 3,
      "w": 1,
      "d": 1,
      "l": 1,
-     "gd": 1,
-     "pts": 4
-    },
-    {
-     "pos": 7,
-     "team": "Santa Clara",
-     "p": 2,
-     "w": 1,
-     "d": 1,
-     "l": 0,
      "gd": 1,
      "pts": 4
     },
@@ -25881,11 +26011,11 @@
     {
      "pos": 14,
      "team": "Famalicão",
-     "p": 2,
+     "p": 3,
      "w": 0,
      "d": 1,
-     "l": 1,
-     "gd": -1,
+     "l": 2,
+     "gd": -2,
      "pts": 1
     },
     {
@@ -25930,13 +26060,13 @@
     }
    ],
    "crests": {
+    "Porto": "/crests/porto.png",
     "Sporting CP": "/crests/sporting-cp.png",
     "Marítimo": "/crests/maritimo.png",
+    "Santa Clara": "/crests/santa-clara.png",
     "Arouca": "/crests/arouca.png",
-    "Porto": "/crests/porto.png",
     "SL Benfica": "/crests/sl-benfica.png",
     "CD Nacional": "/crests/cd-nacional.png",
-    "Santa Clara": "/crests/santa-clara.png",
     "Gil Vicente": "/crests/gil-vicente.png",
     "Vitória SC": "/crests/vitoria-sc.png",
     "Rio Ave": "/crests/rio-ave.png",
@@ -28238,6 +28368,20 @@
      "a": "CD Nacional",
      "hs": 1,
      "as": 0
+    },
+    {
+     "d": "2026-08-23",
+     "h": "Santa Clara",
+     "a": "Famalicão",
+     "hs": 1,
+     "as": 0
+    },
+    {
+     "d": "2026-08-23",
+     "h": "Porto",
+     "a": "Arouca",
+     "hs": 2,
+     "as": 0
     }
    ],
    "scorers": [
@@ -28252,7 +28396,7 @@
     {
      "name": "Gonçalo Paciência",
      "team": "Santa Clara",
-     "goals": 3,
+     "goals": 4,
      "assists": null,
      "pens": 1,
      "played": 3
@@ -28263,7 +28407,7 @@
      "goals": 2,
      "assists": null,
      "pens": null,
-     "played": 2
+     "played": 3
     },
     {
      "name": "Fotis Ioannidis",
@@ -28282,6 +28426,14 @@
      "played": 2
     },
     {
+     "name": "Gabriel Veiga",
+     "team": "Porto",
+     "goals": 2,
+     "assists": 1,
+     "pens": 1,
+     "played": 3
+    },
+    {
      "name": "Gianluca Prestianni",
      "team": "SL Benfica",
      "goals": 2,
@@ -28292,6 +28444,14 @@
     {
      "name": "André Clovis",
      "team": "Acad. Viseu",
+     "goals": 2,
+     "assists": null,
+     "pens": null,
+     "played": 3
+    },
+    {
+     "name": "Borja Sainz",
+     "team": "Porto",
      "goals": 2,
      "assists": null,
      "pens": null,
@@ -28343,23 +28503,7 @@
      "goals": 1,
      "assists": null,
      "pens": 1,
-     "played": 2
-    },
-    {
-     "name": "Gabriel Veiga",
-     "team": "Porto",
-     "goals": 1,
-     "assists": 1,
-     "pens": 1,
-     "played": 2
-    },
-    {
-     "name": "Fran Navarro",
-     "team": "Braga",
-     "goals": 1,
-     "assists": null,
-     "pens": null,
-     "played": 1
+     "played": 3
     }
    ]
   },
