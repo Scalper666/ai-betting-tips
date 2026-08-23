@@ -1,0 +1,161 @@
+---
+import Base from '../../layouts/Base.astro';
+import { contentUpdated } from '../../lib/guides.js';
+
+const title = 'Poisson Calculator — Football Score & Goals Probabilities';
+const description = 'Turn two expected-goals numbers into full match probabilities: 1X2, over/under lines, both teams to score and the most likely correct scores — the same maths our model runs.';
+
+const faq = [
+  { q: 'What is the Poisson distribution doing here?', a: 'It models the number of goals a team scores as random events arriving at a steady rate λ (the expected goals). Given λ for each side, every scoreline gets a probability: P(k goals) = e^−λ · λᵏ ⁄ k!. Summing the grid gives 1X2, totals and BTTS.' },
+  { q: 'Where do I get the expected-goals inputs?', a: 'From any xG source, from a team’s goals-per-game rates, or from our fixture pages — every match where the model has a reliable fit shows its expected goals. The calculator is the same engine with the inputs exposed.' },
+  { q: 'How accurate is a plain Poisson model?', a: 'Good enough to be the backbone of most quant football models, imperfect in known ways: it slightly underrates draws and low-scoring games because goals are not fully independent. Our production model adds time-decay, shrinkage and a market blend on top — methodology on the model page.' },
+  { q: 'Why do the probabilities not sum to exactly 100%?', a: 'The grid is truncated at 10 goals per team. The missing tail is a fraction of a percent at football-realistic λ values — visible only if you push the inputs to absurd levels.' },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+<Base title={title} description={description} schema={schema} updated={`${contentUpdated}T00:00:00Z`} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/tools">Tools</a><span>/</span>Poisson</div>
+      <h1>Poisson goals <em>calculator</em></h1>
+      <p class="lead">The engine behind our predictions, with the dials exposed. Enter expected goals for each side and get the full probability picture — 1X2, totals, BTTS and the likely scorelines.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Match <b>probabilities</b></h2></div>
+          <div class="box"><div class="box-pad">
+            <div class="tool-row" style="grid-template-columns:1fr 1fr">
+              <div class="tool-f"><label>Home expected goals (λ)</label><input id="psH" type="number" step="0.05" min="0.05" max="6" value="1.55" inputmode="decimal" /></div>
+              <div class="tool-f"><label>Away expected goals (λ)</label><input id="psA" type="number" step="0.05" min="0.05" max="6" value="1.15" inputmode="decimal" /></div>
+            </div>
+            <div class="tool-res">
+              <div class="tool-big"><b id="psHome">—</b><span>Home win</span></div>
+              <div class="tool-big"><b id="psDraw">—</b><span>Draw</span></div>
+              <div class="tool-big"><b id="psAway">—</b><span>Away win</span></div>
+            </div>
+            <div class="odds-table" style="margin-top:12px"><div class="scr-scroll">
+              <table class="otbl">
+                <thead><tr><th style="text-align:left">Market</th><th>Probability</th><th>Fair odds</th></tr></thead>
+                <tbody id="psMarkets"></tbody>
+              </table>
+            </div></div>
+            <div class="sec-head" style="margin-top:14px"><h3 class="sec-title">Most likely <b>scorelines</b></h3></div>
+            <div class="res-sum" id="psScores"></div>
+            <p class="res-note" style="margin-top:12px">Fair odds carry no margin — a real price below them is negative value at these λ inputs. Grid truncated at 10 goals per side.</p>
+          </div></div>
+        </section>
+
+        <section class="seo">
+          <h2>The same maths, with nothing hidden</h2>
+          <p>This is not a toy version of our model — it is the core of it. Every fixture page on this site starts from exactly this computation: a goals rate for each side, a Poisson grid over every scoreline, and market probabilities read off the grid. What the production pipeline adds is how the λ values are estimated — time-decayed attack and defence rates over ~11,000 results, shrinkage toward the league mean, and a blend with market prices — all documented on the <a href="/model" style="color:var(--mint)">model page</a>.</p>
+          <p>Two honest limitations worth knowing before you trust any output. Goals are not perfectly independent — teams sit on leads and chase deficits — so plain Poisson slightly underrates draws and 0-0s; and the output quality is exactly the input quality: λ values pulled from thin air produce confident-looking nonsense. Used with real xG or rate data, it is the fastest way to sanity-check whether a price on totals or BTTS is in the right neighbourhood.</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Poisson <b>FAQ</b></h2></div>
+          <div class="faq">
+            {faq.map((f, i) => (
+              <div class={`faq-item${i === 0 ? ' open' : ''}`}>
+                <div class="faq-q">{f.q}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{f.a}</p></div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>⚙️ The full methodology</h4>
+          <p>Decay, shrinkage, the market blend and every limitation — documented, not marketed.</p>
+          <a href="/model" class="btn btn-mint btn-block">Read the model page</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🧮</span> More tools</div>
+          <a class="tm" href="/tools/ev-calculator"><span class="dot"></span>Expected value</a>
+          <a class="tm" href="/tools/no-vig-calculator"><span class="dot"></span>No-vig fair odds</a>
+          <a class="tm" href="/tools/asian-handicap-calculator"><span class="dot"></span>Asian handicap</a>
+          <a class="tm" href="/tools/odds-converter"><span class="dot"></span>Odds converter</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">📖</span> Related terms</div>
+          <a class="tm" href="/glossary/poisson-distribution"><span class="dot"></span>Poisson distribution</a>
+          <a class="tm" href="/glossary/xg"><span class="dot"></span>Expected goals (xG)</a>
+          <a class="tm" href="/glossary/expected-value"><span class="dot"></span>Expected value</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var g = function (id) { return document.getElementById(id); };
+      var MAX = 10;
+
+      function pois(lambda) {
+        var out = [], p = Math.exp(-lambda);
+        out.push(p);
+        for (var k = 1; k <= MAX; k++) { p = p * lambda / k; out.push(p); }
+        return out;
+      }
+      var pct = function (v) { return (v * 100).toFixed(1) + '%'; };
+      var fair = function (v) { return v > 0 ? (1 / v).toFixed(2) : '—'; };
+
+      function calc() {
+        var lh = parseFloat(g('psH').value);
+        var la = parseFloat(g('psA').value);
+        if (!(lh > 0) || !(la > 0)) return;
+        var ph = pois(lh), pa = pois(la);
+        var home = 0, draw = 0, away = 0, btts = 0;
+        var totals = { 1.5: 0, 2.5: 0, 3.5: 0 };
+        var scores = [];
+        for (var i = 0; i <= MAX; i++) {
+          for (var j = 0; j <= MAX; j++) {
+            var p = ph[i] * pa[j];
+            if (i > j) home += p; else if (i === j) draw += p; else away += p;
+            if (i > 0 && j > 0) btts += p;
+            if (i + j > 1.5) totals[1.5] += p;
+            if (i + j > 2.5) totals[2.5] += p;
+            if (i + j > 3.5) totals[3.5] += p;
+            scores.push({ s: i + '–' + j, p: p });
+          }
+        }
+        g('psHome').textContent = pct(home);
+        g('psDraw').textContent = pct(draw);
+        g('psAway').textContent = pct(away);
+
+        var rows = [
+          ['Over 1.5 goals', totals[1.5]], ['Under 1.5 goals', 1 - totals[1.5]],
+          ['Over 2.5 goals', totals[2.5]], ['Under 2.5 goals', 1 - totals[2.5]],
+          ['Over 3.5 goals', totals[3.5]], ['Under 3.5 goals', 1 - totals[3.5]],
+          ['Both teams to score', btts], ['Home or draw (1X)', home + draw], ['Away or draw (X2)', away + draw],
+        ];
+        var html = '';
+        for (var r = 0; r < rows.length; r++) {
+          html += '<tr><td class="o-match" style="font-weight:700">' + rows[r][0] + '</td>'
+            + '<td class="o-cell"><span>' + pct(rows[r][1]) + '</span></td>'
+            + '<td class="o-cell hot"><span class="cb">' + fair(rows[r][1]) + '</span></td></tr>';
+        }
+        g('psMarkets').innerHTML = html;
+
+        scores.sort(function (a, b) { return b.p - a.p; });
+        var sh = '';
+        for (var t = 0; t < 6; t++) {
+          sh += '<div class="res-chip"><b>' + scores[t].s + '</b><span>' + pct(scores[t].p) + ' · fair ' + fair(scores[t].p) + '</span></div>';
+        }
+        g('psScores').innerHTML = sh;
+      }
+
+      ['psH', 'psA'].forEach(function (id) { g(id).addEventListener('input', calc); });
+      calc();
+    })();
+  </script>
+</Base>

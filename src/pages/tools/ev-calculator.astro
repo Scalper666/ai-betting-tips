@@ -1,0 +1,120 @@
+---
+import Base from '../../layouts/Base.astro';
+import { contentUpdated } from '../../lib/guides.js';
+
+const title = 'Expected Value (EV) Calculator for Betting';
+const description = 'Work out the expected value of any bet from the odds and your probability estimate: EV per unit, fair odds, and the margin between your view and the market.';
+
+const faq = [
+  { q: 'What is expected value in betting?', a: 'The average profit or loss per unit staked if the same bet were repeated many times: EV = (decimal odds × your probability) − 1. At 2.50 with a 45% chance, EV is 2.50 × 0.45 − 1 = +12.5% — you expect to make 0.125 units per unit staked over the long run.' },
+  { q: 'Is a positive-EV bet guaranteed to win?', a: 'No — it usually loses if the probability is under 50%. Positive EV means the price overpays the risk, so repeating similar bets is profitable over hundreds of trials. Any single result is dominated by variance.' },
+  { q: 'Where does my probability estimate come from?', a: 'That is the whole game. Ours comes from a Poisson goal model blended with market prices — the methodology is public. If you take the probability implied by the odds themselves, EV is always negative by exactly the bookmaker margin.' },
+  { q: 'What EV is worth betting?', a: 'Our own model only publishes a pick when the blend clears the best available price by a set margin — small edges disappear inside the estimate error. Treat sub-2% EV as noise unless your probability source is exceptional.' },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+<Base title={title} description={description} schema={schema} updated={`${contentUpdated}T00:00:00Z`} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/tools">Tools</a><span>/</span>Expected value</div>
+      <h1>Expected value <em>calculator</em></h1>
+      <p class="lead">The one formula behind every serious bet: does the price overpay the risk? Enter the odds and your probability — get EV per unit, the fair price, and the verdict.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head"><h2 class="sec-title">EV <b>calculator</b></h2></div>
+          <div class="box"><div class="box-pad">
+            <div class="tool-row" style="grid-template-columns:1fr 1fr 1fr">
+              <div class="tool-f"><label>Decimal odds</label><input id="evOdds" type="number" step="0.01" min="1.01" value="2.50" inputmode="decimal" /></div>
+              <div class="tool-f"><label>Your probability %</label><input id="evProb" type="number" step="0.5" min="1" max="99" value="45" inputmode="decimal" /></div>
+              <div class="tool-f"><label>Stake (optional)</label><input id="evStake" type="number" step="1" min="0" value="10" inputmode="decimal" /></div>
+            </div>
+            <div class="tool-res">
+              <div class="tool-big"><b id="evPct">—</b><span>EV per unit staked</span></div>
+              <div class="tool-big"><b id="evMoney">—</b><span>Expected profit on this stake</span></div>
+            </div>
+            <div class="tool-res" style="margin-top:10px">
+              <div class="tool-big"><b id="evFair">—</b><span>Fair odds at your probability</span></div>
+              <div class="tool-big"><b id="evImplied">—</b><span>Probability implied by the price</span></div>
+            </div>
+            <p class="res-note" id="evNote" style="margin-top:12px">—</p>
+          </div></div>
+        </section>
+
+        <section class="seo">
+          <h2>The only formula that separates betting from guessing</h2>
+          <p>Every price is a probability wearing a disguise: decimal odds of 2.50 claim the outcome happens 40% of the time. If your own estimate says 45%, the market is underpricing it and the gap — expected value — is yours; if your estimate says 38%, the same attractive-looking price quietly costs you money. Nothing else about a bet matters until this comparison is made, which is why this calculator sits at the centre of our toolset.</p>
+          <p>The hard part is never the arithmetic, it is the probability. Two honest sources exist: a model built from data (ours is a <a href="/model" style="color:var(--mint)">time-decayed Poisson blend</a>, published in full), or the sharpest available market price with the margin stripped out — our <a href="/tools/no-vig-calculator" style="color:var(--mint)">no-vig calculator</a> does that. Gut feeling is not a source; it is how the margin gets paid.</p>
+          <p>One warning the industry never prints: a positive-EV bet still loses most weeks. Our own <a href="/tipsters" style="color:var(--mint)">public record</a> shows drawdowns of 8+ units inside a sample that the model considers positive value — that is what variance does to true edges, and any tool promising smoother results is lying to you.</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">EV <b>FAQ</b></h2></div>
+          <div class="faq">
+            {faq.map((f, i) => (
+              <div class={`faq-item${i === 0 ? ' open' : ''}`}>
+                <div class="faq-q">{f.q}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{f.a}</p></div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>🔍 Today's positive-EV board</h4>
+          <p>The screener runs this exact calculation on every match we track, twice a day.</p>
+          <a href="/screener" class="btn btn-mint btn-block">Open the screener</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🧮</span> More tools</div>
+          <a class="tm" href="/tools/kelly-calculator"><span class="dot"></span>Kelly stake calculator</a>
+          <a class="tm" href="/tools/no-vig-calculator"><span class="dot"></span>No-vig fair odds</a>
+          <a class="tm" href="/tools/odds-converter"><span class="dot"></span>Odds converter</a>
+          <a class="tm" href="/tools/margin-calculator"><span class="dot"></span>Margin &amp; value</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">📖</span> Related terms</div>
+          <a class="tm" href="/glossary/expected-value"><span class="dot"></span>Expected value</a>
+          <a class="tm" href="/glossary/edge"><span class="dot"></span>Edge</a>
+          <a class="tm" href="/glossary/implied-probability"><span class="dot"></span>Implied probability</a>
+          <a class="tm" href="/glossary/variance"><span class="dot"></span>Variance</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var g = function (id) { return document.getElementById(id); };
+      function calc() {
+        var odds = parseFloat(g('evOdds').value);
+        var p = parseFloat(g('evProb').value) / 100;
+        var stake = parseFloat(g('evStake').value) || 0;
+        if (!(odds > 1) || !(p > 0 && p < 1)) return;
+        var ev = odds * p - 1;
+        g('evPct').textContent = (ev >= 0 ? '+' : '') + (ev * 100).toFixed(2) + '%';
+        g('evPct').parentElement.classList.toggle('warn', ev < 0);
+        g('evMoney').textContent = (ev >= 0 ? '+' : '') + (ev * stake).toFixed(2);
+        g('evFair').textContent = (1 / p).toFixed(2);
+        g('evImplied').textContent = (100 / odds).toFixed(1) + '%';
+        g('evNote').textContent = ev >= 0.02
+          ? 'Positive value: at your estimate the price overpays the risk by ' + (ev * 100).toFixed(1) + '% per unit. Repeated over many similar bets this is profitable — any single one still loses ' + ((1 - p) * 100).toFixed(0) + '% of the time.'
+          : ev >= 0
+            ? 'Marginal: the edge is thinner than typical estimate error. Our model would not publish a pick this thin.'
+            : 'Negative value: the price implies ' + (100 / odds).toFixed(1) + '% but you estimate ' + (p * 100).toFixed(1) + '%. At your own numbers this bet loses ' + Math.abs(ev * 100).toFixed(1) + '% per unit over time — the correct stake is zero.';
+      }
+      ['evOdds', 'evProb', 'evStake'].forEach(function (id) { g(id).addEventListener('input', calc); });
+      calc();
+    })();
+  </script>
+</Base>

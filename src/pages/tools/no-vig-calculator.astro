@@ -1,0 +1,158 @@
+---
+import Base from '../../layouts/Base.astro';
+import { contentUpdated } from '../../lib/guides.js';
+
+const title = 'No-Vig Calculator — Fair Odds With the Margin Removed';
+const description = 'Strip the bookmaker margin out of any 2-way or 3-way market: true implied probabilities, fair odds and the exact vig you are being charged.';
+
+const faq = [
+  { q: 'What is vig (vigorish)?', a: 'The bookmaker margin baked into the odds. Sum the implied probabilities of every outcome in a market and you get more than 100% — the excess is the vig. A 1X2 market summing to 105.5% charges 5.5% before anything kicks off.' },
+  { q: 'How are no-vig odds calculated?', a: 'This tool uses the standard multiplicative method: each implied probability is divided by the market total, so they sum to exactly 100%, then converted back to odds. It assumes the margin is spread proportionally — the common convention, though books actually load more margin onto longshots.' },
+  { q: 'What are no-vig odds useful for?', a: 'They are the market’s honest probability estimate — the best free forecast available. Compare a price at your book against the no-vig line from a sharper market and you can see whether you are getting value without any model at all.' },
+  { q: 'Why do my no-vig probabilities differ from your model?', a: 'The no-vig line is what the market believes; our Poisson model is an independent estimate from results data. When they disagree meaningfully, that disagreement is exactly what our screener flags — one of the two is wrong, and the public record tracks which.' },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+<Base title={title} description={description} schema={schema} updated={`${contentUpdated}T00:00:00Z`} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/tools">Tools</a><span>/</span>No-vig fair odds</div>
+      <h1>No-vig <em>fair odds calculator</em></h1>
+      <p class="lead">Every market overcharges by design. Enter the prices and see what the odds would be with the margin stripped out — the market's honest probability estimate.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">Fair odds <b>calculator</b></h2>
+            <div style="display:flex;gap:6px">
+              <button type="button" id="nvMode2" class="btn btn-sm btn-ghost">2-way</button>
+              <button type="button" id="nvMode3" class="btn btn-sm btn-mint">3-way (1X2)</button>
+            </div>
+          </div>
+          <div class="box"><div class="box-pad">
+            <div class="tool-row" style="grid-template-columns:1fr 1fr 1fr">
+              <div class="tool-f"><label id="nvL1">Home odds</label><input id="nvO1" type="number" step="0.01" min="1.01" value="2.10" inputmode="decimal" /></div>
+              <div class="tool-f" id="nvF2"><label>Draw odds</label><input id="nvO2" type="number" step="0.01" min="1.01" value="3.40" inputmode="decimal" /></div>
+              <div class="tool-f"><label id="nvL3">Away odds</label><input id="nvO3" type="number" step="0.01" min="1.01" value="3.60" inputmode="decimal" /></div>
+            </div>
+            <div class="tool-res">
+              <div class="tool-big"><b id="nvVig">—</b><span>Bookmaker margin (vig)</span></div>
+              <div class="tool-big"><b id="nvBook">—</b><span>Market total (implied %)</span></div>
+            </div>
+            <div class="odds-table" style="margin-top:12px"><div class="scr-scroll">
+              <table class="otbl">
+                <thead><tr><th style="text-align:left">Outcome</th><th>Offered</th><th>Implied %</th><th>True %</th><th>Fair odds</th></tr></thead>
+                <tbody id="nvRows"></tbody>
+              </table>
+            </div></div>
+            <p class="res-note" id="nvNote" style="margin-top:12px">—</p>
+          </div></div>
+        </section>
+
+        <section class="seo">
+          <h2>Why the fair line matters more than the best price</h2>
+          <p>Line shopping finds you the best available price; the no-vig line tells you whether even that price is any good. The two questions are different. A market can be shaded so heavily that the best of six books still sits below fair value — common on longshots, where the favourite-longshot bias concentrates the margin exactly where casual money goes.</p>
+          <p>The practical workflow sharp bettors use: take the no-vig probabilities from the sharpest market you can see, compare them against the price your book offers, and bet only where your book is generous relative to that fair line. It is value betting with the market itself as the model — no statistics degree required. Our <a href="/research/bookmaker-margins" style="color:var(--mint)">margin research</a> measures how much this varies by league, and the <a href="/tools/ev-calculator" style="color:var(--mint)">EV calculator</a> turns the gap into an expected-value figure.</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">No-vig <b>FAQ</b></h2></div>
+          <div class="faq">
+            {faq.map((f, i) => (
+              <div class={`faq-item${i === 0 ? ' open' : ''}`}>
+                <div class="faq-q">{f.q}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{f.a}</p></div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>📊 Margins, measured</h4>
+          <p>We recompute best-price margins across every league we track, twice a day.</p>
+          <a href="/research/bookmaker-margins" class="btn btn-mint btn-block">See the research</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🧮</span> More tools</div>
+          <a class="tm" href="/tools/ev-calculator"><span class="dot"></span>Expected value</a>
+          <a class="tm" href="/tools/margin-calculator"><span class="dot"></span>Margin &amp; value</a>
+          <a class="tm" href="/tools/odds-converter"><span class="dot"></span>Odds converter</a>
+          <a class="tm" href="/tools/kelly-calculator"><span class="dot"></span>Kelly stake</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">📖</span> Related terms</div>
+          <a class="tm" href="/glossary/vig"><span class="dot"></span>Vig / margin</a>
+          <a class="tm" href="/glossary/implied-probability"><span class="dot"></span>Implied probability</a>
+          <a class="tm" href="/glossary/sharp-and-soft-bookmakers"><span class="dot"></span>Sharp vs soft books</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var g = function (id) { return document.getElementById(id); };
+      var three = true;
+      var NAMES3 = ['Home', 'Draw', 'Away'];
+      var NAMES2 = ['Outcome 1', 'Outcome 2'];
+
+      function setMode(m3) {
+        three = m3;
+        g('nvMode3').classList.toggle('btn-mint', m3);
+        g('nvMode3').classList.toggle('btn-ghost', !m3);
+        g('nvMode2').classList.toggle('btn-mint', !m3);
+        g('nvMode2').classList.toggle('btn-ghost', m3);
+        g('nvF2').style.display = m3 ? '' : 'none';
+        g('nvL1').textContent = m3 ? 'Home odds' : 'Outcome 1 odds';
+        g('nvL3').textContent = m3 ? 'Away odds' : 'Outcome 2 odds';
+        calc();
+      }
+
+      function calc() {
+        var ids = three ? ['nvO1', 'nvO2', 'nvO3'] : ['nvO1', 'nvO3'];
+        var names = three ? NAMES3 : NAMES2;
+        var odds = [], i;
+        for (i = 0; i < ids.length; i++) {
+          var v = parseFloat(g(ids[i]).value);
+          if (!(v > 1)) return;
+          odds.push(v);
+        }
+        var imp = odds.map(function (o) { return 1 / o; });
+        var total = imp.reduce(function (a, b) { return a + b; }, 0);
+        var vig = (total - 1) * 100;
+        g('nvVig').textContent = vig.toFixed(2) + '%';
+        g('nvBook').textContent = (total * 100).toFixed(2) + '%';
+        var html = '';
+        for (i = 0; i < odds.length; i++) {
+          var truep = imp[i] / total;
+          html += '<tr><td class="o-match" style="font-weight:700">' + names[i] + '</td>'
+            + '<td class="o-cell"><span class="cb">' + odds[i].toFixed(2) + '</span></td>'
+            + '<td class="o-cell"><span>' + (imp[i] * 100).toFixed(1) + '%</span></td>'
+            + '<td class="o-cell"><span>' + (truep * 100).toFixed(1) + '%</span></td>'
+            + '<td class="o-cell hot"><span class="cb">' + (1 / truep).toFixed(2) + '</span></td></tr>';
+        }
+        g('nvRows').innerHTML = html;
+        if (total < 1) {
+          g('nvNote').textContent = 'These prices sum to under 100% implied — no single bookmaker offers that. You are mixing prices from different books (or a typo): the "fair odds" column is meaningless for a market that does not exist at one counter.';
+          return;
+        }
+        g('nvNote').textContent = 'This market charges ' + vig.toFixed(2) + '% before kick-off. The fair-odds column is the multiplicative no-vig line — the market’s own probability estimate with the fee removed. Books shade extra margin onto longshots, so treat fair odds on outsiders as slightly optimistic.';
+      }
+
+      g('nvMode2').addEventListener('click', function () { setMode(false); });
+      g('nvMode3').addEventListener('click', function () { setMode(true); });
+      ['nvO1', 'nvO2', 'nvO3'].forEach(function (id) { g(id).addEventListener('input', calc); });
+      calc();
+    })();
+  </script>
+</Base>

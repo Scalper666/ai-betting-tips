@@ -1,0 +1,152 @@
+---
+import Base from '../../layouts/Base.astro';
+import { contentUpdated } from '../../lib/guides.js';
+
+const title = 'Asian Handicap Calculator — Settle Any AH Line';
+const description = 'Enter the Asian handicap line, the final score and your stake to see exactly how the bet settles: win, half-win, push, half-loss or loss, with returns for every quarter line.';
+
+const faq = [
+  { q: 'How does a quarter line like -0.75 settle?', a: 'The stake splits in half across the two neighbouring lines: -0.75 is half on -0.5 and half on -1.0. Win by exactly one goal and the -0.5 half wins while the -1.0 half pushes — a half-win. The calculator shows the split explicitly.' },
+  { q: 'What does a push mean?', a: 'The handicap-adjusted result is an exact tie — for example a -1.0 line and a one-goal win. The stake is returned in full: no profit, no loss. Only whole-number lines can push.' },
+  { q: 'Why bet Asian handicap instead of 1X2?', a: 'It removes the draw as a separate outcome and lets you price the gap between the teams rather than just the winner. Margins on main AH lines at sharp books are among the lowest in football, which is why the line itself is such a good probability signal.' },
+  { q: 'What is the difference between -0.5 AH and a straight win bet?', a: 'Nothing in settlement — a -0.5 handicap wins exactly when the team wins. The differences appear on whole and quarter lines, where pushes and half-results soften the all-or-nothing 1X2 payoff.' },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+<Base title={title} description={description} schema={schema} updated={`${contentUpdated}T00:00:00Z`} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/tools">Tools</a><span>/</span>Asian handicap</div>
+      <h1>Asian handicap <em>calculator</em></h1>
+      <p class="lead">Quarter lines confuse everyone once. Pick the line, enter the score, and see exactly how the bet settles — including how a split stake behaves on .25 and .75 handicaps.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Settlement <b>calculator</b></h2></div>
+          <div class="box"><div class="box-pad">
+            <div class="tool-row" style="grid-template-columns:1fr 1fr 1fr 1fr">
+              <div class="tool-f"><label>Handicap (your team)</label><select id="ahLine"></select></div>
+              <div class="tool-f"><label>Your team's goals</label><input id="ahFor" type="number" step="1" min="0" value="2" inputmode="numeric" /></div>
+              <div class="tool-f"><label>Opponent's goals</label><input id="ahAg" type="number" step="1" min="0" value="1" inputmode="numeric" /></div>
+              <div class="tool-f"><label>Stake @ odds</label><div style="display:flex;gap:6px"><input id="ahStake" type="number" step="1" min="0.01" value="10" inputmode="decimal" style="width:50%" /><input id="ahOdds" type="number" step="0.01" min="1.01" value="1.95" inputmode="decimal" style="width:50%" /></div></div>
+            </div>
+            <div class="tool-res">
+              <div class="tool-big"><b id="ahResult">—</b><span>Outcome</span></div>
+              <div class="tool-big"><b id="ahReturn">—</b><span>Return (incl. stake)</span></div>
+            </div>
+            <p class="res-note" id="ahNote" style="margin-top:12px">—</p>
+          </div></div>
+        </section>
+
+        <section class="seo">
+          <h2>Reading Asian lines like the market does</h2>
+          <p>An Asian handicap is the market's estimate of the true gap between two teams, priced to roughly even money on both sides. That makes the line itself information: a team quoted at -1.25 is being called about a 1.2-goal favourite, whatever the 1X2 prices suggest. When our model's expected-goals gap disagrees with the line by a meaningful margin, that disagreement is exactly the kind of signal the <a href="/screener" style="color:var(--mint)">screener</a> surfaces.</p>
+          <p>Quarter lines exist to fill the gaps between whole and half numbers, and the mechanics are always the same: half the stake on each neighbour. Once you have watched the calculator settle a -0.75 on a one-goal win — half won, half pushed — the notation stops being mysterious and starts being useful. The <a href="/glossary/asian-handicap" style="color:var(--mint)">glossary entry</a> covers the full ladder with worked examples.</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">Asian handicap <b>FAQ</b></h2></div>
+          <div class="faq">
+            {faq.map((f, i) => (
+              <div class={`faq-item${i === 0 ? ' open' : ''}`}>
+                <div class="faq-q">{f.q}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{f.a}</p></div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>🔍 Model vs the line</h4>
+          <p>Every fixture we track carries model probabilities next to the best prices.</p>
+          <a href="/predictions" class="btn btn-mint btn-block">Today's fixtures</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🧮</span> More tools</div>
+          <a class="tm" href="/tools/ev-calculator"><span class="dot"></span>Expected value</a>
+          <a class="tm" href="/tools/no-vig-calculator"><span class="dot"></span>No-vig fair odds</a>
+          <a class="tm" href="/tools/odds-converter"><span class="dot"></span>Odds converter</a>
+          <a class="tm" href="/tools/poisson-calculator"><span class="dot"></span>Poisson goals</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">📖</span> Related terms</div>
+          <a class="tm" href="/glossary/asian-handicap"><span class="dot"></span>Asian handicap</a>
+          <a class="tm" href="/glossary/implied-probability"><span class="dot"></span>Implied probability</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var g = function (id) { return document.getElementById(id); };
+      var money = function (v) { return (Math.round(v * 100) / 100).toFixed(2); };
+
+      var sel = g('ahLine');
+      var opts = '';
+      for (var q = -12; q <= 12; q++) {
+        var line = q / 4;
+        var lbl = (line > 0 ? '+' : '') + line.toFixed(2).replace(/\.?0+$/, '').replace(/\.5$/, '.5');
+        if (line === 0) lbl = '0 (level)';
+        opts += '<option value="' + line + '"' + (line === -0.75 ? ' selected' : '') + '>' + lbl + '</option>';
+      }
+      sel.innerHTML = opts;
+
+      // settle one whole/half line: 1 win, 0.5 push, 0 loss
+      function settleHalf(line, diff) {
+        var adj = diff + line;
+        if (adj > 0) return 1;
+        if (adj === 0) return 0.5;
+        return 0;
+      }
+
+      var WORD = { '1': 'WIN', '0.75': 'HALF WIN', '0.5': 'PUSH', '0.25': 'HALF LOSS', '0': 'LOSS' };
+
+      function calc() {
+        var line = parseFloat(sel.value);
+        var diff = (parseInt(g('ahFor').value, 10) || 0) - (parseInt(g('ahAg').value, 10) || 0);
+        var stake = parseFloat(g('ahStake').value);
+        var odds = parseFloat(g('ahOdds').value);
+        if (!(stake > 0) || !(odds > 1)) return;
+
+        var isQuarter = Math.abs(line * 4) % 2 === 1;
+        var score;
+        var detail;
+        if (isQuarter) {
+          var lo = line - 0.25, hi = line + 0.25;
+          var s1 = settleHalf(lo, diff), s2 = settleHalf(hi, diff);
+          score = (s1 + s2) / 2;
+          detail = 'Split stake: ' + money(stake / 2) + ' on ' + (lo > 0 ? '+' : '') + lo.toFixed(1)
+            + ' (' + WORD[String(s1)].toLowerCase() + ') and ' + money(stake / 2) + ' on '
+            + (hi > 0 ? '+' : '') + hi.toFixed(1) + ' (' + WORD[String(s2)].toLowerCase() + ').';
+        } else {
+          score = settleHalf(line, diff);
+          detail = 'Handicap-adjusted result: ' + (diff > 0 ? '+' : '') + diff + ' ' + (line >= 0 ? '+ ' : '− ') + Math.abs(line) + ' = ' + (diff + line > 0 ? '+' : '') + (diff + line) + '.';
+        }
+
+        // return: winning fraction at odds, pushing fraction at 1.00
+        var winFrac = score === 1 ? 1 : score === 0.75 ? 0.5 : 0;
+        var pushFrac = score === 0.75 ? 0.5 : score === 0.5 ? 1 : score === 0.25 ? 0.5 : 0;
+        var ret = stake * winFrac * odds + stake * pushFrac;
+        g('ahResult').textContent = WORD[String(score)];
+        g('ahResult').parentElement.classList.toggle('warn', score < 0.5);
+        g('ahReturn').textContent = money(ret) + ' (' + (ret - stake >= 0 ? '+' : '') + money(ret - stake) + ')';
+        g('ahNote').textContent = detail;
+      }
+
+      ['ahFor', 'ahAg', 'ahStake', 'ahOdds'].forEach(function (id) { g(id).addEventListener('input', calc); });
+      sel.addEventListener('change', calc);
+      calc();
+    })();
+  </script>
+</Base>

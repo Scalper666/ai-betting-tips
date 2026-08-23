@@ -1,0 +1,194 @@
+---
+import Base from '../../layouts/Base.astro';
+import { SYSTEMS, systemParts, FOLD_NAME } from '../../lib/betSystems.js';
+import { contentUpdated } from '../../lib/guides.js';
+
+// One calculator page per system bet — "lucky 15 calculator" and friends are
+// the biggest calculator query family in betting. The combinatorics live in
+// lib/betSystems.js; settling (win/void/lose per selection) is enumerated by
+// bitmask in the inline script.
+export function getStaticPaths() {
+  return SYSTEMS.map((sys) => ({ params: { system: sys.slug }, props: { sys } }));
+}
+const { sys } = Astro.props;
+const parts = systemParts(sys);
+const partsLabel = parts.map((p) => `${p.count} ${FOLD_NAME[p.k].toLowerCase()}`).join(', ');
+const others = SYSTEMS.filter((x) => x.slug !== sys.slug);
+
+const title = `${sys.name} Calculator — Work Out Returns on All ${sys.bets} Bets`;
+const description = `Free ${sys.name} bet calculator: enter your ${sys.n} selections, mark each winner, loser or void, and see the stake, returns and profit across all ${sys.bets} bets instantly.`;
+
+const faq = [
+  { q: `What is a ${sys.name} bet?`, a: `A system bet on ${sys.n} selections made of ${partsLabel} — ${sys.bets} bets in total, each carrying its own stake. ${sys.blurb}` },
+  { q: `How much does a ${sys.name} cost?`, a: `Your unit stake times ${sys.bets}. At 1 unit per bet the full slip costs ${sys.bets} units — the calculator shows the exact outlay as you type.` },
+  { q: sys.singles
+      ? `How many winners do I need for a ${sys.name} to pay?`
+      : `Why doesn't one winner return anything on a ${sys.name}?`,
+    a: sys.singles
+      ? `One. The singles mean a lone winner already returns something, though usually less than the total outlay — the calculator shows the exact figure for your odds.`
+      : `Because the smallest bet in a ${sys.name} is a double, a single winner completes no bet. You need at least two winners for any return — that is the trade-off for spending nothing on singles.` },
+  { q: 'What happens to void selections?', a: 'A void (postponed match, non-runner) is not a loss: every combination containing it is settled at odds of 1.00 for that leg, so doubles become effective singles and so on. Mark a selection Void in the calculator to see the effect.' },
+];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+---
+<Base title={title} description={description} schema={schema} updated={`${contentUpdated}T00:00:00Z`} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/tools">Tools</a><span>/</span>{sys.name}</div>
+      <h1>{sys.name} <em>calculator</em></h1>
+      <p class="lead">{sys.blurb} Enter decimal odds for each selection, mark the results, and every one of the {sys.bets} bets is settled instantly.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{sys.name} <b>returns</b></h2></div>
+          <div class="box"><div class="box-pad">
+            <div class="tool-row" style="grid-template-columns:1fr 1fr">
+              <div class="tool-f"><label>Unit stake (per bet)</label><input id="sbStake" type="number" step="0.5" min="0.01" value="1" inputmode="decimal" /></div>
+              <div class="tool-f"><label>Total outlay</label><input id="sbOutlay" type="text" value="" readonly /></div>
+            </div>
+            <div id="sbRows"></div>
+            <div class="tool-res" style="margin-top:12px">
+              <div class="tool-big"><b id="sbRet">—</b><span>Total return</span></div>
+              <div class="tool-big"><b id="sbProfit">—</b><span>Profit / loss</span></div>
+            </div>
+            <p class="res-note" id="sbNote" style="margin-top:12px">—</p>
+          </div></div>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">What is <b>inside a {sys.name}</b></h2></div>
+          <div class="odds-table"><div class="scr-scroll">
+            <table class="otbl">
+              <thead><tr><th style="text-align:left">Bet type</th><th>Count</th></tr></thead>
+              <tbody>
+                {parts.map((p) => (
+                  <tr><td class="o-match" style="font-weight:700">{FOLD_NAME[p.k]}</td><td class="o-cell"><span class="cb">{p.count}</span></td></tr>
+                ))}
+                <tr><td class="o-match" style="font-weight:700">Total bets</td><td class="o-cell hot"><span class="cb">{sys.bets}</span></td></tr>
+              </tbody>
+            </table>
+          </div></div>
+        </section>
+
+        <section class="seo">
+          <h2>When a {sys.name} makes sense — honestly</h2>
+          <p>Every bet inside a {sys.name} carries the bookmaker's margin, and combining selections multiplies that margin just as it multiplies the odds. A system bet never improves your expected value over the same stakes placed as singles — what it changes is the <em>shape</em> of the outcomes: {sys.singles ? 'the singles soften bad days, while the bigger combinations carry the upside' : 'nothing returns until two selections land, in exchange for cheaper cover than the version with singles'}. That is a variance choice, not an edge.</p>
+          <p>The honest way to use one: pick selections that are each positive value on their own (our <a href="/screener" style="color:var(--mint)">screener</a> ranks the board by exactly that), keep the unit stake small enough that {sys.bets} bets fit your bankroll rules, and check every price before placing — a leg that drifted past fair value weakens every combination it sits in, not just its own single.</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">{sys.name} <b>FAQ</b></h2></div>
+          <div class="faq">
+            {faq.map((f, i) => (
+              <div class={`faq-item${i === 0 ? ' open' : ''}`}>
+                <div class="faq-q">{f.q}<span class="pm">+</span></div>
+                <div class="faq-a"><p>{f.a}</p></div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="promo">
+          <h4>🤖 Build the legs first</h4>
+          <p>The AI acca builder picks value legs from today's board — then settle them here.</p>
+          <a href="/tools/acca-builder" class="btn btn-mint btn-block">Open the builder</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🧮</span> Other system calculators</div>
+          {others.map((x) => (
+            <a class="tm" href={`/tools/${x.slug}`}><span class="dot"></span>{x.name} <span class="cnt">{x.bets}</span></a>
+          ))}
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">📖</span> Related</div>
+          <a class="tm" href={`/glossary/${sys.glossary}`}><span class="dot"></span>{sys.name} explained</a>
+          <a class="tm" href="/glossary/system-bet"><span class="dot"></span>System bets</a>
+          <a class="tm" href="/tools/accumulator-calculator"><span class="dot"></span>Acca calculator</a>
+          <a class="tm" href="/tools/ev-calculator"><span class="dot"></span>Expected value</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script is:inline define:vars={{ N: sys.n, MINK: sys.singles ? 1 : 2 }}>
+    (function () {
+      var g = function (id) { return document.getElementById(id); };
+      var money = function (v) { return (Math.round(v * 100) / 100).toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
+
+      var rows = g('sbRows');
+      var html = '';
+      for (var i = 0; i < N; i++) {
+        html += '<div class="tool-row" style="grid-template-columns:2fr 3fr;margin-top:8px">'
+          + '<div class="tool-f"><label>Selection ' + (i + 1) + ' odds</label>'
+          + '<input id="sbO' + i + '" type="number" step="0.01" min="1.01" value="2.00" inputmode="decimal" /></div>'
+          + '<div class="tool-f"><label>Result</label><div style="display:flex;gap:6px;flex-wrap:wrap">'
+          + '<button type="button" class="btn btn-sm sb-res btn-mint" data-i="' + i + '" data-r="w">Won</button>'
+          + '<button type="button" class="btn btn-sm sb-res btn-ghost" data-i="' + i + '" data-r="l">Lost</button>'
+          + '<button type="button" class="btn btn-sm sb-res btn-ghost" data-i="' + i + '" data-r="v">Void</button>'
+          + '</div></div></div>';
+      }
+      rows.innerHTML = html;
+      var state = [];
+      for (var s = 0; s < N; s++) state.push('w');
+
+      function legFactor(i) {
+        if (state[i] === 'l') return 0;
+        if (state[i] === 'v') return 1;
+        var o = parseFloat(g('sbO' + i).value);
+        return o > 1 ? o : 0;
+      }
+
+      function calc() {
+        var stake = parseFloat(g('sbStake').value);
+        if (!(stake > 0)) return;
+        var factors = [];
+        for (var i = 0; i < N; i++) factors.push(legFactor(i));
+        var totalBets = 0, ret = 0;
+        for (var mask = 1; mask < (1 << N); mask++) {
+          var k = 0, prod = 1;
+          for (var b = 0; b < N; b++) {
+            if (mask & (1 << b)) { k++; prod *= factors[b]; }
+          }
+          if (k < MINK) continue;
+          totalBets++;
+          ret += stake * prod;
+        }
+        g('sbOutlay').value = money(stake * totalBets) + ' (' + totalBets + ' bets)';
+        g('sbRet').textContent = money(ret);
+        var profit = ret - stake * totalBets;
+        g('sbProfit').textContent = (profit >= 0 ? '+' : '') + money(profit);
+        g('sbProfit').parentElement.classList.toggle('warn', profit < 0);
+        var wins = 0, voids = 0;
+        for (var w = 0; w < N; w++) { if (state[w] === 'w') wins++; if (state[w] === 'v') voids++; }
+        g('sbNote').textContent = wins + ' of ' + N + ' selections won' + (voids ? ' (' + voids + ' void)' : '')
+          + '. Void legs settle at 1.00 inside every combination that contains them.';
+      }
+
+      rows.addEventListener('click', function (e) {
+        var btn = e.target.closest('.sb-res');
+        if (!btn) return;
+        var i = parseInt(btn.getAttribute('data-i'), 10);
+        state[i] = btn.getAttribute('data-r');
+        var sib = rows.querySelectorAll('.sb-res[data-i="' + i + '"]');
+        for (var j = 0; j < sib.length; j++) {
+          sib[j].classList.toggle('btn-mint', sib[j] === btn);
+          sib[j].classList.toggle('btn-ghost', sib[j] !== btn);
+        }
+        calc();
+      });
+      rows.addEventListener('input', calc);
+      g('sbStake').addEventListener('input', calc);
+      calc();
+    })();
+  </script>
+</Base>
