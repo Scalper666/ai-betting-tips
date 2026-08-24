@@ -153,6 +153,12 @@ export const D = {
   'nav.colourScheme': { en: 'Colour scheme', es: 'Esquema de color', pt: 'Esquema de cores', de: 'Farbschema' },
   'nav.oddsFmt': { en: 'Odds format', es: 'Formato de cuotas', pt: 'Formato de odds', de: 'Quotenformat' },
   // h2h pages (pair + hub + league hub)
+  'ft.evCalc': { en: 'EV calculator', es: 'Calculadora EV', pt: 'Calculadora EV', de: 'EV-Rechner' },
+  'ft.systemBets': { en: 'System bets', es: 'Apuestas de sistema', pt: 'Apostas de sistema', de: 'Systemwetten' },
+  'ft.ahCalc': { en: 'Asian handicap', es: 'Hándicap asiático', pt: 'Handicap asiático', de: 'Asian Handicap' },
+  'ft.poissonCalc': { en: 'Poisson goals', es: 'Goles Poisson', pt: 'Gols Poisson', de: 'Poisson-Tore' },
+  'ft.noVig': { en: 'No-vig odds', es: 'Cuotas sin margen', pt: 'Odds sem margem', de: 'Faire Quoten' },
+  'ft.allTools': { en: 'All tools', es: 'Todas las herramientas', pt: 'Todas as ferramentas', de: 'Alle Tools' },
   'tl.nmEv': { en: 'Expected value (EV)', es: 'Valor esperado (EV)', pt: 'Valor esperado (EV)', de: 'Erwartungswert (EV)' },
   'tl.dsEv': { en: 'Does the price overpay the risk? Odds + your probability in, EV and fair odds out.', es: '¿El precio paga de más el riesgo? Cuota + tu probabilidad, y sale el EV y la cuota justa.', pt: 'O preço paga mais que o risco? Odd + sua probabilidade, e sai o EV e a odd justa.', de: 'Überbezahlt der Preis das Risiko? Quote + deine Wahrscheinlichkeit rein, EV und faire Quote raus.' },
   'tl.nmVig': { en: 'No-vig fair odds', es: 'Cuotas justas sin margen', pt: 'Odds justas sem margem', de: 'Faire Quoten ohne Marge' },

@@ -63,9 +63,13 @@ const langs = langsProp ?? (i18nPath ? langsFor(i18nPath) : ['en', ...langsFor('
         <div class="dropdown">
           <a href="/tools/acca-builder"><span class="ic">🤖</span>{T('ft.accaBuilder')}</a>
           <a href={L('/tools/odds-converter')}><span class="ic">🔁</span>{T('ft.oddsConverter')}</a>
+          <a href="/tools/ev-calculator"><span class="ic">⚖️</span>{T('ft.evCalc')}</a>
+          <a href="/tools/lucky-15-calculator"><span class="ic">🧩</span>{T('ft.systemBets')}</a>
+          <a href="/tools/asian-handicap-calculator"><span class="ic">🎚️</span>{T('ft.ahCalc')}</a>
+          <a href="/tools/poisson-calculator"><span class="ic">📈</span>{T('ft.poissonCalc')}</a>
           <a href={L('/tools/accumulator-calculator')}><span class="ic">🎯</span>{T('ft.accaCalc')}</a>
-          <a href={L('/tools/margin-calculator')}><span class="ic">📊</span>{T('ft.marginCalc')}</a>
           <a href={L('/dropping-odds')}><span class="ic">📉</span>{T('ft.droppingOdds')}</a>
+          <a href={L('/tools')}><span class="ic">🧮</span>{T('ft.allTools')} →</a>
         </div>
       </div>
       <div class={`nav-item${is('news')}`}><button>{T('nav.news')} <span class="caret">▼</span></button>
