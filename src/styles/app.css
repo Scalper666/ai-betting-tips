@@ -782,8 +782,10 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
 .scr-steam.flat{color:var(--text-mute)}
 .scr-empty{padding:44px;text-align:center;color:var(--text-mute);font-size:13.5px}
 .scr-table.scr-mini{min-width:520px}
+@media (min-width:641px){
 .scr-table th:first-child,.scr-table td:first-child{width:1%}
 .scr-table th:nth-child(2),.scr-table td:nth-child(2){width:50%}
+}
 .scr-table.scr-mini thead th{cursor:default}
 
 /* ===== Geo: country selector + country hub ===== */
@@ -1194,6 +1196,15 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
   .scr-table td:nth-child(4){grid-column:3;grid-row:1;justify-self:end;font-weight:800}
   .scr-table td:nth-child(5){grid-column:3;grid-row:2;justify-self:end}
   .scr-table td:nth-child(n+6){display:none}
+}
+
+/* why-cards: full-size desktop card is huge on phones — icon goes inline */
+@media (max-width:640px){
+  .feat{padding:13px 15px;display:grid;grid-template-columns:40px 1fr;gap:3px 12px;align-items:start}
+  .feat .fi{width:40px;height:40px;border-radius:11px;font-size:18px;margin:0;grid-row:1/3}
+  .feat h4{margin:0;font-size:14.5px;grid-column:2;align-self:center}
+  .feat p{font-size:12.5px;grid-column:2}
+  .feat-grid{gap:10px}
 }
 
 /* ---- mobile layout fixes (from real device screenshots) ---- */
