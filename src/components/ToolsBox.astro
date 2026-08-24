@@ -1,28 +1,20 @@
 ---
-// Sidebar cross-link box for the calculators: compact 2×2 icon tiles.
+// Sidebar cross-link box for the calculators — renders the FULL tool list
+// (user request: show everything). Source of truth: lib/navTools.js.
 // Tools are EN pages; labels are localized, lhref keeps EN routes.
 import { t, lhref } from '../i18n/index.js';
+import { NAV_TOOLS } from '../lib/navTools.js';
 const { lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
 const L = (pth) => lhref(lang, pth);
-const TOOLS = [
-  { href: '/tools/odds-converter', icon: '🔁', key: 'ft.oddsConverter' },
-  { href: '/tools/ev-calculator', icon: '⚖️', key: 'ft.evCalc' },
-  { href: '/tools/lucky-15-calculator', icon: '🧩', key: 'ft.systemBets' },
-  { href: '/tools/asian-handicap-calculator', icon: '🎚️', key: 'ft.ahCalc' },
-  { href: '/tools/poisson-calculator', icon: '📈', key: 'ft.poissonCalc' },
-  { href: '/tools/accumulator-calculator', icon: '🎯', key: 'ft.accaCalc' },
-  { href: '/tools/margin-calculator', icon: '📊', key: 'ft.marginCalc' },
-  { href: '/dropping-odds', icon: '📉', key: 'ft.droppingOdds' },
-];
 ---
 <div class="box">
   <div class="box-h"><span class="hi">🧮</span> {T('common.tools')}<a class="tools-all" href={L('/tools')}>→</a></div>
   <div class="tools-mini">
-    {TOOLS.map((tl) => (
+    {NAV_TOOLS.map((tl) => (
       <a class="tool-t" href={L(tl.href)}>
         <span class="ic">{tl.icon}</span>
-        <span class="lb">{T(tl.key)}</span>
+        <span class="lb">{tl.label ?? T(tl.key)}</span>
       </a>
     ))}
   </div>

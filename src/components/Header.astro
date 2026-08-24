@@ -3,6 +3,7 @@ import { LOCALES, langsFor, homePath, t, lhref } from '../i18n/index.js';
 import predictions from '../data/predictions.json';
 import { slugify } from '../lib/utils.js';
 import { SHOW_OPERATORS } from '../lib/operators.js';
+import { NAV_TOOLS } from '../lib/navTools.js';
 
 const { active = '', lang = 'en', i18nPath = null, langs: langsProp = null } = Astro.props;
 // top live leagues for the nav — hardcoded links 404 when a league leaves the feed
@@ -60,15 +61,10 @@ const langs = langsProp ?? (i18nPath ? langsFor(i18nPath) : ['en', ...langsFor('
         <div class="dropdown"><a href={L('/tipsters')}><span class="ic">📈</span>{T('nav.performance')}</a><a href={L('/news/recap')}><span class="ic">🗓</span>{T('nav.weeklyRecaps')}</a><a href={L('/predictions/daily')}><span class="ic">📅</span>{T('nav.resultsByDate')}</a></div>
       </div>
       <div class="nav-item"><button>{T('nav.tools')} <span class="caret">▼</span></button>
-        <div class="dropdown">
-          <a href="/tools/acca-builder"><span class="ic">🤖</span>{T('ft.accaBuilder')}</a>
-          <a href={L('/tools/odds-converter')}><span class="ic">🔁</span>{T('ft.oddsConverter')}</a>
-          <a href="/tools/ev-calculator"><span class="ic">⚖️</span>{T('ft.evCalc')}</a>
-          <a href="/tools/lucky-15-calculator"><span class="ic">🧩</span>{T('ft.systemBets')}</a>
-          <a href="/tools/asian-handicap-calculator"><span class="ic">🎚️</span>{T('ft.ahCalc')}</a>
-          <a href="/tools/poisson-calculator"><span class="ic">📈</span>{T('ft.poissonCalc')}</a>
-          <a href={L('/tools/accumulator-calculator')}><span class="ic">🎯</span>{T('ft.accaCalc')}</a>
-          <a href={L('/dropping-odds')}><span class="ic">📉</span>{T('ft.droppingOdds')}</a>
+        <div class="dropdown dropdown-tools">
+          {NAV_TOOLS.map((tl) => (
+            <a href={L(tl.href)}><span class="ic">{tl.icon}</span>{tl.label ?? T(tl.key)}</a>
+          ))}
           <a href={L('/tools')}><span class="ic">🧮</span>{T('ft.allTools')} →</a>
         </div>
       </div>

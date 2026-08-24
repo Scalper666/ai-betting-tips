@@ -1354,3 +1354,7 @@ select.cal-sel:focus{outline:none;border-color:var(--mint)}
 
 /* odds-format switcher: reuses .theme-switch dropdown; button shows current format */
 .odds-btn{font-weight:800;font-size:12px;min-width:46px;letter-spacing:.02em}
+
+/* tools dropdown carries all 22 entries — two columns, capped height */
+.dropdown-tools{display:grid;grid-template-columns:1fr 1fr;min-width:440px;max-height:70vh;overflow-y:auto}
+.dropdown-tools a:last-child{grid-column:1/-1;border-top:1px solid var(--line,#1c232c);margin-top:4px;padding-top:10px}
