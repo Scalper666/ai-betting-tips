@@ -27,7 +27,13 @@ export const ALT_LANGS = ['es', 'pt', 'de', 'fr', 'sw', 'ha', 'yo', 'ig', 'am'];
 // indexed the entire site — 7.7K pages — so the crawl-budget rationale for
 // keeping African editions compact retired). Match routes and hreflang both
 // consult this list.
-export const MATCH_LANGS = [...ALT_LANGS];
+// Match pages ship only in markets that actually search fixture previews.
+// Every match is ~40 new pages/day at 10 languages; the archive never shrinks,
+// so at full parity the build crossed Cloudflare's 20,000-file limit on
+// Aug 26, 2026 and every scheduled deploy failed for a week. The compact
+// editions (am/yo/ig/ha/sw) link matches to the EN pages via lhref; retired
+// URLs 301 there in functions/_middleware.js.
+export const MATCH_LANGS = ['es', 'pt', 'de', 'fr'];
 
 // H2H pages are the biggest page family we own (~1700 pairs), and Cloudflare
 // Pages refuses a deployment over 20,000 files — 9 languages of them blew the

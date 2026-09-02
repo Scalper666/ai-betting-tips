@@ -43,6 +43,17 @@ export async function onRequest(context) {
     return Response.redirect(dest.toString(), 301);
   }
 
+  // Retired family: per-match pages in the compact editions (am/yo/ig/ha/sw)
+  // consolidated into EN on 2026-09-02 to stay under the 20K-file Pages limit
+  // (see MATCH_LANGS in src/i18n). Hub pages (/xx/predictions, today, tomorrow,
+  // weekend) still exist — only match slugs fold into EN.
+  const retired = path.match(/^\/(am|yo|ig|ha|sw)\/predictions\/(?!daily(\/|$)|today$|tomorrow$|weekend$)([^/]+)$/);
+  if (retired) {
+    const dest = new URL(`/predictions/${retired[3]}`, url.origin);
+    dest.search = url.search;
+    return Response.redirect(dest.toString(), 301);
+  }
+
   const country = context.request.cf?.country;
   if (country && BLOCKED.has(country)) {
     return new Response(
