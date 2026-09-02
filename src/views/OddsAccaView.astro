@@ -1,0 +1,179 @@
+---
+import Base from '../layouts/Base.astro';
+import Ox from '../components/Ox.astro';
+import ToolsBox from '../components/ToolsBox.astro';
+import AiFaq from '../components/AiFaq.astro';
+import { faqSchema, BUILD_ISO, fmtDate, kickoffLabel } from '../lib/utils.js';
+import { localizeMarket } from '../i18n/index.js';
+import { BRACKETS, buildSlip, singlesRecord, LEG_MIN, LEG_MAX } from '../lib/oddsAccas.js';
+
+// One page per target price (/tips/2-odds …). EN-only: the query lives in
+// English-speaking markets. Everything shown is computed at build time from
+// the screener and the public settlement record — nothing is hand-picked.
+const { bracket } = Astro.props;
+const slip = buildSlip(bracket, BUILD_ISO);
+const rec = singlesRecord();
+const others = BRACKETS.filter((b) => b.slug !== bracket.slug);
+
+const pct = (x) => `${(x * 100).toFixed(x < 0.1 ? 1 : 0)}%`;
+const oneIn = (p) => (p > 0 ? Math.round(1 / p) : null);
+const legsN = slip ? slip.legs.length : bracket.minLegs;
+// what a slip of this many legs does if every leg wins as often as our settled
+// singles in the leg window actually did — the honest ceiling
+const bandEst = rec.all.rate != null && rec.all.n >= 30 ? Math.pow(rec.all.rate, legsN) : null;
+const ev = slip ? slip.p * slip.odds - 1 : null;
+const todayUtc = BUILD_ISO.slice(0, 10);
+const slipIsToday = slip && slip.legs.every((r) => r.kickoff.slice(0, 10) === todayUtc);
+const stakes = [1, 5, 10, 50];
+
+const title = `${bracket.name} Daily Tips — Today's AI-Built ${bracket.name} Accumulator`;
+const description = `Free ${bracket.name.toLowerCase()} daily tips: an accumulator built twice a day from our model's rated picks, with the model's real hit chance and our settled record — no "sure odds" claims.`;
+const schema = { '@context': 'https://schema.org', ...faqSchema(bracket.faq) };
+---
+<Base title={title} description={description} schema={schema} updated={BUILD_ISO} active="predictions">
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/tips">Tips</a><span>/</span>{bracket.name}</div>
+      <h1>{bracket.emoji} {bracket.name} <em>daily tips</em></h1>
+      <p class="lead">{bracket.intro}</p>
+      <p class="upd-line">Slip rebuilt {fmtDate(BUILD_ISO)} · twice daily · <a href="/editorial-policy">how we work</a></p>
+      <div class="chips" style="margin-top:10px">
+        <span class="chip active">Slips by price</span>
+        {others.map((b) => <a class="chip" href={`/tips/${b.slug}`}>{b.emoji} {b.name}</a>)}
+        <a class="chip" href="/tips/accumulator">🎯 AI accumulator tips</a>
+        <a class="chip" href="/tools/acca-builder">🧮 Acca builder</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+
+        {slip ? (
+          <section>
+            <div class="sec-head">
+              <h2 class="sec-title">{slipIsToday ? 'Today’s' : 'Next'} <b>{bracket.name.toLowerCase()} slip</b></h2>
+              <span class="acca-total">Combined <b><Ox v={slip.odds} /></b></span>
+            </div>
+            <div class="acca">
+              {slip.legs.map((r) => (
+                <div class="acca-leg">
+                  <span class="acca-ic">{r.icon}</span>
+                  <div class="acca-m">
+                    <b><a href={r.href}>{r.home} — {r.away}</a></b>
+                    <span>{r.league} · {kickoffLabel(r.kickoff, 'en')}</span>
+                  </div>
+                  <span class="acca-pick">{localizeMarket('en', r.market)}</span>
+                  <span class="acca-odds"><Ox v={r.odds} /></span>
+                </div>
+              ))}
+              <div class="acca-foot">
+                <span>Model hit chance <b>{pct(slip.p)}</b> — about one slip in {oneIn(slip.p)}</span>
+                <a href="/tools/acca-builder" class="btn btn-mint btn-sm">Edit in acca builder</a>
+              </div>
+            </div>
+            <div class="tool-res" style="margin-top:12px">
+              <div class="tool-big"><b><Ox v={slip.odds} /></b><span>Offered price</span></div>
+              <div class="tool-big"><b><Ox v={slip.fair} /></b><span>Model’s fair price</span></div>
+              <div class={`tool-big${ev < 0 ? ' warn' : ''}`}><b>{ev >= 0 ? '+' : ''}{(ev * 100).toFixed(1)}%</b><span>Expected value per unit</span></div>
+            </div>
+            <p class="res-note">{slip.legs.length} legs, one per match, all priced {LEG_MIN.toFixed(2)}–{LEG_MAX.toFixed(2)}. The hit chance multiplies the model’s probability for each leg; it is an estimate, not a promise. Kick-offs from {kickoffLabel(slip.firstKick, 'en')}{slip.legs.length > 1 ? ` to ${kickoffLabel(slip.lastKick, 'en')}` : ''} — re-check prices before placing.</p>
+          </section>
+        ) : (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">No <b>{bracket.name.toLowerCase()} slip</b> right now</h2></div>
+            <div class="box"><div class="box-pad">
+              <p>The feed does not currently hold enough rated picks priced {LEG_MIN.toFixed(2)}–{LEG_MAX.toFixed(2)} to reach {bracket.target.toFixed(2)} within {bracket.maxLegs} legs, so we publish nothing rather than pad a slip with unrated selections. The next refresh is within 12 hours; meanwhile the <a href="/screener">value screener</a> lists every rated pick and the <a href="/tools/acca-builder">acca builder</a> lets you assemble your own.</p>
+            </div></div>
+          </section>
+        )}
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">What <b>{bracket.name.toLowerCase()} pays</b></h2></div>
+          <div class="odds-table"><div class="scr-scroll">
+            <table class="otbl">
+              <thead><tr><th>Stake</th><th>Returns at {slip ? slip.odds.toFixed(2) : bracket.target.toFixed(2)}</th><th>Profit</th></tr></thead>
+              <tbody>
+                {stakes.map((s) => {
+                  const o = slip ? slip.odds : bracket.target;
+                  return (
+                    <tr>
+                      <td class="o-cell"><span class="cb">{s} unit{s > 1 ? 's' : ''}</span></td>
+                      <td class="o-cell hot"><span class="cb">{(s * o).toFixed(2)}</span></td>
+                      <td class="o-cell"><span class="cb">+{(s * (o - 1)).toFixed(2)}</span></td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div></div>
+          <p class="res-note">Units, not currency: multiply by whatever one unit is for you. A slip at {bracket.target.toFixed(2)} needs to land more than one time in {bracket.target} just to break even.</p>
+        </section>
+
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">How often legs like these <b>actually win</b></h2>
+            <a href="/tipsters" class="more-link">Full settled record →</a>
+          </div>
+          {rec.all.n >= 30 ? (
+            <>
+              <div class="odds-table"><div class="scr-scroll">
+                <table class="otbl">
+                  <thead><tr><th>Price band</th><th>Settled singles</th><th>Won</th><th>Hit rate</th></tr></thead>
+                  <tbody>
+                    {rec.bands.map((b) => (
+                      <tr>
+                        <td class="o-cell"><span class="cb">{b.lo.toFixed(2)}–{Math.min(b.hi, LEG_MAX).toFixed(2)}</span></td>
+                        <td class="o-cell"><span class="cb">{b.n}</span></td>
+                        <td class="o-cell"><span class="cb">{b.won}</span></td>
+                        <td class={`o-cell${b.rate != null && b.rate >= 0.5 ? ' hot' : ''}`}><span class="cb">{b.rate == null ? '—' : pct(b.rate)}</span></td>
+                      </tr>
+                    ))}
+                    <tr>
+                      <td class="o-cell"><span class="cb">All {LEG_MIN.toFixed(2)}–{LEG_MAX.toFixed(2)}</span></td>
+                      <td class="o-cell"><span class="cb">{rec.all.n}</span></td>
+                      <td class="o-cell"><span class="cb">{rec.all.won}</span></td>
+                      <td class="o-cell hot"><span class="cb">{pct(rec.all.rate)}</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div></div>
+              <p class="res-note">Our own published singles, settled against real scores — losses included. {bandEst != null ? `If every leg won as often as those singles did (${pct(rec.all.rate)}), ${legsN === 1 ? 'a single at these prices' : `a ${legsN}-leg slip`} would land about ${pct(bandEst)} of the time — roughly one in ${oneIn(bandEst)}. That is the honest ceiling for any "${bracket.name.toLowerCase()}" slip built from picks like these.` : ''}</p>
+            </>
+          ) : (
+            <p class="res-note">Too few settled singles in this price window yet to quote a hit rate honestly — the full record is on the results page and grows daily.</p>
+          )}
+        </section>
+
+        <section class="seo">
+          <h2>How the {bracket.name.toLowerCase()} slip is built</h2>
+          <p>{bracket.how}</p>
+          <h2>Why we print the hit chance instead of calling it sure</h2>
+          <p>Every "{bracket.name.toLowerCase()} daily" page you will find promises certainty and hides the one number that matters: how often the slip lands. Ours prints it for the exact slip, prints the bookmaker's price against the model's fair price, and settles every published pick publicly in <a href="/tipsters">our record</a>. An accumulator multiplies the bookmaker's margin along with the odds — {bracket.maxLegs} legs at a typical 5% margin bake in roughly {Math.round((1 - Math.pow(0.95, bracket.maxLegs)) * 100)}% before kick-off — so the only version of this bet worth placing is one where every leg is a genuine value pick, staked small, judged over many slips.</p>
+          <p>Prefer a different target? Today's <a href="/tips/2-odds">2 odds</a>, <a href="/tips/3-odds">3 odds</a>, <a href="/tips/5-odds">5 odds</a> and <a href="/tips/10-odds">10 odds</a> slips come from the same rated picks; the <a href="/bet-of-the-day">bet of the day</a> is the single strongest official pick, and <a href="/predictions/today">today's predictions</a> list every fixture the model prices.</p>
+        </section>
+
+        <AiFaq faqs={bracket.faq} title={`${bracket.name} FAQ`} />
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">⚽</span> Start here</div>
+          <a class="tm" href="/predictions/today"><span class="dot"></span>Today's predictions</a>
+          <a class="tm" href="/bet-of-the-day"><span class="dot"></span>Bet of the day</a>
+          <a class="tm" href="/tips/accumulator"><span class="dot"></span>AI accumulator tips</a>
+          <a class="tm" href="/tools/acca-builder"><span class="dot"></span>AI acca builder</a>
+          <a class="tm" href="/screener"><span class="dot"></span>Value screener</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🎯</span> Daily slips by price</div>
+          {BRACKETS.map((b) => (
+            <a class={`tm${b.slug === bracket.slug ? ' active' : ''}`} href={`/tips/${b.slug}`}><span class="dot"></span>{b.emoji} {b.name} daily</a>
+          ))}
+        </div>
+        <ToolsBox lang="en" />
+      </aside>
+    </div>
+  </div>
+</Base>

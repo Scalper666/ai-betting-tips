@@ -1,10 +1,17 @@
 ---
 import TipsTypeView from '../../views/TipsTypeView.astro';
+import OddsAccaView from '../../views/OddsAccaView.astro';
 import { BET_TYPES } from '../../lib/betTypes.js';
+import { BRACKETS } from '../../lib/oddsAccas.js';
 
+// Two families share /tips/{slug}: the market pages (BET_TYPES) and the
+// EN-only "X odds" slips (BRACKETS) — one route, so the paths cannot collide.
 export function getStaticPaths() {
-  return BET_TYPES.map((t) => ({ params: { slug: t.slug }, props: { type: t } }));
+  return [
+    ...BET_TYPES.map((t) => ({ params: { slug: t.slug }, props: { type: t } })),
+    ...BRACKETS.map((b) => ({ params: { slug: b.slug }, props: { bracket: b } })),
+  ];
 }
-const { type } = Astro.props;
+const { type, bracket } = Astro.props;
 ---
-<TipsTypeView lang="en" type={type} />
+{bracket ? <OddsAccaView bracket={bracket} /> : <TipsTypeView lang="en" type={type} />}

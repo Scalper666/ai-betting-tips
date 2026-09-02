@@ -44,11 +44,14 @@ export const MATCH_LANGS = ['es', 'pt', 'de', 'fr'];
 export const H2H_LANGS = ['es', 'pt', 'de', 'fr'];
 
 const MATCH_PATH = /^\/predictions\/(?!daily(\/|$)|today$|tomorrow$|weekend$)[^/]+$/;
+// "X odds" slips (/tips/2-odds …) exist in EN only: the query is English-market
+const ODDS_ACCA_PATH = /^\/tips\/\d+-odds$/;
 // h2h pages exist only in the full-parity languages (same set as match pages)
 const H2H_PATH = /^\/h2h(\/|$)/;
 // which language versions exist for a given localized path
 export const langsFor = (path) => {
   const clean = String(path ?? '').replace(/\/+$/, '') || '/';
+  if (ODDS_ACCA_PATH.test(clean)) return ['en'];
   if (H2H_PATH.test(clean)) return ['en', ...H2H_LANGS];
   return MATCH_PATH.test(clean) ? ['en', ...MATCH_LANGS] : ['en', ...ALT_LANGS];
 };
@@ -83,6 +86,7 @@ export const lhref = (lang, path) => {
   const clean = String(path).replace(/\/+$/, '') || '/';
   if (!I18N_PATHS.some((re) => re.test(clean))) return path;
   // families that don't exist in every language link to the EN page instead
+  if (ODDS_ACCA_PATH.test(clean)) return path;
   if (MATCH_PATH.test(clean) && !MATCH_LANGS.includes(lang)) return path;
   if (H2H_PATH.test(clean) && !H2H_LANGS.includes(lang)) return path;
   return clean === '/' ? `/${lang}/` : `/${lang}${clean}`;

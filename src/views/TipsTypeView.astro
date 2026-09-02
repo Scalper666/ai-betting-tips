@@ -8,6 +8,7 @@ import { slugify, faqSchema, signed, kickoffLabel, BUILD_ISO, fmtDate } from '..
 import { t, lhref, localizeMarket } from '../i18n/index.js';
 import { BET_TYPES } from '../lib/betTypes.js';
 import { picksForType, recordForType, bttsRates, commonScores, outcomeSplit, accaLegs, bttsForecasts, scorelineForecasts } from '../lib/tipTypes.js';
+import { BRACKETS } from '../lib/oddsAccas.js';
 import { hasLeaguePage, hasComboPage } from '../lib/links.js';
 import historyData from '../data/history.json';
 import predictions from '../data/predictions.json';
@@ -127,6 +128,10 @@ const leagues = [...new Set(shown.map((x) => x.league))].filter((lg) => hasLeagu
             <p class="res-note">{T('tt.accaRisk')}</p>
             {enAcca && (
               <section class="seo" style="margin-top:18px">
+                <div class="chips" style="margin-bottom:14px">
+                  <span class="chip active">Daily slips by price</span>
+                  {BRACKETS.map((b) => <a class="chip" href={`/tips/${b.slug}`}>{b.emoji} {b.name} daily</a>)}
+                </div>
                 <h2>How to use AI accumulator tips</h2>
                 <ul>
                   <li><b>Keep the slip short — 2–4 legs.</b> Every leg multiplies the bookmaker's margin as well as the odds: three legs at a typical 5% margin already cost ~14% of fair value before kick-off.</li>

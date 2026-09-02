@@ -9,6 +9,7 @@ import ModelTracks from '../components/ModelTracks.astro';
 import TeamMark from '../components/TeamMark.astro';
 import predictions from '../data/predictions.json';
 import screener from '../data/screener.json';
+import { BRACKETS } from '../lib/oddsAccas.js';
 import bookmakers from '../data/bookmakers.json';
 import historyData from '../data/history.json';
 import countriesData from '../data/countries.json';
@@ -326,6 +327,12 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
               </div>
             </div>
             <p class="res-note">{T('home.acca.risk')}</p>
+            {lang === 'en' && (
+              <div class="chips" style="margin-top:8px">
+                <span class="chip active">Daily slips by price</span>
+                {BRACKETS.map((b) => <a class="chip" href={`/tips/${b.slug}`}>{b.emoji} {b.name}</a>)}
+              </div>
+            )}
           </section>
         )}
 

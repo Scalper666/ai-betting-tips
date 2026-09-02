@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import ToolsBox from '../../components/ToolsBox.astro';
 import { BET_TYPES } from '../../lib/betTypes.js';
+import { BRACKETS } from '../../lib/oddsAccas.js';
 import { BUILD_ISO, fmtDate } from '../../lib/utils.js';
 
 // ── /tips parent index. Search Console showed Google guessing this URL from
@@ -38,6 +39,21 @@ const description = `Free football tips organised by market: ${BET_TYPES.map((b)
               <div><h4>Match Result Tips</h4><p>1X2 winner picks priced directly by the model — the full board</p></div>
               <span class="arr">→</span>
             </a>
+          </div>
+        </section>
+        <section>
+          <div class="sec-head">
+            <h2 class="sec-title">Daily slips <b>by target odds</b></h2>
+            <a href="/tools/acca-builder" class="more-link">Build your own →</a>
+          </div>
+          <div class="bt-grid">
+            {BRACKETS.map((b) => (
+              <a href={`/tips/${b.slug}`} class="bt-tile">
+                <div class="ic">{b.emoji}</div>
+                <div><h4>{b.name} daily</h4><p>{b.tile}</p></div>
+                <span class="arr">→</span>
+              </a>
+            ))}
           </div>
         </section>
         <section class="seo">
