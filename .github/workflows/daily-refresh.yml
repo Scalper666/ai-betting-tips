@@ -80,6 +80,35 @@ jobs:
       - name: Sync data into the site
         run: python pipeline/sync_astro.py
 
+      # This commit MUST happen before build/deploy: when a later step fails
+      # (e.g. the 20K-file Pages limit), losing it also loses data/content.json —
+      # and the next run re-pays Claude for the same ~400 pages. That exact loop
+      # burned ~$23/day between Aug 26 and Sep 2, 2026.
+      - name: Commit data snapshot (settled history must persist between runs)
+        run: |
+          git config user.name "abt-refresh-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data src/data public/crests
+          if git diff --cached --quiet; then
+            echo "no data changes"
+            exit 0
+          fi
+          git commit -m "data: scheduled refresh"
+          # A local push landing mid-run leaves our ref stale, and a lost push
+          # means lost settlements. Rebase onto origin and retry instead of
+          # failing the job; data snapshots always rebase cleanly because the
+          # bot is the only writer of these paths.
+          for attempt in 1 2 3; do
+            if git push; then
+              echo "pushed on attempt $attempt"
+              exit 0
+            fi
+            echo "push rejected — rebasing onto origin/main (attempt $attempt)"
+            git pull --rebase --autostash origin main || exit 1
+          done
+          echo "could not push data snapshot after 3 attempts" >&2
+          exit 1
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22   # wrangler requires >= 22
@@ -107,32 +136,6 @@ jobs:
         run: npx wrangler pages deploy dist --project-name ai-betting-tips --branch main --commit-dirty=true
 
       # Exit 1 = every batch was rejected. Surface that as a warning rather
-      # than failing the job: the deploy has already happened and the snapshot
-      # commit after this step must never be lost to a dead ping endpoint.
+      # than failing the job.
       - name: Ping IndexNow (Bing/Yandex instant indexing)
         run: python pipeline/indexnow.py || echo "::warning::IndexNow rejected every batch — see step log"
-
-      - name: Commit data snapshot (settled history must persist between runs)
-        run: |
-          git config user.name "abt-refresh-bot"
-          git config user.email "actions@users.noreply.github.com"
-          git add data src/data public/crests
-          if git diff --cached --quiet; then
-            echo "no data changes"
-            exit 0
-          fi
-          git commit -m "data: scheduled refresh"
-          # A local push landing mid-run leaves our ref stale, and a lost push
-          # means lost settlements. Rebase onto origin and retry instead of
-          # failing the job; data snapshots always rebase cleanly because the
-          # bot is the only writer of these paths.
-          for attempt in 1 2 3; do
-            if git push; then
-              echo "pushed on attempt $attempt"
-              exit 0
-            fi
-            echo "push rejected — rebasing onto origin/main (attempt $attempt)"
-            git pull --rebase --autostash origin main || exit 1
-          done
-          echo "could not push data snapshot after 3 attempts" >&2
-          exit 1
