@@ -19,6 +19,7 @@ on:
 
 permissions:
   contents: write
+  issues: write   # failure alerts open a GitHub issue (mails the owner)
 
 concurrency:
   group: daily-refresh
@@ -75,7 +76,10 @@ jobs:
       - name: AI copy for new fixtures (cached; only new pages cost)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python pipeline/generate_content.py
+        # --limit caps what one run can spend (~150 pages ≈ $2 on Sonnet): a
+        # normal day needs 40-80, a backlog clears over a few runs, and no
+        # future bug can burn $20+/day again the way the Aug-26 loop did
+        run: python pipeline/generate_content.py --limit 150
 
       - name: Sync data into the site
         run: python pipeline/sync_astro.py
@@ -139,3 +143,24 @@ jobs:
       # than failing the job.
       - name: Ping IndexNow (Bing/Yandex instant indexing)
         run: python pipeline/indexnow.py || echo "::warning::IndexNow rejected every batch — see step log"
+
+      # Loud failure. 13 scheduled runs failed in a row (Aug 26 – Sep 2, 2026)
+      # and nobody noticed — the site froze and every run re-paid for AI copy.
+      # A red run now opens a GitHub issue (or comments on the open one), which
+      # mails the repository owner. Close the issue once the cause is fixed.
+      - name: Alert on failure (GitHub issue)
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          api="https://api.github.com/repos/${{ github.repository }}/issues"
+          open=$(curl -s -H "Authorization: Bearer $GH_TOKEN" "$api?state=open&labels=ci-failure&per_page=1" \
+            | python -c "import sys,json; d=json.load(sys.stdin); print(d[0]['number'] if d else '')")
+          if [ -n "$open" ]; then
+            curl -s -o /dev/null -X POST -H "Authorization: Bearer $GH_TOKEN" "$api/$open/comments" \
+              -d "{\"body\":\"Daily refresh failed again: $RUN_URL\"}"
+          else
+            curl -s -o /dev/null -X POST -H "Authorization: Bearer $GH_TOKEN" "$api" \
+              -d "{\"title\":\"Daily refresh is failing — site not updating\",\"body\":\"Run: $RUN_URL\\n\\nThe site is not being refreshed. Each failed run still pays for AI copy (capped at 150 pages). Fix the failing step, then close this issue.\",\"labels\":[\"ci-failure\"]}"
+          fi
