@@ -54,7 +54,7 @@ ROOT = Path(__file__).resolve().parent.parent          # D:\CLOUDE\sharptips
 ASTRO = ROOT if (ROOT / "src" / "data").is_dir() else ROOT.parent / "sharptips-astro"
 OUT = ROOT / "data" / "content.json"
 
-MODEL = os.getenv("CONTENT_MODEL", "claude-opus-4-8")
+MODEL = os.getenv("CONTENT_MODEL", "claude-sonnet-5")
 MAX_TOKENS = 3000
 WORKERS = 4
 
