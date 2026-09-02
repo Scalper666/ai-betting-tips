@@ -657,9 +657,13 @@ def main() -> int:
     with ThreadPoolExecutor(max_workers=WORKERS) as ex:
         list(as_completed(ex.submit(run, w) for w in todo))
 
-    cost = tok_in / 1e6 * 5 + tok_out / 1e6 * 25   # opus 4.8 $5/$25 per MTok
+    # $ per MTok (input, output) — unknown model falls back to Opus rates so the
+    # estimate errs high, never low
+    rates = {"claude-sonnet-5": (2, 10), "claude-haiku-4-5": (1, 5), "claude-opus-5": (5, 25)}
+    p_in, p_out = next((v for k, v in rates.items() if MODEL.startswith(k)), (5, 25))
+    cost = tok_in / 1e6 * p_in + tok_out / 1e6 * p_out
     print(f"✓ content.json: {done} generated, {fail} failed, {len(entries)} total"
-          f" · tokens {tok_in}+{tok_out} ≈ ${cost:.2f}")
+          f" · tokens {tok_in}+{tok_out} ≈ ${cost:.2f} ({MODEL})")
     return 0 if fail == 0 else 1
 
 
