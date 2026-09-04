@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-03T19:24:59+00:00",
+ "updated_at": "2026-09-04T09:56:18+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -12073,6 +12073,16 @@
    "standings": [
     {
      "pos": 1,
+     "team": "Lille",
+     "p": 3,
+     "w": 2,
+     "d": 1,
+     "l": 0,
+     "gd": 3,
+     "pts": 7
+    },
+    {
+     "pos": 2,
      "team": "Monaco",
      "p": 2,
      "w": 2,
@@ -12080,16 +12090,6 @@
      "l": 0,
      "gd": 3,
      "pts": 6
-    },
-    {
-     "pos": 2,
-     "team": "Lille",
-     "p": 3,
-     "w": 1,
-     "d": 2,
-     "l": 0,
-     "gd": 2,
-     "pts": 5
     },
     {
      "pos": 3,
@@ -12193,16 +12193,6 @@
     },
     {
      "pos": 13,
-     "team": "Toulouse",
-     "p": 3,
-     "w": 0,
-     "d": 2,
-     "l": 1,
-     "gd": -2,
-     "pts": 2
-    },
-    {
-     "pos": 14,
      "team": "Le Mans",
      "p": 2,
      "w": 0,
@@ -12212,7 +12202,7 @@
      "pts": 1
     },
     {
-     "pos": 15,
+     "pos": 14,
      "team": "Lorient",
      "p": 2,
      "w": 0,
@@ -12222,13 +12212,23 @@
      "pts": 1
     },
     {
-     "pos": 15,
+     "pos": 14,
      "team": "Le Havre",
      "p": 2,
      "w": 0,
      "d": 1,
      "l": 1,
      "gd": -1,
+     "pts": 1
+    },
+    {
+     "pos": 16,
+     "team": "Toulouse",
+     "p": 3,
+     "w": 0,
+     "d": 1,
+     "l": 2,
+     "gd": -3,
      "pts": 1
     },
     {
@@ -12253,8 +12253,8 @@
     }
    ],
    "crests": {
-    "Monaco": "/crests/monaco.png",
     "Lille": "/crests/lille.png",
+    "Monaco": "/crests/monaco.png",
     "Paris FC": "/crests/paris-fc.png",
     "Olympique Lyon": "/crests/olympique-lyon.png",
     "Stade Rennais": "/crests/stade-rennais.png",
@@ -12265,10 +12265,10 @@
     "Strasbourg": "/crests/strasbourg.png",
     "PSG": "/crests/psg.png",
     "Brest": "/crests/brest.png",
-    "Toulouse": "/crests/toulouse.png",
     "Le Mans": "/crests/le-mans.svg",
     "Lorient": "/crests/lorient.png",
     "Le Havre": "/crests/le-havre.png",
+    "Toulouse": "/crests/toulouse.png",
     "Nice": "/crests/nice.png",
     "Auxerre": "/crests/auxerre.png"
    },
@@ -14533,6 +14533,13 @@
      "a": "Marseille",
      "hs": 2,
      "as": 0
+    },
+    {
+     "d": "2026-09-03",
+     "h": "Toulouse",
+     "a": "Lille",
+     "hs": 0,
+     "as": 1
     }
    ],
    "scorers": [
