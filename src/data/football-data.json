@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-09T22:11:18+00:00",
+ "updated_at": "2026-09-10T10:03:13+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -19813,6 +19813,16 @@
    "standings": [
     {
      "pos": 1,
+     "team": "West Brom",
+     "p": 6,
+     "w": 4,
+     "d": 1,
+     "l": 1,
+     "gd": 3,
+     "pts": 13
+    },
+    {
+     "pos": 2,
      "team": "West Ham",
      "p": 6,
      "w": 3,
@@ -19822,7 +19832,7 @@
      "pts": 11
     },
     {
-     "pos": 2,
+     "pos": 3,
      "team": "Swansea",
      "p": 6,
      "w": 3,
@@ -19832,7 +19842,27 @@
      "pts": 11
     },
     {
-     "pos": 3,
+     "pos": 4,
+     "team": "QPR",
+     "p": 6,
+     "w": 3,
+     "d": 2,
+     "l": 1,
+     "gd": 3,
+     "pts": 11
+    },
+    {
+     "pos": 5,
+     "team": "Charlton",
+     "p": 6,
+     "w": 3,
+     "d": 2,
+     "l": 1,
+     "gd": -1,
+     "pts": 11
+    },
+    {
+     "pos": 6,
      "team": "Middlesbrough",
      "p": 5,
      "w": 3,
@@ -19842,43 +19872,13 @@
      "pts": 10
     },
     {
-     "pos": 4,
-     "team": "QPR",
-     "p": 5,
-     "w": 3,
-     "d": 1,
-     "l": 1,
-     "gd": 3,
-     "pts": 10
-    },
-    {
-     "pos": 5,
+     "pos": 7,
      "team": "Bristol City",
      "p": 5,
      "w": 3,
      "d": 1,
      "l": 1,
      "gd": 2,
-     "pts": 10
-    },
-    {
-     "pos": 6,
-     "team": "West Brom",
-     "p": 5,
-     "w": 3,
-     "d": 1,
-     "l": 1,
-     "gd": 2,
-     "pts": 10
-    },
-    {
-     "pos": 7,
-     "team": "Charlton",
-     "p": 5,
-     "w": 3,
-     "d": 1,
-     "l": 1,
-     "gd": -1,
      "pts": 10
     },
     {
@@ -19893,6 +19893,16 @@
     },
     {
      "pos": 9,
+     "team": "Norwich",
+     "p": 6,
+     "w": 3,
+     "d": 0,
+     "l": 3,
+     "gd": 1,
+     "pts": 9
+    },
+    {
+     "pos": 10,
      "team": "Sheffield Utd",
      "p": 6,
      "w": 2,
@@ -19902,7 +19912,7 @@
      "pts": 9
     },
     {
-     "pos": 10,
+     "pos": 11,
      "team": "Wolverhampton",
      "p": 5,
      "w": 2,
@@ -19912,7 +19922,7 @@
      "pts": 8
     },
     {
-     "pos": 11,
+     "pos": 12,
      "team": "Watford",
      "p": 6,
      "w": 2,
@@ -19922,7 +19932,7 @@
      "pts": 8
     },
     {
-     "pos": 12,
+     "pos": 13,
      "team": "Southampton",
      "p": 6,
      "w": 3,
@@ -19932,7 +19942,7 @@
      "pts": 7
     },
     {
-     "pos": 13,
+     "pos": 14,
      "team": "Wrexham",
      "p": 6,
      "w": 1,
@@ -19942,17 +19952,17 @@
      "pts": 7
     },
     {
-     "pos": 14,
+     "pos": 15,
      "team": "Birmingham",
-     "p": 5,
+     "p": 6,
      "w": 1,
      "d": 4,
-     "l": 0,
-     "gd": 1,
+     "l": 1,
+     "gd": 0,
      "pts": 7
     },
     {
-     "pos": 15,
+     "pos": 16,
      "team": "Stoke",
      "p": 6,
      "w": 2,
@@ -19960,16 +19970,6 @@
      "l": 3,
      "gd": -1,
      "pts": 7
-    },
-    {
-     "pos": 16,
-     "team": "Norwich",
-     "p": 5,
-     "w": 2,
-     "d": 0,
-     "l": 3,
-     "gd": 0,
-     "pts": 6
     },
     {
      "pos": 17,
@@ -20013,17 +20013,17 @@
     },
     {
      "pos": 21,
-     "team": "Derby County",
-     "p": 5,
+     "team": "Bolton",
+     "p": 6,
      "w": 1,
      "d": 1,
-     "l": 3,
-     "gd": -5,
+     "l": 4,
+     "gd": -6,
      "pts": 4
     },
     {
      "pos": 22,
-     "team": "Bolton",
+     "team": "Derby County",
      "p": 6,
      "w": 1,
      "d": 1,
@@ -20053,14 +20053,15 @@
     }
    ],
    "crests": {
+    "West Brom": "/crests/west-brom.png",
     "West Ham": "/crests/west-ham.png",
     "Swansea": "/crests/swansea.png",
-    "Middlesbrough": "/crests/middlesbrough.png",
     "QPR": "/crests/qpr.png",
-    "Bristol City": "/crests/bristol-city.png",
-    "West Brom": "/crests/west-brom.png",
     "Charlton": "/crests/charlton.png",
+    "Middlesbrough": "/crests/middlesbrough.png",
+    "Bristol City": "/crests/bristol-city.png",
     "Millwall": "/crests/millwall.png",
+    "Norwich": "/crests/norwich.png",
     "Sheffield Utd": "/crests/sheffield-utd.png",
     "Wolverhampton": "/crests/wolverhampton.png",
     "Watford": "/crests/watford.png",
@@ -20068,13 +20069,12 @@
     "Wrexham": "/crests/wrexham.png",
     "Birmingham": "/crests/birmingham.png",
     "Stoke": "/crests/stoke.png",
-    "Norwich": "/crests/norwich.png",
     "Portsmouth": "/crests/portsmouth.png",
     "Blackburn": "/crests/blackburn.png",
     "Lincoln City": "/crests/lincoln-city.png",
     "Cardiff": "/crests/cardiff.png",
-    "Derby County": "/crests/derby-county.png",
     "Bolton": "/crests/bolton.png",
+    "Derby County": "/crests/derby-county.png",
     "Burnley": "/crests/burnley.png",
     "Preston NE": "/crests/preston-ne.png"
    },
