@@ -36,9 +36,12 @@ export async function onRequest(context) {
   }
   // exact-match redirect table (slug migrations, retired family parents)
   const path = url.pathname.replace(/\/+$/, '') || '/';
+  // Pages serves directory pages at /x/ and 308s /x -> /x/; a redirect to the
+  // slash-less form therefore costs Googlebot TWO hops. Land on /x/ directly.
+  const slashed = (p) => (p.endsWith('/') || /\.[a-z0-9]+$/i.test(p) || p.startsWith('/api/') ? p : p + '/');
   const target = REDIRECTS[path];
   if (target) {
-    const dest = new URL(target, url.origin);
+    const dest = new URL(slashed(target), url.origin);
     dest.search = url.search;
     return Response.redirect(dest.toString(), 301);
   }
@@ -49,7 +52,7 @@ export async function onRequest(context) {
   // weekend) still exist — only match slugs fold into EN.
   const retired = path.match(/^\/(am|yo|ig|ha|sw)\/predictions\/(?!daily(\/|$)|today$|tomorrow$|weekend$)([^/]+)$/);
   if (retired) {
-    const dest = new URL(`/predictions/${retired[3]}`, url.origin);
+    const dest = new URL(`/predictions/${retired[3]}/`, url.origin);
     dest.search = url.search;
     return Response.redirect(dest.toString(), 301);
   }
