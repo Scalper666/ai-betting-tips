@@ -55,7 +55,7 @@ ASTRO = ROOT if (ROOT / "src" / "data").is_dir() else ROOT.parent / "sharptips-a
 OUT = ROOT / "data" / "content.json"
 
 MODEL = os.getenv("CONTENT_MODEL", "claude-sonnet-5")
-MAX_TOKENS = 3000
+MAX_TOKENS = 4000   # weekly recaps ran past the old cap and came back as truncated JSON
 WORKERS = 4
 
 BET_TYPES = [
@@ -664,7 +664,16 @@ def main() -> int:
     cost = tok_in / 1e6 * p_in + tok_out / 1e6 * p_out
     print(f"✓ content.json: {done} generated, {fail} failed, {len(entries)} total"
           f" · tokens {tok_in}+{tok_out} ≈ ${cost:.2f} ({MODEL})")
-    return 0 if fail == 0 else 1
+    # A partial failure (one truncated JSON out of a dozen) must not fail the
+    # run: the item simply stays uncached and is retried next time. Exit 1 only
+    # when NOTHING generated — that is a systemic problem (key, quota, outage).
+    # On 2026-09-02 a single failed recap out of 13 killed the whole evening
+    # deploy and opened a false alarm.
+    if fail and done == 0:
+        return 1
+    if fail:
+        print(f"::warning::{fail} item(s) failed to generate — will retry on the next run")
+    return 0
 
 
 if __name__ == "__main__":
