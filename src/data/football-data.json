@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-15T10:24:00+00:00",
+ "updated_at": "2026-09-15T19:49:04+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -3312,12 +3312,12 @@
     {
      "pos": 2,
      "team": "Real Madrid",
-     "p": 5,
+     "p": 6,
      "w": 4,
-     "d": 0,
+     "d": 1,
      "l": 1,
      "gd": 10,
-     "pts": 12
+     "pts": 13
     },
     {
      "pos": 3,
@@ -3332,11 +3332,11 @@
     {
      "pos": 4,
      "team": "Alavés",
-     "p": 5,
+     "p": 6,
      "w": 3,
      "d": 1,
-     "l": 1,
-     "gd": 6,
+     "l": 2,
+     "gd": 5,
      "pts": 10
     },
     {
@@ -3372,11 +3372,11 @@
     {
      "pos": 8,
      "team": "Espanyol",
-     "p": 5,
+     "p": 6,
      "w": 2,
      "d": 1,
-     "l": 2,
-     "gd": 3,
+     "l": 3,
+     "gd": 2,
      "pts": 7
     },
     {
@@ -3411,7 +3411,7 @@
     },
     {
      "pos": 12,
-     "team": "Real Sociedad",
+     "team": "Rayo Vallecano",
      "p": 6,
      "w": 2,
      "d": 1,
@@ -3421,6 +3421,16 @@
     },
     {
      "pos": 13,
+     "team": "Real Sociedad",
+     "p": 6,
+     "w": 2,
+     "d": 1,
+     "l": 3,
+     "gd": -5,
+     "pts": 7
+    },
+    {
+     "pos": 14,
      "team": "Levante",
      "p": 5,
      "w": 1,
@@ -3430,7 +3440,7 @@
      "pts": 5
     },
     {
-     "pos": 14,
+     "pos": 15,
      "team": "Getafe",
      "p": 5,
      "w": 1,
@@ -3440,7 +3450,7 @@
      "pts": 5
     },
     {
-     "pos": 15,
+     "pos": 16,
      "team": "Celta",
      "p": 6,
      "w": 0,
@@ -3450,17 +3460,17 @@
      "pts": 4
     },
     {
-     "pos": 16,
-     "team": "Rayo Vallecano",
-     "p": 5,
+     "pos": 17,
+     "team": "Valencia",
+     "p": 6,
      "w": 1,
      "d": 1,
-     "l": 3,
-     "gd": -6,
+     "l": 4,
+     "gd": -8,
      "pts": 4
     },
     {
-     "pos": 17,
+     "pos": 18,
      "team": "Málaga",
      "p": 5,
      "w": 0,
@@ -3470,7 +3480,17 @@
      "pts": 3
     },
     {
-     "pos": 18,
+     "pos": 19,
+     "team": "Elche",
+     "p": 6,
+     "w": 0,
+     "d": 3,
+     "l": 3,
+     "gd": -7,
+     "pts": 3
+    },
+    {
+     "pos": 20,
      "team": "Villarreal",
      "p": 5,
      "w": 0,
@@ -3478,26 +3498,6 @@
      "l": 3,
      "gd": -3,
      "pts": 2
-    },
-    {
-     "pos": 19,
-     "team": "Elche",
-     "p": 5,
-     "w": 0,
-     "d": 2,
-     "l": 3,
-     "gd": -7,
-     "pts": 2
-    },
-    {
-     "pos": 20,
-     "team": "Valencia",
-     "p": 5,
-     "w": 0,
-     "d": 1,
-     "l": 4,
-     "gd": -9,
-     "pts": 1
     }
    ],
    "crests": {
@@ -3512,15 +3512,15 @@
     "Athletic": "/crests/athletic.png",
     "Santander": "/crests/santander.png",
     "Osasuna": "/crests/osasuna.png",
+    "Rayo Vallecano": "/crests/rayo-vallecano.png",
     "Real Sociedad": "/crests/real-sociedad.png",
     "Levante": "/crests/levante.png",
     "Getafe": "/crests/getafe.png",
     "Celta": "/crests/celta.png",
-    "Rayo Vallecano": "/crests/rayo-vallecano.png",
+    "Valencia": "/crests/valencia.png",
     "Málaga": "/crests/malaga.png",
-    "Villarreal": "/crests/villarreal.png",
     "Elche": "/crests/elche.png",
-    "Valencia": "/crests/valencia.png"
+    "Villarreal": "/crests/villarreal.png"
    },
    "results": [
     {
@@ -6539,16 +6539,31 @@
      "a": "Real Betis",
      "hs": 1,
      "as": 2
+    },
+    {
+     "d": "2026-09-15",
+     "h": "Rayo Vallecano",
+     "a": "Espanyol",
+     "hs": 2,
+     "as": 1
     }
    ],
    "scorers": [
+    {
+     "name": "Roberto Fernández",
+     "team": "Espanyol",
+     "goals": 6,
+     "assists": null,
+     "pens": null,
+     "played": 6
+    },
     {
      "name": "Sergio Camello",
      "team": "Rayo Vallecano",
      "goals": 6,
      "assists": 1,
      "pens": null,
-     "played": 5
+     "played": 6
     },
     {
      "name": "Raphinha",
@@ -6564,7 +6579,7 @@
      "goals": 6,
      "assists": 1,
      "pens": 1,
-     "played": 5
+     "played": 6
     },
     {
      "name": "Lamine Yamal",
@@ -6572,14 +6587,6 @@
      "goals": 6,
      "assists": null,
      "pens": 1,
-     "played": 5
-    },
-    {
-     "name": "Roberto Fernández",
-     "team": "Espanyol",
-     "goals": 5,
-     "assists": null,
-     "pens": null,
      "played": 5
     },
     {
@@ -6620,7 +6627,7 @@
      "goals": 4,
      "assists": null,
      "pens": null,
-     "played": 4
+     "played": 5
     },
     {
      "name": "Mariano Díaz",
@@ -6628,7 +6635,7 @@
      "goals": 3,
      "assists": 3,
      "pens": null,
-     "played": 5
+     "played": 6
     },
     {
      "name": "Álex Baena",
@@ -6644,7 +6651,7 @@
      "goals": 3,
      "assists": 2,
      "pens": null,
-     "played": 5
+     "played": 6
     },
     {
      "name": "Brugui",
@@ -6655,12 +6662,12 @@
      "played": 4
     },
     {
-     "name": "Nicolas Pépé",
-     "team": "Villarreal",
+     "name": "Álvaro García",
+     "team": "Rayo Vallecano",
      "goals": 2,
-     "assists": null,
+     "assists": 2,
      "pens": null,
-     "played": 5
+     "played": 6
     }
    ]
   },
@@ -24967,7 +24974,7 @@
      "goals": 5,
      "assists": null,
      "pens": null,
-     "played": 6
+     "played": 7
     },
     {
      "name": "Ethan Galbraith",
@@ -24990,6 +24997,14 @@
      "team": "West Ham",
      "goals": 4,
      "assists": 2,
+     "pens": 1,
+     "played": 7
+    },
+    {
+     "name": "Lyndon Dykes",
+     "team": "Millwall",
+     "goals": 4,
+     "assists": null,
      "pens": 1,
      "played": 7
     },
@@ -25042,6 +25057,14 @@
      "played": 7
     },
     {
+     "name": "Taïryk Arconte",
+     "team": "Millwall",
+     "goals": 3,
+     "assists": null,
+     "pens": null,
+     "played": 6
+    },
+    {
      "name": "Joël Piroe",
      "team": "West Ham",
      "goals": 3,
@@ -25056,22 +25079,6 @@
      "assists": 1,
      "pens": null,
      "played": 5
-    },
-    {
-     "name": "Finn Azaz",
-     "team": "Southampton",
-     "goals": 3,
-     "assists": 4,
-     "pens": null,
-     "played": 7
-    },
-    {
-     "name": "Konstantinos Mavropanos",
-     "team": "West Ham",
-     "goals": 3,
-     "assists": null,
-     "pens": null,
-     "played": 6
     }
    ]
   },
@@ -25112,6 +25119,16 @@
     },
     {
      "pos": 4,
+     "team": "Ajax",
+     "p": 6,
+     "w": 4,
+     "d": 1,
+     "l": 1,
+     "gd": 11,
+     "pts": 13
+    },
+    {
+     "pos": 5,
      "team": "Twente",
      "p": 6,
      "w": 4,
@@ -25119,16 +25136,6 @@
      "l": 1,
      "gd": 7,
      "pts": 13
-    },
-    {
-     "pos": 5,
-     "team": "Ajax",
-     "p": 5,
-     "w": 3,
-     "d": 1,
-     "l": 1,
-     "gd": 8,
-     "pts": 10
     },
     {
      "pos": 6,
@@ -25243,11 +25250,11 @@
     {
      "pos": 17,
      "team": "Willem II",
-     "p": 5,
+     "p": 6,
      "w": 0,
      "d": 2,
-     "l": 3,
-     "gd": -9,
+     "l": 4,
+     "gd": -12,
      "pts": 2
     },
     {
@@ -25265,8 +25272,8 @@
     "PSV": "/crests/psv.png",
     "AZ": "/crests/az.png",
     "Feyenoord": "/crests/feyenoord.png",
-    "Twente": "/crests/twente.png",
     "Ajax": "/crests/ajax.png",
+    "Twente": "/crests/twente.png",
     "Excelsior": "/crests/excelsior.png",
     "Sittard": "/crests/sittard.png",
     "Go Ahead": "/crests/go-ahead.png",
@@ -27875,7 +27882,7 @@
      "goals": 3,
      "assists": 1,
      "pens": null,
-     "played": 5
+     "played": 6
     },
     {
      "name": "Luciano Valente",
@@ -27894,6 +27901,14 @@
      "played": 6
     },
     {
+     "name": "Julian Brandt",
+     "team": "Ajax",
+     "goals": 3,
+     "assists": null,
+     "pens": null,
+     "played": 6
+    },
+    {
      "name": "Tjaronn Chery",
      "team": "NEC",
      "goals": 3,
@@ -27907,14 +27922,6 @@
      "goals": 3,
      "assists": null,
      "pens": 1,
-     "played": 6
-    },
-    {
-     "name": "Lequincio Zeefuik",
-     "team": "Sittard",
-     "goals": 3,
-     "assists": 1,
-     "pens": null,
      "played": 6
     }
    ]
