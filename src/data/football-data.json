@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-15T19:49:04+00:00",
+ "updated_at": "2026-09-16T10:17:39+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -3313,11 +3313,11 @@
      "pos": 2,
      "team": "Real Madrid",
      "p": 6,
-     "w": 4,
-     "d": 1,
+     "w": 5,
+     "d": 0,
      "l": 1,
-     "gd": 10,
-     "pts": 13
+     "gd": 11,
+     "pts": 15
     },
     {
      "pos": 3,
@@ -3481,22 +3481,22 @@
     },
     {
      "pos": 19,
-     "team": "Elche",
-     "p": 6,
-     "w": 0,
-     "d": 3,
-     "l": 3,
-     "gd": -7,
-     "pts": 3
-    },
-    {
-     "pos": 20,
      "team": "Villarreal",
      "p": 5,
      "w": 0,
      "d": 2,
      "l": 3,
      "gd": -3,
+     "pts": 2
+    },
+    {
+     "pos": 20,
+     "team": "Elche",
+     "p": 6,
+     "w": 0,
+     "d": 2,
+     "l": 4,
+     "gd": -8,
      "pts": 2
     }
    ],
@@ -3519,8 +3519,8 @@
     "Celta": "/crests/celta.png",
     "Valencia": "/crests/valencia.png",
     "Málaga": "/crests/malaga.png",
-    "Elche": "/crests/elche.png",
-    "Villarreal": "/crests/villarreal.png"
+    "Villarreal": "/crests/villarreal.png",
+    "Elche": "/crests/elche.png"
    },
    "results": [
     {
@@ -6546,9 +6546,31 @@
      "a": "Espanyol",
      "hs": 2,
      "as": 1
+    },
+    {
+     "d": "2026-09-15",
+     "h": "Alavés",
+     "a": "Valencia",
+     "hs": 0,
+     "as": 1
+    },
+    {
+     "d": "2026-09-15",
+     "h": "Elche",
+     "a": "Real Madrid",
+     "hs": 2,
+     "as": 3
     }
    ],
    "scorers": [
+    {
+     "name": "Kylian Mbappé",
+     "team": "Real Madrid",
+     "goals": 7,
+     "assists": 2,
+     "pens": 1,
+     "played": 6
+    },
     {
      "name": "Roberto Fernández",
      "team": "Espanyol",
@@ -6572,14 +6594,6 @@
      "assists": 2,
      "pens": 1,
      "played": 5
-    },
-    {
-     "name": "Kylian Mbappé",
-     "team": "Real Madrid",
-     "goals": 6,
-     "assists": 1,
-     "pens": 1,
-     "played": 6
     },
     {
      "name": "Lamine Yamal",
@@ -6654,20 +6668,20 @@
      "played": 6
     },
     {
+     "name": "Fer Niño",
+     "team": "Elche",
+     "goals": 3,
+     "assists": null,
+     "pens": null,
+     "played": 6
+    },
+    {
      "name": "Brugui",
      "team": "Levante",
      "goals": 3,
      "assists": null,
      "pens": null,
      "played": 4
-    },
-    {
-     "name": "Álvaro García",
-     "team": "Rayo Vallecano",
-     "goals": 2,
-     "assists": 2,
-     "pens": null,
-     "played": 6
     }
    ]
   },
@@ -24957,6 +24971,20 @@
      "a": "Wolverhampton",
      "hs": 0,
      "as": 1
+    },
+    {
+     "d": "2026-09-15",
+     "h": "Middlesbrough",
+     "a": "Millwall",
+     "hs": 2,
+     "as": 2
+    },
+    {
+     "d": "2026-09-15",
+     "h": "Bristol City",
+     "a": "Lincoln City",
+     "hs": 0,
+     "as": 1
     }
    ],
    "scorers": [
@@ -24971,7 +24999,7 @@
     {
      "name": "William Lankshear",
      "team": "Middlesbrough",
-     "goals": 5,
+     "goals": 6,
      "assists": null,
      "pens": null,
      "played": 7
@@ -25124,7 +25152,7 @@
      "w": 4,
      "d": 1,
      "l": 1,
-     "gd": 11,
+     "gd": 12,
      "pts": 13
     },
     {
@@ -25254,7 +25282,7 @@
      "w": 0,
      "d": 2,
      "l": 4,
-     "gd": -12,
+     "gd": -13,
      "pts": 2
     },
     {
@@ -27800,6 +27828,13 @@
      "h": "PSV",
      "a": "Sparta",
      "hs": 4,
+     "as": 1
+    },
+    {
+     "d": "2026-09-15",
+     "h": "Ajax",
+     "a": "Willem II",
+     "hs": 5,
      "as": 1
     }
    ],
