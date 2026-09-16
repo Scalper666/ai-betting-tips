@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-16T10:17:39+00:00",
+ "updated_at": "2026-09-16T19:42:03+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -3302,12 +3302,12 @@
     {
      "pos": 1,
      "team": "Barça",
-     "p": 5,
+     "p": 6,
      "w": 5,
-     "d": 0,
+     "d": 1,
      "l": 0,
      "gd": 17,
-     "pts": 15
+     "pts": 16
     },
     {
      "pos": 2,
@@ -3321,6 +3321,26 @@
     },
     {
      "pos": 3,
+     "team": "Atleti",
+     "p": 6,
+     "w": 4,
+     "d": 1,
+     "l": 1,
+     "gd": 8,
+     "pts": 13
+    },
+    {
+     "pos": 4,
+     "team": "Sevilla FC",
+     "p": 6,
+     "w": 4,
+     "d": 1,
+     "l": 1,
+     "gd": 3,
+     "pts": 13
+    },
+    {
+     "pos": 5,
      "team": "Real Betis",
      "p": 5,
      "w": 4,
@@ -3330,7 +3350,7 @@
      "pts": 12
     },
     {
-     "pos": 4,
+     "pos": 6,
      "team": "Alavés",
      "p": 6,
      "w": 3,
@@ -3340,37 +3360,37 @@
      "pts": 10
     },
     {
-     "pos": 5,
-     "team": "Atleti",
-     "p": 5,
-     "w": 3,
-     "d": 1,
-     "l": 1,
-     "gd": 4,
-     "pts": 10
-    },
-    {
-     "pos": 6,
-     "team": "Sevilla FC",
-     "p": 5,
-     "w": 3,
-     "d": 1,
-     "l": 1,
-     "gd": 2,
-     "pts": 10
-    },
-    {
      "pos": 7,
      "team": "Deportivo",
-     "p": 5,
+     "p": 6,
      "w": 2,
      "d": 3,
-     "l": 0,
-     "gd": 3,
+     "l": 1,
+     "gd": 2,
      "pts": 9
     },
     {
      "pos": 8,
+     "team": "Athletic",
+     "p": 6,
+     "w": 2,
+     "d": 2,
+     "l": 2,
+     "gd": 1,
+     "pts": 8
+    },
+    {
+     "pos": 9,
+     "team": "Santander",
+     "p": 6,
+     "w": 2,
+     "d": 2,
+     "l": 2,
+     "gd": 0,
+     "pts": 8
+    },
+    {
+     "pos": 10,
      "team": "Espanyol",
      "p": 6,
      "w": 2,
@@ -3380,37 +3400,7 @@
      "pts": 7
     },
     {
-     "pos": 9,
-     "team": "Athletic",
-     "p": 5,
-     "w": 2,
-     "d": 1,
-     "l": 2,
-     "gd": 1,
-     "pts": 7
-    },
-    {
-     "pos": 10,
-     "team": "Santander",
-     "p": 5,
-     "w": 2,
-     "d": 1,
-     "l": 2,
-     "gd": 0,
-     "pts": 7
-    },
-    {
      "pos": 11,
-     "team": "Osasuna",
-     "p": 5,
-     "w": 2,
-     "d": 1,
-     "l": 2,
-     "gd": -3,
-     "pts": 7
-    },
-    {
-     "pos": 12,
      "team": "Rayo Vallecano",
      "p": 6,
      "w": 2,
@@ -3420,7 +3410,7 @@
      "pts": 7
     },
     {
-     "pos": 13,
+     "pos": 12,
      "team": "Real Sociedad",
      "p": 6,
      "w": 2,
@@ -3430,14 +3420,24 @@
      "pts": 7
     },
     {
+     "pos": 13,
+     "team": "Osasuna",
+     "p": 6,
+     "w": 2,
+     "d": 1,
+     "l": 3,
+     "gd": -7,
+     "pts": 7
+    },
+    {
      "pos": 14,
      "team": "Levante",
-     "p": 5,
+     "p": 6,
      "w": 1,
-     "d": 2,
+     "d": 3,
      "l": 2,
      "gd": -2,
-     "pts": 5
+     "pts": 6
     },
     {
      "pos": 15,
@@ -3503,17 +3503,17 @@
    "crests": {
     "Barça": "/crests/barca.png",
     "Real Madrid": "/crests/real-madrid.png",
-    "Real Betis": "/crests/real-betis.png",
-    "Alavés": "/crests/alaves.png",
     "Atleti": "/crests/atleti.png",
     "Sevilla FC": "/crests/sevilla-fc.png",
+    "Real Betis": "/crests/real-betis.png",
+    "Alavés": "/crests/alaves.png",
     "Deportivo": "/crests/deportivo.png",
-    "Espanyol": "/crests/espanyol.png",
     "Athletic": "/crests/athletic.png",
     "Santander": "/crests/santander.png",
-    "Osasuna": "/crests/osasuna.png",
+    "Espanyol": "/crests/espanyol.png",
     "Rayo Vallecano": "/crests/rayo-vallecano.png",
     "Real Sociedad": "/crests/real-sociedad.png",
+    "Osasuna": "/crests/osasuna.png",
     "Levante": "/crests/levante.png",
     "Getafe": "/crests/getafe.png",
     "Celta": "/crests/celta.png",
@@ -6560,6 +6560,20 @@
      "a": "Real Madrid",
      "hs": 2,
      "as": 3
+    },
+    {
+     "d": "2026-09-16",
+     "h": "Deportivo",
+     "a": "Sevilla FC",
+     "hs": 0,
+     "as": 1
+    },
+    {
+     "d": "2026-09-16",
+     "h": "Atleti",
+     "a": "Osasuna",
+     "hs": 4,
+     "as": 0
     }
    ],
    "scorers": [
@@ -6593,7 +6607,7 @@
      "goals": 6,
      "assists": 2,
      "pens": 1,
-     "played": 5
+     "played": 6
     },
     {
      "name": "Lamine Yamal",
@@ -6601,7 +6615,7 @@
      "goals": 6,
      "assists": null,
      "pens": 1,
-     "played": 5
+     "played": 6
     },
     {
      "name": "Pierre-Emerick Aubameyang",
@@ -6609,7 +6623,7 @@
      "goals": 5,
      "assists": 2,
      "pens": null,
-     "played": 5
+     "played": 6
     },
     {
      "name": "Yassir Zabiri",
@@ -6617,7 +6631,15 @@
      "goals": 5,
      "assists": null,
      "pens": null,
-     "played": 5
+     "played": 6
+    },
+    {
+     "name": "Álex Baena",
+     "team": "Atleti",
+     "goals": 4,
+     "assists": 1,
+     "pens": null,
+     "played": 6
     },
     {
      "name": "Fermín López",
@@ -6625,7 +6647,7 @@
      "goals": 4,
      "assists": 2,
      "pens": null,
-     "played": 5
+     "played": 6
     },
     {
      "name": "Ante Budimir",
@@ -6633,7 +6655,7 @@
      "goals": 4,
      "assists": null,
      "pens": 3,
-     "played": 5
+     "played": 6
     },
     {
      "name": "Lucas Boyé",
@@ -6650,14 +6672,6 @@
      "assists": 3,
      "pens": null,
      "played": 6
-    },
-    {
-     "name": "Álex Baena",
-     "team": "Atleti",
-     "goals": 3,
-     "assists": 1,
-     "pens": null,
-     "played": 5
     },
     {
      "name": "Jude Bellingham",
@@ -6681,7 +6695,7 @@
      "goals": 3,
      "assists": null,
      "pens": null,
-     "played": 4
+     "played": 5
     }
    ]
   },
