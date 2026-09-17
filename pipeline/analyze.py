@@ -225,19 +225,32 @@ def pick_recommended_total(event: dict) -> dict | None:
 MODEL_W = 0.4            # blend weight of our Poisson model vs market fair prob
 OFFICIAL_MIN_EV = 0.03   # expected value per 1u at the best price
 OFFICIAL_MAX_ODDS = 4.0
-OFFICIAL_MIN_PROB = 0.35   # h2h blended probability floor
-OFFICIAL_TOTALS_MIN_PROB = 0.45
+# Tightened 2026-09-17 after 933 settled picks: ROI -6.1%, CLV -0.6% — the old
+# gates published market-average bets minus the margin. The record by stated
+# probability was the clearest signal: picks at >=55% hit 58% (+2.5% ROI, +12.8%
+# at >=60%), picks at 30-55% hit 27-44% and carried the whole loss (-75u).
+OFFICIAL_MIN_PROB = 0.55   # blended probability floor, h2h and totals alike
+OFFICIAL_TOTALS_MIN_PROB = 0.55
 OFFICIAL_TOTALS_MAX_ODDS = 2.6
+# Over picks lost 39.5u (ROI -18%) — the Poisson goal expectation runs hot.
+# Overs stay on the page as a model lean; only Unders can be official.
+OFFICIAL_TOTALS_SIDES = ("Under",)
+# Early season: no official pick until both teams have this many games in the
+# recent window (model.RECENT_DAYS) — summer changes are invisible to ratings
+# built on last season, and September 2026 ran -11.8% ROI on that.
+OFFICIAL_MIN_RECENT_GAMES = 4
 # leagues without a model (thin data): market-only official picks need a big
 # soft-price outlier to qualify
 MKT_MIN_EDGE_PCT = 4.0
 MKT_MAX_ODDS = 3.0
-MKT_MIN_CONF = 40
+MKT_MIN_CONF = 55
 
 
 def _official_pick(event, home, away, fair, best_h2h, value_picks, model_probs):
     """Best candidate passing the official gates, or None. Ranked by Kelly."""
     cands = []
+    if model_probs and model_probs.get("recent_games", 99) < OFFICIAL_MIN_RECENT_GAMES:
+        return None   # early season / stale ratings: lean only, nothing graded
     if model_probs and fair:
         from model import totals_probs
         pm = {home: model_probs["p_home"], "Draw": model_probs["p_draw"], away: model_probs["p_away"]}
@@ -259,6 +272,8 @@ def _official_pick(event, home, away, fair, best_h2h, value_picks, model_probs):
         if ct:
             tp = totals_probs(model_probs["lambda_home"], model_probs["lambda_away"], ct["point"])
             for side, key in (("Over", "over"), ("Under", "under")):
+                if side not in OFFICIAL_TOTALS_SIDES:
+                    continue
                 info = ct[key]
                 price = float(info["price"])
                 p = MODEL_W * tp[key] + (1 - MODEL_W) * ct[f"fair_{key}"]

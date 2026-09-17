@@ -22,6 +22,10 @@ ROOT = Path(__file__).resolve().parent.parent
 HALF_LIFE_DAYS = 240   # a result half a season+ old counts ~half
 SHRINK_K = 6.0         # pseudo-games pulling strengths toward league average
 MIN_GAMES = 8          # per team before we trust the model for a fixture
+# Games inside this window count as "this season's evidence". Ratings carry last
+# season through the summer (transfers, new managers) — September 2026 lost 45u
+# largely on that — so official picks wait until both teams have recent games.
+RECENT_DAYS = 75
 MAX_GOALS = 10         # Poisson grid size
 
 # ---------------------------------------------------------------- name matcher
@@ -113,11 +117,13 @@ class _League:
         wsum = wh = wa = 0.0
         acc: dict[str, dict] = {}   # team -> att_num/att_den/def_num/def_den/games
 
-        def bump(team, att_sample, def_sample, w):
-            a = acc.setdefault(team, {"an": 0.0, "aw": 0.0, "dn": 0.0, "dw": 0.0, "n": 0})
+        def bump(team, att_sample, def_sample, w, recent):
+            a = acc.setdefault(team, {"an": 0.0, "aw": 0.0, "dn": 0.0, "dw": 0.0, "n": 0, "r": 0})
             a["an"] += w * att_sample; a["aw"] += w
             a["dn"] += w * def_sample; a["dw"] += w
             a["n"] += 1
+            if recent:
+                a["r"] += 1
 
         games = []
         for r in results:
@@ -132,14 +138,16 @@ class _League:
         self.mu_h = wh / wsum if wsum else 1.4
         self.mu_a = wa / wsum if wsum else 1.1
         for r, w in games:
-            bump(r["h"], r["hs"] / max(self.mu_h, .2), r["as"] / max(self.mu_a, .2), w)
-            bump(r["a"], r["as"] / max(self.mu_a, .2), r["hs"] / max(self.mu_h, .2), w)
+            recent = (today - date.fromisoformat(str(r["d"]))).days <= RECENT_DAYS
+            bump(r["h"], r["hs"] / max(self.mu_h, .2), r["as"] / max(self.mu_a, .2), w, recent)
+            bump(r["a"], r["as"] / max(self.mu_a, .2), r["hs"] / max(self.mu_h, .2), w, recent)
 
-        self.att, self.dfn, self.games = {}, {}, {}
+        self.att, self.dfn, self.games, self.recent = {}, {}, {}, {}
         for t, a in acc.items():
             self.att[t] = (a["an"] + SHRINK_K) / (a["aw"] + SHRINK_K)
             self.dfn[t] = (a["dn"] + SHRINK_K) / (a["dw"] + SHRINK_K)
             self.games[t] = a["n"]
+            self.recent[t] = a["r"]
 
     def lambdas(self, home: str, away: str) -> tuple[float, float]:
         lh = self.mu_h * self.att.get(home, 1) * self.dfn.get(away, 1)
@@ -302,6 +310,7 @@ class GoalModel:
             "lambda_home": round(lh, 3),
             "lambda_away": round(la, 3),
             "games": min(lg.games[th], lg.games[ta]),
+            "recent_games": min(lg.recent.get(th, 0), lg.recent.get(ta, 0)),
             "scorelines": scoreline_probs(lh, la),
             "p_btts": round(btts_prob(lh, la), 4),
         }
