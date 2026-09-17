@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-16T19:42:03+00:00",
+ "updated_at": "2026-09-17T10:22:39+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -3303,11 +3303,11 @@
      "pos": 1,
      "team": "Barça",
      "p": 6,
-     "w": 5,
-     "d": 1,
+     "w": 6,
+     "d": 0,
      "l": 0,
-     "gd": 17,
-     "pts": 16
+     "gd": 22,
+     "pts": 18
     },
     {
      "pos": 2,
@@ -3371,32 +3371,32 @@
     },
     {
      "pos": 8,
-     "team": "Athletic",
-     "p": 6,
-     "w": 2,
-     "d": 2,
-     "l": 2,
-     "gd": 1,
-     "pts": 8
-    },
-    {
-     "pos": 9,
-     "team": "Santander",
-     "p": 6,
-     "w": 2,
-     "d": 2,
-     "l": 2,
-     "gd": 0,
-     "pts": 8
-    },
-    {
-     "pos": 10,
      "team": "Espanyol",
      "p": 6,
      "w": 2,
      "d": 1,
      "l": 3,
      "gd": 2,
+     "pts": 7
+    },
+    {
+     "pos": 9,
+     "team": "Athletic",
+     "p": 5,
+     "w": 2,
+     "d": 1,
+     "l": 2,
+     "gd": 1,
+     "pts": 7
+    },
+    {
+     "pos": 10,
+     "team": "Santander",
+     "p": 6,
+     "w": 2,
+     "d": 1,
+     "l": 3,
+     "gd": -5,
      "pts": 7
     },
     {
@@ -3432,12 +3432,12 @@
     {
      "pos": 14,
      "team": "Levante",
-     "p": 6,
+     "p": 5,
      "w": 1,
-     "d": 3,
+     "d": 2,
      "l": 2,
      "gd": -2,
-     "pts": 6
+     "pts": 5
     },
     {
      "pos": 15,
@@ -3508,9 +3508,9 @@
     "Real Betis": "/crests/real-betis.png",
     "Alavés": "/crests/alaves.png",
     "Deportivo": "/crests/deportivo.png",
+    "Espanyol": "/crests/espanyol.png",
     "Athletic": "/crests/athletic.png",
     "Santander": "/crests/santander.png",
-    "Espanyol": "/crests/espanyol.png",
     "Rayo Vallecano": "/crests/rayo-vallecano.png",
     "Real Sociedad": "/crests/real-sociedad.png",
     "Osasuna": "/crests/osasuna.png",
@@ -6574,12 +6574,35 @@
      "a": "Osasuna",
      "hs": 4,
      "as": 0
+    },
+    {
+     "d": "2026-09-16",
+     "h": "Barça",
+     "a": "Santander",
+     "hs": 7,
+     "as": 2
     }
    ],
    "scorers": [
     {
+     "name": "Raphinha",
+     "team": "Barça",
+     "goals": 9,
+     "assists": 2,
+     "pens": 3,
+     "played": 6
+    },
+    {
      "name": "Kylian Mbappé",
      "team": "Real Madrid",
+     "goals": 7,
+     "assists": 2,
+     "pens": 1,
+     "played": 6
+    },
+    {
+     "name": "Lamine Yamal",
+     "team": "Barça",
      "goals": 7,
      "assists": 2,
      "pens": 1,
@@ -6602,19 +6625,11 @@
      "played": 6
     },
     {
-     "name": "Raphinha",
-     "team": "Barça",
-     "goals": 6,
-     "assists": 2,
-     "pens": 1,
-     "played": 6
-    },
-    {
-     "name": "Lamine Yamal",
-     "team": "Barça",
+     "name": "Yassir Zabiri",
+     "team": "Santander",
      "goals": 6,
      "assists": null,
-     "pens": 1,
+     "pens": null,
      "played": 6
     },
     {
@@ -6622,14 +6637,6 @@
      "team": "Deportivo",
      "goals": 5,
      "assists": 2,
-     "pens": null,
-     "played": 6
-    },
-    {
-     "name": "Yassir Zabiri",
-     "team": "Santander",
-     "goals": 5,
-     "assists": null,
      "pens": null,
      "played": 6
     },
@@ -15479,6 +15486,16 @@
     },
     {
      "pos": 11,
+     "team": "Botafogo",
+     "p": 27,
+     "w": 9,
+     "d": 8,
+     "l": 10,
+     "gd": -2,
+     "pts": 35
+    },
+    {
+     "pos": 12,
      "team": "São Paulo",
      "p": 26,
      "w": 9,
@@ -15488,7 +15505,7 @@
      "pts": 33
     },
     {
-     "pos": 12,
+     "pos": 13,
      "team": "Vitória",
      "p": 27,
      "w": 9,
@@ -15498,23 +15515,13 @@
      "pts": 33
     },
     {
-     "pos": 13,
+     "pos": 14,
      "team": "Corinthians",
      "p": 27,
      "w": 8,
      "d": 8,
      "l": 11,
      "gd": -1,
-     "pts": 32
-    },
-    {
-     "pos": 14,
-     "team": "Botafogo",
-     "p": 26,
-     "w": 8,
-     "d": 8,
-     "l": 10,
-     "gd": -3,
      "pts": 32
     },
     {
@@ -15530,11 +15537,11 @@
     {
      "pos": 16,
      "team": "Grêmio",
-     "p": 26,
+     "p": 27,
      "w": 7,
      "d": 7,
-     "l": 12,
-     "gd": -7,
+     "l": 13,
+     "gd": -8,
      "pts": 28
     },
     {
@@ -15589,10 +15596,10 @@
     "Coritiba": "/crests/coritiba.png",
     "Bragantino": "/crests/bragantino.png",
     "Santos": "/crests/santos.png",
+    "Botafogo": "/crests/botafogo.png",
     "São Paulo": "/crests/sao-paulo.png",
     "Vitória": "/crests/vitoria.png",
     "Corinthians": "/crests/corinthians.png",
-    "Botafogo": "/crests/botafogo.png",
     "Mirassol": "/crests/mirassol.png",
     "Grêmio": "/crests/gremio.png",
     "Vasco da Gama": "/crests/vasco-da-gama.png",
@@ -20122,6 +20129,13 @@
      "a": "Clube do Remo",
      "hs": 2,
      "as": 1
+    },
+    {
+     "d": "2026-09-16",
+     "h": "Botafogo",
+     "a": "Grêmio",
+     "hs": 3,
+     "as": 2
     }
    ],
    "scorers": [
@@ -20147,7 +20161,7 @@
      "goals": 10,
      "assists": 1,
      "pens": 1,
-     "played": 25
+     "played": 26
     },
     {
      "name": "Gabriel Barbosa",
@@ -20156,6 +20170,14 @@
      "assists": 2,
      "pens": 2,
      "played": 19
+    },
+    {
+     "name": "Danilo dos Santos de Oliveira",
+     "team": "Botafogo",
+     "goals": 9,
+     "assists": 2,
+     "pens": null,
+     "played": 17
     },
     {
      "name": "John Kennedy",
@@ -20222,14 +20244,6 @@
      "played": 26
     },
     {
-     "name": "Danilo dos Santos de Oliveira",
-     "team": "Botafogo",
-     "goals": 7,
-     "assists": 2,
-     "pens": null,
-     "played": 16
-    },
-    {
      "name": "Jonathan Calleri",
      "team": "São Paulo",
      "goals": 7,
@@ -20243,7 +20257,7 @@
      "goals": 7,
      "assists": 1,
      "pens": null,
-     "played": 23
+     "played": 24
     }
    ]
   },
