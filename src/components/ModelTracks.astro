@@ -5,10 +5,14 @@
 import historyData from '../data/history.json';
 import { signed } from '../lib/utils.js';
 
-// v2Only: count only picks published under the selective v2 rules (own Poisson
-// model blended with the market, value gates) — the era marked h.model === 'v2'.
+// track: which era of picks to count — 'v3' (stricter gates, from 18 Sep 2026),
+// 'v2' (selective era: own model blended with the market, value gates) or
+// 'all'. Eras are marked h.model by the pipeline at publish time; reporting
+// them separately means a rule change never rewrites the old numbers.
+// v2Only is the legacy spelling of track='v2'.
 import { t as _t, lhref } from '../i18n/index.js';
-const { limit = 3, v2Only = false, lang = 'en' } = Astro.props;
+const { limit = 3, v2Only = false, track: trackProp = null, lang = 'en' } = Astro.props;
+const track = trackProp ?? (v2Only ? 'v2' : 'all');
 const L = (pth) => lhref(lang, pth);
 const TT = (k) => _t(lang, k);
 
@@ -23,7 +27,7 @@ const TRACKS = [
 
 const real = Object.values(historyData.tips ?? {}).filter(
   (h) => h.score !== 'simulated' && !String(h.event_id ?? '').startsWith('mock')
-    && (!v2Only || h.model === 'v2')
+    && (track === 'all' || h.model === track)
 );
 const settledStates = ['won', 'lost', 'void'];
 

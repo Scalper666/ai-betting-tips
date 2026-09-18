@@ -18,6 +18,7 @@ import { t, localizeMarket, lhref } from '../i18n/index.js';
 
 const { lang = 'en' } = Astro.props;
 const T = (k) => t(lang, k);
+const F = (k, vars) => Object.entries(vars).reduce((str, [kk, v]) => str.split(`{${kk}}`).join(String(v)), T(k));
 const L = (pth) => lhref(lang, pth);
 
 const tips = predictions.tips ?? [];
@@ -94,6 +95,13 @@ const resSum = {
   voids: settled.filter((t) => t.status === 'void').length,
   profit: Math.round(settled.reduce((s, t) => s + (t.profit ?? 0), 0) * 100) / 100,
 };
+// hit rate over graded picks (void excluded); profit lives on /tipsters, where
+// it comes with the era breakdown that explains it
+resSum.hit = resSum.won + resSum.lost ? Math.round((resSum.won / (resSum.won + resSum.lost)) * 100) : null;
+// picks published under the current (v3) rules, from 18 Sep 2026
+const v3All = Object.values(historyData.tips ?? {}).filter((t) => t.model === 'v3' && t.score !== 'simulated');
+const v3Settled = v3All.filter((t) => ['won', 'lost'].includes(t.status));
+const v3Won = v3Settled.filter((t) => t.status === 'won').length;
 // mock-phase settlements are labelled honestly until real ones replace them
 const resDemo = resRows.length > 0 && resRows.every((t) => t.score === 'simulated');
 const resDate = (t) => {
@@ -375,8 +383,14 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
               <div class="res-chip win"><b>{resSum.won}</b><span>{T('home.res.won')}</span></div>
               <div class="res-chip lose"><b>{resSum.lost}</b><span>{T('home.res.lost')}</span></div>
               <div class="res-chip"><b>{resSum.voids}</b><span>{T('home.res.void')}</span></div>
-              <div class={`res-chip ${resSum.profit >= 0 ? 'win' : 'lose'}`}><b>{signed(resSum.profit)}u</b><span>{T('home.res.profit')}</span></div>
+              <div class="res-chip"><b>{resSum.hit != null ? `${resSum.hit}%` : '—'}</b><span>{T('home.res.hit')}</span></div>
             </div>
+            {v3All.length > 0 && (
+              <p class="res-note" style="margin-top:8px">
+                {F('home.res.v3', { n: v3All.length, s: v3Settled.length, w: v3Won })}
+                {' '}<a href={L('/tipsters')} style="color:var(--mint)">{T('home.res.stats')}</a>
+              </p>
+            )}
             <div class="res-list">
               {resRows.map((t) => (
                 <div class="res-row">

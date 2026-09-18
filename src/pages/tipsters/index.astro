@@ -23,17 +23,6 @@ const winRate = graded.length ? Math.round((won / graded.length) * 1000) / 10 : 
 const roi = graded.length ? Math.round((profit / graded.length) * 1000) / 10 : null;
 const shown = settled.slice(0, 40);
 
-// v2 era: selective official picks from the blended Poisson+market model.
-// Earlier (v1) bets stay in the all-time record — nothing is deleted — but the
-// current strategy is judged on its own slice.
-const v2 = real.filter((h) => h.model === 'v2');
-const v2Settled = v2.filter((h) => settledStates.includes(h.status));
-const v2Graded = v2Settled.filter((h) => h.status !== 'void');
-const v2Won = v2Graded.filter((h) => h.status === 'won').length;
-const v2Profit = Math.round(v2Settled.reduce((s, h) => s + (h.profit ?? 0), 0) * 100) / 100;
-const v2WinRate = v2Graded.length ? Math.round((v2Won / v2Graded.length) * 1000) / 10 : null;
-const v2Roi = v2Graded.length ? Math.round((v2Profit / v2Graded.length) * 1000) / 10 : null;
-
 // closing-line value: the standard early edge indicator. clv_pct compares the
 // price we took with the last price we tracked before kick-off.
 const clvOf = (list) => {
@@ -46,7 +35,29 @@ const clvOf = (list) => {
   };
 };
 const clv = clvOf(settled);
-const v2Clv = clvOf(v2Settled);
+
+// Eras of the same model, reported separately so a rule change never rewrites
+// the old numbers. v2 (29 Jul – 17 Sep 2026): selective picks from the blended
+// Poisson+market model — closed at ROI -6.1% over 933 graded picks. v3 (from
+// 18 Sep 2026): the same model behind stricter gates — blended probability of
+// at least 55%, no Over-goals picks, nothing in the opening weeks of a season.
+// Earlier (v1) bets stay in the all-time record; nothing is deleted.
+const era = (tag) => {
+  const list = real.filter((h) => h.model === tag);
+  const st = list.filter((h) => settledStates.includes(h.status));
+  const gr = st.filter((h) => h.status !== 'void');
+  const w = gr.filter((h) => h.status === 'won').length;
+  const pr = Math.round(st.reduce((s, h) => s + (h.profit ?? 0), 0) * 100) / 100;
+  return {
+    published: list.length, settled: st.length, graded: gr.length, won: w, profit: pr,
+    winRate: gr.length ? Math.round((w / gr.length) * 1000) / 10 : null,
+    roi: gr.length ? Math.round((pr / gr.length) * 1000) / 10 : null,
+    clv: clvOf(st),
+  };
+};
+const v3 = era('v3');
+const v2 = era('v2');
+const v3Live = v3.graded >= 10;   // below that the chips would be noise
 
 const aiPage = (content.entries ?? {})['page:tipsters'];
 const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...faqSchema(aiPage.faq) } : null;
@@ -95,35 +106,78 @@ const pageSchema = aiPage?.faq?.length ? { '@context': 'https://schema.org', ...
         </section>
 
         <section>
-          <div class="sec-head"><h2 class="sec-title">Model <b>v2</b> — current strategy</h2></div>
-          <div class="res-sum">
-            <div class="res-chip"><b>{v2.length}</b><span>Published</span></div>
-            <div class="res-chip"><b>{v2Settled.length}</b><span>Settled</span></div>
-            <div class="res-chip"><b>{v2WinRate != null ? `${v2WinRate}%` : '—'}</b><span>Win rate</span></div>
-            <div class={`res-chip ${v2Profit > 0 ? 'win' : v2Profit < 0 ? 'lose' : ''}`}>
-              <b>{v2Profit > 0 ? '+' : ''}{v2Profit.toFixed(2)}u</b><span>Profit</span>
-            </div>
-            <div class={`res-chip ${v2Roi != null && v2Roi > 0 ? 'win' : v2Roi != null && v2Roi < 0 ? 'lose' : ''}`}>
-              <b>{v2Roi != null ? `${signed(v2Roi)}%` : '—'}</b><span>ROI</span>
-            </div>
-            {v2Clv && (
-              <div class={`res-chip ${v2Clv.avg > 0 ? 'win' : v2Clv.avg < 0 ? 'lose' : ''}`}>
-                <b>{signed(v2Clv.avg)}%</b><span>Avg CLV</span>
+          <div class="sec-head"><h2 class="sec-title">Model <b>v3</b> — current rules, since 18 Sep 2026</h2></div>
+          {v3Live ? (
+            <div class="res-sum">
+              <div class="res-chip"><b>{v3.published}</b><span>Published</span></div>
+              <div class="res-chip"><b>{v3.settled}</b><span>Settled</span></div>
+              <div class="res-chip"><b>{v3.winRate != null ? `${v3.winRate}%` : '—'}</b><span>Win rate</span></div>
+              <div class={`res-chip ${v3.profit > 0 ? 'win' : v3.profit < 0 ? 'lose' : ''}`}>
+                <b>{v3.profit > 0 ? '+' : ''}{v3.profit.toFixed(2)}u</b><span>Profit</span>
               </div>
-            )}
-          </div>
+              <div class={`res-chip ${v3.roi != null && v3.roi > 0 ? 'win' : v3.roi != null && v3.roi < 0 ? 'lose' : ''}`}>
+                <b>{v3.roi != null ? `${signed(v3.roi)}%` : '—'}</b><span>ROI</span>
+              </div>
+              {v3.clv && (
+                <div class={`res-chip ${v3.clv.avg > 0 ? 'win' : v3.clv.avg < 0 ? 'lose' : ''}`}>
+                  <b>{signed(v3.clv.avg)}%</b><span>Avg CLV</span>
+                </div>
+              )}
+            </div>
+          ) : (
+            <div class="res-sum">
+              <div class="res-chip"><b>{v3.published}</b><span>Published</span></div>
+              <div class="res-chip"><b>{v3.settled}</b><span>Settled</span></div>
+              <div class="res-chip"><b>⏳</b><span>Grading</span></div>
+            </div>
+          )}
           <p class="res-note">
-            Since 29 Jul 2026 the model bets selectively: our own Poisson goal model (fitted on two seasons
-            of results) is blended with the market, and a pick is only published when it clears a value
-            threshold — roughly a quarter of fixtures instead of all of them. Earlier bets remain in the
-            all-time record below; nothing is deleted.
-            {v2Clv && ` CLV so far: ${signed(v2Clv.avg)}% average, beating the close on ${v2Clv.beat} of ${v2Clv.n} bets.`}
+            The v2 record settled at −6.1% ROI over 933 graded picks — market-average results minus the
+            bookmaker margin, which the published closing-line value (−0.6%) confirmed. Its own breakdown showed
+            where the money went: Over-goals picks (−18% ROI), picks the model rated at 50–59% (they hit 44%), and
+            the opening weeks of a season, when ratings still reflect last year. From 18 Sep 2026 the same model
+            publishes only picks it rates at 55% or more, never an Over, and nothing until both teams have four
+            recent matches. Roughly a quarter of the old volume.
+            {!v3Live && ' The first picks under the new rules are being graded now; chips appear once ten have settled.'}
           </p>
         </section>
 
         <section>
+          <div class="sec-head"><h2 class="sec-title">Model <b>v2</b> — 29 Jul to 17 Sep 2026, closed</h2></div>
+          <div class="res-sum">
+            <div class="res-chip"><b>{v2.published}</b><span>Published</span></div>
+            <div class="res-chip"><b>{v2.settled}</b><span>Settled</span></div>
+            <div class="res-chip"><b>{v2.winRate != null ? `${v2.winRate}%` : '—'}</b><span>Win rate</span></div>
+            <div class={`res-chip ${v2.profit > 0 ? 'win' : v2.profit < 0 ? 'lose' : ''}`}>
+              <b>{v2.profit > 0 ? '+' : ''}{v2.profit.toFixed(2)}u</b><span>Profit</span>
+            </div>
+            <div class={`res-chip ${v2.roi != null && v2.roi > 0 ? 'win' : v2.roi != null && v2.roi < 0 ? 'lose' : ''}`}>
+              <b>{v2.roi != null ? `${signed(v2.roi)}%` : '—'}</b><span>ROI</span>
+            </div>
+            {v2.clv && (
+              <div class={`res-chip ${v2.clv.avg > 0 ? 'win' : v2.clv.avg < 0 ? 'lose' : ''}`}>
+                <b>{signed(v2.clv.avg)}%</b><span>Avg CLV</span>
+              </div>
+            )}
+          </div>
+          <p class="res-note">
+            Selective picks from our Poisson goal model blended with the market, published whenever the best price
+            cleared a value threshold. It lost, and the numbers stay here as published — a record that only keeps its
+            winning periods is not a record.
+            {v2.clv && ` CLV: ${signed(v2.clv.avg)}% average, beating the close on ${v2.clv.beat} of ${v2.clv.n} bets.`}
+          </p>
+        </section>
+
+        {v3Live && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">v3 tracks by <b>market</b></h2></div>
+            <ModelTracks limit={3} track="v3" />
+          </section>
+        )}
+
+        <section>
           <div class="sec-head"><h2 class="sec-title">v2 tracks by <b>market</b></h2></div>
-          <ModelTracks limit={3} v2Only={true} />
+          <ModelTracks limit={3} track="v2" />
         </section>
 
         <section>

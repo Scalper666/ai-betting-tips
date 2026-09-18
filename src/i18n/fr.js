@@ -395,6 +395,8 @@ export const FR = {
   'home.res.lost': 'Perdus',
   'home.res.void': 'Annulés',
   'home.res.profit': 'Profit',
+  'home.res.hit': 'Réussite',
+  'home.res.v3': 'Règles actuelles depuis le 18 sept. 2026 : {n} pronostics publiés, {s} réglés, {w} gagnés.',
   'home.res.note': 'Chaque pronostic publié est archivé et réglé sur le score final — gains comme pertes, rien n’est supprimé.',
   'home.bt.pre': 'Types de paris',
   'home.bt.bold': 'populaires',

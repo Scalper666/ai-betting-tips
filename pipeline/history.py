@@ -84,7 +84,12 @@ def add_from_predictions(predictions: dict) -> tuple[int, int]:
             "edge_pct": rec.get("edge_pct"),
             "bookmaker": rec.get("bookmaker"),
             "basis": rec.get("basis"),
-            "model": "v2",               # selective era: official picks only
+            # track marker. v2 = selective era (own model blended with market,
+            # value gates); v3 from 2026-09-18 = stricter gates (blended
+            # probability >= 55%, Unders only, no early-season picks) after the
+            # v2 record settled at ROI -6.1% over 933 picks. Each era is
+            # reported separately so a rule change never rewrites old numbers.
+            "model": "v3",
             "published_at": now,
             "status": "pending",
             "profit": None,

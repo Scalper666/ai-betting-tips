@@ -720,6 +720,8 @@ export const D = {
   'home.res.lost': { en: 'Lost', es: 'Perdidas', pt: 'Perdidas', de: 'Verloren' },
   'home.res.void': { en: 'Void', es: 'Nulas', pt: 'Anuladas', de: 'Ungültig' },
   'home.res.profit': { en: 'Profit', es: 'Beneficio', pt: 'Lucro', de: 'Gewinn' },
+  'home.res.hit': { en: 'Hit rate', es: 'Acierto', pt: 'Acerto', de: 'Trefferquote' },
+  'home.res.v3': { en: 'Current rules since 18 Sep 2026: {n} picks published, {s} settled, {w} won.', es: 'Reglas actuales desde el 18 sep 2026: {n} pronósticos publicados, {s} liquidados, {w} ganados.', pt: 'Regras atuais desde 18 set 2026: {n} palpites publicados, {s} liquidados, {w} ganhos.', de: 'Aktuelle Regeln seit 18. Sep 2026: {n} Tipps veröffentlicht, {s} abgerechnet, {w} gewonnen.' },
   'home.res.note': { en: 'Every published tip is archived and graded against final scores — wins and losses alike, nothing is deleted.', es: 'Cada pronóstico publicado se archiva y se liquida con el resultado final: aciertos y fallos por igual, nada se borra.', pt: 'Cada palpite publicado é arquivado e liquidado com o placar final — acertos e erros, nada é apagado.', de: 'Jeder veröffentlichte Tipp wird archiviert und am Endstand abgerechnet — Siege wie Niederlagen, nichts wird gelöscht.' },
   'home.bt.pre': { en: 'Popular', es: 'Tipos de apuesta', pt: 'Tipos de aposta', de: 'Beliebte' },
   'home.bt.bold': { en: 'bet types', es: 'populares', pt: 'populares', de: 'Wettarten' },
