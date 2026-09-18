@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-17T19:51:26+00:00",
+ "updated_at": "2026-09-18T10:03:44+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -3431,6 +3431,16 @@
     },
     {
      "pos": 14,
+     "team": "Villarreal",
+     "p": 6,
+     "w": 1,
+     "d": 2,
+     "l": 3,
+     "gd": -1,
+     "pts": 5
+    },
+    {
+     "pos": 15,
      "team": "Levante",
      "p": 5,
      "w": 1,
@@ -3440,7 +3450,7 @@
      "pts": 5
     },
     {
-     "pos": 15,
+     "pos": 16,
      "team": "Getafe",
      "p": 6,
      "w": 1,
@@ -3450,23 +3460,13 @@
      "pts": 5
     },
     {
-     "pos": 16,
+     "pos": 17,
      "team": "Celta",
      "p": 6,
      "w": 0,
      "d": 4,
      "l": 2,
      "gd": -3,
-     "pts": 4
-    },
-    {
-     "pos": 17,
-     "team": "Málaga",
-     "p": 6,
-     "w": 0,
-     "d": 4,
-     "l": 2,
-     "gd": -6,
      "pts": 4
     },
     {
@@ -3481,12 +3481,12 @@
     },
     {
      "pos": 19,
-     "team": "Villarreal",
+     "team": "Málaga",
      "p": 6,
      "w": 0,
      "d": 3,
      "l": 3,
-     "gd": -3,
+     "gd": -8,
      "pts": 3
     },
     {
@@ -3514,12 +3514,12 @@
     "Rayo Vallecano": "/crests/rayo-vallecano.png",
     "Real Sociedad": "/crests/real-sociedad.png",
     "Osasuna": "/crests/osasuna.png",
+    "Villarreal": "/crests/villarreal.png",
     "Levante": "/crests/levante.png",
     "Getafe": "/crests/getafe.png",
     "Celta": "/crests/celta.png",
-    "Málaga": "/crests/malaga.png",
     "Valencia": "/crests/valencia.png",
-    "Villarreal": "/crests/villarreal.png",
+    "Málaga": "/crests/malaga.png",
     "Elche": "/crests/elche.png"
    },
    "results": [
@@ -6588,6 +6588,13 @@
      "a": "Getafe",
      "hs": 1,
      "as": 0
+    },
+    {
+     "d": "2026-09-17",
+     "h": "Málaga",
+     "a": "Villarreal",
+     "hs": 1,
+     "as": 3
     }
    ],
    "scorers": [
@@ -6688,6 +6695,14 @@
      "played": 6
     },
     {
+     "name": "Pape Gueye",
+     "team": "Villarreal",
+     "goals": 3,
+     "assists": null,
+     "pens": 1,
+     "played": 6
+    },
+    {
      "name": "Jude Bellingham",
      "team": "Real Madrid",
      "goals": 3,
@@ -6702,14 +6717,6 @@
      "assists": null,
      "pens": null,
      "played": 6
-    },
-    {
-     "name": "Brugui",
-     "team": "Levante",
-     "goals": 3,
-     "assists": null,
-     "pens": null,
-     "played": 5
     }
    ]
   },
