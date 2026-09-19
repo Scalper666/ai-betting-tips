@@ -33,7 +33,12 @@ export const ALT_LANGS = ['es', 'pt', 'de', 'fr', 'sw', 'ha', 'yo', 'ig', 'am'];
 // Aug 26, 2026 and every scheduled deploy failed for a week. The compact
 // editions (am/yo/ig/ha/sw) link matches to the EN pages via lhref; retired
 // URLs 301 there in functions/_middleware.js.
-export const MATCH_LANGS = ['es', 'pt', 'de', 'fr'];
+// 2026-09-19: EN only. The es/pt/de/fr copies were 5.2K of the 10.3K URLs
+// Google had discovered but refused to crawl (72% of that queue together with
+// localized h2h), on a site whose visibility fell 10x through the August 2026
+// spam update while its page count doubled. Retired URLs 301 to EN in
+// functions/_middleware.js; the localized hubs (today/tomorrow/weekend) stay.
+export const MATCH_LANGS = [];
 
 // H2H pages are the biggest page family we own (~1700 pairs), and Cloudflare
 // Pages refuses a deployment over 20,000 files — 9 languages of them blew the
@@ -41,7 +46,7 @@ export const MATCH_LANGS = ['es', 'pt', 'de', 'fr'];
 // whose markets actually search "team vs team h2h"; the compact African
 // editions link to the EN pages via lhref, as they already do for matches.
 // Budget check before widening: `find dist -type f | wc -l` must stay < 20000.
-export const H2H_LANGS = ['es', 'pt', 'de', 'fr'];
+export const H2H_LANGS = [];   // 2026-09-19: EN only, same reasoning as MATCH_LANGS
 
 const MATCH_PATH = /^\/predictions\/(?!daily(\/|$)|today$|tomorrow$|weekend$)[^/]+$/;
 // "X odds" slips (/tips/2-odds …) exist in EN only: the query is English-market

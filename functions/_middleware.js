@@ -46,13 +46,17 @@ export async function onRequest(context) {
     return Response.redirect(dest.toString(), 301);
   }
 
-  // Retired family: per-match pages in the compact editions (am/yo/ig/ha/sw)
-  // consolidated into EN on 2026-09-02 to stay under the 20K-file Pages limit
-  // (see MATCH_LANGS in src/i18n). Hub pages (/xx/predictions, today, tomorrow,
-  // weekend) still exist — only match slugs fold into EN.
-  const retired = path.match(/^\/(am|yo|ig|ha|sw)\/predictions\/(?!daily(\/|$)|today$|tomorrow$|weekend$)([^/]+)$/);
+  // Retired families, folded into EN with a 301 (one hop, slash form):
+  //  - per-match pages in every non-EN edition (compact editions on
+  //    2026-09-02, es/pt/de/fr on 2026-09-19 — see MATCH_LANGS in src/i18n).
+  //    Hub pages (/xx/predictions, today, tomorrow, weekend, daily) still exist.
+  //  - every localized h2h page (hub, league hubs, pairs) — 2026-09-19.
+  const LANGS = 'es|pt|de|fr|am|yo|ig|ha|sw';
+  const retired = path.match(new RegExp(`^/(${LANGS})/predictions/(?!daily(/|$)|today$|tomorrow$|weekend$)([^/]+)$`))
+    || path.match(new RegExp(`^/(${LANGS})/h2h(/.*)?$`));
   if (retired) {
-    const dest = new URL(`/predictions/${retired[3]}/`, url.origin);
+    const rest = retired[0].startsWith(`/${retired[1]}/h2h`) ? `/h2h${retired[2] ?? ''}` : `/predictions/${retired[3]}`;
+    const dest = new URL(slashed(rest), url.origin);
     dest.search = url.search;
     return Response.redirect(dest.toString(), 301);
   }

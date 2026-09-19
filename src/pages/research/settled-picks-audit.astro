@@ -1,0 +1,266 @@
+---
+import Base from '../../layouts/Base.astro';
+import historyData from '../../data/history.json';
+import { signed } from '../../lib/utils.js';
+
+// The audit of everything we published before the v3 rules (v1 + v2, 24 Jul –
+// 17 Sep 2026) — every number below is recomputed from the public settlement
+// archive on each build; the totals only move while the last pre-v3 picks settle.
+const real = Object.values(historyData.tips ?? {}).filter(
+  (h) => h.score !== 'simulated' && !String(h.event_id ?? '').startsWith('mock')
+);
+const v2 = real.filter((h) => h.model !== 'v3');
+const graded = v2.filter((h) => h.status === 'won' || h.status === 'lost');
+const pnl = (rs) => Math.round(rs.reduce((s, h) => s + (h.status === 'won' ? Number(h.odds) - 1 : -1), 0) * 10) / 10;
+const stat = (rs) => {
+  const n = rs.length;
+  const won = rs.filter((h) => h.status === 'won').length;
+  const avg = n ? rs.reduce((s, h) => s + Number(h.odds), 0) / n : 0;
+  const p = pnl(rs);
+  return { n, won, hit: n ? Math.round((won / n) * 1000) / 10 : null, avg: Math.round(avg * 100) / 100,
+    breakeven: avg ? Math.round((100 / avg) * 10) / 10 : null, pnl: p, roi: n ? Math.round((p / n) * 1000) / 10 : null };
+};
+const all = stat(graded);
+// one standard deviation of the total P/L under "no edge" — how much of the
+// result is noise
+const sigma = Math.round(Math.sqrt(graded.reduce((s, h) => s + Math.pow(h.status === 'won' ? Number(h.odds) - 1 : -1, 2), 0)));
+const zScore = sigma ? Math.round((all.pnl / sigma) * 10) / 10 : null;
+const clvRows = graded.filter((h) => h.clv_pct != null);
+const clv = clvRows.length ? Math.round((clvRows.reduce((s, h) => s + h.clv_pct, 0) / clvRows.length) * 100) / 100 : null;
+
+const group = (key) => {
+  const g = new Map();
+  for (const h of graded) { const k = key(h); if (k == null) continue; (g.get(k) ?? g.set(k, []).get(k)).push(h); }
+  return [...g.entries()].map(([k, rs]) => ({ k, ...stat(rs) }));
+};
+// calibration: what the model said vs what happened
+const calib = group((h) => { const c = Number(h.confidence ?? 0); return c < 30 ? '<30%' : c < 40 ? '30–39%' : c < 50 ? '40–49%' : c < 60 ? '50–59%' : c < 70 ? '60–69%' : '70%+'; })
+  .sort((a, b) => parseInt(a.k) - parseInt(b.k) || (a.k < b.k ? -1 : 1));
+const order = ['<30%', '30–39%', '40–49%', '50–59%', '60–69%', '70%+'];
+calib.sort((a, b) => order.indexOf(a.k) - order.indexOf(b.k));
+const midpoint = { '<30%': 25, '30–39%': 35, '40–49%': 45, '50–59%': 55, '60–69%': 65, '70%+': 75 };
+const markets = group((h) => (h.type === 'totals' ? `${h.side} goals` : h.outcome === 'Draw' ? 'Draw' : 'Match result')).sort((a, b) => a.pnl - b.pnl);
+const bands = group((h) => { const o = Number(h.odds); return o < 1.5 ? '1.20–1.49' : o < 2 ? '1.50–1.99' : o < 2.5 ? '2.00–2.49' : o < 3 ? '2.50–2.99' : '3.00+'; })
+  .sort((a, b) => parseFloat(a.k) - parseFloat(b.k));
+const months = group((h) => String(h.kickoff ?? '').slice(0, 7)).sort((a, b) => a.k.localeCompare(b.k));
+const leagues = group((h) => h.league).filter((x) => x.n >= 20).sort((a, b) => a.roi - b.roi);
+const worst = leagues.slice(0, 5);
+const best = leagues.slice(-5).reverse();
+// counterfactual gates, in-sample (so optimistic — say so)
+const cf = [
+  { k: 'As published', f: () => true },
+  { k: 'No Over-goals picks', f: (h) => !(h.type === 'totals' && h.side === 'Over') },
+  { k: 'Only picks rated ≥55%', f: (h) => Number(h.confidence) >= 55 },
+  { k: 'Only picks rated ≥60%', f: (h) => Number(h.confidence) >= 60 },
+  { k: 'No Overs + rated ≥55% (the v3 rules)', f: (h) => Number(h.confidence) >= 55 && !(h.type === 'totals' && h.side === 'Over') },
+].map((c) => ({ k: c.k, ...stat(graded.filter(c.f)) }));
+const bucket55 = calib.find((c) => c.k === '50–59%');
+const overs = markets.find((m) => m.k === 'Over goals');
+const sept = months.find((m) => m.k === '2026-09');
+const updated = String(historyData.updated_at ?? '').slice(0, 10);
+const fmtMonth = (k) => new Date(`${k}-01T00:00:00Z`).toLocaleDateString('en-GB', { month: 'long', year: 'numeric', timeZone: 'UTC' });
+
+const title = `We Published ${all.n} Football Picks and Lost ${Math.abs(all.roi)}% — The Full Audit`;
+const description = `An honest post-mortem of every pick we published before the v3 rules: ${all.n} settled picks, ${all.hit}% hit rate at ${all.avg} average odds, ROI ${signed(all.roi)}%, closing-line value ${clv != null ? signed(clv) : '—'}%. Where the money went, what the calibration shows, and what we changed.`;
+const schema = {
+  '@context': 'https://schema.org', '@type': 'Article', headline: title, dateModified: updated, datePublished: '2026-09-19',
+  author: { '@type': 'Organization', name: 'AI Betting Tips' }, description,
+};
+const pct = (x) => (x == null ? '—' : `${x}%`);
+const cls = (x) => (x > 0 ? 'pos' : x < 0 ? 'neg' : 'zero');
+---
+<Base title={title} description={description} schema={schema} active="tipsters" updated={updated}>
+  <div class="container">
+    <div class="page-head">
+      <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/research">Research</a><span>/</span>Settled picks audit</div>
+      <h1>We published {all.n} picks and <em>lost {Math.abs(all.roi)}%</em></h1>
+      <p class="lead">Most tipping sites show you a win rate. We archived every pick before kick-off, graded every one on the final score, and then did what nobody in this business does with a losing record: took it apart in public. This is the audit of everything we published before the rule change — 24 July to 17 September 2026, the v1 and v2 eras together. Every table is recomputed from the archive on each rebuild — last update {updated}.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="layout">
+      <main class="content">
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">The record, <b>as published</b></h2></div>
+          <div class="res-sum">
+            <div class="res-chip"><b>{all.n}</b><span>Graded picks</span></div>
+            <div class="res-chip"><b>{pct(all.hit)}</b><span>Hit rate</span></div>
+            <div class="res-chip"><b>{all.avg}</b><span>Avg odds</span></div>
+            <div class="res-chip"><b>{pct(all.breakeven)}</b><span>Break-even hit rate</span></div>
+            <div class={`res-chip ${all.pnl < 0 ? 'lose' : 'win'}`}><b>{signed(all.pnl)}u</b><span>Profit, flat 1u stakes</span></div>
+            <div class={`res-chip ${all.roi < 0 ? 'lose' : 'win'}`}><b>{signed(all.roi)}%</b><span>ROI</span></div>
+            {clv != null && <div class={`res-chip ${clv < 0 ? 'lose' : 'win'}`}><b>{signed(clv)}%</b><span>Avg CLV ({clvRows.length})</span></div>}
+          </div>
+          <p class="res-note">One standard deviation of the total under a zero-edge assumption is about ±{sigma}u, so this result sits {zScore} σ from zero: too far for "bad luck", exactly where "no edge, paying the margin" lives. The closing-line value says the same thing in a faster language — the market moved against our picks on average, and the market was right.</p>
+        </section>
+
+        <section class="seo">
+          <h2>The headline number is boring. The breakdown is not.</h2>
+          <p>A bettor who picks at random and takes the best available price loses roughly the bookmaker's margin — four to six percent. Our model lost {Math.abs(all.roi)}%. In other words, {all.n} picks later, a Poisson goal model blended with market prices had produced market-average results, dressed in the language of value. Every claim of edge on this site rested on that record, so the honest question is not "was it unlucky" but "where exactly did it fail". The archive can answer that, and the answer turned out to be specific.</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">1. Calibration — what the model <b>said vs what happened</b></h2></div>
+          <div class="odds-table"><div class="scr-scroll">
+            <table class="otbl">
+              <thead><tr><th style="text-align:left">Model's stated probability</th><th>Picks</th><th>Actual hit rate</th><th>Gap</th><th>P/L</th></tr></thead>
+              <tbody>
+                {calib.map((c) => (
+                  <tr>
+                    <td class="o-match"><span class="cb">{c.k}</span></td>
+                    <td class="o-cell"><span class="cb">{c.n}</span></td>
+                    <td class="o-cell"><span class="cb">{pct(c.hit)}</span></td>
+                    <td class="o-cell"><span class={`cb ${cls(c.hit - midpoint[c.k])}`}>{signed(Math.round(c.hit - midpoint[c.k]))} pts</span></td>
+                    <td class="o-cell"><span class={`cb ${cls(c.pnl)}`}>{signed(c.pnl)}u</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div></div>
+          {bucket55 && (
+            <p class="res-note">The model was well calibrated above 60% and badly overconfident in the middle: picks it rated 50–59% won {pct(bucket55.hit)} of the time — about ten points short — and that bucket, the largest one with {bucket55.n} picks, carried {signed(bucket55.pnl)}u of the loss on its own. A model that is right about its favourites and wrong about its coin-flips is a model that should stop publishing coin-flips.</p>
+          )}
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">2. By market — <b>the Over problem</b></h2></div>
+          <div class="odds-table"><div class="scr-scroll">
+            <table class="otbl">
+              <thead><tr><th style="text-align:left">Market</th><th>Picks</th><th>Hit rate</th><th>Avg odds</th><th>P/L</th><th>ROI</th></tr></thead>
+              <tbody>
+                {markets.map((m) => (
+                  <tr>
+                    <td class="o-match"><span class="cb">{m.k}</span></td>
+                    <td class="o-cell"><span class="cb">{m.n}</span></td>
+                    <td class="o-cell"><span class="cb">{pct(m.hit)}</span></td>
+                    <td class="o-cell"><span class="cb">{m.avg}</span></td>
+                    <td class="o-cell"><span class={`cb ${cls(m.pnl)}`}>{signed(m.pnl)}u</span></td>
+                    <td class="o-cell"><span class={`cb ${cls(m.roi)}`}>{signed(m.roi)}%</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div></div>
+          {overs && (
+            <p class="res-note">Over-goals picks lost {signed(overs.pnl)}u at {signed(overs.roi)}% ROI — the majority of the whole deficit from a minority of the picks. The mechanism is a known one: a Poisson model with time-decayed attack rates runs hot on goal expectation, and the totals market, which is sharp, does not. Unders and match-result picks were close to break-even, which is what "no edge" looks like once you remove the one market that was actively wrong.</p>
+          )}
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">3. By price band</h2></div>
+          <div class="odds-table"><div class="scr-scroll">
+            <table class="otbl">
+              <thead><tr><th style="text-align:left">Odds taken</th><th>Picks</th><th>Hit rate</th><th>P/L</th><th>ROI</th></tr></thead>
+              <tbody>
+                {bands.map((b) => (
+                  <tr>
+                    <td class="o-match"><span class="cb">{b.k}</span></td>
+                    <td class="o-cell"><span class="cb">{b.n}</span></td>
+                    <td class="o-cell"><span class="cb">{pct(b.hit)}</span></td>
+                    <td class="o-cell"><span class={`cb ${cls(b.pnl)}`}>{signed(b.pnl)}u</span></td>
+                    <td class="o-cell"><span class={`cb ${cls(b.roi)}`}>{signed(b.roi)}%</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div></div>
+          <p class="res-note">No price band rescued the record. The favourite–longshot bias that sank the first weeks (v1) on double-digit prices was capped at 4.00 from 29 July; the loss moved into the 1.50–2.50 range where most picks live, which points at calibration, not at price selection.</p>
+        </section>
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">4. By month — <b>the new-season trap</b></h2></div>
+          <div class="odds-table"><div class="scr-scroll">
+            <table class="otbl">
+              <thead><tr><th style="text-align:left">Month</th><th>Picks</th><th>Hit rate</th><th>P/L</th><th>ROI</th></tr></thead>
+              <tbody>
+                {months.map((m) => (
+                  <tr>
+                    <td class="o-match"><span class="cb">{fmtMonth(m.k)}</span></td>
+                    <td class="o-cell"><span class="cb">{m.n}</span></td>
+                    <td class="o-cell"><span class="cb">{pct(m.hit)}</span></td>
+                    <td class="o-cell"><span class={`cb ${cls(m.pnl)}`}>{signed(m.pnl)}u</span></td>
+                    <td class="o-cell"><span class={`cb ${cls(m.roi)}`}>{signed(m.roi)}%</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div></div>
+          {sept && (
+            <p class="res-note">September alone cost {signed(sept.pnl)}u across {sept.n} picks. Team ratings are fitted on two seasons of results with a 240-day half-life, which means that in the opening weeks of a season they still describe last year's squads: summer transfers, new managers and promoted sides are invisible to them. The model kept publishing at full volume through exactly the period when it knew least.</p>
+          )}
+        </section>
+
+        {leagues.length >= 4 && (
+          <section>
+            <div class="sec-head"><h2 class="sec-title">5. By league <b>(20+ picks)</b></h2></div>
+            <div class="odds-table"><div class="scr-scroll">
+              <table class="otbl">
+                <thead><tr><th style="text-align:left">League</th><th>Picks</th><th>Hit rate</th><th>P/L</th><th>ROI</th></tr></thead>
+                <tbody>
+                  {[...best, ...worst].map((l) => (
+                    <tr>
+                      <td class="o-match"><span class="cb">{l.k}</span></td>
+                      <td class="o-cell"><span class="cb">{l.n}</span></td>
+                      <td class="o-cell"><span class="cb">{pct(l.hit)}</span></td>
+                      <td class="o-cell"><span class={`cb ${cls(l.pnl)}`}>{signed(l.pnl)}u</span></td>
+                      <td class="o-cell"><span class={`cb ${cls(l.roi)}`}>{signed(l.roi)}%</span></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div></div>
+            <p class="res-note">Five best and five worst leagues by ROI. With twenty to fifty picks per league these are mostly noise — a league at +30% on 40 picks is one good fortnight — and we resisted the temptation to blacklist the bad ones. Rules that fix a specific league's past are how a model gets fitted to the scoreboard.</p>
+          </section>
+        )}
+
+        <section>
+          <div class="sec-head"><h2 class="sec-title">6. What the record would have been — <b>with a warning</b></h2></div>
+          <div class="odds-table"><div class="scr-scroll">
+            <table class="otbl">
+              <thead><tr><th style="text-align:left">Rule applied after the fact</th><th>Picks</th><th>Hit rate</th><th>P/L</th><th>ROI</th></tr></thead>
+              <tbody>
+                {cf.map((c) => (
+                  <tr>
+                    <td class="o-match"><span class="cb">{c.k}</span></td>
+                    <td class="o-cell"><span class="cb">{c.n}</span></td>
+                    <td class="o-cell"><span class="cb">{pct(c.hit)}</span></td>
+                    <td class="o-cell"><span class={`cb ${cls(c.pnl)}`}>{signed(c.pnl)}u</span></td>
+                    <td class="o-cell"><span class={`cb ${cls(c.roi)}`}>{signed(c.roi)}%</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div></div>
+          <p class="res-note">These are in-sample numbers: rules chosen by looking at the same data they are then scored on. They will flatter any filter, and we expect the honest out-of-sample result of the new rules to be "around zero, on a quarter of the volume" rather than the double-digit ROI the table suggests. Publishing the table anyway is the point — it is how you will be able to check us against it in three months.</p>
+        </section>
+
+        <section class="seo">
+          <h2>What we changed</h2>
+          <p>From 18 September 2026 the same model publishes under three additional gates, reported as a separate track (v3) on the <a href="/tipsters">performance page</a>: a pick must carry a blended probability of at least 55% (the region where the model was actually calibrated); Over-goals selections are never official and remain on match pages as a labelled lean; and no official pick is published until both teams have four matches in the last 75 days, so the opening weeks of a season carry information rather than bets. The old record stays exactly as it was. A record that only keeps its winning periods is a marketing page, not a record.</p>
+          <h2>Why publish a loss</h2>
+          <p>Because the alternative is the industry standard, and the industry standard is a lie. Every "sure odds" page online shows a win rate with no denominator, no prices and no archive. Our archive is public down to the individual pick, price and timestamp — the <a href="/predictions/daily">daily results pages</a> hold every one — and the <a href="/research/clv-experiment">closing-line experiment</a> runs alongside it as the faster test. If v3 does not beat the market either, that will be on this page too.</p>
+          <h2>Method notes</h2>
+          <p>Picks are archived at publication with the best available price across the bookmakers we track, then settled on the official final score; voids (postponements, pushes on whole-number totals) are excluded from hit rates and P/L. Flat 1-unit stakes throughout. "Stated probability" is the model's blended probability at publication. CLV compares the price taken with the last price snapshotted before kick-off (twice-daily snapshots, so a proxy for the true close). The full dataset is downloadable as CSV from our <a href="https://www.kaggle.com/datasets" rel="nofollow">Kaggle listing</a> and reproducible from the archive JSON behind these pages.</p>
+        </section>
+      </main>
+
+      <aside class="sidebar">
+        <div class="box">
+          <div class="box-h"><span class="hi">📊</span> Check the numbers</div>
+          <a class="tm" href="/tipsters"><span class="dot"></span>Performance page (v3 vs v2)</a>
+          <a class="tm" href="/predictions/daily"><span class="dot"></span>Every pick, by date</a>
+          <a class="tm" href="/research/clv-experiment"><span class="dot"></span>The CLV experiment</a>
+          <a class="tm" href="/model"><span class="dot"></span>How the model works</a>
+        </div>
+        <div class="box">
+          <div class="box-h"><span class="hi">🔬</span> More research</div>
+          <a class="tm" href="/research/bookmaker-margins"><span class="dot"></span>What betting really costs</a>
+          <a class="tm" href="/research/league-predictability"><span class="dot"></span>The most unpredictable leagues</a>
+          <a class="tm" href="/research/line-movement"><span class="dot"></span>How prices move before kick-off</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

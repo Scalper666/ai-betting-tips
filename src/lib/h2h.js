@@ -84,12 +84,11 @@ export function buildH2hPairs(minMeetings = 2) {
 //    the two everyone follows (Premier League, Champions League).
 //    Everything else links to the English page through lhref.
 const UNIVERSAL = ['Premier League', 'Champions League'];
-export const H2H_LEAGUES = {
-  es: [...UNIVERSAL, 'La Liga', 'Serie A'],
-  pt: [...UNIVERSAL, 'Brasileirão', 'Primeira Liga'],
-  de: [...UNIVERSAL, 'Bundesliga', 'Eredivisie'],
-  fr: [...UNIVERSAL, 'Ligue 1', 'Serie A'],
-};
+// 2026-09-19: no localized h2h pages any more (see MATCH_LANGS in src/i18n).
+// The per-league map stays documented for when authority allows widening again:
+//   es: [...UNIVERSAL, 'La Liga', 'Serie A'], pt: [...UNIVERSAL, 'Brasileirão',
+//   'Primeira Liga'], de: [...UNIVERSAL, 'Bundesliga', 'Eredivisie'], fr: [...UNIVERSAL, 'Ligue 1', 'Serie A']
+export const H2H_LEAGUES = {};
 
 /** Languages a given league's h2h pages exist in (for hreflang). */
 export const h2hLangsFor = (league) =>
