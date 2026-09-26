@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T10:06:03.753064+00:00",
+  "updated_at": "2026-09-26T19:16:38.703921+00:00",
   "tips": {
     "mock_0|Home total over 1.5": {
       "key": "mock_0|Home total over 1.5",
@@ -34633,10 +34633,12 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-09-20T16:08:37.966042+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "won",
+      "profit": 0.83,
+      "settled_at": "2026-09-26T19:16:38.663736+00:00",
+      "score": "1-0",
+      "close_odds": 1.94,
+      "clv_pct": -5.67
     },
     "edb80d633a1906e5865ab70cc9b540ea|Under 4.25 goals": {
       "key": "edb80d633a1906e5865ab70cc9b540ea|Under 4.25 goals",
@@ -35383,6 +35385,31 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-09-26T10:06:00.553850+00:00",
+      "status": "pending",
+      "profit": null,
+      "settled_at": null,
+      "score": null
+    },
+    "90aa497bc4133c692471f90b436075cd|Houston Dynamo to win": {
+      "key": "90aa497bc4133c692471f90b436075cd|Houston Dynamo to win",
+      "event_id": "90aa497bc4133c692471f90b436075cd",
+      "sport_key": "soccer_usa_mls",
+      "league": "MLS",
+      "home": "Houston Dynamo",
+      "away": "Sporting Kansas City",
+      "kickoff": "2026-09-27T00:30:00Z",
+      "market": "Houston Dynamo to win",
+      "type": "h2h",
+      "side": null,
+      "point": null,
+      "outcome": "Houston Dynamo",
+      "odds": 1.65,
+      "confidence": 63,
+      "edge_pct": 3.31,
+      "bookmaker": "Matchbook",
+      "basis": "model+market",
+      "model": "v3",
+      "published_at": "2026-09-26T19:16:35.939647+00:00",
       "status": "pending",
       "profit": null,
       "settled_at": null,
