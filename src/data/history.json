@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-27T19:48:46.599137+00:00",
+  "updated_at": "2026-09-28T11:54:32.290428+00:00",
   "tips": {
     "mock_0|Home total over 1.5": {
       "key": "mock_0|Home total over 1.5",
@@ -34208,10 +34208,12 @@
       "basis": "model+market",
       "model": "v2",
       "published_at": "2026-09-17T10:17:51.362908+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-09-28T11:54:32.253463+00:00",
+      "score": "2-1",
+      "close_odds": 2.2,
+      "clv_pct": -11.82
     },
     "8271594ff99b4850f5d30712ce212291|Independiente to win": {
       "key": "8271594ff99b4850f5d30712ce212291|Independiente to win",
@@ -35509,6 +35511,31 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-09-27T19:48:45.448573+00:00",
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-09-28T11:54:32.253463+00:00",
+      "score": "2-3"
+    },
+    "f5f8b64c3c4062dfaf01b6d09e4e15c1|Under 3.5 goals": {
+      "key": "f5f8b64c3c4062dfaf01b6d09e4e15c1|Under 3.5 goals",
+      "event_id": "f5f8b64c3c4062dfaf01b6d09e4e15c1",
+      "sport_key": "soccer_netherlands_eredivisie",
+      "league": "Eredivisie",
+      "home": "Fortuna Sittard",
+      "away": "FC Twente Enschede",
+      "kickoff": "2026-10-10T18:00:00Z",
+      "market": "Under 3.5 goals",
+      "type": "totals",
+      "side": "Under",
+      "point": 3.5,
+      "outcome": null,
+      "odds": 1.87,
+      "confidence": 55,
+      "edge_pct": 3.54,
+      "bookmaker": "Tipico",
+      "basis": "model+market",
+      "model": "v3",
+      "published_at": "2026-09-28T11:54:28.789674+00:00",
       "status": "pending",
       "profit": null,
       "settled_at": null,
