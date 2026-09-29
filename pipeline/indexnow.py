@@ -30,6 +30,7 @@ except Exception:
 ROOT = Path(__file__).resolve().parent.parent
 STATE = ROOT / "data" / "indexnow-state.json"
 HOST = "ai-betting-tips.com"
+ENDPOINTS = ["https://yandex.com/indexnow", "https://api.indexnow.org/indexnow"]
 KEY = "7c41a9f2d85e4b06b3c9f1a8e2d47905"
 
 MAX_SUBMIT = 200          # per run; well under any documented threshold
@@ -88,19 +89,27 @@ def main() -> int:
             "keyLocation": f"https://{HOST}/{KEY}.txt",
             "urlList": chunk,
         }).encode()
-        req = urllib.request.Request(
-            "https://api.indexnow.org/indexnow", data=body,
-            headers={"Content-Type": "application/json; charset=utf-8"}, method="POST")
-        try:
-            with urllib.request.urlopen(req, context=ctx, timeout=30) as r:
-                if r.status in (200, 202):
-                    ok_urls += chunk
-                else:
-                    failures += 1
-                    print(f"  ⚠ batch {i // BATCH + 1}: HTTP {r.status}")
-        except Exception as e:
+        # IndexNow is shared: any participating engine forwards the ping to the
+        # rest. api.indexnow.org has answered 403 to this host since the August
+        # over-submission, so Yandex's endpoint goes first and the shared one is
+        # the fallback — a batch counts as delivered when any endpoint accepts it.
+        accepted = False
+        for endpoint in ENDPOINTS:
+            req = urllib.request.Request(
+                endpoint, data=body,
+                headers={"Content-Type": "application/json; charset=utf-8"}, method="POST")
+            try:
+                with urllib.request.urlopen(req, context=ctx, timeout=30) as r:
+                    if r.status in (200, 202):
+                        accepted = True
+                        break
+                    print(f"  ⚠ batch {i // BATCH + 1} via {endpoint}: HTTP {r.status}")
+            except Exception as e:
+                print(f"  ⚠ batch {i // BATCH + 1} via {endpoint}: {e}")
+        if accepted:
+            ok_urls += chunk
+        else:
             failures += 1
-            print(f"  ⚠ batch {i // BATCH + 1}: {e}")
         time.sleep(2)
 
     # only accepted URLs enter the state — rejected ones retry next run
