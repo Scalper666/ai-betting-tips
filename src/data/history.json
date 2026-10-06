@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-05T22:47:29.349026+00:00",
+  "updated_at": "2026-10-06T12:10:34.955440+00:00",
   "tips": {
     "mock_0|Home total over 1.5": {
       "key": "mock_0|Home total over 1.5",
@@ -35598,10 +35598,12 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-09-30T11:17:52.996899+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-10-06T12:10:34.914337+00:00",
+      "score": "3-0",
+      "close_odds": 1.71,
+      "clv_pct": 4.68
     },
     "eae4518235d72f3ed08105b81f1f1863|Under 3.25 goals": {
       "key": "eae4518235d72f3ed08105b81f1f1863|Under 3.25 goals",
@@ -35925,6 +35927,31 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-10-04T19:43:27.727781+00:00",
+      "status": "pending",
+      "profit": null,
+      "settled_at": null,
+      "score": null
+    },
+    "2c173b3bd3a1491f17fcad1012019c4f|Under 3.0 goals": {
+      "key": "2c173b3bd3a1491f17fcad1012019c4f|Under 3.0 goals",
+      "event_id": "2c173b3bd3a1491f17fcad1012019c4f",
+      "sport_key": "soccer_france_ligue_one",
+      "league": "Ligue 1",
+      "home": "Lille",
+      "away": "Le Havre",
+      "kickoff": "2026-10-10T15:15:00Z",
+      "market": "Under 3.0 goals",
+      "type": "totals",
+      "side": "Under",
+      "point": 3.0,
+      "outcome": null,
+      "odds": 1.83,
+      "confidence": 56,
+      "edge_pct": 23.09,
+      "bookmaker": "Pinnacle",
+      "basis": "model+market",
+      "model": "v3",
+      "published_at": "2026-10-06T12:10:32.253767+00:00",
       "status": "pending",
       "profit": null,
       "settled_at": null,
