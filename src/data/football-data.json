@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-08T21:28:54+00:00",
+ "updated_at": "2026-10-09T12:07:16+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -15737,35 +15737,45 @@
     {
      "pos": 1,
      "team": "Flamengo",
-     "p": 28,
+     "p": 29,
      "w": 18,
-     "d": 6,
+     "d": 7,
      "l": 4,
      "gd": 32,
-     "pts": 60
+     "pts": 61
     },
     {
      "pos": 2,
      "team": "Palmeiras",
-     "p": 28,
-     "w": 16,
+     "p": 29,
+     "w": 17,
      "d": 9,
      "l": 3,
-     "gd": 26,
-     "pts": 57
+     "gd": 27,
+     "pts": 60
     },
     {
      "pos": 3,
-     "team": "Paranaense",
-     "p": 28,
+     "team": "Fluminense",
+     "p": 29,
      "w": 14,
-     "d": 7,
-     "l": 7,
-     "gd": 11,
-     "pts": 49
+     "d": 9,
+     "l": 6,
+     "gd": 12,
+     "pts": 51
     },
     {
      "pos": 4,
+     "team": "Paranaense",
+     "p": 29,
+     "w": 14,
+     "d": 8,
+     "l": 7,
+     "gd": 11,
+     "pts": 50
+    },
+    {
+     "pos": 5,
      "team": "Cruzeiro",
      "p": 29,
      "w": 14,
@@ -15775,53 +15785,43 @@
      "pts": 48
     },
     {
-     "pos": 5,
-     "team": "Fluminense",
-     "p": 28,
-     "w": 13,
-     "d": 9,
-     "l": 6,
-     "gd": 8,
-     "pts": 48
-    },
-    {
      "pos": 6,
      "team": "Bahia",
-     "p": 28,
+     "p": 29,
      "w": 12,
      "d": 10,
-     "l": 6,
-     "gd": 8,
+     "l": 7,
+     "gd": 7,
      "pts": 46
     },
     {
      "pos": 7,
      "team": "Mineiro",
-     "p": 28,
+     "p": 29,
      "w": 12,
-     "d": 7,
+     "d": 8,
      "l": 9,
      "gd": 5,
-     "pts": 43
+     "pts": 44
     },
     {
      "pos": 8,
      "team": "Santos",
-     "p": 28,
+     "p": 29,
      "w": 11,
-     "d": 8,
+     "d": 9,
      "l": 9,
      "gd": 2,
-     "pts": 41
+     "pts": 42
     },
     {
      "pos": 9,
      "team": "Coritiba",
-     "p": 28,
+     "p": 29,
      "w": 10,
      "d": 8,
-     "l": 10,
-     "gd": -6,
+     "l": 11,
+     "gd": -10,
      "pts": 38
     },
     {
@@ -15938,9 +15938,9 @@
    "crests": {
     "Flamengo": "/crests/flamengo.png",
     "Palmeiras": "/crests/palmeiras.png",
+    "Fluminense": "/crests/fluminense.png",
     "Paranaense": "/crests/paranaense.png",
     "Cruzeiro": "/crests/cruzeiro.png",
-    "Fluminense": "/crests/fluminense.png",
     "Bahia": "/crests/bahia.png",
     "Mineiro": "/crests/mineiro.png",
     "Santos": "/crests/santos.png",
@@ -20603,7 +20603,7 @@
      "d": "2026-10-07",
      "h": "Botafogo",
      "a": "Vasco da Gama",
-     "hs": 2,
+     "hs": 1,
      "as": 2
     },
     {
@@ -20612,24 +20612,52 @@
      "a": "São Paulo",
      "hs": 2,
      "as": 0
+    },
+    {
+     "d": "2026-10-08",
+     "h": "Santos",
+     "a": "Flamengo",
+     "hs": 2,
+     "as": 2
+    },
+    {
+     "d": "2026-10-08",
+     "h": "Paranaense",
+     "a": "Mineiro",
+     "hs": 2,
+     "as": 2
+    },
+    {
+     "d": "2026-10-09",
+     "h": "Fluminense",
+     "a": "Coritiba",
+     "hs": 4,
+     "as": 0
+    },
+    {
+     "d": "2026-10-09",
+     "h": "Palmeiras",
+     "a": "Bahia",
+     "hs": 1,
+     "as": 0
     }
    ],
    "scorers": [
     {
      "name": "Kevin Viveros",
      "team": "Paranaense",
-     "goals": 18,
+     "goals": 19,
      "assists": 3,
      "pens": 4,
-     "played": 26
+     "played": 27
     },
     {
      "name": "Pedro",
      "team": "Flamengo",
      "goals": 16,
-     "assists": 6,
+     "assists": 7,
      "pens": null,
-     "played": 28
+     "played": 29
     },
     {
      "name": "Gabriel Barbosa",
@@ -20637,7 +20665,7 @@
      "goals": 13,
      "assists": 3,
      "pens": 2,
-     "played": 21
+     "played": 22
     },
     {
      "name": "Carlos Vinícius",
@@ -20646,6 +20674,14 @@
      "assists": 1,
      "pens": 1,
      "played": 28
+    },
+    {
+     "name": "José Manuel López",
+     "team": "Palmeiras",
+     "goals": 9,
+     "assists": 4,
+     "pens": null,
+     "played": 26
     },
     {
      "name": "Luciano",
@@ -20685,7 +20721,7 @@
      "goals": 9,
      "assists": 1,
      "pens": 4,
-     "played": 25
+     "played": 26
     },
     {
      "name": "Samuel Lino",
@@ -20693,15 +20729,7 @@
      "goals": 9,
      "assists": 7,
      "pens": null,
-     "played": 27
-    },
-    {
-     "name": "José Manuel López",
-     "team": "Palmeiras",
-     "goals": 8,
-     "assists": 4,
-     "pens": null,
-     "played": 25
+     "played": 28
     },
     {
      "name": "Jonathan Calleri",
@@ -20717,7 +20745,7 @@
      "goals": 8,
      "assists": 2,
      "pens": null,
-     "played": 24
+     "played": 25
     },
     {
      "name": "Pedro Rocha",
@@ -20725,7 +20753,7 @@
      "goals": 8,
      "assists": 1,
      "pens": null,
-     "played": 27
+     "played": 28
     },
     {
      "name": "Kaio Jorge",
