@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09T21:03:18.186511+00:00",
+  "updated_at": "2026-10-10T11:19:00.609086+00:00",
   "tips": {
     "mock_0|Home total over 1.5": {
       "key": "mock_0|Home total over 1.5",
@@ -35714,10 +35714,12 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-10-03T10:32:59.208184+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-10-10T11:19:00.565826+00:00",
+      "score": "2-1",
+      "close_odds": 1.83,
+      "clv_pct": -2.19
     },
     "4c4026e2782f09d6f0ff2bde2a390513|Under 2.5 goals": {
       "key": "4c4026e2782f09d6f0ff2bde2a390513|Under 2.5 goals",
@@ -36399,6 +36401,31 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-10-09T21:03:16.133743+00:00",
+      "status": "pending",
+      "profit": null,
+      "settled_at": null,
+      "score": null
+    },
+    "b348b67b1ba8fee3dd512c4205554604|Under 2.5 goals": {
+      "key": "b348b67b1ba8fee3dd512c4205554604|Under 2.5 goals",
+      "event_id": "b348b67b1ba8fee3dd512c4205554604",
+      "sport_key": "soccer_brazil_campeonato",
+      "league": "Brasileirão",
+      "home": "Corinthians",
+      "away": "Vitoria",
+      "kickoff": "2026-10-19T23:00:00Z",
+      "market": "Under 2.5 goals",
+      "type": "totals",
+      "side": "Under",
+      "point": 2.5,
+      "outcome": null,
+      "odds": 1.79,
+      "confidence": 59,
+      "edge_pct": 5.14,
+      "bookmaker": "1xBet",
+      "basis": "model+market",
+      "model": "v3",
+      "published_at": "2026-10-10T11:18:59.293561+00:00",
       "status": "pending",
       "profit": null,
       "settled_at": null,
