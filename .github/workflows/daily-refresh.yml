@@ -20,6 +20,7 @@ on:
 permissions:
   contents: write
   issues: write   # failure alerts open a GitHub issue (mails the owner)
+  id-token: write # OIDC token for Anthropic identity federation (no static API key)
 
 concurrency:
   group: daily-refresh
@@ -73,9 +74,27 @@ jobs:
       - name: Rebuild value screener
         run: python pipeline/screener.py
 
+      # Anthropic identity federation (set up 2026-10-23): the runner's OIDC
+      # token is exchanged for a short-lived Anthropic token by the SDK itself —
+      # no static API key to expire or rotate. The federation rule in the
+      # Console matches repo Scalper666/ai-betting-tips, ref main. Fetched right
+      # before the step that uses it: the JWT lives minutes, not hours.
+      - name: Fetch GitHub OIDC token for Anthropic
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const token = await core.getIDToken('https://api.anthropic.com');
+            core.setSecret(token);
+            core.exportVariable('ANTHROPIC_IDENTITY_TOKEN', token);
+
       - name: AI copy for new fixtures (cached; only new pages cost)
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # the four IDs below are identifiers, not secrets; the SDK auto-detects
+          # federation when all are set and ANTHROPIC_API_KEY is absent
+          ANTHROPIC_FEDERATION_RULE_ID: fdrl_015SyABTqcfrbVdzEzPtgFsG
+          ANTHROPIC_ORGANIZATION_ID: 489b1b19-a705-4982-ae53-0d9af7436597
+          ANTHROPIC_SERVICE_ACCOUNT_ID: svac_01LwHFN3LNRMzeGM8LpkkRf2
+          ANTHROPIC_WORKSPACE_ID: wrkspc_01L1nJ7SFdVJpe64Tbk2achd
         # --limit caps what one run can spend (~150 pages ≈ $2 on Sonnet): a
         # normal day needs 40-80, a backlog clears over a few runs, and no
         # future bug can burn $20+/day again the way the Aug-26 loop did

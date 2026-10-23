@@ -627,8 +627,11 @@ def main() -> int:
                                        "entries": entries}, ensure_ascii=False, indent=1), encoding="utf-8")
         return 0
 
-    if not os.getenv("ANTHROPIC_API_KEY"):
-        print("⚠ ANTHROPIC_API_KEY not set (pipeline/.env) — skipping content generation")
+    # credentials: a static key locally, identity federation in CI (the SDK
+    # exchanges ANTHROPIC_IDENTITY_TOKEN + the *_ID variables itself)
+    if not (os.getenv("ANTHROPIC_API_KEY") or os.getenv("ANTHROPIC_AUTH_TOKEN")
+            or os.getenv("ANTHROPIC_IDENTITY_TOKEN") or os.getenv("ANTHROPIC_IDENTITY_TOKEN_FILE")):
+        print("⚠ no Anthropic credentials (ANTHROPIC_API_KEY or identity federation) — skipping content generation")
         return 0   # never fail the pipeline over missing copy
 
     client = make_client()
