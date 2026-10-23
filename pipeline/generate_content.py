@@ -636,8 +636,12 @@ def main() -> int:
     done = fail = 0
     tok_in = tok_out = 0
 
+    auth_failed = False
+
     def run(w):
-        nonlocal done, fail, tok_in, tok_out
+        nonlocal done, fail, tok_in, tok_out, auth_failed
+        if auth_failed:
+            return   # key is dead — do not hammer the API with the rest of the batch
         try:
             entry = generate_one(client, w)
             with lock:
@@ -653,9 +657,19 @@ def main() -> int:
             with lock:
                 fail += 1
                 print(f"  ✗ {w['key']}: {type(e).__name__} {str(e)[:90]}")
+                # An expired/revoked key must not take the deploy down with it:
+                # the site builds fine on cached copy, new pages get templated
+                # text until the key is rotated (GitHub secret ANTHROPIC_API_KEY).
+                if type(e).__name__ in ("AuthenticationError", "PermissionDeniedError"):
+                    auth_failed = True
 
     with ThreadPoolExecutor(max_workers=WORKERS) as ex:
         list(as_completed(ex.submit(run, w) for w in todo))
+
+    if auth_failed:
+        print("::warning::ANTHROPIC_API_KEY was rejected (expired or revoked) — AI copy skipped this run; "
+              "rotate the key in the repository secrets. The site still builds on cached copy.")
+        return 0
 
     # $ per MTok (input, output) — unknown model falls back to Opus rates so the
     # estimate errs high, never low
