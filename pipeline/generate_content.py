@@ -659,19 +659,20 @@ def main() -> int:
         except Exception as e:
             with lock:
                 fail += 1
-                print(f"  ✗ {w['key']}: {type(e).__name__} {str(e)[:90]}")
-                # An expired/revoked key must not take the deploy down with it:
-                # the site builds fine on cached copy, new pages get templated
-                # text until the key is rotated (GitHub secret ANTHROPIC_API_KEY).
-                if type(e).__name__ in ("AuthenticationError", "PermissionDeniedError"):
+                print(f"  ✗ {w['key']}: {type(e).__name__} {str(e)[:400]}")
+                # A dead credential must not take the deploy down with it: the
+                # site builds fine on cached copy, new pages get templated text
+                # until the key/federation is fixed. WorkloadIdentityError is the
+                # SDK's federation failure (token exchange rejected).
+                if type(e).__name__ in ("AuthenticationError", "PermissionDeniedError", "WorkloadIdentityError"):
                     auth_failed = True
 
     with ThreadPoolExecutor(max_workers=WORKERS) as ex:
         list(as_completed(ex.submit(run, w) for w in todo))
 
     if auth_failed:
-        print("::warning::ANTHROPIC_API_KEY was rejected (expired or revoked) — AI copy skipped this run; "
-              "rotate the key in the repository secrets. The site still builds on cached copy.")
+        print("::warning::Anthropic credentials were rejected (expired key or federation token exchange failed) — "
+              "AI copy skipped this run; see the ✗ lines above. The site still builds on cached copy.")
         return 0
 
     # $ per MTok (input, output) — unknown model falls back to Opus rates so the
