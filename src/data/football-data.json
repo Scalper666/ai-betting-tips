@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-27T10:53:38+00:00",
+ "updated_at": "2026-10-27T20:53:49+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -7287,6 +7287,16 @@
    "standings": [
     {
      "pos": 1,
+     "team": "Lazio",
+     "p": 9,
+     "w": 8,
+     "d": 1,
+     "l": 0,
+     "gd": 15,
+     "pts": 25
+    },
+    {
+     "pos": 2,
      "team": "Inter",
      "p": 8,
      "w": 7,
@@ -7296,24 +7306,14 @@
      "pts": 22
     },
     {
-     "pos": 2,
-     "team": "Lazio",
-     "p": 8,
-     "w": 7,
-     "d": 1,
-     "l": 0,
-     "gd": 11,
-     "pts": 22
-    },
-    {
      "pos": 3,
      "team": "Roma",
-     "p": 8,
-     "w": 5,
+     "p": 9,
+     "w": 6,
      "d": 3,
      "l": 0,
-     "gd": 13,
-     "pts": 18
+     "gd": 14,
+     "pts": 21
     },
     {
      "pos": 4,
@@ -7328,15 +7328,25 @@
     {
      "pos": 5,
      "team": "Como 1907",
-     "p": 8,
+     "p": 9,
      "w": 5,
      "d": 2,
-     "l": 1,
-     "gd": 7,
+     "l": 2,
+     "gd": 6,
      "pts": 17
     },
     {
      "pos": 6,
+     "team": "Torino",
+     "p": 9,
+     "w": 5,
+     "d": 1,
+     "l": 3,
+     "gd": 3,
+     "pts": 16
+    },
+    {
+     "pos": 7,
      "team": "Frosinone",
      "p": 8,
      "w": 4,
@@ -7346,7 +7356,7 @@
      "pts": 14
     },
     {
-     "pos": 7,
+     "pos": 8,
      "team": "Juventus",
      "p": 8,
      "w": 4,
@@ -7356,23 +7366,13 @@
      "pts": 14
     },
     {
-     "pos": 8,
-     "team": "Torino",
-     "p": 8,
-     "w": 4,
-     "d": 1,
-     "l": 3,
-     "gd": 2,
-     "pts": 13
-    },
-    {
      "pos": 9,
      "team": "Cagliari",
-     "p": 8,
+     "p": 9,
      "w": 4,
      "d": 1,
-     "l": 3,
-     "gd": -3,
+     "l": 4,
+     "gd": -4,
      "pts": 13
     },
     {
@@ -7418,11 +7418,11 @@
     {
      "pos": 14,
      "team": "Sassuolo",
-     "p": 8,
+     "p": 9,
      "w": 2,
      "d": 2,
-     "l": 4,
-     "gd": -4,
+     "l": 5,
+     "gd": -8,
      "pts": 8
     },
     {
@@ -7487,14 +7487,14 @@
     }
    ],
    "crests": {
-    "Inter": "/crests/inter.png",
     "Lazio": "/crests/lazio.png",
+    "Inter": "/crests/inter.png",
     "Roma": "/crests/roma.png",
     "Milan": "/crests/milan.png",
     "Como 1907": "/crests/como-1907.png",
+    "Torino": "/crests/torino.png",
     "Frosinone": "/crests/frosinone.png",
     "Juventus": "/crests/juventus.png",
-    "Torino": "/crests/torino.png",
     "Cagliari": "/crests/cagliari.png",
     "Napoli": "/crests/napoli.png",
     "Atalanta": "/crests/atalanta.png",
@@ -10728,6 +10728,13 @@
      "a": "Milan",
      "hs": 0,
      "as": 2
+    },
+    {
+     "d": "2026-10-27",
+     "h": "Sassuolo",
+     "a": "Lazio",
+     "hs": 2,
+     "as": 6
     }
    ],
    "scorers": [
@@ -10761,7 +10768,7 @@
      "goals": 6,
      "assists": 1,
      "pens": null,
-     "played": 7
+     "played": 8
     },
     {
      "name": "Anastasios Douvikas",
@@ -10769,7 +10776,7 @@
      "goals": 5,
      "assists": null,
      "pens": null,
-     "played": 8
+     "played": 9
     },
     {
      "name": "Marcus Thuram-Ulien",
@@ -10788,6 +10795,14 @@
      "played": 7
     },
     {
+     "name": "Che Adams",
+     "team": "Torino",
+     "goals": 4,
+     "assists": null,
+     "pens": null,
+     "played": 7
+    },
+    {
      "name": "Lautaro Martínez",
      "team": "Inter",
      "goals": 4,
@@ -10801,7 +10816,15 @@
      "goals": 4,
      "assists": null,
      "pens": 1,
-     "played": 8
+     "played": 9
+    },
+    {
+     "name": "Tijjani Noslin",
+     "team": "Lazio",
+     "goals": 4,
+     "assists": 2,
+     "pens": null,
+     "played": 9
     },
     {
      "name": "Hakan Çalhanoğlu",
@@ -10820,36 +10843,20 @@
      "played": 8
     },
     {
-     "name": "Che Adams",
-     "team": "Torino",
-     "goals": 3,
-     "assists": null,
-     "pens": null,
-     "played": 6
-    },
-    {
      "name": "Davide Frattesi",
      "team": "Lazio",
      "goals": 3,
      "assists": null,
      "pens": null,
-     "played": 8
+     "played": 9
     },
     {
-     "name": "Jurgen Ekkelenkamp",
-     "team": "Udinese",
-     "goals": 3,
-     "assists": 1,
-     "pens": null,
-     "played": 8
-    },
-    {
-     "name": "Matias Soule",
+     "name": "Niccolo Pisilli",
      "team": "Roma",
      "goals": 3,
-     "assists": 1,
+     "assists": null,
      "pens": null,
-     "played": 8
+     "played": 9
     }
    ]
   },
