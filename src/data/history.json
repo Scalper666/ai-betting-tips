@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T11:40:32.083094+00:00",
+  "updated_at": "2026-10-29T21:15:51.081169+00:00",
   "tips": {
     "mock_0|Home total over 1.5": {
       "key": "mock_0|Home total over 1.5",
@@ -39669,10 +39669,12 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-10-26T11:24:51.401589+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-10-29T21:15:51.027844+00:00",
+      "score": "5-1",
+      "close_odds": 2.11,
+      "clv_pct": -8.53
     },
     "9507f4bcbcfd4e4953720628a2b86a17|Under 3.5 goals": {
       "key": "9507f4bcbcfd4e4953720628a2b86a17|Under 3.5 goals",
@@ -40075,6 +40077,31 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-10-29T11:40:29.859401+00:00",
+      "status": "pending",
+      "profit": null,
+      "settled_at": null,
+      "score": null
+    },
+    "d1394e49a7258d4a4daeae7a803cae0a|Under 3.5 goals": {
+      "key": "d1394e49a7258d4a4daeae7a803cae0a|Under 3.5 goals",
+      "event_id": "d1394e49a7258d4a4daeae7a803cae0a",
+      "sport_key": "soccer_efl_champ",
+      "league": "Championship",
+      "home": "Wolverhampton Wanderers",
+      "away": "Cardiff City",
+      "kickoff": "2026-10-31T15:00:00Z",
+      "market": "Under 3.5 goals",
+      "type": "totals",
+      "side": "Under",
+      "point": 3.5,
+      "outcome": null,
+      "odds": 1.73,
+      "confidence": 60,
+      "edge_pct": 3.5,
+      "bookmaker": "Matchbook",
+      "basis": "model+market",
+      "model": "v3",
+      "published_at": "2026-10-29T21:15:49.509874+00:00",
       "status": "pending",
       "profit": null,
       "settled_at": null,

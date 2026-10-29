@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-29T11:45:19+00:00",
+ "updated_at": "2026-10-29T21:20:49+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -7337,22 +7337,22 @@
     },
     {
      "pos": 6,
+     "team": "Frosinone",
+     "p": 9,
+     "w": 5,
+     "d": 2,
+     "l": 2,
+     "gd": 8,
+     "pts": 17
+    },
+    {
+     "pos": 7,
      "team": "Napoli",
      "p": 9,
      "w": 4,
      "d": 2,
      "l": 3,
      "gd": 6,
-     "pts": 14
-    },
-    {
-     "pos": 7,
-     "team": "Frosinone",
-     "p": 8,
-     "w": 4,
-     "d": 2,
-     "l": 2,
-     "gd": 4,
      "pts": 14
     },
     {
@@ -7398,12 +7398,12 @@
     {
      "pos": 12,
      "team": "Atalanta",
-     "p": 8,
+     "p": 9,
      "w": 3,
-     "d": 1,
+     "d": 2,
      "l": 4,
      "gd": -1,
-     "pts": 10
+     "pts": 11
     },
     {
      "pos": 13,
@@ -7418,11 +7418,11 @@
     {
      "pos": 14,
      "team": "Lecce",
-     "p": 8,
+     "p": 9,
      "w": 3,
      "d": 0,
-     "l": 5,
-     "gd": -5,
+     "l": 6,
+     "gd": -9,
      "pts": 9
     },
     {
@@ -7457,7 +7457,7 @@
     },
     {
      "pos": 18,
-     "team": "Parma",
+     "team": "Fiorentina",
      "p": 9,
      "w": 1,
      "d": 2,
@@ -7467,13 +7467,13 @@
     },
     {
      "pos": 19,
-     "team": "Fiorentina",
-     "p": 8,
+     "team": "Parma",
+     "p": 9,
      "w": 1,
-     "d": 1,
+     "d": 2,
      "l": 6,
      "gd": -10,
-     "pts": 4
+     "pts": 5
     },
     {
      "pos": 20,
@@ -7492,8 +7492,8 @@
     "Roma": "/crests/roma.png",
     "Como 1907": "/crests/como-1907.png",
     "Milan": "/crests/milan.png",
-    "Napoli": "/crests/napoli.png",
     "Frosinone": "/crests/frosinone.png",
+    "Napoli": "/crests/napoli.png",
     "Juventus": "/crests/juventus.png",
     "Torino": "/crests/torino.png",
     "Cagliari": "/crests/cagliari.png",
@@ -7504,8 +7504,8 @@
     "Sassuolo": "/crests/sassuolo.png",
     "Monza": "/crests/monza.png",
     "Udinese": "/crests/udinese.png",
-    "Parma": "/crests/parma.png",
     "Fiorentina": "/crests/fiorentina.png",
+    "Parma": "/crests/parma.png",
     "Venezia FC": "/crests/venezia-fc.png"
    },
    "results": [
@@ -10784,6 +10784,13 @@
      "a": "Napoli",
      "hs": 1,
      "as": 4
+    },
+    {
+     "d": "2026-10-29",
+     "h": "Frosinone",
+     "a": "Lecce",
+     "hs": 5,
+     "as": 1
     }
    ],
    "scorers": [
@@ -10796,18 +10803,18 @@
      "played": 8
     },
     {
+     "name": "Antonio Raimondo",
+     "team": "Frosinone",
+     "goals": 8,
+     "assists": null,
+     "pens": null,
+     "played": 9
+    },
+    {
      "name": "Donyell Malen",
      "team": "Roma",
      "goals": 7,
      "assists": 1,
-     "pens": null,
-     "played": 8
-    },
-    {
-     "name": "Antonio Raimondo",
-     "team": "Frosinone",
-     "goals": 7,
-     "assists": null,
      "pens": null,
      "played": 8
     },
@@ -10817,7 +10824,7 @@
      "goals": 6,
      "assists": 2,
      "pens": null,
-     "played": 8
+     "played": 9
     },
     {
      "name": "Anastasios Douvikas",
@@ -10892,20 +10899,20 @@
      "played": 9
     },
     {
+     "name": "Giacomo Calò",
+     "team": "Frosinone",
+     "goals": 4,
+     "assists": 1,
+     "pens": 1,
+     "played": 9
+    },
+    {
      "name": "Hakan Çalhanoğlu",
      "team": "Inter",
      "goals": 3,
      "assists": null,
      "pens": 1,
      "played": 7
-    },
-    {
-     "name": "Davide Frattesi",
-     "team": "Lazio",
-     "goals": 3,
-     "assists": null,
-     "pens": null,
-     "played": 9
     }
    ]
   },
