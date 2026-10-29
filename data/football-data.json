@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-28T21:16:48+00:00",
+ "updated_at": "2026-10-29T11:45:19+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -7342,7 +7342,7 @@
      "w": 4,
      "d": 2,
      "l": 3,
-     "gd": 5,
+     "gd": 6,
      "pts": 14
     },
     {
@@ -7442,7 +7442,7 @@
      "w": 2,
      "d": 1,
      "l": 6,
-     "gd": -5,
+     "gd": -6,
      "pts": 7
     },
     {
@@ -10770,6 +10770,20 @@
      "a": "Udinese",
      "hs": 0,
      "as": 0
+    },
+    {
+     "d": "2026-10-28",
+     "h": "Genoa",
+     "a": "Juventus",
+     "hs": 2,
+     "as": 0
+    },
+    {
+     "d": "2026-10-28",
+     "h": "Monza",
+     "a": "Napoli",
+     "hs": 1,
+     "as": 4
     }
    ],
    "scorers": [
@@ -16797,12 +16811,12 @@
     {
      "pos": 2,
      "team": "Palmeiras",
-     "p": 32,
+     "p": 33,
      "w": 20,
-     "d": 9,
+     "d": 10,
      "l": 3,
      "gd": 34,
-     "pts": 69
+     "pts": 70
     },
     {
      "pos": 3,
@@ -16827,15 +16841,25 @@
     {
      "pos": 5,
      "team": "Fluminense",
-     "p": 32,
-     "w": 14,
+     "p": 33,
+     "w": 15,
      "d": 9,
      "l": 9,
-     "gd": 9,
-     "pts": 51
+     "gd": 10,
+     "pts": 54
     },
     {
      "pos": 6,
+     "team": "Bahia",
+     "p": 33,
+     "w": 14,
+     "d": 11,
+     "l": 8,
+     "gd": 6,
+     "pts": 53
+    },
+    {
+     "pos": 7,
      "team": "Mineiro",
      "p": 32,
      "w": 14,
@@ -16845,53 +16869,43 @@
      "pts": 50
     },
     {
-     "pos": 7,
-     "team": "Bahia",
-     "p": 32,
-     "w": 13,
-     "d": 11,
-     "l": 8,
-     "gd": 5,
-     "pts": 50
-    },
-    {
      "pos": 8,
      "team": "Santos",
-     "p": 32,
+     "p": 33,
      "w": 12,
-     "d": 10,
+     "d": 11,
      "l": 10,
      "gd": 2,
-     "pts": 46
+     "pts": 47
     },
     {
      "pos": 9,
-     "team": "São Paulo",
-     "p": 32,
+     "team": "Bragantino",
+     "p": 33,
      "w": 12,
-     "d": 7,
+     "d": 8,
      "l": 13,
-     "gd": 1,
-     "pts": 43
+     "gd": 4,
+     "pts": 44
     },
     {
      "pos": 10,
-     "team": "Bragantino",
-     "p": 32,
-     "w": 11,
-     "d": 8,
-     "l": 13,
-     "gd": 1,
-     "pts": 41
+     "team": "São Paulo",
+     "p": 33,
+     "w": 12,
+     "d": 7,
+     "l": 14,
+     "gd": 0,
+     "pts": 43
     },
     {
      "pos": 11,
      "team": "Botafogo",
-     "p": 32,
+     "p": 33,
      "w": 10,
      "d": 9,
-     "l": 13,
-     "gd": -7,
+     "l": 14,
+     "gd": -8,
      "pts": 39
     },
     {
@@ -16937,11 +16951,11 @@
     {
      "pos": 16,
      "team": "Internacional",
-     "p": 32,
+     "p": 33,
      "w": 8,
      "d": 11,
-     "l": 13,
-     "gd": -4,
+     "l": 14,
+     "gd": -5,
      "pts": 35
     },
     {
@@ -16967,21 +16981,21 @@
     {
      "pos": 19,
      "team": "Clube do Remo",
-     "p": 32,
-     "w": 5,
+     "p": 33,
+     "w": 6,
      "d": 11,
      "l": 16,
-     "gd": -16,
-     "pts": 26
+     "gd": -15,
+     "pts": 29
     },
     {
      "pos": 20,
      "team": "Chapecoense",
-     "p": 31,
+     "p": 32,
      "w": 4,
      "d": 9,
-     "l": 18,
-     "gd": -31,
+     "l": 19,
+     "gd": -34,
      "pts": 21
     }
    ],
@@ -16991,11 +17005,11 @@
     "Cruzeiro": "/crests/cruzeiro.png",
     "Paranaense": "/crests/paranaense.png",
     "Fluminense": "/crests/fluminense.png",
-    "Mineiro": "/crests/mineiro.png",
     "Bahia": "/crests/bahia.png",
+    "Mineiro": "/crests/mineiro.png",
     "Santos": "/crests/santos.png",
-    "São Paulo": "/crests/sao-paulo.png",
     "Bragantino": "/crests/bragantino.png",
+    "São Paulo": "/crests/sao-paulo.png",
     "Botafogo": "/crests/botafogo.png",
     "Coritiba": "/crests/coritiba.png",
     "Vasco da Gama": "/crests/vasco-da-gama.png",
@@ -21900,6 +21914,41 @@
      "a": "Mineiro",
      "hs": 3,
      "as": 2
+    },
+    {
+     "d": "2026-10-28",
+     "h": "Bragantino",
+     "a": "Chapecoense",
+     "hs": 3,
+     "as": 0
+    },
+    {
+     "d": "2026-10-28",
+     "h": "Fluminense",
+     "a": "Internacional",
+     "hs": 2,
+     "as": 1
+    },
+    {
+     "d": "2026-10-28",
+     "h": "Santos",
+     "a": "Palmeiras",
+     "hs": 0,
+     "as": 0
+    },
+    {
+     "d": "2026-10-29",
+     "h": "Bahia",
+     "a": "São Paulo",
+     "hs": 3,
+     "as": 2
+    },
+    {
+     "d": "2026-10-29",
+     "h": "Clube do Remo",
+     "a": "Botafogo",
+     "hs": 2,
+     "as": 1
     }
    ],
    "scorers": [
@@ -21925,7 +21974,7 @@
      "goals": 15,
      "assists": 3,
      "pens": 2,
-     "played": 25
+     "played": 26
     },
     {
      "name": "Carlos Vinícius",
@@ -21949,7 +21998,7 @@
      "goals": 11,
      "assists": 1,
      "pens": 5,
-     "played": 29
+     "played": 30
     },
     {
      "name": "Danilo dos Santos de Oliveira",
@@ -21963,9 +22012,9 @@
      "name": "Jonathan Calleri",
      "team": "São Paulo",
      "goals": 10,
-     "assists": 1,
+     "assists": 2,
      "pens": 2,
-     "played": 28
+     "played": 29
     },
     {
      "name": "José Manuel López",
@@ -21973,7 +22022,7 @@
      "goals": 9,
      "assists": 6,
      "pens": null,
-     "played": 29
+     "played": 30
     },
     {
      "name": "Luciano",
@@ -21981,7 +22030,7 @@
      "goals": 9,
      "assists": 1,
      "pens": 2,
-     "played": 26
+     "played": 27
     },
     {
      "name": "Mauricio",
@@ -21989,7 +22038,7 @@
      "goals": 9,
      "assists": 1,
      "pens": 1,
-     "played": 29
+     "played": 30
     },
     {
      "name": "John Kennedy",
