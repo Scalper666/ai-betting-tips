@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T11:31:46.782730+00:00",
+  "updated_at": "2026-10-30T20:55:13.821539+00:00",
   "tips": {
     "mock_0|Home total over 1.5": {
       "key": "mock_0|Home total over 1.5",
@@ -38623,10 +38623,12 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-10-19T11:06:16.464791+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-10-30T20:55:13.768369+00:00",
+      "score": "1-5",
+      "close_odds": 1.91,
+      "clv_pct": 5.24
     },
     "e1abd2ba6b11aae5d64e41652a8ea256|Under 3.5 goals": {
       "key": "e1abd2ba6b11aae5d64e41652a8ea256|Under 3.5 goals",
@@ -40177,6 +40179,31 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-10-30T11:31:45.579997+00:00",
+      "status": "pending",
+      "profit": null,
+      "settled_at": null,
+      "score": null
+    },
+    "c59921cdf131bc3c6e9fdc0cbe5abe3f|Under 3.5 goals": {
+      "key": "c59921cdf131bc3c6e9fdc0cbe5abe3f|Under 3.5 goals",
+      "event_id": "c59921cdf131bc3c6e9fdc0cbe5abe3f",
+      "sport_key": "soccer_usa_mls",
+      "league": "MLS",
+      "home": "Portland Timbers",
+      "away": "Houston Dynamo",
+      "kickoff": "2026-11-02T02:45:00Z",
+      "market": "Under 3.5 goals",
+      "type": "totals",
+      "side": "Under",
+      "point": 3.5,
+      "outcome": null,
+      "odds": 1.67,
+      "confidence": 63,
+      "edge_pct": 6.01,
+      "bookmaker": "1xBet",
+      "basis": "model+market",
+      "model": "v3",
+      "published_at": "2026-10-30T20:55:12.888142+00:00",
       "status": "pending",
       "profit": null,
       "settled_at": null,

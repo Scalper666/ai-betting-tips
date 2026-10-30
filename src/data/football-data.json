@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-30T11:36:36+00:00",
+ "updated_at": "2026-10-30T21:00:04+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -3641,6 +3641,16 @@
     },
     {
      "pos": 7,
+     "team": "Villarreal",
+     "p": 11,
+     "w": 3,
+     "d": 4,
+     "l": 4,
+     "gd": 1,
+     "pts": 13
+    },
+    {
+     "pos": 8,
      "team": "Alavés",
      "p": 10,
      "w": 3,
@@ -3650,7 +3660,7 @@
      "pts": 12
     },
     {
-     "pos": 8,
+     "pos": 9,
      "team": "Athletic",
      "p": 9,
      "w": 3,
@@ -3660,23 +3670,13 @@
      "pts": 12
     },
     {
-     "pos": 9,
+     "pos": 10,
      "team": "Celta",
      "p": 10,
      "w": 2,
      "d": 6,
      "l": 2,
      "gd": 3,
-     "pts": 12
-    },
-    {
-     "pos": 10,
-     "team": "Villarreal",
-     "p": 10,
-     "w": 3,
-     "d": 3,
-     "l": 4,
-     "gd": 1,
      "pts": 12
     },
     {
@@ -3731,6 +3731,16 @@
     },
     {
      "pos": 16,
+     "team": "Espanyol",
+     "p": 11,
+     "w": 2,
+     "d": 3,
+     "l": 6,
+     "gd": -2,
+     "pts": 9
+    },
+    {
+     "pos": 17,
      "team": "Rayo Vallecano",
      "p": 9,
      "w": 2,
@@ -3740,7 +3750,7 @@
      "pts": 9
     },
     {
-     "pos": 17,
+     "pos": 18,
      "team": "Getafe",
      "p": 10,
      "w": 2,
@@ -3748,16 +3758,6 @@
      "l": 5,
      "gd": -10,
      "pts": 9
-    },
-    {
-     "pos": 18,
-     "team": "Espanyol",
-     "p": 10,
-     "w": 2,
-     "d": 2,
-     "l": 6,
-     "gd": -2,
-     "pts": 8
     },
     {
      "pos": 19,
@@ -3787,18 +3787,18 @@
     "Real Betis": "/crests/real-betis.png",
     "Real Sociedad": "/crests/real-sociedad.png",
     "Sevilla FC": "/crests/sevilla-fc.png",
+    "Villarreal": "/crests/villarreal.png",
     "Alavés": "/crests/alaves.png",
     "Athletic": "/crests/athletic.png",
     "Celta": "/crests/celta.png",
-    "Villarreal": "/crests/villarreal.png",
     "Deportivo": "/crests/deportivo.png",
     "Osasuna": "/crests/osasuna.png",
     "Santander": "/crests/santander.png",
     "Levante": "/crests/levante.png",
     "Elche": "/crests/elche.png",
+    "Espanyol": "/crests/espanyol.png",
     "Rayo Vallecano": "/crests/rayo-vallecano.png",
     "Getafe": "/crests/getafe.png",
-    "Espanyol": "/crests/espanyol.png",
     "Valencia": "/crests/valencia.png",
     "Málaga": "/crests/malaga.png"
    },
@@ -7212,7 +7212,7 @@
      "goals": 6,
      "assists": null,
      "pens": null,
-     "played": 10
+     "played": 11
     },
     {
      "name": "Fer Niño",
@@ -10970,6 +10970,16 @@
     },
     {
      "pos": 5,
+     "team": "Elversberg",
+     "p": 8,
+     "w": 4,
+     "d": 1,
+     "l": 3,
+     "gd": 0,
+     "pts": 13
+    },
+    {
+     "pos": 6,
      "team": "RB Leipzig",
      "p": 7,
      "w": 4,
@@ -10979,7 +10989,7 @@
      "pts": 12
     },
     {
-     "pos": 6,
+     "pos": 7,
      "team": "Bremen",
      "p": 7,
      "w": 3,
@@ -10989,23 +10999,13 @@
      "pts": 12
     },
     {
-     "pos": 7,
-     "team": "Mainz",
-     "p": 7,
-     "w": 3,
-     "d": 1,
-     "l": 3,
-     "gd": 3,
-     "pts": 10
-    },
-    {
      "pos": 8,
-     "team": "Elversberg",
-     "p": 7,
+     "team": "Mainz",
+     "p": 8,
      "w": 3,
      "d": 1,
-     "l": 3,
-     "gd": -3,
+     "l": 4,
+     "gd": 0,
      "pts": 10
     },
     {
@@ -11114,10 +11114,10 @@
     "Dortmund": "/crests/dortmund.png",
     "Freiburg": "/crests/freiburg.png",
     "Leverkusen": "/crests/leverkusen.png",
+    "Elversberg": "/crests/elversberg.png",
     "RB Leipzig": "/crests/rb-leipzig.png",
     "Bremen": "/crests/bremen.png",
     "Mainz": "/crests/mainz.png",
-    "Elversberg": "/crests/elversberg.png",
     "Augsburg": "/crests/augsburg.png",
     "Hoffenheim": "/crests/hoffenheim.png",
     "HSV": "/crests/hsv.png",
@@ -13753,7 +13753,7 @@
      "goals": 5,
      "assists": null,
      "pens": null,
-     "played": 7
+     "played": 8
     },
     {
      "name": "Luis Díaz",
@@ -13778,6 +13778,14 @@
      "assists": null,
      "pens": 1,
      "played": 7
+    },
+    {
+     "name": "Maurice Krattenmacher",
+     "team": "Elversberg",
+     "goals": 4,
+     "assists": 1,
+     "pens": null,
+     "played": 8
     },
     {
      "name": "Christopher Nkunku",
@@ -13826,14 +13834,6 @@
      "assists": 1,
      "pens": null,
      "played": 7
-    },
-    {
-     "name": "Maurice Krattenmacher",
-     "team": "Elversberg",
-     "goals": 3,
-     "assists": 1,
-     "pens": null,
-     "played": 7
     }
    ]
   },
@@ -13845,32 +13845,32 @@
     {
      "pos": 1,
      "team": "PSG",
-     "p": 8,
-     "w": 5,
+     "p": 9,
+     "w": 6,
      "d": 2,
      "l": 1,
-     "gd": 7,
-     "pts": 17
+     "gd": 11,
+     "pts": 20
     },
     {
      "pos": 2,
-     "team": "Stade Rennais",
-     "p": 8,
-     "w": 5,
-     "d": 1,
-     "l": 2,
-     "gd": 4,
+     "team": "Lille",
+     "p": 9,
+     "w": 4,
+     "d": 4,
+     "l": 1,
+     "gd": 5,
      "pts": 16
     },
     {
      "pos": 3,
-     "team": "Lille",
-     "p": 8,
-     "w": 4,
-     "d": 3,
-     "l": 1,
-     "gd": 5,
-     "pts": 15
+     "team": "Stade Rennais",
+     "p": 9,
+     "w": 5,
+     "d": 1,
+     "l": 3,
+     "gd": 1,
+     "pts": 16
     },
     {
      "pos": 4,
@@ -13894,6 +13894,16 @@
     },
     {
      "pos": 6,
+     "team": "RC Lens",
+     "p": 9,
+     "w": 4,
+     "d": 2,
+     "l": 3,
+     "gd": 4,
+     "pts": 14
+    },
+    {
+     "pos": 7,
      "team": "Paris FC",
      "p": 8,
      "w": 4,
@@ -13903,17 +13913,17 @@
      "pts": 14
     },
     {
-     "pos": 7,
-     "team": "RC Lens",
-     "p": 8,
+     "pos": 8,
+     "team": "Nice",
+     "p": 9,
      "w": 4,
-     "d": 1,
+     "d": 2,
      "l": 3,
-     "gd": 4,
-     "pts": 13
+     "gd": 1,
+     "pts": 14
     },
     {
-     "pos": 8,
+     "pos": 9,
      "team": "Marseille",
      "p": 8,
      "w": 4,
@@ -13923,7 +13933,7 @@
      "pts": 12
     },
     {
-     "pos": 9,
+     "pos": 10,
      "team": "Lorient",
      "p": 8,
      "w": 3,
@@ -13931,16 +13941,6 @@
      "l": 2,
      "gd": 1,
      "pts": 12
-    },
-    {
-     "pos": 10,
-     "team": "Nice",
-     "p": 8,
-     "w": 3,
-     "d": 2,
-     "l": 3,
-     "gd": -2,
-     "pts": 11
     },
     {
      "pos": 11,
@@ -14015,25 +14015,25 @@
     {
      "pos": 18,
      "team": "Le Havre",
-     "p": 8,
+     "p": 9,
      "w": 0,
      "d": 2,
-     "l": 6,
-     "gd": -7,
+     "l": 7,
+     "gd": -11,
      "pts": 2
     }
    ],
    "crests": {
     "PSG": "/crests/psg.png",
-    "Stade Rennais": "/crests/stade-rennais.png",
     "Lille": "/crests/lille.png",
+    "Stade Rennais": "/crests/stade-rennais.png",
     "Monaco": "/crests/monaco.png",
     "Olympique Lyon": "/crests/olympique-lyon.png",
-    "Paris FC": "/crests/paris-fc.png",
     "RC Lens": "/crests/rc-lens.png",
+    "Paris FC": "/crests/paris-fc.png",
+    "Nice": "/crests/nice.png",
     "Marseille": "/crests/marseille.png",
     "Lorient": "/crests/lorient.png",
-    "Nice": "/crests/nice.png",
     "Toulouse": "/crests/toulouse.png",
     "Auxerre": "/crests/auxerre.png",
     "Brest": "/crests/brest.png",
@@ -16682,6 +16682,20 @@
      "a": "Olympique Lyon",
      "hs": 2,
      "as": 0
+    },
+    {
+     "d": "2026-10-30",
+     "h": "Le Havre",
+     "a": "PSG",
+     "hs": 1,
+     "as": 5
+    },
+    {
+     "d": "2026-10-30",
+     "h": "Nice",
+     "a": "Stade Rennais",
+     "hs": 5,
+     "as": 2
     }
    ],
    "scorers": [
@@ -16699,6 +16713,14 @@
      "goals": 6,
      "assists": 4,
      "pens": 3,
+     "played": 8
+    },
+    {
+     "name": "Sepe Elye Wahi",
+     "team": "Nice",
+     "goals": 6,
+     "assists": 2,
+     "pens": 2,
      "played": 8
     },
     {
@@ -16731,7 +16753,7 @@
      "goals": 4,
      "assists": 8,
      "pens": 3,
-     "played": 8
+     "played": 9
     },
     {
      "name": "Louis Mafouta",
@@ -16750,12 +16772,20 @@
      "played": 8
     },
     {
+     "name": "Sebastian Szymański",
+     "team": "Stade Rennais",
+     "goals": 4,
+     "assists": 1,
+     "pens": null,
+     "played": 9
+    },
+    {
      "name": "Ferrán Torres",
      "team": "PSG",
      "goals": 4,
      "assists": 1,
      "pens": null,
-     "played": 8
+     "played": 9
     },
     {
      "name": "Paris Brunner",
@@ -16766,43 +16796,27 @@
      "played": 6
     },
     {
+     "name": "Josh Maja",
+     "team": "Le Havre",
+     "goals": 4,
+     "assists": null,
+     "pens": 1,
+     "played": 9
+    },
+    {
+     "name": "Boulaye Dia",
+     "team": "Stade Rennais",
+     "goals": 4,
+     "assists": null,
+     "pens": 1,
+     "played": 7
+    },
+    {
      "name": "Daniel Namaso",
      "team": "Auxerre",
      "goals": 3,
      "assists": 2,
      "pens": 1,
-     "played": 8
-    },
-    {
-     "name": "Sebastian Szymański",
-     "team": "Stade Rennais",
-     "goals": 3,
-     "assists": 1,
-     "pens": null,
-     "played": 8
-    },
-    {
-     "name": "Marquinhos",
-     "team": "PSG",
-     "goals": 3,
-     "assists": null,
-     "pens": null,
-     "played": 6
-    },
-    {
-     "name": "Ludovic Ajorque",
-     "team": "Brest",
-     "goals": 3,
-     "assists": 1,
-     "pens": null,
-     "played": 8
-    },
-    {
-     "name": "Ernest Nuamah",
-     "team": "Olympique Lyon",
-     "goals": 3,
-     "assists": 1,
-     "pens": null,
      "played": 8
     }
    ]
@@ -30544,12 +30558,12 @@
     {
      "pos": 3,
      "team": "Sporting CP",
-     "p": 9,
-     "w": 5,
+     "p": 10,
+     "w": 6,
      "d": 3,
      "l": 1,
-     "gd": 10,
-     "pts": 18
+     "gd": 11,
+     "pts": 21
     },
     {
      "pos": 4,
@@ -30673,21 +30687,21 @@
     },
     {
      "pos": 16,
-     "team": "Casa Pia",
-     "p": 9,
-     "w": 2,
-     "d": 1,
-     "l": 6,
-     "gd": -12,
-     "pts": 7
-    },
-    {
-     "pos": 17,
      "team": "Rio Ave",
      "p": 9,
      "w": 2,
      "d": 1,
      "l": 6,
+     "gd": -13,
+     "pts": 7
+    },
+    {
+     "pos": 17,
+     "team": "Casa Pia",
+     "p": 10,
+     "w": 2,
+     "d": 1,
+     "l": 7,
      "gd": -13,
      "pts": 7
     },
@@ -30718,8 +30732,8 @@
     "Vitória SC": "/crests/vitoria-sc.png",
     "Marítimo": "/crests/maritimo.png",
     "CD Nacional": "/crests/cd-nacional.png",
-    "Casa Pia": "/crests/casa-pia.png",
     "Rio Ave": "/crests/rio-ave.png",
+    "Casa Pia": "/crests/casa-pia.png",
     "Estoril Praia": "/crests/estoril-praia.png"
    },
    "results": [
@@ -33448,7 +33462,7 @@
      "goals": 8,
      "assists": 1,
      "pens": 2,
-     "played": 9
+     "played": 10
     },
     {
      "name": "Gianluca Prestianni",
