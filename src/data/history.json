@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T20:55:13.821539+00:00",
+  "updated_at": "2026-10-31T11:04:11.981697+00:00",
   "tips": {
     "mock_0|Home total over 1.5": {
       "key": "mock_0|Home total over 1.5",
@@ -40129,10 +40129,12 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-10-30T11:31:45.579997+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "won",
+      "profit": 0.99,
+      "settled_at": "2026-10-31T11:04:11.950530+00:00",
+      "score": "0-1",
+      "close_odds": 1.99,
+      "clv_pct": 0.0
     },
     "8f0b7ef29a47f675429758e83a426d7e|Under 3.25 goals": {
       "key": "8f0b7ef29a47f675429758e83a426d7e|Under 3.25 goals",
@@ -40204,6 +40206,31 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-10-30T20:55:12.888142+00:00",
+      "status": "pending",
+      "profit": null,
+      "settled_at": null,
+      "score": null
+    },
+    "86255d2aca5651bf267f22acf6140d5d|West Ham United to win": {
+      "key": "86255d2aca5651bf267f22acf6140d5d|West Ham United to win",
+      "event_id": "86255d2aca5651bf267f22acf6140d5d",
+      "sport_key": "soccer_efl_champ",
+      "league": "Championship",
+      "home": "West Ham United",
+      "away": "West Bromwich Albion",
+      "kickoff": "2026-10-31T15:00:00Z",
+      "market": "West Ham United to win",
+      "type": "h2h",
+      "side": null,
+      "point": null,
+      "outcome": "West Ham United",
+      "odds": 1.79,
+      "confidence": 58,
+      "edge_pct": 4.64,
+      "bookmaker": "Betfair",
+      "basis": "model+market",
+      "model": "v3",
+      "published_at": "2026-10-31T11:04:10.829478+00:00",
       "status": "pending",
       "profit": null,
       "settled_at": null,

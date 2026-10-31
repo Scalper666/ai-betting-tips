@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-10-30T21:00:04+00:00",
+ "updated_at": "2026-10-31T11:09:02+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -3641,16 +3641,6 @@
     },
     {
      "pos": 7,
-     "team": "Villarreal",
-     "p": 11,
-     "w": 3,
-     "d": 4,
-     "l": 4,
-     "gd": 1,
-     "pts": 13
-    },
-    {
-     "pos": 8,
      "team": "Alavés",
      "p": 10,
      "w": 3,
@@ -3660,7 +3650,7 @@
      "pts": 12
     },
     {
-     "pos": 9,
+     "pos": 8,
      "team": "Athletic",
      "p": 9,
      "w": 3,
@@ -3670,13 +3660,23 @@
      "pts": 12
     },
     {
-     "pos": 10,
+     "pos": 9,
      "team": "Celta",
      "p": 10,
      "w": 2,
      "d": 6,
      "l": 2,
      "gd": 3,
+     "pts": 12
+    },
+    {
+     "pos": 10,
+     "team": "Villarreal",
+     "p": 11,
+     "w": 3,
+     "d": 3,
+     "l": 5,
+     "gd": 0,
      "pts": 12
     },
     {
@@ -3691,6 +3691,16 @@
     },
     {
      "pos": 12,
+     "team": "Espanyol",
+     "p": 11,
+     "w": 3,
+     "d": 2,
+     "l": 6,
+     "gd": -1,
+     "pts": 11
+    },
+    {
+     "pos": 13,
      "team": "Osasuna",
      "p": 10,
      "w": 3,
@@ -3700,7 +3710,7 @@
      "pts": 11
     },
     {
-     "pos": 13,
+     "pos": 14,
      "team": "Santander",
      "p": 10,
      "w": 3,
@@ -3710,7 +3720,7 @@
      "pts": 11
     },
     {
-     "pos": 14,
+     "pos": 15,
      "team": "Levante",
      "p": 10,
      "w": 2,
@@ -3720,7 +3730,7 @@
      "pts": 10
     },
     {
-     "pos": 15,
+     "pos": 16,
      "team": "Elche",
      "p": 10,
      "w": 2,
@@ -3728,16 +3738,6 @@
      "l": 4,
      "gd": -3,
      "pts": 10
-    },
-    {
-     "pos": 16,
-     "team": "Espanyol",
-     "p": 11,
-     "w": 2,
-     "d": 3,
-     "l": 6,
-     "gd": -2,
-     "pts": 9
     },
     {
      "pos": 17,
@@ -3787,16 +3787,16 @@
     "Real Betis": "/crests/real-betis.png",
     "Real Sociedad": "/crests/real-sociedad.png",
     "Sevilla FC": "/crests/sevilla-fc.png",
-    "Villarreal": "/crests/villarreal.png",
     "Alavés": "/crests/alaves.png",
     "Athletic": "/crests/athletic.png",
     "Celta": "/crests/celta.png",
+    "Villarreal": "/crests/villarreal.png",
     "Deportivo": "/crests/deportivo.png",
+    "Espanyol": "/crests/espanyol.png",
     "Osasuna": "/crests/osasuna.png",
     "Santander": "/crests/santander.png",
     "Levante": "/crests/levante.png",
     "Elche": "/crests/elche.png",
-    "Espanyol": "/crests/espanyol.png",
     "Rayo Vallecano": "/crests/rayo-vallecano.png",
     "Getafe": "/crests/getafe.png",
     "Valencia": "/crests/valencia.png",
@@ -7155,6 +7155,13 @@
      "a": "Osasuna",
      "hs": 2,
      "as": 0
+    },
+    {
+     "d": "2026-10-30",
+     "h": "Villarreal",
+     "a": "Espanyol",
+     "hs": 0,
+     "as": 1
     }
    ],
    "scorers": [
@@ -13712,6 +13719,13 @@
      "a": "Bayern",
      "hs": 1,
      "as": 3
+    },
+    {
+     "d": "2026-10-30",
+     "h": "Elversberg",
+     "a": "Mainz",
+     "hs": 4,
+     "as": 1
     }
    ],
    "scorers": [
@@ -13856,11 +13870,11 @@
      "pos": 2,
      "team": "Lille",
      "p": 9,
-     "w": 4,
-     "d": 4,
+     "w": 5,
+     "d": 3,
      "l": 1,
-     "gd": 5,
-     "pts": 16
+     "gd": 6,
+     "pts": 18
     },
     {
      "pos": 3,
@@ -13894,16 +13908,6 @@
     },
     {
      "pos": 6,
-     "team": "RC Lens",
-     "p": 9,
-     "w": 4,
-     "d": 2,
-     "l": 3,
-     "gd": 4,
-     "pts": 14
-    },
-    {
-     "pos": 7,
      "team": "Paris FC",
      "p": 8,
      "w": 4,
@@ -13913,7 +13917,7 @@
      "pts": 14
     },
     {
-     "pos": 8,
+     "pos": 7,
      "team": "Nice",
      "p": 9,
      "w": 4,
@@ -13921,6 +13925,16 @@
      "l": 3,
      "gd": 1,
      "pts": 14
+    },
+    {
+     "pos": 8,
+     "team": "RC Lens",
+     "p": 9,
+     "w": 4,
+     "d": 1,
+     "l": 4,
+     "gd": 3,
+     "pts": 13
     },
     {
      "pos": 9,
@@ -14029,9 +14043,9 @@
     "Stade Rennais": "/crests/stade-rennais.png",
     "Monaco": "/crests/monaco.png",
     "Olympique Lyon": "/crests/olympique-lyon.png",
-    "RC Lens": "/crests/rc-lens.png",
     "Paris FC": "/crests/paris-fc.png",
     "Nice": "/crests/nice.png",
+    "RC Lens": "/crests/rc-lens.png",
     "Marseille": "/crests/marseille.png",
     "Lorient": "/crests/lorient.png",
     "Toulouse": "/crests/toulouse.png",
@@ -16696,6 +16710,13 @@
      "a": "Stade Rennais",
      "hs": 5,
      "as": 2
+    },
+    {
+     "d": "2026-10-30",
+     "h": "Lille",
+     "a": "RC Lens",
+     "hs": 1,
+     "as": 0
     }
    ],
    "scorers": [
@@ -16979,15 +17000,25 @@
     {
      "pos": 16,
      "team": "Mirassol",
-     "p": 32,
+     "p": 33,
      "w": 9,
      "d": 10,
-     "l": 13,
-     "gd": -8,
+     "l": 14,
+     "gd": -10,
      "pts": 37
     },
     {
      "pos": 17,
+     "team": "Corinthians",
+     "p": 33,
+     "w": 9,
+     "d": 9,
+     "l": 15,
+     "gd": -6,
+     "pts": 36
+    },
+    {
+     "pos": 18,
      "team": "Internacional",
      "p": 33,
      "w": 8,
@@ -16995,16 +17026,6 @@
      "l": 14,
      "gd": -5,
      "pts": 35
-    },
-    {
-     "pos": 18,
-     "team": "Corinthians",
-     "p": 32,
-     "w": 8,
-     "d": 9,
-     "l": 15,
-     "gd": -8,
-     "pts": 33
     },
     {
      "pos": 19,
@@ -17044,8 +17065,8 @@
     "Vitória": "/crests/vitoria.png",
     "Grêmio": "/crests/gremio.png",
     "Mirassol": "/crests/mirassol.png",
-    "Internacional": "/crests/internacional.png",
     "Corinthians": "/crests/corinthians.png",
+    "Internacional": "/crests/internacional.png",
     "Clube do Remo": "/crests/clube-do-remo.png",
     "Chapecoense": "/crests/chapecoense.png"
    },
@@ -21998,6 +22019,13 @@
      "a": "Paranaense",
      "hs": 2,
      "as": 0
+    },
+    {
+     "d": "2026-10-30",
+     "h": "Corinthians",
+     "a": "Mirassol",
+     "hs": 2,
+     "as": 0
     }
    ],
    "scorers": [
@@ -22220,6 +22248,16 @@
     },
     {
      "pos": 10,
+     "team": "Sheffield Utd",
+     "p": 13,
+     "w": 5,
+     "d": 4,
+     "l": 4,
+     "gd": 2,
+     "pts": 19
+    },
+    {
+     "pos": 11,
      "team": "Blackburn",
      "p": 12,
      "w": 5,
@@ -22229,7 +22267,7 @@
      "pts": 18
     },
     {
-     "pos": 11,
+     "pos": 12,
      "team": "Portsmouth",
      "p": 12,
      "w": 5,
@@ -22237,16 +22275,6 @@
      "l": 4,
      "gd": 1,
      "pts": 18
-    },
-    {
-     "pos": 12,
-     "team": "Sheffield Utd",
-     "p": 12,
-     "w": 4,
-     "d": 4,
-     "l": 4,
-     "gd": 1,
-     "pts": 16
     },
     {
      "pos": 13,
@@ -22291,30 +22319,30 @@
     {
      "pos": 17,
      "team": "Wrexham",
-     "p": 12,
+     "p": 13,
      "w": 3,
      "d": 5,
-     "l": 4,
-     "gd": -3,
+     "l": 5,
+     "gd": -4,
      "pts": 14
     },
     {
      "pos": 18,
-     "team": "Charlton",
-     "p": 12,
-     "w": 3,
-     "d": 5,
-     "l": 4,
-     "gd": -6,
-     "pts": 14
-    },
-    {
-     "pos": 19,
      "team": "Bolton",
      "p": 12,
      "w": 4,
      "d": 2,
      "l": 6,
+     "gd": -7,
+     "pts": 14
+    },
+    {
+     "pos": 19,
+     "team": "Charlton",
+     "p": 12,
+     "w": 3,
+     "d": 5,
+     "l": 4,
      "gd": -7,
      "pts": 14
     },
@@ -22325,7 +22353,7 @@
      "w": 4,
      "d": 0,
      "l": 8,
-     "gd": -3,
+     "gd": -2,
      "pts": 12
     },
     {
@@ -22379,16 +22407,16 @@
     "Birmingham": "/crests/birmingham.png",
     "QPR": "/crests/qpr.png",
     "Stoke": "/crests/stoke.png",
+    "Sheffield Utd": "/crests/sheffield-utd.png",
     "Blackburn": "/crests/blackburn.png",
     "Portsmouth": "/crests/portsmouth.png",
-    "Sheffield Utd": "/crests/sheffield-utd.png",
     "Millwall": "/crests/millwall.png",
     "Bristol City": "/crests/bristol-city.png",
     "Lincoln City": "/crests/lincoln-city.png",
     "Cardiff": "/crests/cardiff.png",
     "Wrexham": "/crests/wrexham.png",
-    "Charlton": "/crests/charlton.png",
     "Bolton": "/crests/bolton.png",
+    "Charlton": "/crests/charlton.png",
     "Norwich": "/crests/norwich.png",
     "Watford": "/crests/watford.png",
     "Burnley": "/crests/burnley.png",
@@ -30562,7 +30590,7 @@
      "w": 6,
      "d": 3,
      "l": 1,
-     "gd": 11,
+     "gd": 12,
      "pts": 21
     },
     {
@@ -30702,7 +30730,7 @@
      "w": 2,
      "d": 1,
      "l": 7,
-     "gd": -13,
+     "gd": -14,
      "pts": 7
     },
     {
@@ -33444,6 +33472,13 @@
      "h": "Santa Clara",
      "a": "SL Benfica",
      "hs": 1,
+     "as": 2
+    },
+    {
+     "d": "2026-10-30",
+     "h": "Casa Pia",
+     "a": "Sporting CP",
+     "hs": 0,
      "as": 2
     }
    ],
