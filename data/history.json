@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T11:58:04.165193+00:00",
+  "updated_at": "2026-11-01T20:38:51.279333+00:00",
   "tips": {
     "mock_0|Home total over 1.5": {
       "key": "mock_0|Home total over 1.5",
@@ -38677,10 +38677,12 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-10-19T21:11:02.985110+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-11-01T20:38:51.225436+00:00",
+      "score": "0-9",
+      "close_odds": 1.73,
+      "clv_pct": 4.62
     },
     "8acee7fd2e4bfff648144b6114bd15ae|Under 3.5 goals": {
       "key": "8acee7fd2e4bfff648144b6114bd15ae|Under 3.5 goals",
@@ -39658,10 +39660,12 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-10-25T19:08:36.393765+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-11-01T20:38:51.225436+00:00",
+      "score": "2-3",
+      "close_odds": 1.69,
+      "clv_pct": 7.69
     },
     "667cf69986b200753742c90cb9c5126c|Under 3.25 goals": {
       "key": "667cf69986b200753742c90cb9c5126c|Under 3.25 goals",
@@ -39710,10 +39714,12 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-10-26T11:24:51.401589+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "won",
+      "profit": 0.89,
+      "settled_at": "2026-11-01T20:38:51.225436+00:00",
+      "score": "1-0",
+      "close_odds": 1.87,
+      "clv_pct": 1.07
     },
     "3f9f4bc9a19bf36dcb74be2f29610d55|Under 2.5 goals": {
       "key": "3f9f4bc9a19bf36dcb74be2f29610d55|Under 2.5 goals",
@@ -39735,10 +39741,12 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-10-26T11:24:51.401589+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-11-01T20:38:51.225436+00:00",
+      "score": "2-1",
+      "close_odds": 2.09,
+      "clv_pct": -8.13
     },
     "2bf8103627b1f0afe9f9b1b619ebbe61|Under 3.5 goals": {
       "key": "2bf8103627b1f0afe9f9b1b619ebbe61|Under 3.5 goals",
@@ -40334,10 +40342,12 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-10-31T20:07:54.259905+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "won",
+      "profit": 0.92,
+      "settled_at": "2026-11-01T20:38:51.225436+00:00",
+      "score": "2-1",
+      "close_odds": 1.91,
+      "clv_pct": 0.52
     },
     "a30b201e4df636949371d73491c620b5|Under 3.5 goals": {
       "key": "a30b201e4df636949371d73491c620b5|Under 3.5 goals",
@@ -40384,10 +40394,12 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-11-01T11:58:02.659114+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-11-01T20:38:51.225436+00:00",
+      "score": "1-2",
+      "close_odds": 1.79,
+      "clv_pct": 0.0
     },
     "4ca4c7a2a1c15e9121f9a7eaa7f42ddb|Under 3.25 goals": {
       "key": "4ca4c7a2a1c15e9121f9a7eaa7f42ddb|Under 3.25 goals",
@@ -40459,6 +40471,56 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-11-01T11:58:02.659114+00:00",
+      "status": "pending",
+      "profit": null,
+      "settled_at": null,
+      "score": null
+    },
+    "df1e1589c51bbcac432125567d1f7c58|Under 4.0 goals": {
+      "key": "df1e1589c51bbcac432125567d1f7c58|Under 4.0 goals",
+      "event_id": "df1e1589c51bbcac432125567d1f7c58",
+      "sport_key": "soccer_france_ligue_one",
+      "league": "Ligue 1",
+      "home": "Marseille",
+      "away": "Toulouse",
+      "kickoff": "2026-11-01T19:45:00Z",
+      "market": "Under 4.0 goals",
+      "type": "totals",
+      "side": "Under",
+      "point": 4.0,
+      "outcome": null,
+      "odds": 1.8,
+      "confidence": 55,
+      "edge_pct": 18.02,
+      "bookmaker": "Pinnacle",
+      "basis": "model+market",
+      "model": "v3",
+      "published_at": "2026-11-01T20:38:49.455094+00:00",
+      "status": "pending",
+      "profit": null,
+      "settled_at": null,
+      "score": null
+    },
+    "3757bcd765c7da1538cdf2785e784038|Under 3.25 goals": {
+      "key": "3757bcd765c7da1538cdf2785e784038|Under 3.25 goals",
+      "event_id": "3757bcd765c7da1538cdf2785e784038",
+      "sport_key": "soccer_spain_la_liga",
+      "league": "La Liga",
+      "home": "Athletic Bilbao",
+      "away": "Real Sociedad",
+      "kickoff": "2026-11-01T20:00:00Z",
+      "market": "Under 3.25 goals",
+      "type": "totals",
+      "side": "Under",
+      "point": 3.25,
+      "outcome": null,
+      "odds": 1.93,
+      "confidence": 55,
+      "edge_pct": 6.36,
+      "bookmaker": "Pinnacle",
+      "basis": "model+market",
+      "model": "v3",
+      "published_at": "2026-11-01T20:38:49.455094+00:00",
       "status": "pending",
       "profit": null,
       "settled_at": null,
