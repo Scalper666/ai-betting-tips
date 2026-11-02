@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T13:45:41.587113+00:00",
+  "updated_at": "2026-11-02T23:38:26.561576+00:00",
   "tips": {
     "mock_0|Home total over 1.5": {
       "key": "mock_0|Home total over 1.5",
@@ -40554,10 +40554,12 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-11-02T13:45:40.637785+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "won",
+      "profit": 0.82,
+      "settled_at": "2026-11-02T23:38:26.506532+00:00",
+      "score": "0-0",
+      "close_odds": 1.82,
+      "clv_pct": 0.0
     },
     "9469c1977185a1acd0154cc0a3b93331|Under 2.5 goals": {
       "key": "9469c1977185a1acd0154cc0a3b93331|Under 2.5 goals",
@@ -40629,6 +40631,31 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-11-02T13:45:40.637785+00:00",
+      "status": "pending",
+      "profit": null,
+      "settled_at": null,
+      "score": null
+    },
+    "5bab6fa1aa508d533a40f86e0b82605e|Under 3.5 goals": {
+      "key": "5bab6fa1aa508d533a40f86e0b82605e|Under 3.5 goals",
+      "event_id": "5bab6fa1aa508d533a40f86e0b82605e",
+      "sport_key": "soccer_brazil_campeonato",
+      "league": "Brasileirão",
+      "home": "Bragantino-SP",
+      "away": "Santos",
+      "kickoff": "2026-11-02T23:00:00Z",
+      "market": "Under 3.5 goals",
+      "type": "totals",
+      "side": "Under",
+      "point": 3.5,
+      "outcome": null,
+      "odds": 1.7,
+      "confidence": 65,
+      "edge_pct": 10.61,
+      "bookmaker": "MyBookie.ag",
+      "basis": "model+market",
+      "model": "v3",
+      "published_at": "2026-11-02T23:38:25.555301+00:00",
       "status": "pending",
       "profit": null,
       "settled_at": null,
