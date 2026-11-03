@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03T12:57:08.203122+00:00",
+  "updated_at": "2026-11-03T21:52:07.163611+00:00",
   "tips": {
     "mock_0|Home total over 1.5": {
       "key": "mock_0|Home total over 1.5",
@@ -40581,10 +40581,12 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-11-02T13:45:40.637785+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-11-03T21:52:07.125966+00:00",
+      "score": "1-2",
+      "close_odds": 1.83,
+      "clv_pct": 2.19
     },
     "6ef39b0fd8839f6e93a3de32523e9807|Under 3.5 goals": {
       "key": "6ef39b0fd8839f6e93a3de32523e9807|Under 3.5 goals",
@@ -40685,6 +40687,31 @@
       "profit": null,
       "settled_at": null,
       "score": null
+    },
+    "9469c1977185a1acd0154cc0a3b93331|Under 3.5 goals": {
+      "key": "9469c1977185a1acd0154cc0a3b93331|Under 3.5 goals",
+      "event_id": "9469c1977185a1acd0154cc0a3b93331",
+      "sport_key": "soccer_efl_champ",
+      "league": "Championship",
+      "home": "Blackburn Rovers",
+      "away": "Stoke City",
+      "kickoff": "2026-11-03T19:45:00Z",
+      "market": "Under 3.5 goals",
+      "type": "totals",
+      "side": "Under",
+      "point": 3.5,
+      "outcome": null,
+      "odds": 1.26,
+      "confidence": 86,
+      "edge_pct": 8.18,
+      "bookmaker": "Pinnacle",
+      "basis": "model+market",
+      "model": "v3",
+      "published_at": "2026-11-03T21:52:06.157044+00:00",
+      "status": "won",
+      "profit": 0.26,
+      "settled_at": "2026-11-03T21:52:07.125966+00:00",
+      "score": "1-2"
     }
   }
 }
