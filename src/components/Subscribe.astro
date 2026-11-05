@@ -4,22 +4,27 @@ import { t, lhref } from '../i18n/index.js';
 // Newsletter signup. Hidden until PUBLIC_NEWSLETTER=1, because the endpoint
 // needs a KV binding that has to be created in the Cloudflare dashboard — a
 // visible form with nowhere to store addresses is worse than no form.
-const { lang = 'en', source = 'footer' } = Astro.props;
+// compact: sidebar-box variant — the box already carries a title and blurb,
+// so the form drops its own copy, stacks the button under the input and
+// loses the footer's divider.
+const { lang = 'en', source = 'footer', compact = false } = Astro.props;
 const T = (k) => t(lang, k);
 const L = (pth) => lhref(lang, pth);
 const enabled = import.meta.env.PUBLIC_NEWSLETTER === '1';
 ---
 {enabled && (
-  <form class="sub" data-source={source} novalidate
+  <form class={`sub${compact ? ' compact' : ''}`} data-source={source} novalidate
         data-bad-email={T('sub.badEmail')}
         data-need-consent={T('sub.needConsent')}
         data-done={T('sub.done')}
         data-already={T('sub.already')}
         data-failed={T('sub.failed')}>
-    <div class="sub-copy">
-      <h4>{T('sub.h')}</h4>
-      <p>{T('sub.p')}</p>
-    </div>
+    {!compact && (
+      <div class="sub-copy">
+        <h4>{T('sub.h')}</h4>
+        <p>{T('sub.p')}</p>
+      </div>
+    )}
     <div class="sub-row">
       <label class="sr-only" for={`sub-email-${source}`}>{T('sub.label')}</label>
       <input class="sub-input" id={`sub-email-${source}`} type="email" name="email"

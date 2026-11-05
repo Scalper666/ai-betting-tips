@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Ox from '../components/Ox.astro';
 import ToolsBox from '../components/ToolsBox.astro';
+import Subscribe from '../components/Subscribe.astro';
 import PredCard from '../components/PredCard.astro';
 import BookmakerRow from '../components/BookmakerRow.astro';
 import { SHOW_OPERATORS } from '../lib/operators.js';
@@ -718,14 +719,17 @@ const accaValue = accaLegs.length > 0 && accaLegs.every((r) => r.edge > 0);
 
         <ToolsBox lang={lang} />
 
-        <div class="box">
-          <div class="box-h"><span class="hi">📬</span> {T('side.newsletter')}</div>
-          <div class="box-pad newsletter">
-            <p class="dim" style="font-size:12.5px;margin:0 0 12px">{T('side.newsP')}</p>
-            <input type="email" placeholder="your@email.com" />
-            <button class="btn btn-mint btn-block">{T('side.subscribe')}</button>
+        {/* real signup form (same endpoint and script as the footer); the box
+            used to be a dead mock-up — an input and a button wired to nothing */}
+        {import.meta.env.PUBLIC_NEWSLETTER === '1' && (
+          <div class="box">
+            <div class="box-h"><span class="hi">📬</span> {T('side.newsletter')}</div>
+            <div class="box-pad newsletter">
+              <p class="dim" style="font-size:12.5px;margin:0 0 12px">{T('side.newsP')}</p>
+              <Subscribe lang={lang} source="sidebar" compact={true} />
+            </div>
           </div>
-        </div>
+        )}
       </aside>
     </div>
   </div>
