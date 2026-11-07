@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T21:39:54.776522+00:00",
+  "updated_at": "2026-11-07T11:52:58.495953+00:00",
   "tips": {
     "mock_0|Home total over 1.5": {
       "key": "mock_0|Home total over 1.5",
@@ -41033,10 +41033,10 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-11-06T21:39:53.733775+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-11-07T11:52:58.495850+00:00",
+      "score": "3-1"
     },
     "af665449ac9e2c4e1f183376e85fc936|Under 3.5 goals": {
       "key": "af665449ac9e2c4e1f183376e85fc936|Under 3.5 goals",
@@ -41058,10 +41058,10 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-11-06T21:39:53.733775+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-11-07T11:52:58.495850+00:00",
+      "score": "3-1"
     },
     "52b256088d29b4abb82e0c63ea9852fe|Under 3.25 goals": {
       "key": "52b256088d29b4abb82e0c63ea9852fe|Under 3.25 goals",
@@ -41083,6 +41083,31 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-11-06T21:39:53.733775+00:00",
+      "status": "pending",
+      "profit": null,
+      "settled_at": null,
+      "score": null
+    },
+    "f7b240389fa5ec055c58a48ab153dcdd|Under 3.5 goals": {
+      "key": "f7b240389fa5ec055c58a48ab153dcdd|Under 3.5 goals",
+      "event_id": "f7b240389fa5ec055c58a48ab153dcdd",
+      "sport_key": "soccer_france_ligue_one",
+      "league": "Ligue 1",
+      "home": "Paris Saint Germain",
+      "away": "Troyes",
+      "kickoff": "2026-11-07T20:05:00Z",
+      "market": "Under 3.5 goals",
+      "type": "totals",
+      "side": "Under",
+      "point": 3.5,
+      "outcome": null,
+      "odds": 2.0,
+      "confidence": 57,
+      "edge_pct": 14.97,
+      "bookmaker": "Unibet (SE)",
+      "basis": "model+market",
+      "model": "v3",
+      "published_at": "2026-11-07T11:52:57.808769+00:00",
       "status": "pending",
       "profit": null,
       "settled_at": null,
