@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T20:20:50.829672+00:00",
+  "updated_at": "2026-11-08T12:06:02.395104+00:00",
   "tips": {
     "mock_0|Home total over 1.5": {
       "key": "mock_0|Home total over 1.5",
@@ -39876,10 +39876,12 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-10-26T11:24:51.401589+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "won",
+      "profit": 0.9,
+      "settled_at": "2026-11-08T12:06:02.360635+00:00",
+      "score": "1-0",
+      "close_odds": 1.97,
+      "clv_pct": -3.55
     },
     "5b386dfdf6f76705116fbb4120ee8493|Under 3.25 goals": {
       "key": "5b386dfdf6f76705116fbb4120ee8493|Under 3.25 goals",
@@ -39901,10 +39903,12 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-10-26T11:24:51.401589+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "won",
+      "profit": 0.98,
+      "settled_at": "2026-11-08T12:06:02.360635+00:00",
+      "score": "0-3",
+      "close_odds": 1.88,
+      "clv_pct": 5.32
     },
     "b71f32fbba046e08d4cc26e2a8e1d5a6|Under 3.5 goals": {
       "key": "b71f32fbba046e08d4cc26e2a8e1d5a6|Under 3.5 goals",
@@ -41120,10 +41124,12 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-11-07T11:52:57.808769+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "won",
+      "profit": 1.0,
+      "settled_at": "2026-11-08T12:06:02.360635+00:00",
+      "score": "1-0",
+      "close_odds": 2.0,
+      "clv_pct": 0.0
     },
     "c323662f3c6524f2ed1c293a7b4e8a46|Grasshopper Zürich to win": {
       "key": "c323662f3c6524f2ed1c293a7b4e8a46|Grasshopper Zürich to win",
@@ -41145,10 +41151,10 @@
       "basis": "market",
       "model": "v3",
       "published_at": "2026-11-07T20:20:48.071577+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "lost",
+      "profit": -1.0,
+      "settled_at": "2026-11-08T12:06:02.360635+00:00",
+      "score": "1-1"
     },
     "e02e046c5d6a79723c46af703304de02|Hertha Berlin to win": {
       "key": "e02e046c5d6a79723c46af703304de02|Hertha Berlin to win",
@@ -41170,10 +41176,10 @@
       "basis": "market",
       "model": "v3",
       "published_at": "2026-11-07T20:20:48.071577+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "won",
+      "profit": 0.34,
+      "settled_at": "2026-11-08T12:06:02.360635+00:00",
+      "score": "2-1"
     },
     "f110107bca066ac1a598c89661c88fa3|AS Roma to win": {
       "key": "f110107bca066ac1a598c89661c88fa3|AS Roma to win",
@@ -41195,10 +41201,10 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-11-07T20:20:48.071577+00:00",
-      "status": "pending",
-      "profit": null,
-      "settled_at": null,
-      "score": null
+      "status": "won",
+      "profit": 0.32,
+      "settled_at": "2026-11-08T12:06:02.360635+00:00",
+      "score": "3-0"
     },
     "ca93df81e976fbe345a6175bb24e3f19|Under 3.25 goals": {
       "key": "ca93df81e976fbe345a6175bb24e3f19|Under 3.25 goals",
@@ -41220,6 +41226,31 @@
       "basis": "model+market",
       "model": "v3",
       "published_at": "2026-11-07T20:20:48.071577+00:00",
+      "status": "pending",
+      "profit": null,
+      "settled_at": null,
+      "score": null
+    },
+    "019e9d824f3f2251e5b777623d34a9df|Under 5.0 goals": {
+      "key": "019e9d824f3f2251e5b777623d34a9df|Under 5.0 goals",
+      "event_id": "019e9d824f3f2251e5b777623d34a9df",
+      "sport_key": "soccer_netherlands_eredivisie",
+      "league": "Eredivisie",
+      "home": "Heerenveen",
+      "away": "Feyenoord",
+      "kickoff": "2026-11-08T11:15:00Z",
+      "market": "Under 5.0 goals",
+      "type": "totals",
+      "side": "Under",
+      "point": 5.0,
+      "outcome": null,
+      "odds": 1.72,
+      "confidence": 65,
+      "edge_pct": 23.24,
+      "bookmaker": "Marathon Bet",
+      "basis": "model+market",
+      "model": "v3",
+      "published_at": "2026-11-08T12:06:01.242457+00:00",
       "status": "pending",
       "profit": null,
       "settled_at": null,
