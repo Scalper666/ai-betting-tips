@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-08T20:44:54+00:00",
+ "updated_at": "2026-11-09T14:17:39+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -3721,26 +3721,16 @@
    "standings": [
     {
      "pos": 1,
-     "team": "Atleti",
+     "team": "Barça",
      "p": 12,
-     "w": 10,
-     "d": 1,
+     "w": 11,
+     "d": 0,
      "l": 1,
-     "gd": 15,
-     "pts": 31
+     "gd": 35,
+     "pts": 33
     },
     {
      "pos": 2,
-     "team": "Barça",
-     "p": 12,
-     "w": 10,
-     "d": 0,
-     "l": 2,
-     "gd": 33,
-     "pts": 30
-    },
-    {
-     "pos": 3,
      "team": "Real Madrid",
      "p": 12,
      "w": 10,
@@ -3748,6 +3738,16 @@
      "l": 2,
      "gd": 21,
      "pts": 30
+    },
+    {
+     "pos": 3,
+     "team": "Atleti",
+     "p": 12,
+     "w": 9,
+     "d": 1,
+     "l": 2,
+     "gd": 13,
+     "pts": 28
     },
     {
      "pos": 4,
@@ -3921,9 +3921,9 @@
     }
    ],
    "crests": {
-    "Atleti": "/crests/atleti.png",
     "Barça": "/crests/barca.png",
     "Real Madrid": "/crests/real-madrid.png",
+    "Atleti": "/crests/atleti.png",
     "Real Betis": "/crests/real-betis.png",
     "Real Sociedad": "/crests/real-sociedad.png",
     "Sevilla FC": "/crests/sevilla-fc.png",
@@ -7428,6 +7428,13 @@
      "a": "Getafe",
      "hs": 2,
      "as": 0
+    },
+    {
+     "d": "2026-11-08",
+     "h": "Atleti",
+     "a": "Barça",
+     "hs": 1,
+     "as": 2
     }
    ],
    "scorers": [
@@ -7451,7 +7458,7 @@
      "name": "Lamine Yamal",
      "team": "Barça",
      "goals": 10,
-     "assists": 7,
+     "assists": 8,
      "pens": 1,
      "played": 12
     },
@@ -7476,6 +7483,14 @@
      "team": "Rayo Vallecano",
      "goals": 7,
      "assists": 2,
+     "pens": null,
+     "played": 12
+    },
+    {
+     "name": "Fermín López",
+     "team": "Barça",
+     "goals": 7,
+     "assists": 5,
      "pens": null,
      "played": 12
     },
@@ -7508,14 +7523,6 @@
      "team": "Atleti",
      "goals": 5,
      "assists": 3,
-     "pens": null,
-     "played": 12
-    },
-    {
-     "name": "Fermín López",
-     "team": "Barça",
-     "goals": 5,
-     "assists": 5,
      "pens": null,
      "played": 12
     },
@@ -11204,6 +11211,13 @@
      "a": "Como 1907",
      "hs": 2,
      "as": 0
+    },
+    {
+     "d": "2026-11-08",
+     "h": "Fiorentina",
+     "a": "Juventus",
+     "hs": 2,
+     "as": 2
     }
    ],
    "scorers": [
@@ -14406,6 +14420,16 @@
     },
     {
      "pos": 4,
+     "team": "Marseille",
+     "p": 10,
+     "w": 6,
+     "d": 0,
+     "l": 4,
+     "gd": 8,
+     "pts": 18
+    },
+    {
+     "pos": 5,
      "team": "Olympique Lyon",
      "p": 10,
      "w": 5,
@@ -14415,7 +14439,7 @@
      "pts": 17
     },
     {
-     "pos": 5,
+     "pos": 6,
      "team": "Nice",
      "p": 10,
      "w": 5,
@@ -14423,16 +14447,6 @@
      "l": 3,
      "gd": 3,
      "pts": 17
-    },
-    {
-     "pos": 6,
-     "team": "Marseille",
-     "p": 10,
-     "w": 5,
-     "d": 1,
-     "l": 4,
-     "gd": 7,
-     "pts": 16
     },
     {
      "pos": 7,
@@ -14479,10 +14493,10 @@
      "team": "RC Lens",
      "p": 10,
      "w": 4,
-     "d": 2,
-     "l": 4,
-     "gd": 3,
-     "pts": 14
+     "d": 1,
+     "l": 5,
+     "gd": 2,
+     "pts": 13
     },
     {
      "pos": 12,
@@ -14559,9 +14573,9 @@
     "PSG": "/crests/psg.png",
     "Lille": "/crests/lille.png",
     "Paris FC": "/crests/paris-fc.png",
+    "Marseille": "/crests/marseille.png",
     "Olympique Lyon": "/crests/olympique-lyon.png",
     "Nice": "/crests/nice.png",
-    "Marseille": "/crests/marseille.png",
     "Monaco": "/crests/monaco.png",
     "Stade Rennais": "/crests/stade-rennais.png",
     "Brest": "/crests/brest.png",
@@ -17332,6 +17346,13 @@
      "h": "Angers SCO",
      "a": "Nice",
      "hs": 0,
+     "as": 2
+    },
+    {
+     "d": "2026-11-08",
+     "h": "RC Lens",
+     "a": "Marseille",
+     "hs": 1,
      "as": 2
     }
    ],
@@ -31497,6 +31518,13 @@
      "a": "PSV",
      "hs": 2,
      "as": 5
+    },
+    {
+     "d": "2026-11-08",
+     "h": "Utrecht",
+     "a": "NEC",
+     "hs": 2,
+     "as": 3
     }
    ],
    "scorers": [
@@ -31641,11 +31669,11 @@
      "pos": 2,
      "team": "SL Benfica",
      "p": 11,
-     "w": 8,
-     "d": 2,
+     "w": 9,
+     "d": 1,
      "l": 1,
-     "gd": 19,
-     "pts": 26
+     "gd": 20,
+     "pts": 28
     },
     {
      "pos": 3,
@@ -31701,11 +31729,11 @@
      "pos": 8,
      "team": "Braga",
      "p": 11,
-     "w": 4,
-     "d": 3,
+     "w": 5,
+     "d": 2,
      "l": 4,
-     "gd": 1,
-     "pts": 15
+     "gd": 2,
+     "pts": 17
     },
     {
      "pos": 9,
@@ -31742,10 +31770,10 @@
      "team": "Amadora",
      "p": 11,
      "w": 2,
-     "d": 5,
-     "l": 4,
-     "gd": -4,
-     "pts": 11
+     "d": 4,
+     "l": 5,
+     "gd": -5,
+     "pts": 10
     },
     {
      "pos": 13,
@@ -31779,7 +31807,7 @@
     },
     {
      "pos": 16,
-     "team": "Rio Ave",
+     "team": "Casa Pia",
      "p": 11,
      "w": 2,
      "d": 2,
@@ -31789,13 +31817,13 @@
     },
     {
      "pos": 17,
-     "team": "Casa Pia",
+     "team": "Rio Ave",
      "p": 11,
      "w": 2,
-     "d": 2,
-     "l": 7,
-     "gd": -14,
-     "pts": 8
+     "d": 1,
+     "l": 8,
+     "gd": -15,
+     "pts": 7
     },
     {
      "pos": 18,
@@ -31824,8 +31852,8 @@
     "CD Nacional": "/crests/cd-nacional.png",
     "Vitória SC": "/crests/vitoria-sc.png",
     "Marítimo": "/crests/maritimo.png",
-    "Rio Ave": "/crests/rio-ave.png",
     "Casa Pia": "/crests/casa-pia.png",
+    "Rio Ave": "/crests/rio-ave.png",
     "Estoril Praia": "/crests/estoril-praia.png"
    },
    "results": [
@@ -34642,13 +34670,27 @@
      "a": "Porto",
      "hs": 1,
      "as": 2
+    },
+    {
+     "d": "2026-11-08",
+     "h": "Rio Ave",
+     "a": "Braga",
+     "hs": 0,
+     "as": 1
+    },
+    {
+     "d": "2026-11-08",
+     "h": "Amadora",
+     "a": "SL Benfica",
+     "hs": 2,
+     "as": 3
     }
    ],
    "scorers": [
     {
      "name": "Vangelis Pavlidis",
      "team": "SL Benfica",
-     "goals": 10,
+     "goals": 11,
      "assists": 3,
      "pens": 3,
      "played": 11
@@ -34664,7 +34706,7 @@
     {
      "name": "Gianluca Prestianni",
      "team": "SL Benfica",
-     "goals": 6,
+     "goals": 7,
      "assists": 4,
      "pens": null,
      "played": 11
@@ -34690,6 +34732,14 @@
      "team": "Arouca",
      "goals": 5,
      "assists": null,
+     "pens": null,
+     "played": 11
+    },
+    {
+     "name": "Leandro Antonetti",
+     "team": "Amadora",
+     "goals": 5,
+     "assists": 1,
      "pens": null,
      "played": 11
     },
@@ -34724,14 +34774,6 @@
      "assists": 1,
      "pens": 1,
      "played": 9
-    },
-    {
-     "name": "Leandro Antonetti",
-     "team": "Amadora",
-     "goals": 4,
-     "assists": 1,
-     "pens": null,
-     "played": 11
     },
     {
      "name": "André Silva",
