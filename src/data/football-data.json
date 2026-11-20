@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-20T14:21:19+00:00",
+ "updated_at": "2026-11-20T22:48:12+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -3782,11 +3782,11 @@
     {
      "pos": 7,
      "team": "Athletic",
-     "p": 11,
+     "p": 12,
      "w": 4,
      "d": 4,
-     "l": 3,
-     "gd": 4,
+     "l": 4,
+     "gd": 3,
      "pts": 16
     },
     {
@@ -3811,6 +3811,16 @@
     },
     {
      "pos": 10,
+     "team": "Espanyol",
+     "p": 13,
+     "w": 4,
+     "d": 3,
+     "l": 6,
+     "gd": 0,
+     "pts": 15
+    },
+    {
+     "pos": 11,
      "team": "Santander",
      "p": 12,
      "w": 4,
@@ -3820,7 +3830,7 @@
      "pts": 14
     },
     {
-     "pos": 11,
+     "pos": 12,
      "team": "Celta",
      "p": 12,
      "w": 2,
@@ -3830,7 +3840,7 @@
      "pts": 13
     },
     {
-     "pos": 12,
+     "pos": 13,
      "team": "Alavés",
      "p": 12,
      "w": 3,
@@ -3838,16 +3848,6 @@
      "l": 5,
      "gd": -2,
      "pts": 13
-    },
-    {
-     "pos": 13,
-     "team": "Espanyol",
-     "p": 12,
-     "w": 3,
-     "d": 3,
-     "l": 6,
-     "gd": -1,
-     "pts": 12
     },
     {
      "pos": 14,
@@ -3930,10 +3930,10 @@
     "Athletic": "/crests/athletic.png",
     "Villarreal": "/crests/villarreal.png",
     "Deportivo": "/crests/deportivo.png",
+    "Espanyol": "/crests/espanyol.png",
     "Santander": "/crests/santander.png",
     "Celta": "/crests/celta.png",
     "Alavés": "/crests/alaves.png",
-    "Espanyol": "/crests/espanyol.png",
     "Rayo Vallecano": "/crests/rayo-vallecano.png",
     "Getafe": "/crests/getafe.png",
     "Osasuna": "/crests/osasuna.png",
@@ -7479,6 +7479,14 @@
      "played": 12
     },
     {
+     "name": "Roberto Fernández",
+     "team": "Espanyol",
+     "goals": 7,
+     "assists": null,
+     "pens": null,
+     "played": 13
+    },
+    {
      "name": "Sergio Camello",
      "team": "Rayo Vallecano",
      "goals": 7,
@@ -7491,14 +7499,6 @@
      "team": "Barça",
      "goals": 7,
      "assists": 5,
-     "pens": null,
-     "played": 12
-    },
-    {
-     "name": "Roberto Fernández",
-     "team": "Espanyol",
-     "goals": 6,
-     "assists": null,
      "pens": null,
      "played": 12
     },
@@ -11351,12 +11351,12 @@
     {
      "pos": 1,
      "team": "Bayern",
-     "p": 9,
+     "p": 10,
      "w": 6,
-     "d": 3,
+     "d": 4,
      "l": 0,
      "gd": 20,
-     "pts": 21
+     "pts": 22
     },
     {
      "pos": 2,
@@ -11480,22 +11480,22 @@
     },
     {
      "pos": 14,
+     "team": "1. FC Köln",
+     "p": 10,
+     "w": 2,
+     "d": 4,
+     "l": 4,
+     "gd": -4,
+     "pts": 10
+    },
+    {
+     "pos": 15,
      "team": "Augsburg",
      "p": 9,
      "w": 2,
      "d": 3,
      "l": 4,
      "gd": 0,
-     "pts": 9
-    },
-    {
-     "pos": 15,
-     "team": "1. FC Köln",
-     "p": 9,
-     "w": 2,
-     "d": 3,
-     "l": 4,
-     "gd": -4,
      "pts": 9
     },
     {
@@ -11543,8 +11543,8 @@
     "HSV": "/crests/hsv.png",
     "Mainz": "/crests/mainz.png",
     "SC Paderborn": "/crests/sc-paderborn.png",
-    "Augsburg": "/crests/augsburg.png",
     "1. FC Köln": "/crests/1-fc-koln.png",
+    "Augsburg": "/crests/augsburg.png",
     "Union Berlin": "/crests/union-berlin.png",
     "Schalke": "/crests/schalke.png",
     "M'gladbach": "/crests/m-gladbach.png"
@@ -14258,6 +14258,13 @@
      "a": "Schalke",
      "hs": 2,
      "as": 1
+    },
+    {
+     "d": "2026-11-20",
+     "h": "Bayern",
+     "a": "1. FC Köln",
+     "hs": 1,
+     "as": 1
     }
    ],
    "scorers": [
@@ -14283,7 +14290,7 @@
      "goals": 6,
      "assists": 3,
      "pens": null,
-     "played": 9
+     "played": 10
     },
     {
      "name": "Younes Ebnoutalib",
@@ -14510,6 +14517,16 @@
     },
     {
      "pos": 13,
+     "team": "Troyes",
+     "p": 11,
+     "w": 3,
+     "d": 2,
+     "l": 6,
+     "gd": -8,
+     "pts": 11
+    },
+    {
+     "pos": 14,
      "team": "Strasbourg",
      "p": 10,
      "w": 3,
@@ -14519,7 +14536,7 @@
      "pts": 10
     },
     {
-     "pos": 14,
+     "pos": 15,
      "team": "Auxerre",
      "p": 10,
      "w": 3,
@@ -14529,7 +14546,7 @@
      "pts": 10
     },
     {
-     "pos": 15,
+     "pos": 16,
      "team": "Le Mans",
      "p": 10,
      "w": 1,
@@ -14539,18 +14556,8 @@
      "pts": 8
     },
     {
-     "pos": 16,
-     "team": "Angers SCO",
-     "p": 10,
-     "w": 2,
-     "d": 2,
-     "l": 6,
-     "gd": -10,
-     "pts": 8
-    },
-    {
      "pos": 17,
-     "team": "Troyes",
+     "team": "Angers SCO",
      "p": 10,
      "w": 2,
      "d": 2,
@@ -14561,11 +14568,11 @@
     {
      "pos": 18,
      "team": "Le Havre",
-     "p": 10,
+     "p": 11,
      "w": 0,
      "d": 2,
-     "l": 8,
-     "gd": -13,
+     "l": 9,
+     "gd": -15,
      "pts": 2
     }
    ],
@@ -14582,11 +14589,11 @@
     "Lorient": "/crests/lorient.png",
     "RC Lens": "/crests/rc-lens.png",
     "Toulouse": "/crests/toulouse.png",
+    "Troyes": "/crests/troyes.png",
     "Strasbourg": "/crests/strasbourg.png",
     "Auxerre": "/crests/auxerre.png",
     "Le Mans": "/crests/le-mans.png",
     "Angers SCO": "/crests/angers-sco.png",
-    "Troyes": "/crests/troyes.png",
     "Le Havre": "/crests/le-havre.png"
    },
    "results": [
@@ -17354,6 +17361,13 @@
      "a": "Marseille",
      "hs": 1,
      "as": 2
+    },
+    {
+     "d": "2026-11-20",
+     "h": "Troyes",
+     "a": "Le Havre",
+     "hs": 3,
+     "as": 1
     }
    ],
    "scorers": [
@@ -17422,6 +17436,14 @@
      "played": 8
     },
     {
+     "name": "Josh Maja",
+     "team": "Le Havre",
+     "goals": 5,
+     "assists": null,
+     "pens": 1,
+     "played": 11
+    },
+    {
      "name": "Boulaye Dia",
      "team": "Stade Rennais",
      "goals": 5,
@@ -17468,14 +17490,6 @@
      "assists": 3,
      "pens": null,
      "played": 10
-    },
-    {
-     "name": "Paris Brunner",
-     "team": "Monaco",
-     "goals": 4,
-     "assists": null,
-     "pens": null,
-     "played": 8
     }
    ]
   },
@@ -22809,6 +22823,13 @@
      "h": "Vitória",
      "a": "Bragantino",
      "hs": 2,
+     "as": 1
+    },
+    {
+     "d": "2026-11-20",
+     "h": "São Paulo",
+     "a": "Fluminense",
+     "hs": 0,
      "as": 1
     }
    ],
