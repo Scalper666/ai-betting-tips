@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-20T22:48:12+00:00",
+ "updated_at": "2026-11-21T13:43:49+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -29,11 +29,11 @@
     {
      "pos": 3,
      "team": "Man City",
-     "p": 10,
+     "p": 11,
      "w": 7,
      "d": 0,
-     "l": 3,
-     "gd": 8,
+     "l": 4,
+     "gd": 7,
      "pts": 21
     },
     {
@@ -98,6 +98,16 @@
     },
     {
      "pos": 10,
+     "team": "Fulham",
+     "p": 11,
+     "w": 3,
+     "d": 4,
+     "l": 4,
+     "gd": -1,
+     "pts": 13
+    },
+    {
+     "pos": 11,
      "team": "Aston Villa",
      "p": 10,
      "w": 3,
@@ -107,7 +117,7 @@
      "pts": 13
     },
     {
-     "pos": 11,
+     "pos": 12,
      "team": "Tottenham",
      "p": 10,
      "w": 3,
@@ -117,7 +127,7 @@
      "pts": 12
     },
     {
-     "pos": 12,
+     "pos": 13,
      "team": "Newcastle",
      "p": 10,
      "w": 3,
@@ -127,7 +137,7 @@
      "pts": 12
     },
     {
-     "pos": 13,
+     "pos": 14,
      "team": "Hull City",
      "p": 10,
      "w": 2,
@@ -137,7 +147,7 @@
      "pts": 11
     },
     {
-     "pos": 14,
+     "pos": 15,
      "team": "Ipswich Town",
      "p": 10,
      "w": 3,
@@ -145,16 +155,6 @@
      "l": 5,
      "gd": -5,
      "pts": 11
-    },
-    {
-     "pos": 15,
-     "team": "Fulham",
-     "p": 10,
-     "w": 2,
-     "d": 4,
-     "l": 4,
-     "gd": -2,
-     "pts": 10
     },
     {
      "pos": 16,
@@ -217,12 +217,12 @@
     "Bournemouth": "/crests/bournemouth.png",
     "Brentford": "/crests/brentford.png",
     "Leeds United": "/crests/leeds-united.png",
+    "Fulham": "/crests/fulham.png",
     "Aston Villa": "/crests/aston-villa.png",
     "Tottenham": "/crests/tottenham.png",
     "Newcastle": "/crests/newcastle.png",
     "Hull City": "/crests/hull-city.png",
     "Ipswich Town": "/crests/ipswich-town.png",
-    "Fulham": "/crests/fulham.png",
     "Nottingham": "/crests/nottingham.png",
     "Coventry City": "/crests/coventry-city.png",
     "Man United": "/crests/man-united.png",
@@ -3598,7 +3598,7 @@
      "goals": 9,
      "assists": null,
      "pens": null,
-     "played": 10
+     "played": 11
     },
     {
      "name": "Alexander Isak",
@@ -3654,7 +3654,7 @@
      "goals": 5,
      "assists": 2,
      "pens": null,
-     "played": 10
+     "played": 11
     },
     {
      "name": "Evanilson",
@@ -3791,6 +3791,16 @@
     },
     {
      "pos": 8,
+     "team": "Alavés",
+     "p": 13,
+     "w": 4,
+     "d": 4,
+     "l": 5,
+     "gd": -1,
+     "pts": 16
+    },
+    {
+     "pos": 9,
      "team": "Villarreal",
      "p": 12,
      "w": 4,
@@ -3800,17 +3810,17 @@
      "pts": 15
     },
     {
-     "pos": 9,
+     "pos": 10,
      "team": "Deportivo",
-     "p": 12,
+     "p": 13,
      "w": 3,
      "d": 6,
-     "l": 3,
-     "gd": 1,
+     "l": 4,
+     "gd": 0,
      "pts": 15
     },
     {
-     "pos": 10,
+     "pos": 11,
      "team": "Espanyol",
      "p": 13,
      "w": 4,
@@ -3820,7 +3830,7 @@
      "pts": 15
     },
     {
-     "pos": 11,
+     "pos": 12,
      "team": "Santander",
      "p": 12,
      "w": 4,
@@ -3830,23 +3840,13 @@
      "pts": 14
     },
     {
-     "pos": 12,
+     "pos": 13,
      "team": "Celta",
      "p": 12,
      "w": 2,
      "d": 7,
      "l": 3,
      "gd": 0,
-     "pts": 13
-    },
-    {
-     "pos": 13,
-     "team": "Alavés",
-     "p": 12,
-     "w": 3,
-     "d": 4,
-     "l": 5,
-     "gd": -2,
      "pts": 13
     },
     {
@@ -3928,12 +3928,12 @@
     "Real Sociedad": "/crests/real-sociedad.png",
     "Sevilla FC": "/crests/sevilla-fc.png",
     "Athletic": "/crests/athletic.png",
+    "Alavés": "/crests/alaves.png",
     "Villarreal": "/crests/villarreal.png",
     "Deportivo": "/crests/deportivo.png",
     "Espanyol": "/crests/espanyol.png",
     "Santander": "/crests/santander.png",
     "Celta": "/crests/celta.png",
-    "Alavés": "/crests/alaves.png",
     "Rayo Vallecano": "/crests/rayo-vallecano.png",
     "Getafe": "/crests/getafe.png",
     "Osasuna": "/crests/osasuna.png",
@@ -7435,6 +7435,13 @@
      "a": "Barça",
      "hs": 1,
      "as": 2
+    },
+    {
+     "d": "2026-11-20",
+     "h": "Athletic",
+     "a": "Espanyol",
+     "hs": 0,
+     "as": 1
     }
    ],
    "scorers": [
@@ -7516,7 +7523,7 @@
      "goals": 5,
      "assists": 2,
      "pens": null,
-     "played": 9
+     "played": 10
     },
     {
      "name": "Álex Baena",
@@ -7532,7 +7539,7 @@
      "goals": 5,
      "assists": null,
      "pens": 1,
-     "played": 11
+     "played": 12
     },
     {
      "name": "Brugui",
@@ -7556,7 +7563,7 @@
      "goals": 4,
      "assists": 4,
      "pens": null,
-     "played": 12
+     "played": 13
     }
    ]
   },
@@ -14282,7 +14289,7 @@
      "goals": 8,
      "assists": 2,
      "pens": null,
-     "played": 9
+     "played": 10
     },
     {
      "name": "Michael Olise",
@@ -14314,7 +14321,7 @@
      "goals": 5,
      "assists": null,
      "pens": null,
-     "played": 8
+     "played": 9
     },
     {
      "name": "Michael Gregoritsch",
@@ -14346,7 +14353,7 @@
      "goals": 5,
      "assists": 2,
      "pens": null,
-     "played": 8
+     "played": 9
     },
     {
      "name": "Romulo Cruz",
@@ -14354,7 +14361,7 @@
      "goals": 5,
      "assists": null,
      "pens": null,
-     "played": 7
+     "played": 8
     },
     {
      "name": "Luis Díaz",
@@ -14370,7 +14377,7 @@
      "goals": 4,
      "assists": 7,
      "pens": 1,
-     "played": 9
+     "played": 10
     },
     {
      "name": "Igor Matanovic",
@@ -14378,7 +14385,7 @@
      "goals": 4,
      "assists": 1,
      "pens": null,
-     "played": 9
+     "played": 10
     },
     {
      "name": "Joseph Scally",
@@ -14386,7 +14393,7 @@
      "goals": 4,
      "assists": 1,
      "pens": null,
-     "played": 9
+     "played": 10
     }
    ]
   },
@@ -27564,6 +27571,14 @@
      "played": 7
     },
     {
+     "name": "Yousef Salech",
+     "team": "Cardiff",
+     "goals": 6,
+     "assists": 1,
+     "pens": null,
+     "played": 7
+    },
+    {
      "name": "Fer López",
      "team": "Wolverhampton",
      "goals": 6,
@@ -27610,14 +27625,6 @@
      "assists": null,
      "pens": 1,
      "played": 8
-    },
-    {
-     "name": "Yousef Salech",
-     "team": "Cardiff",
-     "goals": 5,
-     "assists": 1,
-     "pens": null,
-     "played": 7
     },
     {
      "name": "Mohamed Toure",
