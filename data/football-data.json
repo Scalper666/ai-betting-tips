@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-24T03:02:02+00:00",
+ "updated_at": "2026-11-24T16:15:45+00:00",
  "leagues": {
   "soccer_epl": {
    "code": "PL",
@@ -7837,6 +7837,16 @@
     },
     {
      "pos": 14,
+     "team": "Monza",
+     "p": 12,
+     "w": 3,
+     "d": 1,
+     "l": 8,
+     "gd": -5,
+     "pts": 10
+    },
+    {
+     "pos": 15,
      "team": "Lecce",
      "p": 12,
      "w": 3,
@@ -7846,17 +7856,17 @@
      "pts": 10
     },
     {
-     "pos": 15,
+     "pos": 16,
      "team": "Fiorentina",
-     "p": 11,
+     "p": 12,
      "w": 2,
      "d": 3,
-     "l": 6,
-     "gd": -8,
+     "l": 7,
+     "gd": -11,
      "pts": 9
     },
     {
-     "pos": 16,
+     "pos": 17,
      "team": "Parma",
      "p": 12,
      "w": 2,
@@ -7866,7 +7876,7 @@
      "pts": 8
     },
     {
-     "pos": 17,
+     "pos": 18,
      "team": "Sassuolo",
      "p": 12,
      "w": 2,
@@ -7874,16 +7884,6 @@
      "l": 8,
      "gd": -15,
      "pts": 8
-    },
-    {
-     "pos": 18,
-     "team": "Monza",
-     "p": 11,
-     "w": 2,
-     "d": 1,
-     "l": 8,
-     "gd": -8,
-     "pts": 7
     },
     {
      "pos": 19,
@@ -7920,11 +7920,11 @@
     "Cagliari": "/crests/cagliari.png",
     "Atalanta": "/crests/atalanta.png",
     "Torino": "/crests/torino.png",
+    "Monza": "/crests/monza.png",
     "Lecce": "/crests/lecce.png",
     "Fiorentina": "/crests/fiorentina.png",
     "Parma": "/crests/parma.png",
     "Sassuolo": "/crests/sassuolo.png",
-    "Monza": "/crests/monza.png",
     "Udinese": "/crests/udinese.png",
     "Venezia FC": "/crests/venezia-fc.png"
    },
@@ -11421,6 +11421,13 @@
      "a": "Inter",
      "hs": 4,
      "as": 4
+    },
+    {
+     "d": "2026-11-23",
+     "h": "Monza",
+     "a": "Fiorentina",
+     "hs": 3,
+     "as": 0
     }
    ],
    "scorers": [
@@ -11435,10 +11442,10 @@
     {
      "name": "Gustavo Varela",
      "team": "Monza",
-     "goals": 9,
+     "goals": 11,
      "assists": 1,
-     "pens": 2,
-     "played": 10
+     "pens": 3,
+     "played": 11
     },
     {
      "name": "Antonio Raimondo",
@@ -23202,6 +23209,13 @@
      "a": "São Paulo",
      "hs": 1,
      "as": 1
+    },
+    {
+     "d": "2026-11-24",
+     "h": "Santos",
+     "a": "Grêmio",
+     "hs": 0,
+     "as": 2
     }
    ],
    "scorers": [
@@ -27984,7 +27998,7 @@
      "goals": 11,
      "assists": 1,
      "pens": null,
-     "played": 6
+     "played": 7
     },
     {
      "name": "Jack Moylan",
